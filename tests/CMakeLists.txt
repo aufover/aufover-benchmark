@@ -23,6 +23,8 @@ add_custom_command(TARGET check
     COMMAND ${CTEST_CMD}
     COMMENT ${CTEST_CMD_STRING})
 
-# TODO: drop this
-add_test(NAME foo COMMAND sleep .4)
-add_test(NAME bar COMMAND sleep .8)
+# find available/enabled tools
+include(find-tools.cmake)
+
+# add top-level test groups
+add_subdirectory(single-c)
