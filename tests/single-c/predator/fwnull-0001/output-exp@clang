@@ -1,0 +1,30 @@
+Error: CLANG_WARNING:
+../fwnull-0001.c:5:8: warning: Dereference of null pointer (loaded from variable 'x')
+#    *x = (void *)&x;
+#       ^
+../fwnull-0001.c:18:5: note: Taking true branch
+#    if (ptr)
+#    ^
+../fwnull-0001.c:19:9: note: Calling 'test0'
+#        test0();
+#        ^~~~~~~
+../fwnull-0001.c:4:5: note: 'x' initialized to a null pointer value
+#    void **x = NULL;
+#    ^~~~~~~~
+../fwnull-0001.c:5:8: note: Dereference of null pointer (loaded from variable 'x')
+#    *x = (void *)&x;
+#     ~ ^
+
+Error: CLANG_WARNING:
+../fwnull-0001.c:12:10: warning: Dereference of null pointer (loaded from variable 'ptr')
+#    *ptr = NULL;
+#     ~~~ ^
+../fwnull-0001.c:9:9: note: Assuming 'ptr' is null
+#    if (ptr)
+#        ^~~
+../fwnull-0001.c:9:5: note: Taking false branch
+#    if (ptr)
+#    ^
+../fwnull-0001.c:12:10: note: Dereference of null pointer (loaded from variable 'ptr')
+#    *ptr = NULL;
+#     ~~~ ^
