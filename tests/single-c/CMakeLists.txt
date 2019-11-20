@@ -1,3 +1,11 @@
+# wrapper around add_test() to deduplicate code
+macro(add_test_wrap name cmd)
+    message(STATUS "add_test: ${name}")
+    add_test(NAME ${name}
+        COMMAND ${cmd}
+        WORKING_DIRECTORY ${dst_tool_dir})
+endmacro()
+
 # helper macro to deduplicate code of gen_test_for_tool parameterized by ${which}
 macro(optionally_append_args which)
     if(EXISTS ${src_dir}/args-${which}@${tool})
@@ -26,12 +34,38 @@ macro(gen_test_for_tool)
     set(cmd_tool_sh ${dst_tool_dir}/cmd-tool.sh)
     file(WRITE ${cmd_tool_sh} ${cmd})
 
-    # create a test-case for this
-    set(test_name "single-c/${group}/${test}@${tool}[exec]")
-    message(STATUS "add_test: ${test_name}")
-    add_test(NAME ${test_name}
-        COMMAND bash ${cmd_tool_sh}
-        WORKING_DIRECTORY ${dst_tool_dir})
+    # create a test-case for [exec]
+    set(test_name_base "single-c/${group}/${test}@${tool}")
+    set(cmd "bash" "${cmd_tool_sh}")
+    add_test_wrap("${test_name_base}[exec]" "${cmd}")
+
+    # create a test-case for [conv]
+    set(cmd_convert_sh ${dst_tool_dir}/cmd-convert.sh)
+    if(EXISTS ${src_dir}/output-convert.sh@${tool})
+        file(CREATE_LINK ${src_dir}/output-convert.sh@${tool} ${cmd_convert_sh} SYMBOLIC)
+    elseif(EXISTS ${group_dir}/output-convert.sh@${tool})
+        file(CREATE_LINK ${group_dir}/output-convert.sh@${tool} ${cmd_convert_sh} SYMBOLIC)
+    else()
+        file(CREATE_LINK "/bin/cat" ${cmd_convert_sh} SYMBOLIC)
+    endif()
+    set(cmd_convert "${cmd_convert_sh} <./output-raw.txt >./output-con.txt")
+    set(cmd bash -c "${cmd_convert}")
+    add_test_wrap("${test_name_base}[conv]" "${cmd}")
+    set_tests_properties("${test_name_base}[conv]" PROPERTIES
+        DEPENDS "${test_name_base}[exec]")
+
+    # create a test-case for [csgrep]
+    set(cmd_csgrep "${UTIL_EXEC_csgrep} <./output-con.txt >./output-uni.txt")
+    set(cmd bash -c "${cmd_csgrep}")
+    add_test_wrap("${test_name_base}[csgrep]" "${cmd}")
+    set_tests_properties("${test_name_base}[csgrep]" PROPERTIES
+        DEPENDS "${test_name_base}[conv]")
+
+    # create a test-case for [diff]
+    set(cmd diff -up ./output-exp.txt ./output-uni.txt)
+    add_test_wrap("${test_name_base}[diff]" "${cmd}")
+    set_tests_properties("${test_name_base}[diff]" PROPERTIES
+        DEPENDS "${test_name_base}[csgrep]")
 endmacro()
 
 # generate tests for a single test

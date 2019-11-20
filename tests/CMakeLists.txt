@@ -23,6 +23,9 @@ add_custom_command(TARGET check
     COMMAND ${CTEST_CMD}
     COMMENT ${CTEST_CMD_STRING})
 
+# find required utils
+include(find-utils.cmake)
+
 # find available/enabled tools
 include(find-tools.cmake)
 
