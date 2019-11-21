@@ -20,7 +20,7 @@ endmacro()
 set(empty_main "<(echo 'int main(){}')")
 
 # make it possible to override path to executables
-set(TOOLS_SUPPORTED gcc clang cppcheck)
+set(TOOLS_SUPPORTED gcc clang cppcheck divine)
 foreach(tool ${TOOLS_SUPPORTED})
     set(TOOL_EXEC_${tool} ${tool} CACHE STRING "command used to run ${tool}")
 endforeach()
@@ -29,3 +29,4 @@ endforeach()
 append_tool_on_succ(gcc        "${TOOL_EXEC_gcc}             -xc ${empty_main}")
 append_tool_on_succ(clang      "${TOOL_EXEC_clang} --analyze -xc ${empty_main}")
 append_tool_on_succ(cppcheck   "${TOOL_EXEC_cppcheck} --quiet    ${empty_main}")
+append_tool_on_succ(divine     "${TOOL_EXEC_divine} version >/dev/null 2>&1")
