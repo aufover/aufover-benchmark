@@ -15,8 +15,11 @@ if(${CPU_COUNT} EQUAL 0)
 endif()
 message(STATUS "CPU_COUNT: ${CPU_COUNT}")
 
-# generate Makefile with useful default target
-set(CTEST_CMD ctest --output-on-failure -j${CPU_COUNT})
+# append $CTEST_OPTS environment variable to ctest args
+string(REPLACE " " ";" CTEST_OPTS "$ENV{CTEST_OPTS}")
+
+# make target `check`
+set(CTEST_CMD ctest --output-on-failure -j${CPU_COUNT} ${CTEST_OPTS})
 string(REPLACE ";" " " CTEST_CMD_STRING "${CTEST_CMD}")
 add_custom_target(check)
 add_custom_command(TARGET check
@@ -28,6 +31,9 @@ include(find-utils.cmake)
 
 # find available/enabled tools
 include(find-tools.cmake)
+
+# make target list-enabled-tools
+add_custom_target(list-enabled-tools COMMAND echo ${TOOLS_ENABLED})
 
 # add top-level test groups
 add_subdirectory(single-c)

@@ -117,3 +117,11 @@ foreach(group ${group_list})
         gen_test_group()
     endif()
 endforeach()
+
+# check-without-diff target
+set(CUSTOM_CTEST_CMD ${CTEST_CMD} -E "\\\\[diff\\\\]\\$")
+string(REPLACE ";" " " CUSTOM_CTEST_CMD_STRING "${CTEST_CMD}")
+add_custom_target(check-without-diff)
+add_custom_command(TARGET check-without-diff
+    COMMAND ${CUSTOM_CTEST_CMD}
+    COMMENT ${CUSTOM_CTEST_CMD_STRING})

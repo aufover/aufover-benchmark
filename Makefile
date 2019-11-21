@@ -1,8 +1,8 @@
 # read-only source directory
-TESTDIR = ./tests
+TESTDIR ?= ./tests
 
 # read-write working directory
-WORKDIR = ./workdir
+WORKDIR ?= ./workdir
 
 .PHONY: check configure test
 
