@@ -18,7 +18,7 @@ message(STATUS "CPU_COUNT: ${CPU_COUNT}")
 # generate Makefile with useful default target
 set(CTEST_CMD ctest --output-on-failure -j${CPU_COUNT})
 string(REPLACE ";" " " CTEST_CMD_STRING "${CTEST_CMD}")
-add_custom_target(check ALL)
+add_custom_target(check)
 add_custom_command(TARGET check
     COMMAND ${CTEST_CMD}
     COMMENT ${CTEST_CMD_STRING})

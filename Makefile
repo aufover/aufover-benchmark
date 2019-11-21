@@ -4,11 +4,17 @@ TESTDIR = ./tests
 # read-write working directory
 WORKDIR = ./workdir
 
+.PHONY: check configure test
+
 # default target
-.PHONY: check
-check: $(WORKDIR)
+configure: $(WORKDIR)
 		cmake -S $(TESTDIR) -B $(WORKDIR)
-		$(MAKE) check -C $(WORKDIR)
+
+check: configure
+		$(MAKE) $@ -C $(WORKDIR)
+
+test: configure
+		$(MAKE) $@ -C $(WORKDIR)
 
 # create $(WORKDIR) if it does not exist already
 $(WORKDIR):
