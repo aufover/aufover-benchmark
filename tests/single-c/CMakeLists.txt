@@ -4,6 +4,8 @@ macro(add_test_wrap name cmd)
     add_test(NAME ${name}
         COMMAND ${cmd}
         WORKING_DIRECTORY ${dst_tool_dir})
+    set_tests_properties("${name}" PROPERTIES
+        LABELS ${tool})
 endmacro()
 
 # helper macro to deduplicate code of gen_test_for_tool parameterized by ${which}
@@ -33,6 +35,7 @@ macro(gen_test_for_tool)
     # dump the command as a shell script
     set(cmd_tool_sh ${dst_tool_dir}/cmd-tool.sh)
     file(WRITE ${cmd_tool_sh} ${cmd})
+    execute_process(COMMAND chmod 0755 ${cmd_tool_sh})
 
     # create a test-case for [exec]
     set(test_name_base "single-c/${group}/${test}@${tool}")
