@@ -25,3 +25,38 @@ How to run existing tests?
     - which tools actually ran
     - how many tests each of them analyzed (you need to divide the numbers by 4)
     - how much time it took for each of the tools
+
+
+Alternative ways of running tests
+---------------------------------
+- using a custom working directory:
+    $ mkdir /tmp/my-custom-wd
+    $ WORKDIR=/tmp/my-custom-wd make check [-C PATH_TO_THIS_REPO]
+
+- using source directory as a working directory:
+    $ cd tests
+    $ cmake .
+    $ ctest -j16 --progress         # see doc/cmake.txt for other useful options
+
+- running tests for selected tool (expected to be run from a working directory):
+    $ ctest --print-labels
+    $ ctest -L cbmc
+    $ ctest -LE divine
+
+- running selected tests (expected to be run from a working directory):
+    $ ctest --show-only
+    $ ctest -R test-0006
+    $ ctest -E predator-regre
+
+
+Tree layout of this repository
+------------------------------
+/doc                    documentation
+/Makefile               top-level Makefile (its use is optional)
+/tests                  source code of the benchmark
+/tests/CMakeLists.txt   top-level CMake configuration file
+/tests/single-c         simplified test-suite using single C file for each test
+/tests/single-c/README  information specific to the single-c test-suite (TODO)
+/tests/single-c/sync.sh script for syncing of expected results (dangerous)
+/workdir                default working directory, its use optional
+/workdir-for-sync       separate working directory for sync script(s)
