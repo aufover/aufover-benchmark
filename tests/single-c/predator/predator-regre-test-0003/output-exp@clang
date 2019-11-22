@@ -1,44 +1,44 @@
-Error: CLANG_WARNING:
-../test-0003.c:12:13: warning: 1st function call argument is an uninitialized value
+Error: COMPILER_WARNING:
+./test-0003.c:12:13: warning: 1st function call argument is an uninitialized value
 #            free(undef);
 #            ^    ~~~~~
-../test-0003.c:6:5: note: 'undef' declared without an initial value
+./test-0003.c:6:5: note: 'undef' declared without an initial value
 #    void *undef;
 #    ^~~~~~~~~~~
-../test-0003.c:10:5: note: Control jumps to 'case 0:'  at line 11
+./test-0003.c:10:5: note: Control jumps to 'case 0:'  at line 11
 #    switch (__VERIFIER_nondet_int()) {
 #    ^
-../test-0003.c:12:13: note: 1st function call argument is an uninitialized value
+./test-0003.c:12:13: note: 1st function call argument is an uninitialized value
 #            free(undef);
 #            ^    ~~~~~
 
-Error: CLANG_WARNING:
-../test-0003.c:20:13: warning: Argument to free() is the address of the local variable 'val', which is not memory allocated by malloc()
+Error: COMPILER_WARNING:
+./test-0003.c:20:13: warning: Argument to free() is the address of the local variable 'val', which is not memory allocated by malloc()
 #            free(ptr);
 #            ^    ~~~
-../test-0003.c:10:5: note: Control jumps to 'case 2:'  at line 19
+./test-0003.c:10:5: note: Control jumps to 'case 2:'  at line 19
 #    switch (__VERIFIER_nondet_int()) {
 #    ^
-../test-0003.c:20:13: note: Argument to free() is the address of the local variable 'val', which is not memory allocated by malloc()
+./test-0003.c:20:13: note: Argument to free() is the address of the local variable 'val', which is not memory allocated by malloc()
 #            free(ptr);
 #            ^    ~~~
 
-Error: CLANG_WARNING:
-../test-0003.c:29:5: warning: Attempt to free released memory
+Error: COMPILER_WARNING:
+./test-0003.c:29:5: warning: Attempt to free released memory
 #    free(item);
 #    ^~~~~~~~~~
-../test-0003.c:10:5: note: Control jumps to the 'default' case at line 23
+./test-0003.c:10:5: note: Control jumps to the 'default' case at line 23
 #    switch (__VERIFIER_nondet_int()) {
 #    ^
-../test-0003.c:24:13: note:  Execution continues on line 27
+./test-0003.c:24:13: note:  Execution continues on line 27
 #            break;
 #            ^
-../test-0003.c:27:18: note: Memory is allocated
+./test-0003.c:27:18: note: Memory is allocated
 #    void *item = malloc(sizeof(void *));
 #                 ^~~~~~~~~~~~~~~~~~~~~~
-../test-0003.c:28:5: note: Memory is released
+./test-0003.c:28:5: note: Memory is released
 #    free(item);
 #    ^~~~~~~~~~
-../test-0003.c:29:5: note: Attempt to free released memory
+./test-0003.c:29:5: note: Attempt to free released memory
 #    free(item);
 #    ^~~~~~~~~~

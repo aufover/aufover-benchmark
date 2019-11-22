@@ -1,38 +1,38 @@
-Error: CLANG_WARNING:
-../test-0002.c:10:22: warning: Dereference of undefined pointer value
+Error: COMPILER_WARNING:
+./test-0002.c:10:22: warning: Dereference of undefined pointer value
 #        null_value = *undef;
 #                     ^~~~~~
-../test-0002.c:9:9: note: Assuming the condition is true
+./test-0002.c:9:9: note: Assuming the condition is true
 #    if (__VERIFIER_nondet_int())
 #        ^~~~~~~~~~~~~~~~~~~~~~~
-../test-0002.c:9:5: note: Taking true branch
+./test-0002.c:9:5: note: Taking true branch
 #    if (__VERIFIER_nondet_int())
 #    ^
-../test-0002.c:10:22: note: Dereference of undefined pointer value
+./test-0002.c:10:22: note: Dereference of undefined pointer value
 #        null_value = *undef;
 #                     ^~~~~~
 
-Error: CLANG_WARNING:
-../test-0002.c:12:12: warning: Value stored to 'err' during its initialization is never read
+Error: COMPILER_WARNING:
+./test-0002.c:12:12: warning: Value stored to 'err' during its initialization is never read
 #    void **err = *null_value;
 #           ^~~   ~~~~~~~~~~~
-../test-0002.c:12:12: note: Value stored to 'err' during its initialization is never read
+./test-0002.c:12:12: note: Value stored to 'err' during its initialization is never read
 #    void **err = *null_value;
 #           ^~~   ~~~~~~~~~~~
 
-Error: CLANG_WARNING:
-../test-0002.c:12:18: warning: Dereference of null pointer (loaded from variable 'null_value')
+Error: COMPILER_WARNING:
+./test-0002.c:12:18: warning: Dereference of null pointer (loaded from variable 'null_value')
 #    void **err = *null_value;
 #                 ^~~~~~~~~~~
-../test-0002.c:7:5: note: 'null_value' initialized to a null pointer value
+./test-0002.c:7:5: note: 'null_value' initialized to a null pointer value
 #    void **null_value = NULL;
 #    ^~~~~~~~~~~~~~~~~
-../test-0002.c:9:9: note: Assuming the condition is false
+./test-0002.c:9:9: note: Assuming the condition is false
 #    if (__VERIFIER_nondet_int())
 #        ^~~~~~~~~~~~~~~~~~~~~~~
-../test-0002.c:9:5: note: Taking false branch
+./test-0002.c:9:5: note: Taking false branch
 #    if (__VERIFIER_nondet_int())
 #    ^
-../test-0002.c:12:18: note: Dereference of null pointer (loaded from variable 'null_value')
+./test-0002.c:12:18: note: Dereference of null pointer (loaded from variable 'null_value')
 #    void **err = *null_value;
 #                 ^~~~~~~~~~~
