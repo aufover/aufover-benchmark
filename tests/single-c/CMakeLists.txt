@@ -27,10 +27,11 @@ macro(gen_test_for_tool)
     file(CREATE_LINK ${exp_file} ${dst_tool_dir}/output-exp.txt SYMBOLIC)
 
     # prepare the command to run
-    set(cmd ${TOOL_EXEC_${tool}})
+    set(cmd "{\n\t${TOOL_EXEC_${tool}}")
     optionally_append_args(prefix)
-    set(cmd "${cmd} ../${c_file} > ${dst_tool_dir}/output-raw.txt")
+    set(cmd "${cmd} ../${c_file}")
     optionally_append_args(suffix)
+    set(cmd "${cmd}\n} >${dst_tool_dir}/output-raw.txt")
 
     # dump the command as a shell script
     set(cmd_tool_sh ${dst_tool_dir}/cmd-tool.sh)
