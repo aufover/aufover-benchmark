@@ -4,7 +4,7 @@ TESTDIR ?= ./tests
 # read-write working directory
 WORKDIR ?= ./workdir
 
-.PHONY: check configure test
+.PHONY: check configure install-deps test
 
 # default target
 configure: $(WORKDIR)
@@ -19,3 +19,7 @@ test: configure
 # create $(WORKDIR) if it does not exist already
 $(WORKDIR):
 	mkdir -p $@
+
+install-deps:
+	# needless to install make as nobody would ever run this without make
+	sudo dnf install --best --skip-broken cbmc cbmc_utils clang cmake coreutils cppcheck csdiff diffutils divine gcc zsh
