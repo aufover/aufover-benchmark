@@ -31,16 +31,18 @@ typeset -a clean_list
 
 # make sure that output-exp@tool files exist to trigger the tests
 cd $group_dir
-for test in */*(/); do
-    for tool in $tool_list; do
-        exp_file="${test}/output-exp@${tool}"
-        if test -e "$exp_file"; then
-            continue;
-        fi
-        touch "$exp_file"
-        clean_list+=("$exp_file")
+if test -z "$SYNC_EXISTING_ONLY"; then
+    for test in */*(/); do
+        for tool in $tool_list; do
+            exp_file="${test}/output-exp@${tool}"
+            if test -e "$exp_file"; then
+                continue;
+            fi
+            touch "$exp_file"
+            clean_list+=("$exp_file")
+        done
     done
-done
+fi
 
 # reconfigure the project to make the above take an effect
 CTEST_OPTS="$*" make -C "${top_dir}"
