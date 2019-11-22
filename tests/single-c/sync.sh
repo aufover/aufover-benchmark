@@ -26,35 +26,42 @@ CTEST_OPTS="$*" make -C ${top_dir}
 # query enabled TOOLS unless $TOOLS is set in caller's env
 tool_list=$(make -s -C $WORKDIR list-enabled-tools/fast)
 
+setopt SH_WORD_SPLIT
+typeset -a clean_list
+
 # make sure that output-exp@tool files exist to trigger the tests
-(cd $group_dir
-    setopt SH_WORD_SPLIT
-    for test in */*(/); do
-        for tool in $tool_list; do
-            touch "${test}/output-exp@${tool}"
-        done
+cd $group_dir
+for test in */*(/); do
+    for tool in $tool_list; do
+        exp_file="${test}/output-exp@${tool}"
+        if test -e "$exp_file"; then
+            continue;
+        fi
+        touch "$exp_file"
+        clean_list+=("$exp_file")
     done
-)
+done
 
 # reconfigure the project to make the above take an effect
-CTEST_OPTS="$*" make -C ${top_dir}
+CTEST_OPTS="$*" make -C "${top_dir}"
 
-(cd ${WORKDIR}/single-c
-    # run check without actually checking the diff
-    make check-without-diff
+# remove output-exp@tool files for tests that were not selected in the end
+rm -fv "${clean_list[@]}"
 
-    # move actual output to the expected output
-    setopt SH_WORD_SPLIT
-    for test in */*(/); do
-        case "$test" in (CMakeFiles/*|Testing/*)
-            continue
-        esac
-        for tool in $tool_list; do
-            dir=${test}/${tool}
-            src=${dir}/output-uni.txt
-            test -r "$src" || continue
-            dst=$(readlink "${dir}/output-exp.txt")
-            mv -v "$src" "$dst"
-        done
+# run check without actually checking the diff
+cd "${WORKDIR}/single-c"
+make check-without-diff
+
+# move actual output to the expected output
+for test in */*(/); do
+    case "$test" in (CMakeFiles/*|Testing/*)
+        continue
+    esac
+    for tool in $tool_list; do
+        dir=${test}/${tool}
+        src=${dir}/output-uni.txt
+        test -r "$src" || continue
+        dst=$(readlink "${dir}/output-exp.txt")
+        mv -v "$src" "$dst"
     done
-)
+done
