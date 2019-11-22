@@ -1,0 +1,27 @@
+aufover-benchmark
+=================
+A unified set of automated tests for multiple formal verification tools
+(cbmc, symbiotic, divine) as well as static analysis tools (gcc, clang,
+cppcheck).
+
+
+How to run existing tests?
+--------------------------
+- enable yum/dnf repositories from the following coprs:
+    https://copr.fedorainfracloud.org/coprs/lzaoral/Divine/
+    https://copr.devel.redhat.com/coprs/acalabek/symbiotic/
+    https://copr.devel.redhat.com/coprs/vmihalko/cbmc_utils/
+
+- install required/optional dependencies of the benchmark on the system:
+    $ make install-deps
+
+- configure the benchmark:
+    $ make
+
+- run the tests:
+    $ make check
+
+- look for Label Time Summary in the output, it will tell you:
+    - which tools actually run
+    - how many tests each of them analyzed (you need to divide the numbers by 4)
+    - how much time it took for each of the tools
