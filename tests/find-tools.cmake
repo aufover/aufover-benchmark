@@ -26,7 +26,7 @@ foreach(tool ${TOOLS_SUPPORTED})
 endforeach()
 
 # probe for available static analyzers
-append_tool_on_succ(gcc        "${TOOL_EXEC_gcc}             -xc ${empty_main}")
-append_tool_on_succ(clang      "${TOOL_EXEC_clang} --analyze -xc ${empty_main}")
-append_tool_on_succ(cppcheck   "${TOOL_EXEC_cppcheck} --quiet    ${empty_main}")
+append_tool_on_succ(gcc        "${TOOL_EXEC_gcc} -xc ${empty_main} -o /dev/null")
+append_tool_on_succ(clang      "${TOOL_EXEC_clang} --analyze -Xanalyzer -analyzer-output=text -xc ${empty_main}")
+append_tool_on_succ(cppcheck   "${TOOL_EXEC_cppcheck} --quiet ${empty_main}")
 append_tool_on_succ(divine     "${TOOL_EXEC_divine} version >/dev/null 2>&1")
