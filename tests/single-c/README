@@ -1,0 +1,37 @@
+single-c
+========
+simplified test-suite using single C file for each test
+
+
+Tree layout of this directory
+-----------------------------
+./CMakeLists.txt            CMake configuration file for this test-suite
+./sync.sh                   script for syncing of expected results (dangerous)
+./*/                        directories with test groups
+./*/*/                      directories with individual tests
+./*/*/*.c                   C file given as input to the tools (1 for each test)
+./*/*/output-exp@${tool}    expected csgrep output for tool ${tool}
+
+./**/output-convert.sh@${tool}
+                            script that converts output of ${tool} for csgrep
+
+./**/args-prefix@${tool}    arguments prefix given to tool ${tool}
+./**/args-suffix@${tool}    arguments suffix given to tool ${tool}
+
+NOTE: File starting with ./**/ can be currently specified, either for individual
+      tests or for a group of tests.  In future, this may be extended also for
+      files shared by the whole test-suite (placed directly in this directory).
+
+
+Tree layout of the corresponding working directory: ${WORKDIR}/single-c
+-----------------------------------------------------------------------
+./Makefile                  generated Makefile for the single-c test-suite
+./${group}/${test}/${tool}/ working directories for test/tool combinations,
+each of them contains:
+    .../*.c                 symlink to C file used as input (1 for each test)
+    .../cmd-tool.sh         generated shell script used to run the tool
+    .../cmd-convert.sh      symlink to output format converter
+    .../output-raw.txt      raw output captured from execution of cmd-tool.sh
+    .../output-con.txt      output converted by cmd-convert.sh
+    .../output-uni.txt      output further converted by csgrep
+    .../output-exp.txt      symlink to expected output for the test/tool pair
