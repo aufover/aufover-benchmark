@@ -42,7 +42,15 @@ macro(gen_test_for_tool)
     # create a test-case for [exec]
     set(test_name_base "single-c/${group}/${test}@${tool}")
     set(cmd "bash" "${cmd_tool_sh}")
-    add_test_wrap("${test_name_base}[exec]" "${cmd}")
+    set(test_name "${test_name_base}[exec]")
+    add_test_wrap(${test_name} "${cmd}")
+    if(EXISTS ${src_dir}/test-props@${tool})
+        file(STRINGS ${src_dir}/test-props@${tool} props)
+        set_tests_properties(${test_name} PROPERTIES ${props})
+    elseif(EXISTS ${group_dir}/test-props@${tool})
+        file(STRINGS ${group_dir}/test-props@${tool} props)
+        set_tests_properties(${test_name} PROPERTIES ${props})
+    endif()
 
     # create a test-case for [conv]
     set(cmd_convert_sh ${dst_tool_dir}/cmd-convert.sh)
