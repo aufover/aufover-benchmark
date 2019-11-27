@@ -36,3 +36,45 @@ each of them contains:
     .../output-con.txt      output converted by cmd-convert.sh
     .../output-uni.txt      output further converted by csgrep
     .../output-exp.txt      symlink to expected output for the test/tool pair
+
+
+What happens at configure time?
+-------------------------------
+- create the ${WORKDIR}/single-c/${group}/${test}/${tool} dir tree structure
+- in each leaf directory of ${WORKDIR}/single-c create the following symlinks:
+    *.c             -> ${TESTDIR}/single-c/${group}/${test}/*.c
+
+    cmd-convert     -> /bin/cat ... or:
+                    -> ${TESTDIR}/single-c/${group}/output-convert.sh@${tool} ... or:
+                    -> ${TESTDIR}/single-c/${group}/${test}/output-convert.sh@${tool}
+
+    output-exp.txt  -> ${TESTDIR}/single-c/${group}/${test}/output-exp@${tool}
+
+
+- in each leaf directory generate the cmd-tool.sh (pseudo) script as follows:
+    {
+        ${TOOL_EXEC_${tool}}        \
+            $(<args-prefix@${tool}) \
+            ${c_file}               \
+            $(<args-suffix@${tool})
+    } > output-raw.txt
+
+- for each group/test/tool combination that provides output-exp@${tool}
+  generate the following CMake tests:
+    single-c/${group}/${test}@${tool}[exec]
+    single-c/${group}/${test}@${tool}[conv]
+    single-c/${group}/${test}@${tool}[csgrep]
+    single-c/${group}/${test}@${tool}[diff]
+
+    ... where:
+
+     [exec]  executes the corresponding cmd-tool.sh script
+     [conv]  executes `cmd-convert <./output-raw.txt >./output-con.txt`
+    [csgrep] executes `csgrep      <./output-con.txt >./output-uni.txt`
+     [diff]  executes `diff -up     ./output-exp.txt  ./output-uni.txt`
+
+    ... chained by dependencies as follows:
+
+        [diff] -> [csgrep] -> [conv] -> [exec]
+
+- set custom properties for [exec] from test-props@${tool} if such a file exists
