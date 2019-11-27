@@ -1,0 +1,48 @@
+Error: CLANG_WARNING:
+./test-0009.c:6:12: warning: Value stored to 'ok' during its initialization is never read
+#    void **ok = mem;
+#           ^~   ~~~
+./test-0009.c:6:12: note: Value stored to 'ok' during its initialization is never read
+#    void **ok = mem;
+#           ^~   ~~~
+
+Error: CLANG_WARNING:
+./test-0009.c:9:5: warning: Potential leak of memory pointed to by 'ok'
+#    char *warn = mem;
+#    ^
+./test-0009.c:5:17: note: Memory is allocated
+#    void *mem = malloc(sizeof(mem));
+#                ^~~~~~~~~~~~~~~~~~~
+./test-0009.c:9:5: note: Potential leak of memory pointed to by 'ok'
+#    char *warn = mem;
+#    ^
+
+Error: CLANG_WARNING:
+./test-0009.c:9:11: warning: Value stored to 'warn' during its initialization is never read
+#    char *warn = mem;
+#          ^~~~   ~~~
+./test-0009.c:9:11: note: Value stored to 'warn' during its initialization is never read
+#    char *warn = mem;
+#          ^~~~   ~~~
+
+Error: CLANG_WARNING:
+./test-0009.c:12:5: warning: Potential leak of memory pointed to by 'warn'
+#    void **err = mem;
+#    ^
+./test-0009.c:8:11: note: Memory is allocated
+#    mem = malloc(sizeof(mem));
+#          ^~~~~~~~~~~~~~~~~~~
+./test-0009.c:12:5: note: Potential leak of memory pointed to by 'warn'
+#    void **err = mem;
+#    ^
+
+Error: CLANG_WARNING:
+./test-0009.c:17:5: warning: Potential leak of memory pointed to by 'err'
+#    return 0;
+#    ^
+./test-0009.c:11:11: note: Memory is allocated
+#    mem = malloc(sizeof(char));
+#          ^~~~~~~~~~~~~~~~~~~~
+./test-0009.c:17:5: note: Potential leak of memory pointed to by 'err'
+#    return 0;
+#    ^
