@@ -29,6 +29,9 @@ How to run existing tests?
 
 Alternative ways of running tests
 ---------------------------------
+- passing custom options to ctest:
+    $ CTEST_OPTS='-LE divine' make check
+
 - using a custom working directory:
     $ mkdir /tmp/my-custom-wd
     $ WORKDIR=/tmp/my-custom-wd make check [-C PATH_TO_THIS_REPO]
@@ -57,6 +60,6 @@ Tree layout of this repository
 /tests/CMakeLists.txt   top-level CMake configuration file
 /tests/single-c         simplified test-suite using single C file for each test
 /tests/single-c/README  information specific to the single-c test-suite
-/tests/single-c/sync.sh script for syncing of expected results (dangerous)
+/tests/single-c/sync.sh script for syncing of expected results (use with care)
 /workdir                default working directory (its use is optional)
 /workdir-for-sync       separate working directory for sync script(s)

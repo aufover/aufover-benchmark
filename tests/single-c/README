@@ -6,7 +6,7 @@ simplified test-suite using single C file for each test
 Tree layout of this directory
 -----------------------------
 ./CMakeLists.txt            CMake configuration file for this test-suite
-./sync.sh                   script for syncing of expected results (dangerous)
+./sync.sh                   script for syncing of expected results
 ./*/                        directories with test groups
 ./*/*/                      directories with individual tests
 ./*/*/*.c                   C file given as input to the tools (1 for each test)
@@ -50,7 +50,6 @@ What happens at configure time?
 
     output-exp.txt  -> ${TESTDIR}/single-c/${group}/${test}/output-exp@${tool}
 
-
 - in each leaf directory generate the cmd-tool.sh (pseudo) script as follows:
     {
         ${TOOL_EXEC_${tool}}        \
@@ -77,4 +76,74 @@ What happens at configure time?
 
         [diff] -> [csgrep] -> [conv] -> [exec]
 
+- tag each CMake test by label ${tool}
 - set custom properties for [exec] from test-props@${tool} if such a file exists
+
+
+How to update expected output of existing tests?
+------------------------------------------------
+- run the following command:
+    $ SYNC_EXISTING_ONLY=1 ./sync.sh [CTEST_OPTS]
+
+- sync.sh takes custom ctest options, which is useful (not only) for filtering:
+    $ SYNC_EXISTING_ONLY=1 ./sync.sh -L cbmc --progress
+
+- sync.sh uses a separate working directory for syncing:
+    ../../workdir-for-sync
+
+- once sync.sh succeeds, verify the changes in output-exp@${tool} files:
+    $ git diff */*/output-exp@*
+
+- if the changes make sense, commit them with explaining commit message:
+    $ git commit */*/output-exp@*
+
+- verify that all tests succeed:
+    $ make check -C ../..
+
+
+How to import new tests into the single-c test-suite?
+-----------------------------------------------------
+- create a new directory for the test:
+    $ mkdir -p ./my_group/my_test
+
+- copy a self-contained C source file to the directory and stage it for commit:
+    $ cp /path/to/my/test/code.c ./my_group/my_test/
+    $ git add ./my_group/my_test/code.c
+
+- if needed, create/update configuration files for the test group:
+    ./my_group/args-prefix@${tool}
+    ./my_group/args-suffix@${tool}
+    ./my_group/test-props@${tool}
+    ./my_group/output-convert.sh@${tool}
+
+- if needed, create configuration files to override configuration for the test:
+    ./my_group/my_test/args-prefix@${tool}
+    ./my_group/my_test/args-suffix@${tool}
+    ./my_group/my_test/test-props@${tool}
+    ./my_group/my_test/output-convert.sh@${tool}
+
+- run sync.sh script to capture initial output-exp@${tool} content:
+    ./sync.sh -R '^single-c/my_group/my_test@'
+
+- optionally you might want to exclude some tools from syncing:
+    ./sync.sh -R '^single-c/my_group/my_test@' -LE 'cbmc\|divine'
+
+- if anything fails unexpectedly, inspect the following (disposable) directory:
+    ../../workdir-for-sync/single-c/my_group/my_test/
+
+- once sync.sh succeeds, verify the initial output-exp@${tool} content:
+    ./my_group/my_test/output-exp@*
+
+- if any output-exp@${tool} content is incorrect, remove the file(s) and create
+  ./my_group/my_test/README* file to record the information why the output is
+  incorrect, optionally with reference to a bug tracker
+
+- commit all related changes to git:
+    $ git add ./my_group/my_test
+    $ git commit -a
+
+- verify that the imported test works as expected:
+    $ CTEST_OPTS="-R '^single-c/my_group/my_test@'" make check -C ../..
+
+- verify that it did not break any other tests:
+    $ make check -C ../..
