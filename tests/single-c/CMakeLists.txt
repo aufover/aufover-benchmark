@@ -74,7 +74,15 @@ macro(gen_test_for_tool)
         DEPENDS "${test_name_base}[conv]")
 
     # create a test-case for [diff]
-    set(cmd diff -up ./output-exp.txt ./output-uni.txt)
+    set(cmd_diff ${dst_tool_dir}/cmd-diff.sh)
+    if(EXISTS ${src_dir}/output-diff.sh@${tool})
+        file(CREATE_LINK ${src_dir}/output-diff.sh@${tool} ${cmd_diff} SYMBOLIC)
+    elseif(EXISTS ${group_dir}/output-diff.sh@${tool})
+        file(CREATE_LINK ${group_dir}/output-diff.sh@${tool} ${cmd_diff} SYMBOLIC)
+    else()
+        file(CREATE_LINK ${CMAKE_CURRENT_SOURCE_DIR}/output-diff.sh ${cmd_diff} SYMBOLIC)
+    endif()
+    set(cmd ${cmd_diff} ./output-exp.txt ./output-uni.txt)
     add_test_wrap("${test_name_base}[diff]" "${cmd}")
     set_tests_properties("${test_name_base}[diff]" PROPERTIES
         DEPENDS "${test_name_base}[csgrep]")

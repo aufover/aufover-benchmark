@@ -15,6 +15,7 @@ Tree layout of this directory
 ./**/output-convert.sh@${tool}
                             script that converts output of ${tool} for csgrep
 
+./**/output-diff.sh@${tool} script comparing expected/actual output of ${tool}
 ./**/args-prefix@${tool}    arguments prefix given to tool ${tool}
 ./**/args-suffix@${tool}    arguments suffix given to tool ${tool}
 ./**/test-props@${tool}     test properties for [exec], for example TIMEOUT
@@ -115,12 +116,14 @@ How to import new tests into the single-c test-suite?
     ./my_group/args-suffix@${tool}
     ./my_group/test-props@${tool}
     ./my_group/output-convert.sh@${tool}
+    ./my_group/output-diff.sh@${tool}
 
 - if needed, create configuration files to override configuration for the test:
     ./my_group/my_test/args-prefix@${tool}
     ./my_group/my_test/args-suffix@${tool}
     ./my_group/my_test/test-props@${tool}
     ./my_group/my_test/output-convert.sh@${tool}
+    ./my_group/my_test/output-diff.sh@${tool}
 
 - run sync.sh script to capture initial output-exp@${tool} content:
     ./sync.sh -R '^single-c/my_group/my_test@'
