@@ -1,0 +1,23 @@
+.fedora: &fedora
+    script:
+        - sudo dnf update -y
+        - make install-deps
+        - make configure
+        - make check
+    artifacts:
+        paths:
+            - "workdir/"
+        expire_in: 1 month
+        when: always
+
+build_30:
+    image: fedora:30
+    <<: *fedora
+
+build_31:
+    image: fedora:30
+    <<: *fedora
+    
+build_rawhide:
+    image: fedora:rawhide
+    <<: *fedora
