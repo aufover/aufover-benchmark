@@ -1,9 +1,9 @@
 .fedora: &fedora
     before_script:
-        - curl -O --insecure https://password.corp.redhat.com/RH-IT-Root-CA.crt -o /etc/pki/ca-trust/source/anchors/RH-IT-Root-CA.crt
+        - curl --insecure https://password.corp.redhat.com/RH-IT-Root-CA.crt -o /etc/pki/ca-trust/source/anchors/RH-IT-Root-CA.crt
         - update-ca-trust extract
-        - dnf install dnf-plugins-core ca-certificates -y
     script:
+        - dnf install dnf-plugins-core -y
         - dnf config-manager --add-repo https://copr.devel.redhat.com/coprs/rhcopr-project/toolset/repo/fedora-${VERSION}/rhcopr-project-toolset-fedora-${VERSION}.repo
         - dnf --enable-repo copr:copr.devel.redhat.com:rhcopr-project:toolset
         - sudo dnf install make rhcopr -y
