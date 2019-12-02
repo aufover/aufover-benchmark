@@ -5,7 +5,7 @@
     script:
         - dnf install dnf-plugins-core -y
         - dnf config-manager --add-repo https://copr.devel.redhat.com/coprs/rhcopr-project/toolset/repo/fedora-${VERSION}/rhcopr-project-toolset-fedora-${VERSION}.repo
-        - dnf --enable-repo copr:copr.devel.redhat.com:rhcopr-project:toolset
+        - dnf config-manager --enable-repo copr:copr.devel.redhat.com:rhcopr-project:toolset
         - sudo dnf install make rhcopr -y
         - sudo dnf copr enable lzaoral/Divine -y
         - sudo dnf copr enable redhat/acalabek/symbiotic -y
