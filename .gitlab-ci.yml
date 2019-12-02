@@ -1,21 +1,10 @@
-.rh_cerificates: &rh_certificates
-    - curl -O --insecure https://password.corp.redhat.com/RH-IT-Root-CA.crt -o /etc/pki/ca-trust/source/anchors/RH-IT-Root-CA.crt
-    - update-ca-trust extract
-
-.rhcopr_rawhide: &rhcopr_rawhide
-    before_script:
-        <<: *rh_certificates
-        - dnf install dnf-plugins-core -y
-        - dnf config-manager --add-repo https://copr.devel.redhat.com/coprs/rhcopr-project/toolset/repo/fedora-rawhide/rhcopr-project-toolset-fedora-rawhide.repo
-
-.rhcopr: &rhcopr
-    before_script:
-        <<: *rh_certificates
-        - dnf install dnf-plugins-core -y
-        - dnf config-manager --add-repo https://copr.devel.redhat.com/coprs/rhcopr-project/toolset/repo/fedora-31/rhcopr-project-toolset-fedora-31.repo
-
 .fedora: &fedora
+    before_script:
+        - curl -O --insecure https://password.corp.redhat.com/RH-IT-Root-CA.crt -o /etc/pki/ca-trust/source/anchors/RH-IT-Root-CA.crt
+        - update-ca-trust extract
     script:
+        - dnf install dnf-plugins-core -y
+        - dnf config-manager --add-repo https://copr.devel.redhat.com/coprs/rhcopr-project/toolset/repo/fedora-${VERSION}/rhcopr-project-toolset-fedora-${VERSION}.repo
         - dnf --enable-repo copr:copr.devel.redhat.com:rhcopr-project:toolset
         - sudo dnf install make rhcopr -y
         - sudo dnf copr enable lzaoral/Divine -y
@@ -38,13 +27,19 @@ build_30:
     script:
     <<: *rhcopr
     <<: *fedora
+    variables:
+        $VERSION: "30"
 
 build_31:
     image: fedora:30
     <<: *rhcopr
     <<: *fedora
+    variables:
+        $VERSION: "31"
     
 build_rawhide:
     image: fedora:rawhide
     <<: *rhcopr_rawhide
     <<: *fedora
+    variables:
+        $VERSION: "rawhide"
