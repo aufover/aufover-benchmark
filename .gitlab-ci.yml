@@ -1,10 +1,16 @@
+.rh_cerificates: &rh_certificates
+    - curl -O --insecure https://password.corp.redhat.com/RH-IT-Root-CA.crt -o /etc/pki/ca-trust/source/anchors/RH-IT-Root-CA.crt
+    - update-ca-trust extract
+
 .rhcopr_rawhide: &rhcopr_rawhide
     before_script:
+        <<: *rh_certificates
         - dnf install dnf-plugins-core -y
         - dnf config-manager --add-repo https://copr.devel.redhat.com/coprs/rhcopr-project/toolset/repo/fedora-rawhide/rhcopr-project-toolset-fedora-rawhide.repo
 
 .rhcopr: &rhcopr
     before_script:
+        <<: *rh_certificates
         - dnf install dnf-plugins-core -y
         - dnf config-manager --add-repo https://copr.devel.redhat.com/coprs/rhcopr-project/toolset/repo/fedora-31/rhcopr-project-toolset-fedora-31.repo
 
