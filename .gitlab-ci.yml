@@ -1,12 +1,21 @@
+.rhcopr_rawhide: &rhcopr_rawhide
+    before_script:
+        - dnf install dnf-plugins-core -y
+        - dnf config-manager --add-repo https://copr.devel.redhat.com/coprs/rhcopr-project/toolset/repo/fedora-rawhide/rhcopr-project-toolset-fedora-rawhide.repo
+
+.rhcopr: &rhcopr
+    before_script:
+        - dnf install dnf-plugins-core -y
+        - dnf config-manager --add-repo https://copr.devel.redhat.com/coprs/rhcopr-project/toolset/repo/fedora-31/rhcopr-project-toolset-fedora-31.repo
+
 .fedora: &fedora
     script:
-        - sudo dnf update -y
-        - sudo dnf install make -y
-        - sudo dnf install dnf-plugins-core -y
-        - sudo dnf install rhcopr -y
+        - dnf --enable-repo copr:copr.devel.redhat.com:rhcopr-project:toolset
+        - sudo dnf install make rhcopr -y
         - sudo dnf copr enable lzaoral/Divine -y
         - sudo dnf copr enable redhat/acalabek/symbiotic -y
         - sudo dnf copr enable redhat/vmihalko/cbmc_utils -y
+        - sudo dnf update -y
         - make install-deps
         - make configure
         - make check
@@ -20,12 +29,16 @@
 
 build_30:
     image: fedora:30
+    script:
+    <<: *rhcopr
     <<: *fedora
 
 build_31:
     image: fedora:30
+    <<: *rhcopr
     <<: *fedora
     
 build_rawhide:
     image: fedora:rawhide
+    <<: *rhcopr_rawhide
     <<: *fedora
