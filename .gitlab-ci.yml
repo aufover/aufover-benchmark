@@ -15,14 +15,16 @@
         - sudo dnf install make rhcopr -y
         
         # Enable given (rh)copr repositories
-        - sudo dnf copr enable lzaoral/Divine -y && rpm --import "https://copr-be.cloud.fedoraproject.org/results/lzaoral/Divine/pubkey.gpg"  
+        - sudo dnf copr enable lzaoral/Divine -y  
         - sudo dnf copr enable redhat/acalabek/symbiotic -y
         - sudo dnf copr enable redhat/vmihalko/cbmc_utils -y
         
         # Update the system and run the testsuite
         - sudo dnf update -y
-        - yes | make install-deps
+        - make install-deps
         - make check
+    variables:
+        DNF_OPTS: -y
     artifacts:
         paths:
             # This directory subtree will be avaliable for download
