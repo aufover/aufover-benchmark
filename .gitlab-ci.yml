@@ -1,0 +1,53 @@
+# Common configuration for all releases of Fedora 
+.fedora: &fedora
+    # Install the Red Hat IT Root CA    
+    before_script:
+        - curl --insecure https://password.corp.redhat.com/RH-IT-Root-CA.crt -o /etc/pki/ca-trust/source/anchors/RH-IT-Root-CA.crt
+        - update-ca-trust
+        # Workaournd for sudo setrlimit error
+        - echo "Set disable_coredump false" >> /etc/sudo.conf  
+
+    script:
+        # Install dnf support for copr and rhcopr
+        - dnf install dnf-plugins-core -y
+        - dnf config-manager --add-repo https://copr.devel.redhat.com/coprs/rhcopr-project/toolset/repo/fedora-${VERSION}/rhcopr-project-toolset-fedora-${VERSION}.repo
+        - sudo dnf install make rhcopr -y
+        
+        # Enable given (rh)copr repositories
+        - sudo dnf copr enable lzaoral/Divine -y  
+        - sudo dnf copr enable redhat/acalabek/symbiotic -y
+        - sudo dnf copr enable redhat/vmihalko/cbmc_utils -y
+        
+        # Update the system and run the testsuite
+        - sudo dnf update -y
+        - DNF_OPTS=-y make install-deps
+        - make check
+    artifacts:
+        paths:
+            # This directory subtree will be avaliable for download
+            # as an zip archive from given job log in GitLab.
+            - "workdir/"
+        expire_in: 1 month
+        when: always
+    tags:
+        - docker
+
+# Run selected Fedora release targets. The VERSION variable is
+# used to determine the correct version of "rhcopr-toolset" repository.
+build_30:
+    image: fedora:30
+    <<: *fedora
+    variables:
+        VERSION: "30"
+
+build_31:
+    image: fedora:31
+    <<: *fedora
+    variables:
+        VERSION: "31"
+    
+build_rawhide:
+    image: fedora:rawhide
+    <<: *fedora
+    variables:
+        VERSION: "rawhide"
