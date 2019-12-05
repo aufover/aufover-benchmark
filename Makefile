@@ -1,5 +1,5 @@
 # dnf options
-DNF_OPTS ?=
+DNF_OPTS += --best --skip-broken
 
 # read-only source directory
 TESTDIR ?= ./tests
@@ -25,4 +25,5 @@ $(WORKDIR):
 
 install-deps:
 	# needless to install make as nobody would ever run this without make
-	sudo dnf install $(DNF_OPTS) --best --skip-broken cbmc cbmc_utils clang cmake coreutils cppcheck csdiff diffutils divine gcc zsh
+	sudo dnf install $(DNF_OPTS) cbmc cbmc_utils clang cmake coreutils cppcheck \
+		csdiff diffutils divine gcc zsh
