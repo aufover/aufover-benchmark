@@ -20,9 +20,8 @@ Tree layout of this directory
 ./**/args-suffix@${tool}    arguments suffix given to tool ${tool}
 ./**/test-props@${tool}     test properties for [exec], for example TIMEOUT
 
-NOTE: File starting with ./**/ can be currently specified, either for individual
-      tests or for a group of tests.  In future, this may be extended also for
-      files shared by the whole test-suite (placed directly in this directory).
+NOTE: File starting with ./**/ can be currently specified for individual tests,
+      for a group of tests, or for the whole tests-suite.
 
 
 Tree layout of the corresponding working directory: ${WORKDIR}/single-c
@@ -32,7 +31,7 @@ Tree layout of the corresponding working directory: ${WORKDIR}/single-c
 each of them contains:
     .../*.c                 symlink to C file used as input (1 for each test)
     .../cmd-tool.sh         generated shell script used to run the tool
-    .../cmd-convert         symlink to output format converter
+    .../cmd-convert.sh      symlink to output format converter
     .../output-raw.txt      raw output captured from execution of cmd-tool.sh
     .../output-con.txt      output converted by cmd-convert.sh
     .../output-uni.txt      output further converted by csgrep
@@ -45,9 +44,15 @@ What happens at configure time?
 - in each leaf directory of ${WORKDIR}/single-c create the following symlinks:
     *.c             -> ${TESTDIR}/single-c/${group}/${test}/*.c
 
-    cmd-convert     -> /bin/cat ... or:
-                    -> ${TESTDIR}/single-c/${group}/output-convert.sh@${tool} ... or:
-                    -> ${TESTDIR}/single-c/${group}/${test}/output-convert.sh@${tool}
+    cmd-convert.sh  -> ${TESTDIR}/single-c/${group}/${test}/output-convert.sh@${tool}
+                    -> ${TESTDIR}/single-c/${group}/output-convert.sh@${tool}
+                    -> ${TESTDIR}/single-c/output-convert.sh@${tool}
+                    -> ${TESTDIR}/single-c/output-convert.sh
+
+    cmd-diff.sh     -> ${TESTDIR}/single-c/${group}/${test}/output-diff.sh@${tool}
+                    -> ${TESTDIR}/single-c/${group}/output-diff.sh@${tool}
+                    -> ${TESTDIR}/single-c/output-diff.sh@${tool}
+                    -> ${TESTDIR}/single-c/output-diff.sh
 
     output-exp.txt  -> ${TESTDIR}/single-c/${group}/${test}/output-exp@${tool}
 
@@ -69,9 +74,9 @@ What happens at configure time?
     ... where:
 
      [exec]  executes the corresponding cmd-tool.sh script
-     [conv]  executes `cmd-convert <./output-raw.txt >./output-con.txt`
-    [csgrep] executes `csgrep      <./output-con.txt >./output-uni.txt`
-     [diff]  executes `diff -up     ./output-exp.txt  ./output-uni.txt`
+     [conv]  executes `cmd-convert.sh <./output-raw.txt >./output-con.txt`
+    [csgrep] executes `csgrep         <./output-con.txt >./output-uni.txt`
+     [diff]  executes `cmd-diff.sh     ./output-exp.txt  ./output-uni.txt`
 
     ... chained by dependencies as follows:
 
