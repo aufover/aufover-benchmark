@@ -1,6 +1,5 @@
 # wrapper around add_test() to deduplicate code
 macro(add_test_wrap name cmd)
-    message(STATUS "add_test: ${name}")
     add_test(NAME ${name}
         COMMAND ${cmd}
         WORKING_DIRECTORY ${dst_tool_dir})
