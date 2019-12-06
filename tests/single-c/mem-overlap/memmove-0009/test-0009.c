@@ -1,9 +1,10 @@
+#include <assert.h>
 #include <string.h>
 
 int main(void)
 {
     char str1[5];
-    memmove(str1, str1 + 1, 2);
+    assert(memmove(str1, str1 + 1, 2) == str1);
 }
 
 /**
