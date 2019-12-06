@@ -9,6 +9,5 @@ int main(void)
 /**
  * @file test-0004.c
  *
- * @brief struct self-assignment is permitted
- *        by the standard
+ * @brief struct self-assignment is permitted by the standard
  */

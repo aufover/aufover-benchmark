@@ -9,6 +9,5 @@ int main(void)
 /**
  * @file test-0006.c
  *
- * @brief the copied memory overlaps, verifiers should
- *        show an error
+ * @brief the copied memory overlaps, verifiers should show an error
  */

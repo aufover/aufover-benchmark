@@ -13,6 +13,5 @@ int main(void)
 /**
  * @file test-0003.c
  *
- * @brief struct assignment is permitted
- *        by the standard
+ * @brief struct assignment is permitted by the standard
  */
