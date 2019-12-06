@@ -4,7 +4,7 @@
     before_script:
         - curl --insecure https://password.corp.redhat.com/RH-IT-Root-CA.crt -o /etc/pki/ca-trust/source/anchors/RH-IT-Root-CA.crt
         - update-ca-trust
-        # Workaournd for sudo setrlimit error
+        # Workaround for sudo setrlimit error
         - echo "Set disable_coredump false" >> /etc/sudo.conf  
 
     script:
@@ -22,9 +22,19 @@
         - sudo dnf update -y
         - DNF_OPTS=-y make install-deps
         - make check
+
+        # try to use source directory as a working directory
+        - cd tests
+        - cmake .
+        - ctest -j8 --output-on-failure
+
+        # try single-c/sync.sh script
+        - SYNC_EXISTING_ONLY=1 single-c/sync.sh
+        - make check
+
     artifacts:
         paths:
-            # This directory subtree will be avaliable for download
+            # This directory subtree will be available for download
             # as an zip archive from given job log in GitLab.
             - "workdir/"
         expire_in: 1 month
