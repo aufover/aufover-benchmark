@@ -20,7 +20,7 @@ Tree layout of this directory
 ./**/args-suffix@${tool}    arguments suffix given to tool ${tool}
 ./**/test-props@${tool}     test properties for [exec], for example TIMEOUT
 
-NOTE: File starting with ./**/ can be currently specified for individual tests,
+NOTE: File starting with ./**/ can be specified for individual tests,
       for a group of tests, or for the whole tests-suite.
 
 
@@ -80,7 +80,7 @@ What happens at configure time?
 
     ... chained by dependencies as follows:
 
-        [diff] -> [csgrep] -> [conv] -> [exec]
+        [diff] <- [csgrep] <- [conv] <- [exec]
 
 - tag each CMake test by label ${tool}
 - set custom properties for [exec] from test-props@${tool} if such a file exists
