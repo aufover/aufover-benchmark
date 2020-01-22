@@ -11,13 +11,13 @@ WORKDIR ?= ./workdir
 
 # default target
 configure: $(WORKDIR)
-		cmake -S $(TESTDIR) -B $(WORKDIR)
+	cmake -S $(TESTDIR) -B $(WORKDIR)
 
 check: configure
-		$(MAKE) $@ -C $(WORKDIR)
+	$(MAKE) $@ -C $(WORKDIR)
 
 test: configure
-		$(MAKE) $@ -C $(WORKDIR)
+	$(MAKE) $@ -C $(WORKDIR)
 
 # create $(WORKDIR) if it does not exist already
 $(WORKDIR):

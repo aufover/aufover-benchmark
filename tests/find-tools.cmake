@@ -16,7 +16,7 @@ macro(append_tool_on_succ tool cmd)
     endif()
 endmacro()
 
-# in-memory C program with emtpy main()
+# in-memory C program with empty main()
 set(empty_main "<(echo 'int main(){}')")
 
 # make it possible to override path to executables
@@ -25,10 +25,14 @@ foreach(tool ${TOOLS_SUPPORTED})
     set(TOOL_EXEC_${tool} ${tool} CACHE STRING "command used to run ${tool}")
 endforeach()
 
-# probe for available static analyzers
+# probe for available static analyzers and formal verification tools
 append_tool_on_succ(gcc        "${TOOL_EXEC_gcc} -xc ${empty_main} -o /dev/null")
-append_tool_on_succ(clang      "${TOOL_EXEC_clang} --analyze -Xanalyzer -analyzer-output=text -xc ${empty_main}")
+append_tool_on_succ(clang      "${TOOL_EXEC_clang} --analyze -Xanalyzer \
+                                -analyzer-output=text -xc ${empty_main}")
 append_tool_on_succ(cppcheck   "${TOOL_EXEC_cppcheck} --quiet ${empty_main}")
-append_tool_on_succ(cbmc       "${TOOL_EXEC_cbmc} --version >/dev/null 2>&1 && test -x /usr/bin/formatCBMCOutput")
-append_tool_on_succ(divine     "${TOOL_EXEC_divine} version >/dev/null 2>&1")
-append_tool_on_succ(symbiotic  "${TOOL_EXEC_symbiotic} --version >/dev/null 2>&1")
+append_tool_on_succ(cbmc       "${TOOL_EXEC_cbmc} --version >/dev/null 2>&1 && \
+                                test -x /usr/bin/formatCBMCOutput")
+append_tool_on_succ(divine     "${TOOL_EXEC_divine} version >/dev/null 2>&1 && \
+                                test -x /usr/bin/divine2csgrep")
+append_tool_on_succ(symbiotic  "${TOOL_EXEC_symbiotic} --version >/dev/null 2>&1 && \
+                                test -x /usr/bin/symbiotic2cs")
