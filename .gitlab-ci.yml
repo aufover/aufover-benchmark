@@ -11,15 +11,15 @@
         # Install dnf support for copr and rhcopr
         - dnf install dnf-plugins-core -y
         - dnf config-manager --add-repo https://copr.devel.redhat.com/coprs/rhcopr-project/toolset/repo/fedora-${VERSION}/rhcopr-project-toolset-fedora-${VERSION}.repo
-        - sudo dnf install make rhcopr -y
+        - dnf install make rhcopr -y
         
         # Enable given (rh)copr repositories
-        - sudo dnf copr enable lzaoral/Divine -y  
-        - sudo dnf copr enable jamartis/symbiotic -y
-        - sudo dnf copr enable redhat/vmihalko/cbmc_utils -y
+        - dnf copr enable lzaoral/Divine -y  
+        - dnf copr enable jamartis/symbiotic -y
+        - dnf copr enable redhat/vmihalko/cbmc_utils -y
         
         # Update the system and run the testsuite
-        - sudo dnf update -y
+        - dnf update -y
         - DNF_OPTS=-y make install-deps
         - make check
 
