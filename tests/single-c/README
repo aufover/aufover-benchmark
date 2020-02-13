@@ -94,6 +94,11 @@ How to update expected output of existing tests?
 - sync.sh takes custom ctest options, which is useful (not only) for filtering:
     $ SYNC_EXISTING_ONLY=1 ./sync.sh -L cbmc --progress
 
+- WARNING: all strings passed to sync.sh in [CTEST_OPTS] must be either escaped
+  or double quoted:
+    $ SYNC_EXISTING_ONLY=1 ./sync.sh -L 'cbmc\|divine'
+    $ SYNC_EXISTING_ONLY=1 ./sync.sh -L '"cbmc|divine"'
+
 - sync.sh uses a separate working directory for syncing:
     ../../workdir-for-sync
 
