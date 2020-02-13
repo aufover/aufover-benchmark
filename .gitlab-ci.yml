@@ -1,6 +1,6 @@
-# Common configuration for all releases of Fedora 
+# Common configuration for all releases of Fedora
 .fedora: &fedora
-    # Install the Red Hat IT Root CA    
+    # Install the Red Hat IT Root CA
     before_script:
         - curl --insecure https://password.corp.redhat.com/RH-IT-Root-CA.crt -o /etc/pki/ca-trust/source/anchors/RH-IT-Root-CA.crt
         - update-ca-trust
@@ -10,12 +10,12 @@
         - dnf install dnf-plugins-core -y
         - dnf config-manager --add-repo https://copr.devel.redhat.com/coprs/rhcopr-project/toolset/repo/fedora-${VERSION}/rhcopr-project-toolset-fedora-${VERSION}.repo
         - dnf install make rhcopr -y
-        
+
         # Enable given (rh)copr repositories
-        - dnf copr enable lzaoral/Divine -y  
+        - dnf copr enable lzaoral/Divine -y
         - dnf copr enable jamartis/symbiotic -y
         - dnf copr enable redhat/vmihalko/cbmc_utils -y
-        
+
         # Update the system and run the testsuite
         - dnf update -y
         - DNF_OPTS=-y make install-deps
@@ -53,7 +53,7 @@ build_31:
     <<: *fedora
     variables:
         VERSION: "31"
-    
+
 build_rawhide:
     image: fedora:rawhide
     <<: *fedora
