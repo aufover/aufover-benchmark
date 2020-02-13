@@ -1,8 +1,7 @@
-Error: COMPILER_WARNING:
-./test-0006.c: scope_hint: In function ‘main’
-./test-0006.c:12: error: DIVINE ERROR: FAULT: access of size 4 at [alloca* 8ba7f02 60h ddp] is 1 bytes out of bounds
-./test-0006.c:12: note: [0] FATAL: memory error in userspace
-./test-0006.c:12: note: backtrace:
-/opt/divine/include/dios/sys/fault.hpp:118: note: void __dios::FaultBase::handler<__dios::Context>(_VM_Fault, _VM_Frame*, void (*)())
+Error: DIVINE_WARNING:
+./test-0006.c: scope_hint: In function ‘main’:
+./test-0006.c:12: error: access of size 4 at [alloca*] is 1 bytes out of bounds
+./test-0006.c:12: note: memory error in userspace
+/opt/divine/include/dios/sys/fault.hpp:119: note: void __dios::FaultBase::handler<__dios::Context>(_VM_Fault, _VM_Frame*, void (*)())
 ./test-0006.c:12: note: main
-/opt/divine/include/dios/libc/sys/start.cpp:89: note: __dios_start
+/opt/divine/include/dios/libc/sys/start.cpp:91: note: __dios_start

@@ -1,11 +1,10 @@
-Error: COMPILER_WARNING:
-./test-0008.c: scope_hint: In function ‘main’
-./test-0008.c:6: error: DIVINE ERROR: FAULT: /opt/divine/include/dios/libc/string/strncpy.c:35: char *strncpy(char *restrict, const char *restrict, size_t): assertion 's1 < old' failed
-./test-0008.c:6: note: [0] FATAL: assertion failure in userspace
-./test-0008.c:6: note: backtrace:
-/opt/divine/include/dios/sys/fault.hpp:118: note: void __dios::FaultBase::handler<__dios::Context>(_VM_Fault, _VM_Frame*, void (*)())
+Error: DIVINE_WARNING:
+./test-0008.c: scope_hint: In function ‘main’:
+./test-0008.c:6: error: /opt/divine/include/dios/libc/string/strncpy.c: char *strncpy(char *restrict, const char *restrict, size_t): assertion 's1 < old' failed
+./test-0008.c:6: note: assertion failure in userspace
+/opt/divine/include/dios/sys/fault.hpp:119: note: void __dios::FaultBase::handler<__dios::Context>(_VM_Fault, _VM_Frame*, void (*)())
 /opt/divine/include/dios/arch/divm/fault.c:12: note: __dios_fault
 /opt/divine/include/dios/libc/_PDCLIB/assert.c:36: note: __assert_fail
 /opt/divine/include/dios/libc/string/strncpy.c:35: note: strncpy
 ./test-0008.c:6: note: main
-/opt/divine/include/dios/libc/sys/start.cpp:89: note: __dios_start
+/opt/divine/include/dios/libc/sys/start.cpp:91: note: __dios_start
