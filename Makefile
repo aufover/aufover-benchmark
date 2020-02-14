@@ -11,7 +11,7 @@ WORKDIR ?= ./workdir
 
 # default target
 configure: $(WORKDIR)
-	cmake -S $(TESTDIR) -B $(WORKDIR) $(CMAKE_OPTS)
+	cmake -S $(TESTDIR) -B $(WORKDIR)
 
 check: configure
 	$(MAKE) $@ -C $(WORKDIR)

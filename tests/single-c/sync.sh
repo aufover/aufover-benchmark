@@ -44,14 +44,17 @@ if test -z "$SYNC_EXISTING_ONLY"; then
     done
 fi
 
+# reconfigure the project to make the above take an effect
+CTEST_OPTS="$*" make -C "${top_dir}"
+
 # remove output-exp@tool files for tests that were not selected in the end
 rm -fv "${clean_list[@]}"
 
 # run check without actually checking the diff
-CTEST_OPTS="$*" make check -C "${top_dir}" CMAKE_OPTS=-DPHASE_ENABLE_diff=OFF
+cd "${WORKDIR}/single-c"
+make check-without-diff
 
 # move actual output to the expected output
-cd "${WORKDIR}/single-c"
 for test in */*(/); do
     case "$test" in (CMakeFiles/*|Testing/*)
         continue
@@ -64,6 +67,3 @@ for test in */*(/); do
         mv -v "$src" "$dst"
     done
 done
-
-# reconfigure the project to enable diff phase again
-CTEST_OPTS="$*" make -C "${top_dir}" CMAKE_OPTS=-DPHASE_ENABLE_diff=ON
