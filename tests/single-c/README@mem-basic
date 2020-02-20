@@ -1,0 +1,175 @@
+# `malloc`
+
+|                **Test**                | `cbmc` | `clang` | `cppcheck` | `divine` | `gcc` | `predator` | `symbiotic` |
+|----------------------------------------|:------:|:-------:|:----------:|:--------:|:-----:|:----------:|:-----------:|
+| 0001-malloc-correct                    | ✘      |    ✔️    |      ✔️     |   ✔️      |   ✔️   |    ✘[^1]   |    ✔️        |
+| 0002-malloc-doublefree                 | ✔️      |    ✔️    |      ✔️     |   ✔️      |   ✔️   |    ✔️       |    ✔️        |
+| 0003-malloc-nonfreed                   | ✔️      |    ✔️    |      ✔️     |   ✔️      |   ✔️   |    ✔️       |    ✔️        |
+| 0004-malloc-plain-leak                 | ✔️      |    ✔️    |      ✔️     |   ✔️      |   ✔️   |    ✔️       |    ✘[^4]    |
+| 0005-malloc-use-after-failure-1        | ✘[^3]  |    ✘    |      ✘     |   ✔️      |   ✔️   |    ✔️       |    ✘[^6]    |
+| 0006-malloc-use-after-failure-2        | ✘[^3]  |    ✔️    |      ✘     |   ✔️      |   ✔️   |    ✔️       |    ✘[^6]    |
+| 0007-malloc-use-after-free             | ✔️      |    ✔️    |      ✔️     |   ✔️      |   ✔️   |    ✔️       |    ✔️        |
+| 0008-malloc-zerosize                   | ✔️      |    ✔️    |      ✔️     |   ✘[^5]  |   ✔️   |    ✘[^1]   |    ✔️        |
+| 0009-malloc-zerosize-leak              | ✔️      |    ✔️    |      ✔️     |   ✘[^5]  |   ✔️   |    ✔️       |    ✔️        |
+| 0010-malloc-zerosize-use-after-failure | ✘[^3]  |    ✔️    |      ✘     |   ✔️      |   ✔️   |    ✔️       |    ✘[^6]    |
+| 0011-malloc-zerosize-used              | ✔️      |    ✔️    |      ✔️     |   ✘[^5]  |   ✔️   |    ✔️       |    ✔️        |
+
+
+# `calloc`
+
+|               **Test**                   | `cbmc` | `clang`  | `cppcheck` | `divine` | `gcc` | `predator` | `symbiotic` |
+|------------------------------------------|:------:|:--------:|:----------:|:--------:|:-----:|:----------:|:-----------:|
+| 0001-calloc-correct                      |  ✘     |     ✔️    |     ✔️      |   ✔️[^2]  |   ✔️   |    ✘[^1]   |     ✔️       |
+| 0002-calloc-doublefree                   |  ✔️     |     ✔️    |     ✔️      |   ✔️      |   ✔️   |    ✔️       |     ✔️       |
+| 0003-calloc-nonfreed                     |  ✔️     |     ✔️    |     ✔️      |   ✔️      |   ✔️   |    ✔️       |     ✔️       |
+| 0004-calloc-plain-leak                   |  ✔️     |     ✔️    |     ✔️      |   ✔️      |   ✔️   |    ✔️       |     ✘[^4]   |
+| 0005-calloc-use-after-failure-1          |  ✘[^3] |     ✘    |     ✘      |   ✔️      |   ✔️   |    ✔️       |     ✘[^6]   |
+| 0006-calloc-use-after-failure-2          |  ✘[^3] |     ✔️    |     ✘      |   ✔️      |   ✔️   |    ✔️       |     ✘[^6]   |
+| 0007-calloc-use-after-free               |  ✔️     |     ✔️    |     ✔️      |   ✔️      |   ✔️   |    ✔️       |     ✔️       |
+| 0008-calloc-zerosize-1                   |  ✔️     |     ✔️    |     ✘      |   ✘[^5]  |   ✔️   |    ✘[^1]   |     ✔️       |
+| 0009-calloc-zerosize-2                   |  ✔️     |     ✔️    |     ✔️      |   ✘[^5]  |   ✔️   |    ✘[^1]   |     ✔️       |
+| 0010-calloc-zerosize-3                   |  ✔️     |     ✔️    |     ✘      |   ✘[^5]  |   ✔️   |    ✘[^1]   |     ✔️       |
+| 0011-calloc-zerosize-leak-1              |  ✔️     |     ✔️    |     ✘      |   ✘[^5]  |   ✔️   |    ✔️       |     ✔️       |
+| 0012-calloc-zerosize-leak-2              |  ✔️     |     ✔️    |     ✔️      |   ✘[^5]  |   ✔️   |    ✔️       |     ✔️       |
+| 0013-calloc-zerosize-leak-3              |  ✔️     |     ✔️    |     ✘      |   ✘[^5]  |   ✔️   |    ✔️       |     ✔️       |
+| 0014-calloc-zerosize-use-after-failure-1 |  ✘[^3] |     ✔️    |     ✘      |   ✔️      |   ✔️   |    ✔️       |     ✘[^6]   |
+| 0015-calloc-zerosize-use-after-failure-2 |  ✘[^3] |     ✔️    |     ✘      |   ✔️      |   ✔️   |    ✔️       |     ✘[^6]   |
+| 0016-calloc-zerosize-use-after-failure-3 |  ✘[^3] |     ✔️    |     ✘      |   ✔️      |   ✔️   |    ✔️       |     ✘[^6]   |
+| 0017-calloc-zerosize-used-1              |  ✔️     |     ✔️    |     ✘      |   ✘[^5]  |   ✔️   |    ✔️       |     ✔️       |
+| 0018-calloc-zerosize-used-2              |  ✔️     |     ✔️    |     ✘      |   ✘[^5]  |   ✔️   |    ✔️       |     ✔️       |
+| 0019-calloc-zerosize-used-3              |  ✔️     |     ✔️    |     ✘      |   ✘[^5]  |   ✔️   |    ✔️       |     ✔️       |
+
+
+# `realloc` as `malloc`
+
+|                      **Test**                     | `cbmc` | `clang` | `cppcheck` | `divine` | `gcc` | `predator` | `symbiotic` |
+|---------------------------------------------------|:------:|:-------:|:----------:|:--------:|:-----:|:----------:|:-----------:|
+| 0001-realloc-as-malloc-correct                    |  ✘     |    ✔️    |     ✔️      |   ✔️      |   ✔️   |    ✘[^1]   |      ✔️      |
+| 0002-realloc-as-malloc-doublefree                 |  ✔️     |    ✔️    |     ✔️      |   ✔️      |   ✔️   |    ✔️       |      ✔️      |
+| 0003-realloc-as-malloc-nonfreed                   |  ✔️     |    ✔️    |     ✔️      |   ✔️      |   ✔️   |    ✔️       |      ✔️      |
+| 0004-realloc-as-malloc-plain-leak                 |  ✔️     |    ✔️    |     ✔️      |   ✔️      |   ✔️   |    ✔️       |      ✘[^4]  |
+| 0005-realloc-as-malloc-use-after-failure-1        |  ✘[^3] |    ✘    |     ✘      |   ✔️      |   ✔️   |    ✔️       |      ✘[^6]  |
+| 0006-realloc-as-malloc-use-after-failure-2        |  ✘[^3] |    ✔️    |     ✘      |   ✔️      |   ✔️   |    ✔️       |      ✘[^6]  |
+| 0007-realloc-as-malloc-use-after-free             |  ✔️     |    ✔️    |     ✔️      |   ✔️      |   ✔️   |    ✔️       |      ✔️      |
+| 0008-realloc-as-malloc-zerosize                   |  ✔️     |    ✔️    |     ✔️      |   ✘[^5]  |   ✔️   |    ✘[^1]   |      ✔️      |
+| 0009-realloc-as-malloc-zerosize-leak              |  ✔️     |    ✘    |     ✔️      |   ✘[^5]  |   ✔️   |    ✔️       |      ✔️      |
+| 0010-realloc-as-malloc-zerosize-use-after-failure |  ✘[^3] |    ✔️    |     ✘      |   ✘      |   ✔️   |    ✔️       |      ✘[^6]  |
+| 0011-realloc-as-malloc-zerosize-used              |  ✔️     |    ✔️    |     ✘      |   ✘[^5]  |   ✔️   |    ✔️       |      ✔️      |
+
+
+# `realloc`
+
+|                   **Test**                  |      `cbmc`    | `clang` | `cppcheck` | `divine` | `gcc` | `predator` | `symbiotic` |
+|---------------------------------------------|:--------------:|:-------:|:----------:|:--------:|:-----:|:----------:|:-----------:|
+| 0001-realloc-after-failure-doublefree-1     |      ✘[^10]    |    ✔️    |     ✘      |     ✔️    |   ✔️   |     ✔️      |    ✘[^6]    |
+| 0002-realloc-after-failure-doublefree-2     |      ✘[^10]    |    ✔️    |     ✘      |     ✔️    |   ✔️   |     ✔️      |    ✘[^6]    |
+| 0003-realloc-after-failure-doublefree-3     |      ✘[^10]    |    ✔️    |     ✘      |     ✔️    |   ✔️   |     ✔️      |    ✘[^6]    |
+| 0004-realloc-after-failure-doublefree-4     |      ✘[^10]    |    ✔️    |     ✘      |     ✔️    |   ✔️   |     ✔️      |    ✘[^6]    |
+| 0005-realloc-after-failure-nonfreed-1       |      ✘[^10]    |    ✔️    |     ✘      |     ✔️    |   ✔️   |     ✔️      |    ✘[^6]    |
+| 0006-realloc-after-failure-nonfreed-2       |      ✘[^10]    |    ✔️    |     ✘      |     ✔️    |   ✔️   |     ✔️      |    ✘[^6]    |
+| 0007-realloc-after-failure-nonfreed-3       |      ✘[^10]    |    ✔️    |     ✘      |     ✔️    |   ✔️   |     ✔️      |    ✘[^6]    |
+| 0008-realloc-after-failure-nonfreed-4       |      ✘[^10]    |    ✔️    |     ✘      |     ✔️    |   ✔️   |     ✔️      |    ✘[^6]    |
+| 0009-realloc-after-failure-nonfreed-5       |      ✘[^10]    |    ✘    |     ✘      |     ✔️    |   ✔️   |     ✔️      |    ✘[^6]    |
+| 0010-realloc-after-failure-nonfreed-6       |      ✘[^10]    |    ✘    |     ✘      |     ✔️    |   ✔️   |     ✔️      |    ✘[^6]    |
+| 0011-realloc-after-failure-nonfreed-7       |      ✘[^10]    |    ✘    |     ✘      |     ✔️    |   ✔️   |     ✔️      |    ✘[^6]    |
+| 0012-realloc-after-failure-nonfreed-8       |      ✘[^10]    |    ✘    |     ✘      |     ✔️    |   ✔️   |     ✔️      |    ✘[^6]    |
+| 0013-realloc-after-failure-use-after-free-1 |      ✘[^10]    |    ✔️    |     ✘      |     ✔️    |   ✔️   |     ✔️      |    ✘[^6]    |
+| 0014-realloc-after-failure-use-after-free-2 |      ✘[^10]    |    ✔️    |     ✘      |     ✔️    |   ✔️   |     ✔️      |    ✘[^6]    |
+| 0015-realloc-after-failure-use-after-free-3 |      ✘[^10]    |    ✔️    |     ✘      |     ✔️    |   ✔️   |     ✔️      |    ✘[^6]    |
+| 0016-realloc-after-failure-use-after-free-4 |      ✘[^10]    |    ✔️    |     ✘      |     ✔️    |   ✔️   |     ✔️      |    ✘[^6]    |
+| 0017-realloc-after-failure-use-before-free  |        ✔️       |    ✔️    |     ✔️      |     ✔️    |   ✔️   |     ✔️      |      ✔️      |
+| 0018-realloc-correct-realloc                |        ✘       |    ✔️    |     ✔️      |     ✔️    |   ✔️   |     ✘[^1]  |      ✔️      |
+| 0019-realloc-doublefree-1                   |        ✔️       |    ✔️    |     ✘      |     ✔️    |   ✔️   |     ✔️      |      ✔️      |
+| 0020-realloc-doublefree-2                   |        ✔️       |    ✔️    |     ✘      |     ✔️    |   ✔️   |     ✔️      |      ✔️      |
+| 0021-realloc-doublefree-3                   |        ✔️       |    ✔️    |     ✘      |     ✔️    |   ✔️   |     ✔️      |      ✔️      |
+| 0022-realloc-doublefree-4                   |        ✘       |    ✔️    |     ✘      |     ✔️    |   ✔️   |     ✔️      |      ✔️      |
+| 0023-realloc-freeoldptr-1                   |        ✔️       |    ✔️    |     ✘      |     ✔️    |   ✔️   |     ✘[^7]  |      ✔️      |
+| 0024-realloc-freeoldptr-2                   |        ✔️       |    ✔️    |     ✘      |     ✔️    |   ✔️   |     ✘[^7]  |      ✔️      |
+| 0025-realloc-freeoldptr-3                   |        ✔️       |    ✔️    |     ✘      |     ✔️    |   ✔️   |     ✘[^7]  |      ✔️      |
+| 0026-realloc-freeoldptr-4                   |        ✘       |    ✔️    |     ✘      |     ✔️    |   ✔️   |     ✘[^7]  |      ✔️      |
+| 0027-realloc-from-zerosize                  |        ✘       |    ✔️    |     ✔️      |     ✔️    |   ✔️   |     ✘[^1]  |      ✔️      |
+| 0028-realloc-invalid-ptr-freed-1            |      ✘[^13]    |    ✔️    |     ✘      |     ✔️    |   ✔️   |     ✔️      |      ✔️      |
+| 0029-realloc-invalid-ptr-freed-2            |      ✘[^13]    |    ✔️    |     ✘      |     ✔️    |   ✔️   |     ✔️      |      ✔️      |
+| 0030-realloc-invalid-ptr-freed-3            |      ✘[^13]    |    ✔️    |     ✘      |     ✔️    |   ✔️   |     ✔️      |      ✔️      |
+| 0031-realloc-invalid-ptr-freed-3            |      ✘[^13]    |    ✔️    |     ✘      |     ✔️    |   ✔️   |     ✔️      |      ✔️      |
+| 0032-realloc-invalid-ptr-nonheap-1          |      ✘[^13]    |   ✔️/✘   |     ✘      |     ✘    |   ✔️   |     ✔️      |      ✔️      |
+| 0033-realloc-invalid-ptr-nonheap-2          |      ✘[^13]    |   ✔️/✘   |     ✘      |     ✔️    |   ✔️   |     ✔️      |      ✔️      |
+| 0034-realloc-invalid-ptr-nonheap-3          |      ✘[^13]    |   ✔️/✘   |     ✘      |     ✔️    |   ✔️   |     ✔️      |      ✔️      |
+| 0035-realloc-invalid-ptr-nonheap-4          |      ✘[^13]    |   ✔️/✘   |     ✘      |    ?/✔️   |   ✔️   |     ✔️      |      ✔️      |
+| 0036-realloc-invalid-ptr-nonheap-5          |      ✘[^13]    |   ✔️/✘   |     ✘      |     ✔️    |   ✔️   |     ✔️      |      ✔️      |
+| 0037-realloc-invalid-ptr-nonheap-6          |      ✘[^13]    |   ✔️/✘   |     ✘      |     ✔️    |   ✔️   |     ✔️      |      ✔️      |
+| 0038-realloc-nonfreed-1                     |        ✔️       |    ✔️    |     ✘      |     ✔️    |   ✔️   |     ✔️      |      ✔️      |
+| 0039-realloc-nonfreed-2                     |        ✔️       |    ✔️    |     ✘      |     ✔️    |   ✔️   |     ✔️      |      ✔️      |
+| 0040-realloc-nonfreed-3                     |        ✔️       |    ✔️    |     ✘      |     ✔️    |   ✔️   |     ✔️      |      ✔️      |
+| 0041-realloc-nonfreed-4                     |        ✔️       |    ✔️    |     ✘      |     ✔️    |   ✔️   |     ✔️      |      ✔️      |
+| 0042-realloc-plain-leak-1                   |        ✔️       |    ✔️    |     ✔️      |     ✔️    |   ✔️   |     ✔️      |      ✔️      |
+| 0043-realloc-plain-leak-2                   |        ✔️       |    ✔️    |     ✔️      |     ✔️    |   ✔️   |     ✔️      |      ✔️      |
+| 0044-realloc-plain-leak-3                   |        ✔️       |    ✔️    |     ✔️      |     ✔️    |   ✔️   |     ✔️      |      ✔️      |
+| 0045-realloc-plain-leak-4                   |        ✔️       |    ✔️    |     ✔️      |     ✔️    |   ✔️   |     ✔️      |      ✔️      |
+| 0046-realloc-samesize                       |        ✔️       |    ✔️    |     ✔️      |     ✔️    |   ✔️   |     ✔️      |      ✔️      |
+| 0047-realloc-use-after-failure-1            |  ✘[^3], ✘[^10] |    ✘    |     ✘      |     ✘    |   ✔️   |     ✔️      |    ✘[^6]    |
+| 0048-realloc-use-after-failure-2            |  ✘[^3], ✘[^10] |    ✘    |     ✘      |     ✘    |   ✔️   |     ✔️      |    ✘[^6]    |
+| 0049-realloc-use-after-failure-3            |  ✘[^3], ✘[^10] |    ✘    |     ✘      |     ✘    |   ✔️   |     ✔️      |    ✘[^6]    |
+| 0050-realloc-use-after-failure-4            |  ✘[^3], ✘[^10] |    ✘    |     ✘      |     ✘    |   ✔️   |     ✔️      |    ✘[^6]    |
+| 0051-realloc-use-after-failure-5            |  ✘[^3], ✘[^10] |    ✔️    |     ✘      |     ✘    |   ✔️   |     ✔️      |    ✘[^6]    |
+| 0052-realloc-use-after-failure-6            |  ✘[^3], ✘[^10] |    ✔️    |     ✘      |     ✘    |   ✔️   |     ✔️      |    ✘[^6]    |
+| 0053-realloc-use-after-failure-7            |  ✘[^3], ✘[^10] |    ✔️    |     ✘      |     ✔️    |   ✔️   |     ✔️      |    ✘[^6]    |
+| 0054-realloc-use-after-failure-8            |  ✘[^3], ✘[^10] |    ✔️    |     ✘      |     ✔️    |   ✔️   |     ✔️      |    ✘[^6]    |
+| 0055-realloc-use-after-free-1               |        ✔️       |    ✔️    |     ✘      |     ✔️    |   ✔️   |     ✔️      |      ✔️      |
+| 0056-realloc-use-after-free-2               |        ✔️       |    ✔️    |     ✘      |     ✔️    |   ✔️   |     ✔️      |      ✔️      |
+| 0057-realloc-use-after-free-3               |        ✔️       |    ✔️    |     ✘      |     ✔️    |   ✔️   |     ✔️      |      ✔️      |
+| 0058-realloc-use-after-free-4               |        ✔️       |    ✔️    |     ✘      |     ✔️    |   ✔️   |     ✔️      |      ✔️      |
+| 0059-realloc-use-old-ptr-1                  |        ✔️       |    ✔️    |     ✘      |     ✔️    |   ✔️   |     ✔️      |      ✔️      |
+| 0060-realloc-use-old-ptr-2                  |        ✔️       |    ✔️    |     ✘      |     ✔️    |   ✔️   |     ✔️      |   ✘[^12]    |
+| 0061-realloc-use-old-ptr-3                  |        ✔️       |    ✔️    |     ✘      |     ✔️    |   ✔️   |     ✔️      |      ✔️      |
+| 0062-realloc-use-old-ptr-3                  |        ✔️       |    ✔️    |     ✘      |     ✔️    |   ✔️   |     ✔️      |      ✔️      |
+| 0063-realloc-zerosize-1                     |        ✘       |    ✘    |     ✘      |     ✘    |   ✔️   |    ✘[^1]   |      ✔️      |
+| 0064-realloc-zerosize-2                     |        ✘       |    ✘    |     ✘      |     ✘    |   ✔️   |    ✘[^1]   |      ✔️      |
+| 0065-realloc-zerosize-3                     |        ✘       |    ✘    |     ✘      |     ✘    |   ✔️   |    ✘[^1]   |      ✔️      |
+| 0066-realloc-zerosize-4                     |        ✘       |    ✘    |     ✘      |     ✘    |   ✔️   |    ✘[^1]   |      ✔️      |
+| 0067-realloc-zerosize-complex               |        ✘       |    ✘    |     ✘      |     ✔️    |   ✔️   |    ✘[^1]   |      ✔️      |
+| 0068-realloc-zerosize-failure-doublefree-1  |        ✘       |    ✔️    |     ✔️      |     ✔️    |   ✔️   |     ✔️      |      ✔️      |
+| 0069-realloc-zerosize-failure-doublefree-2  |        ✘       |    ✔️    |     ✔️      |     ✔️    |   ✔️   |     ✔️      |      ✔️      |
+| 0070-realloc-zerosize-failure-doublefree-3  |        ✘       |    ✔️    |     ✔️      |     ✔️    |   ✔️   |     ✔️      |      ✔️      |
+| 0071-realloc-zerosize-failure-doublefree-4  |      ✘[^10]    |    ✔️    |     ✔️      |     ✔️    |   ✔️   |     ✔️      |      ✔️      |
+| 0072-realloc-zerosize-failure-leak-1        |      ✘[^10]    |    ✘    |     ✘      |     ✘    |   ✔️   |     ✔️      |    ✘[^6]    |
+| 0073-realloc-zerosize-failure-leak-2        |      ✘[^10]    |    ✘    |     ✘      |     ✘    |   ✔️   |     ✔️      |    ✘[^6]    |
+| 0074-realloc-zerosize-failure-leak-3        |      ✘[^10]    |    ✘    |     ✘      |     ✘    |   ✔️   |     ✔️      |    ✘[^6]    |
+| 0075-realloc-zerosize-failure-leak-4        |      ✘[^10]    |    ✘    |     ✘      |     ✘    |   ✔️   |     ✔️      |    ✘[^6]    |
+| 0076-realloc-zerosize-leak-1                |        ✔️       |    ✘    |     ✘      |     ✘    |   ✔️   |    ✘[^1]   |   ✘[^11]    |
+| 0077-realloc-zerosize-leak-2                |        ✔️       |    ✘    |     ✘      |     ✘    |   ✔️   |    ✘[^1]   |   ✘[^11]    |
+| 0078-realloc-zerosize-leak-3                |        ✔️       |    ✘    |     ✘      |     ✘    |   ✔️   |    ✘[^1]   |   ✘[^11]    |
+| 0079-realloc-zerosize-leak-4                |        ✔️       |    ✘    |     ✘      |     ✘    |   ✔️   |    ✘[^1]   |   ✘[^11]    |
+| 0080-realloc-zerosize-use-1                 |      ✘[^14]    |    ✘    |     ✘      |     ✘    |   ✔️   |    ✘[^1]   |   ✘[^11]    |
+| 0081-realloc-zerosize-use-2                 |      ✘[^14]    |    ✘    |     ✘      |     ✘    |   ✔️   |    ✘[^1]   |   ✘[^11]    |
+| 0082-realloc-zerosize-use-3                 |      ✘[^14]    |    ✘    |     ✘      |     ✘    |   ✔️   |    ✘[^1]   |   ✘[^11]    |
+| 0083-realloc-zerosize-use-4                 | ✘[^14], ✘[^10] |   ✔️/✘   |     ✘      |     ✘    |   ✔️   |    ✘[^1]   |   ✘[^11]    |
+| 0084-realloc-zerosize-use-null-1            |      ✘[^3]     |    ✔️    |     ✘      |     ✔️    |   ✔️   |    ✘[^1]   |      ✔️      |
+| 0085-realloc-zerosize-use-null-2            |      ✘[^3]     |    ✔️    |     ✘      |     ✔️    |   ✔️   |    ✘[^1]   |      ✔️      |
+| 0086-realloc-zerosize-use-null-3            |      ✘[^3]     |    ✔️    |     ✘      |     ✔️    |   ✔️   |    ✘[^1]   |      ✔️      |
+| 0087-realloc-zerosize-use-null-4            |  ✘[^3], ✘[^10] |    ✔️    |     ✘      |     ✘    |   ✔️   |    ✘[^1]   |      ✔️      |
+
+# `free`
+
+|     **Test**      | `cbmc` | `clang` | `cppcheck` | `divine` | `gcc` | `predator` | `symbiotic` |
+|-------------------|:------:|:-------:|:----------:|:--------:|:-----:|:----------:|:-----------:|
+| 0001-free-bss     |   ✔️    |    ✔️    |     ✔️      |     ✔️    |   ✔️   |     ✔️      |      ✔️      |
+| 0002-free-data    |   ✔️    |    ✔️    |     ✔️      |     ✔️    |   ✔️   |     ✔️      |      ✔️      |
+| 0003-free-null    |   ✔️    |    ✔️    |     ✔️      |     ✔️    |   ✔️   |     ✔️      |      ✔️      |
+| 0004-free-numeric |   ✔️    |    ✔️    |     ✘      |     ✔️    |   ✔️   |     ✔️      |      ✔️      |
+| 0005-free-rodata  |   ✔️    |    ✔️    |     ✘      |     ✔️    |   ✔️   |     ✔️      |      ✔️      |
+| 0006-free-stack   |   ✔️    |    ✔️    |     ✔️      |     ✔️    |   ✔️   |     ✔️      |      ✔️      |
+| 0007-free-text    |   ✔️    |    ✔️    |     ✘      |     ✔️    |   ✔️   |     ✔️      |      ✔️      |
+
+[^1]: Predator dislikes `errno`.
+[^2]: Fixed downstream.
+[^3]: https://github.com/diffblue/cbmc/issues/5490
+[^4]: https://github.com/staticafi/symbiotic/issues/142
+[^5]: https://divine.fi.muni.cz/trac/ticket/111#ticket
+[^6]: https://github.com/staticafi/symbiotic/issues/154
+[^7]: https://github.com/kdudka/predator/pull/22#issuecomment-549424181
+[^10]: Bug in `cbmc` 5.12.6.
+[^11]: https://github.com/staticafi/symbiotic/issues/159
+[^12]: https://github.com/staticafi/symbiotic/issues/160
+[^13]: Bug in `cbmc` 5.11 and newer.
+[^14]: Bug in `cbmc` 5.11 and newer.

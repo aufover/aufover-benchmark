@@ -1,0 +1,27 @@
+Error: CLANG_WARNING:
+./0029-test.c:10:11: warning: Value stored to 'ptr2' during its initialization is never read
+#    void *ptr2 = realloc(ptr1, 2 * sizeof(char)); /* error */
+#          ^~~~   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./0029-test.c:10:11: note: Value stored to 'ptr2' during its initialization is never read
+#    void *ptr2 = realloc(ptr1, 2 * sizeof(char)); /* error */
+#          ^~~~   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Error: CLANG_WARNING:
+./0029-test.c:10:18: warning: Attempt to free released memory
+#    void *ptr2 = realloc(ptr1, 2 * sizeof(char)); /* error */
+#                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./0029-test.c:5:18: note: Memory is allocated
+#    void *ptr1 = calloc(1, sizeof(char));
+#                 ^~~~~~~~~~~~~~~~~~~~~~~
+./0029-test.c:6:9: note: Assuming 'ptr1' is not equal to NULL
+#    if (ptr1 == NULL)
+#        ^~~~~~~~~~~~
+./0029-test.c:6:5: note: Taking false branch
+#    if (ptr1 == NULL)
+#    ^
+./0029-test.c:9:5: note: Memory is released
+#    free(ptr1);
+#    ^~~~~~~~~~
+./0029-test.c:10:18: note: Attempt to free released memory
+#    void *ptr2 = realloc(ptr1, 2 * sizeof(char)); /* error */
+#                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

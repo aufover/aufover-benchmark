@@ -1,0 +1,25 @@
+Error: CLANG_WARNING:
+./0068-test.c:12:9: warning: Attempt to free released memory
+#        free(ptr1); /* possible invalid free */
+#        ^~~~~~~~~~
+./0068-test.c:5:18: note: Memory is allocated
+#    void *ptr1 = malloc(sizeof(char));
+#                 ^~~~~~~~~~~~~~~~~~~~
+./0068-test.c:6:9: note: Assuming 'ptr1' is not equal to NULL
+#    if (ptr1 == NULL)
+#        ^~~~~~~~~~~~
+./0068-test.c:6:5: note: Taking false branch
+#    if (ptr1 == NULL)
+#    ^
+./0068-test.c:9:18: note: Memory is released
+#    char *ptr2 = realloc(ptr1, 0);
+#                 ^~~~~~~~~~~~~~~~
+./0068-test.c:10:9: note: Assuming 'ptr2' is equal to NULL
+#    if (ptr2 == NULL) {
+#        ^~~~~~~~~~~~
+./0068-test.c:10:5: note: Taking true branch
+#    if (ptr2 == NULL) {
+#    ^
+./0068-test.c:12:9: note: Attempt to free released memory
+#        free(ptr1); /* possible invalid free */
+#        ^~~~~~~~~~

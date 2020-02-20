@@ -1,0 +1,22 @@
+Error: CLANG_WARNING:
+./0038-test.c:16:1: warning: Potential leak of memory pointed to by 'newptr'
+#}
+#^
+./0038-test.c:6:9: note: Assuming 'ptr' is not equal to NULL
+#    if (ptr == NULL)
+#        ^~~~~~~~~~~
+./0038-test.c:6:5: note: Taking false branch
+#    if (ptr == NULL)
+#    ^
+./0038-test.c:9:20: note: Memory is allocated
+#    void *newptr = realloc(ptr, 2 * sizeof(char));
+#                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./0038-test.c:10:9: note: Assuming 'newptr' is not equal to NULL
+#    if (newptr == NULL) {
+#        ^~~~~~~~~~~~~~
+./0038-test.c:10:5: note: Taking false branch
+#    if (newptr == NULL) {
+#    ^
+./0038-test.c:16:1: note: Potential leak of memory pointed to by 'newptr'
+#}
+#^

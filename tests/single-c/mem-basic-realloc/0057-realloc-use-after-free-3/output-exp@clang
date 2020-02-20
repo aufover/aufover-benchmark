@@ -1,0 +1,33 @@
+Error: CLANG_WARNING:
+./0057-test.c:17:10: warning: Value stored to 'ch' during its initialization is never read
+#    char ch = *ptr2; /* error */
+#         ^~   ~~~~~
+./0057-test.c:17:10: note: Value stored to 'ch' during its initialization is never read
+#    char ch = *ptr2; /* error */
+#         ^~   ~~~~~
+
+Error: CLANG_WARNING:
+./0057-test.c:17:15: warning: Use of memory after it is freed
+#    char ch = *ptr2; /* error */
+#              ^~~~~
+./0057-test.c:6:9: note: Assuming 'ptr1' is not equal to NULL
+#    if (ptr1 == NULL)
+#        ^~~~~~~~~~~~
+./0057-test.c:6:5: note: Taking false branch
+#    if (ptr1 == NULL)
+#    ^
+./0057-test.c:9:18: note: Memory is allocated
+#    char *ptr2 = realloc(ptr1, 2 * sizeof(char));
+#                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./0057-test.c:10:9: note: Assuming 'ptr2' is not equal to NULL
+#    if (ptr2 == NULL) {
+#        ^~~~~~~~~~~~
+./0057-test.c:10:5: note: Taking false branch
+#    if (ptr2 == NULL) {
+#    ^
+./0057-test.c:15:5: note: Memory is released
+#    free(ptr2);
+#    ^~~~~~~~~~
+./0057-test.c:17:15: note: Use of memory after it is freed
+#    char ch = *ptr2; /* error */
+#              ^~~~~

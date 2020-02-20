@@ -1,0 +1,19 @@
+Error: CLANG_WARNING:
+./0007-test.c:11:10: warning: Use of memory after it is freed
+#    *ptr = 'A'; /* error */
+#    ~~~~ ^
+./0007-test.c:5:17: note: Memory is allocated
+#    char *ptr = calloc(1, sizeof(char));
+#                ^~~~~~~~~~~~~~~~~~~~~~~
+./0007-test.c:6:9: note: Assuming 'ptr' is not equal to NULL
+#    if (ptr == NULL)
+#        ^~~~~~~~~~~
+./0007-test.c:6:5: note: Taking false branch
+#    if (ptr == NULL)
+#    ^
+./0007-test.c:9:5: note: Memory is released
+#    free(ptr);
+#    ^~~~~~~~~
+./0007-test.c:11:10: note: Use of memory after it is freed
+#    *ptr = 'A'; /* error */
+#    ~~~~ ^

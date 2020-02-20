@@ -1,0 +1,26 @@
+Error: CBMC_WARNING:
+./0058-test.c: scope_hint: In function ‘main’:
+./0058-test.c:23: error: pointer_dereference : dereference failure: deallocated dynamic object in *ptr3
+./0058-test.c:3: note: from_entry_point_function:function-call:main
+./0058-test.c:5: note: main:5:pointer:        ptr1 = NULL
+./0058-test.c:5: note: from_main:function-call:malloc
+./0058-test.c:5: note: function_parameter_set_in:main:5:integer:        malloc_size = 1ul
+./0058-test.c:5: note: main:5:pointer:        ptr1 = dynamic_object1
+./0058-test.c:9: note: main:9:pointer:        ptr2 = NULL
+./0058-test.c:9: note: from_main:function-call:realloc
+./0058-test.c:9: note: function_parameter_set_in:main:9:pointer:        ptr = dynamic_object1
+./0058-test.c:9: note: function_parameter_set_in:main:9:integer:        malloc_size = 2ul
+<builtin-library-realloc>:26: note: function_parameter_set_in:realloc:26:integer:        malloc_size = 2ul
+<builtin-library-realloc>:30: note: function_parameter_set_in:realloc:30:pointer:        ptr = dynamic_object1
+./0058-test.c:9: note: main:9:pointer:        ptr2 = dynamic_object2
+./0058-test.c:15: note: main:15:pointer:        ptr3 = ((char *)NULL)
+./0058-test.c:15: note: from_main:function-call:realloc
+./0058-test.c:15: note: function_parameter_set_in:main:15:pointer:        ptr = dynamic_object2
+./0058-test.c:15: note: function_parameter_set_in:main:15:integer:        malloc_size = 3ul
+<builtin-library-realloc>:26: note: function_parameter_set_in:realloc:26:integer:        malloc_size = 3ul
+<builtin-library-realloc>:30: note: function_parameter_set_in:realloc:30:pointer:        ptr = dynamic_object2
+./0058-test.c:15: note: main:15:pointer:        ptr3 = dynamic_object3
+./0058-test.c:21: note: from_main:function-call:free
+./0058-test.c:21: note: function_parameter_set_in:main:21:pointer:        ptr = dynamic_object3
+./0058-test.c:23: note: main:23:integer:        ch = 0
+./0058-test.c:23: note: dereference failure: deallocated dynamic object in *ptr3

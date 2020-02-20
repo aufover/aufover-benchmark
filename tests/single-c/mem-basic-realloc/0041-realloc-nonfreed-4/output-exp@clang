@@ -1,0 +1,28 @@
+Error: CLANG_WARNING:
+./0041-test.c:22:1: warning: Potential leak of memory pointed to by 'ptr3'
+#}
+#^
+./0041-test.c:6:9: note: Assuming 'ptr1' is not equal to NULL
+#    if (ptr1 == NULL)
+#        ^~~~~~~~~~~~
+./0041-test.c:6:5: note: Taking false branch
+#    if (ptr1 == NULL)
+#    ^
+./0041-test.c:10:9: note: Assuming 'ptr2' is not equal to NULL
+#    if (ptr2 == NULL) {
+#        ^~~~~~~~~~~~
+./0041-test.c:10:5: note: Taking false branch
+#    if (ptr2 == NULL) {
+#    ^
+./0041-test.c:15:18: note: Memory is allocated
+#    void *ptr3 = realloc(ptr2, 3 * sizeof(char));
+#                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./0041-test.c:16:9: note: Assuming 'ptr3' is not equal to NULL
+#    if (ptr3 == NULL) {
+#        ^~~~~~~~~~~~
+./0041-test.c:16:5: note: Taking false branch
+#    if (ptr3 == NULL) {
+#    ^
+./0041-test.c:22:1: note: Potential leak of memory pointed to by 'ptr3'
+#}
+#^

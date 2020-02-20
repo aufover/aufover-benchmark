@@ -1,0 +1,18 @@
+#include <stdlib.h>
+
+int main(void)
+{
+    char *ptr = realloc(NULL, sizeof(char));
+    if (ptr == NULL) {
+        *ptr = 'A'; /* error */
+        return EXIT_SUCCESS;
+    }
+
+    free(ptr);
+}
+
+/**
+ * @filename 0006-test.c
+ *
+ * @brief Usage of pointer after realloc as malloc failure.
+ */

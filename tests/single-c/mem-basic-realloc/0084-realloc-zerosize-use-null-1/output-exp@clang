@@ -1,0 +1,22 @@
+Error: CLANG_WARNING:
+./0084-test.c:13:15: warning: Dereference of null pointer (loaded from variable 'ptr2')
+#        *ptr2 = 'A'; /* error */
+#         ~~~~ ^
+./0084-test.c:7:9: note: Assuming 'ptr1' is not equal to NULL
+#    if (ptr1 == NULL)
+#        ^~~~~~~~~~~~
+./0084-test.c:7:5: note: Taking false branch
+#    if (ptr1 == NULL)
+#    ^
+./0084-test.c:11:5: note: 'ptr2' initialized here
+#    char *ptr2 = realloc(ptr1, 0);
+#    ^~~~~~~~~~
+./0084-test.c:12:9: note: Assuming 'ptr2' is equal to NULL
+#    if (ptr2 == NULL) {
+#        ^~~~~~~~~~~~
+./0084-test.c:12:5: note: Taking true branch
+#    if (ptr2 == NULL) {
+#    ^
+./0084-test.c:13:15: note: Dereference of null pointer (loaded from variable 'ptr2')
+#        *ptr2 = 'A'; /* error */
+#         ~~~~ ^

@@ -1,0 +1,16 @@
+Error: CLANG_WARNING:
+./0003-test.c:10:1: warning: Potential leak of memory pointed to by 'ptr'
+#}
+#^
+./0003-test.c:5:17: note: Memory is allocated
+#    char *ptr = calloc(1, sizeof(char));
+#                ^~~~~~~~~~~~~~~~~~~~~~~
+./0003-test.c:6:9: note: Assuming 'ptr' is not equal to NULL
+#    if (ptr == NULL)
+#        ^~~~~~~~~~~
+./0003-test.c:6:5: note: Taking false branch
+#    if (ptr == NULL)
+#    ^
+./0003-test.c:10:1: note: Potential leak of memory pointed to by 'ptr'
+#}
+#^

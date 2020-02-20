@@ -1,0 +1,22 @@
+Error: CLANG_WARNING:
+./0045-test.c:16:1: warning: Potential memory leak
+#}
+#^
+./0045-test.c:6:9: note: Assuming 'ptr1' is not equal to NULL
+#    if (ptr1 == NULL)
+#        ^~~~~~~~~~~~
+./0045-test.c:6:5: note: Taking false branch
+#    if (ptr1 == NULL)
+#    ^
+./0045-test.c:10:9: note: Assuming 'ptr2' is not equal to NULL
+#    if (ptr2 == NULL) {
+#        ^~~~~~~~~~~~
+./0045-test.c:10:5: note: Taking false branch
+#    if (ptr2 == NULL) {
+#    ^
+./0045-test.c:15:5: note: Memory is allocated
+#    realloc(ptr2, 3 * sizeof(char)); /* leak */
+#    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./0045-test.c:16:1: note: Potential memory leak
+#}
+#^

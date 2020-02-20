@@ -1,0 +1,16 @@
+Error: CLANG_WARNING:
+./0006-test.c:7:14: warning: Dereference of null pointer (loaded from variable 'ptr')
+#        *ptr = 'A'; /* error */
+#         ~~~ ^
+./0006-test.c:5:5: note: 'ptr' initialized here
+#    char *ptr = calloc(1, sizeof(char));
+#    ^~~~~~~~~
+./0006-test.c:6:9: note: Assuming 'ptr' is equal to NULL
+#    if (ptr == NULL) {
+#        ^~~~~~~~~~~
+./0006-test.c:6:5: note: Taking true branch
+#    if (ptr == NULL) {
+#    ^
+./0006-test.c:7:14: note: Dereference of null pointer (loaded from variable 'ptr')
+#        *ptr = 'A'; /* error */
+#         ~~~ ^
