@@ -1,3 +1,5 @@
+option(PHASE_ENABLE_diff "compare actual output with expected output" ON)
+
 # wrapper around add_test() to deduplicate code
 macro(add_test_wrap name cmd)
     add_test(NAME ${name}
@@ -92,9 +94,11 @@ macro(gen_test_for_tool)
         file(CREATE_LINK ${CMAKE_CURRENT_SOURCE_DIR}/output-diff.sh ${cmd_diff} SYMBOLIC)
     endif()
     set(cmd ${cmd_diff} ./output-exp.txt ./output-uni.txt)
-    add_test_wrap("${test_name_base}[diff]" "${cmd}")
-    set_tests_properties("${test_name_base}[diff]" PROPERTIES
-        DEPENDS "${test_name_base}[csgrep]")
+    if(${PHASE_ENABLE_diff})
+        add_test_wrap("${test_name_base}[diff]" "${cmd}")
+        set_tests_properties("${test_name_base}[diff]" PROPERTIES
+            DEPENDS "${test_name_base}[csgrep]")
+    endif()
 endmacro()
 
 # generate tests for a single test
@@ -152,10 +156,9 @@ foreach(group ${group_list})
     endif()
 endforeach()
 
-# check-without-diff target
-set(CUSTOM_CTEST_CMD ${CTEST_CMD} -E "\\\\[diff\\\\]\\$")
-string(REPLACE ";" " " CUSTOM_CTEST_CMD_STRING "${CTEST_CMD}")
-add_custom_target(check-without-diff)
-add_custom_command(TARGET check-without-diff
-    COMMAND ${CUSTOM_CTEST_CMD}
-    COMMENT ${CUSTOM_CTEST_CMD_STRING})
+# check-only target
+string(REPLACE ";" " " CTEST_CMD_STRING "${CTEST_CMD}")
+add_custom_target(check-only)
+add_custom_command(TARGET check-only
+    COMMAND ${CTEST_CMD}
+    COMMENT ${CTEST_CMD_STRING})

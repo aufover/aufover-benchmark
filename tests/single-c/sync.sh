@@ -45,14 +45,14 @@ if test -z "$SYNC_EXISTING_ONLY"; then
 fi
 
 # reconfigure the project to make the above take an effect
-CTEST_OPTS="$*" make -C "${top_dir}"
+CTEST_OPTS="$*" make -C "${top_dir}" CMAKE_OPTS=-DPHASE_ENABLE_diff=OFF
 
 # remove output-exp@tool files for tests that were not selected in the end
 rm -fv "${clean_list[@]}"
 
 # run check without actually checking the diff
 cd "${WORKDIR}/single-c"
-make check-without-diff
+make check-only
 
 # move actual output to the expected output
 for test in */*(/); do
