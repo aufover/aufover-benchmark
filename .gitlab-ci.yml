@@ -16,19 +16,24 @@
         - if [[ ! -v NO_SYMBIOTIC ]]; then dnf copr enable jamartis/symbiotic -y; fi
         - dnf copr enable redhat/vmihalko/cbmc_utils -y
 
-        # Update the system and run the testsuite
+        # Update the system
         - dnf update -y
         - DNF_OPTS=-y make install-deps
-        - make check
+
+        # first run only cheap tests, so that we can report failures sooner
+        - CTEST_OPTS='-LE EXPENSIVE' make check
+
+        # try single-c/sync.sh script
+        - SYNC_EXISTING_ONLY=1 tests/single-c/sync.sh -LE EXPENSIVE
+        - CTEST_OPTS='-LE EXPENSIVE' make check
+
+        # then run all expensive tests
+        - CTEST_OPTS='-L EXPENSIVE' make check
 
         # try to use source directory as a working directory
         - cd tests
         - cmake .
-        - ctest -j$(nproc) --output-on-failure
-
-        # try single-c/sync.sh script
-        - SYNC_EXISTING_ONLY=1 single-c/sync.sh
-        - make check
+        - ctest -j$(nproc) --output-on-failure -LE EXPENSIVE
 
     artifacts:
         paths:
