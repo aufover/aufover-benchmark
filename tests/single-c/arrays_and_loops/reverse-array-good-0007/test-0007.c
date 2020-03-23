@@ -4,7 +4,7 @@ extern char __VERIFIER_nondet_char(void);
 
 int main()
 {
-    int length = 10;
+    int length = 8;
     int *array = alloca(length * sizeof(int));
 
     for (int i = 0; i < length; i++) {
