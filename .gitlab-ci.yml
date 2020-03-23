@@ -24,7 +24,7 @@
         # try to use source directory as a working directory
         - cd tests
         - cmake .
-        - ctest -j8 --output-on-failure
+        - ctest -j$(nproc) --output-on-failure
 
         # try single-c/sync.sh script
         - SYNC_EXISTING_ONLY=1 single-c/sync.sh
