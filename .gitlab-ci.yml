@@ -61,17 +61,14 @@ build_31:
     variables:
         VERSION: "31"
 
-# Symbiotic now fails to build on Fedora 32 and Rawhide.
 build_32:
     image: fedora:32
     <<: *fedora
     variables:
-        NO_SYMBIOTIC: "1"
         VERSION: "32"
 
 build_rawhide:
     image: fedora:rawhide
     <<: *fedora
     variables:
-        NO_SYMBIOTIC: "1"
         VERSION: "rawhide"
