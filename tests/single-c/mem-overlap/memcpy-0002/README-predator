@@ -1,0 +1,16 @@
+This bug is missed by Predator because gcc's unconditional over-optimization
+removes the call to memcpy() and Predator gets the following intermediate code:
+
+int ()(void):0]main():
+                goto L1
+
+        L1:
+                [void *:8]%rF9192773993871441920 := ([int []*:8]&%mF2089:arr [ptr]+ 1U)
+                [unsigned int:2]%rF2092 := [unsigned int:2]*%rF9192773993871441920
+                [unsigned int:2]%mF2089:arr := [unsigned int:2]%rF2092
+                CLOBBER [int []:5]%mF2089:arr
+                [int:4]%rF2091 := 0
+                goto L2
+
+        L2:
+                ret [int:4]%rF2091

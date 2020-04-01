@@ -1,0 +1,5 @@
+#!/bin/bash
+grep ' \[-fplugin=predator\]$' \
+    | grep --invert-match '^/builddir/build/BUILD/predator-' \
+    | grep --invert-match '^[^: ]*/rpmbuild/BUILD/predator-'
+exit 0
