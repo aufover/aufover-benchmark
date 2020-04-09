@@ -1,6 +1,9 @@
 # minimum cmake version we can use to run the benchmark
 cmake_minimum_required(VERSION 3.0)
 
+# force use of POSIX locale
+set(ENV{LC_ALL} "C")
+
 # declare that we do not need any C/C++ compiler
 project(aufover-benchmark NONE)
 

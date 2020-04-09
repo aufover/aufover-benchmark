@@ -1,6 +1,9 @@
 #!/bin/zsh
 set -e
 
+# force use of POSIX locale
+export LC_ALL="C"
+
 # full path to this script
 SELF=$(realpath $0)
 
