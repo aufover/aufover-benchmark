@@ -23,8 +23,15 @@ top_dir=$(dirname $TESTDIR)
 export WORKDIR=${top_dir}/workdir-for-sync
 rm -rf $WORKDIR
 
+# escape every argument to prevent them being interpreted as shell commands
+# as cmake executes ctest in a new shell
+i=1
+while test "$i" -le "$#"; do
+    ARGS+=("'${(P)$((i++))}'")
+done
+
 # (re)configure the project, giving all args as CTEST_OPTS
-CTEST_OPTS="$*" make -C ${top_dir}
+CTEST_OPTS="${ARGS[*]}" make -C ${top_dir}
 
 # query enabled TOOLS unless $TOOLS is set in caller's env
 tool_list=$(make -s -C $WORKDIR list-enabled-tools/fast)
@@ -48,7 +55,7 @@ if test -z "$SYNC_EXISTING_ONLY"; then
 fi
 
 # reconfigure the project to make the above take an effect
-CTEST_OPTS="$*" make -C "${top_dir}" CMAKE_OPTS=-DPHASE_ENABLE_diff=OFF
+CTEST_OPTS="${ARGS[*]}" make -C "${top_dir}" CMAKE_OPTS=-DPHASE_ENABLE_diff=OFF
 
 # remove output-exp@tool files for tests that were not selected in the end
 rm -fv "${clean_list[@]}"
