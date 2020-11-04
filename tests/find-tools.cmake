@@ -39,7 +39,7 @@ append_tool_on_succ(clang      "${TOOL_EXEC_clang} --analyze -Xanalyzer \
                                 -analyzer-output=text -xc ${empty_main}")
 append_tool_on_succ(cppcheck   "${TOOL_EXEC_cppcheck} --quiet ${empty_main}")
 append_tool_on_succ(cbmc       "${TOOL_EXEC_cbmc} --version >/dev/null 2>&1 && \
-                                test -x /usr/bin/formatCBMCOutput")
+                                test -x /usr/bin/cbmc-convert-output")
 append_tool_on_succ(divine     "${TOOL_EXEC_divine} version >/dev/null 2>&1 && \
                                 test -x /usr/bin/divine2csgrep")
 append_tool_on_succ(symbiotic  "${TOOL_EXEC_symbiotic} --version >/dev/null 2>&1 && \

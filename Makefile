@@ -25,5 +25,5 @@ $(WORKDIR):
 
 install-deps:
 	# needless to install make as nobody would ever run this without make
-	sudo dnf install $(DNF_OPTS) cbmc cbmc_utils clang cmake coreutils cppcheck \
+	sudo dnf install $(DNF_OPTS) cbmc cbmc-utils clang cmake coreutils cppcheck \
 		csdiff diffutils divine gcc predator symbiotic zsh
