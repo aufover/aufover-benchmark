@@ -22,6 +22,15 @@
         - dnf update -y
         - DNF_OPTS=-y make install-deps
 
+        # check that all expected tools are present and working
+        - make configure
+        - |
+          for tool in cbmc clang cppcheck gcc predator; do
+            grep TOOL_ENABLE_${tool} workdir/CMakeCache.txt
+          done
+        - if [[ ! -v NO_DIVINE ]]; then grep TOOL_ENABLE_divine workdir/CMakeCache.txt; fi
+        - if [[ ! -v NO_SYMBIOTIC ]]; then grep TOOL_ENABLE_symbiotic workdir/CMakeCache.txt; fi
+
         # first run only cheap tests, so that we can report failures sooner
         - CTEST_OPTS='-LE EXPENSIVE' make check
 
