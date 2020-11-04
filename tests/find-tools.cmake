@@ -13,6 +13,8 @@ macro(append_tool_on_succ tool cmd)
         if (${TOOL_ENABLE_${tool}})
             list(APPEND TOOLS_ENABLED ${tool})
         endif()
+    else()
+        message(STATUS "tool: ${tool} NOT FOUND")
     endif()
 endmacro()
 
