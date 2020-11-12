@@ -11,6 +11,14 @@
         - dnf config-manager --add-repo https://copr.devel.redhat.com/coprs/rhcopr-project/toolset/repo/fedora-${VERSION}/rhcopr-project-toolset-fedora-${VERSION}.repo
         - dnf install make rhcopr -y
 
+        # glibc-2.32.9000-16.fc34 does not work well in GitLab CI
+        # See https://bugzilla.redhat.com/1869030#c22 for details.
+        - |
+          if [[ $VERSION = "rawhide" ]]; then
+            dnf copr enable -y kdudka/glibc
+            dnf update -y 'glibc*'
+          fi
+
         # Enable given (rh)copr repositories
         - if [[ ! -v NO_DIVINE ]]; then dnf copr enable lzaoral/Divine -y; fi
         - if [[ ! -v NO_SYMBIOTIC ]]; then dnf copr enable jamartis/symbiotic -y; fi
