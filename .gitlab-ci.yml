@@ -32,7 +32,7 @@
         # check that all expected tools are present and working
         - make configure
         - |
-          for tool in cbmc clang cppcheck gcc predator; do
+          for tool in cbmc clang cppcheck predator; do
             grep TOOL_ENABLE_${tool} workdir/CMakeCache.txt
           done
         - if [[ ! -v NO_DIVINE ]]; then grep TOOL_ENABLE_divine workdir/CMakeCache.txt; fi

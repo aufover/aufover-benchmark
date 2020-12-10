@@ -33,8 +33,14 @@ set(TOOLS_SUPPORTED ${TOOLS_SUPPORTED} predator)
 set(TOOL_EXEC_predator "${TOOL_EXEC_gcc} -fplugin=predator"
     CACHE STRING "command used to run predator")
 
+# minimum required version of gcc (to avoid special-casing old versions of gcc)
+set(gcc_min_version 11)
+
+# command that returns major version number of the specified gcc executable
+set (gcc_version_cmd "echo __GNUC__ | ${TOOL_EXEC_gcc} -E - | tail -1")
+
 # probe for available static analyzers and formal verification tools
-append_tool_on_succ(gcc        "${TOOL_EXEC_gcc} -xc ${empty_main} -o /dev/null")
+append_tool_on_succ(gcc        "test ${gcc_min_version} -le \$(${gcc_version_cmd})")
 append_tool_on_succ(clang      "${TOOL_EXEC_clang} --analyze -Xanalyzer \
                                 -analyzer-output=text -xc ${empty_main}")
 append_tool_on_succ(cppcheck   "${TOOL_EXEC_cppcheck} --quiet ${empty_main}")

@@ -1,5 +1,8 @@
 Error: COMPILER_WARNING:
 ./0002-test.c: scope_hint: In function 'main'
-./0002-test.c:7:5: warning[-Wfree-nonheap-object]: attempt to free a non-heap object 'a'
+./0002-test.c:7:5: warning[-Wfree-nonheap-object]: 'free' called on unallocated object 'a'
 #    7 |     free(a); /* invalid free */
 #      |     ^~~~~~~
+./0002-test.c:3:5: note: declared here
+#    3 | int a[10] = { 42 };
+#      |     ^
