@@ -1,0 +1,86 @@
+---
+name: Fedora CI
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: '0 10 * * 1'
+
+jobs:
+  build:
+    name: Fedora
+    strategy:
+      fail-fast: false
+      matrix:
+        # Fedora release targets
+        release: [32, 33, 34, rawhide]
+
+    runs-on: ubuntu-latest
+    container:
+      image: fedora:${{matrix.release}}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install Copr support and make
+        run: dnf install dnf-plugins-core make -y
+
+      - name: Enable given copr repositories
+        run: |
+          dnf copr enable lzaoral/Divine -y
+          dnf copr enable kdudka/predator -y
+          if [[ ! -v NO_SYMBIOTIC ]]; then
+            dnf copr enable jamartis/symbiotic -y
+          fi
+
+      - name: Update the system and install dependencies
+        run: |
+          dnf update -y
+          DNF_OPTS=-y make install-deps
+
+      - name: Check that all expected tools are present and working
+        run: |
+          make configure
+          for tool in cbmc clang cppcheck divine predator; do
+            grep TOOL_ENABLE_${tool} workdir/CMakeCache.txt
+          done
+
+          # benchmark requires GCC 11+
+          case "${{matrix.release}}" in
+            3[4-9]|rawhide)
+              grep TOOL_ENABLE_gcc workdir/CMakeCache.txt
+              ;;
+          esac
+
+          if [[ ! -v NO_SYMBIOTIC ]]; then
+            grep TOOL_ENABLE_symbiotic workdir/CMakeCache.txt
+          fi
+
+      # first run only cheap tests, so that we can report failures sooner
+      - name: Cheap tests
+        run: CTEST_OPTS='-LE EXPENSIVE' make check
+
+      - name: Test single-c/sync.sh script
+        run: |
+          SYNC_EXISTING_ONLY=1 tests/single-c/sync.sh -LE EXPENSIVE
+          CTEST_OPTS='-LE EXPENSIVE' make check
+
+      - name: Expensive tests
+        run: CTEST_OPTS='-L EXPENSIVE' make check
+
+      # try to use source directory as a working directory
+      - name: In-source tests
+        run: |
+          cd tests
+          cmake .
+          ctest -j$(nproc) --output-on-failure -LE EXPENSIVE
+
+      # logs are useful only when something fails
+      - name: Upload Artifact
+        if: failure()
+        uses: actions/upload-artifact@v2
+        with:
+          name: fedora-${{matrix.release}}
+          path: workdir/
+          retention-days: 5
