@@ -4,6 +4,12 @@ cmake_minimum_required(VERSION 3.0)
 # force use of POSIX locale
 set(ENV{LC_ALL} "C")
 
+# See https://cmake.org/cmake/help/latest/policy/CMP0110.html
+# Introduced in CMake 3.19
+if(POLICY CMP0110)
+    cmake_policy(SET CMP0110 OLD)
+endif()
+
 # declare that we do not need any C/C++ compiler
 project(aufover-benchmark NONE)
 
