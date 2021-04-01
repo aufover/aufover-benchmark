@@ -16,6 +16,7 @@ Error: CBMC_WARNING:
 ./test-0003.c:7: note: main:7:pointer:        val = NULL
 ./test-0003.c:8: note: main:8:pointer:        ptr = NULL
 ./test-0003.c:8: note: main:8:pointer:        ptr = val!0@1
+./test-0003.c:12: note: free argument must be NULL or valid pointer
 ./test-0003.c:12: note: free argument must be dynamic object
 
 Error: CBMC_WARNING:
@@ -48,7 +49,7 @@ Error: CBMC_WARNING:
 ./test-0003.c:8: note: main:8:pointer:        ptr = val!0@1
 ./test-0003.c:27: note: main:27:pointer:        item = NULL
 ./test-0003.c:27: note: from_main:function-call:malloc
-./test-0003.c:27: note: function_parameter_set_in:main:27:integer:        malloc_size = 8ul
+./test-0003.c:27: note: function_parameter_set_in:main:27:integer:        malloc_size = sizeof(void *) /*8ul*/ 
 ./test-0003.c:28: note: from_main:function-call:free
 ./test-0003.c:29: note: free argument must be NULL or valid pointer
 
@@ -62,7 +63,7 @@ Error: CBMC_WARNING:
 ./test-0003.c:8: note: main:8:pointer:        ptr = val!0@1
 ./test-0003.c:27: note: main:27:pointer:        item = NULL
 ./test-0003.c:27: note: from_main:function-call:malloc
-./test-0003.c:27: note: function_parameter_set_in:main:27:integer:        malloc_size = 8ul
+./test-0003.c:27: note: function_parameter_set_in:main:27:integer:        malloc_size = sizeof(void *) /*8ul*/ 
 ./test-0003.c:28: note: from_main:function-call:free
 ./test-0003.c:29: note: free argument must be NULL or valid pointer
 ./test-0003.c:29: note: double free
