@@ -3,13 +3,13 @@ Error: CBMC_WARNING:
 ./0079-test.c:4: note: from_entry_point_function:function-call:main
 ./0079-test.c:6: note: main:6:pointer:        ptr1 = NULL
 ./0079-test.c:6: note: from_main:function-call:malloc
-./0079-test.c:6: note: function_parameter_set_in:main:6:integer:        malloc_size = 1ul
+./0079-test.c:6: note: function_parameter_set_in:main:6:integer:        malloc_size = sizeof(char) /*1ul*/ 
 ./0079-test.c:6: note: main:6:pointer:        ptr1 = dynamic_object1
 ./0079-test.c:10: note: main:10:pointer:        ptr2 = NULL
 ./0079-test.c:10: note: from_main:function-call:realloc
 ./0079-test.c:10: note: function_parameter_set_in:main:10:pointer:        ptr = dynamic_object1
-./0079-test.c:10: note: function_parameter_set_in:main:10:integer:        malloc_size = 2ul
-<builtin-library-realloc>:26: note: function_parameter_set_in:realloc:26:integer:        malloc_size = 2ul
+./0079-test.c:10: note: function_parameter_set_in:main:10:integer:        malloc_size = sizeof(char) * 2ul /*2ul*/ 
+<builtin-library-realloc>:26: note: function_parameter_set_in:realloc:26:integer:        malloc_size = sizeof(char) * 2ul /*2ul*/ 
 <builtin-library-realloc>:30: note: function_parameter_set_in:realloc:30:pointer:        ptr = dynamic_object1
 ./0079-test.c:10: note: main:10:pointer:        ptr2 = dynamic_object2
 ./0079-test.c:16: note: from_main:function-call:__errno_location
@@ -20,6 +20,6 @@ Error: CBMC_WARNING:
 ./0079-test.c:17: note: function_parameter_set_in:main:17:pointer:        ptr = dynamic_object2
 ./0079-test.c:17: note: function_parameter_set_in:main:17:integer:        malloc_size = 0ul
 <builtin-library-realloc>:20: note: function_parameter_set_in:realloc:20:pointer:        ptr = dynamic_object2
-<builtin-library-realloc>:21: note: function_parameter_set_in:realloc:21:integer:        malloc_size = 1ul
+<builtin-library-realloc>:21: note: function_parameter_set_in:realloc:21:integer:        malloc_size = sizeof(char) /*1ul*/ 
 ./0079-test.c:17: note: main:17:pointer:        ptr3 = dynamic_object3
 ./0079-test.c:27: note: from_main:function-return:main

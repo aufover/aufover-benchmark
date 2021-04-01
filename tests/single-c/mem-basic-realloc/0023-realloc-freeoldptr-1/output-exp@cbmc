@@ -4,13 +4,13 @@ Error: CBMC_WARNING:
 ./0023-test.c:3: note: from_entry_point_function:function-call:main
 ./0023-test.c:5: note: main:5:pointer:        ptr = NULL
 ./0023-test.c:5: note: from_main:function-call:malloc
-./0023-test.c:5: note: function_parameter_set_in:main:5:integer:        malloc_size = 1ul
+./0023-test.c:5: note: function_parameter_set_in:main:5:integer:        malloc_size = sizeof(char) /*1ul*/ 
 ./0023-test.c:5: note: main:5:pointer:        ptr = dynamic_object1
 ./0023-test.c:9: note: main:9:pointer:        newptr = NULL
 ./0023-test.c:9: note: from_main:function-call:realloc
 ./0023-test.c:9: note: function_parameter_set_in:main:9:pointer:        ptr = dynamic_object1
-./0023-test.c:9: note: function_parameter_set_in:main:9:integer:        malloc_size = 2ul
-<builtin-library-realloc>:26: note: function_parameter_set_in:realloc:26:integer:        malloc_size = 2ul
+./0023-test.c:9: note: function_parameter_set_in:main:9:integer:        malloc_size = sizeof(char) * 2ul /*2ul*/ 
+<builtin-library-realloc>:26: note: function_parameter_set_in:realloc:26:integer:        malloc_size = sizeof(char) * 2ul /*2ul*/ 
 <builtin-library-realloc>:30: note: function_parameter_set_in:realloc:30:pointer:        ptr = dynamic_object1
 ./0023-test.c:9: note: main:9:pointer:        newptr = dynamic_object2
 ./0023-test.c:15: note: free argument must be NULL or valid pointer
@@ -22,13 +22,13 @@ Error: CBMC_WARNING:
 ./0023-test.c:3: note: from_entry_point_function:function-call:main
 ./0023-test.c:5: note: main:5:pointer:        ptr = NULL
 ./0023-test.c:5: note: from_main:function-call:malloc
-./0023-test.c:5: note: function_parameter_set_in:main:5:integer:        malloc_size = 1ul
+./0023-test.c:5: note: function_parameter_set_in:main:5:integer:        malloc_size = sizeof(char) /*1ul*/ 
 ./0023-test.c:5: note: main:5:pointer:        ptr = dynamic_object1
 ./0023-test.c:9: note: main:9:pointer:        newptr = NULL
 ./0023-test.c:9: note: from_main:function-call:realloc
 ./0023-test.c:9: note: function_parameter_set_in:main:9:pointer:        ptr = dynamic_object1
-./0023-test.c:9: note: function_parameter_set_in:main:9:integer:        malloc_size = 2ul
-<builtin-library-realloc>:26: note: function_parameter_set_in:realloc:26:integer:        malloc_size = 2ul
+./0023-test.c:9: note: function_parameter_set_in:main:9:integer:        malloc_size = sizeof(char) * 2ul /*2ul*/ 
+<builtin-library-realloc>:26: note: function_parameter_set_in:realloc:26:integer:        malloc_size = sizeof(char) * 2ul /*2ul*/ 
 <builtin-library-realloc>:30: note: function_parameter_set_in:realloc:30:pointer:        ptr = dynamic_object1
 ./0023-test.c:9: note: main:9:pointer:        newptr = dynamic_object2
 ./0023-test.c:15: note: free argument must be NULL or valid pointer
