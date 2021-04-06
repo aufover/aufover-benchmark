@@ -1,0 +1,5 @@
+#!/bin/bash
+sed -E \
+    -e 's| \(loaded from variable [^)]+\)$||' \
+    -e 's|\.?/.*|& <--[clang]|' \
+    | csgrep --prune=0
