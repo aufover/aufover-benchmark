@@ -1,6 +1,6 @@
 #include <stdlib.h>
 
-void test0(void) {
+static void test0(void) {
     void **x = NULL;
     *x = (void *)&x;
 }

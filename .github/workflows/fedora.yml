@@ -28,8 +28,9 @@ jobs:
 
       - name: Enable given copr repositories
         run: |
-          dnf copr enable lzaoral/Divine -y
-          dnf copr enable kdudka/predator -y
+          dnf copr enable -y lzaoral/Divine
+          dnf copr enable -y kdudka/csdiff
+          dnf copr enable -y kdudka/predator
           if [[ ! -v NO_SYMBIOTIC ]]; then
             dnf copr enable jamartis/symbiotic -y
           fi
