@@ -37,7 +37,7 @@ set(TOOL_EXEC_predator "${TOOL_EXEC_gcc} -fplugin=predator"
 set(gcc_min_version 11)
 
 # command that returns major version number of the specified gcc executable
-set (gcc_version_cmd "echo __GNUC__ | ${TOOL_EXEC_gcc} -E - | tail -1")
+set(gcc_version_cmd "echo __GNUC__ | ${TOOL_EXEC_gcc} -E - | tail -1")
 
 # probe for available static analyzers and formal verification tools
 append_tool_on_succ(gcc        "test ${gcc_min_version} -le \$(${gcc_version_cmd})")
