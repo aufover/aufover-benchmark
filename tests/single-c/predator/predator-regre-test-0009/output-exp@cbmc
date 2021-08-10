@@ -11,12 +11,12 @@ Error: CBMC_WARNING:
 ./test-0009.c:11: note: from_main:function-call:malloc
 ./test-0009.c:11: note: function_parameter_set_in:main:11:integer:        malloc_size = sizeof(char) /*1ul*/ 
 ./test-0009.c:12: note: main:12:pointer:        err = ((const void **)NULL)
-./test-0009.c:15: note: dereference failure: pointer outside dynamic object bounds in *err
+./test-0009.c:15: note: dereference failure: pointer outside object bounds in *err
 ./test-0009.c:18: note: from_main:function-return:main
 
 Error: CBMC_WARNING:
 ./test-0009.c: scope_hint: In function ‘main’:
-./test-0009.c:15: error: pointer_dereference : dereference failure: pointer outside dynamic object bounds in *err
+./test-0009.c:15: error: pointer_dereference : dereference failure: pointer outside object bounds in *err
 ./test-0009.c:3: note: from_entry_point_function:function-call:main
 ./test-0009.c:5: note: main:5:pointer:        mem = NULL
 ./test-0009.c:5: note: from_main:function-call:malloc
@@ -28,4 +28,4 @@ Error: CBMC_WARNING:
 ./test-0009.c:11: note: from_main:function-call:malloc
 ./test-0009.c:11: note: function_parameter_set_in:main:11:integer:        malloc_size = sizeof(char) /*1ul*/ 
 ./test-0009.c:12: note: main:12:pointer:        err = ((const void **)NULL)
-./test-0009.c:15: note: dereference failure: pointer outside dynamic object bounds in *err
+./test-0009.c:15: note: dereference failure: pointer outside object bounds in *err
