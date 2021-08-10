@@ -1,6 +1,6 @@
 Error: CBMC_WARNING:
 ./test-0006.c: scope_hint: In function ‘main’:
-./test-0006.c:29: error: pointer_arithmetic : pointer arithmetic: pointer outside dynamic object bounds in b - 1l
+./test-0006.c:29: error: pointer_arithmetic : pointer arithmetic: pointer outside object bounds in b - 1l
 ./test-0006.c:5: note: from_entry_point_function:function-call:main
 ./test-0006.c:7: note: main:7:integer:        length = 0
 ./test-0006.c:7: note: main:7:integer:        length = 99
@@ -32,9 +32,9 @@ Error: CBMC_WARNING:
 ./test-0006.c:11: note: main:11:integer:        i = 22
 ./test-0006.c:11: note: main:11:integer:        i = 23
 ./test-0006.c:11: note: main:11:integer:        i = 24
-./test-0006.c:12: note: dereference failure: pointer outside dynamic object bounds in arr[(signed long int)i]
+./test-0006.c:12: note: dereference failure: pointer outside object bounds in arr[(signed long int)i]
 ./test-0006.c:11: note: main:11:integer:        i = 25
-./test-0006.c:12: note: pointer arithmetic: pointer outside dynamic object bounds in arr + (signed long int)i
+./test-0006.c:12: note: pointer arithmetic: pointer outside object bounds in arr + (signed long int)i
 ./test-0006.c:11: note: main:11:integer:        i = 26
 ./test-0006.c:11: note: main:11:integer:        i = 27
 ./test-0006.c:11: note: main:11:integer:        i = 28
@@ -134,9 +134,9 @@ Error: CBMC_WARNING:
 ./test-0006.c:15: note: main:15:integer:        i = 22
 ./test-0006.c:15: note: main:15:integer:        i = 23
 ./test-0006.c:15: note: main:15:integer:        i = 24
-./test-0006.c:16: note: dereference failure: pointer outside dynamic object bounds in arr[(signed long int)i]
+./test-0006.c:16: note: dereference failure: pointer outside object bounds in arr[(signed long int)i]
 ./test-0006.c:15: note: main:15:integer:        i = 25
-./test-0006.c:16: note: pointer arithmetic: pointer outside dynamic object bounds in arr + (signed long int)i
+./test-0006.c:16: note: pointer arithmetic: pointer outside object bounds in arr + (signed long int)i
 ./test-0006.c:15: note: main:15:integer:        i = 26
 ./test-0006.c:15: note: main:15:integer:        i = 27
 ./test-0006.c:15: note: main:15:integer:        i = 28
@@ -211,21 +211,21 @@ Error: CBMC_WARNING:
 ./test-0006.c:15: note: main:15:integer:        i = 97
 ./test-0006.c:15: note: main:15:integer:        i = 98
 ./test-0006.c:15: note: main:15:integer:        i = 99
-./test-0006.c:20: note: pointer arithmetic: pointer outside dynamic object bounds in arr + (signed long int)(length / 2 + 1)
-./test-0006.c:20: note: dereference failure: pointer outside dynamic object bounds in arr[(signed long int)(length / 2 + 1)]
+./test-0006.c:20: note: pointer arithmetic: pointer outside object bounds in arr + (signed long int)(length / 2 + 1)
+./test-0006.c:20: note: dereference failure: pointer outside object bounds in arr[(signed long int)(length / 2 + 1)]
 ./test-0006.c:21: note: main:21:pointer:        a = ((signed int *)NULL)
 ./test-0006.c:22: note: main:22:pointer:        b = ((signed int *)NULL)
-./test-0006.c:22: note: pointer arithmetic: pointer outside dynamic object bounds in arr + (signed long int)length
-./test-0006.c:22: note: pointer arithmetic: pointer outside dynamic object bounds in (arr + (signed long int)length) - (signed long int)1
+./test-0006.c:22: note: pointer arithmetic: pointer outside object bounds in arr + (signed long int)length
+./test-0006.c:22: note: pointer arithmetic: pointer outside object bounds in (arr + (signed long int)length) - (signed long int)1
 ./test-0006.c:23: note: main:23:integer:        tmp = 0
-./test-0006.c:24: note: dereference failure: pointer outside dynamic object bounds in *b
-./test-0006.c:26: note: dereference failure: pointer outside dynamic object bounds in *b
-./test-0006.c:27: note: dereference failure: pointer outside dynamic object bounds in *b
-./test-0006.c:29: note: pointer arithmetic: pointer outside dynamic object bounds in b - 1l
+./test-0006.c:24: note: dereference failure: pointer outside object bounds in *b
+./test-0006.c:26: note: dereference failure: pointer outside object bounds in *b
+./test-0006.c:27: note: dereference failure: pointer outside object bounds in *b
+./test-0006.c:29: note: pointer arithmetic: pointer outside object bounds in b - 1l
 
 Error: CBMC_WARNING:
 ./test-0006.c: scope_hint: In function ‘main’:
-./test-0006.c:28: error: pointer_arithmetic : pointer arithmetic: pointer outside dynamic object bounds in a + 1l
+./test-0006.c:28: error: pointer_arithmetic : pointer arithmetic: pointer outside object bounds in a + 1l
 ./test-0006.c:5: note: from_entry_point_function:function-call:main
 ./test-0006.c:7: note: main:7:integer:        length = 0
 ./test-0006.c:7: note: main:7:integer:        length = 99
@@ -257,9 +257,9 @@ Error: CBMC_WARNING:
 ./test-0006.c:11: note: main:11:integer:        i = 22
 ./test-0006.c:11: note: main:11:integer:        i = 23
 ./test-0006.c:11: note: main:11:integer:        i = 24
-./test-0006.c:12: note: dereference failure: pointer outside dynamic object bounds in arr[(signed long int)i]
+./test-0006.c:12: note: dereference failure: pointer outside object bounds in arr[(signed long int)i]
 ./test-0006.c:11: note: main:11:integer:        i = 25
-./test-0006.c:12: note: pointer arithmetic: pointer outside dynamic object bounds in arr + (signed long int)i
+./test-0006.c:12: note: pointer arithmetic: pointer outside object bounds in arr + (signed long int)i
 ./test-0006.c:11: note: main:11:integer:        i = 26
 ./test-0006.c:11: note: main:11:integer:        i = 27
 ./test-0006.c:11: note: main:11:integer:        i = 28
@@ -359,9 +359,9 @@ Error: CBMC_WARNING:
 ./test-0006.c:15: note: main:15:integer:        i = 22
 ./test-0006.c:15: note: main:15:integer:        i = 23
 ./test-0006.c:15: note: main:15:integer:        i = 24
-./test-0006.c:16: note: dereference failure: pointer outside dynamic object bounds in arr[(signed long int)i]
+./test-0006.c:16: note: dereference failure: pointer outside object bounds in arr[(signed long int)i]
 ./test-0006.c:15: note: main:15:integer:        i = 25
-./test-0006.c:16: note: pointer arithmetic: pointer outside dynamic object bounds in arr + (signed long int)i
+./test-0006.c:16: note: pointer arithmetic: pointer outside object bounds in arr + (signed long int)i
 ./test-0006.c:15: note: main:15:integer:        i = 26
 ./test-0006.c:15: note: main:15:integer:        i = 27
 ./test-0006.c:15: note: main:15:integer:        i = 28
@@ -436,24 +436,24 @@ Error: CBMC_WARNING:
 ./test-0006.c:15: note: main:15:integer:        i = 97
 ./test-0006.c:15: note: main:15:integer:        i = 98
 ./test-0006.c:15: note: main:15:integer:        i = 99
-./test-0006.c:20: note: pointer arithmetic: pointer outside dynamic object bounds in arr + (signed long int)(length / 2 + 1)
-./test-0006.c:20: note: dereference failure: pointer outside dynamic object bounds in arr[(signed long int)(length / 2 + 1)]
+./test-0006.c:20: note: pointer arithmetic: pointer outside object bounds in arr + (signed long int)(length / 2 + 1)
+./test-0006.c:20: note: dereference failure: pointer outside object bounds in arr[(signed long int)(length / 2 + 1)]
 ./test-0006.c:21: note: main:21:pointer:        a = ((signed int *)NULL)
 ./test-0006.c:22: note: main:22:pointer:        b = ((signed int *)NULL)
-./test-0006.c:22: note: pointer arithmetic: pointer outside dynamic object bounds in arr + (signed long int)length
-./test-0006.c:22: note: pointer arithmetic: pointer outside dynamic object bounds in (arr + (signed long int)length) - (signed long int)1
+./test-0006.c:22: note: pointer arithmetic: pointer outside object bounds in arr + (signed long int)length
+./test-0006.c:22: note: pointer arithmetic: pointer outside object bounds in (arr + (signed long int)length) - (signed long int)1
 ./test-0006.c:23: note: main:23:integer:        tmp = 0
-./test-0006.c:24: note: dereference failure: pointer outside dynamic object bounds in *b
-./test-0006.c:26: note: dereference failure: pointer outside dynamic object bounds in *b
-./test-0006.c:27: note: dereference failure: pointer outside dynamic object bounds in *b
-./test-0006.c:29: note: pointer arithmetic: pointer outside dynamic object bounds in b - 1l
-./test-0006.c:24: note: dereference failure: pointer outside dynamic object bounds in *a
-./test-0006.c:25: note: dereference failure: pointer outside dynamic object bounds in *a
-./test-0006.c:28: note: pointer arithmetic: pointer outside dynamic object bounds in a + 1l
+./test-0006.c:24: note: dereference failure: pointer outside object bounds in *b
+./test-0006.c:26: note: dereference failure: pointer outside object bounds in *b
+./test-0006.c:27: note: dereference failure: pointer outside object bounds in *b
+./test-0006.c:29: note: pointer arithmetic: pointer outside object bounds in b - 1l
+./test-0006.c:24: note: dereference failure: pointer outside object bounds in *a
+./test-0006.c:25: note: dereference failure: pointer outside object bounds in *a
+./test-0006.c:28: note: pointer arithmetic: pointer outside object bounds in a + 1l
 
 Error: CBMC_WARNING:
 ./test-0006.c: scope_hint: In function ‘main’:
-./test-0006.c:27: error: pointer_dereference : dereference failure: pointer outside dynamic object bounds in *b
+./test-0006.c:27: error: pointer_dereference : dereference failure: pointer outside object bounds in *b
 ./test-0006.c:5: note: from_entry_point_function:function-call:main
 ./test-0006.c:7: note: main:7:integer:        length = 0
 ./test-0006.c:7: note: main:7:integer:        length = 99
@@ -485,9 +485,9 @@ Error: CBMC_WARNING:
 ./test-0006.c:11: note: main:11:integer:        i = 22
 ./test-0006.c:11: note: main:11:integer:        i = 23
 ./test-0006.c:11: note: main:11:integer:        i = 24
-./test-0006.c:12: note: dereference failure: pointer outside dynamic object bounds in arr[(signed long int)i]
+./test-0006.c:12: note: dereference failure: pointer outside object bounds in arr[(signed long int)i]
 ./test-0006.c:11: note: main:11:integer:        i = 25
-./test-0006.c:12: note: pointer arithmetic: pointer outside dynamic object bounds in arr + (signed long int)i
+./test-0006.c:12: note: pointer arithmetic: pointer outside object bounds in arr + (signed long int)i
 ./test-0006.c:11: note: main:11:integer:        i = 26
 ./test-0006.c:11: note: main:11:integer:        i = 27
 ./test-0006.c:11: note: main:11:integer:        i = 28
@@ -587,9 +587,9 @@ Error: CBMC_WARNING:
 ./test-0006.c:15: note: main:15:integer:        i = 22
 ./test-0006.c:15: note: main:15:integer:        i = 23
 ./test-0006.c:15: note: main:15:integer:        i = 24
-./test-0006.c:16: note: dereference failure: pointer outside dynamic object bounds in arr[(signed long int)i]
+./test-0006.c:16: note: dereference failure: pointer outside object bounds in arr[(signed long int)i]
 ./test-0006.c:15: note: main:15:integer:        i = 25
-./test-0006.c:16: note: pointer arithmetic: pointer outside dynamic object bounds in arr + (signed long int)i
+./test-0006.c:16: note: pointer arithmetic: pointer outside object bounds in arr + (signed long int)i
 ./test-0006.c:15: note: main:15:integer:        i = 26
 ./test-0006.c:15: note: main:15:integer:        i = 27
 ./test-0006.c:15: note: main:15:integer:        i = 28
@@ -664,20 +664,20 @@ Error: CBMC_WARNING:
 ./test-0006.c:15: note: main:15:integer:        i = 97
 ./test-0006.c:15: note: main:15:integer:        i = 98
 ./test-0006.c:15: note: main:15:integer:        i = 99
-./test-0006.c:20: note: pointer arithmetic: pointer outside dynamic object bounds in arr + (signed long int)(length / 2 + 1)
-./test-0006.c:20: note: dereference failure: pointer outside dynamic object bounds in arr[(signed long int)(length / 2 + 1)]
+./test-0006.c:20: note: pointer arithmetic: pointer outside object bounds in arr + (signed long int)(length / 2 + 1)
+./test-0006.c:20: note: dereference failure: pointer outside object bounds in arr[(signed long int)(length / 2 + 1)]
 ./test-0006.c:21: note: main:21:pointer:        a = ((signed int *)NULL)
 ./test-0006.c:22: note: main:22:pointer:        b = ((signed int *)NULL)
-./test-0006.c:22: note: pointer arithmetic: pointer outside dynamic object bounds in arr + (signed long int)length
-./test-0006.c:22: note: pointer arithmetic: pointer outside dynamic object bounds in (arr + (signed long int)length) - (signed long int)1
+./test-0006.c:22: note: pointer arithmetic: pointer outside object bounds in arr + (signed long int)length
+./test-0006.c:22: note: pointer arithmetic: pointer outside object bounds in (arr + (signed long int)length) - (signed long int)1
 ./test-0006.c:23: note: main:23:integer:        tmp = 0
-./test-0006.c:24: note: dereference failure: pointer outside dynamic object bounds in *b
-./test-0006.c:26: note: dereference failure: pointer outside dynamic object bounds in *b
-./test-0006.c:27: note: dereference failure: pointer outside dynamic object bounds in *b
+./test-0006.c:24: note: dereference failure: pointer outside object bounds in *b
+./test-0006.c:26: note: dereference failure: pointer outside object bounds in *b
+./test-0006.c:27: note: dereference failure: pointer outside object bounds in *b
 
 Error: CBMC_WARNING:
 ./test-0006.c: scope_hint: In function ‘main’:
-./test-0006.c:26: error: pointer_dereference : dereference failure: pointer outside dynamic object bounds in *b
+./test-0006.c:26: error: pointer_dereference : dereference failure: pointer outside object bounds in *b
 ./test-0006.c:5: note: from_entry_point_function:function-call:main
 ./test-0006.c:7: note: main:7:integer:        length = 0
 ./test-0006.c:7: note: main:7:integer:        length = 99
@@ -709,9 +709,9 @@ Error: CBMC_WARNING:
 ./test-0006.c:11: note: main:11:integer:        i = 22
 ./test-0006.c:11: note: main:11:integer:        i = 23
 ./test-0006.c:11: note: main:11:integer:        i = 24
-./test-0006.c:12: note: dereference failure: pointer outside dynamic object bounds in arr[(signed long int)i]
+./test-0006.c:12: note: dereference failure: pointer outside object bounds in arr[(signed long int)i]
 ./test-0006.c:11: note: main:11:integer:        i = 25
-./test-0006.c:12: note: pointer arithmetic: pointer outside dynamic object bounds in arr + (signed long int)i
+./test-0006.c:12: note: pointer arithmetic: pointer outside object bounds in arr + (signed long int)i
 ./test-0006.c:11: note: main:11:integer:        i = 26
 ./test-0006.c:11: note: main:11:integer:        i = 27
 ./test-0006.c:11: note: main:11:integer:        i = 28
@@ -811,9 +811,9 @@ Error: CBMC_WARNING:
 ./test-0006.c:15: note: main:15:integer:        i = 22
 ./test-0006.c:15: note: main:15:integer:        i = 23
 ./test-0006.c:15: note: main:15:integer:        i = 24
-./test-0006.c:16: note: dereference failure: pointer outside dynamic object bounds in arr[(signed long int)i]
+./test-0006.c:16: note: dereference failure: pointer outside object bounds in arr[(signed long int)i]
 ./test-0006.c:15: note: main:15:integer:        i = 25
-./test-0006.c:16: note: pointer arithmetic: pointer outside dynamic object bounds in arr + (signed long int)i
+./test-0006.c:16: note: pointer arithmetic: pointer outside object bounds in arr + (signed long int)i
 ./test-0006.c:15: note: main:15:integer:        i = 26
 ./test-0006.c:15: note: main:15:integer:        i = 27
 ./test-0006.c:15: note: main:15:integer:        i = 28
@@ -888,19 +888,19 @@ Error: CBMC_WARNING:
 ./test-0006.c:15: note: main:15:integer:        i = 97
 ./test-0006.c:15: note: main:15:integer:        i = 98
 ./test-0006.c:15: note: main:15:integer:        i = 99
-./test-0006.c:20: note: pointer arithmetic: pointer outside dynamic object bounds in arr + (signed long int)(length / 2 + 1)
-./test-0006.c:20: note: dereference failure: pointer outside dynamic object bounds in arr[(signed long int)(length / 2 + 1)]
+./test-0006.c:20: note: pointer arithmetic: pointer outside object bounds in arr + (signed long int)(length / 2 + 1)
+./test-0006.c:20: note: dereference failure: pointer outside object bounds in arr[(signed long int)(length / 2 + 1)]
 ./test-0006.c:21: note: main:21:pointer:        a = ((signed int *)NULL)
 ./test-0006.c:22: note: main:22:pointer:        b = ((signed int *)NULL)
-./test-0006.c:22: note: pointer arithmetic: pointer outside dynamic object bounds in arr + (signed long int)length
-./test-0006.c:22: note: pointer arithmetic: pointer outside dynamic object bounds in (arr + (signed long int)length) - (signed long int)1
+./test-0006.c:22: note: pointer arithmetic: pointer outside object bounds in arr + (signed long int)length
+./test-0006.c:22: note: pointer arithmetic: pointer outside object bounds in (arr + (signed long int)length) - (signed long int)1
 ./test-0006.c:23: note: main:23:integer:        tmp = 0
-./test-0006.c:24: note: dereference failure: pointer outside dynamic object bounds in *b
-./test-0006.c:26: note: dereference failure: pointer outside dynamic object bounds in *b
+./test-0006.c:24: note: dereference failure: pointer outside object bounds in *b
+./test-0006.c:26: note: dereference failure: pointer outside object bounds in *b
 
 Error: CBMC_WARNING:
 ./test-0006.c: scope_hint: In function ‘main’:
-./test-0006.c:25: error: pointer_dereference : dereference failure: pointer outside dynamic object bounds in *a
+./test-0006.c:25: error: pointer_dereference : dereference failure: pointer outside object bounds in *a
 ./test-0006.c:5: note: from_entry_point_function:function-call:main
 ./test-0006.c:7: note: main:7:integer:        length = 0
 ./test-0006.c:7: note: main:7:integer:        length = 99
@@ -932,9 +932,9 @@ Error: CBMC_WARNING:
 ./test-0006.c:11: note: main:11:integer:        i = 22
 ./test-0006.c:11: note: main:11:integer:        i = 23
 ./test-0006.c:11: note: main:11:integer:        i = 24
-./test-0006.c:12: note: dereference failure: pointer outside dynamic object bounds in arr[(signed long int)i]
+./test-0006.c:12: note: dereference failure: pointer outside object bounds in arr[(signed long int)i]
 ./test-0006.c:11: note: main:11:integer:        i = 25
-./test-0006.c:12: note: pointer arithmetic: pointer outside dynamic object bounds in arr + (signed long int)i
+./test-0006.c:12: note: pointer arithmetic: pointer outside object bounds in arr + (signed long int)i
 ./test-0006.c:11: note: main:11:integer:        i = 26
 ./test-0006.c:11: note: main:11:integer:        i = 27
 ./test-0006.c:11: note: main:11:integer:        i = 28
@@ -1034,9 +1034,9 @@ Error: CBMC_WARNING:
 ./test-0006.c:15: note: main:15:integer:        i = 22
 ./test-0006.c:15: note: main:15:integer:        i = 23
 ./test-0006.c:15: note: main:15:integer:        i = 24
-./test-0006.c:16: note: dereference failure: pointer outside dynamic object bounds in arr[(signed long int)i]
+./test-0006.c:16: note: dereference failure: pointer outside object bounds in arr[(signed long int)i]
 ./test-0006.c:15: note: main:15:integer:        i = 25
-./test-0006.c:16: note: pointer arithmetic: pointer outside dynamic object bounds in arr + (signed long int)i
+./test-0006.c:16: note: pointer arithmetic: pointer outside object bounds in arr + (signed long int)i
 ./test-0006.c:15: note: main:15:integer:        i = 26
 ./test-0006.c:15: note: main:15:integer:        i = 27
 ./test-0006.c:15: note: main:15:integer:        i = 28
@@ -1111,23 +1111,23 @@ Error: CBMC_WARNING:
 ./test-0006.c:15: note: main:15:integer:        i = 97
 ./test-0006.c:15: note: main:15:integer:        i = 98
 ./test-0006.c:15: note: main:15:integer:        i = 99
-./test-0006.c:20: note: pointer arithmetic: pointer outside dynamic object bounds in arr + (signed long int)(length / 2 + 1)
-./test-0006.c:20: note: dereference failure: pointer outside dynamic object bounds in arr[(signed long int)(length / 2 + 1)]
+./test-0006.c:20: note: pointer arithmetic: pointer outside object bounds in arr + (signed long int)(length / 2 + 1)
+./test-0006.c:20: note: dereference failure: pointer outside object bounds in arr[(signed long int)(length / 2 + 1)]
 ./test-0006.c:21: note: main:21:pointer:        a = ((signed int *)NULL)
 ./test-0006.c:22: note: main:22:pointer:        b = ((signed int *)NULL)
-./test-0006.c:22: note: pointer arithmetic: pointer outside dynamic object bounds in arr + (signed long int)length
-./test-0006.c:22: note: pointer arithmetic: pointer outside dynamic object bounds in (arr + (signed long int)length) - (signed long int)1
+./test-0006.c:22: note: pointer arithmetic: pointer outside object bounds in arr + (signed long int)length
+./test-0006.c:22: note: pointer arithmetic: pointer outside object bounds in (arr + (signed long int)length) - (signed long int)1
 ./test-0006.c:23: note: main:23:integer:        tmp = 0
-./test-0006.c:24: note: dereference failure: pointer outside dynamic object bounds in *b
-./test-0006.c:26: note: dereference failure: pointer outside dynamic object bounds in *b
-./test-0006.c:27: note: dereference failure: pointer outside dynamic object bounds in *b
-./test-0006.c:29: note: pointer arithmetic: pointer outside dynamic object bounds in b - 1l
-./test-0006.c:24: note: dereference failure: pointer outside dynamic object bounds in *a
-./test-0006.c:25: note: dereference failure: pointer outside dynamic object bounds in *a
+./test-0006.c:24: note: dereference failure: pointer outside object bounds in *b
+./test-0006.c:26: note: dereference failure: pointer outside object bounds in *b
+./test-0006.c:27: note: dereference failure: pointer outside object bounds in *b
+./test-0006.c:29: note: pointer arithmetic: pointer outside object bounds in b - 1l
+./test-0006.c:24: note: dereference failure: pointer outside object bounds in *a
+./test-0006.c:25: note: dereference failure: pointer outside object bounds in *a
 
 Error: CBMC_WARNING:
 ./test-0006.c: scope_hint: In function ‘main’:
-./test-0006.c:24: error: pointer_dereference : dereference failure: pointer outside dynamic object bounds in *b
+./test-0006.c:24: error: pointer_dereference : dereference failure: pointer outside object bounds in *b
 ./test-0006.c:5: note: from_entry_point_function:function-call:main
 ./test-0006.c:7: note: main:7:integer:        length = 0
 ./test-0006.c:7: note: main:7:integer:        length = 99
@@ -1159,9 +1159,9 @@ Error: CBMC_WARNING:
 ./test-0006.c:11: note: main:11:integer:        i = 22
 ./test-0006.c:11: note: main:11:integer:        i = 23
 ./test-0006.c:11: note: main:11:integer:        i = 24
-./test-0006.c:12: note: dereference failure: pointer outside dynamic object bounds in arr[(signed long int)i]
+./test-0006.c:12: note: dereference failure: pointer outside object bounds in arr[(signed long int)i]
 ./test-0006.c:11: note: main:11:integer:        i = 25
-./test-0006.c:12: note: pointer arithmetic: pointer outside dynamic object bounds in arr + (signed long int)i
+./test-0006.c:12: note: pointer arithmetic: pointer outside object bounds in arr + (signed long int)i
 ./test-0006.c:11: note: main:11:integer:        i = 26
 ./test-0006.c:11: note: main:11:integer:        i = 27
 ./test-0006.c:11: note: main:11:integer:        i = 28
@@ -1261,9 +1261,9 @@ Error: CBMC_WARNING:
 ./test-0006.c:15: note: main:15:integer:        i = 22
 ./test-0006.c:15: note: main:15:integer:        i = 23
 ./test-0006.c:15: note: main:15:integer:        i = 24
-./test-0006.c:16: note: dereference failure: pointer outside dynamic object bounds in arr[(signed long int)i]
+./test-0006.c:16: note: dereference failure: pointer outside object bounds in arr[(signed long int)i]
 ./test-0006.c:15: note: main:15:integer:        i = 25
-./test-0006.c:16: note: pointer arithmetic: pointer outside dynamic object bounds in arr + (signed long int)i
+./test-0006.c:16: note: pointer arithmetic: pointer outside object bounds in arr + (signed long int)i
 ./test-0006.c:15: note: main:15:integer:        i = 26
 ./test-0006.c:15: note: main:15:integer:        i = 27
 ./test-0006.c:15: note: main:15:integer:        i = 28
@@ -1338,18 +1338,18 @@ Error: CBMC_WARNING:
 ./test-0006.c:15: note: main:15:integer:        i = 97
 ./test-0006.c:15: note: main:15:integer:        i = 98
 ./test-0006.c:15: note: main:15:integer:        i = 99
-./test-0006.c:20: note: pointer arithmetic: pointer outside dynamic object bounds in arr + (signed long int)(length / 2 + 1)
-./test-0006.c:20: note: dereference failure: pointer outside dynamic object bounds in arr[(signed long int)(length / 2 + 1)]
+./test-0006.c:20: note: pointer arithmetic: pointer outside object bounds in arr + (signed long int)(length / 2 + 1)
+./test-0006.c:20: note: dereference failure: pointer outside object bounds in arr[(signed long int)(length / 2 + 1)]
 ./test-0006.c:21: note: main:21:pointer:        a = ((signed int *)NULL)
 ./test-0006.c:22: note: main:22:pointer:        b = ((signed int *)NULL)
-./test-0006.c:22: note: pointer arithmetic: pointer outside dynamic object bounds in arr + (signed long int)length
-./test-0006.c:22: note: pointer arithmetic: pointer outside dynamic object bounds in (arr + (signed long int)length) - (signed long int)1
+./test-0006.c:22: note: pointer arithmetic: pointer outside object bounds in arr + (signed long int)length
+./test-0006.c:22: note: pointer arithmetic: pointer outside object bounds in (arr + (signed long int)length) - (signed long int)1
 ./test-0006.c:23: note: main:23:integer:        tmp = 0
-./test-0006.c:24: note: dereference failure: pointer outside dynamic object bounds in *b
+./test-0006.c:24: note: dereference failure: pointer outside object bounds in *b
 
 Error: CBMC_WARNING:
 ./test-0006.c: scope_hint: In function ‘main’:
-./test-0006.c:24: error: pointer_dereference : dereference failure: pointer outside dynamic object bounds in *a
+./test-0006.c:16: error: pointer_dereference : dereference failure: pointer outside object bounds in arr[(signed long int)i]
 ./test-0006.c:5: note: from_entry_point_function:function-call:main
 ./test-0006.c:7: note: main:7:integer:        length = 0
 ./test-0006.c:7: note: main:7:integer:        length = 99
@@ -1381,9 +1381,9 @@ Error: CBMC_WARNING:
 ./test-0006.c:11: note: main:11:integer:        i = 22
 ./test-0006.c:11: note: main:11:integer:        i = 23
 ./test-0006.c:11: note: main:11:integer:        i = 24
-./test-0006.c:12: note: dereference failure: pointer outside dynamic object bounds in arr[(signed long int)i]
+./test-0006.c:12: note: dereference failure: pointer outside object bounds in arr[(signed long int)i]
 ./test-0006.c:11: note: main:11:integer:        i = 25
-./test-0006.c:12: note: pointer arithmetic: pointer outside dynamic object bounds in arr + (signed long int)i
+./test-0006.c:12: note: pointer arithmetic: pointer outside object bounds in arr + (signed long int)i
 ./test-0006.c:11: note: main:11:integer:        i = 26
 ./test-0006.c:11: note: main:11:integer:        i = 27
 ./test-0006.c:11: note: main:11:integer:        i = 28
@@ -1483,9 +1483,287 @@ Error: CBMC_WARNING:
 ./test-0006.c:15: note: main:15:integer:        i = 22
 ./test-0006.c:15: note: main:15:integer:        i = 23
 ./test-0006.c:15: note: main:15:integer:        i = 24
-./test-0006.c:16: note: dereference failure: pointer outside dynamic object bounds in arr[(signed long int)i]
+./test-0006.c:16: note: dereference failure: pointer outside object bounds in arr[(signed long int)i]
+
+Error: CBMC_WARNING:
+./test-0006.c: scope_hint: In function ‘main’:
+./test-0006.c:16: error: pointer_arithmetic : pointer arithmetic: pointer outside object bounds in arr + (signed long int)i
+./test-0006.c:5: note: from_entry_point_function:function-call:main
+./test-0006.c:7: note: main:7:integer:        length = 0
+./test-0006.c:7: note: main:7:integer:        length = 99
+./test-0006.c:9: note: main:9:pointer:        arr = ((signed int *)NULL)
+./test-0006.c:9: note: from_main:function-call:__builtin_alloca
+./test-0006.c:9: note: function_parameter_set_in:main:9:integer:        alloca_size = 99ul
+./test-0006.c:11: note: main:11:integer:        i = 0
+./test-0006.c:11: note: main:11:integer:        i = 1
+./test-0006.c:11: note: main:11:integer:        i = 2
+./test-0006.c:11: note: main:11:integer:        i = 3
+./test-0006.c:11: note: main:11:integer:        i = 4
+./test-0006.c:11: note: main:11:integer:        i = 5
+./test-0006.c:11: note: main:11:integer:        i = 6
+./test-0006.c:11: note: main:11:integer:        i = 7
+./test-0006.c:11: note: main:11:integer:        i = 8
+./test-0006.c:11: note: main:11:integer:        i = 9
+./test-0006.c:11: note: main:11:integer:        i = 10
+./test-0006.c:11: note: main:11:integer:        i = 11
+./test-0006.c:11: note: main:11:integer:        i = 12
+./test-0006.c:11: note: main:11:integer:        i = 13
+./test-0006.c:11: note: main:11:integer:        i = 14
+./test-0006.c:11: note: main:11:integer:        i = 15
+./test-0006.c:11: note: main:11:integer:        i = 16
+./test-0006.c:11: note: main:11:integer:        i = 17
+./test-0006.c:11: note: main:11:integer:        i = 18
+./test-0006.c:11: note: main:11:integer:        i = 19
+./test-0006.c:11: note: main:11:integer:        i = 20
+./test-0006.c:11: note: main:11:integer:        i = 21
+./test-0006.c:11: note: main:11:integer:        i = 22
+./test-0006.c:11: note: main:11:integer:        i = 23
+./test-0006.c:11: note: main:11:integer:        i = 24
+./test-0006.c:12: note: dereference failure: pointer outside object bounds in arr[(signed long int)i]
+./test-0006.c:11: note: main:11:integer:        i = 25
+./test-0006.c:12: note: pointer arithmetic: pointer outside object bounds in arr + (signed long int)i
+./test-0006.c:11: note: main:11:integer:        i = 26
+./test-0006.c:11: note: main:11:integer:        i = 27
+./test-0006.c:11: note: main:11:integer:        i = 28
+./test-0006.c:11: note: main:11:integer:        i = 29
+./test-0006.c:11: note: main:11:integer:        i = 30
+./test-0006.c:11: note: main:11:integer:        i = 31
+./test-0006.c:11: note: main:11:integer:        i = 32
+./test-0006.c:11: note: main:11:integer:        i = 33
+./test-0006.c:11: note: main:11:integer:        i = 34
+./test-0006.c:11: note: main:11:integer:        i = 35
+./test-0006.c:11: note: main:11:integer:        i = 36
+./test-0006.c:11: note: main:11:integer:        i = 37
+./test-0006.c:11: note: main:11:integer:        i = 38
+./test-0006.c:11: note: main:11:integer:        i = 39
+./test-0006.c:11: note: main:11:integer:        i = 40
+./test-0006.c:11: note: main:11:integer:        i = 41
+./test-0006.c:11: note: main:11:integer:        i = 42
+./test-0006.c:11: note: main:11:integer:        i = 43
+./test-0006.c:11: note: main:11:integer:        i = 44
+./test-0006.c:11: note: main:11:integer:        i = 45
+./test-0006.c:11: note: main:11:integer:        i = 46
+./test-0006.c:11: note: main:11:integer:        i = 47
+./test-0006.c:11: note: main:11:integer:        i = 48
+./test-0006.c:11: note: main:11:integer:        i = 49
+./test-0006.c:11: note: main:11:integer:        i = 50
+./test-0006.c:11: note: main:11:integer:        i = 51
+./test-0006.c:11: note: main:11:integer:        i = 52
+./test-0006.c:11: note: main:11:integer:        i = 53
+./test-0006.c:11: note: main:11:integer:        i = 54
+./test-0006.c:11: note: main:11:integer:        i = 55
+./test-0006.c:11: note: main:11:integer:        i = 56
+./test-0006.c:11: note: main:11:integer:        i = 57
+./test-0006.c:11: note: main:11:integer:        i = 58
+./test-0006.c:11: note: main:11:integer:        i = 59
+./test-0006.c:11: note: main:11:integer:        i = 60
+./test-0006.c:11: note: main:11:integer:        i = 61
+./test-0006.c:11: note: main:11:integer:        i = 62
+./test-0006.c:11: note: main:11:integer:        i = 63
+./test-0006.c:11: note: main:11:integer:        i = 64
+./test-0006.c:11: note: main:11:integer:        i = 65
+./test-0006.c:11: note: main:11:integer:        i = 66
+./test-0006.c:11: note: main:11:integer:        i = 67
+./test-0006.c:11: note: main:11:integer:        i = 68
+./test-0006.c:11: note: main:11:integer:        i = 69
+./test-0006.c:11: note: main:11:integer:        i = 70
+./test-0006.c:11: note: main:11:integer:        i = 71
+./test-0006.c:11: note: main:11:integer:        i = 72
+./test-0006.c:11: note: main:11:integer:        i = 73
+./test-0006.c:11: note: main:11:integer:        i = 74
+./test-0006.c:11: note: main:11:integer:        i = 75
+./test-0006.c:11: note: main:11:integer:        i = 76
+./test-0006.c:11: note: main:11:integer:        i = 77
+./test-0006.c:11: note: main:11:integer:        i = 78
+./test-0006.c:11: note: main:11:integer:        i = 79
+./test-0006.c:11: note: main:11:integer:        i = 80
+./test-0006.c:11: note: main:11:integer:        i = 81
+./test-0006.c:11: note: main:11:integer:        i = 82
+./test-0006.c:11: note: main:11:integer:        i = 83
+./test-0006.c:11: note: main:11:integer:        i = 84
+./test-0006.c:11: note: main:11:integer:        i = 85
+./test-0006.c:11: note: main:11:integer:        i = 86
+./test-0006.c:11: note: main:11:integer:        i = 87
+./test-0006.c:11: note: main:11:integer:        i = 88
+./test-0006.c:11: note: main:11:integer:        i = 89
+./test-0006.c:11: note: main:11:integer:        i = 90
+./test-0006.c:11: note: main:11:integer:        i = 91
+./test-0006.c:11: note: main:11:integer:        i = 92
+./test-0006.c:11: note: main:11:integer:        i = 93
+./test-0006.c:11: note: main:11:integer:        i = 94
+./test-0006.c:11: note: main:11:integer:        i = 95
+./test-0006.c:11: note: main:11:integer:        i = 96
+./test-0006.c:11: note: main:11:integer:        i = 97
+./test-0006.c:11: note: main:11:integer:        i = 98
+./test-0006.c:11: note: main:11:integer:        i = 99
+./test-0006.c:15: note: main:15:integer:        i = 0
+./test-0006.c:15: note: main:15:integer:        i = 1
+./test-0006.c:15: note: main:15:integer:        i = 2
+./test-0006.c:15: note: main:15:integer:        i = 3
+./test-0006.c:15: note: main:15:integer:        i = 4
+./test-0006.c:15: note: main:15:integer:        i = 5
+./test-0006.c:15: note: main:15:integer:        i = 6
+./test-0006.c:15: note: main:15:integer:        i = 7
+./test-0006.c:15: note: main:15:integer:        i = 8
+./test-0006.c:15: note: main:15:integer:        i = 9
+./test-0006.c:15: note: main:15:integer:        i = 10
+./test-0006.c:15: note: main:15:integer:        i = 11
+./test-0006.c:15: note: main:15:integer:        i = 12
+./test-0006.c:15: note: main:15:integer:        i = 13
+./test-0006.c:15: note: main:15:integer:        i = 14
+./test-0006.c:15: note: main:15:integer:        i = 15
+./test-0006.c:15: note: main:15:integer:        i = 16
+./test-0006.c:15: note: main:15:integer:        i = 17
+./test-0006.c:15: note: main:15:integer:        i = 18
+./test-0006.c:15: note: main:15:integer:        i = 19
+./test-0006.c:15: note: main:15:integer:        i = 20
+./test-0006.c:15: note: main:15:integer:        i = 21
+./test-0006.c:15: note: main:15:integer:        i = 22
+./test-0006.c:15: note: main:15:integer:        i = 23
+./test-0006.c:15: note: main:15:integer:        i = 24
+./test-0006.c:16: note: dereference failure: pointer outside object bounds in arr[(signed long int)i]
 ./test-0006.c:15: note: main:15:integer:        i = 25
-./test-0006.c:16: note: pointer arithmetic: pointer outside dynamic object bounds in arr + (signed long int)i
+./test-0006.c:16: note: pointer arithmetic: pointer outside object bounds in arr + (signed long int)i
+
+Error: CBMC_WARNING:
+./test-0006.c: scope_hint: In function ‘main’:
+./test-0006.c:24: error: pointer_dereference : dereference failure: pointer outside object bounds in *a
+./test-0006.c:5: note: from_entry_point_function:function-call:main
+./test-0006.c:7: note: main:7:integer:        length = 0
+./test-0006.c:7: note: main:7:integer:        length = 99
+./test-0006.c:9: note: main:9:pointer:        arr = ((signed int *)NULL)
+./test-0006.c:9: note: from_main:function-call:__builtin_alloca
+./test-0006.c:9: note: function_parameter_set_in:main:9:integer:        alloca_size = 99ul
+./test-0006.c:11: note: main:11:integer:        i = 0
+./test-0006.c:11: note: main:11:integer:        i = 1
+./test-0006.c:11: note: main:11:integer:        i = 2
+./test-0006.c:11: note: main:11:integer:        i = 3
+./test-0006.c:11: note: main:11:integer:        i = 4
+./test-0006.c:11: note: main:11:integer:        i = 5
+./test-0006.c:11: note: main:11:integer:        i = 6
+./test-0006.c:11: note: main:11:integer:        i = 7
+./test-0006.c:11: note: main:11:integer:        i = 8
+./test-0006.c:11: note: main:11:integer:        i = 9
+./test-0006.c:11: note: main:11:integer:        i = 10
+./test-0006.c:11: note: main:11:integer:        i = 11
+./test-0006.c:11: note: main:11:integer:        i = 12
+./test-0006.c:11: note: main:11:integer:        i = 13
+./test-0006.c:11: note: main:11:integer:        i = 14
+./test-0006.c:11: note: main:11:integer:        i = 15
+./test-0006.c:11: note: main:11:integer:        i = 16
+./test-0006.c:11: note: main:11:integer:        i = 17
+./test-0006.c:11: note: main:11:integer:        i = 18
+./test-0006.c:11: note: main:11:integer:        i = 19
+./test-0006.c:11: note: main:11:integer:        i = 20
+./test-0006.c:11: note: main:11:integer:        i = 21
+./test-0006.c:11: note: main:11:integer:        i = 22
+./test-0006.c:11: note: main:11:integer:        i = 23
+./test-0006.c:11: note: main:11:integer:        i = 24
+./test-0006.c:12: note: dereference failure: pointer outside object bounds in arr[(signed long int)i]
+./test-0006.c:11: note: main:11:integer:        i = 25
+./test-0006.c:12: note: pointer arithmetic: pointer outside object bounds in arr + (signed long int)i
+./test-0006.c:11: note: main:11:integer:        i = 26
+./test-0006.c:11: note: main:11:integer:        i = 27
+./test-0006.c:11: note: main:11:integer:        i = 28
+./test-0006.c:11: note: main:11:integer:        i = 29
+./test-0006.c:11: note: main:11:integer:        i = 30
+./test-0006.c:11: note: main:11:integer:        i = 31
+./test-0006.c:11: note: main:11:integer:        i = 32
+./test-0006.c:11: note: main:11:integer:        i = 33
+./test-0006.c:11: note: main:11:integer:        i = 34
+./test-0006.c:11: note: main:11:integer:        i = 35
+./test-0006.c:11: note: main:11:integer:        i = 36
+./test-0006.c:11: note: main:11:integer:        i = 37
+./test-0006.c:11: note: main:11:integer:        i = 38
+./test-0006.c:11: note: main:11:integer:        i = 39
+./test-0006.c:11: note: main:11:integer:        i = 40
+./test-0006.c:11: note: main:11:integer:        i = 41
+./test-0006.c:11: note: main:11:integer:        i = 42
+./test-0006.c:11: note: main:11:integer:        i = 43
+./test-0006.c:11: note: main:11:integer:        i = 44
+./test-0006.c:11: note: main:11:integer:        i = 45
+./test-0006.c:11: note: main:11:integer:        i = 46
+./test-0006.c:11: note: main:11:integer:        i = 47
+./test-0006.c:11: note: main:11:integer:        i = 48
+./test-0006.c:11: note: main:11:integer:        i = 49
+./test-0006.c:11: note: main:11:integer:        i = 50
+./test-0006.c:11: note: main:11:integer:        i = 51
+./test-0006.c:11: note: main:11:integer:        i = 52
+./test-0006.c:11: note: main:11:integer:        i = 53
+./test-0006.c:11: note: main:11:integer:        i = 54
+./test-0006.c:11: note: main:11:integer:        i = 55
+./test-0006.c:11: note: main:11:integer:        i = 56
+./test-0006.c:11: note: main:11:integer:        i = 57
+./test-0006.c:11: note: main:11:integer:        i = 58
+./test-0006.c:11: note: main:11:integer:        i = 59
+./test-0006.c:11: note: main:11:integer:        i = 60
+./test-0006.c:11: note: main:11:integer:        i = 61
+./test-0006.c:11: note: main:11:integer:        i = 62
+./test-0006.c:11: note: main:11:integer:        i = 63
+./test-0006.c:11: note: main:11:integer:        i = 64
+./test-0006.c:11: note: main:11:integer:        i = 65
+./test-0006.c:11: note: main:11:integer:        i = 66
+./test-0006.c:11: note: main:11:integer:        i = 67
+./test-0006.c:11: note: main:11:integer:        i = 68
+./test-0006.c:11: note: main:11:integer:        i = 69
+./test-0006.c:11: note: main:11:integer:        i = 70
+./test-0006.c:11: note: main:11:integer:        i = 71
+./test-0006.c:11: note: main:11:integer:        i = 72
+./test-0006.c:11: note: main:11:integer:        i = 73
+./test-0006.c:11: note: main:11:integer:        i = 74
+./test-0006.c:11: note: main:11:integer:        i = 75
+./test-0006.c:11: note: main:11:integer:        i = 76
+./test-0006.c:11: note: main:11:integer:        i = 77
+./test-0006.c:11: note: main:11:integer:        i = 78
+./test-0006.c:11: note: main:11:integer:        i = 79
+./test-0006.c:11: note: main:11:integer:        i = 80
+./test-0006.c:11: note: main:11:integer:        i = 81
+./test-0006.c:11: note: main:11:integer:        i = 82
+./test-0006.c:11: note: main:11:integer:        i = 83
+./test-0006.c:11: note: main:11:integer:        i = 84
+./test-0006.c:11: note: main:11:integer:        i = 85
+./test-0006.c:11: note: main:11:integer:        i = 86
+./test-0006.c:11: note: main:11:integer:        i = 87
+./test-0006.c:11: note: main:11:integer:        i = 88
+./test-0006.c:11: note: main:11:integer:        i = 89
+./test-0006.c:11: note: main:11:integer:        i = 90
+./test-0006.c:11: note: main:11:integer:        i = 91
+./test-0006.c:11: note: main:11:integer:        i = 92
+./test-0006.c:11: note: main:11:integer:        i = 93
+./test-0006.c:11: note: main:11:integer:        i = 94
+./test-0006.c:11: note: main:11:integer:        i = 95
+./test-0006.c:11: note: main:11:integer:        i = 96
+./test-0006.c:11: note: main:11:integer:        i = 97
+./test-0006.c:11: note: main:11:integer:        i = 98
+./test-0006.c:11: note: main:11:integer:        i = 99
+./test-0006.c:15: note: main:15:integer:        i = 0
+./test-0006.c:15: note: main:15:integer:        i = 1
+./test-0006.c:15: note: main:15:integer:        i = 2
+./test-0006.c:15: note: main:15:integer:        i = 3
+./test-0006.c:15: note: main:15:integer:        i = 4
+./test-0006.c:15: note: main:15:integer:        i = 5
+./test-0006.c:15: note: main:15:integer:        i = 6
+./test-0006.c:15: note: main:15:integer:        i = 7
+./test-0006.c:15: note: main:15:integer:        i = 8
+./test-0006.c:15: note: main:15:integer:        i = 9
+./test-0006.c:15: note: main:15:integer:        i = 10
+./test-0006.c:15: note: main:15:integer:        i = 11
+./test-0006.c:15: note: main:15:integer:        i = 12
+./test-0006.c:15: note: main:15:integer:        i = 13
+./test-0006.c:15: note: main:15:integer:        i = 14
+./test-0006.c:15: note: main:15:integer:        i = 15
+./test-0006.c:15: note: main:15:integer:        i = 16
+./test-0006.c:15: note: main:15:integer:        i = 17
+./test-0006.c:15: note: main:15:integer:        i = 18
+./test-0006.c:15: note: main:15:integer:        i = 19
+./test-0006.c:15: note: main:15:integer:        i = 20
+./test-0006.c:15: note: main:15:integer:        i = 21
+./test-0006.c:15: note: main:15:integer:        i = 22
+./test-0006.c:15: note: main:15:integer:        i = 23
+./test-0006.c:15: note: main:15:integer:        i = 24
+./test-0006.c:16: note: dereference failure: pointer outside object bounds in arr[(signed long int)i]
+./test-0006.c:15: note: main:15:integer:        i = 25
+./test-0006.c:16: note: pointer arithmetic: pointer outside object bounds in arr + (signed long int)i
 ./test-0006.c:15: note: main:15:integer:        i = 26
 ./test-0006.c:15: note: main:15:integer:        i = 27
 ./test-0006.c:15: note: main:15:integer:        i = 28
@@ -1560,22 +1838,22 @@ Error: CBMC_WARNING:
 ./test-0006.c:15: note: main:15:integer:        i = 97
 ./test-0006.c:15: note: main:15:integer:        i = 98
 ./test-0006.c:15: note: main:15:integer:        i = 99
-./test-0006.c:20: note: pointer arithmetic: pointer outside dynamic object bounds in arr + (signed long int)(length / 2 + 1)
-./test-0006.c:20: note: dereference failure: pointer outside dynamic object bounds in arr[(signed long int)(length / 2 + 1)]
+./test-0006.c:20: note: pointer arithmetic: pointer outside object bounds in arr + (signed long int)(length / 2 + 1)
+./test-0006.c:20: note: dereference failure: pointer outside object bounds in arr[(signed long int)(length / 2 + 1)]
 ./test-0006.c:21: note: main:21:pointer:        a = ((signed int *)NULL)
 ./test-0006.c:22: note: main:22:pointer:        b = ((signed int *)NULL)
-./test-0006.c:22: note: pointer arithmetic: pointer outside dynamic object bounds in arr + (signed long int)length
-./test-0006.c:22: note: pointer arithmetic: pointer outside dynamic object bounds in (arr + (signed long int)length) - (signed long int)1
+./test-0006.c:22: note: pointer arithmetic: pointer outside object bounds in arr + (signed long int)length
+./test-0006.c:22: note: pointer arithmetic: pointer outside object bounds in (arr + (signed long int)length) - (signed long int)1
 ./test-0006.c:23: note: main:23:integer:        tmp = 0
-./test-0006.c:24: note: dereference failure: pointer outside dynamic object bounds in *b
-./test-0006.c:26: note: dereference failure: pointer outside dynamic object bounds in *b
-./test-0006.c:27: note: dereference failure: pointer outside dynamic object bounds in *b
-./test-0006.c:29: note: pointer arithmetic: pointer outside dynamic object bounds in b - 1l
-./test-0006.c:24: note: dereference failure: pointer outside dynamic object bounds in *a
+./test-0006.c:24: note: dereference failure: pointer outside object bounds in *b
+./test-0006.c:26: note: dereference failure: pointer outside object bounds in *b
+./test-0006.c:27: note: dereference failure: pointer outside object bounds in *b
+./test-0006.c:29: note: pointer arithmetic: pointer outside object bounds in b - 1l
+./test-0006.c:24: note: dereference failure: pointer outside object bounds in *a
 
 Error: CBMC_WARNING:
 ./test-0006.c: scope_hint: In function ‘main’:
-./test-0006.c:16: error: pointer_arithmetic : pointer arithmetic: pointer outside dynamic object bounds in arr + (signed long int)i
+./test-0006.c:12: error: pointer_dereference : dereference failure: pointer outside object bounds in arr[(signed long int)i]
 ./test-0006.c:5: note: from_entry_point_function:function-call:main
 ./test-0006.c:7: note: main:7:integer:        length = 0
 ./test-0006.c:7: note: main:7:integer:        length = 99
@@ -1607,9 +1885,83 @@ Error: CBMC_WARNING:
 ./test-0006.c:11: note: main:11:integer:        i = 22
 ./test-0006.c:11: note: main:11:integer:        i = 23
 ./test-0006.c:11: note: main:11:integer:        i = 24
-./test-0006.c:12: note: dereference failure: pointer outside dynamic object bounds in arr[(signed long int)i]
+./test-0006.c:12: note: dereference failure: pointer outside object bounds in arr[(signed long int)i]
+
+Error: CBMC_WARNING:
+./test-0006.c: scope_hint: In function ‘main’:
+./test-0006.c:12: error: pointer_arithmetic : pointer arithmetic: pointer outside object bounds in arr + (signed long int)i
+./test-0006.c:5: note: from_entry_point_function:function-call:main
+./test-0006.c:7: note: main:7:integer:        length = 0
+./test-0006.c:7: note: main:7:integer:        length = 99
+./test-0006.c:9: note: main:9:pointer:        arr = ((signed int *)NULL)
+./test-0006.c:9: note: from_main:function-call:__builtin_alloca
+./test-0006.c:9: note: function_parameter_set_in:main:9:integer:        alloca_size = 99ul
+./test-0006.c:11: note: main:11:integer:        i = 0
+./test-0006.c:11: note: main:11:integer:        i = 1
+./test-0006.c:11: note: main:11:integer:        i = 2
+./test-0006.c:11: note: main:11:integer:        i = 3
+./test-0006.c:11: note: main:11:integer:        i = 4
+./test-0006.c:11: note: main:11:integer:        i = 5
+./test-0006.c:11: note: main:11:integer:        i = 6
+./test-0006.c:11: note: main:11:integer:        i = 7
+./test-0006.c:11: note: main:11:integer:        i = 8
+./test-0006.c:11: note: main:11:integer:        i = 9
+./test-0006.c:11: note: main:11:integer:        i = 10
+./test-0006.c:11: note: main:11:integer:        i = 11
+./test-0006.c:11: note: main:11:integer:        i = 12
+./test-0006.c:11: note: main:11:integer:        i = 13
+./test-0006.c:11: note: main:11:integer:        i = 14
+./test-0006.c:11: note: main:11:integer:        i = 15
+./test-0006.c:11: note: main:11:integer:        i = 16
+./test-0006.c:11: note: main:11:integer:        i = 17
+./test-0006.c:11: note: main:11:integer:        i = 18
+./test-0006.c:11: note: main:11:integer:        i = 19
+./test-0006.c:11: note: main:11:integer:        i = 20
+./test-0006.c:11: note: main:11:integer:        i = 21
+./test-0006.c:11: note: main:11:integer:        i = 22
+./test-0006.c:11: note: main:11:integer:        i = 23
+./test-0006.c:11: note: main:11:integer:        i = 24
+./test-0006.c:12: note: dereference failure: pointer outside object bounds in arr[(signed long int)i]
 ./test-0006.c:11: note: main:11:integer:        i = 25
-./test-0006.c:12: note: pointer arithmetic: pointer outside dynamic object bounds in arr + (signed long int)i
+./test-0006.c:12: note: pointer arithmetic: pointer outside object bounds in arr + (signed long int)i
+
+Error: CBMC_WARNING:
+./test-0006.c: scope_hint: In function ‘main’:
+./test-0006.c:20: error: pointer_arithmetic : pointer arithmetic: pointer outside object bounds in arr + (signed long int)(length / 2 + 1)
+./test-0006.c:5: note: from_entry_point_function:function-call:main
+./test-0006.c:7: note: main:7:integer:        length = 0
+./test-0006.c:7: note: main:7:integer:        length = 99
+./test-0006.c:9: note: main:9:pointer:        arr = ((signed int *)NULL)
+./test-0006.c:9: note: from_main:function-call:__builtin_alloca
+./test-0006.c:9: note: function_parameter_set_in:main:9:integer:        alloca_size = 99ul
+./test-0006.c:11: note: main:11:integer:        i = 0
+./test-0006.c:11: note: main:11:integer:        i = 1
+./test-0006.c:11: note: main:11:integer:        i = 2
+./test-0006.c:11: note: main:11:integer:        i = 3
+./test-0006.c:11: note: main:11:integer:        i = 4
+./test-0006.c:11: note: main:11:integer:        i = 5
+./test-0006.c:11: note: main:11:integer:        i = 6
+./test-0006.c:11: note: main:11:integer:        i = 7
+./test-0006.c:11: note: main:11:integer:        i = 8
+./test-0006.c:11: note: main:11:integer:        i = 9
+./test-0006.c:11: note: main:11:integer:        i = 10
+./test-0006.c:11: note: main:11:integer:        i = 11
+./test-0006.c:11: note: main:11:integer:        i = 12
+./test-0006.c:11: note: main:11:integer:        i = 13
+./test-0006.c:11: note: main:11:integer:        i = 14
+./test-0006.c:11: note: main:11:integer:        i = 15
+./test-0006.c:11: note: main:11:integer:        i = 16
+./test-0006.c:11: note: main:11:integer:        i = 17
+./test-0006.c:11: note: main:11:integer:        i = 18
+./test-0006.c:11: note: main:11:integer:        i = 19
+./test-0006.c:11: note: main:11:integer:        i = 20
+./test-0006.c:11: note: main:11:integer:        i = 21
+./test-0006.c:11: note: main:11:integer:        i = 22
+./test-0006.c:11: note: main:11:integer:        i = 23
+./test-0006.c:11: note: main:11:integer:        i = 24
+./test-0006.c:12: note: dereference failure: pointer outside object bounds in arr[(signed long int)i]
+./test-0006.c:11: note: main:11:integer:        i = 25
+./test-0006.c:12: note: pointer arithmetic: pointer outside object bounds in arr + (signed long int)i
 ./test-0006.c:11: note: main:11:integer:        i = 26
 ./test-0006.c:11: note: main:11:integer:        i = 27
 ./test-0006.c:11: note: main:11:integer:        i = 28
@@ -1709,361 +2061,9 @@ Error: CBMC_WARNING:
 ./test-0006.c:15: note: main:15:integer:        i = 22
 ./test-0006.c:15: note: main:15:integer:        i = 23
 ./test-0006.c:15: note: main:15:integer:        i = 24
-./test-0006.c:16: note: dereference failure: pointer outside dynamic object bounds in arr[(signed long int)i]
+./test-0006.c:16: note: dereference failure: pointer outside object bounds in arr[(signed long int)i]
 ./test-0006.c:15: note: main:15:integer:        i = 25
-./test-0006.c:16: note: pointer arithmetic: pointer outside dynamic object bounds in arr + (signed long int)i
-
-Error: CBMC_WARNING:
-./test-0006.c: scope_hint: In function ‘main’:
-./test-0006.c:16: error: pointer_dereference : dereference failure: pointer outside dynamic object bounds in arr[(signed long int)i]
-./test-0006.c:5: note: from_entry_point_function:function-call:main
-./test-0006.c:7: note: main:7:integer:        length = 0
-./test-0006.c:7: note: main:7:integer:        length = 99
-./test-0006.c:9: note: main:9:pointer:        arr = ((signed int *)NULL)
-./test-0006.c:9: note: from_main:function-call:__builtin_alloca
-./test-0006.c:9: note: function_parameter_set_in:main:9:integer:        alloca_size = 99ul
-./test-0006.c:11: note: main:11:integer:        i = 0
-./test-0006.c:11: note: main:11:integer:        i = 1
-./test-0006.c:11: note: main:11:integer:        i = 2
-./test-0006.c:11: note: main:11:integer:        i = 3
-./test-0006.c:11: note: main:11:integer:        i = 4
-./test-0006.c:11: note: main:11:integer:        i = 5
-./test-0006.c:11: note: main:11:integer:        i = 6
-./test-0006.c:11: note: main:11:integer:        i = 7
-./test-0006.c:11: note: main:11:integer:        i = 8
-./test-0006.c:11: note: main:11:integer:        i = 9
-./test-0006.c:11: note: main:11:integer:        i = 10
-./test-0006.c:11: note: main:11:integer:        i = 11
-./test-0006.c:11: note: main:11:integer:        i = 12
-./test-0006.c:11: note: main:11:integer:        i = 13
-./test-0006.c:11: note: main:11:integer:        i = 14
-./test-0006.c:11: note: main:11:integer:        i = 15
-./test-0006.c:11: note: main:11:integer:        i = 16
-./test-0006.c:11: note: main:11:integer:        i = 17
-./test-0006.c:11: note: main:11:integer:        i = 18
-./test-0006.c:11: note: main:11:integer:        i = 19
-./test-0006.c:11: note: main:11:integer:        i = 20
-./test-0006.c:11: note: main:11:integer:        i = 21
-./test-0006.c:11: note: main:11:integer:        i = 22
-./test-0006.c:11: note: main:11:integer:        i = 23
-./test-0006.c:11: note: main:11:integer:        i = 24
-./test-0006.c:12: note: dereference failure: pointer outside dynamic object bounds in arr[(signed long int)i]
-./test-0006.c:11: note: main:11:integer:        i = 25
-./test-0006.c:12: note: pointer arithmetic: pointer outside dynamic object bounds in arr + (signed long int)i
-./test-0006.c:11: note: main:11:integer:        i = 26
-./test-0006.c:11: note: main:11:integer:        i = 27
-./test-0006.c:11: note: main:11:integer:        i = 28
-./test-0006.c:11: note: main:11:integer:        i = 29
-./test-0006.c:11: note: main:11:integer:        i = 30
-./test-0006.c:11: note: main:11:integer:        i = 31
-./test-0006.c:11: note: main:11:integer:        i = 32
-./test-0006.c:11: note: main:11:integer:        i = 33
-./test-0006.c:11: note: main:11:integer:        i = 34
-./test-0006.c:11: note: main:11:integer:        i = 35
-./test-0006.c:11: note: main:11:integer:        i = 36
-./test-0006.c:11: note: main:11:integer:        i = 37
-./test-0006.c:11: note: main:11:integer:        i = 38
-./test-0006.c:11: note: main:11:integer:        i = 39
-./test-0006.c:11: note: main:11:integer:        i = 40
-./test-0006.c:11: note: main:11:integer:        i = 41
-./test-0006.c:11: note: main:11:integer:        i = 42
-./test-0006.c:11: note: main:11:integer:        i = 43
-./test-0006.c:11: note: main:11:integer:        i = 44
-./test-0006.c:11: note: main:11:integer:        i = 45
-./test-0006.c:11: note: main:11:integer:        i = 46
-./test-0006.c:11: note: main:11:integer:        i = 47
-./test-0006.c:11: note: main:11:integer:        i = 48
-./test-0006.c:11: note: main:11:integer:        i = 49
-./test-0006.c:11: note: main:11:integer:        i = 50
-./test-0006.c:11: note: main:11:integer:        i = 51
-./test-0006.c:11: note: main:11:integer:        i = 52
-./test-0006.c:11: note: main:11:integer:        i = 53
-./test-0006.c:11: note: main:11:integer:        i = 54
-./test-0006.c:11: note: main:11:integer:        i = 55
-./test-0006.c:11: note: main:11:integer:        i = 56
-./test-0006.c:11: note: main:11:integer:        i = 57
-./test-0006.c:11: note: main:11:integer:        i = 58
-./test-0006.c:11: note: main:11:integer:        i = 59
-./test-0006.c:11: note: main:11:integer:        i = 60
-./test-0006.c:11: note: main:11:integer:        i = 61
-./test-0006.c:11: note: main:11:integer:        i = 62
-./test-0006.c:11: note: main:11:integer:        i = 63
-./test-0006.c:11: note: main:11:integer:        i = 64
-./test-0006.c:11: note: main:11:integer:        i = 65
-./test-0006.c:11: note: main:11:integer:        i = 66
-./test-0006.c:11: note: main:11:integer:        i = 67
-./test-0006.c:11: note: main:11:integer:        i = 68
-./test-0006.c:11: note: main:11:integer:        i = 69
-./test-0006.c:11: note: main:11:integer:        i = 70
-./test-0006.c:11: note: main:11:integer:        i = 71
-./test-0006.c:11: note: main:11:integer:        i = 72
-./test-0006.c:11: note: main:11:integer:        i = 73
-./test-0006.c:11: note: main:11:integer:        i = 74
-./test-0006.c:11: note: main:11:integer:        i = 75
-./test-0006.c:11: note: main:11:integer:        i = 76
-./test-0006.c:11: note: main:11:integer:        i = 77
-./test-0006.c:11: note: main:11:integer:        i = 78
-./test-0006.c:11: note: main:11:integer:        i = 79
-./test-0006.c:11: note: main:11:integer:        i = 80
-./test-0006.c:11: note: main:11:integer:        i = 81
-./test-0006.c:11: note: main:11:integer:        i = 82
-./test-0006.c:11: note: main:11:integer:        i = 83
-./test-0006.c:11: note: main:11:integer:        i = 84
-./test-0006.c:11: note: main:11:integer:        i = 85
-./test-0006.c:11: note: main:11:integer:        i = 86
-./test-0006.c:11: note: main:11:integer:        i = 87
-./test-0006.c:11: note: main:11:integer:        i = 88
-./test-0006.c:11: note: main:11:integer:        i = 89
-./test-0006.c:11: note: main:11:integer:        i = 90
-./test-0006.c:11: note: main:11:integer:        i = 91
-./test-0006.c:11: note: main:11:integer:        i = 92
-./test-0006.c:11: note: main:11:integer:        i = 93
-./test-0006.c:11: note: main:11:integer:        i = 94
-./test-0006.c:11: note: main:11:integer:        i = 95
-./test-0006.c:11: note: main:11:integer:        i = 96
-./test-0006.c:11: note: main:11:integer:        i = 97
-./test-0006.c:11: note: main:11:integer:        i = 98
-./test-0006.c:11: note: main:11:integer:        i = 99
-./test-0006.c:15: note: main:15:integer:        i = 0
-./test-0006.c:15: note: main:15:integer:        i = 1
-./test-0006.c:15: note: main:15:integer:        i = 2
-./test-0006.c:15: note: main:15:integer:        i = 3
-./test-0006.c:15: note: main:15:integer:        i = 4
-./test-0006.c:15: note: main:15:integer:        i = 5
-./test-0006.c:15: note: main:15:integer:        i = 6
-./test-0006.c:15: note: main:15:integer:        i = 7
-./test-0006.c:15: note: main:15:integer:        i = 8
-./test-0006.c:15: note: main:15:integer:        i = 9
-./test-0006.c:15: note: main:15:integer:        i = 10
-./test-0006.c:15: note: main:15:integer:        i = 11
-./test-0006.c:15: note: main:15:integer:        i = 12
-./test-0006.c:15: note: main:15:integer:        i = 13
-./test-0006.c:15: note: main:15:integer:        i = 14
-./test-0006.c:15: note: main:15:integer:        i = 15
-./test-0006.c:15: note: main:15:integer:        i = 16
-./test-0006.c:15: note: main:15:integer:        i = 17
-./test-0006.c:15: note: main:15:integer:        i = 18
-./test-0006.c:15: note: main:15:integer:        i = 19
-./test-0006.c:15: note: main:15:integer:        i = 20
-./test-0006.c:15: note: main:15:integer:        i = 21
-./test-0006.c:15: note: main:15:integer:        i = 22
-./test-0006.c:15: note: main:15:integer:        i = 23
-./test-0006.c:15: note: main:15:integer:        i = 24
-./test-0006.c:16: note: dereference failure: pointer outside dynamic object bounds in arr[(signed long int)i]
-
-Error: CBMC_WARNING:
-./test-0006.c: scope_hint: In function ‘main’:
-./test-0006.c:12: error: pointer_arithmetic : pointer arithmetic: pointer outside dynamic object bounds in arr + (signed long int)i
-./test-0006.c:5: note: from_entry_point_function:function-call:main
-./test-0006.c:7: note: main:7:integer:        length = 0
-./test-0006.c:7: note: main:7:integer:        length = 99
-./test-0006.c:9: note: main:9:pointer:        arr = ((signed int *)NULL)
-./test-0006.c:9: note: from_main:function-call:__builtin_alloca
-./test-0006.c:9: note: function_parameter_set_in:main:9:integer:        alloca_size = 99ul
-./test-0006.c:11: note: main:11:integer:        i = 0
-./test-0006.c:11: note: main:11:integer:        i = 1
-./test-0006.c:11: note: main:11:integer:        i = 2
-./test-0006.c:11: note: main:11:integer:        i = 3
-./test-0006.c:11: note: main:11:integer:        i = 4
-./test-0006.c:11: note: main:11:integer:        i = 5
-./test-0006.c:11: note: main:11:integer:        i = 6
-./test-0006.c:11: note: main:11:integer:        i = 7
-./test-0006.c:11: note: main:11:integer:        i = 8
-./test-0006.c:11: note: main:11:integer:        i = 9
-./test-0006.c:11: note: main:11:integer:        i = 10
-./test-0006.c:11: note: main:11:integer:        i = 11
-./test-0006.c:11: note: main:11:integer:        i = 12
-./test-0006.c:11: note: main:11:integer:        i = 13
-./test-0006.c:11: note: main:11:integer:        i = 14
-./test-0006.c:11: note: main:11:integer:        i = 15
-./test-0006.c:11: note: main:11:integer:        i = 16
-./test-0006.c:11: note: main:11:integer:        i = 17
-./test-0006.c:11: note: main:11:integer:        i = 18
-./test-0006.c:11: note: main:11:integer:        i = 19
-./test-0006.c:11: note: main:11:integer:        i = 20
-./test-0006.c:11: note: main:11:integer:        i = 21
-./test-0006.c:11: note: main:11:integer:        i = 22
-./test-0006.c:11: note: main:11:integer:        i = 23
-./test-0006.c:11: note: main:11:integer:        i = 24
-./test-0006.c:12: note: dereference failure: pointer outside dynamic object bounds in arr[(signed long int)i]
-./test-0006.c:11: note: main:11:integer:        i = 25
-./test-0006.c:12: note: pointer arithmetic: pointer outside dynamic object bounds in arr + (signed long int)i
-
-Error: CBMC_WARNING:
-./test-0006.c: scope_hint: In function ‘main’:
-./test-0006.c:12: error: pointer_dereference : dereference failure: pointer outside dynamic object bounds in arr[(signed long int)i]
-./test-0006.c:5: note: from_entry_point_function:function-call:main
-./test-0006.c:7: note: main:7:integer:        length = 0
-./test-0006.c:7: note: main:7:integer:        length = 99
-./test-0006.c:9: note: main:9:pointer:        arr = ((signed int *)NULL)
-./test-0006.c:9: note: from_main:function-call:__builtin_alloca
-./test-0006.c:9: note: function_parameter_set_in:main:9:integer:        alloca_size = 99ul
-./test-0006.c:11: note: main:11:integer:        i = 0
-./test-0006.c:11: note: main:11:integer:        i = 1
-./test-0006.c:11: note: main:11:integer:        i = 2
-./test-0006.c:11: note: main:11:integer:        i = 3
-./test-0006.c:11: note: main:11:integer:        i = 4
-./test-0006.c:11: note: main:11:integer:        i = 5
-./test-0006.c:11: note: main:11:integer:        i = 6
-./test-0006.c:11: note: main:11:integer:        i = 7
-./test-0006.c:11: note: main:11:integer:        i = 8
-./test-0006.c:11: note: main:11:integer:        i = 9
-./test-0006.c:11: note: main:11:integer:        i = 10
-./test-0006.c:11: note: main:11:integer:        i = 11
-./test-0006.c:11: note: main:11:integer:        i = 12
-./test-0006.c:11: note: main:11:integer:        i = 13
-./test-0006.c:11: note: main:11:integer:        i = 14
-./test-0006.c:11: note: main:11:integer:        i = 15
-./test-0006.c:11: note: main:11:integer:        i = 16
-./test-0006.c:11: note: main:11:integer:        i = 17
-./test-0006.c:11: note: main:11:integer:        i = 18
-./test-0006.c:11: note: main:11:integer:        i = 19
-./test-0006.c:11: note: main:11:integer:        i = 20
-./test-0006.c:11: note: main:11:integer:        i = 21
-./test-0006.c:11: note: main:11:integer:        i = 22
-./test-0006.c:11: note: main:11:integer:        i = 23
-./test-0006.c:11: note: main:11:integer:        i = 24
-./test-0006.c:12: note: dereference failure: pointer outside dynamic object bounds in arr[(signed long int)i]
-
-Error: CBMC_WARNING:
-./test-0006.c: scope_hint: In function ‘main’:
-./test-0006.c:20: error: pointer_arithmetic : pointer arithmetic: pointer outside dynamic object bounds in arr + (signed long int)(length / 2 + 1)
-./test-0006.c:5: note: from_entry_point_function:function-call:main
-./test-0006.c:7: note: main:7:integer:        length = 0
-./test-0006.c:7: note: main:7:integer:        length = 99
-./test-0006.c:9: note: main:9:pointer:        arr = ((signed int *)NULL)
-./test-0006.c:9: note: from_main:function-call:__builtin_alloca
-./test-0006.c:9: note: function_parameter_set_in:main:9:integer:        alloca_size = 99ul
-./test-0006.c:11: note: main:11:integer:        i = 0
-./test-0006.c:11: note: main:11:integer:        i = 1
-./test-0006.c:11: note: main:11:integer:        i = 2
-./test-0006.c:11: note: main:11:integer:        i = 3
-./test-0006.c:11: note: main:11:integer:        i = 4
-./test-0006.c:11: note: main:11:integer:        i = 5
-./test-0006.c:11: note: main:11:integer:        i = 6
-./test-0006.c:11: note: main:11:integer:        i = 7
-./test-0006.c:11: note: main:11:integer:        i = 8
-./test-0006.c:11: note: main:11:integer:        i = 9
-./test-0006.c:11: note: main:11:integer:        i = 10
-./test-0006.c:11: note: main:11:integer:        i = 11
-./test-0006.c:11: note: main:11:integer:        i = 12
-./test-0006.c:11: note: main:11:integer:        i = 13
-./test-0006.c:11: note: main:11:integer:        i = 14
-./test-0006.c:11: note: main:11:integer:        i = 15
-./test-0006.c:11: note: main:11:integer:        i = 16
-./test-0006.c:11: note: main:11:integer:        i = 17
-./test-0006.c:11: note: main:11:integer:        i = 18
-./test-0006.c:11: note: main:11:integer:        i = 19
-./test-0006.c:11: note: main:11:integer:        i = 20
-./test-0006.c:11: note: main:11:integer:        i = 21
-./test-0006.c:11: note: main:11:integer:        i = 22
-./test-0006.c:11: note: main:11:integer:        i = 23
-./test-0006.c:11: note: main:11:integer:        i = 24
-./test-0006.c:12: note: dereference failure: pointer outside dynamic object bounds in arr[(signed long int)i]
-./test-0006.c:11: note: main:11:integer:        i = 25
-./test-0006.c:12: note: pointer arithmetic: pointer outside dynamic object bounds in arr + (signed long int)i
-./test-0006.c:11: note: main:11:integer:        i = 26
-./test-0006.c:11: note: main:11:integer:        i = 27
-./test-0006.c:11: note: main:11:integer:        i = 28
-./test-0006.c:11: note: main:11:integer:        i = 29
-./test-0006.c:11: note: main:11:integer:        i = 30
-./test-0006.c:11: note: main:11:integer:        i = 31
-./test-0006.c:11: note: main:11:integer:        i = 32
-./test-0006.c:11: note: main:11:integer:        i = 33
-./test-0006.c:11: note: main:11:integer:        i = 34
-./test-0006.c:11: note: main:11:integer:        i = 35
-./test-0006.c:11: note: main:11:integer:        i = 36
-./test-0006.c:11: note: main:11:integer:        i = 37
-./test-0006.c:11: note: main:11:integer:        i = 38
-./test-0006.c:11: note: main:11:integer:        i = 39
-./test-0006.c:11: note: main:11:integer:        i = 40
-./test-0006.c:11: note: main:11:integer:        i = 41
-./test-0006.c:11: note: main:11:integer:        i = 42
-./test-0006.c:11: note: main:11:integer:        i = 43
-./test-0006.c:11: note: main:11:integer:        i = 44
-./test-0006.c:11: note: main:11:integer:        i = 45
-./test-0006.c:11: note: main:11:integer:        i = 46
-./test-0006.c:11: note: main:11:integer:        i = 47
-./test-0006.c:11: note: main:11:integer:        i = 48
-./test-0006.c:11: note: main:11:integer:        i = 49
-./test-0006.c:11: note: main:11:integer:        i = 50
-./test-0006.c:11: note: main:11:integer:        i = 51
-./test-0006.c:11: note: main:11:integer:        i = 52
-./test-0006.c:11: note: main:11:integer:        i = 53
-./test-0006.c:11: note: main:11:integer:        i = 54
-./test-0006.c:11: note: main:11:integer:        i = 55
-./test-0006.c:11: note: main:11:integer:        i = 56
-./test-0006.c:11: note: main:11:integer:        i = 57
-./test-0006.c:11: note: main:11:integer:        i = 58
-./test-0006.c:11: note: main:11:integer:        i = 59
-./test-0006.c:11: note: main:11:integer:        i = 60
-./test-0006.c:11: note: main:11:integer:        i = 61
-./test-0006.c:11: note: main:11:integer:        i = 62
-./test-0006.c:11: note: main:11:integer:        i = 63
-./test-0006.c:11: note: main:11:integer:        i = 64
-./test-0006.c:11: note: main:11:integer:        i = 65
-./test-0006.c:11: note: main:11:integer:        i = 66
-./test-0006.c:11: note: main:11:integer:        i = 67
-./test-0006.c:11: note: main:11:integer:        i = 68
-./test-0006.c:11: note: main:11:integer:        i = 69
-./test-0006.c:11: note: main:11:integer:        i = 70
-./test-0006.c:11: note: main:11:integer:        i = 71
-./test-0006.c:11: note: main:11:integer:        i = 72
-./test-0006.c:11: note: main:11:integer:        i = 73
-./test-0006.c:11: note: main:11:integer:        i = 74
-./test-0006.c:11: note: main:11:integer:        i = 75
-./test-0006.c:11: note: main:11:integer:        i = 76
-./test-0006.c:11: note: main:11:integer:        i = 77
-./test-0006.c:11: note: main:11:integer:        i = 78
-./test-0006.c:11: note: main:11:integer:        i = 79
-./test-0006.c:11: note: main:11:integer:        i = 80
-./test-0006.c:11: note: main:11:integer:        i = 81
-./test-0006.c:11: note: main:11:integer:        i = 82
-./test-0006.c:11: note: main:11:integer:        i = 83
-./test-0006.c:11: note: main:11:integer:        i = 84
-./test-0006.c:11: note: main:11:integer:        i = 85
-./test-0006.c:11: note: main:11:integer:        i = 86
-./test-0006.c:11: note: main:11:integer:        i = 87
-./test-0006.c:11: note: main:11:integer:        i = 88
-./test-0006.c:11: note: main:11:integer:        i = 89
-./test-0006.c:11: note: main:11:integer:        i = 90
-./test-0006.c:11: note: main:11:integer:        i = 91
-./test-0006.c:11: note: main:11:integer:        i = 92
-./test-0006.c:11: note: main:11:integer:        i = 93
-./test-0006.c:11: note: main:11:integer:        i = 94
-./test-0006.c:11: note: main:11:integer:        i = 95
-./test-0006.c:11: note: main:11:integer:        i = 96
-./test-0006.c:11: note: main:11:integer:        i = 97
-./test-0006.c:11: note: main:11:integer:        i = 98
-./test-0006.c:11: note: main:11:integer:        i = 99
-./test-0006.c:15: note: main:15:integer:        i = 0
-./test-0006.c:15: note: main:15:integer:        i = 1
-./test-0006.c:15: note: main:15:integer:        i = 2
-./test-0006.c:15: note: main:15:integer:        i = 3
-./test-0006.c:15: note: main:15:integer:        i = 4
-./test-0006.c:15: note: main:15:integer:        i = 5
-./test-0006.c:15: note: main:15:integer:        i = 6
-./test-0006.c:15: note: main:15:integer:        i = 7
-./test-0006.c:15: note: main:15:integer:        i = 8
-./test-0006.c:15: note: main:15:integer:        i = 9
-./test-0006.c:15: note: main:15:integer:        i = 10
-./test-0006.c:15: note: main:15:integer:        i = 11
-./test-0006.c:15: note: main:15:integer:        i = 12
-./test-0006.c:15: note: main:15:integer:        i = 13
-./test-0006.c:15: note: main:15:integer:        i = 14
-./test-0006.c:15: note: main:15:integer:        i = 15
-./test-0006.c:15: note: main:15:integer:        i = 16
-./test-0006.c:15: note: main:15:integer:        i = 17
-./test-0006.c:15: note: main:15:integer:        i = 18
-./test-0006.c:15: note: main:15:integer:        i = 19
-./test-0006.c:15: note: main:15:integer:        i = 20
-./test-0006.c:15: note: main:15:integer:        i = 21
-./test-0006.c:15: note: main:15:integer:        i = 22
-./test-0006.c:15: note: main:15:integer:        i = 23
-./test-0006.c:15: note: main:15:integer:        i = 24
-./test-0006.c:16: note: dereference failure: pointer outside dynamic object bounds in arr[(signed long int)i]
-./test-0006.c:15: note: main:15:integer:        i = 25
-./test-0006.c:16: note: pointer arithmetic: pointer outside dynamic object bounds in arr + (signed long int)i
+./test-0006.c:16: note: pointer arithmetic: pointer outside object bounds in arr + (signed long int)i
 ./test-0006.c:15: note: main:15:integer:        i = 26
 ./test-0006.c:15: note: main:15:integer:        i = 27
 ./test-0006.c:15: note: main:15:integer:        i = 28
@@ -2138,11 +2138,11 @@ Error: CBMC_WARNING:
 ./test-0006.c:15: note: main:15:integer:        i = 97
 ./test-0006.c:15: note: main:15:integer:        i = 98
 ./test-0006.c:15: note: main:15:integer:        i = 99
-./test-0006.c:20: note: pointer arithmetic: pointer outside dynamic object bounds in arr + (signed long int)(length / 2 + 1)
+./test-0006.c:20: note: pointer arithmetic: pointer outside object bounds in arr + (signed long int)(length / 2 + 1)
 
 Error: CBMC_WARNING:
 ./test-0006.c: scope_hint: In function ‘main’:
-./test-0006.c:20: error: pointer_dereference : dereference failure: pointer outside dynamic object bounds in arr[(signed long int)(length / 2 + 1)]
+./test-0006.c:20: error: pointer_dereference : dereference failure: pointer outside object bounds in arr[(signed long int)(length / 2 + 1)]
 ./test-0006.c:5: note: from_entry_point_function:function-call:main
 ./test-0006.c:7: note: main:7:integer:        length = 0
 ./test-0006.c:7: note: main:7:integer:        length = 99
@@ -2174,9 +2174,9 @@ Error: CBMC_WARNING:
 ./test-0006.c:11: note: main:11:integer:        i = 22
 ./test-0006.c:11: note: main:11:integer:        i = 23
 ./test-0006.c:11: note: main:11:integer:        i = 24
-./test-0006.c:12: note: dereference failure: pointer outside dynamic object bounds in arr[(signed long int)i]
+./test-0006.c:12: note: dereference failure: pointer outside object bounds in arr[(signed long int)i]
 ./test-0006.c:11: note: main:11:integer:        i = 25
-./test-0006.c:12: note: pointer arithmetic: pointer outside dynamic object bounds in arr + (signed long int)i
+./test-0006.c:12: note: pointer arithmetic: pointer outside object bounds in arr + (signed long int)i
 ./test-0006.c:11: note: main:11:integer:        i = 26
 ./test-0006.c:11: note: main:11:integer:        i = 27
 ./test-0006.c:11: note: main:11:integer:        i = 28
@@ -2276,9 +2276,9 @@ Error: CBMC_WARNING:
 ./test-0006.c:15: note: main:15:integer:        i = 22
 ./test-0006.c:15: note: main:15:integer:        i = 23
 ./test-0006.c:15: note: main:15:integer:        i = 24
-./test-0006.c:16: note: dereference failure: pointer outside dynamic object bounds in arr[(signed long int)i]
+./test-0006.c:16: note: dereference failure: pointer outside object bounds in arr[(signed long int)i]
 ./test-0006.c:15: note: main:15:integer:        i = 25
-./test-0006.c:16: note: pointer arithmetic: pointer outside dynamic object bounds in arr + (signed long int)i
+./test-0006.c:16: note: pointer arithmetic: pointer outside object bounds in arr + (signed long int)i
 ./test-0006.c:15: note: main:15:integer:        i = 26
 ./test-0006.c:15: note: main:15:integer:        i = 27
 ./test-0006.c:15: note: main:15:integer:        i = 28
@@ -2353,12 +2353,12 @@ Error: CBMC_WARNING:
 ./test-0006.c:15: note: main:15:integer:        i = 97
 ./test-0006.c:15: note: main:15:integer:        i = 98
 ./test-0006.c:15: note: main:15:integer:        i = 99
-./test-0006.c:20: note: pointer arithmetic: pointer outside dynamic object bounds in arr + (signed long int)(length / 2 + 1)
-./test-0006.c:20: note: dereference failure: pointer outside dynamic object bounds in arr[(signed long int)(length / 2 + 1)]
+./test-0006.c:20: note: pointer arithmetic: pointer outside object bounds in arr + (signed long int)(length / 2 + 1)
+./test-0006.c:20: note: dereference failure: pointer outside object bounds in arr[(signed long int)(length / 2 + 1)]
 
 Error: CBMC_WARNING:
 ./test-0006.c: scope_hint: In function ‘main’:
-./test-0006.c:22: error: pointer_arithmetic : pointer arithmetic: pointer outside dynamic object bounds in arr + (signed long int)length
+./test-0006.c:22: error: pointer_arithmetic : pointer arithmetic: pointer outside object bounds in arr + (signed long int)length
 ./test-0006.c:5: note: from_entry_point_function:function-call:main
 ./test-0006.c:7: note: main:7:integer:        length = 0
 ./test-0006.c:7: note: main:7:integer:        length = 99
@@ -2390,9 +2390,9 @@ Error: CBMC_WARNING:
 ./test-0006.c:11: note: main:11:integer:        i = 22
 ./test-0006.c:11: note: main:11:integer:        i = 23
 ./test-0006.c:11: note: main:11:integer:        i = 24
-./test-0006.c:12: note: dereference failure: pointer outside dynamic object bounds in arr[(signed long int)i]
+./test-0006.c:12: note: dereference failure: pointer outside object bounds in arr[(signed long int)i]
 ./test-0006.c:11: note: main:11:integer:        i = 25
-./test-0006.c:12: note: pointer arithmetic: pointer outside dynamic object bounds in arr + (signed long int)i
+./test-0006.c:12: note: pointer arithmetic: pointer outside object bounds in arr + (signed long int)i
 ./test-0006.c:11: note: main:11:integer:        i = 26
 ./test-0006.c:11: note: main:11:integer:        i = 27
 ./test-0006.c:11: note: main:11:integer:        i = 28
@@ -2492,9 +2492,9 @@ Error: CBMC_WARNING:
 ./test-0006.c:15: note: main:15:integer:        i = 22
 ./test-0006.c:15: note: main:15:integer:        i = 23
 ./test-0006.c:15: note: main:15:integer:        i = 24
-./test-0006.c:16: note: dereference failure: pointer outside dynamic object bounds in arr[(signed long int)i]
+./test-0006.c:16: note: dereference failure: pointer outside object bounds in arr[(signed long int)i]
 ./test-0006.c:15: note: main:15:integer:        i = 25
-./test-0006.c:16: note: pointer arithmetic: pointer outside dynamic object bounds in arr + (signed long int)i
+./test-0006.c:16: note: pointer arithmetic: pointer outside object bounds in arr + (signed long int)i
 ./test-0006.c:15: note: main:15:integer:        i = 26
 ./test-0006.c:15: note: main:15:integer:        i = 27
 ./test-0006.c:15: note: main:15:integer:        i = 28
@@ -2569,15 +2569,15 @@ Error: CBMC_WARNING:
 ./test-0006.c:15: note: main:15:integer:        i = 97
 ./test-0006.c:15: note: main:15:integer:        i = 98
 ./test-0006.c:15: note: main:15:integer:        i = 99
-./test-0006.c:20: note: pointer arithmetic: pointer outside dynamic object bounds in arr + (signed long int)(length / 2 + 1)
-./test-0006.c:20: note: dereference failure: pointer outside dynamic object bounds in arr[(signed long int)(length / 2 + 1)]
+./test-0006.c:20: note: pointer arithmetic: pointer outside object bounds in arr + (signed long int)(length / 2 + 1)
+./test-0006.c:20: note: dereference failure: pointer outside object bounds in arr[(signed long int)(length / 2 + 1)]
 ./test-0006.c:21: note: main:21:pointer:        a = ((signed int *)NULL)
 ./test-0006.c:22: note: main:22:pointer:        b = ((signed int *)NULL)
-./test-0006.c:22: note: pointer arithmetic: pointer outside dynamic object bounds in arr + (signed long int)length
+./test-0006.c:22: note: pointer arithmetic: pointer outside object bounds in arr + (signed long int)length
 
 Error: CBMC_WARNING:
 ./test-0006.c: scope_hint: In function ‘main’:
-./test-0006.c:22: error: pointer_arithmetic : pointer arithmetic: pointer outside dynamic object bounds in (arr + (signed long int)length) - (signed long int)1
+./test-0006.c:22: error: pointer_arithmetic : pointer arithmetic: pointer outside object bounds in (arr + (signed long int)length) - (signed long int)1
 ./test-0006.c:5: note: from_entry_point_function:function-call:main
 ./test-0006.c:7: note: main:7:integer:        length = 0
 ./test-0006.c:7: note: main:7:integer:        length = 99
@@ -2609,9 +2609,9 @@ Error: CBMC_WARNING:
 ./test-0006.c:11: note: main:11:integer:        i = 22
 ./test-0006.c:11: note: main:11:integer:        i = 23
 ./test-0006.c:11: note: main:11:integer:        i = 24
-./test-0006.c:12: note: dereference failure: pointer outside dynamic object bounds in arr[(signed long int)i]
+./test-0006.c:12: note: dereference failure: pointer outside object bounds in arr[(signed long int)i]
 ./test-0006.c:11: note: main:11:integer:        i = 25
-./test-0006.c:12: note: pointer arithmetic: pointer outside dynamic object bounds in arr + (signed long int)i
+./test-0006.c:12: note: pointer arithmetic: pointer outside object bounds in arr + (signed long int)i
 ./test-0006.c:11: note: main:11:integer:        i = 26
 ./test-0006.c:11: note: main:11:integer:        i = 27
 ./test-0006.c:11: note: main:11:integer:        i = 28
@@ -2711,9 +2711,9 @@ Error: CBMC_WARNING:
 ./test-0006.c:15: note: main:15:integer:        i = 22
 ./test-0006.c:15: note: main:15:integer:        i = 23
 ./test-0006.c:15: note: main:15:integer:        i = 24
-./test-0006.c:16: note: dereference failure: pointer outside dynamic object bounds in arr[(signed long int)i]
+./test-0006.c:16: note: dereference failure: pointer outside object bounds in arr[(signed long int)i]
 ./test-0006.c:15: note: main:15:integer:        i = 25
-./test-0006.c:16: note: pointer arithmetic: pointer outside dynamic object bounds in arr + (signed long int)i
+./test-0006.c:16: note: pointer arithmetic: pointer outside object bounds in arr + (signed long int)i
 ./test-0006.c:15: note: main:15:integer:        i = 26
 ./test-0006.c:15: note: main:15:integer:        i = 27
 ./test-0006.c:15: note: main:15:integer:        i = 28
@@ -2788,9 +2788,9 @@ Error: CBMC_WARNING:
 ./test-0006.c:15: note: main:15:integer:        i = 97
 ./test-0006.c:15: note: main:15:integer:        i = 98
 ./test-0006.c:15: note: main:15:integer:        i = 99
-./test-0006.c:20: note: pointer arithmetic: pointer outside dynamic object bounds in arr + (signed long int)(length / 2 + 1)
-./test-0006.c:20: note: dereference failure: pointer outside dynamic object bounds in arr[(signed long int)(length / 2 + 1)]
+./test-0006.c:20: note: pointer arithmetic: pointer outside object bounds in arr + (signed long int)(length / 2 + 1)
+./test-0006.c:20: note: dereference failure: pointer outside object bounds in arr[(signed long int)(length / 2 + 1)]
 ./test-0006.c:21: note: main:21:pointer:        a = ((signed int *)NULL)
 ./test-0006.c:22: note: main:22:pointer:        b = ((signed int *)NULL)
-./test-0006.c:22: note: pointer arithmetic: pointer outside dynamic object bounds in arr + (signed long int)length
-./test-0006.c:22: note: pointer arithmetic: pointer outside dynamic object bounds in (arr + (signed long int)length) - (signed long int)1
+./test-0006.c:22: note: pointer arithmetic: pointer outside object bounds in arr + (signed long int)length
+./test-0006.c:22: note: pointer arithmetic: pointer outside object bounds in (arr + (signed long int)length) - (signed long int)1

@@ -4,11 +4,8 @@ Error: CBMC_WARNING:
 ./test-0002.c:5: note: from_entry_point_function:function-call:main
 ./test-0002.c:6: note: main:6:pointer:        undef = ?
 ./test-0002.c:7: note: main:7:pointer:        null_value = ((const void **)NULL)
-./test-0002.c:10: note: dereference failure: pointer NULL in *undef
-./test-0002.c:10: note: dereference failure: deallocated dynamic object in *undef
-./test-0002.c:10: note: dereference failure: dead object in *undef
+./test-0002.c:10: note: dereference failure: pointer invalid in *undef
 ./test-0002.c:10: note: dereference failure: pointer outside object bounds in *undef
-./test-0002.c:10: note: dereference failure: invalid integer address in *undef
 ./test-0002.c:10: note: main:10:pointer:        null_value = ?
 ./test-0002.c:12: note: main:12:pointer:        err = ((const void **)NULL)
 ./test-0002.c:12: note: dereference failure: pointer NULL in *null_value
@@ -19,57 +16,69 @@ Error: CBMC_WARNING:
 
 Error: CBMC_WARNING:
 ./test-0002.c: scope_hint: In function ‘main’:
-./test-0002.c:10: error: pointer_dereference : dereference failure: pointer NULL in *undef
-./test-0002.c:5: note: from_entry_point_function:function-call:main
-./test-0002.c:6: note: main:6:pointer:        undef = ?
-./test-0002.c:7: note: main:7:pointer:        null_value = ((const void **)NULL)
-./test-0002.c:10: note: dereference failure: pointer NULL in *undef
-
-Error: CBMC_WARNING:
-./test-0002.c: scope_hint: In function ‘main’:
-./test-0002.c:10: error: pointer_dereference : dereference failure: pointer invalid in *undef
+./test-0002.c:12: error: pointer_dereference : dereference failure: pointer outside object bounds in *null_value
 ./test-0002.c:5: note: from_entry_point_function:function-call:main
 ./test-0002.c:6: note: main:6:pointer:        undef = ?
 ./test-0002.c:7: note: main:7:pointer:        null_value = ((const void **)NULL)
 ./test-0002.c:10: note: dereference failure: pointer invalid in *undef
-
-Error: CBMC_WARNING:
-./test-0002.c: scope_hint: In function ‘main’:
-./test-0002.c:10: error: pointer_dereference : dereference failure: deallocated dynamic object in *undef
-./test-0002.c:5: note: from_entry_point_function:function-call:main
-./test-0002.c:6: note: main:6:pointer:        undef = ?
-./test-0002.c:7: note: main:7:pointer:        null_value = ((const void **)NULL)
-./test-0002.c:10: note: dereference failure: pointer NULL in *undef
-./test-0002.c:10: note: dereference failure: deallocated dynamic object in *undef
-
-Error: CBMC_WARNING:
-./test-0002.c: scope_hint: In function ‘main’:
-./test-0002.c:10: error: pointer_dereference : dereference failure: dead object in *undef
-./test-0002.c:5: note: from_entry_point_function:function-call:main
-./test-0002.c:6: note: main:6:pointer:        undef = ?
-./test-0002.c:7: note: main:7:pointer:        null_value = ((const void **)NULL)
-./test-0002.c:10: note: dereference failure: pointer NULL in *undef
-./test-0002.c:10: note: dereference failure: deallocated dynamic object in *undef
-./test-0002.c:10: note: dereference failure: dead object in *undef
-
-Error: CBMC_WARNING:
-./test-0002.c: scope_hint: In function ‘main’:
-./test-0002.c:10: error: pointer_dereference : dereference failure: pointer outside dynamic object bounds in *undef
-./test-0002.c:5: note: from_entry_point_function:function-call:main
-./test-0002.c:6: note: main:6:pointer:        undef = ?
-./test-0002.c:7: note: main:7:pointer:        null_value = ((const void **)NULL)
-./test-0002.c:10: note: dereference failure: pointer outside dynamic object bounds in *undef
-
-Error: CBMC_WARNING:
-./test-0002.c: scope_hint: In function ‘main’:
-./test-0002.c:10: error: pointer_dereference : dereference failure: pointer outside object bounds in *undef
-./test-0002.c:5: note: from_entry_point_function:function-call:main
-./test-0002.c:6: note: main:6:pointer:        undef = ?
-./test-0002.c:7: note: main:7:pointer:        null_value = ((const void **)NULL)
-./test-0002.c:10: note: dereference failure: pointer NULL in *undef
-./test-0002.c:10: note: dereference failure: deallocated dynamic object in *undef
-./test-0002.c:10: note: dereference failure: dead object in *undef
 ./test-0002.c:10: note: dereference failure: pointer outside object bounds in *undef
+./test-0002.c:10: note: main:10:pointer:        null_value = ?
+./test-0002.c:12: note: main:12:pointer:        err = ((const void **)NULL)
+./test-0002.c:12: note: dereference failure: pointer NULL in *null_value
+./test-0002.c:12: note: dereference failure: deallocated dynamic object in *null_value
+./test-0002.c:12: note: dereference failure: dead object in *null_value
+./test-0002.c:12: note: dereference failure: pointer outside object bounds in *null_value
+
+Error: CBMC_WARNING:
+./test-0002.c: scope_hint: In function ‘main’:
+./test-0002.c:12: error: pointer_dereference : dereference failure: dead object in *null_value
+./test-0002.c:5: note: from_entry_point_function:function-call:main
+./test-0002.c:6: note: main:6:pointer:        undef = ?
+./test-0002.c:7: note: main:7:pointer:        null_value = ((const void **)NULL)
+./test-0002.c:10: note: dereference failure: pointer invalid in *undef
+./test-0002.c:10: note: dereference failure: pointer outside object bounds in *undef
+./test-0002.c:10: note: main:10:pointer:        null_value = ?
+./test-0002.c:12: note: main:12:pointer:        err = ((const void **)NULL)
+./test-0002.c:12: note: dereference failure: pointer NULL in *null_value
+./test-0002.c:12: note: dereference failure: deallocated dynamic object in *null_value
+./test-0002.c:12: note: dereference failure: dead object in *null_value
+
+Error: CBMC_WARNING:
+./test-0002.c: scope_hint: In function ‘main’:
+./test-0002.c:12: error: pointer_dereference : dereference failure: deallocated dynamic object in *null_value
+./test-0002.c:5: note: from_entry_point_function:function-call:main
+./test-0002.c:6: note: main:6:pointer:        undef = ?
+./test-0002.c:7: note: main:7:pointer:        null_value = ((const void **)NULL)
+./test-0002.c:10: note: dereference failure: pointer invalid in *undef
+./test-0002.c:10: note: dereference failure: pointer outside object bounds in *undef
+./test-0002.c:10: note: main:10:pointer:        null_value = ?
+./test-0002.c:12: note: main:12:pointer:        err = ((const void **)NULL)
+./test-0002.c:12: note: dereference failure: pointer NULL in *null_value
+./test-0002.c:12: note: dereference failure: deallocated dynamic object in *null_value
+
+Error: CBMC_WARNING:
+./test-0002.c: scope_hint: In function ‘main’:
+./test-0002.c:12: error: pointer_dereference : dereference failure: pointer invalid in *null_value
+./test-0002.c:5: note: from_entry_point_function:function-call:main
+./test-0002.c:6: note: main:6:pointer:        undef = ?
+./test-0002.c:7: note: main:7:pointer:        null_value = ((const void **)NULL)
+./test-0002.c:10: note: dereference failure: pointer invalid in *undef
+./test-0002.c:10: note: dereference failure: pointer outside object bounds in *undef
+./test-0002.c:10: note: main:10:pointer:        null_value = ?
+./test-0002.c:12: note: main:12:pointer:        err = ((const void **)NULL)
+./test-0002.c:12: note: dereference failure: pointer invalid in *null_value
+
+Error: CBMC_WARNING:
+./test-0002.c: scope_hint: In function ‘main’:
+./test-0002.c:12: error: pointer_dereference : dereference failure: pointer NULL in *null_value
+./test-0002.c:5: note: from_entry_point_function:function-call:main
+./test-0002.c:6: note: main:6:pointer:        undef = ?
+./test-0002.c:7: note: main:7:pointer:        null_value = ((const void **)NULL)
+./test-0002.c:10: note: dereference failure: pointer invalid in *undef
+./test-0002.c:10: note: dereference failure: pointer outside object bounds in *undef
+./test-0002.c:10: note: main:10:pointer:        null_value = ?
+./test-0002.c:12: note: main:12:pointer:        err = ((const void **)NULL)
+./test-0002.c:12: note: dereference failure: pointer NULL in *null_value
 
 Error: CBMC_WARNING:
 ./test-0002.c: scope_hint: In function ‘main’:
@@ -85,89 +94,44 @@ Error: CBMC_WARNING:
 
 Error: CBMC_WARNING:
 ./test-0002.c: scope_hint: In function ‘main’:
-./test-0002.c:12: error: pointer_dereference : dereference failure: pointer NULL in *null_value
-./test-0002.c:5: note: from_entry_point_function:function-call:main
-./test-0002.c:6: note: main:6:pointer:        undef = ?
-./test-0002.c:7: note: main:7:pointer:        null_value = ((const void **)NULL)
-./test-0002.c:10: note: dereference failure: pointer NULL in *undef
-./test-0002.c:10: note: dereference failure: deallocated dynamic object in *undef
-./test-0002.c:10: note: dereference failure: dead object in *undef
-./test-0002.c:10: note: dereference failure: pointer outside object bounds in *undef
-./test-0002.c:10: note: dereference failure: invalid integer address in *undef
-./test-0002.c:10: note: main:10:pointer:        null_value = ?
-./test-0002.c:12: note: main:12:pointer:        err = ((const void **)NULL)
-./test-0002.c:12: note: dereference failure: pointer NULL in *null_value
-
-Error: CBMC_WARNING:
-./test-0002.c: scope_hint: In function ‘main’:
-./test-0002.c:12: error: pointer_dereference : dereference failure: pointer invalid in *null_value
-./test-0002.c:5: note: from_entry_point_function:function-call:main
-./test-0002.c:6: note: main:6:pointer:        undef = ?
-./test-0002.c:7: note: main:7:pointer:        null_value = ((const void **)NULL)
-./test-0002.c:10: note: dereference failure: pointer outside dynamic object bounds in *undef
-./test-0002.c:10: note: main:10:pointer:        null_value = ?
-./test-0002.c:12: note: main:12:pointer:        err = ((const void **)NULL)
-./test-0002.c:12: note: dereference failure: pointer invalid in *null_value
-
-Error: CBMC_WARNING:
-./test-0002.c: scope_hint: In function ‘main’:
-./test-0002.c:12: error: pointer_dereference : dereference failure: deallocated dynamic object in *null_value
-./test-0002.c:5: note: from_entry_point_function:function-call:main
-./test-0002.c:6: note: main:6:pointer:        undef = ?
-./test-0002.c:7: note: main:7:pointer:        null_value = ((const void **)NULL)
-./test-0002.c:10: note: dereference failure: pointer NULL in *undef
-./test-0002.c:10: note: dereference failure: deallocated dynamic object in *undef
-./test-0002.c:10: note: dereference failure: dead object in *undef
-./test-0002.c:10: note: dereference failure: pointer outside object bounds in *undef
-./test-0002.c:10: note: dereference failure: invalid integer address in *undef
-./test-0002.c:10: note: main:10:pointer:        null_value = ?
-./test-0002.c:12: note: main:12:pointer:        err = ((const void **)NULL)
-./test-0002.c:12: note: dereference failure: pointer NULL in *null_value
-./test-0002.c:12: note: dereference failure: deallocated dynamic object in *null_value
-
-Error: CBMC_WARNING:
-./test-0002.c: scope_hint: In function ‘main’:
-./test-0002.c:12: error: pointer_dereference : dereference failure: dead object in *null_value
-./test-0002.c:5: note: from_entry_point_function:function-call:main
-./test-0002.c:6: note: main:6:pointer:        undef = ?
-./test-0002.c:7: note: main:7:pointer:        null_value = ((const void **)NULL)
-./test-0002.c:10: note: dereference failure: pointer NULL in *undef
-./test-0002.c:10: note: dereference failure: deallocated dynamic object in *undef
-./test-0002.c:10: note: dereference failure: dead object in *undef
-./test-0002.c:10: note: dereference failure: pointer outside object bounds in *undef
-./test-0002.c:10: note: dereference failure: invalid integer address in *undef
-./test-0002.c:10: note: main:10:pointer:        null_value = ?
-./test-0002.c:12: note: main:12:pointer:        err = ((const void **)NULL)
-./test-0002.c:12: note: dereference failure: pointer NULL in *null_value
-./test-0002.c:12: note: dereference failure: deallocated dynamic object in *null_value
-./test-0002.c:12: note: dereference failure: dead object in *null_value
-
-Error: CBMC_WARNING:
-./test-0002.c: scope_hint: In function ‘main’:
-./test-0002.c:12: error: pointer_dereference : dereference failure: pointer outside dynamic object bounds in *null_value
+./test-0002.c:10: error: pointer_dereference : dereference failure: pointer outside object bounds in *undef
 ./test-0002.c:5: note: from_entry_point_function:function-call:main
 ./test-0002.c:6: note: main:6:pointer:        undef = ?
 ./test-0002.c:7: note: main:7:pointer:        null_value = ((const void **)NULL)
 ./test-0002.c:10: note: dereference failure: pointer invalid in *undef
 ./test-0002.c:10: note: dereference failure: pointer outside object bounds in *undef
-./test-0002.c:10: note: main:10:pointer:        null_value = ?
-./test-0002.c:12: note: main:12:pointer:        err = ((const void **)NULL)
-./test-0002.c:12: note: dereference failure: pointer outside dynamic object bounds in *null_value
 
 Error: CBMC_WARNING:
 ./test-0002.c: scope_hint: In function ‘main’:
-./test-0002.c:12: error: pointer_dereference : dereference failure: pointer outside object bounds in *null_value
+./test-0002.c:10: error: pointer_dereference : dereference failure: dead object in *undef
 ./test-0002.c:5: note: from_entry_point_function:function-call:main
 ./test-0002.c:6: note: main:6:pointer:        undef = ?
 ./test-0002.c:7: note: main:7:pointer:        null_value = ((const void **)NULL)
 ./test-0002.c:10: note: dereference failure: pointer NULL in *undef
 ./test-0002.c:10: note: dereference failure: deallocated dynamic object in *undef
 ./test-0002.c:10: note: dereference failure: dead object in *undef
-./test-0002.c:10: note: dereference failure: pointer outside object bounds in *undef
-./test-0002.c:10: note: dereference failure: invalid integer address in *undef
-./test-0002.c:10: note: main:10:pointer:        null_value = ?
-./test-0002.c:12: note: main:12:pointer:        err = ((const void **)NULL)
-./test-0002.c:12: note: dereference failure: pointer NULL in *null_value
-./test-0002.c:12: note: dereference failure: deallocated dynamic object in *null_value
-./test-0002.c:12: note: dereference failure: dead object in *null_value
-./test-0002.c:12: note: dereference failure: pointer outside object bounds in *null_value
+
+Error: CBMC_WARNING:
+./test-0002.c: scope_hint: In function ‘main’:
+./test-0002.c:10: error: pointer_dereference : dereference failure: deallocated dynamic object in *undef
+./test-0002.c:5: note: from_entry_point_function:function-call:main
+./test-0002.c:6: note: main:6:pointer:        undef = ?
+./test-0002.c:7: note: main:7:pointer:        null_value = ((const void **)NULL)
+./test-0002.c:10: note: dereference failure: pointer NULL in *undef
+./test-0002.c:10: note: dereference failure: deallocated dynamic object in *undef
+
+Error: CBMC_WARNING:
+./test-0002.c: scope_hint: In function ‘main’:
+./test-0002.c:10: error: pointer_dereference : dereference failure: pointer invalid in *undef
+./test-0002.c:5: note: from_entry_point_function:function-call:main
+./test-0002.c:6: note: main:6:pointer:        undef = ?
+./test-0002.c:7: note: main:7:pointer:        null_value = ((const void **)NULL)
+./test-0002.c:10: note: dereference failure: pointer invalid in *undef
+
+Error: CBMC_WARNING:
+./test-0002.c: scope_hint: In function ‘main’:
+./test-0002.c:10: error: pointer_dereference : dereference failure: pointer NULL in *undef
+./test-0002.c:5: note: from_entry_point_function:function-call:main
+./test-0002.c:6: note: main:6:pointer:        undef = ?
+./test-0002.c:7: note: main:7:pointer:        null_value = ((const void **)NULL)
+./test-0002.c:10: note: dereference failure: pointer NULL in *undef

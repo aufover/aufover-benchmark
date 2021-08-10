@@ -1,6 +1,6 @@
 Error: CBMC_WARNING:
 ./0011-test.c: scope_hint: In function ‘main’:
-./0011-test.c:9: error: pointer_dereference : dereference failure: pointer outside dynamic object bounds in *ptr
+./0011-test.c:9: error: pointer_dereference : dereference failure: pointer outside object bounds in *ptr
 ./0011-test.c:3: note: from_entry_point_function:function-call:main
 ./0011-test.c:5: note: main:5:pointer:        ptr = ((char *)NULL)
 ./0011-test.c:5: note: from_main:function-call:realloc
@@ -8,4 +8,4 @@ Error: CBMC_WARNING:
 ./0011-test.c:5: note: function_parameter_set_in:main:5:integer:        malloc_size = 0ul
 <builtin-library-realloc>:14: note: function_parameter_set_in:realloc:14:integer:        malloc_size = 0ul
 ./0011-test.c:5: note: main:5:pointer:        ptr = dynamic_object1
-./0011-test.c:9: note: dereference failure: pointer outside dynamic object bounds in *ptr
+./0011-test.c:9: note: dereference failure: pointer outside object bounds in *ptr
