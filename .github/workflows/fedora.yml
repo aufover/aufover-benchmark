@@ -31,13 +31,13 @@ jobs:
       - name: Install Copr support and make
         run: dnf install dnf-plugins-core make -y
 
-      - name: Enable given copr repositories
+      - name: Enable AUFOVER copr repositories
         run: |
-          dnf copr enable -y lzaoral/Divine
-          dnf copr enable -y kdudka/csdiff
-          dnf copr enable -y kdudka/predator
+          dnf copr enable -y @aufover/csdiff
+          dnf copr enable -y @aufover/divine
+          dnf copr enable -y @aufover/predator
           if [[ ! -v NO_SYMBIOTIC ]]; then
-            dnf copr enable jamartis/symbiotic -y
+            dnf copr enable -y @aufover/symbiotic
           fi
 
       - name: Update the system and install dependencies
