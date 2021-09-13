@@ -40,7 +40,7 @@ macro(gen_test_for_tool)
     file(CREATE_LINK ../${c_file} ${dst_tool_dir}/${c_file} SYMBOLIC)
 
     # prepare the command to run
-    set(cmd "{\n\t${TOOL_EXEC_${tool}}")
+    set(cmd "{\n\texport LC_ALL=C\n\t${TOOL_EXEC_${tool}}")
     optionally_append_args(prefix)
     set(cmd "${cmd} ./${c_file}")
     optionally_append_args(suffix)
