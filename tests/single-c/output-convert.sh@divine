@@ -1,3 +1,3 @@
 #!/bin/bash
-
-divine2csgrep
+set -o pipefail
+divine2csgrep | sed 's/.*\(single-c.*\)/\1/'
