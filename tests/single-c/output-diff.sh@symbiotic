@@ -1,2 +1,6 @@
 #!/bin/bash
-exec diff -up <(cssort "$1") <(cssort "$2")
+
+prune_output () {
+	sed -e 's/address:[[:blank:]]\+[[:digit:]]\+:\?[[:digit:]]*/address:/g' -e 's/[[:blank:]\+]align[[:blank:]]\+[[:digit:]]\+//g' -e 's/[[:blank:]]*!dbg[[:blank:]]*![[:digit:]]\+//g' $1 
+}
+exec diff -up <(prune_output $1 | cssort ) <(prune_output $2 | cssort)
