@@ -38,11 +38,20 @@ add_custom_command(TARGET check
 # find required utils
 include(find-utils.cmake)
 
-# find available/enabled tools
-include(find-tools.cmake)
+# TODO: change the default to ON
+option(ENABLE_SINGLE_C "Set to ON to enable the single-c test-suite" OFF)
+if(ENABLE_SINGLE_C)
+    # find available/enabled tools
+    include(find-tools.cmake)
 
-# make target list-enabled-tools
-add_custom_target(list-enabled-tools COMMAND echo ${TOOLS_ENABLED})
+    # make target list-enabled-tools
+    add_custom_target(list-enabled-tools COMMAND echo ${TOOLS_ENABLED})
 
-# add top-level test groups
-add_subdirectory(single-c)
+    # add top-level test groups
+    add_subdirectory(single-c)
+endif()
+
+option(ENABLE_RPM_PKGS "Set to ON to enable the rpm-pkgs test-suite" ON)
+if(ENABLE_RPM_PKGS)
+    add_subdirectory(rpm-pkgs)
+endif()
