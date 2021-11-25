@@ -1,7 +1,15 @@
 #!/bin/bash
 
 prune_output () {
-	sed -e 's/address:[[:blank:]]\+[[:digit:]]\+:\?[[:digit:]]*/address:/g' -e 's/[[:blank:]\+]align[[:blank:]]\+[[:digit:]]\+//g' -e 's/[[:blank:]]*!dbg[[:blank:]]*![[:digit:]]\+//g' -e 's/\#[[:digit:]]\+//g' $1 
+	  sed \
+        #address: 24:0
+        -e 's/address:[[:blank:]]\+[[:digit:]]\+:\?[[:digit:]]*/address:/g' \
+        -e 's/[[:blank:]\+]align[[:blank:]]\+[[:digit:]]\+//g' \
+        # !dbg !24
+        -e 's/[[:blank:]]*!dbg[[:blank:]]*![[:digit:]]\+//g' \
+        #(i32: -2147483648)
+        -e 's/\#[[:digit:]]\+//g' -e 's/\(i32:[^)]*]\)//' \
+    $1
 }
 #For Debuging purposes only:
 #exec diff -up <(prune_output $1 | cssort ) <(prune_output $2 | cssort) > $1@diff_dbg
