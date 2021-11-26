@@ -1,3 +1,13 @@
+# check for available csmock tools (plug-ins)
+execute_process(COMMAND bash -c "set pipefail; csmock --list-available-tools | sed -e 's| .*$||' | tr '\n' ';'"
+    RESULT_VARIABLE cmd_status
+    OUTPUT_VARIABLE CSMOCK_TOOLS)
+if(${cmd_status} EQUAL 0)
+    message(STATUS "CSMOCK_TOOLS: ${CSMOCK_TOOLS}")
+else()
+    message(FATAL_ERROR "Unable to list csmock tools")
+endif()
+
 # fetch ${build} using the fetch.sh script
 macro(fetch_build)
     set(fetch_script ${src_build_dir}/fetch.sh)
