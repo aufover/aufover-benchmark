@@ -1,0 +1,1107 @@
+scan.ini: [scan]
+scan.ini: tool = csmock
+scan.ini: tool-version = csmock-3.1.0.20211129.160954.g74fe693.ldpwrap-1.fc34
+scan.ini: tool-args = '/usr/bin/csmock' '-o' '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/openssl-pkcs11-0.4.11-4.fc35/divine/output' '-f' '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/openssl-pkcs11-0.4.11-4.fc35/openssl-pkcs11-0.4.11-4.fc35.src.rpm' '-r' 'fedora-35-x86_64' '-t' 'divine' '--divine-timeout=8' '--keep-going'
+scan.ini: host = f34
+scan.ini: store-results-to = /home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/openssl-pkcs11-0.4.11-4.fc35/divine/output
+scan.ini: time-created = 2021-11-29 16:23:16
+scan.ini: enabled-plugins = divine, gcc
+scan.ini: mock-config = fedora-35-x86_64
+scan.ini: project-name = openssl-pkcs11-0.4.11-4.fc35
+scan.ini: known-false-positives = /usr/share/csmock/known-false-positives.js
+>>> 2021-11-29 16:23:16	"rpm -qa | sort -V > '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/openssl-pkcs11-0.4.11-4.fc35/divine/output/debug/rpm-list-host.txt'"
+
+>>> 2021-11-29 16:23:16	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--init"
+INFO: mock.py version 2.13 starting (python version = 3.9.7, NVR = mock-2.13-1.kdudka.1.fc34)...
+Start(bootstrap): init plugins
+INFO: selinux enabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start: clean chroot
+Finish: clean chroot
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+Start: unpacking root cache
+Finish: unpacking root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish: chroot init
+Finish: run
+
+>>> 2021-11-29 16:23:18	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--installdeps" "/tmp/csmockj6orjvws/openssl-pkcs11-0.4.11-4.fc35.src.rpm"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Package pkgconf-pkg-config-1.8.0-1.fc35.x86_64 is already installed.
+Dependencies resolved.
+======================================================================================
+ Package                                Arch    Version                 Repo      Size
+======================================================================================
+Installing:
+ [1mautoconf                              [m noarch  2.69-37.fc35            fedora   666 k
+ [1mautomake                              [m noarch  1.16.2-5.fc35           fedora   662 k
+ [1mdoxygen                               [m x86_64  1:1.9.1-12.fc35         updates  4.7 M
+ [1mlibtool                               [m x86_64  2.4.6-42.fc35           fedora   578 k
+ [1mmake                                  [m x86_64  1:4.3-6.fc35            fedora   533 k
+ [1mopensc                                [m x86_64  0.22.0-1.fc35           fedora   1.2 M
+ [1mopenssl                               [m x86_64  1:1.1.1l-2.fc35         fedora   659 k
+ [1mopenssl-devel                         [m x86_64  1:1.1.1l-2.fc35         fedora   2.2 M
+ [1mp11-kit-devel                         [m x86_64  0.23.22-4.fc35          fedora    78 k
+ [1mprocps-ng                             [m x86_64  3.3.17-3.fc35           fedora   328 k
+ [1msofthsm                               [m x86_64  2.6.1-5.fc35.2          fedora   444 k
+Installing dependencies:
+ [1macl                                   [m x86_64  2.3.1-2.fc35            fedora    71 k
+ [1madobe-mappings-cmap                   [m noarch  20190730-1.fc35         updates  2.1 M
+ [1madobe-mappings-cmap-deprecated        [m noarch  20190730-1.fc35         updates  105 k
+ [1madobe-mappings-pdf                    [m noarch  20180407-9.fc35         fedora   637 k
+ [1mannobin-docs                          [m noarch  9.87-3.fc35             updates   78 k
+ [1mannobin-plugin-gcc                    [m x86_64  9.87-3.fc35             updates   42 k
+ [1matk                                   [m x86_64  2.36.0-4.fc35           fedora   269 k
+ [1mavahi-libs                            [m x86_64  0.8-14.fc35             fedora    68 k
+ [1mcairo                                 [m x86_64  1.17.4-4.fc35           fedora   664 k
+ [1mcairo-gobject                         [m x86_64  1.17.4-4.fc35           fedora    18 k
+ [1mclang-libs                            [m x86_64  13.0.0-3.fc35           updates   22 M
+ [1mclang-resource-filesystem             [m x86_64  13.0.0-3.fc35           updates   14 k
+ [1mcpp                                   [m x86_64  11.2.1-1.fc35           fedora    10 M
+ [1mcryptsetup-libs                       [m x86_64  2.4.2-1.fc35            updates  438 k
+ [1mcups-libs                             [m x86_64  1:2.3.3op2-10.fc35      updates  265 k
+ [1mdbus                                  [m x86_64  1:1.12.20-5.fc35        fedora   7.4 k
+ [1mdbus-broker                           [m x86_64  29-4.fc35               fedora   171 k
+ [1mdbus-common                           [m noarch  1:1.12.20-5.fc35        fedora    14 k
+ [1mdbus-libs                             [m x86_64  1:1.12.20-5.fc35        fedora   152 k
+ [1mdejavu-sans-fonts                     [m noarch  2.37-17.fc35            fedora   1.3 M
+ [1mdevice-mapper                         [m x86_64  1.02.175-6.fc35         fedora   140 k
+ [1mdevice-mapper-libs                    [m x86_64  1.02.175-6.fc35         fedora   179 k
+ [1memacs-filesystem                      [m noarch  1:27.2-9.fc35           fedora   9.0 k
+ [1mexpat                                 [m x86_64  2.4.1-2.fc35            fedora   110 k
+ [1mfontconfig                            [m x86_64  2.13.94-3.fc35          fedora   272 k
+ [1mfonts-filesystem                      [m noarch  1:2.0.5-6.fc35          fedora   8.9 k
+ [1mfreetype                              [m x86_64  2.11.0-1.fc35           fedora   397 k
+ [1mfribidi                               [m x86_64  1.0.10-5.fc35           fedora    84 k
+ [1mgc                                    [m x86_64  8.0.4-6.fc35            fedora   103 k
+ [1mgcc                                   [m x86_64  11.2.1-1.fc35           fedora    31 M
+ [1mgd                                    [m x86_64  2.3.2-10.fc35           updates  134 k
+ [1mgdk-pixbuf2                           [m x86_64  2.42.6-2.fc35           fedora   467 k
+ [1mgdk-pixbuf2-modules                   [m x86_64  2.42.6-2.fc35           fedora    84 k
+ [1mglib2                                 [m x86_64  2.70.1-1.fc35           updates  2.6 M
+ [1mglibc-devel                           [m x86_64  2.34-8.fc35             updates  146 k
+ [1mglibc-headers-x86                     [m noarch  2.34-8.fc35             updates  544 k
+ [1mgnutls                                [m x86_64  3.7.2-2.fc35            fedora   1.0 M
+ [1mgoogle-droid-sans-fonts               [m noarch  20200215-10.fc35        fedora   2.7 M
+ [1mgraphite2                             [m x86_64  1.3.14-8.fc35           fedora    94 k
+ [1mgraphviz                              [m x86_64  2.48.0-4.fc35           updates  1.6 M
+ [1mgroff-base                            [m x86_64  1.22.4-8.fc35           fedora   1.0 M
+ [1mgtk-update-icon-cache                 [m x86_64  3.24.30-4.fc35          fedora    35 k
+ [1mgtk2                                  [m x86_64  2.24.33-5.fc35          fedora   3.5 M
+ [1mgts                                   [m x86_64  0.7.6-40.20121130.fc35  fedora   233 k
+ [1mguile22                               [m x86_64  2.2.7-3.fc35            fedora   6.4 M
+ [1mharfbuzz                              [m x86_64  2.8.2-2.fc35            fedora   668 k
+ [1mhicolor-icon-theme                    [m noarch  0.17-11.fc35            fedora    44 k
+ [1miptables-legacy-libs                  [m x86_64  1.8.7-13.fc35           fedora    39 k
+ [1mjbig2dec-libs                         [m x86_64  0.19-5.fc35             fedora    73 k
+ [1mjbigkit-libs                          [m x86_64  2.1-22.fc35             fedora    52 k
+ [1mjson-c                                [m x86_64  0.15-2.fc35             fedora    43 k
+ [1mkernel-headers                        [m x86_64  5.15.4-200.fc35         updates  1.3 M
+ [1mkmod-libs                             [m x86_64  29-4.fc35               fedora    63 k
+ [1mlangpacks-core-font-en                [m noarch  3.0-15.fc35             fedora   9.9 k
+ [1mlasi                                  [m x86_64  1.1.3-7.fc35            fedora    55 k
+ [1mlcms2                                 [m x86_64  2.12-2.fc35             fedora   167 k
+ [1mlibICE                                [m x86_64  1.0.10-7.fc35           fedora    70 k
+ [1mlibSM                                 [m x86_64  1.2.3-9.fc35            fedora    41 k
+ [1mlibX11                                [m x86_64  1.7.2-3.fc35            fedora   645 k
+ [1mlibX11-common                         [m noarch  1.7.2-3.fc35            fedora   152 k
+ [1mlibXau                                [m x86_64  1.0.9-7.fc35            fedora    30 k
+ [1mlibXaw                                [m x86_64  1.0.13-18.fc35          fedora   196 k
+ [1mlibXcomposite                         [m x86_64  0.4.5-6.fc35            fedora    23 k
+ [1mlibXcursor                            [m x86_64  1.2.0-6.fc35            fedora    30 k
+ [1mlibXdamage                            [m x86_64  1.1.5-6.fc35            fedora    22 k
+ [1mlibXext                               [m x86_64  1.3.4-7.fc35            fedora    39 k
+ [1mlibXfixes                             [m x86_64  6.0.0-2.fc35            fedora    19 k
+ [1mlibXft                                [m x86_64  2.3.3-7.fc35            fedora    61 k
+ [1mlibXi                                 [m x86_64  1.7.10-7.fc35           fedora    38 k
+ [1mlibXinerama                           [m x86_64  1.1.4-9.fc35            fedora    14 k
+ [1mlibXmu                                [m x86_64  1.1.3-7.fc35            fedora    74 k
+ [1mlibXpm                                [m x86_64  3.5.13-6.fc35           fedora    58 k
+ [1mlibXrandr                             [m x86_64  1.5.2-7.fc35            fedora    27 k
+ [1mlibXrender                            [m x86_64  0.9.10-15.fc35          fedora    27 k
+ [1mlibXt                                 [m x86_64  1.2.0-5.fc35            fedora   179 k
+ [1mlibaom                                [m x86_64  3.2.0-2.fc35            local    1.6 M
+ [1mlibargon2                             [m x86_64  20171227-7.fc35         fedora    28 k
+ [1mlibavif                               [m x86_64  0.9.2-2.fc35            fedora    72 k
+ [1mlibdatrie                             [m x86_64  0.2.13-2.fc35           fedora    32 k
+ [1mlibdav1d                              [m x86_64  0.9.1-1.fc35            fedora   459 k
+ [1mlibedit                               [m x86_64  3.1-40.20210910cvs.fc35 fedora   105 k
+ [1mlibevent                              [m x86_64  2.1.12-4.fc35           fedora   261 k
+ [1mlibfontenc                            [m x86_64  1.1.3-16.fc35           fedora    30 k
+ [1mlibgs                                 [m x86_64  9.55.0-1.fc35           updates  3.5 M
+ [1mlibibverbs                            [m x86_64  38.0-1.fc35             updates  391 k
+ [1mlibijs                                [m x86_64  0.35-14.fc35            fedora    29 k
+ [1mlibimagequant                         [m x86_64  2.15.1-2.fc35           fedora    62 k
+ [1mlibjpeg-turbo                         [m x86_64  2.1.0-3.fc35            fedora   176 k
+ [1mlibjxl                                [m x86_64  0.6.1-6.fc35            local    969 k
+ [1mlibmpc                                [m x86_64  1.2.1-3.fc35            fedora    62 k
+ [1mlibnl3                                [m x86_64  3.5.0-8.fc35            fedora   328 k
+ [1mlibpaper                              [m x86_64  1.1.28-3.fc35           fedora    40 k
+ [1mlibpcap                               [m x86_64  14:1.10.1-2.fc35        fedora   171 k
+ [1mlibpng                                [m x86_64  2:1.6.37-11.fc35        fedora   119 k
+ [1mlibrsvg2                              [m x86_64  2.52.4-1.fc35           updates  3.6 M
+ [1mlibseccomp                            [m x86_64  2.5.3-1.fc35            updates   71 k
+ [1mlibthai                               [m x86_64  0.1.28-7.fc35           fedora   208 k
+ [1mlibtiff                               [m x86_64  4.3.0-2.fc35            fedora   193 k
+ [1mlibtool-ltdl                          [m x86_64  2.4.6-42.fc35           fedora    36 k
+ [1mlibusb1                               [m x86_64  1.0.24-4.fc35           fedora    71 k
+ [1mlibvmaf                               [m x86_64  2.1.1-2.fc35            fedora   171 k
+ [1mlibwebp                               [m x86_64  1.2.1-1.fc35            fedora   278 k
+ [1mlibxcb                                [m x86_64  1.13.1-8.fc35           fedora   223 k
+ [1mlibxcrypt-devel                       [m x86_64  4.4.26-4.fc35           fedora    29 k
+ [1mllvm-libs                             [m x86_64  13.0.0-4.fc35           updates   25 M
+ [1mm4                                    [m x86_64  1.4.19-2.fc35           fedora   294 k
+ [1mmkfontscale                           [m x86_64  1.2.1-3.fc35            fedora    31 k
+ [1mmozjs78                               [m x86_64  78.15.0-1.fc35          fedora   8.2 M
+ [1mmpdecimal                             [m x86_64  2.5.1-2.fc35            fedora    99 k
+ [1mncurses                               [m x86_64  6.2-8.20210508.fc35     fedora   400 k
+ [1mnetpbm                                [m x86_64  10.96.00-1.fc35         updates  185 k
+ [1mnettle                                [m x86_64  3.7.3-2.fc35            fedora   396 k
+ [1mopenjpeg2                             [m x86_64  2.4.0-4.fc35            fedora   163 k
+ [1mpango                                 [m x86_64  1.49.3-2.fc35           updates  313 k
+ [1mpcsc-lite                             [m x86_64  1.9.4-1.fc35            updates   90 k
+ [1mpcsc-lite-ccid                        [m x86_64  1.4.36-2.fc35           updates  305 k
+ [1mpcsc-lite-libs                        [m x86_64  1.9.4-1.fc35            updates   26 k
+ [1mperl-B                                [m x86_64  1.82-482.fc35           updates  188 k
+ [1mperl-Carp                             [m noarch  1.52-478.fc35           fedora    29 k
+ [1mperl-Class-Struct                     [m noarch  0.66-482.fc35           updates   30 k
+ [1mperl-Data-Dumper                      [m x86_64  2.183-2.fc35            fedora    56 k
+ [1mperl-DynaLoader                       [m x86_64  1.50-482.fc35           updates   34 k
+ [1mperl-Encode                           [m x86_64  4:3.15-482.fc35         updates  1.7 M
+ [1mperl-Errno                            [m x86_64  1.33-482.fc35           updates   23 k
+ [1mperl-Exporter                         [m noarch  5.76-479.fc35           fedora    31 k
+ [1mperl-Fcntl                            [m x86_64  1.14-482.fc35           updates   28 k
+ [1mperl-File-Basename                    [m noarch  2.85-482.fc35           updates   25 k
+ [1mperl-File-Compare                     [m noarch  1.100.600-482.fc35      updates   21 k
+ [1mperl-File-Copy                        [m noarch  2.35-482.fc35           updates   28 k
+ [1mperl-File-Find                        [m noarch  1.39-482.fc35           updates   33 k
+ [1mperl-File-Path                        [m noarch  2.18-478.fc35           fedora    35 k
+ [1mperl-File-Temp                        [m noarch  1:0.231.100-478.fc35    fedora    59 k
+ [1mperl-File-stat                        [m noarch  1.09-482.fc35           updates   25 k
+ [1mperl-Getopt-Long                      [m noarch  1:2.52-478.fc35         fedora    60 k
+ [1mperl-Getopt-Std                       [m noarch  1.13-482.fc35           updates   23 k
+ [1mperl-HTTP-Tiny                        [m noarch  0.080-1.fc35            updates   55 k
+ [1mperl-IO                               [m x86_64  1.46-482.fc35           updates   95 k
+ [1mperl-IPC-Open3                        [m noarch  1.21-482.fc35           updates   31 k
+ [1mperl-MIME-Base64                      [m x86_64  3.16-478.fc35           fedora    30 k
+ [1mperl-POSIX                            [m x86_64  1.97-482.fc35           updates  105 k
+ [1mperl-PathTools                        [m x86_64  3.80-478.fc35           fedora    85 k
+ [1mperl-Pod-Escapes                      [m noarch  1:1.07-478.fc35         fedora    20 k
+ [1mperl-Pod-Perldoc                      [m noarch  3.28.01-479.fc35        fedora    84 k
+ [1mperl-Pod-Simple                       [m noarch  1:3.43-2.fc35           fedora   215 k
+ [1mperl-Pod-Usage                        [m noarch  4:2.01-478.fc35         fedora    40 k
+ [1mperl-Scalar-List-Utils                [m x86_64  5:1.60-462.fc35         updates   72 k
+ [1mperl-SelectSaver                      [m noarch  1.02-482.fc35           updates   19 k
+ [1mperl-Socket                           [m x86_64  4:2.032-2.fc35          fedora    55 k
+ [1mperl-Storable                         [m x86_64  1:3.25-1.fc35           fedora    95 k
+ [1mperl-Symbol                           [m noarch  1.09-482.fc35           updates   22 k
+ [1mperl-Term-ANSIColor                   [m noarch  5.01-479.fc35           fedora    48 k
+ [1mperl-Term-Cap                         [m noarch  1.17-478.fc35           fedora    22 k
+ [1mperl-Text-ParseWords                  [m noarch  3.30-478.fc35           fedora    16 k
+ [1mperl-Text-Tabs+Wrap                   [m noarch  2021.0814-1.fc35        fedora    22 k
+ [1mperl-Thread-Queue                     [m noarch  3.14-478.fc35           fedora    21 k
+ [1mperl-Time-Local                       [m noarch  2:1.300-478.fc35        fedora    33 k
+ [1mperl-constant                         [m noarch  1.33-479.fc35           fedora    23 k
+ [1mperl-if                               [m noarch  0.60.900-482.fc35       updates   22 k
+ [1mperl-interpreter                      [m x86_64  4:5.34.0-482.fc35       updates   79 k
+ [1mperl-libs                             [m x86_64  4:5.34.0-482.fc35       updates  2.1 M
+ [1mperl-mro                              [m x86_64  1.25-482.fc35           updates   36 k
+ [1mperl-overload                         [m noarch  1.33-482.fc35           updates   53 k
+ [1mperl-overloading                      [m noarch  0.02-482.fc35           updates   21 k
+ [1mperl-parent                           [m noarch  1:0.238-478.fc35        fedora    14 k
+ [1mperl-podlators                        [m noarch  1:4.14-478.fc35         fedora   111 k
+ [1mperl-subs                             [m noarch  1.04-482.fc35           updates   19 k
+ [1mperl-threads                          [m x86_64  1:2.26-448.fc35         fedora    57 k
+ [1mperl-threads-shared                   [m x86_64  1.62-478.fc35           fedora    43 k
+ [1mperl-vars                             [m noarch  1.05-482.fc35           updates   21 k
+ [1mpixman                                [m x86_64  0.40.0-4.fc35           fedora   270 k
+ [1mpolkit                                [m x86_64  0.120-1.fc35            updates  146 k
+ [1mpolkit-libs                           [m x86_64  0.120-1.fc35            updates   66 k
+ [1mpolkit-pkla-compat                    [m x86_64  0.1-20.fc35             fedora    44 k
+ [1mpython-pip-wheel                      [m noarch  21.2.3-4.fc35           updates  1.1 M
+ [1mpython-setuptools-wheel               [m noarch  57.4.0-1.fc35           fedora   505 k
+ [1mpython3                               [m x86_64  3.10.0-1.fc35           fedora    25 k
+ [1mpython3-libs                          [m x86_64  3.10.0-1.fc35           fedora   7.5 M
+ [1mrav1e-libs                            [m x86_64  0.5.0-1.fc35            updates  875 k
+ [1mshared-mime-info                      [m x86_64  2.1-3.fc35              fedora   373 k
+ [1msvt-av1-libs                          [m x86_64  0.8.7-2.fc35            fedora   1.5 M
+ [1msystemd                               [m x86_64  249.7-2.fc35            updates  4.2 M
+ [1msystemd-pam                           [m x86_64  249.7-2.fc35            updates  325 k
+ [1msystemd-rpm-macros                    [m noarch  249.7-2.fc35            updates   29 k
+ [1murw-base35-bookman-fonts              [m noarch  20200910-9.fc35         fedora   846 k
+ [1murw-base35-c059-fonts                 [m noarch  20200910-9.fc35         fedora   874 k
+ [1murw-base35-d050000l-fonts             [m noarch  20200910-9.fc35         fedora    76 k
+ [1murw-base35-fonts                      [m noarch  20200910-9.fc35         fedora    10 k
+ [1murw-base35-fonts-common               [m noarch  20200910-9.fc35         fedora    21 k
+ [1murw-base35-gothic-fonts               [m noarch  20200910-9.fc35         fedora   643 k
+ [1murw-base35-nimbus-mono-ps-fonts       [m noarch  20200910-9.fc35         fedora   795 k
+ [1murw-base35-nimbus-roman-fonts         [m noarch  20200910-9.fc35         fedora   856 k
+ [1murw-base35-nimbus-sans-fonts          [m noarch  20200910-9.fc35         fedora   1.3 M
+ [1murw-base35-p052-fonts                 [m noarch  20200910-9.fc35         fedora   973 k
+ [1murw-base35-standard-symbols-ps-fonts  [m noarch  20200910-9.fc35         fedora    42 k
+ [1murw-base35-z003-fonts                 [m noarch  20200910-9.fc35         fedora   276 k
+ [1mxapian-core-libs                      [m x86_64  1.4.18-3.fc35           fedora   742 k
+ [1mxml-common                            [m noarch  0.6.3-57.fc35           fedora    31 k
+ [1mxorg-x11-fonts-ISO8859-1-100dpi       [m noarch  7.5-32.fc35             fedora   1.0 M
+
+Transaction Summary
+======================================================================================
+Install  209 Packages
+
+Total size: 188 M
+Installed size: 675 M
+Downloading Packages:
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+useradd warning: dbus's uid 81 outside of the SYS_UID_MIN 201 and SYS_UID_MAX 999 range.
+
+Creating group input with gid 104.
+Creating group kvm with gid 36.
+Creating group render with gid 105.
+Creating group sgx with gid 106.
+Creating group systemd-journal with gid 190.
+Creating group systemd-network with gid 192.
+Creating user systemd-network (systemd Network Management) with uid 192 and gid 192.
+Creating group systemd-oom with gid 999.
+Creating user systemd-oom (systemd Userspace OOM Killer) with uid 999 and gid 999.
+Creating group systemd-resolve with gid 193.
+Creating user systemd-resolve (systemd Resolver) with uid 193 and gid 193.
+Creating group systemd-timesync with gid 998.
+Creating user systemd-timesync (systemd Time Synchronization) with uid 998 and gid 998.
+Creating group systemd-coredump with gid 997.
+Creating user systemd-coredump (systemd Core Dumper) with uid 997 and gid 997.
+
+Created symlink /etc/systemd/system/sockets.target.wants/pcscd.socket → /usr/lib/systemd/system/pcscd.socket.
+
+
+Installed:
+  acl-2.3.1-2.fc35.x86_64                                                       
+  adobe-mappings-cmap-20190730-1.fc35.noarch                                    
+  adobe-mappings-cmap-deprecated-20190730-1.fc35.noarch                         
+  adobe-mappings-pdf-20180407-9.fc35.noarch                                     
+  annobin-docs-9.87-3.fc35.noarch                                               
+  annobin-plugin-gcc-9.87-3.fc35.x86_64                                         
+  atk-2.36.0-4.fc35.x86_64                                                      
+  autoconf-2.69-37.fc35.noarch                                                  
+  automake-1.16.2-5.fc35.noarch                                                 
+  avahi-libs-0.8-14.fc35.x86_64                                                 
+  cairo-1.17.4-4.fc35.x86_64                                                    
+  cairo-gobject-1.17.4-4.fc35.x86_64                                            
+  clang-libs-13.0.0-3.fc35.x86_64                                               
+  clang-resource-filesystem-13.0.0-3.fc35.x86_64                                
+  cpp-11.2.1-1.fc35.x86_64                                                      
+  cryptsetup-libs-2.4.2-1.fc35.x86_64                                           
+  cups-libs-1:2.3.3op2-10.fc35.x86_64                                           
+  dbus-1:1.12.20-5.fc35.x86_64                                                  
+  dbus-broker-29-4.fc35.x86_64                                                  
+  dbus-common-1:1.12.20-5.fc35.noarch                                           
+  dbus-libs-1:1.12.20-5.fc35.x86_64                                             
+  dejavu-sans-fonts-2.37-17.fc35.noarch                                         
+  device-mapper-1.02.175-6.fc35.x86_64                                          
+  device-mapper-libs-1.02.175-6.fc35.x86_64                                     
+  doxygen-1:1.9.1-12.fc35.x86_64                                                
+  emacs-filesystem-1:27.2-9.fc35.noarch                                         
+  expat-2.4.1-2.fc35.x86_64                                                     
+  fontconfig-2.13.94-3.fc35.x86_64                                              
+  fonts-filesystem-1:2.0.5-6.fc35.noarch                                        
+  freetype-2.11.0-1.fc35.x86_64                                                 
+  fribidi-1.0.10-5.fc35.x86_64                                                  
+  gc-8.0.4-6.fc35.x86_64                                                        
+  gcc-11.2.1-1.fc35.x86_64                                                      
+  gd-2.3.2-10.fc35.x86_64                                                       
+  gdk-pixbuf2-2.42.6-2.fc35.x86_64                                              
+  gdk-pixbuf2-modules-2.42.6-2.fc35.x86_64                                      
+  glib2-2.70.1-1.fc35.x86_64                                                    
+  glibc-devel-2.34-8.fc35.x86_64                                                
+  glibc-headers-x86-2.34-8.fc35.noarch                                          
+  gnutls-3.7.2-2.fc35.x86_64                                                    
+  google-droid-sans-fonts-20200215-10.fc35.noarch                               
+  graphite2-1.3.14-8.fc35.x86_64                                                
+  graphviz-2.48.0-4.fc35.x86_64                                                 
+  groff-base-1.22.4-8.fc35.x86_64                                               
+  gtk-update-icon-cache-3.24.30-4.fc35.x86_64                                   
+  gtk2-2.24.33-5.fc35.x86_64                                                    
+  gts-0.7.6-40.20121130.fc35.x86_64                                             
+  guile22-2.2.7-3.fc35.x86_64                                                   
+  harfbuzz-2.8.2-2.fc35.x86_64                                                  
+  hicolor-icon-theme-0.17-11.fc35.noarch                                        
+  iptables-legacy-libs-1.8.7-13.fc35.x86_64                                     
+  jbig2dec-libs-0.19-5.fc35.x86_64                                              
+  jbigkit-libs-2.1-22.fc35.x86_64                                               
+  json-c-0.15-2.fc35.x86_64                                                     
+  kernel-headers-5.15.4-200.fc35.x86_64                                         
+  kmod-libs-29-4.fc35.x86_64                                                    
+  langpacks-core-font-en-3.0-15.fc35.noarch                                     
+  lasi-1.1.3-7.fc35.x86_64                                                      
+  lcms2-2.12-2.fc35.x86_64                                                      
+  libICE-1.0.10-7.fc35.x86_64                                                   
+  libSM-1.2.3-9.fc35.x86_64                                                     
+  libX11-1.7.2-3.fc35.x86_64                                                    
+  libX11-common-1.7.2-3.fc35.noarch                                             
+  libXau-1.0.9-7.fc35.x86_64                                                    
+  libXaw-1.0.13-18.fc35.x86_64                                                  
+  libXcomposite-0.4.5-6.fc35.x86_64                                             
+  libXcursor-1.2.0-6.fc35.x86_64                                                
+  libXdamage-1.1.5-6.fc35.x86_64                                                
+  libXext-1.3.4-7.fc35.x86_64                                                   
+  libXfixes-6.0.0-2.fc35.x86_64                                                 
+  libXft-2.3.3-7.fc35.x86_64                                                    
+  libXi-1.7.10-7.fc35.x86_64                                                    
+  libXinerama-1.1.4-9.fc35.x86_64                                               
+  libXmu-1.1.3-7.fc35.x86_64                                                    
+  libXpm-3.5.13-6.fc35.x86_64                                                   
+  libXrandr-1.5.2-7.fc35.x86_64                                                 
+  libXrender-0.9.10-15.fc35.x86_64                                              
+  libXt-1.2.0-5.fc35.x86_64                                                     
+  libaom-3.2.0-2.fc35.x86_64                                                    
+  libargon2-20171227-7.fc35.x86_64                                              
+  libavif-0.9.2-2.fc35.x86_64                                                   
+  libdatrie-0.2.13-2.fc35.x86_64                                                
+  libdav1d-0.9.1-1.fc35.x86_64                                                  
+  libedit-3.1-40.20210910cvs.fc35.x86_64                                        
+  libevent-2.1.12-4.fc35.x86_64                                                 
+  libfontenc-1.1.3-16.fc35.x86_64                                               
+  libgs-9.55.0-1.fc35.x86_64                                                    
+  libibverbs-38.0-1.fc35.x86_64                                                 
+  libijs-0.35-14.fc35.x86_64                                                    
+  libimagequant-2.15.1-2.fc35.x86_64                                            
+  libjpeg-turbo-2.1.0-3.fc35.x86_64                                             
+  libjxl-0.6.1-6.fc35.x86_64                                                    
+  libmpc-1.2.1-3.fc35.x86_64                                                    
+  libnl3-3.5.0-8.fc35.x86_64                                                    
+  libpaper-1.1.28-3.fc35.x86_64                                                 
+  libpcap-14:1.10.1-2.fc35.x86_64                                               
+  libpng-2:1.6.37-11.fc35.x86_64                                                
+  librsvg2-2.52.4-1.fc35.x86_64                                                 
+  libseccomp-2.5.3-1.fc35.x86_64                                                
+  libthai-0.1.28-7.fc35.x86_64                                                  
+  libtiff-4.3.0-2.fc35.x86_64                                                   
+  libtool-2.4.6-42.fc35.x86_64                                                  
+  libtool-ltdl-2.4.6-42.fc35.x86_64                                             
+  libusb1-1.0.24-4.fc35.x86_64                                                  
+  libvmaf-2.1.1-2.fc35.x86_64                                                   
+  libwebp-1.2.1-1.fc35.x86_64                                                   
+  libxcb-1.13.1-8.fc35.x86_64                                                   
+  libxcrypt-devel-4.4.26-4.fc35.x86_64                                          
+  llvm-libs-13.0.0-4.fc35.x86_64                                                
+  m4-1.4.19-2.fc35.x86_64                                                       
+  make-1:4.3-6.fc35.x86_64                                                      
+  mkfontscale-1.2.1-3.fc35.x86_64                                               
+  mozjs78-78.15.0-1.fc35.x86_64                                                 
+  mpdecimal-2.5.1-2.fc35.x86_64                                                 
+  ncurses-6.2-8.20210508.fc35.x86_64                                            
+  netpbm-10.96.00-1.fc35.x86_64                                                 
+  nettle-3.7.3-2.fc35.x86_64                                                    
+  openjpeg2-2.4.0-4.fc35.x86_64                                                 
+  opensc-0.22.0-1.fc35.x86_64                                                   
+  openssl-1:1.1.1l-2.fc35.x86_64                                                
+  openssl-devel-1:1.1.1l-2.fc35.x86_64                                          
+  p11-kit-devel-0.23.22-4.fc35.x86_64                                           
+  pango-1.49.3-2.fc35.x86_64                                                    
+  pcsc-lite-1.9.4-1.fc35.x86_64                                                 
+  pcsc-lite-ccid-1.4.36-2.fc35.x86_64                                           
+  pcsc-lite-libs-1.9.4-1.fc35.x86_64                                            
+  perl-B-1.82-482.fc35.x86_64                                                   
+  perl-Carp-1.52-478.fc35.noarch                                                
+  perl-Class-Struct-0.66-482.fc35.noarch                                        
+  perl-Data-Dumper-2.183-2.fc35.x86_64                                          
+  perl-DynaLoader-1.50-482.fc35.x86_64                                          
+  perl-Encode-4:3.15-482.fc35.x86_64                                            
+  perl-Errno-1.33-482.fc35.x86_64                                               
+  perl-Exporter-5.76-479.fc35.noarch                                            
+  perl-Fcntl-1.14-482.fc35.x86_64                                               
+  perl-File-Basename-2.85-482.fc35.noarch                                       
+  perl-File-Compare-1.100.600-482.fc35.noarch                                   
+  perl-File-Copy-2.35-482.fc35.noarch                                           
+  perl-File-Find-1.39-482.fc35.noarch                                           
+  perl-File-Path-2.18-478.fc35.noarch                                           
+  perl-File-Temp-1:0.231.100-478.fc35.noarch                                    
+  perl-File-stat-1.09-482.fc35.noarch                                           
+  perl-Getopt-Long-1:2.52-478.fc35.noarch                                       
+  perl-Getopt-Std-1.13-482.fc35.noarch                                          
+  perl-HTTP-Tiny-0.080-1.fc35.noarch                                            
+  perl-IO-1.46-482.fc35.x86_64                                                  
+  perl-IPC-Open3-1.21-482.fc35.noarch                                           
+  perl-MIME-Base64-3.16-478.fc35.x86_64                                         
+  perl-POSIX-1.97-482.fc35.x86_64                                               
+  perl-PathTools-3.80-478.fc35.x86_64                                           
+  perl-Pod-Escapes-1:1.07-478.fc35.noarch                                       
+  perl-Pod-Perldoc-3.28.01-479.fc35.noarch                                      
+  perl-Pod-Simple-1:3.43-2.fc35.noarch                                          
+  perl-Pod-Usage-4:2.01-478.fc35.noarch                                         
+  perl-Scalar-List-Utils-5:1.60-462.fc35.x86_64                                 
+  perl-SelectSaver-1.02-482.fc35.noarch                                         
+  perl-Socket-4:2.032-2.fc35.x86_64                                             
+  perl-Storable-1:3.25-1.fc35.x86_64                                            
+  perl-Symbol-1.09-482.fc35.noarch                                              
+  perl-Term-ANSIColor-5.01-479.fc35.noarch                                      
+  perl-Term-Cap-1.17-478.fc35.noarch                                            
+  perl-Text-ParseWords-3.30-478.fc35.noarch                                     
+  perl-Text-Tabs+Wrap-2021.0814-1.fc35.noarch                                   
+  perl-Thread-Queue-3.14-478.fc35.noarch                                        
+  perl-Time-Local-2:1.300-478.fc35.noarch                                       
+  perl-constant-1.33-479.fc35.noarch                                            
+  perl-if-0.60.900-482.fc35.noarch                                              
+  perl-interpreter-4:5.34.0-482.fc35.x86_64                                     
+  perl-libs-4:5.34.0-482.fc35.x86_64                                            
+  perl-mro-1.25-482.fc35.x86_64                                                 
+  perl-overload-1.33-482.fc35.noarch                                            
+  perl-overloading-0.02-482.fc35.noarch                                         
+  perl-parent-1:0.238-478.fc35.noarch                                           
+  perl-podlators-1:4.14-478.fc35.noarch                                         
+  perl-subs-1.04-482.fc35.noarch                                                
+  perl-threads-1:2.26-448.fc35.x86_64                                           
+  perl-threads-shared-1.62-478.fc35.x86_64                                      
+  perl-vars-1.05-482.fc35.noarch                                                
+  pixman-0.40.0-4.fc35.x86_64                                                   
+  polkit-0.120-1.fc35.x86_64                                                    
+  polkit-libs-0.120-1.fc35.x86_64                                               
+  polkit-pkla-compat-0.1-20.fc35.x86_64                                         
+  procps-ng-3.3.17-3.fc35.x86_64                                                
+  python-pip-wheel-21.2.3-4.fc35.noarch                                         
+  python-setuptools-wheel-57.4.0-1.fc35.noarch                                  
+  python3-3.10.0-1.fc35.x86_64                                                  
+  python3-libs-3.10.0-1.fc35.x86_64                                             
+  rav1e-libs-0.5.0-1.fc35.x86_64                                                
+  shared-mime-info-2.1-3.fc35.x86_64                                            
+  softhsm-2.6.1-5.fc35.2.x86_64                                                 
+  svt-av1-libs-0.8.7-2.fc35.x86_64                                              
+  systemd-249.7-2.fc35.x86_64                                                   
+  systemd-pam-249.7-2.fc35.x86_64                                               
+  systemd-rpm-macros-249.7-2.fc35.noarch                                        
+  urw-base35-bookman-fonts-20200910-9.fc35.noarch                               
+  urw-base35-c059-fonts-20200910-9.fc35.noarch                                  
+  urw-base35-d050000l-fonts-20200910-9.fc35.noarch                              
+  urw-base35-fonts-20200910-9.fc35.noarch                                       
+  urw-base35-fonts-common-20200910-9.fc35.noarch                                
+  urw-base35-gothic-fonts-20200910-9.fc35.noarch                                
+  urw-base35-nimbus-mono-ps-fonts-20200910-9.fc35.noarch                        
+  urw-base35-nimbus-roman-fonts-20200910-9.fc35.noarch                          
+  urw-base35-nimbus-sans-fonts-20200910-9.fc35.noarch                           
+  urw-base35-p052-fonts-20200910-9.fc35.noarch                                  
+  urw-base35-standard-symbols-ps-fonts-20200910-9.fc35.noarch                   
+  urw-base35-z003-fonts-20200910-9.fc35.noarch                                  
+  xapian-core-libs-1.4.18-3.fc35.x86_64                                         
+  xml-common-0.6.3-57.fc35.noarch                                               
+  xorg-x11-fonts-ISO8859-1-100dpi-7.5-32.fc35.noarch                            
+
+Complete!
+
+>>> 2021-11-29 16:28:14	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--addrepo" "https://download.copr.fedorainfracloud.org/results/@aufover/divine/fedora-\$releasever-\$basearch/" "--install" "divine"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Dependencies resolved.
+=============================================================================================================================================
+ Package            Arch    Version                   Repository                                                                         Size
+=============================================================================================================================================
+Installing:
+ [1mdivine            [m x86_64  4.4.2_4_gd47985e0b-7.fc35 downloadcoprfedorainfracloudorg_results_aufover_divine_fedorareleaseverbasearch_   68 M
+Installing dependencies:
+ [1mlibyaml           [m x86_64  0.2.5-6.fc35              fedora                                                                             60 k
+ [1mpython3-pygments  [m noarch  2.9.0-2.fc35              fedora                                                                            1.9 M
+ [1mpython3-pyyaml    [m x86_64  5.4.1-4.fc35              fedora                                                                            191 k
+ [1mz3                [m x86_64  4.8.13-1.fc35             updates                                                                           5.9 M
+ [1mz3-libs           [m x86_64  4.8.13-1.fc35             updates                                                                           5.8 M
+
+Transaction Summary
+=============================================================================================================================================
+Install  6 Packages
+
+Total size: 82 M
+Installed size: 447 M
+Downloading Packages:
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+
+Installed:
+  divine-4.4.2_4_gd47985e0b-7.fc35.x86_64   libyaml-0.2.5-6.fc35.x86_64         
+  python3-pygments-2.9.0-2.fc35.noarch      python3-pyyaml-5.4.1-4.fc35.x86_64  
+  z3-4.8.13-1.fc35.x86_64                   z3-libs-4.8.13-1.fc35.x86_64        
+
+Complete!
+
+>>> 2021-11-29 16:28:42	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa' | sort -V > /home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/openssl-pkcs11-0.4.11-4.fc35/divine/output/debug/rpm-list-mock.txt"
+
+>>> 2021-11-29 16:28:43	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa --provides' | sort -V > /tmp/csmockj6orjvws/rpm-list-mock-provides.txt"
+
+>>> 2021-11-29 16:28:44	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--copyin" "/tmp/csmockj6orjvws/openssl-pkcs11-0.4.11-4.fc35.src.rpm" "/builddir/openssl-pkcs11-0.4.11-4.fc35.src.rpm"
+
+>>> 2021-11-29 16:28:46	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "chown mockbuild -R /builddir"
+
+>>> 2021-11-29 16:28:47	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"rpm -Uvh --nodeps '/builddir/openssl-pkcs11-0.4.11-4.fc35.src.rpm'\""
+Updating / installing...
+openssl-pkcs11-0.4.11-4.fc35          ########################################
+
+>>> 2021-11-29 16:28:48	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"sed -e 's|^ExclusiveArch:.*\\\$||' -i /builddir/build/SPECS/openssl-pkcs11.spec\""
+
+>>> 2021-11-29 16:28:50	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"rpmbuild -bs --nodeps /builddir/build/SPECS/openssl-pkcs11.spec '--define' 'apidocs 0' '--define' 'with_publican 0' '--without' 'docs' '--without' 'langpacks' '--define' '__cc dioscc' '--define' '__cxx diosc++' '--define' '__cpp dioscc -E' '--define' 'toolchain clang' '--define' 'optflags -O0' '--define' 'build_ldflags -O0' && sh -c 'cd /builddir/build/SRPMS && eval mv -v *.src.rpm /builddir/openssl-pkcs11-0.4.11-4.fc35.src.rpm || :'\""
+setting SOURCE_DATE_EPOCH=1626912000
+Wrote: /builddir/build/SRPMS/openssl-pkcs11-0.4.11-4.fc35.src.rpm
+renamed 'openssl-pkcs11-0.4.11-4.fc35.src.rpm' -> '/builddir/openssl-pkcs11-0.4.11-4.fc35.src.rpm'
+
+>>> 2021-11-29 16:28:51	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--disable-plugin=selinux" "--copyout" "/builddir/openssl-pkcs11-0.4.11-4.fc35.src.rpm" "/tmp/csmockj6orjvws/openssl-pkcs11-0.4.11-4.fc35.src.rpm"
+
+>>> 2021-11-29 16:28:53	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--installdeps" "/tmp/csmockj6orjvws/openssl-pkcs11-0.4.11-4.fc35.src.rpm"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Package autoconf-2.69-37.fc35.noarch is already installed.
+Package automake-1.16.2-5.fc35.noarch is already installed.
+Package doxygen-1:1.9.1-12.fc35.x86_64 is already installed.
+Package libtool-2.4.6-42.fc35.x86_64 is already installed.
+Package make-1:4.3-6.fc35.x86_64 is already installed.
+Package opensc-0.22.0-1.fc35.x86_64 is already installed.
+Package openssl-1:1.1.1l-2.fc35.x86_64 is already installed.
+Package openssl-devel-1:1.1.1l-2.fc35.x86_64 is already installed.
+Package pkgconf-pkg-config-1.8.0-1.fc35.x86_64 is already installed.
+Package p11-kit-devel-0.23.22-4.fc35.x86_64 is already installed.
+Package procps-ng-3.3.17-3.fc35.x86_64 is already installed.
+Package softhsm-2.6.1-5.fc35.2.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+
+>>> 2021-11-29 16:29:00	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--addrepo" "https://download.copr.fedorainfracloud.org/results/@aufover/divine/fedora-\$releasever-\$basearch/" "--install" "divine"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Package divine-4.4.2_4_gd47985e0b-7.fc35.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+
+>>> 2021-11-29 16:29:06	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa' | sort -V > /home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/openssl-pkcs11-0.4.11-4.fc35/divine/output/debug/rpm-list-mock.txt"
+
+>>> 2021-11-29 16:29:07	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa --provides' | sort -V > /tmp/csmockj6orjvws/rpm-list-mock-provides.txt"
+
+>>> 2021-11-29 16:29:08	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--addrepo" "https://download.copr.fedorainfracloud.org/results/@aufover/divine/fedora-\$releasever-\$basearch/" "--install" "csdiff"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Dependencies resolved.
+================================================================================
+ Package                    Arch        Version               Repository   Size
+================================================================================
+Installing:
+ [1mcsdiff                    [m x86_64      2.2.0-1.fc35          fedora      895 k
+Installing dependencies:
+ [1mboost-filesystem          [m x86_64      1.76.0-4.fc35         fedora       60 k
+ [1mboost-program-options     [m x86_64      1.76.0-4.fc35         fedora      108 k
+ [1mboost-system              [m x86_64      1.76.0-4.fc35         fedora       15 k
+
+Transaction Summary
+================================================================================
+Install  4 Packages
+
+Total size: 1.1 M
+Installed size: 4.8 M
+Downloading Packages:
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+
+Installed:
+  boost-filesystem-1.76.0-4.fc35.x86_64                                         
+  boost-program-options-1.76.0-4.fc35.x86_64                                    
+  boost-system-1.76.0-4.fc35.x86_64                                             
+  csdiff-2.2.0-1.fc35.x86_64                                                    
+
+Complete!
+
+>>> 2021-11-29 16:29:20	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa' | sort -V > /home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/openssl-pkcs11-0.4.11-4.fc35/divine/output/debug/rpm-list-mock.txt"
+
+>>> 2021-11-29 16:29:21	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa --provides' | sort -V > /tmp/csmockj6orjvws/rpm-list-mock-provides.txt"
+
+>>> 2021-11-29 16:29:23	"tar -cP '/usr/share/csmock/scripts' '/usr/bin/cswrap' '/usr/lib64/cswrap' '/usr/bin/csexec' '/usr/bin/csexec-loader' '/usr/lib64/libcsexec-preload.so' '/tmp/csmockj6orjvws/openssl-pkcs11-0.4.11-4.fc35.src.rpm' | '/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'tar -xC/'"
+tar: Removing leading `/' from member names
+
+scan.ini: analyzer-version-divine = 4.4.2_4_gd47985e0b
+>>> 2021-11-29 16:29:24	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"mkdir -pv '/builddir/divine-capture'\""
+mkdir: created directory '/builddir/divine-capture'
+
+scan.ini: analyzer-version-gcc = 11.2.1
+>>> 2021-11-29 16:29:25	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "rpm -Uvh --nodeps '/tmp/csmockj6orjvws/openssl-pkcs11-0.4.11-4.fc35.src.rpm'"
+Updating / installing...
+openssl-pkcs11-0.4.11-4.fc35          ########################################
+
+>>> 2021-11-29 16:29:27	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "chmod -R +r /builddir"
+
+>>> 2021-11-29 16:29:28	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "ln -fv '/usr/share/csmock/scripts/enable-keep-going.sh' '/usr/share/csmock/scripts/chroot-fixups'"
+'/usr/share/csmock/scripts/chroot-fixups/enable-keep-going.sh' => '/usr/share/csmock/scripts/enable-keep-going.sh'
+
+>>> 2021-11-29 16:29:29	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--shell" "for i in /usr/share/csmock/scripts/chroot-fixups/*; do test -x \$i && echo RUN: \$i >&2 && \$i; done"
+RUN: /usr/share/csmock/scripts/chroot-fixups/enable-keep-going.sh
+renamed '/usr/bin/make' -> '/usr/bin/make.orig'
++ ls -l /usr/bin/make
+-rwxr-xr-x. 1 root root 42 Nov 29 16:29 /usr/bin/make
++ cat /usr/bin/make
+#!/bin/sh
+exec /usr/bin/make.orig -k "$@"
+RUN: /usr/share/csmock/scripts/chroot-fixups/gdk-pixbuf2-triggers.sh
++ /usr/bin/gdk-pixbuf-query-loaders-64 --update-cache
+RUN: /usr/share/csmock/scripts/chroot-fixups/glib2-triggers.sh
++ /usr/bin/gio-querymodules-64 /usr/lib64/gio/modules
++ /usr/bin/glib-compile-schemas /usr/share/glib-2.0/schemas
+No schema files found: doing nothing.
+RUN: /usr/share/csmock/scripts/chroot-fixups/kpathsea-texhash.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/openssl-public-header-files.sh
++ sed -i /usr/include/openssl/e_os2.h -e 's|\(# *if\)def DEBUG_UNUSED|\1 1|'
+RUN: /usr/share/csmock/scripts/chroot-fixups/qt5-core-abi.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/rpm-build-scripts.sh
++ sed -e s/fail=1/fail=0/ -i /usr/lib/rpm/redhat/brp-mangle-shebangs
+'/usr/lib/rpm/brp-strip-static-archive' -> '/bin/true'
+RUN: /usr/share/csmock/scripts/chroot-fixups/rpm-macros.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/rpm-python-extras.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/shared-mime-info-triggers.sh
++ /usr/bin/update-mime-database -n /usr/share/mime
+RUN: /usr/share/csmock/scripts/chroot-fixups/simplify-cpp-includes.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/simplify-glib-includes.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/simplify-systemd-includes.sh
+
+>>> 2021-11-29 16:29:32	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--chroot" "/bin/su mockbuild -l -c \"rpmbuild -bp --nodeps /builddir/build/SPECS/openssl-pkcs11.spec '--define' 'apidocs 0' '--define' 'with_publican 0' '--without' 'docs' '--without' 'langpacks' '--define' '__cc dioscc' '--define' '__cxx diosc++' '--define' '__cpp dioscc -E' '--define' 'toolchain clang' '--define' 'optflags -O0' '--define' 'build_ldflags -O0'\""
+INFO: mock.py version 2.13 starting (python version = 3.9.7, NVR = mock-2.13-1.kdudka.1.fc34)...
+Start(bootstrap): init plugins
+INFO: selinux enabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish: chroot init
+INFO: Running in chroot: ['/bin/su mockbuild -l -c "rpmbuild -bp --nodeps /builddir/build/SPECS/openssl-pkcs11.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc dioscc\' \'--define\' \'__cxx diosc++\' \'--define\' \'__cpp dioscc -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'"']
+Start: chroot ['/bin/su mockbuild -l -c "rpmbuild -bp --nodeps /builddir/build/SPECS/openssl-pkcs11.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc dioscc\' \'--define\' \'__cxx diosc++\' \'--define\' \'__cpp dioscc -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'"']
+setting SOURCE_DATE_EPOCH=1626912000
+Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.2ePcTc
++ umask 022
++ cd /builddir/build/BUILD
++ cd /builddir/build/BUILD
++ rm -rf libp11-0.4.11
++ /usr/bin/gzip -dc /builddir/build/SOURCES/libp11-0.4.11.tar.gz
++ /usr/bin/tar -xof -
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd libp11-0.4.11
++ /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
++ /usr/bin/cat /builddir/build/SOURCES/openssl-pkcs11-0.4.10-set-rsa-fips-method-flag.patch
++ /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
++ /usr/bin/cat /builddir/build/SOURCES/openssl-pkcs11-0.4.10-coverity.patch
++ /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Finish: chroot ['/bin/su mockbuild -l -c "rpmbuild -bp --nodeps /builddir/build/SPECS/openssl-pkcs11.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc dioscc\' \'--define\' \'__cxx diosc++\' \'--define\' \'__cpp dioscc -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'"']
+
+>>> 2021-11-29 16:29:34	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "chmod -R +r /builddir/build"
+
+>>> 2021-11-29 16:29:36	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--chroot" "/bin/su mockbuild -l -c \"PATH=/usr/lib64/cswrap:\\\$PATH CSWRAP_CAP_FILE=\\\$'/builddir/cswrap-capture.err' CSWRAP_TIMEOUT=\\\$'30' CSWRAP_TIMEOUT_FOR=\\\$':' CC=\\\$'dioscc' CXX=\\\$'diosc++' CSEXEC_WRAP_CMD=\\\$'--skip-ld-linux\\\\acsexec-divine\\\\a-l\\\\a/builddir/divine-capture\\\\a-d\\\\acheck --lart stubs -o ignore:exit --max-time 8 ' CSWRAP_ADD_CFLAGS=\\\$'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader' CSWRAP_DEL_CFLAGS=\\\$'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register' CSWRAP_ADD_CXXFLAGS=\\\$'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader' CSWRAP_DEL_CXXFLAGS=\\\$'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register' sh -c \\\"rpmbuild -bc --nodeps --short-circuit /builddir/build/SPECS/openssl-pkcs11.spec '--define' 'apidocs 0' '--define' 'with_publican 0' '--without' 'docs' '--without' 'langpacks' '--define' '__cc dioscc' '--define' '__cxx diosc++' '--define' '__cpp dioscc -E' '--define' 'toolchain clang' '--define' 'optflags -O0' '--define' 'build_ldflags -O0'\\\"\""
+INFO: mock.py version 2.13 starting (python version = 3.9.7, NVR = mock-2.13-1.kdudka.1.fc34)...
+Start(bootstrap): init plugins
+INFO: selinux enabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish: chroot init
+INFO: Running in chroot: ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'dioscc\' CXX=\\$\'diosc++\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\acsexec-divine\\\\a-l\\\\a/builddir/divine-capture\\\\a-d\\\\acheck --lart stubs -o ignore:exit --max-time 8 \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bc --nodeps --short-circuit /builddir/build/SPECS/openssl-pkcs11.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc dioscc\' \'--define\' \'__cxx diosc++\' \'--define\' \'__cpp dioscc -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+Start: chroot ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'dioscc\' CXX=\\$\'diosc++\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\acsexec-divine\\\\a-l\\\\a/builddir/divine-capture\\\\a-d\\\\acheck --lart stubs -o ignore:exit --max-time 8 \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bc --nodeps --short-circuit /builddir/build/SPECS/openssl-pkcs11.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc dioscc\' \'--define\' \'__cxx diosc++\' \'--define\' \'__cpp dioscc -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+setting SOURCE_DATE_EPOCH=1626912000
+Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.moNgM5
++ umask 022
++ cd /builddir/build/BUILD
++ cd libp11-0.4.11
++ autoreconf -fvi
+autoreconf: Entering directory `.'
+autoreconf: configure.ac: not using Gettext
+autoreconf: running: aclocal --force -I m4
+autoreconf: configure.ac: tracing
+autoreconf: running: libtoolize --copy --force
+libtoolize: putting auxiliary files in AC_CONFIG_AUX_DIR, '.'.
+libtoolize: copying file './ltmain.sh'
+libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'm4'.
+libtoolize: copying file 'm4/libtool.m4'
+libtoolize: copying file 'm4/ltoptions.m4'
+libtoolize: copying file 'm4/ltsugar.m4'
+libtoolize: copying file 'm4/ltversion.m4'
+libtoolize: copying file 'm4/lt~obsolete.m4'
+libtoolize: Remember to add 'LT_INIT' to configure.ac.
+autoreconf: running: /usr/bin/autoconf --force
+autoreconf: running: /usr/bin/autoheader --force
+autoreconf: running: automake --add-missing --copy --force-missing
+configure.ac:27: installing './compile'
+configure.ac:15: installing './missing'
+examples/Makefile.am: installing './depcomp'
+autoreconf: Leaving directory `.'
++ export CFLAGS=-O0
++ CFLAGS=-O0
++ CFLAGS=-O0
++ export CFLAGS
++ CXXFLAGS=-O0
++ export CXXFLAGS
++ FFLAGS='-O0 -I/usr/lib64/gfortran/modules'
++ export FFLAGS
++ FCFLAGS='-O0 -I/usr/lib64/gfortran/modules'
++ export FCFLAGS
++ LDFLAGS=-O0
++ export LDFLAGS
++ LT_SYS_LIBRARY_PATH=/usr/lib64:
++ export LT_SYS_LIBRARY_PATH
++ CC=dioscc
++ export CC
++ CXX=diosc++
++ export CXX
++ '[' -fltox '!=' x ']'
+++ find . -type f -name configure -print
++ for file in $(find . -type f -name configure -print)
++ /usr/bin/sed -r --in-place=.backup 's/^char \(\*f\) \(\) = /__attribute__ ((used)) char (*f) () = /g' ./configure
++ diff -u ./configure.backup ./configure
++ mv ./configure.backup ./configure
++ /usr/bin/sed -r --in-place=.backup 's/^char \(\*f\) \(\);/__attribute__ ((used)) char (*f) ();/g' ./configure
++ diff -u ./configure.backup ./configure
++ mv ./configure.backup ./configure
++ /usr/bin/sed -r --in-place=.backup 's/^char \$2 \(\);/__attribute__ ((used)) char \$2 ();/g' ./configure
++ diff -u ./configure.backup ./configure
+--- ./configure.backup	2021-11-29 16:29:41.437656592 +0100
++++ ./configure	2021-11-29 16:29:42.261220020 +0100
+@@ -1809,7 +1809,7 @@
+ #ifdef __cplusplus
+ extern "C"
+ #endif
+-char $2 ();
++__attribute__ ((used)) char $2 ();
+ /* The GNU C library defines this for functions which it implements
+     to always fail with ENOSYS.  Some functions are actually named
+     something starting with __ and the normal name is an alias.  */
++ /usr/bin/sed --in-place=.backup '1{$!N;$!N};$!N;s/int x = 1;\nint y = 0;\nint z;\nint nan;/volatile int x = 1; volatile int y = 0; volatile int z, nan;/;P;D' ./configure
++ diff -u ./configure.backup ./configure
++ mv ./configure.backup ./configure
++ /usr/bin/sed --in-place=.backup 's#^lt_cv_sys_global_symbol_to_cdecl=.*#lt_cv_sys_global_symbol_to_cdecl="sed -n -e '\''s/^T .* \\(.*\\)$/extern int \\1();/p'\'' -e '\''s/^$symcode* .* \\(.*\\)$/extern char \\1;/p'\''"#' ./configure
++ diff -u ./configure.backup ./configure
+--- ./configure.backup	2021-11-29 16:29:42.261220020 +0100
++++ ./configure	2021-11-29 16:29:42.275195642 +0100
+@@ -7130,7 +7130,7 @@
+ # Transform an extracted symbol line into a proper C declaration.
+ # Some systems (esp. on ia64) link data and code symbols differently,
+ # so use this general approach.
+-lt_cv_sys_global_symbol_to_cdecl="sed -n"\
++lt_cv_sys_global_symbol_to_cdecl="sed -n -e 's/^T .* \(.*\)$/extern int \1();/p' -e 's/^$symcode* .* \(.*\)$/extern char \1;/p'"
+ $lt_cdecl_hook\
+ " -e 's/^T .* \(.*\)$/extern int \1();/p'"\
+ " -e 's/^$symcode$symcode* .* \(.*\)$/extern char \1;/p'"
+@@ -14551,7 +14551,7 @@
+ compiler='`$ECHO "$compiler" | $SED "$delay_single_quote_subst"`'
+ GCC='`$ECHO "$GCC" | $SED "$delay_single_quote_subst"`'
+ lt_cv_sys_global_symbol_pipe='`$ECHO "$lt_cv_sys_global_symbol_pipe" | $SED "$delay_single_quote_subst"`'
+-lt_cv_sys_global_symbol_to_cdecl='`$ECHO "$lt_cv_sys_global_symbol_to_cdecl" | $SED "$delay_single_quote_subst"`'
++lt_cv_sys_global_symbol_to_cdecl="sed -n -e 's/^T .* \(.*\)$/extern int \1();/p' -e 's/^$symcode* .* \(.*\)$/extern char \1;/p'"
+ lt_cv_sys_global_symbol_to_import='`$ECHO "$lt_cv_sys_global_symbol_to_import" | $SED "$delay_single_quote_subst"`'
+ lt_cv_sys_global_symbol_to_c_name_address='`$ECHO "$lt_cv_sys_global_symbol_to_c_name_address" | $SED "$delay_single_quote_subst"`'
+ lt_cv_sys_global_symbol_to_c_name_address_lib_prefix='`$ECHO "$lt_cv_sys_global_symbol_to_c_name_address_lib_prefix" | $SED "$delay_single_quote_subst"`'
++ '[' 1 = 1 ']'
++++ dirname ./configure
+++ find . -name config.guess -o -name config.sub
++ for i in $(find $(dirname ./configure) -name config.guess -o -name config.sub)
+++ basename ./config.guess
++ '[' -f /usr/lib/rpm/redhat/config.guess ']'
++ /usr/bin/rm -f ./config.guess
+++ basename ./config.guess
++ /usr/bin/cp -fv /usr/lib/rpm/redhat/config.guess ./config.guess
+'/usr/lib/rpm/redhat/config.guess' -> './config.guess'
++ for i in $(find $(dirname ./configure) -name config.guess -o -name config.sub)
+++ basename ./config.sub
++ '[' -f /usr/lib/rpm/redhat/config.sub ']'
++ /usr/bin/rm -f ./config.sub
+++ basename ./config.sub
++ /usr/bin/cp -fv /usr/lib/rpm/redhat/config.sub ./config.sub
+'/usr/lib/rpm/redhat/config.sub' -> './config.sub'
++ '[' 1 = 1 ']'
++ '[' x '!=' 'x-Wl,-z,now ' ']'
+++ find . -name ltmain.sh
++ for i in $(find . -name ltmain.sh)
++ /usr/bin/sed -i.backup -e 's~compiler_flags=$~compiler_flags="-Wl,-z,now "~' ./ltmain.sh
++ ./configure --build=x86_64-redhat-linux-gnu --host=x86_64-redhat-linux-gnu --program-prefix= --disable-dependency-tracking --prefix=/usr --exec-prefix=/usr --bindir=/usr/bin --sbindir=/usr/sbin --sysconfdir=/etc --datadir=/usr/share --includedir=/usr/include --libdir=/usr/lib64 --libexecdir=/usr/libexec --localstatedir=/var --sharedstatedir=/var/lib --mandir=/usr/share/man --infodir=/usr/share/info --disable-static --enable-api-doc --with-enginesdir=/usr/lib64/engines-1.1
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether make supports nested variables... (cached) yes
+checking build system type... x86_64-redhat-linux-gnu
+checking host system type... x86_64-redhat-linux-gnu
+checking for x86_64-redhat-linux-gnu-gcc... dioscc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether dioscc accepts -g... yes
+checking for dioscc option to accept ISO C89... none needed
+checking whether dioscc understands -c and -o together... yes
+checking whether make supports the include directive... yes (GNU style)
+checking dependency style of dioscc... none
+checking for x86_64-redhat-linux-gnu-pkg-config... /usr/bin/x86_64-redhat-linux-gnu-pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking how to run the C preprocessor... dioscc -E
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... no
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking whether byte ordering is bigendian... no
+checking if LD -Wl,--version-script works... yes
+checking how to run the C preprocessor... dioscc -E
+checking whether ln -s works... yes
+checking for a sed that does not truncate output... /usr/bin/sed
+checking whether make sets $(MAKE)... (cached) yes
+checking how to print strings... printf
+checking for a sed that does not truncate output... (cached) /usr/bin/sed
+checking for fgrep... /usr/bin/grep -F
+checking for ld used by dioscc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-redhat-linux-gnu file names to x86_64-redhat-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-redhat-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for x86_64-redhat-linux-gnu-objdump... no
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for x86_64-redhat-linux-gnu-dlltool... no
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for x86_64-redhat-linux-gnu-ar... no
+checking for ar... ar
+checking for archiver @FILE support... @
+checking for x86_64-redhat-linux-gnu-strip... no
+checking for strip... strip
+checking for x86_64-redhat-linux-gnu-ranlib... no
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from dioscc object... ./configure: line 7136:  -e 's/^T .* \(.*\)$/extern int \1();/p' -e 's/^[ABCDGIRSTW][ABCDGIRSTW]* .* \(.*\)$/extern char \1;/p': No such file or directory
+ok
+checking for sysroot... no
+checking for a working dd... /usr/bin/dd
+checking how to truncate binary pipes... /usr/bin/dd bs=4096 count=1
+checking for x86_64-redhat-linux-gnu-mt... no
+checking for mt... no
+checking if : is a manifest tool... no
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if dioscc supports -fno-rtti -fno-exceptions... yes
+checking for dioscc option to produce PIC... -fPIC -DPIC
+checking if dioscc PIC flag -fPIC -DPIC works... yes
+checking if dioscc static flag -static works... no
+checking if dioscc supports -c -o file.o... yes
+checking if dioscc supports -c -o file.o... (cached) yes
+checking whether the dioscc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... yes
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... no
+checking for x86_64-redhat-linux-gnu-windres... no
+checking for windres... no
+checking for ANSI C header files... (cached) yes
+checking for sys/wait.h that is POSIX.1 compatible... yes
+checking errno.h usability... yes
+checking errno.h presence... yes
+checking for errno.h... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking malloc.h usability... no
+checking malloc.h presence... no
+checking for malloc.h... no
+checking for stdlib.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for string.h... (cached) yes
+checking for strings.h... (cached) yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking for unistd.h... (cached) yes
+checking locale.h usability... yes
+checking locale.h presence... yes
+checking for locale.h... yes
+checking getopt.h usability... yes
+checking getopt.h presence... yes
+checking for getopt.h... yes
+checking for dlfcn.h... (cached) yes
+checking utmp.h usability... yes
+checking utmp.h presence... yes
+checking for utmp.h... yes
+checking for doxygen... doxygen
+checking for library containing dlopen... no
+configure: error: dlopen required
+
+
+RPM build errors:
+error: Bad exit status from /var/tmp/rpm-tmp.moNgM5 (%build)
+    Bad exit status from /var/tmp/rpm-tmp.moNgM5 (%build)
+Finish: chroot ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'dioscc\' CXX=\\$\'diosc++\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\acsexec-divine\\\\a-l\\\\a/builddir/divine-capture\\\\a-d\\\\acheck --lart stubs -o ignore:exit --max-time 8 \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bc --nodeps --short-circuit /builddir/build/SPECS/openssl-pkcs11.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc dioscc\' \'--define\' \'__cxx diosc++\' \'--define\' \'__cpp dioscc -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+
+!!! 2021-11-29 16:29:48	error: %build failed
+
+>>> 2021-11-29 16:29:48	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--chroot" "/bin/su mockbuild -l -c \"PATH=/usr/lib64/cswrap:\\\$PATH CSWRAP_CAP_FILE=\\\$'/builddir/cswrap-capture.err' CSWRAP_TIMEOUT=\\\$'30' CSWRAP_TIMEOUT_FOR=\\\$':' CC=\\\$'dioscc' CXX=\\\$'diosc++' CSEXEC_WRAP_CMD=\\\$'--skip-ld-linux\\\\acsexec-divine\\\\a-l\\\\a/builddir/divine-capture\\\\a-d\\\\acheck --lart stubs -o ignore:exit --max-time 8 ' CSWRAP_ADD_CFLAGS=\\\$'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader' CSWRAP_DEL_CFLAGS=\\\$'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register' CSWRAP_ADD_CXXFLAGS=\\\$'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader' CSWRAP_DEL_CXXFLAGS=\\\$'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register' sh -c \\\"rpmbuild -bi --nodeps --short-circuit /builddir/build/SPECS/openssl-pkcs11.spec '--define' 'apidocs 0' '--define' 'with_publican 0' '--without' 'docs' '--without' 'langpacks' '--define' '__cc dioscc' '--define' '__cxx diosc++' '--define' '__cpp dioscc -E' '--define' 'toolchain clang' '--define' 'optflags -O0' '--define' 'build_ldflags -O0'\\\"\""
+INFO: mock.py version 2.13 starting (python version = 3.9.7, NVR = mock-2.13-1.kdudka.1.fc34)...
+Start(bootstrap): init plugins
+INFO: selinux enabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish: chroot init
+INFO: Running in chroot: ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'dioscc\' CXX=\\$\'diosc++\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\acsexec-divine\\\\a-l\\\\a/builddir/divine-capture\\\\a-d\\\\acheck --lart stubs -o ignore:exit --max-time 8 \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bi --nodeps --short-circuit /builddir/build/SPECS/openssl-pkcs11.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc dioscc\' \'--define\' \'__cxx diosc++\' \'--define\' \'__cpp dioscc -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+Start: chroot ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'dioscc\' CXX=\\$\'diosc++\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\acsexec-divine\\\\a-l\\\\a/builddir/divine-capture\\\\a-d\\\\acheck --lart stubs -o ignore:exit --max-time 8 \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bi --nodeps --short-circuit /builddir/build/SPECS/openssl-pkcs11.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc dioscc\' \'--define\' \'__cxx diosc++\' \'--define\' \'__cpp dioscc -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+setting SOURCE_DATE_EPOCH=1626912000
+Executing(%install): /bin/sh -e /var/tmp/rpm-tmp.OLTCFw
++ umask 022
++ cd /builddir/build/BUILD
++ '[' /builddir/build/BUILDROOT/openssl-pkcs11-0.4.11-4.fc35.x86_64 '!=' / ']'
++ rm -rf /builddir/build/BUILDROOT/openssl-pkcs11-0.4.11-4.fc35.x86_64
+++ dirname /builddir/build/BUILDROOT/openssl-pkcs11-0.4.11-4.fc35.x86_64
++ mkdir -p /builddir/build/BUILDROOT
++ mkdir /builddir/build/BUILDROOT/openssl-pkcs11-0.4.11-4.fc35.x86_64
++ cd libp11-0.4.11
++ mkdir -p /builddir/build/BUILDROOT/openssl-pkcs11-0.4.11-4.fc35.x86_64/usr/lib64/engines-1.1
++ make install DESTDIR=/builddir/build/BUILDROOT/openssl-pkcs11-0.4.11-4.fc35.x86_64
+make.orig: *** No rule to make target 'install'.
+
+
+RPM build errors:
+error: Bad exit status from /var/tmp/rpm-tmp.OLTCFw (%install)
+    Bad exit status from /var/tmp/rpm-tmp.OLTCFw (%install)
+Finish: chroot ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'dioscc\' CXX=\\$\'diosc++\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\acsexec-divine\\\\a-l\\\\a/builddir/divine-capture\\\\a-d\\\\acheck --lart stubs -o ignore:exit --max-time 8 \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bi --nodeps --short-circuit /builddir/build/SPECS/openssl-pkcs11.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc dioscc\' \'--define\' \'__cxx diosc++\' \'--define\' \'__cpp dioscc -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+
+!!! 2021-11-29 16:29:49	error: %install failed
+
+>>> 2021-11-29 16:29:49	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'tar -c --remove-files '/builddir/cswrap-capture.err' '/builddir/divine-capture'' | tar -xC '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/openssl-pkcs11-0.4.11-4.fc35/divine/output/debug/raw-results'"
+tar: Removing leading `/' from member names
+tar: Removing leading `/' from hard link targets
+
+>>> 2021-11-29 16:29:51	"csgrep --mode=json --remove-duplicates '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/openssl-pkcs11-0.4.11-4.fc35/divine/output/debug/raw-results/builddir/divine-capture'/pid-*.conv > '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/openssl-pkcs11-0.4.11-4.fc35/divine/output/debug/uni-results/divine-capture.js'"
+/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/openssl-pkcs11-0.4.11-4.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-*.conv: failed to open input file
+
+!!! 2021-11-29 16:29:51	error: post-process hook failed
+
+scan.ini: time-finished = 2021-11-29 16:29:51
+scan.ini: exit-code = 1
+>>> 2021-11-29 16:29:51	"cslinker --quiet --cwelist '/usr/share/csmock/cwe-map.csv' --inifile '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/openssl-pkcs11-0.4.11-4.fc35/divine/output/scan.ini' '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/openssl-pkcs11-0.4.11-4.fc35/divine/output/debug/uni-results'/* > '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/openssl-pkcs11-0.4.11-4.fc35/divine/output/debug/scan-results-all.js'"
+
+>>> 2021-11-29 16:29:51	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'csgrep --mode=json --embed-context 3' < '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/openssl-pkcs11-0.4.11-4.fc35/divine/output/debug/scan-results-all.js' > '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/openssl-pkcs11-0.4.11-4.fc35/divine/output/debug/scan-results-all.js.tmp'"
+
+>>> 2021-11-29 16:29:52	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--clean"
+
+>>> 2021-11-29 16:30:03	"cat '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/openssl-pkcs11-0.4.11-4.fc35/divine/output/debug/scan-results-all.js' | sed 's|/builddir/build/BUILDROOT/[^/]*/|/builddir/build/BUILD//|' | csgrep --mode=json --path '^/builddir/build/BUILD/' --strip-path-prefix /builddir/build/BUILD/ | csgrep --mode=json --invert-match --path '^ksh-.*[0-9]+\\.c\$' | csgrep --mode=json --invert-match --path 'CMakeFiles/CMakeTmp|conftest.c' | csdiff --json-output --show-internal \"/usr/share/csmock/known-false-positives.js\" - | cssort --key=path > '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/openssl-pkcs11-0.4.11-4.fc35/divine/output/scan-results.js'"
+
+>>> 2021-11-29 16:30:03	"sed 's|/builddir/build/BUILDROOT/[^/]*/|/builddir/build/BUILD//|' '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/openssl-pkcs11-0.4.11-4.fc35/divine/output/debug/scan-results-all.js' | csgrep --mode=json --strip-path-prefix /builddir/build/BUILD/ | csdiff --show-internal '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/openssl-pkcs11-0.4.11-4.fc35/divine/output/scan-results.js' - | cssort > '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/openssl-pkcs11-0.4.11-4.fc35/divine/output/debug/suppressed-results.js'"
+
+>>> 2021-11-29 16:30:03	"csgrep --mode=grep --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/openssl-pkcs11-0.4.11-4.fc35/divine/output/debug/suppressed-results.js' > '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/openssl-pkcs11-0.4.11-4.fc35/divine/output/debug/suppressed-results.err'"
+
+>>> 2021-11-29 16:30:03	"csgrep --mode=json --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/openssl-pkcs11-0.4.11-4.fc35/divine/output/debug/suppressed-results.js' | cshtml - > '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/openssl-pkcs11-0.4.11-4.fc35/divine/output/debug/suppressed-results.html'"
+
+>>> 2021-11-29 16:30:03	"csgrep --mode=evtstat --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/openssl-pkcs11-0.4.11-4.fc35/divine/output/debug/suppressed-results.js' | tee '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/openssl-pkcs11-0.4.11-4.fc35/divine/output/debug/suppressed-results-summary.txt'"
+
+>>> 2021-11-29 16:30:03	"csgrep --mode=grep --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/openssl-pkcs11-0.4.11-4.fc35/divine/output/scan-results.js' > '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/openssl-pkcs11-0.4.11-4.fc35/divine/output/scan-results.err'"
+
+>>> 2021-11-29 16:30:03	"csgrep --mode=json --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/openssl-pkcs11-0.4.11-4.fc35/divine/output/scan-results.js' | cshtml - > '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/openssl-pkcs11-0.4.11-4.fc35/divine/output/scan-results.html'"
+
+>>> 2021-11-29 16:30:03	"csgrep --mode=evtstat --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/openssl-pkcs11-0.4.11-4.fc35/divine/output/scan-results.js' | tee '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/openssl-pkcs11-0.4.11-4.fc35/divine/output/scan-results-summary.txt'"
+
+<<< 2021-11-29 16:30:03	csmock exit code: 1
+

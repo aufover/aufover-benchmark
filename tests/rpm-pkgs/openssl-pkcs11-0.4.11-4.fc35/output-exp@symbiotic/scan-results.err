@@ -1,0 +1,118 @@
+Error: COMPILER_WARNING (CWE-477):
+libp11-0.4.11/examples/auth.c:252:7: warning[-Wdeprecated-declarations]: 'PKCS11_sign' is deprecated
+#        rc = PKCS11_sign(NID_sha1, random, RANDOM_SIZE,
+#             ^
+libp11-0.4.11/src/libp11.h:470:1: note: 'PKCS11_sign' has been explicitly marked deprecated here
+#P11_DEPRECATED_FUNC extern int PKCS11_sign(int type,
+#^
+libp11-0.4.11/src/libp11.h:432:2: note: expanded from macro 'P11_DEPRECATED_FUNC'
+#        P11_DEPRECATED("This function will be removed in libp11 0.5.0")
+#        ^
+libp11-0.4.11/src/libp11.h:423:45: note: expanded from macro 'P11_DEPRECATED'
+##define P11_DEPRECATED(msg) __attribute__ ((deprecated))
+#                                            ^
+#  250|   	}
+#  251|   
+#  252|-> 	rc = PKCS11_sign(NID_sha1, random, RANDOM_SIZE,
+#  253|   		signature, &siglen, authkey);
+#  254|   	if (rc != 1) {
+
+Error: COMPILER_WARNING (CWE-477):
+libp11-0.4.11/examples/decrypt.c:261:7: warning[-Wdeprecated-declarations]: 'PKCS11_private_decrypt' is deprecated
+#        rc = PKCS11_private_decrypt(len, encrypted,
+#             ^
+libp11-0.4.11/src/libp11.h:494:1: note: 'PKCS11_private_decrypt' has been explicitly marked deprecated here
+#P11_DEPRECATED_FUNC extern int PKCS11_private_decrypt(
+#^
+libp11-0.4.11/src/libp11.h:432:2: note: expanded from macro 'P11_DEPRECATED_FUNC'
+#        P11_DEPRECATED("This function will be removed in libp11 0.5.0")
+#        ^
+libp11-0.4.11/src/libp11.h:423:45: note: expanded from macro 'P11_DEPRECATED'
+##define P11_DEPRECATED(msg) __attribute__ ((deprecated))
+#                                            ^
+#  259|   	}
+#  260|   
+#  261|-> 	rc = PKCS11_private_decrypt(len, encrypted,
+#  262|   			decrypted, authkey, RSA_PKCS1_PADDING);
+#  263|   	if (rc != RANDOM_SIZE) {
+
+Error: SYMBIOTIC_WARNING:
+libp11-0.4.11/examples/listkeys.c:97: error: memory error: out of bound pointer
+libp11-0.4.11/examples/listkeys.c:97: note: call stack: function main (=2, =0)
+libp11-0.4.11/examples/listkeys.c:97: note: Additional Info: address: 71776119061217280:24
+libp11-0.4.11/examples/listkeys.c:97: note: Additional Info: pointing to: none
+libp11-0.4.11/examples/listkeys.c:81:8: note: Non-deterministic values: PKCS11_CTX_new: len 8 bytes, [8 times 0x0] (i64: 0)
+libp11-0.4.11/examples/listkeys.c:85:7: note: Non-deterministic values: PKCS11_CTX_load: len 4 bytes, [4 times 0x0] (i32: 0)
+libp11-0.4.11/examples/listkeys.c:90:7: note: Non-deterministic values: PKCS11_enumerate_slots: len 4 bytes, [4 times 0x0] (i32: 0)
+libp11-0.4.11/examples/listkeys.c:95:9: note: Non-deterministic values: PKCS11_find_token: len 8 bytes, [6 times 0x0|0xff|0x0] (i64: 71776119061217280)
+/builddir/build/BUILD/libp11-0.4.11/examples/listkeys.c:95:9 (offset): note: Non-deterministic values: PKCS11_find_token: len 8 bytes, [8 times 0x0] (i64: 0)
+#   95|   	slot = PKCS11_find_token(ctx, slots, nslots);
+#   96|   	error_queue("PKCS11_find_token");
+#   97|-> 	CHECK_ERR(!slot || !slot->token, "no token available", 3);
+#   98|   
+#   99|   	printf("Slot manufacturer......: %s\n", slot->manufacturer);
+
+Error: COMPILER_WARNING (CWE-252):
+libp11-0.4.11/tests/evp-sign.c:260:2: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#        EVP_SignInit(ctx, digest_algo);
+#        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/openssl/evp.h:500:42: note: expanded from macro 'EVP_SignInit'
+## define EVP_SignInit(a,b)               EVP_DigestInit(a,b)
+#                                         ^~~~~~~~~~~~~~ ~~~
+#  258|   	}
+#  259|   
+#  260|-> 	EVP_SignInit(ctx, digest_algo);
+#  261|   
+#  262|   #define TEST_DATA "test data"
+
+Error: COMPILER_WARNING (CWE-252):
+libp11-0.4.11/tests/fork-change-slot.c:273:5: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#    EVP_SignInit(md_ctx, digest_algo);
+#    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/openssl/evp.h:500:42: note: expanded from macro 'EVP_SignInit'
+## define EVP_SignInit(a,b)               EVP_DigestInit(a,b)
+#                                         ^~~~~~~~~~~~~~ ~~~
+#  271|       }
+#  272|   
+#  273|->     EVP_SignInit(md_ctx, digest_algo);
+#  274|       if (EVP_SignUpdate(md_ctx, random, RANDOM_SIZE) <= 0) {
+#  275|           error_queue("EVP_SignUpdate", pid);
+
+Error: COMPILER_WARNING (CWE-252):
+libp11-0.4.11/tests/fork-change-slot.c:294:5: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#    EVP_VerifyInit(md_ctx, digest_algo);
+#    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/openssl/evp.h:503:42: note: expanded from macro 'EVP_VerifyInit'
+## define EVP_VerifyInit(a,b)             EVP_DigestInit(a,b)
+#                                         ^~~~~~~~~~~~~~ ~~~
+#  292|       }
+#  293|   
+#  294|->     EVP_VerifyInit(md_ctx, digest_algo);
+#  295|       if (EVP_VerifyUpdate(md_ctx, random, RANDOM_SIZE) <= 0) {
+#  296|           error_queue("EVP_VerifyUpdate", pid);
+
+Error: COMPILER_WARNING (CWE-252):
+libp11-0.4.11/tests/fork-test.c:224:2: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#        EVP_SignInit(md_ctx, digest_algo);
+#        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/openssl/evp.h:500:42: note: expanded from macro 'EVP_SignInit'
+## define EVP_SignInit(a,b)               EVP_DigestInit(a,b)
+#                                         ^~~~~~~~~~~~~~ ~~~
+#  222|   	}
+#  223|   
+#  224|-> 	EVP_SignInit(md_ctx, digest_algo);
+#  225|   	if (EVP_SignUpdate(md_ctx, random, RANDOM_SIZE) <= 0) {
+#  226|   		error_queue("EVP_SignUpdate");
+
+Error: COMPILER_WARNING (CWE-252):
+libp11-0.4.11/tests/fork-test.c:252:2: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#        EVP_VerifyInit(md_ctx, digest_algo);
+#        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/openssl/evp.h:503:42: note: expanded from macro 'EVP_VerifyInit'
+## define EVP_VerifyInit(a,b)             EVP_DigestInit(a,b)
+#                                         ^~~~~~~~~~~~~~ ~~~
+#  250|   	}
+#  251|   
+#  252|-> 	EVP_VerifyInit(md_ctx, digest_algo);
+#  253|   	if (EVP_VerifyUpdate(md_ctx, random, RANDOM_SIZE) <= 0) {
+#  254|   		error_queue("EVP_VerifyUpdate");

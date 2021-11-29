@@ -1,0 +1,33 @@
+Error: COMPILER_WARNING (CWE-477):
+libp11-0.4.11/examples/auth.c: scope_hint: In function 'main'
+libp11-0.4.11/examples/auth.c:252:9: warning[-Wdeprecated-declarations]: 'PKCS11_sign' is deprecated: This function will be removed in libp11 0.5.0
+#  252 |         rc = PKCS11_sign(NID_sha1, random, RANDOM_SIZE,
+#      |         ^~
+libp11-0.4.11/examples/auth.c:48: included_from: Included from here.
+libp11-0.4.11/src/libp11.h:470:32: note: declared here
+#  470 | P11_DEPRECATED_FUNC extern int PKCS11_sign(int type,
+#      |                                ^~~~~~~~~~~
+libp11-0.4.11/examples/auth.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#  250|   	}
+#  251|   
+#  252|-> 	rc = PKCS11_sign(NID_sha1, random, RANDOM_SIZE,
+#  253|   		signature, &siglen, authkey);
+#  254|   	if (rc != 1) {
+
+Error: COMPILER_WARNING (CWE-477):
+libp11-0.4.11/examples/decrypt.c: scope_hint: In function 'main'
+libp11-0.4.11/examples/decrypt.c:261:9: warning[-Wdeprecated-declarations]: 'PKCS11_private_decrypt' is deprecated: This function will be removed in libp11 0.5.0
+#  261 |         rc = PKCS11_private_decrypt(len, encrypted,
+#      |         ^~
+libp11-0.4.11/examples/decrypt.c:48: included_from: Included from here.
+libp11-0.4.11/src/libp11.h:494:32: note: declared here
+#  494 | P11_DEPRECATED_FUNC extern int PKCS11_private_decrypt(
+#      |                                ^~~~~~~~~~~~~~~~~~~~~~
+libp11-0.4.11/examples/decrypt.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#  259|   	}
+#  260|   
+#  261|-> 	rc = PKCS11_private_decrypt(len, encrypted,
+#  262|   			decrypted, authkey, RSA_PKCS1_PADDING);
+#  263|   	if (rc != RANDOM_SIZE) {
