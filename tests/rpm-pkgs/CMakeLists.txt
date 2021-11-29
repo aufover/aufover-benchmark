@@ -85,7 +85,8 @@ macro(tool_verify_build)
     set_tests_properties("${test_name_base}[verify]" PROPERTIES
         DEPENDS "${build}[fetch]"
         RUN_SERIAL ON)
-    set_tests_properties("${build}[fetch]" PROPERTIES LABELS ${tool})
+    get_test_property("${build}[fetch]" LABELS orig_lables)
+    set_tests_properties("${build}[fetch]" PROPERTIES LABELS "${orig_lables};${tool}")
 endmacro()
 
 # add [diff] test for a single build and single tool

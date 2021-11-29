@@ -1,0 +1,9 @@
+Error: COMPILER_WARNING (CWE-758):
+gzip-1.10/lib/savedir.c:179:20: warning[-Wstringop-overflow=]: writing 1 byte into a region of size 0
+#  179 |   name_space[used] = '\0';
+#      |                    ^
+#  177|       name_space = xrealloc (name_space, used + 1);
+#  178|   
+#  179|->   name_space[used] = '\0';
+#  180|     return name_space;
+#  181|   }
