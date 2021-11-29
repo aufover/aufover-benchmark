@@ -83,7 +83,8 @@ macro(tool_verify_build)
     set(test_name_base "${build}@${tool}")
     add_test_wrap("${test_name_base}[verify]" "${run_csmock_sh}")
     set_tests_properties("${test_name_base}[verify]" PROPERTIES
-        DEPENDS "${build}[fetch]")
+        DEPENDS "${build}[fetch]"
+        RUN_SERIAL ON)
     set_tests_properties("${build}[fetch]" PROPERTIES LABELS ${tool})
 endmacro()
 
