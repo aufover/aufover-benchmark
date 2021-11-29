@@ -1,0 +1,66 @@
+rpm-pkgs
+========
+test-suite that uses csmock to formally verify RPM pkgs
+
+
+Tree layout of this directory
+-----------------------------
+./CMakeLists.txt            CMake configuration file for this test-suite
+./sync.sh                   script for syncing of expected results
+./*/                        directories per source RPM (name-version-release)
+./*/output-exp@${tool}      expected csmock output for tool ${tool}
+
+./**/fetch.sh               script to get $1.src.rpm for the specicifed build
+./**/output-diff.sh@${tool} script comparing expected/actual output of ${tool}
+./**/csmock-args@${tool}    tool-specific arguments for csmock
+
+NOTE: File starting with ./**/ can be specified for individual source RPMs,
+      or for the whole tests-suite.
+
+
+Tree layout of the corresponding working directory: ${WORKDIR}/rpm-pkgs
+-----------------------------------------------------------------------
+./Makefile                  generated Makefile for the rpm-pkgs test-suite
+./${build}/${build}.src.rpm source RPM package obtained for ${build}
+./${build}/${tool}/         working directories for build/tool combinations,
+each of them contains:
+    .../run-csmock.sh       script that runs csmock with specified arguments
+    .../output/             directory with actual output of csmock
+    .../output-exp/         symlink to directory with the expected output
+    .../output-diff.sh      symlink to script that compare the outputs
+
+
+Generated tests for each RPM package
+------------------------------------
+    ${build}[fetch]         - download ${build}.src.rpm (common for all tools)
+    ${build}${tool}[verify] - run csmock -t ${tool} for ${build}
+    ${build}${tool}[diff]   - compare expected output with the actual output
+
+
+How to update expected output of existing tests?
+------------------------------------------------
+- run the following command:
+    $ SYNC_EXISTING_ONLY=1 ./sync.sh [CTEST_OPTS]
+
+- sync.sh takes custom ctest options, which is useful (not only) for filtering:
+    $ SYNC_EXISTING_ONLY=1 ./sync.sh -L cbmc --verbose
+
+- sync.sh uses a separate working directory for syncing:
+    ../../workdir-for-sync
+
+- once sync.sh succeeds, verify the changes in output-exp@${tool} directories:
+    $ git diff */output-exp@*
+
+
+How to import new tests into the rpm-pkgs test-suite?
+-----------------------------------------------------
+- create a new directory for the test:
+    $ mkdir ${build}
+
+- if needed, create/update configuration files for the build:
+    ./${build}/fetch.sh
+    ./${build}/csmock-args@${tool}
+    ./${build}/output-diff.sh@${tool}
+
+- run sync.sh script to capture initial output-exp@${tool} content:
+    ./sync.sh -L 'cbmc|divine|symbiotic|valgrind' --verbose -R ${build}
