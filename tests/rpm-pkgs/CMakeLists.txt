@@ -10,6 +10,12 @@ else()
     message(FATAL_ERROR "Unable to list csmock tools")
 endif()
 
+# list available tools
+set_property(GLOBAL PROPERTY TARGET_MESSAGES OFF)
+add_custom_target(list-available-tools)
+add_custom_command(TARGET list-available-tools
+    COMMAND echo ${CSMOCK_TOOLS})
+
 # wrapper around add_test() to deduplicate code
 # FIXME: copy-pasted from single-c
 macro(add_test_wrap name cmd)
@@ -78,6 +84,7 @@ macro(tool_verify_build)
     add_test_wrap("${test_name_base}[verify]" "${run_csmock_sh}")
     set_tests_properties("${test_name_base}[verify]" PROPERTIES
         DEPENDS "${build}[fetch]")
+    set_tests_properties("${build}[fetch]" PROPERTIES LABELS ${tool})
 endmacro()
 
 # add [diff] test for a single build and single tool
@@ -91,9 +98,11 @@ macro(tool_diff_output)
         file(CREATE_LINK ${CMAKE_CURRENT_SOURCE_DIR}/output-diff.sh ${cmd_diff} SYMBOLIC)
     endif()
     set(cmd ${cmd_diff} ${dst_test_dir}/output-exp ${dst_out_dir})
-    add_test_wrap("${test_name_base}[diff]" "${cmd}")
-    set_tests_properties("${test_name_base}[diff]" PROPERTIES
-        DEPENDS "${test_name_base}[verify]")
+    if(${PHASE_ENABLE_diff})
+        add_test_wrap("${test_name_base}[diff]" "${cmd}")
+        set_tests_properties("${test_name_base}[diff]" PROPERTIES
+            DEPENDS "${test_name_base}[verify]")
+    endif()
 endmacro()
 
 # go through all available tools and create tests for them
@@ -127,3 +136,11 @@ foreach(build ${build_list})
         handle_build()
     endif()
 endforeach()
+
+# check-only target
+# FIXME: copy-pasted from single-c
+string(REPLACE ";" " " CTEST_CMD_STRING "${CTEST_CMD}")
+add_custom_target(check-only)
+add_custom_command(TARGET check-only
+    COMMAND ${CTEST_CMD}
+    COMMENT ${CTEST_CMD_STRING})

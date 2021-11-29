@@ -38,6 +38,8 @@ add_custom_command(TARGET check
 # find required utils
 include(find-utils.cmake)
 
+option(PHASE_ENABLE_diff "compare actual output with expected output" ON)
+
 # TODO: change the default to ON
 option(ENABLE_SINGLE_C "Set to ON to enable the single-c test-suite" OFF)
 if(ENABLE_SINGLE_C)

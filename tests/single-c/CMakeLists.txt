@@ -1,5 +1,3 @@
-option(PHASE_ENABLE_diff "compare actual output with expected output" ON)
-
 # wrapper around add_test() to deduplicate code
 macro(add_test_wrap name cmd)
     add_test(NAME ${name}
