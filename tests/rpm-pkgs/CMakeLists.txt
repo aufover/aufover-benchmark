@@ -82,7 +82,18 @@ endmacro()
 
 # add [diff] test for a single build and single tool
 macro(tool_diff_output)
-    # TODO
+    set(cmd_diff ${dst_build_dir}/output-diff.sh)
+    if(EXISTS ${src_build_dir}/output-diff.sh@${tool})
+        file(CREATE_LINK ${src_build_dir}/output-diff.sh@${tool} ${cmd_diff} SYMBOLIC)
+    elseif(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/output-diff.sh@${tool})
+        file(CREATE_LINK ${CMAKE_CURRENT_SOURCE_DIR}/output-diff.sh@${tool} ${cmd_diff} SYMBOLIC)
+    else()
+        file(CREATE_LINK ${CMAKE_CURRENT_SOURCE_DIR}/output-diff.sh ${cmd_diff} SYMBOLIC)
+    endif()
+    set(cmd ${cmd_diff} ${dst_test_dir}/output-exp ${dst_out_dir})
+    add_test_wrap("${test_name_base}[diff]" "${cmd}")
+    set_tests_properties("${test_name_base}[diff]" PROPERTIES
+        DEPENDS "${test_name_base}[verify]")
 endmacro()
 
 # go through all available tools and create tests for them

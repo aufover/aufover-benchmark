@@ -1,0 +1,2800 @@
+scan.ini: [scan]
+scan.ini: tool = csmock
+scan.ini: tool-version = csmock-3.1.0.20211126.090206.ga7412e7-1.fc34
+scan.ini: tool-args = '/usr/bin/csmock' '-o' '/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output' '-f' '/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/gzip-1.10-5.fc35.src.rpm' '-r' 'fedora-35-x86_64' '-t' 'divine' '--divine-timeout=8' '--keep-going'
+scan.ini: host = f34
+scan.ini: store-results-to = /home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output
+scan.ini: time-created = 2021-11-27 12:04:14
+scan.ini: enabled-plugins = divine, gcc
+scan.ini: mock-config = fedora-35-x86_64
+scan.ini: project-name = gzip-1.10-5.fc35
+scan.ini: known-false-positives = /usr/share/csmock/known-false-positives.js
+>>> 2021-11-27 12:04:14	"rpm -qa | sort -V > '/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/rpm-list-host.txt'"
+
+>>> 2021-11-27 12:04:15	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--init"
+INFO: mock.py version 2.13 starting (python version = 3.9.7, NVR = mock-2.13-1.kdudka.1.fc34)...
+Start(bootstrap): init plugins
+INFO: selinux enabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start: clean chroot
+Finish: clean chroot
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+Start: unpacking root cache
+Finish: unpacking root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish: chroot init
+Finish: run
+
+>>> 2021-11-27 12:04:30	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--installdeps" "/tmp/csmock52w5zo2q/gzip-1.10-5.fc35.src.rpm"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Errors during downloading metadata for repository 'kdudka-shellcheck':
+  - Curl error (6): Couldn't resolve host name for http://coprbe.devel.redhat.com/results/kdudka/shellcheck/fedora-35-x86_64/repodata/repomd.xml [Could not resolve host: coprbe.devel.redhat.com]
+Error: Failed to download metadata for repo 'kdudka-shellcheck': Cannot download repomd.xml: Cannot download repodata/repomd.xml: All mirrors were tried
+Ignoring repositories: kdudka-shellcheck
+Dependencies resolved.
+================================================================================
+ Package                       Arch     Version                 Repo       Size
+================================================================================
+Installing:
+ [1mautoconf                     [m noarch   2.69-37.fc35            fedora    666 k
+ [1mautomake                     [m noarch   1.16.2-5.fc35           fedora    662 k
+ [1mgcc                          [m x86_64   11.2.1-1.fc35           fedora     31 M
+ [1mless                         [m x86_64   590-2.fc35              updates   161 k
+ [1mmake                         [m x86_64   1:4.3-6.fc35            fedora    533 k
+ [1mtexinfo                      [m x86_64   6.8-2.fc35              fedora    1.0 M
+Installing dependencies:
+ [1mannobin-docs                 [m noarch   9.87-3.fc35             updates    78 k
+ [1mannobin-plugin-gcc           [m x86_64   9.87-3.fc35             updates    42 k
+ [1mcpp                          [m x86_64   11.2.1-1.fc35           fedora     10 M
+ [1memacs-filesystem             [m noarch   1:27.2-9.fc35           fedora    9.0 k
+ [1mgc                           [m x86_64   8.0.4-6.fc35            fedora    103 k
+ [1mglibc-devel                  [m x86_64   2.34-8.fc35             updates   146 k
+ [1mglibc-headers-x86            [m noarch   2.34-8.fc35             updates   544 k
+ [1mgroff-base                   [m x86_64   1.22.4-8.fc35           fedora    1.0 M
+ [1mguile22                      [m x86_64   2.2.7-3.fc35            fedora    6.4 M
+ [1mkernel-headers               [m x86_64   5.15.4-200.fc35         updates   1.3 M
+ [1mlibmpc                       [m x86_64   1.2.1-3.fc35            fedora     62 k
+ [1mlibtool-ltdl                 [m x86_64   2.4.6-42.fc35           fedora     36 k
+ [1mlibxcrypt-devel              [m x86_64   4.4.26-4.fc35           fedora     29 k
+ [1mm4                           [m x86_64   1.4.19-2.fc35           fedora    294 k
+ [1mncurses                      [m x86_64   6.2-8.20210508.fc35     fedora    400 k
+ [1mperl-B                       [m x86_64   1.82-482.fc35           updates   188 k
+ [1mperl-Carp                    [m noarch   1.52-478.fc35           fedora     29 k
+ [1mperl-Class-Struct            [m noarch   0.66-482.fc35           updates    30 k
+ [1mperl-Data-Dumper             [m x86_64   2.183-2.fc35            fedora     56 k
+ [1mperl-DynaLoader              [m x86_64   1.50-482.fc35           updates    34 k
+ [1mperl-Encode                  [m x86_64   4:3.15-482.fc35         updates   1.7 M
+ [1mperl-Errno                   [m x86_64   1.33-482.fc35           updates    23 k
+ [1mperl-Exporter                [m noarch   5.76-479.fc35           fedora     31 k
+ [1mperl-Fcntl                   [m x86_64   1.14-482.fc35           updates    28 k
+ [1mperl-File-Basename           [m noarch   2.85-482.fc35           updates    25 k
+ [1mperl-File-Compare            [m noarch   1.100.600-482.fc35      updates    21 k
+ [1mperl-File-Copy               [m noarch   2.35-482.fc35           updates    28 k
+ [1mperl-File-Find               [m noarch   1.39-482.fc35           updates    33 k
+ [1mperl-File-Path               [m noarch   2.18-478.fc35           fedora     35 k
+ [1mperl-File-Temp               [m noarch   1:0.231.100-478.fc35    fedora     59 k
+ [1mperl-File-stat               [m noarch   1.09-482.fc35           updates    25 k
+ [1mperl-Getopt-Long             [m noarch   1:2.52-478.fc35         fedora     60 k
+ [1mperl-Getopt-Std              [m noarch   1.13-482.fc35           updates    23 k
+ [1mperl-HTTP-Tiny               [m noarch   0.080-1.fc35            updates    55 k
+ [1mperl-IO                      [m x86_64   1.46-482.fc35           updates    95 k
+ [1mperl-IPC-Open3               [m noarch   1.21-482.fc35           updates    31 k
+ [1mperl-MIME-Base64             [m x86_64   3.16-478.fc35           fedora     30 k
+ [1mperl-POSIX                   [m x86_64   1.97-482.fc35           updates   105 k
+ [1mperl-PathTools               [m x86_64   3.80-478.fc35           fedora     85 k
+ [1mperl-Pod-Escapes             [m noarch   1:1.07-478.fc35         fedora     20 k
+ [1mperl-Pod-Perldoc             [m noarch   3.28.01-479.fc35        fedora     84 k
+ [1mperl-Pod-Simple              [m noarch   1:3.43-2.fc35           fedora    215 k
+ [1mperl-Pod-Usage               [m noarch   4:2.01-478.fc35         fedora     40 k
+ [1mperl-Scalar-List-Utils       [m x86_64   5:1.60-462.fc35         updates    72 k
+ [1mperl-SelectSaver             [m noarch   1.02-482.fc35           updates    19 k
+ [1mperl-Socket                  [m x86_64   4:2.032-2.fc35          fedora     55 k
+ [1mperl-Storable                [m x86_64   1:3.25-1.fc35           fedora     95 k
+ [1mperl-Symbol                  [m noarch   1.09-482.fc35           updates    22 k
+ [1mperl-Term-ANSIColor          [m noarch   5.01-479.fc35           fedora     48 k
+ [1mperl-Term-Cap                [m noarch   1.17-478.fc35           fedora     22 k
+ [1mperl-Text-ParseWords         [m noarch   3.30-478.fc35           fedora     16 k
+ [1mperl-Text-Tabs+Wrap          [m noarch   2021.0814-1.fc35        fedora     22 k
+ [1mperl-Text-Unidecode          [m noarch   1.30-16.fc35            fedora    138 k
+ [1mperl-Thread-Queue            [m noarch   3.14-478.fc35           fedora     21 k
+ [1mperl-Time-Local              [m noarch   2:1.300-478.fc35        fedora     33 k
+ [1mperl-Unicode-EastAsianWidth  [m noarch   12.0-7.fc35             fedora     19 k
+ [1mperl-Unicode-Normalize       [m x86_64   1.28-478.fc35           fedora     89 k
+ [1mperl-base                    [m noarch   2.27-482.fc35           updates    24 k
+ [1mperl-constant                [m noarch   1.33-479.fc35           fedora     23 k
+ [1mperl-if                      [m noarch   0.60.900-482.fc35       updates    22 k
+ [1mperl-interpreter             [m x86_64   4:5.34.0-482.fc35       updates    79 k
+ [1mperl-libintl-perl            [m x86_64   1.32-4.fc35             fedora    796 k
+ [1mperl-libs                    [m x86_64   4:5.34.0-482.fc35       updates   2.1 M
+ [1mperl-locale                  [m noarch   1.10-482.fc35           updates    21 k
+ [1mperl-mro                     [m x86_64   1.25-482.fc35           updates    36 k
+ [1mperl-overload                [m noarch   1.33-482.fc35           updates    53 k
+ [1mperl-overloading             [m noarch   0.02-482.fc35           updates    21 k
+ [1mperl-parent                  [m noarch   1:0.238-478.fc35        fedora     14 k
+ [1mperl-podlators               [m noarch   1:4.14-478.fc35         fedora    111 k
+ [1mperl-subs                    [m noarch   1.04-482.fc35           updates    19 k
+ [1mperl-threads                 [m x86_64   1:2.26-448.fc35         fedora     57 k
+ [1mperl-threads-shared          [m x86_64   1.62-478.fc35           fedora     43 k
+ [1mperl-vars                    [m noarch   1.05-482.fc35           updates    21 k
+
+Transaction Summary
+================================================================================
+Install  79 Packages
+
+Total size: 62 M
+Installed size: 203 M
+Downloading Packages:
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+
+Installed:
+  annobin-docs-9.87-3.fc35.noarch                                               
+  annobin-plugin-gcc-9.87-3.fc35.x86_64                                         
+  autoconf-2.69-37.fc35.noarch                                                  
+  automake-1.16.2-5.fc35.noarch                                                 
+  cpp-11.2.1-1.fc35.x86_64                                                      
+  emacs-filesystem-1:27.2-9.fc35.noarch                                         
+  gc-8.0.4-6.fc35.x86_64                                                        
+  gcc-11.2.1-1.fc35.x86_64                                                      
+  glibc-devel-2.34-8.fc35.x86_64                                                
+  glibc-headers-x86-2.34-8.fc35.noarch                                          
+  groff-base-1.22.4-8.fc35.x86_64                                               
+  guile22-2.2.7-3.fc35.x86_64                                                   
+  kernel-headers-5.15.4-200.fc35.x86_64                                         
+  less-590-2.fc35.x86_64                                                        
+  libmpc-1.2.1-3.fc35.x86_64                                                    
+  libtool-ltdl-2.4.6-42.fc35.x86_64                                             
+  libxcrypt-devel-4.4.26-4.fc35.x86_64                                          
+  m4-1.4.19-2.fc35.x86_64                                                       
+  make-1:4.3-6.fc35.x86_64                                                      
+  ncurses-6.2-8.20210508.fc35.x86_64                                            
+  perl-B-1.82-482.fc35.x86_64                                                   
+  perl-Carp-1.52-478.fc35.noarch                                                
+  perl-Class-Struct-0.66-482.fc35.noarch                                        
+  perl-Data-Dumper-2.183-2.fc35.x86_64                                          
+  perl-DynaLoader-1.50-482.fc35.x86_64                                          
+  perl-Encode-4:3.15-482.fc35.x86_64                                            
+  perl-Errno-1.33-482.fc35.x86_64                                               
+  perl-Exporter-5.76-479.fc35.noarch                                            
+  perl-Fcntl-1.14-482.fc35.x86_64                                               
+  perl-File-Basename-2.85-482.fc35.noarch                                       
+  perl-File-Compare-1.100.600-482.fc35.noarch                                   
+  perl-File-Copy-2.35-482.fc35.noarch                                           
+  perl-File-Find-1.39-482.fc35.noarch                                           
+  perl-File-Path-2.18-478.fc35.noarch                                           
+  perl-File-Temp-1:0.231.100-478.fc35.noarch                                    
+  perl-File-stat-1.09-482.fc35.noarch                                           
+  perl-Getopt-Long-1:2.52-478.fc35.noarch                                       
+  perl-Getopt-Std-1.13-482.fc35.noarch                                          
+  perl-HTTP-Tiny-0.080-1.fc35.noarch                                            
+  perl-IO-1.46-482.fc35.x86_64                                                  
+  perl-IPC-Open3-1.21-482.fc35.noarch                                           
+  perl-MIME-Base64-3.16-478.fc35.x86_64                                         
+  perl-POSIX-1.97-482.fc35.x86_64                                               
+  perl-PathTools-3.80-478.fc35.x86_64                                           
+  perl-Pod-Escapes-1:1.07-478.fc35.noarch                                       
+  perl-Pod-Perldoc-3.28.01-479.fc35.noarch                                      
+  perl-Pod-Simple-1:3.43-2.fc35.noarch                                          
+  perl-Pod-Usage-4:2.01-478.fc35.noarch                                         
+  perl-Scalar-List-Utils-5:1.60-462.fc35.x86_64                                 
+  perl-SelectSaver-1.02-482.fc35.noarch                                         
+  perl-Socket-4:2.032-2.fc35.x86_64                                             
+  perl-Storable-1:3.25-1.fc35.x86_64                                            
+  perl-Symbol-1.09-482.fc35.noarch                                              
+  perl-Term-ANSIColor-5.01-479.fc35.noarch                                      
+  perl-Term-Cap-1.17-478.fc35.noarch                                            
+  perl-Text-ParseWords-3.30-478.fc35.noarch                                     
+  perl-Text-Tabs+Wrap-2021.0814-1.fc35.noarch                                   
+  perl-Text-Unidecode-1.30-16.fc35.noarch                                       
+  perl-Thread-Queue-3.14-478.fc35.noarch                                        
+  perl-Time-Local-2:1.300-478.fc35.noarch                                       
+  perl-Unicode-EastAsianWidth-12.0-7.fc35.noarch                                
+  perl-Unicode-Normalize-1.28-478.fc35.x86_64                                   
+  perl-base-2.27-482.fc35.noarch                                                
+  perl-constant-1.33-479.fc35.noarch                                            
+  perl-if-0.60.900-482.fc35.noarch                                              
+  perl-interpreter-4:5.34.0-482.fc35.x86_64                                     
+  perl-libintl-perl-1.32-4.fc35.x86_64                                          
+  perl-libs-4:5.34.0-482.fc35.x86_64                                            
+  perl-locale-1.10-482.fc35.noarch                                              
+  perl-mro-1.25-482.fc35.x86_64                                                 
+  perl-overload-1.33-482.fc35.noarch                                            
+  perl-overloading-0.02-482.fc35.noarch                                         
+  perl-parent-1:0.238-478.fc35.noarch                                           
+  perl-podlators-1:4.14-478.fc35.noarch                                         
+  perl-subs-1.04-482.fc35.noarch                                                
+  perl-threads-1:2.26-448.fc35.x86_64                                           
+  perl-threads-shared-1.62-478.fc35.x86_64                                      
+  perl-vars-1.05-482.fc35.noarch                                                
+  texinfo-6.8-2.fc35.x86_64                                                     
+
+Complete!
+
+>>> 2021-11-27 12:05:42	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--addrepo" "https://download.copr.fedorainfracloud.org/results/@aufover/divine/fedora-\$releasever-\$basearch/" "--install" "divine"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Errors during downloading metadata for repository 'kdudka-shellcheck':
+  - Curl error (6): Couldn't resolve host name for http://coprbe.devel.redhat.com/results/kdudka/shellcheck/fedora-35-x86_64/repodata/repomd.xml [Could not resolve host: coprbe.devel.redhat.com]
+Error: Failed to download metadata for repo 'kdudka-shellcheck': Cannot download repomd.xml: Cannot download repodata/repomd.xml: All mirrors were tried
+Ignoring repositories: kdudka-shellcheck
+Dependencies resolved.
+====================================================================================================================================================
+ Package                   Arch    Version                   Repository                                                                         Size
+====================================================================================================================================================
+Installing:
+ [1mdivine                   [m x86_64  4.4.2_4_gd47985e0b-7.fc35 downloadcoprfedorainfracloudorg_results_aufover_divine_fedorareleaseverbasearch_   68 M
+Installing dependencies:
+ [1mexpat                    [m x86_64  2.4.1-2.fc35              fedora                                                                            110 k
+ [1mlibedit                  [m x86_64  3.1-40.20210910cvs.fc35   fedora                                                                            105 k
+ [1mlibyaml                  [m x86_64  0.2.5-6.fc35              fedora                                                                             60 k
+ [1mmpdecimal                [m x86_64  2.5.1-2.fc35              fedora                                                                             99 k
+ [1mpython-pip-wheel         [m noarch  21.2.3-4.fc35             updates                                                                           1.1 M
+ [1mpython-setuptools-wheel  [m noarch  57.4.0-1.fc35             fedora                                                                            505 k
+ [1mpython3                  [m x86_64  3.10.0-1.fc35             fedora                                                                             25 k
+ [1mpython3-libs             [m x86_64  3.10.0-1.fc35             fedora                                                                            7.5 M
+ [1mpython3-pygments         [m noarch  2.9.0-2.fc35              fedora                                                                            1.9 M
+ [1mpython3-pyyaml           [m x86_64  5.4.1-4.fc35              fedora                                                                            191 k
+ [1mz3                       [m x86_64  4.8.12-2.fc35             fedora                                                                            5.9 M
+ [1mz3-libs                  [m x86_64  4.8.12-2.fc35             fedora                                                                            5.8 M
+
+Transaction Summary
+====================================================================================================================================================
+Install  13 Packages
+
+Total size: 91 M
+Installed size: 480 M
+Downloading Packages:
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+
+Installed:
+  divine-4.4.2_4_gd47985e0b-7.fc35.x86_64                                       
+  expat-2.4.1-2.fc35.x86_64                                                     
+  libedit-3.1-40.20210910cvs.fc35.x86_64                                        
+  libyaml-0.2.5-6.fc35.x86_64                                                   
+  mpdecimal-2.5.1-2.fc35.x86_64                                                 
+  python-pip-wheel-21.2.3-4.fc35.noarch                                         
+  python-setuptools-wheel-57.4.0-1.fc35.noarch                                  
+  python3-3.10.0-1.fc35.x86_64                                                  
+  python3-libs-3.10.0-1.fc35.x86_64                                             
+  python3-pygments-2.9.0-2.fc35.noarch                                          
+  python3-pyyaml-5.4.1-4.fc35.x86_64                                            
+  z3-4.8.12-2.fc35.x86_64                                                       
+  z3-libs-4.8.12-2.fc35.x86_64                                                  
+
+Complete!
+
+>>> 2021-11-27 12:07:10	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa' | sort -V > /home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/rpm-list-mock.txt"
+
+>>> 2021-11-27 12:07:11	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa --provides' | sort -V > /tmp/csmock52w5zo2q/rpm-list-mock-provides.txt"
+
+>>> 2021-11-27 12:07:13	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--copyin" "/tmp/csmock52w5zo2q/gzip-1.10-5.fc35.src.rpm" "/builddir/gzip-1.10-5.fc35.src.rpm"
+
+>>> 2021-11-27 12:07:14	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "chown mockbuild -R /builddir"
+
+>>> 2021-11-27 12:07:16	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"rpm -Uvh --nodeps '/builddir/gzip-1.10-5.fc35.src.rpm'\""
+Updating / installing...
+gzip-1.10-5.fc35                      ########################################
+
+>>> 2021-11-27 12:07:17	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"sed -e 's|^ExclusiveArch:.*\\\$||' -i /builddir/build/SPECS/gzip.spec\""
+
+>>> 2021-11-27 12:07:19	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"rpmbuild -bs --nodeps /builddir/build/SPECS/gzip.spec '--define' 'apidocs 0' '--define' 'with_publican 0' '--without' 'docs' '--without' 'langpacks' '--define' '__cc dioscc' '--define' '__cxx diosc++' '--define' '__cpp dioscc -E' '--define' 'toolchain clang' '--define' 'optflags -O0' '--define' 'build_ldflags -O0' && sh -c 'cd /builddir/build/SRPMS && eval mv -v *.src.rpm /builddir/gzip-1.10-5.fc35.src.rpm || :'\""
+setting SOURCE_DATE_EPOCH=1626912000
+Wrote: /builddir/build/SRPMS/gzip-1.10-5.fc35.src.rpm
+renamed 'gzip-1.10-5.fc35.src.rpm' -> '/builddir/gzip-1.10-5.fc35.src.rpm'
+
+>>> 2021-11-27 12:07:20	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--disable-plugin=selinux" "--copyout" "/builddir/gzip-1.10-5.fc35.src.rpm" "/tmp/csmock52w5zo2q/gzip-1.10-5.fc35.src.rpm"
+
+>>> 2021-11-27 12:07:22	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--installdeps" "/tmp/csmock52w5zo2q/gzip-1.10-5.fc35.src.rpm"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Errors during downloading metadata for repository 'kdudka-shellcheck':
+  - Curl error (6): Couldn't resolve host name for http://coprbe.devel.redhat.com/results/kdudka/shellcheck/fedora-35-x86_64/repodata/repomd.xml [Could not resolve host: coprbe.devel.redhat.com]
+Error: Failed to download metadata for repo 'kdudka-shellcheck': Cannot download repomd.xml: Cannot download repodata/repomd.xml: All mirrors were tried
+Ignoring repositories: kdudka-shellcheck
+Package autoconf-2.69-37.fc35.noarch is already installed.
+Package automake-1.16.2-5.fc35.noarch is already installed.
+Package gcc-11.2.1-1.fc35.x86_64 is already installed.
+Package less-590-2.fc35.x86_64 is already installed.
+Package make-1:4.3-6.fc35.x86_64 is already installed.
+Package texinfo-6.8-2.fc35.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+
+>>> 2021-11-27 12:07:28	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--addrepo" "https://download.copr.fedorainfracloud.org/results/@aufover/divine/fedora-\$releasever-\$basearch/" "--install" "divine"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Errors during downloading metadata for repository 'kdudka-shellcheck':
+  - Curl error (6): Couldn't resolve host name for http://coprbe.devel.redhat.com/results/kdudka/shellcheck/fedora-35-x86_64/repodata/repomd.xml [Could not resolve host: coprbe.devel.redhat.com]
+Error: Failed to download metadata for repo 'kdudka-shellcheck': Cannot download repomd.xml: Cannot download repodata/repomd.xml: All mirrors were tried
+Ignoring repositories: kdudka-shellcheck
+Package divine-4.4.2_4_gd47985e0b-7.fc35.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+
+>>> 2021-11-27 12:07:33	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa' | sort -V > /home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/rpm-list-mock.txt"
+
+>>> 2021-11-27 12:07:35	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa --provides' | sort -V > /tmp/csmock52w5zo2q/rpm-list-mock-provides.txt"
+
+>>> 2021-11-27 12:07:36	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--addrepo" "https://download.copr.fedorainfracloud.org/results/@aufover/divine/fedora-\$releasever-\$basearch/" "--install" "csdiff"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Errors during downloading metadata for repository 'kdudka-shellcheck':
+  - Curl error (6): Couldn't resolve host name for http://coprbe.devel.redhat.com/results/kdudka/shellcheck/fedora-35-x86_64/repodata/repomd.xml [Could not resolve host: coprbe.devel.redhat.com]
+Error: Failed to download metadata for repo 'kdudka-shellcheck': Cannot download repomd.xml: Cannot download repodata/repomd.xml: All mirrors were tried
+Ignoring repositories: kdudka-shellcheck
+Dependencies resolved.
+================================================================================
+ Package                    Arch        Version               Repository   Size
+================================================================================
+Installing:
+ [1mcsdiff                    [m x86_64      2.2.0-1.fc35          fedora      895 k
+Installing dependencies:
+ [1mboost-filesystem          [m x86_64      1.76.0-4.fc35         fedora       60 k
+ [1mboost-program-options     [m x86_64      1.76.0-4.fc35         fedora      108 k
+ [1mboost-system              [m x86_64      1.76.0-4.fc35         fedora       15 k
+
+Transaction Summary
+================================================================================
+Install  4 Packages
+
+Total size: 1.1 M
+Installed size: 4.8 M
+Downloading Packages:
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+
+Installed:
+  boost-filesystem-1.76.0-4.fc35.x86_64                                         
+  boost-program-options-1.76.0-4.fc35.x86_64                                    
+  boost-system-1.76.0-4.fc35.x86_64                                             
+  csdiff-2.2.0-1.fc35.x86_64                                                    
+
+Complete!
+
+>>> 2021-11-27 12:07:49	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa' | sort -V > /home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/rpm-list-mock.txt"
+
+>>> 2021-11-27 12:07:50	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa --provides' | sort -V > /tmp/csmock52w5zo2q/rpm-list-mock-provides.txt"
+
+>>> 2021-11-27 12:07:51	"tar -cP '/usr/share/csmock/scripts' '/usr/bin/cswrap' '/usr/lib64/cswrap' '/usr/bin/csexec' '/usr/bin/csexec-loader' '/usr/lib64/libcsexec-preload.so' '/tmp/csmock52w5zo2q/gzip-1.10-5.fc35.src.rpm' | '/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'tar -xC/'"
+tar: Removing leading `/' from member names
+
+scan.ini: analyzer-version-divine = 4.4.2_4_gd47985e0b
+>>> 2021-11-27 12:07:53	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"mkdir -pv '/builddir/divine-capture'\""
+mkdir: created directory '/builddir/divine-capture'
+
+scan.ini: analyzer-version-gcc = 11.2.1
+>>> 2021-11-27 12:07:54	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "rpm -Uvh --nodeps '/tmp/csmock52w5zo2q/gzip-1.10-5.fc35.src.rpm'"
+Updating / installing...
+gzip-1.10-5.fc35                      ########################################
+
+>>> 2021-11-27 12:07:56	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "chmod -R +r /builddir"
+
+>>> 2021-11-27 12:07:57	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "ln -fv '/usr/share/csmock/scripts/enable-keep-going.sh' '/usr/share/csmock/scripts/chroot-fixups'"
+'/usr/share/csmock/scripts/chroot-fixups/enable-keep-going.sh' => '/usr/share/csmock/scripts/enable-keep-going.sh'
+
+>>> 2021-11-27 12:07:59	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--shell" "for i in /usr/share/csmock/scripts/chroot-fixups/*; do test -x \$i && echo RUN: \$i >&2 && \$i; done"
+RUN: /usr/share/csmock/scripts/chroot-fixups/enable-keep-going.sh
+renamed '/usr/bin/make' -> '/usr/bin/make.orig'
++ ls -l /usr/bin/make
+-rwxr-xr-x. 1 root root 42 Nov 27 12:08 /usr/bin/make
++ cat /usr/bin/make
+#!/bin/sh
+exec /usr/bin/make.orig -k "$@"
+RUN: /usr/share/csmock/scripts/chroot-fixups/gdk-pixbuf2-triggers.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/glib2-triggers.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/kpathsea-texhash.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/openssl-public-header-files.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/qt5-core-abi.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/rpm-build-scripts.sh
++ sed -e s/fail=1/fail=0/ -i /usr/lib/rpm/redhat/brp-mangle-shebangs
+'/usr/lib/rpm/brp-strip-static-archive' -> '/bin/true'
+RUN: /usr/share/csmock/scripts/chroot-fixups/rpm-macros.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/rpm-python-extras.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/shared-mime-info-triggers.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/simplify-cpp-includes.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/simplify-glib-includes.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/simplify-systemd-includes.sh
+
+>>> 2021-11-27 12:08:00	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--chroot" "/bin/su mockbuild -l -c \"rpmbuild -bp --nodeps /builddir/build/SPECS/gzip.spec '--define' 'apidocs 0' '--define' 'with_publican 0' '--without' 'docs' '--without' 'langpacks' '--define' '__cc dioscc' '--define' '__cxx diosc++' '--define' '__cpp dioscc -E' '--define' 'toolchain clang' '--define' 'optflags -O0' '--define' 'build_ldflags -O0'\""
+INFO: mock.py version 2.13 starting (python version = 3.9.7, NVR = mock-2.13-1.kdudka.1.fc34)...
+Start(bootstrap): init plugins
+INFO: selinux enabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish: chroot init
+INFO: Running in chroot: ['/bin/su mockbuild -l -c "rpmbuild -bp --nodeps /builddir/build/SPECS/gzip.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc dioscc\' \'--define\' \'__cxx diosc++\' \'--define\' \'__cpp dioscc -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'"']
+Start: chroot ['/bin/su mockbuild -l -c "rpmbuild -bp --nodeps /builddir/build/SPECS/gzip.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc dioscc\' \'--define\' \'__cxx diosc++\' \'--define\' \'__cpp dioscc -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'"']
+setting SOURCE_DATE_EPOCH=1626912000
+Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.qddc91
++ umask 022
++ cd /builddir/build/BUILD
++ cd /builddir/build/BUILD
++ rm -rf gzip-1.10
++ /usr/bin/xz -dc /builddir/build/SOURCES/gzip-1.10.tar.xz
++ /usr/bin/tar -xof -
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd gzip-1.10
++ /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+Patch #2 (gzexe.patch):
++ echo 'Patch #2 (gzexe.patch):'
++ /usr/bin/patch --no-backup-if-mismatch -f -p1 -b --suffix .gzexe --fuzz=0
+patching file gzexe.in
+patching file tests/Makefile.am
+patching file tests/gzexe
++ cp /builddir/build/SOURCES/fdl-1.3.txt .
++ autoreconf
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Finish: chroot ['/bin/su mockbuild -l -c "rpmbuild -bp --nodeps /builddir/build/SPECS/gzip.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc dioscc\' \'--define\' \'__cxx diosc++\' \'--define\' \'__cpp dioscc -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'"']
+
+>>> 2021-11-27 12:08:06	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "chmod -R +r /builddir/build"
+
+>>> 2021-11-27 12:08:07	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--chroot" "/bin/su mockbuild -l -c \"PATH=/usr/lib64/cswrap:\\\$PATH CSWRAP_CAP_FILE=\\\$'/builddir/cswrap-capture.err' CSWRAP_TIMEOUT=\\\$'30' CSWRAP_TIMEOUT_FOR=\\\$':' CC=\\\$'dioscc' CXX=\\\$'diosc++' CSEXEC_WRAP_CMD=\\\$'--skip-ld-linux\\\\acsexec-divine\\\\a-l\\\\a/builddir/divine-capture\\\\a-d\\\\acheck --lart stubs -o ignore:exit --max-time 8 ' CSWRAP_ADD_CFLAGS=\\\$'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader' CSWRAP_DEL_CFLAGS=\\\$'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register' CSWRAP_ADD_CXXFLAGS=\\\$'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader' CSWRAP_DEL_CXXFLAGS=\\\$'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register' sh -c \\\"rpmbuild -bc --nodeps --short-circuit /builddir/build/SPECS/gzip.spec '--define' 'apidocs 0' '--define' 'with_publican 0' '--without' 'docs' '--without' 'langpacks' '--define' '__cc dioscc' '--define' '__cxx diosc++' '--define' '__cpp dioscc -E' '--define' 'toolchain clang' '--define' 'optflags -O0' '--define' 'build_ldflags -O0'\\\"\""
+INFO: mock.py version 2.13 starting (python version = 3.9.7, NVR = mock-2.13-1.kdudka.1.fc34)...
+Start(bootstrap): init plugins
+INFO: selinux enabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish: chroot init
+INFO: Running in chroot: ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'dioscc\' CXX=\\$\'diosc++\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\acsexec-divine\\\\a-l\\\\a/builddir/divine-capture\\\\a-d\\\\acheck --lart stubs -o ignore:exit --max-time 8 \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bc --nodeps --short-circuit /builddir/build/SPECS/gzip.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc dioscc\' \'--define\' \'__cxx diosc++\' \'--define\' \'__cpp dioscc -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+Start: chroot ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'dioscc\' CXX=\\$\'diosc++\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\acsexec-divine\\\\a-l\\\\a/builddir/divine-capture\\\\a-d\\\\acheck --lart stubs -o ignore:exit --max-time 8 \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bc --nodeps --short-circuit /builddir/build/SPECS/gzip.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc dioscc\' \'--define\' \'__cxx diosc++\' \'--define\' \'__cpp dioscc -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+setting SOURCE_DATE_EPOCH=1626912000
+Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.nraxxX
++ umask 022
++ cd /builddir/build/BUILD
++ cd gzip-1.10
++ export DEFS=NO_ASM
++ DEFS=NO_ASM
++ export CPPFLAGS=-DHAVE_LSTAT
++ CPPFLAGS=-DHAVE_LSTAT
++ export CC=dioscc
++ CC=dioscc
++ export 'CPP=dioscc -E'
++ CPP='dioscc -E'
++ export CXX=diosc++
++ CXX=diosc++
++ CFLAGS=-O0
++ export CFLAGS
++ CXXFLAGS=-O0
++ export CXXFLAGS
++ FFLAGS='-O0 -I/usr/lib64/gfortran/modules'
++ export FFLAGS
++ FCFLAGS='-O0 -I/usr/lib64/gfortran/modules'
++ export FCFLAGS
++ LDFLAGS=-O0
++ export LDFLAGS
++ LT_SYS_LIBRARY_PATH=/usr/lib64:
++ export LT_SYS_LIBRARY_PATH
++ CC=dioscc
++ export CC
++ CXX=diosc++
++ export CXX
++ '[' -fltox '!=' x ']'
+++ find . -type f -name configure -print
++ for file in $(find . -type f -name configure -print)
++ /usr/bin/sed -r --in-place=.backup 's/^char \(\*f\) \(\) = /__attribute__ ((used)) char (*f) () = /g' ./configure
++ diff -u ./configure.backup ./configure
++ mv ./configure.backup ./configure
++ /usr/bin/sed -r --in-place=.backup 's/^char \(\*f\) \(\);/__attribute__ ((used)) char (*f) ();/g' ./configure
++ diff -u ./configure.backup ./configure
++ mv ./configure.backup ./configure
++ /usr/bin/sed -r --in-place=.backup 's/^char \$2 \(\);/__attribute__ ((used)) char \$2 ();/g' ./configure
++ diff -u ./configure.backup ./configure
+--- ./configure.backup	2021-11-27 12:08:05.109290500 +0100
++++ ./configure	2021-11-27 12:08:09.213120049 +0100
+@@ -2891,7 +2891,7 @@
+ #ifdef __cplusplus
+ extern "C"
+ #endif
+-char $2 ();
++__attribute__ ((used)) char $2 ();
+ /* The GNU C library defines this for functions which it implements
+     to always fail with ENOSYS.  Some functions are actually named
+     something starting with __ and the normal name is an alias.  */
++ /usr/bin/sed --in-place=.backup '1{$!N;$!N};$!N;s/int x = 1;\nint y = 0;\nint z;\nint nan;/volatile int x = 1; volatile int y = 0; volatile int z, nan;/;P;D' ./configure
++ diff -u ./configure.backup ./configure
++ mv ./configure.backup ./configure
++ /usr/bin/sed --in-place=.backup 's#^lt_cv_sys_global_symbol_to_cdecl=.*#lt_cv_sys_global_symbol_to_cdecl="sed -n -e '\''s/^T .* \\(.*\\)$/extern int \\1();/p'\'' -e '\''s/^$symcode* .* \\(.*\\)$/extern char \\1;/p'\''"#' ./configure
++ diff -u ./configure.backup ./configure
++ mv ./configure.backup ./configure
++ '[' 1 = 1 ']'
++++ dirname ./configure
+++ find . -name config.guess -o -name config.sub
++ for i in $(find $(dirname ./configure) -name config.guess -o -name config.sub)
+++ basename ./build-aux/config.guess
++ '[' -f /usr/lib/rpm/redhat/config.guess ']'
++ /usr/bin/rm -f ./build-aux/config.guess
+++ basename ./build-aux/config.guess
++ /usr/bin/cp -fv /usr/lib/rpm/redhat/config.guess ./build-aux/config.guess
+'/usr/lib/rpm/redhat/config.guess' -> './build-aux/config.guess'
++ for i in $(find $(dirname ./configure) -name config.guess -o -name config.sub)
+++ basename ./build-aux/config.sub
++ '[' -f /usr/lib/rpm/redhat/config.sub ']'
++ /usr/bin/rm -f ./build-aux/config.sub
+++ basename ./build-aux/config.sub
++ /usr/bin/cp -fv /usr/lib/rpm/redhat/config.sub ./build-aux/config.sub
+'/usr/lib/rpm/redhat/config.sub' -> './build-aux/config.sub'
++ '[' 1 = 1 ']'
++ '[' x '!=' 'x-Wl,-z,now ' ']'
+++ find . -name ltmain.sh
++ ./configure --build=x86_64-redhat-linux-gnu --host=x86_64-redhat-linux-gnu --program-prefix= --disable-dependency-tracking --prefix=/usr --exec-prefix=/usr --bindir=/usr/bin --sbindir=/usr/sbin --sysconfdir=/etc --datadir=/usr/share --includedir=/usr/include --libdir=/usr/lib64 --libexecdir=/usr/libexec --localstatedir=/var --sharedstatedir=/var/lib --mandir=/usr/share/man --infodir=/usr/share/info
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether make supports nested variables... (cached) yes
+checking whether make supports the include directive... yes (GNU style)
+checking for x86_64-redhat-linux-gnu-gcc... dioscc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether dioscc accepts -g... yes
+checking for dioscc option to accept ISO C89... none needed
+checking whether dioscc understands -c and -o together... yes
+checking dependency style of dioscc... none
+checking for dioscc option to accept ISO C99... none needed
+checking for dioscc option to accept ISO Standard C... (cached) none needed
+checking how to run the C preprocessor... dioscc -E
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for x86_64-redhat-linux-gnu-nm... no
+checking for nm... nm
+checking whether ln -s works... yes
+checking for x86_64-redhat-linux-gnu-ranlib... no
+checking for ranlib... ranlib
+checking for a POSIX-compliant shell... /bin/sh
+checking for egrep... /usr/bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... no
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking whether _XOPEN_SOURCE should be defined... no
+checking for Minix Amsterdam compiler... no
+checking for x86_64-redhat-linux-gnu-ar... no
+checking for ar... ar
+checking for _LARGEFILE_SOURCE value needed for large files... no
+checking build system type... x86_64-redhat-linux-gnu
+checking host system type... x86_64-redhat-linux-gnu
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... no
+checking for size_t... yes
+checking for working alloca.h... no
+checking for alloca... yes
+checking whether malloc, realloc, calloc are POSIX compliant... yes
+checking for unistd.h... (cached) yes
+checking for sys/param.h... yes
+checking for sys/socket.h... yes
+checking for dirent.h... yes
+checking for features.h... no
+checking for sys/stat.h... (cached) yes
+checking for getopt.h... yes
+checking for sys/cdefs.h... yes
+checking for sys/time.h... yes
+checking for limits.h... yes
+checking for math.h... yes
+checking for sys/mman.h... yes
+checking for wchar.h... yes
+checking for stdint.h... (cached) yes
+checking for utime.h... yes
+checking for crtdefs.h... no
+checking for fcntl.h... yes
+checking for memory.h... (cached) no
+checking for time.h... yes
+checking for _set_invalid_parameter_handler... no
+checking for fchdir... yes
+checking for fdopendir... yes
+checking for fcntl... yes
+checking for symlink... yes
+checking for mempcpy... yes
+checking for vasnprintf... no
+checking for snprintf... yes
+checking for fpurge... no
+checking for __fpurge... yes
+checking for __freading... yes
+checking for __fseterr... yes
+checking for fstatat... no
+checking for fsync... yes
+checking for getdtablesize... no
+checking for getprogname... no
+checking for getexecname... no
+checking for gettimeofday... yes
+checking for lstat... yes
+checking for mprotect... no
+checking for openat... yes
+checking for strerror_r... yes
+checking for __xpg_strerror_r... yes
+checking for sigaction... yes
+checking for sigaltstack... no
+checking for siginterrupt... no
+checking for strdup... yes
+checking for catgets... yes
+checking for pipe... yes
+checking for unlinkat... yes
+checking for utime... yes
+checking for futimes... no
+checking for futimesat... no
+checking for futimens... no
+checking for utimensat... no
+checking for lutimes... no
+checking for chown... yes
+checking for fchmod... yes
+checking for fchown... yes
+checking whether the preprocessor supports include_next... yes
+checking whether system header files limit the line length... no
+checking whether // is distinct from /... no
+checking for complete errno.h... yes
+checking whether strerror_r is declared... yes
+checking for strerror_r... (cached) yes
+checking whether strerror_r returns char *... yes
+checking whether fchdir is declared... yes
+checking for working fcntl.h... yes
+checking for pid_t... yes
+checking for mode_t... yes
+checking for promoted mode_t type... mode_t
+checking whether fdatasync is declared... yes
+checking for stdint.h... yes
+checking for inttypes.h... yes
+checking whether printf supports size specifiers as in C99... yes
+checking whether printf supports 'long double' arguments... yes
+checking whether printf supports infinite 'double' arguments... yes
+checking whether byte ordering is bigendian... no
+checking whether long double and double are the same... no
+checking whether printf supports infinite 'long double' arguments... yes
+checking whether printf supports the 'a' and 'A' directives... yes
+checking whether printf supports the 'F' directive... yes
+checking whether printf supports the 'n' directive... yes
+checking whether printf supports the 'ls' directive... yes
+checking whether printf supports POSIX/XSI format strings with positions... yes
+checking whether printf supports the grouping flag... yes
+checking whether printf supports the left-adjust flag correctly... yes
+checking whether printf supports the zero flag correctly... yes
+checking whether printf supports large precisions... yes
+checking whether printf survives out-of-memory conditions... yes
+checking for unsigned long long int... yes
+checking for long long int... yes
+checking for wchar_t... yes
+checking for wint_t... yes
+checking whether wint_t is too small... no
+checking for intmax_t... yes
+checking where to find the exponent in a 'double'... word 1 bit 20
+checking whether snprintf returns a byte count as in C99... yes
+checking for snprintf... (cached) yes
+checking for strnlen... yes
+checking for wcslen... yes
+checking for wcsnlen... no
+checking for mbrtowc... yes
+checking for wcrtomb... yes
+checking whether _snprintf is declared... no
+checking whether frexp() can be used without linking with libm... no
+checking whether alarm is declared... yes
+checking whether stdin defaults to large file offsets... yes
+checking whether fseeko is declared... yes
+checking for fseeko... yes
+checking whether fflush works on input streams... yes
+checking whether stat file-mode macros are broken... no
+checking for nlink_t... yes
+checking whether lstat correctly handles trailing slash... yes
+checking whether ftello is declared... yes
+checking for ftello... yes
+checking whether ftello works... yes
+checking whether getcwd (NULL, 0) allocates memory for result... yes
+checking for getcwd with POSIX signature... yes
+checking whether getdtablesize is declared... no
+checking for getopt.h... (cached) yes
+checking for getopt_long_only... yes
+checking whether getopt is POSIX compatible... yes
+checking for working GNU getopt function... yes
+checking for working GNU getopt_long function... yes
+checking for C/C++ restrict keyword... __restrict
+checking for struct timeval... yes
+checking for wide-enough struct timeval.tv_sec member... yes
+checking where to find the exponent in a 'float'... word 0 bit 23
+checking whether limits.h has LLONG_MAX, WORD_BIT, ULLONG_WIDTH etc.... no
+checking for ld used by dioscc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for shared library run path origin... done
+checking 32-bit host C ABI... no
+checking for the common suffixes of directories in the library search path... lib64,lib64
+checking whether imported symbols can be declared weak... no
+checking whether the linker supports --as-needed... yes
+checking whether the linker supports --push-state... yes
+checking pthread.h usability... yes
+checking pthread.h presence... yes
+checking for pthread.h... yes
+checking for pthread_kill in -lpthread... no
+checking for multithread API to use... posix
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for stdlib.h... (cached) yes
+checking for GNU libc compatible malloc... yes
+checking for mmap... yes
+checking for MAP_ANONYMOUS... yes
+checking whether memchr works... yes
+checking whether memrchr is declared... no
+checking for O_CLOEXEC... yes
+checking whether strerror(0) succeeds... yes
+checking for strerror_r with POSIX signature... no
+checking whether __xpg_strerror_r works... yes
+checking whether strerror_r is declared... (cached) yes
+checking whether C symbols are prefixed with underscore at the linker level... /usr/bin/grep: conftest.s: No such file or directory
+no
+checking for sigset_t... yes
+checking for uid_t in sys/types.h... yes
+checking for stdbool.h that conforms to C99... yes
+checking for _Bool... yes
+checking whether stdint.h conforms to C99... no
+checking sys/inttypes.h usability... no
+checking sys/inttypes.h presence... no
+checking for sys/inttypes.h... no
+checking sys/bitypes.h usability... yes
+checking sys/bitypes.h presence... yes
+checking for sys/bitypes.h... yes
+checking for bit size of ptrdiff_t... 64
+checking for bit size of size_t... 64
+checking for bit size of sig_atomic_t... 32
+checking for bit size of wchar_t... 32
+checking for bit size of wint_t... 32
+checking whether sig_atomic_t is signed... yes
+checking whether wchar_t is signed... yes
+checking whether wint_t is signed... yes
+checking for ptrdiff_t integer literal suffix... l
+checking for size_t integer literal suffix... ul
+checking for sig_atomic_t integer literal suffix... 
+checking for wchar_t integer literal suffix... 
+checking for wint_t integer literal suffix... 
+checking whether strdup is declared... yes
+checking for struct timespec in <time.h>... yes
+checking whether the utimes function works... yes
+checking whether <wchar.h> uses 'inline' correctly... yes
+checking for 64-bit time_t... yes
+checking for GNU libc compatible calloc... yes
+checking whether this system has an arbitrary file name length limit... yes
+checking for library containing clock_gettime... none required
+checking for clock_gettime... yes
+checking for clock_settime... yes
+checking for closedir... yes
+checking for dirfd... yes
+checking whether dirfd is declared... yes
+checking whether dirfd is a macro... no
+checking whether // is distinct from /... (cached) no
+checking whether dup works... yes
+checking whether dup2 works... yes
+checking for error_at_line... no
+checking whether fflush works on input streams... (cached) yes
+checking whether fcntl handles F_DUPFD correctly... yes
+checking whether fcntl understands F_DUPFD_CLOEXEC... yes
+checking for library containing fdatasync... none required
+checking whether fdopendir is declared... yes
+checking whether fdopendir works... yes
+checking whether fflush works on input streams... (cached) yes
+checking whether conversion from 'int' to 'long double' works... yes
+checking whether fpurge is declared... no
+checking whether frexpl is declared... yes
+checking whether frexpl() can be used without linking with libm... no
+checking for fseeko... (cached) yes
+checking whether fflush works on input streams... (cached) yes
+checking for ftello... (cached) yes
+checking whether ftello works... (cached) yes
+checking whether program_invocation_name is declared... no
+checking whether program_invocation_short_name is declared... no
+checking whether __argv is declared... no
+checking whether __progname is defined in default libraries... yes
+checking whether gettimeofday clobbers localtime buffer... no
+checking for gettimeofday with POSIX signature... almost
+checking whether isnan(double) can be used without linking with libm... yes
+checking whether isnan(float) can be used without linking with libm... no
+checking where to find the exponent in a 'float'... (cached) word 0 bit 23
+checking whether isnan(long double) can be used without linking with libm... no
+checking where to find the exponent in a 'long double'... word 2 bit 0
+checking for C compiler flag to ignore unused libraries... -Wl,--as-needed
+checking for pthread_rwlock_t... yes
+checking whether pthread_rwlock_rdlock prefers a writer to a reader... no
+checking whether lseek detects pipes... yes
+checking for stdlib.h... (cached) yes
+checking for GNU libc compatible malloc... (cached) yes
+checking whether NAN macro works... yes
+checking whether HUGE_VAL works... yes
+checking for mempcpy... (cached) yes
+checking for memrchr... no
+checking whether open recognizes a trailing slash... yes
+checking for opendir... yes
+checking whether perror matches strerror... yes
+checking whether ldexp can be used without linking with libm... no
+checking whether frexpl() can be used without linking with libm... (cached) no
+checking whether ldexpl() can be used without linking with libm... no
+checking for raise... yes
+checking for sigprocmask... yes
+checking for readdir... yes
+checking for stdlib.h... (cached) yes
+checking for GNU libc compatible realloc... yes
+checking whether rmdir works... yes
+checking for struct sigaction.sa_sigaction... yes
+checking for volatile sig_atomic_t... yes
+checking for sighandler_t... no
+checking for signbit macro... yes
+checking for signbit compiler built-ins... yes
+checking for sigprocmask... (cached) yes
+checking for stdint.h... (cached) yes
+checking for SIZE_MAX... yes
+checking for ssize_t... yes
+checking whether stat handles trailing slashes on files... yes
+checking for struct stat.st_atim.tv_nsec... yes
+checking whether struct stat.st_atim is of type struct timespec... yes
+checking for struct stat.st_birthtimespec.tv_nsec... no
+checking for struct stat.st_birthtimensec... no
+checking for struct stat.st_birthtim.tv_nsec... no
+checking for good max_align_t... no
+checking whether NULL can be used in arbitrary expressions... no
+checking which flavor of printf attribute matches inttypes macros... system
+checking for working stdnoreturn.h... yes
+checking for stpcpy... yes
+checking for working strerror function... yes
+checking for nlink_t... (cached) yes
+checking whether unlink honors trailing slashes... yes
+checking whether unlink of a parent directory fails as it should... guessing yes
+checking for ptrdiff_t... yes
+checking for stdint.h... (cached) yes
+checking for underline in external names... no
+checking for an assembler syntax supported by this package... no
+checking for library containing strerror... none required
+checking for an ANSI C-conforming const... yes
+checking for ANSI C header files... (cached) yes
+checking for dirent.h that defines DIR... yes
+checking for library containing opendir... none required
+checking return type of signal handlers... void
+checking for size_t... (cached) yes
+checking for off_t... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating doc/Makefile
+config.status: creating lib/Makefile
+config.status: creating tests/Makefile
+config.status: creating lib/config.h
+config.status: executing depfiles commands
++ make
+  GEN      version.c
+  GEN      version.h
+/usr/bin/make.orig  all-recursive
+make.orig[1]: Entering directory '/builddir/build/BUILD/gzip-1.10'
+Making all in lib
+make.orig[2]: Entering directory '/builddir/build/BUILD/gzip-1.10/lib'
+  GEN      alloca.h
+  GEN      dirent.h
+  GEN      fcntl.h
+  GEN      limits.h
+  GEN      math.h
+  GEN      signal.h
+  GEN      stddef.h
+  GEN      stdint.h
+  GEN      stdio.h
+  GEN      stdlib.h
+  GEN      string.h
+  GEN      sys/stat.h
+  GEN      sys/time.h
+  GEN      sys/types.h
+  GEN      time.h
+  GEN      unistd.h
+  GEN      wchar.h
+/usr/bin/make.orig  all-am
+make.orig[3]: Entering directory '/builddir/build/BUILD/gzip-1.10/lib'
+  CC       cloexec.o
+  CC       opendir-safer.o
+  CC       dirname-lgpl.o
+  CC       basename-lgpl.o
+  CC       stripslash.o
+  CC       exitfail.o
+  CC       creat-safer.o
+  CC       open-safer.o
+  CC       fd-hook.o
+  CC       fd-safer-flag.o
+  CC       dup-safer-flag.o
+  CC       filenamecat-lgpl.o
+  CC       freading.o
+  CC       getprogname.o
+  CC       gettime.o
+  CC       glthread/lock.o
+  CC       malloca.o
+  CC       math.o
+  CC       openat-die.o
+  CC       openat-safer.o
+  CC       printf-frexp.o
+  CC       printf-frexpl.o
+  CC       save-cwd.o
+  CC       savedir.o
+  CC       sig-handler.o
+  CC       stat-time.o
+  CC       statat.o
+  CC       glthread/threadlib.o
+  CC       timespec.o
+  CC       unistd.o
+  CC       dup-safer.o
+  CC       fd-safer.o
+  CC       pipe-safer.o
+  CC       utimens.o
+  CC       xmalloc.o
+  CC       xalloc-die.o
+  CC       xsize.o
+  CC       yesno.o
+  CC       asnprintf.o
+  CC       chdir-long.o
+  CC       error.o
+  CC       fpurge.o
+  CC       frexp.o
+  CC       frexpl.o
+  CC       fstatat.o
+  CC       getdtablesize.o
+  CC       isnanf.o
+  CC       isnanl.o
+  CC       localtime-buffer.o
+  CC       memrchr.o
+  CC       openat-proc.o
+  CC       printf-args.o
+  CC       printf-parse.o
+  CC       strerror_r.o
+/builddir/build/BUILD/gzip-1.10/lib/strerror_r.c:204:9: warning: incompatible pointer to integer conversion assigning to 'int' from 'char *' <--[dioscc]
+    ret = strerror_r (errnum, buf, buflen);
+        ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/gzip-1.10/lib/strerror_r.c:241:60: warning: comparison between pointer and integer ('char *' and 'int') <--[dioscc]
+        if (strerror_r (errnum, stackbuf, sizeof stackbuf) == ERANGE)
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^  ~~~~~~
+2 warnings generated.
+  CC       vasnprintf.o
+  AR       libgzip.a
+make.orig[3]: Leaving directory '/builddir/build/BUILD/gzip-1.10/lib'
+make.orig[2]: Leaving directory '/builddir/build/BUILD/gzip-1.10/lib'
+Making all in doc
+make.orig[2]: Entering directory '/builddir/build/BUILD/gzip-1.10/doc'
+make.orig[2]: Leaving directory '/builddir/build/BUILD/gzip-1.10/doc'
+Making all in .
+make.orig[2]: Entering directory '/builddir/build/BUILD/gzip-1.10'
+  CC       bits.o
+  CC       deflate.o
+  CC       gzip.o
+  CC       inflate.o
+  CC       lzw.o
+  CC       trees.o
+  CC       unlzh.o
+  CC       unlzw.o
+  CC       unpack.o
+  CC       unzip.o
+  CC       util.o
+  CC       zip.o
+  CC       version.o
+  AR       libver.a
+  CCLD     gzip
+  GEN      gunzip
+  GEN      gzexe
+  GEN      zcat
+  GEN      zcmp
+  GEN      zdiff
+  GEN      zegrep
+  GEN      zfgrep
+  GEN      zforce
+  GEN      zgrep
+  GEN      zless
+  GEN      zmore
+  GEN      znew
+make.orig[2]: Leaving directory '/builddir/build/BUILD/gzip-1.10'
+Making all in tests
+make.orig[2]: Entering directory '/builddir/build/BUILD/gzip-1.10/tests'
+make.orig[2]: Nothing to be done for 'all'.
+make.orig[2]: Leaving directory '/builddir/build/BUILD/gzip-1.10/tests'
+make.orig[1]: Leaving directory '/builddir/build/BUILD/gzip-1.10'
++ make check
+  GEN      public-submodule-commit
+/usr/bin/make.orig  check-recursive
+make.orig[1]: Entering directory '/builddir/build/BUILD/gzip-1.10'
+Making check in lib
+make.orig[2]: Entering directory '/builddir/build/BUILD/gzip-1.10/lib'
+/usr/bin/make.orig  check-am
+make.orig[3]: Entering directory '/builddir/build/BUILD/gzip-1.10/lib'
+make.orig[3]: Leaving directory '/builddir/build/BUILD/gzip-1.10/lib'
+make.orig[2]: Leaving directory '/builddir/build/BUILD/gzip-1.10/lib'
+Making check in doc
+make.orig[2]: Entering directory '/builddir/build/BUILD/gzip-1.10/doc'
+make.orig[2]: Nothing to be done for 'check'.
+make.orig[2]: Leaving directory '/builddir/build/BUILD/gzip-1.10/doc'
+Making check in .
+make.orig[2]: Entering directory '/builddir/build/BUILD/gzip-1.10'
+/usr/bin/make.orig  check-local
+make.orig[3]: Entering directory '/builddir/build/BUILD/gzip-1.10'
+  GEN      gzip.doc.gz
+  GEN      check-local
+
+gzip: stdin: unexpected end of file
+cmp: EOF on - which is empty
+make.orig[3]: *** [Makefile:2285: check-local] Error 1
+make.orig[3]: Leaving directory '/builddir/build/BUILD/gzip-1.10'
+make.orig[2]: Leaving directory '/builddir/build/BUILD/gzip-1.10'
+make.orig[2]: *** [Makefile:2067: check-am] Error 2
+Making check in tests
+make.orig[2]: Entering directory '/builddir/build/BUILD/gzip-1.10/tests'
+/usr/bin/make.orig  check-TESTS
+make.orig[3]: Entering directory '/builddir/build/BUILD/gzip-1.10/tests'
+make.orig[4]: Entering directory '/builddir/build/BUILD/gzip-1.10/tests'
+FAIL: gzexe
+PASS: gzip-env
+PASS: helin-segv
+PASS: help-version
+FAIL: hufts
+PASS: keep
+PASS: list
+PASS: memcpy-abuse
+PASS: mixed
+FAIL: null-suffix-clobber
+FAIL: reproducible
+FAIL: stdin
+PASS: timestamp
+PASS: trailing-nul
+PASS: unpack-invalid
+FAIL: unpack-valid
+FAIL: upper-suffix
+PASS: z-suffix
+FAIL: zdiff
+FAIL: zgrep-f
+PASS: zgrep-context
+PASS: zgrep-signal
+PASS: znew-k
+=====================================
+   gzip 1.10: tests/test-suite.log
+=====================================
+
+# TOTAL: 23
+# PASS:  14
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  9
+# XPASS: 0
+# ERROR: 0
+
+.. contents:: :depth: 2
+
+FAIL: gzexe
+===========
+
+++ initial_cwd_=/builddir/build/BUILD/gzip-1.10/tests
++++ testdir_prefix_
++++ printf gt
+++ pfx_=gt
++++ mktempd_ /builddir/build/BUILD/gzip-1.10/tests gt-gzexe.XXXX
++++ case $# in
++++ destdir_=/builddir/build/BUILD/gzip-1.10/tests
++++ template_=gt-gzexe.XXXX
++++ MAX_TRIES_=4
++++ case $destdir_ in
++++ destdir_slash_=/builddir/build/BUILD/gzip-1.10/tests/
++++ case $template_ in
+++++ unset TMPDIR
++++ d=/builddir/build/BUILD/gzip-1.10/tests/gt-gzexe.r33i
++++ case $d in
++++ :
++++ test -d /builddir/build/BUILD/gzip-1.10/tests/gt-gzexe.r33i
+++++ ls -dgo /builddir/build/BUILD/gzip-1.10/tests/gt-gzexe.r33i
++++ perms='drwx------. 2 6 Nov 27 12:09 /builddir/build/BUILD/gzip-1.10/tests/gt-gzexe.r33i'
++++ case $perms in
++++ :
++++ echo /builddir/build/BUILD/gzip-1.10/tests/gt-gzexe.r33i
++++ return
+++ test_dir_=/builddir/build/BUILD/gzip-1.10/tests/gt-gzexe.r33i
+++ cd /builddir/build/BUILD/gzip-1.10/tests/gt-gzexe.r33i
+++ gl_init_sh_nl_='
+'
+++ IFS=' 	
+'
+++ for sig_ in 1 2 3 13 15
++++ expr 1 + 128
+++ eval 'trap '\''Exit 129'\'' 1'
++++ trap 'Exit 129' 1
+++ for sig_ in 1 2 3 13 15
++++ expr 2 + 128
+++ eval 'trap '\''Exit 130'\'' 2'
++++ trap 'Exit 130' 2
+++ for sig_ in 1 2 3 13 15
++++ expr 3 + 128
+++ eval 'trap '\''Exit 131'\'' 3'
++++ trap 'Exit 131' 3
+++ for sig_ in 1 2 3 13 15
++++ expr 13 + 128
+++ eval 'trap '\''Exit 141'\'' 13'
++++ trap 'Exit 141' 13
+++ for sig_ in 1 2 3 13 15
++++ expr 15 + 128
+++ eval 'trap '\''Exit 143'\'' 15'
++++ trap 'Exit 143' 15
+++ trap remove_tmp_ 0
++ path_prepend_ ..
++ test 1 '!=' 0
++ path_dir_=..
++ case $path_dir_ in
++ abs_path_dir_=/builddir/build/BUILD/gzip-1.10/tests/..
++ case $abs_path_dir_ in
++ PATH=/builddir/build/BUILD/gzip-1.10/tests/..:/builddir/build/BUILD/gzip-1.10:/usr/lib64/cswrap:/builddir/.local/bin:/builddir/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
++ create_exe_shims_ /builddir/build/BUILD/gzip-1.10/tests/..
++ case $EXEEXT in
++ return 0
++ shift
++ test 0 '!=' 0
++ export PATH
++ cat
++ echo 'Hello World!'
++ fail=0
++ gzexe foo
+Traceback (most recent call last):
+  File "/usr/bin/divine2csgrep", line 176, in <module>
+    main(parser.parse_args())
+  File "/usr/bin/divine2csgrep", line 162, in main
+    process_report(args, report)
+  File "/usr/bin/divine2csgrep", line 136, in process_report
+    print_error_trace(report, Error.internal_error, args)
+  File "/usr/bin/divine2csgrep", line 47, in print_error_trace
+    location = parse_location(report["input file"])
+KeyError: 'input file'
+foo:	 -6.7%
++ /bin/sh foo
++ compare exp out
++ compare_dev_null_ exp out
++ test 2 = 2
++ test xexp = x/dev/null
++ test xout = x/dev/null
++ return 2
++ case $? in
++ compare_ exp out
++ diff -u exp out
++ test -s err
++ fail=1
++ Exit 1
++ set +e
++ exit 1
++ exit 1
++ remove_tmp_
++ __st=1
++ cleanup_
++ :
++ test '' = yes
++ cd /builddir/build/BUILD/gzip-1.10/tests
++ chmod -R u+rwx /builddir/build/BUILD/gzip-1.10/tests/gt-gzexe.r33i
++ rm -rf /builddir/build/BUILD/gzip-1.10/tests/gt-gzexe.r33i
++ exit 1
+FAIL gzexe (exit status: 1)
+
+FAIL: hufts
+===========
+
+++ initial_cwd_=/builddir/build/BUILD/gzip-1.10/tests
++++ testdir_prefix_
++++ printf gt
+++ pfx_=gt
++++ mktempd_ /builddir/build/BUILD/gzip-1.10/tests gt-hufts.XXXX
++++ case $# in
++++ destdir_=/builddir/build/BUILD/gzip-1.10/tests
++++ template_=gt-hufts.XXXX
++++ MAX_TRIES_=4
++++ case $destdir_ in
++++ destdir_slash_=/builddir/build/BUILD/gzip-1.10/tests/
++++ case $template_ in
+++++ unset TMPDIR
++++ d=/builddir/build/BUILD/gzip-1.10/tests/gt-hufts.2z1d
++++ case $d in
++++ :
++++ test -d /builddir/build/BUILD/gzip-1.10/tests/gt-hufts.2z1d
+++++ ls -dgo /builddir/build/BUILD/gzip-1.10/tests/gt-hufts.2z1d
++++ perms='drwx------. 2 6 Nov 27 12:20 /builddir/build/BUILD/gzip-1.10/tests/gt-hufts.2z1d'
++++ case $perms in
++++ :
++++ echo /builddir/build/BUILD/gzip-1.10/tests/gt-hufts.2z1d
++++ return
+++ test_dir_=/builddir/build/BUILD/gzip-1.10/tests/gt-hufts.2z1d
+++ cd /builddir/build/BUILD/gzip-1.10/tests/gt-hufts.2z1d
+++ gl_init_sh_nl_='
+'
+++ IFS=' 	
+'
+++ for sig_ in 1 2 3 13 15
++++ expr 1 + 128
+++ eval 'trap '\''Exit 129'\'' 1'
++++ trap 'Exit 129' 1
+++ for sig_ in 1 2 3 13 15
++++ expr 2 + 128
+++ eval 'trap '\''Exit 130'\'' 2'
++++ trap 'Exit 130' 2
+++ for sig_ in 1 2 3 13 15
++++ expr 3 + 128
+++ eval 'trap '\''Exit 131'\'' 3'
++++ trap 'Exit 131' 3
+++ for sig_ in 1 2 3 13 15
++++ expr 13 + 128
+++ eval 'trap '\''Exit 141'\'' 13'
++++ trap 'Exit 141' 13
+++ for sig_ in 1 2 3 13 15
++++ expr 15 + 128
+++ eval 'trap '\''Exit 143'\'' 15'
++++ trap 'Exit 143' 15
+++ trap remove_tmp_ 0
++ path_prepend_ ..
++ test 1 '!=' 0
++ path_dir_=..
++ case $path_dir_ in
++ abs_path_dir_=/builddir/build/BUILD/gzip-1.10/tests/..
++ case $abs_path_dir_ in
++ PATH=/builddir/build/BUILD/gzip-1.10/tests/..:/builddir/build/BUILD/gzip-1.10:/usr/lib64/cswrap:/builddir/.local/bin:/builddir/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
++ create_exe_shims_ /builddir/build/BUILD/gzip-1.10/tests/..
++ case $EXEEXT in
++ return 0
++ shift
++ test 0 '!=' 0
++ export PATH
++ printf '\n...: invalid compressed data--format violated\n'
++ fail=0
++ returns_ 1 gzip -dc /builddir/build/BUILD/gzip-1.10/tests/hufts-segv.gz
++ compare /dev/null out
++ compare_dev_null_ /dev/null out
++ test 2 = 2
++ test x/dev/null = x/dev/null
++ test -s out
++ return 0
++ return 0
++ sed 's/.*hufts-segv.gz: /...: /' err
++ mv k err
++ compare exp err
++ compare_dev_null_ exp err
++ test 2 = 2
++ test xexp = x/dev/null
++ test xerr = x/dev/null
++ return 2
++ case $? in
++ compare_ exp err
++ diff -u exp err
+--- exp	2021-11-27 12:20:36.970269294 +0100
++++ err	2021-11-27 12:20:43.960067321 +0100
+@@ -1,2 +1,12 @@
++Traceback (most recent call last):
++  File "/usr/bin/divine2csgrep", line 176, in <module>
++    main(parser.parse_args())
++  File "/usr/bin/divine2csgrep", line 162, in main
++    process_report(args, report)
++  File "/usr/bin/divine2csgrep", line 136, in process_report
++    print_error_trace(report, Error.internal_error, args)
++  File "/usr/bin/divine2csgrep", line 47, in print_error_trace
++    location = parse_location(report["input file"])
++KeyError: 'input file'
+ 
+ ...: invalid compressed data--format violated
++ fail=1
++ printf '\037\213\010\000\060\060\060\060\060\060\144\000\000\000'
++ printf '\ngzip: stdin: invalid compressed data--format violated\n'
++ returns_ 1 gzip -d
++ compare exp33501 err33501
++ compare_dev_null_ exp33501 err33501
++ test 2 = 2
++ test xexp33501 = x/dev/null
++ test xerr33501 = x/dev/null
++ return 2
++ case $? in
++ compare_ exp33501 err33501
++ diff -u exp33501 err33501
+--- exp33501	2021-11-27 12:20:43.962063836 +0100
++++ err33501	2021-11-27 12:20:51.326207994 +0100
+@@ -1,2 +1,12 @@
++Traceback (most recent call last):
++  File "/usr/bin/divine2csgrep", line 176, in <module>
++    main(parser.parse_args())
++  File "/usr/bin/divine2csgrep", line 162, in main
++    process_report(args, report)
++  File "/usr/bin/divine2csgrep", line 136, in process_report
++    print_error_trace(report, Error.internal_error, args)
++  File "/usr/bin/divine2csgrep", line 47, in print_error_trace
++    location = parse_location(report["input file"])
++KeyError: 'input file'
+ 
+ gzip: stdin: invalid compressed data--format violated
++ fail=1
++ Exit 1
++ set +e
++ exit 1
++ exit 1
++ remove_tmp_
++ __st=1
++ cleanup_
++ :
++ test '' = yes
++ cd /builddir/build/BUILD/gzip-1.10/tests
++ chmod -R u+rwx /builddir/build/BUILD/gzip-1.10/tests/gt-hufts.2z1d
++ rm -rf /builddir/build/BUILD/gzip-1.10/tests/gt-hufts.2z1d
++ exit 1
+FAIL hufts (exit status: 1)
+
+FAIL: null-suffix-clobber
+=========================
+
+++ initial_cwd_=/builddir/build/BUILD/gzip-1.10/tests
++++ testdir_prefix_
++++ printf gt
+++ pfx_=gt
++++ mktempd_ /builddir/build/BUILD/gzip-1.10/tests gt-null-suffix-clobber.XXXX
++++ case $# in
++++ destdir_=/builddir/build/BUILD/gzip-1.10/tests
++++ template_=gt-null-suffix-clobber.XXXX
++++ MAX_TRIES_=4
++++ case $destdir_ in
++++ destdir_slash_=/builddir/build/BUILD/gzip-1.10/tests/
++++ case $template_ in
+++++ unset TMPDIR
++++ d=/builddir/build/BUILD/gzip-1.10/tests/gt-null-suffix-clobber.gPcn
++++ case $d in
++++ :
++++ test -d /builddir/build/BUILD/gzip-1.10/tests/gt-null-suffix-clobber.gPcn
+++++ ls -dgo /builddir/build/BUILD/gzip-1.10/tests/gt-null-suffix-clobber.gPcn
++++ perms='drwx------. 2 6 Nov 27 12:31 /builddir/build/BUILD/gzip-1.10/tests/gt-null-suffix-clobber.gPcn'
++++ case $perms in
++++ :
++++ echo /builddir/build/BUILD/gzip-1.10/tests/gt-null-suffix-clobber.gPcn
++++ return
+++ test_dir_=/builddir/build/BUILD/gzip-1.10/tests/gt-null-suffix-clobber.gPcn
+++ cd /builddir/build/BUILD/gzip-1.10/tests/gt-null-suffix-clobber.gPcn
+++ gl_init_sh_nl_='
+'
+++ IFS=' 	
+'
+++ for sig_ in 1 2 3 13 15
++++ expr 1 + 128
+++ eval 'trap '\''Exit 129'\'' 1'
++++ trap 'Exit 129' 1
+++ for sig_ in 1 2 3 13 15
++++ expr 2 + 128
+++ eval 'trap '\''Exit 130'\'' 2'
++++ trap 'Exit 130' 2
+++ for sig_ in 1 2 3 13 15
++++ expr 3 + 128
+++ eval 'trap '\''Exit 131'\'' 3'
++++ trap 'Exit 131' 3
+++ for sig_ in 1 2 3 13 15
++++ expr 13 + 128
+++ eval 'trap '\''Exit 141'\'' 13'
++++ trap 'Exit 141' 13
+++ for sig_ in 1 2 3 13 15
++++ expr 15 + 128
+++ eval 'trap '\''Exit 143'\'' 15'
++++ trap 'Exit 143' 15
+++ trap remove_tmp_ 0
++ path_prepend_ ..
++ test 1 '!=' 0
++ path_dir_=..
++ case $path_dir_ in
++ abs_path_dir_=/builddir/build/BUILD/gzip-1.10/tests/..
++ case $abs_path_dir_ in
++ PATH=/builddir/build/BUILD/gzip-1.10/tests/..:/builddir/build/BUILD/gzip-1.10:/usr/lib64/cswrap:/builddir/.local/bin:/builddir/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
++ create_exe_shims_ /builddir/build/BUILD/gzip-1.10/tests/..
++ case $EXEEXT in
++ return 0
++ shift
++ test 0 '!=' 0
++ export PATH
++ printf anything
++ gzip
+Traceback (most recent call last):
+  File "/usr/bin/divine2csgrep", line 176, in <module>
+    main(parser.parse_args())
+  File "/usr/bin/divine2csgrep", line 162, in main
+    process_report(args, report)
+  File "/usr/bin/divine2csgrep", line 136, in process_report
+    print_error_trace(report, Error.internal_error, args)
+  File "/usr/bin/divine2csgrep", line 47, in print_error_trace
+    location = parse_location(report["input file"])
+KeyError: 'input file'
++ echo y
++ echo 'gzip: invalid suffix '\'''\'''
++ fail=0
++ gzip ---presume-input-tty -d -S '' F.gz
++ compare /dev/null out
++ compare_dev_null_ /dev/null out
++ test 2 = 2
++ test x/dev/null = x/dev/null
++ test -s out
++ return 0
++ return 0
++ compare expected-err err
++ compare_dev_null_ expected-err err
++ test 2 = 2
++ test xexpected-err = x/dev/null
++ test xerr = x/dev/null
++ return 2
++ case $? in
++ compare_ expected-err err
++ diff -u expected-err err
+--- expected-err	2021-11-27 12:31:16.424252958 +0100
++++ err	2021-11-27 12:31:23.402075942 +0100
+@@ -1 +1,11 @@
++Traceback (most recent call last):
++  File "/usr/bin/divine2csgrep", line 176, in <module>
++    main(parser.parse_args())
++  File "/usr/bin/divine2csgrep", line 162, in main
++    process_report(args, report)
++  File "/usr/bin/divine2csgrep", line 136, in process_report
++    print_error_trace(report, Error.internal_error, args)
++  File "/usr/bin/divine2csgrep", line 47, in print_error_trace
++    location = parse_location(report["input file"])
++KeyError: 'input file'
+ gzip: invalid suffix ''
++ fail=1
++ test -f F.gz
++ Exit 1
++ set +e
++ exit 1
++ exit 1
++ remove_tmp_
++ __st=1
++ cleanup_
++ :
++ test '' = yes
++ cd /builddir/build/BUILD/gzip-1.10/tests
++ chmod -R u+rwx /builddir/build/BUILD/gzip-1.10/tests/gt-null-suffix-clobber.gPcn
++ rm -rf /builddir/build/BUILD/gzip-1.10/tests/gt-null-suffix-clobber.gPcn
++ exit 1
+FAIL null-suffix-clobber (exit status: 1)
+
+FAIL: reproducible
+==================
+
+++ initial_cwd_=/builddir/build/BUILD/gzip-1.10/tests
++++ testdir_prefix_
++++ printf gt
+++ pfx_=gt
++++ mktempd_ /builddir/build/BUILD/gzip-1.10/tests gt-reproducible.XXXX
++++ case $# in
++++ destdir_=/builddir/build/BUILD/gzip-1.10/tests
++++ template_=gt-reproducible.XXXX
++++ MAX_TRIES_=4
++++ case $destdir_ in
++++ destdir_slash_=/builddir/build/BUILD/gzip-1.10/tests/
++++ case $template_ in
+++++ unset TMPDIR
++++ d=/builddir/build/BUILD/gzip-1.10/tests/gt-reproducible.bxSX
++++ case $d in
++++ :
++++ test -d /builddir/build/BUILD/gzip-1.10/tests/gt-reproducible.bxSX
+++++ ls -dgo /builddir/build/BUILD/gzip-1.10/tests/gt-reproducible.bxSX
++++ perms='drwx------. 2 6 Nov 27 12:31 /builddir/build/BUILD/gzip-1.10/tests/gt-reproducible.bxSX'
++++ case $perms in
++++ :
++++ echo /builddir/build/BUILD/gzip-1.10/tests/gt-reproducible.bxSX
++++ return
+++ test_dir_=/builddir/build/BUILD/gzip-1.10/tests/gt-reproducible.bxSX
+++ cd /builddir/build/BUILD/gzip-1.10/tests/gt-reproducible.bxSX
+++ gl_init_sh_nl_='
+'
+++ IFS=' 	
+'
+++ for sig_ in 1 2 3 13 15
++++ expr 1 + 128
+++ eval 'trap '\''Exit 129'\'' 1'
++++ trap 'Exit 129' 1
+++ for sig_ in 1 2 3 13 15
++++ expr 2 + 128
+++ eval 'trap '\''Exit 130'\'' 2'
++++ trap 'Exit 130' 2
+++ for sig_ in 1 2 3 13 15
++++ expr 3 + 128
+++ eval 'trap '\''Exit 131'\'' 3'
++++ trap 'Exit 131' 3
+++ for sig_ in 1 2 3 13 15
++++ expr 13 + 128
+++ eval 'trap '\''Exit 141'\'' 13'
++++ trap 'Exit 141' 13
+++ for sig_ in 1 2 3 13 15
++++ expr 15 + 128
+++ eval 'trap '\''Exit 143'\'' 15'
++++ trap 'Exit 143' 15
+++ trap remove_tmp_ 0
++ path_prepend_ ..
++ test 1 '!=' 0
++ path_dir_=..
++ case $path_dir_ in
++ abs_path_dir_=/builddir/build/BUILD/gzip-1.10/tests/..
++ case $abs_path_dir_ in
++ PATH=/builddir/build/BUILD/gzip-1.10/tests/..:/builddir/build/BUILD/gzip-1.10:/usr/lib64/cswrap:/builddir/.local/bin:/builddir/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
++ create_exe_shims_ /builddir/build/BUILD/gzip-1.10/tests/..
++ case $EXEEXT in
++ return 0
++ shift
++ test 0 '!=' 0
++ export PATH
++ echo a
++ gzip
+Traceback (most recent call last):
+  File "/usr/bin/divine2csgrep", line 176, in <module>
+    main(parser.parse_args())
+  File "/usr/bin/divine2csgrep", line 162, in main
+    process_report(args, report)
+  File "/usr/bin/divine2csgrep", line 136, in process_report
+    print_error_trace(report, Error.internal_error, args)
+  File "/usr/bin/divine2csgrep", line 47, in print_error_trace
+    location = parse_location(report["input file"])
+KeyError: 'input file'
++ sleep 1
++ echo a
++ gzip
+Traceback (most recent call last):
+  File "/usr/bin/divine2csgrep", line 176, in <module>
+    main(parser.parse_args())
+  File "/usr/bin/divine2csgrep", line 162, in main
+    process_report(args, report)
+  File "/usr/bin/divine2csgrep", line 136, in process_report
+    print_error_trace(report, Error.internal_error, args)
+  File "/usr/bin/divine2csgrep", line 47, in print_error_trace
+    location = parse_location(report["input file"])
+KeyError: 'input file'
++ compare exp out
++ compare_dev_null_ exp out
++ test 2 = 2
++ test xexp = x/dev/null
++ test xout = x/dev/null
++ return 2
++ case $? in
++ compare_ exp out
++ diff -u exp out
+Binary files exp and out differ
++ fail=1
++ Exit 1
++ set +e
++ exit 1
++ exit 1
++ remove_tmp_
++ __st=1
++ cleanup_
++ :
++ test '' = yes
++ cd /builddir/build/BUILD/gzip-1.10/tests
++ chmod -R u+rwx /builddir/build/BUILD/gzip-1.10/tests/gt-reproducible.bxSX
++ rm -rf /builddir/build/BUILD/gzip-1.10/tests/gt-reproducible.bxSX
++ exit 1
+FAIL reproducible (exit status: 1)
+
+FAIL: stdin
+===========
+
+++ initial_cwd_=/builddir/build/BUILD/gzip-1.10/tests
++++ testdir_prefix_
++++ printf gt
+++ pfx_=gt
++++ mktempd_ /builddir/build/BUILD/gzip-1.10/tests gt-stdin.XXXX
++++ case $# in
++++ destdir_=/builddir/build/BUILD/gzip-1.10/tests
++++ template_=gt-stdin.XXXX
++++ MAX_TRIES_=4
++++ case $destdir_ in
++++ destdir_slash_=/builddir/build/BUILD/gzip-1.10/tests/
++++ case $template_ in
+++++ unset TMPDIR
++++ d=/builddir/build/BUILD/gzip-1.10/tests/gt-stdin.E4qd
++++ case $d in
++++ :
++++ test -d /builddir/build/BUILD/gzip-1.10/tests/gt-stdin.E4qd
+++++ ls -dgo /builddir/build/BUILD/gzip-1.10/tests/gt-stdin.E4qd
++++ perms='drwx------. 2 6 Nov 27 12:31 /builddir/build/BUILD/gzip-1.10/tests/gt-stdin.E4qd'
++++ case $perms in
++++ :
++++ echo /builddir/build/BUILD/gzip-1.10/tests/gt-stdin.E4qd
++++ return
+++ test_dir_=/builddir/build/BUILD/gzip-1.10/tests/gt-stdin.E4qd
+++ cd /builddir/build/BUILD/gzip-1.10/tests/gt-stdin.E4qd
+++ gl_init_sh_nl_='
+'
+++ IFS=' 	
+'
+++ for sig_ in 1 2 3 13 15
++++ expr 1 + 128
+++ eval 'trap '\''Exit 129'\'' 1'
++++ trap 'Exit 129' 1
+++ for sig_ in 1 2 3 13 15
++++ expr 2 + 128
+++ eval 'trap '\''Exit 130'\'' 2'
++++ trap 'Exit 130' 2
+++ for sig_ in 1 2 3 13 15
++++ expr 3 + 128
+++ eval 'trap '\''Exit 131'\'' 3'
++++ trap 'Exit 131' 3
+++ for sig_ in 1 2 3 13 15
++++ expr 13 + 128
+++ eval 'trap '\''Exit 141'\'' 13'
++++ trap 'Exit 141' 13
+++ for sig_ in 1 2 3 13 15
++++ expr 15 + 128
+++ eval 'trap '\''Exit 143'\'' 15'
++++ trap 'Exit 143' 15
+++ trap remove_tmp_ 0
++ path_prepend_ ..
++ test 1 '!=' 0
++ path_dir_=..
++ case $path_dir_ in
++ abs_path_dir_=/builddir/build/BUILD/gzip-1.10/tests/..
++ case $abs_path_dir_ in
++ PATH=/builddir/build/BUILD/gzip-1.10/tests/..:/builddir/build/BUILD/gzip-1.10:/usr/lib64/cswrap:/builddir/.local/bin:/builddir/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
++ create_exe_shims_ /builddir/build/BUILD/gzip-1.10/tests/..
++ case $EXEEXT in
++ return 0
++ shift
++ test 0 '!=' 0
++ export PATH
++ printf a
++ gzip
+Traceback (most recent call last):
+  File "/usr/bin/divine2csgrep", line 176, in <module>
+    main(parser.parse_args())
+  File "/usr/bin/divine2csgrep", line 162, in main
+    process_report(args, report)
+  File "/usr/bin/divine2csgrep", line 136, in process_report
+    print_error_trace(report, Error.internal_error, args)
+  File "/usr/bin/divine2csgrep", line 47, in print_error_trace
+    location = parse_location(report["input file"])
+KeyError: 'input file'
++ printf aaa
++ fail=0
++ gzip -dc in - in
++ compare exp out
++ compare_dev_null_ exp out
++ test 2 = 2
++ test xexp = x/dev/null
++ test xout = x/dev/null
++ return 2
++ case $? in
++ compare_ exp out
++ diff -u exp out
++ compare /dev/null err
++ compare_dev_null_ /dev/null err
++ test 2 = 2
++ test x/dev/null = x/dev/null
++ test -s err
++ emit_diff_u_header_ /dev/null err
++ printf '%s\n' 'diff -u /dev/null err' '--- /dev/null	1970-01-01' '+++ err	1970-01-01'
+diff -u /dev/null err
+--- /dev/null	1970-01-01
++++ err	1970-01-01
++ sed 's/^/+/' err
++Traceback (most recent call last):
++  File "/usr/bin/divine2csgrep", line 176, in <module>
++    main(parser.parse_args())
++  File "/usr/bin/divine2csgrep", line 162, in main
++    process_report(args, report)
++  File "/usr/bin/divine2csgrep", line 136, in process_report
++    print_error_trace(report, Error.internal_error, args)
++  File "/usr/bin/divine2csgrep", line 47, in print_error_trace
++    location = parse_location(report["input file"])
++KeyError: 'input file'
++ return 1
++ case $? in
++ return 1
++ fail=1
++ Exit 1
++ set +e
++ exit 1
++ exit 1
++ remove_tmp_
++ __st=1
++ cleanup_
++ :
++ test '' = yes
++ cd /builddir/build/BUILD/gzip-1.10/tests
++ chmod -R u+rwx /builddir/build/BUILD/gzip-1.10/tests/gt-stdin.E4qd
++ rm -rf /builddir/build/BUILD/gzip-1.10/tests/gt-stdin.E4qd
++ exit 1
+FAIL stdin (exit status: 1)
+
+FAIL: unpack-valid
+==================
+
+++ initial_cwd_=/builddir/build/BUILD/gzip-1.10/tests
++++ testdir_prefix_
++++ printf gt
+++ pfx_=gt
++++ mktempd_ /builddir/build/BUILD/gzip-1.10/tests gt-unpack-valid.XXXX
++++ case $# in
++++ destdir_=/builddir/build/BUILD/gzip-1.10/tests
++++ template_=gt-unpack-valid.XXXX
++++ MAX_TRIES_=4
++++ case $destdir_ in
++++ destdir_slash_=/builddir/build/BUILD/gzip-1.10/tests/
++++ case $template_ in
+++++ unset TMPDIR
++++ d=/builddir/build/BUILD/gzip-1.10/tests/gt-unpack-valid.c8TR
++++ case $d in
++++ :
++++ test -d /builddir/build/BUILD/gzip-1.10/tests/gt-unpack-valid.c8TR
+++++ ls -dgo /builddir/build/BUILD/gzip-1.10/tests/gt-unpack-valid.c8TR
++++ perms='drwx------. 2 6 Nov 27 12:33 /builddir/build/BUILD/gzip-1.10/tests/gt-unpack-valid.c8TR'
++++ case $perms in
++++ :
++++ echo /builddir/build/BUILD/gzip-1.10/tests/gt-unpack-valid.c8TR
++++ return
+++ test_dir_=/builddir/build/BUILD/gzip-1.10/tests/gt-unpack-valid.c8TR
+++ cd /builddir/build/BUILD/gzip-1.10/tests/gt-unpack-valid.c8TR
+++ gl_init_sh_nl_='
+'
+++ IFS=' 	
+'
+++ for sig_ in 1 2 3 13 15
++++ expr 1 + 128
+++ eval 'trap '\''Exit 129'\'' 1'
++++ trap 'Exit 129' 1
+++ for sig_ in 1 2 3 13 15
++++ expr 2 + 128
+++ eval 'trap '\''Exit 130'\'' 2'
++++ trap 'Exit 130' 2
+++ for sig_ in 1 2 3 13 15
++++ expr 3 + 128
+++ eval 'trap '\''Exit 131'\'' 3'
++++ trap 'Exit 131' 3
+++ for sig_ in 1 2 3 13 15
++++ expr 13 + 128
+++ eval 'trap '\''Exit 141'\'' 13'
++++ trap 'Exit 141' 13
+++ for sig_ in 1 2 3 13 15
++++ expr 15 + 128
+++ eval 'trap '\''Exit 143'\'' 15'
++++ trap 'Exit 143' 15
+++ trap remove_tmp_ 0
++ path_prepend_ ..
++ test 1 '!=' 0
++ path_dir_=..
++ case $path_dir_ in
++ abs_path_dir_=/builddir/build/BUILD/gzip-1.10/tests/..
++ case $abs_path_dir_ in
++ PATH=/builddir/build/BUILD/gzip-1.10/tests/..:/builddir/build/BUILD/gzip-1.10:/usr/lib64/cswrap:/builddir/.local/bin:/builddir/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
++ create_exe_shims_ /builddir/build/BUILD/gzip-1.10/tests/..
++ case $EXEEXT in
++ return 0
++ shift
++ test 0 '!=' 0
++ export PATH
++ printf banana
++ hex_printf_ '\x1f\x1e\x00\x00\x00\x06\x03\x01\x01\x00\x61\x6e\x62\x16\xc8'
++++ printf '%s\n' '\x1f\x1e\x00\x00\x00\x06\x03\x01\x01\x00\x61\x6e\x62\x16\xc8'
++++ sed 's,\\x\([0-9abcdefABCDEF][0-9abcdefABCDEF]\), 0x\1,g'
+++ printf '\\%o' 0x1f 0x1e 0x00 0x00 0x00 0x06 0x03 0x01 0x01 0x00 0x61 0x6e 0x62 0x16 0xc8
++ local 'octal_fmt=\37\36\0\0\0\6\3\1\1\0\141\156\142\26\310'
++ printf '\37\36\0\0\0\6\3\1\1\0\141\156\142\26\310'
++ fail=0
++ gzip -dc test.z
++ compare exp out
++ compare_dev_null_ exp out
++ test 2 = 2
++ test xexp = x/dev/null
++ test xout = x/dev/null
++ return 2
++ case $? in
++ compare_ exp out
++ diff -u exp out
++ compare /dev/null err
++ compare_dev_null_ /dev/null err
++ test 2 = 2
++ test x/dev/null = x/dev/null
++ test -s err
++ emit_diff_u_header_ /dev/null err
++ printf '%s\n' 'diff -u /dev/null err' '--- /dev/null	1970-01-01' '+++ err	1970-01-01'
+diff -u /dev/null err
+--- /dev/null	1970-01-01
++++ err	1970-01-01
++ sed 's/^/+/' err
++Traceback (most recent call last):
++  File "/usr/bin/divine2csgrep", line 176, in <module>
++    main(parser.parse_args())
++  File "/usr/bin/divine2csgrep", line 162, in main
++    process_report(args, report)
++  File "/usr/bin/divine2csgrep", line 136, in process_report
++    print_error_trace(report, Error.internal_error, args)
++  File "/usr/bin/divine2csgrep", line 47, in print_error_trace
++    location = parse_location(report["input file"])
++KeyError: 'input file'
++ return 1
++ case $? in
++ return 1
++ fail=1
++ Exit 1
++ set +e
++ exit 1
++ exit 1
++ remove_tmp_
++ __st=1
++ cleanup_
++ :
++ test '' = yes
++ cd /builddir/build/BUILD/gzip-1.10/tests
++ chmod -R u+rwx /builddir/build/BUILD/gzip-1.10/tests/gt-unpack-valid.c8TR
++ rm -rf /builddir/build/BUILD/gzip-1.10/tests/gt-unpack-valid.c8TR
++ exit 1
+FAIL unpack-valid (exit status: 1)
+
+FAIL: upper-suffix
+==================
+
+++ initial_cwd_=/builddir/build/BUILD/gzip-1.10/tests
++++ testdir_prefix_
++++ printf gt
+++ pfx_=gt
++++ mktempd_ /builddir/build/BUILD/gzip-1.10/tests gt-upper-suffix.XXXX
++++ case $# in
++++ destdir_=/builddir/build/BUILD/gzip-1.10/tests
++++ template_=gt-upper-suffix.XXXX
++++ MAX_TRIES_=4
++++ case $destdir_ in
++++ destdir_slash_=/builddir/build/BUILD/gzip-1.10/tests/
++++ case $template_ in
+++++ unset TMPDIR
++++ d=/builddir/build/BUILD/gzip-1.10/tests/gt-upper-suffix.QBrt
++++ case $d in
++++ :
++++ test -d /builddir/build/BUILD/gzip-1.10/tests/gt-upper-suffix.QBrt
+++++ ls -dgo /builddir/build/BUILD/gzip-1.10/tests/gt-upper-suffix.QBrt
++++ perms='drwx------. 2 6 Nov 27 12:33 /builddir/build/BUILD/gzip-1.10/tests/gt-upper-suffix.QBrt'
++++ case $perms in
++++ :
++++ echo /builddir/build/BUILD/gzip-1.10/tests/gt-upper-suffix.QBrt
++++ return
+++ test_dir_=/builddir/build/BUILD/gzip-1.10/tests/gt-upper-suffix.QBrt
+++ cd /builddir/build/BUILD/gzip-1.10/tests/gt-upper-suffix.QBrt
+++ gl_init_sh_nl_='
+'
+++ IFS=' 	
+'
+++ for sig_ in 1 2 3 13 15
++++ expr 1 + 128
+++ eval 'trap '\''Exit 129'\'' 1'
++++ trap 'Exit 129' 1
+++ for sig_ in 1 2 3 13 15
++++ expr 2 + 128
+++ eval 'trap '\''Exit 130'\'' 2'
++++ trap 'Exit 130' 2
+++ for sig_ in 1 2 3 13 15
++++ expr 3 + 128
+++ eval 'trap '\''Exit 131'\'' 3'
++++ trap 'Exit 131' 3
+++ for sig_ in 1 2 3 13 15
++++ expr 13 + 128
+++ eval 'trap '\''Exit 141'\'' 13'
++++ trap 'Exit 141' 13
+++ for sig_ in 1 2 3 13 15
++++ expr 15 + 128
+++ eval 'trap '\''Exit 143'\'' 15'
++++ trap 'Exit 143' 15
+++ trap remove_tmp_ 0
++ path_prepend_ ..
++ test 1 '!=' 0
++ path_dir_=..
++ case $path_dir_ in
++ abs_path_dir_=/builddir/build/BUILD/gzip-1.10/tests/..
++ case $abs_path_dir_ in
++ PATH=/builddir/build/BUILD/gzip-1.10/tests/..:/builddir/build/BUILD/gzip-1.10:/usr/lib64/cswrap:/builddir/.local/bin:/builddir/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
++ create_exe_shims_ /builddir/build/BUILD/gzip-1.10/tests/..
++ case $EXEEXT in
++ return 0
++ shift
++ test 0 '!=' 0
++ export PATH
++ :
++ gzip
+Traceback (most recent call last):
+  File "/usr/bin/divine2csgrep", line 176, in <module>
+    main(parser.parse_args())
+  File "/usr/bin/divine2csgrep", line 162, in main
+    process_report(args, report)
+  File "/usr/bin/divine2csgrep", line 136, in process_report
+    print_error_trace(report, Error.internal_error, args)
+  File "/usr/bin/divine2csgrep", line 47, in print_error_trace
+    location = parse_location(report["input file"])
+KeyError: 'input file'
++ fail=0
++ gzip -d -S T kT
++ test -f k
++ compare /dev/null out
++ compare_dev_null_ /dev/null out
++ test 2 = 2
++ test x/dev/null = x/dev/null
++ test -s out
++ return 0
++ return 0
++ compare /dev/null err
++ compare_dev_null_ /dev/null err
++ test 2 = 2
++ test x/dev/null = x/dev/null
++ test -s err
++ emit_diff_u_header_ /dev/null err
++ printf '%s\n' 'diff -u /dev/null err' '--- /dev/null	1970-01-01' '+++ err	1970-01-01'
+diff -u /dev/null err
+--- /dev/null	1970-01-01
++++ err	1970-01-01
++ sed 's/^/+/' err
++Traceback (most recent call last):
++  File "/usr/bin/divine2csgrep", line 176, in <module>
++    main(parser.parse_args())
++  File "/usr/bin/divine2csgrep", line 162, in main
++    process_report(args, report)
++  File "/usr/bin/divine2csgrep", line 136, in process_report
++    print_error_trace(report, Error.internal_error, args)
++  File "/usr/bin/divine2csgrep", line 47, in print_error_trace
++    location = parse_location(report["input file"])
++KeyError: 'input file'
++ return 1
++ case $? in
++ return 1
++ fail=1
++ Exit 1
++ set +e
++ exit 1
++ exit 1
++ remove_tmp_
++ __st=1
++ cleanup_
++ :
++ test '' = yes
++ cd /builddir/build/BUILD/gzip-1.10/tests
++ chmod -R u+rwx /builddir/build/BUILD/gzip-1.10/tests/gt-upper-suffix.QBrt
++ rm -rf /builddir/build/BUILD/gzip-1.10/tests/gt-upper-suffix.QBrt
++ exit 1
+FAIL upper-suffix (exit status: 1)
+
+FAIL: zdiff
+===========
+
+++ initial_cwd_=/builddir/build/BUILD/gzip-1.10/tests
++++ testdir_prefix_
++++ printf gt
+++ pfx_=gt
++++ mktempd_ /builddir/build/BUILD/gzip-1.10/tests gt-zdiff.XXXX
++++ case $# in
++++ destdir_=/builddir/build/BUILD/gzip-1.10/tests
++++ template_=gt-zdiff.XXXX
++++ MAX_TRIES_=4
++++ case $destdir_ in
++++ destdir_slash_=/builddir/build/BUILD/gzip-1.10/tests/
++++ case $template_ in
+++++ unset TMPDIR
++++ d=/builddir/build/BUILD/gzip-1.10/tests/gt-zdiff.KWvT
++++ case $d in
++++ :
++++ test -d /builddir/build/BUILD/gzip-1.10/tests/gt-zdiff.KWvT
+++++ ls -dgo /builddir/build/BUILD/gzip-1.10/tests/gt-zdiff.KWvT
++++ perms='drwx------. 2 6 Nov 27 12:34 /builddir/build/BUILD/gzip-1.10/tests/gt-zdiff.KWvT'
++++ case $perms in
++++ :
++++ echo /builddir/build/BUILD/gzip-1.10/tests/gt-zdiff.KWvT
++++ return
+++ test_dir_=/builddir/build/BUILD/gzip-1.10/tests/gt-zdiff.KWvT
+++ cd /builddir/build/BUILD/gzip-1.10/tests/gt-zdiff.KWvT
+++ gl_init_sh_nl_='
+'
+++ IFS=' 	
+'
+++ for sig_ in 1 2 3 13 15
++++ expr 1 + 128
+++ eval 'trap '\''Exit 129'\'' 1'
++++ trap 'Exit 129' 1
+++ for sig_ in 1 2 3 13 15
++++ expr 2 + 128
+++ eval 'trap '\''Exit 130'\'' 2'
++++ trap 'Exit 130' 2
+++ for sig_ in 1 2 3 13 15
++++ expr 3 + 128
+++ eval 'trap '\''Exit 131'\'' 3'
++++ trap 'Exit 131' 3
+++ for sig_ in 1 2 3 13 15
++++ expr 13 + 128
+++ eval 'trap '\''Exit 141'\'' 13'
++++ trap 'Exit 141' 13
+++ for sig_ in 1 2 3 13 15
++++ expr 15 + 128
+++ eval 'trap '\''Exit 143'\'' 15'
++++ trap 'Exit 143' 15
+++ trap remove_tmp_ 0
++ path_prepend_ ..
++ test 1 '!=' 0
++ path_dir_=..
++ case $path_dir_ in
++ abs_path_dir_=/builddir/build/BUILD/gzip-1.10/tests/..
++ case $abs_path_dir_ in
++ PATH=/builddir/build/BUILD/gzip-1.10/tests/..:/builddir/build/BUILD/gzip-1.10:/usr/lib64/cswrap:/builddir/.local/bin:/builddir/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
++ create_exe_shims_ /builddir/build/BUILD/gzip-1.10/tests/..
++ case $EXEEXT in
++ return 0
++ shift
++ test 0 '!=' 0
++ export PATH
++ echo a
++ echo b
++ cat
++ diff a b
++ diff exp -
++ fail=0
++ gzip a b
+Traceback (most recent call last):
+  File "/usr/bin/divine2csgrep", line 176, in <module>
+    main(parser.parse_args())
+  File "/usr/bin/divine2csgrep", line 162, in main
+    process_report(args, report)
+  File "/usr/bin/divine2csgrep", line 136, in process_report
+    print_error_trace(report, Error.internal_error, args)
+  File "/usr/bin/divine2csgrep", line 47, in print_error_trace
+    location = parse_location(report["input file"])
+KeyError: 'input file'
++ returns_ 1 zdiff a.gz b.gz
++ compare exp out
++ compare_dev_null_ exp out
++ test 2 = 2
++ test xexp = x/dev/null
++ test xout = x/dev/null
++ return 2
++ case $? in
++ compare_ exp out
++ diff -u exp out
+--- exp	2021-11-27 12:34:12.300291508 +0100
++++ out	2021-11-27 12:34:26.777024511 +0100
+@@ -1,3 +1,23 @@
++Traceback (most recent call last):
++  File "/usr/bin/divine2csgrep", line 176, in <module>
++    main(parser.parse_args())
++  File "/usr/bin/divine2csgrep", line 162, in main
++    process_report(args, report)
++  File "/usr/bin/divine2csgrep", line 136, in process_report
++    print_error_trace(report, Error.internal_error, args)
++  File "/usr/bin/divine2csgrep", line 47, in print_error_trace
++    location = parse_location(report["input file"])
++KeyError: 'input file'
++Traceback (most recent call last):
++  File "/usr/bin/divine2csgrep", line 176, in <module>
++    main(parser.parse_args())
++  File "/usr/bin/divine2csgrep", line 162, in main
++    process_report(args, report)
++  File "/usr/bin/divine2csgrep", line 136, in process_report
++    print_error_trace(report, Error.internal_error, args)
++  File "/usr/bin/divine2csgrep", line 47, in print_error_trace
++    location = parse_location(report["input file"])
++KeyError: 'input file'
+ 1c1
+ < a
+ ---
++ fail=1
++ rm -f out
++ zdiff a.gz a.gz
++ test -s out
++ test -s err
++ fail=1
++ Exit 1
++ set +e
++ exit 1
++ exit 1
++ remove_tmp_
++ __st=1
++ cleanup_
++ :
++ test '' = yes
++ cd /builddir/build/BUILD/gzip-1.10/tests
++ chmod -R u+rwx /builddir/build/BUILD/gzip-1.10/tests/gt-zdiff.KWvT
++ rm -rf /builddir/build/BUILD/gzip-1.10/tests/gt-zdiff.KWvT
++ exit 1
+FAIL zdiff (exit status: 1)
+
+FAIL: zgrep-f
+=============
+
+++ initial_cwd_=/builddir/build/BUILD/gzip-1.10/tests
++++ testdir_prefix_
++++ printf gt
+++ pfx_=gt
++++ mktempd_ /builddir/build/BUILD/gzip-1.10/tests gt-zgrep-f.XXXX
++++ case $# in
++++ destdir_=/builddir/build/BUILD/gzip-1.10/tests
++++ template_=gt-zgrep-f.XXXX
++++ MAX_TRIES_=4
++++ case $destdir_ in
++++ destdir_slash_=/builddir/build/BUILD/gzip-1.10/tests/
++++ case $template_ in
+++++ unset TMPDIR
++++ d=/builddir/build/BUILD/gzip-1.10/tests/gt-zgrep-f.z1bY
++++ case $d in
++++ :
++++ test -d /builddir/build/BUILD/gzip-1.10/tests/gt-zgrep-f.z1bY
+++++ ls -dgo /builddir/build/BUILD/gzip-1.10/tests/gt-zgrep-f.z1bY
++++ perms='drwx------. 2 6 Nov 27 12:34 /builddir/build/BUILD/gzip-1.10/tests/gt-zgrep-f.z1bY'
++++ case $perms in
++++ :
++++ echo /builddir/build/BUILD/gzip-1.10/tests/gt-zgrep-f.z1bY
++++ return
+++ test_dir_=/builddir/build/BUILD/gzip-1.10/tests/gt-zgrep-f.z1bY
+++ cd /builddir/build/BUILD/gzip-1.10/tests/gt-zgrep-f.z1bY
+++ gl_init_sh_nl_='
+'
+++ IFS=' 	
+'
+++ for sig_ in 1 2 3 13 15
++++ expr 1 + 128
+++ eval 'trap '\''Exit 129'\'' 1'
++++ trap 'Exit 129' 1
+++ for sig_ in 1 2 3 13 15
++++ expr 2 + 128
+++ eval 'trap '\''Exit 130'\'' 2'
++++ trap 'Exit 130' 2
+++ for sig_ in 1 2 3 13 15
++++ expr 3 + 128
+++ eval 'trap '\''Exit 131'\'' 3'
++++ trap 'Exit 131' 3
+++ for sig_ in 1 2 3 13 15
++++ expr 13 + 128
+++ eval 'trap '\''Exit 141'\'' 13'
++++ trap 'Exit 141' 13
+++ for sig_ in 1 2 3 13 15
++++ expr 15 + 128
+++ eval 'trap '\''Exit 143'\'' 15'
++++ trap 'Exit 143' 15
+++ trap remove_tmp_ 0
++ path_prepend_ ..
++ test 1 '!=' 0
++ path_dir_=..
++ case $path_dir_ in
++ abs_path_dir_=/builddir/build/BUILD/gzip-1.10/tests/..
++ case $abs_path_dir_ in
++ PATH=/builddir/build/BUILD/gzip-1.10/tests/..:/builddir/build/BUILD/gzip-1.10:/usr/lib64/cswrap:/builddir/.local/bin:/builddir/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
++ create_exe_shims_ /builddir/build/BUILD/gzip-1.10/tests/..
++ case $EXEEXT in
++ return 0
++ shift
++ test 0 '!=' 0
++ export PATH
++ printf 'needle\nn2\n'
++ cp n haystack
++ gzip haystack
+Traceback (most recent call last):
+  File "/usr/bin/divine2csgrep", line 176, in <module>
+    main(parser.parse_args())
+  File "/usr/bin/divine2csgrep", line 162, in main
+    process_report(args, report)
+  File "/usr/bin/divine2csgrep", line 136, in process_report
+    print_error_trace(report, Error.internal_error, args)
+  File "/usr/bin/divine2csgrep", line 47, in print_error_trace
+    location = parse_location(report["input file"])
+KeyError: 'input file'
++ fail=0
++ zgrep -f - haystack.gz
++ compare out n
++ compare_dev_null_ out n
++ test 2 = 2
++ test xout = x/dev/null
++ test xn = x/dev/null
++ return 2
++ case $? in
++ compare_ out n
++ diff -u out n
+--- out	2021-11-27 12:34:49.213864325 +0100
++++ n	2021-11-27 12:34:34.926800282 +0100
+@@ -1,12 +1,2 @@
+-Traceback (most recent call last):
+-  File "/usr/bin/divine2csgrep", line 176, in <module>
+-    main(parser.parse_args())
+-  File "/usr/bin/divine2csgrep", line 162, in main
+-    process_report(args, report)
+-  File "/usr/bin/divine2csgrep", line 136, in process_report
+-    print_error_trace(report, Error.internal_error, args)
+-  File "/usr/bin/divine2csgrep", line 47, in print_error_trace
+-    location = parse_location(report["input file"])
+-KeyError: 'input file'
+ needle
+ n2
++ fail=1
++ : false
++ set +o posix
++ cat n n
++ eval 'zgrep -h -f <(cat n) haystack.gz haystack.gz'
+++ zgrep -h -f /dev/fd/63 haystack.gz haystack.gz
++++ cat n
+Traceback (most recent call last):
+  File "/usr/bin/divine2csgrep", line 176, in <module>
+    main(parser.parse_args())
+  File "/usr/bin/divine2csgrep", line 162, in main
+    process_report(args, report)
+  File "/usr/bin/divine2csgrep", line 136, in process_report
+    print_error_trace(report, Error.internal_error, args)
+  File "/usr/bin/divine2csgrep", line 47, in print_error_trace
+    location = parse_location(report["input file"])
+KeyError: 'input file'
+Traceback (most recent call last):
+  File "/usr/bin/divine2csgrep", line 176, in <module>
+    main(parser.parse_args())
+  File "/usr/bin/divine2csgrep", line 162, in main
+    process_report(args, report)
+  File "/usr/bin/divine2csgrep", line 136, in process_report
+    print_error_trace(report, Error.internal_error, args)
+  File "/usr/bin/divine2csgrep", line 47, in print_error_trace
+    location = parse_location(report["input file"])
+KeyError: 'input file'
++ compare out nn
++ compare_dev_null_ out nn
++ test 2 = 2
++ test xout = x/dev/null
++ test xnn = x/dev/null
++ return 2
++ case $? in
++ compare_ out nn
++ diff -u out nn
++ echo a-b
++ zgrep -e -
+Traceback (most recent call last):
+  File "/usr/bin/divine2csgrep", line 176, in <module>
+    main(parser.parse_args())
+  File "/usr/bin/divine2csgrep", line 162, in main
+    process_report(args, report)
+  File "/usr/bin/divine2csgrep", line 136, in process_report
+    print_error_trace(report, Error.internal_error, args)
+  File "/usr/bin/divine2csgrep", line 47, in print_error_trace
+    location = parse_location(report["input file"])
+KeyError: 'input file'
++ Exit 1
++ set +e
++ exit 1
++ exit 1
++ remove_tmp_
++ __st=1
++ cleanup_
++ :
++ test '' = yes
++ cd /builddir/build/BUILD/gzip-1.10/tests
++ chmod -R u+rwx /builddir/build/BUILD/gzip-1.10/tests/gt-zgrep-f.z1bY
++ rm -rf /builddir/build/BUILD/gzip-1.10/tests/gt-zgrep-f.z1bY
++ exit 1
+FAIL zgrep-f (exit status: 1)
+
+============================================================================
+Testsuite summary for gzip 1.10
+============================================================================
+# TOTAL: 23
+# PASS:  14
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  9
+# XPASS: 0
+# ERROR: 0
+============================================================================
+See tests/test-suite.log
+Please report to bug-gzip@gnu.org
+============================================================================
+make.orig[4]: Leaving directory '/builddir/build/BUILD/gzip-1.10/tests'
+make.orig[3]: Leaving directory '/builddir/build/BUILD/gzip-1.10/tests'
+make.orig[2]: Leaving directory '/builddir/build/BUILD/gzip-1.10/tests'
+make.orig[1]: Leaving directory '/builddir/build/BUILD/gzip-1.10'
+
+
+RPM build errors:
+make.orig[4]: *** [Makefile:1674: test-suite.log] Error 1
+make.orig[3]: *** [Makefile:1782: check-TESTS] Error 2
+make.orig[2]: *** [Makefile:2009: check-am] Error 2
+make.orig[2]: Target 'check' not remade because of errors.
+make.orig[1]: *** [Makefile:1768: check-recursive] Error 1
+make.orig: *** [Makefile:2069: check] Error 2
+error: Bad exit status from /var/tmp/rpm-tmp.nraxxX (%build)
+    Bad exit status from /var/tmp/rpm-tmp.nraxxX (%build)
+Finish: chroot ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'dioscc\' CXX=\\$\'diosc++\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\acsexec-divine\\\\a-l\\\\a/builddir/divine-capture\\\\a-d\\\\acheck --lart stubs -o ignore:exit --max-time 8 \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bc --nodeps --short-circuit /builddir/build/SPECS/gzip.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc dioscc\' \'--define\' \'__cxx diosc++\' \'--define\' \'__cpp dioscc -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+
+!!! 2021-11-27 12:35:59	error: %build failed
+
+>>> 2021-11-27 12:35:59	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--chroot" "/bin/su mockbuild -l -c \"PATH=/usr/lib64/cswrap:\\\$PATH CSWRAP_CAP_FILE=\\\$'/builddir/cswrap-capture.err' CSWRAP_TIMEOUT=\\\$'30' CSWRAP_TIMEOUT_FOR=\\\$':' CC=\\\$'dioscc' CXX=\\\$'diosc++' CSEXEC_WRAP_CMD=\\\$'--skip-ld-linux\\\\acsexec-divine\\\\a-l\\\\a/builddir/divine-capture\\\\a-d\\\\acheck --lart stubs -o ignore:exit --max-time 8 ' CSWRAP_ADD_CFLAGS=\\\$'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader' CSWRAP_DEL_CFLAGS=\\\$'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register' CSWRAP_ADD_CXXFLAGS=\\\$'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader' CSWRAP_DEL_CXXFLAGS=\\\$'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register' sh -c \\\"rpmbuild -bi --nodeps --short-circuit /builddir/build/SPECS/gzip.spec '--define' 'apidocs 0' '--define' 'with_publican 0' '--without' 'docs' '--without' 'langpacks' '--define' '__cc dioscc' '--define' '__cxx diosc++' '--define' '__cpp dioscc -E' '--define' 'toolchain clang' '--define' 'optflags -O0' '--define' 'build_ldflags -O0'\\\"\""
+INFO: mock.py version 2.13 starting (python version = 3.9.7, NVR = mock-2.13-1.kdudka.1.fc34)...
+Start(bootstrap): init plugins
+INFO: selinux enabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish: chroot init
+INFO: Running in chroot: ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'dioscc\' CXX=\\$\'diosc++\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\acsexec-divine\\\\a-l\\\\a/builddir/divine-capture\\\\a-d\\\\acheck --lart stubs -o ignore:exit --max-time 8 \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bi --nodeps --short-circuit /builddir/build/SPECS/gzip.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc dioscc\' \'--define\' \'__cxx diosc++\' \'--define\' \'__cpp dioscc -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+Start: chroot ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'dioscc\' CXX=\\$\'diosc++\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\acsexec-divine\\\\a-l\\\\a/builddir/divine-capture\\\\a-d\\\\acheck --lart stubs -o ignore:exit --max-time 8 \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bi --nodeps --short-circuit /builddir/build/SPECS/gzip.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc dioscc\' \'--define\' \'__cxx diosc++\' \'--define\' \'__cpp dioscc -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+setting SOURCE_DATE_EPOCH=1626912000
+Executing(%install): /bin/sh -e /var/tmp/rpm-tmp.A95add
++ umask 022
++ cd /builddir/build/BUILD
++ '[' /builddir/build/BUILDROOT/gzip-1.10-5.fc35.x86_64 '!=' / ']'
++ rm -rf /builddir/build/BUILDROOT/gzip-1.10-5.fc35.x86_64
+++ dirname /builddir/build/BUILDROOT/gzip-1.10-5.fc35.x86_64
++ mkdir -p /builddir/build/BUILDROOT
++ mkdir /builddir/build/BUILDROOT/gzip-1.10-5.fc35.x86_64
++ cd gzip-1.10
++ echo 'warning: %makeinstall is deprecated, try %make_install instead'
+warning: %makeinstall is deprecated, try %make_install instead
++ /usr/bin/make prefix=/builddir/build/BUILDROOT/gzip-1.10-5.fc35.x86_64/usr exec_prefix=/builddir/build/BUILDROOT/gzip-1.10-5.fc35.x86_64/usr bindir=/builddir/build/BUILDROOT/gzip-1.10-5.fc35.x86_64/usr/bin sbindir=/builddir/build/BUILDROOT/gzip-1.10-5.fc35.x86_64/usr/sbin sysconfdir=/builddir/build/BUILDROOT/gzip-1.10-5.fc35.x86_64/etc datadir=/builddir/build/BUILDROOT/gzip-1.10-5.fc35.x86_64/usr/share includedir=/builddir/build/BUILDROOT/gzip-1.10-5.fc35.x86_64/usr/include libdir=/builddir/build/BUILDROOT/gzip-1.10-5.fc35.x86_64/usr/lib64 libexecdir=/builddir/build/BUILDROOT/gzip-1.10-5.fc35.x86_64/usr/libexec localstatedir=/builddir/build/BUILDROOT/gzip-1.10-5.fc35.x86_64/var sharedstatedir=/builddir/build/BUILDROOT/gzip-1.10-5.fc35.x86_64/var/lib mandir=/builddir/build/BUILDROOT/gzip-1.10-5.fc35.x86_64/usr/share/man infodir=/builddir/build/BUILDROOT/gzip-1.10-5.fc35.x86_64/usr/share/info install
+/usr/bin/make.orig  install-recursive
+make.orig[1]: Entering directory '/builddir/build/BUILD/gzip-1.10'
+Making install in lib
+make.orig[2]: Entering directory '/builddir/build/BUILD/gzip-1.10/lib'
+/usr/bin/make.orig  install-am
+make.orig[3]: Entering directory '/builddir/build/BUILD/gzip-1.10/lib'
+make.orig[4]: Entering directory '/builddir/build/BUILD/gzip-1.10/lib'
+make.orig[4]: Nothing to be done for 'install-exec-am'.
+make.orig[4]: Nothing to be done for 'install-data-am'.
+make.orig[4]: Leaving directory '/builddir/build/BUILD/gzip-1.10/lib'
+make.orig[3]: Leaving directory '/builddir/build/BUILD/gzip-1.10/lib'
+make.orig[2]: Leaving directory '/builddir/build/BUILD/gzip-1.10/lib'
+Making install in doc
+make.orig[2]: Entering directory '/builddir/build/BUILD/gzip-1.10/doc'
+make.orig[3]: Entering directory '/builddir/build/BUILD/gzip-1.10/doc'
+make.orig[3]: Nothing to be done for 'install-exec-am'.
+ /usr/bin/mkdir -p '/builddir/build/BUILDROOT/gzip-1.10-5.fc35.x86_64/usr/share/info'
+ /usr/bin/install -c -m 644 ./gzip.info '/builddir/build/BUILDROOT/gzip-1.10-5.fc35.x86_64/usr/share/info'
+ install-info --info-dir='/builddir/build/BUILDROOT/gzip-1.10-5.fc35.x86_64/usr/share/info' '/builddir/build/BUILDROOT/gzip-1.10-5.fc35.x86_64/usr/share/info/gzip.info'
+make.orig[3]: Leaving directory '/builddir/build/BUILD/gzip-1.10/doc'
+make.orig[2]: Leaving directory '/builddir/build/BUILD/gzip-1.10/doc'
+Making install in .
+make.orig[2]: Entering directory '/builddir/build/BUILD/gzip-1.10'
+make.orig[3]: Entering directory '/builddir/build/BUILD/gzip-1.10'
+ /usr/bin/mkdir -p '/builddir/build/BUILDROOT/gzip-1.10-5.fc35.x86_64/usr/bin'
+  /usr/bin/install -c gzip '/builddir/build/BUILDROOT/gzip-1.10-5.fc35.x86_64/usr/bin'
+ /usr/bin/mkdir -p '/builddir/build/BUILDROOT/gzip-1.10-5.fc35.x86_64/usr/bin'
+ /usr/bin/install -c gunzip gzexe zcat zcmp zdiff zegrep zfgrep zforce zgrep zless zmore znew '/builddir/build/BUILDROOT/gzip-1.10-5.fc35.x86_64/usr/bin'
+/usr/bin/make.orig  install-exec-hook
+make.orig[4]: Entering directory '/builddir/build/BUILD/gzip-1.10'
++ cd /builddir/build/BUILDROOT/gzip-1.10-5.fc35.x86_64/usr/bin
++ rm -f uncompress
++ case remove-installed-links in
++ cd /builddir/build/BUILDROOT/gzip-1.10-5.fc35.x86_64/usr/bin
++ rm -f uncompress
++ case install-exec-hook in
++ ln gunzip uncompress
+make.orig[4]: Leaving directory '/builddir/build/BUILD/gzip-1.10'
+ /usr/bin/mkdir -p '/builddir/build/BUILDROOT/gzip-1.10-5.fc35.x86_64/usr/share/man/man1'
+ /usr/bin/install -c -m 644 gunzip.1 gzexe.1 gzip.1 zcat.1 zcmp.1 zdiff.1 zforce.1 zgrep.1 zless.1 zmore.1 znew.1 '/builddir/build/BUILDROOT/gzip-1.10-5.fc35.x86_64/usr/share/man/man1'
+make.orig[3]: Leaving directory '/builddir/build/BUILD/gzip-1.10'
+make.orig[2]: Leaving directory '/builddir/build/BUILD/gzip-1.10'
+Making install in tests
+make.orig[2]: Entering directory '/builddir/build/BUILD/gzip-1.10/tests'
+make.orig[3]: Entering directory '/builddir/build/BUILD/gzip-1.10/tests'
+make.orig[3]: Nothing to be done for 'install-exec-am'.
+make.orig[3]: Nothing to be done for 'install-data-am'.
+make.orig[3]: Leaving directory '/builddir/build/BUILD/gzip-1.10/tests'
+make.orig[2]: Leaving directory '/builddir/build/BUILD/gzip-1.10/tests'
+make.orig[1]: Leaving directory '/builddir/build/BUILD/gzip-1.10'
++ gzip -9nf /builddir/build/BUILDROOT/gzip-1.10-5.fc35.x86_64/usr/share/info/gzip.info
++ rm -f /builddir/build/BUILDROOT/gzip-1.10-5.fc35.x86_64/usr/share/info/dir
++ rm -f /builddir/build/BUILDROOT/gzip-1.10-5.fc35.x86_64/usr/bin/uncompress
++ mkdir -p /builddir/build/BUILDROOT/gzip-1.10-5.fc35.x86_64/etc/profile.d
++ install -p -m 644 /builddir/build/SOURCES/colorzgrep.csh /builddir/build/BUILDROOT/gzip-1.10-5.fc35.x86_64/etc/profile.d
++ install -p -m 644 /builddir/build/SOURCES/colorzgrep.sh /builddir/build/BUILDROOT/gzip-1.10-5.fc35.x86_64/etc/profile.d
++ /usr/bin/find-debuginfo -j8 --strict-build-id -m -i --build-id-seed 1.10-5.fc35 --unique-debug-suffix -1.10-5.fc35.x86_64 --unique-debug-src-base gzip-1.10-5.fc35.x86_64 --run-dwz --dwz-low-mem-die-limit 10000000 --dwz-max-die-limit 110000000 -S debugsourcefiles.list /builddir/build/BUILD/gzip-1.10
+extracting debug info from /builddir/build/BUILDROOT/gzip-1.10-5.fc35.x86_64/usr/bin/gzip
+original debug info size: 1304kB, size after compression: 1288kB
+/usr/bin/sepdebugcrcfix: Updated 1 CRC32s, 0 CRC32s did match.
+647 blocks
++ /usr/lib/rpm/check-buildroot
++ /usr/lib/rpm/redhat/brp-llvm-compile-lto-elf -O0 -O0
+Checking for LLVM bitcode artifacts
++ /usr/lib/rpm/redhat/brp-ldconfig
++ /usr/lib/rpm/brp-compress
++ /usr/lib/rpm/redhat/brp-strip-lto /usr/bin/strip
++ /usr/lib/rpm/brp-strip-static-archive /usr/bin/strip
++ /usr/lib/rpm/check-rpaths
++ /usr/lib/rpm/redhat/brp-mangle-shebangs
+mangling shebang in /usr/bin/gunzip from /bin/sh to #!/usr/bin/sh
+mangling shebang in /usr/bin/gzexe from /bin/sh to #!/usr/bin/sh
+mangling shebang in /usr/bin/zcat from /bin/sh to #!/usr/bin/sh
+mangling shebang in /usr/bin/zcmp from /bin/sh to #!/usr/bin/sh
+mangling shebang in /usr/bin/zdiff from /bin/sh to #!/usr/bin/sh
+mangling shebang in /usr/bin/zegrep from /bin/sh to #!/usr/bin/sh
+mangling shebang in /usr/bin/zfgrep from /bin/sh to #!/usr/bin/sh
+mangling shebang in /usr/bin/zforce from /bin/sh to #!/usr/bin/sh
+mangling shebang in /usr/bin/zgrep from /bin/sh to #!/usr/bin/sh
+mangling shebang in /usr/bin/zless from /bin/sh to #!/usr/bin/sh
+mangling shebang in /usr/bin/zmore from /bin/sh to #!/usr/bin/sh
+mangling shebang in /usr/bin/znew from /bin/sh to #!/usr/bin/sh
++ /usr/lib/rpm/redhat/brp-python-bytecompile '' 1 0
++ /usr/lib/rpm/redhat/brp-python-hardlink
+Processing files: gzip-1.10-5.fc35.x86_64
+Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.gpI065
++ umask 022
++ cd /builddir/build/BUILD
++ cd gzip-1.10
++ DOCDIR=/builddir/build/BUILDROOT/gzip-1.10-5.fc35.x86_64/usr/share/doc/gzip
++ export LC_ALL=C
++ LC_ALL=C
++ export DOCDIR
++ /usr/bin/mkdir -p /builddir/build/BUILDROOT/gzip-1.10-5.fc35.x86_64/usr/share/doc/gzip
++ cp -pr NEWS /builddir/build/BUILDROOT/gzip-1.10-5.fc35.x86_64/usr/share/doc/gzip
++ cp -pr README /builddir/build/BUILDROOT/gzip-1.10-5.fc35.x86_64/usr/share/doc/gzip
++ cp -pr AUTHORS /builddir/build/BUILDROOT/gzip-1.10-5.fc35.x86_64/usr/share/doc/gzip
++ cp -pr ChangeLog /builddir/build/BUILDROOT/gzip-1.10-5.fc35.x86_64/usr/share/doc/gzip
++ cp -pr THANKS /builddir/build/BUILDROOT/gzip-1.10-5.fc35.x86_64/usr/share/doc/gzip
++ cp -pr TODO /builddir/build/BUILDROOT/gzip-1.10-5.fc35.x86_64/usr/share/doc/gzip
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Executing(%license): /bin/sh -e /var/tmp/rpm-tmp.l1MlNf
++ umask 022
++ cd /builddir/build/BUILD
++ cd gzip-1.10
++ LICENSEDIR=/builddir/build/BUILDROOT/gzip-1.10-5.fc35.x86_64/usr/share/licenses/gzip
++ export LC_ALL=C
++ LC_ALL=C
++ export LICENSEDIR
++ /usr/bin/mkdir -p /builddir/build/BUILDROOT/gzip-1.10-5.fc35.x86_64/usr/share/licenses/gzip
++ cp -pr COPYING /builddir/build/BUILDROOT/gzip-1.10-5.fc35.x86_64/usr/share/licenses/gzip
++ cp -pr fdl-1.3.txt /builddir/build/BUILDROOT/gzip-1.10-5.fc35.x86_64/usr/share/licenses/gzip
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Provides: /bin/gunzip /bin/gzip /bin/zcat bundled(gnulib) gzip = 1.10-5.fc35 gzip(x86-64) = 1.10-5.fc35
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Requires: /usr/bin/sh libc.so.6()(64bit) libc.so.6(GLIBC_2.14)(64bit) libc.so.6(GLIBC_2.17)(64bit) libc.so.6(GLIBC_2.2.5)(64bit) libc.so.6(GLIBC_2.33)(64bit) libc.so.6(GLIBC_2.34)(64bit) libc.so.6(GLIBC_2.4)(64bit) rtld(GNU_HASH)
+Conflicts: filesystem < 3
+Processing files: gzip-debugsource-1.10-5.fc35.x86_64
+Provides: gzip-debugsource = 1.10-5.fc35 gzip-debugsource(x86-64) = 1.10-5.fc35
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Processing files: gzip-debuginfo-1.10-5.fc35.x86_64
+Provides: debuginfo(build-id) = 80ea877aeb3808356a1210ef0086b0efb0d331fc gzip-debuginfo = 1.10-5.fc35 gzip-debuginfo(x86-64) = 1.10-5.fc35
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Recommends: gzip-debugsource(x86-64) = 1.10-5.fc35
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /builddir/build/BUILDROOT/gzip-1.10-5.fc35.x86_64
+Finish: chroot ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'dioscc\' CXX=\\$\'diosc++\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\acsexec-divine\\\\a-l\\\\a/builddir/divine-capture\\\\a-d\\\\acheck --lart stubs -o ignore:exit --max-time 8 \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bi --nodeps --short-circuit /builddir/build/SPECS/gzip.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc dioscc\' \'--define\' \'__cxx diosc++\' \'--define\' \'__cpp dioscc -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+
+>>> 2021-11-27 12:36:01	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'tar -c --remove-files '/builddir/cswrap-capture.err' '/builddir/divine-capture'' | tar -xC '/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results'"
+tar: Removing leading `/' from member names
+tar: Removing leading `/' from hard link targets
+
+>>> 2021-11-27 12:36:03	"csgrep --mode=json --remove-duplicates '/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture'/pid-*.conv > '/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/uni-results/divine-capture.js'"
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-10042.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-10057.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-10071.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-10086.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-10100.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-10123.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-10141.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-10156.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-10170.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-10197.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-10200.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-10226.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-10252.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-10255.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-10281.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-10300.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-10315.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-10334.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-10349.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-10368.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-10387.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-10402.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-10420.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-10434.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-10452.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-10467.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-10489.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-10500.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-10547.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-10561.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-10609.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-10621.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-10634.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-10646.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-10661.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-10708.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-10720.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-10731.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-10742.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-10792.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-10803.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-10851.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-10865.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-10876.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-10890.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-10902.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-10913.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-10990.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11002.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11014.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11026.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11038.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11050.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11062.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11074.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11086.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11098.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11110.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11122.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11134.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11146.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11158.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11170.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11182.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11194.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11206.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11218.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11230.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11242.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11254.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11266.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11278.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11290.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11302.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11314.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11326.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11338.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11350.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11362.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11374.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11386.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11398.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11410.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11422.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11436.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11448.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11460.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11472.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11484.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11496.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11508.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11520.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11532.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11544.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11556.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11568.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11580.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11592.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11604.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11616.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11628.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11651.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11663.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11675.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11687.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11699.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11711.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11723.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11735.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11747.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11759.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11771.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11783.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11795.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11807.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11819.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11831.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11843.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11891.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11902.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11950.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-11963.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-12011.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-12022.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-12075.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-12089.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-12106.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-12120.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-12134.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-12149.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-12161.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-12210.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-12223.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-12236.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-12247.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-12259.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-12271.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-12317.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-12328.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-12378.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-12428.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-12439.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-12487.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-12498.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-12548.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-12570.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-12573.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-12609.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-12612.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-12671.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-12688.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-12711.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-12726.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-12745.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-12793.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-12811.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-12860.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-12877.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-12931.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-12955.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-12966.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-8992.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9016.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9069.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9081.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9093.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9104.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9115.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9126.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9137.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9149.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9160.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9171.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9182.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9193.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9204.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9215.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9226.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9237.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9248.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9259.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9271.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9282.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9293.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9304.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9315.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9326.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9337.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9348.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9359.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9371.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9383.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9395.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9407.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9419.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9431.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9445.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9457.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9469.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9481.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9493.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9505.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9517.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9529.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9541.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9553.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9565.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9577.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9624.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9672.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9684.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9695.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9708.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9719.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9802.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9814.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9827.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9838.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9921.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9932.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9945.out.conv:1: parse error: failed to guess key event
+/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-9956.out.conv:1: parse error: failed to guess key event
+
+!!! 2021-11-27 12:36:03	error: post-process hook failed
+
+scan.ini: time-finished = 2021-11-27 12:36:03
+scan.ini: exit-code = 1
+>>> 2021-11-27 12:36:03	"cslinker --quiet --cwelist '/usr/share/csmock/cwe-map.csv' --inifile '/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/scan.ini' '/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/uni-results'/* > '/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/scan-results-all.js'"
+
+>>> 2021-11-27 12:36:03	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'csgrep --mode=json --embed-context 3' < '/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/scan-results-all.js' > '/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/scan-results-all.js.tmp'"
+
+>>> 2021-11-27 12:36:05	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--clean"
+
+>>> 2021-11-27 12:36:13	"cat '/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/scan-results-all.js' | sed 's|/builddir/build/BUILDROOT/[^/]*/|/builddir/build/BUILD//|' | csgrep --mode=json --path '^/builddir/build/BUILD/' --strip-path-prefix /builddir/build/BUILD/ | csgrep --mode=json --invert-match --path '^ksh-.*[0-9]+\\.c\$' | csgrep --mode=json --invert-match --path 'CMakeFiles/CMakeTmp|conftest.c' | csdiff --json-output --show-internal \"/usr/share/csmock/known-false-positives.js\" - | cssort --key=path > '/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/scan-results.js'"
+
+>>> 2021-11-27 12:36:13	"sed 's|/builddir/build/BUILDROOT/[^/]*/|/builddir/build/BUILD//|' '/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/scan-results-all.js' | csgrep --mode=json --strip-path-prefix /builddir/build/BUILD/ | csdiff --show-internal '/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/scan-results.js' - | cssort > '/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/suppressed-results.js'"
+
+>>> 2021-11-27 12:36:13	"csgrep --mode=grep --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/suppressed-results.js' > '/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/suppressed-results.err'"
+
+>>> 2021-11-27 12:36:13	"csgrep --mode=json --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/suppressed-results.js' | cshtml - > '/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/suppressed-results.html'"
+
+>>> 2021-11-27 12:36:13	"csgrep --mode=evtstat --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/suppressed-results.js' | tee '/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/debug/suppressed-results-summary.txt'"
+
+>>> 2021-11-27 12:36:13	"csgrep --mode=grep --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/scan-results.js' > '/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/scan-results.err'"
+
+>>> 2021-11-27 12:36:13	"csgrep --mode=json --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/scan-results.js' | cshtml - > '/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/scan-results.html'"
+
+>>> 2021-11-27 12:36:13	"csgrep --mode=evtstat --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/scan-results.js' | tee '/home/kdudka/git/aufover-benchmark/workdir/rpm-pkgs/gzip-1.10-5.fc35/divine/output/scan-results-summary.txt'"
+      2	COMPILER_WARNING                                	warning
+      1	DIVINE_WARNING                                  	error
+
+<<< 2021-11-27 12:36:13	csmock exit code: 1
+
