@@ -138,11 +138,3 @@ foreach(build ${build_list})
         handle_build()
     endif()
 endforeach()
-
-# check-only target
-# FIXME: copy-pasted from single-c
-string(REPLACE ";" " " CTEST_CMD_STRING "${CTEST_CMD}")
-add_custom_target(check-only)
-add_custom_command(TARGET check-only
-    COMMAND ${CTEST_CMD}
-    COMMENT ${CTEST_CMD_STRING})

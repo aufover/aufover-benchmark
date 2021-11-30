@@ -33,7 +33,7 @@ while test "$i" -le "$#"; do
 done
 
 # (re)configure the project, giving all args as CTEST_OPTS
-CTEST_OPTS="${ARGS[*]}" make -C ${top_dir}
+CTEST_OPTS="${ARGS[*]}" make -C ${top_dir} configure-csmock
 
 # query available TOOLS unless $TOOLS is set in caller's env
 tool_list=$(make -s -C $rpm_pkgs list-available-tools)
@@ -57,16 +57,16 @@ if test -z "$SYNC_EXISTING_ONLY"; then
 fi
 
 # reconfigure the project to make the above take an effect
-CTEST_OPTS="${ARGS[*]}" make -C "${top_dir}" CMAKE_OPTS=-DPHASE_ENABLE_diff=OFF
+CTEST_OPTS="${ARGS[*]}" make -C "${top_dir}" configure-csmock CMAKE_OPTS=-DPHASE_ENABLE_diff=OFF
 
 # remove output-exp@tool files for tests that were not selected in the end
 [[ -z "$clean_list" ]] || rmdir -v "${clean_list[@]}"
 
 # run check without actually checking the diff
-cd "$rpm_pkgs"
-make check-only
+make -C $WORKDIR check-only
 
 # move actual output to the expected output
+cd "$rpm_pkgs"
 for test in *(/); do
     case "$test" in (CMakeFiles/*|Testing/*)
         continue

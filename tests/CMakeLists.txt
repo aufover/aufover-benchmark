@@ -35,13 +35,19 @@ add_custom_command(TARGET check
     COMMAND env LC_ALL=C ${CTEST_CMD}
     COMMENT ${CTEST_CMD_STRING})
 
+# check-only target
+string(REPLACE ";" " " CTEST_CMD_STRING "${CTEST_CMD}")
+add_custom_target(check-only)
+add_custom_command(TARGET check-only
+    COMMAND ${CTEST_CMD}
+    COMMENT ${CTEST_CMD_STRING})
+
 # find required utils
 include(find-utils.cmake)
 
 option(PHASE_ENABLE_diff "compare actual output with expected output" ON)
 
-# TODO: change the default to ON
-option(ENABLE_SINGLE_C "Set to ON to enable the single-c test-suite" OFF)
+option(ENABLE_SINGLE_C "Set to ON to enable the single-c test-suite" ON)
 if(ENABLE_SINGLE_C)
     # find available/enabled tools
     include(find-tools.cmake)
@@ -53,7 +59,7 @@ if(ENABLE_SINGLE_C)
     add_subdirectory(single-c)
 endif()
 
-option(ENABLE_RPM_PKGS "Set to ON to enable the rpm-pkgs test-suite" ON)
+option(ENABLE_RPM_PKGS "Set to ON to enable the rpm-pkgs test-suite" OFF)
 if(ENABLE_RPM_PKGS)
     add_subdirectory(rpm-pkgs)
 endif()

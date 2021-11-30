@@ -160,10 +160,3 @@ foreach(group ${group_list})
         gen_test_group()
     endif()
 endforeach()
-
-# check-only target
-string(REPLACE ";" " " CTEST_CMD_STRING "${CTEST_CMD}")
-add_custom_target(check-only)
-add_custom_command(TARGET check-only
-    COMMAND ${CTEST_CMD}
-    COMMENT ${CTEST_CMD_STRING})

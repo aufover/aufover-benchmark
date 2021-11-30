@@ -61,10 +61,10 @@ CTEST_OPTS="${ARGS[*]}" make -C "${top_dir}" CMAKE_OPTS=-DPHASE_ENABLE_diff=OFF
 rm -fv "${clean_list[@]}"
 
 # run check without actually checking the diff
-cd "${WORKDIR}/single-c"
-make check-only
+make -C "${WORKDIR}" check-only
 
 # move actual output to the expected output
+cd "${WORKDIR}/single-c"
 for test in */*(/); do
     case "$test" in (CMakeFiles/*|Testing/*)
         continue

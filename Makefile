@@ -7,17 +7,27 @@ TESTDIR ?= ./tests
 # read-write working directory
 WORKDIR ?= ./workdir
 
-.PHONY: check configure install-deps test
+.PHONY: check check-all check-csmock configure configure-all configure-csmock install-deps test
 
-# default target
+# default target (single-c only)
 configure: $(WORKDIR)
-	cmake -S $(TESTDIR) -B $(WORKDIR) $(CMAKE_OPTS)
+	cmake -S $(TESTDIR) -B $(WORKDIR) -DENABLE_RPM_PKGS=OFF -DENABLE_SINGLE_C=ON $(CMAKE_OPTS)
 
-check: configure
+configure-all:
+	cmake -S $(TESTDIR) -B $(WORKDIR) -DENABLE_RPM_PKGS=ON -DENABLE_SINGLE_C=ON $(CMAKE_OPTS)
+
+configure-csmock:
+	cmake -S $(TESTDIR) -B $(WORKDIR) -DENABLE_RPM_PKGS=ON -DENABLE_SINGLE_C=OFF $(CMAKE_OPTS)
+
+# default check target (single-c only)
+check test: configure
 	$(MAKE) $@ -C $(WORKDIR)
 
-test: configure
-	$(MAKE) $@ -C $(WORKDIR)
+check-all: configure-all
+	$(MAKE) check -C $(WORKDIR)
+
+check-csmock: configure-csmock
+	$(MAKE) check -C $(WORKDIR)
 
 # create $(WORKDIR) if it does not exist already
 $(WORKDIR):
