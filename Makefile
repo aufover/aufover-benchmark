@@ -7,17 +7,20 @@ TESTDIR ?= ./tests
 # read-write working directory
 WORKDIR ?= ./workdir
 
+# we need to use CMAKE=cmake3 on RHEL-7
+CMAKE ?= cmake
+
 .PHONY: check check-all check-csmock configure configure-all configure-csmock install-deps test
 
 # default target (single-c only)
 configure: $(WORKDIR)
-	cmake -S $(TESTDIR) -B $(WORKDIR) -DENABLE_RPM_PKGS=OFF -DENABLE_SINGLE_C=ON $(CMAKE_OPTS)
+	$(CMAKE) -S $(TESTDIR) -B $(WORKDIR) -DENABLE_RPM_PKGS=OFF -DENABLE_SINGLE_C=ON $(CMAKE_OPTS)
 
 configure-all:
-	cmake -S $(TESTDIR) -B $(WORKDIR) -DENABLE_RPM_PKGS=ON -DENABLE_SINGLE_C=ON $(CMAKE_OPTS)
+	$(CMAKE) -S $(TESTDIR) -B $(WORKDIR) -DENABLE_RPM_PKGS=ON -DENABLE_SINGLE_C=ON $(CMAKE_OPTS)
 
 configure-csmock:
-	cmake -S $(TESTDIR) -B $(WORKDIR) -DENABLE_RPM_PKGS=ON -DENABLE_SINGLE_C=OFF $(CMAKE_OPTS)
+	$(CMAKE) -S $(TESTDIR) -B $(WORKDIR) -DENABLE_RPM_PKGS=ON -DENABLE_SINGLE_C=OFF $(CMAKE_OPTS)
 
 # default check target (single-c only)
 check test: configure

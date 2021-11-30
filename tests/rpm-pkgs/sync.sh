@@ -76,6 +76,7 @@ for test in *(/); do
         src=${dir}/output
         test -r "$src" || continue
         dst=$(readlink "${dir}/output-exp")
+        install -m0755 -v -d "$dst"             # needed on RHEL-7
         install -m0644 -v "$src"/scan{.log,-results.{err,js}} -Dt "$dst"
     done
 done
