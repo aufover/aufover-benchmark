@@ -1,0 +1,1208 @@
+scan.ini: [scan]
+scan.ini: tool = csmock
+scan.ini: tool-version = csmock-3.1.0.20211130.175245.g27e99a8.internal-1.el7
+scan.ini: tool-args = '/usr/bin/csmock' '-o' '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output' '-f' '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/libassuan-2.5.5-3.fc35.src.rpm' '-r' 'fedora-35-x86_64' '-t' 'divine' '--divine-timeout=8' '--keep-going'
+scan.ini: host = cov03.lab.eng.brq.redhat.com
+scan.ini: store-results-to = /home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output
+scan.ini: time-created = 2021-12-01 11:35:11
+scan.ini: enabled-plugins = divine, gcc
+scan.ini: mock-config = fedora-35-x86_64
+scan.ini: project-name = libassuan-2.5.5-3.fc35
+scan.ini: known-false-positives = /usr/share/csmock/known-false-positives.js
+>>> 2021-12-01 11:35:11	"rpm -qa | sort -V > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/debug/rpm-list-host.txt'"
+
+>>> 2021-12-01 11:35:12	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--init"
+INFO: mock.py version 2.13 starting (python version = 3.6.8, NVR = mock-2.13-1.kdudka.1.el7)...
+Start(bootstrap): init plugins
+INFO: selinux enabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start: clean chroot
+Finish: clean chroot
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+Start: unpacking root cache
+Finish: unpacking root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish: chroot init
+Finish: run
+
+>>> 2021-12-01 11:35:15	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--installdeps" "/tmp/csmock3qhi8ahi/libassuan-2.5.5-3.fc35.src.rpm"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Package gawk-5.1.0-4.fc35.x86_64 is already installed.
+Dependencies resolved.
+================================================================================
+ Package                 Arch        Version               Repository      Size
+================================================================================
+Installing:
+ [1mgcc                    [m x86_64      11.2.1-1.fc35         f35-build       31 M
+ [1mlibgpg-error-devel     [m x86_64      1.43-1.fc35           f35-build       65 k
+ [1mmake                   [m x86_64      1:4.3-6.fc35          f35-build      533 k
+Installing dependencies:
+ [1mannobin-docs           [m noarch      9.87-3.fc35           f35-build       78 k
+ [1mannobin-plugin-gcc     [m x86_64      9.87-3.fc35           f35-build       42 k
+ [1mcpp                    [m x86_64      11.2.1-1.fc35         f35-build       10 M
+ [1mgc                     [m x86_64      8.0.4-6.fc35          f35-build      103 k
+ [1mglibc-devel            [m x86_64      2.34-8.fc35           f35-build      146 k
+ [1mglibc-headers-x86      [m noarch      2.34-8.fc35           f35-build      544 k
+ [1mguile22                [m x86_64      2.2.7-3.fc35          f35-build      6.4 M
+ [1mkernel-headers         [m x86_64      5.15.4-200.fc35       f35-build      1.3 M
+ [1mlibmpc                 [m x86_64      1.2.1-3.fc35          f35-build       62 k
+ [1mlibtool-ltdl           [m x86_64      2.4.6-42.fc35         f35-build       36 k
+ [1mlibxcrypt-devel        [m x86_64      4.4.26-4.fc35         f35-build       29 k
+
+Transaction Summary
+================================================================================
+Install  14 Packages
+
+Total size: 51 M
+Total download size: 65 k
+Installed size: 161 M
+Downloading Packages:
+--------------------------------------------------------------------------------
+Total                                           123 kB/s |  65 kB     00:00     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+
+Installed:
+  annobin-docs-9.87-3.fc35.noarch        annobin-plugin-gcc-9.87-3.fc35.x86_64 
+  cpp-11.2.1-1.fc35.x86_64               gc-8.0.4-6.fc35.x86_64                
+  gcc-11.2.1-1.fc35.x86_64               glibc-devel-2.34-8.fc35.x86_64        
+  glibc-headers-x86-2.34-8.fc35.noarch   guile22-2.2.7-3.fc35.x86_64           
+  kernel-headers-5.15.4-200.fc35.x86_64  libgpg-error-devel-1.43-1.fc35.x86_64 
+  libmpc-1.2.1-3.fc35.x86_64             libtool-ltdl-2.4.6-42.fc35.x86_64     
+  libxcrypt-devel-4.4.26-4.fc35.x86_64   make-1:4.3-6.fc35.x86_64              
+
+Complete!
+
+>>> 2021-12-01 11:35:23	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--addrepo" "https://download.copr.fedorainfracloud.org/results/@aufover/divine/fedora-\$releasever-\$basearch/" "--install" "divine"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Dependencies resolved.
+====================================================================================================================================================
+ Package                   Arch    Version                   Repository                                                                         Size
+====================================================================================================================================================
+Installing:
+ [1mdivine                   [m x86_64  4.4.2_4_gd47985e0b-7.fc35 downloadcoprfedorainfracloudorg_results_aufover_divine_fedorareleaseverbasearch_   68 M
+Installing dependencies:
+ [1mexpat                    [m x86_64  2.4.1-2.fc35              f35-build                                                                         110 k
+ [1mgroff-base               [m x86_64  1.22.4-8.fc35             f35-build                                                                         1.0 M
+ [1mlibedit                  [m x86_64  3.1-40.20210910cvs.fc35   f35-build                                                                         105 k
+ [1mlibyaml                  [m x86_64  0.2.5-6.fc35              f35-build                                                                          60 k
+ [1mmpdecimal                [m x86_64  2.5.1-2.fc35              f35-build                                                                          99 k
+ [1mncurses                  [m x86_64  6.2-8.20210508.fc35       f35-build                                                                         400 k
+ [1mperl-Carp                [m noarch  1.52-478.fc35             f35-build                                                                          29 k
+ [1mperl-Class-Struct        [m noarch  0.66-482.fc35             f35-build                                                                          30 k
+ [1mperl-DynaLoader          [m x86_64  1.50-482.fc35             f35-build                                                                          34 k
+ [1mperl-Encode              [m x86_64  4:3.15-482.fc35           f35-build                                                                         1.7 M
+ [1mperl-Errno               [m x86_64  1.33-482.fc35             f35-build                                                                          23 k
+ [1mperl-Exporter            [m noarch  5.76-479.fc35             f35-build                                                                          31 k
+ [1mperl-Fcntl               [m x86_64  1.14-482.fc35             f35-build                                                                          28 k
+ [1mperl-File-Basename       [m noarch  2.85-482.fc35             f35-build                                                                          25 k
+ [1mperl-File-Path           [m noarch  2.18-478.fc35             f35-build                                                                          35 k
+ [1mperl-File-Temp           [m noarch  1:0.231.100-478.fc35      f35-build                                                                          59 k
+ [1mperl-File-stat           [m noarch  1.09-482.fc35             f35-build                                                                          25 k
+ [1mperl-Getopt-Long         [m noarch  1:2.52-478.fc35           f35-build                                                                          60 k
+ [1mperl-Getopt-Std          [m noarch  1.13-482.fc35             f35-build                                                                          23 k
+ [1mperl-HTTP-Tiny           [m noarch  0.080-1.fc35              f35-build                                                                          55 k
+ [1mperl-IO                  [m x86_64  1.46-482.fc35             f35-build                                                                          95 k
+ [1mperl-IPC-Open3           [m noarch  1.21-482.fc35             f35-build                                                                          31 k
+ [1mperl-MIME-Base64         [m x86_64  3.16-478.fc35             f35-build                                                                          30 k
+ [1mperl-POSIX               [m x86_64  1.97-482.fc35             f35-build                                                                         105 k
+ [1mperl-PathTools           [m x86_64  3.80-478.fc35             f35-build                                                                          85 k
+ [1mperl-Pod-Escapes         [m noarch  1:1.07-478.fc35           f35-build                                                                          20 k
+ [1mperl-Pod-Perldoc         [m noarch  3.28.01-479.fc35          f35-build                                                                          84 k
+ [1mperl-Pod-Simple          [m noarch  1:3.43-2.fc35             f35-build                                                                         215 k
+ [1mperl-Pod-Usage           [m noarch  4:2.01-478.fc35           f35-build                                                                          40 k
+ [1mperl-Scalar-List-Utils   [m x86_64  5:1.60-462.fc35           f35-build                                                                          72 k
+ [1mperl-SelectSaver         [m noarch  1.02-482.fc35             f35-build                                                                          19 k
+ [1mperl-Socket              [m x86_64  4:2.032-2.fc35            f35-build                                                                          55 k
+ [1mperl-Storable            [m x86_64  1:3.25-1.fc35             f35-build                                                                          95 k
+ [1mperl-Symbol              [m noarch  1.09-482.fc35             f35-build                                                                          22 k
+ [1mperl-Term-ANSIColor      [m noarch  5.01-479.fc35             f35-build                                                                          48 k
+ [1mperl-Term-Cap            [m noarch  1.17-478.fc35             f35-build                                                                          22 k
+ [1mperl-Text-ParseWords     [m noarch  3.30-478.fc35             f35-build                                                                          16 k
+ [1mperl-Text-Tabs+Wrap      [m noarch  2021.0814-1.fc35          f35-build                                                                          22 k
+ [1mperl-Time-Local          [m noarch  2:1.300-478.fc35          f35-build                                                                          33 k
+ [1mperl-constant            [m noarch  1.33-479.fc35             f35-build                                                                          23 k
+ [1mperl-if                  [m noarch  0.60.900-482.fc35         f35-build                                                                          22 k
+ [1mperl-interpreter         [m x86_64  4:5.34.0-482.fc35         f35-build                                                                          79 k
+ [1mperl-libs                [m x86_64  4:5.34.0-482.fc35         f35-build                                                                         2.1 M
+ [1mperl-mro                 [m x86_64  1.25-482.fc35             f35-build                                                                          36 k
+ [1mperl-overload            [m noarch  1.33-482.fc35             f35-build                                                                          53 k
+ [1mperl-overloading         [m noarch  0.02-482.fc35             f35-build                                                                          21 k
+ [1mperl-parent              [m noarch  1:0.238-478.fc35          f35-build                                                                          14 k
+ [1mperl-podlators           [m noarch  1:4.14-478.fc35           f35-build                                                                         111 k
+ [1mperl-subs                [m noarch  1.04-482.fc35             f35-build                                                                          19 k
+ [1mperl-vars                [m noarch  1.05-482.fc35             f35-build                                                                          21 k
+ [1mpython-pip-wheel         [m noarch  21.2.3-4.fc35             f35-build                                                                         1.1 M
+ [1mpython-setuptools-wheel  [m noarch  57.4.0-1.fc35             f35-build                                                                         505 k
+ [1mpython3                  [m x86_64  3.10.0-1.fc35             f35-build                                                                          25 k
+ [1mpython3-libs             [m x86_64  3.10.0-1.fc35             f35-build                                                                         7.5 M
+ [1mpython3-pygments         [m noarch  2.9.0-2.fc35              f35-build                                                                         1.9 M
+ [1mpython3-pyyaml           [m x86_64  5.4.1-4.fc35              f35-build                                                                         191 k
+ [1mz3                       [m x86_64  4.8.13-1.fc35             f35-build                                                                         5.9 M
+ [1mz3-libs                  [m x86_64  4.8.13-1.fc35             f35-build                                                                         5.8 M
+
+Transaction Summary
+====================================================================================================================================================
+Install  59 Packages
+
+Total size: 98 M
+Installed size: 507 M
+Downloading Packages:
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+
+Installed:
+  divine-4.4.2_4_gd47985e0b-7.fc35.x86_64                                       
+  expat-2.4.1-2.fc35.x86_64                                                     
+  groff-base-1.22.4-8.fc35.x86_64                                               
+  libedit-3.1-40.20210910cvs.fc35.x86_64                                        
+  libyaml-0.2.5-6.fc35.x86_64                                                   
+  mpdecimal-2.5.1-2.fc35.x86_64                                                 
+  ncurses-6.2-8.20210508.fc35.x86_64                                            
+  perl-Carp-1.52-478.fc35.noarch                                                
+  perl-Class-Struct-0.66-482.fc35.noarch                                        
+  perl-DynaLoader-1.50-482.fc35.x86_64                                          
+  perl-Encode-4:3.15-482.fc35.x86_64                                            
+  perl-Errno-1.33-482.fc35.x86_64                                               
+  perl-Exporter-5.76-479.fc35.noarch                                            
+  perl-Fcntl-1.14-482.fc35.x86_64                                               
+  perl-File-Basename-2.85-482.fc35.noarch                                       
+  perl-File-Path-2.18-478.fc35.noarch                                           
+  perl-File-Temp-1:0.231.100-478.fc35.noarch                                    
+  perl-File-stat-1.09-482.fc35.noarch                                           
+  perl-Getopt-Long-1:2.52-478.fc35.noarch                                       
+  perl-Getopt-Std-1.13-482.fc35.noarch                                          
+  perl-HTTP-Tiny-0.080-1.fc35.noarch                                            
+  perl-IO-1.46-482.fc35.x86_64                                                  
+  perl-IPC-Open3-1.21-482.fc35.noarch                                           
+  perl-MIME-Base64-3.16-478.fc35.x86_64                                         
+  perl-POSIX-1.97-482.fc35.x86_64                                               
+  perl-PathTools-3.80-478.fc35.x86_64                                           
+  perl-Pod-Escapes-1:1.07-478.fc35.noarch                                       
+  perl-Pod-Perldoc-3.28.01-479.fc35.noarch                                      
+  perl-Pod-Simple-1:3.43-2.fc35.noarch                                          
+  perl-Pod-Usage-4:2.01-478.fc35.noarch                                         
+  perl-Scalar-List-Utils-5:1.60-462.fc35.x86_64                                 
+  perl-SelectSaver-1.02-482.fc35.noarch                                         
+  perl-Socket-4:2.032-2.fc35.x86_64                                             
+  perl-Storable-1:3.25-1.fc35.x86_64                                            
+  perl-Symbol-1.09-482.fc35.noarch                                              
+  perl-Term-ANSIColor-5.01-479.fc35.noarch                                      
+  perl-Term-Cap-1.17-478.fc35.noarch                                            
+  perl-Text-ParseWords-3.30-478.fc35.noarch                                     
+  perl-Text-Tabs+Wrap-2021.0814-1.fc35.noarch                                   
+  perl-Time-Local-2:1.300-478.fc35.noarch                                       
+  perl-constant-1.33-479.fc35.noarch                                            
+  perl-if-0.60.900-482.fc35.noarch                                              
+  perl-interpreter-4:5.34.0-482.fc35.x86_64                                     
+  perl-libs-4:5.34.0-482.fc35.x86_64                                            
+  perl-mro-1.25-482.fc35.x86_64                                                 
+  perl-overload-1.33-482.fc35.noarch                                            
+  perl-overloading-0.02-482.fc35.noarch                                         
+  perl-parent-1:0.238-478.fc35.noarch                                           
+  perl-podlators-1:4.14-478.fc35.noarch                                         
+  perl-subs-1.04-482.fc35.noarch                                                
+  perl-vars-1.05-482.fc35.noarch                                                
+  python-pip-wheel-21.2.3-4.fc35.noarch                                         
+  python-setuptools-wheel-57.4.0-1.fc35.noarch                                  
+  python3-3.10.0-1.fc35.x86_64                                                  
+  python3-libs-3.10.0-1.fc35.x86_64                                             
+  python3-pygments-2.9.0-2.fc35.noarch                                          
+  python3-pyyaml-5.4.1-4.fc35.x86_64                                            
+  z3-4.8.13-1.fc35.x86_64                                                       
+  z3-libs-4.8.13-1.fc35.x86_64                                                  
+
+Complete!
+
+>>> 2021-12-01 11:35:36	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa' | sort -V > /home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/debug/rpm-list-mock.txt"
+
+>>> 2021-12-01 11:35:37	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa --provides' | sort -V > /tmp/csmock3qhi8ahi/rpm-list-mock-provides.txt"
+
+>>> 2021-12-01 11:35:39	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--copyin" "/tmp/csmock3qhi8ahi/libassuan-2.5.5-3.fc35.src.rpm" "/builddir/libassuan-2.5.5-3.fc35.src.rpm"
+
+>>> 2021-12-01 11:35:41	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "chown mockbuild -R /builddir"
+
+>>> 2021-12-01 11:35:43	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"rpm -Uvh --nodeps '/builddir/libassuan-2.5.5-3.fc35.src.rpm'\""
+Updating / installing...
+libassuan-2.5.5-3.fc35                ########################################
+
+>>> 2021-12-01 11:35:44	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"sed -e 's|^ExclusiveArch:.*\\\$||' -i /builddir/build/SPECS/libassuan.spec\""
+
+>>> 2021-12-01 11:35:46	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"rpmbuild -bs --nodeps /builddir/build/SPECS/libassuan.spec '--define' 'apidocs 0' '--define' 'with_publican 0' '--without' 'docs' '--without' 'langpacks' '--define' '__cc dioscc' '--define' '__cxx diosc++' '--define' '__cpp dioscc -E' '--define' 'toolchain clang' '--define' 'optflags -O0' '--define' 'build_ldflags -O0' && sh -c 'cd /builddir/build/SRPMS && eval mv -v *.src.rpm /builddir/libassuan-2.5.5-3.fc35.src.rpm || :'\""
+setting SOURCE_DATE_EPOCH=1626912000
+Wrote: /builddir/build/SRPMS/libassuan-2.5.5-3.fc35.src.rpm
+renamed 'libassuan-2.5.5-3.fc35.src.rpm' -> '/builddir/libassuan-2.5.5-3.fc35.src.rpm'
+
+>>> 2021-12-01 11:35:48	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--disable-plugin=selinux" "--copyout" "/builddir/libassuan-2.5.5-3.fc35.src.rpm" "/tmp/csmock3qhi8ahi/libassuan-2.5.5-3.fc35.src.rpm"
+
+>>> 2021-12-01 11:35:50	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--installdeps" "/tmp/csmock3qhi8ahi/libassuan-2.5.5-3.fc35.src.rpm"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Package gawk-5.1.0-4.fc35.x86_64 is already installed.
+Package gcc-11.2.1-1.fc35.x86_64 is already installed.
+Package libgpg-error-devel-1.43-1.fc35.x86_64 is already installed.
+Package make-1:4.3-6.fc35.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+
+>>> 2021-12-01 11:35:54	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--addrepo" "https://download.copr.fedorainfracloud.org/results/@aufover/divine/fedora-\$releasever-\$basearch/" "--install" "divine"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Package divine-4.4.2_4_gd47985e0b-7.fc35.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+
+>>> 2021-12-01 11:35:59	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa' | sort -V > /home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/debug/rpm-list-mock.txt"
+
+>>> 2021-12-01 11:36:01	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa --provides' | sort -V > /tmp/csmock3qhi8ahi/rpm-list-mock-provides.txt"
+
+>>> 2021-12-01 11:36:03	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--addrepo" "https://download.copr.fedorainfracloud.org/results/@aufover/divine/fedora-\$releasever-\$basearch/" "--install" "csdiff"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Dependencies resolved.
+================================================================================
+ Package                    Arch        Version            Repository      Size
+================================================================================
+Installing:
+ [1mcsdiff                    [m x86_64      2.2.0-1.fc35       f35-build      895 k
+Installing dependencies:
+ [1mboost-filesystem          [m x86_64      1.76.0-4.fc35      f35-build       60 k
+ [1mboost-program-options     [m x86_64      1.76.0-4.fc35      f35-build      108 k
+ [1mboost-system              [m x86_64      1.76.0-4.fc35      f35-build       15 k
+
+Transaction Summary
+================================================================================
+Install  4 Packages
+
+Total size: 1.1 M
+Installed size: 4.8 M
+Downloading Packages:
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+
+Installed:
+  boost-filesystem-1.76.0-4.fc35.x86_64                                         
+  boost-program-options-1.76.0-4.fc35.x86_64                                    
+  boost-system-1.76.0-4.fc35.x86_64                                             
+  csdiff-2.2.0-1.fc35.x86_64                                                    
+
+Complete!
+
+>>> 2021-12-01 11:36:08	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa' | sort -V > /home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/debug/rpm-list-mock.txt"
+
+>>> 2021-12-01 11:36:10	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa --provides' | sort -V > /tmp/csmock3qhi8ahi/rpm-list-mock-provides.txt"
+
+>>> 2021-12-01 11:36:12	"tar -cP '/usr/share/csmock/scripts' '/usr/bin/cswrap' '/usr/lib64/cswrap' '/usr/bin/csexec' '/usr/bin/csexec-loader' '/usr/lib64/libcsexec-preload.so' '/tmp/csmock3qhi8ahi/libassuan-2.5.5-3.fc35.src.rpm' | '/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'tar -xC/'"
+tar: Removing leading `/' from member names
+tar: Removing leading `/' from hard link targets
+
+scan.ini: analyzer-version-divine = 4.4.2_4_gd47985e0b
+>>> 2021-12-01 11:36:14	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"mkdir -pv '/builddir/divine-capture'\""
+mkdir: created directory '/builddir/divine-capture'
+
+scan.ini: analyzer-version-gcc = 11.2.1
+>>> 2021-12-01 11:36:15	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "rpm -Uvh --nodeps '/tmp/csmock3qhi8ahi/libassuan-2.5.5-3.fc35.src.rpm'"
+Updating / installing...
+libassuan-2.5.5-3.fc35                ########################################
+
+>>> 2021-12-01 11:36:17	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "chmod -R +r /builddir"
+
+>>> 2021-12-01 11:36:19	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "ln -fv '/usr/share/csmock/scripts/enable-keep-going.sh' '/usr/share/csmock/scripts/chroot-fixups'"
+'/usr/share/csmock/scripts/chroot-fixups/enable-keep-going.sh' => '/usr/share/csmock/scripts/enable-keep-going.sh'
+
+>>> 2021-12-01 11:36:21	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--shell" "for i in /usr/share/csmock/scripts/chroot-fixups/*; do test -x \$i && echo RUN: \$i >&2 && \$i; done"
+RUN: /usr/share/csmock/scripts/chroot-fixups/enable-keep-going.sh
+renamed '/usr/bin/make' -> '/usr/bin/make.orig'
++ ls -l /usr/bin/make
+-rwxr-xr-x. 1 root root 42 Dec  1 11:36 /usr/bin/make
++ cat /usr/bin/make
+#!/bin/sh
+exec /usr/bin/make.orig -k "$@"
+RUN: /usr/share/csmock/scripts/chroot-fixups/gdk-pixbuf2-triggers.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/glib2-triggers.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/kpathsea-texhash.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/openssl-public-header-files.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/qt5-core-abi.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/rpm-build-scripts.sh
++ sed -e s/fail=1/fail=0/ -i /usr/lib/rpm/redhat/brp-mangle-shebangs
+'/usr/lib/rpm/brp-strip-static-archive' -> '/bin/true'
+RUN: /usr/share/csmock/scripts/chroot-fixups/rpm-macros.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/rpm-python-extras.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/shared-mime-info-triggers.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/simplify-cpp-includes.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/simplify-glib-includes.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/simplify-systemd-includes.sh
+
+>>> 2021-12-01 11:36:22	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--chroot" "/bin/su mockbuild -l -c \"rpmbuild -bp --nodeps /builddir/build/SPECS/libassuan.spec '--define' 'apidocs 0' '--define' 'with_publican 0' '--without' 'docs' '--without' 'langpacks' '--define' '__cc dioscc' '--define' '__cxx diosc++' '--define' '__cpp dioscc -E' '--define' 'toolchain clang' '--define' 'optflags -O0' '--define' 'build_ldflags -O0'\""
+INFO: mock.py version 2.13 starting (python version = 3.6.8, NVR = mock-2.13-1.kdudka.1.el7)...
+Start(bootstrap): init plugins
+INFO: selinux enabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish: chroot init
+INFO: Running in chroot: ['/bin/su mockbuild -l -c "rpmbuild -bp --nodeps /builddir/build/SPECS/libassuan.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc dioscc\' \'--define\' \'__cxx diosc++\' \'--define\' \'__cpp dioscc -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'"']
+Start: chroot ['/bin/su mockbuild -l -c "rpmbuild -bp --nodeps /builddir/build/SPECS/libassuan.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc dioscc\' \'--define\' \'__cxx diosc++\' \'--define\' \'__cpp dioscc -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'"']
+setting SOURCE_DATE_EPOCH=1626912000
+Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.gzX6QV
++ umask 022
++ cd /builddir/build/BUILD
++ cd /builddir/build/BUILD
++ rm -rf libassuan-2.5.5
++ /usr/bin/bzip2 -dc /builddir/build/SOURCES/libassuan-2.5.5.tar.bz2
++ /usr/bin/tar -xof -
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd libassuan-2.5.5
++ /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
++ echo 'Patch #1 (libassuan-2.5.2-multilib.patch):'
+Patch #1 (libassuan-2.5.2-multilib.patch):
++ /usr/bin/patch --no-backup-if-mismatch -f -p1 -b --suffix .multilib --fuzz=0
+patching file src/libassuan-config.in
+Patch #2 (libassuan-2.5.5-coverity.patch):
++ echo 'Patch #2 (libassuan-2.5.5-coverity.patch):'
++ /usr/bin/patch --no-backup-if-mismatch -f -p1 -b --suffix .coverity --fuzz=0
+patching file tests/fdpassing.c
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Finish: chroot ['/bin/su mockbuild -l -c "rpmbuild -bp --nodeps /builddir/build/SPECS/libassuan.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc dioscc\' \'--define\' \'__cxx diosc++\' \'--define\' \'__cpp dioscc -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'"']
+
+>>> 2021-12-01 11:36:24	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "chmod -R +r /builddir/build"
+
+>>> 2021-12-01 11:36:26	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--chroot" "/bin/su mockbuild -l -c \"PATH=/usr/lib64/cswrap:\\\$PATH CSWRAP_CAP_FILE=\\\$'/builddir/cswrap-capture.err' CSWRAP_TIMEOUT=\\\$'30' CSWRAP_TIMEOUT_FOR=\\\$':' CC=\\\$'dioscc' CXX=\\\$'diosc++' CSEXEC_WRAP_CMD=\\\$'--skip-ld-linux\\\\acsexec-divine\\\\a-l\\\\a/builddir/divine-capture\\\\a-d\\\\acheck --lart stubs -o ignore:exit --max-time 8 ' CSWRAP_ADD_CFLAGS=\\\$'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader' CSWRAP_DEL_CFLAGS=\\\$'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register' CSWRAP_ADD_CXXFLAGS=\\\$'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader' CSWRAP_DEL_CXXFLAGS=\\\$'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register' sh -c \\\"rpmbuild -bc --nodeps --short-circuit /builddir/build/SPECS/libassuan.spec '--define' 'apidocs 0' '--define' 'with_publican 0' '--without' 'docs' '--without' 'langpacks' '--define' '__cc dioscc' '--define' '__cxx diosc++' '--define' '__cpp dioscc -E' '--define' 'toolchain clang' '--define' 'optflags -O0' '--define' 'build_ldflags -O0'\\\"\""
+INFO: mock.py version 2.13 starting (python version = 3.6.8, NVR = mock-2.13-1.kdudka.1.el7)...
+Start(bootstrap): init plugins
+INFO: selinux enabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish: chroot init
+INFO: Running in chroot: ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'dioscc\' CXX=\\$\'diosc++\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\acsexec-divine\\\\a-l\\\\a/builddir/divine-capture\\\\a-d\\\\acheck --lart stubs -o ignore:exit --max-time 8 \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bc --nodeps --short-circuit /builddir/build/SPECS/libassuan.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc dioscc\' \'--define\' \'__cxx diosc++\' \'--define\' \'__cpp dioscc -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+Start: chroot ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'dioscc\' CXX=\\$\'diosc++\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\acsexec-divine\\\\a-l\\\\a/builddir/divine-capture\\\\a-d\\\\acheck --lart stubs -o ignore:exit --max-time 8 \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bc --nodeps --short-circuit /builddir/build/SPECS/libassuan.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc dioscc\' \'--define\' \'__cxx diosc++\' \'--define\' \'__cpp dioscc -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+setting SOURCE_DATE_EPOCH=1626912000
+Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.gyIzwZ
++ umask 022
++ cd /builddir/build/BUILD
++ cd libassuan-2.5.5
++ CFLAGS=-O0
++ export CFLAGS
++ CXXFLAGS=-O0
++ export CXXFLAGS
++ FFLAGS='-O0 -I/usr/lib64/gfortran/modules'
++ export FFLAGS
++ FCFLAGS='-O0 -I/usr/lib64/gfortran/modules'
++ export FCFLAGS
++ LDFLAGS=-O0
++ export LDFLAGS
++ LT_SYS_LIBRARY_PATH=/usr/lib64:
++ export LT_SYS_LIBRARY_PATH
++ CC=dioscc
++ export CC
++ CXX=diosc++
++ export CXX
++ '[' -fltox '!=' x ']'
+++ find . -type f -name configure -print
++ for file in $(find . -type f -name configure -print)
++ /usr/bin/sed -r --in-place=.backup 's/^char \(\*f\) \(\) = /__attribute__ ((used)) char (*f) () = /g' ./configure
++ diff -u ./configure.backup ./configure
++ mv ./configure.backup ./configure
++ /usr/bin/sed -r --in-place=.backup 's/^char \(\*f\) \(\);/__attribute__ ((used)) char (*f) ();/g' ./configure
++ diff -u ./configure.backup ./configure
++ mv ./configure.backup ./configure
++ /usr/bin/sed -r --in-place=.backup 's/^char \$2 \(\);/__attribute__ ((used)) char \$2 ();/g' ./configure
++ diff -u ./configure.backup ./configure
+--- ./configure.backup	2021-03-22 13:11:16.000000000 +0100
++++ ./configure	2021-12-01 11:36:27.786961720 +0100
+@@ -1889,7 +1889,7 @@
+ #ifdef __cplusplus
+ extern "C"
+ #endif
+-char $2 ();
++__attribute__ ((used)) char $2 ();
+ /* The GNU C library defines this for functions which it implements
+     to always fail with ENOSYS.  Some functions are actually named
+     something starting with __ and the normal name is an alias.  */
++ /usr/bin/sed --in-place=.backup '1{$!N;$!N};$!N;s/int x = 1;\nint y = 0;\nint z;\nint nan;/volatile int x = 1; volatile int y = 0; volatile int z, nan;/;P;D' ./configure
++ diff -u ./configure.backup ./configure
++ mv ./configure.backup ./configure
++ /usr/bin/sed --in-place=.backup 's#^lt_cv_sys_global_symbol_to_cdecl=.*#lt_cv_sys_global_symbol_to_cdecl="sed -n -e '\''s/^T .* \\(.*\\)$/extern int \\1();/p'\'' -e '\''s/^$symcode* .* \\(.*\\)$/extern char \\1;/p'\''"#' ./configure
++ diff -u ./configure.backup ./configure
+--- ./configure.backup	2021-12-01 11:36:27.786961720 +0100
++++ ./configure	2021-12-01 11:36:27.801961583 +0100
+@@ -15596,7 +15596,7 @@
+ compiler='`$ECHO "$compiler" | $SED "$delay_single_quote_subst"`'
+ GCC='`$ECHO "$GCC" | $SED "$delay_single_quote_subst"`'
+ lt_cv_sys_global_symbol_pipe='`$ECHO "$lt_cv_sys_global_symbol_pipe" | $SED "$delay_single_quote_subst"`'
+-lt_cv_sys_global_symbol_to_cdecl='`$ECHO "$lt_cv_sys_global_symbol_to_cdecl" | $SED "$delay_single_quote_subst"`'
++lt_cv_sys_global_symbol_to_cdecl="sed -n -e 's/^T .* \(.*\)$/extern int \1();/p' -e 's/^$symcode* .* \(.*\)$/extern char \1;/p'"
+ lt_cv_sys_global_symbol_to_c_name_address='`$ECHO "$lt_cv_sys_global_symbol_to_c_name_address" | $SED "$delay_single_quote_subst"`'
+ lt_cv_sys_global_symbol_to_c_name_address_lib_prefix='`$ECHO "$lt_cv_sys_global_symbol_to_c_name_address_lib_prefix" | $SED "$delay_single_quote_subst"`'
+ nm_file_list_spec='`$ECHO "$nm_file_list_spec" | $SED "$delay_single_quote_subst"`'
++ '[' 1 = 1 ']'
++++ dirname ./configure
+++ find . -name config.guess -o -name config.sub
++ for i in $(find $(dirname ./configure) -name config.guess -o -name config.sub)
+++ basename ./build-aux/config.sub
++ '[' -f /usr/lib/rpm/redhat/config.sub ']'
++ /usr/bin/rm -f ./build-aux/config.sub
+++ basename ./build-aux/config.sub
++ /usr/bin/cp -fv /usr/lib/rpm/redhat/config.sub ./build-aux/config.sub
+'/usr/lib/rpm/redhat/config.sub' -> './build-aux/config.sub'
++ for i in $(find $(dirname ./configure) -name config.guess -o -name config.sub)
+++ basename ./build-aux/config.guess
++ '[' -f /usr/lib/rpm/redhat/config.guess ']'
++ /usr/bin/rm -f ./build-aux/config.guess
+++ basename ./build-aux/config.guess
++ /usr/bin/cp -fv /usr/lib/rpm/redhat/config.guess ./build-aux/config.guess
+'/usr/lib/rpm/redhat/config.guess' -> './build-aux/config.guess'
++ '[' 1 = 1 ']'
++ '[' x '!=' 'x-Wl,-z,now ' ']'
+++ find . -name ltmain.sh
++ for i in $(find . -name ltmain.sh)
++ /usr/bin/sed -i.backup -e 's~compiler_flags=$~compiler_flags="-Wl,-z,now "~' ./build-aux/ltmain.sh
++ ./configure --build=x86_64-redhat-linux-gnu --host=x86_64-redhat-linux-gnu --program-prefix= --disable-dependency-tracking --prefix=/usr --exec-prefix=/usr --bindir=/usr/bin --sbindir=/usr/sbin --sysconfdir=/etc --datadir=/usr/share --includedir=/usr/include --libdir=/usr/lib64 --libexecdir=/usr/libexec --localstatedir=/var --sharedstatedir=/var/lib --mandir=/usr/share/man --infodir=/usr/share/info --includedir=/usr/include/libassuan2
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking build system type... x86_64-redhat-linux-gnu
+checking host system type... x86_64-redhat-linux-gnu
+checking whether make supports nested variables... (cached) yes
+configure: autobuild project... libassuan
+configure: autobuild revision... 2.5.5
+./configure: line 3212: hostname: command not found
+configure: autobuild timestamp... 20211201-113627
+checking whether make supports the include directive... yes (GNU style)
+checking for x86_64-redhat-linux-gnu-gcc... dioscc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether dioscc accepts -g... yes
+checking for dioscc option to accept ISO C89... none needed
+checking whether dioscc understands -c and -o together... yes
+checking dependency style of dioscc... none
+checking how to run the C preprocessor... dioscc -E
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... no
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking how to print strings... printf
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for fgrep... /usr/bin/grep -F
+checking for ld used by dioscc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking whether the shell understands some XSI constructs... yes
+checking whether the shell understands "+="... yes
+checking how to convert x86_64-redhat-linux-gnu file names to x86_64-redhat-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-redhat-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for x86_64-redhat-linux-gnu-objdump... no
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for x86_64-redhat-linux-gnu-dlltool... no
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for x86_64-redhat-linux-gnu-ar... no
+checking for ar... ar
+checking for archiver @FILE support... @
+checking for x86_64-redhat-linux-gnu-strip... no
+checking for strip... strip
+checking for x86_64-redhat-linux-gnu-ranlib... no
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from dioscc object... ok
+checking for sysroot... no
+checking for x86_64-redhat-linux-gnu-mt... no
+checking for mt... no
+checking if : is a manifest tool... no
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if dioscc supports -fno-rtti -fno-exceptions... yes
+checking for dioscc option to produce PIC... -fPIC -DPIC
+checking if dioscc PIC flag -fPIC -DPIC works... yes
+checking if dioscc static flag -static works... no
+checking if dioscc supports -c -o file.o... yes
+checking if dioscc supports -c -o file.o... (cached) yes
+checking whether the dioscc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... yes
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... no
+checking for x86_64-redhat-linux-gnu-windres... no
+checking for windres... no
+checking for gawk... (cached) gawk
+checking for x86_64-redhat-linux-gnu-gcc... (cached) dioscc
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether dioscc accepts -g... (cached) yes
+checking for dioscc option to accept ISO C89... (cached) none needed
+checking whether dioscc understands -c and -o together... (cached) yes
+checking dependency style of dioscc... (cached) none
+checking how to run the C preprocessor... dioscc -E
+checking whether ln -s works... yes
+checking whether make sets $(MAKE)... (cached) yes
+checking for cc for build... dioscc
+checking if gcc supports -Wpointer-arith... yes
+checking for setsockopt... yes
+checking for ANSI C header files... (cached) yes
+checking for string.h... (cached) yes
+checking locale.h usability... yes
+checking locale.h presence... yes
+checking for locale.h... yes
+checking sys/uio.h usability... yes
+checking sys/uio.h presence... yes
+checking for sys/uio.h... yes
+checking for stdint.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking sys/select.h usability... yes
+checking sys/select.h presence... yes
+checking for sys/select.h... yes
+checking ucred.h usability... no
+checking ucred.h presence... no
+checking for ucred.h... no
+checking sys/ucred.h usability... no
+checking sys/ucred.h presence... no
+checking for sys/ucred.h... no
+checking for uintptr_t... yes
+checking for uint16_t... yes
+checking for an ANSI C-conforming const... yes
+checking for inline... inline
+checking for size_t... yes
+checking for sys/socket.h... yes
+checking for socklen_t... yes
+checking for struct cmsghdr.cmsg_len... yes
+checking for gpg-error-config... /usr/bin/gpg-error-config
+checking for gpgrt-config... /usr/bin/gpgrt-config
+configure: Use gpgrt-config with /usr/lib64 as gpg-error-config
+checking for GPG Error - version >= 1.17... yes (1.43-unknown)
+checking for flockfile... no
+checking for funlockfile... no
+checking for inet_pton... yes
+checking for stat... yes
+checking for getaddrinfo... yes
+checking for getrlimit... yes
+checking for library containing nanosleep... none required
+checking for funopen... no
+checking for fopencookie... no
+checking for isascii... configure: WARNING:
+***
+*** No implementation of fopencookie or funopen available.
+*** The assuan_get_data_fp function won't work; see the
+*** manual for details.  GnuPG does not require this feature.
+***
+yes
+checking for putc_unlocked... yes
+checking for memrchr... no
+checking for stpcpy... yes
+checking for unistd.h... (cached) yes
+checking for setenv... yes
+checking for struct sockpeercred.pid... no
+checking for getpeerucred... no
+checking for getpeereid... no
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating m4/Makefile
+config.status: creating src/Makefile
+config.status: creating doc/Makefile
+config.status: creating tests/Makefile
+config.status: creating src/libassuan-config
+config.status: creating src/versioninfo.rc
+config.status: creating src/libassuan.pc
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+
+        Libassuan v2.5.5 has been configured as follows:
+
+        Revision: f8cfb56  (63695)
+        Platform: x86_64-redhat-linux-gnu
+
++ /usr/bin/make -O -j16 V=1 VERBOSE=1
+/usr/bin/make.orig  all-recursive
+Making all in m4
+make.orig[2]: Nothing to be done for 'all'.
+Making all in src
+make.orig[2]: Entering directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+dioscc   \
+           -I. -I. -o mkheader ./mkheader.c
+make.orig[2]: Leaving directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+make.orig[2]: Entering directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+./mkheader linux-gnu ./assuan.h.in \
+                   2.5.5 0x020505 >assuan.h
+make.orig[2]: Leaving directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+/usr/bin/make.orig  all-am
+make.orig[3]: Entering directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+/bin/sh ../libtool  --tag=CC   --mode=compile dioscc -DHAVE_CONFIG_H -I. -I..  -I..    -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c -o libassuan_la-sysutils.lo `test -f 'sysutils.c' || echo './'`sysutils.c
+libtool: compile:  dioscc -DHAVE_CONFIG_H -I. -I.. -I.. -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c sysutils.c  -fPIC -DPIC -o .libs/libassuan_la-sysutils.o
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+make.orig[3]: Entering directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+/bin/sh ../libtool  --tag=CC   --mode=compile dioscc -DHAVE_CONFIG_H -I. -I..  -I..    -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c -o libassuan_la-server.lo `test -f 'server.c' || echo './'`server.c
+libtool: compile:  dioscc -DHAVE_CONFIG_H -I. -I.. -I.. -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c server.c  -fPIC -DPIC -o .libs/libassuan_la-server.o
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+make.orig[3]: Entering directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+/bin/sh ../libtool  --tag=CC   --mode=compile dioscc -DHAVE_CONFIG_H -I. -I..  -I..    -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c -o libassuan_la-assuan-error.lo `test -f 'assuan-error.c' || echo './'`assuan-error.c
+libtool: compile:  dioscc -DHAVE_CONFIG_H -I. -I.. -I.. -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c assuan-error.c  -fPIC -DPIC -o .libs/libassuan_la-assuan-error.o
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+make.orig[3]: Entering directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+/bin/sh ../libtool  --tag=CC   --mode=compile dioscc -DHAVE_CONFIG_H -I. -I..  -I..    -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c -o libassuan_la-conversion.lo `test -f 'conversion.c' || echo './'`conversion.c
+libtool: compile:  dioscc -DHAVE_CONFIG_H -I. -I.. -I.. -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c conversion.c  -fPIC -DPIC -o .libs/libassuan_la-conversion.o
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+make.orig[3]: Entering directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+/bin/sh ../libtool  --tag=CC   --mode=compile dioscc -DHAVE_CONFIG_H -I. -I..  -I..    -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c -o libassuan_la-assuan-listen.lo `test -f 'assuan-listen.c' || echo './'`assuan-listen.c
+libtool: compile:  dioscc -DHAVE_CONFIG_H -I. -I.. -I.. -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c assuan-listen.c  -fPIC -DPIC -o .libs/libassuan_la-assuan-listen.o
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+make.orig[3]: Entering directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+/bin/sh ../libtool  --tag=CC   --mode=compile dioscc -DHAVE_CONFIG_H -I. -I..  -I..    -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c -o libassuan_la-assuan-pipe-server.lo `test -f 'assuan-pipe-server.c' || echo './'`assuan-pipe-server.c
+libtool: compile:  dioscc -DHAVE_CONFIG_H -I. -I.. -I.. -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c assuan-pipe-server.c  -fPIC -DPIC -o .libs/libassuan_la-assuan-pipe-server.o
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+make.orig[3]: Entering directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+/bin/sh ../libtool  --tag=CC   --mode=compile dioscc -DHAVE_CONFIG_H -I. -I..  -I..    -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c -o libassuan_la-context.lo `test -f 'context.c' || echo './'`context.c
+libtool: compile:  dioscc -DHAVE_CONFIG_H -I. -I.. -I.. -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c context.c  -fPIC -DPIC -o .libs/libassuan_la-context.o
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+make.orig[3]: Entering directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+/bin/sh ../libtool  --tag=CC   --mode=compile dioscc -DHAVE_CONFIG_H -I. -I..  -I..    -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c -o libassuan_la-debug.lo `test -f 'debug.c' || echo './'`debug.c
+libtool: compile:  dioscc -DHAVE_CONFIG_H -I. -I.. -I.. -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c debug.c  -fPIC -DPIC -o .libs/libassuan_la-debug.o
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+make.orig[3]: Entering directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+/bin/sh ../libtool  --tag=CC   --mode=compile dioscc -DHAVE_CONFIG_H -I. -I..  -I..    -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c -o libassuan_la-assuan-socket-server.lo `test -f 'assuan-socket-server.c' || echo './'`assuan-socket-server.c
+libtool: compile:  dioscc -DHAVE_CONFIG_H -I. -I.. -I.. -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c assuan-socket-server.c  -fPIC -DPIC -o .libs/libassuan_la-assuan-socket-server.o
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+make.orig[3]: Entering directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+/bin/sh ../libtool  --tag=CC   --mode=compile dioscc -DHAVE_CONFIG_H -I. -I..  -I..    -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c -o libassuan_la-assuan.lo `test -f 'assuan.c' || echo './'`assuan.c
+libtool: compile:  dioscc -DHAVE_CONFIG_H -I. -I.. -I.. -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c assuan.c  -fPIC -DPIC -o .libs/libassuan_la-assuan.o
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+make.orig[3]: Entering directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+/bin/sh ../libtool  --tag=CC   --mode=compile dioscc -DHAVE_CONFIG_H -I. -I..  -I..    -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c -o libassuan_la-client.lo `test -f 'client.c' || echo './'`client.c
+libtool: compile:  dioscc -DHAVE_CONFIG_H -I. -I.. -I.. -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c client.c  -fPIC -DPIC -o .libs/libassuan_la-client.o
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+make.orig[3]: Entering directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+/bin/sh ../libtool  --tag=CC   --mode=compile dioscc -DHAVE_CONFIG_H -I. -I..  -I..    -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c -o libassuan_la-system.lo `test -f 'system.c' || echo './'`system.c
+libtool: compile:  dioscc -DHAVE_CONFIG_H -I. -I.. -I.. -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c system.c  -fPIC -DPIC -o .libs/libassuan_la-system.o
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+make.orig[3]: Entering directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+/bin/sh ../libtool  --tag=CC   --mode=compile dioscc -DHAVE_CONFIG_H -I. -I..  -I..    -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c -o libassuan_la-assuan-inquire.lo `test -f 'assuan-inquire.c' || echo './'`assuan-inquire.c
+libtool: compile:  dioscc -DHAVE_CONFIG_H -I. -I.. -I.. -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c assuan-inquire.c  -fPIC -DPIC -o .libs/libassuan_la-assuan-inquire.o
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+make.orig[3]: Entering directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+/bin/sh ../libtool  --tag=CC   --mode=compile dioscc -DHAVE_CONFIG_H -I. -I..  -I..    -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c -o libassuan_la-assuan-pipe-connect.lo `test -f 'assuan-pipe-connect.c' || echo './'`assuan-pipe-connect.c
+libtool: compile:  dioscc -DHAVE_CONFIG_H -I. -I.. -I.. -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c assuan-pipe-connect.c  -fPIC -DPIC -o .libs/libassuan_la-assuan-pipe-connect.o
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+/builddir/build/BUILD/libassuan-2.5.5/src/assuan-pipe-connect.c:84:18: warning: taking address of packed member '' of class or structure 'sigaction' may result in an unaligned pointer value <--[dioscc]
+          sigemptyset (&act.sa_mask);
+                        ^~~~~~~~~~~
+/builddir/build/BUILD/libassuan-2.5.5/src/assuan-pipe-connect.c:143:5: warning: implicit declaration of function 'setenv' is invalid in C99 <--[dioscc]
+    setenv ("_assuan_pipe_connect_pid", mypidstr, 1);
+    ^
+/builddir/build/BUILD/libassuan-2.5.5/src/assuan-pipe-connect.c:143:5: warning: this function declaration is not a prototype <--[dioscc]
+/builddir/build/BUILD/libassuan-2.5.5/src/assuan-pipe-connect.c:147:5: warning: implicit declaration of function 'unsetenv' is invalid in C99 <--[dioscc]
+    unsetenv ("_assuan_connection_fd");
+    ^
+/builddir/build/BUILD/libassuan-2.5.5/src/assuan-pipe-connect.c:147:5: warning: this function declaration is not a prototype <--[dioscc]
+/builddir/build/BUILD/libassuan-2.5.5/src/assuan-pipe-connect.c:259:5: warning: implicit declaration of function 'setenv' is invalid in C99 <--[dioscc]
+    setenv ("_assuan_pipe_connect_pid", mypidstr, 1);
+    ^
+6 warnings generated.
+make.orig[3]: Entering directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+/bin/sh ../libtool  --tag=CC   --mode=compile dioscc -DHAVE_CONFIG_H -I. -I..  -I..    -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c -o libassuan_la-assuan-buffer.lo `test -f 'assuan-buffer.c' || echo './'`assuan-buffer.c
+libtool: compile:  dioscc -DHAVE_CONFIG_H -I. -I.. -I.. -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c assuan-buffer.c  -fPIC -DPIC -o .libs/libassuan_la-assuan-buffer.o
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+make.orig[3]: Entering directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+/bin/sh ../libtool  --tag=CC   --mode=compile dioscc -DHAVE_CONFIG_H -I. -I..  -I..    -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c -o libassuan_la-assuan-handler.lo `test -f 'assuan-handler.c' || echo './'`assuan-handler.c
+libtool: compile:  dioscc -DHAVE_CONFIG_H -I. -I.. -I.. -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c assuan-handler.c  -fPIC -DPIC -o .libs/libassuan_la-assuan-handler.o
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+make.orig[3]: Entering directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+/bin/sh ../libtool  --tag=CC   --mode=compile dioscc -DHAVE_CONFIG_H -I. -I..  -I..    -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c -o libassuan_la-assuan-uds.lo `test -f 'assuan-uds.c' || echo './'`assuan-uds.c
+libtool: compile:  dioscc -DHAVE_CONFIG_H -I. -I.. -I.. -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c assuan-uds.c  -fPIC -DPIC -o .libs/libassuan_la-assuan-uds.o
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+/builddir/build/BUILD/libassuan-2.5.5/src/assuan-uds.c:124:38: error: use of undeclared identifier 'SCM_RIGHTS' <--[dioscc]
+              || cmptr->cmsg_type != SCM_RIGHTS)
+                                     ^
+/builddir/build/BUILD/libassuan-2.5.5/src/assuan-uds.c:224:22: error: use of undeclared identifier 'SCM_RIGHTS' <--[dioscc]
+  cmptr->cmsg_type = SCM_RIGHTS;
+                     ^
+2 errors generated.
+Error building assuan-uds.c
+make.orig[3]: *** [Makefile:888: libassuan_la-assuan-uds.lo] Error 1
+make.orig[3]: Entering directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+/bin/sh ../libtool  --tag=CC   --mode=compile dioscc -DHAVE_CONFIG_H -I. -I..  -I..    -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c -o libassuan_la-assuan-socket-connect.lo `test -f 'assuan-socket-connect.c' || echo './'`assuan-socket-connect.c
+libtool: compile:  dioscc -DHAVE_CONFIG_H -I. -I.. -I.. -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c assuan-socket-connect.c  -fPIC -DPIC -o .libs/libassuan_la-assuan-socket-connect.o
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+/builddir/build/BUILD/libassuan-2.5.5/src/assuan-socket-connect.c:197:23: error: variable has incomplete type 'struct sockaddr_in6' <--[dioscc]
+  struct sockaddr_in6 srvr_addr_in6;
+                      ^
+/builddir/build/BUILD/libassuan-2.5.5/src/assuan-socket-connect.c:197:10: note: forward declaration of 'struct sockaddr_in6' <--[dioscc]
+  struct sockaddr_in6 srvr_addr_in6;
+         ^
+1 error generated.
+Error building assuan-socket-connect.c
+make.orig[3]: *** [Makefile:881: libassuan_la-assuan-socket-connect.lo] Error 1
+make.orig[3]: Entering directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+/bin/sh ../libtool  --tag=CC   --mode=compile dioscc -DHAVE_CONFIG_H -I. -I..  -I..   -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c -o memrchr.lo memrchr.c
+libtool: compile:  dioscc -DHAVE_CONFIG_H -I. -I.. -I.. -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c memrchr.c  -fPIC -DPIC -o .libs/memrchr.o
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+make.orig[3]: Entering directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+/bin/sh ../libtool  --tag=CC   --mode=compile dioscc -DHAVE_CONFIG_H -I. -I..  -I..    -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c -o libassuan_la-assuan-io.lo `test -f 'assuan-io.c' || echo './'`assuan-io.c
+libtool: compile:  dioscc -DHAVE_CONFIG_H -I. -I.. -I.. -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c assuan-io.c  -fPIC -DPIC -o .libs/libassuan_la-assuan-io.o
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+make.orig[3]: Entering directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+/bin/sh ../libtool  --tag=CC   --mode=compile dioscc -DHAVE_CONFIG_H -I. -I..  -I..    -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c -o libassuan_la-assuan-logging.lo `test -f 'assuan-logging.c' || echo './'`assuan-logging.c
+libtool: compile:  dioscc -DHAVE_CONFIG_H -I. -I.. -I.. -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c assuan-logging.c  -fPIC -DPIC -o .libs/libassuan_la-assuan-logging.o
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+make.orig[3]: Entering directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+/bin/sh ../libtool  --tag=CC   --mode=compile dioscc -DHAVE_CONFIG_H -I. -I..  -I..    -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c -o libassuan_la-assuan-socket.lo `test -f 'assuan-socket.c' || echo './'`assuan-socket.c
+libtool: compile:  dioscc -DHAVE_CONFIG_H -I. -I.. -I.. -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c assuan-socket.c  -fPIC -DPIC -o .libs/libassuan_la-assuan-socket.o
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+/builddir/build/BUILD/libassuan-2.5.5/src/assuan-socket.c:714:3: error: use of undeclared identifier 'fd_set' <--[dioscc]
+  fd_set fds;
+  ^
+/builddir/build/BUILD/libassuan-2.5.5/src/assuan-socket.c:715:18: error: variable has incomplete type 'struct timeval' <--[dioscc]
+  struct timeval tv = { TIMEOUT_NOT_WAITING_SOCKS5_FOREVER, 0 };
+                 ^
+/builddir/build/BUILD/libassuan-2.5.5/src/assuan-socket.c:715:10: note: forward declaration of 'struct timeval' <--[dioscc]
+  struct timeval tv = { TIMEOUT_NOT_WAITING_SOCKS5_FOREVER, 0 };
+         ^
+/builddir/build/BUILD/libassuan-2.5.5/src/assuan-socket.c:719:3: warning: implicit declaration of function 'FD_ZERO' is invalid in C99 <--[dioscc]
+  FD_ZERO (&fds);
+  ^
+/builddir/build/BUILD/libassuan-2.5.5/src/assuan-socket.c:719:3: warning: this function declaration is not a prototype <--[dioscc]
+/builddir/build/BUILD/libassuan-2.5.5/src/assuan-socket.c:719:13: error: use of undeclared identifier 'fds' <--[dioscc]
+  FD_ZERO (&fds);
+            ^
+/builddir/build/BUILD/libassuan-2.5.5/src/assuan-socket.c:720:3: warning: implicit declaration of function 'FD_SET' is invalid in C99 <--[dioscc]
+  FD_SET (HANDLE2SOCKET (sock), &fds);
+  ^
+/builddir/build/BUILD/libassuan-2.5.5/src/assuan-socket.c:720:3: warning: this function declaration is not a prototype <--[dioscc]
+/builddir/build/BUILD/libassuan-2.5.5/src/assuan-socket.c:720:34: error: use of undeclared identifier 'fds' <--[dioscc]
+  FD_SET (HANDLE2SOCKET (sock), &fds);
+                                 ^
+/builddir/build/BUILD/libassuan-2.5.5/src/assuan-socket.c:788:9: warning: implicit declaration of function 'select' is invalid in C99 <--[dioscc]
+  ret = select (HANDLE2SOCKET (sock)+1, &fds, NULL, NULL, &tv);
+        ^
+/builddir/build/BUILD/libassuan-2.5.5/src/assuan-socket.c:788:9: warning: this function declaration is not a prototype <--[dioscc]
+/builddir/build/BUILD/libassuan-2.5.5/src/assuan-socket.c:788:42: error: use of undeclared identifier 'fds' <--[dioscc]
+  ret = select (HANDLE2SOCKET (sock)+1, &fds, NULL, NULL, &tv);
+                                         ^
+/builddir/build/BUILD/libassuan-2.5.5/src/assuan-socket.c:879:41: error: incomplete definition of type 'struct sockaddr_in6' <--[dioscc]
+      memcpy (buffer+ 4, &addru.addr_in6->sin6_addr.s6_addr, 16); /* DST.ADDR */
+                          ~~~~~~~~~~~~~~^
+/builddir/build/BUILD/libassuan-2.5.5/src/assuan-socket.c:707:12: note: forward declaration of 'struct sockaddr_in6' <--[dioscc]
+    struct sockaddr_in6 *addr_in6;
+           ^
+/builddir/build/BUILD/libassuan-2.5.5/src/assuan-socket.c:880:41: error: incomplete definition of type 'struct sockaddr_in6' <--[dioscc]
+      memcpy (buffer+20, &addru.addr_in6->sin6_port, 2);          /* DST.PORT */
+                          ~~~~~~~~~~~~~~^
+/builddir/build/BUILD/libassuan-2.5.5/src/assuan-socket.c:707:12: note: forward declaration of 'struct sockaddr_in6' <--[dioscc]
+    struct sockaddr_in6 *addr_in6;
+           ^
+/builddir/build/BUILD/libassuan-2.5.5/src/assuan-socket.c:972:43: error: incomplete definition of type 'struct sockaddr_in6' <--[dioscc]
+      s = (unsigned char *)&addru.addr_in6->sin6_addr.s6_addr;
+                            ~~~~~~~~~~~~~~^
+/builddir/build/BUILD/libassuan-2.5.5/src/assuan-socket.c:960:12: note: forward declaration of 'struct sockaddr_in6' <--[dioscc]
+    struct sockaddr_in6 *addr_in6;
+           ^
+6 warnings and 8 errors generated.
+Error building assuan-socket.c
+make.orig[3]: *** [Makefile:902: libassuan_la-assuan-socket.lo] Error 1
+make.orig[3]: Entering directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+/bin/sh ../libtool  --tag=CC   --mode=compile dioscc -DHAVE_CONFIG_H -I. -I..  -I..    -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c -o libassuan_la-system-posix.lo `test -f 'system-posix.c' || echo './'`system-posix.c
+libtool: compile:  dioscc -DHAVE_CONFIG_H -I. -I.. -I.. -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c system-posix.c  -fPIC -DPIC -o .libs/libassuan_la-system-posix.o
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+/builddir/build/BUILD/libassuan-2.5.5/src/system-posix.c:133:11: warning: implicit declaration of function 'recvmsg' is invalid in C99 <--[dioscc]
+    ret = recvmsg (fd, msg, flags);
+          ^
+/builddir/build/BUILD/libassuan-2.5.5/src/system-posix.c:133:11: warning: this function declaration is not a prototype <--[dioscc]
+/builddir/build/BUILD/libassuan-2.5.5/src/system-posix.c:148:11: warning: implicit declaration of function 'sendmsg' is invalid in C99 <--[dioscc]
+    ret = sendmsg (fd, msg, flags);
+          ^
+/builddir/build/BUILD/libassuan-2.5.5/src/system-posix.c:148:11: warning: this function declaration is not a prototype <--[dioscc]
+/builddir/build/BUILD/libassuan-2.5.5/src/system-posix.c:373:7: warning: implicit declaration of function 'execv' is invalid in C99 <--[dioscc]
+      execv (name, (char *const *) argv);
+      ^
+/builddir/build/BUILD/libassuan-2.5.5/src/system-posix.c:373:7: warning: this function declaration is not a prototype <--[dioscc]
+6 warnings generated.
+make.orig[3]: Target 'all-am' not remade because of errors.
+make.orig[2]: *** [Makefile:529: all] Error 2
+Making all in doc
+make.orig[2]: Nothing to be done for 'all'.
+Making all in tests
+/usr/bin/make.orig  all-am
+make.orig[3]: *** No rule to make target '../src/libassuan.la', needed by 'version'.
+make.orig[3]: Entering directory '/builddir/build/BUILD/libassuan-2.5.5/tests'
+dioscc -DHAVE_CONFIG_H -I. -I..     -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c -o version.o version.c
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libassuan-2.5.5/tests'
+make.orig[3]: Entering directory '/builddir/build/BUILD/libassuan-2.5.5/tests'
+dioscc -DHAVE_CONFIG_H -I. -I..     -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c -o fdpassing.o fdpassing.c
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libassuan-2.5.5/tests'
+make.orig[3]: Entering directory '/builddir/build/BUILD/libassuan-2.5.5/tests'
+dioscc -DHAVE_CONFIG_H -I. -I..     -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c -o socks5.o socks5.c
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libassuan-2.5.5/tests'
+make.orig[3]: Entering directory '/builddir/build/BUILD/libassuan-2.5.5/tests'
+dioscc -DHAVE_CONFIG_H -I. -I..     -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c -o pipeconnect.o pipeconnect.c
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libassuan-2.5.5/tests'
+/builddir/build/BUILD/libassuan-2.5.5/tests/socks5.c:190:57: warning: missing sentinel in function call <--[dioscc]
+        cred = xstrconcat (user?user:"", ":", pass, NULL);
+                                                        ^
+                                                        , NULL
+/builddir/build/BUILD/libassuan-2.5.5/tests/common.h:274:1: note: function has been explicitly marked sentinel here <--[dioscc]
+xstrconcat (const char *s1, ...)
+^
+/builddir/build/BUILD/libassuan-2.5.5/tests/socks5.c:214:57: warning: missing sentinel in function call <--[dioscc]
+        cred = xstrconcat (user?user:"", ":", pass, NULL);
+                                                        ^
+                                                        , NULL
+/builddir/build/BUILD/libassuan-2.5.5/tests/common.h:274:1: note: function has been explicitly marked sentinel here <--[dioscc]
+xstrconcat (const char *s1, ...)
+^
+2 warnings generated.
+/builddir/build/BUILD/libassuan-2.5.5/tests/pipeconnect.c:371:64: warning: missing sentinel in function call <--[dioscc]
+                              server? ".server":".client", NULL));
+                                                               ^
+                                                               , NULL
+/builddir/build/BUILD/libassuan-2.5.5/tests/common.h:274:1: note: function has been explicitly marked sentinel here <--[dioscc]
+xstrconcat (const char *s1, ...)
+^
+1 warning generated.
+make.orig[3]: Target 'all-am' not remade because of errors.
+make.orig[2]: *** [Makefile:411: all] Error 2
+make.orig[1]: *** [Makefile:460: all-recursive] Error 1
+make.orig: *** [Makefile:392: all] Error 2
+error: Bad exit status from /var/tmp/rpm-tmp.gyIzwZ (%build)
+    Bad exit status from /var/tmp/rpm-tmp.gyIzwZ (%build)
+
+
+RPM build errors:
+Finish: chroot ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'dioscc\' CXX=\\$\'diosc++\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\acsexec-divine\\\\a-l\\\\a/builddir/divine-capture\\\\a-d\\\\acheck --lart stubs -o ignore:exit --max-time 8 \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bc --nodeps --short-circuit /builddir/build/SPECS/libassuan.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc dioscc\' \'--define\' \'__cxx diosc++\' \'--define\' \'__cpp dioscc -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+
+!!! 2021-12-01 11:36:41	error: %build failed
+
+>>> 2021-12-01 11:36:41	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--chroot" "/bin/su mockbuild -l -c \"PATH=/usr/lib64/cswrap:\\\$PATH CSWRAP_CAP_FILE=\\\$'/builddir/cswrap-capture.err' CSWRAP_TIMEOUT=\\\$'30' CSWRAP_TIMEOUT_FOR=\\\$':' CC=\\\$'dioscc' CXX=\\\$'diosc++' CSEXEC_WRAP_CMD=\\\$'--skip-ld-linux\\\\acsexec-divine\\\\a-l\\\\a/builddir/divine-capture\\\\a-d\\\\acheck --lart stubs -o ignore:exit --max-time 8 ' CSWRAP_ADD_CFLAGS=\\\$'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader' CSWRAP_DEL_CFLAGS=\\\$'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register' CSWRAP_ADD_CXXFLAGS=\\\$'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader' CSWRAP_DEL_CXXFLAGS=\\\$'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register' sh -c \\\"rpmbuild -bi --nodeps --short-circuit /builddir/build/SPECS/libassuan.spec '--define' 'apidocs 0' '--define' 'with_publican 0' '--without' 'docs' '--without' 'langpacks' '--define' '__cc dioscc' '--define' '__cxx diosc++' '--define' '__cpp dioscc -E' '--define' 'toolchain clang' '--define' 'optflags -O0' '--define' 'build_ldflags -O0'\\\"\""
+INFO: mock.py version 2.13 starting (python version = 3.6.8, NVR = mock-2.13-1.kdudka.1.el7)...
+Start(bootstrap): init plugins
+INFO: selinux enabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish: chroot init
+INFO: Running in chroot: ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'dioscc\' CXX=\\$\'diosc++\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\acsexec-divine\\\\a-l\\\\a/builddir/divine-capture\\\\a-d\\\\acheck --lart stubs -o ignore:exit --max-time 8 \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bi --nodeps --short-circuit /builddir/build/SPECS/libassuan.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc dioscc\' \'--define\' \'__cxx diosc++\' \'--define\' \'__cpp dioscc -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+Start: chroot ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'dioscc\' CXX=\\$\'diosc++\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\acsexec-divine\\\\a-l\\\\a/builddir/divine-capture\\\\a-d\\\\acheck --lart stubs -o ignore:exit --max-time 8 \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bi --nodeps --short-circuit /builddir/build/SPECS/libassuan.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc dioscc\' \'--define\' \'__cxx diosc++\' \'--define\' \'__cpp dioscc -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+setting SOURCE_DATE_EPOCH=1626912000
+Executing(%install): /bin/sh -e /var/tmp/rpm-tmp.ZIw0i9
++ umask 022
++ cd /builddir/build/BUILD
++ '[' /builddir/build/BUILDROOT/libassuan-2.5.5-3.fc35.x86_64 '!=' / ']'
++ rm -rf /builddir/build/BUILDROOT/libassuan-2.5.5-3.fc35.x86_64
+++ dirname /builddir/build/BUILDROOT/libassuan-2.5.5-3.fc35.x86_64
++ mkdir -p /builddir/build/BUILDROOT
++ mkdir /builddir/build/BUILDROOT/libassuan-2.5.5-3.fc35.x86_64
++ cd libassuan-2.5.5
++ /usr/bin/make install DESTDIR=/builddir/build/BUILDROOT/libassuan-2.5.5-3.fc35.x86_64 'INSTALL=/usr/bin/install -p'
+Making install in m4
+make.orig[1]: Entering directory '/builddir/build/BUILD/libassuan-2.5.5/m4'
+make.orig[2]: Entering directory '/builddir/build/BUILD/libassuan-2.5.5/m4'
+make.orig[2]: Nothing to be done for 'install-exec-am'.
+make.orig[2]: Nothing to be done for 'install-data-am'.
+make.orig[2]: Leaving directory '/builddir/build/BUILD/libassuan-2.5.5/m4'
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libassuan-2.5.5/m4'
+Making install in src
+make.orig[1]: Entering directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+/usr/bin/make.orig  install-am
+make.orig[2]: Entering directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+/bin/sh ../libtool  --tag=CC   --mode=compile dioscc -DHAVE_CONFIG_H -I. -I..  -I..    -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c -o libassuan_la-assuan-socket-connect.lo `test -f 'assuan-socket-connect.c' || echo './'`assuan-socket-connect.c
+libtool: compile:  dioscc -DHAVE_CONFIG_H -I. -I.. -I.. -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c assuan-socket-connect.c  -fPIC -DPIC -o .libs/libassuan_la-assuan-socket-connect.o
+/builddir/build/BUILD/libassuan-2.5.5/src/assuan-socket-connect.c:197:23: error: variable has incomplete type 'struct sockaddr_in6' <--[dioscc]
+  struct sockaddr_in6 srvr_addr_in6;
+                      ^
+/builddir/build/BUILD/libassuan-2.5.5/src/assuan-socket-connect.c:197:10: note: forward declaration of 'struct sockaddr_in6' <--[dioscc]
+  struct sockaddr_in6 srvr_addr_in6;
+         ^
+1 error generated.
+Error building assuan-socket-connect.c
+make.orig[2]: *** [Makefile:881: libassuan_la-assuan-socket-connect.lo] Error 1
+/bin/sh ../libtool  --tag=CC   --mode=compile dioscc -DHAVE_CONFIG_H -I. -I..  -I..    -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c -o libassuan_la-assuan-uds.lo `test -f 'assuan-uds.c' || echo './'`assuan-uds.c
+libtool: compile:  dioscc -DHAVE_CONFIG_H -I. -I.. -I.. -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c assuan-uds.c  -fPIC -DPIC -o .libs/libassuan_la-assuan-uds.o
+/builddir/build/BUILD/libassuan-2.5.5/src/assuan-uds.c:124:38: error: use of undeclared identifier 'SCM_RIGHTS' <--[dioscc]
+              || cmptr->cmsg_type != SCM_RIGHTS)
+                                     ^
+/builddir/build/BUILD/libassuan-2.5.5/src/assuan-uds.c:224:22: error: use of undeclared identifier 'SCM_RIGHTS' <--[dioscc]
+  cmptr->cmsg_type = SCM_RIGHTS;
+                     ^
+2 errors generated.
+Error building assuan-uds.c
+make.orig[2]: *** [Makefile:888: libassuan_la-assuan-uds.lo] Error 1
+/bin/sh ../libtool  --tag=CC   --mode=compile dioscc -DHAVE_CONFIG_H -I. -I..  -I..    -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c -o libassuan_la-assuan-socket.lo `test -f 'assuan-socket.c' || echo './'`assuan-socket.c
+libtool: compile:  dioscc -DHAVE_CONFIG_H -I. -I.. -I.. -O0 -Wall -Wcast-align -Wshadow -Wstrict-prototypes -Wpointer-arith -fPIC -DPIC -c assuan-socket.c  -fPIC -DPIC -o .libs/libassuan_la-assuan-socket.o
+/builddir/build/BUILD/libassuan-2.5.5/src/assuan-socket.c:714:3: error: use of undeclared identifier 'fd_set' <--[dioscc]
+  fd_set fds;
+  ^
+/builddir/build/BUILD/libassuan-2.5.5/src/assuan-socket.c:715:18: error: variable has incomplete type 'struct timeval' <--[dioscc]
+  struct timeval tv = { TIMEOUT_NOT_WAITING_SOCKS5_FOREVER, 0 };
+                 ^
+/builddir/build/BUILD/libassuan-2.5.5/src/assuan-socket.c:715:10: note: forward declaration of 'struct timeval' <--[dioscc]
+  struct timeval tv = { TIMEOUT_NOT_WAITING_SOCKS5_FOREVER, 0 };
+         ^
+/builddir/build/BUILD/libassuan-2.5.5/src/assuan-socket.c:719:3: warning: implicit declaration of function 'FD_ZERO' is invalid in C99 <--[dioscc]
+  FD_ZERO (&fds);
+  ^
+/builddir/build/BUILD/libassuan-2.5.5/src/assuan-socket.c:719:3: warning: this function declaration is not a prototype <--[dioscc]
+/builddir/build/BUILD/libassuan-2.5.5/src/assuan-socket.c:719:13: error: use of undeclared identifier 'fds' <--[dioscc]
+  FD_ZERO (&fds);
+            ^
+/builddir/build/BUILD/libassuan-2.5.5/src/assuan-socket.c:720:3: warning: implicit declaration of function 'FD_SET' is invalid in C99 <--[dioscc]
+  FD_SET (HANDLE2SOCKET (sock), &fds);
+  ^
+/builddir/build/BUILD/libassuan-2.5.5/src/assuan-socket.c:720:3: warning: this function declaration is not a prototype <--[dioscc]
+/builddir/build/BUILD/libassuan-2.5.5/src/assuan-socket.c:720:34: error: use of undeclared identifier 'fds' <--[dioscc]
+  FD_SET (HANDLE2SOCKET (sock), &fds);
+                                 ^
+/builddir/build/BUILD/libassuan-2.5.5/src/assuan-socket.c:788:9: warning: implicit declaration of function 'select' is invalid in C99 <--[dioscc]
+  ret = select (HANDLE2SOCKET (sock)+1, &fds, NULL, NULL, &tv);
+        ^
+/builddir/build/BUILD/libassuan-2.5.5/src/assuan-socket.c:788:9: warning: this function declaration is not a prototype <--[dioscc]
+/builddir/build/BUILD/libassuan-2.5.5/src/assuan-socket.c:788:42: error: use of undeclared identifier 'fds' <--[dioscc]
+  ret = select (HANDLE2SOCKET (sock)+1, &fds, NULL, NULL, &tv);
+                                         ^
+/builddir/build/BUILD/libassuan-2.5.5/src/assuan-socket.c:879:41: error: incomplete definition of type 'struct sockaddr_in6' <--[dioscc]
+      memcpy (buffer+ 4, &addru.addr_in6->sin6_addr.s6_addr, 16); /* DST.ADDR */
+                          ~~~~~~~~~~~~~~^
+/builddir/build/BUILD/libassuan-2.5.5/src/assuan-socket.c:707:12: note: forward declaration of 'struct sockaddr_in6' <--[dioscc]
+    struct sockaddr_in6 *addr_in6;
+           ^
+/builddir/build/BUILD/libassuan-2.5.5/src/assuan-socket.c:880:41: error: incomplete definition of type 'struct sockaddr_in6' <--[dioscc]
+      memcpy (buffer+20, &addru.addr_in6->sin6_port, 2);          /* DST.PORT */
+                          ~~~~~~~~~~~~~~^
+/builddir/build/BUILD/libassuan-2.5.5/src/assuan-socket.c:707:12: note: forward declaration of 'struct sockaddr_in6' <--[dioscc]
+    struct sockaddr_in6 *addr_in6;
+           ^
+/builddir/build/BUILD/libassuan-2.5.5/src/assuan-socket.c:972:43: error: incomplete definition of type 'struct sockaddr_in6' <--[dioscc]
+      s = (unsigned char *)&addru.addr_in6->sin6_addr.s6_addr;
+                            ~~~~~~~~~~~~~~^
+/builddir/build/BUILD/libassuan-2.5.5/src/assuan-socket.c:960:12: note: forward declaration of 'struct sockaddr_in6' <--[dioscc]
+    struct sockaddr_in6 *addr_in6;
+           ^
+6 warnings and 8 errors generated.
+Error building assuan-socket.c
+make.orig[2]: *** [Makefile:902: libassuan_la-assuan-socket.lo] Error 1
+make.orig[2]: Leaving directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+make.orig[2]: Target 'install-am' not remade because of errors.
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libassuan-2.5.5/src'
+make.orig[1]: *** [Makefile:1119: install] Error 2
+Making install in doc
+make.orig[1]: Entering directory '/builddir/build/BUILD/libassuan-2.5.5/doc'
+make.orig[2]: Entering directory '/builddir/build/BUILD/libassuan-2.5.5/doc'
+make.orig[2]: Nothing to be done for 'install-exec-am'.
+ /usr/bin/mkdir -p '/builddir/build/BUILDROOT/libassuan-2.5.5-3.fc35.x86_64/usr/share/info'
+ /usr/bin/install -p -m 644 ./assuan.info '/builddir/build/BUILDROOT/libassuan-2.5.5-3.fc35.x86_64/usr/share/info'
+ install-info --info-dir='/builddir/build/BUILDROOT/libassuan-2.5.5-3.fc35.x86_64/usr/share/info' '/builddir/build/BUILDROOT/libassuan-2.5.5-3.fc35.x86_64/usr/share/info/assuan.info'
+make.orig[2]: Leaving directory '/builddir/build/BUILD/libassuan-2.5.5/doc'
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libassuan-2.5.5/doc'
+Making install in tests
+make.orig[1]: Entering directory '/builddir/build/BUILD/libassuan-2.5.5/tests'
+/usr/bin/make.orig  install-am
+make.orig[2]: Entering directory '/builddir/build/BUILD/libassuan-2.5.5/tests'
+make.orig[2]: *** No rule to make target '../src/libassuan.la', needed by 'version'.
+make.orig[2]: Target 'install-am' not remade because of errors.
+make.orig[1]: *** [Makefile:709: install] Error 2
+make.orig[2]: Leaving directory '/builddir/build/BUILD/libassuan-2.5.5/tests'
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libassuan-2.5.5/tests'
+make.orig[1]: Entering directory '/builddir/build/BUILD/libassuan-2.5.5'
+make.orig[2]: Entering directory '/builddir/build/BUILD/libassuan-2.5.5'
+make.orig[2]: Nothing to be done for 'install-exec-am'.
+make.orig[2]: Nothing to be done for 'install-data-am'.
+make.orig[2]: Leaving directory '/builddir/build/BUILD/libassuan-2.5.5'
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libassuan-2.5.5'
+make.orig: *** [Makefile:460: install-recursive] Error 1
+make.orig: Target 'install' not remade because of errors.
+error: Bad exit status from /var/tmp/rpm-tmp.ZIw0i9 (%install)
+
+
+RPM build errors:
+    Bad exit status from /var/tmp/rpm-tmp.ZIw0i9 (%install)
+Finish: chroot ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'dioscc\' CXX=\\$\'diosc++\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\acsexec-divine\\\\a-l\\\\a/builddir/divine-capture\\\\a-d\\\\acheck --lart stubs -o ignore:exit --max-time 8 \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bi --nodeps --short-circuit /builddir/build/SPECS/libassuan.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc dioscc\' \'--define\' \'__cxx diosc++\' \'--define\' \'__cpp dioscc -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+
+!!! 2021-12-01 11:36:43	error: %install failed
+
+>>> 2021-12-01 11:36:43	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'tar -c --remove-files '/builddir/cswrap-capture.err' '/builddir/divine-capture'' | tar -xC '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/debug/raw-results'"
+tar: Removing leading `/' from member names
+tar: Removing leading `/' from hard link targets
+
+>>> 2021-12-01 11:36:45	"csgrep --mode=json --remove-duplicates '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/debug/raw-results/builddir/divine-capture'/pid-*.conv > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/debug/uni-results/divine-capture.js'"
+
+scan.ini: time-finished = 2021-12-01 11:36:45
+scan.ini: exit-code = 1
+>>> 2021-12-01 11:36:45	"cslinker --quiet --cwelist '/usr/share/csmock/cwe-map.csv' --inifile '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/scan.ini' '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/debug/uni-results'/* > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/debug/scan-results-all.js'"
+
+>>> 2021-12-01 11:36:45	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'csgrep --mode=json --embed-context 3' < '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/debug/scan-results-all.js' > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/debug/scan-results-all.js.tmp'"
+
+>>> 2021-12-01 11:36:46	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--clean"
+
+>>> 2021-12-01 11:36:49	"cat '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/debug/scan-results-all.js' | sed 's|/builddir/build/BUILDROOT/[^/]*/|/builddir/build/BUILD//|' | csgrep --mode=json --path '^/builddir/build/BUILD/' --strip-path-prefix /builddir/build/BUILD/ | csgrep --mode=json --invert-match --path '^ksh-.*[0-9]+\\.c\$' | csgrep --mode=json --invert-match --path 'CMakeFiles/CMakeTmp|conftest.c' | csdiff --json-output --show-internal \"/usr/share/csmock/known-false-positives.js\" - | cssort --key=path > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/scan-results.js'"
+
+>>> 2021-12-01 11:36:49	"sed 's|/builddir/build/BUILDROOT/[^/]*/|/builddir/build/BUILD//|' '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/debug/scan-results-all.js' | csgrep --mode=json --strip-path-prefix /builddir/build/BUILD/ | csdiff --show-internal '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/scan-results.js' - | cssort > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/debug/suppressed-results.js'"
+
+>>> 2021-12-01 11:36:49	"\"bash\" \"-c\" \"csgrep '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/debug/suppressed-results.js' --mode=json --checker '^(COMPILER_WARNING)\\\$' | csdiff <(csgrep '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/debug/suppressed-results.js' --mode=json --drop-scan-props --invert-regex --checker '^()\\\$' --event '-W(address|bool-compare|builtin-declaration-mismatch|format-overflow|implicit-function-declaration|implicit-int|int-in-bool-context|logical-not-parentheses|logical-op|memset-transposed-args|misleading-indentation|pointer-compare|stack-protector|stringop-overflow|switch-unreachable|tautological-compare)=?\\\\]\\\$') - > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/debug/suppressed-results-imp.js'\""
+
+>>> 2021-12-01 11:36:49	"csgrep --mode=grep --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/debug/suppressed-results-imp.js' > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/debug/suppressed-results-imp.err'"
+
+>>> 2021-12-01 11:36:49	"csgrep --mode=json --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/debug/suppressed-results-imp.js' | cshtml - > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/debug/suppressed-results-imp.html'"
+
+>>> 2021-12-01 11:36:49	"csgrep --mode=evtstat --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/debug/suppressed-results-imp.js' | tee '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/debug/suppressed-results-imp-summary.txt'"
+
+>>> 2021-12-01 11:36:49	"cslinker --implist '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/debug/suppressed-results-imp.js' '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/debug/suppressed-results.js' > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/debug/suppressed-results-tmp.js' && mv -v '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/debug/suppressed-results-tmp.js' '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/debug/suppressed-results.js'"
+'/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/debug/suppressed-results-tmp.js' -> '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/debug/suppressed-results.js'
+
+>>> 2021-12-01 11:36:49	"csgrep --mode=grep --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/debug/suppressed-results.js' > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/debug/suppressed-results.err'"
+
+>>> 2021-12-01 11:36:49	"csgrep --mode=json --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/debug/suppressed-results.js' | cshtml - > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/debug/suppressed-results.html'"
+
+>>> 2021-12-01 11:36:49	"csgrep --mode=evtstat --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/debug/suppressed-results.js' | tee '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/debug/suppressed-results-summary.txt'"
+
+>>> 2021-12-01 11:36:49	"\"bash\" \"-c\" \"csgrep '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/scan-results.js' --mode=json --checker '^(COMPILER_WARNING)\\\$' | csdiff <(csgrep '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/scan-results.js' --mode=json --drop-scan-props --invert-regex --checker '^()\\\$' --event '-W(address|bool-compare|builtin-declaration-mismatch|format-overflow|implicit-function-declaration|implicit-int|int-in-bool-context|logical-not-parentheses|logical-op|memset-transposed-args|misleading-indentation|pointer-compare|stack-protector|stringop-overflow|switch-unreachable|tautological-compare)=?\\\\]\\\$') - > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/scan-results-imp.js'\""
+
+>>> 2021-12-01 11:36:49	"csgrep --mode=grep --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/scan-results-imp.js' > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/scan-results-imp.err'"
+
+>>> 2021-12-01 11:36:49	"csgrep --mode=json --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/scan-results-imp.js' | cshtml - > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/scan-results-imp.html'"
+
+>>> 2021-12-01 11:36:49	"csgrep --mode=evtstat --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/scan-results-imp.js' | tee '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/scan-results-imp-summary.txt'"
+
+>>> 2021-12-01 11:36:49	"cslinker --implist '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/scan-results-imp.js' '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/scan-results.js' > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/scan-results-tmp.js' && mv -v '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/scan-results-tmp.js' '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/scan-results.js'"
+'/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/scan-results-tmp.js' -> '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/scan-results.js'
+
+>>> 2021-12-01 11:36:49	"csgrep --mode=grep --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/scan-results.js' > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/scan-results.err'"
+
+>>> 2021-12-01 11:36:49	"csgrep --mode=json --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/scan-results.js' | cshtml - > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/scan-results.html'"
+
+>>> 2021-12-01 11:36:49	"csgrep --mode=evtstat --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/scan-results.js' | tee '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libassuan-2.5.5-3.fc35/divine/output/scan-results-summary.txt'"
+     21	COMPILER_WARNING                                	warning
+
+<<< 2021-12-01 11:36:49	csmock exit code: 1
+

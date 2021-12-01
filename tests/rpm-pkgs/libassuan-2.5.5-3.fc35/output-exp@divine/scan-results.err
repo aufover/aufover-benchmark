@@ -1,0 +1,202 @@
+Error: COMPILER_WARNING (CWE-758):
+libassuan-2.5.5/src/assuan-pipe-connect.c:84:18: warning: taking address of packed member '' of class or structure 'sigaction' may result in an unaligned pointer value
+#          sigemptyset (&act.sa_mask);
+#                        ^~~~~~~~~~~
+#   82|   	{
+#   83|   	  act.sa_handler = SIG_IGN;
+#   84|-> 	  sigemptyset (&act.sa_mask);
+#   85|   	  act.sa_flags = 0;
+#   86|   	  sigaction (SIGPIPE, &act, NULL);
+
+Error: COMPILER_WARNING (CWE-758):
+libassuan-2.5.5/src/assuan-pipe-connect.c:143:5: warning: implicit declaration of function 'setenv' is invalid in C99
+#    setenv ("_assuan_pipe_connect_pid", mypidstr, 1);
+#    ^
+#  141|          forked before the assuan server has been initialized. */
+#  142|       sprintf (mypidstr, "%lu", (unsigned long) atp->parent_pid);
+#  143|->     setenv ("_assuan_pipe_connect_pid", mypidstr, 1);
+#  144|   
+#  145|       /* Make sure that we never pass a connection fd variable when
+
+Error: COMPILER_WARNING (CWE-758):
+libassuan-2.5.5/src/assuan-pipe-connect.c:143:5: warning: this function declaration is not a prototype
+#  141|          forked before the assuan server has been initialized. */
+#  142|       sprintf (mypidstr, "%lu", (unsigned long) atp->parent_pid);
+#  143|->     setenv ("_assuan_pipe_connect_pid", mypidstr, 1);
+#  144|   
+#  145|       /* Make sure that we never pass a connection fd variable when
+
+Error: COMPILER_WARNING (CWE-758):
+libassuan-2.5.5/src/assuan-pipe-connect.c:147:5: warning: implicit declaration of function 'unsetenv' is invalid in C99
+#    unsetenv ("_assuan_connection_fd");
+#    ^
+#  145|       /* Make sure that we never pass a connection fd variable when
+#  146|          using a simple pipe.  */
+#  147|->     unsetenv ("_assuan_connection_fd");
+#  148|     }
+#  149|   #endif
+
+Error: COMPILER_WARNING (CWE-758):
+libassuan-2.5.5/src/assuan-pipe-connect.c:147:5: warning: this function declaration is not a prototype
+#  145|       /* Make sure that we never pass a connection fd variable when
+#  146|          using a simple pipe.  */
+#  147|->     unsetenv ("_assuan_connection_fd");
+#  148|     }
+#  149|   #endif
+
+Error: COMPILER_WARNING (CWE-758):
+libassuan-2.5.5/src/assuan-pipe-connect.c:259:5: warning: implicit declaration of function 'setenv' is invalid in C99
+#    setenv ("_assuan_pipe_connect_pid", mypidstr, 1);
+#    ^
+#  257|          forked before the assuan server has been initialized. */
+#  258|       sprintf (mypidstr, "%lu", (unsigned long) atp->parent_pid);
+#  259|->     setenv ("_assuan_pipe_connect_pid", mypidstr, 1);
+#  260|   
+#  261|       /* Now set the environment variable used to convey the
+
+Error: COMPILER_WARNING (CWE-758):
+libassuan-2.5.5/src/assuan-socket.c:719:3: warning: implicit declaration of function 'FD_ZERO' is invalid in C99
+#  FD_ZERO (&fds);
+#  ^
+#  717|     addru.addr = addr;
+#  718|   
+#  719|->   FD_ZERO (&fds);
+#  720|     FD_SET (HANDLE2SOCKET (sock), &fds);
+#  721|   
+
+Error: COMPILER_WARNING (CWE-758):
+libassuan-2.5.5/src/assuan-socket.c:719:3: warning: this function declaration is not a prototype
+#  717|     addru.addr = addr;
+#  718|   
+#  719|->   FD_ZERO (&fds);
+#  720|     FD_SET (HANDLE2SOCKET (sock), &fds);
+#  721|   
+
+Error: COMPILER_WARNING (CWE-758):
+libassuan-2.5.5/src/assuan-socket.c:720:3: warning: implicit declaration of function 'FD_SET' is invalid in C99
+#  FD_SET (HANDLE2SOCKET (sock), &fds);
+#  ^
+#  718|   
+#  719|     FD_ZERO (&fds);
+#  720|->   FD_SET (HANDLE2SOCKET (sock), &fds);
+#  721|   
+#  722|     /* memset (&proxyaddr_in6, 0, sizeof proxyaddr_in6); */
+
+Error: COMPILER_WARNING (CWE-758):
+libassuan-2.5.5/src/assuan-socket.c:720:3: warning: this function declaration is not a prototype
+#  718|   
+#  719|     FD_ZERO (&fds);
+#  720|->   FD_SET (HANDLE2SOCKET (sock), &fds);
+#  721|   
+#  722|     /* memset (&proxyaddr_in6, 0, sizeof proxyaddr_in6); */
+
+Error: COMPILER_WARNING (CWE-758):
+libassuan-2.5.5/src/assuan-socket.c:788:9: warning: implicit declaration of function 'select' is invalid in C99
+#  ret = select (HANDLE2SOCKET (sock)+1, &fds, NULL, NULL, &tv);
+#        ^
+#  786|        succeeding calls, this select should soon return successfully.
+#  787|      */
+#  788|->   ret = select (HANDLE2SOCKET (sock)+1, &fds, NULL, NULL, &tv);
+#  789|     if (!ret)
+#  790|       {
+
+Error: COMPILER_WARNING (CWE-758):
+libassuan-2.5.5/src/assuan-socket.c:788:9: warning: this function declaration is not a prototype
+#  786|        succeeding calls, this select should soon return successfully.
+#  787|      */
+#  788|->   ret = select (HANDLE2SOCKET (sock)+1, &fds, NULL, NULL, &tv);
+#  789|     if (!ret)
+#  790|       {
+
+Error: COMPILER_WARNING (CWE-758):
+libassuan-2.5.5/src/system-posix.c:133:11: warning: implicit declaration of function 'recvmsg' is invalid in C99
+#    ret = recvmsg (fd, msg, flags);
+#          ^
+#  131|   
+#  132|     do
+#  133|->     ret = recvmsg (fd, msg, flags);
+#  134|     while (ret == -1 && errno == EINTR);
+#  135|   
+
+Error: COMPILER_WARNING (CWE-758):
+libassuan-2.5.5/src/system-posix.c:133:11: warning: this function declaration is not a prototype
+#  131|   
+#  132|     do
+#  133|->     ret = recvmsg (fd, msg, flags);
+#  134|     while (ret == -1 && errno == EINTR);
+#  135|   
+
+Error: COMPILER_WARNING (CWE-758):
+libassuan-2.5.5/src/system-posix.c:148:11: warning: implicit declaration of function 'sendmsg' is invalid in C99
+#    ret = sendmsg (fd, msg, flags);
+#          ^
+#  146|   
+#  147|     do
+#  148|->     ret = sendmsg (fd, msg, flags);
+#  149|     while (ret == -1 && errno == EINTR);
+#  150|   
+
+Error: COMPILER_WARNING (CWE-758):
+libassuan-2.5.5/src/system-posix.c:148:11: warning: this function declaration is not a prototype
+#  146|   
+#  147|     do
+#  148|->     ret = sendmsg (fd, msg, flags);
+#  149|     while (ret == -1 && errno == EINTR);
+#  150|   
+
+Error: COMPILER_WARNING (CWE-758):
+libassuan-2.5.5/src/system-posix.c:373:7: warning: implicit declaration of function 'execv' is invalid in C99
+#      execv (name, (char *const *) argv);
+#      ^
+#  371|   	}
+#  372|   
+#  373|->       execv (name, (char *const *) argv);
+#  374|   
+#  375|         /* oops - use the pipe to tell the parent about it */
+
+Error: COMPILER_WARNING (CWE-758):
+libassuan-2.5.5/src/system-posix.c:373:7: warning: this function declaration is not a prototype
+#  371|   	}
+#  372|   
+#  373|->       execv (name, (char *const *) argv);
+#  374|   
+#  375|         /* oops - use the pipe to tell the parent about it */
+
+Error: COMPILER_WARNING (CWE-758):
+libassuan-2.5.5/tests/pipeconnect.c:371:64: warning: missing sentinel in function call
+#                              server? ".server":".client", NULL));
+#                                                               ^
+libassuan-2.5.5/tests/common.h:274:1: note: function has been explicitly marked sentinel here
+#xstrconcat (const char *s1, ...)
+#^
+#  369|   
+#  370|     log_set_prefix (xstrconcat (log_get_prefix (), 
+#  371|->                               server? ".server":".client", NULL));
+#  372|     assuan_set_assuan_log_prefix (log_get_prefix ());
+#  373|   
+
+Error: COMPILER_WARNING (CWE-758):
+libassuan-2.5.5/tests/socks5.c:190:57: warning: missing sentinel in function call
+#        cred = xstrconcat (user?user:"", ":", pass, NULL);
+#                                                        ^
+libassuan-2.5.5/tests/common.h:274:1: note: function has been explicitly marked sentinel here
+#xstrconcat (const char *s1, ...)
+#^
+#  188|   
+#  189|         if (user || pass)
+#  190|->         cred = xstrconcat (user?user:"", ":", pass, NULL);
+#  191|         else
+#  192|           cred = NULL;
+
+Error: COMPILER_WARNING (CWE-758):
+libassuan-2.5.5/tests/socks5.c:214:57: warning: missing sentinel in function call
+#        cred = xstrconcat (user?user:"", ":", pass, NULL);
+#                                                        ^
+libassuan-2.5.5/tests/common.h:274:1: note: function has been explicitly marked sentinel here
+#xstrconcat (const char *s1, ...)
+#^
+#  212|   
+#  213|         if (user || pass)
+#  214|->         cred = xstrconcat (user?user:"", ":", pass, NULL);
+#  215|         else
+#  216|           cred = NULL;

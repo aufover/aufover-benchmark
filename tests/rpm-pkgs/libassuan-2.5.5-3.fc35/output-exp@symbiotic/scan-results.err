@@ -1,0 +1,13 @@
+Error: SYMBIOTIC_WARNING:
+libassuan-2.5.5/tests/fdpassing.c:304: error: memory error: out of bound pointer
+libassuan-2.5.5/tests/fdpassing.c:304: note: call stack: function main (=2, =0)
+libassuan-2.5.5/tests/fdpassing.c:304: note: Additional Info: address: 0:12370169555311111083
+libassuan-2.5.5/tests/fdpassing.c:304: note: Additional Info: pointing to: none
+/opt/symbiotic/lib/libc/klee/getenv.c:14:6: note: Non-deterministic values: __VERIFIER_nondet__Bool: len 1 bytes, [0x1] (i8: 1)
+libassuan-2.5.5/tests/fdpassing.c:291:13: note: Non-deterministic values: assuan_new: len 4 bytes, [4 times 0x0] (i32: 0)
+libassuan-2.5.5/tests/fdpassing.c:295:13: note: Non-deterministic values: assuan_pipe_connect: len 4 bytes, [4 times 0x0] (i32: 0)
+#  302|             errorcount++;
+#  303|           }
+#  304|->       else if (!with_exec && loc[0] == 's')
+#  305|           {
+#  306|             server ();
