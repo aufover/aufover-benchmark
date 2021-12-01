@@ -1,0 +1,1215 @@
+scan.ini: [scan]
+scan.ini: tool = csmock
+scan.ini: tool-version = csmock-3.1.0.20211130.175245.g27e99a8.internal-1.el7
+scan.ini: tool-args = '/usr/bin/csmock' '-o' '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output' '-f' '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/at-3.2.2-2.fc35.src.rpm' '-r' 'fedora-35-x86_64' '-t' 'symbiotic' '--symbiotic-timeout=8' '--keep-going'
+scan.ini: host = cov03.lab.eng.brq.redhat.com
+scan.ini: store-results-to = /home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output
+scan.ini: time-created = 2021-12-01 11:17:30
+scan.ini: enabled-plugins = symbiotic, gcc
+scan.ini: mock-config = fedora-35-x86_64
+scan.ini: project-name = at-3.2.2-2.fc35
+scan.ini: known-false-positives = /usr/share/csmock/known-false-positives.js
+>>> 2021-12-01 11:17:30	"rpm -qa | sort -V > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/debug/rpm-list-host.txt'"
+
+>>> 2021-12-01 11:17:31	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--init"
+INFO: mock.py version 2.13 starting (python version = 3.6.8, NVR = mock-2.13-1.kdudka.1.el7)...
+Start(bootstrap): init plugins
+INFO: selinux enabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start: clean chroot
+Finish: clean chroot
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+Start: unpacking root cache
+Finish: unpacking root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish: chroot init
+Finish: run
+
+>>> 2021-12-01 11:17:33	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--installdeps" "/tmp/csmockjt69hyng/at-3.2.2-2.fc35.src.rpm"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Dependencies resolved.
+================================================================================
+ Package               Arch   Version                           Repo       Size
+================================================================================
+Installing:
+ [1mautoconf             [m noarch 2.69-37.fc35                      f35-build 666 k
+ [1mbison                [m x86_64 3.7.6-3.fc35                      f35-build 927 k
+ [1mexim                 [m x86_64 4.94.2-3.fc35                     f35-build 1.4 M
+ [1mflex                 [m x86_64 2.6.4-9.fc35                      f35-build 308 k
+ [1mgcc                  [m x86_64 11.2.1-1.fc35                     f35-build  31 M
+ [1mlibfl-static         [m x86_64 2.6.4-9.fc35                      f35-build  11 k
+ [1mlibselinux-devel     [m x86_64 3.3-1.fc35                        f35-build 112 k
+ [1mmake                 [m x86_64 1:4.3-6.fc35                      f35-build 533 k
+ [1mpam-devel            [m x86_64 1.5.2-5.fc35                      f35-build 148 k
+ [1mperl-Test-Harness    [m noarch 1:3.43-479.fc35                   f35-build 267 k
+ [1mperl-Test-Simple     [m noarch 3:1.302188-1.fc35                 f35-build 525 k
+Installing dependencies:
+ [1macl                  [m x86_64 2.3.1-2.fc35                      f35-build  71 k
+ [1mannobin-docs         [m noarch 9.87-3.fc35                       f35-build  78 k
+ [1mannobin-plugin-gcc   [m x86_64 9.87-3.fc35                       f35-build  42 k
+ [1mcpp                  [m x86_64 11.2.1-1.fc35                     f35-build  10 M
+ [1mcryptsetup-libs      [m x86_64 2.4.2-1.fc35                      f35-build 438 k
+ [1mdbus                 [m x86_64 1:1.12.20-5.fc35                  f35-build 7.4 k
+ [1mdbus-broker          [m x86_64 29-4.fc35                         f35-build 171 k
+ [1mdbus-common          [m noarch 1:1.12.20-5.fc35                  f35-build  14 k
+ [1mdevice-mapper        [m x86_64 1.02.175-6.fc35                   f35-build 140 k
+ [1mdevice-mapper-libs   [m x86_64 1.02.175-6.fc35                   f35-build 179 k
+ [1memacs-filesystem     [m noarch 1:27.2-9.fc35                     f35-build 9.0 k
+ [1mexpat                [m x86_64 2.4.1-2.fc35                      f35-build 110 k
+ [1mgc                   [m x86_64 8.0.4-6.fc35                      f35-build 103 k
+ [1mglibc-devel          [m x86_64 2.34-8.fc35                       f35-build 146 k
+ [1mglibc-headers-x86    [m noarch 2.34-8.fc35                       f35-build 544 k
+ [1mgroff-base           [m x86_64 1.22.4-8.fc35                     f35-build 1.0 M
+ [1mguile22              [m x86_64 2.2.7-3.fc35                      f35-build 6.4 M
+ [1miptables-legacy-libs [m x86_64 1.8.7-13.fc35                     f35-build  39 k
+ [1mjson-c               [m x86_64 0.15-2.fc35                       f35-build  43 k
+ [1mkernel-headers       [m x86_64 5.15.4-200.fc35                   f35-build 1.3 M
+ [1mkmod-libs            [m x86_64 29-4.fc35                         f35-build  63 k
+ [1mlibargon2            [m x86_64 20171227-7.fc35                   f35-build  28 k
+ [1mlibbsd               [m x86_64 0.10.0-8.fc35                     f35-build 104 k
+ [1mlibgsasl             [m x86_64 1.10.0-2.fc35                     f35-build 153 k
+ [1mlibibverbs           [m x86_64 38.0-1.fc35                       f35-build 391 k
+ [1mlibidn               [m x86_64 1.38-1.fc35                       f35-build 191 k
+ [1mlibmpc               [m x86_64 1.2.1-3.fc35                      f35-build  62 k
+ [1mlibnl3               [m x86_64 3.5.0-8.fc35                      f35-build 328 k
+ [1mlibntlm              [m x86_64 1.6-3.fc35                        f35-build  91 k
+ [1mlibopendmarc         [m x86_64 1.4.1.1-5.fc35                    f35-build  31 k
+ [1mlibpcap              [m x86_64 14:1.10.1-2.fc35                  f35-build 171 k
+ [1mlibseccomp           [m x86_64 2.5.3-1.fc35                      f35-build  71 k
+ [1mlibselinux-utils     [m x86_64 3.3-1.fc35                        f35-build 140 k
+ [1mlibsepol-devel       [m x86_64 3.3-2.fc35                        f35-build  40 k
+ [1mlibspf2              [m x86_64 1.2.11-1.20210922git4915c308.fc35 f35-build  68 k
+ [1mlibtool-ltdl         [m x86_64 2.4.6-42.fc35                     f35-build  36 k
+ [1mlibxcrypt-devel      [m x86_64 4.4.26-4.fc35                     f35-build  29 k
+ [1mm4                   [m x86_64 1.4.19-2.fc35                     f35-build 294 k
+ [1mncurses              [m x86_64 6.2-8.20210508.fc35               f35-build 400 k
+ [1mpcre2-devel          [m x86_64 10.37-4.fc35                      f35-build 476 k
+ [1mpcre2-utf16          [m x86_64 10.37-4.fc35                      f35-build 211 k
+ [1mpcre2-utf32          [m x86_64 10.37-4.fc35                      f35-build 201 k
+ [1mperl-B               [m x86_64 1.82-482.fc35                     f35-build 188 k
+ [1mperl-Benchmark       [m noarch 1.23-482.fc35                     f35-build  35 k
+ [1mperl-Carp            [m noarch 1.52-478.fc35                     f35-build  29 k
+ [1mperl-Class-Struct    [m noarch 0.66-482.fc35                     f35-build  30 k
+ [1mperl-Data-Dumper     [m x86_64 2.183-2.fc35                      f35-build  56 k
+ [1mperl-DynaLoader      [m x86_64 1.50-482.fc35                     f35-build  34 k
+ [1mperl-Encode          [m x86_64 4:3.15-482.fc35                   f35-build 1.7 M
+ [1mperl-Errno           [m x86_64 1.33-482.fc35                     f35-build  23 k
+ [1mperl-Exporter        [m noarch 5.76-479.fc35                     f35-build  31 k
+ [1mperl-Fcntl           [m x86_64 1.14-482.fc35                     f35-build  28 k
+ [1mperl-File-Basename   [m noarch 2.85-482.fc35                     f35-build  25 k
+ [1mperl-File-Compare    [m noarch 1.100.600-482.fc35                f35-build  21 k
+ [1mperl-File-Copy       [m noarch 2.35-482.fc35                     f35-build  28 k
+ [1mperl-File-Find       [m noarch 1.39-482.fc35                     f35-build  33 k
+ [1mperl-File-Path       [m noarch 2.18-478.fc35                     f35-build  35 k
+ [1mperl-File-Temp       [m noarch 1:0.231.100-478.fc35              f35-build  59 k
+ [1mperl-File-stat       [m noarch 1.09-482.fc35                     f35-build  25 k
+ [1mperl-Getopt-Long     [m noarch 1:2.52-478.fc35                   f35-build  60 k
+ [1mperl-Getopt-Std      [m noarch 1.13-482.fc35                     f35-build  23 k
+ [1mperl-HTTP-Tiny       [m noarch 0.080-1.fc35                      f35-build  55 k
+ [1mperl-IO              [m x86_64 1.46-482.fc35                     f35-build  95 k
+ [1mperl-IPC-Open3       [m noarch 1.21-482.fc35                     f35-build  31 k
+ [1mperl-Importer        [m noarch 0.026-4.fc35                      f35-build  39 k
+ [1mperl-JSON-PP         [m noarch 1:4.06-479.fc35                   f35-build  66 k
+ [1mperl-MIME-Base64     [m x86_64 3.16-478.fc35                     f35-build  30 k
+ [1mperl-Math-BigInt     [m noarch 1:1.9998.24-1.fc35                f35-build 193 k
+ [1mperl-Math-Complex    [m noarch 1.59-482.fc35                     f35-build  54 k
+ [1mperl-Object-HashBase [m noarch 0.009-7.fc35                      f35-build  25 k
+ [1mperl-POSIX           [m x86_64 1.97-482.fc35                     f35-build 105 k
+ [1mperl-PathTools       [m x86_64 3.80-478.fc35                     f35-build  85 k
+ [1mperl-Pod-Escapes     [m noarch 1:1.07-478.fc35                   f35-build  20 k
+ [1mperl-Pod-Perldoc     [m noarch 3.28.01-479.fc35                  f35-build  84 k
+ [1mperl-Pod-Simple      [m noarch 1:3.43-2.fc35                     f35-build 215 k
+ [1mperl-Pod-Usage       [m noarch 4:2.01-478.fc35                   f35-build  40 k
+ [1mperl-Scalar-List-Utils[m
+                       x86_64 5:1.60-462.fc35                   f35-build  72 k
+ [1mperl-SelectSaver     [m noarch 1.02-482.fc35                     f35-build  19 k
+ [1mperl-Socket          [m x86_64 4:2.032-2.fc35                    f35-build  55 k
+ [1mperl-Storable        [m x86_64 1:3.25-1.fc35                     f35-build  95 k
+ [1mperl-Symbol          [m noarch 1.09-482.fc35                     f35-build  22 k
+ [1mperl-Term-ANSIColor  [m noarch 5.01-479.fc35                     f35-build  48 k
+ [1mperl-Term-Cap        [m noarch 1.17-478.fc35                     f35-build  22 k
+ [1mperl-Term-Table      [m noarch 0.015-8.fc35                      f35-build  35 k
+ [1mperl-Text-ParseWords [m noarch 3.30-478.fc35                     f35-build  16 k
+ [1mperl-Text-Tabs+Wrap  [m noarch 2021.0814-1.fc35                  f35-build  22 k
+ [1mperl-Time-Local      [m noarch 2:1.300-478.fc35                  f35-build  33 k
+ [1mperl-base            [m noarch 2.27-482.fc35                     f35-build  24 k
+ [1mperl-constant        [m noarch 1.33-479.fc35                     f35-build  23 k
+ [1mperl-if              [m noarch 0.60.900-482.fc35                 f35-build  22 k
+ [1mperl-interpreter     [m x86_64 4:5.34.0-482.fc35                 f35-build  79 k
+ [1mperl-libs            [m x86_64 4:5.34.0-482.fc35                 f35-build 2.1 M
+ [1mperl-mro             [m x86_64 1.25-482.fc35                     f35-build  36 k
+ [1mperl-overload        [m noarch 1.33-482.fc35                     f35-build  53 k
+ [1mperl-overloading     [m noarch 0.02-482.fc35                     f35-build  21 k
+ [1mperl-parent          [m noarch 1:0.238-478.fc35                  f35-build  14 k
+ [1mperl-podlators       [m noarch 1:4.14-478.fc35                   f35-build 111 k
+ [1mperl-subs            [m noarch 1.04-482.fc35                     f35-build  19 k
+ [1mperl-vars            [m noarch 1.05-482.fc35                     f35-build  21 k
+ [1mpolicycoreutils      [m x86_64 3.3-1.fc35                        f35-build 199 k
+ [1msystemd              [m x86_64 249.7-2.fc35                      f35-build 4.2 M
+ [1msystemd-pam          [m x86_64 249.7-2.fc35                      f35-build 325 k
+ [1msystemd-rpm-macros   [m noarch 249.7-2.fc35                      f35-build  29 k
+
+Transaction Summary
+================================================================================
+Install  114 Packages
+
+Total size: 72 M
+Installed size: 230 M
+Downloading Packages:
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+useradd warning: dbus's uid 81 outside of the SYS_UID_MIN 201 and SYS_UID_MAX 999 range.
+
+Creating group input with gid 104.
+Creating group kvm with gid 36.
+Creating group render with gid 105.
+Creating group sgx with gid 106.
+Creating group systemd-journal with gid 190.
+Creating group systemd-network with gid 192.
+Creating user systemd-network (systemd Network Management) with uid 192 and gid 192.
+Creating group systemd-oom with gid 999.
+Creating user systemd-oom (systemd Userspace OOM Killer) with uid 999 and gid 999.
+Creating group systemd-resolve with gid 193.
+Creating user systemd-resolve (systemd Resolver) with uid 193 and gid 193.
+Creating group systemd-timesync with gid 998.
+Creating user systemd-timesync (systemd Time Synchronization) with uid 998 and gid 998.
+Creating group systemd-coredump with gid 997.
+Creating user systemd-coredump (systemd Core Dumper) with uid 997 and gid 997.
+
+
+Installed:
+  acl-2.3.1-2.fc35.x86_64                                                       
+  annobin-docs-9.87-3.fc35.noarch                                               
+  annobin-plugin-gcc-9.87-3.fc35.x86_64                                         
+  autoconf-2.69-37.fc35.noarch                                                  
+  bison-3.7.6-3.fc35.x86_64                                                     
+  cpp-11.2.1-1.fc35.x86_64                                                      
+  cryptsetup-libs-2.4.2-1.fc35.x86_64                                           
+  dbus-1:1.12.20-5.fc35.x86_64                                                  
+  dbus-broker-29-4.fc35.x86_64                                                  
+  dbus-common-1:1.12.20-5.fc35.noarch                                           
+  device-mapper-1.02.175-6.fc35.x86_64                                          
+  device-mapper-libs-1.02.175-6.fc35.x86_64                                     
+  emacs-filesystem-1:27.2-9.fc35.noarch                                         
+  exim-4.94.2-3.fc35.x86_64                                                     
+  expat-2.4.1-2.fc35.x86_64                                                     
+  flex-2.6.4-9.fc35.x86_64                                                      
+  gc-8.0.4-6.fc35.x86_64                                                        
+  gcc-11.2.1-1.fc35.x86_64                                                      
+  glibc-devel-2.34-8.fc35.x86_64                                                
+  glibc-headers-x86-2.34-8.fc35.noarch                                          
+  groff-base-1.22.4-8.fc35.x86_64                                               
+  guile22-2.2.7-3.fc35.x86_64                                                   
+  iptables-legacy-libs-1.8.7-13.fc35.x86_64                                     
+  json-c-0.15-2.fc35.x86_64                                                     
+  kernel-headers-5.15.4-200.fc35.x86_64                                         
+  kmod-libs-29-4.fc35.x86_64                                                    
+  libargon2-20171227-7.fc35.x86_64                                              
+  libbsd-0.10.0-8.fc35.x86_64                                                   
+  libfl-static-2.6.4-9.fc35.x86_64                                              
+  libgsasl-1.10.0-2.fc35.x86_64                                                 
+  libibverbs-38.0-1.fc35.x86_64                                                 
+  libidn-1.38-1.fc35.x86_64                                                     
+  libmpc-1.2.1-3.fc35.x86_64                                                    
+  libnl3-3.5.0-8.fc35.x86_64                                                    
+  libntlm-1.6-3.fc35.x86_64                                                     
+  libopendmarc-1.4.1.1-5.fc35.x86_64                                            
+  libpcap-14:1.10.1-2.fc35.x86_64                                               
+  libseccomp-2.5.3-1.fc35.x86_64                                                
+  libselinux-devel-3.3-1.fc35.x86_64                                            
+  libselinux-utils-3.3-1.fc35.x86_64                                            
+  libsepol-devel-3.3-2.fc35.x86_64                                              
+  libspf2-1.2.11-1.20210922git4915c308.fc35.x86_64                              
+  libtool-ltdl-2.4.6-42.fc35.x86_64                                             
+  libxcrypt-devel-4.4.26-4.fc35.x86_64                                          
+  m4-1.4.19-2.fc35.x86_64                                                       
+  make-1:4.3-6.fc35.x86_64                                                      
+  ncurses-6.2-8.20210508.fc35.x86_64                                            
+  pam-devel-1.5.2-5.fc35.x86_64                                                 
+  pcre2-devel-10.37-4.fc35.x86_64                                               
+  pcre2-utf16-10.37-4.fc35.x86_64                                               
+  pcre2-utf32-10.37-4.fc35.x86_64                                               
+  perl-B-1.82-482.fc35.x86_64                                                   
+  perl-Benchmark-1.23-482.fc35.noarch                                           
+  perl-Carp-1.52-478.fc35.noarch                                                
+  perl-Class-Struct-0.66-482.fc35.noarch                                        
+  perl-Data-Dumper-2.183-2.fc35.x86_64                                          
+  perl-DynaLoader-1.50-482.fc35.x86_64                                          
+  perl-Encode-4:3.15-482.fc35.x86_64                                            
+  perl-Errno-1.33-482.fc35.x86_64                                               
+  perl-Exporter-5.76-479.fc35.noarch                                            
+  perl-Fcntl-1.14-482.fc35.x86_64                                               
+  perl-File-Basename-2.85-482.fc35.noarch                                       
+  perl-File-Compare-1.100.600-482.fc35.noarch                                   
+  perl-File-Copy-2.35-482.fc35.noarch                                           
+  perl-File-Find-1.39-482.fc35.noarch                                           
+  perl-File-Path-2.18-478.fc35.noarch                                           
+  perl-File-Temp-1:0.231.100-478.fc35.noarch                                    
+  perl-File-stat-1.09-482.fc35.noarch                                           
+  perl-Getopt-Long-1:2.52-478.fc35.noarch                                       
+  perl-Getopt-Std-1.13-482.fc35.noarch                                          
+  perl-HTTP-Tiny-0.080-1.fc35.noarch                                            
+  perl-IO-1.46-482.fc35.x86_64                                                  
+  perl-IPC-Open3-1.21-482.fc35.noarch                                           
+  perl-Importer-0.026-4.fc35.noarch                                             
+  perl-JSON-PP-1:4.06-479.fc35.noarch                                           
+  perl-MIME-Base64-3.16-478.fc35.x86_64                                         
+  perl-Math-BigInt-1:1.9998.24-1.fc35.noarch                                    
+  perl-Math-Complex-1.59-482.fc35.noarch                                        
+  perl-Object-HashBase-0.009-7.fc35.noarch                                      
+  perl-POSIX-1.97-482.fc35.x86_64                                               
+  perl-PathTools-3.80-478.fc35.x86_64                                           
+  perl-Pod-Escapes-1:1.07-478.fc35.noarch                                       
+  perl-Pod-Perldoc-3.28.01-479.fc35.noarch                                      
+  perl-Pod-Simple-1:3.43-2.fc35.noarch                                          
+  perl-Pod-Usage-4:2.01-478.fc35.noarch                                         
+  perl-Scalar-List-Utils-5:1.60-462.fc35.x86_64                                 
+  perl-SelectSaver-1.02-482.fc35.noarch                                         
+  perl-Socket-4:2.032-2.fc35.x86_64                                             
+  perl-Storable-1:3.25-1.fc35.x86_64                                            
+  perl-Symbol-1.09-482.fc35.noarch                                              
+  perl-Term-ANSIColor-5.01-479.fc35.noarch                                      
+  perl-Term-Cap-1.17-478.fc35.noarch                                            
+  perl-Term-Table-0.015-8.fc35.noarch                                           
+  perl-Test-Harness-1:3.43-479.fc35.noarch                                      
+  perl-Test-Simple-3:1.302188-1.fc35.noarch                                     
+  perl-Text-ParseWords-3.30-478.fc35.noarch                                     
+  perl-Text-Tabs+Wrap-2021.0814-1.fc35.noarch                                   
+  perl-Time-Local-2:1.300-478.fc35.noarch                                       
+  perl-base-2.27-482.fc35.noarch                                                
+  perl-constant-1.33-479.fc35.noarch                                            
+  perl-if-0.60.900-482.fc35.noarch                                              
+  perl-interpreter-4:5.34.0-482.fc35.x86_64                                     
+  perl-libs-4:5.34.0-482.fc35.x86_64                                            
+  perl-mro-1.25-482.fc35.x86_64                                                 
+  perl-overload-1.33-482.fc35.noarch                                            
+  perl-overloading-0.02-482.fc35.noarch                                         
+  perl-parent-1:0.238-478.fc35.noarch                                           
+  perl-podlators-1:4.14-478.fc35.noarch                                         
+  perl-subs-1.04-482.fc35.noarch                                                
+  perl-vars-1.05-482.fc35.noarch                                                
+  policycoreutils-3.3-1.fc35.x86_64                                             
+  systemd-249.7-2.fc35.x86_64                                                   
+  systemd-pam-249.7-2.fc35.x86_64                                               
+  systemd-rpm-macros-249.7-2.fc35.noarch                                        
+
+Complete!
+
+>>> 2021-12-01 11:17:46	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--addrepo" "https://download.copr.fedorainfracloud.org/results/@aufover/symbiotic/fedora-\$releasever-\$basearch/" "--addrepo" "https://download.copr.fedorainfracloud.org/results/@aufover/gllvm/fedora-\$releasever-\$basearch/" "--install" "symbiotic" "gllvm"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Dependencies resolved.
+============================================================================================================================================================
+ Package                     Arch    Version                      Repository                                                                            Size
+============================================================================================================================================================
+Installing:
+ [1mgllvm                      [m x86_64  1.3.0-1.fc35                 downloadcoprfedorainfracloudorg_results_aufover_gllvm_fedorareleaseverbasearch_      1.6 M
+ [1msymbiotic                  [m x86_64  8.0.0.20211119.190944-1.fc35 downloadcoprfedorainfracloudorg_results_aufover_symbiotic_fedorareleaseverbasearch_  2.0 M
+Installing dependencies:
+ [1mclang                      [m x86_64  13.0.0-3.fc35                f35-build                                                                             84 k
+ [1mclang-libs                 [m x86_64  13.0.0-3.fc35                f35-build                                                                             22 M
+ [1mclang-resource-filesystem  [m x86_64  13.0.0-3.fc35                f35-build                                                                             14 k
+ [1mgcc-c++                    [m x86_64  11.2.1-1.fc35                f35-build                                                                             12 M
+ [1mjsoncpp                    [m x86_64  1.9.4-5.fc35                 f35-build                                                                             93 k
+ [1mlibedit                    [m x86_64  3.1-40.20210910cvs.fc35      f35-build                                                                            105 k
+ [1mlibstdc++-devel            [m x86_64  11.2.1-1.fc35                f35-build                                                                            2.2 M
+ [1mllvm                       [m x86_64  13.0.0-4.fc35                f35-build                                                                             15 M
+ [1mllvm-libs                  [m x86_64  13.0.0-4.fc35                f35-build                                                                             25 M
+ [1mmpdecimal                  [m x86_64  2.5.1-2.fc35                 f35-build                                                                             99 k
+ [1mpython-pip-wheel           [m noarch  21.2.3-4.fc35                f35-build                                                                            1.1 M
+ [1mpython-setuptools-wheel    [m noarch  57.4.0-1.fc35                f35-build                                                                            505 k
+ [1mpython3                    [m x86_64  3.10.0-1.fc35                f35-build                                                                             25 k
+ [1mpython3-libs               [m x86_64  3.10.0-1.fc35                f35-build                                                                            7.5 M
+ [1mz3-libs                    [m x86_64  4.8.13-1.fc35                f35-build                                                                            5.8 M
+
+Transaction Summary
+============================================================================================================================================================
+Install  17 Packages
+
+Total size: 95 M
+Installed size: 369 M
+Downloading Packages:
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+
+Installed:
+  clang-13.0.0-3.fc35.x86_64                                                    
+  clang-libs-13.0.0-3.fc35.x86_64                                               
+  clang-resource-filesystem-13.0.0-3.fc35.x86_64                                
+  gcc-c++-11.2.1-1.fc35.x86_64                                                  
+  gllvm-1.3.0-1.fc35.x86_64                                                     
+  jsoncpp-1.9.4-5.fc35.x86_64                                                   
+  libedit-3.1-40.20210910cvs.fc35.x86_64                                        
+  libstdc++-devel-11.2.1-1.fc35.x86_64                                          
+  llvm-13.0.0-4.fc35.x86_64                                                     
+  llvm-libs-13.0.0-4.fc35.x86_64                                                
+  mpdecimal-2.5.1-2.fc35.x86_64                                                 
+  python-pip-wheel-21.2.3-4.fc35.noarch                                         
+  python-setuptools-wheel-57.4.0-1.fc35.noarch                                  
+  python3-3.10.0-1.fc35.x86_64                                                  
+  python3-libs-3.10.0-1.fc35.x86_64                                             
+  symbiotic-8.0.0.20211119.190944-1.fc35.x86_64                                 
+  z3-libs-4.8.13-1.fc35.x86_64                                                  
+
+Complete!
+
+>>> 2021-12-01 11:17:57	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa' | sort -V > /home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/debug/rpm-list-mock.txt"
+
+>>> 2021-12-01 11:17:59	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa --provides' | sort -V > /tmp/csmockjt69hyng/rpm-list-mock-provides.txt"
+
+>>> 2021-12-01 11:18:01	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--copyin" "/tmp/csmockjt69hyng/at-3.2.2-2.fc35.src.rpm" "/builddir/at-3.2.2-2.fc35.src.rpm"
+
+>>> 2021-12-01 11:18:03	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "chown mockbuild -R /builddir"
+
+>>> 2021-12-01 11:18:04	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"rpm -Uvh --nodeps '/builddir/at-3.2.2-2.fc35.src.rpm'\""
+Updating / installing...
+at-3.2.2-2.fc35                       ########################################
+
+>>> 2021-12-01 11:18:06	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"sed -e 's|^ExclusiveArch:.*\\\$||' -i /builddir/build/SPECS/at.spec\""
+
+>>> 2021-12-01 11:18:08	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"rpmbuild -bs --nodeps /builddir/build/SPECS/at.spec '--define' 'apidocs 0' '--define' 'with_publican 0' '--without' 'docs' '--without' 'langpacks' '--define' '__cc gclang' '--define' '__cxx gclang++' '--define' '__cpp gclang -E' '--define' 'toolchain clang' '--define' 'optflags -O0' '--define' 'build_ldflags -O0' && sh -c 'cd /builddir/build/SRPMS && eval mv -v *.src.rpm /builddir/at-3.2.2-2.fc35.src.rpm || :'\""
+setting SOURCE_DATE_EPOCH=1626825600
+Wrote: /builddir/build/SRPMS/at-3.2.2-2.fc35.src.rpm
+renamed 'at-3.2.2-2.fc35.src.rpm' -> '/builddir/at-3.2.2-2.fc35.src.rpm'
+
+>>> 2021-12-01 11:18:10	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--disable-plugin=selinux" "--copyout" "/builddir/at-3.2.2-2.fc35.src.rpm" "/tmp/csmockjt69hyng/at-3.2.2-2.fc35.src.rpm"
+
+>>> 2021-12-01 11:18:12	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--installdeps" "/tmp/csmockjt69hyng/at-3.2.2-2.fc35.src.rpm"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Package autoconf-2.69-37.fc35.noarch is already installed.
+Package bison-3.7.6-3.fc35.x86_64 is already installed.
+Package flex-2.6.4-9.fc35.x86_64 is already installed.
+Package libfl-static-2.6.4-9.fc35.x86_64 is already installed.
+Package gcc-11.2.1-1.fc35.x86_64 is already installed.
+Package libselinux-devel-3.3-1.fc35.x86_64 is already installed.
+Package make-1:4.3-6.fc35.x86_64 is already installed.
+Package pam-devel-1.5.2-5.fc35.x86_64 is already installed.
+Package perl-Test-Harness-1:3.43-479.fc35.noarch is already installed.
+Package perl-Test-Simple-3:1.302188-1.fc35.noarch is already installed.
+Package exim-4.94.2-3.fc35.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+
+>>> 2021-12-01 11:18:17	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--addrepo" "https://download.copr.fedorainfracloud.org/results/@aufover/symbiotic/fedora-\$releasever-\$basearch/" "--addrepo" "https://download.copr.fedorainfracloud.org/results/@aufover/gllvm/fedora-\$releasever-\$basearch/" "--install" "symbiotic" "gllvm"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Package symbiotic-8.0.0.20211119.190944-1.fc35.x86_64 is already installed.
+Package gllvm-1.3.0-1.fc35.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+
+>>> 2021-12-01 11:18:23	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa' | sort -V > /home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/debug/rpm-list-mock.txt"
+
+>>> 2021-12-01 11:18:25	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa --provides' | sort -V > /tmp/csmockjt69hyng/rpm-list-mock-provides.txt"
+
+>>> 2021-12-01 11:18:27	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--addrepo" "https://download.copr.fedorainfracloud.org/results/@aufover/symbiotic/fedora-\$releasever-\$basearch/" "--addrepo" "https://download.copr.fedorainfracloud.org/results/@aufover/gllvm/fedora-\$releasever-\$basearch/" "--install" "csdiff"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Dependencies resolved.
+================================================================================
+ Package                    Arch        Version            Repository      Size
+================================================================================
+Installing:
+ [1mcsdiff                    [m x86_64      2.2.0-1.fc35       f35-build      895 k
+Installing dependencies:
+ [1mboost-filesystem          [m x86_64      1.76.0-4.fc35      f35-build       60 k
+ [1mboost-program-options     [m x86_64      1.76.0-4.fc35      f35-build      108 k
+ [1mboost-system              [m x86_64      1.76.0-4.fc35      f35-build       15 k
+
+Transaction Summary
+================================================================================
+Install  4 Packages
+
+Total size: 1.1 M
+Installed size: 4.8 M
+Downloading Packages:
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+
+Installed:
+  boost-filesystem-1.76.0-4.fc35.x86_64                                         
+  boost-program-options-1.76.0-4.fc35.x86_64                                    
+  boost-system-1.76.0-4.fc35.x86_64                                             
+  csdiff-2.2.0-1.fc35.x86_64                                                    
+
+Complete!
+
+>>> 2021-12-01 11:18:33	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa' | sort -V > /home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/debug/rpm-list-mock.txt"
+
+>>> 2021-12-01 11:18:35	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa --provides' | sort -V > /tmp/csmockjt69hyng/rpm-list-mock-provides.txt"
+
+>>> 2021-12-01 11:18:36	"tar -cP '/usr/share/csmock/scripts' '/usr/bin/cswrap' '/usr/lib64/cswrap' '/usr/bin/csexec' '/usr/bin/csexec-loader' '/usr/lib64/libcsexec-preload.so' '/tmp/csmockjt69hyng/at-3.2.2-2.fc35.src.rpm' | '/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'tar -xC/'"
+tar: Removing leading `/' from member names
+tar: Removing leading `/' from hard link targets
+
+>>> 2021-12-01 11:18:38	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"gsanity-check\""
+
+Version info: gsanity-check version 1.3.0
+Released: February 18 2021
+
+Logging output to standard error.
+Logging level not set, using default of WARNING.
+
+Logging configuration uses the environment variables:
+
+	WLLVM_OUTPUT_LEVEL and WLLVM_OUTPUT_FILE.
+
+Happily sitting atop "linux" operating system.
+
+The C compiler clang is:
+
+	clang version 13.0.0 (Fedora 13.0.0-3.fc35)
+
+The CXX compiler clang++ is:
+
+	clang version 13.0.0 (Fedora 13.0.0-3.fc35)
+
+The bitcode linker llvm-link is:
+
+	LLVM version 13.0.0
+
+The bitcode archiver llvm-ar is:
+
+	LLVM version 13.0.0
+
+Not using a bitcode store.
+
+
+scan.ini: analyzer-version-symbiotic = 8.0.0.20211119.190944
+>>> 2021-12-01 11:18:40	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"mkdir -pv '/builddir/symbiotic-capture'\""
+mkdir: created directory '/builddir/symbiotic-capture'
+
+scan.ini: analyzer-version-gcc = 11.2.1
+>>> 2021-12-01 11:18:42	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "rpm -Uvh --nodeps '/tmp/csmockjt69hyng/at-3.2.2-2.fc35.src.rpm'"
+Updating / installing...
+at-3.2.2-2.fc35                       ########################################
+
+>>> 2021-12-01 11:18:43	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "chmod -R +r /builddir"
+
+>>> 2021-12-01 11:18:45	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "ln -fv '/usr/share/csmock/scripts/enable-keep-going.sh' '/usr/share/csmock/scripts/chroot-fixups'"
+'/usr/share/csmock/scripts/chroot-fixups/enable-keep-going.sh' => '/usr/share/csmock/scripts/enable-keep-going.sh'
+
+>>> 2021-12-01 11:18:47	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--shell" "for i in /usr/share/csmock/scripts/chroot-fixups/*; do test -x \$i && echo RUN: \$i >&2 && \$i; done"
+RUN: /usr/share/csmock/scripts/chroot-fixups/enable-keep-going.sh
+renamed '/usr/bin/make' -> '/usr/bin/make.orig'
++ ls -l /usr/bin/make
+-rwxr-xr-x. 1 root root 42 Dec  1 11:18 /usr/bin/make
++ cat /usr/bin/make
+#!/bin/sh
+exec /usr/bin/make.orig -k "$@"
+RUN: /usr/share/csmock/scripts/chroot-fixups/gdk-pixbuf2-triggers.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/glib2-triggers.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/kpathsea-texhash.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/openssl-public-header-files.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/qt5-core-abi.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/rpm-build-scripts.sh
++ sed -e s/fail=1/fail=0/ -i /usr/lib/rpm/redhat/brp-mangle-shebangs
+'/usr/lib/rpm/brp-strip-static-archive' -> '/bin/true'
+RUN: /usr/share/csmock/scripts/chroot-fixups/rpm-macros.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/rpm-python-extras.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/shared-mime-info-triggers.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/simplify-cpp-includes.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/simplify-glib-includes.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/simplify-systemd-includes.sh
+
+>>> 2021-12-01 11:18:49	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--chroot" "/bin/su mockbuild -l -c \"rpmbuild -bp --nodeps /builddir/build/SPECS/at.spec '--define' 'apidocs 0' '--define' 'with_publican 0' '--without' 'docs' '--without' 'langpacks' '--define' '__cc gclang' '--define' '__cxx gclang++' '--define' '__cpp gclang -E' '--define' 'toolchain clang' '--define' 'optflags -O0' '--define' 'build_ldflags -O0'\""
+INFO: mock.py version 2.13 starting (python version = 3.6.8, NVR = mock-2.13-1.kdudka.1.el7)...
+Start(bootstrap): init plugins
+INFO: selinux enabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish: chroot init
+INFO: Running in chroot: ['/bin/su mockbuild -l -c "rpmbuild -bp --nodeps /builddir/build/SPECS/at.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc gclang\' \'--define\' \'__cxx gclang++\' \'--define\' \'__cpp gclang -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'"']
+Start: chroot ['/bin/su mockbuild -l -c "rpmbuild -bp --nodeps /builddir/build/SPECS/at.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc gclang\' \'--define\' \'__cxx gclang++\' \'--define\' \'__cpp gclang -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'"']
+setting SOURCE_DATE_EPOCH=1626825600
+Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.5IqXK0
++ umask 022
++ cd /builddir/build/BUILD
++ cd /builddir/build/BUILD
++ rm -rf at-3.2.2
++ /usr/bin/gzip -dc /builddir/build/SOURCES/at_3.2.2.orig.tar.gz
++ /usr/bin/tar -xof -
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd at-3.2.2
++ /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
++ cp /builddir/build/SOURCES/pam_atd .
++ /usr/bin/cat /builddir/build/SOURCES/at-aarch64.patch
++ /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
++ /usr/bin/cat /builddir/build/SOURCES/at-3.2.2-make.patch
++ /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
++ /usr/bin/cat /builddir/build/SOURCES/at-3.2.2-pam.patch
++ /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
++ /usr/bin/cat /builddir/build/SOURCES/at-3.1.14-opt_V.patch
++ /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
++ /usr/bin/cat /builddir/build/SOURCES/at-3.2.2-shell.patch
++ /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
++ /usr/bin/cat /builddir/build/SOURCES/at-3.1.18-nitpicks.patch
++ /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
++ /usr/bin/cat /builddir/build/SOURCES/at-3.1.14-fix_no_export.patch
++ /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
++ /usr/bin/cat /builddir/build/SOURCES/at-3.1.14-mailwithhostname.patch
++ /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
++ /usr/bin/cat /builddir/build/SOURCES/at-3.1.14-usePOSIXtimers.patch
++ /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
++ /usr/bin/cat /builddir/build/SOURCES/at-3.1.20-aborted-jobs.patch
++ /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
++ /usr/bin/cat /builddir/build/SOURCES/at-3.1.18-noabort.patch
++ /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
++ /usr/bin/cat /builddir/build/SOURCES/at-3.1.16-fclose-error.patch
++ /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
++ /usr/bin/cat /builddir/build/SOURCES/at-3.1.16-clear-nonjobs.patch
++ /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
++ /usr/bin/cat /builddir/build/SOURCES/at-3.2.2-lock-locks.patch
++ /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
++ /usr/bin/cat /builddir/build/SOURCES/at-3.1.23-document-n.patch
++ /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
++ /usr/bin/cat /builddir/build/SOURCES/at-3.1.20-log-jobs.patch
++ /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
++ /usr/bin/cat /builddir/build/SOURCES/at-3.2.23-coverity-fix.patch
++ /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Finish: chroot ['/bin/su mockbuild -l -c "rpmbuild -bp --nodeps /builddir/build/SPECS/at.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc gclang\' \'--define\' \'__cxx gclang++\' \'--define\' \'__cpp gclang -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'"']
+
+>>> 2021-12-01 11:18:50	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "chmod -R +r /builddir/build"
+
+>>> 2021-12-01 11:18:52	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--chroot" "/bin/su mockbuild -l -c \"PATH=/usr/lib64/cswrap:\\\$PATH CSWRAP_CAP_FILE=\\\$'/builddir/cswrap-capture.err' CSWRAP_TIMEOUT=\\\$'30' CSWRAP_TIMEOUT_FOR=\\\$':' CC=\\\$'gclang' CXX=\\\$'gclang++' CSEXEC_WRAP_CMD=\\\$'--skip-ld-linux\\\\acsexec-symbiotic\\\\a-l\\\\a/builddir/symbiotic-capture\\\\a-s\\\\a--prp=memsafety --timeout=8 ' CSWRAP_ADD_CFLAGS=\\\$'-Wno-unknown-pragmas:-Wno-unused-command-line-argument:-Wno-unused-parameter:-Wno-unknown-attributes:-Wno-unused-label:-Wno-unknown-pragmas:-Wno-unused-command-line-argument:-fsanitize-address-use-after-scope:-O0:-Xclang:-disable-llvm-passes:-D__inline=:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader' CSWRAP_DEL_CFLAGS=\\\$'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register' CSWRAP_ADD_CXXFLAGS=\\\$'-Wno-unused-command-line-argument:-Wno-unused-parameter:-Wno-unknown-attributes:-Wno-unused-label:-Wno-unknown-pragmas:-Wno-unused-command-line-argument:-fsanitize-address-use-after-scope:-O0:-Xclang:-disable-llvm-passes:-D__inline=:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader' CSWRAP_DEL_CXXFLAGS=\\\$'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register' sh -c \\\"rpmbuild -bc --nodeps --short-circuit /builddir/build/SPECS/at.spec '--define' 'apidocs 0' '--define' 'with_publican 0' '--without' 'docs' '--without' 'langpacks' '--define' '__cc gclang' '--define' '__cxx gclang++' '--define' '__cpp gclang -E' '--define' 'toolchain clang' '--define' 'optflags -O0' '--define' 'build_ldflags -O0'\\\"\""
+INFO: mock.py version 2.13 starting (python version = 3.6.8, NVR = mock-2.13-1.kdudka.1.el7)...
+Start(bootstrap): init plugins
+INFO: selinux enabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish: chroot init
+INFO: Running in chroot: ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'gclang\' CXX=\\$\'gclang++\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\acsexec-symbiotic\\\\a-l\\\\a/builddir/symbiotic-capture\\\\a-s\\\\a--prp=memsafety --timeout=8 \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unused-command-line-argument:-Wno-unused-parameter:-Wno-unknown-attributes:-Wno-unused-label:-Wno-unknown-pragmas:-Wno-unused-command-line-argument:-fsanitize-address-use-after-scope:-O0:-Xclang:-disable-llvm-passes:-D__inline=:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unused-command-line-argument:-Wno-unused-parameter:-Wno-unknown-attributes:-Wno-unused-label:-Wno-unknown-pragmas:-Wno-unused-command-line-argument:-fsanitize-address-use-after-scope:-O0:-Xclang:-disable-llvm-passes:-D__inline=:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bc --nodeps --short-circuit /builddir/build/SPECS/at.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc gclang\' \'--define\' \'__cxx gclang++\' \'--define\' \'__cpp gclang -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+Start: chroot ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'gclang\' CXX=\\$\'gclang++\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\acsexec-symbiotic\\\\a-l\\\\a/builddir/symbiotic-capture\\\\a-s\\\\a--prp=memsafety --timeout=8 \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unused-command-line-argument:-Wno-unused-parameter:-Wno-unknown-attributes:-Wno-unused-label:-Wno-unknown-pragmas:-Wno-unused-command-line-argument:-fsanitize-address-use-after-scope:-O0:-Xclang:-disable-llvm-passes:-D__inline=:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unused-command-line-argument:-Wno-unused-parameter:-Wno-unknown-attributes:-Wno-unused-label:-Wno-unknown-pragmas:-Wno-unused-command-line-argument:-fsanitize-address-use-after-scope:-O0:-Xclang:-disable-llvm-passes:-D__inline=:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bc --nodeps --short-circuit /builddir/build/SPECS/at.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc gclang\' \'--define\' \'__cxx gclang++\' \'--define\' \'__cpp gclang -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+setting SOURCE_DATE_EPOCH=1626825600
+Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.twLP3Z
++ umask 022
++ cd /builddir/build/BUILD
++ cd at-3.2.2
++ autoconf
++ rm -f 'lex.yy.*' 'y.tab.*'
++ CFLAGS=-O0
++ export CFLAGS
++ CXXFLAGS=-O0
++ export CXXFLAGS
++ FFLAGS='-O0 -I/usr/lib64/gfortran/modules'
++ export FFLAGS
++ FCFLAGS='-O0 -I/usr/lib64/gfortran/modules'
++ export FCFLAGS
++ LDFLAGS=-O0
++ export LDFLAGS
++ LT_SYS_LIBRARY_PATH=/usr/lib64:
++ export LT_SYS_LIBRARY_PATH
++ CC=gclang
++ export CC
++ CXX=gclang++
++ export CXX
++ '[' -fltox '!=' x ']'
+++ find . -type f -name configure -print
++ for file in $(find . -type f -name configure -print)
++ /usr/bin/sed -r --in-place=.backup 's/^char \(\*f\) \(\) = /__attribute__ ((used)) char (*f) () = /g' ./configure
++ diff -u ./configure.backup ./configure
++ mv ./configure.backup ./configure
++ /usr/bin/sed -r --in-place=.backup 's/^char \(\*f\) \(\);/__attribute__ ((used)) char (*f) ();/g' ./configure
++ diff -u ./configure.backup ./configure
++ mv ./configure.backup ./configure
++ /usr/bin/sed -r --in-place=.backup 's/^char \$2 \(\);/__attribute__ ((used)) char \$2 ();/g' ./configure
++ diff -u ./configure.backup ./configure
+--- ./configure.backup	2021-12-01 11:18:54.339597627 +0100
++++ ./configure	2021-12-01 11:18:54.355597534 +0100
+@@ -1828,7 +1828,7 @@
+ #ifdef __cplusplus
+ extern "C"
+ #endif
+-char $2 ();
++__attribute__ ((used)) char $2 ();
+ /* The GNU C library defines this for functions which it implements
+     to always fail with ENOSYS.  Some functions are actually named
+     something starting with __ and the normal name is an alias.  */
++ /usr/bin/sed --in-place=.backup '1{$!N;$!N};$!N;s/int x = 1;\nint y = 0;\nint z;\nint nan;/volatile int x = 1; volatile int y = 0; volatile int z, nan;/;P;D' ./configure
++ diff -u ./configure.backup ./configure
++ mv ./configure.backup ./configure
++ /usr/bin/sed --in-place=.backup 's#^lt_cv_sys_global_symbol_to_cdecl=.*#lt_cv_sys_global_symbol_to_cdecl="sed -n -e '\''s/^T .* \\(.*\\)$/extern int \\1();/p'\'' -e '\''s/^$symcode* .* \\(.*\\)$/extern char \\1;/p'\''"#' ./configure
++ diff -u ./configure.backup ./configure
++ mv ./configure.backup ./configure
++ '[' 1 = 1 ']'
++++ dirname ./configure
+++ find . -name config.guess -o -name config.sub
++ for i in $(find $(dirname ./configure) -name config.guess -o -name config.sub)
+++ basename ./config.guess
++ '[' -f /usr/lib/rpm/redhat/config.guess ']'
++ /usr/bin/rm -f ./config.guess
+++ basename ./config.guess
++ /usr/bin/cp -fv /usr/lib/rpm/redhat/config.guess ./config.guess
+'/usr/lib/rpm/redhat/config.guess' -> './config.guess'
++ for i in $(find $(dirname ./configure) -name config.guess -o -name config.sub)
+++ basename ./config.sub
++ '[' -f /usr/lib/rpm/redhat/config.sub ']'
++ /usr/bin/rm -f ./config.sub
+++ basename ./config.sub
++ /usr/bin/cp -fv /usr/lib/rpm/redhat/config.sub ./config.sub
+'/usr/lib/rpm/redhat/config.sub' -> './config.sub'
++ '[' 1 = 1 ']'
++ '[' x '!=' 'x-Wl,-z,now ' ']'
+++ find . -name ltmain.sh
++ ./configure --build=x86_64-redhat-linux-gnu --host=x86_64-redhat-linux-gnu --program-prefix= --disable-dependency-tracking --prefix=/usr --exec-prefix=/usr --bindir=/usr/bin --sbindir=/usr/sbin --sysconfdir=/etc --datadir=/usr/share --includedir=/usr/include --libdir=/usr/lib64 --libexecdir=/usr/libexec --localstatedir=/var --sharedstatedir=/var/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-atspool=/var/spool/at/spool --with-jobdir=/var/spool/at --with-daemon_username=root --with-daemon_groupname=root --with-selinux --with-pam
+configure: WARNING: unrecognized options: --disable-dependency-tracking
+checking build system type... x86_64-redhat-linux-gnu
+checking host system type... x86_64-redhat-linux-gnu
+checking for x86_64-redhat-linux-gnu-gcc... gclang
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gclang accepts -g... yes
+checking for gclang option to accept ISO C89... none needed
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether ln -s works... yes
+checking for bison... bison -y
+checking for flex... flex
+checking lex output file root... lex.yy
+checking lex library... -lfl
+checking whether yytext is a pointer... yes
+checking HP-UX -Aa... no
+checking __attribute__((noreturn))... yes
+checking for yywrap in -lfl... yes
+checking for dirent.h that defines DIR... yes
+checking for library containing opendir... none required
+checking how to run the C preprocessor... gclang -E
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/wait.h that is POSIX.1 compatible... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking syslog.h usability... yes
+checking syslog.h presence... yes
+checking for syslog.h... yes
+checking for unistd.h... (cached) yes
+checking errno.h usability... yes
+checking errno.h presence... yes
+checking for errno.h... yes
+checking sys/fcntl.h usability... yes
+checking sys/fcntl.h presence... yes
+checking for sys/fcntl.h... yes
+checking getopt.h usability... yes
+checking getopt.h presence... yes
+checking for getopt.h... yes
+checking stdarg.h usability... yes
+checking stdarg.h presence... yes
+checking for stdarg.h... yes
+checking for an ANSI C-conforming const... yes
+checking return type of signal handlers... void
+checking for uid_t in sys/types.h... yes
+checking for mode_t... yes
+checking for off_t... yes
+checking for pid_t... yes
+checking for size_t... yes
+checking whether struct tm is in sys/time.h or time.h... time.h
+checking for vprintf... yes
+checking for _doprnt... no
+checking for getloadavg... yes
+checking for pstat_getdynamic... no
+checking for kstat_open in -lkstat... no
+checking for getloadavg... yes
+checking whether getloadavg requires setgid... no
+checking for getcwd... yes
+checking for mktime... yes
+checking for strftime... yes
+checking for setreuid... yes
+checking for setresuid... yes
+checking for sigaction... yes
+checking for waitpid... yes
+checking security/pam_appl.h usability... yes
+checking security/pam_appl.h presence... yes
+checking for security/pam_appl.h... yes
+checking for sendmail... /usr/sbin/sendmail
+checking etcdir... /etc
+checking location of pid file... /var/run
+checking location of spool directory... not found
+checking jobdir... /var/spool/at
+checking atspool... /var/spool/at/spool
+checking maximum load average for batch to start jobs... 0.8
+checking username to run under... root
+checking for pam_start in -lpam... yes
+checking for is_selinux_enabled in -lselinux... yes
+checking for library containing timer_create... none required
+checking for timer_create... yes
+checking groupname to run under... root
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: WARNING:  'Makefile.in' seems to ignore the --datarootdir setting
+config.status: creating atrun
+config.status: creating atd.8
+config.status: creating atrun.8
+config.status: creating at.1
+config.status: creating at.allow.5
+config.status: creating batch
+config.status: creating config.h
+configure: WARNING: unrecognized options: --disable-dependency-tracking
++ make
+gclang -c -I. -O0 -fPIE -DHAVE_CONFIG_H -DVERSION=\"3.2.2\" -DETCDIR=\"/etc\" -DLOADAVG_MX=0.8 -DDAEMON_USERNAME=\"root\" -DDAEMON_GROUPNAME=\"root\" -DLFILE=\"/var/spool/at/.SEQ\" -Wall at.c
+gclang -c -I. -O0 -fPIE -DHAVE_CONFIG_H -DVERSION=\"3.2.2\" -DETCDIR=\"/etc\" -DLOADAVG_MX=0.8 -DDAEMON_USERNAME=\"root\" -DDAEMON_GROUPNAME=\"root\" -DLFILE=\"/var/spool/at/.SEQ\" -Wall panic.c
+gclang -c -I. -O0 -fPIE -DHAVE_CONFIG_H -DVERSION=\"3.2.2\" -DETCDIR=\"/etc\" -DLOADAVG_MX=0.8 -DDAEMON_USERNAME=\"root\" -DDAEMON_GROUPNAME=\"root\" -DLFILE=\"/var/spool/at/.SEQ\" -Wall perm.c
+gclang -c -I. -O0 -fPIE -DHAVE_CONFIG_H -DVERSION=\"3.2.2\" -DETCDIR=\"/etc\" -DLOADAVG_MX=0.8 -DDAEMON_USERNAME=\"root\" -DDAEMON_GROUPNAME=\"root\" -DLFILE=\"/var/spool/at/.SEQ\" -Wall posixtm.c
+bison -y -d parsetime.y
+gclang -c -I. -O0 -fPIE -DHAVE_CONFIG_H -DVERSION=\"3.2.2\" -DETCDIR=\"/etc\" -DLOADAVG_MX=0.8 -DDAEMON_USERNAME=\"root\" -DDAEMON_GROUPNAME=\"root\" -DLFILE=\"/var/spool/at/.SEQ\" -Wall y.tab.c
+/builddir/build/BUILD/at-3.2.2/parsetime.y:13:9: warning: '__isleap' macro redefined [-Wmacro-redefined] <--[gclang]
+#define __isleap(y) \
+        ^
+/usr/include/time.hparsetime.y:239::139::9 :note:  previous definition is here
+warning: '__isleap' macro redefined [-Wmacro-redefined]
+#define __isleap(year)  \
+        ^
+#define __isleap(y) \
+        ^
+/usr/include/time.h:239:9: note: previous definition is here <--[gclang]
+#define __isleap(year)  \
+        ^
+1 warning generated.
+1 warning generated.
+flex -i parsetime.l
+gclang -c -I. -O0 -fPIE -DHAVE_CONFIG_H -DVERSION=\"3.2.2\" -DETCDIR=\"/etc\" -DLOADAVG_MX=0.8 -DDAEMON_USERNAME=\"root\" -DDAEMON_GROUPNAME=\"root\" -DLFILE=\"/var/spool/at/.SEQ\" -Wall lex.yy.c
+lex.yy.clex.yy.c::15071507::1717::  warning: warning: unused function 'yyunput' [-Wunused-function]unused function 'yyunput' [-Wunused-function]
+
+    static void yyunput (int c, char * yy_bp )    static void yyunput (int c, char * yy_bp )
+
+                ^                ^
+
+/builddir/build/BUILD/at-3.2.2/lex.yy.c:1550:16lex.yy.c:: warning: 1550function 'input' is not needed and will not be emitted [-Wunneeded-internal-declaration]: <--[gclang]
+16: warning: function 'input' is not needed and will not be emitted [-Wunneeded-internal-declaration]    static int input  (void)
+
+               ^
+    static int input  (void)
+               ^
+2 warnings generated.
+2 warnings generated.
+gclang -O0 -pie -o at at.o panic.o perm.o posixtm.o y.tab.o lex.yy.o -lfl  -lfl -lpam -lpam_misc
+rm -f atq atrm
+ln -s -f at atq
+ln -s -f at atrm
+gclang -c -I. -O0 -fPIE -DHAVE_CONFIG_H -DVERSION=\"3.2.2\" -DETCDIR=\"/etc\" -DLOADAVG_MX=0.8 -DDAEMON_USERNAME=\"root\" -DDAEMON_GROUPNAME=\"root\" -DLFILE=\"/var/spool/at/.SEQ\" -Wall atd.c
+/builddir/build/BUILD/at-3.2.2/atd.c:223:5: warning: 'security_context_t' is deprecated [-Wdeprecated-declarations] <--[gclang]
+    security_context_t user_context = NULL;
+    ^
+/builddir/build/BUILD/at-3.2.2/atd.c:/usr/include/selinux/selinux.h223::195::17 :warning:  note: 'security_context_t' has been explicitly marked deprecated here'security_context_t' is deprecated [-Wdeprecated-declarations] <--[gclang]
+
+__attribute__ ((deprecated))
+                ^
+    security_context_t user_context = NULL;
+    ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here <--[gclang]
+__attribute__ ((deprecated))
+                ^
+/builddir/build/BUILD/at-3.2.2/atd.c:224:5: warning: 'security_context_t' is deprecated [-Wdeprecated-declarations] <--[gclang]
+/builddir/build/BUILD/at-3.2.2/atd.c:224:5: warning: 'security_context_t' is deprecated [-Wdeprecated-declarations]    security_context_t file_context = NULL; <--[gclang]
+
+    ^
+/usr/include/selinux/selinux.h:19    security_context_t file_context = NULL;: <--[gclang]
+17    ^
+: /usr/include/selinux/selinux.hnote: :'security_context_t' has been explicitly marked deprecated here19:
+17: note: 'security_context_t' has been explicitly marked deprecated here
+__attribute__ ((deprecated))__attribute__ ((deprecated))
+
+                ^                ^
+
+/builddir/build/BUILD/at-3.2.2/atd.c:665:10: warning: variable 'batch_queue' set but not used [-Wunused-but-set-variable] <--[gclang]
+    char batch_queue = '\0';
+         ^
+/builddir/build/BUILD/at-3.2.2/atd.c:665:10: warning: variable 'batch_queue' set but not used [-Wunused-but-set-variable] <--[gclang]
+    char batch_queue = '\0';
+         ^
+3 warnings generated.
+3 warnings generated.
+gclang -c -I. -O0 -fPIE -DHAVE_CONFIG_H -DVERSION=\"3.2.2\" -DETCDIR=\"/etc\" -DLOADAVG_MX=0.8 -DDAEMON_USERNAME=\"root\" -DDAEMON_GROUPNAME=\"root\" -DLFILE=\"/var/spool/at/.SEQ\" -Wall daemon.c
+daemon.cdaemon.c::124124::1212::  warning: warning: variable 'old_umask' set but not used [-Wunused-but-set-variable]variable 'old_umask' set but not used [-Wunused-but-set-variable]
+
+    mode_t old_umask;    mode_t old_umask;
+
+           ^           ^
+
+1 warning generated.
+1 warning generated.
+gclang -O0 -pie -o atd atd.o daemon.o  -lfl  -lpam -lpam_misc -lselinux
+cat atd.service.in | sed -e 's![@]sbindir[@]!/usr/sbin!g' | sed -e 's![@]atjobdir[@]!/var/spool/at!g' > atd.service
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Finish: chroot ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'gclang\' CXX=\\$\'gclang++\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\acsexec-symbiotic\\\\a-l\\\\a/builddir/symbiotic-capture\\\\a-s\\\\a--prp=memsafety --timeout=8 \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unused-command-line-argument:-Wno-unused-parameter:-Wno-unknown-attributes:-Wno-unused-label:-Wno-unknown-pragmas:-Wno-unused-command-line-argument:-fsanitize-address-use-after-scope:-O0:-Xclang:-disable-llvm-passes:-D__inline=:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unused-command-line-argument:-Wno-unused-parameter:-Wno-unknown-attributes:-Wno-unused-label:-Wno-unknown-pragmas:-Wno-unused-command-line-argument:-fsanitize-address-use-after-scope:-O0:-Xclang:-disable-llvm-passes:-D__inline=:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bc --nodeps --short-circuit /builddir/build/SPECS/at.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc gclang\' \'--define\' \'__cxx gclang++\' \'--define\' \'__cpp gclang -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+
+>>> 2021-12-01 11:19:00	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--chroot" "/bin/su mockbuild -l -c \"PATH=/usr/lib64/cswrap:\\\$PATH CSWRAP_CAP_FILE=\\\$'/builddir/cswrap-capture.err' CSWRAP_TIMEOUT=\\\$'30' CSWRAP_TIMEOUT_FOR=\\\$':' CC=\\\$'gclang' CXX=\\\$'gclang++' CSEXEC_WRAP_CMD=\\\$'--skip-ld-linux\\\\acsexec-symbiotic\\\\a-l\\\\a/builddir/symbiotic-capture\\\\a-s\\\\a--prp=memsafety --timeout=8 ' CSWRAP_ADD_CFLAGS=\\\$'-Wno-unknown-pragmas:-Wno-unused-command-line-argument:-Wno-unused-parameter:-Wno-unknown-attributes:-Wno-unused-label:-Wno-unknown-pragmas:-Wno-unused-command-line-argument:-fsanitize-address-use-after-scope:-O0:-Xclang:-disable-llvm-passes:-D__inline=:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader' CSWRAP_DEL_CFLAGS=\\\$'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register' CSWRAP_ADD_CXXFLAGS=\\\$'-Wno-unused-command-line-argument:-Wno-unused-parameter:-Wno-unknown-attributes:-Wno-unused-label:-Wno-unknown-pragmas:-Wno-unused-command-line-argument:-fsanitize-address-use-after-scope:-O0:-Xclang:-disable-llvm-passes:-D__inline=:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader' CSWRAP_DEL_CXXFLAGS=\\\$'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register' sh -c \\\"rpmbuild -bi --nodeps --short-circuit /builddir/build/SPECS/at.spec '--define' 'apidocs 0' '--define' 'with_publican 0' '--without' 'docs' '--without' 'langpacks' '--define' '__cc gclang' '--define' '__cxx gclang++' '--define' '__cpp gclang -E' '--define' 'toolchain clang' '--define' 'optflags -O0' '--define' 'build_ldflags -O0'\\\"\""
+INFO: mock.py version 2.13 starting (python version = 3.6.8, NVR = mock-2.13-1.kdudka.1.el7)...
+Start(bootstrap): init plugins
+INFO: selinux enabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish: chroot init
+INFO: Running in chroot: ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'gclang\' CXX=\\$\'gclang++\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\acsexec-symbiotic\\\\a-l\\\\a/builddir/symbiotic-capture\\\\a-s\\\\a--prp=memsafety --timeout=8 \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unused-command-line-argument:-Wno-unused-parameter:-Wno-unknown-attributes:-Wno-unused-label:-Wno-unknown-pragmas:-Wno-unused-command-line-argument:-fsanitize-address-use-after-scope:-O0:-Xclang:-disable-llvm-passes:-D__inline=:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unused-command-line-argument:-Wno-unused-parameter:-Wno-unknown-attributes:-Wno-unused-label:-Wno-unknown-pragmas:-Wno-unused-command-line-argument:-fsanitize-address-use-after-scope:-O0:-Xclang:-disable-llvm-passes:-D__inline=:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bi --nodeps --short-circuit /builddir/build/SPECS/at.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc gclang\' \'--define\' \'__cxx gclang++\' \'--define\' \'__cpp gclang -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+Start: chroot ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'gclang\' CXX=\\$\'gclang++\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\acsexec-symbiotic\\\\a-l\\\\a/builddir/symbiotic-capture\\\\a-s\\\\a--prp=memsafety --timeout=8 \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unused-command-line-argument:-Wno-unused-parameter:-Wno-unknown-attributes:-Wno-unused-label:-Wno-unknown-pragmas:-Wno-unused-command-line-argument:-fsanitize-address-use-after-scope:-O0:-Xclang:-disable-llvm-passes:-D__inline=:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unused-command-line-argument:-Wno-unused-parameter:-Wno-unknown-attributes:-Wno-unused-label:-Wno-unknown-pragmas:-Wno-unused-command-line-argument:-fsanitize-address-use-after-scope:-O0:-Xclang:-disable-llvm-passes:-D__inline=:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bi --nodeps --short-circuit /builddir/build/SPECS/at.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc gclang\' \'--define\' \'__cxx gclang++\' \'--define\' \'__cpp gclang -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+setting SOURCE_DATE_EPOCH=1626825600
+Executing(%install): /bin/sh -e /var/tmp/rpm-tmp.vOnCrV
++ umask 022
++ cd /builddir/build/BUILD
++ '[' /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64 '!=' / ']'
++ rm -rf /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64
+++ dirname /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64
++ mkdir -p /builddir/build/BUILDROOT
++ mkdir /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64
++ cd at-3.2.2
+++ id -nu
+++ id -ng
+++ id -nu
+++ id -nu
++ make install DAEMON_USERNAME=mockbuild DAEMON_GROUPNAME=mock DESTDIR=/builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64 sbindir=/builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/usr/sbin bindir=/builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/usr/bin prefix=/builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/usr exec_prefix=/builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/usr docdir=/builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/usr/doc mandir=/builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/usr/share/man etcdir=/builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/etc ATJOB_DIR=/builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/var/spool/at ATSPOOL_DIR=/builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/var/spool/at/spool INSTALL_ROOT_USER=mockbuild INSTALL_ROOT_GROUP=mockbuild
+/usr/bin/install -c -m 755 -d /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/etc
+/usr/bin/install -c -m 755 -d /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/usr/bin
+/usr/bin/install -c -m 755 -d /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/usr/sbin
+/usr/bin/install -c -m 755 -d /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/usr/doc
+/usr/bin/install -c -m 755 -d /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/usr/doc/at
+/usr/bin/install -c -m 755 -d /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/etc/pam.d/
+/usr/bin/install -c -g mock -o mockbuild -m 755 -d /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/var/spool/at/spool
+chmod 700 /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/var/spool/at /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/var/spool/at/spool
+chown mockbuild:mock /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/var/spool/at /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/var/spool/at/spool
+touch /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/var/spool/at/.SEQ
+chmod 600 /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/var/spool/at/.SEQ
+chown mockbuild:mock /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/var/spool/at/.SEQ
+test -f /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/etc/at.allow || test -f /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/etc/at.deny || /usr/bin/install -c -m 600 at.deny /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/etc/
+/usr/bin/install -c -o mockbuild -g mock pam_atd /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/etc/pam.d/atd
+/usr/bin/install -c -m 4755 at /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/usr/bin
+ln -s -f at /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/usr/bin/atq
+ln -s -f at /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/usr/bin/atrm
+/usr/bin/install -c -m 755 batch /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/usr/bin
+/usr/bin/install -c -d -m 755 /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/usr/share/man/man1
+/usr/bin/install -c -d -m 755 /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/usr/share/man/man5
+/usr/bin/install -c -d -m 755 /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/usr/share/man/man8
+/usr/bin/install -c -m 755 atd /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/usr/sbin
+/usr/bin/install -c -m 755 atrun /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/usr/sbin
+/usr/bin/install -c -m 644 at.1 /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/usr/share/man/man1/
+cd /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/usr/share/man/man1 && ln -s -f at.1 atq.1 && ln -s -f at.1 batch.1 && ln -s -f at.1 atrm.1
+/usr/bin/install -c -m 644 atd.8 /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/usr/share/man/man8/
+sed "s,\${exec_prefix},/builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/usr,g" <atrun.8>tmpman
+/usr/bin/install -c -m 644 tmpman /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/usr/share/man/man8/atrun.8
+rm -f tmpman
+/usr/bin/install -c -m 644 at.allow.5 /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/usr/share/man/man5/
+cd /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/usr/share/man/man5 && ln -s -f at.allow.5 at.deny.5
+/usr/bin/install -c -m 644 Problems Copyright README ChangeLog timespec /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/usr/doc/at
+rm -f /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/usr/share/man/cat1/at.1* /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/usr/share/man/cat1/batch.1* \
+	/builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/usr/share/man/cat1/atq.1*
+rm -f /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/usr/share/man/cat1/atd.8*
+if test x"no" != xno; then \
+	/usr/bin/install -c -o root -g root -m 755 -d no; \
+	/usr/bin/install -c -o root -g root -m 644 atd.service no; \
+fi
++ echo
++ mkdir docs
++ cp /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64//usr/doc/at/ChangeLog /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64//usr/doc/at/Copyright /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64//usr/doc/at/Problems /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64//usr/doc/at/README /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64//usr/doc/at/timespec docs/
++ mkdir -p /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/etc/pam.d
++ install -m 644 /builddir/build/SOURCES/pam_atd /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/etc/pam.d/atd
++ mkdir -p /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/etc/sysconfig
++ install -m 644 /builddir/build/SOURCES/atd.sysconf /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/etc/sysconfig/atd
++ mkdir -p /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64//usr/lib/systemd/system/
++ install -m 644 /builddir/build/SOURCES/atd.systemd /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64//usr/lib/systemd/system/atd.service
++ rm -r /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/usr/doc
++ /usr/bin/find-debuginfo -j16 --strict-build-id -m -i --build-id-seed 3.2.2-2.fc35 --unique-debug-suffix -3.2.2-2.fc35.x86_64 --unique-debug-src-base at-3.2.2-2.fc35.x86_64 --run-dwz --dwz-low-mem-die-limit 10000000 --dwz-max-die-limit 110000000 -S debugsourcefiles.list /builddir/build/BUILD/at-3.2.2
+extracting debug info from /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/usr/bin/at
+extracting debug info from /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/usr/sbin/atd
+original debug info size: 124kB, size after compression: 108kB
+/usr/bin/sepdebugcrcfix: Updated 2 CRC32s, 0 CRC32s did match.
+429 blocks
++ /usr/lib/rpm/check-buildroot
++ /usr/lib/rpm/redhat/brp-llvm-compile-lto-elf -O0 -O0
+Checking for LLVM bitcode artifacts
++ /usr/lib/rpm/redhat/brp-ldconfig
++ /usr/lib/rpm/brp-compress
++ /usr/lib/rpm/redhat/brp-strip-lto /usr/bin/strip
++ /usr/lib/rpm/brp-strip-static-archive /usr/bin/strip
++ /usr/lib/rpm/check-rpaths
++ /usr/lib/rpm/redhat/brp-mangle-shebangs
+mangling shebang in /usr/bin/batch from /bin/sh -e to #!/usr/bin/sh -e
+mangling shebang in /usr/sbin/atrun from /bin/sh to #!/usr/bin/sh
++ /usr/lib/rpm/redhat/brp-python-bytecompile '' 1 0
++ /usr/lib/rpm/redhat/brp-python-hardlink
+Executing(%check): /bin/sh -e /var/tmp/rpm-tmp.6a1zsl
++ umask 022
++ cd /builddir/build/BUILD
++ cd at-3.2.2
++ make test
+gclang -o parsetest -I. -O0 -DHAVE_CONFIG_H -DVERSION=\"3.2.2\" -DETCDIR=\"/etc\" -DLOADAVG_MX=0.8 -DDAEMON_USERNAME=\"root\" -DDAEMON_GROUPNAME=\"root\" -DLFILE=\"/var/spool/at/.SEQ\" -Wall -DTEST_PARSER -DNEED_YYWRAP lex.yy.c y.tab.c
+/builddir/build/BUILD/at-3.2.2/lex.yy.c:1507:17: warning: unused function 'yyunput' [-Wunused-function] <--[gclang]
+    static void yyunput (int c, char * yy_bp )
+                ^
+/builddir/build/BUILD/at-3.2.2/lex.yy.c:1550:16: warning: function 'input' is not needed and will not be emitted [-Wunneeded-internal-declaration] <--[gclang]
+    static int input  (void)
+               ^
+2 warnings generated.
+/builddir/build/BUILD/at-3.2.2/lex.yy.c:1507:17: warning: unused function 'yyunput' [-Wunused-function] <--[gclang]
+    static void yyunput (int c, char * yy_bp )
+                ^
+/builddir/build/BUILD/at-3.2.2/lex.yy.c:1550:16: warning: function 'input' is not needed and will not be emitted [-Wunneeded-internal-declaration] <--[gclang]
+    static int input  (void)
+               ^
+2 warnings generated.
+/builddir/build/BUILD/at-3.2.2/parsetime.y:13:9: warning: '__isleap' macro redefined [-Wmacro-redefined] <--[gclang]
+#define __isleap(y) \
+        ^
+/usr/include/time.h:239:9: note: previous definition is here <--[gclang]
+#define __isleap(year)  \
+        ^
+/builddir/build/BUILD/at-3.2.2/lex.yy.c:1507:17: warning: unused function 'yyunput' [-Wunused-function] <--[gclang]
+    static void yyunput (int c, char * yy_bp )
+                ^
+/builddir/build/BUILD/at-3.2.2/lex.yy.c:1550:16: warning: function 'input' is not needed and will not be emitted [-Wunneeded-internal-declaration] <--[gclang]
+    static int input  (void)
+               ^
+2 warnings generated.
+1 warning generated.
+/builddir/build/BUILD/at-3.2.2/parsetime.y:13:9: warning: '__isleap' macro redefined [-Wmacro-redefined] <--[gclang]
+#define __isleap(y) \
+        ^
+/usr/include/time.h:239:9: note: previous definition is here <--[gclang]
+#define __isleap(year)  \
+        ^
+1 warning generated.
+/builddir/build/BUILD/at-3.2.2/parsetime.y:13:9: warning: '__isleap' macro redefined [-Wmacro-redefined] <--[gclang]
+#define __isleap(y) \
+        ^
+/usr/include/time.h:239:9: note: previous definition is here <--[gclang]
+#define __isleap(year)  \
+        ^
+1 warning generated.
+prove parsetime.pl
+parsetime.pl .. ok
+All tests successful.
+
+Test Summary Report
+-------------------
+parsetime.pl (Wstat: 0 Tests: 29 Failed: 0)
+  TODO passed:   29
+Files=1, Tests=29, 252 wallclock secs ( 0.02 usr  0.01 sys + 234.83 cusr  3.35 csys = 238.21 CPU)
+Result: PASS
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Processing files: at-3.2.2-2.fc35.x86_64
+Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.aJybSh
++ umask 022
++ cd /builddir/build/BUILD
++ cd at-3.2.2
++ DOCDIR=/builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/usr/share/doc/at
++ export LC_ALL=C
++ LC_ALL=C
++ export DOCDIR
++ /usr/bin/mkdir -p /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/usr/share/doc/at
++ cp -pr README /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/usr/share/doc/at
++ cp -pr timespec /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/usr/share/doc/at
++ cp -pr ChangeLog /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/usr/share/doc/at
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Executing(%license): /bin/sh -e /var/tmp/rpm-tmp.uYT49M
++ umask 022
++ cd /builddir/build/BUILD
++ cd at-3.2.2
++ LICENSEDIR=/builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/usr/share/licenses/at
++ export LC_ALL=C
++ LC_ALL=C
++ export LICENSEDIR
++ /usr/bin/mkdir -p /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/usr/share/licenses/at
++ cp -pr Copyright /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/usr/share/licenses/at
++ cp -pr COPYING /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64/usr/share/licenses/at
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Provides: at = 3.2.2-2.fc35 at(x86-64) = 3.2.2-2.fc35 config(at) = 3.2.2-2.fc35
+Requires(interp): /bin/sh /bin/sh /bin/sh /bin/sh
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Requires(post): /bin/sh systemd-units
+Requires(preun): /bin/sh systemd-units
+Requires(postun): /bin/sh systemd-units
+Requires: /usr/bin/sh libc.so.6()(64bit) libc.so.6(GLIBC_2.14)(64bit) libc.so.6(GLIBC_2.17)(64bit) libc.so.6(GLIBC_2.2.5)(64bit) libc.so.6(GLIBC_2.3)(64bit) libc.so.6(GLIBC_2.33)(64bit) libc.so.6(GLIBC_2.34)(64bit) libc.so.6(GLIBC_2.7)(64bit) libpam.so.0()(64bit) libpam.so.0(LIBPAM_1.0)(64bit) libpam_misc.so.0()(64bit) libselinux.so.1()(64bit) libselinux.so.1(LIBSELINUX_1.0)(64bit) rtld(GNU_HASH)
+Conflicts: crontabs <= 1.5
+Obsoletes: at-sysvinit < 3.1.16-1
+Processing files: at-debugsource-3.2.2-2.fc35.x86_64
+Provides: at-debugsource = 3.2.2-2.fc35 at-debugsource(x86-64) = 3.2.2-2.fc35
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Processing files: at-debuginfo-3.2.2-2.fc35.x86_64
+Provides: at-debuginfo = 3.2.2-2.fc35 at-debuginfo(x86-64) = 3.2.2-2.fc35 debuginfo(build-id) = 434b4f83b4b8561fca82795df14ef9eea1ff8783 debuginfo(build-id) = 7207e98b6ba05955e9fcb7b2ea59cde8f7ff368e
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Recommends: at-debugsource(x86-64) = 3.2.2-2.fc35
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /builddir/build/BUILDROOT/at-3.2.2-2.fc35.x86_64
+Finish: chroot ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'gclang\' CXX=\\$\'gclang++\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\acsexec-symbiotic\\\\a-l\\\\a/builddir/symbiotic-capture\\\\a-s\\\\a--prp=memsafety --timeout=8 \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unused-command-line-argument:-Wno-unused-parameter:-Wno-unknown-attributes:-Wno-unused-label:-Wno-unknown-pragmas:-Wno-unused-command-line-argument:-fsanitize-address-use-after-scope:-O0:-Xclang:-disable-llvm-passes:-D__inline=:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unused-command-line-argument:-Wno-unused-parameter:-Wno-unknown-attributes:-Wno-unused-label:-Wno-unknown-pragmas:-Wno-unused-command-line-argument:-fsanitize-address-use-after-scope:-O0:-Xclang:-disable-llvm-passes:-D__inline=:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bi --nodeps --short-circuit /builddir/build/SPECS/at.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc gclang\' \'--define\' \'__cxx gclang++\' \'--define\' \'__cpp gclang -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+
+>>> 2021-12-01 11:23:14	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'tar -c --remove-files '/builddir/cswrap-capture.err' '/builddir/symbiotic-capture'' | tar -xC '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/debug/raw-results'"
+tar: Removing leading `/' from member names
+tar: Removing leading `/' from hard link targets
+
+>>> 2021-12-01 11:23:16	"csgrep --mode=json --remove-duplicates '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/debug/raw-results/builddir/symbiotic-capture'/pid-*.conv > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/debug/uni-results/symbiotic-capture.js'"
+
+scan.ini: time-finished = 2021-12-01 11:23:16
+scan.ini: exit-code = 0
+>>> 2021-12-01 11:23:16	"cslinker --quiet --cwelist '/usr/share/csmock/cwe-map.csv' --inifile '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/scan.ini' '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/debug/uni-results'/* > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/debug/scan-results-all.js'"
+
+>>> 2021-12-01 11:23:16	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'csgrep --mode=json --embed-context 3' < '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/debug/scan-results-all.js' > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/debug/scan-results-all.js.tmp'"
+
+>>> 2021-12-01 11:23:18	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--clean"
+
+>>> 2021-12-01 11:23:21	"cat '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/debug/scan-results-all.js' | sed 's|/builddir/build/BUILDROOT/[^/]*/|/builddir/build/BUILD//|' | csgrep --mode=json --path '^/builddir/build/BUILD/' --strip-path-prefix /builddir/build/BUILD/ | csgrep --mode=json --invert-match --path '^ksh-.*[0-9]+\\.c\$' | csgrep --mode=json --invert-match --path 'CMakeFiles/CMakeTmp|conftest.c' | csdiff --json-output --show-internal \"/usr/share/csmock/known-false-positives.js\" - | cssort --key=path > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/scan-results.js'"
+
+>>> 2021-12-01 11:23:21	"sed 's|/builddir/build/BUILDROOT/[^/]*/|/builddir/build/BUILD//|' '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/debug/scan-results-all.js' | csgrep --mode=json --strip-path-prefix /builddir/build/BUILD/ | csdiff --show-internal '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/scan-results.js' - | cssort > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/debug/suppressed-results.js'"
+
+>>> 2021-12-01 11:23:21	"\"bash\" \"-c\" \"csgrep '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/debug/suppressed-results.js' --mode=json --checker '^(COMPILER_WARNING)\\\$' | csdiff <(csgrep '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/debug/suppressed-results.js' --mode=json --drop-scan-props --invert-regex --checker '^()\\\$' --event '-W(address|bool-compare|builtin-declaration-mismatch|format-overflow|implicit-function-declaration|implicit-int|int-in-bool-context|logical-not-parentheses|logical-op|memset-transposed-args|misleading-indentation|pointer-compare|stack-protector|stringop-overflow|switch-unreachable|tautological-compare)=?\\\\]\\\$') - > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/debug/suppressed-results-imp.js'\""
+
+>>> 2021-12-01 11:23:21	"csgrep --mode=grep --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/debug/suppressed-results-imp.js' > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/debug/suppressed-results-imp.err'"
+
+>>> 2021-12-01 11:23:21	"csgrep --mode=json --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/debug/suppressed-results-imp.js' | cshtml - > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/debug/suppressed-results-imp.html'"
+
+>>> 2021-12-01 11:23:21	"csgrep --mode=evtstat --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/debug/suppressed-results-imp.js' | tee '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/debug/suppressed-results-imp-summary.txt'"
+
+>>> 2021-12-01 11:23:21	"cslinker --implist '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/debug/suppressed-results-imp.js' '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/debug/suppressed-results.js' > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/debug/suppressed-results-tmp.js' && mv -v '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/debug/suppressed-results-tmp.js' '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/debug/suppressed-results.js'"
+'/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/debug/suppressed-results-tmp.js' -> '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/debug/suppressed-results.js'
+
+>>> 2021-12-01 11:23:21	"csgrep --mode=grep --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/debug/suppressed-results.js' > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/debug/suppressed-results.err'"
+
+>>> 2021-12-01 11:23:21	"csgrep --mode=json --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/debug/suppressed-results.js' | cshtml - > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/debug/suppressed-results.html'"
+
+>>> 2021-12-01 11:23:21	"csgrep --mode=evtstat --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/debug/suppressed-results.js' | tee '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/debug/suppressed-results-summary.txt'"
+
+>>> 2021-12-01 11:23:21	"\"bash\" \"-c\" \"csgrep '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/scan-results.js' --mode=json --checker '^(COMPILER_WARNING)\\\$' | csdiff <(csgrep '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/scan-results.js' --mode=json --drop-scan-props --invert-regex --checker '^()\\\$' --event '-W(address|bool-compare|builtin-declaration-mismatch|format-overflow|implicit-function-declaration|implicit-int|int-in-bool-context|logical-not-parentheses|logical-op|memset-transposed-args|misleading-indentation|pointer-compare|stack-protector|stringop-overflow|switch-unreachable|tautological-compare)=?\\\\]\\\$') - > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/scan-results-imp.js'\""
+
+>>> 2021-12-01 11:23:21	"csgrep --mode=grep --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/scan-results-imp.js' > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/scan-results-imp.err'"
+
+>>> 2021-12-01 11:23:21	"csgrep --mode=json --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/scan-results-imp.js' | cshtml - > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/scan-results-imp.html'"
+
+>>> 2021-12-01 11:23:21	"csgrep --mode=evtstat --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/scan-results-imp.js' | tee '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/scan-results-imp-summary.txt'"
+
+>>> 2021-12-01 11:23:21	"cslinker --implist '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/scan-results-imp.js' '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/scan-results.js' > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/scan-results-tmp.js' && mv -v '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/scan-results-tmp.js' '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/scan-results.js'"
+'/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/scan-results-tmp.js' -> '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/scan-results.js'
+
+>>> 2021-12-01 11:23:21	"csgrep --mode=grep --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/scan-results.js' > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/scan-results.err'"
+
+>>> 2021-12-01 11:23:21	"csgrep --mode=json --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/scan-results.js' | cshtml - > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/scan-results.html'"
+
+>>> 2021-12-01 11:23:21	"csgrep --mode=evtstat --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/scan-results.js' | tee '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/at-3.2.2-2.fc35/symbiotic/output/scan-results-summary.txt'"
+      1	COMPILER_WARNING                                	warning
+      2	COMPILER_WARNING                                	warning[-Wdeprecated-declarations]
+      1	COMPILER_WARNING                                	warning[-Wmacro-redefined]
+      1	COMPILER_WARNING                                	warning[-Wunneeded-internal-declaration]
+      1	COMPILER_WARNING                                	warning[-Wunused-but-set-variable]
+      1	COMPILER_WARNING                                	warning[-Wunused-function]
+
+<<< 2021-12-01 11:23:21	csmock exit code: 0
+

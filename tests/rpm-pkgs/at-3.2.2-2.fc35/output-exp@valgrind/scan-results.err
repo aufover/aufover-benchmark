@@ -1,0 +1,512 @@
+Error: COMPILER_WARNING (CWE-252):
+at-3.2.2/at.c: scope_hint: In function 'nextjob'
+at-3.2.2/at.c:202:9: warning[-Wunused-result]: ignoring return value of 'fscanf' declared with attribute 'warn_unused_result'
+#  202 |         fscanf(fid, "%5lx", &jobno);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  200|       fid = fopen(LFILE, "r+");
+#  201|       if (fid != NULL) {
+#  202|-> 	fscanf(fid, "%5lx", &jobno);
+#  203|   	rewind(fid);
+#  204|       } else {
+
+Error: COMPILER_WARNING (CWE-477):
+at-3.2.2/atd.c: scope_hint: In function 'set_selinux_context'
+at-3.2.2/atd.c:223:5: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#  223 |     security_context_t user_context = NULL;
+#      |     ^~~~~~~~~~~~~~~~~~
+#  221|   static int
+#  222|   set_selinux_context(const char *name, const char *filename) {
+#  223|->     security_context_t user_context = NULL;
+#  224|       security_context_t file_context = NULL;
+#  225|       int retval = 0;
+
+Error: COMPILER_WARNING (CWE-477):
+at-3.2.2/atd.c:224:5: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#  224 |     security_context_t file_context = NULL;
+#      |     ^~~~~~~~~~~~~~~~~~
+#  222|   set_selinux_context(const char *name, const char *filename) {
+#  223|       security_context_t user_context = NULL;
+#  224|->     security_context_t file_context = NULL;
+#  225|       int retval = 0;
+#  226|       char *seuser = NULL;
+
+Error: COMPILER_WARNING (CWE-252):
+at-3.2.2/atd.c:538:13: warning[-Wunused-result]: ignoring return value of 'nice' declared with attribute 'warn_unused_result'
+#  538 |             nice((tolower((int) queue) - 'a') * 2);
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  536|   	close(fd_out);
+#  537|   
+#  538|-> 	    nice((tolower((int) queue) - 'a') * 2);
+#  539|   
+#  540|   #ifdef WITH_SELINUX
+
+Error: COMPILER_WARNING (CWE-252):
+at-3.2.2/atd.c:559:13: warning[-Wunused-result]: ignoring return value of 'chdir' declared with attribute 'warn_unused_result'
+#  559 |             chdir("/");
+#      |             ^~~~~~~~~~
+#  557|   		perr("Cannot reset signal handler to default");
+#  558|   
+#  559|-> 	    chdir("/");
+#  560|   
+#  561|   	    execle("/bin/sh", "sh", (char *) NULL, nenvp);
+
+Error: COMPILER_WARNING (CWE-252):
+at-3.2.2/atd.c:629:13: warning[-Wunused-result]: ignoring return value of 'chdir' declared with attribute 'warn_unused_result'
+#  629 |             chdir ("/");
+#      |             ^~~~~~~~~~~
+#  627|   		perr("Cannot reset signal handler to default");
+#  628|   
+#  629|-> 	    chdir ("/");
+#  630|   
+#  631|   #if defined(SENDMAIL)
+
+Error: COMPILER_WARNING (CWE-563):
+at-3.2.2/atd.c: scope_hint: In function 'run_loop'
+at-3.2.2/atd.c:665:10: warning[-Wunused-but-set-variable]: variable 'batch_queue' set but not used
+#  665 |     char batch_queue = '\0';
+#      |          ^~~~~~~~~~~
+#  663|       unsigned long jobno;
+#  664|       char queue;
+#  665|->     char batch_queue = '\0';
+#  666|       time_t run_time, next_job;
+#  667|       char batch_name[] = "z2345678901234";
+
+Error: COMPILER_WARNING (CWE-563):
+at-3.2.2/daemon.c: scope_hint: In function 'daemon_setup'
+at-3.2.2/daemon.c:124:12: warning[-Wunused-but-set-variable]: variable 'old_umask' set but not used
+#  124 |     mode_t old_umask;
+#      |            ^~~~~~~~~
+#  122|       /* Set up standard daemon environment */
+#  123|       pid_t pid;
+#  124|->     mode_t old_umask;
+#  125|       int fd, devnull;
+#  126|       FILE *fp;
+
+Error: COMPILER_WARNING (CWE-1164):
+at-3.2.2/lex.yy.c:1507:17: warning[-Wunused-function]: 'yyunput' defined but not used
+# 1507 | 
+#      |                 ^      
+# 1505|   
+# 1506|   #ifndef YY_NO_UNPUT
+# 1507|-> 
+# 1508|       static void yyunput (int c, char * yy_bp )
+# 1509|   {
+
+Error: COMPILER_WARNING (CWE-1164):
+at-3.2.2/lex.yy.c:1550:16: warning[-Wunused-function]: 'input' defined but not used
+# 1550 | #else
+#      |                ^    
+# 1548|   #ifdef __cplusplus
+# 1549|       static int yyinput (void)
+# 1550|-> #else
+# 1551|       static int input  (void)
+# 1552|   #endif
+
+Error: COMPILER_WARNING (CWE-252):
+at-3.2.2/panic.c: scope_hint: In function 'panic'
+at-3.2.2/panic.c:60:9: warning[-Wunused-result]: ignoring return value of 'setregid' declared with attribute 'warn_unused_result'
+#   60 |         setregid(real_gid, effective_gid);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   58|       fprintf(stderr, "%s: %s\n", namep, a);
+#   59|       if (fcreated) {
+#   60|-> 	setregid(real_gid, effective_gid);
+#   61|   	unlink(atfile);
+#   62|   	setregid(effective_gid, real_gid);
+
+Error: COMPILER_WARNING (CWE-252):
+at-3.2.2/panic.c:62:9: warning[-Wunused-result]: ignoring return value of 'setregid' declared with attribute 'warn_unused_result'
+#   62 |         setregid(effective_gid, real_gid);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   60|   	setregid(real_gid, effective_gid);
+#   61|   	unlink(atfile);
+#   62|-> 	setregid(effective_gid, real_gid);
+#   63|       }
+#   64|   
+
+Error: COMPILER_WARNING (CWE-252):
+at-3.2.2/panic.c: scope_hint: In function 'perr'
+at-3.2.2/panic.c:82:9: warning[-Wunused-result]: ignoring return value of 'setregid' declared with attribute 'warn_unused_result'
+#   82 |         setregid(real_gid, effective_gid);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   80|       perror(buf);
+#   81|       if (fcreated) {
+#   82|->         setregid(real_gid, effective_gid);
+#   83|   	unlink(atfile);
+#   84|           setregid(effective_gid, real_gid);
+
+Error: COMPILER_WARNING (CWE-252):
+at-3.2.2/panic.c:84:9: warning[-Wunused-result]: ignoring return value of 'setregid' declared with attribute 'warn_unused_result'
+#   84 |         setregid(effective_gid, real_gid);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   82|           setregid(real_gid, effective_gid);
+#   83|   	unlink(atfile);
+#   84|->         setregid(effective_gid, real_gid);
+#   85|       }
+#   86|   
+
+Error: VALGRIND_WARNING:
+./parsetest: note: while executing process 9289 with arguments: 1258462020 now + 1 min
+at-3.2.2/parsetime.l:38: warning[Leak_DefinitelyLost]: 4 bytes in 1 blocks are definitely lost in loss record 4 of 7
+/usr/lib64/libc.so.6: note: called from strdup()
+at-3.2.2/parsetime.l:38: note: called from UnknownInlinedFun()
+at-3.2.2/y.tab.c:1295: note: called from yyparse()
+at-3.2.2/parsetime.y:497: note: called from UnknownInlinedFun()
+at-3.2.2/parsetime.y:550: note: called from main()
+#   36|   %%
+#   37|   
+#   38|-> now		{ COPY_TOK ; return NOW; }
+#   39|   am		{ COPY_TOK ; return AM; }
+#   40|   pm		{ COPY_TOK ; return PM; }
+
+Error: VALGRIND_WARNING:
+./parsetest: note: while executing process 9795 with arguments: 1258462020 Jan 32
+at-3.2.2/parsetime.l:61: warning[Leak_DefinitelyLost]: 4 bytes in 1 blocks are definitely lost in loss record 3 of 6
+/usr/lib64/libc.so.6: note: called from strdup()
+at-3.2.2/parsetime.l:61: note: called from UnknownInlinedFun()
+at-3.2.2/y.tab.c:1295: note: called from yyparse()
+at-3.2.2/parsetime.y:497: note: called from UnknownInlinedFun()
+at-3.2.2/parsetime.y:550: note: called from main()
+#   59|   month(s)?	{ COPY_TOK ; return MONTH; }
+#   60|   year(s)?	{ COPY_TOK ; return YEAR; }
+#   61|-> jan(uary)?	{ COPY_TOK ; return JAN; }
+#   62|   feb(ruary)?	{ COPY_TOK ; return FEB; }
+#   63|   mar(ch)?	{ COPY_TOK ; return MAR; }
+
+Error: VALGRIND_WARNING:
+./parsetest: note: while executing process 9818 with arguments: 1258462020 Feb 30
+at-3.2.2/parsetime.l:62: warning[Leak_DefinitelyLost]: 4 bytes in 1 blocks are definitely lost in loss record 2 of 5
+/usr/lib64/libc.so.6: note: called from strdup()
+at-3.2.2/parsetime.l:62: note: called from UnknownInlinedFun()
+at-3.2.2/y.tab.c:1295: note: called from yyparse()
+at-3.2.2/parsetime.y:497: note: called from UnknownInlinedFun()
+at-3.2.2/parsetime.y:550: note: called from main()
+#   60|   year(s)?	{ COPY_TOK ; return YEAR; }
+#   61|   jan(uary)?	{ COPY_TOK ; return JAN; }
+#   62|-> feb(ruary)?	{ COPY_TOK ; return FEB; }
+#   63|   mar(ch)?	{ COPY_TOK ; return MAR; }
+#   64|   apr(il)?	{ COPY_TOK ; return APR; }
+
+Error: VALGRIND_WARNING:
+./parsetest: note: while executing process 9841 with arguments: 1258462020 Apr 31
+at-3.2.2/parsetime.l:64: warning[Leak_DefinitelyLost]: 4 bytes in 1 blocks are definitely lost in loss record 2 of 5
+/usr/lib64/libc.so.6: note: called from strdup()
+at-3.2.2/parsetime.l:64: note: called from UnknownInlinedFun()
+at-3.2.2/y.tab.c:1295: note: called from yyparse()
+at-3.2.2/parsetime.y:497: note: called from UnknownInlinedFun()
+at-3.2.2/parsetime.y:550: note: called from main()
+#   62|   feb(ruary)?	{ COPY_TOK ; return FEB; }
+#   63|   mar(ch)?	{ COPY_TOK ; return MAR; }
+#   64|-> apr(il)?	{ COPY_TOK ; return APR; }
+#   65|   may		{ COPY_TOK ; return MAY; }
+#   66|   jun(e)?		{ COPY_TOK ; return JUN; }
+
+Error: VALGRIND_WARNING:
+./parsetest: note: while executing process 9864 with arguments: 1258462020 May -1
+at-3.2.2/parsetime.l:65: warning[Leak_DefinitelyLost]: 4 bytes in 1 blocks are definitely lost in loss record 2 of 5
+/usr/lib64/libc.so.6: note: called from strdup()
+at-3.2.2/parsetime.l:65: note: called from UnknownInlinedFun()
+at-3.2.2/y.tab.c:1295: note: called from yyparse()
+at-3.2.2/parsetime.y:497: note: called from UnknownInlinedFun()
+at-3.2.2/parsetime.y:550: note: called from main()
+#   63|   mar(ch)?	{ COPY_TOK ; return MAR; }
+#   64|   apr(il)?	{ COPY_TOK ; return APR; }
+#   65|-> may		{ COPY_TOK ; return MAY; }
+#   66|   jun(e)?		{ COPY_TOK ; return JUN; }
+#   67|   jul(y)?		{ COPY_TOK ; return JUL; }
+
+Error: VALGRIND_WARNING:
+./parsetest: note: while executing process 9611 with arguments: 1258462020 12:00 Oct 17
+at-3.2.2/parsetime.l:70: warning[Leak_DefinitelyLost]: 4 bytes in 1 blocks are definitely lost in loss record 2 of 6
+/usr/lib64/libc.so.6: note: called from strdup()
+at-3.2.2/parsetime.l:70: note: called from UnknownInlinedFun()
+at-3.2.2/y.tab.c:1295: note: called from yyparse()
+at-3.2.2/parsetime.y:497: note: called from UnknownInlinedFun()
+at-3.2.2/parsetime.y:550: note: called from main()
+#   68|   aug(ust)?	{ COPY_TOK ; return AUG; }
+#   69|   sep(tember)?	{ COPY_TOK ; return SEP; }
+#   70|-> oct(ober)?	{ COPY_TOK ; return OCT; }
+#   71|   nov(ember)?	{ COPY_TOK ; return NOV; }
+#   72|   dec(ember)?	{ COPY_TOK ; return DEC; }
+
+Error: VALGRIND_WARNING:
+./parsetest: note: while executing process 9588 with arguments: 1258462020 12:00 Dec 17
+at-3.2.2/parsetime.l:72: warning[Leak_DefinitelyLost]: 4 bytes in 1 blocks are definitely lost in loss record 2 of 6
+/usr/lib64/libc.so.6: note: called from strdup()
+at-3.2.2/parsetime.l:72: note: called from UnknownInlinedFun()
+at-3.2.2/y.tab.c:1295: note: called from yyparse()
+at-3.2.2/parsetime.y:497: note: called from UnknownInlinedFun()
+at-3.2.2/parsetime.y:550: note: called from main()
+#   70|   oct(ober)?	{ COPY_TOK ; return OCT; }
+#   71|   nov(ember)?	{ COPY_TOK ; return NOV; }
+#   72|-> dec(ember)?	{ COPY_TOK ; return DEC; }
+#   73|   utc		{ COPY_TOK ; return UTC; }
+#   74|   [0-9]{1}	{ COPY_TOK ; COPY_VAL; return INT1DIGIT; }
+
+Error: VALGRIND_WARNING:
+./parsetest: note: while executing process 9289 with arguments: 1258462020 now + 1 min
+at-3.2.2/parsetime.l:74: warning[Leak_DefinitelyLost]: 2 bytes in 1 blocks are definitely lost in loss record 2 of 7
+/usr/lib64/libc.so.6: note: called from strdup()
+at-3.2.2/parsetime.l:74: note: called from UnknownInlinedFun()
+at-3.2.2/y.tab.c:1295: note: called from yyparse()
+at-3.2.2/parsetime.y:497: note: called from UnknownInlinedFun()
+at-3.2.2/parsetime.y:550: note: called from main()
+#   72|   dec(ember)?	{ COPY_TOK ; return DEC; }
+#   73|   utc		{ COPY_TOK ; return UTC; }
+#   74|-> [0-9]{1}	{ COPY_TOK ; COPY_VAL; return INT1DIGIT; }
+#   75|   [0-9]{2}	{ COPY_TOK ; COPY_VAL; return INT2DIGIT; }
+#   76|   [0-9]{4}	{ COPY_TOK ; COPY_VAL; return INT4DIGIT; }
+
+Error: VALGRIND_WARNING:
+./parsetest: note: while executing process 9312 with arguments: 1258462020 now + 23 min
+at-3.2.2/parsetime.l:75: warning[Leak_DefinitelyLost]: 3 bytes in 1 blocks are definitely lost in loss record 2 of 7
+/usr/lib64/libc.so.6: note: called from strdup()
+at-3.2.2/parsetime.l:75: note: called from UnknownInlinedFun()
+at-3.2.2/y.tab.c:1295: note: called from yyparse()
+at-3.2.2/parsetime.y:497: note: called from UnknownInlinedFun()
+at-3.2.2/parsetime.y:550: note: called from main()
+#   73|   utc		{ COPY_TOK ; return UTC; }
+#   74|   [0-9]{1}	{ COPY_TOK ; COPY_VAL; return INT1DIGIT; }
+#   75|-> [0-9]{2}	{ COPY_TOK ; COPY_VAL; return INT2DIGIT; }
+#   76|   [0-9]{4}	{ COPY_TOK ; COPY_VAL; return INT4DIGIT; }
+#   77|   [0-9]{5,8}	{ COPY_TOK ; COPY_VAL; return INT5_8DIGIT; }
+
+Error: VALGRIND_WARNING:
+./parsetest: note: while executing process 9657 with arguments: 1258462020 12:00 Oct 17 + 35 days
+at-3.2.2/parsetime.l:75: warning[Leak_DefinitelyLost]: 6 bytes in 2 blocks are definitely lost in loss record 5 of 8
+/usr/lib64/libc.so.6: note: called from strdup()
+at-3.2.2/parsetime.l:75: note: called from UnknownInlinedFun()
+at-3.2.2/y.tab.c:1295: note: called from yyparse()
+at-3.2.2/parsetime.y:497: note: called from UnknownInlinedFun()
+at-3.2.2/parsetime.y:550: note: called from main()
+#   73|   utc		{ COPY_TOK ; return UTC; }
+#   74|   [0-9]{1}	{ COPY_TOK ; COPY_VAL; return INT1DIGIT; }
+#   75|-> [0-9]{2}	{ COPY_TOK ; COPY_VAL; return INT2DIGIT; }
+#   76|   [0-9]{4}	{ COPY_TOK ; COPY_VAL; return INT4DIGIT; }
+#   77|   [0-9]{5,8}	{ COPY_TOK ; COPY_VAL; return INT5_8DIGIT; }
+
+Error: VALGRIND_WARNING:
+./parsetest: note: while executing process 9726 with arguments: 1258462020 00:00 Dec 24 + 358 days
+at-3.2.2/parsetime.l:78: warning[Leak_DefinitelyLost]: 4 bytes in 1 blocks are definitely lost in loss record 4 of 9
+/usr/lib64/libc.so.6: note: called from strdup()
+at-3.2.2/parsetime.l:78: note: called from UnknownInlinedFun()
+at-3.2.2/y.tab.c:1295: note: called from yyparse()
+at-3.2.2/parsetime.y:497: note: called from UnknownInlinedFun()
+at-3.2.2/parsetime.y:550: note: called from main()
+#   76|   [0-9]{4}	{ COPY_TOK ; COPY_VAL; return INT4DIGIT; }
+#   77|   [0-9]{5,8}	{ COPY_TOK ; COPY_VAL; return INT5_8DIGIT; }
+#   78|-> [0-9]+		{ COPY_TOK ; COPY_VAL; return INT; }
+#   79|   [0-9]{1,2}\.[0-9]{1,2}\.[0-9]{2}([0-9]{2})?	{ COPY_TOK ; COPY_VAL; return DOTTEDDATE; }
+#   80|   [0-9]{2}([0-9]{2})?-[0-9]{1,2}-[0-9]{1,2}	{ COPY_TOK ; COPY_VAL; return HYPHENDATE; }
+
+Error: VALGRIND_WARNING:
+./parsetest: note: while executing process 9496 with arguments: 1258462020 23:55 + 7 min
+at-3.2.2/parsetime.l:81: warning[Leak_DefinitelyLost]: 6 bytes in 1 blocks are definitely lost in loss record 4 of 7
+/usr/lib64/libc.so.6: note: called from strdup()
+at-3.2.2/parsetime.l:81: note: called from UnknownInlinedFun()
+at-3.2.2/y.tab.c:1295: note: called from yyparse()
+at-3.2.2/parsetime.y:497: note: called from UnknownInlinedFun()
+at-3.2.2/parsetime.y:550: note: called from main()
+#   79|   [0-9]{1,2}\.[0-9]{1,2}\.[0-9]{2}([0-9]{2})?	{ COPY_TOK ; COPY_VAL; return DOTTEDDATE; }
+#   80|   [0-9]{2}([0-9]{2})?-[0-9]{1,2}-[0-9]{1,2}	{ COPY_TOK ; COPY_VAL; return HYPHENDATE; }
+#   81|-> [012]?[0-9][:'h,.][0-9]{2}	{ COPY_TOK ; COPY_VAL; return HOURMIN; }
+#   82|   [ \t\n]		;
+#   83|   .		{ COPY_TOK ; return yytext[0]; }
+
+Error: VALGRIND_WARNING:
+./parsetest: note: while executing process 9289 with arguments: 1258462020 now + 1 min
+at-3.2.2/parsetime.l:83: warning[Leak_DefinitelyLost]: 2 bytes in 1 blocks are definitely lost in loss record 1 of 7
+/usr/lib64/libc.so.6: note: called from strdup()
+at-3.2.2/parsetime.l:83: note: called from UnknownInlinedFun()
+at-3.2.2/y.tab.c:1295: note: called from yyparse()
+at-3.2.2/parsetime.y:497: note: called from UnknownInlinedFun()
+at-3.2.2/parsetime.y:550: note: called from main()
+#   81|   [012]?[0-9][:'h,.][0-9]{2}	{ COPY_TOK ; COPY_VAL; return HOURMIN; }
+#   82|   [ \t\n]		;
+#   83|-> .		{ COPY_TOK ; return yytext[0]; }
+#   84|   
+#   85|   %%
+
+Error: COMPILER_WARNING (CWE-758):
+at-3.2.2/parsetime.y:13: warning: "__isleap" redefined
+#   13 | #define __isleap(y) \
+#      | 
+at-3.2.2/parsetime.y:2: included_from: Included from here.
+/usr/include/time.h:239: note: this is the location of the previous definition
+#  239 | #define __isleap(year)  \
+#      | 
+#   11|   
+#   12|   #ifndef HAVE_ISLEAP
+#   13|-> #define __isleap(y) \
+#   14|       ((y) % 4 == 0 && ((y) % 100 != 0 || (y) % 400 == 0))
+#   15|   #endif
+
+Error: COMPILER_WARNING (CWE-252):
+at-3.2.2/at.c:79: included_from: Included from here.
+at-3.2.2/at.c: scope_hint: In function 'main'
+at-3.2.2/privs.h:70:31: warning[-Wunused-result]: ignoring return value of 'setreuid' declared with attribute 'warn_unused_result'
+#   70 |                               setreuid(effective_uid, real_uid); \
+#      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+at-3.2.2/at.c:792:5: note: in expansion of macro 'RELINQUISH_PRIVS'
+#  792 |     RELINQUISH_PRIVS
+#      |     ^~~~~~~~~~~~~~~~
+#   68|   			      real_gid = getgid(); \
+#   69|   			      effective_gid = getegid(); \
+#   70|-> 			      setreuid(effective_uid, real_uid); \
+#   71|   			      setregid(effective_gid, real_gid); \
+#   72|   		          }
+
+Error: COMPILER_WARNING (CWE-252):
+at-3.2.2/privs.h:71:31: warning[-Wunused-result]: ignoring return value of 'setregid' declared with attribute 'warn_unused_result'
+#   71 |                               setregid(effective_gid, real_gid); \
+#      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+at-3.2.2/at.c:792:5: note: in expansion of macro 'RELINQUISH_PRIVS'
+#  792 |     RELINQUISH_PRIVS
+#      |     ^~~~~~~~~~~~~~~~
+#   69|   			      effective_gid = getegid(); \
+#   70|   			      setreuid(effective_uid, real_uid); \
+#   71|-> 			      setregid(effective_gid, real_gid); \
+#   72|   		          }
+#   73|   
+
+Error: COMPILER_WARNING (CWE-252):
+at-3.2.2/atd.c:82: included_from: Included from here.
+at-3.2.2/atd.c: scope_hint: In function 'main'
+at-3.2.2/privs.h:79:31: warning[-Wunused-result]: ignoring return value of 'setregid' declared with attribute 'warn_unused_result'
+#   79 |                               setregid(effective_gid, real_gid); \
+#      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+at-3.2.2/atd.c:937:5: note: in expansion of macro 'RELINQUISH_PRIVS_ROOT'
+#  937 |     RELINQUISH_PRIVS_ROOT(daemon_uid, daemon_gid)
+#      |     ^~~~~~~~~~~~~~~~~~~~~
+#   77|   			      real_gid = (b); \
+#   78|   			      effective_gid = getegid(); \
+#   79|-> 			      setregid(effective_gid, real_gid); \
+#   80|   			      setreuid(effective_uid, real_uid); \
+#   81|   		          }
+
+Error: COMPILER_WARNING (CWE-252):
+at-3.2.2/privs.h:80:31: warning[-Wunused-result]: ignoring return value of 'setreuid' declared with attribute 'warn_unused_result'
+#   80 |                               setreuid(effective_uid, real_uid); \
+#      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+at-3.2.2/atd.c:937:5: note: in expansion of macro 'RELINQUISH_PRIVS_ROOT'
+#  937 |     RELINQUISH_PRIVS_ROOT(daemon_uid, daemon_gid)
+#      |     ^~~~~~~~~~~~~~~~~~~~~
+#   78|   			      effective_gid = getegid(); \
+#   79|   			      setregid(effective_gid, real_gid); \
+#   80|-> 			      setreuid(effective_uid, real_uid); \
+#   81|   		          }
+#   82|   
+
+Error: COMPILER_WARNING (CWE-252):
+at-3.2.2/at.c: scope_hint: In function 'list_jobs'
+at-3.2.2/privs.h:84:21: warning[-Wunused-result]: ignoring return value of 'setreuid' declared with attribute 'warn_unused_result'
+#   84 |                     setreuid(real_uid, effective_uid); \
+#      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+at-3.2.2/at.c:616:5: note: in expansion of macro 'PRIV_START'
+#  616 |     PRIV_START
+#      |     ^~~~~~~~~~
+#   82|   
+#   83|   #define PRIV_START {\
+#   84|-> 		    setreuid(real_uid, effective_uid); \
+#   85|   		    setregid(real_gid, effective_gid);
+#   86|   
+
+Error: COMPILER_WARNING (CWE-252):
+at-3.2.2/privs.h:85:21: warning[-Wunused-result]: ignoring return value of 'setregid' declared with attribute 'warn_unused_result'
+#   85 |                     setregid(real_gid, effective_gid);
+#      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+at-3.2.2/at.c:616:5: note: in expansion of macro 'PRIV_START'
+#  616 |     PRIV_START
+#      |     ^~~~~~~~~~
+#   83|   #define PRIV_START {\
+#   84|   		    setreuid(real_uid, effective_uid); \
+#   85|-> 		    setregid(real_gid, effective_gid);
+#   86|   
+#   87|   #define PRIV_END \
+
+Error: COMPILER_WARNING (CWE-252):
+at-3.2.2/privs.h:88:21: warning[-Wunused-result]: ignoring return value of 'setregid' declared with attribute 'warn_unused_result'
+#   88 |                     setregid(effective_gid, real_gid); \
+#      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+at-3.2.2/at.c:654:5: note: in expansion of macro 'PRIV_END'
+#  654 |     PRIV_END
+#      |     ^~~~~~~~
+#   86|   
+#   87|   #define PRIV_END \
+#   88|-> 		    setregid(effective_gid, real_gid); \
+#   89|   		    setreuid(effective_uid, real_uid); \
+#   90|   		    }
+
+Error: COMPILER_WARNING (CWE-252):
+at-3.2.2/privs.h:89:21: warning[-Wunused-result]: ignoring return value of 'setreuid' declared with attribute 'warn_unused_result'
+#   89 |                     setreuid(effective_uid, real_uid); \
+#      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+at-3.2.2/at.c:654:5: note: in expansion of macro 'PRIV_END'
+#  654 |     PRIV_END
+#      |     ^~~~~~~~
+#   87|   #define PRIV_END \
+#   88|   		    setregid(effective_gid, real_gid); \
+#   89|-> 		    setreuid(effective_uid, real_uid); \
+#   90|   		    }
+#   91|   
+
+Error: COMPILER_WARNING (CWE-252):
+at-3.2.2/privs.h:93:25: warning[-Wunused-result]: ignoring return value of 'setreuid' declared with attribute 'warn_unused_result'
+#   93 |                         setreuid(real_uid, effective_uid); \
+#      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+at-3.2.2/at.c:926:9: note: in expansion of macro 'REDUCE_PRIV'
+#  926 |         REDUCE_PRIV(daemon_uid, daemon_gid)
+#      |         ^~~~~~~~~~~
+#   91|   
+#   92|   #define REDUCE_PRIV(a,b) {\
+#   93|-> 			setreuid(real_uid, effective_uid); \
+#   94|   			setregid(real_gid, effective_gid); \
+#   95|   			effective_uid = (a); \
+
+Error: COMPILER_WARNING (CWE-252):
+at-3.2.2/privs.h:94:25: warning[-Wunused-result]: ignoring return value of 'setregid' declared with attribute 'warn_unused_result'
+#   94 |                         setregid(real_gid, effective_gid); \
+#      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+at-3.2.2/at.c:926:9: note: in expansion of macro 'REDUCE_PRIV'
+#  926 |         REDUCE_PRIV(daemon_uid, daemon_gid)
+#      |         ^~~~~~~~~~~
+#   92|   #define REDUCE_PRIV(a,b) {\
+#   93|   			setreuid(real_uid, effective_uid); \
+#   94|-> 			setregid(real_gid, effective_gid); \
+#   95|   			effective_uid = (a); \
+#   96|   			effective_gid = (b); \
+
+Error: COMPILER_WARNING (CWE-252):
+at-3.2.2/privs.h:97:25: warning[-Wunused-result]: ignoring return value of 'setregid' declared with attribute 'warn_unused_result'
+#   97 |                         setregid(effective_gid, real_gid); \
+#      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+at-3.2.2/at.c:926:9: note: in expansion of macro 'REDUCE_PRIV'
+#  926 |         REDUCE_PRIV(daemon_uid, daemon_gid)
+#      |         ^~~~~~~~~~~
+#   95|   			effective_uid = (a); \
+#   96|   			effective_gid = (b); \
+#   97|-> 			setregid(effective_gid, real_gid); \
+#   98|   			setreuid(effective_uid, real_uid); \
+#   99|   		    }
+
+Error: COMPILER_WARNING (CWE-252):
+at-3.2.2/privs.h:98:25: warning[-Wunused-result]: ignoring return value of 'setreuid' declared with attribute 'warn_unused_result'
+#   98 |                         setreuid(effective_uid, real_uid); \
+#      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+at-3.2.2/at.c:926:9: note: in expansion of macro 'REDUCE_PRIV'
+#  926 |         REDUCE_PRIV(daemon_uid, daemon_gid)
+#      |         ^~~~~~~~~~~
+#   96|   			effective_gid = (b); \
+#   97|   			setregid(effective_gid, real_gid); \
+#   98|-> 			setreuid(effective_uid, real_uid); \
+#   99|   		    }
+#  100|   #elif HAVE_SETRESUID
+
+Error: COMPILER_WARNING (CWE-563):
+at-3.2.2/privs.h:177:12: warning[-Wunused-variable]: 'pam_session_opened' defined but not used
+#  177 | static int pam_session_opened = 0;      //global for open session
+#      |            ^~~~~~~~~~~~~~~~~~
+#  175|          } while (0) \
+#  176|   
+#  177|-> static int pam_session_opened = 0;      //global for open session
+#  178|   
+#  179|   #define AT_START_PAM { \

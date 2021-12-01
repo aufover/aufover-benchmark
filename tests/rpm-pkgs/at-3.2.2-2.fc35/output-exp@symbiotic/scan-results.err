@@ -1,0 +1,82 @@
+Error: COMPILER_WARNING (CWE-477):
+at-3.2.2/atd.c:223:5: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#    security_context_t user_context = NULL;
+#    ^
+#__attribute__ ((deprecated))
+#                ^
+#    security_context_t user_context = NULL;
+#    ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#  221|   static int
+#  222|   set_selinux_context(const char *name, const char *filename) {
+#  223|->     security_context_t user_context = NULL;
+#  224|       security_context_t file_context = NULL;
+#  225|       int retval = 0;
+
+Error: COMPILER_WARNING (CWE-758):
+at-3.2.2/atd.c:224:5: warning: 'security_context_t' is deprecated [-Wdeprecated-declarations]    security_context_t file_context = NULL;
+#
+#    ^
+17: note: 'security_context_t' has been explicitly marked deprecated here
+#  222|   set_selinux_context(const char *name, const char *filename) {
+#  223|       security_context_t user_context = NULL;
+#  224|->     security_context_t file_context = NULL;
+#  225|       int retval = 0;
+#  226|       char *seuser = NULL;
+
+Error: COMPILER_WARNING (CWE-477):
+at-3.2.2/atd.c:224:5: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#  222|   set_selinux_context(const char *name, const char *filename) {
+#  223|       security_context_t user_context = NULL;
+#  224|->     security_context_t file_context = NULL;
+#  225|       int retval = 0;
+#  226|       char *seuser = NULL;
+
+Error: COMPILER_WARNING (CWE-563):
+at-3.2.2/atd.c:665:10: warning[-Wunused-but-set-variable]: variable 'batch_queue' set but not used
+#    char batch_queue = '\0';
+#         ^
+#  663|       unsigned long jobno;
+#  664|       char queue;
+#  665|->     char batch_queue = '\0';
+#  666|       time_t run_time, next_job;
+#  667|       char batch_name[] = "z2345678901234";
+
+Error: COMPILER_WARNING (CWE-1164):
+at-3.2.2/lex.yy.c:1507:17: warning[-Wunused-function]: unused function 'yyunput'
+#    static void yyunput (int c, char * yy_bp )
+#                ^
+# 1505|   
+# 1506|   #ifndef YY_NO_UNPUT
+# 1507|-> 
+# 1508|       static void yyunput (int c, char * yy_bp )
+# 1509|   {
+
+Error: COMPILER_WARNING (CWE-758):
+at-3.2.2/lex.yy.c:1550:16: warning[-Wunneeded-internal-declaration]: function 'input' is not needed and will not be emitted
+#    static int input  (void)
+#               ^
+# 1548|   #ifdef __cplusplus
+# 1549|       static int yyinput (void)
+# 1550|-> #else
+# 1551|       static int input  (void)
+# 1552|   #endif
+
+Error: COMPILER_WARNING (CWE-758):
+at-3.2.2/parsetime.y:13:9: warning[-Wmacro-redefined]: '__isleap' macro redefined
+##define __isleap(y) \
+#        ^
+##define __isleap(year)  \
+#        ^
+##define __isleap(y) \
+#        ^
+/usr/include/time.h:239:9: note: previous definition is here
+##define __isleap(year)  \
+#        ^
+#   11|   
+#   12|   #ifndef HAVE_ISLEAP
+#   13|-> #define __isleap(y) \
+#   14|       ((y) % 4 == 0 && ((y) % 100 != 0 || (y) % 400 == 0))
+#   15|   #endif
