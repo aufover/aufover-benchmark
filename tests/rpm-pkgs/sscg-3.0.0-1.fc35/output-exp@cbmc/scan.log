@@ -1,0 +1,778 @@
+scan.ini: [scan]
+scan.ini: tool = csmock
+scan.ini: tool-version = csmock-3.2.0.20211130.141423.g64dd084.divine-1.fc34
+scan.ini: tool-args = '/usr/bin/csmock' '-o' '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output' '-f' '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/sscg-3.0.0-1.fc35.src.rpm' '-r' 'fedora-35-x86_64' '-t' 'cbmc' '--cbmc-timeout=8' '--keep-going'
+scan.ini: host = f34
+scan.ini: store-results-to = /home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output
+scan.ini: time-created = 2021-12-01 15:07:30
+scan.ini: enabled-plugins = cbmc, gcc
+scan.ini: mock-config = fedora-35-x86_64
+scan.ini: project-name = sscg-3.0.0-1.fc35
+scan.ini: known-false-positives = /usr/share/csmock/known-false-positives.js
+>>> 2021-12-01 15:07:30	"rpm -qa | sort -V > '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/debug/rpm-list-host.txt'"
+
+>>> 2021-12-01 15:07:30	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--init"
+INFO: mock.py version 2.13 starting (python version = 3.9.7, NVR = mock-2.13-1.kdudka.1.fc34)...
+Start(bootstrap): init plugins
+INFO: selinux enabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start: clean chroot
+Finish: clean chroot
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+Start: unpacking root cache
+Finish: unpacking root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish: chroot init
+Finish: run
+
+>>> 2021-12-01 15:07:33	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--installdeps" "/tmp/csmockvhlxg3zj/sscg-3.0.0-1.fc35.src.rpm"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Dependencies resolved.
+================================================================================
+ Package                   Arch     Version                   Repository   Size
+================================================================================
+Installing:
+ [1mgcc                      [m x86_64   11.2.1-1.fc35             f35-build    31 M
+ [1mhelp2man                 [m noarch   1.48.5-1.fc35             f35-build   156 k
+ [1mlibpath_utils-devel      [m x86_64   0.2.1-48.fc35             f35-build   112 k
+ [1mlibtalloc-devel          [m x86_64   2.3.3-2.fc35              f35-build    56 k
+ [1mmeson                    [m noarch   0.59.4-1.fc35             f35-build   1.2 M
+ [1mninja-build              [m x86_64   1.10.2-6.fc35             f35-build   144 k
+ [1mopenssl-devel            [m x86_64   1:1.1.1l-2.fc35           f35-build   2.2 M
+ [1mpopt-devel               [m x86_64   1.18-6.fc35               f35-build    25 k
+Installing dependencies:
+ [1mannobin-docs             [m noarch   9.87-3.fc35               f35-build    78 k
+ [1mannobin-plugin-gcc       [m x86_64   9.87-3.fc35               f35-build    42 k
+ [1mcpp                      [m x86_64   11.2.1-1.fc35             f35-build    10 M
+ [1memacs-filesystem         [m noarch   1:27.2-9.fc35             f35-build   9.0 k
+ [1mexpat                    [m x86_64   2.4.1-2.fc35              f35-build   110 k
+ [1mgc                       [m x86_64   8.0.4-6.fc35              f35-build   103 k
+ [1mglibc-devel              [m x86_64   2.34-8.fc35               f35-build   146 k
+ [1mglibc-headers-x86        [m noarch   2.34-8.fc35               f35-build   544 k
+ [1mgroff-base               [m x86_64   1.22.4-8.fc35             f35-build   1.0 M
+ [1mguile22                  [m x86_64   2.2.7-3.fc35              f35-build   6.4 M
+ [1mkernel-headers           [m x86_64   5.15.4-200.fc35           f35-build   1.3 M
+ [1mlibmpc                   [m x86_64   1.2.1-3.fc35              f35-build    62 k
+ [1mlibpath_utils            [m x86_64   0.2.1-48.fc35             f35-build    29 k
+ [1mlibtalloc                [m x86_64   2.3.3-2.fc35              f35-build    31 k
+ [1mlibtool-ltdl             [m x86_64   2.4.6-42.fc35             f35-build    36 k
+ [1mlibxcrypt-devel          [m x86_64   4.4.26-4.fc35             f35-build    29 k
+ [1mmake                     [m x86_64   1:4.3-6.fc35              f35-build   533 k
+ [1mmpdecimal                [m x86_64   2.5.1-2.fc35              f35-build    99 k
+ [1mncurses                  [m x86_64   6.2-8.20210508.fc35       f35-build   400 k
+ [1mperl-Carp                [m noarch   1.52-478.fc35             f35-build    29 k
+ [1mperl-Class-Struct        [m noarch   0.66-482.fc35             f35-build    30 k
+ [1mperl-DynaLoader          [m x86_64   1.50-482.fc35             f35-build    34 k
+ [1mperl-Encode              [m x86_64   4:3.15-482.fc35           f35-build   1.7 M
+ [1mperl-Errno               [m x86_64   1.33-482.fc35             f35-build    23 k
+ [1mperl-Exporter            [m noarch   5.76-479.fc35             f35-build    31 k
+ [1mperl-Fcntl               [m x86_64   1.14-482.fc35             f35-build    28 k
+ [1mperl-File-Basename       [m noarch   2.85-482.fc35             f35-build    25 k
+ [1mperl-File-Path           [m noarch   2.18-478.fc35             f35-build    35 k
+ [1mperl-File-Temp           [m noarch   1:0.231.100-478.fc35      f35-build    59 k
+ [1mperl-File-stat           [m noarch   1.09-482.fc35             f35-build    25 k
+ [1mperl-Getopt-Long         [m noarch   1:2.52-478.fc35           f35-build    60 k
+ [1mperl-Getopt-Std          [m noarch   1.13-482.fc35             f35-build    23 k
+ [1mperl-HTTP-Tiny           [m noarch   0.080-1.fc35              f35-build    55 k
+ [1mperl-IO                  [m x86_64   1.46-482.fc35             f35-build    95 k
+ [1mperl-IPC-Open3           [m noarch   1.21-482.fc35             f35-build    31 k
+ [1mperl-MIME-Base64         [m x86_64   3.16-478.fc35             f35-build    30 k
+ [1mperl-POSIX               [m x86_64   1.97-482.fc35             f35-build   105 k
+ [1mperl-PathTools           [m x86_64   3.80-478.fc35             f35-build    85 k
+ [1mperl-Pod-Escapes         [m noarch   1:1.07-478.fc35           f35-build    20 k
+ [1mperl-Pod-Perldoc         [m noarch   3.28.01-479.fc35          f35-build    84 k
+ [1mperl-Pod-Simple          [m noarch   1:3.43-2.fc35             f35-build   215 k
+ [1mperl-Pod-Usage           [m noarch   4:2.01-478.fc35           f35-build    40 k
+ [1mperl-Scalar-List-Utils   [m x86_64   5:1.60-462.fc35           f35-build    72 k
+ [1mperl-SelectSaver         [m noarch   1.02-482.fc35             f35-build    19 k
+ [1mperl-Socket              [m x86_64   4:2.032-2.fc35            f35-build    55 k
+ [1mperl-Storable            [m x86_64   1:3.25-1.fc35             f35-build    95 k
+ [1mperl-Symbol              [m noarch   1.09-482.fc35             f35-build    22 k
+ [1mperl-Term-ANSIColor      [m noarch   5.01-479.fc35             f35-build    48 k
+ [1mperl-Term-Cap            [m noarch   1.17-478.fc35             f35-build    22 k
+ [1mperl-Text-ParseWords     [m noarch   3.30-478.fc35             f35-build    16 k
+ [1mperl-Text-Tabs+Wrap      [m noarch   2021.0814-1.fc35          f35-build    22 k
+ [1mperl-Time-Local          [m noarch   2:1.300-478.fc35          f35-build    33 k
+ [1mperl-constant            [m noarch   1.33-479.fc35             f35-build    23 k
+ [1mperl-if                  [m noarch   0.60.900-482.fc35         f35-build    22 k
+ [1mperl-interpreter         [m x86_64   4:5.34.0-482.fc35         f35-build    79 k
+ [1mperl-libs                [m x86_64   4:5.34.0-482.fc35         f35-build   2.1 M
+ [1mperl-mro                 [m x86_64   1.25-482.fc35             f35-build    36 k
+ [1mperl-overload            [m noarch   1.33-482.fc35             f35-build    53 k
+ [1mperl-overloading         [m noarch   0.02-482.fc35             f35-build    21 k
+ [1mperl-parent              [m noarch   1:0.238-478.fc35          f35-build    14 k
+ [1mperl-podlators           [m noarch   1:4.14-478.fc35           f35-build   111 k
+ [1mperl-subs                [m noarch   1.04-482.fc35             f35-build    19 k
+ [1mperl-vars                [m noarch   1.05-482.fc35             f35-build    21 k
+ [1mpython-pip-wheel         [m noarch   21.2.3-4.fc35             f35-build   1.1 M
+ [1mpython-setuptools-wheel  [m noarch   57.4.0-1.fc35             f35-build   505 k
+ [1mpython3                  [m x86_64   3.10.0-1.fc35             f35-build    25 k
+ [1mpython3-libs             [m x86_64   3.10.0-1.fc35             f35-build   7.5 M
+ [1mpython3-setuptools       [m noarch   57.4.0-1.fc35             f35-build   928 k
+ [1mvim-filesystem           [m noarch   2:8.2.3642-2.fc35         f35-build    22 k
+
+Transaction Summary
+================================================================================
+Install  77 Packages
+
+Total size: 72 M
+Total download size: 5.0 M
+Installed size: 237 M
+Downloading Packages:
+--------------------------------------------------------------------------------
+Total                                           958 kB/s | 5.0 MB     00:05     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+
+Installed:
+  annobin-docs-9.87-3.fc35.noarch                                               
+  annobin-plugin-gcc-9.87-3.fc35.x86_64                                         
+  cpp-11.2.1-1.fc35.x86_64                                                      
+  emacs-filesystem-1:27.2-9.fc35.noarch                                         
+  expat-2.4.1-2.fc35.x86_64                                                     
+  gc-8.0.4-6.fc35.x86_64                                                        
+  gcc-11.2.1-1.fc35.x86_64                                                      
+  glibc-devel-2.34-8.fc35.x86_64                                                
+  glibc-headers-x86-2.34-8.fc35.noarch                                          
+  groff-base-1.22.4-8.fc35.x86_64                                               
+  guile22-2.2.7-3.fc35.x86_64                                                   
+  help2man-1.48.5-1.fc35.noarch                                                 
+  kernel-headers-5.15.4-200.fc35.x86_64                                         
+  libmpc-1.2.1-3.fc35.x86_64                                                    
+  libpath_utils-0.2.1-48.fc35.x86_64                                            
+  libpath_utils-devel-0.2.1-48.fc35.x86_64                                      
+  libtalloc-2.3.3-2.fc35.x86_64                                                 
+  libtalloc-devel-2.3.3-2.fc35.x86_64                                           
+  libtool-ltdl-2.4.6-42.fc35.x86_64                                             
+  libxcrypt-devel-4.4.26-4.fc35.x86_64                                          
+  make-1:4.3-6.fc35.x86_64                                                      
+  meson-0.59.4-1.fc35.noarch                                                    
+  mpdecimal-2.5.1-2.fc35.x86_64                                                 
+  ncurses-6.2-8.20210508.fc35.x86_64                                            
+  ninja-build-1.10.2-6.fc35.x86_64                                              
+  openssl-devel-1:1.1.1l-2.fc35.x86_64                                          
+  perl-Carp-1.52-478.fc35.noarch                                                
+  perl-Class-Struct-0.66-482.fc35.noarch                                        
+  perl-DynaLoader-1.50-482.fc35.x86_64                                          
+  perl-Encode-4:3.15-482.fc35.x86_64                                            
+  perl-Errno-1.33-482.fc35.x86_64                                               
+  perl-Exporter-5.76-479.fc35.noarch                                            
+  perl-Fcntl-1.14-482.fc35.x86_64                                               
+  perl-File-Basename-2.85-482.fc35.noarch                                       
+  perl-File-Path-2.18-478.fc35.noarch                                           
+  perl-File-Temp-1:0.231.100-478.fc35.noarch                                    
+  perl-File-stat-1.09-482.fc35.noarch                                           
+  perl-Getopt-Long-1:2.52-478.fc35.noarch                                       
+  perl-Getopt-Std-1.13-482.fc35.noarch                                          
+  perl-HTTP-Tiny-0.080-1.fc35.noarch                                            
+  perl-IO-1.46-482.fc35.x86_64                                                  
+  perl-IPC-Open3-1.21-482.fc35.noarch                                           
+  perl-MIME-Base64-3.16-478.fc35.x86_64                                         
+  perl-POSIX-1.97-482.fc35.x86_64                                               
+  perl-PathTools-3.80-478.fc35.x86_64                                           
+  perl-Pod-Escapes-1:1.07-478.fc35.noarch                                       
+  perl-Pod-Perldoc-3.28.01-479.fc35.noarch                                      
+  perl-Pod-Simple-1:3.43-2.fc35.noarch                                          
+  perl-Pod-Usage-4:2.01-478.fc35.noarch                                         
+  perl-Scalar-List-Utils-5:1.60-462.fc35.x86_64                                 
+  perl-SelectSaver-1.02-482.fc35.noarch                                         
+  perl-Socket-4:2.032-2.fc35.x86_64                                             
+  perl-Storable-1:3.25-1.fc35.x86_64                                            
+  perl-Symbol-1.09-482.fc35.noarch                                              
+  perl-Term-ANSIColor-5.01-479.fc35.noarch                                      
+  perl-Term-Cap-1.17-478.fc35.noarch                                            
+  perl-Text-ParseWords-3.30-478.fc35.noarch                                     
+  perl-Text-Tabs+Wrap-2021.0814-1.fc35.noarch                                   
+  perl-Time-Local-2:1.300-478.fc35.noarch                                       
+  perl-constant-1.33-479.fc35.noarch                                            
+  perl-if-0.60.900-482.fc35.noarch                                              
+  perl-interpreter-4:5.34.0-482.fc35.x86_64                                     
+  perl-libs-4:5.34.0-482.fc35.x86_64                                            
+  perl-mro-1.25-482.fc35.x86_64                                                 
+  perl-overload-1.33-482.fc35.noarch                                            
+  perl-overloading-0.02-482.fc35.noarch                                         
+  perl-parent-1:0.238-478.fc35.noarch                                           
+  perl-podlators-1:4.14-478.fc35.noarch                                         
+  perl-subs-1.04-482.fc35.noarch                                                
+  perl-vars-1.05-482.fc35.noarch                                                
+  popt-devel-1.18-6.fc35.x86_64                                                 
+  python-pip-wheel-21.2.3-4.fc35.noarch                                         
+  python-setuptools-wheel-57.4.0-1.fc35.noarch                                  
+  python3-3.10.0-1.fc35.x86_64                                                  
+  python3-libs-3.10.0-1.fc35.x86_64                                             
+  python3-setuptools-57.4.0-1.fc35.noarch                                       
+  vim-filesystem-2:8.2.3642-2.fc35.noarch                                       
+
+Complete!
+
+>>> 2021-12-01 15:09:22	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--install" "cbmc" "cbmc-utils"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Dependencies resolved.
+================================================================================
+ Package               Architecture Version               Repository       Size
+================================================================================
+Installing:
+ [1mcbmc                 [m x86_64       5.38.0-1.fc35         f35-build        15 M
+ [1mcbmc-utils           [m x86_64       5.38.0-1.fc35         f35-build        12 k
+Installing dependencies:
+ [1mgcc-c++              [m x86_64       11.2.1-1.fc35         f35-build        12 M
+ [1mlibstdc++-devel      [m x86_64       11.2.1-1.fc35         f35-build       2.2 M
+ [1mminisat2-libs        [m x86_64       2.2.1-13.fc35         f35-build        44 k
+
+Transaction Summary
+================================================================================
+Install  5 Packages
+
+Total size: 29 M
+Installed size: 97 M
+Downloading Packages:
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+
+Installed:
+  cbmc-5.38.0-1.fc35.x86_64             cbmc-utils-5.38.0-1.fc35.x86_64        
+  gcc-c++-11.2.1-1.fc35.x86_64          libstdc++-devel-11.2.1-1.fc35.x86_64   
+  minisat2-libs-2.2.1-13.fc35.x86_64   
+
+Complete!
+
+>>> 2021-12-01 15:10:49	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa' | sort -V > /home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/debug/rpm-list-mock.txt"
+
+>>> 2021-12-01 15:10:51	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa --provides' | sort -V > /tmp/csmockvhlxg3zj/rpm-list-mock-provides.txt"
+
+>>> 2021-12-01 15:10:53	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--copyin" "/tmp/csmockvhlxg3zj/sscg-3.0.0-1.fc35.src.rpm" "/builddir/sscg-3.0.0-1.fc35.src.rpm"
+
+>>> 2021-12-01 15:10:54	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "chown mockbuild -R /builddir"
+
+>>> 2021-12-01 15:10:56	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"rpm -Uvh --nodeps '/builddir/sscg-3.0.0-1.fc35.src.rpm'\""
+Updating / installing...
+sscg-3.0.0-1.fc35                     ########################################
+
+>>> 2021-12-01 15:10:57	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"sed -e 's|^ExclusiveArch:.*\\\$||' -i /builddir/build/SPECS/sscg.spec\""
+
+>>> 2021-12-01 15:10:59	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"rpmbuild -bs --nodeps /builddir/build/SPECS/sscg.spec '--define' 'apidocs 0' '--define' 'with_publican 0' '--without' 'docs' '--without' 'langpacks' '--define' '__cc goto-gcc' '--define' '__cxx goto-gcc' '--define' '__cpp goto-gcc -E' '--define' 'optflags -O0' '--define' 'build_ldflags -O0' && sh -c 'cd /builddir/build/SRPMS && eval mv -v *.src.rpm /builddir/sscg-3.0.0-1.fc35.src.rpm || :'\""
+setting SOURCE_DATE_EPOCH=1626825600
+Wrote: /builddir/build/SRPMS/sscg-3.0.0-1.fc35.src.rpm
+renamed 'sscg-3.0.0-1.fc35.src.rpm' -> '/builddir/sscg-3.0.0-1.fc35.src.rpm'
+
+>>> 2021-12-01 15:11:00	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--disable-plugin=selinux" "--copyout" "/builddir/sscg-3.0.0-1.fc35.src.rpm" "/tmp/csmockvhlxg3zj/sscg-3.0.0-1.fc35.src.rpm"
+
+>>> 2021-12-01 15:11:02	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--installdeps" "/tmp/csmockvhlxg3zj/sscg-3.0.0-1.fc35.src.rpm"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Package gcc-11.2.1-1.fc35.x86_64 is already installed.
+Package help2man-1.48.5-1.fc35.noarch is already installed.
+Package libpath_utils-devel-0.2.1-48.fc35.x86_64 is already installed.
+Package libtalloc-devel-2.3.3-2.fc35.x86_64 is already installed.
+Package meson-0.59.4-1.fc35.noarch is already installed.
+Package ninja-build-1.10.2-6.fc35.x86_64 is already installed.
+Package openssl-devel-1:1.1.1l-2.fc35.x86_64 is already installed.
+Package popt-devel-1.18-6.fc35.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+
+>>> 2021-12-01 15:11:47	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--install" "cbmc" "cbmc-utils"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Package cbmc-5.38.0-1.fc35.x86_64 is already installed.
+Package cbmc-utils-5.38.0-1.fc35.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+
+>>> 2021-12-01 15:11:54	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa' | sort -V > /home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/debug/rpm-list-mock.txt"
+
+>>> 2021-12-01 15:11:56	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa --provides' | sort -V > /tmp/csmockvhlxg3zj/rpm-list-mock-provides.txt"
+
+>>> 2021-12-01 15:11:57	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--install" "csdiff"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Dependencies resolved.
+================================================================================
+ Package                    Arch        Version            Repository      Size
+================================================================================
+Installing:
+ [1mcsdiff                    [m x86_64      2.2.0-1.fc35       f35-build      895 k
+Installing dependencies:
+ [1mboost-filesystem          [m x86_64      1.76.0-4.fc35      f35-build       60 k
+ [1mboost-program-options     [m x86_64      1.76.0-4.fc35      f35-build      108 k
+ [1mboost-system              [m x86_64      1.76.0-4.fc35      f35-build       15 k
+
+Transaction Summary
+================================================================================
+Install  4 Packages
+
+Total size: 1.1 M
+Installed size: 4.8 M
+Downloading Packages:
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+
+Installed:
+  boost-filesystem-1.76.0-4.fc35.x86_64                                         
+  boost-program-options-1.76.0-4.fc35.x86_64                                    
+  boost-system-1.76.0-4.fc35.x86_64                                             
+  csdiff-2.2.0-1.fc35.x86_64                                                    
+
+Complete!
+
+>>> 2021-12-01 15:12:09	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa' | sort -V > /home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/debug/rpm-list-mock.txt"
+
+>>> 2021-12-01 15:12:10	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa --provides' | sort -V > /tmp/csmockvhlxg3zj/rpm-list-mock-provides.txt"
+
+>>> 2021-12-01 15:12:12	"tar -cP '/usr/share/csmock/scripts' '/usr/bin/cswrap' '/usr/lib64/cswrap' '/usr/bin/csexec' '/usr/bin/csexec-loader' '/usr/lib64/libcsexec-preload.so' '/tmp/csmockvhlxg3zj/sscg-3.0.0-1.fc35.src.rpm' | '/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'tar -xC/'"
+tar: Removing leading `/' from member names
+
+scan.ini: analyzer-version-cbmc = 5.38.0
+>>> 2021-12-01 15:12:13	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"mkdir -pv '/builddir/cbmc-capture'\""
+mkdir: created directory '/builddir/cbmc-capture'
+
+scan.ini: analyzer-version-gcc = 11.2.1
+>>> 2021-12-01 15:12:14	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "rpm -Uvh --nodeps '/tmp/csmockvhlxg3zj/sscg-3.0.0-1.fc35.src.rpm'"
+Updating / installing...
+sscg-3.0.0-1.fc35                     ########################################
+
+>>> 2021-12-01 15:12:16	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "chmod -R +r /builddir"
+
+>>> 2021-12-01 15:12:17	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "ln -fv '/usr/share/csmock/scripts/enable-keep-going.sh' '/usr/share/csmock/scripts/chroot-fixups'"
+'/usr/share/csmock/scripts/chroot-fixups/enable-keep-going.sh' => '/usr/share/csmock/scripts/enable-keep-going.sh'
+
+>>> 2021-12-01 15:12:18	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--shell" "for i in /usr/share/csmock/scripts/chroot-fixups/*; do test -x \$i && echo RUN: \$i >&2 && \$i; done"
+RUN: /usr/share/csmock/scripts/chroot-fixups/enable-keep-going.sh
+renamed '/usr/bin/make' -> '/usr/bin/make.orig'
++ ls -l /usr/bin/make
+-rwxr-xr-x. 1 root root 42 Dec  1 15:12 /usr/bin/make
++ cat /usr/bin/make
+#!/bin/sh
+exec /usr/bin/make.orig -k "$@"
+renamed '/usr/bin/ninja' -> '/usr/bin/ninja.orig'
++ ls -l /usr/bin/ninja
+-rwxr-xr-x. 1 root root 44 Dec  1 15:12 /usr/bin/ninja
++ cat /usr/bin/ninja
+#!/bin/sh
+exec /usr/bin/ninja.orig -k0 "$@"
+RUN: /usr/share/csmock/scripts/chroot-fixups/gdk-pixbuf2-triggers.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/glib2-triggers.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/kpathsea-texhash.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/openssl-public-header-files.sh
++ sed -i /usr/include/openssl/e_os2.h -e 's|\(# *if\)def DEBUG_UNUSED|\1 1|'
+RUN: /usr/share/csmock/scripts/chroot-fixups/qt5-core-abi.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/rpm-build-scripts.sh
++ sed -e s/fail=1/fail=0/ -i /usr/lib/rpm/redhat/brp-mangle-shebangs
+'/usr/lib/rpm/brp-strip-static-archive' -> '/bin/true'
+RUN: /usr/share/csmock/scripts/chroot-fixups/rpm-macros.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/rpm-python-extras.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/shared-mime-info-triggers.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/simplify-cpp-includes.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/simplify-glib-includes.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/simplify-systemd-includes.sh
+
+>>> 2021-12-01 15:12:20	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--chroot" "/bin/su mockbuild -l -c \"rpmbuild -bp --nodeps /builddir/build/SPECS/sscg.spec '--define' 'apidocs 0' '--define' 'with_publican 0' '--without' 'docs' '--without' 'langpacks' '--define' '__cc goto-gcc' '--define' '__cxx goto-gcc' '--define' '__cpp goto-gcc -E' '--define' 'optflags -O0' '--define' 'build_ldflags -O0'\""
+INFO: mock.py version 2.13 starting (python version = 3.9.7, NVR = mock-2.13-1.kdudka.1.fc34)...
+Start(bootstrap): init plugins
+INFO: selinux enabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish: chroot init
+INFO: Running in chroot: ['/bin/su mockbuild -l -c "rpmbuild -bp --nodeps /builddir/build/SPECS/sscg.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc goto-gcc\' \'--define\' \'__cxx goto-gcc\' \'--define\' \'__cpp goto-gcc -E\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'"']
+Start: chroot ['/bin/su mockbuild -l -c "rpmbuild -bp --nodeps /builddir/build/SPECS/sscg.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc goto-gcc\' \'--define\' \'__cxx goto-gcc\' \'--define\' \'__cpp goto-gcc -E\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'"']
+setting SOURCE_DATE_EPOCH=1626825600
+Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.PKiCKz
++ umask 022
++ cd /builddir/build/BUILD
++ cd /builddir/build/BUILD
++ rm -rf sscg-3.0.0
++ /usr/bin/xz -dc /builddir/build/SOURCES/sscg-3.0.0.tar.xz
++ /usr/bin/tar -xof -
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd sscg-3.0.0
++ /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Finish: chroot ['/bin/su mockbuild -l -c "rpmbuild -bp --nodeps /builddir/build/SPECS/sscg.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc goto-gcc\' \'--define\' \'__cxx goto-gcc\' \'--define\' \'__cpp goto-gcc -E\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'"']
+
+>>> 2021-12-01 15:12:21	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "chmod -R +r /builddir/build"
+
+>>> 2021-12-01 15:12:23	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--chroot" "/bin/su mockbuild -l -c \"PATH=/usr/lib64/cswrap:\\\$PATH CSWRAP_CAP_FILE=\\\$'/builddir/cswrap-capture.err' CSWRAP_TIMEOUT=\\\$'30' CSWRAP_TIMEOUT_FOR=\\\$':' CC=\\\$'goto-gcc' CXX=\\\$'goto-gcc' CSEXEC_WRAP_CMD=\\\$'--skip-ld-linux\\\\acsexec-cbmc\\\\a-t\\\\a8\\\\a-l\\\\a/builddir/cbmc-capture\\\\a-c\\\\a--unwind 1 --json-ui --verbosity 4 --pointer-overflow-check --memory-leak-check ' CSWRAP_ADD_CFLAGS=\\\$'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader' CSWRAP_DEL_CFLAGS=\\\$'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register' CSWRAP_ADD_CXXFLAGS=\\\$'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader' CSWRAP_DEL_CXXFLAGS=\\\$'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register' sh -c \\\"rpmbuild -bc --nodeps --short-circuit /builddir/build/SPECS/sscg.spec '--define' 'apidocs 0' '--define' 'with_publican 0' '--without' 'docs' '--without' 'langpacks' '--define' '__cc goto-gcc' '--define' '__cxx goto-gcc' '--define' '__cpp goto-gcc -E' '--define' 'optflags -O0' '--define' 'build_ldflags -O0'\\\"\""
+INFO: mock.py version 2.13 starting (python version = 3.9.7, NVR = mock-2.13-1.kdudka.1.fc34)...
+Start(bootstrap): init plugins
+INFO: selinux enabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish: chroot init
+INFO: Running in chroot: ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'goto-gcc\' CXX=\\$\'goto-gcc\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\acsexec-cbmc\\\\a-t\\\\a8\\\\a-l\\\\a/builddir/cbmc-capture\\\\a-c\\\\a--unwind 1 --json-ui --verbosity 4 --pointer-overflow-check --memory-leak-check \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bc --nodeps --short-circuit /builddir/build/SPECS/sscg.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc goto-gcc\' \'--define\' \'__cxx goto-gcc\' \'--define\' \'__cpp goto-gcc -E\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+Start: chroot ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'goto-gcc\' CXX=\\$\'goto-gcc\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\acsexec-cbmc\\\\a-t\\\\a8\\\\a-l\\\\a/builddir/cbmc-capture\\\\a-c\\\\a--unwind 1 --json-ui --verbosity 4 --pointer-overflow-check --memory-leak-check \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bc --nodeps --short-circuit /builddir/build/SPECS/sscg.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc goto-gcc\' \'--define\' \'__cxx goto-gcc\' \'--define\' \'__cpp goto-gcc -E\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+setting SOURCE_DATE_EPOCH=1626825600
+Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.F0W3L0
++ umask 022
++ cd /builddir/build/BUILD
++ cd sscg-3.0.0
++ CFLAGS=-O0
++ export CFLAGS
++ CXXFLAGS=-O0
++ export CXXFLAGS
++ FFLAGS='-O0 -I/usr/lib64/gfortran/modules'
++ export FFLAGS
++ FCFLAGS='-O0 -I/usr/lib64/gfortran/modules'
++ export FCFLAGS
++ LDFLAGS=-O0
++ export LDFLAGS
++ LT_SYS_LIBRARY_PATH=/usr/lib64:
++ export LT_SYS_LIBRARY_PATH
++ CC=goto-gcc
++ export CC
++ CXX=goto-gcc
++ export CXX
++ /usr/bin/meson --buildtype=plain --prefix=/usr --libdir=/usr/lib64 --libexecdir=/usr/libexec --bindir=/usr/bin --sbindir=/usr/sbin --includedir=/usr/include --datadir=/usr/share --mandir=/usr/share/man --infodir=/usr/share/info --localedir=/usr/share/locale --sysconfdir=/etc --localstatedir=/var --sharedstatedir=/var/lib --wrap-mode=nodownload --auto-features=enabled . redhat-linux-build
+The Meson build system
+Version: 0.59.4
+Source dir: /builddir/build/BUILD/sscg-3.0.0
+Build dir: /builddir/build/BUILD/sscg-3.0.0/redhat-linux-build
+Build type: native build
+Project name: sscg
+Project version: 3.0.0
+C compiler for the host machine: goto-gcc (gcc 11.2.1 "gcc (GCC) 11.2.1 20210728 (Red Hat 11.2.1-1)")
+C linker for the host machine: goto-gcc ld.bfd 2.37-10
+Host machine cpu family: x86_64
+Host machine cpu: x86_64
+Compiler for C supports arguments -Wpointer-arith: YES 
+Compiler for C supports arguments -Wmissing-declarations: YES 
+Compiler for C supports arguments -Wmissing-prototypes: YES 
+Compiler for C supports arguments -Wstrict-prototypes: YES 
+Compiler for C supports arguments -Wuninitialized: YES 
+Compiler for C supports arguments -Werror=implicit: YES 
+Compiler for C supports arguments -Werror=init-self: YES 
+Compiler for C supports arguments -Werror=main: YES 
+Compiler for C supports arguments -Werror=missing-braces: YES 
+Compiler for C supports arguments -Werror=return-type: YES 
+Compiler for C supports arguments -Werror=array-bounds: YES 
+Compiler for C supports arguments -Werror=write-strings: YES 
+Compiler for C supports arguments -DG_LOG_USE_STRUCTURED: YES 
+Found pkg-config: /usr/bin/pkg-config (1.8.0)
+Did not find CMake 'cmake'
+Found CMake: NO
+Run-time dependency libcrypto11 found: NO (tried pkgconfig and cmake)
+Run-time dependency libcrypto found: YES 1.1.1l
+Run-time dependency libssl11 found: NO (tried pkgconfig and cmake)
+Run-time dependency libssl found: YES 1.1.1l
+Run-time dependency path_utils found: YES 0.2.1
+Run-time dependency talloc found: YES 2.3.3
+Run-time dependency popt found: YES 1.18
+Header <openssl/rsa.h> has symbol "EVP_RSA_gen" with dependency libcrypto: NO 
+Header <openssl/core.h> has symbol "OSSL_PARAM" : NO 
+Program clang-format found: NO
+Configuring config.h using configuration
+Program help2man found: YES (/usr/bin/help2man)
+Build targets in project: 10
+
+Option buildtype is: plain [default: debugoptimized]
+Found ninja-1.10.2 at /usr/bin/ninja
++ /usr/bin/meson compile -C redhat-linux-build -j 8 --verbose
+ninja: Entering directory `redhat-linux-build'
+[1/26] goto-gcc -Ilibsscg.a.p -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=gnu99 -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wuninitialized -Werror=implicit -Werror=init-self -Werror=main -Werror=missing-braces -Werror=return-type -Werror=array-bounds -Werror=write-strings -DG_LOG_USE_STRUCTURED -O0 -fPIC -MD -MQ libsscg.a.p/src_bignum.c.o -MF libsscg.a.p/src_bignum.c.o.d -o libsscg.a.p/src_bignum.c.o -c ../src/bignum.c
+[2/26] goto-gcc -Ilibsscg.a.p -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=gnu99 -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wuninitialized -Werror=implicit -Werror=init-self -Werror=main -Werror=missing-braces -Werror=return-type -Werror=array-bounds -Werror=write-strings -DG_LOG_USE_STRUCTURED -O0 -fPIC -MD -MQ libsscg.a.p/src_key.c.o -MF libsscg.a.p/src_key.c.o.d -o libsscg.a.p/src_key.c.o -c ../src/key.c
+[3/26] goto-gcc -Ilibsscg.a.p -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=gnu99 -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wuninitialized -Werror=implicit -Werror=init-self -Werror=main -Werror=missing-braces -Werror=return-type -Werror=array-bounds -Werror=write-strings -DG_LOG_USE_STRUCTURED -O0 -fPIC -MD -MQ libsscg.a.p/src_dhparams.c.o -MF libsscg.a.p/src_dhparams.c.o.d -o libsscg.a.p/src_dhparams.c.o -c ../src/dhparams.c
+[4/26] goto-gcc -Ilibsscg.a.p -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=gnu99 -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wuninitialized -Werror=implicit -Werror=init-self -Werror=main -Werror=missing-braces -Werror=return-type -Werror=array-bounds -Werror=write-strings -DG_LOG_USE_STRUCTURED -O0 -fPIC -MD -MQ libsscg.a.p/src_io_utils.c.o -MF libsscg.a.p/src_io_utils.c.o.d -o libsscg.a.p/src_io_utils.c.o -c ../src/io_utils.c
+[5/26] goto-gcc -Isscg.p -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=gnu99 -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wuninitialized -Werror=implicit -Werror=init-self -Werror=main -Werror=missing-braces -Werror=return-type -Werror=array-bounds -Werror=write-strings -DG_LOG_USE_STRUCTURED -O0 -MD -MQ sscg.p/src_arguments.c.o -MF sscg.p/src_arguments.c.o.d -o sscg.p/src_arguments.c.o -c ../src/arguments.c
+[6/26] goto-gcc -Ilibsscg.a.p -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=gnu99 -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wuninitialized -Werror=implicit -Werror=init-self -Werror=main -Werror=missing-braces -Werror=return-type -Werror=array-bounds -Werror=write-strings -DG_LOG_USE_STRUCTURED -O0 -fPIC -MD -MQ libsscg.a.p/src_cert.c.o -MF libsscg.a.p/src_cert.c.o.d -o libsscg.a.p/src_cert.c.o -c ../src/cert.c
+[7/26] goto-gcc -Ilibsscg.a.p -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=gnu99 -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wuninitialized -Werror=implicit -Werror=init-self -Werror=main -Werror=missing-braces -Werror=return-type -Werror=array-bounds -Werror=write-strings -DG_LOG_USE_STRUCTURED -O0 -fPIC -MD -MQ libsscg.a.p/src_authority.c.o -MF libsscg.a.p/src_authority.c.o.d -o libsscg.a.p/src_authority.c.o -c ../src/authority.c
+[8/26] goto-gcc -Ilibsscg.a.p -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=gnu99 -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wuninitialized -Werror=implicit -Werror=init-self -Werror=main -Werror=missing-braces -Werror=return-type -Werror=array-bounds -Werror=write-strings -DG_LOG_USE_STRUCTURED -O0 -fPIC -MD -MQ libsscg.a.p/src_x509.c.o -MF libsscg.a.p/src_x509.c.o.d -o libsscg.a.p/src_x509.c.o -c ../src/x509.c
+[9/26] rm -f libsscg.a && gcc-ar csrD libsscg.a libsscg.a.p/src_authority.c.o libsscg.a.p/src_bignum.c.o libsscg.a.p/src_cert.c.o libsscg.a.p/src_dhparams.c.o libsscg.a.p/src_io_utils.c.o libsscg.a.p/src_key.c.o libsscg.a.p/src_x509.c.o
+[10/26] goto-gcc -Igenerate_rsa_key_test.p -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=gnu99 -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wuninitialized -Werror=implicit -Werror=init-self -Werror=main -Werror=missing-braces -Werror=return-type -Werror=array-bounds -Werror=write-strings -DG_LOG_USE_STRUCTURED -O0 -MD -MQ generate_rsa_key_test.p/test_generate_rsa_key_test.c.o -MF generate_rsa_key_test.p/test_generate_rsa_key_test.c.o.d -o generate_rsa_key_test.p/test_generate_rsa_key_test.c.o -c ../test/generate_rsa_key_test.c
+[11/26] goto-gcc  -o generate_rsa_key_test generate_rsa_key_test.p/test_generate_rsa_key_test.c.o -Wl,--as-needed -Wl,--no-undefined -O0 -O0 -Wl,--start-group libsscg.a /usr/lib64/libcrypto.so /usr/lib64/libssl.so /usr/lib64/libtalloc.so -Wl,--end-group
+[12/26] goto-gcc -Icreate_ca_test.p -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=gnu99 -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wuninitialized -Werror=implicit -Werror=init-self -Werror=main -Werror=missing-braces -Werror=return-type -Werror=array-bounds -Werror=write-strings -DG_LOG_USE_STRUCTURED -O0 -MD -MQ create_ca_test.p/test_create_ca_test.c.o -MF create_ca_test.p/test_create_ca_test.c.o.d -o create_ca_test.p/test_create_ca_test.c.o -c ../test/create_ca_test.c
+[13/26] goto-gcc -Iinit_bignum_test.p -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=gnu99 -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wuninitialized -Werror=implicit -Werror=init-self -Werror=main -Werror=missing-braces -Werror=return-type -Werror=array-bounds -Werror=write-strings -DG_LOG_USE_STRUCTURED -O0 -MD -MQ init_bignum_test.p/test_init_bignum_test.c.o -MF init_bignum_test.p/test_init_bignum_test.c.o.d -o init_bignum_test.p/test_init_bignum_test.c.o -c ../test/init_bignum_test.c
+[14/26] goto-gcc -Icreate_csr_test.p -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=gnu99 -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wuninitialized -Werror=implicit -Werror=init-self -Werror=main -Werror=missing-braces -Werror=return-type -Werror=array-bounds -Werror=write-strings -DG_LOG_USE_STRUCTURED -O0 -MD -MQ create_csr_test.p/test_create_csr_test.c.o -MF create_csr_test.p/test_create_csr_test.c.o.d -o create_csr_test.p/test_create_csr_test.c.o -c ../test/create_csr_test.c
+[15/26] goto-gcc  -o create_ca_test create_ca_test.p/test_create_ca_test.c.o -Wl,--as-needed -Wl,--no-undefined -O0 -O0 -Wl,--start-group libsscg.a /usr/lib64/libcrypto.so /usr/lib64/libssl.so /usr/lib64/libtalloc.so -Wl,--end-group
+[16/26] goto-gcc -Idhparams_test.p -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=gnu99 -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wuninitialized -Werror=implicit -Werror=init-self -Werror=main -Werror=missing-braces -Werror=return-type -Werror=array-bounds -Werror=write-strings -DG_LOG_USE_STRUCTURED -O0 -MD -MQ dhparams_test.p/test_dhparams_test.c.o -MF dhparams_test.p/test_dhparams_test.c.o.d -o dhparams_test.p/test_dhparams_test.c.o -c ../test/dhparams_test.c
+[17/26] goto-gcc  -o init_bignum_test init_bignum_test.p/test_init_bignum_test.c.o -Wl,--as-needed -Wl,--no-undefined -O0 -O0 -Wl,--start-group libsscg.a /usr/lib64/libcrypto.so /usr/lib64/libssl.so /usr/lib64/libtalloc.so -Wl,--end-group
+[18/26] goto-gcc  -o create_csr_test create_csr_test.p/test_create_csr_test.c.o -Wl,--as-needed -Wl,--no-undefined -O0 -O0 -Wl,--start-group libsscg.a /usr/lib64/libcrypto.so /usr/lib64/libssl.so /usr/lib64/libtalloc.so -Wl,--end-group
+[19/26] goto-gcc -Inamed_dhparams_test.p -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=gnu99 -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wuninitialized -Werror=implicit -Werror=init-self -Werror=main -Werror=missing-braces -Werror=return-type -Werror=array-bounds -Werror=write-strings -DG_LOG_USE_STRUCTURED -O0 -MD -MQ named_dhparams_test.p/test_named_dhparams_test.c.o -MF named_dhparams_test.p/test_named_dhparams_test.c.o.d -o named_dhparams_test.p/test_named_dhparams_test.c.o -c ../test/named_dhparams_test.c
+[20/26] goto-gcc  -o dhparams_test dhparams_test.p/test_dhparams_test.c.o -Wl,--as-needed -Wl,--no-undefined -O0 -O0 -Wl,--start-group libsscg.a /usr/lib64/libcrypto.so /usr/lib64/libssl.so /usr/lib64/libtalloc.so -Wl,--end-group
+[21/26] goto-gcc  -o named_dhparams_test named_dhparams_test.p/test_named_dhparams_test.c.o -Wl,--as-needed -Wl,--no-undefined -O0 -O0 -Wl,--start-group libsscg.a /usr/lib64/libcrypto.so /usr/lib64/libssl.so /usr/lib64/libtalloc.so -Wl,--end-group
+[22/26] goto-gcc -Isscg.p -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=gnu99 -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wuninitialized -Werror=implicit -Werror=init-self -Werror=main -Werror=missing-braces -Werror=return-type -Werror=array-bounds -Werror=write-strings -DG_LOG_USE_STRUCTURED -O0 -MD -MQ sscg.p/src_sscg.c.o -MF sscg.p/src_sscg.c.o.d -o sscg.p/src_sscg.c.o -c ../src/sscg.c
+[23/26] goto-gcc -Igenerate_serial_test.p -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=gnu99 -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wuninitialized -Werror=implicit -Werror=init-self -Werror=main -Werror=missing-braces -Werror=return-type -Werror=array-bounds -Werror=write-strings -DG_LOG_USE_STRUCTURED -O0 -MD -MQ generate_serial_test.p/test_generate_serial_test.c.o -MF generate_serial_test.p/test_generate_serial_test.c.o.d -o generate_serial_test.p/test_generate_serial_test.c.o -c ../test/generate_serial_test.c
+[24/26] goto-gcc  -o generate_serial_test generate_serial_test.p/test_generate_serial_test.c.o -Wl,--as-needed -Wl,--no-undefined -O0 -O0 -Wl,--start-group libsscg.a /usr/lib64/libcrypto.so /usr/lib64/libssl.so /usr/lib64/libtalloc.so -Wl,--end-group
+[25/26] goto-gcc  -o sscg sscg.p/src_arguments.c.o sscg.p/src_sscg.c.o -Wl,--as-needed -Wl,--no-undefined -O0 -O0 -Wl,--start-group libsscg.a /usr/lib64/libcrypto.so /usr/lib64/libpath_utils.so /usr/lib64/libpopt.so /usr/lib64/libssl.so /usr/lib64/libtalloc.so -Wl,--end-group
+[26/26] /usr/bin/meson --internal exe --capture sscg.8 -- /usr/bin/help2man -s 8 -n 'Tool for generating x.509 certificates' -N /builddir/build/BUILD/sscg-3.0.0/redhat-linux-build/sscg
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Finish: chroot ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'goto-gcc\' CXX=\\$\'goto-gcc\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\acsexec-cbmc\\\\a-t\\\\a8\\\\a-l\\\\a/builddir/cbmc-capture\\\\a-c\\\\a--unwind 1 --json-ui --verbosity 4 --pointer-overflow-check --memory-leak-check \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bc --nodeps --short-circuit /builddir/build/SPECS/sscg.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc goto-gcc\' \'--define\' \'__cxx goto-gcc\' \'--define\' \'__cpp goto-gcc -E\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+
+>>> 2021-12-01 15:12:35	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--chroot" "/bin/su mockbuild -l -c \"PATH=/usr/lib64/cswrap:\\\$PATH CSWRAP_CAP_FILE=\\\$'/builddir/cswrap-capture.err' CSWRAP_TIMEOUT=\\\$'30' CSWRAP_TIMEOUT_FOR=\\\$':' CC=\\\$'goto-gcc' CXX=\\\$'goto-gcc' CSEXEC_WRAP_CMD=\\\$'--skip-ld-linux\\\\acsexec-cbmc\\\\a-t\\\\a8\\\\a-l\\\\a/builddir/cbmc-capture\\\\a-c\\\\a--unwind 1 --json-ui --verbosity 4 --pointer-overflow-check --memory-leak-check ' CSWRAP_ADD_CFLAGS=\\\$'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader' CSWRAP_DEL_CFLAGS=\\\$'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register' CSWRAP_ADD_CXXFLAGS=\\\$'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader' CSWRAP_DEL_CXXFLAGS=\\\$'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register' sh -c \\\"rpmbuild -bi --nodeps --short-circuit /builddir/build/SPECS/sscg.spec '--define' 'apidocs 0' '--define' 'with_publican 0' '--without' 'docs' '--without' 'langpacks' '--define' '__cc goto-gcc' '--define' '__cxx goto-gcc' '--define' '__cpp goto-gcc -E' '--define' 'optflags -O0' '--define' 'build_ldflags -O0'\\\"\""
+INFO: mock.py version 2.13 starting (python version = 3.9.7, NVR = mock-2.13-1.kdudka.1.fc34)...
+Start(bootstrap): init plugins
+INFO: selinux enabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish: chroot init
+INFO: Running in chroot: ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'goto-gcc\' CXX=\\$\'goto-gcc\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\acsexec-cbmc\\\\a-t\\\\a8\\\\a-l\\\\a/builddir/cbmc-capture\\\\a-c\\\\a--unwind 1 --json-ui --verbosity 4 --pointer-overflow-check --memory-leak-check \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bi --nodeps --short-circuit /builddir/build/SPECS/sscg.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc goto-gcc\' \'--define\' \'__cxx goto-gcc\' \'--define\' \'__cpp goto-gcc -E\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+Start: chroot ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'goto-gcc\' CXX=\\$\'goto-gcc\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\acsexec-cbmc\\\\a-t\\\\a8\\\\a-l\\\\a/builddir/cbmc-capture\\\\a-c\\\\a--unwind 1 --json-ui --verbosity 4 --pointer-overflow-check --memory-leak-check \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bi --nodeps --short-circuit /builddir/build/SPECS/sscg.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc goto-gcc\' \'--define\' \'__cxx goto-gcc\' \'--define\' \'__cpp goto-gcc -E\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+setting SOURCE_DATE_EPOCH=1626825600
+Executing(%install): /bin/sh -e /var/tmp/rpm-tmp.wos1PU
++ umask 022
++ cd /builddir/build/BUILD
++ '[' /builddir/build/BUILDROOT/sscg-3.0.0-1.fc35.x86_64 '!=' / ']'
++ rm -rf /builddir/build/BUILDROOT/sscg-3.0.0-1.fc35.x86_64
+++ dirname /builddir/build/BUILDROOT/sscg-3.0.0-1.fc35.x86_64
++ mkdir -p /builddir/build/BUILDROOT
++ mkdir /builddir/build/BUILDROOT/sscg-3.0.0-1.fc35.x86_64
++ cd sscg-3.0.0
++ DESTDIR=/builddir/build/BUILDROOT/sscg-3.0.0-1.fc35.x86_64
++ /usr/bin/meson install -C redhat-linux-build --no-rebuild
+Installing sscg to /builddir/build/BUILDROOT/sscg-3.0.0-1.fc35.x86_64/usr/bin
+Installing sscg.8 to /builddir/build/BUILDROOT/sscg-3.0.0-1.fc35.x86_64/usr/share/man/man8
++ /usr/bin/find-debuginfo -j8 --strict-build-id -m -i --build-id-seed 3.0.0-1.fc35 --unique-debug-suffix -3.0.0-1.fc35.x86_64 --unique-debug-src-base sscg-3.0.0-1.fc35.x86_64 --run-dwz --dwz-low-mem-die-limit 10000000 --dwz-max-die-limit 110000000 -S debugsourcefiles.list /builddir/build/BUILD/sscg-3.0.0
+extracting debug info from /builddir/build/BUILDROOT/sscg-3.0.0-1.fc35.x86_64/usr/bin/sscg
+original debug info size: 476kB, size after compression: 460kB
+/usr/bin/sepdebugcrcfix: Updated 1 CRC32s, 0 CRC32s did match.
+212 blocks
++ /usr/lib/rpm/check-buildroot
++ /usr/lib/rpm/redhat/brp-ldconfig
++ /usr/lib/rpm/brp-compress
++ /usr/lib/rpm/redhat/brp-strip-lto /usr/bin/strip
++ /usr/lib/rpm/brp-strip-static-archive /usr/bin/strip
++ /usr/lib/rpm/check-rpaths
++ /usr/lib/rpm/redhat/brp-mangle-shebangs
++ /usr/lib/rpm/redhat/brp-python-bytecompile '' 1 0
++ /usr/lib/rpm/redhat/brp-python-hardlink
+Executing(%check): /bin/sh -e /var/tmp/rpm-tmp.x4PdwD
++ umask 022
++ cd /builddir/build/BUILD
++ cd sscg-3.0.0
++ /usr/bin/meson test -C redhat-linux-build --num-processes 8 --print-errorlogs -t 10
+ninja: Entering directory `/builddir/build/BUILD/sscg-3.0.0/redhat-linux-build'
+ninja: no work to do.
+ 1/10 generate_serial_test  OK                0.21s
+ 2/10 init_bignum_test      OK                0.22s
+ 3/10 dhparams_test_512_5   OK                0.42s
+ 4/10 dhparams_test_512_2   OK                0.55s
+ 5/10 dhparams_test_1024_2  OK                1.29s
+ 6/10 generate_rsa_key_test OK                1.54s
+ 7/10 dhparams_test_1024_5  OK                2.76s
+ 8/10 create_csr_test       OK                3.17s
+ 9/10 create_ca_test        OK                3.76s
+10/10 named_dhparams_test   OK               20.53s
+
+
+Ok:                 10  
+Expected Fail:      0   
+Fail:               0   
+Unexpected Pass:    0   
+Skipped:            0   
+Timeout:            0   
+
+Full log written to /builddir/build/BUILD/sscg-3.0.0/redhat-linux-build/meson-logs/testlog.txt
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Processing files: sscg-3.0.0-1.fc35.x86_64
+Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.bmkxZu
++ umask 022
++ cd /builddir/build/BUILD
++ cd sscg-3.0.0
++ DOCDIR=/builddir/build/BUILDROOT/sscg-3.0.0-1.fc35.x86_64/usr/share/doc/sscg
++ export LC_ALL=C
++ LC_ALL=C
++ export DOCDIR
++ /usr/bin/mkdir -p /builddir/build/BUILDROOT/sscg-3.0.0-1.fc35.x86_64/usr/share/doc/sscg
++ cp -pr README.md /builddir/build/BUILDROOT/sscg-3.0.0-1.fc35.x86_64/usr/share/doc/sscg
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Executing(%license): /bin/sh -e /var/tmp/rpm-tmp.ckmIo2
++ umask 022
++ cd /builddir/build/BUILD
++ cd sscg-3.0.0
++ LICENSEDIR=/builddir/build/BUILDROOT/sscg-3.0.0-1.fc35.x86_64/usr/share/licenses/sscg
++ export LC_ALL=C
++ LC_ALL=C
++ export LICENSEDIR
++ /usr/bin/mkdir -p /builddir/build/BUILDROOT/sscg-3.0.0-1.fc35.x86_64/usr/share/licenses/sscg
++ cp -pr COPYING /builddir/build/BUILDROOT/sscg-3.0.0-1.fc35.x86_64/usr/share/licenses/sscg
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Provides: sscg = 3.0.0-1.fc35 sscg(x86-64) = 3.0.0-1.fc35
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Requires: libc.so.6()(64bit) libc.so.6(GLIBC_2.2.5)(64bit) libc.so.6(GLIBC_2.34)(64bit) libcrypto.so.1.1()(64bit) libcrypto.so.1.1(OPENSSL_1_1_0)(64bit) libcrypto.so.1.1(OPENSSL_1_1_1)(64bit) libpath_utils.so.1()(64bit) libpath_utils.so.1(PATH_UTILS_0.2.1)(64bit) libpopt.so.0()(64bit) libpopt.so.0(LIBPOPT_0)(64bit) libssl.so.1.1()(64bit) libssl.so.1.1(OPENSSL_1_1_0)(64bit) libtalloc.so.2()(64bit) libtalloc.so.2(TALLOC_2.0.2)(64bit) rtld(GNU_HASH)
+Processing files: sscg-debugsource-3.0.0-1.fc35.x86_64
+Provides: sscg-debugsource = 3.0.0-1.fc35 sscg-debugsource(x86-64) = 3.0.0-1.fc35
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Processing files: sscg-debuginfo-3.0.0-1.fc35.x86_64
+Provides: debuginfo(build-id) = bc5cfc3d1c238ef50b855eaaff5464ed6418d842 sscg-debuginfo = 3.0.0-1.fc35 sscg-debuginfo(x86-64) = 3.0.0-1.fc35
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Recommends: sscg-debugsource(x86-64) = 3.0.0-1.fc35
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /builddir/build/BUILDROOT/sscg-3.0.0-1.fc35.x86_64
+Finish: chroot ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'goto-gcc\' CXX=\\$\'goto-gcc\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\acsexec-cbmc\\\\a-t\\\\a8\\\\a-l\\\\a/builddir/cbmc-capture\\\\a-c\\\\a--unwind 1 --json-ui --verbosity 4 --pointer-overflow-check --memory-leak-check \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bi --nodeps --short-circuit /builddir/build/SPECS/sscg.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc goto-gcc\' \'--define\' \'__cxx goto-gcc\' \'--define\' \'__cpp goto-gcc -E\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+
+>>> 2021-12-01 15:12:58	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'tar -c --remove-files '/builddir/cswrap-capture.err' '/builddir/cbmc-capture'' | tar -xC '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/debug/raw-results'"
+tar: Removing leading `/' from member names
+tar: Removing leading `/' from hard link targets
+
+>>> 2021-12-01 15:13:00	"
+                  set -ex
+                  for file in /home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/debug/raw-results/builddir/cbmc-capture/pid-*.out; do
+                      cbmc-convert-output -a < \"\$file\" > \"\$file.conv\"
+                  done
+                  csgrep --mode=json --remove-duplicates '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/debug/raw-results/builddir/cbmc-capture'/pid-*.out.conv > '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/debug/uni-results/cbmc-capture.js'
+                  "
++ for file in /home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/debug/raw-results/builddir/cbmc-capture/pid-*.out
++ cbmc-convert-output -a
++ for file in /home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/debug/raw-results/builddir/cbmc-capture/pid-*.out
++ cbmc-convert-output -a
++ for file in /home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/debug/raw-results/builddir/cbmc-capture/pid-*.out
++ cbmc-convert-output -a
++ for file in /home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/debug/raw-results/builddir/cbmc-capture/pid-*.out
++ cbmc-convert-output -a
++ for file in /home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/debug/raw-results/builddir/cbmc-capture/pid-*.out
++ cbmc-convert-output -a
++ for file in /home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/debug/raw-results/builddir/cbmc-capture/pid-*.out
++ cbmc-convert-output -a
++ for file in /home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/debug/raw-results/builddir/cbmc-capture/pid-*.out
++ cbmc-convert-output -a
++ for file in /home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/debug/raw-results/builddir/cbmc-capture/pid-*.out
++ cbmc-convert-output -a
++ for file in /home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/debug/raw-results/builddir/cbmc-capture/pid-*.out
++ cbmc-convert-output -a
++ for file in /home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/debug/raw-results/builddir/cbmc-capture/pid-*.out
++ cbmc-convert-output -a
++ for file in /home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/debug/raw-results/builddir/cbmc-capture/pid-*.out
++ cbmc-convert-output -a
++ for file in /home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/debug/raw-results/builddir/cbmc-capture/pid-*.out
++ cbmc-convert-output -a
++ for file in /home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/debug/raw-results/builddir/cbmc-capture/pid-*.out
++ cbmc-convert-output -a
++ for file in /home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/debug/raw-results/builddir/cbmc-capture/pid-*.out
++ cbmc-convert-output -a
++ csgrep --mode=json --remove-duplicates /home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/debug/raw-results/builddir/cbmc-capture/pid-14992.out.conv /home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/debug/raw-results/builddir/cbmc-capture/pid-15044.out.conv /home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/debug/raw-results/builddir/cbmc-capture/pid-15589.out.conv /home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/debug/raw-results/builddir/cbmc-capture/pid-15608.out.conv /home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/debug/raw-results/builddir/cbmc-capture/pid-15936.out.conv /home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/debug/raw-results/builddir/cbmc-capture/pid-15938.out.conv /home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/debug/raw-results/builddir/cbmc-capture/pid-15943.out.conv /home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/debug/raw-results/builddir/cbmc-capture/pid-15950.out.conv /home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/debug/raw-results/builddir/cbmc-capture/pid-15957.out.conv /home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/debug/raw-results/builddir/cbmc-capture/pid-15967.out.conv /home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/debug/raw-results/builddir/cbmc-capture/pid-15978.out.conv /home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/debug/raw-results/builddir/cbmc-capture/pid-15986.out.conv /home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/debug/raw-results/builddir/cbmc-capture/pid-16081.out.conv /home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/debug/raw-results/builddir/cbmc-capture/pid-16086.out.conv
+
+scan.ini: time-finished = 2021-12-01 15:13:01
+scan.ini: exit-code = 0
+>>> 2021-12-01 15:13:01	"cslinker --quiet --cwelist '/usr/share/csmock/cwe-map.csv' --inifile '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/scan.ini' '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/debug/uni-results'/* > '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/debug/scan-results-all.js'"
+
+>>> 2021-12-01 15:13:02	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'csgrep --mode=json --embed-context 3' < '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/debug/scan-results-all.js' > '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/debug/scan-results-all.js.tmp'"
+
+>>> 2021-12-01 15:13:04	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--clean"
+
+>>> 2021-12-01 15:13:18	"cat '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/debug/scan-results-all.js' | sed 's|/builddir/build/BUILDROOT/[^/]*/|/builddir/build/BUILD//|' | csgrep --mode=json --path '^/builddir/build/BUILD/' --strip-path-prefix /builddir/build/BUILD/ | csgrep --mode=json --invert-match --path '^ksh-.*[0-9]+\\.c\$' | csgrep --mode=json --invert-match --path 'CMakeFiles/CMakeTmp|conftest.c' | csdiff --json-output --show-internal \"/usr/share/csmock/known-false-positives.js\" - | cssort --key=path > '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/scan-results.js'"
+
+>>> 2021-12-01 15:13:21	"sed 's|/builddir/build/BUILDROOT/[^/]*/|/builddir/build/BUILD//|' '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/debug/scan-results-all.js' | csgrep --mode=json --strip-path-prefix /builddir/build/BUILD/ | csdiff --show-internal '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/scan-results.js' - | cssort > '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/debug/suppressed-results.js'"
+
+>>> 2021-12-01 15:13:22	"csgrep --mode=grep --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/debug/suppressed-results.js' > '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/debug/suppressed-results.err'"
+
+>>> 2021-12-01 15:13:22	"csgrep --mode=json --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/debug/suppressed-results.js' | cshtml - > '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/debug/suppressed-results.html'"
+
+>>> 2021-12-01 15:13:22	"csgrep --mode=evtstat --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/debug/suppressed-results.js' | tee '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/debug/suppressed-results-summary.txt'"
+      1	CBMC_WARNING                                    	fatal error
+
+>>> 2021-12-01 15:13:22	"csgrep --mode=grep --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/scan-results.js' > '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/scan-results.err'"
+
+>>> 2021-12-01 15:13:22	"csgrep --mode=json --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/scan-results.js' | cshtml - > '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/scan-results.html'"
+
+>>> 2021-12-01 15:13:23	"csgrep --mode=evtstat --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/scan-results.js' | tee '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/sscg-3.0.0-1.fc35/cbmc/output/scan-results-summary.txt'"
+     78	CBMC_WARNING                                    	error
+
+<<< 2021-12-01 15:13:23	csmock exit code: 0
+
