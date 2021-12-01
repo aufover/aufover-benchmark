@@ -1,0 +1,119 @@
+Error: COMPILER_WARNING (CWE-758):
+findutils-4.8.0/find/exec.c:337:2: warning: implicit declaration of function 'execvp' is invalid in C99
+#        execvp (argv[0], argv);
+#        ^
+#  335|   	errno = E2BIG;
+#  336|         else
+#  337|-> 	execvp (argv[0], argv);
+#  338|         /* TODO: use a pipe to pass back the errno value, like xargs does */
+#  339|         error (0, errno, "%s",
+
+Error: COMPILER_WARNING (CWE-758):
+findutils-4.8.0/find/util.c:833:5: warning: incompatible integer to pointer conversion assigning to 'const char *' from 'int'
+#  p = strtok_r (arg, delimiters, &token_context);
+#    ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  831|     size_t i;
+#  832|   
+#  833|->   p = strtok_r (arg, delimiters, &token_context);
+#  834|     while (p)
+#  835|       {
+
+Error: COMPILER_WARNING (CWE-758):
+findutils-4.8.0/find/util.c:833:7: warning: implicit declaration of function 'strtok_r' is invalid in C99
+#  p = strtok_r (arg, delimiters, &token_context);
+#      ^
+#  831|     size_t i;
+#  832|   
+#  833|->   p = strtok_r (arg, delimiters, &token_context);
+#  834|     while (p)
+#  835|       {
+
+Error: COMPILER_WARNING (CWE-758):
+findutils-4.8.0/find/util.c:851:9: warning: incompatible integer to pointer conversion assigning to 'const char *' from 'int'
+#      p = strtok_r (NULL, delimiters, &token_context);
+#        ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  849|   		 quotearg_n_style (0, options.err_quoting_style, arg));
+#  850|   	}
+#  851|->       p = strtok_r (NULL, delimiters, &token_context);
+#  852|       }
+#  853|     if (empty)
+
+Error: COMPILER_WARNING (CWE-758):
+findutils-4.8.0/gl/lib/strerror_r.c:205:9: warning: incompatible pointer to integer conversion assigning to 'int' from 'char *'
+#    ret = strerror_r (errnum, buf, buflen);
+#        ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  203|       }
+#  204|   # else
+#  205|->     ret = strerror_r (errnum, buf, buflen);
+#  206|   
+#  207|       /* Some old implementations may return (-1, EINVAL) instead of EINVAL.
+
+Error: COMPILER_WARNING (CWE-758):
+findutils-4.8.0/gl/lib/strerror_r.c:242:60: warning: comparison between pointer and integer ('char *' and 'int')
+#        if (strerror_r (errnum, stackbuf, sizeof stackbuf) == ERANGE)
+#            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^  ~~~~~~
+#  240|   
+#  241|           /* STACKBUF_LEN should have been large enough.  */
+#  242|->         if (strerror_r (errnum, stackbuf, sizeof stackbuf) == ERANGE)
+#  243|             abort ();
+#  244|           safe_copy (buf, buflen, stackbuf);
+
+Error: COMPILER_WARNING (CWE-758):
+findutils-4.8.0/gl/lib/time_rz.c:289:12: warning: implicit declaration of function 'timegm' is invalid in C99
+#    return timegm (tm);
+#           ^
+#  287|   {
+#  288|     if (!tz)
+#  289|->     return timegm (tm);
+#  290|     else
+#  291|       {
+
+Error: COMPILER_WARNING (CWE-758):
+findutils-4.8.0/gnulib-tests/pthread_sigmask.c:52:9: warning: implicit declaration of function 'pthread_sigmask' is invalid in C99
+#  ret = pthread_sigmask (how, new_mask, old_mask_ptr);
+#        ^
+#   50|   # endif
+#   51|   
+#   52|->   ret = pthread_sigmask (how, new_mask, old_mask_ptr);
+#   53|   
+#   54|   # if PTHREAD_SIGMASK_INEFFECTIVE
+
+Error: COMPILER_WARNING (CWE-758):
+findutils-4.8.0/lib/listfile.c:337:37: warning: taking address of packed member '' of class or structure 'stat' may result in an unaligned pointer value
+#      if ((when_local = localtime (&statp->st_mtime)))
+#                                    ^~~~~~~~~~~~~~~
+#  335|     if (output_good)
+#  336|       {
+#  337|->       if ((when_local = localtime (&statp->st_mtime)))
+#  338|           {
+#  339|             char init_bigbuf[256];
+
+Error: COMPILER_WARNING (CWE-758):
+findutils-4.8.0/xargs/xargs.c:731:16: warning: taking address of packed member '' of class or structure 'sigaction' may result in an unaligned pointer value
+#  sigemptyset(&sigact.sa_mask);
+#               ^~~~~~~~~~~~~~
+#  729|        proc_max.  */
+#  730|     sigact.sa_handler = increment_proc_max;
+#  731|->   sigemptyset(&sigact.sa_mask);
+#  732|     sigact.sa_flags = 0;
+#  733|     if (0 != sigaction (SIGUSR1, &sigact, (struct sigaction *)NULL))
+
+Error: COMPILER_WARNING (CWE-758):
+findutils-4.8.0/xargs/xargs.c:737:16: warning: taking address of packed member '' of class or structure 'sigaction' may result in an unaligned pointer value
+#  sigemptyset(&sigact.sa_mask);
+#               ^~~~~~~~~~~~~~
+#  735|   
+#  736|     sigact.sa_handler = decrement_proc_max;
+#  737|->   sigemptyset(&sigact.sa_mask);
+#  738|     sigact.sa_flags = 0;
+#  739|     if (0 != sigaction (SIGUSR2, &sigact, (struct sigaction *)NULL))
+
+Error: COMPILER_WARNING (CWE-758):
+findutils-4.8.0/xargs/xargs.c:1334:8: warning: implicit declaration of function 'execvp' is invalid in C99
+#              execvp (argv[0], argv);
+#              ^
+# 1332|   	      errno = E2BIG;
+# 1333|   	    else
+# 1334|-> 	      execvp (argv[0], argv);
+# 1335|   	    if (errno)
+# 1336|   	      {
