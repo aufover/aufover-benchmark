@@ -1,0 +1,15 @@
+Error: SYMBIOTIC_WARNING:
+libmaxminddb-1.5.2/t/libtap/tap.c:66: error: memory error: out of bound pointer
+libmaxminddb-1.5.2/t/libtap/tap.c:66: note: call stack: function vok_at_loc (=0, =0, =1, =0, =0)
+libmaxminddb-1.5.2/t/libtap/tap.c:93: note: call stack: function ok_at_loc (=0, =159, =1, =0)
+libmaxminddb-1.5.2/src/data-pool.c:159: note: call stack: function test_can_multiply ()
+libmaxminddb-1.5.2/src/data-pool.c:154: note: call stack: function main ()
+libmaxminddb-1.5.2/t/libtap/tap.c:66: note: Additional Info: address: 72:0
+libmaxminddb-1.5.2/t/libtap/tap.c:66: note: Additional Info: pointing to: object at Segment: [72] of size symbolic
+libmaxminddb-1.5.2/t/libtap/tap.c:66: note: Additional Info: MO61[symbolic] allocated at vstrdupf():  %23 = call noalias align 16 i8* @malloc(i64 %22) #8, !dbg !74
+libmaxminddb-1.5.2/t/libtap/tap.c:28:12: note: Non-deterministic values: vsnprintf: len 4 bytes, [0xfe|3 times 0xff] (i32: -2)
+#   64|       }
+#   65|       printf("ok %d", ++current_test);
+#   66|->     if (*name)
+#   67|           printf(" - %s", name);
+#   68|       if (todo_mesg) {

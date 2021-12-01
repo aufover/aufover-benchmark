@@ -1,0 +1,1071 @@
+scan.ini: [scan]
+scan.ini: tool = csmock
+scan.ini: tool-version = csmock-3.1.0.20211130.175245.g27e99a8.internal-1.el7
+scan.ini: tool-args = '/usr/bin/csmock' '-o' '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output' '-f' '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/libmaxminddb-1.5.2-2.fc35.src.rpm' '-r' 'fedora-35-x86_64' '-t' 'divine' '--divine-timeout=8' '--keep-going'
+scan.ini: host = cov03.lab.eng.brq.redhat.com
+scan.ini: store-results-to = /home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output
+scan.ini: time-created = 2021-12-01 14:53:42
+scan.ini: enabled-plugins = divine, gcc
+scan.ini: mock-config = fedora-35-x86_64
+scan.ini: project-name = libmaxminddb-1.5.2-2.fc35
+scan.ini: known-false-positives = /usr/share/csmock/known-false-positives.js
+>>> 2021-12-01 14:53:42	"rpm -qa | sort -V > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/debug/rpm-list-host.txt'"
+
+>>> 2021-12-01 14:53:43	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--init"
+INFO: mock.py version 2.13 starting (python version = 3.6.8, NVR = mock-2.13-1.kdudka.1.el7)...
+Start(bootstrap): init plugins
+INFO: selinux enabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start: clean chroot
+Finish: clean chroot
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+Start: unpacking root cache
+Finish: unpacking root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish: chroot init
+Finish: run
+
+>>> 2021-12-01 14:53:46	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--installdeps" "/tmp/csmocko11dhlh0/libmaxminddb-1.5.2-2.fc35.src.rpm"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Dependencies resolved.
+================================================================================
+ Package                   Arch      Version                 Repository    Size
+================================================================================
+Installing:
+ [1mautoconf                 [m noarch    2.69-37.fc35            f35-build    666 k
+ [1mautomake                 [m noarch    1.16.2-5.fc35           f35-build    662 k
+ [1mgcc                      [m x86_64    11.2.1-1.fc35           f35-build     31 M
+ [1mlibtool                  [m x86_64    2.4.6-42.fc35           f35-build    578 k
+ [1mmake                     [m x86_64    1:4.3-6.fc35            f35-build    533 k
+ [1mperl-FindBin             [m noarch    1.52-482.fc35           f35-build     22 k
+ [1mperl-interpreter         [m x86_64    4:5.34.0-482.fc35       f35-build     79 k
+Installing dependencies:
+ [1mannobin-docs             [m noarch    9.87-3.fc35             f35-build     78 k
+ [1mannobin-plugin-gcc       [m x86_64    9.87-3.fc35             f35-build     42 k
+ [1mcpp                      [m x86_64    11.2.1-1.fc35           f35-build     10 M
+ [1memacs-filesystem         [m noarch    1:27.2-9.fc35           f35-build    9.0 k
+ [1mgc                       [m x86_64    8.0.4-6.fc35            f35-build    103 k
+ [1mglibc-devel              [m x86_64    2.34-8.fc35             f35-build    146 k
+ [1mglibc-headers-x86        [m noarch    2.34-8.fc35             f35-build    544 k
+ [1mgroff-base               [m x86_64    1.22.4-8.fc35           f35-build    1.0 M
+ [1mguile22                  [m x86_64    2.2.7-3.fc35            f35-build    6.4 M
+ [1mkernel-headers           [m x86_64    5.15.4-200.fc35         f35-build    1.3 M
+ [1mlibmpc                   [m x86_64    1.2.1-3.fc35            f35-build     62 k
+ [1mlibtool-ltdl             [m x86_64    2.4.6-42.fc35           f35-build     36 k
+ [1mlibxcrypt-devel          [m x86_64    4.4.26-4.fc35           f35-build     29 k
+ [1mm4                       [m x86_64    1.4.19-2.fc35           f35-build    294 k
+ [1mncurses                  [m x86_64    6.2-8.20210508.fc35     f35-build    400 k
+ [1mperl-B                   [m x86_64    1.82-482.fc35           f35-build    188 k
+ [1mperl-Carp                [m noarch    1.52-478.fc35           f35-build     29 k
+ [1mperl-Class-Struct        [m noarch    0.66-482.fc35           f35-build     30 k
+ [1mperl-Data-Dumper         [m x86_64    2.183-2.fc35            f35-build     56 k
+ [1mperl-DynaLoader          [m x86_64    1.50-482.fc35           f35-build     34 k
+ [1mperl-Encode              [m x86_64    4:3.15-482.fc35         f35-build    1.7 M
+ [1mperl-Errno               [m x86_64    1.33-482.fc35           f35-build     23 k
+ [1mperl-Exporter            [m noarch    5.76-479.fc35           f35-build     31 k
+ [1mperl-Fcntl               [m x86_64    1.14-482.fc35           f35-build     28 k
+ [1mperl-File-Basename       [m noarch    2.85-482.fc35           f35-build     25 k
+ [1mperl-File-Compare        [m noarch    1.100.600-482.fc35      f35-build     21 k
+ [1mperl-File-Copy           [m noarch    2.35-482.fc35           f35-build     28 k
+ [1mperl-File-Find           [m noarch    1.39-482.fc35           f35-build     33 k
+ [1mperl-File-Path           [m noarch    2.18-478.fc35           f35-build     35 k
+ [1mperl-File-Temp           [m noarch    1:0.231.100-478.fc35    f35-build     59 k
+ [1mperl-File-stat           [m noarch    1.09-482.fc35           f35-build     25 k
+ [1mperl-Getopt-Long         [m noarch    1:2.52-478.fc35         f35-build     60 k
+ [1mperl-Getopt-Std          [m noarch    1.13-482.fc35           f35-build     23 k
+ [1mperl-HTTP-Tiny           [m noarch    0.080-1.fc35            f35-build     55 k
+ [1mperl-IO                  [m x86_64    1.46-482.fc35           f35-build     95 k
+ [1mperl-IPC-Open3           [m noarch    1.21-482.fc35           f35-build     31 k
+ [1mperl-MIME-Base64         [m x86_64    3.16-478.fc35           f35-build     30 k
+ [1mperl-POSIX               [m x86_64    1.97-482.fc35           f35-build    105 k
+ [1mperl-PathTools           [m x86_64    3.80-478.fc35           f35-build     85 k
+ [1mperl-Pod-Escapes         [m noarch    1:1.07-478.fc35         f35-build     20 k
+ [1mperl-Pod-Perldoc         [m noarch    3.28.01-479.fc35        f35-build     84 k
+ [1mperl-Pod-Simple          [m noarch    1:3.43-2.fc35           f35-build    215 k
+ [1mperl-Pod-Usage           [m noarch    4:2.01-478.fc35         f35-build     40 k
+ [1mperl-Scalar-List-Utils   [m x86_64    5:1.60-462.fc35         f35-build     72 k
+ [1mperl-SelectSaver         [m noarch    1.02-482.fc35           f35-build     19 k
+ [1mperl-Socket              [m x86_64    4:2.032-2.fc35          f35-build     55 k
+ [1mperl-Storable            [m x86_64    1:3.25-1.fc35           f35-build     95 k
+ [1mperl-Symbol              [m noarch    1.09-482.fc35           f35-build     22 k
+ [1mperl-Term-ANSIColor      [m noarch    5.01-479.fc35           f35-build     48 k
+ [1mperl-Term-Cap            [m noarch    1.17-478.fc35           f35-build     22 k
+ [1mperl-Text-ParseWords     [m noarch    3.30-478.fc35           f35-build     16 k
+ [1mperl-Text-Tabs+Wrap      [m noarch    2021.0814-1.fc35        f35-build     22 k
+ [1mperl-Thread-Queue        [m noarch    3.14-478.fc35           f35-build     21 k
+ [1mperl-Time-Local          [m noarch    2:1.300-478.fc35        f35-build     33 k
+ [1mperl-constant            [m noarch    1.33-479.fc35           f35-build     23 k
+ [1mperl-if                  [m noarch    0.60.900-482.fc35       f35-build     22 k
+ [1mperl-libs                [m x86_64    4:5.34.0-482.fc35       f35-build    2.1 M
+ [1mperl-mro                 [m x86_64    1.25-482.fc35           f35-build     36 k
+ [1mperl-overload            [m noarch    1.33-482.fc35           f35-build     53 k
+ [1mperl-overloading         [m noarch    0.02-482.fc35           f35-build     21 k
+ [1mperl-parent              [m noarch    1:0.238-478.fc35        f35-build     14 k
+ [1mperl-podlators           [m noarch    1:4.14-478.fc35         f35-build    111 k
+ [1mperl-subs                [m noarch    1.04-482.fc35           f35-build     19 k
+ [1mperl-threads             [m x86_64    1:2.26-448.fc35         f35-build     57 k
+ [1mperl-threads-shared      [m x86_64    1.62-478.fc35           f35-build     43 k
+ [1mperl-vars                [m noarch    1.05-482.fc35           f35-build     21 k
+
+Transaction Summary
+================================================================================
+Install  73 Packages
+
+Total size: 60 M
+Total download size: 1.4 M
+Installed size: 195 M
+Downloading Packages:
+--------------------------------------------------------------------------------
+Total                                           1.6 MB/s | 1.4 MB     00:00     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+
+Installed:
+  annobin-docs-9.87-3.fc35.noarch                                               
+  annobin-plugin-gcc-9.87-3.fc35.x86_64                                         
+  autoconf-2.69-37.fc35.noarch                                                  
+  automake-1.16.2-5.fc35.noarch                                                 
+  cpp-11.2.1-1.fc35.x86_64                                                      
+  emacs-filesystem-1:27.2-9.fc35.noarch                                         
+  gc-8.0.4-6.fc35.x86_64                                                        
+  gcc-11.2.1-1.fc35.x86_64                                                      
+  glibc-devel-2.34-8.fc35.x86_64                                                
+  glibc-headers-x86-2.34-8.fc35.noarch                                          
+  groff-base-1.22.4-8.fc35.x86_64                                               
+  guile22-2.2.7-3.fc35.x86_64                                                   
+  kernel-headers-5.15.4-200.fc35.x86_64                                         
+  libmpc-1.2.1-3.fc35.x86_64                                                    
+  libtool-2.4.6-42.fc35.x86_64                                                  
+  libtool-ltdl-2.4.6-42.fc35.x86_64                                             
+  libxcrypt-devel-4.4.26-4.fc35.x86_64                                          
+  m4-1.4.19-2.fc35.x86_64                                                       
+  make-1:4.3-6.fc35.x86_64                                                      
+  ncurses-6.2-8.20210508.fc35.x86_64                                            
+  perl-B-1.82-482.fc35.x86_64                                                   
+  perl-Carp-1.52-478.fc35.noarch                                                
+  perl-Class-Struct-0.66-482.fc35.noarch                                        
+  perl-Data-Dumper-2.183-2.fc35.x86_64                                          
+  perl-DynaLoader-1.50-482.fc35.x86_64                                          
+  perl-Encode-4:3.15-482.fc35.x86_64                                            
+  perl-Errno-1.33-482.fc35.x86_64                                               
+  perl-Exporter-5.76-479.fc35.noarch                                            
+  perl-Fcntl-1.14-482.fc35.x86_64                                               
+  perl-File-Basename-2.85-482.fc35.noarch                                       
+  perl-File-Compare-1.100.600-482.fc35.noarch                                   
+  perl-File-Copy-2.35-482.fc35.noarch                                           
+  perl-File-Find-1.39-482.fc35.noarch                                           
+  perl-File-Path-2.18-478.fc35.noarch                                           
+  perl-File-Temp-1:0.231.100-478.fc35.noarch                                    
+  perl-File-stat-1.09-482.fc35.noarch                                           
+  perl-FindBin-1.52-482.fc35.noarch                                             
+  perl-Getopt-Long-1:2.52-478.fc35.noarch                                       
+  perl-Getopt-Std-1.13-482.fc35.noarch                                          
+  perl-HTTP-Tiny-0.080-1.fc35.noarch                                            
+  perl-IO-1.46-482.fc35.x86_64                                                  
+  perl-IPC-Open3-1.21-482.fc35.noarch                                           
+  perl-MIME-Base64-3.16-478.fc35.x86_64                                         
+  perl-POSIX-1.97-482.fc35.x86_64                                               
+  perl-PathTools-3.80-478.fc35.x86_64                                           
+  perl-Pod-Escapes-1:1.07-478.fc35.noarch                                       
+  perl-Pod-Perldoc-3.28.01-479.fc35.noarch                                      
+  perl-Pod-Simple-1:3.43-2.fc35.noarch                                          
+  perl-Pod-Usage-4:2.01-478.fc35.noarch                                         
+  perl-Scalar-List-Utils-5:1.60-462.fc35.x86_64                                 
+  perl-SelectSaver-1.02-482.fc35.noarch                                         
+  perl-Socket-4:2.032-2.fc35.x86_64                                             
+  perl-Storable-1:3.25-1.fc35.x86_64                                            
+  perl-Symbol-1.09-482.fc35.noarch                                              
+  perl-Term-ANSIColor-5.01-479.fc35.noarch                                      
+  perl-Term-Cap-1.17-478.fc35.noarch                                            
+  perl-Text-ParseWords-3.30-478.fc35.noarch                                     
+  perl-Text-Tabs+Wrap-2021.0814-1.fc35.noarch                                   
+  perl-Thread-Queue-3.14-478.fc35.noarch                                        
+  perl-Time-Local-2:1.300-478.fc35.noarch                                       
+  perl-constant-1.33-479.fc35.noarch                                            
+  perl-if-0.60.900-482.fc35.noarch                                              
+  perl-interpreter-4:5.34.0-482.fc35.x86_64                                     
+  perl-libs-4:5.34.0-482.fc35.x86_64                                            
+  perl-mro-1.25-482.fc35.x86_64                                                 
+  perl-overload-1.33-482.fc35.noarch                                            
+  perl-overloading-0.02-482.fc35.noarch                                         
+  perl-parent-1:0.238-478.fc35.noarch                                           
+  perl-podlators-1:4.14-478.fc35.noarch                                         
+  perl-subs-1.04-482.fc35.noarch                                                
+  perl-threads-1:2.26-448.fc35.x86_64                                           
+  perl-threads-shared-1.62-478.fc35.x86_64                                      
+  perl-vars-1.05-482.fc35.noarch                                                
+
+Complete!
+
+>>> 2021-12-01 14:53:56	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--addrepo" "https://download.copr.fedorainfracloud.org/results/@aufover/divine/fedora-\$releasever-\$basearch/" "--install" "divine"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Dependencies resolved.
+====================================================================================================================================================
+ Package                   Arch    Version                   Repository                                                                         Size
+====================================================================================================================================================
+Installing:
+ [1mdivine                   [m x86_64  4.4.2_4_gd47985e0b-7.fc35 downloadcoprfedorainfracloudorg_results_aufover_divine_fedorareleaseverbasearch_   68 M
+Installing dependencies:
+ [1mexpat                    [m x86_64  2.4.1-2.fc35              f35-build                                                                         110 k
+ [1mlibedit                  [m x86_64  3.1-40.20210910cvs.fc35   f35-build                                                                         105 k
+ [1mlibyaml                  [m x86_64  0.2.5-6.fc35              f35-build                                                                          60 k
+ [1mmpdecimal                [m x86_64  2.5.1-2.fc35              f35-build                                                                          99 k
+ [1mpython-pip-wheel         [m noarch  21.2.3-4.fc35             f35-build                                                                         1.1 M
+ [1mpython-setuptools-wheel  [m noarch  57.4.0-1.fc35             f35-build                                                                         505 k
+ [1mpython3                  [m x86_64  3.10.0-1.fc35             f35-build                                                                          25 k
+ [1mpython3-libs             [m x86_64  3.10.0-1.fc35             f35-build                                                                         7.5 M
+ [1mpython3-pygments         [m noarch  2.9.0-2.fc35              f35-build                                                                         1.9 M
+ [1mpython3-pyyaml           [m x86_64  5.4.1-4.fc35              f35-build                                                                         191 k
+ [1mz3                       [m x86_64  4.8.13-1.fc35             f35-build                                                                         5.9 M
+ [1mz3-libs                  [m x86_64  4.8.13-1.fc35             f35-build                                                                         5.8 M
+
+Transaction Summary
+====================================================================================================================================================
+Install  13 Packages
+
+Total size: 91 M
+Installed size: 481 M
+Downloading Packages:
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+
+Installed:
+  divine-4.4.2_4_gd47985e0b-7.fc35.x86_64                                       
+  expat-2.4.1-2.fc35.x86_64                                                     
+  libedit-3.1-40.20210910cvs.fc35.x86_64                                        
+  libyaml-0.2.5-6.fc35.x86_64                                                   
+  mpdecimal-2.5.1-2.fc35.x86_64                                                 
+  python-pip-wheel-21.2.3-4.fc35.noarch                                         
+  python-setuptools-wheel-57.4.0-1.fc35.noarch                                  
+  python3-3.10.0-1.fc35.x86_64                                                  
+  python3-libs-3.10.0-1.fc35.x86_64                                             
+  python3-pygments-2.9.0-2.fc35.noarch                                          
+  python3-pyyaml-5.4.1-4.fc35.x86_64                                            
+  z3-4.8.13-1.fc35.x86_64                                                       
+  z3-libs-4.8.13-1.fc35.x86_64                                                  
+
+Complete!
+
+>>> 2021-12-01 14:54:07	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa' | sort -V > /home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/debug/rpm-list-mock.txt"
+
+>>> 2021-12-01 14:54:09	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa --provides' | sort -V > /tmp/csmocko11dhlh0/rpm-list-mock-provides.txt"
+
+>>> 2021-12-01 14:54:10	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--copyin" "/tmp/csmocko11dhlh0/libmaxminddb-1.5.2-2.fc35.src.rpm" "/builddir/libmaxminddb-1.5.2-2.fc35.src.rpm"
+
+>>> 2021-12-01 14:54:12	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "chown mockbuild -R /builddir"
+
+>>> 2021-12-01 14:54:14	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"rpm -Uvh --nodeps '/builddir/libmaxminddb-1.5.2-2.fc35.src.rpm'\""
+Updating / installing...
+libmaxminddb-1.5.2-2.fc35             ########################################
+
+>>> 2021-12-01 14:54:16	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"sed -e 's|^ExclusiveArch:.*\\\$||' -i /builddir/build/SPECS/libmaxminddb.spec\""
+
+>>> 2021-12-01 14:54:17	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"rpmbuild -bs --nodeps /builddir/build/SPECS/libmaxminddb.spec '--define' 'apidocs 0' '--define' 'with_publican 0' '--without' 'docs' '--without' 'langpacks' '--define' '__cc dioscc' '--define' '__cxx diosc++' '--define' '__cpp dioscc -E' '--define' 'toolchain clang' '--define' 'optflags -O0' '--define' 'build_ldflags -O0' && sh -c 'cd /builddir/build/SRPMS && eval mv -v *.src.rpm /builddir/libmaxminddb-1.5.2-2.fc35.src.rpm || :'\""
+setting SOURCE_DATE_EPOCH=1626912000
+Wrote: /builddir/build/SRPMS/libmaxminddb-1.5.2-2.fc35.src.rpm
+renamed 'libmaxminddb-1.5.2-2.fc35.src.rpm' -> '/builddir/libmaxminddb-1.5.2-2.fc35.src.rpm'
+
+>>> 2021-12-01 14:54:19	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--disable-plugin=selinux" "--copyout" "/builddir/libmaxminddb-1.5.2-2.fc35.src.rpm" "/tmp/csmocko11dhlh0/libmaxminddb-1.5.2-2.fc35.src.rpm"
+
+>>> 2021-12-01 14:54:21	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--installdeps" "/tmp/csmocko11dhlh0/libmaxminddb-1.5.2-2.fc35.src.rpm"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Package autoconf-2.69-37.fc35.noarch is already installed.
+Package automake-1.16.2-5.fc35.noarch is already installed.
+Package gcc-11.2.1-1.fc35.x86_64 is already installed.
+Package libtool-2.4.6-42.fc35.x86_64 is already installed.
+Package make-1:4.3-6.fc35.x86_64 is already installed.
+Package perl-FindBin-1.52-482.fc35.noarch is already installed.
+Package perl-interpreter-4:5.34.0-482.fc35.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+
+>>> 2021-12-01 14:54:26	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--addrepo" "https://download.copr.fedorainfracloud.org/results/@aufover/divine/fedora-\$releasever-\$basearch/" "--install" "divine"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Package divine-4.4.2_4_gd47985e0b-7.fc35.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+
+>>> 2021-12-01 14:54:31	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa' | sort -V > /home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/debug/rpm-list-mock.txt"
+
+>>> 2021-12-01 14:54:32	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa --provides' | sort -V > /tmp/csmocko11dhlh0/rpm-list-mock-provides.txt"
+
+>>> 2021-12-01 14:54:34	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--addrepo" "https://download.copr.fedorainfracloud.org/results/@aufover/divine/fedora-\$releasever-\$basearch/" "--install" "csdiff"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Dependencies resolved.
+================================================================================
+ Package                    Arch        Version            Repository      Size
+================================================================================
+Installing:
+ [1mcsdiff                    [m x86_64      2.2.0-1.fc35       f35-build      895 k
+Installing dependencies:
+ [1mboost-filesystem          [m x86_64      1.76.0-4.fc35      f35-build       60 k
+ [1mboost-program-options     [m x86_64      1.76.0-4.fc35      f35-build      108 k
+ [1mboost-system              [m x86_64      1.76.0-4.fc35      f35-build       15 k
+
+Transaction Summary
+================================================================================
+Install  4 Packages
+
+Total size: 1.1 M
+Installed size: 4.8 M
+Downloading Packages:
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+
+Installed:
+  boost-filesystem-1.76.0-4.fc35.x86_64                                         
+  boost-program-options-1.76.0-4.fc35.x86_64                                    
+  boost-system-1.76.0-4.fc35.x86_64                                             
+  csdiff-2.2.0-1.fc35.x86_64                                                    
+
+Complete!
+
+>>> 2021-12-01 14:54:40	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa' | sort -V > /home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/debug/rpm-list-mock.txt"
+
+>>> 2021-12-01 14:54:42	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa --provides' | sort -V > /tmp/csmocko11dhlh0/rpm-list-mock-provides.txt"
+
+>>> 2021-12-01 14:54:43	"tar -cP '/usr/share/csmock/scripts' '/usr/bin/cswrap' '/usr/lib64/cswrap' '/usr/bin/csexec' '/usr/bin/csexec-loader' '/usr/lib64/libcsexec-preload.so' '/tmp/csmocko11dhlh0/libmaxminddb-1.5.2-2.fc35.src.rpm' | '/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'tar -xC/'"
+tar: Removing leading `/' from member names
+tar: Removing leading `/' from hard link targets
+
+scan.ini: analyzer-version-divine = 4.4.2_4_gd47985e0b
+>>> 2021-12-01 14:54:45	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"mkdir -pv '/builddir/divine-capture'\""
+mkdir: created directory '/builddir/divine-capture'
+
+scan.ini: analyzer-version-gcc = 11.2.1
+>>> 2021-12-01 14:54:47	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "rpm -Uvh --nodeps '/tmp/csmocko11dhlh0/libmaxminddb-1.5.2-2.fc35.src.rpm'"
+Updating / installing...
+libmaxminddb-1.5.2-2.fc35             ########################################
+
+>>> 2021-12-01 14:54:49	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "chmod -R +r /builddir"
+
+>>> 2021-12-01 14:54:51	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "ln -fv '/usr/share/csmock/scripts/enable-keep-going.sh' '/usr/share/csmock/scripts/chroot-fixups'"
+'/usr/share/csmock/scripts/chroot-fixups/enable-keep-going.sh' => '/usr/share/csmock/scripts/enable-keep-going.sh'
+
+>>> 2021-12-01 14:54:52	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--shell" "for i in /usr/share/csmock/scripts/chroot-fixups/*; do test -x \$i && echo RUN: \$i >&2 && \$i; done"
+RUN: /usr/share/csmock/scripts/chroot-fixups/enable-keep-going.sh
+renamed '/usr/bin/make' -> '/usr/bin/make.orig'
++ ls -l /usr/bin/make
+-rwxr-xr-x. 1 root root 42 Dec  1 14:54 /usr/bin/make
++ cat /usr/bin/make
+#!/bin/sh
+exec /usr/bin/make.orig -k "$@"
+RUN: /usr/share/csmock/scripts/chroot-fixups/gdk-pixbuf2-triggers.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/glib2-triggers.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/kpathsea-texhash.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/openssl-public-header-files.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/qt5-core-abi.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/rpm-build-scripts.sh
++ sed -e s/fail=1/fail=0/ -i /usr/lib/rpm/redhat/brp-mangle-shebangs
+'/usr/lib/rpm/brp-strip-static-archive' -> '/bin/true'
+RUN: /usr/share/csmock/scripts/chroot-fixups/rpm-macros.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/rpm-python-extras.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/shared-mime-info-triggers.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/simplify-cpp-includes.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/simplify-glib-includes.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/simplify-systemd-includes.sh
+
+>>> 2021-12-01 14:54:54	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--chroot" "/bin/su mockbuild -l -c \"rpmbuild -bp --nodeps /builddir/build/SPECS/libmaxminddb.spec '--define' 'apidocs 0' '--define' 'with_publican 0' '--without' 'docs' '--without' 'langpacks' '--define' '__cc dioscc' '--define' '__cxx diosc++' '--define' '__cpp dioscc -E' '--define' 'toolchain clang' '--define' 'optflags -O0' '--define' 'build_ldflags -O0'\""
+INFO: mock.py version 2.13 starting (python version = 3.6.8, NVR = mock-2.13-1.kdudka.1.el7)...
+Start(bootstrap): init plugins
+INFO: selinux enabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish: chroot init
+INFO: Running in chroot: ['/bin/su mockbuild -l -c "rpmbuild -bp --nodeps /builddir/build/SPECS/libmaxminddb.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc dioscc\' \'--define\' \'__cxx diosc++\' \'--define\' \'__cpp dioscc -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'"']
+Start: chroot ['/bin/su mockbuild -l -c "rpmbuild -bp --nodeps /builddir/build/SPECS/libmaxminddb.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc dioscc\' \'--define\' \'__cxx diosc++\' \'--define\' \'__cpp dioscc -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'"']
+setting SOURCE_DATE_EPOCH=1626912000
+Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.qxqD5v
++ umask 022
++ cd /builddir/build/BUILD
++ cd /builddir/build/BUILD
++ rm -rf libmaxminddb-1.5.2
++ /usr/bin/gzip -dc /builddir/build/SOURCES/libmaxminddb-1.5.2.tar.gz
++ /usr/bin/tar -xof -
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd libmaxminddb-1.5.2
++ /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
++ sed -i -e /AM_CFLAGS=/d common.mk
++ sed -i -e /CFLAGS=/d configure.ac
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Finish: chroot ['/bin/su mockbuild -l -c "rpmbuild -bp --nodeps /builddir/build/SPECS/libmaxminddb.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc dioscc\' \'--define\' \'__cxx diosc++\' \'--define\' \'__cpp dioscc -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'"']
+
+>>> 2021-12-01 14:54:56	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "chmod -R +r /builddir/build"
+
+>>> 2021-12-01 14:54:58	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--chroot" "/bin/su mockbuild -l -c \"PATH=/usr/lib64/cswrap:\\\$PATH CSWRAP_CAP_FILE=\\\$'/builddir/cswrap-capture.err' CSWRAP_TIMEOUT=\\\$'30' CSWRAP_TIMEOUT_FOR=\\\$':' CC=\\\$'dioscc' CXX=\\\$'diosc++' CSEXEC_WRAP_CMD=\\\$'--skip-ld-linux\\\\acsexec-divine\\\\a-l\\\\a/builddir/divine-capture\\\\a-d\\\\acheck --lart stubs -o ignore:exit --max-time 8 ' CSWRAP_ADD_CFLAGS=\\\$'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader' CSWRAP_DEL_CFLAGS=\\\$'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register' CSWRAP_ADD_CXXFLAGS=\\\$'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader' CSWRAP_DEL_CXXFLAGS=\\\$'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register' sh -c \\\"rpmbuild -bc --nodeps --short-circuit /builddir/build/SPECS/libmaxminddb.spec '--define' 'apidocs 0' '--define' 'with_publican 0' '--without' 'docs' '--without' 'langpacks' '--define' '__cc dioscc' '--define' '__cxx diosc++' '--define' '__cpp dioscc -E' '--define' 'toolchain clang' '--define' 'optflags -O0' '--define' 'build_ldflags -O0'\\\"\""
+INFO: mock.py version 2.13 starting (python version = 3.6.8, NVR = mock-2.13-1.kdudka.1.el7)...
+Start(bootstrap): init plugins
+INFO: selinux enabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish: chroot init
+INFO: Running in chroot: ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'dioscc\' CXX=\\$\'diosc++\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\acsexec-divine\\\\a-l\\\\a/builddir/divine-capture\\\\a-d\\\\acheck --lart stubs -o ignore:exit --max-time 8 \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bc --nodeps --short-circuit /builddir/build/SPECS/libmaxminddb.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc dioscc\' \'--define\' \'__cxx diosc++\' \'--define\' \'__cpp dioscc -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+Start: chroot ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'dioscc\' CXX=\\$\'diosc++\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\acsexec-divine\\\\a-l\\\\a/builddir/divine-capture\\\\a-d\\\\acheck --lart stubs -o ignore:exit --max-time 8 \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bc --nodeps --short-circuit /builddir/build/SPECS/libmaxminddb.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc dioscc\' \'--define\' \'__cxx diosc++\' \'--define\' \'__cpp dioscc -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+setting SOURCE_DATE_EPOCH=1626912000
+Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.KGch7F
++ umask 022
++ cd /builddir/build/BUILD
++ cd libmaxminddb-1.5.2
++ autoreconf -vfi
+autoreconf: Entering directory `.'
+autoreconf: configure.ac: not using Gettext
+autoreconf: running: aclocal --force 
+autoreconf: configure.ac: tracing
+autoreconf: running: libtoolize --copy --force
+libtoolize: putting auxiliary files in '.'.
+libtoolize: copying file './ltmain.sh'
+libtoolize: Consider adding 'AC_CONFIG_MACRO_DIRS([m4])' to configure.ac,
+libtoolize: and rerunning libtoolize and aclocal.
+libtoolize: Consider adding '-I m4' to ACLOCAL_AMFLAGS in Makefile.am.
+autoreconf: running: /usr/bin/autoconf --force
+autoreconf: running: /usr/bin/autoheader --force
+autoreconf: running: automake --add-missing --copy --force-missing
+configure.ac:13: installing './compile'
+configure.ac:14: installing './missing'
+bin/Makefile.am: installing './depcomp'
+t/Makefile.am:25: warning: source file '../src/data-pool.c' is in a subdirectory,
+t/Makefile.am:25: but option 'subdir-objects' is disabled
+automake: warning: possible forward-incompatibility.
+automake: At least a source file is in a subdirectory, but the 'subdir-objects'
+automake: automake option hasn't been enabled.  For now, the corresponding output
+automake: object file(s) will be placed in the top-level directory.  However,
+automake: this behaviour will change in future Automake versions: they will
+automake: unconditionally cause object files to be placed in the same subdirectory
+automake: of the corresponding sources.
+automake: You are advised to start using 'subdir-objects' option throughout your
+automake: project, to avoid future incompatibilities.
+autoreconf: Leaving directory `.'
++ CFLAGS=-O0
++ export CFLAGS
++ CXXFLAGS=-O0
++ export CXXFLAGS
++ FFLAGS='-O0 -I/usr/lib64/gfortran/modules'
++ export FFLAGS
++ FCFLAGS='-O0 -I/usr/lib64/gfortran/modules'
++ export FCFLAGS
++ LDFLAGS=-O0
++ export LDFLAGS
++ LT_SYS_LIBRARY_PATH=/usr/lib64:
++ export LT_SYS_LIBRARY_PATH
++ CC=dioscc
++ export CC
++ CXX=diosc++
++ export CXX
++ '[' -fltox '!=' x ']'
+++ find . -type f -name configure -print
++ for file in $(find . -type f -name configure -print)
++ /usr/bin/sed -r --in-place=.backup 's/^char \(\*f\) \(\) = /__attribute__ ((used)) char (*f) () = /g' ./configure
++ diff -u ./configure.backup ./configure
++ mv ./configure.backup ./configure
++ /usr/bin/sed -r --in-place=.backup 's/^char \(\*f\) \(\);/__attribute__ ((used)) char (*f) ();/g' ./configure
++ diff -u ./configure.backup ./configure
++ mv ./configure.backup ./configure
++ /usr/bin/sed -r --in-place=.backup 's/^char \$2 \(\);/__attribute__ ((used)) char \$2 ();/g' ./configure
++ diff -u ./configure.backup ./configure
+--- ./configure.backup	2021-12-01 14:55:03.619187830 +0100
++++ ./configure	2021-12-01 14:55:04.704179865 +0100
+@@ -1779,7 +1779,7 @@
+ #ifdef __cplusplus
+ extern "C"
+ #endif
+-char $2 ();
++__attribute__ ((used)) char $2 ();
+ /* The GNU C library defines this for functions which it implements
+     to always fail with ENOSYS.  Some functions are actually named
+     something starting with __ and the normal name is an alias.  */
++ /usr/bin/sed --in-place=.backup '1{$!N;$!N};$!N;s/int x = 1;\nint y = 0;\nint z;\nint nan;/volatile int x = 1; volatile int y = 0; volatile int z, nan;/;P;D' ./configure
++ diff -u ./configure.backup ./configure
++ mv ./configure.backup ./configure
++ /usr/bin/sed --in-place=.backup 's#^lt_cv_sys_global_symbol_to_cdecl=.*#lt_cv_sys_global_symbol_to_cdecl="sed -n -e '\''s/^T .* \\(.*\\)$/extern int \\1();/p'\'' -e '\''s/^$symcode* .* \\(.*\\)$/extern char \\1;/p'\''"#' ./configure
++ diff -u ./configure.backup ./configure
+--- ./configure.backup	2021-12-01 14:55:04.704179865 +0100
++++ ./configure	2021-12-01 14:55:04.718179762 +0100
+@@ -5517,7 +5517,7 @@
+ # Transform an extracted symbol line into a proper C declaration.
+ # Some systems (esp. on ia64) link data and code symbols differently,
+ # so use this general approach.
+-lt_cv_sys_global_symbol_to_cdecl="sed -n"\
++lt_cv_sys_global_symbol_to_cdecl="sed -n -e 's/^T .* \(.*\)$/extern int \1();/p' -e 's/^$symcode* .* \(.*\)$/extern char \1;/p'"
+ $lt_cdecl_hook\
+ " -e 's/^T .* \(.*\)$/extern int \1();/p'"\
+ " -e 's/^$symcode$symcode* .* \(.*\)$/extern char \1;/p'"
+@@ -14095,7 +14095,7 @@
+ compiler='`$ECHO "$compiler" | $SED "$delay_single_quote_subst"`'
+ GCC='`$ECHO "$GCC" | $SED "$delay_single_quote_subst"`'
+ lt_cv_sys_global_symbol_pipe='`$ECHO "$lt_cv_sys_global_symbol_pipe" | $SED "$delay_single_quote_subst"`'
+-lt_cv_sys_global_symbol_to_cdecl='`$ECHO "$lt_cv_sys_global_symbol_to_cdecl" | $SED "$delay_single_quote_subst"`'
++lt_cv_sys_global_symbol_to_cdecl="sed -n -e 's/^T .* \(.*\)$/extern int \1();/p' -e 's/^$symcode* .* \(.*\)$/extern char \1;/p'"
+ lt_cv_sys_global_symbol_to_import='`$ECHO "$lt_cv_sys_global_symbol_to_import" | $SED "$delay_single_quote_subst"`'
+ lt_cv_sys_global_symbol_to_c_name_address='`$ECHO "$lt_cv_sys_global_symbol_to_c_name_address" | $SED "$delay_single_quote_subst"`'
+ lt_cv_sys_global_symbol_to_c_name_address_lib_prefix='`$ECHO "$lt_cv_sys_global_symbol_to_c_name_address_lib_prefix" | $SED "$delay_single_quote_subst"`'
++ '[' 1 = 1 ']'
++++ dirname ./configure
+++ find . -name config.guess -o -name config.sub
++ for i in $(find $(dirname ./configure) -name config.guess -o -name config.sub)
+++ basename ./config.guess
++ '[' -f /usr/lib/rpm/redhat/config.guess ']'
++ /usr/bin/rm -f ./config.guess
+++ basename ./config.guess
++ /usr/bin/cp -fv /usr/lib/rpm/redhat/config.guess ./config.guess
+'/usr/lib/rpm/redhat/config.guess' -> './config.guess'
++ for i in $(find $(dirname ./configure) -name config.guess -o -name config.sub)
+++ basename ./config.sub
++ '[' -f /usr/lib/rpm/redhat/config.sub ']'
++ /usr/bin/rm -f ./config.sub
+++ basename ./config.sub
++ /usr/bin/cp -fv /usr/lib/rpm/redhat/config.sub ./config.sub
+'/usr/lib/rpm/redhat/config.sub' -> './config.sub'
++ '[' 1 = 1 ']'
++ '[' x '!=' 'x-Wl,-z,now ' ']'
+++ find . -name ltmain.sh
++ for i in $(find . -name ltmain.sh)
++ /usr/bin/sed -i.backup -e 's~compiler_flags=$~compiler_flags="-Wl,-z,now "~' ./ltmain.sh
++ ./configure --build=x86_64-redhat-linux-gnu --host=x86_64-redhat-linux-gnu --program-prefix= --disable-dependency-tracking --prefix=/usr --exec-prefix=/usr --bindir=/usr/bin --sbindir=/usr/sbin --sysconfdir=/etc --datadir=/usr/share --includedir=/usr/include --libdir=/usr/lib64 --libexecdir=/usr/libexec --localstatedir=/var --sharedstatedir=/var/lib --mandir=/usr/share/man --infodir=/usr/share/info --disable-static
+checking for x86_64-redhat-linux-gnu-pkg-config... /usr/bin/x86_64-redhat-linux-gnu-pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking build system type... x86_64-redhat-linux-gnu
+checking host system type... x86_64-redhat-linux-gnu
+checking how to print strings... printf
+checking for x86_64-redhat-linux-gnu-gcc... dioscc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether dioscc accepts -g... yes
+checking for dioscc option to accept ISO C89... none needed
+checking whether dioscc understands -c and -o together... yes
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for fgrep... /usr/bin/grep -F
+checking for ld used by dioscc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-redhat-linux-gnu file names to x86_64-redhat-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-redhat-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for x86_64-redhat-linux-gnu-objdump... no
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for x86_64-redhat-linux-gnu-dlltool... no
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for x86_64-redhat-linux-gnu-ar... no
+checking for ar... ar
+checking for archiver @FILE support... @
+checking for x86_64-redhat-linux-gnu-strip... no
+checking for strip... strip
+checking for x86_64-redhat-linux-gnu-ranlib... no
+checking for ranlib... ranlib
+checking for gawk... gawk
+checking command to parse /usr/bin/nm -B output from dioscc object... ./configure: line 5523:  -e 's/^T .* \(.*\)$/extern int \1();/p' -e 's/^[ABCDGIRSTW][ABCDGIRSTW]* .* \(.*\)$/extern char \1;/p': No such file or directory
+ok
+checking for sysroot... no
+checking for a working dd... /usr/bin/dd
+checking how to truncate binary pipes... /usr/bin/dd bs=4096 count=1
+checking for x86_64-redhat-linux-gnu-mt... no
+checking for mt... no
+checking if : is a manifest tool... no
+checking how to run the C preprocessor... dioscc -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... no
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if dioscc supports -fno-rtti -fno-exceptions... yes
+checking for dioscc option to produce PIC... -fPIC -DPIC
+checking if dioscc PIC flag -fPIC -DPIC works... yes
+checking if dioscc static flag -static works... no
+checking if dioscc supports -c -o file.o... yes
+checking if dioscc supports -c -o file.o... (cached) yes
+checking whether the dioscc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... yes
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... no
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+checking whether make sets $(MAKE)... yes
+checking whether make supports the include directive... yes (GNU style)
+checking whether make supports nested variables... yes
+checking dependency style of dioscc... none
+checking for dioscc option to accept ISO C99... none needed
+checking whether compiler accepts "-fms-extensions"... yes
+checking for C/C++ restrict keyword... __restrict
+checking arpa/inet.h usability... yes
+checking arpa/inet.h presence... yes
+checking for arpa/inet.h... yes
+checking assert.h usability... yes
+checking assert.h presence... yes
+checking for assert.h... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking for inttypes.h... (cached) yes
+checking libgen.h usability... yes
+checking libgen.h presence... yes
+checking for libgen.h... yes
+checking math.h usability... yes
+checking math.h presence... yes
+checking for math.h... yes
+checking netdb.h usability... yes
+checking netdb.h presence... yes
+checking for netdb.h... yes
+checking netinet/in.h usability... yes
+checking netinet/in.h presence... yes
+checking for netinet/in.h... yes
+checking stdarg.h usability... yes
+checking stdarg.h presence... yes
+checking for stdarg.h... yes
+checking stdbool.h usability... yes
+checking stdbool.h presence... yes
+checking for stdbool.h... yes
+checking for stdint.h... (cached) yes
+checking stdio.h usability... yes
+checking stdio.h presence... yes
+checking for stdio.h... yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking sys/mman.h usability... yes
+checking sys/mman.h presence... yes
+checking for sys/mman.h... yes
+checking sys/socket.h usability... yes
+checking sys/socket.h presence... yes
+checking for sys/socket.h... yes
+checking for sys/stat.h... (cached) yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking for sys/types.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for off_t... yes
+checking for size_t... yes
+checking for ssize_t... yes
+checking for uint8_t... yes
+checking for uint32_t... yes
+checking for uint64_t... yes
+checking for unsigned __int128... yes
+checking for boolean... no
+checking for clock_gettime... yes
+checking for open_memstream... no
+checking whether byte ordering is bigendian... no
+checking for stdlib.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for sys/param.h... yes
+checking for getpagesize... yes
+checking for working mmap... yes
+checking for library containing fabs... -lm
+checking for library containing fabsf... none required
+checking for library containing getaddrinfo... none required
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating src/libmaxminddb.pc
+config.status: creating Makefile
+config.status: creating src/Makefile
+config.status: creating bin/Makefile
+config.status: creating t/Makefile
+config.status: creating config.h
+config.status: creating include/maxminddb_config.h
+config.status: executing libtool commands
+config.status: executing depfiles commands
++ /usr/bin/make -O -j16 V=1 VERBOSE=1
+/usr/bin/make.orig  all-recursive
+Making all in src
+make.orig[2]: Entering directory '/builddir/build/BUILD/libmaxminddb-1.5.2/src'
+/bin/sh ../libtool  --tag=CC   --mode=compile dioscc -DHAVE_CONFIG_H -I. -I.. -I../include  -I../include   -O0 -c -o data-pool.lo data-pool.c
+libtool: compile:  dioscc -DHAVE_CONFIG_H -I. -I.. -I../include -I../include -O0 -c data-pool.c  -fPIC -DPIC -o .libs/data-pool.o
+make.orig[2]: Leaving directory '/builddir/build/BUILD/libmaxminddb-1.5.2/src'
+make.orig[2]: Entering directory '/builddir/build/BUILD/libmaxminddb-1.5.2/src'
+/bin/sh ../libtool  --tag=CC   --mode=compile dioscc -DHAVE_CONFIG_H -I. -I.. -I../include  -I../include   -O0 -c -o maxminddb.lo maxminddb.c
+libtool: compile:  dioscc -DHAVE_CONFIG_H -I. -I.. -I../include -I../include -O0 -c maxminddb.c  -fPIC -DPIC -o .libs/maxminddb.o
+make.orig[2]: Leaving directory '/builddir/build/BUILD/libmaxminddb-1.5.2/src'
+/builddir/build/BUILD/libmaxminddb-1.5.2/src/maxminddb.c:892:27: error: incomplete definition of type 'struct sockaddr_in6' <--[dioscc]
+                          ->sin6_addr.s6_addr;
+                          ^
+/builddir/build/BUILD/libmaxminddb-1.5.2/src/maxminddb.c:891:44: note: forward declaration of 'struct sockaddr_in6' <--[dioscc]
+            address = (uint8_t *)&((struct sockaddr_in6 *)sockaddr)
+                                           ^
+1 error generated.
+Error building maxminddb.c
+make.orig[2]: *** [Makefile:498: maxminddb.lo] Error 1
+make.orig[2]: Target 'all' not remade because of errors.
+Making all in bin
+make.orig[2]: Entering directory '/builddir/build/BUILD/libmaxminddb-1.5.2/bin'
+dioscc -DHAVE_CONFIG_H -I. -I.. -I../include  -I../include -pthread   -O0 -c -o mmdblookup.o mmdblookup.c
+make.orig[2]: Leaving directory '/builddir/build/BUILD/libmaxminddb-1.5.2/bin'
+make.orig[2]: Entering directory '/builddir/build/BUILD/libmaxminddb-1.5.2/bin'
+/bin/sh ../libtool  --tag=CC   --mode=link dioscc  -O0 ../src/libmaxminddb.la -pthread -O0 -o mmdblookup mmdblookup.o  -lm 
+make.orig[2]: Leaving directory '/builddir/build/BUILD/libmaxminddb-1.5.2/bin'
+libtool:   error: cannot find the library '../src/libmaxminddb.la' or unhandled argument '../src/libmaxminddb.la'
+make.orig[2]: *** [Makefile:386: mmdblookup] Error 1
+make.orig[2]: Target 'all' not remade because of errors.
+Making all in t
+cd libtap && /usr/bin/make.orig  all
+make.orig[3]: Entering directory '/builddir/build/BUILD/libmaxminddb-1.5.2/t/libtap'
+generating tap.pc
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libmaxminddb-1.5.2/t/libtap'
+make.orig[3]: Entering directory '/builddir/build/BUILD/libmaxminddb-1.5.2/t/libtap'
+dioscc -O0 -I../src -Wall -I. -fPIC   -c tap.c  -o tap.o
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libmaxminddb-1.5.2/t/libtap'
+make.orig[3]: Entering directory '/builddir/build/BUILD/libmaxminddb-1.5.2/t/libtap'
+ar rcs libtap.a tap.o
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libmaxminddb-1.5.2/t/libtap'
+make.orig[2]: Entering directory '/builddir/build/BUILD/libmaxminddb-1.5.2/t'
+/bin/sh ../libtool  --tag=CC   --mode=compile dioscc -DHAVE_CONFIG_H -I. -I.. -I../include  -I../include   -O0 -I../src -c -o maxminddb_test_helper.lo maxminddb_test_helper.c
+libtool: compile:  dioscc -DHAVE_CONFIG_H -I. -I.. -I../include -I../include -O0 -I../src -c maxminddb_test_helper.c  -fPIC -DPIC -o .libs/maxminddb_test_helper.o
+make.orig[2]: Leaving directory '/builddir/build/BUILD/libmaxminddb-1.5.2/t'
+make.orig[2]: Entering directory '/builddir/build/BUILD/libmaxminddb-1.5.2/t'
+/bin/sh ../libtool  --tag=CC   --mode=link dioscc  -O0 -I../src ../src/libmaxminddb.la -O0 -o libmmdbtest.la  maxminddb_test_helper.lo  -lm 
+make.orig[2]: Leaving directory '/builddir/build/BUILD/libmaxminddb-1.5.2/t'
+libtool:   error: cannot find the library '../src/libmaxminddb.la' or unhandled argument '../src/libmaxminddb.la'
+make.orig[2]: *** [Makefile:487: libmmdbtest.la] Error 1
+make.orig[3]: Entering directory '/builddir/build/BUILD/libmaxminddb-1.5.2/t/libtap'
+dioscc -shared -O0  tap.o  -o libtap.so
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libmaxminddb-1.5.2/t/libtap'
+make.orig[2]: Target 'all' not remade because of errors.
+make.orig[2]: Entering directory '/builddir/build/BUILD/libmaxminddb-1.5.2'
+if [ ! -f man/man1/mmdblookup.1 ]; then mkdir -p man/man1 && touch man/man1/mmdblookup.1; fi
+make.orig[2]: Leaving directory '/builddir/build/BUILD/libmaxminddb-1.5.2'
+make.orig[2]: Entering directory '/builddir/build/BUILD/libmaxminddb-1.5.2'
+if [ ! -f man/man3/libmaxminddb.3 ]; then mkdir -p man/man3 && touch man/man3/libmaxminddb.3; fi
+make.orig[2]: Leaving directory '/builddir/build/BUILD/libmaxminddb-1.5.2'
+make.orig[2]: Entering directory '/builddir/build/BUILD/libmaxminddb-1.5.2'
+if [ ! -f man/man3/libmaxminddb.3 ]; then mkdir -p man/man3 && touch man/man3/libmaxminddb.3; fi
+make.orig[2]: Leaving directory '/builddir/build/BUILD/libmaxminddb-1.5.2'
+make.orig[2]: Entering directory '/builddir/build/BUILD/libmaxminddb-1.5.2'
+if [ ! -f man/man3/libmaxminddb.3 ]; then mkdir -p man/man3 && touch man/man3/libmaxminddb.3; fi
+make.orig[2]: Leaving directory '/builddir/build/BUILD/libmaxminddb-1.5.2'
+make.orig[2]: Entering directory '/builddir/build/BUILD/libmaxminddb-1.5.2'
+if [ ! -f man/man3/libmaxminddb.3 ]; then mkdir -p man/man3 && touch man/man3/libmaxminddb.3; fi
+make.orig[2]: Leaving directory '/builddir/build/BUILD/libmaxminddb-1.5.2'
+make.orig[2]: Entering directory '/builddir/build/BUILD/libmaxminddb-1.5.2'
+if [ ! -f man/man3/libmaxminddb.3 ]; then mkdir -p man/man3 && touch man/man3/libmaxminddb.3; fi
+make.orig[2]: Leaving directory '/builddir/build/BUILD/libmaxminddb-1.5.2'
+make.orig[2]: Entering directory '/builddir/build/BUILD/libmaxminddb-1.5.2'
+if [ ! -f man/man3/libmaxminddb.3 ]; then mkdir -p man/man3 && touch man/man3/libmaxminddb.3; fi
+make.orig[2]: Leaving directory '/builddir/build/BUILD/libmaxminddb-1.5.2'
+make.orig[2]: Entering directory '/builddir/build/BUILD/libmaxminddb-1.5.2'
+if [ ! -f man/man3/libmaxminddb.3 ]; then mkdir -p man/man3 && touch man/man3/libmaxminddb.3; fi
+make.orig[2]: Leaving directory '/builddir/build/BUILD/libmaxminddb-1.5.2'
+make.orig[2]: Entering directory '/builddir/build/BUILD/libmaxminddb-1.5.2'
+if [ ! -f man/man3/libmaxminddb.3 ]; then mkdir -p man/man3 && touch man/man3/libmaxminddb.3; fi
+make.orig[2]: Leaving directory '/builddir/build/BUILD/libmaxminddb-1.5.2'
+make.orig[2]: Entering directory '/builddir/build/BUILD/libmaxminddb-1.5.2'
+if [ ! -f man/man3/libmaxminddb.3 ]; then mkdir -p man/man3 && touch man/man3/libmaxminddb.3; fi
+make.orig[2]: Leaving directory '/builddir/build/BUILD/libmaxminddb-1.5.2'
+make.orig[2]: Entering directory '/builddir/build/BUILD/libmaxminddb-1.5.2'
+if [ ! -f man/man3/libmaxminddb.3 ]; then mkdir -p man/man3 && touch man/man3/libmaxminddb.3; fi
+make.orig[2]: Leaving directory '/builddir/build/BUILD/libmaxminddb-1.5.2'
+make.orig[2]: Entering directory '/builddir/build/BUILD/libmaxminddb-1.5.2'
+if [ ! -f man/man3/libmaxminddb.3 ]; then mkdir -p man/man3 && touch man/man3/libmaxminddb.3; fi
+make.orig[2]: Leaving directory '/builddir/build/BUILD/libmaxminddb-1.5.2'
+make.orig[2]: Entering directory '/builddir/build/BUILD/libmaxminddb-1.5.2'
+if [ ! -f man/man3/libmaxminddb.3 ]; then mkdir -p man/man3 && touch man/man3/libmaxminddb.3; fi
+make.orig[2]: Leaving directory '/builddir/build/BUILD/libmaxminddb-1.5.2'
+make.orig[2]: Entering directory '/builddir/build/BUILD/libmaxminddb-1.5.2'
+if [ ! -f man/man3/libmaxminddb.3 ]; then mkdir -p man/man3 && touch man/man3/libmaxminddb.3; fi
+make.orig[2]: Leaving directory '/builddir/build/BUILD/libmaxminddb-1.5.2'
+make.orig[2]: Entering directory '/builddir/build/BUILD/libmaxminddb-1.5.2'
+if [ ! -f man/man3/libmaxminddb.3 ]; then mkdir -p man/man3 && touch man/man3/libmaxminddb.3; fi
+make.orig[2]: Leaving directory '/builddir/build/BUILD/libmaxminddb-1.5.2'
+make.orig[2]: Entering directory '/builddir/build/BUILD/libmaxminddb-1.5.2'
+if [ ! -f man/man3/libmaxminddb.3 ]; then mkdir -p man/man3 && touch man/man3/libmaxminddb.3; fi
+make.orig[2]: Leaving directory '/builddir/build/BUILD/libmaxminddb-1.5.2'
+make.orig[1]: *** [Makefile:576: all-recursive] Error 1
+make.orig: *** [Makefile:376: all] Error 2
+
+
+RPM build errors:
+error: Bad exit status from /var/tmp/rpm-tmp.KGch7F (%build)
+    Bad exit status from /var/tmp/rpm-tmp.KGch7F (%build)
+Finish: chroot ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'dioscc\' CXX=\\$\'diosc++\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\acsexec-divine\\\\a-l\\\\a/builddir/divine-capture\\\\a-d\\\\acheck --lart stubs -o ignore:exit --max-time 8 \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bc --nodeps --short-circuit /builddir/build/SPECS/libmaxminddb.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc dioscc\' \'--define\' \'__cxx diosc++\' \'--define\' \'__cpp dioscc -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+
+!!! 2021-12-01 14:55:13	error: %build failed
+
+>>> 2021-12-01 14:55:13	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--chroot" "/bin/su mockbuild -l -c \"PATH=/usr/lib64/cswrap:\\\$PATH CSWRAP_CAP_FILE=\\\$'/builddir/cswrap-capture.err' CSWRAP_TIMEOUT=\\\$'30' CSWRAP_TIMEOUT_FOR=\\\$':' CC=\\\$'dioscc' CXX=\\\$'diosc++' CSEXEC_WRAP_CMD=\\\$'--skip-ld-linux\\\\acsexec-divine\\\\a-l\\\\a/builddir/divine-capture\\\\a-d\\\\acheck --lart stubs -o ignore:exit --max-time 8 ' CSWRAP_ADD_CFLAGS=\\\$'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader' CSWRAP_DEL_CFLAGS=\\\$'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register' CSWRAP_ADD_CXXFLAGS=\\\$'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader' CSWRAP_DEL_CXXFLAGS=\\\$'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register' sh -c \\\"rpmbuild -bi --nodeps --short-circuit /builddir/build/SPECS/libmaxminddb.spec '--define' 'apidocs 0' '--define' 'with_publican 0' '--without' 'docs' '--without' 'langpacks' '--define' '__cc dioscc' '--define' '__cxx diosc++' '--define' '__cpp dioscc -E' '--define' 'toolchain clang' '--define' 'optflags -O0' '--define' 'build_ldflags -O0'\\\"\""
+INFO: mock.py version 2.13 starting (python version = 3.6.8, NVR = mock-2.13-1.kdudka.1.el7)...
+Start(bootstrap): init plugins
+INFO: selinux enabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish: chroot init
+INFO: Running in chroot: ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'dioscc\' CXX=\\$\'diosc++\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\acsexec-divine\\\\a-l\\\\a/builddir/divine-capture\\\\a-d\\\\acheck --lart stubs -o ignore:exit --max-time 8 \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bi --nodeps --short-circuit /builddir/build/SPECS/libmaxminddb.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc dioscc\' \'--define\' \'__cxx diosc++\' \'--define\' \'__cpp dioscc -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+Start: chroot ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'dioscc\' CXX=\\$\'diosc++\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\acsexec-divine\\\\a-l\\\\a/builddir/divine-capture\\\\a-d\\\\acheck --lart stubs -o ignore:exit --max-time 8 \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bi --nodeps --short-circuit /builddir/build/SPECS/libmaxminddb.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc dioscc\' \'--define\' \'__cxx diosc++\' \'--define\' \'__cpp dioscc -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+setting SOURCE_DATE_EPOCH=1626912000
+Executing(%install): /bin/sh -e /var/tmp/rpm-tmp.6zEV2U
++ umask 022
++ cd /builddir/build/BUILD
++ '[' /builddir/build/BUILDROOT/libmaxminddb-1.5.2-2.fc35.x86_64 '!=' / ']'
++ rm -rf /builddir/build/BUILDROOT/libmaxminddb-1.5.2-2.fc35.x86_64
+++ dirname /builddir/build/BUILDROOT/libmaxminddb-1.5.2-2.fc35.x86_64
++ mkdir -p /builddir/build/BUILDROOT
++ mkdir /builddir/build/BUILDROOT/libmaxminddb-1.5.2-2.fc35.x86_64
++ cd libmaxminddb-1.5.2
++ /usr/bin/make install DESTDIR=/builddir/build/BUILDROOT/libmaxminddb-1.5.2-2.fc35.x86_64 'INSTALL=/usr/bin/install -p'
+Making install in src
+make.orig[1]: Entering directory '/builddir/build/BUILD/libmaxminddb-1.5.2/src'
+/bin/sh ../libtool  --tag=CC   --mode=compile dioscc -DHAVE_CONFIG_H -I. -I.. -I../include  -I../include   -O0 -c -o maxminddb.lo maxminddb.c
+libtool: compile:  dioscc -DHAVE_CONFIG_H -I. -I.. -I../include -I../include -O0 -c maxminddb.c  -fPIC -DPIC -o .libs/maxminddb.o
+/builddir/build/BUILD/libmaxminddb-1.5.2/src/maxminddb.c:892:27: error: incomplete definition of type 'struct sockaddr_in6' <--[dioscc]
+                          ->sin6_addr.s6_addr;
+                          ^
+/builddir/build/BUILD/libmaxminddb-1.5.2/src/maxminddb.c:891:44: note: forward declaration of 'struct sockaddr_in6' <--[dioscc]
+            address = (uint8_t *)&((struct sockaddr_in6 *)sockaddr)
+                                           ^
+1 error generated.
+Error building maxminddb.c
+make.orig[1]: *** [Makefile:498: maxminddb.lo] Error 1
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libmaxminddb-1.5.2/src'
+make.orig[1]: Target 'install' not remade because of errors.
+Making install in bin
+make.orig[1]: Entering directory '/builddir/build/BUILD/libmaxminddb-1.5.2/bin'
+/bin/sh ../libtool  --tag=CC   --mode=link dioscc  -O0 ../src/libmaxminddb.la -pthread -O0 -o mmdblookup mmdblookup.o  -lm 
+libtool:   error: cannot find the library '../src/libmaxminddb.la' or unhandled argument '../src/libmaxminddb.la'
+make.orig[1]: *** [Makefile:386: mmdblookup] Error 1
+make.orig[1]: Target 'install' not remade because of errors.
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libmaxminddb-1.5.2/bin'
+Making install in t
+make.orig[1]: Entering directory '/builddir/build/BUILD/libmaxminddb-1.5.2/t'
+/bin/sh ../libtool  --tag=CC   --mode=link dioscc  -O0 -I../src ../src/libmaxminddb.la -O0 -o libmmdbtest.la  maxminddb_test_helper.lo  -lm 
+libtool:   error: cannot find the library '../src/libmaxminddb.la' or unhandled argument '../src/libmaxminddb.la'
+make.orig[1]: *** [Makefile:487: libmmdbtest.la] Error 1
+cd libtap && /usr/bin/make.orig  all
+make.orig[2]: Entering directory '/builddir/build/BUILD/libmaxminddb-1.5.2/t/libtap'
+make.orig[2]: Nothing to be done for 'all'.
+make.orig[2]: Leaving directory '/builddir/build/BUILD/libmaxminddb-1.5.2/t/libtap'
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libmaxminddb-1.5.2/t'
+make.orig[1]: Target 'install' not remade because of errors.
+make.orig[1]: Entering directory '/builddir/build/BUILD/libmaxminddb-1.5.2'
+if [ ! -f man/man1/mmdblookup.1 ]; then mkdir -p man/man1 && touch man/man1/mmdblookup.1; fi
+if [ ! -f man/man3/libmaxminddb.3 ]; then mkdir -p man/man3 && touch man/man3/libmaxminddb.3; fi
+if [ ! -f man/man3/libmaxminddb.3 ]; then mkdir -p man/man3 && touch man/man3/libmaxminddb.3; fi
+if [ ! -f man/man3/libmaxminddb.3 ]; then mkdir -p man/man3 && touch man/man3/libmaxminddb.3; fi
+if [ ! -f man/man3/libmaxminddb.3 ]; then mkdir -p man/man3 && touch man/man3/libmaxminddb.3; fi
+if [ ! -f man/man3/libmaxminddb.3 ]; then mkdir -p man/man3 && touch man/man3/libmaxminddb.3; fi
+if [ ! -f man/man3/libmaxminddb.3 ]; then mkdir -p man/man3 && touch man/man3/libmaxminddb.3; fi
+if [ ! -f man/man3/libmaxminddb.3 ]; then mkdir -p man/man3 && touch man/man3/libmaxminddb.3; fi
+if [ ! -f man/man3/libmaxminddb.3 ]; then mkdir -p man/man3 && touch man/man3/libmaxminddb.3; fi
+if [ ! -f man/man3/libmaxminddb.3 ]; then mkdir -p man/man3 && touch man/man3/libmaxminddb.3; fi
+if [ ! -f man/man3/libmaxminddb.3 ]; then mkdir -p man/man3 && touch man/man3/libmaxminddb.3; fi
+if [ ! -f man/man3/libmaxminddb.3 ]; then mkdir -p man/man3 && touch man/man3/libmaxminddb.3; fi
+if [ ! -f man/man3/libmaxminddb.3 ]; then mkdir -p man/man3 && touch man/man3/libmaxminddb.3; fi
+if [ ! -f man/man3/libmaxminddb.3 ]; then mkdir -p man/man3 && touch man/man3/libmaxminddb.3; fi
+if [ ! -f man/man3/libmaxminddb.3 ]; then mkdir -p man/man3 && touch man/man3/libmaxminddb.3; fi
+if [ ! -f man/man3/libmaxminddb.3 ]; then mkdir -p man/man3 && touch man/man3/libmaxminddb.3; fi
+make.orig[2]: Entering directory '/builddir/build/BUILD/libmaxminddb-1.5.2'
+make.orig[2]: Nothing to be done for 'install-exec-am'.
+ /usr/bin/mkdir -p '/builddir/build/BUILDROOT/libmaxminddb-1.5.2-2.fc35.x86_64/usr/include'
+ /usr/bin/install -p -m 644 include/maxminddb.h '/builddir/build/BUILDROOT/libmaxminddb-1.5.2-2.fc35.x86_64/usr/include'
+if [ ! -f man/man1/mmdblookup.1 ]; then mkdir -p man/man1 && touch man/man1/mmdblookup.1; fi
+ /usr/bin/mkdir -p '/builddir/build/BUILDROOT/libmaxminddb-1.5.2-2.fc35.x86_64/usr/share/man/man1'
+ /usr/bin/install -p -m 644 man/man1/mmdblookup.1 '/builddir/build/BUILDROOT/libmaxminddb-1.5.2-2.fc35.x86_64/usr/share/man/man1'
+if [ ! -f man/man3/libmaxminddb.3 ]; then mkdir -p man/man3 && touch man/man3/libmaxminddb.3; fi
+if [ ! -f man/man3/libmaxminddb.3 ]; then mkdir -p man/man3 && touch man/man3/libmaxminddb.3; fi
+if [ ! -f man/man3/libmaxminddb.3 ]; then mkdir -p man/man3 && touch man/man3/libmaxminddb.3; fi
+if [ ! -f man/man3/libmaxminddb.3 ]; then mkdir -p man/man3 && touch man/man3/libmaxminddb.3; fi
+if [ ! -f man/man3/libmaxminddb.3 ]; then mkdir -p man/man3 && touch man/man3/libmaxminddb.3; fi
+if [ ! -f man/man3/libmaxminddb.3 ]; then mkdir -p man/man3 && touch man/man3/libmaxminddb.3; fi
+if [ ! -f man/man3/libmaxminddb.3 ]; then mkdir -p man/man3 && touch man/man3/libmaxminddb.3; fi
+if [ ! -f man/man3/libmaxminddb.3 ]; then mkdir -p man/man3 && touch man/man3/libmaxminddb.3; fi
+if [ ! -f man/man3/libmaxminddb.3 ]; then mkdir -p man/man3 && touch man/man3/libmaxminddb.3; fi
+if [ ! -f man/man3/libmaxminddb.3 ]; then mkdir -p man/man3 && touch man/man3/libmaxminddb.3; fi
+if [ ! -f man/man3/libmaxminddb.3 ]; then mkdir -p man/man3 && touch man/man3/libmaxminddb.3; fi
+if [ ! -f man/man3/libmaxminddb.3 ]; then mkdir -p man/man3 && touch man/man3/libmaxminddb.3; fi
+if [ ! -f man/man3/libmaxminddb.3 ]; then mkdir -p man/man3 && touch man/man3/libmaxminddb.3; fi
+if [ ! -f man/man3/libmaxminddb.3 ]; then mkdir -p man/man3 && touch man/man3/libmaxminddb.3; fi
+if [ ! -f man/man3/libmaxminddb.3 ]; then mkdir -p man/man3 && touch man/man3/libmaxminddb.3; fi
+ /usr/bin/mkdir -p '/builddir/build/BUILDROOT/libmaxminddb-1.5.2-2.fc35.x86_64/usr/share/man/man3'
+ /usr/bin/install -p -m 644 man/man3/MMDB_aget_value.3 man/man3/MMDB_close.3 man/man3/MMDB_dump_entry_data_list.3 man/man3/MMDB_free_entry_data_list.3 man/man3/MMDB_get_entry_data_list.3 man/man3/MMDB_get_metadata_as_entry_data_list.3 man/man3/MMDB_get_value.3 man/man3/MMDB_lib_version.3 man/man3/MMDB_lookup_sockaddr.3 man/man3/MMDB_lookup_string.3 man/man3/MMDB_open.3 man/man3/MMDB_read_node.3 man/man3/MMDB_strerror.3 man/man3/MMDB_vget_value.3 man/man3/libmaxminddb.3 '/builddir/build/BUILDROOT/libmaxminddb-1.5.2-2.fc35.x86_64/usr/share/man/man3'
+ /usr/bin/mkdir -p '/builddir/build/BUILDROOT/libmaxminddb-1.5.2-2.fc35.x86_64/usr/include'
+ /usr/bin/install -p -m 644 include/maxminddb_config.h '/builddir/build/BUILDROOT/libmaxminddb-1.5.2-2.fc35.x86_64/usr/include'
+make.orig[2]: Leaving directory '/builddir/build/BUILD/libmaxminddb-1.5.2'
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libmaxminddb-1.5.2'
+make.orig: *** [Makefile:576: install-recursive] Error 1
+make.orig: Target 'install' not remade because of errors.
+error: Bad exit status from /var/tmp/rpm-tmp.6zEV2U (%install)
+
+
+RPM build errors:
+    Bad exit status from /var/tmp/rpm-tmp.6zEV2U (%install)
+Finish: chroot ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'dioscc\' CXX=\\$\'diosc++\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\acsexec-divine\\\\a-l\\\\a/builddir/divine-capture\\\\a-d\\\\acheck --lart stubs -o ignore:exit --max-time 8 \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bi --nodeps --short-circuit /builddir/build/SPECS/libmaxminddb.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc dioscc\' \'--define\' \'__cxx diosc++\' \'--define\' \'__cpp dioscc -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+
+!!! 2021-12-01 14:55:15	error: %install failed
+
+>>> 2021-12-01 14:55:15	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'tar -c --remove-files '/builddir/cswrap-capture.err' '/builddir/divine-capture'' | tar -xC '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/debug/raw-results'"
+tar: Removing leading `/' from member names
+tar: Removing leading `/' from hard link targets
+
+>>> 2021-12-01 14:55:16	"csgrep --mode=json --remove-duplicates '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/debug/raw-results/builddir/divine-capture'/pid-*.conv > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/debug/uni-results/divine-capture.js'"
+/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/debug/raw-results/builddir/divine-capture/pid-*.conv: failed to open input file
+
+!!! 2021-12-01 14:55:16	error: post-process hook failed
+
+scan.ini: time-finished = 2021-12-01 14:55:16
+scan.ini: exit-code = 1
+>>> 2021-12-01 14:55:16	"cslinker --quiet --cwelist '/usr/share/csmock/cwe-map.csv' --inifile '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/scan.ini' '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/debug/uni-results'/* > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/debug/scan-results-all.js'"
+
+>>> 2021-12-01 14:55:16	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'csgrep --mode=json --embed-context 3' < '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/debug/scan-results-all.js' > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/debug/scan-results-all.js.tmp'"
+
+>>> 2021-12-01 14:55:18	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--clean"
+
+>>> 2021-12-01 14:55:21	"cat '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/debug/scan-results-all.js' | sed 's|/builddir/build/BUILDROOT/[^/]*/|/builddir/build/BUILD//|' | csgrep --mode=json --path '^/builddir/build/BUILD/' --strip-path-prefix /builddir/build/BUILD/ | csgrep --mode=json --invert-match --path '^ksh-.*[0-9]+\\.c\$' | csgrep --mode=json --invert-match --path 'CMakeFiles/CMakeTmp|conftest.c' | csdiff --json-output --show-internal \"/usr/share/csmock/known-false-positives.js\" - | cssort --key=path > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/scan-results.js'"
+
+>>> 2021-12-01 14:55:21	"sed 's|/builddir/build/BUILDROOT/[^/]*/|/builddir/build/BUILD//|' '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/debug/scan-results-all.js' | csgrep --mode=json --strip-path-prefix /builddir/build/BUILD/ | csdiff --show-internal '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/scan-results.js' - | cssort > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/debug/suppressed-results.js'"
+
+>>> 2021-12-01 14:55:21	"\"bash\" \"-c\" \"csgrep '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/debug/suppressed-results.js' --mode=json --checker '^(COMPILER_WARNING)\\\$' | csdiff <(csgrep '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/debug/suppressed-results.js' --mode=json --drop-scan-props --invert-regex --checker '^()\\\$' --event '-W(address|bool-compare|builtin-declaration-mismatch|format-overflow|implicit-function-declaration|implicit-int|int-in-bool-context|logical-not-parentheses|logical-op|memset-transposed-args|misleading-indentation|pointer-compare|stack-protector|stringop-overflow|switch-unreachable|tautological-compare)=?\\\\]\\\$') - > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/debug/suppressed-results-imp.js'\""
+
+>>> 2021-12-01 14:55:21	"csgrep --mode=grep --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/debug/suppressed-results-imp.js' > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/debug/suppressed-results-imp.err'"
+
+>>> 2021-12-01 14:55:21	"csgrep --mode=json --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/debug/suppressed-results-imp.js' | cshtml - > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/debug/suppressed-results-imp.html'"
+
+>>> 2021-12-01 14:55:21	"csgrep --mode=evtstat --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/debug/suppressed-results-imp.js' | tee '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/debug/suppressed-results-imp-summary.txt'"
+
+>>> 2021-12-01 14:55:21	"cslinker --implist '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/debug/suppressed-results-imp.js' '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/debug/suppressed-results.js' > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/debug/suppressed-results-tmp.js' && mv -v '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/debug/suppressed-results-tmp.js' '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/debug/suppressed-results.js'"
+'/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/debug/suppressed-results-tmp.js' -> '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/debug/suppressed-results.js'
+
+>>> 2021-12-01 14:55:21	"csgrep --mode=grep --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/debug/suppressed-results.js' > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/debug/suppressed-results.err'"
+
+>>> 2021-12-01 14:55:21	"csgrep --mode=json --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/debug/suppressed-results.js' | cshtml - > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/debug/suppressed-results.html'"
+
+>>> 2021-12-01 14:55:21	"csgrep --mode=evtstat --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/debug/suppressed-results.js' | tee '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/debug/suppressed-results-summary.txt'"
+
+>>> 2021-12-01 14:55:21	"\"bash\" \"-c\" \"csgrep '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/scan-results.js' --mode=json --checker '^(COMPILER_WARNING)\\\$' | csdiff <(csgrep '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/scan-results.js' --mode=json --drop-scan-props --invert-regex --checker '^()\\\$' --event '-W(address|bool-compare|builtin-declaration-mismatch|format-overflow|implicit-function-declaration|implicit-int|int-in-bool-context|logical-not-parentheses|logical-op|memset-transposed-args|misleading-indentation|pointer-compare|stack-protector|stringop-overflow|switch-unreachable|tautological-compare)=?\\\\]\\\$') - > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/scan-results-imp.js'\""
+
+>>> 2021-12-01 14:55:21	"csgrep --mode=grep --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/scan-results-imp.js' > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/scan-results-imp.err'"
+
+>>> 2021-12-01 14:55:21	"csgrep --mode=json --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/scan-results-imp.js' | cshtml - > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/scan-results-imp.html'"
+
+>>> 2021-12-01 14:55:21	"csgrep --mode=evtstat --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/scan-results-imp.js' | tee '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/scan-results-imp-summary.txt'"
+
+>>> 2021-12-01 14:55:21	"cslinker --implist '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/scan-results-imp.js' '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/scan-results.js' > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/scan-results-tmp.js' && mv -v '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/scan-results-tmp.js' '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/scan-results.js'"
+'/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/scan-results-tmp.js' -> '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/scan-results.js'
+
+>>> 2021-12-01 14:55:21	"csgrep --mode=grep --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/scan-results.js' > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/scan-results.err'"
+
+>>> 2021-12-01 14:55:21	"csgrep --mode=json --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/scan-results.js' | cshtml - > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/scan-results.html'"
+
+>>> 2021-12-01 14:55:21	"csgrep --mode=evtstat --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/scan-results.js' | tee '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output/scan-results-summary.txt'"
+
+<<< 2021-12-01 14:55:21	csmock exit code: 1
+
