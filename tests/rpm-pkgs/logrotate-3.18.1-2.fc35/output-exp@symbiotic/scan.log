@@ -1,0 +1,1051 @@
+scan.ini: [scan]
+scan.ini: tool = csmock
+scan.ini: tool-version = csmock-3.1.0.20211130.175245.g27e99a8.internal-1.el7
+scan.ini: tool-args = '/usr/bin/csmock' '-o' '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output' '-f' '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/logrotate-3.18.1-2.fc35.src.rpm' '-r' 'fedora-35-x86_64' '-t' 'symbiotic' '--symbiotic-timeout=8' '--keep-going'
+scan.ini: host = cov03.lab.eng.brq.redhat.com
+scan.ini: store-results-to = /home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output
+scan.ini: time-created = 2021-12-01 15:29:43
+scan.ini: enabled-plugins = symbiotic, gcc
+scan.ini: mock-config = fedora-35-x86_64
+scan.ini: project-name = logrotate-3.18.1-2.fc35
+scan.ini: known-false-positives = /usr/share/csmock/known-false-positives.js
+>>> 2021-12-01 15:29:43	"rpm -qa | sort -V > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/debug/rpm-list-host.txt'"
+
+>>> 2021-12-01 15:29:44	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--init"
+INFO: mock.py version 2.13 starting (python version = 3.6.8, NVR = mock-2.13-1.kdudka.1.el7)...
+Start(bootstrap): init plugins
+INFO: selinux enabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start: clean chroot
+Finish: clean chroot
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+Start: unpacking root cache
+Finish: unpacking root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish: chroot init
+Finish: run
+
+>>> 2021-12-01 15:29:46	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--installdeps" "/tmp/csmockik7qvzx4/logrotate-3.18.1-2.fc35.src.rpm"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Dependencies resolved.
+================================================================================
+ Package                  Arch     Version                    Repository   Size
+================================================================================
+Installing:
+ [1macl                     [m x86_64   2.3.1-2.fc35               f35-build    71 k
+ [1mautomake                [m noarch   1.16.2-5.fc35              f35-build   662 k
+ [1mgcc                     [m x86_64   11.2.1-1.fc35              f35-build    31 M
+ [1mgit                     [m x86_64   2.33.1-2.fc35              f35-build    67 k
+ [1mlibacl-devel            [m x86_64   2.3.1-2.fc35               f35-build    69 k
+ [1mlibselinux-devel        [m x86_64   3.3-1.fc35                 f35-build   112 k
+ [1mmake                    [m x86_64   1:4.3-6.fc35               f35-build   533 k
+ [1mpopt-devel              [m x86_64   1.18-6.fc35                f35-build    25 k
+ [1msystemd-rpm-macros      [m noarch   249.7-2.fc35               f35-build    29 k
+Installing dependencies:
+ [1mannobin-docs            [m noarch   9.87-3.fc35                f35-build    78 k
+ [1mannobin-plugin-gcc      [m x86_64   9.87-3.fc35                f35-build    42 k
+ [1mautoconf                [m noarch   2.69-37.fc35               f35-build   666 k
+ [1mcpp                     [m x86_64   11.2.1-1.fc35              f35-build    10 M
+ [1memacs-filesystem        [m noarch   1:27.2-9.fc35              f35-build   9.0 k
+ [1mexpat                   [m x86_64   2.4.1-2.fc35               f35-build   110 k
+ [1mgc                      [m x86_64   8.0.4-6.fc35               f35-build   103 k
+ [1mgit-core                [m x86_64   2.33.1-2.fc35              f35-build   3.8 M
+ [1mgit-core-doc            [m noarch   2.33.1-2.fc35              f35-build   2.4 M
+ [1mglibc-devel             [m x86_64   2.34-8.fc35                f35-build   146 k
+ [1mglibc-headers-x86       [m noarch   2.34-8.fc35                f35-build   544 k
+ [1mgroff-base              [m x86_64   1.22.4-8.fc35              f35-build   1.0 M
+ [1mguile22                 [m x86_64   2.2.7-3.fc35               f35-build   6.4 M
+ [1mkernel-headers          [m x86_64   5.15.4-200.fc35            f35-build   1.3 M
+ [1mless                    [m x86_64   590-2.fc35                 f35-build   161 k
+ [1mlibattr-devel           [m x86_64   2.5.1-3.fc35               f35-build    25 k
+ [1mlibcbor                 [m x86_64   0.7.0-4.fc35               f35-build    56 k
+ [1mlibedit                 [m x86_64   3.1-40.20210910cvs.fc35    f35-build   105 k
+ [1mlibfido2                [m x86_64   1.8.0-1.fc35               f35-build    81 k
+ [1mlibmpc                  [m x86_64   1.2.1-3.fc35               f35-build    62 k
+ [1mlibsepol-devel          [m x86_64   3.3-2.fc35                 f35-build    40 k
+ [1mlibtool-ltdl            [m x86_64   2.4.6-42.fc35              f35-build    36 k
+ [1mlibxcrypt-devel         [m x86_64   4.4.26-4.fc35              f35-build    29 k
+ [1mm4                      [m x86_64   1.4.19-2.fc35              f35-build   294 k
+ [1mncurses                 [m x86_64   6.2-8.20210508.fc35        f35-build   400 k
+ [1mopenssh                 [m x86_64   8.7p1-3.fc35               f35-build   451 k
+ [1mopenssh-clients         [m x86_64   8.7p1-3.fc35               f35-build   696 k
+ [1mpcre2-devel             [m x86_64   10.37-4.fc35               f35-build   476 k
+ [1mpcre2-utf16             [m x86_64   10.37-4.fc35               f35-build   211 k
+ [1mpcre2-utf32             [m x86_64   10.37-4.fc35               f35-build   201 k
+ [1mperl-B                  [m x86_64   1.82-482.fc35              f35-build   188 k
+ [1mperl-Carp               [m noarch   1.52-478.fc35              f35-build    29 k
+ [1mperl-Class-Struct       [m noarch   0.66-482.fc35              f35-build    30 k
+ [1mperl-Data-Dumper        [m x86_64   2.183-2.fc35               f35-build    56 k
+ [1mperl-DynaLoader         [m x86_64   1.50-482.fc35              f35-build    34 k
+ [1mperl-Encode             [m x86_64   4:3.15-482.fc35            f35-build   1.7 M
+ [1mperl-Errno              [m x86_64   1.33-482.fc35              f35-build    23 k
+ [1mperl-Error              [m noarch   1:0.17029-7.fc35           f35-build    41 k
+ [1mperl-Exporter           [m noarch   5.76-479.fc35              f35-build    31 k
+ [1mperl-Fcntl              [m x86_64   1.14-482.fc35              f35-build    28 k
+ [1mperl-File-Basename      [m noarch   2.85-482.fc35              f35-build    25 k
+ [1mperl-File-Compare       [m noarch   1.100.600-482.fc35         f35-build    21 k
+ [1mperl-File-Copy          [m noarch   2.35-482.fc35              f35-build    28 k
+ [1mperl-File-Find          [m noarch   1.39-482.fc35              f35-build    33 k
+ [1mperl-File-Path          [m noarch   2.18-478.fc35              f35-build    35 k
+ [1mperl-File-Temp          [m noarch   1:0.231.100-478.fc35       f35-build    59 k
+ [1mperl-File-stat          [m noarch   1.09-482.fc35              f35-build    25 k
+ [1mperl-Getopt-Long        [m noarch   1:2.52-478.fc35            f35-build    60 k
+ [1mperl-Getopt-Std         [m noarch   1.13-482.fc35              f35-build    23 k
+ [1mperl-Git                [m noarch   2.33.1-2.fc35              f35-build    43 k
+ [1mperl-HTTP-Tiny          [m noarch   0.080-1.fc35               f35-build    55 k
+ [1mperl-IO                 [m x86_64   1.46-482.fc35              f35-build    95 k
+ [1mperl-IPC-Open3          [m noarch   1.21-482.fc35              f35-build    31 k
+ [1mperl-MIME-Base64        [m x86_64   3.16-478.fc35              f35-build    30 k
+ [1mperl-POSIX              [m x86_64   1.97-482.fc35              f35-build   105 k
+ [1mperl-PathTools          [m x86_64   3.80-478.fc35              f35-build    85 k
+ [1mperl-Pod-Escapes        [m noarch   1:1.07-478.fc35            f35-build    20 k
+ [1mperl-Pod-Perldoc        [m noarch   3.28.01-479.fc35           f35-build    84 k
+ [1mperl-Pod-Simple         [m noarch   1:3.43-2.fc35              f35-build   215 k
+ [1mperl-Pod-Usage          [m noarch   4:2.01-478.fc35            f35-build    40 k
+ [1mperl-Scalar-List-Utils  [m x86_64   5:1.60-462.fc35            f35-build    72 k
+ [1mperl-SelectSaver        [m noarch   1.02-482.fc35              f35-build    19 k
+ [1mperl-Socket             [m x86_64   4:2.032-2.fc35             f35-build    55 k
+ [1mperl-Storable           [m x86_64   1:3.25-1.fc35              f35-build    95 k
+ [1mperl-Symbol             [m noarch   1.09-482.fc35              f35-build    22 k
+ [1mperl-Term-ANSIColor     [m noarch   5.01-479.fc35              f35-build    48 k
+ [1mperl-Term-Cap           [m noarch   1.17-478.fc35              f35-build    22 k
+ [1mperl-TermReadKey        [m x86_64   2.38-11.fc35               f35-build    36 k
+ [1mperl-Text-ParseWords    [m noarch   3.30-478.fc35              f35-build    16 k
+ [1mperl-Text-Tabs+Wrap     [m noarch   2021.0814-1.fc35           f35-build    22 k
+ [1mperl-Thread-Queue       [m noarch   3.14-478.fc35              f35-build    21 k
+ [1mperl-Time-Local         [m noarch   2:1.300-478.fc35           f35-build    33 k
+ [1mperl-constant           [m noarch   1.33-479.fc35              f35-build    23 k
+ [1mperl-if                 [m noarch   0.60.900-482.fc35          f35-build    22 k
+ [1mperl-interpreter        [m x86_64   4:5.34.0-482.fc35          f35-build    79 k
+ [1mperl-lib                [m x86_64   0.65-482.fc35              f35-build    23 k
+ [1mperl-libs               [m x86_64   4:5.34.0-482.fc35          f35-build   2.1 M
+ [1mperl-mro                [m x86_64   1.25-482.fc35              f35-build    36 k
+ [1mperl-overload           [m noarch   1.33-482.fc35              f35-build    53 k
+ [1mperl-overloading        [m noarch   0.02-482.fc35              f35-build    21 k
+ [1mperl-parent             [m noarch   1:0.238-478.fc35           f35-build    14 k
+ [1mperl-podlators          [m noarch   1:4.14-478.fc35            f35-build   111 k
+ [1mperl-subs               [m noarch   1.04-482.fc35              f35-build    19 k
+ [1mperl-threads            [m x86_64   1:2.26-448.fc35            f35-build    57 k
+ [1mperl-threads-shared     [m x86_64   1.62-478.fc35              f35-build    43 k
+ [1mperl-vars               [m noarch   1.05-482.fc35              f35-build    21 k
+
+Transaction Summary
+================================================================================
+Install  95 Packages
+
+Total size: 69 M
+Installed size: 234 M
+Downloading Packages:
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+
+Installed:
+  acl-2.3.1-2.fc35.x86_64                                                       
+  annobin-docs-9.87-3.fc35.noarch                                               
+  annobin-plugin-gcc-9.87-3.fc35.x86_64                                         
+  autoconf-2.69-37.fc35.noarch                                                  
+  automake-1.16.2-5.fc35.noarch                                                 
+  cpp-11.2.1-1.fc35.x86_64                                                      
+  emacs-filesystem-1:27.2-9.fc35.noarch                                         
+  expat-2.4.1-2.fc35.x86_64                                                     
+  gc-8.0.4-6.fc35.x86_64                                                        
+  gcc-11.2.1-1.fc35.x86_64                                                      
+  git-2.33.1-2.fc35.x86_64                                                      
+  git-core-2.33.1-2.fc35.x86_64                                                 
+  git-core-doc-2.33.1-2.fc35.noarch                                             
+  glibc-devel-2.34-8.fc35.x86_64                                                
+  glibc-headers-x86-2.34-8.fc35.noarch                                          
+  groff-base-1.22.4-8.fc35.x86_64                                               
+  guile22-2.2.7-3.fc35.x86_64                                                   
+  kernel-headers-5.15.4-200.fc35.x86_64                                         
+  less-590-2.fc35.x86_64                                                        
+  libacl-devel-2.3.1-2.fc35.x86_64                                              
+  libattr-devel-2.5.1-3.fc35.x86_64                                             
+  libcbor-0.7.0-4.fc35.x86_64                                                   
+  libedit-3.1-40.20210910cvs.fc35.x86_64                                        
+  libfido2-1.8.0-1.fc35.x86_64                                                  
+  libmpc-1.2.1-3.fc35.x86_64                                                    
+  libselinux-devel-3.3-1.fc35.x86_64                                            
+  libsepol-devel-3.3-2.fc35.x86_64                                              
+  libtool-ltdl-2.4.6-42.fc35.x86_64                                             
+  libxcrypt-devel-4.4.26-4.fc35.x86_64                                          
+  m4-1.4.19-2.fc35.x86_64                                                       
+  make-1:4.3-6.fc35.x86_64                                                      
+  ncurses-6.2-8.20210508.fc35.x86_64                                            
+  openssh-8.7p1-3.fc35.x86_64                                                   
+  openssh-clients-8.7p1-3.fc35.x86_64                                           
+  pcre2-devel-10.37-4.fc35.x86_64                                               
+  pcre2-utf16-10.37-4.fc35.x86_64                                               
+  pcre2-utf32-10.37-4.fc35.x86_64                                               
+  perl-B-1.82-482.fc35.x86_64                                                   
+  perl-Carp-1.52-478.fc35.noarch                                                
+  perl-Class-Struct-0.66-482.fc35.noarch                                        
+  perl-Data-Dumper-2.183-2.fc35.x86_64                                          
+  perl-DynaLoader-1.50-482.fc35.x86_64                                          
+  perl-Encode-4:3.15-482.fc35.x86_64                                            
+  perl-Errno-1.33-482.fc35.x86_64                                               
+  perl-Error-1:0.17029-7.fc35.noarch                                            
+  perl-Exporter-5.76-479.fc35.noarch                                            
+  perl-Fcntl-1.14-482.fc35.x86_64                                               
+  perl-File-Basename-2.85-482.fc35.noarch                                       
+  perl-File-Compare-1.100.600-482.fc35.noarch                                   
+  perl-File-Copy-2.35-482.fc35.noarch                                           
+  perl-File-Find-1.39-482.fc35.noarch                                           
+  perl-File-Path-2.18-478.fc35.noarch                                           
+  perl-File-Temp-1:0.231.100-478.fc35.noarch                                    
+  perl-File-stat-1.09-482.fc35.noarch                                           
+  perl-Getopt-Long-1:2.52-478.fc35.noarch                                       
+  perl-Getopt-Std-1.13-482.fc35.noarch                                          
+  perl-Git-2.33.1-2.fc35.noarch                                                 
+  perl-HTTP-Tiny-0.080-1.fc35.noarch                                            
+  perl-IO-1.46-482.fc35.x86_64                                                  
+  perl-IPC-Open3-1.21-482.fc35.noarch                                           
+  perl-MIME-Base64-3.16-478.fc35.x86_64                                         
+  perl-POSIX-1.97-482.fc35.x86_64                                               
+  perl-PathTools-3.80-478.fc35.x86_64                                           
+  perl-Pod-Escapes-1:1.07-478.fc35.noarch                                       
+  perl-Pod-Perldoc-3.28.01-479.fc35.noarch                                      
+  perl-Pod-Simple-1:3.43-2.fc35.noarch                                          
+  perl-Pod-Usage-4:2.01-478.fc35.noarch                                         
+  perl-Scalar-List-Utils-5:1.60-462.fc35.x86_64                                 
+  perl-SelectSaver-1.02-482.fc35.noarch                                         
+  perl-Socket-4:2.032-2.fc35.x86_64                                             
+  perl-Storable-1:3.25-1.fc35.x86_64                                            
+  perl-Symbol-1.09-482.fc35.noarch                                              
+  perl-Term-ANSIColor-5.01-479.fc35.noarch                                      
+  perl-Term-Cap-1.17-478.fc35.noarch                                            
+  perl-TermReadKey-2.38-11.fc35.x86_64                                          
+  perl-Text-ParseWords-3.30-478.fc35.noarch                                     
+  perl-Text-Tabs+Wrap-2021.0814-1.fc35.noarch                                   
+  perl-Thread-Queue-3.14-478.fc35.noarch                                        
+  perl-Time-Local-2:1.300-478.fc35.noarch                                       
+  perl-constant-1.33-479.fc35.noarch                                            
+  perl-if-0.60.900-482.fc35.noarch                                              
+  perl-interpreter-4:5.34.0-482.fc35.x86_64                                     
+  perl-lib-0.65-482.fc35.x86_64                                                 
+  perl-libs-4:5.34.0-482.fc35.x86_64                                            
+  perl-mro-1.25-482.fc35.x86_64                                                 
+  perl-overload-1.33-482.fc35.noarch                                            
+  perl-overloading-0.02-482.fc35.noarch                                         
+  perl-parent-1:0.238-478.fc35.noarch                                           
+  perl-podlators-1:4.14-478.fc35.noarch                                         
+  perl-subs-1.04-482.fc35.noarch                                                
+  perl-threads-1:2.26-448.fc35.x86_64                                           
+  perl-threads-shared-1.62-478.fc35.x86_64                                      
+  perl-vars-1.05-482.fc35.noarch                                                
+  popt-devel-1.18-6.fc35.x86_64                                                 
+  systemd-rpm-macros-249.7-2.fc35.noarch                                        
+
+Complete!
+
+>>> 2021-12-01 15:29:56	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--addrepo" "https://download.copr.fedorainfracloud.org/results/@aufover/symbiotic/fedora-\$releasever-\$basearch/" "--addrepo" "https://download.copr.fedorainfracloud.org/results/@aufover/gllvm/fedora-\$releasever-\$basearch/" "--install" "symbiotic" "gllvm"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Dependencies resolved.
+============================================================================================================================================================
+ Package                     Arch    Version                      Repository                                                                            Size
+============================================================================================================================================================
+Installing:
+ [1mgllvm                      [m x86_64  1.3.0-1.fc35                 downloadcoprfedorainfracloudorg_results_aufover_gllvm_fedorareleaseverbasearch_      1.6 M
+ [1msymbiotic                  [m x86_64  8.0.0.20211119.190944-1.fc35 downloadcoprfedorainfracloudorg_results_aufover_symbiotic_fedorareleaseverbasearch_  2.0 M
+Installing dependencies:
+ [1mclang                      [m x86_64  13.0.0-3.fc35                f35-build                                                                             84 k
+ [1mclang-libs                 [m x86_64  13.0.0-3.fc35                f35-build                                                                             22 M
+ [1mclang-resource-filesystem  [m x86_64  13.0.0-3.fc35                f35-build                                                                             14 k
+ [1mgcc-c++                    [m x86_64  11.2.1-1.fc35                f35-build                                                                             12 M
+ [1mjsoncpp                    [m x86_64  1.9.4-5.fc35                 f35-build                                                                             93 k
+ [1mlibstdc++-devel            [m x86_64  11.2.1-1.fc35                f35-build                                                                            2.2 M
+ [1mllvm                       [m x86_64  13.0.0-4.fc35                f35-build                                                                             15 M
+ [1mllvm-libs                  [m x86_64  13.0.0-4.fc35                f35-build                                                                             25 M
+ [1mmpdecimal                  [m x86_64  2.5.1-2.fc35                 f35-build                                                                             99 k
+ [1mpython-pip-wheel           [m noarch  21.2.3-4.fc35                f35-build                                                                            1.1 M
+ [1mpython-setuptools-wheel    [m noarch  57.4.0-1.fc35                f35-build                                                                            505 k
+ [1mpython3                    [m x86_64  3.10.0-1.fc35                f35-build                                                                             25 k
+ [1mpython3-libs               [m x86_64  3.10.0-1.fc35                f35-build                                                                            7.5 M
+ [1mz3-libs                    [m x86_64  4.8.13-1.fc35                f35-build                                                                            5.8 M
+
+Transaction Summary
+============================================================================================================================================================
+Install  16 Packages
+
+Total size: 95 M
+Installed size: 369 M
+Downloading Packages:
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+
+Installed:
+  clang-13.0.0-3.fc35.x86_64                                                    
+  clang-libs-13.0.0-3.fc35.x86_64                                               
+  clang-resource-filesystem-13.0.0-3.fc35.x86_64                                
+  gcc-c++-11.2.1-1.fc35.x86_64                                                  
+  gllvm-1.3.0-1.fc35.x86_64                                                     
+  jsoncpp-1.9.4-5.fc35.x86_64                                                   
+  libstdc++-devel-11.2.1-1.fc35.x86_64                                          
+  llvm-13.0.0-4.fc35.x86_64                                                     
+  llvm-libs-13.0.0-4.fc35.x86_64                                                
+  mpdecimal-2.5.1-2.fc35.x86_64                                                 
+  python-pip-wheel-21.2.3-4.fc35.noarch                                         
+  python-setuptools-wheel-57.4.0-1.fc35.noarch                                  
+  python3-3.10.0-1.fc35.x86_64                                                  
+  python3-libs-3.10.0-1.fc35.x86_64                                             
+  symbiotic-8.0.0.20211119.190944-1.fc35.x86_64                                 
+  z3-libs-4.8.13-1.fc35.x86_64                                                  
+
+Complete!
+
+>>> 2021-12-01 15:30:07	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa' | sort -V > /home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/debug/rpm-list-mock.txt"
+
+>>> 2021-12-01 15:30:08	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa --provides' | sort -V > /tmp/csmockik7qvzx4/rpm-list-mock-provides.txt"
+
+>>> 2021-12-01 15:30:10	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--copyin" "/tmp/csmockik7qvzx4/logrotate-3.18.1-2.fc35.src.rpm" "/builddir/logrotate-3.18.1-2.fc35.src.rpm"
+
+>>> 2021-12-01 15:30:12	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "chown mockbuild -R /builddir"
+
+>>> 2021-12-01 15:30:14	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"rpm -Uvh --nodeps '/builddir/logrotate-3.18.1-2.fc35.src.rpm'\""
+Updating / installing...
+logrotate-3.18.1-2.fc35               ########################################
+
+>>> 2021-12-01 15:30:15	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"sed -e 's|^ExclusiveArch:.*\\\$||' -i /builddir/build/SPECS/logrotate.spec\""
+
+>>> 2021-12-01 15:30:17	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"rpmbuild -bs --nodeps /builddir/build/SPECS/logrotate.spec '--define' 'apidocs 0' '--define' 'with_publican 0' '--without' 'docs' '--without' 'langpacks' '--define' '__cc gclang' '--define' '__cxx gclang++' '--define' '__cpp gclang -E' '--define' 'toolchain clang' '--define' 'optflags -O0' '--define' 'build_ldflags -O0' && sh -c 'cd /builddir/build/SRPMS && eval mv -v *.src.rpm /builddir/logrotate-3.18.1-2.fc35.src.rpm || :'\""
+setting SOURCE_DATE_EPOCH=1626912000
+Wrote: /builddir/build/SRPMS/logrotate-3.18.1-2.fc35.src.rpm
+renamed 'logrotate-3.18.1-2.fc35.src.rpm' -> '/builddir/logrotate-3.18.1-2.fc35.src.rpm'
+
+>>> 2021-12-01 15:30:19	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--disable-plugin=selinux" "--copyout" "/builddir/logrotate-3.18.1-2.fc35.src.rpm" "/tmp/csmockik7qvzx4/logrotate-3.18.1-2.fc35.src.rpm"
+
+>>> 2021-12-01 15:30:21	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--installdeps" "/tmp/csmockik7qvzx4/logrotate-3.18.1-2.fc35.src.rpm"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Package acl-2.3.1-2.fc35.x86_64 is already installed.
+Package automake-1.16.2-5.fc35.noarch is already installed.
+Package gcc-11.2.1-1.fc35.x86_64 is already installed.
+Package git-2.33.1-2.fc35.x86_64 is already installed.
+Package libacl-devel-2.3.1-2.fc35.x86_64 is already installed.
+Package libselinux-devel-3.3-1.fc35.x86_64 is already installed.
+Package make-1:4.3-6.fc35.x86_64 is already installed.
+Package popt-devel-1.18-6.fc35.x86_64 is already installed.
+Package systemd-rpm-macros-249.7-2.fc35.noarch is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+
+>>> 2021-12-01 15:30:25	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--addrepo" "https://download.copr.fedorainfracloud.org/results/@aufover/symbiotic/fedora-\$releasever-\$basearch/" "--addrepo" "https://download.copr.fedorainfracloud.org/results/@aufover/gllvm/fedora-\$releasever-\$basearch/" "--install" "symbiotic" "gllvm"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Package symbiotic-8.0.0.20211119.190944-1.fc35.x86_64 is already installed.
+Package gllvm-1.3.0-1.fc35.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+
+>>> 2021-12-01 15:30:31	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa' | sort -V > /home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/debug/rpm-list-mock.txt"
+
+>>> 2021-12-01 15:30:33	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa --provides' | sort -V > /tmp/csmockik7qvzx4/rpm-list-mock-provides.txt"
+
+>>> 2021-12-01 15:30:35	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--addrepo" "https://download.copr.fedorainfracloud.org/results/@aufover/symbiotic/fedora-\$releasever-\$basearch/" "--addrepo" "https://download.copr.fedorainfracloud.org/results/@aufover/gllvm/fedora-\$releasever-\$basearch/" "--install" "csdiff"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Dependencies resolved.
+================================================================================
+ Package                    Arch        Version            Repository      Size
+================================================================================
+Installing:
+ [1mcsdiff                    [m x86_64      2.2.0-1.fc35       f35-build      895 k
+Installing dependencies:
+ [1mboost-filesystem          [m x86_64      1.76.0-4.fc35      f35-build       60 k
+ [1mboost-program-options     [m x86_64      1.76.0-4.fc35      f35-build      108 k
+ [1mboost-system              [m x86_64      1.76.0-4.fc35      f35-build       15 k
+
+Transaction Summary
+================================================================================
+Install  4 Packages
+
+Total size: 1.1 M
+Installed size: 4.8 M
+Downloading Packages:
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+
+Installed:
+  boost-filesystem-1.76.0-4.fc35.x86_64                                         
+  boost-program-options-1.76.0-4.fc35.x86_64                                    
+  boost-system-1.76.0-4.fc35.x86_64                                             
+  csdiff-2.2.0-1.fc35.x86_64                                                    
+
+Complete!
+
+>>> 2021-12-01 15:30:40	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa' | sort -V > /home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/debug/rpm-list-mock.txt"
+
+>>> 2021-12-01 15:30:42	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa --provides' | sort -V > /tmp/csmockik7qvzx4/rpm-list-mock-provides.txt"
+
+>>> 2021-12-01 15:30:44	"tar -cP '/usr/share/csmock/scripts' '/usr/bin/cswrap' '/usr/lib64/cswrap' '/usr/bin/csexec' '/usr/bin/csexec-loader' '/usr/lib64/libcsexec-preload.so' '/tmp/csmockik7qvzx4/logrotate-3.18.1-2.fc35.src.rpm' | '/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'tar -xC/'"
+tar: Removing leading `/' from member names
+tar: Removing leading `/' from hard link targets
+
+>>> 2021-12-01 15:30:45	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"gsanity-check\""
+
+Version info: gsanity-check version 1.3.0
+Released: February 18 2021
+
+Logging output to standard error.
+Logging level not set, using default of WARNING.
+
+Logging configuration uses the environment variables:
+
+	WLLVM_OUTPUT_LEVEL and WLLVM_OUTPUT_FILE.
+
+Happily sitting atop "linux" operating system.
+
+The C compiler clang is:
+
+	clang version 13.0.0 (Fedora 13.0.0-3.fc35)
+
+The CXX compiler clang++ is:
+
+	clang version 13.0.0 (Fedora 13.0.0-3.fc35)
+
+The bitcode linker llvm-link is:
+
+	LLVM version 13.0.0
+
+The bitcode archiver llvm-ar is:
+
+	LLVM version 13.0.0
+
+Not using a bitcode store.
+
+
+scan.ini: analyzer-version-symbiotic = 8.0.0.20211119.190944
+>>> 2021-12-01 15:30:47	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"mkdir -pv '/builddir/symbiotic-capture'\""
+mkdir: created directory '/builddir/symbiotic-capture'
+
+scan.ini: analyzer-version-gcc = 11.2.1
+>>> 2021-12-01 15:30:49	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "rpm -Uvh --nodeps '/tmp/csmockik7qvzx4/logrotate-3.18.1-2.fc35.src.rpm'"
+Updating / installing...
+logrotate-3.18.1-2.fc35               ########################################
+
+>>> 2021-12-01 15:30:51	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "chmod -R +r /builddir"
+
+>>> 2021-12-01 15:30:52	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "ln -fv '/usr/share/csmock/scripts/enable-keep-going.sh' '/usr/share/csmock/scripts/chroot-fixups'"
+'/usr/share/csmock/scripts/chroot-fixups/enable-keep-going.sh' => '/usr/share/csmock/scripts/enable-keep-going.sh'
+
+>>> 2021-12-01 15:30:54	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--shell" "for i in /usr/share/csmock/scripts/chroot-fixups/*; do test -x \$i && echo RUN: \$i >&2 && \$i; done"
+RUN: /usr/share/csmock/scripts/chroot-fixups/enable-keep-going.sh
+renamed '/usr/bin/make' -> '/usr/bin/make.orig'
++ ls -l /usr/bin/make
+-rwxr-xr-x. 1 root root 42 Dec  1 15:30 /usr/bin/make
++ cat /usr/bin/make
+#!/bin/sh
+exec /usr/bin/make.orig -k "$@"
+RUN: /usr/share/csmock/scripts/chroot-fixups/gdk-pixbuf2-triggers.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/glib2-triggers.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/kpathsea-texhash.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/openssl-public-header-files.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/qt5-core-abi.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/rpm-build-scripts.sh
++ sed -e s/fail=1/fail=0/ -i /usr/lib/rpm/redhat/brp-mangle-shebangs
+'/usr/lib/rpm/brp-strip-static-archive' -> '/bin/true'
+RUN: /usr/share/csmock/scripts/chroot-fixups/rpm-macros.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/rpm-python-extras.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/shared-mime-info-triggers.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/simplify-cpp-includes.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/simplify-glib-includes.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/simplify-systemd-includes.sh
+
+>>> 2021-12-01 15:30:56	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--chroot" "/bin/su mockbuild -l -c \"rpmbuild -bp --nodeps /builddir/build/SPECS/logrotate.spec '--define' 'apidocs 0' '--define' 'with_publican 0' '--without' 'docs' '--without' 'langpacks' '--define' '__cc gclang' '--define' '__cxx gclang++' '--define' '__cpp gclang -E' '--define' 'toolchain clang' '--define' 'optflags -O0' '--define' 'build_ldflags -O0'\""
+INFO: mock.py version 2.13 starting (python version = 3.6.8, NVR = mock-2.13-1.kdudka.1.el7)...
+Start(bootstrap): init plugins
+INFO: selinux enabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish: chroot init
+INFO: Running in chroot: ['/bin/su mockbuild -l -c "rpmbuild -bp --nodeps /builddir/build/SPECS/logrotate.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc gclang\' \'--define\' \'__cxx gclang++\' \'--define\' \'__cpp gclang -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'"']
+Start: chroot ['/bin/su mockbuild -l -c "rpmbuild -bp --nodeps /builddir/build/SPECS/logrotate.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc gclang\' \'--define\' \'__cxx gclang++\' \'--define\' \'__cpp gclang -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'"']
+setting SOURCE_DATE_EPOCH=1626912000
+Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.GQ6jKl
++ umask 022
++ cd /builddir/build/BUILD
++ cd /builddir/build/BUILD
++ rm -rf logrotate-3.18.1
++ /usr/bin/xz -dc /builddir/build/SOURCES/logrotate-3.18.1.tar.xz
++ /usr/bin/tar -xof -
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd logrotate-3.18.1
++ /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
++ /usr/bin/git init -q
++ /usr/bin/git config user.name rpm-build
++ /usr/bin/git config user.email '<rpm-build>'
++ /usr/bin/git config gc.auto 0
++ /usr/bin/git add --force .
++ /usr/bin/git commit -q --allow-empty -a --author 'rpm-build <rpm-build>' -m 'logrotate-3.18.1 base'
++ cat
++ git add .gitignore
++ git commit -m 'update .gitignore'
+[master 68c96d9] update .gitignore
+ 1 file changed, 3 insertions(+)
+ create mode 100644 .gitignore
++ autoreconf -fiv
+autoreconf: Entering directory `.'
+autoreconf: configure.ac: not using Gettext
+autoreconf: running: aclocal --force 
+autoreconf: configure.ac: tracing
+autoreconf: configure.ac: not using Libtool
+autoreconf: running: /usr/bin/autoconf --force
+autoreconf: running: /usr/bin/autoheader --force
+autoreconf: running: automake --add-missing --copy --force-missing
+autoreconf: Leaving directory `.'
++ git add --all
++ git commit -m 'force autoreconf' --allow-empty
+[master 0d37cb8] force autoreconf
+ 2 files changed, 99 insertions(+), 324 deletions(-)
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Finish: chroot ['/bin/su mockbuild -l -c "rpmbuild -bp --nodeps /builddir/build/SPECS/logrotate.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc gclang\' \'--define\' \'__cxx gclang++\' \'--define\' \'__cpp gclang -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'"']
+
+>>> 2021-12-01 15:31:00	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "chmod -R +r /builddir/build"
+
+>>> 2021-12-01 15:31:02	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--chroot" "/bin/su mockbuild -l -c \"PATH=/usr/lib64/cswrap:\\\$PATH CSWRAP_CAP_FILE=\\\$'/builddir/cswrap-capture.err' CSWRAP_TIMEOUT=\\\$'30' CSWRAP_TIMEOUT_FOR=\\\$':' CC=\\\$'gclang' CXX=\\\$'gclang++' CSEXEC_WRAP_CMD=\\\$'--skip-ld-linux\\\\acsexec-symbiotic\\\\a-l\\\\a/builddir/symbiotic-capture\\\\a-s\\\\a--prp=memsafety --timeout=8 ' CSWRAP_ADD_CFLAGS=\\\$'-Wno-unknown-pragmas:-Wno-unused-command-line-argument:-Wno-unused-parameter:-Wno-unknown-attributes:-Wno-unused-label:-Wno-unknown-pragmas:-Wno-unused-command-line-argument:-fsanitize-address-use-after-scope:-O0:-Xclang:-disable-llvm-passes:-D__inline=:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader' CSWRAP_DEL_CFLAGS=\\\$'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register' CSWRAP_ADD_CXXFLAGS=\\\$'-Wno-unused-command-line-argument:-Wno-unused-parameter:-Wno-unknown-attributes:-Wno-unused-label:-Wno-unknown-pragmas:-Wno-unused-command-line-argument:-fsanitize-address-use-after-scope:-O0:-Xclang:-disable-llvm-passes:-D__inline=:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader' CSWRAP_DEL_CXXFLAGS=\\\$'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register' sh -c \\\"rpmbuild -bc --nodeps --short-circuit /builddir/build/SPECS/logrotate.spec '--define' 'apidocs 0' '--define' 'with_publican 0' '--without' 'docs' '--without' 'langpacks' '--define' '__cc gclang' '--define' '__cxx gclang++' '--define' '__cpp gclang -E' '--define' 'toolchain clang' '--define' 'optflags -O0' '--define' 'build_ldflags -O0'\\\"\""
+INFO: mock.py version 2.13 starting (python version = 3.6.8, NVR = mock-2.13-1.kdudka.1.el7)...
+Start(bootstrap): init plugins
+INFO: selinux enabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish: chroot init
+INFO: Running in chroot: ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'gclang\' CXX=\\$\'gclang++\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\acsexec-symbiotic\\\\a-l\\\\a/builddir/symbiotic-capture\\\\a-s\\\\a--prp=memsafety --timeout=8 \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unused-command-line-argument:-Wno-unused-parameter:-Wno-unknown-attributes:-Wno-unused-label:-Wno-unknown-pragmas:-Wno-unused-command-line-argument:-fsanitize-address-use-after-scope:-O0:-Xclang:-disable-llvm-passes:-D__inline=:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unused-command-line-argument:-Wno-unused-parameter:-Wno-unknown-attributes:-Wno-unused-label:-Wno-unknown-pragmas:-Wno-unused-command-line-argument:-fsanitize-address-use-after-scope:-O0:-Xclang:-disable-llvm-passes:-D__inline=:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bc --nodeps --short-circuit /builddir/build/SPECS/logrotate.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc gclang\' \'--define\' \'__cxx gclang++\' \'--define\' \'__cpp gclang -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+Start: chroot ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'gclang\' CXX=\\$\'gclang++\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\acsexec-symbiotic\\\\a-l\\\\a/builddir/symbiotic-capture\\\\a-s\\\\a--prp=memsafety --timeout=8 \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unused-command-line-argument:-Wno-unused-parameter:-Wno-unknown-attributes:-Wno-unused-label:-Wno-unknown-pragmas:-Wno-unused-command-line-argument:-fsanitize-address-use-after-scope:-O0:-Xclang:-disable-llvm-passes:-D__inline=:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unused-command-line-argument:-Wno-unused-parameter:-Wno-unknown-attributes:-Wno-unused-label:-Wno-unknown-pragmas:-Wno-unused-command-line-argument:-fsanitize-address-use-after-scope:-O0:-Xclang:-disable-llvm-passes:-D__inline=:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bc --nodeps --short-circuit /builddir/build/SPECS/logrotate.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc gclang\' \'--define\' \'__cxx gclang++\' \'--define\' \'__cpp gclang -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+setting SOURCE_DATE_EPOCH=1626912000
+Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.9hxw45
++ umask 022
++ cd /builddir/build/BUILD
++ cd logrotate-3.18.1
++ mkdir build
++ cd build
++ CFLAGS=-O0
++ export CFLAGS
++ CXXFLAGS=-O0
++ export CXXFLAGS
++ FFLAGS='-O0 -I/usr/lib64/gfortran/modules'
++ export FFLAGS
++ FCFLAGS='-O0 -I/usr/lib64/gfortran/modules'
++ export FCFLAGS
++ LDFLAGS=-O0
++ export LDFLAGS
++ LT_SYS_LIBRARY_PATH=/usr/lib64:
++ export LT_SYS_LIBRARY_PATH
++ CC=gclang
++ export CC
++ CXX=gclang++
++ export CXX
++ '[' -fltox '!=' x ']'
+++ find . -type f -name configure -print
++ '[' 1 = 1 ']'
++++ dirname ../configure
+++ find .. -name config.guess -o -name config.sub
++ for i in $(find $(dirname ../configure) -name config.guess -o -name config.sub)
+++ basename ../config.guess
++ '[' -f /usr/lib/rpm/redhat/config.guess ']'
++ /usr/bin/rm -f ../config.guess
+++ basename ../config.guess
++ /usr/bin/cp -fv /usr/lib/rpm/redhat/config.guess ../config.guess
+'/usr/lib/rpm/redhat/config.guess' -> '../config.guess'
++ for i in $(find $(dirname ../configure) -name config.guess -o -name config.sub)
+++ basename ../config.sub
++ '[' -f /usr/lib/rpm/redhat/config.sub ']'
++ /usr/bin/rm -f ../config.sub
+++ basename ../config.sub
++ /usr/bin/cp -fv /usr/lib/rpm/redhat/config.sub ../config.sub
+'/usr/lib/rpm/redhat/config.sub' -> '../config.sub'
++ '[' 1 = 1 ']'
++ '[' x '!=' 'x-Wl,-z,now ' ']'
+++ find . -name ltmain.sh
++ ../configure --build=x86_64-redhat-linux-gnu --host=x86_64-redhat-linux-gnu --program-prefix= --disable-dependency-tracking --prefix=/usr --exec-prefix=/usr --bindir=/usr/bin --sbindir=/usr/sbin --sysconfdir=/etc --datadir=/usr/share --includedir=/usr/include --libdir=/usr/lib64 --libexecdir=/usr/libexec --localstatedir=/var --sharedstatedir=/var/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-state-file-path=/var/lib/logrotate/logrotate.status
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether make supports nested variables... (cached) yes
+checking whether make supports the include directive... yes (GNU style)
+checking for x86_64-redhat-linux-gnu-gcc... gclang
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gclang accepts -g... yes
+checking for gclang option to accept ISO C89... none needed
+checking whether gclang understands -c and -o together... yes
+checking dependency style of gclang... none
+checking how to run the C preprocessor... gclang -E
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for x86_64-redhat-linux-gnu-gcc... (cached) gclang
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether gclang accepts -g... (cached) yes
+checking for gclang option to accept ISO C89... (cached) none needed
+checking whether gclang understands -c and -o together... (cached) yes
+checking dependency style of gclang... (cached) none
+checking for struct stat.st_blksize... yes
+checking for struct stat.st_blocks... yes
+checking build system type... x86_64-redhat-linux-gnu
+checking host system type... x86_64-redhat-linux-gnu
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... no
+checking libgen.h usability... yes
+checking libgen.h presence... yes
+checking for libgen.h... yes
+checking for poptParseArgvString in -lpopt... yes
+checking for getfscreatecon_raw in -lselinux... yes
+checking for acl_get_file in -lacl... yes
+checking for asprintf... yes
+checking for madvise... yes
+checking for qsort... yes
+checking for secure_getenv... yes
+checking for strndup... yes
+checking for strptime... yes
+checking for utimensat... yes
+checking for vsyslog... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating test/Makefile
+config.status: creating logrotate.8
+config.status: creating logrotate.spec
+config.status: creating config.h
+config.status: executing depfiles commands
+
+  logrotate 3.18.1
+
+  SELinux support:        yes
+  ACL support:            yes
+  default mail command:   /bin/mail
+  compress command:       /bin/gzip
+  uncompress command:     /bin/gunzip
+  compress extension:     .gz
+  statefile path:         /var/lib/logrotate/logrotate.status
+
++ /usr/bin/make -O -j16 V=1 VERBOSE=1
+/usr/bin/make.orig  all-recursive
+Making all in .
+make.orig[2]: Entering directory '/builddir/build/BUILD/logrotate-3.18.1/build'
+gclang -DHAVE_CONFIG_H -I. -I..  -include config.h  -Wall -Wconversion -Wdeclaration-after-statement -Wextra -Wmissing-format-attribute -Wmissing-noreturn -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-prototypes -Wundef -Wunused -Wwrite-strings -O0 -c -o log.o ../log.c
+make.orig[2]: Leaving directory '/builddir/build/BUILD/logrotate-3.18.1/build'
+make.orig[2]: Entering directory '/builddir/build/BUILD/logrotate-3.18.1/build'
+gclang -DHAVE_CONFIG_H -I. -I..  -include config.h  -Wall -Wconversion -Wdeclaration-after-statement -Wextra -Wmissing-format-attribute -Wmissing-noreturn -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-prototypes -Wundef -Wunused -Wwrite-strings -O0 -c -o config.o ../config.c
+make.orig[2]: Leaving directory '/builddir/build/BUILD/logrotate-3.18.1/build'
+make.orig[2]: Entering directory '/builddir/build/BUILD/logrotate-3.18.1/build'
+gclang -DHAVE_CONFIG_H -I. -I..  -include config.h  -Wall -Wconversion -Wdeclaration-after-statement -Wextra -Wmissing-format-attribute -Wmissing-noreturn -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-prototypes -Wundef -Wunused -Wwrite-strings -O0 -c -o logrotate.o ../logrotate.c
+make.orig[2]: Leaving directory '/builddir/build/BUILD/logrotate-3.18.1/build'
+/builddir/build/BUILD/logrotate-3.18.1/logrotate.c:1083:17: warning: variable 'ptr' set but not used [-Wunused-but-set-variable] <--[gclang]
+/builddir/build/BUILD/logrotate-3.18.1/logrotate.c:1083:17: warning: variable 'ptr' set but not used [-Wunused-but-set-variable] <--[gclang]
+    const char *ptr = (const char *) buf;
+                ^
+    const char *ptr = (const char *) buf;
+                ^
+1 warning generated.
+1 warning generated.
+make.orig[2]: Entering directory '/builddir/build/BUILD/logrotate-3.18.1/build'
+gclang -Wall -Wconversion -Wdeclaration-after-statement -Wextra -Wmissing-format-attribute -Wmissing-noreturn -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-prototypes -Wundef -Wunused -Wwrite-strings -O0  -O0 -o logrotate config.o log.o logrotate.o  -lacl -lselinux -lpopt 
+make.orig[2]: Leaving directory '/builddir/build/BUILD/logrotate-3.18.1/build'
+Making all in test
+make.orig[2]: Entering directory '/builddir/build/BUILD/logrotate-3.18.1/build/test'
+test ../.. = .. || ln -fs ../../test/* .
+make.orig[2]: Leaving directory '/builddir/build/BUILD/logrotate-3.18.1/build/test'
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Finish: chroot ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'gclang\' CXX=\\$\'gclang++\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\acsexec-symbiotic\\\\a-l\\\\a/builddir/symbiotic-capture\\\\a-s\\\\a--prp=memsafety --timeout=8 \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unused-command-line-argument:-Wno-unused-parameter:-Wno-unknown-attributes:-Wno-unused-label:-Wno-unknown-pragmas:-Wno-unused-command-line-argument:-fsanitize-address-use-after-scope:-O0:-Xclang:-disable-llvm-passes:-D__inline=:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unused-command-line-argument:-Wno-unused-parameter:-Wno-unknown-attributes:-Wno-unused-label:-Wno-unknown-pragmas:-Wno-unused-command-line-argument:-fsanitize-address-use-after-scope:-O0:-Xclang:-disable-llvm-passes:-D__inline=:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bc --nodeps --short-circuit /builddir/build/SPECS/logrotate.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc gclang\' \'--define\' \'__cxx gclang++\' \'--define\' \'__cpp gclang -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+
+>>> 2021-12-01 15:31:07	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--chroot" "/bin/su mockbuild -l -c \"PATH=/usr/lib64/cswrap:\\\$PATH CSWRAP_CAP_FILE=\\\$'/builddir/cswrap-capture.err' CSWRAP_TIMEOUT=\\\$'30' CSWRAP_TIMEOUT_FOR=\\\$':' CC=\\\$'gclang' CXX=\\\$'gclang++' CSEXEC_WRAP_CMD=\\\$'--skip-ld-linux\\\\acsexec-symbiotic\\\\a-l\\\\a/builddir/symbiotic-capture\\\\a-s\\\\a--prp=memsafety --timeout=8 ' CSWRAP_ADD_CFLAGS=\\\$'-Wno-unknown-pragmas:-Wno-unused-command-line-argument:-Wno-unused-parameter:-Wno-unknown-attributes:-Wno-unused-label:-Wno-unknown-pragmas:-Wno-unused-command-line-argument:-fsanitize-address-use-after-scope:-O0:-Xclang:-disable-llvm-passes:-D__inline=:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader' CSWRAP_DEL_CFLAGS=\\\$'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register' CSWRAP_ADD_CXXFLAGS=\\\$'-Wno-unused-command-line-argument:-Wno-unused-parameter:-Wno-unknown-attributes:-Wno-unused-label:-Wno-unknown-pragmas:-Wno-unused-command-line-argument:-fsanitize-address-use-after-scope:-O0:-Xclang:-disable-llvm-passes:-D__inline=:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader' CSWRAP_DEL_CXXFLAGS=\\\$'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register' sh -c \\\"rpmbuild -bi --nodeps --short-circuit /builddir/build/SPECS/logrotate.spec '--define' 'apidocs 0' '--define' 'with_publican 0' '--without' 'docs' '--without' 'langpacks' '--define' '__cc gclang' '--define' '__cxx gclang++' '--define' '__cpp gclang -E' '--define' 'toolchain clang' '--define' 'optflags -O0' '--define' 'build_ldflags -O0'\\\"\""
+INFO: mock.py version 2.13 starting (python version = 3.6.8, NVR = mock-2.13-1.kdudka.1.el7)...
+Start(bootstrap): init plugins
+INFO: selinux enabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish: chroot init
+INFO: Running in chroot: ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'gclang\' CXX=\\$\'gclang++\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\acsexec-symbiotic\\\\a-l\\\\a/builddir/symbiotic-capture\\\\a-s\\\\a--prp=memsafety --timeout=8 \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unused-command-line-argument:-Wno-unused-parameter:-Wno-unknown-attributes:-Wno-unused-label:-Wno-unknown-pragmas:-Wno-unused-command-line-argument:-fsanitize-address-use-after-scope:-O0:-Xclang:-disable-llvm-passes:-D__inline=:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unused-command-line-argument:-Wno-unused-parameter:-Wno-unknown-attributes:-Wno-unused-label:-Wno-unknown-pragmas:-Wno-unused-command-line-argument:-fsanitize-address-use-after-scope:-O0:-Xclang:-disable-llvm-passes:-D__inline=:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bi --nodeps --short-circuit /builddir/build/SPECS/logrotate.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc gclang\' \'--define\' \'__cxx gclang++\' \'--define\' \'__cpp gclang -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+Start: chroot ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'gclang\' CXX=\\$\'gclang++\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\acsexec-symbiotic\\\\a-l\\\\a/builddir/symbiotic-capture\\\\a-s\\\\a--prp=memsafety --timeout=8 \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unused-command-line-argument:-Wno-unused-parameter:-Wno-unknown-attributes:-Wno-unused-label:-Wno-unknown-pragmas:-Wno-unused-command-line-argument:-fsanitize-address-use-after-scope:-O0:-Xclang:-disable-llvm-passes:-D__inline=:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unused-command-line-argument:-Wno-unused-parameter:-Wno-unknown-attributes:-Wno-unused-label:-Wno-unknown-pragmas:-Wno-unused-command-line-argument:-fsanitize-address-use-after-scope:-O0:-Xclang:-disable-llvm-passes:-D__inline=:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bi --nodeps --short-circuit /builddir/build/SPECS/logrotate.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc gclang\' \'--define\' \'__cxx gclang++\' \'--define\' \'__cpp gclang -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+setting SOURCE_DATE_EPOCH=1626912000
+Executing(%install): /bin/sh -e /var/tmp/rpm-tmp.CZ7qQr
++ umask 022
++ cd /builddir/build/BUILD
++ '[' /builddir/build/BUILDROOT/logrotate-3.18.1-2.fc35.x86_64 '!=' / ']'
++ rm -rf /builddir/build/BUILDROOT/logrotate-3.18.1-2.fc35.x86_64
+++ dirname /builddir/build/BUILDROOT/logrotate-3.18.1-2.fc35.x86_64
++ mkdir -p /builddir/build/BUILDROOT
++ mkdir /builddir/build/BUILDROOT/logrotate-3.18.1-2.fc35.x86_64
++ cd logrotate-3.18.1
++ /usr/bin/make install DESTDIR=/builddir/build/BUILDROOT/logrotate-3.18.1-2.fc35.x86_64 'INSTALL=/usr/bin/install -p' -C build
+make.orig: Entering directory '/builddir/build/BUILD/logrotate-3.18.1/build'
+/usr/bin/make.orig  install-recursive
+make.orig[1]: Entering directory '/builddir/build/BUILD/logrotate-3.18.1/build'
+Making install in .
+make.orig[2]: Entering directory '/builddir/build/BUILD/logrotate-3.18.1/build'
+make.orig[3]: Entering directory '/builddir/build/BUILD/logrotate-3.18.1/build'
+ /usr/bin/mkdir -p '/builddir/build/BUILDROOT/logrotate-3.18.1-2.fc35.x86_64/usr/sbin'
+  /usr/bin/install -p logrotate '/builddir/build/BUILDROOT/logrotate-3.18.1-2.fc35.x86_64/usr/sbin'
+ /usr/bin/mkdir -p '/builddir/build/BUILDROOT/logrotate-3.18.1-2.fc35.x86_64/usr/share/man/man5'
+ /usr/bin/install -p -m 644 ../logrotate.conf.5 '/builddir/build/BUILDROOT/logrotate-3.18.1-2.fc35.x86_64/usr/share/man/man5'
+ /usr/bin/mkdir -p '/builddir/build/BUILDROOT/logrotate-3.18.1-2.fc35.x86_64/usr/share/man/man8'
+ /usr/bin/install -p -m 644 logrotate.8 '/builddir/build/BUILDROOT/logrotate-3.18.1-2.fc35.x86_64/usr/share/man/man8'
+make.orig[3]: Leaving directory '/builddir/build/BUILD/logrotate-3.18.1/build'
+make.orig[2]: Leaving directory '/builddir/build/BUILD/logrotate-3.18.1/build'
+Making install in test
+make.orig[2]: Entering directory '/builddir/build/BUILD/logrotate-3.18.1/build/test'
+make.orig[3]: Entering directory '/builddir/build/BUILD/logrotate-3.18.1/build/test'
+make.orig[3]: Nothing to be done for 'install-exec-am'.
+make.orig[3]: Nothing to be done for 'install-data-am'.
+make.orig[3]: Leaving directory '/builddir/build/BUILD/logrotate-3.18.1/build/test'
+make.orig[2]: Leaving directory '/builddir/build/BUILD/logrotate-3.18.1/build/test'
+make.orig[1]: Leaving directory '/builddir/build/BUILD/logrotate-3.18.1/build'
+make.orig: Leaving directory '/builddir/build/BUILD/logrotate-3.18.1/build'
++ mkdir -p /builddir/build/BUILDROOT/logrotate-3.18.1-2.fc35.x86_64/etc/logrotate.d
++ mkdir -p /builddir/build/BUILDROOT/logrotate-3.18.1-2.fc35.x86_64/usr/lib/systemd/system
++ mkdir -p /builddir/build/BUILDROOT/logrotate-3.18.1-2.fc35.x86_64/var/lib/logrotate
++ install -p -m 644 examples/logrotate.conf /builddir/build/BUILDROOT/logrotate-3.18.1-2.fc35.x86_64/etc/
++ install -p -m 644 examples/btmp examples/wtmp /builddir/build/BUILDROOT/logrotate-3.18.1-2.fc35.x86_64/etc/logrotate.d/
++ install -p -m 644 examples/logrotate.service examples/logrotate.timer /builddir/build/BUILDROOT/logrotate-3.18.1-2.fc35.x86_64/usr/lib/systemd/system/
++ mkdir -p /builddir/build/BUILDROOT/logrotate-3.18.1-2.fc35.x86_64/etc/rwtab.d
++ install -m644 /builddir/build/SOURCES/rwtab /builddir/build/BUILDROOT/logrotate-3.18.1-2.fc35.x86_64/etc/rwtab.d/logrotate
++ /usr/bin/find-debuginfo -j16 --strict-build-id -m -i --build-id-seed 3.18.1-2.fc35 --unique-debug-suffix -3.18.1-2.fc35.x86_64 --unique-debug-src-base logrotate-3.18.1-2.fc35.x86_64 --run-dwz --dwz-low-mem-die-limit 10000000 --dwz-max-die-limit 110000000 -S debugsourcefiles.list /builddir/build/BUILD/logrotate-3.18.1
+extracting debug info from /builddir/build/BUILDROOT/logrotate-3.18.1-2.fc35.x86_64/usr/sbin/logrotate
+original debug info size: 80kB, size after compression: 76kB
+/usr/bin/sepdebugcrcfix: Updated 1 CRC32s, 0 CRC32s did match.
+358 blocks
++ /usr/lib/rpm/check-buildroot
++ /usr/lib/rpm/redhat/brp-llvm-compile-lto-elf -O0 -O0
+Checking for LLVM bitcode artifacts
++ /usr/lib/rpm/redhat/brp-ldconfig
++ /usr/lib/rpm/brp-compress
++ /usr/lib/rpm/redhat/brp-strip-lto /usr/bin/strip
++ /usr/lib/rpm/brp-strip-static-archive /usr/bin/strip
++ /usr/lib/rpm/check-rpaths
++ /usr/lib/rpm/redhat/brp-mangle-shebangs
++ /usr/lib/rpm/redhat/brp-python-bytecompile '' 1 0
++ /usr/lib/rpm/redhat/brp-python-hardlink
+Executing(%check): /bin/sh -e /var/tmp/rpm-tmp.1uuLEv
++ umask 022
++ cd /builddir/build/BUILD
++ cd logrotate-3.18.1
++ /usr/bin/make -O -j16 V=1 VERBOSE=1 -C build -s check
+Making check in .
+Making check in test
+PASS: test-0008.sh
+PASS: test-0009.sh
+PASS: test-0013.sh
+PASS: test-0012.sh
+PASS: test-0014.sh
+PASS: test-0002.sh
+PASS: test-0006.sh
+PASS: test-0011.sh
+PASS: test-0007.sh
+PASS: test-0004.sh
+PASS: test-0005.sh
+PASS: test-0010.sh
+PASS: test-0017.sh
+PASS: test-0015.sh
+PASS: test-0016.sh
+PASS: test-0018.sh
+PASS: test-0020.sh
+PASS: test-0003.sh
+PASS: test-0021.sh
+PASS: test-0024.sh
+PASS: test-0019.sh
+PASS: test-0022.sh
+PASS: test-0023.sh
+PASS: test-0025.sh
+PASS: test-0026.sh
+PASS: test-0027.sh
+PASS: test-0001.sh
+PASS: test-0028.sh
+PASS: test-0029.sh
+PASS: test-0030.sh
+PASS: test-0031.sh
+SKIP: test-0047.sh
+PASS: test-0034.sh
+PASS: test-0033.sh
+PASS: test-0032.sh
+PASS: test-0035.sh
+PASS: test-0036.sh
+PASS: test-0037.sh
+PASS: test-0038.sh
+PASS: test-0039.sh
+PASS: test-0040.sh
+PASS: test-0041.sh
+PASS: test-0042.sh
+PASS: test-0043.sh
+PASS: test-0044.sh
+PASS: test-0046.sh
+PASS: test-0045.sh
+PASS: test-0048.sh
+PASS: test-0051.sh
+PASS: test-0049.sh
+PASS: test-0053.sh
+PASS: test-0052.sh
+PASS: test-0054.sh
+PASS: test-0055.sh
+PASS: test-0057.sh
+PASS: test-0056.sh
+PASS: test-0058.sh
+PASS: test-0059.sh
+PASS: test-0061.sh
+PASS: test-0060.sh
+PASS: test-0062.sh
+PASS: test-0063.sh
+PASS: test-0064.sh
+PASS: test-0065.sh
+PASS: test-0066.sh
+PASS: test-0067.sh
+PASS: test-0069.sh
+PASS: test-0071.sh
+PASS: test-0073.sh
+PASS: test-0074.sh
+PASS: test-0075.sh
+PASS: test-0076.sh
+PASS: test-0077.sh
+PASS: test-0050.sh
+PASS: test-0078.sh
+PASS: test-0079.sh
+PASS: test-0081.sh
+PASS: test-0080.sh
+PASS: test-0083.sh
+PASS: test-0070.sh
+PASS: test-0084.sh
+PASS: test-0072.sh
+PASS: test-0068.sh
+PASS: test-0088.sh
+PASS: test-0101.sh
+PASS: test-0100.sh
+PASS: test-0085.sh
+PASS: test-0086.sh
+PASS: test-0087.sh
+PASS: test-0082.sh
+============================================================================
+Testsuite summary for logrotate 3.18.1
+============================================================================
+# TOTAL: 90
+# PASS:  89
+# SKIP:  1
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0
+============================================================================
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Processing files: logrotate-3.18.1-2.fc35.x86_64
+Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.tIkyRa
++ umask 022
++ cd /builddir/build/BUILD
++ cd logrotate-3.18.1
++ DOCDIR=/builddir/build/BUILDROOT/logrotate-3.18.1-2.fc35.x86_64/usr/share/doc/logrotate
++ export LC_ALL=C
++ LC_ALL=C
++ export DOCDIR
++ /usr/bin/mkdir -p /builddir/build/BUILDROOT/logrotate-3.18.1-2.fc35.x86_64/usr/share/doc/logrotate
++ cp -pr ChangeLog.md /builddir/build/BUILDROOT/logrotate-3.18.1-2.fc35.x86_64/usr/share/doc/logrotate
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Executing(%license): /bin/sh -e /var/tmp/rpm-tmp.iiPPai
++ umask 022
++ cd /builddir/build/BUILD
++ cd logrotate-3.18.1
++ LICENSEDIR=/builddir/build/BUILDROOT/logrotate-3.18.1-2.fc35.x86_64/usr/share/licenses/logrotate
++ export LC_ALL=C
++ LC_ALL=C
++ export LICENSEDIR
++ /usr/bin/mkdir -p /builddir/build/BUILDROOT/logrotate-3.18.1-2.fc35.x86_64/usr/share/licenses/logrotate
++ cp -pr COPYING /builddir/build/BUILDROOT/logrotate-3.18.1-2.fc35.x86_64/usr/share/licenses/logrotate
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Provides: config(logrotate) = 3.18.1-2.fc35 logrotate = 3.18.1-2.fc35 logrotate(x86-64) = 3.18.1-2.fc35
+Requires(interp): /bin/sh /bin/sh /bin/sh /bin/sh
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Requires(pre): /bin/sh
+Requires(post): /bin/sh systemd
+Requires(preun): /bin/sh systemd
+Requires: libacl.so.1()(64bit) libacl.so.1(ACL_1.0)(64bit) libc.so.6()(64bit) libc.so.6(GLIBC_2.14)(64bit) libc.so.6(GLIBC_2.17)(64bit) libc.so.6(GLIBC_2.2.5)(64bit) libc.so.6(GLIBC_2.27)(64bit) libc.so.6(GLIBC_2.3)(64bit) libc.so.6(GLIBC_2.33)(64bit) libc.so.6(GLIBC_2.34)(64bit) libc.so.6(GLIBC_2.6)(64bit) libc.so.6(GLIBC_2.7)(64bit) libpopt.so.0()(64bit) libpopt.so.0(LIBPOPT_0)(64bit) libselinux.so.1()(64bit) libselinux.so.1(LIBSELINUX_1.0)(64bit) rtld(GNU_HASH)
+Processing files: logrotate-debugsource-3.18.1-2.fc35.x86_64
+Provides: logrotate-debugsource = 3.18.1-2.fc35 logrotate-debugsource(x86-64) = 3.18.1-2.fc35
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Processing files: logrotate-debuginfo-3.18.1-2.fc35.x86_64
+Provides: debuginfo(build-id) = f464431735e8387e81e9f8aa84e6a3b18262d23e logrotate-debuginfo = 3.18.1-2.fc35 logrotate-debuginfo(x86-64) = 3.18.1-2.fc35
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Recommends: logrotate-debugsource(x86-64) = 3.18.1-2.fc35
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /builddir/build/BUILDROOT/logrotate-3.18.1-2.fc35.x86_64
+Finish: chroot ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'gclang\' CXX=\\$\'gclang++\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\acsexec-symbiotic\\\\a-l\\\\a/builddir/symbiotic-capture\\\\a-s\\\\a--prp=memsafety --timeout=8 \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unused-command-line-argument:-Wno-unused-parameter:-Wno-unknown-attributes:-Wno-unused-label:-Wno-unknown-pragmas:-Wno-unused-command-line-argument:-fsanitize-address-use-after-scope:-O0:-Xclang:-disable-llvm-passes:-D__inline=:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unused-command-line-argument:-Wno-unused-parameter:-Wno-unknown-attributes:-Wno-unused-label:-Wno-unknown-pragmas:-Wno-unused-command-line-argument:-fsanitize-address-use-after-scope:-O0:-Xclang:-disable-llvm-passes:-D__inline=:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bi --nodeps --short-circuit /builddir/build/SPECS/logrotate.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc gclang\' \'--define\' \'__cxx gclang++\' \'--define\' \'__cpp gclang -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+
+>>> 2021-12-01 15:36:33	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'tar -c --remove-files '/builddir/cswrap-capture.err' '/builddir/symbiotic-capture'' | tar -xC '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/debug/raw-results'"
+tar: Removing leading `/' from member names
+tar: Removing leading `/' from hard link targets
+
+>>> 2021-12-01 15:36:35	"csgrep --mode=json --remove-duplicates '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/debug/raw-results/builddir/symbiotic-capture'/pid-*.conv > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/debug/uni-results/symbiotic-capture.js'"
+
+scan.ini: time-finished = 2021-12-01 15:36:35
+scan.ini: exit-code = 0
+>>> 2021-12-01 15:36:35	"cslinker --quiet --cwelist '/usr/share/csmock/cwe-map.csv' --inifile '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/scan.ini' '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/debug/uni-results'/* > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/debug/scan-results-all.js'"
+
+>>> 2021-12-01 15:36:35	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'csgrep --mode=json --embed-context 3' < '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/debug/scan-results-all.js' > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/debug/scan-results-all.js.tmp'"
+
+>>> 2021-12-01 15:36:36	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--clean"
+
+>>> 2021-12-01 15:36:40	"cat '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/debug/scan-results-all.js' | sed 's|/builddir/build/BUILDROOT/[^/]*/|/builddir/build/BUILD//|' | csgrep --mode=json --path '^/builddir/build/BUILD/' --strip-path-prefix /builddir/build/BUILD/ | csgrep --mode=json --invert-match --path '^ksh-.*[0-9]+\\.c\$' | csgrep --mode=json --invert-match --path 'CMakeFiles/CMakeTmp|conftest.c' | csdiff --json-output --show-internal \"/usr/share/csmock/known-false-positives.js\" - | cssort --key=path > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/scan-results.js'"
+
+>>> 2021-12-01 15:36:40	"sed 's|/builddir/build/BUILDROOT/[^/]*/|/builddir/build/BUILD//|' '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/debug/scan-results-all.js' | csgrep --mode=json --strip-path-prefix /builddir/build/BUILD/ | csdiff --show-internal '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/scan-results.js' - | cssort > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/debug/suppressed-results.js'"
+
+>>> 2021-12-01 15:36:40	"\"bash\" \"-c\" \"csgrep '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/debug/suppressed-results.js' --mode=json --checker '^(COMPILER_WARNING)\\\$' | csdiff <(csgrep '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/debug/suppressed-results.js' --mode=json --drop-scan-props --invert-regex --checker '^()\\\$' --event '-W(address|bool-compare|builtin-declaration-mismatch|format-overflow|implicit-function-declaration|implicit-int|int-in-bool-context|logical-not-parentheses|logical-op|memset-transposed-args|misleading-indentation|pointer-compare|stack-protector|stringop-overflow|switch-unreachable|tautological-compare)=?\\\\]\\\$') - > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/debug/suppressed-results-imp.js'\""
+
+>>> 2021-12-01 15:36:40	"csgrep --mode=grep --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/debug/suppressed-results-imp.js' > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/debug/suppressed-results-imp.err'"
+
+>>> 2021-12-01 15:36:40	"csgrep --mode=json --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/debug/suppressed-results-imp.js' | cshtml - > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/debug/suppressed-results-imp.html'"
+
+>>> 2021-12-01 15:36:40	"csgrep --mode=evtstat --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/debug/suppressed-results-imp.js' | tee '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/debug/suppressed-results-imp-summary.txt'"
+
+>>> 2021-12-01 15:36:40	"cslinker --implist '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/debug/suppressed-results-imp.js' '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/debug/suppressed-results.js' > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/debug/suppressed-results-tmp.js' && mv -v '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/debug/suppressed-results-tmp.js' '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/debug/suppressed-results.js'"
+'/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/debug/suppressed-results-tmp.js' -> '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/debug/suppressed-results.js'
+
+>>> 2021-12-01 15:36:40	"csgrep --mode=grep --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/debug/suppressed-results.js' > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/debug/suppressed-results.err'"
+
+>>> 2021-12-01 15:36:40	"csgrep --mode=json --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/debug/suppressed-results.js' | cshtml - > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/debug/suppressed-results.html'"
+
+>>> 2021-12-01 15:36:40	"csgrep --mode=evtstat --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/debug/suppressed-results.js' | tee '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/debug/suppressed-results-summary.txt'"
+
+>>> 2021-12-01 15:36:40	"\"bash\" \"-c\" \"csgrep '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/scan-results.js' --mode=json --checker '^(COMPILER_WARNING)\\\$' | csdiff <(csgrep '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/scan-results.js' --mode=json --drop-scan-props --invert-regex --checker '^()\\\$' --event '-W(address|bool-compare|builtin-declaration-mismatch|format-overflow|implicit-function-declaration|implicit-int|int-in-bool-context|logical-not-parentheses|logical-op|memset-transposed-args|misleading-indentation|pointer-compare|stack-protector|stringop-overflow|switch-unreachable|tautological-compare)=?\\\\]\\\$') - > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/scan-results-imp.js'\""
+
+>>> 2021-12-01 15:36:40	"csgrep --mode=grep --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/scan-results-imp.js' > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/scan-results-imp.err'"
+
+>>> 2021-12-01 15:36:40	"csgrep --mode=json --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/scan-results-imp.js' | cshtml - > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/scan-results-imp.html'"
+
+>>> 2021-12-01 15:36:40	"csgrep --mode=evtstat --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/scan-results-imp.js' | tee '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/scan-results-imp-summary.txt'"
+
+>>> 2021-12-01 15:36:40	"cslinker --implist '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/scan-results-imp.js' '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/scan-results.js' > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/scan-results-tmp.js' && mv -v '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/scan-results-tmp.js' '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/scan-results.js'"
+'/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/scan-results-tmp.js' -> '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/scan-results.js'
+
+>>> 2021-12-01 15:36:40	"csgrep --mode=grep --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/scan-results.js' > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/scan-results.err'"
+
+>>> 2021-12-01 15:36:40	"csgrep --mode=json --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/scan-results.js' | cshtml - > '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/scan-results.html'"
+
+>>> 2021-12-01 15:36:40	"csgrep --mode=evtstat --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/scan-results.js' | tee '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/logrotate-3.18.1-2.fc35/symbiotic/output/scan-results-summary.txt'"
+      1	COMPILER_WARNING                                	warning[-Wunused-but-set-variable]
+
+<<< 2021-12-01 15:36:40	csmock exit code: 0
+
