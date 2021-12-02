@@ -1,5 +1,12 @@
 #!/bin/bash
 set -x
 set -e
-diff -up "$1/scan-results.err" "$2/scan-results.err"
-test -z "$(csdiff -c "$1/scan-results.js" "$2/scan-results.js" 2>&1)"
+
+diff -up \
+    <(csgrep --invert-match --checker COMPILER "$1/scan-results.err") \
+    <(csgrep --invert-match --checker COMPILER "$2/scan-results.err")
+
+test -z "$(csdiff -c  \
+    <(csgrep --invert-match --checker COMPILER "$1/scan-results.js") \
+    <(csgrep --invert-match --checker COMPILER "$2/scan-results.js") \
+    2>&1)"
