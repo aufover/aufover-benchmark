@@ -1,0 +1,231 @@
+Error: COMPILER_WARNING (CWE-477):
+coreutils-8.32/lib/selinux-at.c:37: included_from: Included from here.
+coreutils-8.32/lib/at-func.c:70:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#   70 | AT_FUNC_NAME (int fd, char const *file AT_FUNC_POST_FILE_PARAM_DECLS)
+#      | ^~~~~~~~~~~~
+#   68|      fails, then give a diagnostic and exit nonzero.  */
+#   69|   FUNC_RESULT
+#   70|-> AT_FUNC_NAME (int fd, char const *file AT_FUNC_POST_FILE_PARAM_DECLS)
+#   71|   {
+#   72|     VALIDATE_FLAG (flag);
+
+Error: COMPILER_WARNING (CWE-477):
+coreutils-8.32/lib/getfilecon.c:36:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#   36 | int getfilecon (char const *file, security_context_t *con);
+#      | ^~~
+#   34|   #undef lgetfilecon
+#   35|   #undef fgetfilecon
+#   36|-> int getfilecon (char const *file, security_context_t *con);
+#   37|   int lgetfilecon (char const *file, security_context_t *con);
+#   38|   int fgetfilecon (int fd, security_context_t *con);
+
+Error: COMPILER_WARNING (CWE-477):
+coreutils-8.32/lib/getfilecon.c:37:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#   37 | int lgetfilecon (char const *file, security_context_t *con);
+#      | ^~~
+#   35|   #undef fgetfilecon
+#   36|   int getfilecon (char const *file, security_context_t *con);
+#   37|-> int lgetfilecon (char const *file, security_context_t *con);
+#   38|   int fgetfilecon (int fd, security_context_t *con);
+#   39|   
+
+Error: COMPILER_WARNING (CWE-477):
+coreutils-8.32/lib/getfilecon.c:38:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#   38 | int fgetfilecon (int fd, security_context_t *con);
+#      | ^~~
+#   36|   int getfilecon (char const *file, security_context_t *con);
+#   37|   int lgetfilecon (char const *file, security_context_t *con);
+#   38|-> int fgetfilecon (int fd, security_context_t *con);
+#   39|   
+#   40|   /* getfilecon, lgetfilecon, and fgetfilecon can all misbehave, be it
+
+Error: COMPILER_WARNING (CWE-477):
+coreutils-8.32/lib/getfilecon.c:49:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#   49 | map_to_failure (int ret, security_context_t *con)
+#      | ^~~~~~~~~~~~~~
+#   47|   
+#   48|   static int
+#   49|-> map_to_failure (int ret, security_context_t *con)
+#   50|   {
+#   51|     if (ret == 0)
+
+Error: COMPILER_WARNING (CWE-477):
+coreutils-8.32/lib/getfilecon.c:69:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#   69 | rpl_getfilecon (char const *file, security_context_t *con)
+#      | ^~~~~~~~~~~~~~
+#   67|   
+#   68|   int
+#   69|-> rpl_getfilecon (char const *file, security_context_t *con)
+#   70|   {
+#   71|     int ret = getfilecon (file, con);
+
+Error: COMPILER_WARNING (CWE-477):
+coreutils-8.32/lib/getfilecon.c:76:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#   76 | rpl_lgetfilecon (char const *file, security_context_t *con)
+#      | ^~~~~~~~~~~~~~~
+#   74|   
+#   75|   int
+#   76|-> rpl_lgetfilecon (char const *file, security_context_t *con)
+#   77|   {
+#   78|     int ret = lgetfilecon (file, con);
+
+Error: COMPILER_WARNING (CWE-477):
+coreutils-8.32/lib/getfilecon.c:83:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#   83 | rpl_fgetfilecon (int fd, security_context_t *con)
+#      | ^~~~~~~~~~~~~~~
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#   81|   
+#   82|   int
+#   83|-> rpl_fgetfilecon (int fd, security_context_t *con)
+#   84|   {
+#   85|     int ret = fgetfilecon (fd, con);
+
+Error: COMPILER_WARNING (CWE-758):
+coreutils-8.32/lib/posixtm.c: scope_hint: In function 'posixtime'
+coreutils-8.32/lib/posixtm.c:217:9: warning[-Wstringop-overflow=]: '__builtin_memcpy' writing 3 bytes into a region of size 0 overflows the destination
+#  217 |         strcpy (b - 2, "59");
+#      |         ^~~~~~~~~~~~~~~~~~~~
+coreutils-8.32/lib/posixtm.c:215:14: note: at offset -2 into destination object 'buf' of size 16
+#  215 |         char buf[16];
+#      |              ^~~
+coreutils-8.32/lib/posixtm.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#  215|           char buf[16];
+#  216|           char *b = stpcpy (buf, s);
+#  217|->         strcpy (b - 2, "59");
+#  218|           if (!posixtime (&dummy, buf, syntax_bits))
+#  219|             return false;
+
+Error: COMPILER_WARNING (CWE-477):
+coreutils-8.32/src/chcon.c:30: included_from: Included from here.
+coreutils-8.32/lib/selinux-at.h:34:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#   34 | int  getfileconat (int dir_fd, char const *file, security_context_t *con);
+#      | ^~~
+#   32|      and return -1.
+#   33|      [*] with flags=0 here, with flags=AT_SYMLINK_NOFOLLOW for lgetfileconat  */
+#   34|-> int  getfileconat (int dir_fd, char const *file, security_context_t *con);
+#   35|   
+#   36|   /* dir-fd-relative lgetfilecon.  This function is just like getfileconat,
+
+Error: COMPILER_WARNING (CWE-477):
+coreutils-8.32/lib/selinux-at.h:39:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#   39 | int lgetfileconat (int dir_fd, char const *file, security_context_t *con);
+#      | ^~~
+#   37|      except when DIR_FD and FILE specify a symlink:  lgetfileconat operates on
+#   38|      the symlink, while getfileconat operates on the referent of the symlink.  */
+#   39|-> int lgetfileconat (int dir_fd, char const *file, security_context_t *con);
+#   40|   
+#   41|   /* dir-fd-relative setfilecon.  Set the SELinux security context of
+
+Error: COMPILER_WARNING (CWE-477):
+coreutils-8.32/lib/selinux-at.h:45:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#   45 | int  setfileconat (int dir_fd, char const *file, security_context_t con);
+#      | ^~~
+#   43|      interpreted as for fstatat[*].  Upon success, return 0.
+#   44|      Otherwise, return -1 and set errno.  */
+#   45|-> int  setfileconat (int dir_fd, char const *file, security_context_t con);
+#   46|   
+#   47|   /* dir-fd-relative lsetfilecon.  This function is just like setfileconat,
+
+Error: COMPILER_WARNING (CWE-477):
+coreutils-8.32/lib/selinux-at.h:52:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#   52 | int lsetfileconat (int dir_fd, char const *file, security_context_t con);
+#      | ^~~
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#   50|      except when DIR_FD and FILE specify a symlink:  lsetfileconat operates on
+#   51|      the symlink, while setfileconat operates on the referent of the symlink.  */
+#   52|-> int lsetfileconat (int dir_fd, char const *file, security_context_t con);
+
+Error: COMPILER_WARNING (CWE-477):
+coreutils-8.32/src/install.c: scope_hint: In function 'setdefaultfilecon'
+coreutils-8.32/src/install.c:368:3: warning[-Wdeprecated-declarations]: 'matchpathcon' is deprecated: Use selabel_lookup instead
+#  368 |   if ((matchpathcon (file, st.st_mode, &scontext) != 0)
+#      |   ^~
+coreutils-8.32/separate/lib/selinux/selinux.h:25: included_from: Included from here.
+coreutils-8.32/src/install.c:26: included_from: Included from here.
+/usr/include/selinux/selinux.h:502:12: note: declared here
+#  502 | extern int matchpathcon(const char *path,
+#      |            ^~~~~~~~~~~~
+coreutils-8.32/src/install.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#  366|        return to allow default context.  Note the "<<none>>" check
+#  367|        is only needed for libselinux < 1.20 (2005-01-04).  */
+#  368|->   if ((matchpathcon (file, st.st_mode, &scontext) != 0)
+#  369|         || STREQ (scontext, "<<none>>"))
+#  370|       {
+
+Error: COMPILER_WARNING (CWE-477):
+coreutils-8.32/src/selinux.c: scope_hint: In function 'defaultcon'
+coreutils-8.32/src/selinux.c:132:3: warning[-Wdeprecated-declarations]: 'matchpathcon' is deprecated: Use selabel_lookup instead
+#  132 |   if (matchpathcon (path, mode, &scon) < 0)
+#      |   ^~
+coreutils-8.32/separate/lib/selinux/selinux.h:25: included_from: Included from here.
+coreutils-8.32/src/selinux.c:20: included_from: Included from here.
+/usr/include/selinux/selinux.h:502:12: note: declared here
+#  502 | extern int matchpathcon(const char *path,
+#      |            ^~~~~~~~~~~~
+#  130|       }
+#  131|   
+#  132|->   if (matchpathcon (path, mode, &scon) < 0)
+#  133|       {
+#  134|         /* "No such file or directory" is a confusing error,
+
+Error: COMPILER_WARNING (CWE-477):
+coreutils-8.32/src/selinux.c: scope_hint: In function 'restorecon_private'
+coreutils-8.32/src/selinux.c:222:3: warning[-Wdeprecated-declarations]: 'matchpathcon' is deprecated: Use selabel_lookup instead
+#  222 |   if (matchpathcon (path, sb.st_mode, &scon) < 0)
+#      |   ^~
+coreutils-8.32/separate/lib/selinux/selinux.h:25: included_from: Included from here.
+coreutils-8.32/src/selinux.c:20: included_from: Included from here.
+/usr/include/selinux/selinux.h:502:12: note: declared here
+#  502 | extern int matchpathcon(const char *path,
+#      |            ^~~~~~~~~~~~
+coreutils-8.32/src/selinux.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#  220|       }
+#  221|   
+#  222|->   if (matchpathcon (path, sb.st_mode, &scon) < 0)
+#  223|       {
+#  224|         /* "No such file or directory" is a confusing error,
+
+Error: COMPILER_WARNING (CWE-758):
+coreutils-8.32/src/uname.c: scope_hint: In function 'main'
+coreutils-8.32/src/uname.c:303:23: warning[-Wdiscarded-qualifiers]: initialization discards 'const' qualifier from pointer target type
+#  303 |       char *element = unknown;
+#      |                       ^~~~~~~
+#  301|     if (toprint & PRINT_PROCESSOR)
+#  302|       {
+#  303|->       char *element = unknown;
+#  304|   #if HAVE_SYSINFO && defined SI_ARCHITECTURE
+#  305|         {
+
+Error: COMPILER_WARNING (CWE-758):
+coreutils-8.32/src/uname.c:353:23: warning[-Wdiscarded-qualifiers]: initialization discards 'const' qualifier from pointer target type
+#  353 |       char *element = unknown;
+#      |                       ^~~~~~~
+coreutils-8.32/src/uname.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#  351|     if (toprint & PRINT_HARDWARE_PLATFORM)
+#  352|       {
+#  353|->       char *element = unknown;
+#  354|   #if HAVE_SYSINFO && defined SI_PLATFORM
+#  355|         {
+
+Error: COMPILER_WARNING (CWE-758):
+coreutils-8.32/src/who.c: scope_hint: In function 'make_id_equals_comment'
+coreutils-8.32/src/who.c:454:3: warning[-Wstringop-overread]: 'strncat' argument 2 declared attribute 'nonstring'
+#  454 |   strncat (comment, UT_ID (utmp_ent), utmpsize);
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/utmpx.h:31: included_from: Included from here.
+coreutils-8.32/lib/readutmp.h:42: included_from: Included from here.
+coreutils-8.32/src/who.c:36: included_from: Included from here.
+/usr/include/bits/utmpx.h:61:8: note: argument 'ut_id' declared here
+#   61 |   char ut_id[4]
+#      |        ^~~~~
+coreutils-8.32/src/who.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#  452|   
+#  453|     strcpy (comment, _("id="));
+#  454|->   strncat (comment, UT_ID (utmp_ent), utmpsize);
+#  455|     return comment;
+#  456|   }

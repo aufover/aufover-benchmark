@@ -1,0 +1,327 @@
+Error: COMPILER_WARNING (CWE-758):
+coreutils-8.32/gnulib-tests/test-regex.c:237:9: warning[-Wtautological-constant-compare]: converting the result of '<<' to a boolean always evaluates to true
+#  if (! REG_STARTEND)
+#        ^
+coreutils-8.32/lib/regex.h:340:25: note: expanded from macro 'REG_STARTEND'
+##define REG_STARTEND (1 << 2)
+#                        ^
+#  235|     /* REG_STARTEND was added to glibc on 2004-01-15.
+#  236|        Reject older versions.  */
+#  237|->   if (! REG_STARTEND)
+#  238|       result |= 64;
+#  239|   
+
+Error: COMPILER_WARNING (CWE-477):
+coreutils-8.32/lib/selinux-at.c:37: included_from: Included from here.
+coreutils-8.32/lib/at-func.c:70:40: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#AT_FUNC_NAME (int fd, char const *file AT_FUNC_POST_FILE_PARAM_DECLS)
+#                                       ^
+coreutils-8.32/lib/selinux-at.c:35:41: note: expanded from macro 'AT_FUNC_POST_FILE_PARAM_DECLS'
+##define AT_FUNC_POST_FILE_PARAM_DECLS , security_context_t *con
+#                                        ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   68|      fails, then give a diagnostic and exit nonzero.  */
+#   69|   FUNC_RESULT
+#   70|-> AT_FUNC_NAME (int fd, char const *file AT_FUNC_POST_FILE_PARAM_DECLS)
+#   71|   {
+#   72|     VALIDATE_FLAG (flag);
+
+Error: COMPILER_WARNING (CWE-758):
+coreutils-8.32/lib/dtotimespec.c:34:27: warning[-Wimplicit-const-int-float-conversion]: implicit conversion from 'time_t' (aka 'long') to 'double' changes value from 9223372036854775807 to 9223372036854775808
+#  else if (! (sec < 1.0 + TYPE_MAXIMUM (time_t)))
+#                        ~ ^~~~~~~~~~~~~~~~~~~~~
+coreutils-8.32/lib/intprops.h:58:4: note: expanded from macro 'TYPE_MAXIMUM'
+#  ((t) (! TYPE_SIGNED (t)                                               \
+#   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   32|     if (! (TYPE_MINIMUM (time_t) < sec))
+#   33|       return make_timespec (TYPE_MINIMUM (time_t), 0);
+#   34|->   else if (! (sec < 1.0 + TYPE_MAXIMUM (time_t)))
+#   35|       return make_timespec (TYPE_MAXIMUM (time_t), TIMESPEC_HZ - 1);
+#   36|     else
+
+Error: COMPILER_WARNING (CWE-477):
+coreutils-8.32/lib/getfilecon.c:36:35: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#int getfilecon (char const *file, security_context_t *con);
+#                                  ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   34|   #undef lgetfilecon
+#   35|   #undef fgetfilecon
+#   36|-> int getfilecon (char const *file, security_context_t *con);
+#   37|   int lgetfilecon (char const *file, security_context_t *con);
+#   38|   int fgetfilecon (int fd, security_context_t *con);
+
+Error: COMPILER_WARNING (CWE-477):
+coreutils-8.32/lib/getfilecon.c:37:36: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#int lgetfilecon (char const *file, security_context_t *con);
+#                                   ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   35|   #undef fgetfilecon
+#   36|   int getfilecon (char const *file, security_context_t *con);
+#   37|-> int lgetfilecon (char const *file, security_context_t *con);
+#   38|   int fgetfilecon (int fd, security_context_t *con);
+#   39|   
+
+Error: COMPILER_WARNING (CWE-477):
+coreutils-8.32/lib/getfilecon.c:38:26: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#int fgetfilecon (int fd, security_context_t *con);
+#                         ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   36|   int getfilecon (char const *file, security_context_t *con);
+#   37|   int lgetfilecon (char const *file, security_context_t *con);
+#   38|-> int fgetfilecon (int fd, security_context_t *con);
+#   39|   
+#   40|   /* getfilecon, lgetfilecon, and fgetfilecon can all misbehave, be it
+
+Error: COMPILER_WARNING (CWE-477):
+coreutils-8.32/lib/getfilecon.c:49:26: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#map_to_failure (int ret, security_context_t *con)
+#                         ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   47|   
+#   48|   static int
+#   49|-> map_to_failure (int ret, security_context_t *con)
+#   50|   {
+#   51|     if (ret == 0)
+
+Error: COMPILER_WARNING (CWE-477):
+coreutils-8.32/lib/getfilecon.c:69:35: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#rpl_getfilecon (char const *file, security_context_t *con)
+#                                  ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   67|   
+#   68|   int
+#   69|-> rpl_getfilecon (char const *file, security_context_t *con)
+#   70|   {
+#   71|     int ret = getfilecon (file, con);
+
+Error: COMPILER_WARNING (CWE-477):
+coreutils-8.32/lib/getfilecon.c:76:36: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#rpl_lgetfilecon (char const *file, security_context_t *con)
+#                                   ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   74|   
+#   75|   int
+#   76|-> rpl_lgetfilecon (char const *file, security_context_t *con)
+#   77|   {
+#   78|     int ret = lgetfilecon (file, con);
+
+Error: COMPILER_WARNING (CWE-477):
+coreutils-8.32/lib/getfilecon.c:83:26: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#rpl_fgetfilecon (int fd, security_context_t *con)
+#                         ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   81|   
+#   82|   int
+#   83|-> rpl_fgetfilecon (int fd, security_context_t *con)
+#   84|   {
+#   85|     int ret = fgetfilecon (fd, con);
+
+Error: COMPILER_WARNING (CWE-758):
+coreutils-8.32/lib/hash.c:549:11: warning[-Wimplicit-const-int-float-conversion]: implicit conversion from 'unsigned long' to 'float' changes value from 18446744073709551615 to 18446744073709551616
+#      if (SIZE_MAX <= new_candidate)
+#          ^~~~~~~~ ~~
+/usr/include/stdint.h:227:22: note: expanded from macro 'SIZE_MAX'
+##  define SIZE_MAX              (18446744073709551615UL)
+#                                 ^~~~~~~~~~~~~~~~~~~~~~
+#  547|       {
+#  548|         float new_candidate = candidate / tuning->growth_threshold;
+#  549|->       if (SIZE_MAX <= new_candidate)
+#  550|           return 0;
+#  551|         candidate = new_candidate;
+
+Error: COMPILER_WARNING (CWE-758):
+coreutils-8.32/lib/hash.c:1079:15: warning[-Wimplicit-const-int-float-conversion]: implicit conversion from 'unsigned long' to 'float' changes value from 18446744073709551615 to 18446744073709551616
+#          if (SIZE_MAX <= candidate)
+#              ^~~~~~~~ ~~
+/usr/include/stdint.h:227:22: note: expanded from macro 'SIZE_MAX'
+##  define SIZE_MAX              (18446744073709551615UL)
+#                                 ^~~~~~~~~~~~~~~~~~~~~~
+# 1077|                   * tuning->growth_threshold));
+# 1078|   
+# 1079|->           if (SIZE_MAX <= candidate)
+# 1080|               return -1;
+# 1081|   
+
+Error: COMPILER_WARNING (CWE-758):
+coreutils-8.32/lib/obstack.c:351:31: warning[-Wincompatible-function-pointer-types]: incompatible function pointer types initializing 'void (*)(void) __attribute__((noreturn))' with an expression of type 'void (void)'
+#__attribute_noreturn__ void (*obstack_alloc_failed_handler) (void)
+#                              ^
+#  349|      variable by default points to the internal function
+#  350|      'print_and_abort'.  */
+#  351|-> __attribute_noreturn__ void (*obstack_alloc_failed_handler) (void)
+#  352|     = print_and_abort;
+#  353|   # endif /* !_OBSTACK_NO_ERROR_HANDLER */
+
+Error: COMPILER_WARNING (CWE-477):
+coreutils-8.32/src/chcon.c:30: included_from: Included from here.
+coreutils-8.32/lib/selinux-at.h:34:50: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#int  getfileconat (int dir_fd, char const *file, security_context_t *con);
+#                                                 ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   32|      and return -1.
+#   33|      [*] with flags=0 here, with flags=AT_SYMLINK_NOFOLLOW for lgetfileconat  */
+#   34|-> int  getfileconat (int dir_fd, char const *file, security_context_t *con);
+#   35|   
+#   36|   /* dir-fd-relative lgetfilecon.  This function is just like getfileconat,
+
+Error: COMPILER_WARNING (CWE-477):
+coreutils-8.32/src/chcon.c:30: included_from: Included from here.
+coreutils-8.32/lib/selinux-at.h:39:50: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#int lgetfileconat (int dir_fd, char const *file, security_context_t *con);
+#                                                 ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   37|      except when DIR_FD and FILE specify a symlink:  lgetfileconat operates on
+#   38|      the symlink, while getfileconat operates on the referent of the symlink.  */
+#   39|-> int lgetfileconat (int dir_fd, char const *file, security_context_t *con);
+#   40|   
+#   41|   /* dir-fd-relative setfilecon.  Set the SELinux security context of
+
+Error: COMPILER_WARNING (CWE-477):
+coreutils-8.32/src/chcon.c:30: included_from: Included from here.
+coreutils-8.32/lib/selinux-at.h:45:50: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#int  setfileconat (int dir_fd, char const *file, security_context_t con);
+#                                                 ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   43|      interpreted as for fstatat[*].  Upon success, return 0.
+#   44|      Otherwise, return -1 and set errno.  */
+#   45|-> int  setfileconat (int dir_fd, char const *file, security_context_t con);
+#   46|   
+#   47|   /* dir-fd-relative lsetfilecon.  This function is just like setfileconat,
+
+Error: COMPILER_WARNING (CWE-477):
+coreutils-8.32/src/chcon.c:30: included_from: Included from here.
+coreutils-8.32/lib/selinux-at.h:52:50: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#int lsetfileconat (int dir_fd, char const *file, security_context_t con);
+#                                                 ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   50|      except when DIR_FD and FILE specify a symlink:  lsetfileconat operates on
+#   51|      the symlink, while setfileconat operates on the referent of the symlink.  */
+#   52|-> int lsetfileconat (int dir_fd, char const *file, security_context_t con);
+
+Error: COMPILER_WARNING (CWE-758):
+coreutils-8.32/lib/xnanosleep.c:43:13: warning[-Wimplicit-const-int-float-conversion]: implicit conversion from 'time_t' (aka 'long') to 'double' changes value from 9223372036854775807 to 9223372036854775808
+#  if (1.0 + TYPE_MAXIMUM (time_t) <= seconds)
+#          ~ ^~~~~~~~~~~~~~~~~~~~~
+coreutils-8.32/lib/intprops.h:58:4: note: expanded from macro 'TYPE_MAXIMUM'
+#  ((t) (! TYPE_SIGNED (t)                                               \
+#   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   41|   {
+#   42|   #if HAVE_PAUSE
+#   43|->   if (1.0 + TYPE_MAXIMUM (time_t) <= seconds)
+#   44|       {
+#   45|         do
+
+Error: COMPILER_WARNING (CWE-477):
+coreutils-8.32/src/install.c:368:8: warning[-Wdeprecated-declarations]: 'matchpathcon' is deprecated: Use selabel_lookup instead
+#  if ((matchpathcon (file, st.st_mode, &scontext) != 0)
+#       ^
+/usr/include/selinux/selinux.h:505:18: note: 'matchpathcon' has been explicitly marked deprecated here
+#        __attribute__ ((deprecated("Use selabel_lookup instead")))
+#                        ^
+#  366|        return to allow default context.  Note the "<<none>>" check
+#  367|        is only needed for libselinux < 1.20 (2005-01-04).  */
+#  368|->   if ((matchpathcon (file, st.st_mode, &scontext) != 0)
+#  369|         || STREQ (scontext, "<<none>>"))
+#  370|       {
+
+Error: COMPILER_WARNING (CWE-477):
+coreutils-8.32/src/selinux.c:132:7: warning[-Wdeprecated-declarations]: 'matchpathcon' is deprecated: Use selabel_lookup instead
+#  if (matchpathcon (path, mode, &scon) < 0)
+#      ^
+/usr/include/selinux/selinux.h:505:18: note: 'matchpathcon' has been explicitly marked deprecated here
+#        __attribute__ ((deprecated("Use selabel_lookup instead")))
+#                        ^
+#  130|       }
+#  131|   
+#  132|->   if (matchpathcon (path, mode, &scon) < 0)
+#  133|       {
+#  134|         /* "No such file or directory" is a confusing error,
+
+Error: COMPILER_WARNING (CWE-477):
+coreutils-8.32/src/selinux.c:222:7: warning[-Wdeprecated-declarations]: 'matchpathcon' is deprecated: Use selabel_lookup instead
+#  if (matchpathcon (path, sb.st_mode, &scon) < 0)
+#      ^
+/usr/include/selinux/selinux.h:505:18: note: 'matchpathcon' has been explicitly marked deprecated here
+#        __attribute__ ((deprecated("Use selabel_lookup instead")))
+#                        ^
+#  220|       }
+#  221|   
+#  222|->   if (matchpathcon (path, sb.st_mode, &scon) < 0)
+#  223|       {
+#  224|         /* "No such file or directory" is a confusing error,
+
+Error: COMPILER_WARNING (CWE-758):
+coreutils-8.32/src/sort.c:1561:21: warning[-Wimplicit-const-int-float-conversion]: implicit conversion from 'unsigned long' to 'double' changes value from 18446744073709551615 to 18446744073709551616
+#          if (mem < UINTMAX_MAX)
+#                  ~ ^~~~~~~~~~~
+/usr/include/stdint.h:202:24: note: expanded from macro 'UINTMAX_MAX'
+## define UINTMAX_MAX            (__UINT64_C(18446744073709551615))
+#                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/stdint.h:107:25: note: expanded from macro '__UINT64_C'
+##  define __UINT64_C(c) c ## UL
+#                        ^~~~~~~
+<scratch space>:16:1: note: expanded from here
+#18446744073709551615UL
+#^~~~~~~~~~~~~~~~~~~~~~
+# 1559|   
+# 1560|             /* Use "<", not "<=", to avoid problems with rounding.  */
+# 1561|->           if (mem < UINTMAX_MAX)
+# 1562|               {
+# 1563|                 n = mem;
+
+Error: COMPILER_WARNING (CWE-758):
+coreutils-8.32/src/uname.c:303:13: warning[-Wincompatible-pointer-types-discards-qualifiers]: initializing 'char *' with an expression of type 'const char [8]' discards qualifiers
+#      char *element = unknown;
+#            ^         ~~~~~~~
+#  301|     if (toprint & PRINT_PROCESSOR)
+#  302|       {
+#  303|->       char *element = unknown;
+#  304|   #if HAVE_SYSINFO && defined SI_ARCHITECTURE
+#  305|         {
+
+Error: COMPILER_WARNING (CWE-758):
+coreutils-8.32/src/uname.c:353:13: warning[-Wincompatible-pointer-types-discards-qualifiers]: initializing 'char *' with an expression of type 'const char [8]' discards qualifiers
+#      char *element = unknown;
+#            ^         ~~~~~~~
+#  351|     if (toprint & PRINT_HARDWARE_PLATFORM)
+#  352|       {
+#  353|->       char *element = unknown;
+#  354|   #if HAVE_SYSINFO && defined SI_PLATFORM
+#  355|         {
+
+Error: COMPILER_WARNING (CWE-758):
+coreutils-8.32/src/uptime.c:75:47: warning[-Wimplicit-const-int-float-conversion]: implicit conversion from 'time_t' (aka 'long') to 'double' changes value from 9223372036854775807 to 9223372036854775808
+#            uptime = (0 <= upsecs && upsecs < TYPE_MAXIMUM (time_t)
+#                                            ~ ^~~~~~~~~~~~~~~~~~~~~
+coreutils-8.32/lib/intprops.h:58:4: note: expanded from macro 'TYPE_MAXIMUM'
+#  ((t) (! TYPE_SIGNED (t)                                               \
+#   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   73|             double upsecs = c_strtod (buf, &end_ptr);
+#   74|             if (buf != end_ptr)
+#   75|->             uptime = (0 <= upsecs && upsecs < TYPE_MAXIMUM (time_t)
+#   76|                         ? upsecs : -1);
+#   77|           }

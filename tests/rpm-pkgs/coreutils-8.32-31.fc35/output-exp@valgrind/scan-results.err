@@ -1,0 +1,230 @@
+Error: COMPILER_WARNING (CWE-1164):
+coreutils-8.32/gnulib-tests/test-lock.c:439:1: warning[-Wunused-function]: 'test_rwlock' defined but not used
+#  439 | test_rwlock (void)
+#      | ^~~~~~~~~~~
+#  437|   
+#  438|   static void
+#  439|-> test_rwlock (void)
+#  440|   {
+#  441|     int i;
+
+Error: COMPILER_WARNING (CWE-457):
+coreutils-8.32/gnulib-tests/test-memrchr.c:28: included_from: Included from here.
+coreutils-8.32/gnulib-tests/test-memrchr.c: scope_hint: In function 'main'
+coreutils-8.32/gnulib-tests/test-memrchr.c:32:26: warning[-Wmaybe-uninitialized]: 'input_59' may be used uninitialized
+#   32 | #define MEMRCHR (char *) memrchr
+#      |                          ^
+coreutils-8.32/separate/lib/string.h:41: included_from: Included from here.
+coreutils-8.32/gnulib-tests/test-memrchr.c:20: included_from: Included from here.
+/usr/include/string.h:117:14: note: in a call to 'memrchr' declared with attribute 'access (read_only, 1, 3)' here
+#  117 | extern void *memrchr (const void *__s, int __c, size_t __n)
+#      |              ^~~~~~~
+#   30|   /* Calculating void * + int is not portable, so this wrapper converts
+#   31|      to char * to make the tests easier to write.  */
+#   32|-> #define MEMRCHR (char *) memrchr
+#   33|   
+#   34|   int
+
+Error: COMPILER_WARNING (CWE-477):
+coreutils-8.32/lib/selinux-at.c:37: included_from: Included from here.
+coreutils-8.32/lib/at-func.c:70:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#   70 | AT_FUNC_NAME (int fd, char const *file AT_FUNC_POST_FILE_PARAM_DECLS)
+#      | ^~~~~~~~~~~~
+#   68|      fails, then give a diagnostic and exit nonzero.  */
+#   69|   FUNC_RESULT
+#   70|-> AT_FUNC_NAME (int fd, char const *file AT_FUNC_POST_FILE_PARAM_DECLS)
+#   71|   {
+#   72|     VALIDATE_FLAG (flag);
+
+Error: COMPILER_WARNING (CWE-758):
+coreutils-8.32/lib/exclude.c:31: included_from: Included from here.
+coreutils-8.32/lib/exclude.c: scope_hint: In function 'add_exclude_file'
+coreutils-8.32/lib/exclude.c:691:21: warning[-Wmismatched-dealloc]: 'rpl_fclose' called on pointer returned from a mismatched allocation function
+#  691 |   if (!use_stdin && fclose (in) != 0)
+#      |                     ^
+coreutils-8.32/lib/exclude.c:686:20: note: returned from 'fopen'
+#  686 |   else if (! (in = fopen (file_name, "r")))
+#      |                    ^~~~~~~~~~~~~~~~~~~~~~
+#  689|     rc = add_exclude_fp (call_addfn, ex, in, options, line_end, &add_func);
+#  690|   
+#  691|->   if (!use_stdin && fclose (in) != 0)
+#  692|       rc = -1;
+#  693|   
+
+Error: COMPILER_WARNING (CWE-477):
+coreutils-8.32/lib/getfilecon.c:36:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#   36 | int getfilecon (char const *file, security_context_t *con);
+#      | ^~~
+#   34|   #undef lgetfilecon
+#   35|   #undef fgetfilecon
+#   36|-> int getfilecon (char const *file, security_context_t *con);
+#   37|   int lgetfilecon (char const *file, security_context_t *con);
+#   38|   int fgetfilecon (int fd, security_context_t *con);
+
+Error: COMPILER_WARNING (CWE-477):
+coreutils-8.32/lib/getfilecon.c:37:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#   37 | int lgetfilecon (char const *file, security_context_t *con);
+#      | ^~~
+#   35|   #undef fgetfilecon
+#   36|   int getfilecon (char const *file, security_context_t *con);
+#   37|-> int lgetfilecon (char const *file, security_context_t *con);
+#   38|   int fgetfilecon (int fd, security_context_t *con);
+#   39|   
+
+Error: COMPILER_WARNING (CWE-477):
+coreutils-8.32/lib/getfilecon.c:38:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#   38 | int fgetfilecon (int fd, security_context_t *con);
+#      | ^~~
+#   36|   int getfilecon (char const *file, security_context_t *con);
+#   37|   int lgetfilecon (char const *file, security_context_t *con);
+#   38|-> int fgetfilecon (int fd, security_context_t *con);
+#   39|   
+#   40|   /* getfilecon, lgetfilecon, and fgetfilecon can all misbehave, be it
+
+Error: COMPILER_WARNING (CWE-477):
+coreutils-8.32/lib/getfilecon.c:49:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#   49 | map_to_failure (int ret, security_context_t *con)
+#      | ^~~~~~~~~~~~~~
+#   47|   
+#   48|   static int
+#   49|-> map_to_failure (int ret, security_context_t *con)
+#   50|   {
+#   51|     if (ret == 0)
+
+Error: COMPILER_WARNING (CWE-477):
+coreutils-8.32/lib/getfilecon.c:69:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#   69 | rpl_getfilecon (char const *file, security_context_t *con)
+#      | ^~~~~~~~~~~~~~
+#   67|   
+#   68|   int
+#   69|-> rpl_getfilecon (char const *file, security_context_t *con)
+#   70|   {
+#   71|     int ret = getfilecon (file, con);
+
+Error: COMPILER_WARNING (CWE-477):
+coreutils-8.32/lib/getfilecon.c:76:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#   76 | rpl_lgetfilecon (char const *file, security_context_t *con)
+#      | ^~~~~~~~~~~~~~~
+#   74|   
+#   75|   int
+#   76|-> rpl_lgetfilecon (char const *file, security_context_t *con)
+#   77|   {
+#   78|     int ret = lgetfilecon (file, con);
+
+Error: COMPILER_WARNING (CWE-477):
+coreutils-8.32/lib/getfilecon.c:83:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#   83 | rpl_fgetfilecon (int fd, security_context_t *con)
+#      | ^~~~~~~~~~~~~~~
+#   81|   
+#   82|   int
+#   83|-> rpl_fgetfilecon (int fd, security_context_t *con)
+#   84|   {
+#   85|     int ret = fgetfilecon (fd, con);
+
+Error: COMPILER_WARNING (CWE-477):
+coreutils-8.32/src/chcon.c:30: included_from: Included from here.
+coreutils-8.32/lib/selinux-at.h:34:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#   34 | int  getfileconat (int dir_fd, char const *file, security_context_t *con);
+#      | ^~~
+#   32|      and return -1.
+#   33|      [*] with flags=0 here, with flags=AT_SYMLINK_NOFOLLOW for lgetfileconat  */
+#   34|-> int  getfileconat (int dir_fd, char const *file, security_context_t *con);
+#   35|   
+#   36|   /* dir-fd-relative lgetfilecon.  This function is just like getfileconat,
+
+Error: COMPILER_WARNING (CWE-477):
+coreutils-8.32/lib/selinux-at.h:39:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#   39 | int lgetfileconat (int dir_fd, char const *file, security_context_t *con);
+#      | ^~~
+#   37|      except when DIR_FD and FILE specify a symlink:  lgetfileconat operates on
+#   38|      the symlink, while getfileconat operates on the referent of the symlink.  */
+#   39|-> int lgetfileconat (int dir_fd, char const *file, security_context_t *con);
+#   40|   
+#   41|   /* dir-fd-relative setfilecon.  Set the SELinux security context of
+
+Error: COMPILER_WARNING (CWE-477):
+coreutils-8.32/lib/selinux-at.h:45:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#   45 | int  setfileconat (int dir_fd, char const *file, security_context_t con);
+#      | ^~~
+#   43|      interpreted as for fstatat[*].  Upon success, return 0.
+#   44|      Otherwise, return -1 and set errno.  */
+#   45|-> int  setfileconat (int dir_fd, char const *file, security_context_t con);
+#   46|   
+#   47|   /* dir-fd-relative lsetfilecon.  This function is just like setfileconat,
+
+Error: COMPILER_WARNING (CWE-477):
+coreutils-8.32/lib/selinux-at.h:52:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#   52 | int lsetfileconat (int dir_fd, char const *file, security_context_t con);
+#      | ^~~
+#   50|      except when DIR_FD and FILE specify a symlink:  lsetfileconat operates on
+#   51|      the symlink, while setfileconat operates on the referent of the symlink.  */
+#   52|-> int lsetfileconat (int dir_fd, char const *file, security_context_t con);
+
+Error: COMPILER_WARNING (CWE-477):
+coreutils-8.32/src/install.c: scope_hint: In function 'setdefaultfilecon'
+coreutils-8.32/src/install.c:368:3: warning[-Wdeprecated-declarations]: 'matchpathcon' is deprecated: Use selabel_lookup instead
+#  368 |   if ((matchpathcon (file, st.st_mode, &scontext) != 0)
+#      |   ^~
+coreutils-8.32/separate/lib/selinux/selinux.h:25: included_from: Included from here.
+coreutils-8.32/src/install.c:26: included_from: Included from here.
+/usr/include/selinux/selinux.h:502:12: note: declared here
+#  502 | extern int matchpathcon(const char *path,
+#      |            ^~~~~~~~~~~~
+#  366|        return to allow default context.  Note the "<<none>>" check
+#  367|        is only needed for libselinux < 1.20 (2005-01-04).  */
+#  368|->   if ((matchpathcon (file, st.st_mode, &scontext) != 0)
+#  369|         || STREQ (scontext, "<<none>>"))
+#  370|       {
+
+Error: COMPILER_WARNING (CWE-477):
+coreutils-8.32/src/selinux.c: scope_hint: In function 'defaultcon'
+coreutils-8.32/src/selinux.c:132:3: warning[-Wdeprecated-declarations]: 'matchpathcon' is deprecated: Use selabel_lookup instead
+#  132 |   if (matchpathcon (path, mode, &scon) < 0)
+#      |   ^~
+coreutils-8.32/separate/lib/selinux/selinux.h:25: included_from: Included from here.
+coreutils-8.32/src/selinux.c:20: included_from: Included from here.
+/usr/include/selinux/selinux.h:502:12: note: declared here
+#  502 | extern int matchpathcon(const char *path,
+#      |            ^~~~~~~~~~~~
+#  130|       }
+#  131|   
+#  132|->   if (matchpathcon (path, mode, &scon) < 0)
+#  133|       {
+#  134|         /* "No such file or directory" is a confusing error,
+
+Error: COMPILER_WARNING (CWE-477):
+coreutils-8.32/src/selinux.c: scope_hint: In function 'restorecon_private'
+coreutils-8.32/src/selinux.c:222:3: warning[-Wdeprecated-declarations]: 'matchpathcon' is deprecated: Use selabel_lookup instead
+#  222 |   if (matchpathcon (path, sb.st_mode, &scon) < 0)
+#      |   ^~
+coreutils-8.32/separate/lib/selinux/selinux.h:25: included_from: Included from here.
+coreutils-8.32/src/selinux.c:20: included_from: Included from here.
+/usr/include/selinux/selinux.h:502:12: note: declared here
+#  502 | extern int matchpathcon(const char *path,
+#      |            ^~~~~~~~~~~~
+#  220|       }
+#  221|   
+#  222|->   if (matchpathcon (path, sb.st_mode, &scon) < 0)
+#  223|       {
+#  224|         /* "No such file or directory" is a confusing error,
+
+Error: COMPILER_WARNING (CWE-758):
+coreutils-8.32/src/uname.c: scope_hint: In function 'main'
+coreutils-8.32/src/uname.c:303:23: warning[-Wdiscarded-qualifiers]: initialization discards 'const' qualifier from pointer target type
+#  303 |       char *element = unknown;
+#      |                       ^~~~~~~
+#  301|     if (toprint & PRINT_PROCESSOR)
+#  302|       {
+#  303|->       char *element = unknown;
+#  304|   #if HAVE_SYSINFO && defined SI_ARCHITECTURE
+#  305|         {
+
+Error: COMPILER_WARNING (CWE-758):
+coreutils-8.32/src/uname.c:353:23: warning[-Wdiscarded-qualifiers]: initialization discards 'const' qualifier from pointer target type
+#  353 |       char *element = unknown;
+#      |                       ^~~~~~~
+#  351|     if (toprint & PRINT_HARDWARE_PLATFORM)
+#  352|       {
+#  353|->       char *element = unknown;
+#  354|   #if HAVE_SYSINFO && defined SI_PLATFORM
+#  355|         {
