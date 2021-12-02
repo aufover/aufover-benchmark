@@ -1,0 +1,163 @@
+Error: COMPILER_WARNING (CWE-758):
+diffutils-3.8/gnulib-tests/pthread_sigmask.c:52:9: warning: implicit declaration of function 'pthread_sigmask' is invalid in C99
+#  ret = pthread_sigmask (how, new_mask, old_mask_ptr);
+#        ^
+#   50|   # endif
+#   51|   
+#   52|->   ret = pthread_sigmask (how, new_mask, old_mask_ptr);
+#   53|   
+#   54|   # if PTHREAD_SIGMASK_INEFFECTIVE
+
+Error: COMPILER_WARNING (CWE-758):
+diffutils-3.8/gnulib-tests/strerror_r.c:205:9: warning: incompatible pointer to integer conversion assigning to 'int' from 'char *'
+#    ret = strerror_r (errnum, buf, buflen);
+#        ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  203|       }
+#  204|   # else
+#  205|->     ret = strerror_r (errnum, buf, buflen);
+#  206|   
+#  207|       /* Some old implementations may return (-1, EINVAL) instead of EINVAL.
+
+Error: COMPILER_WARNING (CWE-758):
+diffutils-3.8/gnulib-tests/strerror_r.c:242:60: warning: comparison between pointer and integer ('char *' and 'int')
+#        if (strerror_r (errnum, stackbuf, sizeof stackbuf) == ERANGE)
+#            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^  ~~~~~~
+#  240|   
+#  241|           /* STACKBUF_LEN should have been large enough.  */
+#  242|->         if (strerror_r (errnum, stackbuf, sizeof stackbuf) == ERANGE)
+#  243|             abort ();
+#  244|           safe_copy (buf, buflen, stackbuf);
+
+Error: COMPILER_WARNING (CWE-758):
+diffutils-3.8/lib/ialloc.h:86:11: warning: pointer/integer type mismatch in conditional expression ('int' and 'void *')
+#          ? reallocarray (p, n, s)
+#          ^ ~~~~~~~~~~~~~~~~~~~~~~
+#   84|       n = s = 1;
+#   85|     return (n <= SIZE_MAX && s <= SIZE_MAX
+#   86|->           ? reallocarray (p, n, s)
+#   87|             : _gl_alloc_nomem ());
+#   88|   }
+
+Error: COMPILER_WARNING (CWE-758):
+diffutils-3.8/lib/ialloc.c:21: included_from: Included from here.
+diffutils-3.8/lib/ialloc.h:86:13: warning: implicit declaration of function 'reallocarray' is invalid in C99
+#          ? reallocarray (p, n, s)
+#            ^
+#   84|       n = s = 1;
+#   85|     return (n <= SIZE_MAX && s <= SIZE_MAX
+#   86|->           ? reallocarray (p, n, s)
+#   87|             : _gl_alloc_nomem ());
+#   88|   }
+
+Error: COMPILER_WARNING (CWE-758):
+diffutils-3.8/lib/time_rz.c:289:12: warning: implicit declaration of function 'timegm' is invalid in C99
+#    return timegm (tm);
+#           ^
+#  287|   {
+#  288|     if (!tz)
+#  289|->     return timegm (tm);
+#  290|     else
+#  291|       {
+
+Error: COMPILER_WARNING (CWE-758):
+diffutils-3.8/lib/xmalloc.c:77:9: warning: incompatible integer to pointer conversion initializing 'void *' with an expression of type 'int'
+#  void *r = reallocarray (p, n, s);
+#        ^   ~~~~~~~~~~~~~~~~~~~~~~
+#   75|   xreallocarray (void *p, size_t n, size_t s)
+#   76|   {
+#   77|->   void *r = reallocarray (p, n, s);
+#   78|     if (!r && (!p || (n && s)))
+#   79|       xalloc_die ();
+
+Error: COMPILER_WARNING (CWE-758):
+diffutils-3.8/lib/xmalloc.c:77:13: warning: implicit declaration of function 'reallocarray' is invalid in C99
+#  void *r = reallocarray (p, n, s);
+#            ^
+#   75|   xreallocarray (void *p, size_t n, size_t s)
+#   76|   {
+#   77|->   void *r = reallocarray (p, n, s);
+#   78|     if (!r && (!p || (n && s)))
+#   79|       xalloc_die ();
+
+Error: COMPILER_WARNING (CWE-758):
+diffutils-3.8/src/diff.c:1082:13: warning: taking address of packed member '' of class or structure 'stat' may result in an unaligned pointer value
+#  gettime (&STAT_TIMESPEC (st, st_mtim));
+#            ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+diffutils-3.8/lib/stat-time.h:52:39: note: expanded from macro 'STAT_TIMESPEC'
+##  define STAT_TIMESPEC(st, st_xtim) ((st)->st_xtim)
+#                                      ^~~~~~~~~~~~~
+# 1080|   {
+# 1081|   #ifdef STAT_TIMESPEC
+# 1082|->   gettime (&STAT_TIMESPEC (st, st_mtim));
+# 1083|   #else
+# 1084|     struct timespec t;
+
+Error: COMPILER_WARNING (CWE-758):
+diffutils-3.8/src/diff3.c:1258:7: warning: implicit declaration of function 'execvp' is invalid in C99
+#      execvp (diff_program, (char **) argv);
+#      ^
+# 1256|         /* The cast to (char **) is needed for portability to older
+# 1257|            hosts with a nonstandard prototype for execvp.  */
+# 1258|->       execvp (diff_program, (char **) argv);
+# 1259|   
+# 1260|         _exit (errno == ENOENT ? 127 : 126);
+
+Error: COMPILER_WARNING (CWE-758):
+diffutils-3.8/src/sdiff.c:582:7: warning: implicit declaration of function 'execvp' is invalid in C99
+#      execvp (diffargv[0], (char **) diffargv);
+#      ^
+#  580|         diffarg (argv[optind + 1]);
+#  581|         diffarg (0);
+#  582|->       execvp (diffargv[0], (char **) diffargv);
+#  583|         perror_fatal (diffargv[0]);
+#  584|       }
+
+Error: COMPILER_WARNING (CWE-758):
+diffutils-3.8/src/sdiff.c:648:13: warning: implicit declaration of function 'execvp' is invalid in C99
+#            execvp (diffargv[0], (char **) diffargv);
+#            ^
+#  646|                 }
+#  647|   
+#  648|->             execvp (diffargv[0], (char **) diffargv);
+#  649|               _exit (errno == ENOENT ? 127 : 126);
+#  650|             }
+
+Error: COMPILER_WARNING (CWE-758):
+diffutils-3.8/src/sdiff.c:757:17: warning: taking address of packed member '' of class or structure 'sigaction' may result in an unaligned pointer value
+#  sigemptyset (&catchaction.sa_mask);
+#                ^~~~~~~~~~~~~~~~~~~
+#  755|   #if HAVE_SIGACTION
+#  756|     catchaction.sa_flags = SA_RESTART;
+#  757|->   sigemptyset (&catchaction.sa_mask);
+#  758|     for (i = 0;  i < NUM_SIGS;  i++)
+#  759|       sigaddset (&catchaction.sa_mask, sigs[i]);
+
+Error: COMPILER_WARNING (CWE-758):
+diffutils-3.8/src/sdiff.c:759:17: warning: taking address of packed member '' of class or structure 'sigaction' may result in an unaligned pointer value
+#    sigaddset (&catchaction.sa_mask, sigs[i]);
+#                ^~~~~~~~~~~~~~~~~~~
+#  757|     sigemptyset (&catchaction.sa_mask);
+#  758|     for (i = 0;  i < NUM_SIGS;  i++)
+#  759|->     sigaddset (&catchaction.sa_mask, sigs[i]);
+#  760|   #endif
+#  761|   
+
+Error: COMPILER_WARNING (CWE-758):
+diffutils-3.8/src/sdiff.c:1037:21: warning: implicit declaration of function 'execvp' is invalid in C99
+#                    execvp (editor_program, (char **) argv);
+#                    ^
+# 1035|                   if (pid == 0)
+# 1036|                     {
+# 1037|->                     execvp (editor_program, (char **) argv);
+# 1038|                       _exit (errno == ENOENT ? 127 : 126);
+# 1039|                     }
+
+Error: COMPILER_WARNING (CWE-758):
+diffutils-3.8/src/util.c:881:13: warning: implicit declaration of function 'execv' is invalid in C99
+#            execv (pr_program, (char **) argv);
+#            ^
+#  879|                 }
+#  880|   
+#  881|->             execv (pr_program, (char **) argv);
+#  882|               _exit (errno == ENOENT ? 127 : 126);
+#  883|             }

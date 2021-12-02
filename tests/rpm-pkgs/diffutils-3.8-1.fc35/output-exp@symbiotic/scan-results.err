@@ -1,0 +1,69 @@
+Error: SYMBIOTIC_WARNING:
+diffutils-3.8/gnulib-tests/test-vasprintf.c:54: error: abort failure
+diffutils-3.8/gnulib-tests/test-vasprintf.c:54: note: call stack: function test_vasprintf ()
+diffutils-3.8/gnulib-tests/test-vasprintf.c:100: note: call stack: function main (=2, =0)
+diffutils-3.8/gnulib-tests/test-vasprintf.c:40:9: note: Non-deterministic values: vasprintf: len 4 bytes, [4 times 0x0] (i32: 0)
+#   52|         char *result;
+#   53|         int retval = my_asprintf (&result, "%d", 12345);
+#   54|->       ASSERT (retval == 5);
+#   55|         ASSERT (result != NULL);
+#   56|         ASSERT (strcmp (result, "12345") == 0);
+
+Error: SYMBIOTIC_WARNING:
+diffutils-3.8/gnulib-tests/test-xvasprintf.c:57: error: abort failure
+diffutils-3.8/gnulib-tests/test-xvasprintf.c:57: note: call stack: function test_xvasprintf ()
+diffutils-3.8/gnulib-tests/test-xvasprintf.c:131: note: call stack: function main (=2, =0)
+diffutils-3.8/lib/xvasprintf.c:102:7: note: Non-deterministic values: vasprintf: len 4 bytes, [3 times 0x0|0x80] (i32: -2147483648)
+#   55|       {
+#   56|         result = my_xasprintf ("%d", 12345);
+#   57|->       ASSERT (result != NULL);
+#   58|         ASSERT (strcmp (result, "12345") == 0);
+#   59|         free (result);
+
+Error: SYMBIOTIC_WARNING:
+diffutils-3.8/lib/./xstrtol.c:127: error: memory error: out of bound pointer
+diffutils-3.8/lib/./xstrtol.c:127: note: call stack: function xstrtoimax (=0, =0, =0, =0, =0)
+diffutils-3.8/gnulib-tests/./test-xstrtol.c:51: note: call stack: function main (=2, =0)
+diffutils-3.8/lib/./xstrtol.c:127: note: Additional Info: address: 0:12370169555311111083
+diffutils-3.8/lib/./xstrtol.c:127: note: Additional Info: pointing to: none
+diffutils-3.8/lib/./xstrtol.c:100:9: note: Non-deterministic values: strtoimax: len 8 bytes, [8 times 0x0] (i64: 0)
+#  125|       }
+#  126|   
+#  127|->   if (**p != '\0')
+#  128|       {
+#  129|         int base = 1024;
+
+Error: SYMBIOTIC_WARNING:
+diffutils-3.8/lib/basename-lgpl.c:36: error: memory error: out of bound pointer
+diffutils-3.8/lib/basename-lgpl.c:36: note: call stack: function last_component (=0)
+diffutils-3.8/lib/stripslash.c:33: note: call stack: function strip_trailing_slashes (=0)
+diffutils-3.8/gnulib-tests/test-dirname.c:145: note: call stack: function main ()
+diffutils-3.8/lib/basename-lgpl.c:36: note: Additional Info: address: 0:0
+diffutils-3.8/lib/basename-lgpl.c:36: note: Additional Info: pointing to: none
+/opt/symbiotic/lib/posix/strdup.c:11:6: note: Non-deterministic values: __VERIFIER_nondet__Bool: len 1 bytes, [0x1] (i8: 1)
+#   34|     bool last_was_slash = false;
+#   35|   
+#   36|->   while (ISSLASH (*base))
+#   37|       base++;
+#   38|   
+
+Error: SYMBIOTIC_WARNING:
+diffutils-3.8/lib/xstrtol.c:127: error: memory error: out of bound pointer
+diffutils-3.8/lib/xstrtol.c:127: note: call stack: function xstrtol (=0, =0, =0, =0, =0)
+diffutils-3.8/gnulib-tests/test-xstrtol.c:51: note: call stack: function main (=2, =0)
+diffutils-3.8/lib/xstrtol.c:127: note: Additional Info: address: 0:12370169555311111083
+diffutils-3.8/lib/xstrtol.c:127: note: Additional Info: pointing to: none
+diffutils-3.8/lib/xstrtol.c:100:9: note: Non-deterministic values: strtol: len 8 bytes, [8 times 0x0] (i64: 0)
+#  125|       }
+#  126|   
+#  127|->   if (**p != '\0')
+#  128|       {
+#  129|         int base = 1024;
+
+Error: COMPILER_WARNING (CWE-758):
+diffutils-3.8/src/diff.c:775:8: warning[-Wbool-operation]: bitwise negation of a boolean expression; did you mean logical negation?
+#  773|     files_can_be_treated_as_binary =
+#  774|       (brief & binary
+#  775|->      & ~ (ignore_blank_lines | ignore_case | strip_trailing_cr
+#  776|             | (ignore_regexp_list.regexps || ignore_white_space)));
+#  777|   

@@ -1,0 +1,326 @@
+Error: VALGRIND_WARNING:
+./test-c-stack: note: while executing process 17379 with arguments: 1
+diffutils-3.8/gnulib-tests/test-c-stack.c:66: warning[InvalidRead]: Invalid read of size 1
+diffutils-3.8/gnulib-tests/test-c-stack.c:66: note: Address 0x0 is not stack'd, malloc'd or (recently) free'd
+diffutils-3.8/gnulib-tests/test-c-stack.c:66: note: called from main()
+#   64|           {
+#   65|             exit_failure = 77;
+#   66|->           ++*argv[argc]; /* Intentionally dereference NULL.  */
+#   67|           }
+#   68|         return recurse (0);
+
+Error: VALGRIND_WARNING:
+./test-calloc-gnu: note: while executing process 17457
+diffutils-3.8/gnulib-tests/test-calloc-gnu.c:62: warning[FishyValue]: Argument 'size' of function calloc has a fishy (possibly negative) value: -9223372036854775808
+
+diffutils-3.8/gnulib-tests/test-calloc-gnu.c:62: note: called from main()
+#   60|       for (size_t n = 2; n != 0; n <<= 1)
+#   61|         {
+#   62|->         void *volatile p = calloc (PTRDIFF_MAX / n + 1, identity (n));
+#   63|           ASSERT (p == NULL);
+#   64|           ASSERT (errno == ENOMEM);
+
+Error: VALGRIND_WARNING:
+./test-malloc-gnu: note: while executing process 19501
+diffutils-3.8/gnulib-tests/test-malloc-gnu.c:39: warning[FishyValue]: Argument 'size' of function malloc has a fishy (possibly negative) value: -9223372036854775808
+
+diffutils-3.8/gnulib-tests/test-malloc-gnu.c:39: note: called from main()
+#   37|       {
+#   38|         size_t one = argc != 12345;
+#   39|->       p = malloc (PTRDIFF_MAX + one);
+#   40|         ASSERT (p == NULL);
+#   41|         ASSERT (errno == ENOMEM);
+
+Error: VALGRIND_WARNING:
+./test-realloc-gnu: note: while executing process 20535
+diffutils-3.8/gnulib-tests/test-realloc-gnu.c:31: warning[Leak_DefinitelyLost]: 0 bytes in 1 blocks are definitely lost in loss record 1 of 1
+diffutils-3.8/gnulib-tests/test-realloc-gnu.c:31: note: called from main()
+#   29|   {
+#   30|     /* Check that realloc (NULL, 0) is not a NULL pointer.  */
+#   31|->   void *volatile p = realloc (NULL, 0);
+#   32|     ASSERT (p != NULL);
+#   33|   
+
+Error: VALGRIND_WARNING:
+./test-realloc-gnu: note: while executing process 20535
+diffutils-3.8/gnulib-tests/test-realloc-gnu.c:39: warning[FishyValue]: Argument 'size' of function realloc has a fishy (possibly negative) value: -9223372036854775808
+
+diffutils-3.8/gnulib-tests/test-realloc-gnu.c:39: note: called from main()
+#   37|       {
+#   38|         size_t one = argc != 12345;
+#   39|->       p = realloc (p, PTRDIFF_MAX + one);
+#   40|         ASSERT (p == NULL);
+#   41|         /* Avoid a test failure due to glibc bug
+
+Error: VALGRIND_WARNING:
+./test-reallocarray: note: while executing process 20561
+diffutils-3.8/gnulib-tests/test-reallocarray.c:41: warning[FishyValue]: Argument 'size' of function malloc has a fishy (possibly negative) value: -9223372036854775808
+
+diffutils-3.8/gnulib-tests/test-reallocarray.c:41: note: called from main()
+#   39|         if (PTRDIFF_MAX / n + 1 <= SIZE_MAX)
+#   40|           {
+#   41|->           p = reallocarray (p, PTRDIFF_MAX / n + 1, n);
+#   42|             ASSERT (p == NULL);
+#   43|             ASSERT (errno == ENOMEM);
+
+Error: VALGRIND_WARNING:
+./test-sigsegv-catch-stackoverflow2: note: while executing process 21196
+diffutils-3.8/gnulib-tests/test-sigsegv-catch-stackoverflow2.c:188: warning[InvalidWrite]: Invalid write of size 4
+diffutils-3.8/gnulib-tests/test-sigsegv-catch-stackoverflow2.c:188: note: Address 0x0 is not stack'd, malloc'd or (recently) free'd
+diffutils-3.8/gnulib-tests/test-sigsegv-catch-stackoverflow2.c:188: note: called from main()
+#  186|         break;
+#  187|       case 3:
+#  188|->       *null_pointer_to_volatile_int = 42;
+#  189|         break;
+#  190|       case 4:
+
+Error: COMPILER_WARNING (CWE-758):
+diffutils-3.8/lib/careadlinkat.c: scope_hint: In function 'careadlinkat'
+diffutils-3.8/lib/careadlinkat.c:178:5: warning[-Wcpp]: #warning "GCC might issue a bogus -Wreturn-local-addr warning here."
+#  178 |    #warning "GCC might issue a bogus -Wreturn-local-addr warning here."
+#      |     ^~~~~~~
+#  176|        shrinking realloc.  */
+#  177|     #ifdef GCC_BOGUS_WRETURN_LOCAL_ADDR
+#  178|->    #warning "GCC might issue a bogus -Wreturn-local-addr warning here."
+#  179|      #warning "See <https://gcc.gnu.org/bugzilla/show_bug.cgi?id=93644>."
+#  180|     #endif
+
+Error: COMPILER_WARNING (CWE-758):
+diffutils-3.8/lib/careadlinkat.c:179:5: warning[-Wcpp]: #warning "See <https://gcc.gnu.org/bugzilla/show_bug.cgi?id=93644>."
+#  179 |    #warning "See <https://gcc.gnu.org/bugzilla/show_bug.cgi?id=93644>."
+#      |     ^~~~~~~
+#  177|     #ifdef GCC_BOGUS_WRETURN_LOCAL_ADDR
+#  178|      #warning "GCC might issue a bogus -Wreturn-local-addr warning here."
+#  179|->    #warning "See <https://gcc.gnu.org/bugzilla/show_bug.cgi?id=93644>."
+#  180|     #endif
+#  181|     char stack_buf[STACK_BUF_SIZE];
+
+Error: COMPILER_WARNING (CWE-562):
+diffutils-3.8/lib/careadlinkat.c:182:10: warning[-Wreturn-local-addr]: function may return address of local variable
+#  182 |   return readlink_stk (fd, filename, buffer, buffer_size, alloc,
+#      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  183 |                        preadlinkat, stack_buf);
+#      |                        ~~~~~~~~~~~~~~~~~~~~~~~
+diffutils-3.8/lib/careadlinkat.c:181:8: note: declared here
+#  181 |   char stack_buf[STACK_BUF_SIZE];
+#      |        ^~~~~~~~~
+#  180|     #endif
+#  181|     char stack_buf[STACK_BUF_SIZE];
+#  182|->   return readlink_stk (fd, filename, buffer, buffer_size, alloc,
+#  183|                          preadlinkat, stack_buf);
+#  184|   }
+
+Error: COMPILER_WARNING (CWE-457):
+diffutils-3.8/lib/diffseq.h:425:36: warning[-Wmaybe-uninitialized]: 'fxbest' may be used uninitialized in this function
+#  425 |               part->ymid = fxybest - fxbest;
+#      |                            ~~~~~~~~^~~~~~~~
+diffutils-3.8/lib/diffseq.h:381:18: note: 'fxbest' was declared here
+#  381 |           OFFSET fxbest IF_LINT (= 0);
+#      |                  ^~~~~~
+#  423|               {
+#  424|                 part->xmid = fxbest;
+#  425|->               part->ymid = fxybest - fxbest;
+#  426|                 part->lo_minimal = true;
+#  427|                 part->hi_minimal = false;
+
+Error: COMPILER_WARNING (CWE-457):
+diffutils-3.8/src/analyze.c:35: included_from: Included from here.
+diffutils-3.8/lib/diffseq.h: scope_hint: In function 'compareseq'
+diffutils-3.8/lib/diffseq.h:432:36: warning[-Wmaybe-uninitialized]: 'bxbest' may be used uninitialized in this function
+#  432 |               part->ymid = bxybest - bxbest;
+#      |                            ~~~~~~~~^~~~~~~~
+diffutils-3.8/lib/diffseq.h:383:18: note: 'bxbest' was declared here
+#  383 |           OFFSET bxbest IF_LINT (= 0);
+#      |                  ^~~~~~
+#  430|               {
+#  431|                 part->xmid = bxbest;
+#  432|->               part->ymid = bxybest - bxbest;
+#  433|                 part->lo_minimal = false;
+#  434|                 part->hi_minimal = true;
+
+Error: COMPILER_WARNING (CWE-457):
+diffutils-3.8/lib/trim.c: scope_hint: In function 'trim2'
+diffutils-3.8/lib/trim.c:103:16: warning[-Wmaybe-uninitialized]: 'r' may be used uninitialized in this function
+#  103 |             *r = '\0';
+#      |             ~~~^~~~~~
+#  101|   
+#  102|             if (state == 2)
+#  103|->             *r = '\0';
+#  104|           }
+#  105|       }
+
+Error: VALGRIND_WARNING:
+diffutils-3.8/tests/../src/diff: note: while executing process 10774 with arguments: -Ix -I\ a b
+diffutils-3.8/src/../lib/regcomp.c:859: warning[Leak_DefinitelyLost]: 32 bytes in 1 blocks are definitely lost in loss record 8 of 12
+diffutils-3.8/src/../lib/regcomp.c:859: note: called from UnknownInlinedFun()
+diffutils-3.8/src/../lib/regcomp.c:758: note: called from re_compile_internal()
+diffutils-3.8/src/../lib/regcomp.c:230: note: called from rpl_re_compile_pattern()
+diffutils-3.8/src/diff.c:829: note: called from add_regexp()
+diffutils-3.8/src/diff.c:442: note: called from main()
+#  857|   
+#  858|     dfa->nodes_alloc = pat_len + 1;
+#  859|->   dfa->nodes = re_malloc (re_token_t, dfa->nodes_alloc);
+#  860|   
+#  861|     /*  table_size = 2 ^ ceil(log pat_len) */
+
+Error: VALGRIND_WARNING:
+diffutils-3.8/tests/../src/diff: note: while executing process 10774 with arguments: -Ix -I\ a b
+diffutils-3.8/src/../lib/regcomp.c:866: warning[Leak_DefinitelyLost]: 192 (48 direct, 144 indirect) bytes in 1 blocks are definitely lost in loss record 12 of 12
+diffutils-3.8/src/../lib/regcomp.c:866: note: called from UnknownInlinedFun()
+diffutils-3.8/src/../lib/regcomp.c:758: note: called from re_compile_internal()
+diffutils-3.8/src/../lib/regcomp.c:230: note: called from rpl_re_compile_pattern()
+diffutils-3.8/src/diff.c:829: note: called from add_regexp()
+diffutils-3.8/src/diff.c:442: note: called from main()
+#  864|         break;
+#  865|   
+#  866|->   dfa->state_table = calloc (sizeof (struct re_state_table_entry), table_size);
+#  867|     dfa->state_hash_mask = table_size - 1;
+#  868|   
+
+Error: VALGRIND_WARNING:
+diffutils-3.8/tests/../src/diff: note: while executing process 10774 with arguments: -Ix -I\ a b
+diffutils-3.8/src/../lib/regcomp.c:1169: warning[Leak_DefinitelyLost]: 16 bytes in 1 blocks are definitely lost in loss record 7 of 12
+diffutils-3.8/src/../lib/regcomp.c:1169: note: called from UnknownInlinedFun()
+diffutils-3.8/src/../lib/regcomp.c:795: note: called from re_compile_internal()
+diffutils-3.8/src/../lib/regcomp.c:230: note: called from rpl_re_compile_pattern()
+diffutils-3.8/src/diff.c:829: note: called from add_regexp()
+diffutils-3.8/src/diff.c:442: note: called from main()
+# 1167|   
+# 1168|     /* Allocate arrays.  */
+# 1169|->   dfa->nexts = re_malloc (Idx, dfa->nodes_alloc);
+# 1170|     dfa->org_indices = re_malloc (Idx, dfa->nodes_alloc);
+# 1171|     dfa->edests = re_malloc (re_node_set, dfa->nodes_alloc);
+
+Error: VALGRIND_WARNING:
+diffutils-3.8/tests/../src/diff: note: while executing process 10774 with arguments: -Ix -I\ a b
+diffutils-3.8/src/../lib/regcomp.c:1171: warning[Leak_DefinitelyLost]: 48 bytes in 1 blocks are definitely lost in loss record 9 of 12
+diffutils-3.8/src/../lib/regcomp.c:1171: note: called from UnknownInlinedFun()
+diffutils-3.8/src/../lib/regcomp.c:795: note: called from re_compile_internal()
+diffutils-3.8/src/../lib/regcomp.c:230: note: called from rpl_re_compile_pattern()
+diffutils-3.8/src/diff.c:829: note: called from add_regexp()
+diffutils-3.8/src/diff.c:442: note: called from main()
+# 1169|     dfa->nexts = re_malloc (Idx, dfa->nodes_alloc);
+# 1170|     dfa->org_indices = re_malloc (Idx, dfa->nodes_alloc);
+# 1171|->   dfa->edests = re_malloc (re_node_set, dfa->nodes_alloc);
+# 1172|     dfa->eclosures = re_malloc (re_node_set, dfa->nodes_alloc);
+# 1173|     if (__glibc_unlikely (dfa->nexts == NULL || dfa->org_indices == NULL
+
+Error: VALGRIND_WARNING:
+diffutils-3.8/tests/../src/diff: note: while executing process 10774 with arguments: -Ix -I\ a b
+diffutils-3.8/src/../lib/regcomp.c:1172: warning[Leak_DefinitelyLost]: 64 (48 direct, 16 indirect) bytes in 1 blocks are definitely lost in loss record 10 of 12
+diffutils-3.8/src/../lib/regcomp.c:1172: note: called from UnknownInlinedFun()
+diffutils-3.8/src/../lib/regcomp.c:795: note: called from re_compile_internal()
+diffutils-3.8/src/../lib/regcomp.c:230: note: called from rpl_re_compile_pattern()
+diffutils-3.8/src/diff.c:829: note: called from add_regexp()
+diffutils-3.8/src/diff.c:442: note: called from main()
+# 1170|     dfa->org_indices = re_malloc (Idx, dfa->nodes_alloc);
+# 1171|     dfa->edests = re_malloc (re_node_set, dfa->nodes_alloc);
+# 1172|->   dfa->eclosures = re_malloc (re_node_set, dfa->nodes_alloc);
+# 1173|     if (__glibc_unlikely (dfa->nexts == NULL || dfa->org_indices == NULL
+# 1174|   			|| dfa->edests == NULL || dfa->eclosures == NULL))
+
+Error: VALGRIND_WARNING:
+diffutils-3.8/tests/../src/diff3: note: while executing process 9083 with arguments: d e f
+diffutils-3.8/src/../lib/xmalloc.c:44: warning[Leak_DefinitelyLost]: 520 (360 direct, 160 indirect) bytes in 5 blocks are definitely lost in loss record 25 of 27
+diffutils-3.8/src/../lib/xmalloc.c:44: note: called from UnknownInlinedFun()
+diffutils-3.8/src/diff3.c:1015: note: called from process_diff()
+diffutils-3.8/src/diff3.c:425: note: called from main()
+#   42|   xmalloc (size_t s)
+#   43|   {
+#   44|->   return nonnull (malloc (s));
+#   45|   }
+#   46|   
+
+Error: COMPILER_WARNING (CWE-758):
+diffutils-3.8/src/analyze.c:21: included_from: Included from here.
+diffutils-3.8/src/diff.h:395:1: warning[-Wattributes]: 'pure' attribute ignored
+#  395 | extern bool (*lines_differ) (char const *, size_t, char const *, size_t) _GL_ATTRIBUTE_PURE;
+#      | ^~~~~~
+#  393|   extern char const pr_program[];
+#  394|   extern char *concat (char const *, char const *, char const *);
+#  395|-> extern bool (*lines_differ) (char const *, size_t, char const *, size_t) _GL_ATTRIBUTE_PURE;
+#  396|   extern bool lines_differ_singlebyte (char const *, size_t, char const *, size_t) _GL_ATTRIBUTE_PURE;
+#  397|   #ifdef HANDLE_MULTIBYTE
+
+Error: COMPILER_WARNING (CWE-457):
+diffutils-3.8/src/diff3.c: scope_hint: In function 'process_diff'
+diffutils-3.8/src/diff3.c:1096:15: warning[-Wmaybe-uninitialized]: 'bptr' may be used uninitialized in this function
+# 1096 |   *last_block = bptr;
+#      |   ~~~~~~~~~~~~^~~~~~
+# 1094|   
+# 1095|     *block_list_end = NULL;
+# 1096|->   *last_block = bptr;
+# 1097|     return block_list;
+# 1098|   }
+
+Error: COMPILER_WARNING (CWE-457):
+diffutils-3.8/src/sdiff.c: scope_hint: In function 'edit'
+diffutils-3.8/src/sdiff.c:870:11: warning[-Wmaybe-uninitialized]: 'cmd1' may be used uninitialized in this function
+#  870 |       int cmd1 IF_LINT (= 0);
+#      |           ^~~~
+#  868|       {
+#  869|         int cmd0 IF_LINT (= 0);
+#  870|->       int cmd1 IF_LINT (= 0);
+#  871|         bool gotcmd = false;
+#  872|   
+
+Error: COMPILER_WARNING (CWE-457):
+diffutils-3.8/src/util.c:1177:29: warning[-Wmaybe-uninitialized]: 'convfail1_bak' may be used uninitialized in this function
+# 1177 |   int convfail1, convfail2, convfail1_bak, convfail2_bak;
+#      |                             ^~~~~~~~~~~~~
+# 1175|     size_t mblen1, mblen2;
+# 1176|     mbstate_t state1, state2, state1_bak, state2_bak;
+# 1177|->   int convfail1, convfail2, convfail1_bak, convfail2_bak;
+# 1178|     
+# 1179|     char const *t1 = s1;
+
+Error: COMPILER_WARNING (CWE-457):
+diffutils-3.8/src/util.c:1177:44: warning[-Wmaybe-uninitialized]: 'convfail2_bak' may be used uninitialized in this function
+# 1177 |   int convfail1, convfail2, convfail1_bak, convfail2_bak;
+#      |                                            ^~~~~~~~~~~~~
+# 1175|     size_t mblen1, mblen2;
+# 1176|     mbstate_t state1, state2, state1_bak, state2_bak;
+# 1177|->   int convfail1, convfail2, convfail1_bak, convfail2_bak;
+# 1178|     
+# 1179|     char const *t1 = s1;
+
+Error: COMPILER_WARNING (CWE-457):
+diffutils-3.8/src/util.c: scope_hint: In function 'lines_differ_multibyte'
+diffutils-3.8/src/util.c:1235:22: warning[-Wmaybe-uninitialized]: 't2' may be used uninitialized in this function
+# 1235 |                   t2 += mblen2;
+#      |                   ~~~^~~~~~~~~
+# 1233|   		    break;
+# 1234|   
+# 1235|-> 		  t2 += mblen2;
+# 1236|   		  c2 = *t2;
+# 1237|   		  MBC2WC (t2, end2, mblen2, wc2, state2, convfail2);
+
+Error: COMPILER_WARNING (CWE-457):
+diffutils-3.8/src/util.c:1300:27: warning[-Wmaybe-uninitialized]: 'wc1_bak' may be used uninitialized in this function
+# 1300 |                       wc1 = wc1_bak;
+#      |                       ~~~~^~~~~~~~~
+# 1298|   		    {
+# 1299|   		      t1 = t1_bak;
+# 1300|-> 		      wc1 = wc1_bak;
+# 1301|   		      state1 = state1_bak;
+# 1302|   		      convfail1 = convfail1_bak;
+
+Error: COMPILER_WARNING (CWE-457):
+diffutils-3.8/src/util.c:1307:44: warning[-Wmaybe-uninitialized]: 'wc2_bak' may be used uninitialized in this function
+# 1307 |                       && !convfail2_bak && iswspace (wc2_bak))
+#      |                                            ^~~~~~~~~~~~~~~~~~
+# 1305|   		  if (wc1 == L' ' && wc2 != L'\n'
+# 1306|   		      && t2 > s2
+# 1307|-> 		      && !convfail2_bak && iswspace (wc2_bak))
+# 1308|   		    {
+# 1309|   		      t2 = t2_bak;
+
+Error: COMPILER_WARNING (CWE-457):
+diffutils-3.8/src/util.c:1446:22: warning[-Wmaybe-uninitialized]: 't1' may be used uninitialized in this function
+# 1446 |                   t1 += mblen1;
+#      |                   ~~~^~~~~~~~~
+# 1444|   	      else
+# 1445|   		{
+# 1446|-> 		  t1 += mblen1;
+# 1447|   		  t2 += mblen2;
+# 1448|   		}

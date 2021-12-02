@@ -1,0 +1,1722 @@
+scan.ini: [scan]
+scan.ini: tool = csmock
+scan.ini: tool-version = csmock-3.2.0.20211130.141423.g64dd084.divine-1.fc34
+scan.ini: tool-args = '/usr/bin/csmock' '-o' '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/diffutils-3.8-1.fc35/cbmc/output' '-f' '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/diffutils-3.8-1.fc35/diffutils-3.8-1.fc35.src.rpm' '-r' 'fedora-35-x86_64' '-t' 'cbmc' '--cbmc-timeout=8' '--keep-going'
+scan.ini: host = f34
+scan.ini: store-results-to = /home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/diffutils-3.8-1.fc35/cbmc/output
+scan.ini: time-created = 2021-12-01 16:17:04
+scan.ini: enabled-plugins = cbmc, gcc
+scan.ini: mock-config = fedora-35-x86_64
+scan.ini: project-name = diffutils-3.8-1.fc35
+scan.ini: known-false-positives = /usr/share/csmock/known-false-positives.js
+>>> 2021-12-01 16:17:04	"rpm -qa | sort -V > '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/diffutils-3.8-1.fc35/cbmc/output/debug/rpm-list-host.txt'"
+
+>>> 2021-12-01 16:17:06	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--init"
+INFO: mock.py version 2.13 starting (python version = 3.9.7, NVR = mock-2.13-1.kdudka.1.fc34)...
+Start(bootstrap): init plugins
+INFO: selinux enabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start: clean chroot
+Finish: clean chroot
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+Start: unpacking root cache
+Finish: unpacking root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish: chroot init
+Finish: run
+
+>>> 2021-12-01 16:17:16	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--installdeps" "/tmp/csmock4r1bxn2x/diffutils-3.8-1.fc35.src.rpm"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Dependencies resolved.
+================================================================================
+ Package                      Arch    Version                  Repository  Size
+================================================================================
+Installing:
+ [1mautoconf                    [m noarch  2.69-37.fc35             f35-build  666 k
+ [1mautomake                    [m noarch  1.16.2-5.fc35            f35-build  662 k
+ [1mgcc                         [m x86_64  11.2.1-1.fc35            f35-build   31 M
+ [1mhelp2man                    [m noarch  1.48.5-1.fc35            f35-build  156 k
+ [1mmake                        [m x86_64  1:4.3-6.fc35             f35-build  533 k
+ [1mtexinfo                     [m x86_64  6.8-2.fc35               f35-build  1.0 M
+Installing dependencies:
+ [1mannobin-docs                [m noarch  9.87-3.fc35              f35-build   78 k
+ [1mannobin-plugin-gcc          [m x86_64  9.87-3.fc35              f35-build   42 k
+ [1mcpp                         [m x86_64  11.2.1-1.fc35            f35-build   10 M
+ [1memacs-filesystem            [m noarch  1:27.2-9.fc35            f35-build  9.0 k
+ [1mgc                          [m x86_64  8.0.4-6.fc35             f35-build  103 k
+ [1mglibc-devel                 [m x86_64  2.34-8.fc35              f35-build  146 k
+ [1mglibc-headers-x86           [m noarch  2.34-8.fc35              f35-build  544 k
+ [1mgroff-base                  [m x86_64  1.22.4-8.fc35            f35-build  1.0 M
+ [1mguile22                     [m x86_64  2.2.7-3.fc35             f35-build  6.4 M
+ [1mkernel-headers              [m x86_64  5.15.4-200.fc35          f35-build  1.3 M
+ [1mlibmpc                      [m x86_64  1.2.1-3.fc35             f35-build   62 k
+ [1mlibtool-ltdl                [m x86_64  2.4.6-42.fc35            f35-build   36 k
+ [1mlibxcrypt-devel             [m x86_64  4.4.26-4.fc35            f35-build   29 k
+ [1mm4                          [m x86_64  1.4.19-2.fc35            f35-build  294 k
+ [1mncurses                     [m x86_64  6.2-8.20210508.fc35      f35-build  400 k
+ [1mperl-B                      [m x86_64  1.82-482.fc35            f35-build  188 k
+ [1mperl-Carp                   [m noarch  1.52-478.fc35            f35-build   29 k
+ [1mperl-Class-Struct           [m noarch  0.66-482.fc35            f35-build   30 k
+ [1mperl-Data-Dumper            [m x86_64  2.183-2.fc35             f35-build   56 k
+ [1mperl-DynaLoader             [m x86_64  1.50-482.fc35            f35-build   34 k
+ [1mperl-Encode                 [m x86_64  4:3.15-482.fc35          f35-build  1.7 M
+ [1mperl-Errno                  [m x86_64  1.33-482.fc35            f35-build   23 k
+ [1mperl-Exporter               [m noarch  5.76-479.fc35            f35-build   31 k
+ [1mperl-Fcntl                  [m x86_64  1.14-482.fc35            f35-build   28 k
+ [1mperl-File-Basename          [m noarch  2.85-482.fc35            f35-build   25 k
+ [1mperl-File-Compare           [m noarch  1.100.600-482.fc35       f35-build   21 k
+ [1mperl-File-Copy              [m noarch  2.35-482.fc35            f35-build   28 k
+ [1mperl-File-Find              [m noarch  1.39-482.fc35            f35-build   33 k
+ [1mperl-File-Path              [m noarch  2.18-478.fc35            f35-build   35 k
+ [1mperl-File-Temp              [m noarch  1:0.231.100-478.fc35     f35-build   59 k
+ [1mperl-File-stat              [m noarch  1.09-482.fc35            f35-build   25 k
+ [1mperl-Getopt-Long            [m noarch  1:2.52-478.fc35          f35-build   60 k
+ [1mperl-Getopt-Std             [m noarch  1.13-482.fc35            f35-build   23 k
+ [1mperl-HTTP-Tiny              [m noarch  0.080-1.fc35             f35-build   55 k
+ [1mperl-IO                     [m x86_64  1.46-482.fc35            f35-build   95 k
+ [1mperl-IPC-Open3              [m noarch  1.21-482.fc35            f35-build   31 k
+ [1mperl-MIME-Base64            [m x86_64  3.16-478.fc35            f35-build   30 k
+ [1mperl-POSIX                  [m x86_64  1.97-482.fc35            f35-build  105 k
+ [1mperl-PathTools              [m x86_64  3.80-478.fc35            f35-build   85 k
+ [1mperl-Pod-Escapes            [m noarch  1:1.07-478.fc35          f35-build   20 k
+ [1mperl-Pod-Perldoc            [m noarch  3.28.01-479.fc35         f35-build   84 k
+ [1mperl-Pod-Simple             [m noarch  1:3.43-2.fc35            f35-build  215 k
+ [1mperl-Pod-Usage              [m noarch  4:2.01-478.fc35          f35-build   40 k
+ [1mperl-Scalar-List-Utils      [m x86_64  5:1.60-462.fc35          f35-build   72 k
+ [1mperl-SelectSaver            [m noarch  1.02-482.fc35            f35-build   19 k
+ [1mperl-Socket                 [m x86_64  4:2.032-2.fc35           f35-build   55 k
+ [1mperl-Storable               [m x86_64  1:3.25-1.fc35            f35-build   95 k
+ [1mperl-Symbol                 [m noarch  1.09-482.fc35            f35-build   22 k
+ [1mperl-Term-ANSIColor         [m noarch  5.01-479.fc35            f35-build   48 k
+ [1mperl-Term-Cap               [m noarch  1.17-478.fc35            f35-build   22 k
+ [1mperl-Text-ParseWords        [m noarch  3.30-478.fc35            f35-build   16 k
+ [1mperl-Text-Tabs+Wrap         [m noarch  2021.0814-1.fc35         f35-build   22 k
+ [1mperl-Text-Unidecode         [m noarch  1.30-16.fc35             f35-build  138 k
+ [1mperl-Thread-Queue           [m noarch  3.14-478.fc35            f35-build   21 k
+ [1mperl-Time-Local             [m noarch  2:1.300-478.fc35         f35-build   33 k
+ [1mperl-Unicode-EastAsianWidth [m noarch  12.0-7.fc35              f35-build   19 k
+ [1mperl-Unicode-Normalize      [m x86_64  1.28-478.fc35            f35-build   89 k
+ [1mperl-base                   [m noarch  2.27-482.fc35            f35-build   24 k
+ [1mperl-constant               [m noarch  1.33-479.fc35            f35-build   23 k
+ [1mperl-if                     [m noarch  0.60.900-482.fc35        f35-build   22 k
+ [1mperl-interpreter            [m x86_64  4:5.34.0-482.fc35        f35-build   79 k
+ [1mperl-libintl-perl           [m x86_64  1.32-4.fc35              f35-build  796 k
+ [1mperl-libs                   [m x86_64  4:5.34.0-482.fc35        f35-build  2.1 M
+ [1mperl-locale                 [m noarch  1.10-482.fc35            f35-build   21 k
+ [1mperl-mro                    [m x86_64  1.25-482.fc35            f35-build   36 k
+ [1mperl-overload               [m noarch  1.33-482.fc35            f35-build   53 k
+ [1mperl-overloading            [m noarch  0.02-482.fc35            f35-build   21 k
+ [1mperl-parent                 [m noarch  1:0.238-478.fc35         f35-build   14 k
+ [1mperl-podlators              [m noarch  1:4.14-478.fc35          f35-build  111 k
+ [1mperl-subs                   [m noarch  1.04-482.fc35            f35-build   19 k
+ [1mperl-threads                [m x86_64  1:2.26-448.fc35          f35-build   57 k
+ [1mperl-threads-shared         [m x86_64  1.62-478.fc35            f35-build   43 k
+ [1mperl-vars                   [m noarch  1.05-482.fc35            f35-build   21 k
+
+Transaction Summary
+================================================================================
+Install  79 Packages
+
+Total size: 62 M
+Installed size: 203 M
+Downloading Packages:
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+
+Installed:
+  annobin-docs-9.87-3.fc35.noarch                                               
+  annobin-plugin-gcc-9.87-3.fc35.x86_64                                         
+  autoconf-2.69-37.fc35.noarch                                                  
+  automake-1.16.2-5.fc35.noarch                                                 
+  cpp-11.2.1-1.fc35.x86_64                                                      
+  emacs-filesystem-1:27.2-9.fc35.noarch                                         
+  gc-8.0.4-6.fc35.x86_64                                                        
+  gcc-11.2.1-1.fc35.x86_64                                                      
+  glibc-devel-2.34-8.fc35.x86_64                                                
+  glibc-headers-x86-2.34-8.fc35.noarch                                          
+  groff-base-1.22.4-8.fc35.x86_64                                               
+  guile22-2.2.7-3.fc35.x86_64                                                   
+  help2man-1.48.5-1.fc35.noarch                                                 
+  kernel-headers-5.15.4-200.fc35.x86_64                                         
+  libmpc-1.2.1-3.fc35.x86_64                                                    
+  libtool-ltdl-2.4.6-42.fc35.x86_64                                             
+  libxcrypt-devel-4.4.26-4.fc35.x86_64                                          
+  m4-1.4.19-2.fc35.x86_64                                                       
+  make-1:4.3-6.fc35.x86_64                                                      
+  ncurses-6.2-8.20210508.fc35.x86_64                                            
+  perl-B-1.82-482.fc35.x86_64                                                   
+  perl-Carp-1.52-478.fc35.noarch                                                
+  perl-Class-Struct-0.66-482.fc35.noarch                                        
+  perl-Data-Dumper-2.183-2.fc35.x86_64                                          
+  perl-DynaLoader-1.50-482.fc35.x86_64                                          
+  perl-Encode-4:3.15-482.fc35.x86_64                                            
+  perl-Errno-1.33-482.fc35.x86_64                                               
+  perl-Exporter-5.76-479.fc35.noarch                                            
+  perl-Fcntl-1.14-482.fc35.x86_64                                               
+  perl-File-Basename-2.85-482.fc35.noarch                                       
+  perl-File-Compare-1.100.600-482.fc35.noarch                                   
+  perl-File-Copy-2.35-482.fc35.noarch                                           
+  perl-File-Find-1.39-482.fc35.noarch                                           
+  perl-File-Path-2.18-478.fc35.noarch                                           
+  perl-File-Temp-1:0.231.100-478.fc35.noarch                                    
+  perl-File-stat-1.09-482.fc35.noarch                                           
+  perl-Getopt-Long-1:2.52-478.fc35.noarch                                       
+  perl-Getopt-Std-1.13-482.fc35.noarch                                          
+  perl-HTTP-Tiny-0.080-1.fc35.noarch                                            
+  perl-IO-1.46-482.fc35.x86_64                                                  
+  perl-IPC-Open3-1.21-482.fc35.noarch                                           
+  perl-MIME-Base64-3.16-478.fc35.x86_64                                         
+  perl-POSIX-1.97-482.fc35.x86_64                                               
+  perl-PathTools-3.80-478.fc35.x86_64                                           
+  perl-Pod-Escapes-1:1.07-478.fc35.noarch                                       
+  perl-Pod-Perldoc-3.28.01-479.fc35.noarch                                      
+  perl-Pod-Simple-1:3.43-2.fc35.noarch                                          
+  perl-Pod-Usage-4:2.01-478.fc35.noarch                                         
+  perl-Scalar-List-Utils-5:1.60-462.fc35.x86_64                                 
+  perl-SelectSaver-1.02-482.fc35.noarch                                         
+  perl-Socket-4:2.032-2.fc35.x86_64                                             
+  perl-Storable-1:3.25-1.fc35.x86_64                                            
+  perl-Symbol-1.09-482.fc35.noarch                                              
+  perl-Term-ANSIColor-5.01-479.fc35.noarch                                      
+  perl-Term-Cap-1.17-478.fc35.noarch                                            
+  perl-Text-ParseWords-3.30-478.fc35.noarch                                     
+  perl-Text-Tabs+Wrap-2021.0814-1.fc35.noarch                                   
+  perl-Text-Unidecode-1.30-16.fc35.noarch                                       
+  perl-Thread-Queue-3.14-478.fc35.noarch                                        
+  perl-Time-Local-2:1.300-478.fc35.noarch                                       
+  perl-Unicode-EastAsianWidth-12.0-7.fc35.noarch                                
+  perl-Unicode-Normalize-1.28-478.fc35.x86_64                                   
+  perl-base-2.27-482.fc35.noarch                                                
+  perl-constant-1.33-479.fc35.noarch                                            
+  perl-if-0.60.900-482.fc35.noarch                                              
+  perl-interpreter-4:5.34.0-482.fc35.x86_64                                     
+  perl-libintl-perl-1.32-4.fc35.x86_64                                          
+  perl-libs-4:5.34.0-482.fc35.x86_64                                            
+  perl-locale-1.10-482.fc35.noarch                                              
+  perl-mro-1.25-482.fc35.x86_64                                                 
+  perl-overload-1.33-482.fc35.noarch                                            
+  perl-overloading-0.02-482.fc35.noarch                                         
+  perl-parent-1:0.238-478.fc35.noarch                                           
+  perl-podlators-1:4.14-478.fc35.noarch                                         
+  perl-subs-1.04-482.fc35.noarch                                                
+  perl-threads-1:2.26-448.fc35.x86_64                                           
+  perl-threads-shared-1.62-478.fc35.x86_64                                      
+  perl-vars-1.05-482.fc35.noarch                                                
+  texinfo-6.8-2.fc35.x86_64                                                     
+
+Complete!
+
+>>> 2021-12-01 16:18:38	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--install" "cbmc" "cbmc-utils"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Dependencies resolved.
+================================================================================
+ Package                     Arch       Version             Repository     Size
+================================================================================
+Installing:
+ [1mcbmc                       [m x86_64     5.38.0-1.fc35       f35-build      15 M
+ [1mcbmc-utils                 [m x86_64     5.38.0-1.fc35       f35-build      12 k
+Installing dependencies:
+ [1mexpat                      [m x86_64     2.4.1-2.fc35        f35-build     110 k
+ [1mgcc-c++                    [m x86_64     11.2.1-1.fc35       f35-build      12 M
+ [1mlibstdc++-devel            [m x86_64     11.2.1-1.fc35       f35-build     2.2 M
+ [1mminisat2-libs              [m x86_64     2.2.1-13.fc35       f35-build      44 k
+ [1mmpdecimal                  [m x86_64     2.5.1-2.fc35        f35-build      99 k
+ [1mpython-pip-wheel           [m noarch     21.2.3-4.fc35       f35-build     1.1 M
+ [1mpython-setuptools-wheel    [m noarch     57.4.0-1.fc35       f35-build     505 k
+ [1mpython3                    [m x86_64     3.10.0-1.fc35       f35-build      25 k
+ [1mpython3-libs               [m x86_64     3.10.0-1.fc35       f35-build     7.5 M
+
+Transaction Summary
+================================================================================
+Install  11 Packages
+
+Total size: 38 M
+Installed size: 131 M
+Downloading Packages:
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+
+Installed:
+  cbmc-5.38.0-1.fc35.x86_64                                                     
+  cbmc-utils-5.38.0-1.fc35.x86_64                                               
+  expat-2.4.1-2.fc35.x86_64                                                     
+  gcc-c++-11.2.1-1.fc35.x86_64                                                  
+  libstdc++-devel-11.2.1-1.fc35.x86_64                                          
+  minisat2-libs-2.2.1-13.fc35.x86_64                                            
+  mpdecimal-2.5.1-2.fc35.x86_64                                                 
+  python-pip-wheel-21.2.3-4.fc35.noarch                                         
+  python-setuptools-wheel-57.4.0-1.fc35.noarch                                  
+  python3-3.10.0-1.fc35.x86_64                                                  
+  python3-libs-3.10.0-1.fc35.x86_64                                             
+
+Complete!
+
+>>> 2021-12-01 16:19:06	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa' | sort -V > /home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/diffutils-3.8-1.fc35/cbmc/output/debug/rpm-list-mock.txt"
+
+>>> 2021-12-01 16:19:07	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa --provides' | sort -V > /tmp/csmock4r1bxn2x/rpm-list-mock-provides.txt"
+
+>>> 2021-12-01 16:19:10	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--copyin" "/tmp/csmock4r1bxn2x/diffutils-3.8-1.fc35.src.rpm" "/builddir/diffutils-3.8-1.fc35.src.rpm"
+
+>>> 2021-12-01 16:19:13	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "chown mockbuild -R /builddir"
+
+>>> 2021-12-01 16:19:15	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"rpm -Uvh --nodeps '/builddir/diffutils-3.8-1.fc35.src.rpm'\""
+Updating / installing...
+diffutils-3.8-1.fc35                  ########################################
+
+>>> 2021-12-01 16:19:18	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"sed -e 's|^ExclusiveArch:.*\\\$||' -i /builddir/build/SPECS/diffutils.spec\""
+
+>>> 2021-12-01 16:19:21	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"rpmbuild -bs --nodeps /builddir/build/SPECS/diffutils.spec '--define' 'apidocs 0' '--define' 'with_publican 0' '--without' 'docs' '--without' 'langpacks' '--define' '__cc goto-gcc' '--define' '__cxx goto-gcc' '--define' '__cpp goto-gcc -E' '--define' 'optflags -O0' '--define' 'build_ldflags -O0' && sh -c 'cd /builddir/build/SRPMS && eval mv -v *.src.rpm /builddir/diffutils-3.8-1.fc35.src.rpm || :'\""
+setting SOURCE_DATE_EPOCH=1627862400
+Wrote: /builddir/build/SRPMS/diffutils-3.8-1.fc35.src.rpm
+renamed 'diffutils-3.8-1.fc35.src.rpm' -> '/builddir/diffutils-3.8-1.fc35.src.rpm'
+
+>>> 2021-12-01 16:19:24	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--disable-plugin=selinux" "--copyout" "/builddir/diffutils-3.8-1.fc35.src.rpm" "/tmp/csmock4r1bxn2x/diffutils-3.8-1.fc35.src.rpm"
+
+>>> 2021-12-01 16:19:27	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--installdeps" "/tmp/csmock4r1bxn2x/diffutils-3.8-1.fc35.src.rpm"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Package autoconf-2.69-37.fc35.noarch is already installed.
+Package automake-1.16.2-5.fc35.noarch is already installed.
+Package gcc-11.2.1-1.fc35.x86_64 is already installed.
+Package help2man-1.48.5-1.fc35.noarch is already installed.
+Package make-1:4.3-6.fc35.x86_64 is already installed.
+Package texinfo-6.8-2.fc35.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+
+>>> 2021-12-01 16:19:36	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--install" "cbmc" "cbmc-utils"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Package cbmc-5.38.0-1.fc35.x86_64 is already installed.
+Package cbmc-utils-5.38.0-1.fc35.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+
+>>> 2021-12-01 16:19:43	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa' | sort -V > /home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/diffutils-3.8-1.fc35/cbmc/output/debug/rpm-list-mock.txt"
+
+>>> 2021-12-01 16:19:45	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa --provides' | sort -V > /tmp/csmock4r1bxn2x/rpm-list-mock-provides.txt"
+
+>>> 2021-12-01 16:19:47	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--install" "csdiff"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Dependencies resolved.
+================================================================================
+ Package                    Arch        Version            Repository      Size
+================================================================================
+Installing:
+ [1mcsdiff                    [m x86_64      2.2.0-1.fc35       f35-build      895 k
+Installing dependencies:
+ [1mboost-filesystem          [m x86_64      1.76.0-4.fc35      f35-build       60 k
+ [1mboost-program-options     [m x86_64      1.76.0-4.fc35      f35-build      108 k
+ [1mboost-system              [m x86_64      1.76.0-4.fc35      f35-build       15 k
+
+Transaction Summary
+================================================================================
+Install  4 Packages
+
+Total size: 1.1 M
+Installed size: 4.8 M
+Downloading Packages:
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+
+Installed:
+  boost-filesystem-1.76.0-4.fc35.x86_64                                         
+  boost-program-options-1.76.0-4.fc35.x86_64                                    
+  boost-system-1.76.0-4.fc35.x86_64                                             
+  csdiff-2.2.0-1.fc35.x86_64                                                    
+
+Complete!
+
+>>> 2021-12-01 16:20:00	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa' | sort -V > /home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/diffutils-3.8-1.fc35/cbmc/output/debug/rpm-list-mock.txt"
+
+>>> 2021-12-01 16:20:02	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa --provides' | sort -V > /tmp/csmock4r1bxn2x/rpm-list-mock-provides.txt"
+
+>>> 2021-12-01 16:20:06	"tar -cP '/usr/share/csmock/scripts' '/usr/bin/cswrap' '/usr/lib64/cswrap' '/usr/bin/csexec' '/usr/bin/csexec-loader' '/usr/lib64/libcsexec-preload.so' '/tmp/csmock4r1bxn2x/diffutils-3.8-1.fc35.src.rpm' | '/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'tar -xC/'"
+tar: Removing leading `/' from member names
+
+scan.ini: analyzer-version-cbmc = 5.38.0
+>>> 2021-12-01 16:20:08	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"mkdir -pv '/builddir/cbmc-capture'\""
+mkdir: created directory '/builddir/cbmc-capture'
+
+scan.ini: analyzer-version-gcc = 11.2.1
+>>> 2021-12-01 16:20:11	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "rpm -Uvh --nodeps '/tmp/csmock4r1bxn2x/diffutils-3.8-1.fc35.src.rpm'"
+Updating / installing...
+diffutils-3.8-1.fc35                  ########################################
+
+>>> 2021-12-01 16:20:13	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "chmod -R +r /builddir"
+
+>>> 2021-12-01 16:20:16	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "ln -fv '/usr/share/csmock/scripts/enable-keep-going.sh' '/usr/share/csmock/scripts/chroot-fixups'"
+'/usr/share/csmock/scripts/chroot-fixups/enable-keep-going.sh' => '/usr/share/csmock/scripts/enable-keep-going.sh'
+
+>>> 2021-12-01 16:20:18	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--shell" "for i in /usr/share/csmock/scripts/chroot-fixups/*; do test -x \$i && echo RUN: \$i >&2 && \$i; done"
+RUN: /usr/share/csmock/scripts/chroot-fixups/enable-keep-going.sh
+renamed '/usr/bin/make' -> '/usr/bin/make.orig'
++ ls -l /usr/bin/make
+-rwxr-xr-x. 1 root root 42 Dec  1 16:20 /usr/bin/make
++ cat /usr/bin/make
+#!/bin/sh
+exec /usr/bin/make.orig -k "$@"
+RUN: /usr/share/csmock/scripts/chroot-fixups/gdk-pixbuf2-triggers.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/glib2-triggers.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/kpathsea-texhash.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/openssl-public-header-files.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/qt5-core-abi.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/rpm-build-scripts.sh
++ sed -e s/fail=1/fail=0/ -i /usr/lib/rpm/redhat/brp-mangle-shebangs
+'/usr/lib/rpm/brp-strip-static-archive' -> '/bin/true'
+RUN: /usr/share/csmock/scripts/chroot-fixups/rpm-macros.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/rpm-python-extras.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/shared-mime-info-triggers.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/simplify-cpp-includes.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/simplify-glib-includes.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/simplify-systemd-includes.sh
+
+>>> 2021-12-01 16:20:21	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--chroot" "/bin/su mockbuild -l -c \"rpmbuild -bp --nodeps /builddir/build/SPECS/diffutils.spec '--define' 'apidocs 0' '--define' 'with_publican 0' '--without' 'docs' '--without' 'langpacks' '--define' '__cc goto-gcc' '--define' '__cxx goto-gcc' '--define' '__cpp goto-gcc -E' '--define' 'optflags -O0' '--define' 'build_ldflags -O0'\""
+INFO: mock.py version 2.13 starting (python version = 3.9.7, NVR = mock-2.13-1.kdudka.1.fc34)...
+Start(bootstrap): init plugins
+INFO: selinux enabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish: chroot init
+INFO: Running in chroot: ['/bin/su mockbuild -l -c "rpmbuild -bp --nodeps /builddir/build/SPECS/diffutils.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc goto-gcc\' \'--define\' \'__cxx goto-gcc\' \'--define\' \'__cpp goto-gcc -E\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'"']
+Start: chroot ['/bin/su mockbuild -l -c "rpmbuild -bp --nodeps /builddir/build/SPECS/diffutils.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc goto-gcc\' \'--define\' \'__cxx goto-gcc\' \'--define\' \'__cpp goto-gcc -E\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'"']
+setting SOURCE_DATE_EPOCH=1627862400
+Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.DzD0lp
++ umask 022
++ cd /builddir/build/BUILD
++ cd /builddir/build/BUILD
++ rm -rf diffutils-3.8
++ /usr/bin/xz -dc /builddir/build/SOURCES/diffutils-3.8.tar.xz
++ /usr/bin/tar -xof -
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd diffutils-3.8
++ /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+Patch #1 (diffutils-cmp-s-empty.patch):
++ echo 'Patch #1 (diffutils-cmp-s-empty.patch):'
++ /usr/bin/patch --no-backup-if-mismatch -f -p1 -b --suffix .cmp-s-empty --fuzz=0
+patching file src/cmp.c
+Hunk #1 succeeded at 329 (offset -1 lines).
+Patch #2 (diffutils-i18n.patch):
++ echo 'Patch #2 (diffutils-i18n.patch):'
++ /usr/bin/patch --no-backup-if-mismatch -f -p1 -b --suffix .i18n --fuzz=0
+patching file src/diff.c
+patching file src/diff.h
+patching file src/io.c
+patching file src/util.c
++ autoreconf
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Finish: chroot ['/bin/su mockbuild -l -c "rpmbuild -bp --nodeps /builddir/build/SPECS/diffutils.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc goto-gcc\' \'--define\' \'__cxx goto-gcc\' \'--define\' \'__cpp goto-gcc -E\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'"']
+
+>>> 2021-12-01 16:20:41	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "chmod -R +r /builddir/build"
+
+>>> 2021-12-01 16:20:45	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--chroot" "/bin/su mockbuild -l -c \"PATH=/usr/lib64/cswrap:\\\$PATH CSWRAP_CAP_FILE=\\\$'/builddir/cswrap-capture.err' CSWRAP_TIMEOUT=\\\$'30' CSWRAP_TIMEOUT_FOR=\\\$':' CC=\\\$'goto-gcc' CXX=\\\$'goto-gcc' CSEXEC_WRAP_CMD=\\\$'--skip-ld-linux\\\\acsexec-cbmc\\\\a-t\\\\a8\\\\a-l\\\\a/builddir/cbmc-capture\\\\a-c\\\\a--unwind 1 --json-ui --verbosity 4 --pointer-overflow-check --memory-leak-check ' CSWRAP_ADD_CFLAGS=\\\$'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader' CSWRAP_DEL_CFLAGS=\\\$'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register' CSWRAP_ADD_CXXFLAGS=\\\$'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader' CSWRAP_DEL_CXXFLAGS=\\\$'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register' sh -c \\\"rpmbuild -bc --nodeps --short-circuit /builddir/build/SPECS/diffutils.spec '--define' 'apidocs 0' '--define' 'with_publican 0' '--without' 'docs' '--without' 'langpacks' '--define' '__cc goto-gcc' '--define' '__cxx goto-gcc' '--define' '__cpp goto-gcc -E' '--define' 'optflags -O0' '--define' 'build_ldflags -O0'\\\"\""
+INFO: mock.py version 2.13 starting (python version = 3.9.7, NVR = mock-2.13-1.kdudka.1.fc34)...
+Start(bootstrap): init plugins
+INFO: selinux enabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish: chroot init
+INFO: Running in chroot: ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'goto-gcc\' CXX=\\$\'goto-gcc\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\acsexec-cbmc\\\\a-t\\\\a8\\\\a-l\\\\a/builddir/cbmc-capture\\\\a-c\\\\a--unwind 1 --json-ui --verbosity 4 --pointer-overflow-check --memory-leak-check \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bc --nodeps --short-circuit /builddir/build/SPECS/diffutils.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc goto-gcc\' \'--define\' \'__cxx goto-gcc\' \'--define\' \'__cpp goto-gcc -E\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+Start: chroot ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'goto-gcc\' CXX=\\$\'goto-gcc\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\acsexec-cbmc\\\\a-t\\\\a8\\\\a-l\\\\a/builddir/cbmc-capture\\\\a-c\\\\a--unwind 1 --json-ui --verbosity 4 --pointer-overflow-check --memory-leak-check \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bc --nodeps --short-circuit /builddir/build/SPECS/diffutils.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc goto-gcc\' \'--define\' \'__cxx goto-gcc\' \'--define\' \'__cpp goto-gcc -E\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+setting SOURCE_DATE_EPOCH=1627862400
+Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.5poOaX
++ umask 022
++ cd /builddir/build/BUILD
++ cd diffutils-3.8
++ CFLAGS=-O0
++ export CFLAGS
++ CXXFLAGS=-O0
++ export CXXFLAGS
++ FFLAGS='-O0 -I/usr/lib64/gfortran/modules'
++ export FFLAGS
++ FCFLAGS='-O0 -I/usr/lib64/gfortran/modules'
++ export FCFLAGS
++ LDFLAGS=-O0
++ export LDFLAGS
++ LT_SYS_LIBRARY_PATH=/usr/lib64:
++ export LT_SYS_LIBRARY_PATH
++ CC=goto-gcc
++ export CC
++ CXX=goto-gcc
++ export CXX
++ '[' '-flto=auto -ffat-lto-objectsx' '!=' x ']'
+++ find . -type f -name configure -print
++ for file in $(find . -type f -name configure -print)
++ /usr/bin/sed -r --in-place=.backup 's/^char \(\*f\) \(\) = /__attribute__ ((used)) char (*f) () = /g' ./configure
++ diff -u ./configure.backup ./configure
++ mv ./configure.backup ./configure
++ /usr/bin/sed -r --in-place=.backup 's/^char \(\*f\) \(\);/__attribute__ ((used)) char (*f) ();/g' ./configure
++ diff -u ./configure.backup ./configure
++ mv ./configure.backup ./configure
++ /usr/bin/sed -r --in-place=.backup 's/^char \$2 \(\);/__attribute__ ((used)) char \$2 ();/g' ./configure
++ diff -u ./configure.backup ./configure
+--- ./configure.backup	2021-12-01 16:20:36.442538801 +0100
++++ ./configure	2021-12-01 16:20:48.351625739 +0100
+@@ -2990,7 +2990,7 @@
+ #ifdef __cplusplus
+ extern "C"
+ #endif
+-char $2 ();
++__attribute__ ((used)) char $2 ();
+ /* The GNU C library defines this for functions which it implements
+     to always fail with ENOSYS.  Some functions are actually named
+     something starting with __ and the normal name is an alias.  */
++ /usr/bin/sed --in-place=.backup '1{$!N;$!N};$!N;s/int x = 1;\nint y = 0;\nint z;\nint nan;/volatile int x = 1; volatile int y = 0; volatile int z, nan;/;P;D' ./configure
++ diff -u ./configure.backup ./configure
++ mv ./configure.backup ./configure
++ /usr/bin/sed --in-place=.backup 's#^lt_cv_sys_global_symbol_to_cdecl=.*#lt_cv_sys_global_symbol_to_cdecl="sed -n -e '\''s/^T .* \\(.*\\)$/extern int \\1();/p'\'' -e '\''s/^$symcode* .* \\(.*\\)$/extern char \\1;/p'\''"#' ./configure
++ diff -u ./configure.backup ./configure
++ mv ./configure.backup ./configure
++ '[' 1 = 1 ']'
++++ dirname ./configure
+++ find . -name config.guess -o -name config.sub
++ for i in $(find $(dirname ./configure) -name config.guess -o -name config.sub)
+++ basename ./build-aux/config.guess
++ '[' -f /usr/lib/rpm/redhat/config.guess ']'
++ /usr/bin/rm -f ./build-aux/config.guess
+++ basename ./build-aux/config.guess
++ /usr/bin/cp -fv /usr/lib/rpm/redhat/config.guess ./build-aux/config.guess
+'/usr/lib/rpm/redhat/config.guess' -> './build-aux/config.guess'
++ for i in $(find $(dirname ./configure) -name config.guess -o -name config.sub)
+++ basename ./build-aux/config.sub
++ '[' -f /usr/lib/rpm/redhat/config.sub ']'
++ /usr/bin/rm -f ./build-aux/config.sub
+++ basename ./build-aux/config.sub
++ /usr/bin/cp -fv /usr/lib/rpm/redhat/config.sub ./build-aux/config.sub
+'/usr/lib/rpm/redhat/config.sub' -> './build-aux/config.sub'
++ '[' 1 = 1 ']'
++ '[' x '!=' 'x-Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld' ']'
+++ find . -name ltmain.sh
++ ./configure --build=x86_64-redhat-linux-gnu --host=x86_64-redhat-linux-gnu --program-prefix= --disable-dependency-tracking --prefix=/usr --exec-prefix=/usr --bindir=/usr/bin --sbindir=/usr/sbin --sysconfdir=/etc --datadir=/usr/share --includedir=/usr/include --libdir=/usr/lib64 --libexecdir=/usr/libexec --localstatedir=/var --sharedstatedir=/var/lib --mandir=/usr/share/man --infodir=/usr/share/info
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether make supports nested variables... (cached) yes
+checking for gawk... (cached) gawk
+checking for x86_64-redhat-linux-gnu-gcc... goto-gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether goto-gcc accepts -g... yes
+checking for goto-gcc option to accept ISO C89... none needed
+checking whether goto-gcc understands -c and -o together... yes
+checking whether the compiler is clang... no
+checking for compiler option needed when checking for declarations... none
+checking whether make supports the include directive... yes (GNU style)
+checking dependency style of goto-gcc... none
+checking for x86_64-redhat-linux-gnu-ranlib... no
+checking for ranlib... ranlib
+checking how to run the C preprocessor... goto-gcc -E
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for wchar.h... yes
+checking for minix/config.h... no
+checking for sys/socket.h... yes
+checking for unistd.h... (cached) yes
+checking for fnmatch.h... yes
+checking for sys/stat.h... (cached) yes
+checking for getopt.h... yes
+checking for sys/cdefs.h... yes
+checking for sys/time.h... yes
+checking for threads.h... yes
+checking for iconv.h... yes
+checking for limits.h... yes
+checking for inttypes.h... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for crtdefs.h... no
+checking for wctype.h... yes
+checking for langinfo.h... yes
+checking for xlocale.h... no
+checking for sys/mman.h... yes
+checking for sys/param.h... yes
+checking for malloc.h... yes
+checking for strings.h... (cached) yes
+checking for sys/random.h... yes
+checking for sys/wait.h... yes
+checking for features.h... yes
+checking for arpa/inet.h... yes
+checking for netdb.h... yes
+checking for netinet/in.h... yes
+checking for sys/select.h... yes
+checking for pthread.h... yes
+checking for sys/ioctl.h... yes
+checking for sys/uio.h... yes
+checking whether it is safe to define __EXTENSIONS__... yes
+checking whether _XOPEN_SOURCE should be defined... no
+checking build system type... x86_64-redhat-linux-gnu
+checking host system type... x86_64-redhat-linux-gnu
+checking for Minix Amsterdam compiler... no
+checking for x86_64-redhat-linux-gnu-ar... no
+checking for ar... ar
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... no
+checking for goto-gcc option to accept ISO C99... none needed
+checking for size_t... yes
+checking for working alloca.h... yes
+checking for alloca... yes
+checking whether <wchar.h> uses 'inline' correctly... yes
+checking for btowc... yes
+checking for readlinkat... yes
+checking for _set_invalid_parameter_handler... no
+checking for fcntl... yes
+checking for symlink... yes
+checking for mempcpy... yes
+checking for fnmatch... yes
+checking for mbsrtowcs... yes
+checking for getdtablesize... yes
+checking for getprogname... no
+checking for getexecname... no
+checking for getrandom... yes
+checking for gettimeofday... yes
+checking for isblank... yes
+checking for iswcntrl... yes
+checking for iswblank... yes
+checking for lstat... yes
+checking for mbsinit... yes
+checking for mbrtowc... yes
+checking for mbslen... no
+checking for mprotect... yes
+checking for mkstemp... yes
+checking for nl_langinfo... yes
+checking for readlink... yes
+checking for iswctype... yes
+checking for setenv... yes
+checking for sigaltstack... yes
+checking for setrlimit... yes
+checking for getrlimit... yes
+checking for strerror_r... yes
+checking for __xpg_strerror_r... yes
+checking for strptime... yes
+checking for strtoimax... yes
+checking for localtime_r... yes
+checking for timegm... yes
+checking for vasnprintf... no
+checking for snprintf... yes
+checking for wcrtomb... yes
+checking for wcwidth... yes
+checking for wmempcpy... yes
+checking for ftruncate... yes
+checking for duplocale... yes
+checking for newlocale... yes
+checking for pipe... yes
+checking for pthread_sigmask... yes
+checking for sigaction... yes
+checking for siginterrupt... yes
+checking for sleep... yes
+checking for catgets... yes
+checking for shutdown... yes
+checking for wctob... yes
+checking for sigprocmask... yes
+checking for strcasecoll... no
+checking for stricoll... no
+checking for nl_langinfo and CODESET... yes
+checking for a traditional french locale... none
+checking whether malloc is ptrdiff_t safe... yes
+checking whether malloc, realloc, calloc set errno on failure... yes
+checking for C/C++ restrict keyword... __restrict__
+checking whether the preprocessor supports include_next... yes
+checking whether source code line length is unlimited... yes
+checking if environ is properly declared... yes
+checking for complete errno.h... yes
+checking whether strerror_r is declared... yes
+checking for strerror_r... (cached) yes
+checking whether strerror_r returns char *... yes
+checking for working fcntl.h... yes
+checking for pid_t... yes
+checking for mode_t... yes
+checking for mbstate_t... yes
+checking whether stat file-mode macros are broken... no
+checking for nlink_t... yes
+checking whether getdtablesize is declared... yes
+checking for getopt.h... (cached) yes
+checking for getopt_long_only... yes
+checking whether getopt is POSIX compatible... yes
+checking for working GNU getopt function... yes
+checking for working GNU getopt_long function... yes
+checking for struct timeval... yes
+checking for wide-enough struct timeval.tv_sec member... yes
+checking for pthread.h... (cached) yes
+checking for pthread_kill in -lpthread... yes
+checking whether POSIX threads API is available... yes
+checking whether setlocale (LC_ALL, NULL) is multithread-safe... yes
+checking whether setlocale (category, NULL) is multithread-safe... yes
+checking host CPU and C ABI... x86_64
+checking for ld used by goto-gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for shared library run path origin... done
+checking 32-bit host C ABI... no
+checking for ELF binary format... yes
+checking for the common suffixes of directories in the library search path... lib,lib,lib64
+checking for iconv... yes
+checking for working iconv... yes
+checking whether iconv is compatible with its POSIX signature... yes
+checking for inline... inline
+checking for off_t... yes
+checking whether limits.h has WORD_BIT, BOOL_WIDTH etc.... yes
+checking for wint_t... yes
+checking whether wint_t is large enough... yes
+checking whether the compiler produces multi-arch binaries... no
+checking whether stdint.h conforms to C99... yes
+checking whether stdint.h works without ISO C predefines... yes
+checking whether stdint.h has UINTMAX_WIDTH etc.... yes
+checking whether INT32_MAX < INTMAX_MAX... yes
+checking whether INT64_MAX == LONG_MAX... yes
+checking whether UINT32_MAX < UINTMAX_MAX... yes
+checking whether UINT64_MAX == ULONG_MAX... yes
+checking whether iswcntrl works... yes
+checking for towlower... yes
+checking for wctype_t... yes
+checking for wctrans_t... yes
+checking for a traditional japanese locale... none
+checking for a french Unicode locale... none
+checking for a transitional chinese locale... none
+checking whether langinfo.h defines CODESET... yes
+checking whether langinfo.h defines T_FMT_AMPM... yes
+checking whether langinfo.h defines ALTMON_1... yes
+checking whether langinfo.h defines ERA... yes
+checking whether langinfo.h defines YESEXPR... yes
+checking for wchar_t... yes
+checking for good max_align_t... yes
+checking whether NULL can be used in arbitrary expressions... yes
+checking whether locale.h defines locale_t... yes
+checking whether locale.h conforms to POSIX:2001... yes
+checking whether struct lconv is properly defined... yes
+checking whether imported symbols can be declared weak... yes
+checking for multithread API to use... posix
+checking whether lstat correctly handles trailing slash... yes
+checking for a sed that does not truncate output... /usr/bin/sed
+checking whether malloc (0) returns nonnull... yes
+checking for mmap... yes
+checking for MAP_ANONYMOUS... yes
+checking whether memchr works... yes
+checking whether <limits.h> defines MIN and MAX... no
+checking whether <sys/param.h> defines MIN and MAX... yes
+checking whether time_t is signed... yes
+checking whether alarm is declared... yes
+checking for working mktime... yes
+checking whether struct tm is in sys/time.h or time.h... time.h
+checking for struct tm.tm_zone... yes
+checking for struct tm.tm_gmtoff... yes
+checking for O_CLOEXEC... yes
+checking for promoted mode_t type... mode_t
+checking for sigset_t... yes
+checking whether setenv is declared... yes
+checking search.h usability... yes
+checking search.h presence... yes
+checking for search.h... yes
+checking for tsearch... yes
+checking for uid_t in sys/types.h... yes
+checking for volatile sig_atomic_t... yes
+checking for sighandler_t... yes
+checking for stdbool.h that conforms to C99... yes
+checking for _Bool... yes
+checking whether fcloseall is declared... yes
+checking which flavor of printf attribute matches inttypes macros... system
+checking whether ecvt is declared... yes
+checking whether fcvt is declared... yes
+checking whether gcvt is declared... yes
+checking whether strerror(0) succeeds... yes
+checking for strerror_r with POSIX signature... no
+checking whether __xpg_strerror_r works... yes
+checking whether strnlen is declared... yes
+checking whether strtoimax is declared... yes
+checking for struct timespec in <time.h>... yes
+checking for TIME_UTC in <time.h>... yes
+checking whether execvpe is declared... yes
+checking whether clearerr_unlocked is declared... yes
+checking whether feof_unlocked is declared... yes
+checking whether ferror_unlocked is declared... yes
+checking whether fflush_unlocked is declared... yes
+checking whether fgets_unlocked is declared... yes
+checking whether fputc_unlocked is declared... yes
+checking whether fputs_unlocked is declared... yes
+checking whether fread_unlocked is declared... yes
+checking whether fwrite_unlocked is declared... yes
+checking whether getc_unlocked is declared... yes
+checking whether getchar_unlocked is declared... yes
+checking whether putc_unlocked is declared... yes
+checking whether putchar_unlocked is declared... yes
+checking whether unsetenv is declared... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for intmax_t... yes
+checking where to find the exponent in a 'double'... word 1 bit 20
+checking whether snprintf returns a byte count as in C99... yes
+checking whether snprintf truncates the result as in C99... yes
+checking for snprintf... (cached) yes
+checking for strnlen... yes
+checking for wcslen... yes
+checking for wcsnlen... yes
+checking for mbrtowc... (cached) yes
+checking for wcrtomb... (cached) yes
+checking whether _snprintf is declared... no
+checking whether wcsdup is declared... yes
+checking for C compiler option to allow warnings... -Wno-error
+checking for C++ compiler option to allow warnings... -Wno-error
+checking whether <sys/socket.h> is self-contained... yes
+checking for shutdown... (cached) yes
+checking whether <sys/socket.h> defines the SHUT_* macros... yes
+checking for struct sockaddr_storage... yes
+checking for sa_family_t... yes
+checking for struct sockaddr_storage.ss_family... yes
+checking whether getcwd (NULL, 0) allocates memory for result... yes
+checking for getcwd with POSIX signature... yes
+checking for IPv4 sockets... yes
+checking for IPv6 sockets... yes
+checking whether <sys/select.h> is self-contained... yes
+checking for library containing setsockopt... none needed
+checking whether select supports a 0 argument... yes
+checking whether select detects invalid fds... yes
+checking whether strerror_r is declared... (cached) yes
+checking for pthread_t... yes
+checking for pthread_spinlock_t... yes
+checking for PTHREAD_CREATE_DETACHED... yes
+checking for PTHREAD_MUTEX_RECURSIVE... yes
+checking for PTHREAD_MUTEX_ROBUST... yes
+checking for PTHREAD_PROCESS_SHARED... yes
+checking for sched.h... yes
+checking for struct sched_param... yes
+checking whether snprintf is declared... yes
+checking whether <sys/ioctl.h> declares ioctl... yes
+checking for alloca as a compiler built-in... yes
+checking whether btowc(0) is correct... yes
+checking whether btowc(EOF) is correct... guessing yes
+checking for __builtin_expect... yes
+checking whether calloc (0, n) and calloc (n, 0) return nonnull... yes
+checking for library containing clock_gettime... none required
+checking for clock_gettime... yes
+checking for clock_settime... yes
+checking whether // is distinct from /... no
+checking whether dup2 works... yes
+checking for error_at_line... yes
+checking whether fcntl handles F_DUPFD correctly... yes
+checking whether fcntl understands F_DUPFD_CLOEXEC... needs runtime check
+checking for flexible array member... yes
+checking whether conversion from 'int' to 'long double' works... yes
+checking for working GNU fnmatch... yes
+checking whether fopen recognizes a trailing slash... yes
+checking whether fopen supports the mode character 'x'... yes
+checking whether fopen supports the mode character 'e'... yes
+checking whether free is known to preserve errno... yes
+checking whether freopen works on closed fds... yes
+checking whether getdtablesize works... yes
+checking for getpagesize... yes
+checking whether getpagesize is declared... yes
+checking whether program_invocation_name is declared... yes
+checking whether program_invocation_short_name is declared... yes
+checking whether __argv is declared... no
+checking whether getrandom is compatible with its GNU+BSD signature... yes
+checking for gettimeofday with POSIX signature... yes
+checking whether the compiler generally respects inline... no
+checking whether iswblank is declared... yes
+checking whether iswdigit is ISO C compliant... guessing yes
+checking whether iswxdigit is ISO C compliant... guessing yes
+checking whether the compiler supports the __inline keyword... yes
+checking for pthread_rwlock_t... yes
+checking whether pthread_rwlock_rdlock prefers a writer to a reader... no
+checking whether malloc (0) returns nonnull... (cached) yes
+checking whether mbrtowc handles incomplete characters... guessing yes
+checking whether mbrtowc works as well as mbtowc... guessing yes
+checking whether mbrtowc handles a NULL pwc argument... guessing yes
+checking whether mbrtowc handles a NULL string argument... guessing yes
+checking whether mbrtowc has a correct return value... guessing yes
+checking whether mbrtowc returns 0 when parsing a NUL character... guessing yes
+checking whether mbrtowc stores incomplete characters... guessing no
+checking whether mbrtowc works on empty input... yes
+checking whether the C locale is free of encoding errors... no
+checking whether mbrtowc handles incomplete characters... (cached) guessing yes
+checking whether mbrtowc works as well as mbtowc... (cached) guessing yes
+checking whether mbrtowc handles incomplete characters... (cached) guessing yes
+checking whether mbrtowc works as well as mbtowc... (cached) guessing yes
+checking whether mbsrtowcs works... guessing yes
+checking for mbtowc... yes
+checking for mempcpy... (cached) yes
+checking whether mkdir handles trailing slash... yes
+checking whether mkdir handles trailing dot... yes
+checking for working mkstemp... yes
+checking for __mktime_internal... no
+checking whether YESEXPR works... yes
+checking whether open recognizes a trailing slash... yes
+checking whether program_invocation_name is declared... (cached) yes
+checking whether program_invocation_short_name is declared... (cached) yes
+checking for raise... yes
+checking for sigprocmask... (cached) yes
+checking for rawmemchr... yes
+checking whether readlink signature is correct... yes
+checking whether readlink handles trailing slash correctly... yes
+checking whether readlink truncates results correctly... yes
+checking whether realloc (0, 0) returns nonnull... yes
+checking for reallocarray... yes
+checking for working re_compile_pattern... no
+checking libintl.h usability... yes
+checking libintl.h presence... yes
+checking for libintl.h... yes
+checking whether isblank is declared... yes
+checking whether setenv validates arguments... yes
+checking whether setlocale (LC_ALL, NULL) is multithread-safe... (cached) yes
+checking whether setlocale (category, NULL) is multithread-safe... (cached) yes
+checking for stack direction... grows down
+checking for stack_t... yes
+checking for working sigaltstack... yes
+checking for correct stack_t interpretation... yes
+checking for stdint.h... (cached) yes
+checking for SIZE_MAX... yes
+checking for ssize_t... yes
+checking whether stat handles trailing slashes on files... yes
+checking for struct stat.st_atim.tv_nsec... yes
+checking whether struct stat.st_atim is of type struct timespec... yes
+checking for struct stat.st_birthtimespec.tv_nsec... no
+checking for struct stat.st_birthtimensec... no
+checking for struct stat.st_birthtim.tv_nsec... no
+checking for working stdalign.h... yes
+checking for va_copy... yes
+checking for strcasecmp... yes
+checking for strncasecmp... yes
+checking whether strncasecmp is declared... yes
+checking for working strerror function... yes
+checking for working strnlen... yes
+checking whether strtoimax works... yes
+checking for strtoll... yes
+checking whether strtoll works... yes
+checking whether localtime_r is declared... yes
+checking whether localtime_r is compatible with its POSIX signature... yes
+checking whether localtime works even near extrema... yes
+checking for timezone_t... no
+checking for unsetenv... yes
+checking for unsetenv() return type... int
+checking whether unsetenv obeys POSIX... yes
+checking for ptrdiff_t... yes
+checking for vasprintf... yes
+checking whether mbrtowc handles incomplete characters... (cached) guessing yes
+checking whether mbrtowc works as well as mbtowc... (cached) guessing yes
+checking whether wcrtomb works in the C locale... yes
+checking whether wcrtomb return value is correct... guessing yes
+checking whether wcwidth is declared... yes
+checking whether wcwidth works reasonably in UTF-8 locales... yes
+checking for wmemchr... yes
+checking for stdint.h... (cached) yes
+checking for atoll... yes
+checking for a traditional french locale... (cached) none
+checking for a french Unicode locale... (cached) none
+checking for a traditional french locale... (cached) none
+checking for a turkish Unicode locale... none
+checking whether fdopen sets errno... yes
+checking for library containing inet_pton... none required
+checking whether inet_pton is declared... yes
+checking whether byte ordering is bigendian... no
+checking for ioctl... yes
+checking for ioctl with POSIX signature... no
+checking for a traditional french locale... (cached) none
+checking for a french Unicode locale... (cached) none
+checking for a traditional japanese locale... (cached) none
+checking for a transitional chinese locale... (cached) none
+checking for a traditional french locale... (cached) none
+checking for a french Unicode locale... (cached) none
+checking for a traditional japanese locale... (cached) none
+checking for a transitional chinese locale... (cached) none
+checking for a traditional french locale... (cached) none
+checking for a french Unicode locale... (cached) none
+checking for a traditional japanese locale... (cached) none
+checking for a transitional chinese locale... (cached) none
+checking for a turkish Unicode locale... (cached) none
+checking for a french Unicode locale... (cached) none
+checking for a traditional french locale... (cached) none
+checking for a french Unicode locale... (cached) none
+checking for a traditional japanese locale... (cached) none
+checking for a transitional chinese locale... (cached) none
+checking for a french Unicode locale... (cached) none
+checking for a transitional chinese locale... (cached) none
+checking for library containing nanosleep... none required
+checking for working nanosleep... no (mishandles large arguments)
+checking whether <netinet/in.h> is self-contained... yes
+checking for a traditional french locale... (cached) none
+checking for a french Unicode locale... (cached) none
+checking whether perror matches strerror... yes
+checking whether pthread_create exists as a global function... yes
+checking whether pthread_sigmask is a macro... no
+checking whether pthread_sigmask works without -lpthread... yes
+checking whether pthread_sigmask returns error numbers... yes
+checking whether pthread_sigmask unblocks signals correctly... guessing yes
+checking for putenv compatible with GNU and SVID... yes
+checking whether select supports a 0 argument... (cached) yes
+checking whether select detects invalid fds... (cached) yes
+checking for struct sigaction.sa_sigaction... yes
+checking for sigprocmask... (cached) yes
+checking whether sleep is declared... yes
+checking for working sleep... yes
+checking for snprintf... (cached) yes
+checking whether snprintf respects a size of 1... yes
+checking whether printf supports POSIX/XSI format strings with positions... yes
+checking for socklen_t... yes
+checking whether symlink handles trailing slash correctly... yes
+checking for pthread_atfork... yes
+checking for a traditional french locale... (cached) none
+checking for a french Unicode locale... (cached) none
+checking for a traditional japanese locale... (cached) none
+checking for a transitional chinese locale... (cached) none
+checking whether wctob works... guessing yes
+checking whether wctob is declared... yes
+checking for inline... (cached) inline
+checking for pr... /usr/bin/pr
+checking for struct stat.st_blksize... yes
+checking for struct stat.st_rdev... yes
+checking for dirent.h that defines DIR... yes
+checking for library containing opendir... none required
+checking for sys/wait.h that is POSIX.1 compatible... (cached) yes
+checking for pid_t... (cached) yes
+checking whether closedir returns void... no
+checking vfork.h usability... no
+checking vfork.h presence... no
+checking for vfork.h... no
+checking for fork... yes
+checking for vfork... yes
+checking for working fork... yes
+checking for working vfork... (cached) yes
+checking whether NLS is requested... yes
+checking for msgfmt... no
+checking for gmsgfmt... :
+checking for xgettext... no
+checking for msgmerge... no
+checking for CFPreferencesCopyAppValue... no
+checking for CFLocaleCopyCurrent... no
+checking for GNU gettext in libc... yes
+checking whether to use NLS... yes
+checking where the gettext function comes from... libc
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating doc/Makefile
+config.status: creating lib/Makefile
+config.status: creating src/Makefile
+config.status: creating tests/Makefile
+config.status: creating gnulib-tests/Makefile
+config.status: creating man/Makefile
+config.status: creating po/Makefile.in
+config.status: creating lib/config.h
+config.status: executing depfiles commands
+config.status: executing po-directories commands
+config.status: creating po/POTFILES
+config.status: creating po/Makefile
++ make PR_PROGRAM=/usr/bin/pr
+Making all in lib
+make.orig[1]: Entering directory '/builddir/build/BUILD/diffutils-3.8/lib'
+  GEN      alloca.h
+  GEN      ctype.h
+  GEN      malloc/dynarray.gl.h
+  GEN      malloc/dynarray-skeleton.gl.h
+  GEN      fcntl.h
+  GEN      iconv.h
+  GEN      inttypes.h
+  GEN      langinfo.h
+  GEN      limits.h
+  GEN      locale.h
+  GEN      signal.h
+  GEN      sigsegv.h
+  GEN      stdio.h
+  GEN      stdlib.h
+  GEN      string.h
+  GEN      strings.h
+  GEN      sys/random.h
+  GEN      sys/stat.h
+  GEN      sys/time.h
+  GEN      sys/types.h
+  GEN      sys/wait.h
+  GEN      time.h
+  GEN      unistd.h
+  GEN      unistr.h
+  GEN      unitypes.h
+  GEN      uniwidth.h
+  GEN      wchar.h
+  GEN      wctype.h
+/usr/bin/make.orig  all-am
+make.orig[2]: Entering directory '/builddir/build/BUILD/diffutils-3.8/lib'
+  CC       allocator.o
+  CC       areadlink.o
+  CC       argmatch.o
+  CC       basename-lgpl.o
+  CC       binary-io.o
+  CC       bitrotate.o
+  CC       c-ctype.o
+  CC       c-stack.o
+  CC       c-strcasecmp.o
+  CC       c-strncasecmp.o
+  CC       careadlinkat.o
+  CC       cloexec.o
+  CC       dirname.o
+  CC       basename.o
+  CC       dirname-lgpl.o
+  CC       stripslash.o
+  CC       malloc/dynarray_at_failure.o
+  CC       malloc/dynarray_emplace_enlarge.o
+  CC       malloc/dynarray_finalize.o
+  CC       malloc/dynarray_resize.o
+  CC       malloc/dynarray_resize_clear.o
+  CC       exclude.o
+/builddir/build/BUILD/diffutils-3.8/lib/hash.h:175:1: error: syntax error before '[' <--[goto-gcc]
+ _GL_ATTRIBUTE_NODISCARD
+PARSING ERROR
+make.orig[2]: *** [Makefile:2323: exclude.o] Error 1
+  CC       exitfail.o
+  CC       fd-hook.o
+  CC       file-type.o
+  CC       filenamecat.o
+  CC       filenamecat-lgpl.o
+  CC       getprogname.o
+  CC       gettime.o
+  CC       hard-locale.o
+  CC       hash.o
+/builddir/build/BUILD/diffutils-3.8/lib/hash.h:175:1: error: syntax error before '[' <--[goto-gcc]
+ _GL_ATTRIBUTE_NODISCARD
+PARSING ERROR
+make.orig[2]: *** [Makefile:2323: hash.o] Error 1
+  CC       ialloc.o
+  CC       imaxtostr.o
+/builddir/build/BUILD/diffutils-3.8/lib/inttostr.h:25:1: error: syntax error before '[' <--[goto-gcc]
+ _GL_ATTRIBUTE_NODISCARD char *imaxtostr (intmax_t, char *);
+PARSING ERROR
+make.orig[2]: *** [Makefile:2323: imaxtostr.o] Error 1
+  CC       inttostr.o
+/builddir/build/BUILD/diffutils-3.8/lib/inttostr.h:25:1: error: syntax error before '[' <--[goto-gcc]
+ _GL_ATTRIBUTE_NODISCARD char *imaxtostr (intmax_t, char *);
+PARSING ERROR
+make.orig[2]: *** [Makefile:2323: inttostr.o] Error 1
+  CC       offtostr.o
+/builddir/build/BUILD/diffutils-3.8/lib/inttostr.h:25:1: error: syntax error before '[' <--[goto-gcc]
+ _GL_ATTRIBUTE_NODISCARD char *imaxtostr (intmax_t, char *);
+PARSING ERROR
+make.orig[2]: *** [Makefile:2323: offtostr.o] Error 1
+  CC       uinttostr.o
+/builddir/build/BUILD/diffutils-3.8/lib/inttostr.h:25:1: error: syntax error before '[' <--[goto-gcc]
+ _GL_ATTRIBUTE_NODISCARD char *imaxtostr (intmax_t, char *);
+PARSING ERROR
+make.orig[2]: *** [Makefile:2323: uinttostr.o] Error 1
+  CC       umaxtostr.o
+/builddir/build/BUILD/diffutils-3.8/lib/inttostr.h:25:1: error: syntax error before '[' <--[goto-gcc]
+ _GL_ATTRIBUTE_NODISCARD char *imaxtostr (intmax_t, char *);
+PARSING ERROR
+make.orig[2]: *** [Makefile:2323: umaxtostr.o] Error 1
+  CC       localcharset.o
+  CC       glthread/lock.o
+  CC       malloca.o
+  CC       mbchar.o
+  CC       mbiter.o
+  CC       mbscasecmp.o
+  CC       mbslen.o
+  CC       mbsstr.o
+  CC       mbuiter.o
+  CC       nstrftime.o
+/builddir/build/BUILD/diffutils-3.8/lib/nstrftime.c: In function '__strftime_internal': <--[goto-gcc]
+/builddir/build/BUILD/diffutils-3.8/lib/nstrftime.c:1148:1: error: syntax error before '[' <--[goto-gcc]
+           FALLTHROUGH;
+PARSING ERROR
+make.orig[2]: *** [Makefile:2323: nstrftime.o] Error 1
+  CC       progname.o
+  CC       propername.o
+  CC       quotearg.o
+/builddir/build/BUILD/diffutils-3.8/lib/quotearg.c: In function 'quotearg_buffer_restyled': <--[goto-gcc]
+/builddir/build/BUILD/diffutils-3.8/lib/quotearg.c:314:1: error: syntax error before '[' <--[goto-gcc]
+       FALLTHROUGH;
+PARSING ERROR
+make.orig[2]: *** [Makefile:2323: quotearg.o] Error 1
+  CC       setlocale_null.o
+  CC       sh-quote.o
+  CC       sigsegv.o
+  CC       stackvma.o
+  CC       stat-time.o
+  CC       stdopen.o
+  CC       striconv.o
+  CC       strnlen1.o
+  CC       system-quote.o
+  CC       tempname.o
+  CC       glthread/threadlib.o
+  CC       timespec.o
+  CC       trim.o
+  CC       unistd.o
+  CC       unistr/u8-mbtoucr.o
+  CC       unistr/u8-uctomb.o
+/builddir/build/BUILD/diffutils-3.8/lib/unistr/u8-uctomb.c: In function 'u8_uctomb': <--[goto-gcc]
+/builddir/build/BUILD/diffutils-3.8/lib/unistr/u8-uctomb.c:67:1: error: syntax error before '[' <--[goto-gcc]
+               FALLTHROUGH;
+PARSING ERROR
+make.orig[2]: *** [Makefile:2323: unistr/u8-uctomb.o] Error 1
+  CC       unistr/u8-uctomb-aux.o
+/builddir/build/BUILD/diffutils-3.8/lib/unistr/u8-uctomb-aux.c: In function 'u8_uctomb_aux': <--[goto-gcc]
+/builddir/build/BUILD/diffutils-3.8/lib/unistr/u8-uctomb-aux.c:53:1: error: syntax error before '[' <--[goto-gcc]
+       FALLTHROUGH;
+PARSING ERROR
+make.orig[2]: *** [Makefile:2323: unistr/u8-uctomb-aux.o] Error 1
+  CC       uniwidth/width.o
+  CC       version-etc.o
+  CC       version-etc-fsf.o
+  CC       wctype-h.o
+  CC       xmalloc.o
+  CC       xalloc-die.o
+  CC       xfreopen.o
+  CC       xmalloca.o
+  CC       xreadlink.o
+  CC       xsize.o
+  CC       xstdopen.o
+  CC       xstriconv.o
+  CC       xstrtoimax.o
+  CC       xstrtol.o
+  CC       xstrtoul.o
+  CC       xvasprintf.o
+  CC       xasprintf.o
+  CC       cmpbuf.o
+  CC       prepargs.o
+  CC       asnprintf.o
+  CC       fcntl.o
+  CC       mbrtowc.o
+  CC       mktime.o
+  CC       printf-args.o
+  CC       printf-parse.o
+  CC       regex.o
+/builddir/build/BUILD/diffutils-3.8/lib/regcomp.c: In function 'peek_token_bracket': <--[goto-gcc]
+/builddir/build/BUILD/diffutils-3.8/lib/regcomp.c:2076:1: error: syntax error before '[' <--[goto-gcc]
+ 	  FALLTHROUGH;
+PARSING ERROR
+make.orig[2]: *** [Makefile:2323: regex.o] Error 1
+  CC       time_rz.o
+  CC       vasnprintf.o
+/builddir/build/BUILD/diffutils-3.8/lib/vasnprintf.c: In function 'vasnprintf': <--[goto-gcc]
+/builddir/build/BUILD/diffutils-3.8/lib/vasnprintf.c:5092:1: error: syntax error before '[' <--[goto-gcc]
+                     FALLTHROUGH;
+PARSING ERROR
+make.orig[2]: *** [Makefile:2323: vasnprintf.o] Error 1
+make.orig[2]: Target 'all-am' not remade because of errors.
+make.orig[2]: Leaving directory '/builddir/build/BUILD/diffutils-3.8/lib'
+make.orig[1]: *** [Makefile:2018: all] Error 2
+make.orig[1]: Leaving directory '/builddir/build/BUILD/diffutils-3.8/lib'
+Making all in src
+make.orig[1]: Entering directory '/builddir/build/BUILD/diffutils-3.8/src'
+  GEN      paths.h
+  GEN      version.c
+  GEN      version.h
+/usr/bin/make.orig  all-am
+make.orig[2]: Entering directory '/builddir/build/BUILD/diffutils-3.8/src'
+  CC       cmp.o
+/builddir/build/BUILD/diffutils-3.8/lib/inttostr.h:25:1: error: syntax error before '[' <--[goto-gcc]
+ _GL_ATTRIBUTE_NODISCARD char *imaxtostr (intmax_t, char *);
+PARSING ERROR
+make.orig[2]: *** [Makefile:1755: cmp.o] Error 1
+  CC       version.o
+  AR       libver.a
+make.orig[2]: *** No rule to make target '../lib/libdiffutils.a', needed by 'cmp'.
+  CC       analyze.o
+In file included from /builddir/build/BUILD/diffutils-3.8/src/analyze.c:21: <--[goto-gcc]
+/builddir/build/BUILD/diffutils-3.8/src/diff.h:395:1: warning: 'pure' attribute ignored [-Wattributes] <--[goto-gcc]
+  395 | extern bool (*lines_differ) (char const *, size_t, char const *, size_t) _GL_ATTRIBUTE_PURE;
+      | ^~~~~~
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+  CC       context.o
+In file included from /builddir/build/BUILD/diffutils-3.8/src/context.c:21: <--[goto-gcc]
+/builddir/build/BUILD/diffutils-3.8/src/diff.h:395:1: warning: 'pure' attribute ignored [-Wattributes] <--[goto-gcc]
+  395 | extern bool (*lines_differ) (char const *, size_t, char const *, size_t) _GL_ATTRIBUTE_PURE;
+      | ^~~~~~
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+  CC       diff.o
+In file included from /builddir/build/BUILD/diffutils-3.8/src/diff.c:22: <--[goto-gcc]
+/builddir/build/BUILD/diffutils-3.8/src/diff.h:395:1: warning: 'pure' attribute ignored [-Wattributes] <--[goto-gcc]
+  395 | extern bool (*lines_differ) (char const *, size_t, char const *, size_t) _GL_ATTRIBUTE_PURE;
+      | ^~~~~~
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+  CC       dir.o
+In file included from /builddir/build/BUILD/diffutils-3.8/src/dir.c:21: <--[goto-gcc]
+/builddir/build/BUILD/diffutils-3.8/src/diff.h:395:1: warning: 'pure' attribute ignored [-Wattributes] <--[goto-gcc]
+  395 | extern bool (*lines_differ) (char const *, size_t, char const *, size_t) _GL_ATTRIBUTE_PURE;
+      | ^~~~~~
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+  CC       ed.o
+In file included from /builddir/build/BUILD/diffutils-3.8/src/ed.c:21: <--[goto-gcc]
+/builddir/build/BUILD/diffutils-3.8/src/diff.h:395:1: warning: 'pure' attribute ignored [-Wattributes] <--[goto-gcc]
+  395 | extern bool (*lines_differ) (char const *, size_t, char const *, size_t) _GL_ATTRIBUTE_PURE;
+      | ^~~~~~
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+  CC       ifdef.o
+In file included from /builddir/build/BUILD/diffutils-3.8/src/ifdef.c:23: <--[goto-gcc]
+/builddir/build/BUILD/diffutils-3.8/src/diff.h:395:1: warning: 'pure' attribute ignored [-Wattributes] <--[goto-gcc]
+  395 | extern bool (*lines_differ) (char const *, size_t, char const *, size_t) _GL_ATTRIBUTE_PURE;
+      | ^~~~~~
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+  CC       io.o
+In file included from /builddir/build/BUILD/diffutils-3.8/src/io.c:21: <--[goto-gcc]
+/builddir/build/BUILD/diffutils-3.8/src/diff.h:395:1: warning: 'pure' attribute ignored [-Wattributes] <--[goto-gcc]
+  395 | extern bool (*lines_differ) (char const *, size_t, char const *, size_t) _GL_ATTRIBUTE_PURE;
+      | ^~~~~~
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+  CC       normal.o
+In file included from /builddir/build/BUILD/diffutils-3.8/src/normal.c:21: <--[goto-gcc]
+/builddir/build/BUILD/diffutils-3.8/src/diff.h:395:1: warning: 'pure' attribute ignored [-Wattributes] <--[goto-gcc]
+  395 | extern bool (*lines_differ) (char const *, size_t, char const *, size_t) _GL_ATTRIBUTE_PURE;
+      | ^~~~~~
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+  CC       side.o
+In file included from /builddir/build/BUILD/diffutils-3.8/src/side.c:23: <--[goto-gcc]
+/builddir/build/BUILD/diffutils-3.8/src/diff.h:395:1: warning: 'pure' attribute ignored [-Wattributes] <--[goto-gcc]
+  395 | extern bool (*lines_differ) (char const *, size_t, char const *, size_t) _GL_ATTRIBUTE_PURE;
+      | ^~~~~~
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+  CC       util.o
+In file included from /builddir/build/BUILD/diffutils-3.8/src/util.c:21: <--[goto-gcc]
+/builddir/build/BUILD/diffutils-3.8/src/diff.h:395:1: warning: 'pure' attribute ignored [-Wattributes] <--[goto-gcc]
+  395 | extern bool (*lines_differ) (char const *, size_t, char const *, size_t) _GL_ATTRIBUTE_PURE;
+      | ^~~~~~
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+  CC       diff3.o
+  CC       sdiff.o
+make.orig[2]: Leaving directory '/builddir/build/BUILD/diffutils-3.8/src'
+make.orig[2]: Target 'all-am' not remade because of errors.
+make.orig[1]: Leaving directory '/builddir/build/BUILD/diffutils-3.8/src'
+make.orig[1]: *** [Makefile:1622: all] Error 2
+Making all in tests
+make.orig[1]: Entering directory '/builddir/build/BUILD/diffutils-3.8/tests'
+make.orig[1]: Nothing to be done for 'all'.
+make.orig[1]: Leaving directory '/builddir/build/BUILD/diffutils-3.8/tests'
+Making all in doc
+make.orig[1]: Entering directory '/builddir/build/BUILD/diffutils-3.8/doc'
+make.orig[1]: Leaving directory '/builddir/build/BUILD/diffutils-3.8/doc'
+Making all in man
+make.orig[1]: Entering directory '/builddir/build/BUILD/diffutils-3.8/man'
+  GEN      cmp.1
+make.orig[1]: *** [Makefile:1787: cmp.1] Error 1
+  GEN      diff.1
+make.orig[1]: *** [Makefile:1787: diff.1] Error 1
+make.orig[1]: Leaving directory '/builddir/build/BUILD/diffutils-3.8/man'
+make.orig[1]: Target 'all' not remade because of errors.
+Making all in po
+make.orig[1]: Entering directory '/builddir/build/BUILD/diffutils-3.8/po'
+make.orig[1]: Nothing to be done for 'all'.
+make.orig[1]: Leaving directory '/builddir/build/BUILD/diffutils-3.8/po'
+Making all in gnulib-tests
+make.orig[1]: Entering directory '/builddir/build/BUILD/diffutils-3.8/gnulib-tests'
+  GEN      arpa/inet.h
+  GEN      pthread.h
+  GEN      sched.h
+  GEN      sys/ioctl.h
+  GEN      sys/select.h
+  GEN      sys/socket.h
+  GEN      sys/uio.h
+## ---------------------------------------------------- ##
+## ------------------- Gnulib tests ------------------- ##
+## You can ignore compiler warnings in this directory.  ##
+## ---------------------------------------------------- ##
+/usr/bin/make.orig  all-recursive
+make.orig[2]: Entering directory '/builddir/build/BUILD/diffutils-3.8/gnulib-tests'
+Making all in .
+make.orig[3]: Entering directory '/builddir/build/BUILD/diffutils-3.8/gnulib-tests'
+  CC       locale.o
+  CC       dtotimespec.o
+  CC       hash-pjw.o
+  CC       sig-handler.o
+  CC       sockets.o
+  CC       sys_socket.o
+  CC       glthread/thread.o
+  CC       timespec-add.o
+  CC       timespec-sub.o
+  CC       xstrtol-error.o
+  CC       ioctl.o
+  CC       nanosleep.o
+  CC       strerror_r.o
+  AR       libtests.a
+make.orig[3]: *** No rule to make target '../lib/libdiffutils.a', needed by 'current-locale'.
+  CC       test-localcharset.o
+make.orig[3]: Leaving directory '/builddir/build/BUILD/diffutils-3.8/gnulib-tests'
+make.orig[3]: Target 'all-am' not remade because of errors.
+make.orig[2]: Leaving directory '/builddir/build/BUILD/diffutils-3.8/gnulib-tests'
+make.orig[2]: *** [Makefile:4377: all-recursive] Error 1
+make.orig[1]: *** [Makefile:3344: all] Error 2
+make.orig[1]: Leaving directory '/builddir/build/BUILD/diffutils-3.8/gnulib-tests'
+make.orig[1]: Entering directory '/builddir/build/BUILD/diffutils-3.8'
+make.orig[1]: Nothing to be done for 'all-am'.
+make.orig[1]: Leaving directory '/builddir/build/BUILD/diffutils-3.8'
+make.orig: *** [Makefile:1648: all-recursive] Error 1
+make.orig: Target 'all' not remade because of errors.
+
+
+RPM build errors:
+error: Bad exit status from /var/tmp/rpm-tmp.5poOaX (%build)
+    Bad exit status from /var/tmp/rpm-tmp.5poOaX (%build)
+Finish: chroot ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'goto-gcc\' CXX=\\$\'goto-gcc\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\acsexec-cbmc\\\\a-t\\\\a8\\\\a-l\\\\a/builddir/cbmc-capture\\\\a-c\\\\a--unwind 1 --json-ui --verbosity 4 --pointer-overflow-check --memory-leak-check \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bc --nodeps --short-circuit /builddir/build/SPECS/diffutils.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc goto-gcc\' \'--define\' \'__cxx goto-gcc\' \'--define\' \'__cpp goto-gcc -E\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+
+!!! 2021-12-01 16:22:13	error: %build failed
+
+>>> 2021-12-01 16:22:13	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--chroot" "/bin/su mockbuild -l -c \"PATH=/usr/lib64/cswrap:\\\$PATH CSWRAP_CAP_FILE=\\\$'/builddir/cswrap-capture.err' CSWRAP_TIMEOUT=\\\$'30' CSWRAP_TIMEOUT_FOR=\\\$':' CC=\\\$'goto-gcc' CXX=\\\$'goto-gcc' CSEXEC_WRAP_CMD=\\\$'--skip-ld-linux\\\\acsexec-cbmc\\\\a-t\\\\a8\\\\a-l\\\\a/builddir/cbmc-capture\\\\a-c\\\\a--unwind 1 --json-ui --verbosity 4 --pointer-overflow-check --memory-leak-check ' CSWRAP_ADD_CFLAGS=\\\$'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader' CSWRAP_DEL_CFLAGS=\\\$'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register' CSWRAP_ADD_CXXFLAGS=\\\$'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader' CSWRAP_DEL_CXXFLAGS=\\\$'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register' sh -c \\\"rpmbuild -bi --nodeps --short-circuit /builddir/build/SPECS/diffutils.spec '--define' 'apidocs 0' '--define' 'with_publican 0' '--without' 'docs' '--without' 'langpacks' '--define' '__cc goto-gcc' '--define' '__cxx goto-gcc' '--define' '__cpp goto-gcc -E' '--define' 'optflags -O0' '--define' 'build_ldflags -O0'\\\"\""
+INFO: mock.py version 2.13 starting (python version = 3.9.7, NVR = mock-2.13-1.kdudka.1.fc34)...
+Start(bootstrap): init plugins
+INFO: selinux enabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish: chroot init
+INFO: Running in chroot: ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'goto-gcc\' CXX=\\$\'goto-gcc\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\acsexec-cbmc\\\\a-t\\\\a8\\\\a-l\\\\a/builddir/cbmc-capture\\\\a-c\\\\a--unwind 1 --json-ui --verbosity 4 --pointer-overflow-check --memory-leak-check \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bi --nodeps --short-circuit /builddir/build/SPECS/diffutils.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc goto-gcc\' \'--define\' \'__cxx goto-gcc\' \'--define\' \'__cpp goto-gcc -E\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+Start: chroot ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'goto-gcc\' CXX=\\$\'goto-gcc\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\acsexec-cbmc\\\\a-t\\\\a8\\\\a-l\\\\a/builddir/cbmc-capture\\\\a-c\\\\a--unwind 1 --json-ui --verbosity 4 --pointer-overflow-check --memory-leak-check \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bi --nodeps --short-circuit /builddir/build/SPECS/diffutils.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc goto-gcc\' \'--define\' \'__cxx goto-gcc\' \'--define\' \'__cpp goto-gcc -E\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+setting SOURCE_DATE_EPOCH=1627862400
+Executing(%install): /bin/sh -e /var/tmp/rpm-tmp.VARTqU
++ umask 022
++ cd /builddir/build/BUILD
++ '[' /builddir/build/BUILDROOT/diffutils-3.8-1.fc35.x86_64 '!=' / ']'
++ rm -rf /builddir/build/BUILDROOT/diffutils-3.8-1.fc35.x86_64
+++ dirname /builddir/build/BUILDROOT/diffutils-3.8-1.fc35.x86_64
++ mkdir -p /builddir/build/BUILDROOT
++ mkdir /builddir/build/BUILDROOT/diffutils-3.8-1.fc35.x86_64
++ cd diffutils-3.8
++ /usr/bin/make install DESTDIR=/builddir/build/BUILDROOT/diffutils-3.8-1.fc35.x86_64 'INSTALL=/usr/bin/install -p'
+Making install in lib
+make.orig[1]: Entering directory '/builddir/build/BUILD/diffutils-3.8/lib'
+/usr/bin/make.orig  install-am
+make.orig[2]: Entering directory '/builddir/build/BUILD/diffutils-3.8/lib'
+  CC       exclude.o
+/builddir/build/BUILD/diffutils-3.8/lib/hash.h:175:1: error: syntax error before '[' <--[goto-gcc]
+ _GL_ATTRIBUTE_NODISCARD
+PARSING ERROR
+make.orig[2]: *** [Makefile:2323: exclude.o] Error 1
+  CC       hash.o
+/builddir/build/BUILD/diffutils-3.8/lib/hash.h:175:1: error: syntax error before '[' <--[goto-gcc]
+ _GL_ATTRIBUTE_NODISCARD
+PARSING ERROR
+make.orig[2]: *** [Makefile:2323: hash.o] Error 1
+  CC       imaxtostr.o
+/builddir/build/BUILD/diffutils-3.8/lib/inttostr.h:25:1: error: syntax error before '[' <--[goto-gcc]
+ _GL_ATTRIBUTE_NODISCARD char *imaxtostr (intmax_t, char *);
+PARSING ERROR
+make.orig[2]: *** [Makefile:2323: imaxtostr.o] Error 1
+  CC       inttostr.o
+/builddir/build/BUILD/diffutils-3.8/lib/inttostr.h:25:1: error: syntax error before '[' <--[goto-gcc]
+ _GL_ATTRIBUTE_NODISCARD char *imaxtostr (intmax_t, char *);
+PARSING ERROR
+make.orig[2]: *** [Makefile:2323: inttostr.o] Error 1
+  CC       offtostr.o
+/builddir/build/BUILD/diffutils-3.8/lib/inttostr.h:25:1: error: syntax error before '[' <--[goto-gcc]
+ _GL_ATTRIBUTE_NODISCARD char *imaxtostr (intmax_t, char *);
+PARSING ERROR
+make.orig[2]: *** [Makefile:2323: offtostr.o] Error 1
+  CC       uinttostr.o
+/builddir/build/BUILD/diffutils-3.8/lib/inttostr.h:25:1: error: syntax error before '[' <--[goto-gcc]
+ _GL_ATTRIBUTE_NODISCARD char *imaxtostr (intmax_t, char *);
+PARSING ERROR
+make.orig[2]: *** [Makefile:2323: uinttostr.o] Error 1
+  CC       umaxtostr.o
+/builddir/build/BUILD/diffutils-3.8/lib/inttostr.h:25:1: error: syntax error before '[' <--[goto-gcc]
+ _GL_ATTRIBUTE_NODISCARD char *imaxtostr (intmax_t, char *);
+PARSING ERROR
+make.orig[2]: *** [Makefile:2323: umaxtostr.o] Error 1
+  CC       nstrftime.o
+/builddir/build/BUILD/diffutils-3.8/lib/nstrftime.c: In function '__strftime_internal': <--[goto-gcc]
+/builddir/build/BUILD/diffutils-3.8/lib/nstrftime.c:1148:1: error: syntax error before '[' <--[goto-gcc]
+           FALLTHROUGH;
+PARSING ERROR
+make.orig[2]: *** [Makefile:2323: nstrftime.o] Error 1
+  CC       quotearg.o
+/builddir/build/BUILD/diffutils-3.8/lib/quotearg.c: In function 'quotearg_buffer_restyled': <--[goto-gcc]
+/builddir/build/BUILD/diffutils-3.8/lib/quotearg.c:314:1: error: syntax error before '[' <--[goto-gcc]
+       FALLTHROUGH;
+PARSING ERROR
+make.orig[2]: *** [Makefile:2323: quotearg.o] Error 1
+  CC       unistr/u8-uctomb.o
+/builddir/build/BUILD/diffutils-3.8/lib/unistr/u8-uctomb.c: In function 'u8_uctomb': <--[goto-gcc]
+/builddir/build/BUILD/diffutils-3.8/lib/unistr/u8-uctomb.c:67:1: error: syntax error before '[' <--[goto-gcc]
+               FALLTHROUGH;
+PARSING ERROR
+make.orig[2]: *** [Makefile:2323: unistr/u8-uctomb.o] Error 1
+  CC       unistr/u8-uctomb-aux.o
+/builddir/build/BUILD/diffutils-3.8/lib/unistr/u8-uctomb-aux.c: In function 'u8_uctomb_aux': <--[goto-gcc]
+/builddir/build/BUILD/diffutils-3.8/lib/unistr/u8-uctomb-aux.c:53:1: error: syntax error before '[' <--[goto-gcc]
+       FALLTHROUGH;
+PARSING ERROR
+make.orig[2]: *** [Makefile:2323: unistr/u8-uctomb-aux.o] Error 1
+  CC       regex.o
+/builddir/build/BUILD/diffutils-3.8/lib/regcomp.c: In function 'peek_token_bracket': <--[goto-gcc]
+/builddir/build/BUILD/diffutils-3.8/lib/regcomp.c:2076:1: error: syntax error before '[' <--[goto-gcc]
+ 	  FALLTHROUGH;
+PARSING ERROR
+make.orig[2]: *** [Makefile:2323: regex.o] Error 1
+  CC       vasnprintf.o
+/builddir/build/BUILD/diffutils-3.8/lib/vasnprintf.c: In function 'vasnprintf': <--[goto-gcc]
+/builddir/build/BUILD/diffutils-3.8/lib/vasnprintf.c:5092:1: error: syntax error before '[' <--[goto-gcc]
+                     FALLTHROUGH;
+PARSING ERROR
+make.orig[2]: *** [Makefile:2323: vasnprintf.o] Error 1
+make.orig[2]: Target 'install-am' not remade because of errors.
+make.orig[2]: Leaving directory '/builddir/build/BUILD/diffutils-3.8/lib'
+make.orig[1]: *** [Makefile:2424: install] Error 2
+make.orig[1]: Leaving directory '/builddir/build/BUILD/diffutils-3.8/lib'
+Making install in src
+make.orig[1]: Entering directory '/builddir/build/BUILD/diffutils-3.8/src'
+/usr/bin/make.orig  install-am
+make.orig[2]: Entering directory '/builddir/build/BUILD/diffutils-3.8/src'
+  CC       cmp.o
+/builddir/build/BUILD/diffutils-3.8/lib/inttostr.h:25:1: error: syntax error before '[' <--[goto-gcc]
+ _GL_ATTRIBUTE_NODISCARD char *imaxtostr (intmax_t, char *);
+PARSING ERROR
+make.orig[2]: *** [Makefile:1755: cmp.o] Error 1
+make.orig[2]: *** No rule to make target '../lib/libdiffutils.a', needed by 'cmp'.
+make.orig[2]: Leaving directory '/builddir/build/BUILD/diffutils-3.8/src'
+make.orig[2]: Target 'install-am' not remade because of errors.
+make.orig[1]: *** [Makefile:1859: install] Error 2
+make.orig[1]: Leaving directory '/builddir/build/BUILD/diffutils-3.8/src'
+Making install in tests
+make.orig[1]: Entering directory '/builddir/build/BUILD/diffutils-3.8/tests'
+make.orig[2]: Entering directory '/builddir/build/BUILD/diffutils-3.8/tests'
+make.orig[2]: Nothing to be done for 'install-exec-am'.
+make.orig[2]: Nothing to be done for 'install-data-am'.
+make.orig[2]: Leaving directory '/builddir/build/BUILD/diffutils-3.8/tests'
+make.orig[1]: Leaving directory '/builddir/build/BUILD/diffutils-3.8/tests'
+Making install in doc
+make.orig[1]: Entering directory '/builddir/build/BUILD/diffutils-3.8/doc'
+make.orig[2]: Entering directory '/builddir/build/BUILD/diffutils-3.8/doc'
+make.orig[2]: Nothing to be done for 'install-exec-am'.
+ /usr/bin/mkdir -p '/builddir/build/BUILDROOT/diffutils-3.8-1.fc35.x86_64/usr/share/info'
+ /usr/bin/install -p -m 644 ./diffutils.info '/builddir/build/BUILDROOT/diffutils-3.8-1.fc35.x86_64/usr/share/info'
+ install-info --info-dir='/builddir/build/BUILDROOT/diffutils-3.8-1.fc35.x86_64/usr/share/info' '/builddir/build/BUILDROOT/diffutils-3.8-1.fc35.x86_64/usr/share/info/diffutils.info'
+make.orig[2]: Leaving directory '/builddir/build/BUILD/diffutils-3.8/doc'
+make.orig[1]: Leaving directory '/builddir/build/BUILD/diffutils-3.8/doc'
+Making install in man
+make.orig[1]: Entering directory '/builddir/build/BUILD/diffutils-3.8/man'
+  GEN      cmp.1
+make.orig[1]: *** [Makefile:1787: cmp.1] Error 1
+  GEN      diff.1
+make.orig[1]: *** [Makefile:1787: diff.1] Error 1
+make.orig[1]: Leaving directory '/builddir/build/BUILD/diffutils-3.8/man'
+make.orig[1]: Target 'install' not remade because of errors.
+Making install in po
+make.orig[1]: Entering directory '/builddir/build/BUILD/diffutils-3.8/po'
+installing bg.gmo as /builddir/build/BUILDROOT/diffutils-3.8-1.fc35.x86_64/usr/share/locale/bg/LC_MESSAGES/diffutils.mo
+installing ca.gmo as /builddir/build/BUILDROOT/diffutils-3.8-1.fc35.x86_64/usr/share/locale/ca/LC_MESSAGES/diffutils.mo
+installing cs.gmo as /builddir/build/BUILDROOT/diffutils-3.8-1.fc35.x86_64/usr/share/locale/cs/LC_MESSAGES/diffutils.mo
+installing da.gmo as /builddir/build/BUILDROOT/diffutils-3.8-1.fc35.x86_64/usr/share/locale/da/LC_MESSAGES/diffutils.mo
+installing de.gmo as /builddir/build/BUILDROOT/diffutils-3.8-1.fc35.x86_64/usr/share/locale/de/LC_MESSAGES/diffutils.mo
+installing el.gmo as /builddir/build/BUILDROOT/diffutils-3.8-1.fc35.x86_64/usr/share/locale/el/LC_MESSAGES/diffutils.mo
+installing eo.gmo as /builddir/build/BUILDROOT/diffutils-3.8-1.fc35.x86_64/usr/share/locale/eo/LC_MESSAGES/diffutils.mo
+installing es.gmo as /builddir/build/BUILDROOT/diffutils-3.8-1.fc35.x86_64/usr/share/locale/es/LC_MESSAGES/diffutils.mo
+installing fi.gmo as /builddir/build/BUILDROOT/diffutils-3.8-1.fc35.x86_64/usr/share/locale/fi/LC_MESSAGES/diffutils.mo
+installing fr.gmo as /builddir/build/BUILDROOT/diffutils-3.8-1.fc35.x86_64/usr/share/locale/fr/LC_MESSAGES/diffutils.mo
+installing ga.gmo as /builddir/build/BUILDROOT/diffutils-3.8-1.fc35.x86_64/usr/share/locale/ga/LC_MESSAGES/diffutils.mo
+installing gl.gmo as /builddir/build/BUILDROOT/diffutils-3.8-1.fc35.x86_64/usr/share/locale/gl/LC_MESSAGES/diffutils.mo
+installing he.gmo as /builddir/build/BUILDROOT/diffutils-3.8-1.fc35.x86_64/usr/share/locale/he/LC_MESSAGES/diffutils.mo
+installing hr.gmo as /builddir/build/BUILDROOT/diffutils-3.8-1.fc35.x86_64/usr/share/locale/hr/LC_MESSAGES/diffutils.mo
+installing hu.gmo as /builddir/build/BUILDROOT/diffutils-3.8-1.fc35.x86_64/usr/share/locale/hu/LC_MESSAGES/diffutils.mo
+installing id.gmo as /builddir/build/BUILDROOT/diffutils-3.8-1.fc35.x86_64/usr/share/locale/id/LC_MESSAGES/diffutils.mo
+installing it.gmo as /builddir/build/BUILDROOT/diffutils-3.8-1.fc35.x86_64/usr/share/locale/it/LC_MESSAGES/diffutils.mo
+installing ja.gmo as /builddir/build/BUILDROOT/diffutils-3.8-1.fc35.x86_64/usr/share/locale/ja/LC_MESSAGES/diffutils.mo
+installing lv.gmo as /builddir/build/BUILDROOT/diffutils-3.8-1.fc35.x86_64/usr/share/locale/lv/LC_MESSAGES/diffutils.mo
+installing ms.gmo as /builddir/build/BUILDROOT/diffutils-3.8-1.fc35.x86_64/usr/share/locale/ms/LC_MESSAGES/diffutils.mo
+installing nb.gmo as /builddir/build/BUILDROOT/diffutils-3.8-1.fc35.x86_64/usr/share/locale/nb/LC_MESSAGES/diffutils.mo
+installing nl.gmo as /builddir/build/BUILDROOT/diffutils-3.8-1.fc35.x86_64/usr/share/locale/nl/LC_MESSAGES/diffutils.mo
+installing pl.gmo as /builddir/build/BUILDROOT/diffutils-3.8-1.fc35.x86_64/usr/share/locale/pl/LC_MESSAGES/diffutils.mo
+installing pt.gmo as /builddir/build/BUILDROOT/diffutils-3.8-1.fc35.x86_64/usr/share/locale/pt/LC_MESSAGES/diffutils.mo
+installing pt_BR.gmo as /builddir/build/BUILDROOT/diffutils-3.8-1.fc35.x86_64/usr/share/locale/pt_BR/LC_MESSAGES/diffutils.mo
+installing ro.gmo as /builddir/build/BUILDROOT/diffutils-3.8-1.fc35.x86_64/usr/share/locale/ro/LC_MESSAGES/diffutils.mo
+installing ru.gmo as /builddir/build/BUILDROOT/diffutils-3.8-1.fc35.x86_64/usr/share/locale/ru/LC_MESSAGES/diffutils.mo
+installing sr.gmo as /builddir/build/BUILDROOT/diffutils-3.8-1.fc35.x86_64/usr/share/locale/sr/LC_MESSAGES/diffutils.mo
+installing sv.gmo as /builddir/build/BUILDROOT/diffutils-3.8-1.fc35.x86_64/usr/share/locale/sv/LC_MESSAGES/diffutils.mo
+installing tr.gmo as /builddir/build/BUILDROOT/diffutils-3.8-1.fc35.x86_64/usr/share/locale/tr/LC_MESSAGES/diffutils.mo
+installing uk.gmo as /builddir/build/BUILDROOT/diffutils-3.8-1.fc35.x86_64/usr/share/locale/uk/LC_MESSAGES/diffutils.mo
+installing vi.gmo as /builddir/build/BUILDROOT/diffutils-3.8-1.fc35.x86_64/usr/share/locale/vi/LC_MESSAGES/diffutils.mo
+installing zh_CN.gmo as /builddir/build/BUILDROOT/diffutils-3.8-1.fc35.x86_64/usr/share/locale/zh_CN/LC_MESSAGES/diffutils.mo
+installing zh_TW.gmo as /builddir/build/BUILDROOT/diffutils-3.8-1.fc35.x86_64/usr/share/locale/zh_TW/LC_MESSAGES/diffutils.mo
+if test "diffutils" = "gettext-tools"; then \
+  /usr/bin/mkdir -p /builddir/build/BUILDROOT/diffutils-3.8-1.fc35.x86_64/usr/share/gettext/po; \
+  for file in Makefile.in.in remove-potcdate.sin quot.sed boldquot.sed en@quot.header en@boldquot.header insert-header.sin Rules-quot   Makevars.template; do \
+    /usr/bin/install -p -m 644 ./$file \
+		    /builddir/build/BUILDROOT/diffutils-3.8-1.fc35.x86_64/usr/share/gettext/po/$file; \
+  done; \
+  for file in Makevars; do \
+    rm -f /builddir/build/BUILDROOT/diffutils-3.8-1.fc35.x86_64/usr/share/gettext/po/$file; \
+  done; \
+else \
+  : ; \
+fi
+make.orig[1]: Leaving directory '/builddir/build/BUILD/diffutils-3.8/po'
+Making install in gnulib-tests
+make.orig[1]: Entering directory '/builddir/build/BUILD/diffutils-3.8/gnulib-tests'
+/usr/bin/make.orig  install-recursive
+make.orig[2]: Entering directory '/builddir/build/BUILD/diffutils-3.8/gnulib-tests'
+Making install in .
+make.orig[3]: Entering directory '/builddir/build/BUILD/diffutils-3.8/gnulib-tests'
+make.orig[3]: *** No rule to make target '../lib/libdiffutils.a', needed by 'current-locale'.
+make.orig[3]: Target 'install-am' not remade because of errors.
+make.orig[3]: Leaving directory '/builddir/build/BUILD/diffutils-3.8/gnulib-tests'
+make.orig[2]: Leaving directory '/builddir/build/BUILD/diffutils-3.8/gnulib-tests'
+make.orig[2]: *** [Makefile:4377: install-recursive] Error 1
+make.orig[1]: Leaving directory '/builddir/build/BUILD/diffutils-3.8/gnulib-tests'
+make.orig[1]: *** [Makefile:6113: install] Error 2
+make.orig[1]: Entering directory '/builddir/build/BUILD/diffutils-3.8'
+make.orig[2]: Entering directory '/builddir/build/BUILD/diffutils-3.8'
+make.orig[2]: Nothing to be done for 'install-exec-am'.
+make.orig[2]: Nothing to be done for 'install-data-am'.
+make.orig[2]: Leaving directory '/builddir/build/BUILD/diffutils-3.8'
+make.orig[1]: Leaving directory '/builddir/build/BUILD/diffutils-3.8'
+make.orig: *** [Makefile:1648: install-recursive] Error 1
+make.orig: Target 'install' not remade because of errors.
+
+
+RPM build errors:
+error: Bad exit status from /var/tmp/rpm-tmp.VARTqU (%install)
+    Bad exit status from /var/tmp/rpm-tmp.VARTqU (%install)
+Finish: chroot ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'goto-gcc\' CXX=\\$\'goto-gcc\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\acsexec-cbmc\\\\a-t\\\\a8\\\\a-l\\\\a/builddir/cbmc-capture\\\\a-c\\\\a--unwind 1 --json-ui --verbosity 4 --pointer-overflow-check --memory-leak-check \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bi --nodeps --short-circuit /builddir/build/SPECS/diffutils.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc goto-gcc\' \'--define\' \'__cxx goto-gcc\' \'--define\' \'__cpp goto-gcc -E\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+
+!!! 2021-12-01 16:22:22	error: %install failed
+
+>>> 2021-12-01 16:22:22	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'tar -c --remove-files '/builddir/cswrap-capture.err' '/builddir/cbmc-capture'' | tar -xC '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/diffutils-3.8-1.fc35/cbmc/output/debug/raw-results'"
+tar: Removing leading `/' from member names
+tar: Removing leading `/' from hard link targets
+
+>>> 2021-12-01 16:22:26	"
+                  set -ex
+                  for file in /home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/diffutils-3.8-1.fc35/cbmc/output/debug/raw-results/builddir/cbmc-capture/pid-*.out; do
+                      cbmc-convert-output -a < \"\$file\" > \"\$file.conv\"
+                  done
+                  csgrep --mode=json --remove-duplicates '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/diffutils-3.8-1.fc35/cbmc/output/debug/raw-results/builddir/cbmc-capture'/pid-*.out.conv > '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/diffutils-3.8-1.fc35/cbmc/output/debug/uni-results/cbmc-capture.js'
+                  "
++ for file in /home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/diffutils-3.8-1.fc35/cbmc/output/debug/raw-results/builddir/cbmc-capture/pid-*.out
++ cbmc-convert-output -a
+/bin/sh: line 4: /home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/diffutils-3.8-1.fc35/cbmc/output/debug/raw-results/builddir/cbmc-capture/pid-*.out: No such file or directory
+
+!!! 2021-12-01 16:22:26	error: post-process hook failed
+
+scan.ini: time-finished = 2021-12-01 16:22:26
+scan.ini: exit-code = 1
+>>> 2021-12-01 16:22:26	"cslinker --quiet --cwelist '/usr/share/csmock/cwe-map.csv' --inifile '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/diffutils-3.8-1.fc35/cbmc/output/scan.ini' '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/diffutils-3.8-1.fc35/cbmc/output/debug/uni-results'/* > '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/diffutils-3.8-1.fc35/cbmc/output/debug/scan-results-all.js'"
+
+>>> 2021-12-01 16:22:26	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'csgrep --mode=json --embed-context 3' < '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/diffutils-3.8-1.fc35/cbmc/output/debug/scan-results-all.js' > '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/diffutils-3.8-1.fc35/cbmc/output/debug/scan-results-all.js.tmp'"
+
+>>> 2021-12-01 16:22:29	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--clean"
+
+>>> 2021-12-01 16:22:47	"cat '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/diffutils-3.8-1.fc35/cbmc/output/debug/scan-results-all.js' | sed 's|/builddir/build/BUILDROOT/[^/]*/|/builddir/build/BUILD//|' | csgrep --mode=json --path '^/builddir/build/BUILD/' --strip-path-prefix /builddir/build/BUILD/ | csgrep --mode=json --invert-match --path '^ksh-.*[0-9]+\\.c\$' | csgrep --mode=json --invert-match --path 'CMakeFiles/CMakeTmp|conftest.c' | csdiff --json-output --show-internal \"/usr/share/csmock/known-false-positives.js\" - | cssort --key=path > '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/diffutils-3.8-1.fc35/cbmc/output/scan-results.js'"
+
+>>> 2021-12-01 16:22:47	"sed 's|/builddir/build/BUILDROOT/[^/]*/|/builddir/build/BUILD//|' '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/diffutils-3.8-1.fc35/cbmc/output/debug/scan-results-all.js' | csgrep --mode=json --strip-path-prefix /builddir/build/BUILD/ | csdiff --show-internal '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/diffutils-3.8-1.fc35/cbmc/output/scan-results.js' - | cssort > '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/diffutils-3.8-1.fc35/cbmc/output/debug/suppressed-results.js'"
+
+>>> 2021-12-01 16:22:47	"csgrep --mode=grep --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/diffutils-3.8-1.fc35/cbmc/output/debug/suppressed-results.js' > '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/diffutils-3.8-1.fc35/cbmc/output/debug/suppressed-results.err'"
+
+>>> 2021-12-01 16:22:47	"csgrep --mode=json --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/diffutils-3.8-1.fc35/cbmc/output/debug/suppressed-results.js' | cshtml - > '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/diffutils-3.8-1.fc35/cbmc/output/debug/suppressed-results.html'"
+
+>>> 2021-12-01 16:22:47	"csgrep --mode=evtstat --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/diffutils-3.8-1.fc35/cbmc/output/debug/suppressed-results.js' | tee '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/diffutils-3.8-1.fc35/cbmc/output/debug/suppressed-results-summary.txt'"
+
+>>> 2021-12-01 16:22:47	"csgrep --mode=grep --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/diffutils-3.8-1.fc35/cbmc/output/scan-results.js' > '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/diffutils-3.8-1.fc35/cbmc/output/scan-results.err'"
+
+>>> 2021-12-01 16:22:47	"csgrep --mode=json --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/diffutils-3.8-1.fc35/cbmc/output/scan-results.js' | cshtml - > '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/diffutils-3.8-1.fc35/cbmc/output/scan-results.html'"
+
+>>> 2021-12-01 16:22:47	"csgrep --mode=evtstat --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/diffutils-3.8-1.fc35/cbmc/output/scan-results.js' | tee '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/diffutils-3.8-1.fc35/cbmc/output/scan-results-summary.txt'"
+      1	COMPILER_WARNING                                	warning[-Wattributes]
+
+<<< 2021-12-01 16:22:47	csmock exit code: 1
+
