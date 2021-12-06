@@ -2,19 +2,19 @@
     "scan":
     {
         "analyzer-version-gcc": "11.2.1",
-        "analyzer-version-symbiotic": "8.0.0.20211119.190944",
+        "analyzer-version-symbiotic": "8.0.0.20211203.134551",
         "enabled-plugins": "symbiotic, gcc",
         "exit-code": 1,
         "host": "cov04.lab.eng.brq.redhat.com",
         "known-false-positives": "/usr/share/csmock/known-false-positives.js",
         "mock-config": "fedora-35-x86_64",
         "project-name": "findutils-4.8.0-4.fc35",
-        "store-results-to": "/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/findutils-4.8.0-4.fc35/symbiotic/output",
-        "time-created": "2021-12-01 09:17:07",
-        "time-finished": "2021-12-01 12:10:56",
+        "store-results-to": "/home/kdudka/aufover-benchmark/workdir/rpm-pkgs/findutils-4.8.0-4.fc35/symbiotic/output",
+        "time-created": "2021-12-03 19:42:33",
+        "time-finished": "2021-12-03 22:36:04",
         "tool": "csmock",
-        "tool-args": "'/usr/bin/csmock' '-o' '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/findutils-4.8.0-4.fc35/symbiotic/output' '-f' '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/findutils-4.8.0-4.fc35/findutils-4.8.0-4.fc35.src.rpm' '-r' 'fedora-35-x86_64' '-t' 'symbiotic' '--symbiotic-timeout=8' '--keep-going'",
-        "tool-version": "csmock-3.1.0.20211130.175245.g27e99a8.internal-1.el7"
+        "tool-args": "'/usr/bin/csmock' '-o' '/home/kdudka/aufover-benchmark/workdir/rpm-pkgs/findutils-4.8.0-4.fc35/symbiotic/output' '-f' '/home/kdudka/aufover-benchmark/workdir/rpm-pkgs/findutils-4.8.0-4.fc35/findutils-4.8.0-4.fc35.src.rpm' '-r' 'fedora-35-x86_64' '-t' 'symbiotic' '--symbiotic-timeout=8' '--keep-going'",
+        "tool-version": "csmock-3.1.0.20211202.081848.gd264244.internal-1.el7"
     },
     "defects":
     [
@@ -34,28 +34,28 @@
                     "file_name": "findutils-4.8.0/build/gl/lib/../../../gl/lib/fflush.c",
                     "line": 43,
                     "event": "note",
-                    "message": "call stack: function clear_ungetc_buffer_preserving_position (=140582922757312)",
+                    "message": "call stack: function clear_ungetc_buffer_preserving_position (=140528833447104)",
                     "verbosity_level": "1"
                 },
                 {
                     "file_name": "findutils-4.8.0/build/gl/lib/../../../gl/lib/fflush.c",
                     "line": 156,
                     "event": "note",
-                    "message": "call stack: function rpl_fflush (=140582922757312)",
+                    "message": "call stack: function rpl_fflush (=140528833447104)",
                     "verbosity_level": "1"
                 },
                 {
-                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-accept.c",
-                    "line": 42,
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-wcrtomb.c",
+                    "line": 68,
                     "event": "note",
-                    "message": "call stack: function main ()",
+                    "message": "call stack: function main (=2, =0)",
                     "verbosity_level": "1"
                 },
                 {
                     "file_name": "findutils-4.8.0/build/gl/lib/../../../gl/lib/fflush.c",
                     "line": 43,
                     "event": "note",
-                    "message": "Additional Info: address: 0:140582922757312",
+                    "message": "Additional Info: address: 0:140528833447104",
                     "verbosity_level": "1"
                 },
                 {
@@ -66,11 +66,19 @@
                     "verbosity_level": "1"
                 },
                 {
-                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-accept.c",
-                    "line": 42,
-                    "column": 5,
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-wcrtomb.c",
+                    "line": 61,
+                    "column": 7,
                     "event": "note",
-                    "message": "Non-deterministic values: accept: len 4 bytes, [4 times 0x0] (i32: 0)",
+                    "message": "Non-deterministic values: setlocale: len 8 bytes, [0x1|7 times 0x0] (i64: 1)\n/builddir/build/BUILD/findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-wcrtomb.c:61:7 (offset): note: Non-deterministic values: setlocale: len 8 bytes, [8 times 0x0] (i64: 0)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-wcrtomb.c",
+                    "line": 67,
+                    "column": 11,
+                    "event": "note",
+                    "message": "Non-deterministic values: wcrtomb: len 8 bytes, [8 times 0x0] (i64: 0)",
                     "verbosity_level": "1"
                 },
                 {
@@ -134,7 +142,7 @@
                     "file_name": "findutils-4.8.0/build/gl/lib/../../../gl/lib/freadahead.c",
                     "line": 38,
                     "event": "note",
-                    "message": "call stack: function freadahead (=140317899004096)",
+                    "message": "call stack: function freadahead (=140187031517376)",
                     "verbosity_level": "1"
                 },
                 {
@@ -162,7 +170,7 @@
                     "file_name": "findutils-4.8.0/build/gl/lib/../../../gl/lib/freadahead.c",
                     "line": 38,
                     "event": "note",
-                    "message": "Additional Info: address: 0:140317899004136",
+                    "message": "Additional Info: address: 0:140187031517416",
                     "verbosity_level": "1"
                 },
                 {
@@ -241,14 +249,14 @@
                     "file_name": "findutils-4.8.0/build/gl/lib/../../../gl/lib/fseeko.c",
                     "line": 52,
                     "event": "note",
-                    "message": "call stack: function rpl_fseeko (=140676278773952, =0, =1)",
+                    "message": "call stack: function rpl_fseeko (=140340701837504, =0, =1)",
                     "verbosity_level": "1"
                 },
                 {
                     "file_name": "findutils-4.8.0/build/gl/lib/../../../gl/lib/fseek.c",
                     "line": 29,
                     "event": "note",
-                    "message": "call stack: function rpl_fseek (=140676278773952, =0, =1)",
+                    "message": "call stack: function rpl_fseek (=140340701837504, =0, =1)",
                     "verbosity_level": "1"
                 },
                 {
@@ -262,7 +270,7 @@
                     "file_name": "findutils-4.8.0/build/gl/lib/../../../gl/lib/fseeko.c",
                     "line": 52,
                     "event": "note",
-                    "message": "Additional Info: address: 0:140676278773968",
+                    "message": "Additional Info: address: 0:140340701837520",
                     "verbosity_level": "1"
                 },
                 {
@@ -1951,6 +1959,150 @@
             "events":
             [
                 {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-ftruncate.c",
+                    "line": 37,
+                    "event": "error",
+                    "message": "reached \"unreachable\" instruction",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-ftruncate.c",
+                    "line": 37,
+                    "event": "note",
+                    "message": "call stack: function main (=2, =0)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-ftruncate.c",
+                    "line": 37,
+                    "column": 5,
+                    "event": "note",
+                    "message": "Non-deterministic values: ftruncate: len 4 bytes, [4 times 0x0] (i32: 0)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gl/lib/../../../gl/lib/fflush.c",
+                    "line": 150,
+                    "column": 27,
+                    "event": "note",
+                    "message": "Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   35|     {",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   36|       errno = 0;",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   37|->     ASSERT (ftruncate (-1, 0) == -1);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   38|       ASSERT (errno == EBADF);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   39|     }",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "SYMBIOTIC_WARNING",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-ftruncate.c",
+                    "line": 38,
+                    "event": "error",
+                    "message": "reached \"unreachable\" instruction",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-ftruncate.c",
+                    "line": 38,
+                    "event": "note",
+                    "message": "call stack: function main (=2, =0)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-ftruncate.c",
+                    "line": 37,
+                    "column": 5,
+                    "event": "note",
+                    "message": "Non-deterministic values: ftruncate: len 4 bytes, [4 times 0xff] (i32: -1)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gl/lib/../../../gl/lib/fflush.c",
+                    "line": 150,
+                    "column": 27,
+                    "event": "note",
+                    "message": "Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   36|       errno = 0;",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   37|       ASSERT (ftruncate (-1, 0) == -1);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   38|->     ASSERT (errno == EBADF);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   39|     }",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   40|     {",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "SYMBIOTIC_WARNING",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
                     "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-getcwd-lgpl.c",
                     "line": 44,
                     "event": "error",
@@ -2107,6 +2259,230 @@
                     "line": 0,
                     "event": "#",
                     "message": "   46|       printf (\"cwd=%s\\n\", pwd1);",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "SYMBIOTIC_WARNING",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-getgroups.c",
+                    "line": 55,
+                    "event": "error",
+                    "message": "reached \"unreachable\" instruction",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-getgroups.c",
+                    "line": 55,
+                    "event": "note",
+                    "message": "call stack: function main (=2, =0)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-getgroups.c",
+                    "line": 49,
+                    "column": 12,
+                    "event": "note",
+                    "message": "Non-deterministic values: getgroups: len 4 bytes, [3 times 0x0|0x80] (i32: -2147483648)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gl/lib/../../../gl/lib/fflush.c",
+                    "line": 150,
+                    "column": 27,
+                    "event": "note",
+                    "message": "Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   53|         return 77;",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   54|       }",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   55|->   ASSERT (0 <= result);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   56|     ASSERT (result + 1 < SIZE_MAX / sizeof *groups);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   57|     groups = malloc ((result + 1) * sizeof *groups);",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "SYMBIOTIC_WARNING",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-getgroups.c",
+                    "line": 56,
+                    "event": "error",
+                    "message": "reached \"unreachable\" instruction",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-getgroups.c",
+                    "line": 56,
+                    "event": "note",
+                    "message": "call stack: function main (=2, =0)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-getgroups.c",
+                    "line": 49,
+                    "column": 12,
+                    "event": "note",
+                    "message": "Non-deterministic values: getgroups: len 4 bytes, [3 times 0xff|0x7f] (i32: 2147483647)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gl/lib/../../../gl/lib/fflush.c",
+                    "line": 150,
+                    "column": 27,
+                    "event": "note",
+                    "message": "Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   54|       }",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   55|     ASSERT (0 <= result);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   56|->   ASSERT (result + 1 < SIZE_MAX / sizeof *groups);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   57|     groups = malloc ((result + 1) * sizeof *groups);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   58|     ASSERT (groups);",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "SYMBIOTIC_WARNING",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-getgroups.c",
+                    "line": 70,
+                    "event": "error",
+                    "message": "reached \"unreachable\" instruction",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-getgroups.c",
+                    "line": 70,
+                    "event": "note",
+                    "message": "call stack: function main (=2, =0)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-getgroups.c",
+                    "line": 49,
+                    "column": 12,
+                    "event": "note",
+                    "message": "Non-deterministic values: getgroups: len 4 bytes, [4 times 0x0] (i32: 0)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-getgroups.c",
+                    "line": 70,
+                    "column": 3,
+                    "event": "note",
+                    "message": "Non-deterministic values: getgroups: len 4 bytes, [0x1|3 times 0x0] (i32: 1)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gl/lib/../../../gl/lib/fflush.c",
+                    "line": 150,
+                    "column": 27,
+                    "event": "note",
+                    "message": "Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   68|         ASSERT (errno == EINVAL);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   69|       }",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   70|->   ASSERT (getgroups (result, groups) == result);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   71|     ASSERT (getgroups (result + 1, groups) == result);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   72|     ASSERT (groups[result] == -1);",
                     "verbosity_level": "1"
                 }
             ]
@@ -3008,6 +3384,334 @@
                     "line": 0,
                     "event": "#",
                     "message": "   51|     ASSERT (MEMRCHR (input, 'a', 0) == NULL);",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "SYMBIOTIC_WARNING",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-nanosleep.c",
+                    "line": 58,
+                    "event": "error",
+                    "message": "reached \"unreachable\" instruction",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-nanosleep.c",
+                    "line": 58,
+                    "event": "note",
+                    "message": "call stack: function main ()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/nanosleep.c",
+                    "line": 85,
+                    "column": 12,
+                    "event": "note",
+                    "message": "Non-deterministic values: nanosleep: len 4 bytes, [0x1|3 times 0x0] (i32: 1)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gl/lib/../../../gl/lib/fflush.c",
+                    "line": 150,
+                    "column": 27,
+                    "event": "note",
+                    "message": "Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   56|     ts.tv_sec = 0;",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   57|     ts.tv_nsec = 1;",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   58|->   ASSERT (nanosleep (&ts, &ts) == 0);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   59|     /* Remaining time is only defined on EINTR failure; but on success,",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   60|        it is typically either 0 or unchanged from input.  At any rate,",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "SYMBIOTIC_WARNING",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-nanosleep.c",
+                    "line": 65,
+                    "event": "error",
+                    "message": "reached \"unreachable\" instruction",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-nanosleep.c",
+                    "line": 65,
+                    "event": "note",
+                    "message": "call stack: function main ()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/nanosleep.c",
+                    "line": 85,
+                    "column": 12,
+                    "event": "note",
+                    "message": "Non-deterministic values: nanosleep: len 4 bytes, [4 times 0x0] (i32: 0)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/nanosleep.c",
+                    "line": 85,
+                    "column": 12,
+                    "event": "note",
+                    "message": "Non-deterministic values: nanosleep: len 4 bytes, [0x1|3 times 0x0] (i32: 1)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gl/lib/../../../gl/lib/fflush.c",
+                    "line": 150,
+                    "column": 27,
+                    "event": "note",
+                    "message": "Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   63|     ASSERT (ts.tv_nsec == 0 || ts.tv_nsec == 1);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   64|     ts.tv_nsec = 0;",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   65|->   ASSERT (nanosleep (&ts, NULL) == 0);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   66|   ",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   67|   #if HAVE_DECL_ALARM",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "SYMBIOTIC_WARNING",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-nanosleep.c",
+                    "line": 75,
+                    "event": "error",
+                    "message": "reached \"unreachable\" instruction",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-nanosleep.c",
+                    "line": 75,
+                    "event": "note",
+                    "message": "call stack: function main ()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/nanosleep.c",
+                    "line": 85,
+                    "column": 12,
+                    "event": "note",
+                    "message": "Non-deterministic values: nanosleep: len 4 bytes, [4 times 0x0] (i32: 0)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/nanosleep.c",
+                    "line": 85,
+                    "column": 12,
+                    "event": "note",
+                    "message": "Non-deterministic values: nanosleep: len 4 bytes, [4 times 0x0] (i32: 0)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/nanosleep.c",
+                    "line": 74,
+                    "column": 18,
+                    "event": "note",
+                    "message": "Non-deterministic values: nanosleep: len 4 bytes, [0x1|3 times 0x0] (i32: 1)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gl/lib/../../../gl/lib/fflush.c",
+                    "line": 150,
+                    "column": 27,
+                    "event": "note",
+                    "message": "Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   73|       ts.tv_nsec = 999999999;",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   74|       errno = 0;",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   75|->     ASSERT (nanosleep (&ts, &ts) == -1);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   76|       ASSERT (errno == EINTR);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   77|       ASSERT (pentecost - 10 < ts.tv_sec && ts.tv_sec <= pentecost);",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "SYMBIOTIC_WARNING",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-nanosleep.c",
+                    "line": 76,
+                    "event": "error",
+                    "message": "reached \"unreachable\" instruction",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-nanosleep.c",
+                    "line": 76,
+                    "event": "note",
+                    "message": "call stack: function main ()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/nanosleep.c",
+                    "line": 85,
+                    "column": 12,
+                    "event": "note",
+                    "message": "Non-deterministic values: nanosleep: len 4 bytes, [4 times 0x0] (i32: 0)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/nanosleep.c",
+                    "line": 85,
+                    "column": 12,
+                    "event": "note",
+                    "message": "Non-deterministic values: nanosleep: len 4 bytes, [4 times 0x0] (i32: 0)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/nanosleep.c",
+                    "line": 74,
+                    "column": 18,
+                    "event": "note",
+                    "message": "Non-deterministic values: nanosleep: len 4 bytes, [4 times 0xff] (i32: -1)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gl/lib/../../../gl/lib/fflush.c",
+                    "line": 150,
+                    "column": 27,
+                    "event": "note",
+                    "message": "Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   74|       errno = 0;",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   75|       ASSERT (nanosleep (&ts, &ts) == -1);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   76|->     ASSERT (errno == EINTR);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   77|       ASSERT (pentecost - 10 < ts.tv_sec && ts.tv_sec <= pentecost);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   78|       ASSERT (0 <= ts.tv_nsec && ts.tv_nsec <= 999999999);",
                     "verbosity_level": "1"
                 }
             ]
@@ -4220,6 +4924,438 @@
             "events":
             [
                 {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-sigaction.c",
+                    "line": 97,
+                    "event": "error",
+                    "message": "reached \"unreachable\" instruction",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-sigaction.c",
+                    "line": 97,
+                    "event": "note",
+                    "message": "call stack: function main ()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-sigaction.c",
+                    "line": 97,
+                    "column": 3,
+                    "event": "note",
+                    "message": "Non-deterministic values: sigemptyset: len 4 bytes, [0x1|3 times 0x0] (i32: 1)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gl/lib/../../../gl/lib/fflush.c",
+                    "line": 150,
+                    "column": 27,
+                    "event": "note",
+                    "message": "Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   95|   ",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   96|     sa.sa_flags = 0;",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   97|->   ASSERT (sigemptyset (&sa.sa_mask) == 0);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   98|     ASSERT (sigaction (SIGABRT, &sa, NULL) == 0);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   99|     ASSERT (raise (SIGABRT) == 0);",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "SYMBIOTIC_WARNING",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-sigaction.c",
+                    "line": 98,
+                    "event": "error",
+                    "message": "reached \"unreachable\" instruction",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-sigaction.c",
+                    "line": 98,
+                    "event": "note",
+                    "message": "call stack: function main ()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-sigaction.c",
+                    "line": 97,
+                    "column": 3,
+                    "event": "note",
+                    "message": "Non-deterministic values: sigemptyset: len 4 bytes, [4 times 0x0] (i32: 0)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-sigaction.c",
+                    "line": 98,
+                    "column": 3,
+                    "event": "note",
+                    "message": "Non-deterministic values: sigaction: len 4 bytes, [0x1|3 times 0x0] (i32: 1)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gl/lib/../../../gl/lib/fflush.c",
+                    "line": 150,
+                    "column": 27,
+                    "event": "note",
+                    "message": "Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   96|     sa.sa_flags = 0;",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   97|     ASSERT (sigemptyset (&sa.sa_mask) == 0);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   98|->   ASSERT (sigaction (SIGABRT, &sa, NULL) == 0);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   99|     ASSERT (raise (SIGABRT) == 0);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  100|   ",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "SYMBIOTIC_WARNING",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-sigaction.c",
+                    "line": 99,
+                    "event": "error",
+                    "message": "reached \"unreachable\" instruction",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-sigaction.c",
+                    "line": 99,
+                    "event": "note",
+                    "message": "call stack: function main ()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-sigaction.c",
+                    "line": 97,
+                    "column": 3,
+                    "event": "note",
+                    "message": "Non-deterministic values: sigemptyset: len 4 bytes, [4 times 0x0] (i32: 0)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-sigaction.c",
+                    "line": 98,
+                    "column": 3,
+                    "event": "note",
+                    "message": "Non-deterministic values: sigaction: len 4 bytes, [4 times 0x0] (i32: 0)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-sigaction.c",
+                    "line": 99,
+                    "column": 3,
+                    "event": "note",
+                    "message": "Non-deterministic values: raise: len 4 bytes, [0x1|3 times 0x0] (i32: 1)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gl/lib/../../../gl/lib/fflush.c",
+                    "line": 150,
+                    "column": 27,
+                    "event": "note",
+                    "message": "Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   97|     ASSERT (sigemptyset (&sa.sa_mask) == 0);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   98|     ASSERT (sigaction (SIGABRT, &sa, NULL) == 0);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   99|->   ASSERT (raise (SIGABRT) == 0);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  100|   ",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  101|     sa.sa_flags = SA_RESETHAND | SA_NODEFER;",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "SYMBIOTIC_WARNING",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-sigaction.c",
+                    "line": 102,
+                    "event": "error",
+                    "message": "reached \"unreachable\" instruction",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-sigaction.c",
+                    "line": 102,
+                    "event": "note",
+                    "message": "call stack: function main ()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-sigaction.c",
+                    "line": 97,
+                    "column": 3,
+                    "event": "note",
+                    "message": "Non-deterministic values: sigemptyset: len 4 bytes, [4 times 0x0] (i32: 0)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-sigaction.c",
+                    "line": 98,
+                    "column": 3,
+                    "event": "note",
+                    "message": "Non-deterministic values: sigaction: len 4 bytes, [4 times 0x0] (i32: 0)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-sigaction.c",
+                    "line": 99,
+                    "column": 3,
+                    "event": "note",
+                    "message": "Non-deterministic values: raise: len 4 bytes, [4 times 0x0] (i32: 0)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-sigaction.c",
+                    "line": 102,
+                    "column": 3,
+                    "event": "note",
+                    "message": "Non-deterministic values: sigaction: len 4 bytes, [0x1|3 times 0x0] (i32: 1)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gl/lib/../../../gl/lib/fflush.c",
+                    "line": 150,
+                    "column": 27,
+                    "event": "note",
+                    "message": "Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  100|   ",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  101|     sa.sa_flags = SA_RESETHAND | SA_NODEFER;",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  102|->   ASSERT (sigaction (SIGABRT, &sa, &old_sa) == 0);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  103|     ASSERT ((old_sa.sa_flags & MASK_SA_FLAGS) == 0);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  104|     ASSERT (old_sa.sa_handler == handler);",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "SYMBIOTIC_WARNING",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-sigaction.c",
+                    "line": 103,
+                    "event": "error",
+                    "message": "reached \"unreachable\" instruction",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-sigaction.c",
+                    "line": 103,
+                    "event": "note",
+                    "message": "call stack: function main ()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-sigaction.c",
+                    "line": 97,
+                    "column": 3,
+                    "event": "note",
+                    "message": "Non-deterministic values: sigemptyset: len 4 bytes, [4 times 0x0] (i32: 0)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-sigaction.c",
+                    "line": 98,
+                    "column": 3,
+                    "event": "note",
+                    "message": "Non-deterministic values: sigaction: len 4 bytes, [4 times 0x0] (i32: 0)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-sigaction.c",
+                    "line": 99,
+                    "column": 3,
+                    "event": "note",
+                    "message": "Non-deterministic values: raise: len 4 bytes, [4 times 0x0] (i32: 0)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-sigaction.c",
+                    "line": 102,
+                    "column": 3,
+                    "event": "note",
+                    "message": "Non-deterministic values: sigaction: len 4 bytes, [4 times 0x0] (i32: 0)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gl/lib/../../../gl/lib/fflush.c",
+                    "line": 150,
+                    "column": 27,
+                    "event": "note",
+                    "message": "Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  101|     sa.sa_flags = SA_RESETHAND | SA_NODEFER;",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  102|     ASSERT (sigaction (SIGABRT, &sa, &old_sa) == 0);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  103|->   ASSERT ((old_sa.sa_flags & MASK_SA_FLAGS) == 0);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  104|     ASSERT (old_sa.sa_handler == handler);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  105|     ASSERT (raise (SIGABRT) == 0);",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "SYMBIOTIC_WARNING",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
                     "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-sigprocmask.c",
                     "line": 62,
                     "event": "error",
@@ -4550,7 +5686,7 @@
                     "line": 52,
                     "column": 17,
                     "event": "note",
-                    "message": "Non-deterministic values: sleep: len 4 bytes, [0x1|0xeb|0x41|0x0] (i32: 4320001)",
+                    "message": "Non-deterministic values: sleep: len 4 bytes, [4 times 0x0] (i32: 0)",
                     "verbosity_level": "1"
                 },
                 {
@@ -5606,6 +6742,230 @@
                     "line": 0,
                     "event": "#",
                     "message": "   74|     {",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "SYMBIOTIC_WARNING",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-usleep.c",
+                    "line": 34,
+                    "event": "error",
+                    "message": "reached \"unreachable\" instruction",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-usleep.c",
+                    "line": 34,
+                    "event": "note",
+                    "message": "call stack: function main ()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-usleep.c",
+                    "line": 34,
+                    "column": 3,
+                    "event": "note",
+                    "message": "Non-deterministic values: usleep: len 4 bytes, [0x1|3 times 0x0] (i32: 1)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gl/lib/../../../gl/lib/fflush.c",
+                    "line": 150,
+                    "column": 27,
+                    "event": "note",
+                    "message": "Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   32|   {",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   33|     time_t start = time (NULL);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   34|->   ASSERT (usleep (1000000) == 0);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   35|     ASSERT (start < time (NULL));",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   36|   ",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "SYMBIOTIC_WARNING",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-usleep.c",
+                    "line": 35,
+                    "event": "error",
+                    "message": "reached \"unreachable\" instruction",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-usleep.c",
+                    "line": 35,
+                    "event": "note",
+                    "message": "call stack: function main ()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-usleep.c",
+                    "line": 34,
+                    "column": 3,
+                    "event": "note",
+                    "message": "Non-deterministic values: usleep: len 4 bytes, [4 times 0x0] (i32: 0)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gl/lib/../../../gl/lib/fflush.c",
+                    "line": 150,
+                    "column": 27,
+                    "event": "note",
+                    "message": "Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   33|     time_t start = time (NULL);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   34|     ASSERT (usleep (1000000) == 0);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   35|->   ASSERT (start < time (NULL));",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   36|   ",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   37|     ASSERT (usleep (0) == 0);",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "SYMBIOTIC_WARNING",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-usleep.c",
+                    "line": 37,
+                    "event": "error",
+                    "message": "reached \"unreachable\" instruction",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-usleep.c",
+                    "line": 37,
+                    "event": "note",
+                    "message": "call stack: function main ()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-usleep.c",
+                    "line": 34,
+                    "column": 3,
+                    "event": "note",
+                    "message": "Non-deterministic values: usleep: len 4 bytes, [4 times 0x0] (i32: 0)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gnulib-tests/../../gnulib-tests/test-usleep.c",
+                    "line": 37,
+                    "column": 3,
+                    "event": "note",
+                    "message": "Non-deterministic values: usleep: len 4 bytes, [0x1|3 times 0x0] (i32: 1)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "findutils-4.8.0/build/gl/lib/../../../gl/lib/fflush.c",
+                    "line": 150,
+                    "column": 27,
+                    "event": "note",
+                    "message": "Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   35|     ASSERT (start < time (NULL));",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   36|   ",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   37|->   ASSERT (usleep (0) == 0);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   38|   ",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   39|     return 0;",
                     "verbosity_level": "1"
                 }
             ]

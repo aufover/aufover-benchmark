@@ -1,3 +1,43 @@
+Error: SYMBIOTIC_WARNING:
+libp11-0.4.11/examples/auth.c:96: error: memory error: out of bound pointer
+libp11-0.4.11/examples/auth.c:96: note: call stack: function main (=2, =0)
+libp11-0.4.11/examples/auth.c:96: note: Additional Info: address: (ReadLSB w64 0 PKCS11_find_token):(Add w64 24
+libp11-0.4.11/examples/auth.c:96: note: Additional Info: (ReadLSB w64 0 PKCS11_find_token_off))
+libp11-0.4.11/examples/auth.c:96: note: Additional Info: example: 0:279
+libp11-0.4.11/examples/auth.c:96: note: Additional Info: segment range: [0, 18446744073709551615]
+libp11-0.4.11/examples/auth.c:96: note: Additional Info: offset range: [0, 18446744073709551615]
+libp11-0.4.11/examples/auth.c:96: note: Additional Info: pointing to: none
+libp11-0.4.11/examples/auth.c:75:8: note: Non-deterministic values: PKCS11_CTX_new: len 8 bytes, [8 times 0x0] (i64: 0)
+libp11-0.4.11/examples/auth.c:78:7: note: Non-deterministic values: PKCS11_CTX_load: len 4 bytes, [4 times 0x0] (i32: 0)
+libp11-0.4.11/examples/auth.c:87:7: note: Non-deterministic values: PKCS11_enumerate_slots: len 4 bytes, [4 times 0x0] (i32: 0)
+libp11-0.4.11/examples/auth.c:95:9: note: Non-deterministic values: PKCS11_find_token: len 8 bytes, [0x1|7 times 0x0] (i64: 1)
+/builddir/build/BUILD/libp11-0.4.11/examples/auth.c:95:9 (offset): note: Non-deterministic values: PKCS11_find_token: len 8 bytes, [8 times 0x0] (i64: 0)
+#   94|   	/* get first slot with a token */
+#   95|   	slot = PKCS11_find_token(ctx, slots, nslots);
+#   96|-> 	if (slot == NULL || slot->token == NULL) {
+#   97|   		fprintf(stderr, "no token available\n");
+#   98|   		rc = 3;
+
+Error: SYMBIOTIC_WARNING:
+libp11-0.4.11/examples/auth.c:101: error: memory error: out of bound pointer
+libp11-0.4.11/examples/auth.c:101: note: call stack: function main (=2, =0)
+libp11-0.4.11/examples/auth.c:101: note: Additional Info: address: (ReadLSB w64 0 PKCS11_find_token):(ReadLSB w64 0 PKCS11_find_token_off)
+libp11-0.4.11/examples/auth.c:101: note: Additional Info: example: 13:18446744073709551595
+libp11-0.4.11/examples/auth.c:101: note: Additional Info: segment range: [13, 13]
+libp11-0.4.11/examples/auth.c:101: note: Additional Info: offset range: [18446744073709551592, 18446744073709551615]
+libp11-0.4.11/examples/auth.c:101: note: Additional Info: pointing to: object at Segment: [13] of size 66
+libp11-0.4.11/examples/auth.c:101: note: Additional Info: MO1[66] allocated at main():  %3 = alloca i32, align 4
+libp11-0.4.11/examples/auth.c:75:8: note: Non-deterministic values: PKCS11_CTX_new: len 8 bytes, [8 times 0x0] (i64: 0)
+libp11-0.4.11/examples/auth.c:78:7: note: Non-deterministic values: PKCS11_CTX_load: len 4 bytes, [4 times 0x0] (i32: 0)
+libp11-0.4.11/examples/auth.c:87:7: note: Non-deterministic values: PKCS11_enumerate_slots: len 4 bytes, [4 times 0x0] (i32: 0)
+libp11-0.4.11/examples/auth.c:95:9: note: Non-deterministic values: PKCS11_find_token: len 8 bytes, [0xd|7 times 0x0] (i64: 13)
+/builddir/build/BUILD/libp11-0.4.11/examples/auth.c:95:9 (offset): note: Non-deterministic values: PKCS11_find_token: len 8 bytes, [0xe8|7 times 0xff] (i64: -24)
+#   99|   		goto notoken;
+#  100|   	}
+#  101|-> 	printf("Slot manufacturer......: %s\n", slot->manufacturer);
+#  102|   	printf("Slot description.......: %s\n", slot->description);
+#  103|   	printf("Slot token label.......: %s\n", slot->token->label);
+
 Error: COMPILER_WARNING (CWE-477):
 libp11-0.4.11/examples/auth.c:252:7: warning[-Wdeprecated-declarations]: 'PKCS11_sign' is deprecated
 #        rc = PKCS11_sign(NID_sha1, random, RANDOM_SIZE,
@@ -90,6 +130,54 @@ libp11-0.4.11/tests/fork-change-slot.c:294:5: warning[-Wunused-result]: ignoring
 #  294|->     EVP_VerifyInit(md_ctx, digest_algo);
 #  295|       if (EVP_VerifyUpdate(md_ctx, random, RANDOM_SIZE) <= 0) {
 #  296|           error_queue("EVP_VerifyUpdate", pid);
+
+Error: SYMBIOTIC_WARNING:
+libp11-0.4.11/tests/fork-test.c:116: error: memory error: out of bound pointer
+libp11-0.4.11/tests/fork-test.c:116: note: call stack: function main (=2, =0)
+libp11-0.4.11/tests/fork-test.c:116: note: Additional Info: address: (ReadLSB w64 0 PKCS11_find_token):(Add w64 24
+libp11-0.4.11/tests/fork-test.c:116: note: Additional Info: (ReadLSB w64 0 PKCS11_find_token_off))
+libp11-0.4.11/tests/fork-test.c:116: note: Additional Info: example: 0:71776119061217304
+libp11-0.4.11/tests/fork-test.c:116: note: Additional Info: segment range: [0, 18446744073709551615]
+libp11-0.4.11/tests/fork-test.c:116: note: Additional Info: offset range: [0, 18446744073709551615]
+libp11-0.4.11/tests/fork-test.c:116: note: Additional Info: pointing to: none
+libp11-0.4.11/tests/fork-test.c:300:14: note: Non-deterministic values: fork: len 4 bytes, [4 times 0x0] (i32: 0)
+libp11-0.4.11/tests/fork-test.c:88:8: note: Non-deterministic values: PKCS11_CTX_new: len 8 bytes, [8 times 0x0] (i64: 0)
+libp11-0.4.11/tests/fork-test.c:300:14: note: Non-deterministic values: fork: len 4 bytes, [4 times 0x0] (i32: 0)
+libp11-0.4.11/tests/fork-test.c:93:7: note: Non-deterministic values: PKCS11_CTX_load: len 4 bytes, [4 times 0x0] (i32: 0)
+libp11-0.4.11/tests/fork-test.c:300:14: note: Non-deterministic values: fork: len 4 bytes, [4 times 0x0] (i32: 0)
+libp11-0.4.11/tests/fork-test.c:104:7: note: Non-deterministic values: PKCS11_enumerate_slots: len 4 bytes, [4 times 0x0] (i32: 0)
+libp11-0.4.11/tests/fork-test.c:300:14: note: Non-deterministic values: fork: len 4 bytes, [4 times 0x0] (i32: 0)
+libp11-0.4.11/tests/fork-test.c:114:9: note: Non-deterministic values: PKCS11_find_token: len 8 bytes, [0x1|7 times 0x0] (i64: 1)
+/builddir/build/BUILD/libp11-0.4.11/tests/fork-test.c:114:9 (offset): note: Non-deterministic values: PKCS11_find_token: len 8 bytes, [8 times 0x0] (i64: 0)
+#  114|   	slot = PKCS11_find_token(ctx, slots, nslots);
+#  115|   	error_queue("PKCS11_find_token");
+#  116|-> 	if (slot == NULL || slot->token == NULL) {
+#  117|   		fprintf(stderr, "no token available\n");
+#  118|   		rc = 3;
+
+Error: SYMBIOTIC_WARNING:
+libp11-0.4.11/tests/fork-test.c:121: error: memory error: out of bound pointer
+libp11-0.4.11/tests/fork-test.c:121: note: call stack: function main (=2, =0)
+libp11-0.4.11/tests/fork-test.c:121: note: Additional Info: address: (ReadLSB w64 0 PKCS11_find_token):(ReadLSB w64 0 PKCS11_find_token_off)
+libp11-0.4.11/tests/fork-test.c:121: note: Additional Info: example: 12:18446744073709551596
+libp11-0.4.11/tests/fork-test.c:121: note: Additional Info: segment range: [12, 12]
+libp11-0.4.11/tests/fork-test.c:121: note: Additional Info: offset range: [18446744073709551592, 18446744073709551615]
+libp11-0.4.11/tests/fork-test.c:121: note: Additional Info: pointing to: object at Segment: [12] of size 168
+libp11-0.4.11/tests/fork-test.c:121: note: Additional Info: MO0[168] allocated at main():  %3 = alloca i32, align 4
+libp11-0.4.11/tests/fork-test.c:300:14: note: Non-deterministic values: fork: len 4 bytes, [4 times 0x0] (i32: 0)
+libp11-0.4.11/tests/fork-test.c:88:8: note: Non-deterministic values: PKCS11_CTX_new: len 8 bytes, [8 times 0x0] (i64: 0)
+libp11-0.4.11/tests/fork-test.c:300:14: note: Non-deterministic values: fork: len 4 bytes, [4 times 0x0] (i32: 0)
+libp11-0.4.11/tests/fork-test.c:93:7: note: Non-deterministic values: PKCS11_CTX_load: len 4 bytes, [4 times 0x0] (i32: 0)
+libp11-0.4.11/tests/fork-test.c:300:14: note: Non-deterministic values: fork: len 4 bytes, [4 times 0x0] (i32: 0)
+libp11-0.4.11/tests/fork-test.c:104:7: note: Non-deterministic values: PKCS11_enumerate_slots: len 4 bytes, [4 times 0x0] (i32: 0)
+libp11-0.4.11/tests/fork-test.c:300:14: note: Non-deterministic values: fork: len 4 bytes, [4 times 0x0] (i32: 0)
+libp11-0.4.11/tests/fork-test.c:114:9: note: Non-deterministic values: PKCS11_find_token: len 8 bytes, [0xc|7 times 0x0] (i64: 12)
+/builddir/build/BUILD/libp11-0.4.11/tests/fork-test.c:114:9 (offset): note: Non-deterministic values: PKCS11_find_token: len 8 bytes, [0xe8|7 times 0xff] (i64: -24)
+#  119|   		goto notoken;
+#  120|   	}
+#  121|-> 	printf("Slot manufacturer......: %s\n", slot->manufacturer);
+#  122|   	printf("Slot description.......: %s\n", slot->description);
+#  123|   	printf("Slot token label.......: %s\n", slot->token->label);
 
 Error: COMPILER_WARNING (CWE-252):
 libp11-0.4.11/tests/fork-test.c:224:2: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
