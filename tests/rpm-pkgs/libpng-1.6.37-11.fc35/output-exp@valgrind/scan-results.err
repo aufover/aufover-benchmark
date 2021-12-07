@@ -1,0 +1,98 @@
+Error: COMPILER_WARNING (CWE-758):
+libpng-1.6.37/contrib/libtests/pngstest.c: scope_hint: In function 'write_one_file'
+libpng-1.6.37/contrib/libtests/pngstest.c:3215:24: warning[-Wformat-overflow=]: '%d' directive writing between 1 and 11 bytes into a region of size between 10 and 32
+# 3215 |       sprintf(name, "%s%d.png", tmpf, ++counter);
+#      |                        ^~
+libpng-1.6.37/contrib/libtests/pngstest.c:3215:21: note: directive argument in the range [-2147483647, 2147483647]
+# 3215 |       sprintf(name, "%s%d.png", tmpf, ++counter);
+#      |                     ^~~~~~~~~~
+/usr/include/stdio.h:888: included_from: Included from here.
+libpng-1.6.37/contrib/libtests/pngstest.c:19: included_from: Included from here.
+/usr/include/bits/stdio2.h:38:10: note: '__sprintf_chk' output between 6 and 38 bytes into a destination of size 32
+#   38 |   return __builtin___sprintf_chk (__s, __USE_FORTIFY_LEVEL - 1,
+#      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   39 |                                   __glibc_objsize (__s), __fmt,
+#      |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   40 |                                   __va_arg_pack ());
+#      |                                   ~~~~~~~~~~~~~~~~~
+# 3213|         char name[32];
+# 3214|   
+# 3215|->       sprintf(name, "%s%d.png", tmpf, ++counter);
+# 3216|   
+# 3217|         if (png_image_write_to_file(&image->image, name, convert_to_8bit,
+
+Error: VALGRIND_WARNING:
+libpng-1.6.37/.libs/pngtest: note: while executing process 219883 with arguments: --relaxed ./contrib/testpngs/crashers/badcrc.png
+libpng-1.6.37/png.c:173: warning[UninitValue]: Use of uninitialised value of size 8
+/usr/lib64/libz.so.1.2.11: note: called from here
+libpng-1.6.37/png.c:173: note: called from UnknownInlinedFun()
+libpng-1.6.37/png.c:139: note: called from png_calculate_crc()
+libpng-1.6.37/pngwutil.c:186: note: called from UnknownInlinedFun()
+libpng-1.6.37/pngwutil.c:1053: note: called from png_compress_IDAT()
+libpng-1.6.37/pngwutil.c:2769: note: called from UnknownInlinedFun()
+libpng-1.6.37/pngwutil.c:2739: note: called from UnknownInlinedFun()
+libpng-1.6.37/pngwrite.c:899: note: called from png_write_row()
+libpng-1.6.37/pngwrite.c:593: note: called from UnknownInlinedFun()
+libpng-1.6.37/pngwrite.c:579: note: called from png_write_rows()
+libpng-1.6.37/pngtest.c:1507: note: called from test_one_file()
+libpng-1.6.37/pngtest.c:1952: note: called from main()
+#  171|   #endif
+#  172|   
+#  173|->          crc = crc32(crc, ptr, safe_length);
+#  174|   
+#  175|            /* The following should never issue compiler warnings; if they do the
+
+Error: COMPILER_WARNING (CWE-457):
+libpng-1.6.37/pngerror.c:19: included_from: Included from here.
+libpng-1.6.37/pngerror.c: scope_hint: In function 'png_warning_parameter_unsigned'
+libpng-1.6.37/pngpriv.h:1749:4: warning[-Wmaybe-uninitialized]: 'buffer' may be used uninitialized
+# 1749 |    png_format_number(buffer, buffer + (sizeof buffer), format, number)
+#      |    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libpng-1.6.37/pngerror.c:133:1: note: by argument 1 of type 'const char *' to 'png_format_number' declared here
+#  133 | png_format_number(png_const_charp start, png_charp end, int format,
+#      | ^~~~~~~~~~~~~~~~~
+libpng-1.6.37/pngerror.c:258:9: note: 'buffer' declared here
+#  258 |    char buffer[PNG_NUMBER_BUFFER_SIZE];
+#      |         ^~~~~~
+# 1747|   /* Convenience macro that takes an array: */
+# 1748|   #define PNG_FORMAT_NUMBER(buffer,format,number) \
+# 1749|->    png_format_number(buffer, buffer + (sizeof buffer), format, number)
+# 1750|   
+# 1751|   /* Suggested size for a number buffer (enough for 64 bits and a sign!) */
+
+Error: COMPILER_WARNING (CWE-457):
+libpng-1.6.37/png.c: scope_hint: In function 'png_convert_to_rfc1123_buffer'
+libpng-1.6.37/pngpriv.h:1749:4: warning[-Wmaybe-uninitialized]: 'number_buf' may be used uninitialized
+# 1749 |    png_format_number(buffer, buffer + (sizeof buffer), format, number)
+libpng-1.6.37/png.h:335: included_from: Included from here.
+libpng-1.6.37/pngpriv.h:386: included_from: Included from here.
+libpng-1.6.37/png.c:14: included_from: Included from here.
+libpng-1.6.37/pngpriv.h:1744:33: note: by argument 1 of type 'const char *' to 'png_format_number' declared here
+# 1744 | PNG_INTERNAL_FUNCTION(png_charp,png_format_number,(png_const_charp start,
+#      |                                 ^~~~~~~~~~~~~~~~~
+libpng-1.6.37/png.c:755:12: note: 'number_buf' declared here
+#  755 |       char number_buf[5]; /* enough for a four-digit year */
+#      |            ^~~~~~~~~~
+# 1747|   /* Convenience macro that takes an array: */
+# 1748|   #define PNG_FORMAT_NUMBER(buffer,format,number) \
+# 1749|->    png_format_number(buffer, buffer + (sizeof buffer), format, number)
+# 1750|   
+# 1751|   /* Suggested size for a number buffer (enough for 64 bits and a sign!) */
+
+Error: VALGRIND_WARNING:
+libpng-1.6.37/.libs/pngtest: note: while executing process 219883 with arguments: --relaxed ./contrib/testpngs/crashers/badcrc.png
+libpng-1.6.37/pngtest.c:1674: warning[SyscallParam]: Syscall param write(buf) points to uninitialised byte(s)
+libpng-1.6.37/pngtest.c:1674: note: Address 0x4b7164f is 47 bytes inside a block of size 4,096 alloc'd
+/usr/lib64/libc.so.6: note: called from write()
+/usr/lib64/libc.so.6: note: called from _IO_file_write@@GLIBC_2.2.5()
+/usr/lib64/libc.so.6: note: called from new_do_write()
+/usr/lib64/libc.so.6: note: called from _IO_do_write@@GLIBC_2.2.5()
+/usr/lib64/libc.so.6: note: called from _IO_file_close_it@@GLIBC_2.2.5()
+/usr/lib64/libc.so.6: note: called from fclose@@GLIBC_2.2.5()
+libpng-1.6.37/pngtest.c:1674: note: called from test_one_file()
+libpng-1.6.37/pngtest.c:1952: note: called from main()
+# 1672|   
+# 1673|      FCLOSE(fpin);
+# 1674|->    FCLOSE(fpout);
+# 1675|   
+# 1676|      /* Summarize any warnings or errors and in 'strict' mode fail the test.

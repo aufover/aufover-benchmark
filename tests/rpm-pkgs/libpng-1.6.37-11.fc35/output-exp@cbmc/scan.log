@@ -1,0 +1,1378 @@
+scan.ini: [scan]
+scan.ini: tool = csmock
+scan.ini: tool-version = csmock-3.2.0.20211207.150340.g263db49.csexec-1.fc34
+scan.ini: tool-args = '/usr/bin/csmock' '-o' '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/libpng-1.6.37-11.fc35/cbmc/output' '-f' '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/libpng-1.6.37-11.fc35/libpng-1.6.37-11.fc35.src.rpm' '-r' 'fedora-35-x86_64' '-t' 'cbmc' '--cbmc-timeout=8' '--keep-going'
+scan.ini: host = f34
+scan.ini: store-results-to = /home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/libpng-1.6.37-11.fc35/cbmc/output
+scan.ini: time-created = 2021-12-07 15:25:05
+scan.ini: enabled-plugins = cbmc, gcc
+scan.ini: mock-config = fedora-35-x86_64
+scan.ini: project-name = libpng-1.6.37-11.fc35
+scan.ini: known-false-positives = /usr/share/csmock/known-false-positives.js
+>>> 2021-12-07 15:25:05	"rpm -qa | sort -V > '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/libpng-1.6.37-11.fc35/cbmc/output/debug/rpm-list-host.txt'"
+
+>>> 2021-12-07 15:25:06	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--init"
+INFO: mock.py version 2.13 starting (python version = 3.9.7, NVR = mock-2.13-1.kdudka.1.fc34)...
+Start(bootstrap): init plugins
+INFO: selinux disabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux disabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start: clean chroot
+Finish: clean chroot
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+Start: unpacking root cache
+Finish: unpacking root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish: chroot init
+Finish: run
+
+>>> 2021-12-07 15:25:19	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--installdeps" "/tmp/csmock5l7ulz8u/libpng-1.6.37-11.fc35.src.rpm"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Dependencies resolved.
+================================================================================
+ Package                   Arch      Version                 Repository    Size
+================================================================================
+Installing:
+ [1mautoconf                 [m noarch    2.69-37.fc35            f35-build    666 k
+ [1mautomake                 [m noarch    1.16.2-5.fc35           f35-build    662 k
+ [1mgcc                      [m x86_64    11.2.1-7.fc35           f35-build     31 M
+ [1mlibtool                  [m x86_64    2.4.6-42.fc35           f35-build    578 k
+ [1mmake                     [m x86_64    1:4.3-6.fc35            f35-build    533 k
+ [1mzlib-devel               [m x86_64    1.2.11-30.fc35          f35-build     44 k
+Installing dependencies:
+ [1mannobin-docs             [m noarch    9.87-3.fc35             f35-build     78 k
+ [1mannobin-plugin-gcc       [m x86_64    9.87-3.fc35             f35-build     42 k
+ [1mcpp                      [m x86_64    11.2.1-7.fc35           f35-build     10 M
+ [1memacs-filesystem         [m noarch    1:27.2-9.fc35           f35-build    9.0 k
+ [1mgc                       [m x86_64    8.0.4-6.fc35            f35-build    103 k
+ [1mglibc-devel              [m x86_64    2.34-10.fc35            f35-build    140 k
+ [1mglibc-headers-x86        [m noarch    2.34-10.fc35            f35-build    538 k
+ [1mgroff-base               [m x86_64    1.22.4-8.fc35           f35-build    1.0 M
+ [1mguile22                  [m x86_64    2.2.7-3.fc35            f35-build    6.4 M
+ [1mkernel-headers           [m x86_64    5.15.4-200.fc35         f35-build    1.3 M
+ [1mlibmpc                   [m x86_64    1.2.1-3.fc35            f35-build     62 k
+ [1mlibtool-ltdl             [m x86_64    2.4.6-42.fc35           f35-build     36 k
+ [1mlibxcrypt-devel          [m x86_64    4.4.26-4.fc35           f35-build     29 k
+ [1mm4                       [m x86_64    1.4.19-2.fc35           f35-build    294 k
+ [1mncurses                  [m x86_64    6.2-8.20210508.fc35     f35-build    400 k
+ [1mperl-B                   [m x86_64    1.82-482.fc35           f35-build    188 k
+ [1mperl-Carp                [m noarch    1.52-478.fc35           f35-build     29 k
+ [1mperl-Class-Struct        [m noarch    0.66-482.fc35           f35-build     30 k
+ [1mperl-Data-Dumper         [m x86_64    2.183-2.fc35            f35-build     56 k
+ [1mperl-DynaLoader          [m x86_64    1.50-482.fc35           f35-build     34 k
+ [1mperl-Encode              [m x86_64    4:3.15-482.fc35         f35-build    1.7 M
+ [1mperl-Errno               [m x86_64    1.33-482.fc35           f35-build     23 k
+ [1mperl-Exporter            [m noarch    5.76-479.fc35           f35-build     31 k
+ [1mperl-Fcntl               [m x86_64    1.14-482.fc35           f35-build     28 k
+ [1mperl-File-Basename       [m noarch    2.85-482.fc35           f35-build     25 k
+ [1mperl-File-Compare        [m noarch    1.100.600-482.fc35      f35-build     21 k
+ [1mperl-File-Copy           [m noarch    2.35-482.fc35           f35-build     28 k
+ [1mperl-File-Find           [m noarch    1.39-482.fc35           f35-build     33 k
+ [1mperl-File-Path           [m noarch    2.18-478.fc35           f35-build     35 k
+ [1mperl-File-Temp           [m noarch    1:0.231.100-478.fc35    f35-build     59 k
+ [1mperl-File-stat           [m noarch    1.09-482.fc35           f35-build     25 k
+ [1mperl-Getopt-Long         [m noarch    1:2.52-478.fc35         f35-build     60 k
+ [1mperl-Getopt-Std          [m noarch    1.13-482.fc35           f35-build     23 k
+ [1mperl-HTTP-Tiny           [m noarch    0.080-1.fc35            f35-build     55 k
+ [1mperl-IO                  [m x86_64    1.46-482.fc35           f35-build     95 k
+ [1mperl-IPC-Open3           [m noarch    1.21-482.fc35           f35-build     31 k
+ [1mperl-MIME-Base64         [m x86_64    3.16-478.fc35           f35-build     30 k
+ [1mperl-POSIX               [m x86_64    1.97-482.fc35           f35-build    105 k
+ [1mperl-PathTools           [m x86_64    3.80-478.fc35           f35-build     85 k
+ [1mperl-Pod-Escapes         [m noarch    1:1.07-478.fc35         f35-build     20 k
+ [1mperl-Pod-Perldoc         [m noarch    3.28.01-479.fc35        f35-build     84 k
+ [1mperl-Pod-Simple          [m noarch    1:3.43-2.fc35           f35-build    215 k
+ [1mperl-Pod-Usage           [m noarch    4:2.01-478.fc35         f35-build     40 k
+ [1mperl-Scalar-List-Utils   [m x86_64    5:1.60-462.fc35         f35-build     72 k
+ [1mperl-SelectSaver         [m noarch    1.02-482.fc35           f35-build     19 k
+ [1mperl-Socket              [m x86_64    4:2.032-2.fc35          f35-build     55 k
+ [1mperl-Storable            [m x86_64    1:3.25-1.fc35           f35-build     95 k
+ [1mperl-Symbol              [m noarch    1.09-482.fc35           f35-build     22 k
+ [1mperl-Term-ANSIColor      [m noarch    5.01-479.fc35           f35-build     48 k
+ [1mperl-Term-Cap            [m noarch    1.17-478.fc35           f35-build     22 k
+ [1mperl-Text-ParseWords     [m noarch    3.30-478.fc35           f35-build     16 k
+ [1mperl-Text-Tabs+Wrap      [m noarch    2021.0814-1.fc35        f35-build     22 k
+ [1mperl-Thread-Queue        [m noarch    3.14-478.fc35           f35-build     21 k
+ [1mperl-Time-Local          [m noarch    2:1.300-478.fc35        f35-build     33 k
+ [1mperl-constant            [m noarch    1.33-479.fc35           f35-build     23 k
+ [1mperl-if                  [m noarch    0.60.900-482.fc35       f35-build     22 k
+ [1mperl-interpreter         [m x86_64    4:5.34.0-482.fc35       f35-build     79 k
+ [1mperl-libs                [m x86_64    4:5.34.0-482.fc35       f35-build    2.1 M
+ [1mperl-mro                 [m x86_64    1.25-482.fc35           f35-build     36 k
+ [1mperl-overload            [m noarch    1.33-482.fc35           f35-build     53 k
+ [1mperl-overloading         [m noarch    0.02-482.fc35           f35-build     21 k
+ [1mperl-parent              [m noarch    1:0.238-478.fc35        f35-build     14 k
+ [1mperl-podlators           [m noarch    1:4.14-478.fc35         f35-build    111 k
+ [1mperl-subs                [m noarch    1.04-482.fc35           f35-build     19 k
+ [1mperl-threads             [m x86_64    1:2.26-448.fc35         f35-build     57 k
+ [1mperl-threads-shared      [m x86_64    1.62-478.fc35           f35-build     43 k
+ [1mperl-vars                [m noarch    1.05-482.fc35           f35-build     21 k
+
+Transaction Summary
+================================================================================
+Install  73 Packages
+
+Total size: 60 M
+Installed size: 196 M
+Downloading Packages:
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+
+Installed:
+  annobin-docs-9.87-3.fc35.noarch                                               
+  annobin-plugin-gcc-9.87-3.fc35.x86_64                                         
+  autoconf-2.69-37.fc35.noarch                                                  
+  automake-1.16.2-5.fc35.noarch                                                 
+  cpp-11.2.1-7.fc35.x86_64                                                      
+  emacs-filesystem-1:27.2-9.fc35.noarch                                         
+  gc-8.0.4-6.fc35.x86_64                                                        
+  gcc-11.2.1-7.fc35.x86_64                                                      
+  glibc-devel-2.34-10.fc35.x86_64                                               
+  glibc-headers-x86-2.34-10.fc35.noarch                                         
+  groff-base-1.22.4-8.fc35.x86_64                                               
+  guile22-2.2.7-3.fc35.x86_64                                                   
+  kernel-headers-5.15.4-200.fc35.x86_64                                         
+  libmpc-1.2.1-3.fc35.x86_64                                                    
+  libtool-2.4.6-42.fc35.x86_64                                                  
+  libtool-ltdl-2.4.6-42.fc35.x86_64                                             
+  libxcrypt-devel-4.4.26-4.fc35.x86_64                                          
+  m4-1.4.19-2.fc35.x86_64                                                       
+  make-1:4.3-6.fc35.x86_64                                                      
+  ncurses-6.2-8.20210508.fc35.x86_64                                            
+  perl-B-1.82-482.fc35.x86_64                                                   
+  perl-Carp-1.52-478.fc35.noarch                                                
+  perl-Class-Struct-0.66-482.fc35.noarch                                        
+  perl-Data-Dumper-2.183-2.fc35.x86_64                                          
+  perl-DynaLoader-1.50-482.fc35.x86_64                                          
+  perl-Encode-4:3.15-482.fc35.x86_64                                            
+  perl-Errno-1.33-482.fc35.x86_64                                               
+  perl-Exporter-5.76-479.fc35.noarch                                            
+  perl-Fcntl-1.14-482.fc35.x86_64                                               
+  perl-File-Basename-2.85-482.fc35.noarch                                       
+  perl-File-Compare-1.100.600-482.fc35.noarch                                   
+  perl-File-Copy-2.35-482.fc35.noarch                                           
+  perl-File-Find-1.39-482.fc35.noarch                                           
+  perl-File-Path-2.18-478.fc35.noarch                                           
+  perl-File-Temp-1:0.231.100-478.fc35.noarch                                    
+  perl-File-stat-1.09-482.fc35.noarch                                           
+  perl-Getopt-Long-1:2.52-478.fc35.noarch                                       
+  perl-Getopt-Std-1.13-482.fc35.noarch                                          
+  perl-HTTP-Tiny-0.080-1.fc35.noarch                                            
+  perl-IO-1.46-482.fc35.x86_64                                                  
+  perl-IPC-Open3-1.21-482.fc35.noarch                                           
+  perl-MIME-Base64-3.16-478.fc35.x86_64                                         
+  perl-POSIX-1.97-482.fc35.x86_64                                               
+  perl-PathTools-3.80-478.fc35.x86_64                                           
+  perl-Pod-Escapes-1:1.07-478.fc35.noarch                                       
+  perl-Pod-Perldoc-3.28.01-479.fc35.noarch                                      
+  perl-Pod-Simple-1:3.43-2.fc35.noarch                                          
+  perl-Pod-Usage-4:2.01-478.fc35.noarch                                         
+  perl-Scalar-List-Utils-5:1.60-462.fc35.x86_64                                 
+  perl-SelectSaver-1.02-482.fc35.noarch                                         
+  perl-Socket-4:2.032-2.fc35.x86_64                                             
+  perl-Storable-1:3.25-1.fc35.x86_64                                            
+  perl-Symbol-1.09-482.fc35.noarch                                              
+  perl-Term-ANSIColor-5.01-479.fc35.noarch                                      
+  perl-Term-Cap-1.17-478.fc35.noarch                                            
+  perl-Text-ParseWords-3.30-478.fc35.noarch                                     
+  perl-Text-Tabs+Wrap-2021.0814-1.fc35.noarch                                   
+  perl-Thread-Queue-3.14-478.fc35.noarch                                        
+  perl-Time-Local-2:1.300-478.fc35.noarch                                       
+  perl-constant-1.33-479.fc35.noarch                                            
+  perl-if-0.60.900-482.fc35.noarch                                              
+  perl-interpreter-4:5.34.0-482.fc35.x86_64                                     
+  perl-libs-4:5.34.0-482.fc35.x86_64                                            
+  perl-mro-1.25-482.fc35.x86_64                                                 
+  perl-overload-1.33-482.fc35.noarch                                            
+  perl-overloading-0.02-482.fc35.noarch                                         
+  perl-parent-1:0.238-478.fc35.noarch                                           
+  perl-podlators-1:4.14-478.fc35.noarch                                         
+  perl-subs-1.04-482.fc35.noarch                                                
+  perl-threads-1:2.26-448.fc35.x86_64                                           
+  perl-threads-shared-1.62-478.fc35.x86_64                                      
+  perl-vars-1.05-482.fc35.noarch                                                
+  zlib-devel-1.2.11-30.fc35.x86_64                                              
+
+Complete!
+
+>>> 2021-12-07 15:26:31	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--install" "cbmc" "cbmc-utils" "csexec"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Dependencies resolved.
+================================================================================
+ Package                    Arch      Version           Repository         Size
+================================================================================
+Installing:
+ [1mcbmc                      [m x86_64    5.38.0-1.fc35     f35-build          15 M
+ [1mcbmc-utils                [m x86_64    5.38.0-1.fc35     f35-build          12 k
+ [1mcsexec                    [m x86_64    2.1.0-1.fc35      aufover-cswrap    352 k
+Installing dependencies:
+ [1mexpat                     [m x86_64    2.4.1-2.fc35      f35-build         110 k
+ [1mgcc-c++                   [m x86_64    11.2.1-7.fc35     f35-build          12 M
+ [1mlibstdc++-devel           [m x86_64    11.2.1-7.fc35     f35-build         2.2 M
+ [1mminisat2-libs             [m x86_64    2.2.1-13.fc35     f35-build          44 k
+ [1mmpdecimal                 [m x86_64    2.5.1-2.fc35      f35-build          99 k
+ [1mpython-pip-wheel          [m noarch    21.2.3-4.fc35     f35-build         1.1 M
+ [1mpython-setuptools-wheel   [m noarch    57.4.0-1.fc35     f35-build         505 k
+ [1mpython3                   [m x86_64    3.10.0-1.fc35     f35-build          25 k
+ [1mpython3-libs              [m x86_64    3.10.0-1.fc35     f35-build         7.5 M
+
+Transaction Summary
+================================================================================
+Install  12 Packages
+
+Total size: 39 M
+Installed size: 132 M
+Downloading Packages:
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+
+Installed:
+  cbmc-5.38.0-1.fc35.x86_64                                                     
+  cbmc-utils-5.38.0-1.fc35.x86_64                                               
+  csexec-2.1.0-1.fc35.x86_64                                                    
+  expat-2.4.1-2.fc35.x86_64                                                     
+  gcc-c++-11.2.1-7.fc35.x86_64                                                  
+  libstdc++-devel-11.2.1-7.fc35.x86_64                                          
+  minisat2-libs-2.2.1-13.fc35.x86_64                                            
+  mpdecimal-2.5.1-2.fc35.x86_64                                                 
+  python-pip-wheel-21.2.3-4.fc35.noarch                                         
+  python-setuptools-wheel-57.4.0-1.fc35.noarch                                  
+  python3-3.10.0-1.fc35.x86_64                                                  
+  python3-libs-3.10.0-1.fc35.x86_64                                             
+
+Complete!
+
+>>> 2021-12-07 15:27:07	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa' | sort -V > /home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/libpng-1.6.37-11.fc35/cbmc/output/debug/rpm-list-mock.txt"
+
+>>> 2021-12-07 15:27:09	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa --provides' | sort -V > /tmp/csmock5l7ulz8u/rpm-list-mock-provides.txt"
+
+>>> 2021-12-07 15:27:10	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--copyin" "/tmp/csmock5l7ulz8u/libpng-1.6.37-11.fc35.src.rpm" "/builddir/libpng-1.6.37-11.fc35.src.rpm"
+
+>>> 2021-12-07 15:27:12	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "chown mockbuild -R /builddir"
+
+>>> 2021-12-07 15:27:14	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"rpm -Uvh --nodeps '/builddir/libpng-1.6.37-11.fc35.src.rpm'\""
+Updating / installing...
+libpng-2:1.6.37-11.fc35               ########################################
+
+>>> 2021-12-07 15:27:15	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"sed -e 's|^ExclusiveArch:.*\\\$||' -i /builddir/build/SPECS/libpng.spec\""
+
+>>> 2021-12-07 15:27:17	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"rpmbuild -bs --nodeps /builddir/build/SPECS/libpng.spec '--define' 'apidocs 0' '--define' 'with_publican 0' '--without' 'docs' '--without' 'langpacks' '--define' '__cc goto-gcc' '--define' '__cxx goto-gcc' '--define' '__cpp goto-gcc -E' '--define' 'optflags -O0' '--define' 'build_ldflags -O0' && sh -c 'cd /builddir/build/SRPMS && eval mv -v *.src.rpm /builddir/libpng-1.6.37-11.fc35.src.rpm || :'\""
+setting SOURCE_DATE_EPOCH=1626912000
+Wrote: /builddir/build/SRPMS/libpng-1.6.37-11.fc35.src.rpm
+renamed 'libpng-1.6.37-11.fc35.src.rpm' -> '/builddir/libpng-1.6.37-11.fc35.src.rpm'
+
+>>> 2021-12-07 15:27:18	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--disable-plugin=selinux" "--copyout" "/builddir/libpng-1.6.37-11.fc35.src.rpm" "/tmp/csmock5l7ulz8u/libpng-1.6.37-11.fc35.src.rpm"
+
+>>> 2021-12-07 15:27:20	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--installdeps" "/tmp/csmock5l7ulz8u/libpng-1.6.37-11.fc35.src.rpm"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Package autoconf-2.69-37.fc35.noarch is already installed.
+Package automake-1.16.2-5.fc35.noarch is already installed.
+Package gcc-11.2.1-7.fc35.x86_64 is already installed.
+Package libtool-2.4.6-42.fc35.x86_64 is already installed.
+Package make-1:4.3-6.fc35.x86_64 is already installed.
+Package zlib-devel-1.2.11-30.fc35.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+
+>>> 2021-12-07 15:27:27	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--install" "cbmc" "cbmc-utils" "csexec"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Package cbmc-5.38.0-1.fc35.x86_64 is already installed.
+Package cbmc-utils-5.38.0-1.fc35.x86_64 is already installed.
+Package csexec-2.1.0-1.fc35.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+
+>>> 2021-12-07 15:27:33	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa' | sort -V > /home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/libpng-1.6.37-11.fc35/cbmc/output/debug/rpm-list-mock.txt"
+
+>>> 2021-12-07 15:27:34	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa --provides' | sort -V > /tmp/csmock5l7ulz8u/rpm-list-mock-provides.txt"
+
+>>> 2021-12-07 15:27:35	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--install" "csdiff"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Dependencies resolved.
+================================================================================
+ Package                    Arch        Version            Repository      Size
+================================================================================
+Installing:
+ [1mcsdiff                    [m x86_64      2.2.0-1.fc35       f35-build      895 k
+Installing dependencies:
+ [1mboost-filesystem          [m x86_64      1.76.0-4.fc35      f35-build       60 k
+ [1mboost-program-options     [m x86_64      1.76.0-4.fc35      f35-build      108 k
+ [1mboost-system              [m x86_64      1.76.0-4.fc35      f35-build       15 k
+
+Transaction Summary
+================================================================================
+Install  4 Packages
+
+Total size: 1.1 M
+Installed size: 4.8 M
+Downloading Packages:
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+
+Installed:
+  boost-filesystem-1.76.0-4.fc35.x86_64                                         
+  boost-program-options-1.76.0-4.fc35.x86_64                                    
+  boost-system-1.76.0-4.fc35.x86_64                                             
+  csdiff-2.2.0-1.fc35.x86_64                                                    
+
+Complete!
+
+>>> 2021-12-07 15:27:54	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa' | sort -V > /home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/libpng-1.6.37-11.fc35/cbmc/output/debug/rpm-list-mock.txt"
+
+>>> 2021-12-07 15:27:56	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa --provides' | sort -V > /tmp/csmock5l7ulz8u/rpm-list-mock-provides.txt"
+
+>>> 2021-12-07 15:27:57	"tar -cP '/usr/share/csmock/scripts' '/usr/bin/cswrap' '/usr/lib64/cswrap' '/tmp/csmock5l7ulz8u/libpng-1.6.37-11.fc35.src.rpm' | '/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'tar -xC/'"
+tar: Removing leading `/' from member names
+
+scan.ini: analyzer-version-cbmc = 5.38.0
+>>> 2021-12-07 15:27:58	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"mkdir -pv '/builddir/cbmc-capture'\""
+mkdir: created directory '/builddir/cbmc-capture'
+
+scan.ini: analyzer-version-gcc = 11.2.1
+>>> 2021-12-07 15:28:00	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "rpm -Uvh --nodeps '/tmp/csmock5l7ulz8u/libpng-1.6.37-11.fc35.src.rpm'"
+Updating / installing...
+libpng-2:1.6.37-11.fc35               ########################################
+
+>>> 2021-12-07 15:28:01	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "chmod -R +r /builddir"
+
+>>> 2021-12-07 15:28:03	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "ln -fv '/usr/share/csmock/scripts/enable-keep-going.sh' '/usr/share/csmock/scripts/chroot-fixups'"
+'/usr/share/csmock/scripts/chroot-fixups/enable-keep-going.sh' => '/usr/share/csmock/scripts/enable-keep-going.sh'
+
+>>> 2021-12-07 15:28:04	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--shell" "for i in /usr/share/csmock/scripts/chroot-fixups/*; do test -x \$i && echo RUN: \$i >&2 && \$i; done"
+RUN: /usr/share/csmock/scripts/chroot-fixups/enable-keep-going.sh
+renamed '/usr/bin/make' -> '/usr/bin/make.orig'
++ ls -l /usr/bin/make
+-rwxr-xr-x. 1 root root 42 Dec  7 15:28 /usr/bin/make
++ cat /usr/bin/make
+#!/bin/sh
+exec /usr/bin/make.orig -k "$@"
+RUN: /usr/share/csmock/scripts/chroot-fixups/gdk-pixbuf2-triggers.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/glib2-triggers.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/kpathsea-texhash.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/openssl-public-header-files.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/qt5-core-abi.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/rpm-build-scripts.sh
++ sed -e s/fail=1/fail=0/ -i /usr/lib/rpm/redhat/brp-mangle-shebangs
+'/usr/lib/rpm/brp-strip-static-archive' -> '/bin/true'
+RUN: /usr/share/csmock/scripts/chroot-fixups/rpm-macros.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/rpm-python-extras.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/shared-mime-info-triggers.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/simplify-cpp-includes.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/simplify-glib-includes.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/simplify-systemd-includes.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/symbiotic-timeout.sh
+
+>>> 2021-12-07 15:28:06	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--chroot" "/bin/su mockbuild -l -c \"rpmbuild -bp --nodeps /builddir/build/SPECS/libpng.spec '--define' 'apidocs 0' '--define' 'with_publican 0' '--without' 'docs' '--without' 'langpacks' '--define' '__cc goto-gcc' '--define' '__cxx goto-gcc' '--define' '__cpp goto-gcc -E' '--define' 'optflags -O0' '--define' 'build_ldflags -O0'\""
+INFO: mock.py version 2.13 starting (python version = 3.9.7, NVR = mock-2.13-1.kdudka.1.fc34)...
+Start(bootstrap): init plugins
+INFO: selinux disabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux disabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish: chroot init
+INFO: Running in chroot: ['/bin/su mockbuild -l -c "rpmbuild -bp --nodeps /builddir/build/SPECS/libpng.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc goto-gcc\' \'--define\' \'__cxx goto-gcc\' \'--define\' \'__cpp goto-gcc -E\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'"']
+Start: chroot ['/bin/su mockbuild -l -c "rpmbuild -bp --nodeps /builddir/build/SPECS/libpng.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc goto-gcc\' \'--define\' \'__cxx goto-gcc\' \'--define\' \'__cpp goto-gcc -E\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'"']
+setting SOURCE_DATE_EPOCH=1626912000
+Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.dIZOdp
++ umask 022
++ cd /builddir/build/BUILD
++ cd /builddir/build/BUILD
++ rm -rf libpng-1.6.37
++ /usr/bin/gzip -dc /builddir/build/SOURCES/libpng-1.6.37.tar.gz
++ /usr/bin/tar -xof -
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd libpng-1.6.37
++ /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
++ cp -p /builddir/build/SOURCES/pngusr.dfa .
+Patch #0 (libpng-multilib.patch):
++ echo 'Patch #0 (libpng-multilib.patch):'
++ /usr/bin/patch --no-backup-if-mismatch -f -p1 --fuzz=0
+patching file libpng-config.in
+Patch #1 (libpng-fix-arm-neon.patch):
++ echo 'Patch #1 (libpng-fix-arm-neon.patch):'
++ /usr/bin/patch --no-backup-if-mismatch -f -p1 -b --suffix .arm --fuzz=0
+patching file configure.ac
+Hunk #1 succeeded at 363 (offset 80 lines).
+patching file pngpriv.h
+Hunk #1 succeeded at 127 (offset 2 lines).
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Finish: chroot ['/bin/su mockbuild -l -c "rpmbuild -bp --nodeps /builddir/build/SPECS/libpng.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc goto-gcc\' \'--define\' \'__cxx goto-gcc\' \'--define\' \'__cpp goto-gcc -E\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'"']
+
+>>> 2021-12-07 15:28:07	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "chmod -R +r /builddir/build"
+
+>>> 2021-12-07 15:28:09	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--chroot" "/bin/su mockbuild -l -c \"PATH=/usr/lib64/cswrap:\\\$PATH CSWRAP_CAP_FILE=\\\$'/builddir/cswrap-capture.err' CSWRAP_TIMEOUT=\\\$'30' CSWRAP_TIMEOUT_FOR=\\\$':' CC=\\\$'goto-gcc' CXX=\\\$'goto-gcc' CSEXEC_WRAP_CMD=\\\$'--skip-ld-linux\\\\a/usr/bin/csexec-cbmc\\\\a-t\\\\a8\\\\a-l\\\\a/builddir/cbmc-capture\\\\a-c\\\\a--unwind 1 --json-ui --verbosity 4 --pointer-overflow-check --memory-leak-check ' CSWRAP_ADD_CFLAGS=\\\$'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader' CSWRAP_DEL_CFLAGS=\\\$'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register' CSWRAP_ADD_CXXFLAGS=\\\$'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader' CSWRAP_DEL_CXXFLAGS=\\\$'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register' sh -c \\\"rpmbuild -bc --nodeps --short-circuit /builddir/build/SPECS/libpng.spec '--define' 'apidocs 0' '--define' 'with_publican 0' '--without' 'docs' '--without' 'langpacks' '--define' '__cc goto-gcc' '--define' '__cxx goto-gcc' '--define' '__cpp goto-gcc -E' '--define' 'optflags -O0' '--define' 'build_ldflags -O0'\\\"\""
+INFO: mock.py version 2.13 starting (python version = 3.9.7, NVR = mock-2.13-1.kdudka.1.fc34)...
+Start(bootstrap): init plugins
+INFO: selinux disabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux disabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish: chroot init
+INFO: Running in chroot: ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'goto-gcc\' CXX=\\$\'goto-gcc\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\a/usr/bin/csexec-cbmc\\\\a-t\\\\a8\\\\a-l\\\\a/builddir/cbmc-capture\\\\a-c\\\\a--unwind 1 --json-ui --verbosity 4 --pointer-overflow-check --memory-leak-check \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bc --nodeps --short-circuit /builddir/build/SPECS/libpng.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc goto-gcc\' \'--define\' \'__cxx goto-gcc\' \'--define\' \'__cpp goto-gcc -E\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+Start: chroot ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'goto-gcc\' CXX=\\$\'goto-gcc\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\a/usr/bin/csexec-cbmc\\\\a-t\\\\a8\\\\a-l\\\\a/builddir/cbmc-capture\\\\a-c\\\\a--unwind 1 --json-ui --verbosity 4 --pointer-overflow-check --memory-leak-check \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bc --nodeps --short-circuit /builddir/build/SPECS/libpng.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc goto-gcc\' \'--define\' \'__cxx goto-gcc\' \'--define\' \'__cpp goto-gcc -E\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+setting SOURCE_DATE_EPOCH=1626912000
+Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.5HCiyG
++ umask 022
++ cd /builddir/build/BUILD
++ cd libpng-1.6.37
++ autoreconf -vif
+autoreconf: Entering directory `.'
+autoreconf: configure.ac: not using Gettext
+autoreconf: running: aclocal --force -I scripts
+autoreconf: configure.ac: tracing
+autoreconf: running: libtoolize --copy --force
+libtoolize: putting auxiliary files in '.'.
+libtoolize: copying file './ltmain.sh'
+libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'scripts'.
+libtoolize: copying file 'scripts/libtool.m4'
+libtoolize: copying file 'scripts/ltoptions.m4'
+libtoolize: copying file 'scripts/ltsugar.m4'
+libtoolize: copying file 'scripts/ltversion.m4'
+libtoolize: copying file 'scripts/lt~obsolete.m4'
+autoreconf: running: /usr/bin/autoconf --force
+autoreconf: running: /usr/bin/autoheader --force
+autoreconf: running: automake --add-missing --copy --force-missing
+configure.ac:61: installing './compile'
+configure.ac:37: installing './missing'
+Makefile.am: installing './depcomp'
+autoreconf: Leaving directory `.'
++ CFLAGS=-O0
++ export CFLAGS
++ CXXFLAGS=-O0
++ export CXXFLAGS
++ FFLAGS='-O0 -I/usr/lib64/gfortran/modules'
++ export FFLAGS
++ FCFLAGS='-O0 -I/usr/lib64/gfortran/modules'
++ export FCFLAGS
++ LDFLAGS=-O0
++ export LDFLAGS
++ LT_SYS_LIBRARY_PATH=/usr/lib64:
++ export LT_SYS_LIBRARY_PATH
++ CC=goto-gcc
++ export CC
++ CXX=goto-gcc
++ export CXX
++ '[' '-flto=auto -ffat-lto-objectsx' '!=' x ']'
+++ find . -type f -name configure -print
++ for file in $(find . -type f -name configure -print)
++ /usr/bin/sed -r --in-place=.backup 's/^char \(\*f\) \(\) = /__attribute__ ((used)) char (*f) () = /g' ./configure
++ diff -u ./configure.backup ./configure
++ mv ./configure.backup ./configure
++ /usr/bin/sed -r --in-place=.backup 's/^char \(\*f\) \(\);/__attribute__ ((used)) char (*f) ();/g' ./configure
++ diff -u ./configure.backup ./configure
++ mv ./configure.backup ./configure
++ /usr/bin/sed -r --in-place=.backup 's/^char \$2 \(\);/__attribute__ ((used)) char \$2 ();/g' ./configure
++ diff -u ./configure.backup ./configure
+--- ./configure.backup	2021-12-07 15:28:14.390045093 +0100
++++ ./configure	2021-12-07 15:28:15.229581195 +0100
+@@ -1878,7 +1878,7 @@
+ #ifdef __cplusplus
+ extern "C"
+ #endif
+-char $2 ();
++__attribute__ ((used)) char $2 ();
+ /* The GNU C library defines this for functions which it implements
+     to always fail with ENOSYS.  Some functions are actually named
+     something starting with __ and the normal name is an alias.  */
++ /usr/bin/sed --in-place=.backup '1{$!N;$!N};$!N;s/int x = 1;\nint y = 0;\nint z;\nint nan;/volatile int x = 1; volatile int y = 0; volatile int z, nan;/;P;D' ./configure
++ diff -u ./configure.backup ./configure
++ mv ./configure.backup ./configure
++ /usr/bin/sed --in-place=.backup 's#^lt_cv_sys_global_symbol_to_cdecl=.*#lt_cv_sys_global_symbol_to_cdecl="sed -n -e '\''s/^T .* \\(.*\\)$/extern int \\1();/p'\'' -e '\''s/^$symcode* .* \\(.*\\)$/extern char \\1;/p'\''"#' ./configure
++ diff -u ./configure.backup ./configure
+--- ./configure.backup	2021-12-07 15:28:15.229581195 +0100
++++ ./configure	2021-12-07 15:28:15.243556825 +0100
+@@ -6443,7 +6443,7 @@
+ # Transform an extracted symbol line into a proper C declaration.
+ # Some systems (esp. on ia64) link data and code symbols differently,
+ # so use this general approach.
+-lt_cv_sys_global_symbol_to_cdecl="sed -n"\
++lt_cv_sys_global_symbol_to_cdecl="sed -n -e 's/^T .* \(.*\)$/extern int \1();/p' -e 's/^$symcode* .* \(.*\)$/extern char \1;/p'"
+ $lt_cdecl_hook\
+ " -e 's/^T .* \(.*\)$/extern int \1();/p'"\
+ " -e 's/^$symcode$symcode* .* \(.*\)$/extern char \1;/p'"
+@@ -14632,7 +14632,7 @@
+ compiler='`$ECHO "$compiler" | $SED "$delay_single_quote_subst"`'
+ GCC='`$ECHO "$GCC" | $SED "$delay_single_quote_subst"`'
+ lt_cv_sys_global_symbol_pipe='`$ECHO "$lt_cv_sys_global_symbol_pipe" | $SED "$delay_single_quote_subst"`'
+-lt_cv_sys_global_symbol_to_cdecl='`$ECHO "$lt_cv_sys_global_symbol_to_cdecl" | $SED "$delay_single_quote_subst"`'
++lt_cv_sys_global_symbol_to_cdecl="sed -n -e 's/^T .* \(.*\)$/extern int \1();/p' -e 's/^$symcode* .* \(.*\)$/extern char \1;/p'"
+ lt_cv_sys_global_symbol_to_import='`$ECHO "$lt_cv_sys_global_symbol_to_import" | $SED "$delay_single_quote_subst"`'
+ lt_cv_sys_global_symbol_to_c_name_address='`$ECHO "$lt_cv_sys_global_symbol_to_c_name_address" | $SED "$delay_single_quote_subst"`'
+ lt_cv_sys_global_symbol_to_c_name_address_lib_prefix='`$ECHO "$lt_cv_sys_global_symbol_to_c_name_address_lib_prefix" | $SED "$delay_single_quote_subst"`'
++ '[' 1 = 1 ']'
++++ dirname ./configure
+++ find . -name config.guess -o -name config.sub
++ for i in $(find $(dirname ./configure) -name config.guess -o -name config.sub)
+++ basename ./config.guess
++ '[' -f /usr/lib/rpm/redhat/config.guess ']'
++ /usr/bin/rm -f ./config.guess
+++ basename ./config.guess
++ /usr/bin/cp -fv /usr/lib/rpm/redhat/config.guess ./config.guess
+'/usr/lib/rpm/redhat/config.guess' -> './config.guess'
++ for i in $(find $(dirname ./configure) -name config.guess -o -name config.sub)
+++ basename ./config.sub
++ '[' -f /usr/lib/rpm/redhat/config.sub ']'
++ /usr/bin/rm -f ./config.sub
+++ basename ./config.sub
++ /usr/bin/cp -fv /usr/lib/rpm/redhat/config.sub ./config.sub
+'/usr/lib/rpm/redhat/config.sub' -> './config.sub'
++ '[' 1 = 1 ']'
++ '[' x '!=' 'x-Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld' ']'
+++ find . -name ltmain.sh
++ for i in $(find . -name ltmain.sh)
++ /usr/bin/sed -i.backup -e 's~compiler_flags=$~compiler_flags="-Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld"~' ./ltmain.sh
++ ./configure --build=x86_64-redhat-linux-gnu --host=x86_64-redhat-linux-gnu --program-prefix= --disable-dependency-tracking --prefix=/usr --exec-prefix=/usr --bindir=/usr/bin --sbindir=/usr/sbin --sysconfdir=/etc --datadir=/usr/share --includedir=/usr/include --libdir=/usr/lib64 --libexecdir=/usr/libexec --localstatedir=/var --sharedstatedir=/var/lib --mandir=/usr/share/man --infodir=/usr/share/info
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking for x86_64-redhat-linux-gnu-gcc... goto-gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether goto-gcc accepts -g... yes
+checking for goto-gcc option to accept ISO C89... none needed
+checking whether goto-gcc understands -c and -o together... yes
+checking whether make supports the include directive... yes (GNU style)
+checking dependency style of goto-gcc... none
+checking dependency style of goto-gcc... none
+checking build system type... x86_64-redhat-linux-gnu
+checking host system type... x86_64-redhat-linux-gnu
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for fgrep... /usr/bin/grep -F
+checking how to print strings... printf
+checking for ld used by goto-gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking how to run the C preprocessor... goto-gcc -E
+checking for gawk... (cached) gawk
+checking whether ln -s works... yes
+checking whether make sets $(MAKE)... (cached) yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-redhat-linux-gnu file names to x86_64-redhat-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-redhat-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for x86_64-redhat-linux-gnu-objdump... no
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for x86_64-redhat-linux-gnu-dlltool... no
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for x86_64-redhat-linux-gnu-ar... no
+checking for ar... ar
+checking for archiver @FILE support... @
+checking for x86_64-redhat-linux-gnu-strip... no
+checking for strip... strip
+checking for x86_64-redhat-linux-gnu-ranlib... no
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from goto-gcc object... ./configure: line 6449:  -e 's/^T .* \(.*\)$/extern int \1();/p' -e 's/^[ABCDGIRSTW][ABCDGIRSTW]* .* \(.*\)$/extern char \1;/p': No such file or directory
+ok
+checking for sysroot... no
+checking for a working dd... /usr/bin/dd
+checking how to truncate binary pipes... /usr/bin/dd bs=4096 count=1
+checking for x86_64-redhat-linux-gnu-mt... no
+checking for mt... no
+checking if : is a manifest tool... no
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if goto-gcc supports -fno-rtti -fno-exceptions... no
+checking for goto-gcc option to produce PIC... -fPIC -DPIC
+checking if goto-gcc PIC flag -fPIC -DPIC works... yes
+checking if goto-gcc static flag -static works... no
+checking if goto-gcc supports -c -o file.o... yes
+checking if goto-gcc supports -c -o file.o... (cached) yes
+checking whether the goto-gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking that AWK works... ok
+checking if we need to force back C standard to C89... no
+checking for ANSI C header files... (cached) yes
+checking for an ANSI C-conforming const... yes
+checking for size_t... yes
+checking whether struct tm is in sys/time.h or time.h... time.h
+checking for C/C++ restrict keyword... __restrict
+checking for working strtod... yes
+checking for pow... no
+checking for pow in -lm... yes
+checking for clock_gettime... yes
+checking for zlibVersion in -lz... yes
+checking for feenableexcept in -lm... yes
+checking for feenableexcept... yes
+checking if using Solaris linker... no
+checking if libraries can be versioned... yes
+checking for symbol prefix... 
+configure: pkgconfig directory is ${libdir}/pkgconfig
+configure: Extra options for compiler: 
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating libpng.pc
+config.status: creating libpng-config
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
++ /usr/bin/make -O -j8 V=1 VERBOSE=1 DFA_XTRA=pngusr.dfa
+rm -f pnglibconf.c pnglibconf.tf[45]
+gawk -f ./scripts/options.awk out=pnglibconf.tf4 version=search\
+    ./pngconf.h ./scripts/pnglibconf.dfa\
+    ./pngusr.dfa pngusr.dfa 1>&2
+gawk -f ./scripts/options.awk out=pnglibconf.tf5 pnglibconf.tf4 1>&2
+rm pnglibconf.tf4
+mv pnglibconf.tf5 pnglibconf.c
+rm -f pnglibconf.out pnglibconf.tf[12]
+test -d scripts || mkdir scripts || test -d scripts
+goto-gcc -E -DHAVE_CONFIG_H -I. \
+     -DPNGLIB_LIBNAME='PNG16_0' -DPNGLIB_VERSION='1.6.37' -DSYMBOL_PREFIX='' -DPNG_NO_USE_READ_MACROS -DPNG_BUILDING_SYMBOL_TABLE  pnglibconf.c > pnglibconf.tf1
+gawk -f "./scripts/dfn.awk" out="pnglibconf.tf2" pnglibconf.tf1 1>&2
+rm -f pnglibconf.tf1
+mv pnglibconf.tf2 pnglibconf.out
+rm -f pnglibconf.h
+cp pnglibconf.out pnglibconf.h
+/usr/bin/make.orig  all-am
+make.orig[1]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
+:>pngprefix.h
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
+make.orig[1]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
+cp libpng-config libpng16-config
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
+make.orig[1]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
+cp libpng.pc libpng16.pc
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
+make.orig[1]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
+rm -f scripts/vers.out scripts/vers.tf[12]
+test -d scripts || mkdir scripts || test -d scripts
+goto-gcc -E -DHAVE_CONFIG_H -I. \
+     -DPNGLIB_LIBNAME='PNG16_0' -DPNGLIB_VERSION='1.6.37' -DSYMBOL_PREFIX='' -DPNG_NO_USE_READ_MACROS -DPNG_BUILDING_SYMBOL_TABLE  scripts/vers.c > scripts/vers.tf1
+gawk -f "./scripts/dfn.awk" out="scripts/vers.tf2" scripts/vers.tf1 1>&2
+rm -f scripts/vers.tf1
+mv scripts/vers.tf2 scripts/vers.out
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
+make.orig[1]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
+goto-gcc -DHAVE_CONFIG_H -I.     -O0 -c -o contrib/tools/png-fix-itxt.o contrib/tools/png-fix-itxt.c
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
+make.orig[1]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
+goto-gcc -DHAVE_CONFIG_H -I.     -O0 -c -o pngtest.o pngtest.c
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
+make.orig[1]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
+goto-gcc -DHAVE_CONFIG_H -I.     -O0 -c -o contrib/tools/pngcp.o contrib/tools/pngcp.c
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
+make.orig[1]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
+goto-gcc -DHAVE_CONFIG_H -I.     -O0 -c -o contrib/tools/pngfix.o contrib/tools/pngfix.c
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
+make.orig[1]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
+/bin/sh ./libtool  --tag=CC   --mode=compile goto-gcc -DHAVE_CONFIG_H -I.     -O0 -c -o pngmem.lo pngmem.c
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -O0 -c pngmem.c  -fPIC -DPIC -o .libs/pngmem.o
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -O0 -c pngmem.c -o pngmem.o >/dev/null 2>&1
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
+make.orig[1]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
+/bin/sh ./libtool  --tag=CC   --mode=compile goto-gcc -DHAVE_CONFIG_H -I.     -O0 -c -o pngerror.lo pngerror.c
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -O0 -c pngerror.c  -fPIC -DPIC -o .libs/pngerror.o
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -O0 -c pngerror.c -o pngerror.o >/dev/null 2>&1
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
+make.orig[1]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
+/bin/sh ./libtool  --tag=CC   --mode=compile goto-gcc -DHAVE_CONFIG_H -I.     -O0 -c -o pngget.lo pngget.c
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -O0 -c pngget.c  -fPIC -DPIC -o .libs/pngget.o
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -O0 -c pngget.c -o pngget.o >/dev/null 2>&1
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
+make.orig[1]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
+/bin/sh ./libtool  --tag=CC   --mode=compile goto-gcc -DHAVE_CONFIG_H -I.     -O0 -c -o pngrio.lo pngrio.c
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -O0 -c pngrio.c  -fPIC -DPIC -o .libs/pngrio.o
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -O0 -c pngrio.c -o pngrio.o >/dev/null 2>&1
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
+make.orig[1]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
+/bin/sh ./libtool  --tag=CC   --mode=compile goto-gcc -DHAVE_CONFIG_H -I.     -O0 -c -o pngpread.lo pngpread.c
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -O0 -c pngpread.c  -fPIC -DPIC -o .libs/pngpread.o
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -O0 -c pngpread.c -o pngpread.o >/dev/null 2>&1
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
+make.orig[1]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
+/bin/sh ./libtool  --tag=CC   --mode=compile goto-gcc -DHAVE_CONFIG_H -I.     -O0 -c -o png.lo png.c
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -O0 -c png.c  -fPIC -DPIC -o .libs/png.o
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -O0 -c png.c -o png.o >/dev/null 2>&1
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
+make.orig[1]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
+/bin/sh ./libtool  --tag=CC   --mode=compile goto-gcc -DHAVE_CONFIG_H -I.     -O0 -c -o pngtrans.lo pngtrans.c
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -O0 -c pngtrans.c  -fPIC -DPIC -o .libs/pngtrans.o
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -O0 -c pngtrans.c -o pngtrans.o >/dev/null 2>&1
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
+make.orig[1]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
+/bin/sh ./libtool  --tag=CC   --mode=compile goto-gcc -DHAVE_CONFIG_H -I.     -O0 -c -o pngwio.lo pngwio.c
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -O0 -c pngwio.c  -fPIC -DPIC -o .libs/pngwio.o
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -O0 -c pngwio.c -o pngwio.o >/dev/null 2>&1
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
+make.orig[1]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
+/bin/sh ./libtool  --tag=CC   --mode=compile goto-gcc -DHAVE_CONFIG_H -I.     -O0 -c -o pngread.lo pngread.c
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -O0 -c pngread.c  -fPIC -DPIC -o .libs/pngread.o
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -O0 -c pngread.c -o pngread.o >/dev/null 2>&1
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
+make.orig[1]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
+/bin/sh ./libtool  --tag=CC   --mode=compile goto-gcc -DHAVE_CONFIG_H -I.     -O0 -c -o pngset.lo pngset.c
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -O0 -c pngset.c  -fPIC -DPIC -o .libs/pngset.o
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -O0 -c pngset.c -o pngset.o >/dev/null 2>&1
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
+make.orig[1]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
+/bin/sh ./libtool  --tag=CC   --mode=compile goto-gcc -DHAVE_CONFIG_H -I.     -O0 -c -o pngwrite.lo pngwrite.c
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -O0 -c pngwrite.c  -fPIC -DPIC -o .libs/pngwrite.o
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -O0 -c pngwrite.c -o pngwrite.o >/dev/null 2>&1
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
+make.orig[1]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
+/bin/sh ./libtool  --tag=CC   --mode=compile goto-gcc -DHAVE_CONFIG_H -I.     -O0 -c -o pngwtran.lo pngwtran.c
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -O0 -c pngwtran.c  -fPIC -DPIC -o .libs/pngwtran.o
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -O0 -c pngwtran.c -o pngwtran.o >/dev/null 2>&1
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
+make.orig[1]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
+/bin/sh ./libtool  --tag=CC   --mode=compile goto-gcc -DHAVE_CONFIG_H -I.     -O0 -c -o pngrtran.lo pngrtran.c
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -O0 -c pngrtran.c  -fPIC -DPIC -o .libs/pngrtran.o
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -O0 -c pngrtran.c -o pngrtran.o >/dev/null 2>&1
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
+make.orig[1]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
+/bin/sh ./libtool  --tag=CC   --mode=compile goto-gcc -DHAVE_CONFIG_H -I.     -O0 -c -o mips/mips_init.lo mips/mips_init.c
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -O0 -c mips/mips_init.c  -fPIC -DPIC -o mips/.libs/mips_init.o
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -O0 -c mips/mips_init.c -o mips/mips_init.o >/dev/null 2>&1
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
+make.orig[1]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
+rm -f libpng.vers
+cp scripts/vers.out libpng.vers
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
+make.orig[1]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
+/bin/sh ./libtool  --tag=CC   --mode=compile goto-gcc -DHAVE_CONFIG_H -I.     -O0 -c -o intel/intel_init.lo intel/intel_init.c
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -O0 -c intel/intel_init.c  -fPIC -DPIC -o intel/.libs/intel_init.o
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -O0 -c intel/intel_init.c -o intel/intel_init.o >/dev/null 2>&1
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
+make.orig[1]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
+/bin/sh ./libtool  --tag=CC   --mode=compile goto-gcc -DHAVE_CONFIG_H -I.     -O0 -c -o mips/filter_msa_intrinsics.lo mips/filter_msa_intrinsics.c
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -O0 -c mips/filter_msa_intrinsics.c  -fPIC -DPIC -o mips/.libs/filter_msa_intrinsics.o
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -O0 -c mips/filter_msa_intrinsics.c -o mips/filter_msa_intrinsics.o >/dev/null 2>&1
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
+make.orig[1]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
+/bin/sh ./libtool  --tag=CC   --mode=link goto-gcc  -O0  -O0 -o png-fix-itxt contrib/tools/png-fix-itxt.o  -lm -lz -lm 
+libtool: link: goto-gcc -O0 -O0 -o png-fix-itxt contrib/tools/png-fix-itxt.o  -lz -lm
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
+make.orig[1]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
+goto-gcc -DHAVE_CONFIG_H -I.     -O0 -c -o contrib/libtests/pngunknown.o contrib/libtests/pngunknown.c
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
+make.orig[1]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
+/bin/sh ./libtool  --tag=CC   --mode=compile goto-gcc -DHAVE_CONFIG_H -I.     -O0 -c -o intel/filter_sse2_intrinsics.lo intel/filter_sse2_intrinsics.c
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -O0 -c intel/filter_sse2_intrinsics.c  -fPIC -DPIC -o intel/.libs/filter_sse2_intrinsics.o
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -O0 -c intel/filter_sse2_intrinsics.c -o intel/filter_sse2_intrinsics.o >/dev/null 2>&1
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
+make.orig[1]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
+/bin/sh ./libtool  --tag=CC   --mode=compile goto-gcc -DHAVE_CONFIG_H -I.     -O0 -c -o pngwutil.lo pngwutil.c
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -O0 -c pngwutil.c  -fPIC -DPIC -o .libs/pngwutil.o
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -O0 -c pngwutil.c -o pngwutil.o >/dev/null 2>&1
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
+make.orig[1]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
+/bin/sh ./libtool  --tag=CC   --mode=compile goto-gcc -DHAVE_CONFIG_H -I.     -O0 -c -o powerpc/powerpc_init.lo powerpc/powerpc_init.c
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -O0 -c powerpc/powerpc_init.c  -fPIC -DPIC -o powerpc/.libs/powerpc_init.o
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -O0 -c powerpc/powerpc_init.c -o powerpc/powerpc_init.o >/dev/null 2>&1
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
+make.orig[1]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
+/bin/sh ./libtool  --tag=CC   --mode=compile goto-gcc -DHAVE_CONFIG_H -I.     -O0 -c -o pngrutil.lo pngrutil.c
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -O0 -c pngrutil.c  -fPIC -DPIC -o .libs/pngrutil.o
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -O0 -c pngrutil.c -o pngrutil.o >/dev/null 2>&1
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
+make.orig[1]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
+goto-gcc -DHAVE_CONFIG_H -I.     -O0 -c -o contrib/libtests/timepng.o contrib/libtests/timepng.c
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
+make.orig[1]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
+/bin/sh ./libtool  --tag=CC   --mode=compile goto-gcc -DHAVE_CONFIG_H -I.     -O0 -c -o powerpc/filter_vsx_intrinsics.lo powerpc/filter_vsx_intrinsics.c
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -O0 -c powerpc/filter_vsx_intrinsics.c  -fPIC -DPIC -o powerpc/.libs/filter_vsx_intrinsics.o
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -O0 -c powerpc/filter_vsx_intrinsics.c -o powerpc/filter_vsx_intrinsics.o >/dev/null 2>&1
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
+make.orig[1]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
+goto-gcc -DHAVE_CONFIG_H -I.     -O0 -c -o contrib/libtests/pngimage.o contrib/libtests/pngimage.c
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
+make.orig[1]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
+goto-gcc -DHAVE_CONFIG_H -I.     -O0 -c -o contrib/libtests/pngstest.o contrib/libtests/pngstest.c
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
+make.orig[1]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
+/bin/sh ./libtool  --tag=CC   --mode=link goto-gcc  -O0 -no-undefined -export-dynamic -version-number 16:37:0  -Wl,--version-script=libpng.vers  -O0 -o libpng16.la -rpath /usr/lib64 png.lo pngerror.lo pngget.lo pngmem.lo pngpread.lo pngread.lo pngrio.lo pngrtran.lo pngrutil.lo pngset.lo pngtrans.lo pngwio.lo pngwrite.lo pngwtran.lo pngwutil.lo  mips/mips_init.lo mips/filter_msa_intrinsics.lo intel/intel_init.lo intel/filter_sse2_intrinsics.lo powerpc/powerpc_init.lo powerpc/filter_vsx_intrinsics.lo   -lm -lz -lm 
+libtool: link: goto-gcc -shared  -fPIC -DPIC  .libs/png.o .libs/pngerror.o .libs/pngget.o .libs/pngmem.o .libs/pngpread.o .libs/pngread.o .libs/pngrio.o .libs/pngrtran.o .libs/pngrutil.o .libs/pngset.o .libs/pngtrans.o .libs/pngwio.o .libs/pngwrite.o .libs/pngwtran.o .libs/pngwutil.o mips/.libs/mips_init.o mips/.libs/filter_msa_intrinsics.o intel/.libs/intel_init.o intel/.libs/filter_sse2_intrinsics.o powerpc/.libs/powerpc_init.o powerpc/.libs/filter_vsx_intrinsics.o   -lz -lm -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -O0 -Wl,--version-script=libpng.vers -O0   -Wl,-soname -Wl,libpng16.so.16 -o .libs/libpng16.so.16.37.0
+libtool: link: (cd ".libs" && rm -f "libpng16.so.16" && ln -s "libpng16.so.16.37.0" "libpng16.so.16")
+libtool: link: (cd ".libs" && rm -f "libpng16.so" && ln -s "libpng16.so.16.37.0" "libpng16.so")
+libtool: link: ar cru .libs/libpng16.a  png.o pngerror.o pngget.o pngmem.o pngpread.o pngread.o pngrio.o pngrtran.o pngrutil.o pngset.o pngtrans.o pngwio.o pngwrite.o pngwtran.o pngwutil.o mips/mips_init.o mips/filter_msa_intrinsics.o intel/intel_init.o intel/filter_sse2_intrinsics.o powerpc/powerpc_init.o powerpc/filter_vsx_intrinsics.o
+libtool: link: ranlib .libs/libpng16.a
+libtool: link: ( cd ".libs" && rm -f "libpng16.la" && ln -s "../libpng16.la" "libpng16.la" )
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
+make.orig[1]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
+goto-gcc -DHAVE_CONFIG_H -I.     -O0 -c -o contrib/libtests/pngvalid.o contrib/libtests/pngvalid.c
+In file included from /usr/include/signal.h:25, <--[goto-gcc]
+                 from /builddir/build/BUILD/libpng-1.6.37/contrib/libtests/pngvalid.c:26: <--[goto-gcc]
+/usr/include/features.h:194:3: warning: #warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE" [-Wcpp] <--[goto-gcc]
+  194 | # warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE"
+      |   ^~~~~~~
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+In file included from /usr/include/signal.h:25, <--[goto-gcc]
+                 from /builddir/build/BUILD/libpng-1.6.37/contrib/libtests/pngvalid.c:26: <--[goto-gcc]
+/usr/include/features.h:194:3: warning: #warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE" [-Wcpp] <--[goto-gcc]
+  194 | # warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE"
+      |   ^~~~~~~
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
+make.orig[1]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
+/bin/sh ./libtool  --tag=CC   --mode=link goto-gcc  -O0  -O0 -o pngimage contrib/libtests/pngimage.o libpng16.la -lm -lz -lm 
+libtool: link: goto-gcc -O0 -O0 -o .libs/pngimage contrib/libtests/pngimage.o  ./.libs/libpng16.so -lz -lm
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
+make.orig[1]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
+/bin/sh ./libtool  --tag=CC   --mode=link goto-gcc  -O0  -O0 -o pngtest pngtest.o libpng16.la -lm -lz -lm 
+libtool: link: goto-gcc -O0 -O0 -o .libs/pngtest pngtest.o  ./.libs/libpng16.so -lz -lm
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
+make.orig[1]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
+/bin/sh ./libtool  --tag=CC   --mode=link goto-gcc  -O0  -O0 -o pngunknown contrib/libtests/pngunknown.o libpng16.la -lm -lz -lm 
+libtool: link: goto-gcc -O0 -O0 -o .libs/pngunknown contrib/libtests/pngunknown.o  ./.libs/libpng16.so -lz -lm
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
+make.orig[1]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
+/bin/sh ./libtool  --tag=CC   --mode=link goto-gcc  -O0  -O0 -o pngfix contrib/tools/pngfix.o libpng16.la -lm -lz -lm 
+libtool: link: goto-gcc -O0 -O0 -o .libs/pngfix contrib/tools/pngfix.o  ./.libs/libpng16.so -lz -lm
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
+make.orig[1]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
+/bin/sh ./libtool  --tag=CC   --mode=link goto-gcc  -O0  -O0 -o timepng contrib/libtests/timepng.o libpng16.la -lm -lz -lm 
+libtool: link: goto-gcc -O0 -O0 -o .libs/timepng contrib/libtests/timepng.o  ./.libs/libpng16.so -lz -lm
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
+make.orig[1]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
+/bin/sh ./libtool  --tag=CC   --mode=link goto-gcc  -O0  -O0 -o pngstest contrib/libtests/pngstest.o libpng16.la -lm -lz -lm 
+libtool: link: goto-gcc -O0 -O0 -o .libs/pngstest contrib/libtests/pngstest.o  ./.libs/libpng16.so -lz -lm
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
+make.orig[1]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
+/bin/sh ./libtool  --tag=CC   --mode=link goto-gcc  -O0  -O0 -o pngcp contrib/tools/pngcp.o libpng16.la -lm -lz -lm 
+libtool: link: goto-gcc -O0 -O0 -o .libs/pngcp contrib/tools/pngcp.o  ./.libs/libpng16.so -lz -lm
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
+make.orig[1]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
+/bin/sh ./libtool  --tag=CC   --mode=link goto-gcc  -O0  -O0 -o pngvalid contrib/libtests/pngvalid.o libpng16.la -lm -lz -lm 
+libtool: link: goto-gcc -O0 -O0 -o .libs/pngvalid contrib/libtests/pngvalid.o  ./.libs/libpng16.so -lz -lm
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Finish: chroot ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'goto-gcc\' CXX=\\$\'goto-gcc\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\a/usr/bin/csexec-cbmc\\\\a-t\\\\a8\\\\a-l\\\\a/builddir/cbmc-capture\\\\a-c\\\\a--unwind 1 --json-ui --verbosity 4 --pointer-overflow-check --memory-leak-check \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bc --nodeps --short-circuit /builddir/build/SPECS/libpng.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc goto-gcc\' \'--define\' \'__cxx goto-gcc\' \'--define\' \'__cpp goto-gcc -E\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+
+>>> 2021-12-07 15:28:26	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--chroot" "/bin/su mockbuild -l -c \"PATH=/usr/lib64/cswrap:\\\$PATH CSWRAP_CAP_FILE=\\\$'/builddir/cswrap-capture.err' CSWRAP_TIMEOUT=\\\$'30' CSWRAP_TIMEOUT_FOR=\\\$':' CC=\\\$'goto-gcc' CXX=\\\$'goto-gcc' CSEXEC_WRAP_CMD=\\\$'--skip-ld-linux\\\\a/usr/bin/csexec-cbmc\\\\a-t\\\\a8\\\\a-l\\\\a/builddir/cbmc-capture\\\\a-c\\\\a--unwind 1 --json-ui --verbosity 4 --pointer-overflow-check --memory-leak-check ' CSWRAP_ADD_CFLAGS=\\\$'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader' CSWRAP_DEL_CFLAGS=\\\$'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register' CSWRAP_ADD_CXXFLAGS=\\\$'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader' CSWRAP_DEL_CXXFLAGS=\\\$'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register' sh -c \\\"rpmbuild -bi --nodeps --short-circuit /builddir/build/SPECS/libpng.spec '--define' 'apidocs 0' '--define' 'with_publican 0' '--without' 'docs' '--without' 'langpacks' '--define' '__cc goto-gcc' '--define' '__cxx goto-gcc' '--define' '__cpp goto-gcc -E' '--define' 'optflags -O0' '--define' 'build_ldflags -O0'\\\"\""
+INFO: mock.py version 2.13 starting (python version = 3.9.7, NVR = mock-2.13-1.kdudka.1.fc34)...
+Start(bootstrap): init plugins
+INFO: selinux disabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux disabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 2.13
+INFO: Mock Version: 2.13
+Finish: chroot init
+INFO: Running in chroot: ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'goto-gcc\' CXX=\\$\'goto-gcc\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\a/usr/bin/csexec-cbmc\\\\a-t\\\\a8\\\\a-l\\\\a/builddir/cbmc-capture\\\\a-c\\\\a--unwind 1 --json-ui --verbosity 4 --pointer-overflow-check --memory-leak-check \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bi --nodeps --short-circuit /builddir/build/SPECS/libpng.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc goto-gcc\' \'--define\' \'__cxx goto-gcc\' \'--define\' \'__cpp goto-gcc -E\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+Start: chroot ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'goto-gcc\' CXX=\\$\'goto-gcc\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\a/usr/bin/csexec-cbmc\\\\a-t\\\\a8\\\\a-l\\\\a/builddir/cbmc-capture\\\\a-c\\\\a--unwind 1 --json-ui --verbosity 4 --pointer-overflow-check --memory-leak-check \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bi --nodeps --short-circuit /builddir/build/SPECS/libpng.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc goto-gcc\' \'--define\' \'__cxx goto-gcc\' \'--define\' \'__cpp goto-gcc -E\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+setting SOURCE_DATE_EPOCH=1626912000
+Executing(%install): /bin/sh -e /var/tmp/rpm-tmp.f6FPvg
++ umask 022
++ cd /builddir/build/BUILD
++ '[' /builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64 '!=' / ']'
++ rm -rf /builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64
+++ dirname /builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64
++ mkdir -p /builddir/build/BUILDROOT
++ mkdir /builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64
++ cd libpng-1.6.37
++ /usr/bin/make install DESTDIR=/builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64 'INSTALL=/usr/bin/install -p'
+/usr/bin/make.orig  install-am
+make.orig[1]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
+make.orig[2]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
+ /usr/bin/mkdir -p '/builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/lib64'
+ /bin/sh ./libtool   --mode=install /usr/bin/install -p   libpng16.la '/builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/lib64'
+libtool: install: /usr/bin/install -p .libs/libpng16.so.16.37.0 /builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/lib64/libpng16.so.16.37.0
+libtool: install: (cd /builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/lib64 && { ln -s -f libpng16.so.16.37.0 libpng16.so.16 || { rm -f libpng16.so.16 && ln -s libpng16.so.16.37.0 libpng16.so.16; }; })
+libtool: install: (cd /builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/lib64 && { ln -s -f libpng16.so.16.37.0 libpng16.so || { rm -f libpng16.so && ln -s libpng16.so.16.37.0 libpng16.so; }; })
+libtool: install: /usr/bin/install -p .libs/libpng16.lai /builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/lib64/libpng16.la
+libtool: install: /usr/bin/install -p .libs/libpng16.a /builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/lib64/libpng16.a
+libtool: install: chmod 644 /builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/lib64/libpng16.a
+libtool: install: ranlib /builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/lib64/libpng16.a
+libtool: warning: remember to run 'libtool --finish /usr/lib64'
+ /usr/bin/mkdir -p '/builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/bin'
+  /bin/sh ./libtool   --mode=install /usr/bin/install -p pngfix png-fix-itxt '/builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/bin'
+libtool: warning: 'libpng16.la' has not been installed in '/usr/lib64'
+libtool: install: /usr/bin/install -p .libs/pngfix /builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/bin/pngfix
+libtool: install: /usr/bin/install -p png-fix-itxt /builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/bin/png-fix-itxt
+ /usr/bin/mkdir -p '/builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/bin'
+ /usr/bin/install -p libpng16-config '/builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/bin'
+/usr/bin/make.orig  install-exec-hook
+make.orig[3]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
++ cd /builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/lib64
++ for ext in a dll.a so so.16.37 la sl dylib
++ rm -f libpng.a
++ test -f libpng16.a
++ ln -s libpng16.a libpng.a
++ for ext in a dll.a so so.16.37 la sl dylib
++ rm -f libpng.dll.a
++ test -f libpng16.dll.a
++ for ext in a dll.a so so.16.37 la sl dylib
++ rm -f libpng.so
++ test -f libpng16.so
++ ln -s libpng16.so libpng.so
++ for ext in a dll.a so so.16.37 la sl dylib
++ rm -f libpng.so.16.37
++ test -f libpng16.so.16.37
++ for ext in a dll.a so so.16.37 la sl dylib
++ rm -f libpng.la
++ test -f libpng16.la
++ ln -s libpng16.la libpng.la
++ for ext in a dll.a so so.16.37 la sl dylib
++ rm -f libpng.sl
++ test -f libpng16.sl
++ for ext in a dll.a so so.16.37 la sl dylib
++ rm -f libpng.dylib
++ test -f libpng16.dylib
++ cd /builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/bin
++ rm -f libpng-config
++ ln -s libpng16-config libpng-config
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
+ /usr/bin/mkdir -p '/builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/share/man/man3'
+ /usr/bin/install -p -m 644 libpng.3 libpngpf.3 '/builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/share/man/man3'
+ /usr/bin/mkdir -p '/builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/share/man/man5'
+ /usr/bin/install -p -m 644 png.5 '/builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/share/man/man5'
+ /usr/bin/mkdir -p '/builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/include/libpng16'
+ /usr/bin/install -p -m 644 pnglibconf.h '/builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/include/libpng16'
+ /usr/bin/mkdir -p '/builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/lib64/pkgconfig'
+ /usr/bin/install -p -m 644 libpng16.pc '/builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/lib64/pkgconfig'
+ /usr/bin/mkdir -p '/builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/include/libpng16'
+ /usr/bin/install -p -m 644 png.h pngconf.h '/builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/include/libpng16'
+/usr/bin/make.orig  install-data-hook
+make.orig[3]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
++ cd /builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/include
++ for f in pnglibconf.h png.h pngconf.h
++ rm -f pnglibconf.h
++ ln -s libpng16/pnglibconf.h pnglibconf.h
++ for f in pnglibconf.h png.h pngconf.h
++ rm -f png.h
++ ln -s libpng16/png.h png.h
++ for f in pnglibconf.h png.h pngconf.h
++ rm -f pngconf.h
++ ln -s libpng16/pngconf.h pngconf.h
++ cd /builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/lib64/pkgconfig
++ rm -f libpng.pc
++ ln -s libpng16.pc libpng.pc
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
+make.orig[2]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
++ rm -f /builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/lib64/libpng.la /builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/lib64/libpng16.la
++ /usr/bin/find-debuginfo -j8 --strict-build-id -m -i --build-id-seed 1.6.37-11.fc35 --unique-debug-suffix -1.6.37-11.fc35.x86_64 --unique-debug-src-base libpng-1.6.37-11.fc35.x86_64 --run-dwz --dwz-low-mem-die-limit 10000000 --dwz-max-die-limit 110000000 -S debugsourcefiles.list /builddir/build/BUILD/libpng-1.6.37
+extracting debug info from /builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/bin/pngfix
+extracting debug info from /builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/bin/png-fix-itxt
+extracting debug info from /builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/lib64/libpng16.so.16.37.0
+original debug info size: 6216kB, size after compression: 6092kB
+/usr/bin/sepdebugcrcfix: Updated 3 CRC32s, 0 CRC32s did match.
+2881 blocks
++ /usr/lib/rpm/check-buildroot
++ /usr/lib/rpm/redhat/brp-ldconfig
++ /usr/lib/rpm/brp-compress
++ /usr/lib/rpm/redhat/brp-strip-lto /usr/bin/strip
+/usr/bin/strip: /builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/lib64/st3hDVjY/png.o: cannot set time: Invalid argument
+/usr/bin/strip: /builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/lib64/st3hDVjY/pngerror.o: cannot set time: Invalid argument
+/usr/bin/strip: /builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/lib64/st3hDVjY/pngget.o: cannot set time: Invalid argument
+/usr/bin/strip: /builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/lib64/st3hDVjY/pngmem.o: cannot set time: Invalid argument
+/usr/bin/strip: /builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/lib64/st3hDVjY/pngpread.o: cannot set time: Invalid argument
+/usr/bin/strip: /builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/lib64/st3hDVjY/pngread.o: cannot set time: Invalid argument
+/usr/bin/strip: /builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/lib64/st3hDVjY/pngrio.o: cannot set time: Invalid argument
+/usr/bin/strip: /builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/lib64/st3hDVjY/pngrtran.o: cannot set time: Invalid argument
+/usr/bin/strip: /builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/lib64/st3hDVjY/pngrutil.o: cannot set time: Invalid argument
+/usr/bin/strip: /builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/lib64/st3hDVjY/pngset.o: cannot set time: Invalid argument
+/usr/bin/strip: /builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/lib64/st3hDVjY/pngtrans.o: cannot set time: Invalid argument
+/usr/bin/strip: /builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/lib64/st3hDVjY/pngwio.o: cannot set time: Invalid argument
+/usr/bin/strip: /builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/lib64/st3hDVjY/pngwrite.o: cannot set time: Invalid argument
+/usr/bin/strip: /builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/lib64/st3hDVjY/pngwtran.o: cannot set time: Invalid argument
+/usr/bin/strip: /builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/lib64/st3hDVjY/pngwutil.o: cannot set time: Invalid argument
+/usr/bin/strip: /builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/lib64/st3hDVjY/mips_init.o: cannot set time: Invalid argument
+/usr/bin/strip: /builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/lib64/st3hDVjY/filter_msa_intrinsics.o: cannot set time: Invalid argument
+/usr/bin/strip: /builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/lib64/st3hDVjY/intel_init.o: cannot set time: Invalid argument
+/usr/bin/strip: /builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/lib64/st3hDVjY/filter_sse2_intrinsics.o: cannot set time: Invalid argument
+/usr/bin/strip: /builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/lib64/st3hDVjY/powerpc_init.o: cannot set time: Invalid argument
+/usr/bin/strip: /builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/lib64/st3hDVjY/filter_vsx_intrinsics.o: cannot set time: Invalid argument
++ /usr/lib/rpm/brp-strip-static-archive /usr/bin/strip
++ /usr/lib/rpm/check-rpaths
++ /usr/lib/rpm/redhat/brp-mangle-shebangs
+mangling shebang in /usr/bin/libpng16-config from /bin/sh to #!/usr/bin/sh
++ /usr/lib/rpm/redhat/brp-python-bytecompile '' 1 0
++ /usr/lib/rpm/redhat/brp-python-hardlink
+Executing(%check): /bin/sh -e /var/tmp/rpm-tmp.mlureG
++ umask 022
++ cd /builddir/build/BUILD
++ cd libpng-1.6.37
++ make check
+rm -f scripts/symbols.out scripts/symbols.tf[12]
+test -d scripts || mkdir scripts || test -d scripts
+goto-gcc -E -DHAVE_CONFIG_H -I. \
+     -DPNGLIB_LIBNAME='PNG16_0' -DPNGLIB_VERSION='1.6.37' -DSYMBOL_PREFIX='' -DPNG_NO_USE_READ_MACROS -DPNG_BUILDING_SYMBOL_TABLE  scripts/symbols.c > scripts/symbols.tf1
+gawk -f "./scripts/dfn.awk" out="scripts/symbols.tf2" scripts/symbols.tf1 1>&2
+rm -f scripts/symbols.tf1
+mv scripts/symbols.tf2 scripts/symbols.out
+rm -f scripts/symbols.chk scripts/symbols.new
+gawk -f ./scripts/checksym.awk ./scripts/symbols.def\
+    of="scripts/symbols.new" scripts/symbols.out >&2
+mv scripts/symbols.new scripts/symbols.chk
+/usr/bin/make.orig  check-am
+make.orig[1]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
+/usr/bin/make.orig  pngtest pngunknown pngstest pngvalid pngimage pngcp timepng
+make.orig[2]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
+make.orig[2]: 'pngtest' is up to date.
+make.orig[2]: 'pngunknown' is up to date.
+make.orig[2]: 'pngstest' is up to date.
+make.orig[2]: 'pngvalid' is up to date.
+make.orig[2]: 'pngimage' is up to date.
+make.orig[2]: 'pngcp' is up to date.
+make.orig[2]: 'timepng' is up to date.
+make.orig[2]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
+/usr/bin/make.orig  check-TESTS
+make.orig[2]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
+make.orig[3]: Entering directory '/builddir/build/BUILD/libpng-1.6.37'
+PASS: tests/pngtest
+PASS: tests/pngtest-badpngs
+PASS: tests/pngvalid-gamma-16-to-8
+PASS: tests/pngvalid-gamma-alpha-mode
+PASS: tests/pngvalid-gamma-background
+PASS: tests/pngvalid-gamma-expand16-alpha-mode
+PASS: tests/pngvalid-gamma-expand16-background
+PASS: tests/pngvalid-gamma-expand16-transform
+PASS: tests/pngvalid-gamma-sbit
+PASS: tests/pngvalid-gamma-threshold
+PASS: tests/pngvalid-gamma-transform
+PASS: tests/pngvalid-progressive-size
+PASS: tests/pngvalid-progressive-interlace-standard
+PASS: tests/pngvalid-transform
+PASS: tests/pngvalid-progressive-standard
+PASS: tests/pngvalid-standard
+PASS: tests/pngstest-1.8
+PASS: tests/pngstest-1.8-alpha
+PASS: tests/pngstest-linear
+PASS: tests/pngstest-linear-alpha
+PASS: tests/pngstest-none
+PASS: tests/pngstest-none-alpha
+PASS: tests/pngstest-sRGB
+PASS: tests/pngstest-sRGB-alpha
+PASS: tests/pngunknown-IDAT
+PASS: tests/pngunknown-discard
+PASS: tests/pngunknown-if-safe
+PASS: tests/pngunknown-sAPI
+PASS: tests/pngunknown-sTER
+PASS: tests/pngunknown-save
+PASS: tests/pngunknown-vpAg
+PASS: tests/pngimage-quick
+PASS: tests/pngimage-full
+============================================================================
+Testsuite summary for libpng 1.6.37
+============================================================================
+# TOTAL: 33
+# PASS:  33
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0
+============================================================================
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
+make.orig[2]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libpng-1.6.37'
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Processing files: libpng-1.6.37-11.fc35.x86_64
+Executing(%license): /bin/sh -e /var/tmp/rpm-tmp.R4NQQE
++ umask 022
++ cd /builddir/build/BUILD
++ cd libpng-1.6.37
++ LICENSEDIR=/builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/share/licenses/libpng
++ export LC_ALL=C
++ LC_ALL=C
++ export LICENSEDIR
++ /usr/bin/mkdir -p /builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/share/licenses/libpng
++ cp -pr LICENSE /builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/share/licenses/libpng
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Provides: libpng = 2:1.6.37-11.fc35 libpng(x86-64) = 2:1.6.37-11.fc35 libpng16.so.16()(64bit) libpng16.so.16(PNG16_0)(64bit)
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Requires: libc.so.6()(64bit) libc.so.6(GLIBC_2.14)(64bit) libc.so.6(GLIBC_2.2.5)(64bit) libm.so.6()(64bit) libm.so.6(GLIBC_2.2.5)(64bit) libm.so.6(GLIBC_2.29)(64bit) libz.so.1()(64bit) libz.so.1(ZLIB_1.2.3.4)(64bit) libz.so.1(ZLIB_1.2.9)(64bit) rtld(GNU_HASH)
+Processing files: libpng-devel-1.6.37-11.fc35.x86_64
+Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.dTaxHg
++ umask 022
++ cd /builddir/build/BUILD
++ cd libpng-1.6.37
++ DOCDIR=/builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/share/doc/libpng-devel
++ export LC_ALL=C
++ LC_ALL=C
++ export DOCDIR
++ /usr/bin/mkdir -p /builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/share/doc/libpng-devel
++ cp -pr libpng-manual.txt /builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/share/doc/libpng-devel
++ cp -pr example.c /builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/share/doc/libpng-devel
++ cp -pr TODO /builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/share/doc/libpng-devel
++ cp -pr CHANGES /builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64/usr/share/doc/libpng-devel
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Provides: libpng-devel = 2:1.6.37-11.fc35 libpng-devel(x86-64) = 2:1.6.37-11.fc35 pkgconfig(libpng) = 1.6.37 pkgconfig(libpng16) = 1.6.37
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Requires: /usr/bin/pkg-config /usr/bin/sh libc.so.6()(64bit) libc.so.6(GLIBC_2.14)(64bit) libc.so.6(GLIBC_2.2.5)(64bit) libc.so.6(GLIBC_2.3)(64bit) libc.so.6(GLIBC_2.34)(64bit) libm.so.6()(64bit) libpng16.so.16()(64bit) libpng16.so.16(PNG16_0)(64bit) libz.so.1()(64bit) libz.so.1(ZLIB_1.2.3.4)(64bit) pkgconfig(zlib) rtld(GNU_HASH)
+Processing files: libpng-static-1.6.37-11.fc35.x86_64
+Provides: libpng-static = 2:1.6.37-11.fc35 libpng-static(x86-64) = 2:1.6.37-11.fc35
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Processing files: libpng-tools-1.6.37-11.fc35.x86_64
+Provides: libpng-tools = 2:1.6.37-11.fc35 libpng-tools(x86-64) = 2:1.6.37-11.fc35
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Requires: libc.so.6()(64bit) libc.so.6(GLIBC_2.14)(64bit) libc.so.6(GLIBC_2.2.5)(64bit) libc.so.6(GLIBC_2.3)(64bit) libc.so.6(GLIBC_2.34)(64bit) libm.so.6()(64bit) libpng16.so.16()(64bit) libpng16.so.16(PNG16_0)(64bit) libz.so.1()(64bit) libz.so.1(ZLIB_1.2.3.4)(64bit) rtld(GNU_HASH)
+Processing files: libpng-debugsource-1.6.37-11.fc35.x86_64
+Provides: libpng-debugsource = 2:1.6.37-11.fc35 libpng-debugsource(x86-64) = 2:1.6.37-11.fc35
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Processing files: libpng-debuginfo-1.6.37-11.fc35.x86_64
+Provides: debuginfo(build-id) = 4e0c9f13a573b5f95917a96dc733dd3fca0e94ac libpng-debuginfo = 2:1.6.37-11.fc35 libpng-debuginfo(x86-64) = 2:1.6.37-11.fc35 libpng16.so.16.37.0-1.6.37-11.fc35.x86_64.debug()(64bit)
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Recommends: libpng-debugsource(x86-64) = 2:1.6.37-11.fc35
+Processing files: libpng-devel-debuginfo-1.6.37-11.fc35.x86_64
+Provides: debuginfo(build-id) = 344d898bc94ab4e78dca635e16e911bd4bf90788 debuginfo(build-id) = fa9783924c0712404d1ca61cd1a3d9b680997833 libpng-devel-debuginfo = 2:1.6.37-11.fc35 libpng-devel-debuginfo(x86-64) = 2:1.6.37-11.fc35
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Recommends: libpng-debugsource(x86-64) = 2:1.6.37-11.fc35
+Processing files: libpng-tools-debuginfo-1.6.37-11.fc35.x86_64
+Provides: debuginfo(build-id) = fa9783924c0712404d1ca61cd1a3d9b680997833 libpng-tools-debuginfo = 2:1.6.37-11.fc35 libpng-tools-debuginfo(x86-64) = 2:1.6.37-11.fc35
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Recommends: libpng-debugsource(x86-64) = 2:1.6.37-11.fc35
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /builddir/build/BUILDROOT/libpng-1.6.37-11.fc35.x86_64
+Finish: chroot ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'goto-gcc\' CXX=\\$\'goto-gcc\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\a/usr/bin/csexec-cbmc\\\\a-t\\\\a8\\\\a-l\\\\a/builddir/cbmc-capture\\\\a-c\\\\a--unwind 1 --json-ui --verbosity 4 --pointer-overflow-check --memory-leak-check \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bi --nodeps --short-circuit /builddir/build/SPECS/libpng.spec \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc goto-gcc\' \'--define\' \'__cxx goto-gcc\' \'--define\' \'__cpp goto-gcc -E\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+
+>>> 2021-12-07 15:31:14	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'tar -c --remove-files '/builddir/cswrap-capture.err' '/builddir/cbmc-capture'' | tar -xC '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/libpng-1.6.37-11.fc35/cbmc/output/debug/raw-results'"
+tar: Removing leading `/' from member names
+tar: Removing leading `/' from hard link targets
+
+>>> 2021-12-07 15:31:15	"chmod" "-R" "+r" "/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/libpng-1.6.37-11.fc35/cbmc/output/debug/raw-results/builddir/cbmc-capture"
+
+>>> 2021-12-07 15:31:15	"
+                  set -ex
+                  cd '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/libpng-1.6.37-11.fc35/cbmc/output/debug/raw-results/builddir/cbmc-capture'
+                  shopt -s nullglob
+                  for file in pid-*.out; do
+                      cbmc-convert-output -a < \"\$file\" > \"\$file.conv\"
+                  done
+                  touch empty.err
+                  csgrep --mode=json --remove-duplicates empty.err pid-*.out.conv > '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/libpng-1.6.37-11.fc35/cbmc/output/debug/uni-results/cbmc-capture.js'
+                  "
++ cd /home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/libpng-1.6.37-11.fc35/cbmc/output/debug/raw-results/builddir/cbmc-capture
++ shopt -s nullglob
++ for file in pid-*.out
++ cbmc-convert-output -a
++ for file in pid-*.out
++ cbmc-convert-output -a
++ for file in pid-*.out
++ cbmc-convert-output -a
++ for file in pid-*.out
++ cbmc-convert-output -a
++ for file in pid-*.out
++ cbmc-convert-output -a
++ for file in pid-*.out
++ cbmc-convert-output -a
++ for file in pid-*.out
++ cbmc-convert-output -a
++ for file in pid-*.out
++ cbmc-convert-output -a
++ for file in pid-*.out
++ cbmc-convert-output -a
++ for file in pid-*.out
++ cbmc-convert-output -a
++ for file in pid-*.out
++ cbmc-convert-output -a
++ for file in pid-*.out
++ cbmc-convert-output -a
++ for file in pid-*.out
++ cbmc-convert-output -a
++ for file in pid-*.out
++ cbmc-convert-output -a
++ for file in pid-*.out
++ cbmc-convert-output -a
++ for file in pid-*.out
++ cbmc-convert-output -a
++ for file in pid-*.out
++ cbmc-convert-output -a
++ for file in pid-*.out
++ cbmc-convert-output -a
++ for file in pid-*.out
++ cbmc-convert-output -a
++ for file in pid-*.out
++ cbmc-convert-output -a
++ for file in pid-*.out
++ cbmc-convert-output -a
++ for file in pid-*.out
++ cbmc-convert-output -a
++ for file in pid-*.out
++ cbmc-convert-output -a
++ for file in pid-*.out
++ cbmc-convert-output -a
++ for file in pid-*.out
++ cbmc-convert-output -a
++ for file in pid-*.out
++ cbmc-convert-output -a
++ for file in pid-*.out
++ cbmc-convert-output -a
++ for file in pid-*.out
++ cbmc-convert-output -a
++ for file in pid-*.out
++ cbmc-convert-output -a
++ for file in pid-*.out
++ cbmc-convert-output -a
++ for file in pid-*.out
++ cbmc-convert-output -a
++ for file in pid-*.out
++ cbmc-convert-output -a
++ for file in pid-*.out
++ cbmc-convert-output -a
++ for file in pid-*.out
++ cbmc-convert-output -a
++ for file in pid-*.out
++ cbmc-convert-output -a
++ for file in pid-*.out
++ cbmc-convert-output -a
++ for file in pid-*.out
++ cbmc-convert-output -a
++ for file in pid-*.out
++ cbmc-convert-output -a
++ touch empty.err
++ csgrep --mode=json --remove-duplicates empty.err pid-198197.out.conv pid-198239.out.conv pid-198240.out.conv pid-198275.out.conv pid-198310.out.conv pid-198345.out.conv pid-198380.out.conv pid-198456.out.conv pid-198498.out.conv pid-198540.out.conv pid-198582.out.conv pid-198624.out.conv pid-198666.out.conv pid-198708.out.conv pid-198750.out.conv pid-198792.out.conv pid-198834.out.conv pid-198876.out.conv pid-198918.out.conv pid-198960.out.conv pid-199002.out.conv pid-199044.out.conv pid-199086.out.conv pid-199128.out.conv pid-199170.out.conv pid-199212.out.conv pid-199254.out.conv pid-199296.out.conv pid-199338.out.conv pid-199380.out.conv pid-199422.out.conv pid-199464.out.conv pid-199506.out.conv pid-199548.out.conv pid-199590.out.conv pid-199632.out.conv pid-199674.out.conv pid-199716.out.conv
+
+scan.ini: time-finished = 2021-12-07 15:31:19
+scan.ini: exit-code = 0
+>>> 2021-12-07 15:31:19	"cslinker --quiet --cwelist '/usr/share/csmock/cwe-map.csv' --inifile '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/libpng-1.6.37-11.fc35/cbmc/output/scan.ini' '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/libpng-1.6.37-11.fc35/cbmc/output/debug/uni-results'/* > '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/libpng-1.6.37-11.fc35/cbmc/output/debug/scan-results-all.js'"
+
+>>> 2021-12-07 15:31:19	"'/usr/bin/mock-unbuffered' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'csgrep --mode=json --embed-context 3' < '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/libpng-1.6.37-11.fc35/cbmc/output/debug/scan-results-all.js' > '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/libpng-1.6.37-11.fc35/cbmc/output/debug/scan-results-all.js.tmp'"
+
+>>> 2021-12-07 15:31:21	"/usr/bin/mock-unbuffered" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--clean"
+
+>>> 2021-12-07 15:31:24	"cat '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/libpng-1.6.37-11.fc35/cbmc/output/debug/scan-results-all.js' | sed 's|/builddir/build/BUILDROOT/[^/]*/|/builddir/build/BUILD//|' | csgrep --mode=json --path '^/builddir/build/BUILD/' --strip-path-prefix /builddir/build/BUILD/ | csgrep --mode=json --invert-match --path '^ksh-.*[0-9]+\\.c\$' | csgrep --mode=json --invert-match --path 'CMakeFiles/CMakeTmp|conftest.c' | csdiff --json-output --show-internal \"/usr/share/csmock/known-false-positives.js\" - | cssort --key=path > '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/libpng-1.6.37-11.fc35/cbmc/output/scan-results.js'"
+
+>>> 2021-12-07 15:31:26	"sed 's|/builddir/build/BUILDROOT/[^/]*/|/builddir/build/BUILD//|' '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/libpng-1.6.37-11.fc35/cbmc/output/debug/scan-results-all.js' | csgrep --mode=json --strip-path-prefix /builddir/build/BUILD/ | csdiff --show-internal '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/libpng-1.6.37-11.fc35/cbmc/output/scan-results.js' - | cssort > '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/libpng-1.6.37-11.fc35/cbmc/output/debug/suppressed-results.js'"
+
+>>> 2021-12-07 15:31:26	"csgrep --mode=grep --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/libpng-1.6.37-11.fc35/cbmc/output/debug/suppressed-results.js' > '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/libpng-1.6.37-11.fc35/cbmc/output/debug/suppressed-results.err'"
+
+>>> 2021-12-07 15:31:26	"csgrep --mode=json --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/libpng-1.6.37-11.fc35/cbmc/output/debug/suppressed-results.js' | cshtml - > '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/libpng-1.6.37-11.fc35/cbmc/output/debug/suppressed-results.html'"
+
+>>> 2021-12-07 15:31:26	"csgrep --mode=evtstat --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/libpng-1.6.37-11.fc35/cbmc/output/debug/suppressed-results.js' | tee '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/libpng-1.6.37-11.fc35/cbmc/output/debug/suppressed-results-summary.txt'"
+
+>>> 2021-12-07 15:31:26	"csgrep --mode=grep --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/libpng-1.6.37-11.fc35/cbmc/output/scan-results.js' > '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/libpng-1.6.37-11.fc35/cbmc/output/scan-results.err'"
+
+>>> 2021-12-07 15:31:26	"csgrep --mode=json --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/libpng-1.6.37-11.fc35/cbmc/output/scan-results.js' | cshtml - > '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/libpng-1.6.37-11.fc35/cbmc/output/scan-results.html'"
+
+>>> 2021-12-07 15:31:27	"csgrep --mode=evtstat --invert-match --event \"internal warning\" --prune-events=1 '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/libpng-1.6.37-11.fc35/cbmc/output/scan-results.js' | tee '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/libpng-1.6.37-11.fc35/cbmc/output/scan-results-summary.txt'"
+     12	CBMC_WARNING                                    	error
+
+<<< 2021-12-07 15:31:27	csmock exit code: 0
+
