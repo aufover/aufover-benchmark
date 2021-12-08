@@ -22,11 +22,10 @@ diffutils-3.8/lib/xvasprintf.c:102:7: note: Non-deterministic values: vasprintf:
 
 Error: SYMBIOTIC_WARNING:
 diffutils-3.8/lib/./xstrtol.c:127: error: memory error: out of bound pointer
-diffutils-3.8/lib/./xstrtol.c:127: note: call stack: function xstrtoimax (=0, =0, =0, =0, =0)
+diffutils-3.8/lib/./xstrtol.c:127: note: call stack: function xstrtoul (=0, =0, =0, =0, =0)
 diffutils-3.8/gnulib-tests/./test-xstrtol.c:51: note: call stack: function main (=2, =0)
-diffutils-3.8/lib/./xstrtol.c:127: note: Additional Info: address: 0:12370169555311111083
+diffutils-3.8/lib/./xstrtol.c:127: note: Additional Info: address: 0:94156244951760
 diffutils-3.8/lib/./xstrtol.c:127: note: Additional Info: pointing to: none
-diffutils-3.8/lib/./xstrtol.c:100:9: note: Non-deterministic values: strtoimax: len 8 bytes, [8 times 0x0] (i64: 0)
 #  125|       }
 #  126|   
 #  127|->   if (**p != '\0')
@@ -62,6 +61,8 @@ diffutils-3.8/lib/xstrtol.c:100:9: note: Non-deterministic values: strtol: len 8
 
 Error: COMPILER_WARNING (CWE-758):
 diffutils-3.8/src/diff.c:775:8: warning[-Wbool-operation]: bitwise negation of a boolean expression; did you mean logical negation?
+#     & ~ (ignore_blank_lines | ignore_case | strip_trailing_cr
+#       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #  773|     files_can_be_treated_as_binary =
 #  774|       (brief & binary
 #  775|->      & ~ (ignore_blank_lines | ignore_case | strip_trailing_cr

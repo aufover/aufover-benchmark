@@ -69,6 +69,26 @@ findutils-4.8.0/gl/lib/time_rz.c:289:12: warning: implicit declaration of functi
 #  291|       {
 
 Error: COMPILER_WARNING (CWE-758):
+findutils-4.8.0/gnulib-tests/localename.c:3123:24: warning: implicit declaration of function '_NL_ITEM' is invalid in C99
+#          nl_langinfo (_NL_ITEM ((category), _NL_ITEM_INDEX (-1)));
+#                       ^
+# 3121|              See <https://sourceware.org/bugzilla/show_bug.cgi?id=10968>.  */
+# 3122|           const char *name =
+# 3123|->           nl_langinfo (_NL_ITEM ((category), _NL_ITEM_INDEX (-1)));
+# 3124|           if (name[0] == '\0')
+# 3125|             /* Fallback code for glibc < 2.4, which did not implement
+
+Error: COMPILER_WARNING (CWE-758):
+findutils-4.8.0/gnulib-tests/localename.c:3123:46: warning: implicit declaration of function '_NL_ITEM_INDEX' is invalid in C99
+#          nl_langinfo (_NL_ITEM ((category), _NL_ITEM_INDEX (-1)));
+#                                             ^
+# 3121|              See <https://sourceware.org/bugzilla/show_bug.cgi?id=10968>.  */
+# 3122|           const char *name =
+# 3123|->           nl_langinfo (_NL_ITEM ((category), _NL_ITEM_INDEX (-1)));
+# 3124|           if (name[0] == '\0')
+# 3125|             /* Fallback code for glibc < 2.4, which did not implement
+
+Error: COMPILER_WARNING (CWE-758):
 findutils-4.8.0/gnulib-tests/pthread_sigmask.c:52:9: warning: implicit declaration of function 'pthread_sigmask' is invalid in C99
 #  ret = pthread_sigmask (how, new_mask, old_mask_ptr);
 #        ^
@@ -77,6 +97,16 @@ findutils-4.8.0/gnulib-tests/pthread_sigmask.c:52:9: warning: implicit declarati
 #   52|->   ret = pthread_sigmask (how, new_mask, old_mask_ptr);
 #   53|   
 #   54|   # if PTHREAD_SIGMASK_INEFFECTIVE
+
+Error: COMPILER_WARNING (CWE-758):
+findutils-4.8.0/lib/fdleak.c:161:12: warning: implicit declaration of function 'poll' is invalid in C99
+#      rv = poll (pf, limit, 0);
+#           ^
+#  159|   	  pf[i].fd = fd_min + i;
+#  160|   	}
+#  161|->       rv = poll (pf, limit, 0);
+#  162|         if (-1 == rv)
+#  163|   	{
 
 Error: COMPILER_WARNING (CWE-758):
 findutils-4.8.0/lib/listfile.c:337:37: warning: taking address of packed member '' of class or structure 'stat' may result in an unaligned pointer value

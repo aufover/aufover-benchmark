@@ -235,6 +235,1469 @@ coreutils-8.32/lib/intprops.h:58:4: note: expanded from macro 'TYPE_MAXIMUM'
 #   44|       {
 #   45|         do
 
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/../lib/fflush.c:43: error: memory error: out of bound pointer
+coreutils-8.32/separate/../lib/fflush.c:43: note: call stack: function clear_ungetc_buffer_preserving_position (=139917817500864)
+coreutils-8.32/separate/../lib/fflush.c:156: note: call stack: function rpl_fflush (=139917817500864)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-inet_pton.c:43: note: call stack: function main ()
+coreutils-8.32/separate/../lib/fflush.c:43: note: Additional Info: address: 0:139917817500864
+coreutils-8.32/separate/../lib/fflush.c:43: note: Additional Info: pointing to: none
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-inet_pton.c:42:11: note: Non-deterministic values: inet_pton: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [0x1|3 times 0x0] (i32: 1)
+#   41|   clear_ungetc_buffer_preserving_position (FILE *fp)
+#   42|   {
+#   43|->   if (fp->_flags & _IO_IN_BACKUP)
+#   44|       /* _IO_free_backup_area is a bit complicated.  Simply call fseek.  */
+#   45|       fseeko (fp, 0, SEEK_CUR);
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/../lib/freadahead.c:38: error: memory error: out of bound pointer
+coreutils-8.32/separate/../lib/freadahead.c:38: note: call stack: function freadahead (=139867586889920)
+coreutils-8.32/separate/../lib/closein.c:87: note: call stack: function close_stdin ()
+/opt/symbiotic/lib/libc/klee/atexit.c:13: note: call stack: function RunAtExit ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-yesno.c:61: note: call stack: function main (=2, =0)
+coreutils-8.32/separate/../lib/freadahead.c:38: note: Additional Info: address: 0:139867586889960
+coreutils-8.32/separate/../lib/freadahead.c:38: note: Additional Info: pointing to: none
+coreutils-8.32/separate/../lib/yesno.c:39:26: note: Non-deterministic values: getline: len 8 bytes, [8 times 0x0] (i64: 0)
+/opt/symbiotic/lib/libc/klee/puts.c:3:16: note: Non-deterministic values: __VERIFIER_nondet_int: len 4 bytes, [4 times 0x0] (i32: 0)
+#   36|   #if defined _IO_EOF_SEEN || defined _IO_ftrylockfile || __GNU_LIBRARY__ == 1
+#   37|     /* GNU libc, BeOS, Haiku, Linux libc5 */
+#   38|->   if (fp->_IO_write_ptr > fp->_IO_write_base)
+#   39|       return 0;
+#   40|     return (fp->_IO_read_end - fp->_IO_read_ptr)
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/../lib/freadptr.c:37: error: memory error: out of bound pointer
+coreutils-8.32/separate/../lib/freadptr.c:37: note: call stack: function freadptr (=139759463033024, =0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-freadptr.c:44: note: call stack: function main (=2, =0)
+coreutils-8.32/separate/../lib/freadptr.c:37: note: Additional Info: address: 0:139759463033064
+coreutils-8.32/separate/../lib/freadptr.c:37: note: Additional Info: pointing to: none
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-freadptr.c:35:5: note: Non-deterministic values: fread: len 8 bytes, [8 times 0x0] (i64: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-freadptr.c:39:7: note: Non-deterministic values: lseek: len 8 bytes, [8 times 0x0] (i64: 0)
+#   35|   #if defined _IO_EOF_SEEN || defined _IO_ftrylockfile || __GNU_LIBRARY__ == 1
+#   36|     /* GNU libc, BeOS, Haiku, Linux libc5 */
+#   37|->   if (fp->_IO_write_ptr > fp->_IO_write_base)
+#   38|       return NULL;
+#   39|     size = fp->_IO_read_end - fp->_IO_read_ptr;
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/../lib/fseeko.c:52: error: memory error: out of bound pointer
+coreutils-8.32/separate/../lib/fseeko.c:52: note: call stack: function rpl_fseeko (=140207573432512, =0, =1)
+coreutils-8.32/separate/../lib/fseek.c:29: note: call stack: function rpl_fseek (=140207573432512, =0, =1)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-fseek.c:41: note: call stack: function main (=2, =0)
+coreutils-8.32/separate/../lib/fseeko.c:52: note: Additional Info: address: 0:140207573432528
+coreutils-8.32/separate/../lib/fseeko.c:52: note: Additional Info: pointing to: none
+#   50|   #if defined _IO_EOF_SEEN || defined _IO_ftrylockfile || __GNU_LIBRARY__ == 1
+#   51|     /* GNU libc, BeOS, Haiku, Linux libc5 */
+#   52|->   if (fp->_IO_read_end == fp->_IO_read_ptr
+#   53|         && fp->_IO_write_ptr == fp->_IO_write_base
+#   54|         && fp->_IO_save_base == NULL)
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/../lib/fseterr.c:37: error: memory error: out of bound pointer
+coreutils-8.32/separate/../lib/fseterr.c:37: note: call stack: function fseterr (=140665034003872)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-fseterr.c:34: note: call stack: function main ()
+coreutils-8.32/separate/../lib/fseterr.c:37: note: Additional Info: address: 0:140665034003872
+coreutils-8.32/separate/../lib/fseterr.c:37: note: Additional Info: pointing to: none
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-fseterr.c:30:7: note: Non-deterministic values: ferror: len 4 bytes, [4 times 0x0] (i32: 0)
+#   35|   #if defined _IO_EOF_SEEN || defined _IO_ftrylockfile || __GNU_LIBRARY__ == 1
+#   36|     /* GNU libc, BeOS, Haiku, Linux libc5 */
+#   37|->   fp->_flags |= _IO_ERR_SEEN;
+#   38|   #elif defined __sferror || defined __DragonFly__ || defined __ANDROID__
+#   39|     /* FreeBSD, NetBSD, OpenBSD, DragonFly, Mac OS X, Cygwin, Minix 3, Android */
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/../lib/localcharset.c:1070: error: memory error: out of bound pointer
+coreutils-8.32/separate/../lib/localcharset.c:1070: note: call stack: function locale_charset ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-wcwidth.c:53: note: call stack: function main ()
+coreutils-8.32/separate/../lib/localcharset.c:1070: note: Additional Info: address: 18374686479671623680:0
+coreutils-8.32/separate/../lib/localcharset.c:1070: note: Additional Info: pointing to: none
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-wcwidth.c:47:7: note: Non-deterministic values: setlocale: len 8 bytes, [0x1|7 times 0x0] (i64: 1)
+/builddir/build/BUILD/coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-wcwidth.c:47:7 (offset): note: Non-deterministic values: setlocale: len 8 bytes, [8 times 0x0] (i64: 0)
+coreutils-8.32/separate/../lib/localcharset.c:847:13: note: Non-deterministic values: nl_langinfo: len 8 bytes, [7 times 0x0|0xff] (i64: -72057594037927936)
+/builddir/build/BUILD/coreutils-8.32/separate/../lib/localcharset.c:847:13 (offset): note: Non-deterministic values: nl_langinfo: len 8 bytes, [8 times 0x0] (i64: 0)
+# 1068|              the empty string as denoting "the locale's character encoding",
+# 1069|              thus GNU libiconv would call this function a second time.  */
+# 1070|->         if (codeset[0] == '\0')
+# 1071|             codeset = "ASCII";
+# 1072|   # endif
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/../lib/xalloc-die.c:40: error: abort failure
+coreutils-8.32/separate/../lib/xalloc-die.c:40: note: call stack: function xalloc_die ()
+coreutils-8.32/separate/../lib/xstrndup.c:34: note: call stack: function xstrndup (=2, =1)
+coreutils-8.32/separate/../lib/basename.c:57: note: call stack: function base_name (=0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-dirname.c:142: note: call stack: function main ()
+coreutils-8.32/separate/../lib/xstrndup.c:32:13: note: Non-deterministic values: strndup: len 8 bytes, [8 times 0x0] (i64: 0)
+#   38|        xalloc_die does not return, call abort.  Also, the abort is a
+#   39|        safety feature if exit_failure is 0 (which shouldn't happen).  */
+#   40|->   abort ();
+#   41|   }
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/../lib/xstrtol.c:127: error: memory error: out of bound pointer
+coreutils-8.32/separate/../lib/xstrtol.c:127: note: call stack: function xstrtoimax (=0, =0, =0, =0, =0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-xstrtol.c:51: note: call stack: function main (=2, =0)
+coreutils-8.32/separate/../lib/xstrtol.c:127: note: Additional Info: address: 0:12370169555311111083
+coreutils-8.32/separate/../lib/xstrtol.c:127: note: Additional Info: pointing to: none
+coreutils-8.32/separate/../lib/xstrtol.c:100:9: note: Non-deterministic values: strtoimax: len 8 bytes, [8 times 0x0] (i64: 0)
+#  125|       }
+#  126|   
+#  127|->   if (**p != '\0')
+#  128|       {
+#  129|         int base = 1024;
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/../lib/yesno.c:47: error: memory error: out of bound pointer
+coreutils-8.32/separate/../lib/yesno.c:47: note: call stack: function yesno ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-yesno.c:60: note: call stack: function main (=2, =0)
+coreutils-8.32/separate/../lib/yesno.c:47: note: Additional Info: address: 0:(Add w64 18446744073709551615
+coreutils-8.32/separate/../lib/yesno.c:47: note: Additional Info: (ReadLSB w64 0 getline))
+coreutils-8.32/separate/../lib/yesno.c:47: note: Additional Info: example: 0:0
+coreutils-8.32/separate/../lib/yesno.c:47: note: Additional Info: segment range: [0, 0]
+coreutils-8.32/separate/../lib/yesno.c:47: note: Additional Info: offset range: [0, 9223372036854775806]
+coreutils-8.32/separate/../lib/yesno.c:47: note: Additional Info: pointing to: none
+coreutils-8.32/separate/../lib/yesno.c:39:26: note: Non-deterministic values: getline: len 8 bytes, [0x1|7 times 0x0] (i64: 1)
+#   45|         /* Remove EOL if present as that's not part of the matched response,
+#   46|            and not matched by $ for example.  */
+#   47|->       if (response[response_len - 1] == '\n')
+#   48|           response[response_len - 1] = '\0';
+#   49|         yes = (0 < rpmatch (response));
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/../src/printf.c:152: error: memory error: out of bound pointer
+coreutils-8.32/separate/../src/printf.c:152: note: call stack: function verify_numeric (=0, =12370169555311111083)
+coreutils-8.32/separate/../src/printf.c:189: note: call stack: function vstrtoimax (=0)
+coreutils-8.32/separate/../src/printf.c:377: note: call stack: function print_direc (=1, =1, =100, =false, =0, =false, =0, =0)
+coreutils-8.32/separate/../src/printf.c:632: note: call stack: function print_formatted (=0, =0, =16)
+coreutils-8.32/separate/../src/printf.c:703: note: call stack: function main (=2, =0)
+coreutils-8.32/separate/../src/printf.c:152: note: Additional Info: address: 0:12370169555311111083
+coreutils-8.32/separate/../src/printf.c:152: note: Additional Info: pointing to: none
+/opt/symbiotic/lib/libc/klee/getenv.c:14:6: note: Non-deterministic values: __VERIFIER_nondet__Bool: len 1 bytes, [0x1] (i8: 1)
+coreutils-8.32/separate/../src/printf.c:189:1: note: Non-deterministic values: strtoimax: len 8 bytes, [8 times 0x0] (i64: 0)
+#  150|         exit_status = EXIT_FAILURE;
+#  151|       }
+#  152|->   else if (*end)
+#  153|       {
+#  154|         if (s == end)
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-accept.c:42: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-accept.c:42: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-accept.c:42:5: note: Non-deterministic values: accept: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   40|   
+#   41|       errno = 0;
+#   42|->     ASSERT (accept (-1, (struct sockaddr *) &addr, &addrlen) == -1);
+#   43|       ASSERT (errno == EBADF);
+#   44|     }
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-accept.c:43: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-accept.c:43: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-accept.c:42:5: note: Non-deterministic values: accept: len 4 bytes, [4 times 0xff] (i32: -1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   41|       errno = 0;
+#   42|       ASSERT (accept (-1, (struct sockaddr *) &addr, &addrlen) == -1);
+#   43|->     ASSERT (errno == EBADF);
+#   44|     }
+#   45|     {
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-binary-io.c:47: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-binary-io.c:47: note: call stack: function main (=2, =0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-binary-io.c:38:7: note: Non-deterministic values: open: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-binary-io.c:39:9: note: Non-deterministic values: write: len 8 bytes, [8 times 0x0] (i64: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-binary-io.c:45:9: note: Non-deterministic values: stat: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   45|       if (stat ("t-bin-out0.tmp", &statbuf) < 0)
+#   46|         exit (1);
+#   47|->     ASSERT (statbuf.st_size == 6);
+#   48|     }
+#   49|   
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-bind.c:46: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-bind.c:46: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-bind.c:46:7: note: Non-deterministic values: bind: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   44|       {
+#   45|         errno = 0;
+#   46|->       ASSERT (bind (-1, (const struct sockaddr *) &addr, sizeof (addr)) == -1);
+#   47|         ASSERT (errno == EBADF);
+#   48|       }
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-bind.c:47: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-bind.c:47: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-bind.c:46:7: note: Non-deterministic values: bind: len 4 bytes, [4 times 0xff] (i32: -1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   45|         errno = 0;
+#   46|         ASSERT (bind (-1, (const struct sockaddr *) &addr, sizeof (addr)) == -1);
+#   47|->       ASSERT (errno == EBADF);
+#   48|       }
+#   49|       {
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-chdir.c:30: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-chdir.c:30: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-chdir.c:30:3: note: Non-deterministic values: chdir: len 4 bytes, [0x1|3 times 0x0] (i32: 1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   28|   main (void)
+#   29|   {
+#   30|->   ASSERT (chdir ("/") == 0);
+#   31|   
+#   32|     return 0;
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-close.c:34: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-close.c:34: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-close.c:34:5: note: Non-deterministic values: close: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   32|     {
+#   33|       errno = 0;
+#   34|->     ASSERT (close (-1) == -1);
+#   35|       ASSERT (errno == EBADF);
+#   36|     }
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-close.c:35: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-close.c:35: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-close.c:34:5: note: Non-deterministic values: close: len 4 bytes, [4 times 0xff] (i32: -1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   33|       errno = 0;
+#   34|       ASSERT (close (-1) == -1);
+#   35|->     ASSERT (errno == EBADF);
+#   36|     }
+#   37|     {
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-connect.c:46: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-connect.c:46: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-connect.c:46:7: note: Non-deterministic values: connect: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   44|       {
+#   45|         errno = 0;
+#   46|->       ASSERT (connect (-1, (const struct sockaddr *) &addr, sizeof (addr))
+#   47|                 == -1);
+#   48|         ASSERT (errno == EBADF);
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-connect.c:48: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-connect.c:48: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-connect.c:46:7: note: Non-deterministic values: connect: len 4 bytes, [4 times 0xff] (i32: -1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   46|         ASSERT (connect (-1, (const struct sockaddr *) &addr, sizeof (addr))
+#   47|                 == -1);
+#   48|->       ASSERT (errno == EBADF);
+#   49|       }
+#   50|       {
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-copy-acl.c:42: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-copy-acl.c:42: note: call stack: function main (=2, =0)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   40|     int fd2;
+#   41|   
+#   42|->   ASSERT (argc == 3);
+#   43|   
+#   44|     file1 = argv[1];
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-dup.c:34: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-dup.c:34: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-dup.c:34:5: note: Non-deterministic values: dup: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   32|     {
+#   33|       errno = 0;
+#   34|->     ASSERT (dup (-1) == -1);
+#   35|       ASSERT (errno == EBADF);
+#   36|     }
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-dup.c:35: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-dup.c:35: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-dup.c:34:5: note: Non-deterministic values: dup: len 4 bytes, [4 times 0xff] (i32: -1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   33|       errno = 0;
+#   34|       ASSERT (dup (-1) == -1);
+#   35|->     ASSERT (errno == EBADF);
+#   36|     }
+#   37|     {
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-faccessat.c:37: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-faccessat.c:37: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-faccessat.c:37:5: note: Non-deterministic values: faccessat: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   35|     {
+#   36|       errno = 0;
+#   37|->     ASSERT (faccessat (-1, "foo", F_OK, 0) == -1);
+#   38|       ASSERT (errno == EBADF);
+#   39|     }
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-faccessat.c:38: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-faccessat.c:38: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-faccessat.c:37:5: note: Non-deterministic values: faccessat: len 4 bytes, [4 times 0xff] (i32: -1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   36|       errno = 0;
+#   37|       ASSERT (faccessat (-1, "foo", F_OK, 0) == -1);
+#   38|->     ASSERT (errno == EBADF);
+#   39|     }
+#   40|     {
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-fchmodat.c:39: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-fchmodat.c:39: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-fchmodat.c:39:5: note: Non-deterministic values: fchmodat: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   37|     {
+#   38|       errno = 0;
+#   39|->     ASSERT (fchmodat (-1, "foo", 0600, 0) == -1);
+#   40|       ASSERT (errno == EBADF);
+#   41|     }
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-fchmodat.c:40: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-fchmodat.c:40: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-fchmodat.c:39:5: note: Non-deterministic values: fchmodat: len 4 bytes, [4 times 0xff] (i32: -1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   38|       errno = 0;
+#   39|       ASSERT (fchmodat (-1, "foo", 0600, 0) == -1);
+#   40|->     ASSERT (errno == EBADF);
+#   41|     }
+#   42|     {
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-fdatasync.c:40: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-fdatasync.c:40: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-fdatasync.c:38:9: note: Non-deterministic values: fdatasync: len 4 bytes, [0x1|3 times 0x0] (i32: 1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   38|       if (fdatasync (fd) != 0)
+#   39|         {
+#   40|->         ASSERT (errno == EINVAL /* POSIX */
+#   41|                   || errno == ENOTSUP /* seen on Mac OS X 10.5 */
+#   42|                   || errno == EBADF /* seen on AIX 7.1 */
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-fdatasync.c:50: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-fdatasync.c:50: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-fdatasync.c:38:9: note: Non-deterministic values: fdatasync: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-fdatasync.c:38:9: note: Non-deterministic values: fdatasync: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-fdatasync.c:50:5: note: Non-deterministic values: fdatasync: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   48|     {
+#   49|       errno = 0;
+#   50|->     ASSERT (fdatasync (-1) == -1);
+#   51|       ASSERT (errno == EBADF);
+#   52|     }
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-fdatasync.c:51: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-fdatasync.c:51: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-fdatasync.c:38:9: note: Non-deterministic values: fdatasync: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-fdatasync.c:38:9: note: Non-deterministic values: fdatasync: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-fdatasync.c:50:5: note: Non-deterministic values: fdatasync: len 4 bytes, [4 times 0xff] (i32: -1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   49|       errno = 0;
+#   50|       ASSERT (fdatasync (-1) == -1);
+#   51|->     ASSERT (errno == EBADF);
+#   52|     }
+#   53|     {
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-freadptr.c:35: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-freadptr.c:35: note: call stack: function main (=2, =0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-freadptr.c:35:5: note: Non-deterministic values: fread: len 8 bytes, [0x1|7 times 0x0] (i64: 1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+/opt/symbiotic/lib/libc/klee/fflush.c:9:9: note: Non-deterministic values: __VERIFIER_nondet__Bool: len 1 bytes, [0x1] (i8: 1)
+#   33|     {
+#   34|       void *buf = malloc (nbytes);
+#   35|->     ASSERT (fread (buf, 1, nbytes, stdin) == nbytes);
+#   36|       free (buf);
+#   37|     }
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-fseeko3.c:33: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-fseeko3.c:33: note: call stack: function main (=2, =0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-fseeko3.c:32:14: note: Non-deterministic values: fopen: len 8 bytes, [8 times 0x0] (i64: 0)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+/opt/symbiotic/lib/libc/klee/fflush.c:9:9: note: Non-deterministic values: __VERIFIER_nondet__Bool: len 1 bytes, [0x0] (i8: 0)
+#   31|     const char *filename = argv[2];
+#   32|     FILE *fp = fopen (filename, "r");
+#   33|->   ASSERT (fp != NULL);
+#   34|   
+#   35|     if (do_initial_ftell)
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-fstat.c:37: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-fstat.c:37: note: call stack: function main (=2, =0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-fstat.c:37:5: note: Non-deterministic values: fstat: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   35|   
+#   36|       errno = 0;
+#   37|->     ASSERT (fstat (-1, &statbuf) == -1);
+#   38|       ASSERT (errno == EBADF);
+#   39|     }
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-fstat.c:38: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-fstat.c:38: note: call stack: function main (=2, =0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-fstat.c:37:5: note: Non-deterministic values: fstat: len 4 bytes, [4 times 0xff] (i32: -1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   36|       errno = 0;
+#   37|       ASSERT (fstat (-1, &statbuf) == -1);
+#   38|->     ASSERT (errno == EBADF);
+#   39|     }
+#   40|     {
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-fstatat.c:82: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-fstatat.c:82: note: call stack: function main (=2, =0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-fstatat.c:75:3: note: Non-deterministic values: system: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-fstatat.c:82:5: note: Non-deterministic values: fstatat: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   80|   
+#   81|       errno = 0;
+#   82|->     ASSERT (fstatat (-1, "foo", &statbuf, 0) == -1);
+#   83|       ASSERT (errno == EBADF);
+#   84|     }
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-fstatat.c:83: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-fstatat.c:83: note: call stack: function main (=2, =0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-fstatat.c:75:3: note: Non-deterministic values: system: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-fstatat.c:82:5: note: Non-deterministic values: fstatat: len 4 bytes, [4 times 0xff] (i32: -1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   81|       errno = 0;
+#   82|       ASSERT (fstatat (-1, "foo", &statbuf, 0) == -1);
+#   83|->     ASSERT (errno == EBADF);
+#   84|     }
+#   85|     {
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-fsync.c:40: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-fsync.c:40: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-fsync.c:38:9: note: Non-deterministic values: fsync: len 4 bytes, [0x1|3 times 0x0] (i32: 1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   38|       if (fsync (fd) != 0)
+#   39|         {
+#   40|->         ASSERT (errno == EINVAL /* POSIX */
+#   41|                   || errno == ENOTSUP /* seen on Mac OS X 10.5 */
+#   42|                   || errno == EBADF /* seen on AIX 7.1 */
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-fsync.c:50: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-fsync.c:50: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-fsync.c:38:9: note: Non-deterministic values: fsync: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-fsync.c:38:9: note: Non-deterministic values: fsync: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-fsync.c:50:5: note: Non-deterministic values: fsync: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   48|     {
+#   49|       errno = 0;
+#   50|->     ASSERT (fsync (-1) == -1);
+#   51|       ASSERT (errno == EBADF);
+#   52|     }
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-fsync.c:51: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-fsync.c:51: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-fsync.c:38:9: note: Non-deterministic values: fsync: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-fsync.c:38:9: note: Non-deterministic values: fsync: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-fsync.c:50:5: note: Non-deterministic values: fsync: len 4 bytes, [4 times 0xff] (i32: -1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   49|       errno = 0;
+#   50|       ASSERT (fsync (-1) == -1);
+#   51|->     ASSERT (errno == EBADF);
+#   52|     }
+#   53|     {
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-ftruncate.c:37: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-ftruncate.c:37: note: call stack: function main (=2, =0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-ftruncate.c:37:5: note: Non-deterministic values: ftruncate: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   35|     {
+#   36|       errno = 0;
+#   37|->     ASSERT (ftruncate (-1, 0) == -1);
+#   38|       ASSERT (errno == EBADF);
+#   39|     }
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-ftruncate.c:38: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-ftruncate.c:38: note: call stack: function main (=2, =0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-ftruncate.c:37:5: note: Non-deterministic values: ftruncate: len 4 bytes, [4 times 0xff] (i32: -1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   36|       errno = 0;
+#   37|       ASSERT (ftruncate (-1, 0) == -1);
+#   38|->     ASSERT (errno == EBADF);
+#   39|     }
+#   40|     {
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-getaddrinfo.c:124: error: memory error: out of bound pointer
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-getaddrinfo.c:124: note: call stack: function simple (=0, =0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-getaddrinfo.c:174: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-getaddrinfo.c:124: note: Additional Info: address: 0:12370169555311111107
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-getaddrinfo.c:124: note: Additional Info: pointing to: none
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-getaddrinfo.c:85:9: note: Non-deterministic values: getaddrinfo: len 4 bytes, [4 times 0x0] (i32: 0)
+#  122|     for (ai = ai0; ai; ai = ai->ai_next)
+#  123|       {
+#  124|->       void *ai_addr = ai->ai_addr;
+#  125|         struct sockaddr_in *sock_addr = ai_addr;
+#  126|         dbgprintf ("\tflags %x\n", ai->ai_flags + 0u);
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-getcwd-lgpl.c:44: error: memory error: out of bound pointer
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-getcwd-lgpl.c:44: note: call stack: function main (=2, =0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-getcwd-lgpl.c:44: note: Additional Info: address: 65280:0
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-getcwd-lgpl.c:44: note: Additional Info: pointing to: none
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-getcwd-lgpl.c:39:11: note: Non-deterministic values: chdir: len 4 bytes, [0x1|3 times 0x0] (i32: 1)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-getcwd-lgpl.c:43:10: note: Non-deterministic values: getcwd: len 8 bytes, [0x0|0xff|6 times 0x0] (i64: 65280)
+/builddir/build/BUILD/coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-getcwd-lgpl.c:43:10 (offset): note: Non-deterministic values: getcwd: len 8 bytes, [8 times 0x0] (i64: 0)
+#   42|   
+#   43|     pwd1 = getcwd (NULL, 0);
+#   44|->   ASSERT (pwd1 && *pwd1);
+#   45|     if (1 < argc)
+#   46|       printf ("cwd=%s\n", pwd1);
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-getcwd-lgpl.c:44: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-getcwd-lgpl.c:44: note: call stack: function main (=2, =0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-getcwd-lgpl.c:39:11: note: Non-deterministic values: chdir: len 4 bytes, [0x1|3 times 0x0] (i32: 1)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-getcwd-lgpl.c:43:10: note: Non-deterministic values: getcwd: len 8 bytes, [8 times 0x0] (i64: 0)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   42|   
+#   43|     pwd1 = getcwd (NULL, 0);
+#   44|->   ASSERT (pwd1 && *pwd1);
+#   45|     if (1 < argc)
+#   46|       printf ("cwd=%s\n", pwd1);
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-getgroups.c:46: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-getgroups.c:46: note: call stack: function main (=2, =0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-getgroups.c:40:12: note: Non-deterministic values: getgroups: len 4 bytes, [4 times 0xff] (i32: -1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   44|         return 77;
+#   45|       }
+#   46|->   ASSERT (0 <= result);
+#   47|     ASSERT (result + 1 < SIZE_MAX / sizeof *groups);
+#   48|     groups = malloc ((result + 1) * sizeof *groups);
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-getgroups.c:47: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-getgroups.c:47: note: call stack: function main (=2, =0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-getgroups.c:40:12: note: Non-deterministic values: getgroups: len 4 bytes, [3 times 0xff|0x7f] (i32: 2147483647)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   45|       }
+#   46|     ASSERT (0 <= result);
+#   47|->   ASSERT (result + 1 < SIZE_MAX / sizeof *groups);
+#   48|     groups = malloc ((result + 1) * sizeof *groups);
+#   49|     ASSERT (groups);
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-getgroups.c:61: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-getgroups.c:61: note: call stack: function main (=2, =0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-getgroups.c:40:12: note: Non-deterministic values: getgroups: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-getgroups.c:61:3: note: Non-deterministic values: getgroups: len 4 bytes, [0x1|3 times 0x0] (i32: 1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   59|         ASSERT (errno == EINVAL);
+#   60|       }
+#   61|->   ASSERT (getgroups (result, groups) == result);
+#   62|     ASSERT (getgroups (result + 1, groups) == result);
+#   63|     ASSERT (groups[result] == -1);
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-inet_pton.c:43: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-inet_pton.c:43: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-inet_pton.c:42:11: note: Non-deterministic values: inet_pton: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   41|   
+#   42|       ret = inet_pton (AF_INET, printable, &internal);
+#   43|->     ASSERT (ret == 1);
+#   44|       /* Verify that internal is filled in network byte order.  */
+#   45|       ASSERT (((unsigned char *) &internal)[0] == 0x81);
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-inet_pton.c:45: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-inet_pton.c:45: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-inet_pton.c:42:11: note: Non-deterministic values: inet_pton: len 4 bytes, [0x1|3 times 0x0] (i32: 1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   43|       ASSERT (ret == 1);
+#   44|       /* Verify that internal is filled in network byte order.  */
+#   45|->     ASSERT (((unsigned char *) &internal)[0] == 0x81);
+#   46|       ASSERT (((unsigned char *) &internal)[1] == 0x0D);
+#   47|       ASSERT (((unsigned char *) &internal)[2] == 0x73);
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-ino-map.c:49: error: memory error: memory leak detected
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-ino-map.c:49: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-ino-map.c:49: note: Additional Info: address: 106:0
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-ino-map.c:49: note: Additional Info: pointing to: object at Segment: [106] of size 16
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-ino-map.c:49: note: Additional Info: MO95[16] allocated at ino_map_insert():  %30 = call noalias align 16 i8* @malloc(i64 16) #14, !dbg !102
+#   47|     ino_map_free (ino_map);
+#   48|   
+#   49|->   return 0;
+#   50|   }
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-ioctl.c:38: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-ioctl.c:38: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/ioctl.c:42:10: note: Non-deterministic values: ioctl: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   36|       int value;
+#   37|       errno = 0;
+#   38|->     ASSERT (ioctl (-1, FIONREAD, &value) == -1);
+#   39|       ASSERT (errno == EBADF);
+#   40|     }
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-ioctl.c:39: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-ioctl.c:39: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/ioctl.c:42:10: note: Non-deterministic values: ioctl: len 4 bytes, [4 times 0xff] (i32: -1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   37|       errno = 0;
+#   38|       ASSERT (ioctl (-1, FIONREAD, &value) == -1);
+#   39|->     ASSERT (errno == EBADF);
+#   40|     }
+#   41|     {
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-iswblank.c:32: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-iswblank.c:32: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-iswblank.c:32:3: note: Non-deterministic values: iswblank: len 4 bytes, [0x1|3 times 0x0] (i32: 1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   30|     (void) iswblank (0);
+#   31|     /* Check that the isw* functions map WEOF to 0.  */
+#   32|->   ASSERT (!iswblank (e));
+#   33|   
+#   34|     return 0;
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-lchmod.c:40: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-lchmod.c:40: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-lchmod.c:40:5: note: Non-deterministic values: creat: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-lchmod.c:40:5: note: Non-deterministic values: close: len 4 bytes, [0x1|3 times 0x0] (i32: 1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   38|       struct stat statbuf;
+#   39|       unlink (BASE "file");
+#   40|->     ASSERT (close (creat (BASE "file", 0600)) == 0);
+#   41|       ASSERT (lchmod (BASE "file", 0400) == 0);
+#   42|       ASSERT (stat (BASE "file", &statbuf) >= 0);
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-lchmod.c:41: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-lchmod.c:41: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-lchmod.c:40:5: note: Non-deterministic values: creat: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-lchmod.c:40:5: note: Non-deterministic values: close: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/../lib/lchmod.c:53:12: note: Non-deterministic values: open: len 4 bytes, [3 times 0x0|0x80] (i32: -2147483648)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   39|       unlink (BASE "file");
+#   40|       ASSERT (close (creat (BASE "file", 0600)) == 0);
+#   41|->     ASSERT (lchmod (BASE "file", 0400) == 0);
+#   42|       ASSERT (stat (BASE "file", &statbuf) >= 0);
+#   43|       ASSERT ((statbuf.st_mode & 0700) == 0400);
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-listen.c:38: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-listen.c:38: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-listen.c:38:5: note: Non-deterministic values: listen: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   36|     {
+#   37|       errno = 0;
+#   38|->     ASSERT (listen (-1, 1) == -1);
+#   39|       ASSERT (errno == EBADF);
+#   40|     }
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-listen.c:39: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-listen.c:39: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-listen.c:38:5: note: Non-deterministic values: listen: len 4 bytes, [4 times 0xff] (i32: -1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   37|       errno = 0;
+#   38|       ASSERT (listen (-1, 1) == -1);
+#   39|->     ASSERT (errno == EBADF);
+#   40|     }
+#   41|     {
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-lstat.h:32: error: abort failure
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-lstat.h:32: note: call stack: function test_lstat_func ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-lstat.c:59: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-lstat.c:50:10: note: Non-deterministic values: lstat: len 4 bytes, [0x1|3 times 0x0] (i32: 1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   30|   
+#   31|     /* Test for common directories.  */
+#   32|->   ASSERT (func (".", &st1) == 0);
+#   33|     ASSERT (func ("./", &st2) == 0);
+#   34|   #if !(defined _WIN32 && !defined __CYGWIN__ && !_GL_WINDOWS_STAT_INODES)
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-lstat.h:33: error: abort failure
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-lstat.h:33: note: call stack: function test_lstat_func ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-lstat.c:59: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-lstat.c:50:10: note: Non-deterministic values: lstat: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-lstat.c:50:10: note: Non-deterministic values: lstat: len 4 bytes, [0x1|3 times 0x0] (i32: 1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   31|     /* Test for common directories.  */
+#   32|     ASSERT (func (".", &st1) == 0);
+#   33|->   ASSERT (func ("./", &st2) == 0);
+#   34|   #if !(defined _WIN32 && !defined __CYGWIN__ && !_GL_WINDOWS_STAT_INODES)
+#   35|     ASSERT (SAME_INODE (st1, st2));
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-lstat.h:37: error: abort failure
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-lstat.h:37: note: call stack: function test_lstat_func ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-lstat.c:59: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-lstat.c:50:10: note: Non-deterministic values: lstat: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-lstat.c:50:10: note: Non-deterministic values: lstat: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   35|     ASSERT (SAME_INODE (st1, st2));
+#   36|   #endif
+#   37|->   ASSERT (S_ISDIR (st1.st_mode));
+#   38|     ASSERT (S_ISDIR (st2.st_mode));
+#   39|     ASSERT (func ("/", &st1) == 0);
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-memchr.c:54: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-memchr.c:54: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/zerosize-ptr.h:71:22: note: Non-deterministic values: getpagesize: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/zerosize-ptr.h:73:18: note: Non-deterministic values: mmap: len 8 bytes, [8 times 0xff] (i64: -1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   52|     ASSERT (MEMCHR (zerosize_ptr (), 'a', 0) == NULL);
+#   53|   
+#   54|->   ASSERT (MEMCHR (input, 'b', n) == input + 1);
+#   55|     ASSERT (MEMCHR (input, 'c', n) == input + 2);
+#   56|     ASSERT (MEMCHR (input, 'd', n) == input + 1026);
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-memrchr.c:49: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-memrchr.c:49: note: call stack: function main ()
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   47|   
+#   48|     /* Basic behavior tests.  */
+#   49|->   ASSERT (MEMRCHR (input, 'a', n) == input + n - 1);
+#   50|   
+#   51|     ASSERT (MEMRCHR (input, 'a', 0) == NULL);
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-mkdir.h:27: error: abort failure
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-mkdir.h:27: note: call stack: function test_mkdir ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-mkdir.c:46: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-mkdir.h:27:3: note: Non-deterministic values: creat: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-mkdir.h:27:3: note: Non-deterministic values: close: len 4 bytes, [0x1|3 times 0x0] (i32: 1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   25|   {
+#   26|     /* Test basic error handling.  */
+#   27|->   ASSERT (close (creat (BASE "file", 0600)) == 0);
+#   28|     errno = 0;
+#   29|     ASSERT (func (BASE "file", 0700) == -1);
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-mkdir.h:29: error: abort failure
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-mkdir.h:29: note: call stack: function test_mkdir ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-mkdir.c:46: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-mkdir.h:27:3: note: Non-deterministic values: creat: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-mkdir.h:27:3: note: Non-deterministic values: close: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-mkdir.h:29:3: note: Non-deterministic values: mkdir: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   27|     ASSERT (close (creat (BASE "file", 0600)) == 0);
+#   28|     errno = 0;
+#   29|->   ASSERT (func (BASE "file", 0700) == -1);
+#   30|     ASSERT (errno == EEXIST);
+#   31|     errno = 0;
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-mkdir.h:30: error: abort failure
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-mkdir.h:30: note: call stack: function test_mkdir ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-mkdir.c:46: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-mkdir.h:27:3: note: Non-deterministic values: creat: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-mkdir.h:27:3: note: Non-deterministic values: close: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-mkdir.h:29:3: note: Non-deterministic values: mkdir: len 4 bytes, [4 times 0xff] (i32: -1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   28|     errno = 0;
+#   29|     ASSERT (func (BASE "file", 0700) == -1);
+#   30|->   ASSERT (errno == EEXIST);
+#   31|     errno = 0;
+#   32|     ASSERT (func (BASE "file/", 0700) == -1);
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-mkfifo.h:36: error: abort failure
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-mkfifo.h:36: note: call stack: function test_mkfifo ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-mkfifo.c:46: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-mkfifo.h:28:16: note: Non-deterministic values: mkfifo: len 4 bytes, [0x1|3 times 0x0] (i32: 1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   34|         return 77;
+#   35|       }
+#   36|->   ASSERT (result == 0);
+#   37|     ASSERT (stat (BASE "fifo", &st) == 0);
+#   38|     ASSERT (S_ISFIFO (st.st_mode));
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-mkfifo.h:37: error: abort failure
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-mkfifo.h:37: note: call stack: function test_mkfifo ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-mkfifo.c:46: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-mkfifo.h:28:16: note: Non-deterministic values: mkfifo: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-mkfifo.h:37:3: note: Non-deterministic values: stat: len 4 bytes, [0x1|3 times 0x0] (i32: 1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   35|       }
+#   36|     ASSERT (result == 0);
+#   37|->   ASSERT (stat (BASE "fifo", &st) == 0);
+#   38|     ASSERT (S_ISFIFO (st.st_mode));
+#   39|   
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-mkfifo.h:38: error: abort failure
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-mkfifo.h:38: note: call stack: function test_mkfifo ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-mkfifo.c:46: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-mkfifo.h:28:16: note: Non-deterministic values: mkfifo: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-mkfifo.h:37:3: note: Non-deterministic values: stat: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   36|     ASSERT (result == 0);
+#   37|     ASSERT (stat (BASE "fifo", &st) == 0);
+#   38|->   ASSERT (S_ISFIFO (st.st_mode));
+#   39|   
+#   40|     /* Sanity checks of failures.  */
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-nanosleep.c:58: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-nanosleep.c:58: note: call stack: function main ()
+coreutils-8.32/separate/../lib/nanosleep.c:85:12: note: Non-deterministic values: nanosleep: len 4 bytes, [0x1|3 times 0x0] (i32: 1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   56|     ts.tv_sec = 0;
+#   57|     ts.tv_nsec = 1;
+#   58|->   ASSERT (nanosleep (&ts, &ts) == 0);
+#   59|     /* Remaining time is only defined on EINTR failure; but on success,
+#   60|        it is typically either 0 or unchanged from input.  At any rate,
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-nanosleep.c:65: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-nanosleep.c:65: note: call stack: function main ()
+coreutils-8.32/separate/../lib/nanosleep.c:85:12: note: Non-deterministic values: nanosleep: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/../lib/nanosleep.c:85:12: note: Non-deterministic values: nanosleep: len 4 bytes, [0x1|3 times 0x0] (i32: 1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   63|     ASSERT (ts.tv_nsec == 0 || ts.tv_nsec == 1);
+#   64|     ts.tv_nsec = 0;
+#   65|->   ASSERT (nanosleep (&ts, NULL) == 0);
+#   66|   
+#   67|   #if HAVE_DECL_ALARM
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-nanosleep.c:75: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-nanosleep.c:75: note: call stack: function main ()
+coreutils-8.32/separate/../lib/nanosleep.c:85:12: note: Non-deterministic values: nanosleep: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/../lib/nanosleep.c:85:12: note: Non-deterministic values: nanosleep: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/../lib/nanosleep.c:74:18: note: Non-deterministic values: nanosleep: len 4 bytes, [0x1|3 times 0x0] (i32: 1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   73|       ts.tv_nsec = 999999999;
+#   74|       errno = 0;
+#   75|->     ASSERT (nanosleep (&ts, &ts) == -1);
+#   76|       ASSERT (errno == EINTR);
+#   77|       ASSERT (pentecost - 10 < ts.tv_sec && ts.tv_sec <= pentecost);
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-nanosleep.c:76: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-nanosleep.c:76: note: call stack: function main ()
+coreutils-8.32/separate/../lib/nanosleep.c:85:12: note: Non-deterministic values: nanosleep: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/../lib/nanosleep.c:85:12: note: Non-deterministic values: nanosleep: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/../lib/nanosleep.c:74:18: note: Non-deterministic values: nanosleep: len 4 bytes, [4 times 0xff] (i32: -1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   74|       errno = 0;
+#   75|       ASSERT (nanosleep (&ts, &ts) == -1);
+#   76|->     ASSERT (errno == EINTR);
+#   77|       ASSERT (pentecost - 10 < ts.tv_sec && ts.tv_sec <= pentecost);
+#   78|       ASSERT (0 <= ts.tv_nsec && ts.tv_nsec <= 999999999);
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-once.c:40: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-once.c:40: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-once.c:38:3: note: Non-deterministic values: pthread_once: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   38|     gl_once (a_once, a_init);
+#   39|   
+#   40|->   ASSERT (a == 42);
+#   41|   
+#   42|     return 0;
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-open.h:48: error: abort failure
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-open.h:48: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-open.h:42:3: note: Non-deterministic values: unlink: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-open.h:43:3: note: Non-deterministic values: unlink: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-open.h:44:3: note: Non-deterministic values: unlink: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-open.h:48:3: note: Non-deterministic values: open: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+/opt/symbiotic/lib/libc/klee/fflush.c:9:9: note: Non-deterministic values: __VERIFIER_nondet__Bool: len 1 bytes, [0x0] (i8: 0)
+#   46|     /* Cannot create directory.  */
+#   47|     errno = 0;
+#   48|->   ASSERT (func ("nonexist.ent/", O_CREAT | O_RDONLY, 0600) == -1);
+#   49|     ASSERT (errno == ENOTDIR || errno == EISDIR || errno == ENOENT
+#   50|             || errno == EINVAL);
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-open.h:49: error: abort failure
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-open.h:49: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-open.h:42:3: note: Non-deterministic values: unlink: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-open.h:43:3: note: Non-deterministic values: unlink: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-open.h:44:3: note: Non-deterministic values: unlink: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-open.h:48:3: note: Non-deterministic values: open: len 4 bytes, [4 times 0xff] (i32: -1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+/opt/symbiotic/lib/libc/klee/fflush.c:9:9: note: Non-deterministic values: __VERIFIER_nondet__Bool: len 1 bytes, [0x0] (i8: 0)
+#   47|     errno = 0;
+#   48|     ASSERT (func ("nonexist.ent/", O_CREAT | O_RDONLY, 0600) == -1);
+#   49|->   ASSERT (errno == ENOTDIR || errno == EISDIR || errno == ENOENT
+#   50|             || errno == EINVAL);
+#   51|   
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-openat.c:68: error: abort failure
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-openat.c:68: note: call stack: function main (=2, =0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-openat.c:68:5: note: Non-deterministic values: openat: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+/opt/symbiotic/lib/libc/klee/fflush.c:9:9: note: Non-deterministic values: __VERIFIER_nondet__Bool: len 1 bytes, [0x0] (i8: 0)
+#   66|     {
+#   67|       errno = 0;
+#   68|->     ASSERT (openat (-1, "foo", O_RDONLY) == -1);
+#   69|       ASSERT (errno == EBADF);
+#   70|     }
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-openat.c:69: error: abort failure
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-openat.c:69: note: call stack: function main (=2, =0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-openat.c:68:5: note: Non-deterministic values: openat: len 4 bytes, [4 times 0xff] (i32: -1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+/opt/symbiotic/lib/libc/klee/fflush.c:9:9: note: Non-deterministic values: __VERIFIER_nondet__Bool: len 1 bytes, [0x1] (i8: 1)
+#   67|       errno = 0;
+#   68|       ASSERT (openat (-1, "foo", O_RDONLY) == -1);
+#   69|->     ASSERT (errno == EBADF);
+#   70|     }
+#   71|     {
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-pipe.c:96: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-pipe.c:96: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-pipe.c:96:3: note: Non-deterministic values: pipe: len 4 bytes, [3 times 0x0|0x80] (i32: -2147483648)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   94|     fd[0] = -1;
+#   95|     fd[1] = -1;
+#   96|->   ASSERT (pipe (fd) >= 0);
+#   97|     ASSERT (fd[0] >= 0);
+#   98|     ASSERT (fd[1] >= 0);
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-pipe.c:97: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-pipe.c:97: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-pipe.c:96:3: note: Non-deterministic values: pipe: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   95|     fd[1] = -1;
+#   96|     ASSERT (pipe (fd) >= 0);
+#   97|->   ASSERT (fd[0] >= 0);
+#   98|     ASSERT (fd[1] >= 0);
+#   99|     ASSERT (fd[0] != fd[1]);
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-pipe2.c:115: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-pipe2.c:115: note: call stack: function main ()
+coreutils-8.32/separate/../lib/pipe2.c:58:22: note: Non-deterministic values: pipe2: len 4 bytes, [3 times 0x0|0x80] (i32: -2147483648)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#  113|           fd[0] = -1;
+#  114|           fd[1] = -1;
+#  115|->         ASSERT (pipe2 (fd, o_flags) >= 0);
+#  116|           ASSERT (fd[0] >= 0);
+#  117|           ASSERT (fd[1] >= 0);
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-pipe2.c:116: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-pipe2.c:116: note: call stack: function main ()
+coreutils-8.32/separate/../lib/pipe2.c:58:22: note: Non-deterministic values: pipe2: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#  114|           fd[1] = -1;
+#  115|           ASSERT (pipe2 (fd, o_flags) >= 0);
+#  116|->         ASSERT (fd[0] >= 0);
+#  117|           ASSERT (fd[1] >= 0);
+#  118|           ASSERT (fd[0] != fd[1]);
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-posixtm.c:119: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-posixtm.c:119: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-posixtm.c:118:9: note: Non-deterministic values: setenv: len 4 bytes, [0x1|3 times 0x0] (i32: 1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#  117|     /* The above test data requires Universal Time, e.g., TZ="UTC0".  */
+#  118|     err = setenv ("TZ", "UTC0", 1);
+#  119|->   ASSERT (err == 0);
+#  120|   
+#  121|     t_now = time (NULL);
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-posixtm.c:122: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-posixtm.c:122: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-posixtm.c:118:9: note: Non-deterministic values: setenv: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#  120|   
+#  121|     t_now = time (NULL);
+#  122|->   ASSERT (t_now != (time_t) -1);
+#  123|     tm = localtime (&t_now);
+#  124|     ASSERT (tm);
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-readlink.h:34: error: abort failure
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-readlink.h:34: note: call stack: function test_readlink ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-readlink.c:47: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-readlink.h:34:3: note: Non-deterministic values: readlink: len 8 bytes, [8 times 0x0] (i64: 0)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   32|     memset (buf, 0xff, sizeof buf);
+#   33|     errno = 0;
+#   34|->   ASSERT (func ("no_such", buf, sizeof buf) == -1);
+#   35|     ASSERT (errno == ENOENT);
+#   36|     errno = 0;
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-readlink.h:35: error: abort failure
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-readlink.h:35: note: call stack: function test_readlink ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-readlink.c:47: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-readlink.h:34:3: note: Non-deterministic values: readlink: len 8 bytes, [8 times 0xff] (i64: -1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   33|     errno = 0;
+#   34|     ASSERT (func ("no_such", buf, sizeof buf) == -1);
+#   35|->   ASSERT (errno == ENOENT);
+#   36|     errno = 0;
+#   37|     ASSERT (func ("no_such/", buf, sizeof buf) == -1);
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-readlinkat.c:65: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-readlinkat.c:65: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-readlinkat.c:60:3: note: Non-deterministic values: system: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-readlinkat.c:65:5: note: Non-deterministic values: readlinkat: len 8 bytes, [8 times 0x0] (i64: 0)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   63|     {
+#   64|       errno = 0;
+#   65|->     ASSERT (readlinkat (-1, "foo", buf, sizeof buf) == -1);
+#   66|       ASSERT (errno == EBADF);
+#   67|     }
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-readlinkat.c:66: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-readlinkat.c:66: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-readlinkat.c:60:3: note: Non-deterministic values: system: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-readlinkat.c:65:5: note: Non-deterministic values: readlinkat: len 8 bytes, [8 times 0xff] (i64: -1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   64|       errno = 0;
+#   65|       ASSERT (readlinkat (-1, "foo", buf, sizeof buf) == -1);
+#   66|->     ASSERT (errno == EBADF);
+#   67|     }
+#   68|     {
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-rmdir.h:29: error: abort failure
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-rmdir.h:29: note: call stack: function test_rmdir_func ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-rmdir.c:46: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-rmdir.h:29:3: note: Non-deterministic values: mkdir: len 4 bytes, [0x1|3 times 0x0] (i32: 1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   27|   {
+#   28|     /* Setup.  */
+#   29|->   ASSERT (mkdir (BASE "dir", 0700) == 0);
+#   30|     ASSERT (close (creat (BASE "dir/file", 0600)) == 0);
+#   31|   
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-rmdir.h:30: error: abort failure
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-rmdir.h:30: note: call stack: function test_rmdir_func ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-rmdir.c:46: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-rmdir.h:29:3: note: Non-deterministic values: mkdir: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-rmdir.h:30:3: note: Non-deterministic values: creat: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-rmdir.h:30:3: note: Non-deterministic values: close: len 4 bytes, [0x1|3 times 0x0] (i32: 1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   28|     /* Setup.  */
+#   29|     ASSERT (mkdir (BASE "dir", 0700) == 0);
+#   30|->   ASSERT (close (creat (BASE "dir/file", 0600)) == 0);
+#   31|   
+#   32|     /* Basic error conditions.  */
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-rmdir.h:34: error: abort failure
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-rmdir.h:34: note: call stack: function test_rmdir_func ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-rmdir.c:46: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-rmdir.h:29:3: note: Non-deterministic values: mkdir: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-rmdir.h:30:3: note: Non-deterministic values: creat: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-rmdir.h:30:3: note: Non-deterministic values: close: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-rmdir.h:34:3: note: Non-deterministic values: rmdir: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   32|     /* Basic error conditions.  */
+#   33|     errno = 0;
+#   34|->   ASSERT (func ("") == -1);
+#   35|     ASSERT (errno == ENOENT);
+#   36|     errno = 0;
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-rmdir.h:35: error: abort failure
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-rmdir.h:35: note: call stack: function test_rmdir_func ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-rmdir.c:46: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-rmdir.h:29:3: note: Non-deterministic values: mkdir: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-rmdir.h:30:3: note: Non-deterministic values: creat: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-rmdir.h:30:3: note: Non-deterministic values: close: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-rmdir.h:34:3: note: Non-deterministic values: rmdir: len 4 bytes, [4 times 0xff] (i32: -1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   33|     errno = 0;
+#   34|     ASSERT (func ("") == -1);
+#   35|->   ASSERT (errno == ENOENT);
+#   36|     errno = 0;
+#   37|     ASSERT (func (BASE "nosuch") == -1);
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-sameacls.c:46: error: abort failure
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-sameacls.c:46: note: call stack: function main (=2, =0)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+/opt/symbiotic/lib/libc/klee/fflush.c:9:9: note: Non-deterministic values: __VERIFIER_nondet__Bool: len 1 bytes, [0x0] (i8: 0)
+#   44|     const char *file2;
+#   45|   
+#   46|->   ASSERT (argc == 3);
+#   47|   
+#   48|     file1 = argv[1];
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-set-mode-acl.c:33: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-set-mode-acl.c:33: note: call stack: function main (=2, =0)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   31|     int mode;
+#   32|   
+#   33|->   ASSERT (argc == 3);
+#   34|   
+#   35|     file = argv[1];
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-setsockopt.c:40: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-setsockopt.c:40: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-setsockopt.c:40:5: note: Non-deterministic values: setsockopt: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   38|   
+#   39|       errno = 0;
+#   40|->     ASSERT (setsockopt (-1, SOL_SOCKET, SO_REUSEADDR, &value, sizeof (value))
+#   41|               == -1);
+#   42|       ASSERT (errno == EBADF);
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-setsockopt.c:42: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-setsockopt.c:42: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-setsockopt.c:40:5: note: Non-deterministic values: setsockopt: len 4 bytes, [4 times 0xff] (i32: -1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   40|       ASSERT (setsockopt (-1, SOL_SOCKET, SO_REUSEADDR, &value, sizeof (value))
+#   41|               == -1);
+#   42|->     ASSERT (errno == EBADF);
+#   43|     }
+#   44|     {
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-sigprocmask.c:62: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-sigprocmask.c:62: note: call stack: function main (=2, =0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-sigprocmask.c:62:3: note: Non-deterministic values: sigprocmask: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   60|   
+#   61|     /* Check error handling.  */
+#   62|->   ASSERT (sigprocmask (1729, &set, NULL) == -1);
+#   63|     ASSERT (errno == EINVAL);
+#   64|   
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-sigprocmask.c:63: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-sigprocmask.c:63: note: call stack: function main (=2, =0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-sigprocmask.c:62:3: note: Non-deterministic values: sigprocmask: len 4 bytes, [4 times 0xff] (i32: -1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   61|     /* Check error handling.  */
+#   62|     ASSERT (sigprocmask (1729, &set, NULL) == -1);
+#   63|->   ASSERT (errno == EINVAL);
+#   64|   
+#   65|     /* Block SIGINT.  */
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-sleep.c:42: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-sleep.c:42: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-sleep.c:42:3: note: Non-deterministic values: sleep: len 4 bytes, [0x2|3 times 0x0] (i32: 2)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   40|   main (void)
+#   41|   {
+#   42|->   ASSERT (sleep (1) <= 1);
+#   43|   
+#   44|     ASSERT (sleep (0) == 0);
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-sleep.c:44: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-sleep.c:44: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-sleep.c:42:3: note: Non-deterministic values: sleep: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-sleep.c:44:3: note: Non-deterministic values: sleep: len 4 bytes, [0x1|3 times 0x0] (i32: 1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   42|     ASSERT (sleep (1) <= 1);
+#   43|   
+#   44|->   ASSERT (sleep (0) == 0);
+#   45|   
+#   46|   #if HAVE_DECL_ALARM
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-sleep.c:53: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-sleep.c:53: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-sleep.c:42:3: note: Non-deterministic values: sleep: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-sleep.c:44:3: note: Non-deterministic values: sleep: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-sleep.c:52:17: note: Non-deterministic values: sleep: len 4 bytes, [0x1|0xeb|0x41|0x0] (i32: 4320001)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   51|       alarm (1);
+#   52|       remaining = sleep (pentecost);
+#   53|->     ASSERT (pentecost - 10 < remaining && remaining <= pentecost);
+#   54|     }
+#   55|   #endif
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-strtoimax.c:40: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-strtoimax.c:40: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-strtoimax.c:39:14: note: Non-deterministic values: strtoimax: len 8 bytes, [0x1|7 times 0x0] (i64: 1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   38|       errno = 0;
+#   39|       result = strtoimax (input, &ptr, 10);
+#   40|->     ASSERT (result == 0);
+#   41|       ASSERT (ptr == input);
+#   42|       ASSERT (errno == 0 || errno == EINVAL);
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-strtoimax.c:41: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-strtoimax.c:41: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-strtoimax.c:39:14: note: Non-deterministic values: strtoimax: len 8 bytes, [8 times 0x0] (i64: 0)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   39|       result = strtoimax (input, &ptr, 10);
+#   40|       ASSERT (result == 0);
+#   41|->     ASSERT (ptr == input);
+#   42|       ASSERT (errno == 0 || errno == EINVAL);
+#   43|     }
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-strtoll.c:41: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-strtoll.c:41: note: call stack: function main ()
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   39|       result = strtoll (input, &ptr, 10);
+#   40|       ASSERT (result == 0);
+#   41|->     ASSERT (ptr == input);
+#   42|       ASSERT (errno == 0 || errno == EINVAL);
+#   43|     }
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-strtoumax.c:40: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-strtoumax.c:40: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-strtoumax.c:39:14: note: Non-deterministic values: strtoumax: len 8 bytes, [0x1|7 times 0x0] (i64: 1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   38|       errno = 0;
+#   39|       result = strtoumax (input, &ptr, 10);
+#   40|->     ASSERT (result == 0);
+#   41|       ASSERT (ptr == input);
+#   42|       ASSERT (errno == 0 || errno == EINVAL);
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-strtoumax.c:41: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-strtoumax.c:41: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-strtoumax.c:39:14: note: Non-deterministic values: strtoumax: len 8 bytes, [8 times 0x0] (i64: 0)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   39|       result = strtoumax (input, &ptr, 10);
+#   40|       ASSERT (result == 0);
+#   41|->     ASSERT (ptr == input);
+#   42|       ASSERT (errno == 0 || errno == EINVAL);
+#   43|     }
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-symlinkat.c:64: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-symlinkat.c:64: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-symlinkat.c:59:3: note: Non-deterministic values: system: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-symlinkat.c:64:5: note: Non-deterministic values: symlinkat: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   62|     {
+#   63|       errno = 0;
+#   64|->     ASSERT (symlinkat ("foo", -1, "bar") == -1);
+#   65|       ASSERT (errno == EBADF
+#   66|               || errno == ENOSYS /* seen on mingw */
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-symlinkat.c:65: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-symlinkat.c:65: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-symlinkat.c:59:3: note: Non-deterministic values: system: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-symlinkat.c:64:5: note: Non-deterministic values: symlinkat: len 4 bytes, [4 times 0xff] (i32: -1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   63|       errno = 0;
+#   64|       ASSERT (symlinkat ("foo", -1, "bar") == -1);
+#   65|->     ASSERT (errno == EBADF
+#   66|               || errno == ENOSYS /* seen on mingw */
+#   67|              );
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-uname.c:43: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-uname.c:43: note: call stack: function main (=2, =0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-uname.c:43:3: note: Non-deterministic values: uname: len 4 bytes, [3 times 0x0|0x80] (i32: -2147483648)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   41|     memset (&buf, '?', sizeof (buf));
+#   42|   
+#   43|->   ASSERT (uname (&buf) >= 0);
+#   44|   
+#   45|     /* Verify that every field's value is NUL terminated.  */
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-unlink.h:29: error: abort failure
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-unlink.h:29: note: call stack: function test_unlink_func ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-unlink.c:48: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-unlink.h:29:3: note: Non-deterministic values: mkdir: len 4 bytes, [0x1|3 times 0x0] (i32: 1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   27|   {
+#   28|     /* Setup.  */
+#   29|->   ASSERT (mkdir (BASE "dir", 0700) == 0);
+#   30|     ASSERT (close (creat (BASE "dir/file", 0600)) == 0);
+#   31|   
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-unlink.h:30: error: abort failure
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-unlink.h:30: note: call stack: function test_unlink_func ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-unlink.c:48: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-unlink.h:29:3: note: Non-deterministic values: mkdir: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-unlink.h:30:3: note: Non-deterministic values: creat: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-unlink.h:30:3: note: Non-deterministic values: close: len 4 bytes, [0x1|3 times 0x0] (i32: 1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   28|     /* Setup.  */
+#   29|     ASSERT (mkdir (BASE "dir", 0700) == 0);
+#   30|->   ASSERT (close (creat (BASE "dir/file", 0600)) == 0);
+#   31|   
+#   32|     /* Basic error conditions.  */
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-unlink.h:34: error: abort failure
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-unlink.h:34: note: call stack: function test_unlink_func ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-unlink.c:48: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-unlink.h:29:3: note: Non-deterministic values: mkdir: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-unlink.h:30:3: note: Non-deterministic values: creat: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-unlink.h:30:3: note: Non-deterministic values: close: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-unlink.h:34:3: note: Non-deterministic values: unlink: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   32|     /* Basic error conditions.  */
+#   33|     errno = 0;
+#   34|->   ASSERT (func ("") == -1);
+#   35|     ASSERT (errno == ENOENT);
+#   36|     errno = 0;
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-unlink.h:35: error: abort failure
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-unlink.h:35: note: call stack: function test_unlink_func ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-unlink.c:48: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-unlink.h:29:3: note: Non-deterministic values: mkdir: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-unlink.h:30:3: note: Non-deterministic values: creat: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-unlink.h:30:3: note: Non-deterministic values: close: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-unlink.h:34:3: note: Non-deterministic values: unlink: len 4 bytes, [4 times 0xff] (i32: -1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   33|     errno = 0;
+#   34|     ASSERT (func ("") == -1);
+#   35|->   ASSERT (errno == ENOENT);
+#   36|     errno = 0;
+#   37|     ASSERT (func (BASE "nosuch") == -1);
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-unlinkat.c:71: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-unlinkat.c:71: note: call stack: function main (=2, =0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-unlinkat.c:66:3: note: Non-deterministic values: system: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-unlinkat.c:71:5: note: Non-deterministic values: unlinkat: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   69|     {
+#   70|       errno = 0;
+#   71|->     ASSERT (unlinkat (-1, "foo", 0) == -1);
+#   72|       ASSERT (errno == EBADF);
+#   73|     }
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-unlinkat.c:72: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-unlinkat.c:72: note: call stack: function main (=2, =0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-unlinkat.c:66:3: note: Non-deterministic values: system: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-unlinkat.c:71:5: note: Non-deterministic values: unlinkat: len 4 bytes, [4 times 0xff] (i32: -1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   70|       errno = 0;
+#   71|       ASSERT (unlinkat (-1, "foo", 0) == -1);
+#   72|->     ASSERT (errno == EBADF);
+#   73|     }
+#   74|     {
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-usleep.c:34: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-usleep.c:34: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-usleep.c:34:3: note: Non-deterministic values: usleep: len 4 bytes, [0x1|3 times 0x0] (i32: 1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   32|   {
+#   33|     time_t start = time (NULL);
+#   34|->   ASSERT (usleep (1000000) == 0);
+#   35|     ASSERT (start < time (NULL));
+#   36|   
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-usleep.c:35: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-usleep.c:35: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-usleep.c:34:3: note: Non-deterministic values: usleep: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   33|     time_t start = time (NULL);
+#   34|     ASSERT (usleep (1000000) == 0);
+#   35|->   ASSERT (start < time (NULL));
+#   36|   
+#   37|     ASSERT (usleep (0) == 0);
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-usleep.c:37: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-usleep.c:37: note: call stack: function main ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-usleep.c:34:3: note: Non-deterministic values: usleep: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-usleep.c:37:3: note: Non-deterministic values: usleep: len 4 bytes, [0x1|3 times 0x0] (i32: 1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   35|     ASSERT (start < time (NULL));
+#   36|   
+#   37|->   ASSERT (usleep (0) == 0);
+#   38|   
+#   39|     return 0;
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-vasprintf.c:54: error: abort failure
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-vasprintf.c:54: note: call stack: function test_vasprintf ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-vasprintf.c:100: note: call stack: function main (=2, =0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-vasprintf.c:40:9: note: Non-deterministic values: vasprintf: len 4 bytes, [4 times 0x0] (i32: 0)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   52|         char *result;
+#   53|         int retval = my_asprintf (&result, "%d", 12345);
+#   54|->       ASSERT (retval == 5);
+#   55|         ASSERT (result != NULL);
+#   56|         ASSERT (strcmp (result, "12345") == 0);
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-wcrtomb.c:68: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-wcrtomb.c:68: note: call stack: function main (=2, =0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-wcrtomb.c:61:7: note: Non-deterministic values: setlocale: len 8 bytes, [0x1|7 times 0x0] (i64: 1)
+/builddir/build/BUILD/coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-wcrtomb.c:61:7 (offset): note: Non-deterministic values: setlocale: len 8 bytes, [8 times 0x0] (i64: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-wcrtomb.c:67:11: note: Non-deterministic values: wcrtomb: len 8 bytes, [8 times 0x0] (i64: 0)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   66|       buf[0] = 'x';
+#   67|       ret = wcrtomb (buf, 0, NULL);
+#   68|->     ASSERT (ret == 1);
+#   69|       ASSERT (buf[0] == '\0');
+#   70|     }
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-wcrtomb.c:69: error: reached "unreachable" instruction
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-wcrtomb.c:69: note: call stack: function main (=2, =0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-wcrtomb.c:61:7: note: Non-deterministic values: setlocale: len 8 bytes, [0x1|7 times 0x0] (i64: 1)
+/builddir/build/BUILD/coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-wcrtomb.c:61:7 (offset): note: Non-deterministic values: setlocale: len 8 bytes, [8 times 0x0] (i64: 0)
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-wcrtomb.c:67:11: note: Non-deterministic values: wcrtomb: len 8 bytes, [0x1|7 times 0x0] (i64: 1)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   67|       ret = wcrtomb (buf, 0, NULL);
+#   68|       ASSERT (ret == 1);
+#   69|->     ASSERT (buf[0] == '\0');
+#   70|     }
+#   71|   
+
+Error: SYMBIOTIC_WARNING:
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-xvasprintf.c:57: error: abort failure
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-xvasprintf.c:57: note: call stack: function test_xvasprintf ()
+coreutils-8.32/separate/gnulib-tests/../../gnulib-tests/test-xvasprintf.c:131: note: call stack: function main (=2, =0)
+coreutils-8.32/separate/../lib/xvasprintf.c:102:7: note: Non-deterministic values: vasprintf: len 4 bytes, [3 times 0x0|0x80] (i32: -2147483648)
+coreutils-8.32/separate/../lib/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   55|       {
+#   56|         result = my_xasprintf ("%d", 12345);
+#   57|->       ASSERT (result != NULL);
+#   58|         ASSERT (strcmp (result, "12345") == 0);
+#   59|         free (result);
+
 Error: COMPILER_WARNING (CWE-477):
 coreutils-8.32/src/install.c:368:8: warning[-Wdeprecated-declarations]: 'matchpathcon' is deprecated: Use selabel_lookup instead
 #  if ((matchpathcon (file, st.st_mode, &scontext) != 0)
