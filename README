@@ -53,6 +53,18 @@ Alternative ways of running tests
     $ ctest -E predator-regre
 
 
+Formal verification of RPM packages (expensive)
+-----------------------------------------------
+- run all tests
+    $ sudo dnf install csmock-plugin-{cbmc,divine,symbiotic}
+    $ make check-csmock
+
+- passing custom options to ctest:
+    $ CTEST_OPTS='-L symbiotic' make check-csmock   # use only Symbiotic
+    $ CTEST_OPTS='-R coreutils' make check-csmock   # verify only coreutils
+    $ CTEST_OPTS='--verbose' make check-csmock      # provide verbose output
+
+
 Tree layout of this repository
 ------------------------------
 /Makefile               top-level Makefile (its use is optional)
