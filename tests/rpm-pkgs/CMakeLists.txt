@@ -1,4 +1,5 @@
 set(MOCK_PROFILE "fedora-35-x86_64" CACHE STRING "mock configuration to use by csmock")
+set(CSMOCK_ADD_OPTS "" CACHE STRING "extra options to be passed to csmock")
 
 # check for available csmock tools (plug-ins)
 execute_process(COMMAND bash -c "set pipefail; csmock --list-available-tools | sed -e 's| .*$||' | tr '\n' ';'"
@@ -71,6 +72,9 @@ macro(tool_verify_build)
     elseif(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/csmock-args@${tool})
         file(STRINGS ${CMAKE_CURRENT_SOURCE_DIR}/csmock-args@${tool} args)
         set(cmd "${cmd} ${args}")
+    endif()
+    if(NOT "${CSMOCK_ADD_OPTS}" STREQUAL "")
+        set(cmd "${cmd} ${CSMOCK_ADD_OPTS}")
     endif()
     set(cmd "${cmd}\\; grep exit-code ${scan_ini}")
 

@@ -55,7 +55,7 @@ Alternative ways of running tests
 
 Formal verification of RPM packages (expensive)
 -----------------------------------------------
-- run all tests
+- run all tests:
     $ sudo dnf install csmock-plugin-{cbmc,divine,symbiotic}
     $ make check-csmock
 
@@ -63,6 +63,10 @@ Formal verification of RPM packages (expensive)
     $ CTEST_OPTS='-L symbiotic' make check-csmock   # use only Symbiotic
     $ CTEST_OPTS='-R coreutils' make check-csmock   # verify only coreutils
     $ CTEST_OPTS='--verbose' make check-csmock      # provide verbose output
+
+- passing custom options to cmake:
+    $ make check-csmock MOCK_PROFILE=fedora-34-x86_64
+    $ make check-csmock CSMOCK_ADD_OPTS=--use-ldpwrap
 
 
 Tree layout of this repository

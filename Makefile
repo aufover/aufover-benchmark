@@ -10,6 +10,14 @@ WORKDIR ?= ./workdir
 # we need to use CMAKE=cmake3 on RHEL-7
 CMAKE ?= cmake
 
+ifdef MOCK_PROFILE
+	CMAKE_OPTS += -DMOCK_PROFILE='$(MOCK_PROFILE)'
+endif
+
+ifdef CSMOCK_ADD_OPTS
+	CMAKE_OPTS += -DCSMOCK_ADD_OPTS='$(CSMOCK_ADD_OPTS)'
+endif
+
 .PHONY: check check-all check-csmock configure configure-all configure-csmock install-deps test
 
 # default target (single-c only)
