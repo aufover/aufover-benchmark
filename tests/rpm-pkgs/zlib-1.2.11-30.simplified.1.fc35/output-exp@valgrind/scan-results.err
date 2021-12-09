@@ -1,0 +1,13 @@
+Error: COMPILER_WARNING (CWE-483):
+zlib-1.2.11/contrib/minizip/zip.c: scope_hint: In function 'zip64local_SearchCentralDir'
+zlib-1.2.11/contrib/minizip/zip.c:521:5: warning[-Wmisleading-indentation]: this 'for' clause does not guard...
+#  521 |     for (i=(int)uReadSize-3; (i--)>0;)
+#      |     ^~~
+zlib-1.2.11/contrib/minizip/zip.c:529:7: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'for'
+#  529 |       if (uPosFound!=0)
+#      |       ^~
+#  519|         break;
+#  520|   
+#  521|->     for (i=(int)uReadSize-3; (i--)>0;)
+#  522|         if (((*(buf+i))==0x50) && ((*(buf+i+1))==0x4b) &&
+#  523|           ((*(buf+i+2))==0x05) && ((*(buf+i+3))==0x06))
