@@ -1,0 +1,66 @@
+Error: COMPILER_WARNING (CWE-758):
+zlib-1.2.11/contrib/minizip/ioapi.c:127:14: warning: incompatible integer to pointer conversion assigning to 'FILE *' (aka 'struct _PDCLIB_file *') from 'int'
+#        file = FOPEN_FUNC((const char*)filename, mode_fopen);
+#             ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  125|   
+#  126|       if ((filename!=NULL) && (mode_fopen != NULL))
+#  127|->         file = FOPEN_FUNC((const char*)filename, mode_fopen);
+#  128|       return file;
+#  129|   }
+
+Error: COMPILER_WARNING (CWE-758):
+zlib-1.2.11/contrib/minizip/ioapi.c:127:16: warning: implicit declaration of function 'fopen64' is invalid in C99
+#        file = FOPEN_FUNC((const char*)filename, mode_fopen);
+#               ^
+zlib-1.2.11/contrib/minizip/ioapi.c:23:36: note: expanded from macro 'FOPEN_FUNC'
+##define FOPEN_FUNC(filename, mode) fopen64(filename, mode)
+#                                   ^
+#  125|   
+#  126|       if ((filename!=NULL) && (mode_fopen != NULL))
+#  127|->         file = FOPEN_FUNC((const char*)filename, mode_fopen);
+#  128|       return file;
+#  129|   }
+
+Error: COMPILER_WARNING (CWE-758):
+zlib-1.2.11/contrib/minizip/ioapi.c:157:11: warning: implicit declaration of function 'ftello64' is invalid in C99
+#    ret = FTELLO_FUNC((FILE *)stream);
+#          ^
+zlib-1.2.11/contrib/minizip/ioapi.c:24:29: note: expanded from macro 'FTELLO_FUNC'
+##define FTELLO_FUNC(stream) ftello64(stream)
+#                            ^
+#  155|   {
+#  156|       ZPOS64_T ret;
+#  157|->     ret = FTELLO_FUNC((FILE *)stream);
+#  158|       return ret;
+#  159|   }
+
+Error: COMPILER_WARNING (CWE-758):
+zlib-1.2.11/contrib/minizip/ioapi.c:203:8: warning: implicit declaration of function 'fseeko64' is invalid in C99
+#    if(FSEEKO_FUNC((FILE *)stream, offset, fseek_origin) != 0)
+#       ^
+zlib-1.2.11/contrib/minizip/ioapi.c:25:45: note: expanded from macro 'FSEEKO_FUNC'
+##define FSEEKO_FUNC(stream, offset, origin) fseeko64(stream, offset, origin)
+#                                            ^
+#  201|       ret = 0;
+#  202|   
+#  203|->     if(FSEEKO_FUNC((FILE *)stream, offset, fseek_origin) != 0)
+#  204|                           ret = -1;
+#  205|   
+
+Error: DIVINE_WARNING:
+zlib-1.2.11/deflate.c: scope_hint: In function 'slide_hash':
+zlib-1.2.11/deflate.c:234: error: conditional jump depends on an undefined value
+zlib-1.2.11/deflate.c:234: note: control error in userspace
+/opt/divine/include/dios/sys/fault.hpp:119: note: void __dios::FaultBase::handler<__dios::Context>(_VM_Fault, _VM_Frame*, void (*)())
+zlib-1.2.11/deflate.c:234: note: slide_hash
+zlib-1.2.11/deflate.c:1546: note: fill_window
+zlib-1.2.11/deflate.c:1971: note: deflate_slow
+zlib-1.2.11/deflate.c:1029: note: deflate
+zlib-1.2.11/test/example.c:319: note: test_large_deflate
+zlib-1.2.11/test/example.c:588: note: main
+/opt/divine/include/dios/libc/sys/start.cpp:94: note: __dios_start
+#  232|       do {
+#  233|           m = *--p;
+#  234|->         *p = (Pos)(m >= wsize ? m - wsize : NIL);
+#  235|           /* If n is not on any hash chain, prev[n] is garbage but
+#  236|            * its value will never be used.
