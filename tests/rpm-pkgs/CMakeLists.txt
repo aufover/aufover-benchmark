@@ -26,6 +26,8 @@ macro(add_test_wrap name cmd)
     if(NOT "${props}" STREQUAL "")
         set_tests_properties(${name} PROPERTIES ${props})
     endif()
+    execute_process(COMMAND python3 tests/rpm-pkgs/cost.py ${name}
+	    OUTPUT_VARIABLE cost)
     get_test_property(${name} LABELS labels)
     if(NOT ${labels} STREQUAL "NOTFOUND")
         set(labels "${tool} ${labels}")
@@ -33,6 +35,7 @@ macro(add_test_wrap name cmd)
         set(labels "${tool}")
     endif()
     set_tests_properties("${name}" PROPERTIES LABELS ${labels})
+    set_tests_properties("${name}" PROPERTIES COST ${cost})
 endmacro()
 
 # fetch ${build} using the fetch.sh script
