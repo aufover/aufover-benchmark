@@ -1,6 +1,24 @@
 Error: CBMC_WARNING:
 ./0024-test.c: scope_hint: In function ‘main’:
-./0024-test.c:15: error: precondition_instance : double free
+./0024-test.c:15: error: precondition_instance: free argument must be NULL or valid pointer
+./0024-test.c:3: note: from_entry_point_function:function-call:main
+./0024-test.c:5: note: main:5:pointer:        ptr = NULL
+./0024-test.c:5: note: from_main:function-call:calloc
+./0024-test.c:5: note: function_parameter_set_in:main:5:integer:        nmemb = 1ul
+./0024-test.c:5: note: function_parameter_set_in:main:5:integer:        size = 1ul
+./0024-test.c:5: note: main:5:pointer:        ptr = dynamic_object1
+./0024-test.c:9: note: main:9:pointer:        newptr = NULL
+./0024-test.c:9: note: from_main:function-call:realloc
+./0024-test.c:9: note: function_parameter_set_in:main:9:pointer:        ptr = dynamic_object1
+./0024-test.c:9: note: function_parameter_set_in:main:9:integer:        malloc_size = sizeof(char) * 2ul /*2ul*/ 
+<builtin-library-realloc>:26: note: function_parameter_set_in:realloc:26:integer:        malloc_size = sizeof(char) * 2ul /*2ul*/ 
+<builtin-library-realloc>:30: note: function_parameter_set_in:realloc:30:pointer:        ptr = dynamic_object1
+./0024-test.c:9: note: main:9:pointer:        newptr = dynamic_object2
+./0024-test.c:15: note: free argument must be NULL or valid pointer
+
+Error: CBMC_WARNING:
+./0024-test.c: scope_hint: In function ‘main’:
+./0024-test.c:15: error: precondition_instance: double free
 ./0024-test.c:3: note: from_entry_point_function:function-call:main
 ./0024-test.c:5: note: main:5:pointer:        ptr = NULL
 ./0024-test.c:5: note: from_main:function-call:calloc
@@ -16,21 +34,3 @@ Error: CBMC_WARNING:
 ./0024-test.c:9: note: main:9:pointer:        newptr = dynamic_object2
 ./0024-test.c:15: note: free argument must be NULL or valid pointer
 ./0024-test.c:15: note: double free
-
-Error: CBMC_WARNING:
-./0024-test.c: scope_hint: In function ‘main’:
-./0024-test.c:15: error: precondition_instance : free argument must be NULL or valid pointer
-./0024-test.c:3: note: from_entry_point_function:function-call:main
-./0024-test.c:5: note: main:5:pointer:        ptr = NULL
-./0024-test.c:5: note: from_main:function-call:calloc
-./0024-test.c:5: note: function_parameter_set_in:main:5:integer:        nmemb = 1ul
-./0024-test.c:5: note: function_parameter_set_in:main:5:integer:        size = 1ul
-./0024-test.c:5: note: main:5:pointer:        ptr = dynamic_object1
-./0024-test.c:9: note: main:9:pointer:        newptr = NULL
-./0024-test.c:9: note: from_main:function-call:realloc
-./0024-test.c:9: note: function_parameter_set_in:main:9:pointer:        ptr = dynamic_object1
-./0024-test.c:9: note: function_parameter_set_in:main:9:integer:        malloc_size = sizeof(char) * 2ul /*2ul*/ 
-<builtin-library-realloc>:26: note: function_parameter_set_in:realloc:26:integer:        malloc_size = sizeof(char) * 2ul /*2ul*/ 
-<builtin-library-realloc>:30: note: function_parameter_set_in:realloc:30:pointer:        ptr = dynamic_object1
-./0024-test.c:9: note: main:9:pointer:        newptr = dynamic_object2
-./0024-test.c:15: note: free argument must be NULL or valid pointer
