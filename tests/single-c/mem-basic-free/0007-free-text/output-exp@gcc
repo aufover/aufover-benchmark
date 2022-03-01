@@ -1,4 +1,7 @@
-Error: COMPILER_WARNING:
+Error: GCC_ANALYZER_WARNING (CWE-590):
 ./0007-test.c: scope_hint: In function 'main'
+./0007-test.c:5:5: warning[-Wanalyzer-free-of-non-heap]: 'free' of '&main' which points to memory not on the heap
+
+Error: COMPILER_WARNING:
 ./0007-test.c:5:5: warning[-Wfree-nonheap-object]: 'free' called on unallocated object 'main'
 ./0007-test.c:3:5: note: declared here

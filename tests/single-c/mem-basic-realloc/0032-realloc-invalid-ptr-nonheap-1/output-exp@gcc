@@ -1,4 +1,7 @@
-Error: COMPILER_WARNING:
+Error: GCC_ANALYZER_WARNING (CWE-590):
 ./0032-test.c: scope_hint: In function 'main'
+./0032-test.c:6:17: warning[-Wanalyzer-free-of-non-heap]: 'realloc' of '&a' which points to memory on the stack
+
+Error: COMPILER_WARNING:
 ./0032-test.c:6:17: warning[-Wfree-nonheap-object]: 'realloc' called on unallocated object 'a'
 ./0032-test.c:5:9: note: declared here
