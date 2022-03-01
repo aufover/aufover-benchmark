@@ -54,9 +54,11 @@ jobs:
             grep TOOL_ENABLE_${tool} workdir/CMakeCache.txt
           done
 
-          # benchmark requires GCC 11+
+          # benchmark requires GCC 12+
           case "${{matrix.release}}" in
-            3[4-9]|rawhide)
+            3[45])
+              ;;
+            *)
               grep TOOL_ENABLE_gcc workdir/CMakeCache.txt
               ;;
           esac
