@@ -39,10 +39,15 @@ set(gcc_min_version 12)
 # command that returns major version number of the specified gcc executable
 set(gcc_version_cmd "echo __GNUC__ | ${TOOL_EXEC_gcc} -E - | tail -1")
 
+# minimum required version of clang (to avoid special-casing with older versions of clang)
+set(clang_min_version 14)
+
+# command that returns major version number of the specified clang executable
+set(clang_version_cmd "echo __clang_major__ | ${TOOL_EXEC_clang} -E - | tail -1")
+
 # probe for available static analyzers and formal verification tools
 append_tool_on_succ(gcc        "test ${gcc_min_version} -le \$(${gcc_version_cmd})")
-append_tool_on_succ(clang      "${TOOL_EXEC_clang} --analyze -Xanalyzer \
-                                -analyzer-output=text -xc ${empty_main}")
+append_tool_on_succ(clang      "test ${clang_min_version} -le \$(${clang_version_cmd})")
 append_tool_on_succ(cppcheck   "${TOOL_EXEC_cppcheck} --quiet ${empty_main}")
 append_tool_on_succ(cbmc       "${TOOL_EXEC_cbmc} --version >/dev/null 2>&1 && \
                                 test -x /usr/bin/cbmc-convert-output")
