@@ -51,17 +51,18 @@ jobs:
       - name: Check that all expected tools are present and working
         run: |
           make configure
-          for tool in cbmc clang cppcheck divine predator; do
+          for tool in cbmc cppcheck divine predator; do
             grep TOOL_ENABLE_${tool} workdir/CMakeCache.txt
           done
 
-          # benchmark requires GCC 12+
+          # benchmark requires CLANG 14+ and GCC 12+
           # symbiotic does not support LLVM 14
           case "${{matrix.release}}" in
             3[45])
               grep TOOL_ENABLE_symbiotic workdir/CMakeCache.txt
               ;;
             *)
+              grep TOOL_ENABLE_clang workdir/CMakeCache.txt
               grep TOOL_ENABLE_gcc workdir/CMakeCache.txt
               ;;
           esac
