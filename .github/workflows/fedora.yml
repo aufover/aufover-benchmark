@@ -36,9 +36,10 @@ jobs:
           dnf copr enable -y @aufover/csdiff
           dnf copr enable -y @aufover/divine
           dnf copr enable -y @aufover/predator
-          if [[ ! -v NO_SYMBIOTIC ]]; then
-            dnf copr enable -y @aufover/symbiotic
-          fi
+
+      - name: Symbiotic does not support LLVM 14
+        if: matrix.release <= 35
+        run: dnf copr enable -y @aufover/symbiotic
 
       - name: Update the system and install dependencies
         run: |
@@ -55,17 +56,15 @@ jobs:
           done
 
           # benchmark requires GCC 12+
+          # symbiotic does not support LLVM 14
           case "${{matrix.release}}" in
             3[45])
+              grep TOOL_ENABLE_symbiotic workdir/CMakeCache.txt
               ;;
             *)
               grep TOOL_ENABLE_gcc workdir/CMakeCache.txt
               ;;
           esac
-
-          if [[ ! -v NO_SYMBIOTIC ]]; then
-            grep TOOL_ENABLE_symbiotic workdir/CMakeCache.txt
-          fi
 
       # first run only cheap tests, so that we can report failures sooner
       - name: Cheap tests
