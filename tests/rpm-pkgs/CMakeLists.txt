@@ -23,6 +23,12 @@ macro(add_test_wrap name cmd)
     add_test(NAME ${name}
         COMMAND ${cmd}
         WORKING_DIRECTORY ${dst_tool_dir})
+    if(EXISTS tests/rpm-pkgs/${build}/test-props)
+        file(STRINGS ${build}/test-props props)
+    else()
+        set(props "")
+    endif()
+
     if(NOT "${props}" STREQUAL "")
         set_tests_properties(${name} PROPERTIES ${props})
     endif()
