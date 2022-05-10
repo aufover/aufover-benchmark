@@ -17,7 +17,7 @@ jobs:
       fail-fast: false
       matrix:
         # Fedora release targets
-        release: [34, 35, 36, rawhide]
+        release: [35, 36, rawhide]
 
     runs-on: ubuntu-latest
     container:
@@ -54,7 +54,7 @@ jobs:
 
           # benchmark requires CLANG 14+ and GCC 12+
           case "${{matrix.release}}" in
-            3[45])
+            35)
               ;;
             *)
               grep TOOL_ENABLE_clang workdir/CMakeCache.txt
