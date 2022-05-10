@@ -36,10 +36,7 @@ jobs:
           dnf copr enable -y @aufover/csdiff
           dnf copr enable -y @aufover/divine
           dnf copr enable -y @aufover/predator
-
-      - name: Symbiotic does not support LLVM 14
-        if: matrix.release <= 35
-        run: dnf copr enable -y @aufover/symbiotic
+          dnf copr enable -y @aufover/symbiotic
 
       - name: Update the system and install dependencies
         run: |
@@ -56,10 +53,8 @@ jobs:
           done
 
           # benchmark requires CLANG 14+ and GCC 12+
-          # symbiotic does not support LLVM 14
           case "${{matrix.release}}" in
             3[45])
-              grep TOOL_ENABLE_symbiotic workdir/CMakeCache.txt
               ;;
             *)
               grep TOOL_ENABLE_clang workdir/CMakeCache.txt
