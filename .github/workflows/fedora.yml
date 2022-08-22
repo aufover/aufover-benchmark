@@ -48,7 +48,7 @@ jobs:
       - name: Check that all expected tools are present and working
         run: |
           make configure
-          for tool in cbmc cppcheck divine predator; do
+          for tool in cbmc cppcheck divine predator symbiotic; do
             grep TOOL_ENABLE_${tool} workdir/CMakeCache.txt
           done
 
