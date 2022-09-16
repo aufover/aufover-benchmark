@@ -35,7 +35,9 @@ jobs:
         run: |
           dnf copr enable -y @aufover/divine
           dnf copr enable -y @aufover/predator
-          dnf copr enable -y @aufover/symbiotic
+          if [[ "${{matrix.release}}" =~ 3[56] ]]; then
+            dnf copr enable -y @aufover/symbiotic
+          fi
 
       - name: Update the system and install dependencies
         run: |
@@ -47,13 +49,14 @@ jobs:
       - name: Check that all expected tools are present and working
         run: |
           make configure
-          for tool in cbmc cppcheck divine predator symbiotic; do
+          for tool in cbmc cppcheck divine predator; do
             grep TOOL_ENABLE_${tool} workdir/CMakeCache.txt
           done
 
           # benchmark requires CLANG 14+ and GCC 12+
           case "${{matrix.release}}" in
-            35)
+            3[56])
+              grep TOOL_ENABLE_symbiotic workdir/CMakeCache.txt
               ;;
             *)
               grep TOOL_ENABLE_clang workdir/CMakeCache.txt
