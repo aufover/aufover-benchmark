@@ -34,7 +34,7 @@ set(TOOL_EXEC_predator "${TOOL_EXEC_gcc} -fplugin=predator"
     CACHE STRING "command used to run predator")
 
 # minimum required version of gcc (to avoid special-casing old versions of gcc)
-set(gcc_min_version 12)
+set(gcc_min_version 13)
 
 # command that returns major version number of the specified gcc executable
 set(gcc_version_cmd "echo __GNUC__ | ${TOOL_EXEC_gcc} -E - | tail -1")

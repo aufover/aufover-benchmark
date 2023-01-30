@@ -35,7 +35,7 @@ jobs:
         run: |
           dnf copr enable -y @aufover/divine
           dnf copr enable -y @aufover/predator
-          if [[ "${{matrix.release}}" =~ 3[56] ]]; then
+          if [[ "${{matrix.release}}" =~ 36 ]]; then
             dnf copr enable -y @aufover/symbiotic
           fi
 
@@ -55,8 +55,11 @@ jobs:
 
           # benchmark requires CLANG 14+ and GCC 12+
           case "${{matrix.release}}" in
-            3[56])
+            36)
               grep TOOL_ENABLE_symbiotic workdir/CMakeCache.txt
+              ;;
+            37)
+              grep TOOL_ENABLE_clang workdir/CMakeCache.txt
               ;;
             *)
               grep TOOL_ENABLE_clang workdir/CMakeCache.txt
