@@ -1,3 +1,10 @@
-Error: GCC_ANALYZER_WARNING (CWE-690):
+Error: GCC_ANALYZER_WARNING (CWE-131):
 ./test-0009.c: scope_hint: In function 'main'
+./test-0009.c:12:12: warning[-Wanalyzer-allocation-size]: allocated buffer size is not a multiple of the pointee's size
+
+Error: GCC_ANALYZER_WARNING (CWE-122):
+./test-0009.c:15:10: warning[-Wanalyzer-out-of-bounds]: heap-based buffer overflow
+./test-0009.c:15:10: note: write of 7 bytes to beyond the end of the region
+
+Error: GCC_ANALYZER_WARNING (CWE-690):
 ./test-0009.c:15:10: warning[-Wanalyzer-possible-null-dereference]: dereference of possibly-NULL 'err'
