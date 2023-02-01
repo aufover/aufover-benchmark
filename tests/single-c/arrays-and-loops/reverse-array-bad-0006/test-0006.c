@@ -9,7 +9,7 @@ int main(void)
     int *arr = alloca(length); // alocates only 99 bytes
 
     for (int i = 0; i < length; i++) {
-        arr[i] = __VERIFIER_nondet_int(); // i=24 -> writes 1 byte outside of the allocated memory
+        arr[i] = __VERIFIER_nondet_int(); // sizeof(int)==4 && i==24 -> writes 1 byte outside of the allocated memory
     }
 
     for (int i = 0; i < length; i++) {
