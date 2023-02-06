@@ -1,0 +1,15 @@
+Error: CLANG_WARNING:
+./0037-test.c:5:11: warning: Value stored to 'ptr' during its initialization is never read
+#    void *ptr = realloc((void *) 0xDEAD, sizeof(char)); /* error */
+#          ^~~   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./0037-test.c:5:11: note: Value stored to 'ptr' during its initialization is never read
+#    void *ptr = realloc((void *) 0xDEAD, sizeof(char)); /* error */
+#          ^~~   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Error: CLANG_WARNING:
+./0037-test.c:5:17: warning: Argument to realloc() is a constant address (57005), which is not memory allocated by malloc()
+#    void *ptr = realloc((void *) 0xDEAD, sizeof(char)); /* error */
+#                ^       ~~~~~~~~~~~~~~~
+./0037-test.c:5:17: note: Argument to realloc() is a constant address (57005), which is not memory allocated by malloc()
+#    void *ptr = realloc((void *) 0xDEAD, sizeof(char)); /* error */
+#                ^       ~~~~~~~~~~~~~~~
