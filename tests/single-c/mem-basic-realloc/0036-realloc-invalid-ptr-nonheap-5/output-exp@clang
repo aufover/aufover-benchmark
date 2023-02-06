@@ -1,0 +1,15 @@
+Error: CLANG_WARNING:
+./0036-test.c:7:11: warning: Value stored to 'ptr' during its initialization is never read
+#    void *ptr = realloc(&a, sizeof(char)); /* error */
+#          ^~~   ~~~~~~~~~~~~~~~~~~~~~~~~~
+./0036-test.c:7:11: note: Value stored to 'ptr' during its initialization is never read
+#    void *ptr = realloc(&a, sizeof(char)); /* error */
+#          ^~~   ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Error: CLANG_WARNING:
+./0036-test.c:7:17: warning: Argument to realloc() is the address of the global variable 'a', which is not memory allocated by malloc()
+#    void *ptr = realloc(&a, sizeof(char)); /* error */
+#                ^       ~~
+./0036-test.c:7:17: note: Argument to realloc() is the address of the global variable 'a', which is not memory allocated by malloc()
+#    void *ptr = realloc(&a, sizeof(char)); /* error */
+#                ^       ~~
