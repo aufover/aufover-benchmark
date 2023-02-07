@@ -1,0 +1,1326 @@
+Error: COMPILER_WARNING:
+coreutils-8.32/gnulib-tests/glthread/thread.c:24: included_from: Included from here.
+coreutils-8.32/gnulib-tests/glthread/thread.h:178:17: warning: weak identifier 'pthread_sigmask' never declared
+##   pragma weak pthread_sigmask
+#                ^
+#  176|   
+#  177|   #  ifndef pthread_sigmask /* Do not declare rpl_pthread_sigmask weak.  */
+#  178|-> #   pragma weak pthread_sigmask
+#  179|   #  endif
+#  180|   
+
+Error: COMPILER_WARNING:
+coreutils-8.32/gnulib-tests/strerror_r.c:204:9: warning: incompatible pointer to integer conversion assigning to 'int' from 'char *'
+#    ret = strerror_r (errnum, buf, buflen);
+#        ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  202|       }
+#  203|   # else
+#  204|->     ret = strerror_r (errnum, buf, buflen);
+#  205|   
+#  206|       /* Some old implementations may return (-1, EINVAL) instead of EINVAL.
+
+Error: COMPILER_WARNING:
+coreutils-8.32/gnulib-tests/strerror_r.c:241:60: warning: comparison between pointer and integer ('char *' and 'int')
+#        if (strerror_r (errnum, stackbuf, sizeof stackbuf) == ERANGE)
+#            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^  ~~~~~~
+#  239|   
+#  240|           /* STACKBUF_LEN should have been large enough.  */
+#  241|->         if (strerror_r (errnum, stackbuf, sizeof stackbuf) == ERANGE)
+#  242|             abort ();
+#  243|           safe_copy (buf, buflen, stackbuf);
+
+Error: COMPILER_WARNING:
+coreutils-8.32/gnulib-tests/tmpdir.c:108:9: warning: incompatible integer to pointer conversion assigning to 'const char *' from 'int'
+#      d = __libc_secure_getenv ("TMPDIR");
+#        ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  106|     if (try_tmpdir)
+#  107|       {
+#  108|->       d = __libc_secure_getenv ("TMPDIR");
+#  109|         if (d != NULL && direxists (d))
+#  110|           dir = d;
+
+Error: COMPILER_WARNING:
+coreutils-8.32/gnulib-tests/tmpdir.c:108:11: warning: implicit declaration of function 'secure_getenv' is invalid in C99
+#      d = __libc_secure_getenv ("TMPDIR");
+#          ^
+coreutils-8.32/gnulib-tests/tmpdir.c:56:31: note: expanded from macro '__libc_secure_getenv'
+## define __libc_secure_getenv secure_getenv
+#                              ^
+#  106|     if (try_tmpdir)
+#  107|       {
+#  108|->       d = __libc_secure_getenv ("TMPDIR");
+#  109|         if (d != NULL && direxists (d))
+#  110|           dir = d;
+
+Error: COMPILER_WARNING:
+coreutils-8.32/lib/selinux-at.c:37: included_from: Included from here.
+coreutils-8.32/lib/at-func.c:70:40: warning: 'security_context_t' is deprecated
+#AT_FUNC_NAME (int fd, char const *file AT_FUNC_POST_FILE_PARAM_DECLS)
+#                                       ^
+coreutils-8.32/lib/selinux-at.c:35:41: note: expanded from macro 'AT_FUNC_POST_FILE_PARAM_DECLS'
+##define AT_FUNC_POST_FILE_PARAM_DECLS , security_context_t *con
+#                                        ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   68|      fails, then give a diagnostic and exit nonzero.  */
+#   69|   FUNC_RESULT
+#   70|-> AT_FUNC_NAME (int fd, char const *file AT_FUNC_POST_FILE_PARAM_DECLS)
+#   71|   {
+#   72|     VALIDATE_FLAG (flag);
+
+Error: COMPILER_WARNING:
+coreutils-8.32/lib/c-strtod.c:83:7: warning: implicit declaration of function 'strtod_l' is invalid in C99
+#  r = STRTOD_L (nptr, endptr, locale);
+#      ^
+coreutils-8.32/lib/c-strtod.c:38:19: note: expanded from macro 'STRTOD_L'
+## define STRTOD_L strtod_l
+#                  ^
+#   81|   # if (LONG ? HAVE_GOOD_STRTOLD_L : HAVE_GOOD_STRTOD_L)
+#   82|   
+#   83|->   r = STRTOD_L (nptr, endptr, locale);
+#   84|   
+#   85|   # else /* HAVE_WORKING_USELOCALE */
+
+Error: COMPILER_WARNING:
+coreutils-8.32/lib/dirchownmod.c:100:27: warning: implicit declaration of function 'lchown' is invalid in C99
+#                        ? lchown (dir, owner, group)
+#                          ^
+#   98|                           ? fchown (fd, owner, group)
+#   99|                           : mkdir_mode != (mode_t) -1
+#  100|->                         ? lchown (dir, owner, group)
+#  101|                           : chown (dir, owner, group));
+#  102|   
+
+Error: COMPILER_WARNING:
+coreutils-8.32/lib/fadvise.c:34:17: warning: implicit declaration of function 'posix_fadvise' is invalid in C99
+#  ignore_value (posix_fadvise (fd, offset, len, advice));
+#                ^
+#   32|   {
+#   33|   #if HAVE_POSIX_FADVISE
+#   34|->   ignore_value (posix_fadvise (fd, offset, len, advice));
+#   35|   #endif
+#   36|   }
+
+Error: COMPILER_WARNING:
+coreutils-8.32/lib/getfilecon.c:36:35: warning: 'security_context_t' is deprecated
+#int getfilecon (char const *file, security_context_t *con);
+#                                  ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   34|   #undef lgetfilecon
+#   35|   #undef fgetfilecon
+#   36|-> int getfilecon (char const *file, security_context_t *con);
+#   37|   int lgetfilecon (char const *file, security_context_t *con);
+#   38|   int fgetfilecon (int fd, security_context_t *con);
+
+Error: COMPILER_WARNING:
+coreutils-8.32/lib/getfilecon.c:37:36: warning: 'security_context_t' is deprecated
+#int lgetfilecon (char const *file, security_context_t *con);
+#                                   ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   35|   #undef fgetfilecon
+#   36|   int getfilecon (char const *file, security_context_t *con);
+#   37|-> int lgetfilecon (char const *file, security_context_t *con);
+#   38|   int fgetfilecon (int fd, security_context_t *con);
+#   39|   
+
+Error: COMPILER_WARNING:
+coreutils-8.32/lib/getfilecon.c:38:26: warning: 'security_context_t' is deprecated
+#int fgetfilecon (int fd, security_context_t *con);
+#                         ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   36|   int getfilecon (char const *file, security_context_t *con);
+#   37|   int lgetfilecon (char const *file, security_context_t *con);
+#   38|-> int fgetfilecon (int fd, security_context_t *con);
+#   39|   
+#   40|   /* getfilecon, lgetfilecon, and fgetfilecon can all misbehave, be it
+
+Error: COMPILER_WARNING:
+coreutils-8.32/lib/getfilecon.c:49:26: warning: 'security_context_t' is deprecated
+#map_to_failure (int ret, security_context_t *con)
+#                         ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   47|   
+#   48|   static int
+#   49|-> map_to_failure (int ret, security_context_t *con)
+#   50|   {
+#   51|     if (ret == 0)
+
+Error: COMPILER_WARNING:
+coreutils-8.32/lib/getfilecon.c:69:35: warning: 'security_context_t' is deprecated
+#rpl_getfilecon (char const *file, security_context_t *con)
+#                                  ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   67|   
+#   68|   int
+#   69|-> rpl_getfilecon (char const *file, security_context_t *con)
+#   70|   {
+#   71|     int ret = getfilecon (file, con);
+
+Error: COMPILER_WARNING:
+coreutils-8.32/lib/getfilecon.c:76:36: warning: 'security_context_t' is deprecated
+#rpl_lgetfilecon (char const *file, security_context_t *con)
+#                                   ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   74|   
+#   75|   int
+#   76|-> rpl_lgetfilecon (char const *file, security_context_t *con)
+#   77|   {
+#   78|     int ret = lgetfilecon (file, con);
+
+Error: COMPILER_WARNING:
+coreutils-8.32/lib/getfilecon.c:83:26: warning: 'security_context_t' is deprecated
+#rpl_fgetfilecon (int fd, security_context_t *con)
+#                         ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   81|   
+#   82|   int
+#   83|-> rpl_fgetfilecon (int fd, security_context_t *con)
+#   84|   {
+#   85|     int ret = fgetfilecon (fd, con);
+
+Error: COMPILER_WARNING:
+coreutils-8.32/lib/mbsalign.c:153:20: warning: implicit declaration of function 'wcswidth' is invalid in C99
+#          n_cols = wcswidth (str_wc, src_chars);
+#                   ^
+#  151|             wc_enabled = true;
+#  152|             conversion = wc_ensure_printable (str_wc);
+#  153|->           n_cols = wcswidth (str_wc, src_chars);
+#  154|           }
+#  155|       }
+
+Error: COMPILER_WARNING:
+coreutils-8.32/lib/mgetgroups.c:97:16: warning: implicit declaration of function 'getgrouplist' is invalid in C99
+#          ng = getgrouplist (username, gid, g, &max_n_groups);
+#               ^
+#   95|   
+#   96|             /* getgrouplist updates max_n_groups to num required.  */
+#   97|->           ng = getgrouplist (username, gid, g, &max_n_groups);
+#   98|   
+#   99|             /* Some systems (like Darwin) have a bug where they
+
+Error: COMPILER_WARNING:
+coreutils-8.32/lib/mgetgroups.c:131:5: warning: implicit declaration of function 'getgrouplist' is invalid in C99
+#    getgrouplist (username, gid, NULL, &max_n_groups);
+#    ^
+#  129|   #ifdef HAVE_GETGROUPLIST
+#  130|       max_n_groups = 0;
+#  131|->     getgrouplist (username, gid, NULL, &max_n_groups);
+#  132|   #else
+#  133|       max_n_groups = getugroups (0, NULL, username, gid);
+
+Error: COMPILER_WARNING:
+coreutils-8.32/lib/mgetgroups.c:164:17: warning: implicit declaration of function 'getgrouplist' is invalid in C99
+#    while ((e = getgrouplist (username, gid, g, &ng)) == -1
+#                ^
+#  162|       int e;
+#  163|       ng = max_n_groups;
+#  164|->     while ((e = getgrouplist (username, gid, g, &ng)) == -1
+#  165|   	&& ng > max_n_groups)
+#  166|       {
+
+Error: COMPILER_WARNING:
+coreutils-8.32/lib/nl_langinfo.c:186:10: warning: implicit declaration of function 'nl_langinfo' is invalid in C99
+#  return nl_langinfo (item);
+#         ^
+#  184|         break;
+#  185|       }
+#  186|->   return nl_langinfo (item);
+#  187|   }
+#  188|   
+
+Error: COMPILER_WARNING:
+coreutils-8.32/lib/nl_langinfo.c:186:10: warning: incompatible integer to pointer conversion returning 'int' from a function with result type 'char *'
+#  return nl_langinfo (item);
+#         ^~~~~~~~~~~~~~~~~~
+#  184|         break;
+#  185|       }
+#  186|->   return nl_langinfo (item);
+#  187|   }
+#  188|   
+
+Error: COMPILER_WARNING:
+coreutils-8.32/lib/obstack.c:351:31: warning: incompatible pointer types initializing 'void (*)(void) __attribute__((noreturn))' with an expression of type 'void (void)'
+#__attribute_noreturn__ void (*obstack_alloc_failed_handler) (void)
+#                              ^
+#  349|      variable by default points to the internal function
+#  350|      'print_and_abort'.  */
+#  351|-> __attribute_noreturn__ void (*obstack_alloc_failed_handler) (void)
+#  352|     = print_and_abort;
+#  353|   # endif /* !_OBSTACK_NO_ERROR_HANDLER */
+
+Error: COMPILER_WARNING:
+coreutils-8.32/lib/parse-datetime.c:4074:24: warning: implicit declaration of function 'gmtime_r' is invalid in C99
+#      bool got_utc = !!gmtime_r (&result->tv_sec, &gmt);
+#                       ^
+# 4072|   
+# 4073|         struct tm gmt, lmt;
+# 4074|->       bool got_utc = !!gmtime_r (&result->tv_sec, &gmt);
+# 4075|         if (got_utc)
+# 4076|           dbg_printf (_("final: %s (UTC)\n"),
+
+Error: COMPILER_WARNING:
+coreutils-8.32/lib/pipe2.c:58:22: warning: implicit declaration of function 'pipe2' is invalid in C99
+#        int result = pipe2 (fd, flags);
+#                     ^
+#   56|       if (have_pipe2_really >= 0)
+#   57|         {
+#   58|->         int result = pipe2 (fd, flags);
+#   59|           if (!(result < 0 && errno == ENOSYS))
+#   60|             {
+
+Error: COMPILER_WARNING:
+coreutils-8.32/lib/randint.c:201:3: warning: implicit declaration of function 'explicit_bzero' is invalid in C99
+#  explicit_bzero (s, sizeof *s);
+#  ^
+#  199|   randint_free (struct randint_source *s)
+#  200|   {
+#  201|->   explicit_bzero (s, sizeof *s);
+#  202|     free (s);
+#  203|   }
+
+Error: COMPILER_WARNING:
+coreutils-8.32/lib/randread.c:344:3: warning: implicit declaration of function 'explicit_bzero' is invalid in C99
+#  explicit_bzero (s, sizeof *s);
+#  ^
+#  342|   {
+#  343|     FILE *source = s->source;
+#  344|->   explicit_bzero (s, sizeof *s);
+#  345|     free (s);
+#  346|     return (source ? fclose (source) : 0);
+
+Error: COMPILER_WARNING:
+coreutils-8.32/lib/readutmp.c:104:3: warning: implicit declaration of function 'utmpname' is invalid in C99
+#  UTMP_NAME_FUNCTION ((char *) file);
+#  ^
+coreutils-8.32/lib/readutmp.h:86:31: note: expanded from macro 'UTMP_NAME_FUNCTION'
+##   define UTMP_NAME_FUNCTION utmpname
+#                              ^
+#  102|        to what the GNU libc version does.  In addition, older GNU libc
+#  103|        versions are actually void.   */
+#  104|->   UTMP_NAME_FUNCTION ((char *) file);
+#  105|   
+#  106|     SET_UTMP_ENT ();
+
+Error: COMPILER_WARNING:
+coreutils-8.32/lib/readutmp.c:106:3: warning: implicit declaration of function 'setutent' is invalid in C99
+#  SET_UTMP_ENT ();
+#  ^
+coreutils-8.32/lib/readutmp.h:82:24: note: expanded from macro 'SET_UTMP_ENT'
+##  define SET_UTMP_ENT setutent
+#                       ^
+#  104|     UTMP_NAME_FUNCTION ((char *) file);
+#  105|   
+#  106|->   SET_UTMP_ENT ();
+#  107|   
+#  108|     while ((u = GET_UTMP_ENT ()) != NULL)
+
+Error: COMPILER_WARNING:
+coreutils-8.32/lib/readutmp.c:117:3: warning: implicit declaration of function 'endutent' is invalid in C99
+#  END_UTMP_ENT ();
+#  ^
+coreutils-8.32/lib/readutmp.h:84:24: note: expanded from macro 'END_UTMP_ENT'
+##  define END_UTMP_ENT endutent
+#                       ^
+#  115|         }
+#  116|   
+#  117|->   END_UTMP_ENT ();
+#  118|   
+#  119|     *n_entries = n_read;
+
+Error: COMPILER_WARNING:
+coreutils-8.32/lib/renameatu.c:84:13: warning: implicit declaration of function 'renameat2' is invalid in C99
+#  ret_val = renameat2 (fd1, src, fd2, dst, flags);
+#            ^
+#   82|   
+#   83|   #ifdef HAVE_RENAMEAT2
+#   84|->   ret_val = renameat2 (fd1, src, fd2, dst, flags);
+#   85|     err = errno;
+#   86|   #elif defined SYS_renameat2
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/chcon.c:30: included_from: Included from here.
+coreutils-8.32/lib/selinux-at.h:34:50: warning: 'security_context_t' is deprecated
+#int  getfileconat (int dir_fd, char const *file, security_context_t *con);
+#                                                 ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   32|      and return -1.
+#   33|      [*] with flags=0 here, with flags=AT_SYMLINK_NOFOLLOW for lgetfileconat  */
+#   34|-> int  getfileconat (int dir_fd, char const *file, security_context_t *con);
+#   35|   
+#   36|   /* dir-fd-relative lgetfilecon.  This function is just like getfileconat,
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/chcon.c:30: included_from: Included from here.
+coreutils-8.32/lib/selinux-at.h:39:50: warning: 'security_context_t' is deprecated
+#int lgetfileconat (int dir_fd, char const *file, security_context_t *con);
+#                                                 ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   37|      except when DIR_FD and FILE specify a symlink:  lgetfileconat operates on
+#   38|      the symlink, while getfileconat operates on the referent of the symlink.  */
+#   39|-> int lgetfileconat (int dir_fd, char const *file, security_context_t *con);
+#   40|   
+#   41|   /* dir-fd-relative setfilecon.  Set the SELinux security context of
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/chcon.c:30: included_from: Included from here.
+coreutils-8.32/lib/selinux-at.h:45:50: warning: 'security_context_t' is deprecated
+#int  setfileconat (int dir_fd, char const *file, security_context_t con);
+#                                                 ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   43|      interpreted as for fstatat[*].  Upon success, return 0.
+#   44|      Otherwise, return -1 and set errno.  */
+#   45|-> int  setfileconat (int dir_fd, char const *file, security_context_t con);
+#   46|   
+#   47|   /* dir-fd-relative lsetfilecon.  This function is just like setfileconat,
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/chcon.c:30: included_from: Included from here.
+coreutils-8.32/lib/selinux-at.h:52:50: warning: 'security_context_t' is deprecated
+#int lsetfileconat (int dir_fd, char const *file, security_context_t con);
+#                                                 ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   50|      except when DIR_FD and FILE specify a symlink:  lsetfileconat operates on
+#   51|      the symlink, while setfileconat operates on the referent of the symlink.  */
+#   52|-> int lsetfileconat (int dir_fd, char const *file, security_context_t con);
+
+Error: COMPILER_WARNING:
+coreutils-8.32/lib/time_rz.c:324:12: warning: implicit declaration of function 'timegm' is invalid in C99
+#    return timegm (tm);
+#           ^
+#  322|   {
+#  323|     if (!tz)
+#  324|->     return timegm (tm);
+#  325|     else
+#  326|       {
+
+Error: COMPILER_WARNING:
+coreutils-8.32/lib/utimens.c:404:16: warning: implicit declaration of function 'futimesat' is invalid in C99
+#        return futimesat (AT_FDCWD, file, t);
+#               ^
+#  402|         {
+#  403|   # if HAVE_FUTIMESAT
+#  404|->         return futimesat (AT_FDCWD, file, t);
+#  405|   # endif
+#  406|         }
+
+Error: COMPILER_WARNING:
+coreutils-8.32/lib/utimens.c:425:13: warning: implicit declaration of function 'futimesat' is invalid in C99
+#        if (futimes (fd, t) == 0)
+#            ^
+coreutils-8.32/lib/utimens.c:423:27: note: expanded from macro 'futimes'
+##   define futimes(fd, t) futimesat (fd, NULL, t)
+#                          ^
+#  423|   #   define futimes(fd, t) futimesat (fd, NULL, t)
+#  424|   #  endif
+#  425|->         if (futimes (fd, t) == 0)
+#  426|             {
+#  427|   #  if __linux__ && __GLIBC__
+
+Error: COMPILER_WARNING:
+coreutils-8.32/lib/xnanosleep.c:46:9: warning: implicit declaration of function 'pause' is invalid in C99
+#        pause ();
+#        ^
+#   44|       {
+#   45|         do
+#   46|->         pause ();
+#   47|         while (errno == EINTR);
+#   48|   
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/chroot.c:174:9: warning: incompatible integer to pointer conversion initializing 'char *' with an expression of type 'int'
+#  char *resolved = canonicalize_file_name (dir);
+#        ^          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  172|   is_root (const char* dir)
+#  173|   {
+#  174|->   char *resolved = canonicalize_file_name (dir);
+#  175|     bool is_res_root = resolved && STREQ ("/", resolved);
+#  176|     free (resolved);
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/chroot.c:174:20: warning: implicit declaration of function 'canonicalize_file_name' is invalid in C99
+#  char *resolved = canonicalize_file_name (dir);
+#                   ^
+#  172|   is_root (const char* dir)
+#  173|   {
+#  174|->   char *resolved = canonicalize_file_name (dir);
+#  175|     bool is_res_root = resolved && STREQ ("/", resolved);
+#  176|     free (resolved);
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/chroot.c:330:7: warning: implicit declaration of function 'chroot' is invalid in C99
+#  if (chroot (newroot) != 0)
+#      ^
+#  328|       }
+#  329|   
+#  330|->   if (chroot (newroot) != 0)
+#  331|       die (EXIT_CANCELED, errno, _("cannot change root directory to %s"),
+#  332|            quoteaf (newroot));
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/chroot.c:413:36: warning: implicit declaration of function 'setgroups' is invalid in C99
+#  if ((uid_set (uid) || groups) && setgroups (n_gids, gids) != 0)
+#                                   ^
+#  411|   #endif
+#  412|   
+#  413|->   if ((uid_set (uid) || groups) && setgroups (n_gids, gids) != 0)
+#  414|       die (EXIT_CANCELED, errno, _("failed to set supplemental groups"));
+#  415|   
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/chroot.c:419:24: warning: implicit declaration of function 'setgid' is invalid in C99
+#  if (gid_set (gid) && setgid (gid))
+#                       ^
+#  417|     free (out_gids);
+#  418|   
+#  419|->   if (gid_set (gid) && setgid (gid))
+#  420|       die (EXIT_CANCELED, errno, _("failed to set group-ID"));
+#  421|   
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/chroot.c:422:24: warning: implicit declaration of function 'setuid' is invalid in C99
+#  if (uid_set (uid) && setuid (uid))
+#                       ^
+#  420|       die (EXIT_CANCELED, errno, _("failed to set group-ID"));
+#  421|   
+#  422|->   if (uid_set (uid) && setuid (uid))
+#  423|       die (EXIT_CANCELED, errno, _("failed to set user-ID"));
+#  424|   
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/chroot.c:426:3: warning: implicit declaration of function 'execvp' is invalid in C99
+#  execvp (argv[0], argv);
+#  ^
+#  424|   
+#  425|     /* Execute the given command.  */
+#  426|->   execvp (argv[0], argv);
+#  427|   
+#  428|     int exit_status = errno == ENOENT ? EXIT_ENOENT : EXIT_CANNOT_INVOKE;
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/copy.c:213:9: warning: implicit declaration of function 'fallocate' is invalid in C99
+#  ret = fallocate (fd, FALLOC_FL_PUNCH_HOLE | FALLOC_FL_KEEP_SIZE,
+#        ^
+#  211|   #if HAVE_FALLOCATE + 0
+#  212|   # if defined FALLOC_FL_PUNCH_HOLE && defined FALLOC_FL_KEEP_SIZE
+#  213|->   ret = fallocate (fd, FALLOC_FL_PUNCH_HOLE | FALLOC_FL_KEEP_SIZE,
+#  214|                      offset, length);
+#  215|     if (ret < 0 && (is_ENOTSUP (errno) || errno == ENOSYS))
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/copy.c:1092:11: warning: implicit declaration of function 'lchown' is invalid in C99
+#      if (lchown (dst_name, uid, gid) == 0)
+#          ^
+# 1090|     else
+# 1091|       {
+# 1092|->       if (lchown (dst_name, uid, gid) == 0)
+# 1093|           return 1;
+# 1094|         if (errno == EPERM || errno == EINVAL)
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/copy.c:1920:13: warning: incompatible integer to pointer conversion initializing 'char *' with an expression of type 'int'
+#      char *abs_src = canonicalize_file_name (src_name);
+#            ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1918|         && 1 < dst_sb_link->st_nlink)
+# 1919|       {
+# 1920|->       char *abs_src = canonicalize_file_name (src_name);
+# 1921|         if (abs_src)
+# 1922|           {
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/copy.c:1920:23: warning: implicit declaration of function 'canonicalize_file_name' is invalid in C99
+#      char *abs_src = canonicalize_file_name (src_name);
+#                      ^
+# 1918|         && 1 < dst_sb_link->st_nlink)
+# 1919|       {
+# 1920|->       char *abs_src = canonicalize_file_name (src_name);
+# 1921|         if (abs_src)
+# 1922|           {
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/copy.c:1969:14: warning: implicit declaration of function 'euidaccess' is invalid in C99
+#          || euidaccess (file, W_OK) == 0);
+#             ^
+# 1967|     return (S_ISLNK (mode)
+# 1968|             || can_write_any_file ()
+# 1969|->           || euidaccess (file, W_OK) == 0);
+# 1970|   }
+# 1971|   
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/copy.c:3054:18: warning: implicit declaration of function 'lchown' is invalid in C99
+#              && lchown (dst_name, src_sb.st_uid, src_sb.st_gid) != 0
+#                 ^
+# 3052|                symbolic link, if possible.  */
+# 3053|             if (HAVE_LCHOWN
+# 3054|->               && lchown (dst_name, src_sb.st_uid, src_sb.st_gid) != 0
+# 3055|                 && ! chown_failure_ok (x))
+# 3056|               {
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/cp.c:317:15: warning: implicit declaration of function 'lchown' is invalid in C99
+#          if (lchown (dst_name, p->st.st_uid, p->st.st_gid) != 0)
+#              ^
+#  315|         if (x->preserve_ownership)
+#  316|           {
+#  317|->           if (lchown (dst_name, p->st.st_uid, p->st.st_gid) != 0)
+#  318|               {
+#  319|                 if (! chown_failure_ok (x))
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/dd.c:935:7: warning: implicit declaration of function 'siginterrupt' is invalid in C99
+#      siginterrupt (SIGINFO, 1);
+#      ^
+#  933|       {
+#  934|         signal (SIGINFO, siginfo_handler);
+#  935|->       siginterrupt (SIGINFO, 1);
+#  936|       }
+#  937|     if (signal (SIGINT, SIG_IGN) != SIG_IGN)
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/dd.c:940:7: warning: implicit declaration of function 'siginterrupt' is invalid in C99
+#      siginterrupt (SIGINT, 1);
+#      ^
+#  938|       {
+#  939|         signal (SIGINT, interrupt_handler);
+#  940|->       siginterrupt (SIGINT, 1);
+#  941|       }
+#  942|   #endif
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/dd.c:1112:16: warning: implicit declaration of function 'posix_fadvise' is invalid in C99
+#     adv_ret = posix_fadvise (fd, offset, clen, POSIX_FADV_DONTNEED);
+#               ^
+# 1110|        if (clen == 0)
+# 1111|          offset -= offset % page_size;
+# 1112|->      adv_ret = posix_fadvise (fd, offset, clen, POSIX_FADV_DONTNEED);
+# 1113|   #else
+# 1114|        errno = ENOTSUP;
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/df.c:1281:13: warning: incompatible integer to pointer conversion initializing 'char *' with an expression of type 'int'
+#      char *canon_dev = canonicalize_file_name (devname);
+#            ^           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1279|       {
+# 1280|         char *devname = le->me_devname;
+# 1281|->       char *canon_dev = canonicalize_file_name (devname);
+# 1282|         if (canon_dev && IS_ABSOLUTE_FILE_NAME (canon_dev))
+# 1283|           return canon_dev;
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/df.c:1281:25: warning: implicit declaration of function 'canonicalize_file_name' is invalid in C99
+#      char *canon_dev = canonicalize_file_name (devname);
+#                        ^
+# 1279|       {
+# 1280|         char *devname = le->me_devname;
+# 1281|->       char *canon_dev = canonicalize_file_name (devname);
+# 1282|         if (canon_dev && IS_ABSOLUTE_FILE_NAME (canon_dev))
+# 1283|           return canon_dev;
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/df.c:1302:9: warning: incompatible integer to pointer conversion initializing 'char *' with an expression of type 'int'
+#  char *resolved = canonicalize_file_name (disk);
+#        ^          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1300|     char const *file = disk;
+# 1301|   
+# 1302|->   char *resolved = canonicalize_file_name (disk);
+# 1303|     if (resolved && IS_ABSOLUTE_FILE_NAME (resolved))
+# 1304|       disk = resolved;
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/df.c:1302:20: warning: implicit declaration of function 'canonicalize_file_name' is invalid in C99
+#  char *resolved = canonicalize_file_name (disk);
+#                   ^
+# 1300|     char const *file = disk;
+# 1301|   
+# 1302|->   char *resolved = canonicalize_file_name (disk);
+# 1303|     if (resolved && IS_ABSOLUTE_FILE_NAME (resolved))
+# 1304|       disk = resolved;
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/df.c:1311:13: warning: incompatible integer to pointer conversion initializing 'char *' with an expression of type 'int'
+#      char *canon_dev = canonicalize_file_name (me->me_devname);
+#            ^           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1309|         /* TODO: Should cache canon_dev in the mount_entry struct.  */
+# 1310|         char *devname = me->me_devname;
+# 1311|->       char *canon_dev = canonicalize_file_name (me->me_devname);
+# 1312|         if (canon_dev && IS_ABSOLUTE_FILE_NAME (canon_dev))
+# 1313|           devname = canon_dev;
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/df.c:1384:9: warning: incompatible integer to pointer conversion initializing 'char *' with an expression of type 'int'
+#  char *resolved = canonicalize_file_name (point);
+#        ^          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1382|        the mount point.  This avoids statting unavailable mount points,
+# 1383|        which can hang df.  */
+# 1384|->   char *resolved = canonicalize_file_name (point);
+# 1385|     if (resolved && resolved[0] == '/')
+# 1386|       {
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/df.c:1384:20: warning: implicit declaration of function 'canonicalize_file_name' is invalid in C99
+#  char *resolved = canonicalize_file_name (point);
+#                   ^
+# 1382|        the mount point.  This avoids statting unavailable mount points,
+# 1383|        which can hang df.  */
+# 1384|->   char *resolved = canonicalize_file_name (point);
+# 1385|     if (resolved && resolved[0] == '/')
+# 1386|       {
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/df.c:1477:13: warning: incompatible integer to pointer conversion initializing 'char *' with an expression of type 'int'
+#      char *resolved = canonicalize_file_name (name);
+#            ^          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1475|     if (direct_statfs)
+# 1476|       {
+# 1477|->       char *resolved = canonicalize_file_name (name);
+# 1478|         if (resolved)
+# 1479|   	{
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/df.c:1477:24: warning: implicit declaration of function 'canonicalize_file_name' is invalid in C99
+#      char *resolved = canonicalize_file_name (name);
+#                       ^
+# 1475|     if (direct_statfs)
+# 1476|       {
+# 1477|->       char *resolved = canonicalize_file_name (name);
+# 1478|         if (resolved)
+# 1479|   	{
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/env.c:212:1: warning: control may reach end of non-void function
+#}
+#^
+#  210|       default:  assert (0);                           /* LCOV_EXCL_LINE */
+#  211|       }
+#  212|-> }
+#  213|   
+#  214|   /* Return a pointer to the end of a valid ${VARNAME} string, or NULL.
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/env.c:943:3: warning: implicit declaration of function 'execvp' is invalid in C99
+#  execvp (argv[optind], &argv[optind]);
+#  ^
+#  941|       }
+#  942|   
+#  943|->   execvp (argv[optind], &argv[optind]);
+#  944|   
+#  945|     int exit_status = errno == ENOENT ? EXIT_ENOENT : EXIT_CANNOT_INVOKE;
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/expand-common.c:160:12: warning: implicit declaration of function 'strcasestr' is invalid in C99
+#  else if (strcasestr(locale, "utf8") == NULL && strcasestr(locale, "utf-8") == NULL)
+#           ^
+#  158|       return false;
+#  159|     }
+#  160|->   else if (strcasestr(locale, "utf8") == NULL && strcasestr(locale, "utf-8") == NULL)
+#  161|     {
+#  162|       return false;
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/expand-common.c:160:39: warning: comparison between pointer and integer ('int' and 'void *')
+#  else if (strcasestr(locale, "utf8") == NULL && strcasestr(locale, "utf-8") == NULL)
+#           ~~~~~~~~~~~~~~~~~~~~~~~~~~ ^  ~~~~
+#  158|       return false;
+#  159|     }
+#  160|->   else if (strcasestr(locale, "utf8") == NULL && strcasestr(locale, "utf-8") == NULL)
+#  161|     {
+#  162|       return false;
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/expand-common.c:160:78: warning: comparison between pointer and integer ('int' and 'void *')
+#  else if (strcasestr(locale, "utf8") == NULL && strcasestr(locale, "utf-8") == NULL)
+#                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^  ~~~~
+#  158|       return false;
+#  159|     }
+#  160|->   else if (strcasestr(locale, "utf8") == NULL && strcasestr(locale, "utf-8") == NULL)
+#  161|     {
+#  162|       return false;
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/expr.c:512:7: warning: implicit declaration of function '__gmpz_out_str' is invalid in C99
+#      mpz_out_str (stdout, 10, v->u.i);
+#      ^
+/usr/include/gmp-x86_64.h:955:21: note: expanded from macro 'mpz_out_str'
+##define mpz_out_str __gmpz_out_str
+#                    ^
+#  510|       {
+#  511|       case integer:
+#  512|->       mpz_out_str (stdout, 10, v->u.i);
+#  513|         putchar ('\n');
+#  514|         break;
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/hostid.c:76:8: warning: implicit declaration of function 'gethostid' is invalid in C99
+#  id = gethostid ();
+#       ^
+#   74|       }
+#   75|   
+#   76|->   id = gethostid ();
+#   77|   
+#   78|     /* POSIX says gethostid returns a "32-bit identifier" but is silent
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/install.c:357:23: warning: implicitly declaring library function 'stpncpy' with type 'char *(char *, const char *, unsigned long)'
+#              stpcpy (stpncpy (prefix, p0, p - p0), "/");
+#                      ^
+coreutils-8.32/src/install.c:357:23: note: include the header <string.h> or explicitly provide a declaration for 'stpncpy'
+#  355|             if (prefix)
+#  356|               {
+#  357|->               stpcpy (stpncpy (prefix, p0, p - p0), "/");
+#  358|                 matchpathcon_init_prefix (NULL, prefix);
+#  359|                 free (prefix);
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/install.c:368:8: warning: 'matchpathcon' is deprecated: Use selabel_lookup instead
+#  if ((matchpathcon (file, st.st_mode, &scontext) != 0)
+#       ^
+/usr/include/selinux/selinux.h:505:18: note: 'matchpathcon' has been explicitly marked deprecated here
+#        __attribute__ ((deprecated("Use selabel_lookup instead")))
+#                        ^
+#  366|        return to allow default context.  Note the "<<none>>" check
+#  367|        is only needed for libselinux < 1.20 (2005-01-04).  */
+#  368|->   if ((matchpathcon (file, st.st_mode, &scontext) != 0)
+#  369|         || STREQ (scontext, "<<none>>"))
+#  370|       {
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/install.c:509:10: warning: implicit declaration of function 'lchown' is invalid in C99
+#      && lchown (name, owner_id, group_id) != 0)
+#         ^
+#  507|   
+#  508|     if (! (owner_id == (uid_t) -1 && group_id == (gid_t) -1)
+#  509|->       && lchown (name, owner_id, group_id) != 0)
+#  510|       error (0, errno, _("cannot change ownership of %s"), quoteaf (name));
+#  511|     else if (chmod (name, mode) != 0)
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/install.c:559:7: warning: implicit declaration of function 'execlp' is invalid in C99
+#      execlp (strip_program, strip_program, name, NULL);
+#      ^
+#  557|         break;
+#  558|       case 0:			/* Child. */
+#  559|->       execlp (strip_program, strip_program, name, NULL);
+#  560|         die (EXIT_FAILURE, errno, _("cannot run %s"), quoteaf (strip_program));
+#  561|       default:			/* Parent. */
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/ls.c:1302:30: warning: implicit declaration of function 'nl_langinfo' is invalid in C99
+#          char const *abbr = nl_langinfo (ABMON_1 + i);
+#                             ^
+# 1300|           {
+# 1301|             size_t width = curr_max_width;
+# 1302|->           char const *abbr = nl_langinfo (ABMON_1 + i);
+# 1303|             if (strchr (abbr, '%'))
+# 1304|               return false;
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/ls.c:1589:15: warning: implicit declaration of function 'siginterrupt' is invalid in C99
+#              siginterrupt (sig[j], 0);
+#              ^
+# 1587|               {
+# 1588|                 signal (sig[j], sig[j] == SIGTSTP ? stophandler : sighandler);
+# 1589|->               siginterrupt (sig[j], 0);
+# 1590|               }
+# 1591|           }
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/ls.c:3661:11: warning: implicitly declaring library function 'stpncpy' with type 'char *(char *, const char *, unsigned long)'
+#  stpcpy (stpncpy (p, name, prefix_len), linkname);
+#          ^
+coreutils-8.32/src/ls.c:3661:11: note: include the header <string.h> or explicitly provide a declaration for 'stpncpy'
+# 3659|       ++prefix_len;
+# 3660|   
+# 3661|->   stpcpy (stpncpy (p, name, prefix_len), linkname);
+# 3662|     return p;
+# 3663|   }
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/ls.c:4993:16: warning: implicit declaration of function 'tcgetpgrp' is invalid in C99
+#      if (0 <= tcgetpgrp (STDOUT_FILENO))
+#               ^
+# 4991|            default state if "ls" is suspended or interrupted.  */
+# 4992|   
+# 4993|->       if (0 <= tcgetpgrp (STDOUT_FILENO))
+# 4994|           signal_init ();
+# 4995|   
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/nice.c:216:3: warning: implicit declaration of function 'execvp' is invalid in C99
+#  execvp (argv[i], &argv[i]);
+#  ^
+#  214|       }
+#  215|   
+#  216|->   execvp (argv[i], &argv[i]);
+#  217|   
+#  218|     int exit_status = errno == ENOENT ? EXIT_ENOENT : EXIT_CANNOT_INVOKE;
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/nohup.c:211:3: warning: implicit declaration of function 'execvp' is invalid in C99
+#  execvp (*cmd, cmd);
+#  ^
+#  209|   
+#  210|     char **cmd = argv + optind;
+#  211|->   execvp (*cmd, cmd);
+#  212|     int exit_status = errno == ENOENT ? EXIT_ENOENT : EXIT_CANNOT_INVOKE;
+#  213|     int saved_errno = errno;
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/pr.c:1398:7: warning: result of comparison of constant 9223372036854775807 with expression of type 'int' is always false
+#  if (INT_MULTIPLY_WRAPV (columns - 1, col_sep_width, &sep_chars))
+#      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+coreutils-8.32/lib/intprops.h:389:34: note: expanded from macro 'INT_MULTIPLY_WRAPV'
+#   _GL_INT_OP_WRAPV (a, b, r, *, _GL_INT_MULTIPLY_RANGE_OVERFLOW)
+#   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+coreutils-8.32/lib/intprops.h:478:45: note: expanded from macro '_GL_INT_OP_WRAPV'
+#    : _GL_INT_OP_WRAPV_LONGISH(a, b, r, op, overflow))
+#      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~
+coreutils-8.32/lib/intprops.h:483:41: note: expanded from macro '_GL_INT_OP_WRAPV_LONGISH'
+#        ? _GL_INT_OP_CALC (a, b, r, op, overflow, unsigned long int, \
+#          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+coreutils-8.32/lib/intprops.h:507:4: note: expanded from macro '_GL_INT_OP_CALC'
+#  (overflow (a, b, tmin, tmax) \
+#   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+coreutils-8.32/lib/intprops.h:574:35: note: expanded from macro '_GL_INT_MULTIPLY_RANGE_OVERFLOW'
+#         : 0 < (a) && -1 - (tmin) < (a) - 1) \
+#                      ~~~~~~~~~~~ ^ ~~~~~~~
+# 1396|   
+# 1397|     int sep_chars, useful_chars;
+# 1398|->   if (INT_MULTIPLY_WRAPV (columns - 1, col_sep_width, &sep_chars))
+# 1399|       sep_chars = INT_MAX;
+# 1400|     if (INT_SUBTRACT_WRAPV (chars_per_line - chars_used_by_number, sep_chars,
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/pr.c:2016:7: warning: result of comparison of constant 9223372036854775807 with expression of type 'int' is always false
+#  if (INT_MULTIPLY_WRAPV (lines_per_body, columns, &total_lines)
+#      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+coreutils-8.32/lib/intprops.h:389:34: note: expanded from macro 'INT_MULTIPLY_WRAPV'
+#   _GL_INT_OP_WRAPV (a, b, r, *, _GL_INT_MULTIPLY_RANGE_OVERFLOW)
+#   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+coreutils-8.32/lib/intprops.h:478:45: note: expanded from macro '_GL_INT_OP_WRAPV'
+#    : _GL_INT_OP_WRAPV_LONGISH(a, b, r, op, overflow))
+#      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~
+coreutils-8.32/lib/intprops.h:483:41: note: expanded from macro '_GL_INT_OP_WRAPV_LONGISH'
+#        ? _GL_INT_OP_CALC (a, b, r, op, overflow, unsigned long int, \
+#          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+coreutils-8.32/lib/intprops.h:507:4: note: expanded from macro '_GL_INT_OP_CALC'
+#  (overflow (a, b, tmin, tmax) \
+#   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+coreutils-8.32/lib/intprops.h:574:35: note: expanded from macro '_GL_INT_MULTIPLY_RANGE_OVERFLOW'
+#         : 0 < (a) && -1 - (tmin) < (a) - 1) \
+#                      ~~~~~~~~~~~ ^ ~~~~~~~
+# 2014|   {
+# 2015|     int total_lines, total_lines_1, chars_per_column_1, chars_if_truncate;
+# 2016|->   if (INT_MULTIPLY_WRAPV (lines_per_body, columns, &total_lines)
+# 2017|         || INT_ADD_WRAPV (total_lines, 1, &total_lines_1)
+# 2018|         || INT_ADD_WRAPV (chars_per_column, 1, &chars_per_column_1)
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/pr.c:2019:10: warning: result of comparison of constant 9223372036854775807 with expression of type 'int' is always false
+#      || INT_MULTIPLY_WRAPV (total_lines, chars_per_column_1,
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+coreutils-8.32/lib/intprops.h:389:34: note: expanded from macro 'INT_MULTIPLY_WRAPV'
+#   _GL_INT_OP_WRAPV (a, b, r, *, _GL_INT_MULTIPLY_RANGE_OVERFLOW)
+#   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+coreutils-8.32/lib/intprops.h:478:45: note: expanded from macro '_GL_INT_OP_WRAPV'
+#    : _GL_INT_OP_WRAPV_LONGISH(a, b, r, op, overflow))
+#      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~
+coreutils-8.32/lib/intprops.h:483:41: note: expanded from macro '_GL_INT_OP_WRAPV_LONGISH'
+#        ? _GL_INT_OP_CALC (a, b, r, op, overflow, unsigned long int, \
+#          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+coreutils-8.32/lib/intprops.h:507:4: note: expanded from macro '_GL_INT_OP_CALC'
+#  (overflow (a, b, tmin, tmax) \
+#   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+coreutils-8.32/lib/intprops.h:574:35: note: expanded from macro '_GL_INT_MULTIPLY_RANGE_OVERFLOW'
+#         : 0 < (a) && -1 - (tmin) < (a) - 1) \
+#                      ~~~~~~~~~~~ ^ ~~~~~~~
+# 2017|         || INT_ADD_WRAPV (total_lines, 1, &total_lines_1)
+# 2018|         || INT_ADD_WRAPV (chars_per_column, 1, &chars_per_column_1)
+# 2019|->       || INT_MULTIPLY_WRAPV (total_lines, chars_per_column_1,
+# 2020|                                &chars_if_truncate))
+# 2021|       integer_overflow ();
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/runcon.c:259:3: warning: implicit declaration of function 'execvp' is invalid in C99
+#  execvp (argv[optind], argv + optind);
+#  ^
+#  257|       freecon (cur_context);
+#  258|   
+#  259|->   execvp (argv[optind], argv + optind);
+#  260|   
+#  261|     int exit_status = errno == ENOENT ? EXIT_ENOENT : EXIT_CANNOT_INVOKE;
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/selinux.c:132:7: warning: 'matchpathcon' is deprecated: Use selabel_lookup instead
+#  if (matchpathcon (path, mode, &scon) < 0)
+#      ^
+/usr/include/selinux/selinux.h:505:18: note: 'matchpathcon' has been explicitly marked deprecated here
+#        __attribute__ ((deprecated("Use selabel_lookup instead")))
+#                        ^
+#  130|       }
+#  131|   
+#  132|->   if (matchpathcon (path, mode, &scon) < 0)
+#  133|       {
+#  134|         /* "No such file or directory" is a confusing error,
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/selinux.c:222:7: warning: 'matchpathcon' is deprecated: Use selabel_lookup instead
+#  if (matchpathcon (path, sb.st_mode, &scon) < 0)
+#      ^
+/usr/include/selinux/selinux.h:505:18: note: 'matchpathcon' has been explicitly marked deprecated here
+#        __attribute__ ((deprecated("Use selabel_lookup instead")))
+#                        ^
+#  220|       }
+#  221|   
+#  222|->   if (matchpathcon (path, sb.st_mode, &scon) < 0)
+#  223|       {
+#  224|         /* "No such file or directory" is a confusing error,
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/sort.c:667:13: warning: implicit declaration of function 'pthread_sigmask' is invalid in C99
+#  int ret = pthread_sigmask (SIG_BLOCK, &caught_signals, &status->sigs);
+#            ^
+#  665|   cs_enter (struct cs_status *status)
+#  666|   {
+#  667|->   int ret = pthread_sigmask (SIG_BLOCK, &caught_signals, &status->sigs);
+#  668|     status->valid = ret == 0;
+#  669|   }
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/sort.c:678:7: warning: implicit declaration of function 'pthread_sigmask' is invalid in C99
+#      pthread_sigmask (SIG_SETMASK, &status->sigs, NULL);
+#      ^
+#  676|       {
+#  677|         /* Ignore failure when restoring the signal mask. */
+#  678|->       pthread_sigmask (SIG_SETMASK, &status->sigs, NULL);
+#  679|       }
+#  680|   }
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/sort.c:1218:11: warning: implicit declaration of function 'execlp' is invalid in C99
+#          execlp (compress_program, compress_program, (char *) NULL);
+#          ^
+# 1216|             move_fd (pipefds[0], STDIN_FILENO);
+# 1217|   
+# 1218|->           execlp (compress_program, compress_program, (char *) NULL);
+# 1219|   
+# 1220|             async_safe_die (errno, "couldn't execute compress program");
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/sort.c:1278:7: warning: implicit declaration of function 'execlp' is invalid in C99
+#      execlp (compress_program, compress_program, "-d", (char *) NULL);
+#      ^
+# 1276|         move_fd (pipefds[1], STDOUT_FILENO);
+# 1277|   
+# 1278|->       execlp (compress_program, compress_program, "-d", (char *) NULL);
+# 1279|   
+# 1280|         async_safe_die (errno, "couldn't execute compress program (with -d)");
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/sort.c:1479:20: warning: implicit declaration of function 'nl_langinfo' is invalid in C99
+#      s = (char *) nl_langinfo (ABMON_1 + i);
+#                   ^
+# 1477|     for (i = 0; i < MONTHS_PER_YEAR; i++)
+# 1478|       {
+# 1479|->       s = (char *) nl_langinfo (ABMON_1 + i);
+# 1480|         s_len = strlen (s);
+# 1481|         monthtab[i].name = name = (char *) xmalloc (s_len + 1);
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/sort.c:4406:11: warning: implicit declaration of function 'euidaccess' is invalid in C99
+#      if (euidaccess (files[i], R_OK) != 0)
+#          ^
+# 4404|           continue;
+# 4405|   
+# 4406|->       if (euidaccess (files[i], R_OK) != 0)
+# 4407|           sort_die (_("cannot read"), files[i]);
+# 4408|       }
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/sort.c:4965:11: warning: implicit declaration of function 'siginterrupt' is invalid in C99
+#          siginterrupt (sig[i], 1);
+#          ^
+# 4963|           {
+# 4964|             signal (sig[i], sighandler);
+# 4965|->           siginterrupt (sig[i], 1);
+# 4966|           }
+# 4967|   #endif
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/split.c:517:11: warning: implicit declaration of function 'execl' is invalid in C99
+#          execl (shell_prog, last_component (shell_prog), "-c",
+#          ^
+#  515|               }
+#  516|             sigprocmask (SIG_SETMASK, &oldblocked, NULL);
+#  517|->           execl (shell_prog, last_component (shell_prog), "-c",
+#  518|                    filter_command, (char *) NULL);
+#  519|             die (EXIT_FAILURE, errno, _("failed to run command: \"%s -c %s\""),
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/stat.c:992:13: warning: incompatible integer to pointer conversion initializing 'char *' with an expression of type 'int'
+#      char *resolved = canonicalize_file_name (filename);
+#            ^          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  990|     if (follow_links || !S_ISLNK (statp->st_mode))
+#  991|       {
+#  992|->       char *resolved = canonicalize_file_name (filename);
+#  993|         if (!resolved)
+#  994|           {
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/stat.c:992:24: warning: implicit declaration of function 'canonicalize_file_name' is invalid in C99
+#      char *resolved = canonicalize_file_name (filename);
+#                       ^
+#  990|     if (follow_links || !S_ISLNK (statp->st_mode))
+#  991|       {
+#  992|->       char *resolved = canonicalize_file_name (filename);
+#  993|         if (!resolved)
+#  994|           {
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/stdbuf.c:389:3: warning: implicit declaration of function 'execvp' is invalid in C99
+#  execvp (*argv, argv);
+#  ^
+#  387|     free (program_path);
+#  388|   
+#  389|->   execvp (*argv, argv);
+#  390|   
+#  391|     int exit_status = errno == ENOENT ? EXIT_ENOENT : EXIT_CANNOT_INVOKE;
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/tail.c:355:7: warning: implicit declaration of function 'poll' is invalid in C99
+#  if (poll (&pfd, 1, 0) >= 0 && (pfd.revents & POLLERR))
+#      ^
+#  353|     pfd.events = POLLERR;
+#  354|   
+#  355|->   if (poll (&pfd, 1, 0) >= 0 && (pfd.revents & POLLERR))
+#  356|       die_pipe ();
+#  357|   }
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/tail.c:1494:32: warning: implicit declaration of function 'inotify_add_watch' is invalid in C99
+#              f[i].parent_wd = inotify_add_watch (wd, dirlen ? f[i].name : ".",
+#                               ^
+# 1492|                  /* It's fine to add the same directory more than once.
+# 1493|                     In that case the same watch descriptor is returned.  */
+# 1494|->               f[i].parent_wd = inotify_add_watch (wd, dirlen ? f[i].name : ".",
+# 1495|                                                     (IN_CREATE | IN_DELETE
+# 1496|                                                      | IN_MOVED_TO | IN_ATTRIB
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/tail.c:1515:21: warning: implicit declaration of function 'inotify_add_watch' is invalid in C99
+#          f[i].wd = inotify_add_watch (wd, f[i].name, inotify_wd_mask);
+#                    ^
+# 1513|               }
+# 1514|   
+# 1515|->           f[i].wd = inotify_add_watch (wd, f[i].name, inotify_wd_mask);
+# 1516|   
+# 1517|             if (f[i].wd < 0)
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/tail.c:1649:29: warning: implicit declaration of function 'poll' is invalid in C99
+#              file_change = poll (pfd, monitor_output + 1, delay);
+#                            ^
+# 1647|                 pfd[1].fd = STDOUT_FILENO;
+# 1648|                 pfd[1].events = pfd[1].revents = 0;
+# 1649|->               file_change = poll (pfd, monitor_output + 1, delay);
+# 1650|               }
+# 1651|             while (file_change == 0);
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/tail.c:1708:29: warning: incompatible integer to pointer conversion passing 'char' to parameter of type 'const char *'; take the address with &
+#                  && STREQ (ev->name, f[j].name + f[j].basename_start))
+#                            ^~~~~~~~
+coreutils-8.32/src/system.h:191:30: note: expanded from macro 'STREQ'
+##define STREQ(a, b) (strcmp (a, b) == 0)
+#                             ^
+/opt/divine/include/dios/include/string.h:107:26: note: passing argument to parameter 's1' here
+#int strcmp( const char * s1, const char * s2 ) _PDCLIB_nothrow;
+#                         ^
+# 1706|                    process might be a problem.  FIXME: use a hash table?  */
+# 1707|                 if (f[j].parent_wd == ev->wd
+# 1708|->                   && STREQ (ev->name, f[j].name + f[j].basename_start))
+# 1709|                   break;
+# 1710|               }
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/tail.c:1724:24: warning: implicit declaration of function 'inotify_add_watch' is invalid in C99
+#              new_wd = inotify_add_watch (wd, f[j].name, inotify_wd_mask);
+#                       ^
+# 1722|               {
+# 1723|                 /* Adding the same inode again will look up any existing wd.  */
+# 1724|->               new_wd = inotify_add_watch (wd, f[j].name, inotify_wd_mask);
+# 1725|               }
+# 1726|   
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/tail.c:1752:19: warning: implicit declaration of function 'inotify_rm_watch' is invalid in C99
+#                  inotify_rm_watch (wd, fspec->wd);
+#                  ^
+# 1750|                 if (0 <= fspec->wd)
+# 1751|                   {
+# 1752|->                   inotify_rm_watch (wd, fspec->wd);
+# 1753|                     hash_delete (wd_to_name, fspec);
+# 1754|                   }
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/tail.c:1798:15: warning: implicit declaration of function 'inotify_rm_watch' is invalid in C99
+#              inotify_rm_watch (wd, fspec->wd);
+#              ^
+# 1796|             if (ev->mask & IN_DELETE_SELF)
+# 1797|               {
+# 1798|->               inotify_rm_watch (wd, fspec->wd);
+# 1799|                 hash_delete (wd_to_name, fspec);
+# 1800|               }
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/tail.c:2478:20: warning: implicit declaration of function 'inotify_init' is invalid in C99
+#          int wd = inotify_init ();
+#                   ^
+# 2476|         if (!disable_inotify)
+# 2477|           {
+# 2478|->           int wd = inotify_init ();
+# 2479|             if (0 <= wd)
+# 2480|               {
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/tail.c:2500:17: warning: implicit declaration of function 'inotify_rm_watch' is invalid in C99
+#                inotify_rm_watch (wd, F[i].wd);
+#                ^
+# 2498|                   ignoring the EINVAL from redundant calls.  */
+# 2499|                 if (F[i].wd != -1)
+# 2500|->                 inotify_rm_watch (wd, F[i].wd);
+# 2501|                 if (F[i].parent_wd != -1)
+# 2502|                   inotify_rm_watch (wd, F[i].parent_wd);
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/lbracket.c:2: included_from: Included from here.
+coreutils-8.32/src/test.c:410:14: warning: implicit declaration of function 'euidaccess' is invalid in C99
+#      return euidaccess (argv[pos - 1], R_OK) == 0;
+#             ^
+#  408|       case 'r':			/* file is readable? */
+#  409|         unary_advance ();
+#  410|->       return euidaccess (argv[pos - 1], R_OK) == 0;
+#  411|   
+#  412|       case 'w':			/* File is writable? */
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/timeout.c:128:7: warning: implicit declaration of function 'timer_create' is invalid in C99
+#  if (timer_create (CLOCK_REALTIME, NULL, &timerid) == 0)
+#      ^
+#  126|     struct itimerspec its = { {0, 0}, ts };
+#  127|     timer_t timerid;
+#  128|->   if (timer_create (CLOCK_REALTIME, NULL, &timerid) == 0)
+#  129|       {
+#  130|         if (timer_settime (timerid, 0, &its, NULL) == 0)
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/timeout.c:130:11: warning: implicit declaration of function 'timer_settime' is invalid in C99
+#      if (timer_settime (timerid, 0, &its, NULL) == 0)
+#          ^
+#  128|     if (timer_create (CLOCK_REALTIME, NULL, &timerid) == 0)
+#  129|       {
+#  130|->       if (timer_settime (timerid, 0, &its, NULL) == 0)
+#  131|           return;
+#  132|         else
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/timeout.c:136:11: warning: implicit declaration of function 'timer_delete' is invalid in C99
+#          timer_delete (timerid);
+#          ^
+#  134|             if (warn)
+#  135|               error (0, errno, _("warning: timer_settime"));
+#  136|->           timer_delete (timerid);
+#  137|           }
+#  138|       }
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/timeout.c:353:17: warning: taking address of packed member '' of class or structure 'sigaction' may result in an unaligned pointer value
+#  sigemptyset (&sa.sa_mask);  /* Allow concurrent calls to handler */
+#                ^~~~~~~~~~
+#  351|   {
+#  352|     struct sigaction sa;
+#  353|->   sigemptyset (&sa.sa_mask);  /* Allow concurrent calls to handler */
+#  354|     sa.sa_handler = chld;
+#  355|     sa.sa_flags = SA_RESTART;   /* Restart syscalls if possible, as that's
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/timeout.c:369:17: warning: taking address of packed member '' of class or structure 'sigaction' may result in an unaligned pointer value
+#  sigemptyset (&sa.sa_mask);  /* Allow concurrent calls to handler */
+#                ^~~~~~~~~~
+#  367|   {
+#  368|     struct sigaction sa;
+#  369|->   sigemptyset (&sa.sa_mask);  /* Allow concurrent calls to handler */
+#  370|     sa.sa_handler = cleanup;
+#  371|     sa.sa_flags = SA_RESTART;   /* Restart syscalls if possible, as that's
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/timeout.c:412:7: warning: implicit declaration of function 'prctl' is invalid in C99
+#  if (prctl (PR_SET_DUMPABLE, 0) == 0)
+#      ^
+#  410|   {
+#  411|   #if HAVE_PRCTL && defined PR_SET_DUMPABLE
+#  412|->   if (prctl (PR_SET_DUMPABLE, 0) == 0)
+#  413|       return true;
+#  414|   
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/timeout.c:515:7: warning: implicit declaration of function 'execvp' is invalid in C99
+#      execvp (argv[0], argv);   /* FIXME: should we use "sh -c" ... here?  */
+#      ^
+#  513|         signal (SIGTTOU, SIG_DFL);
+#  514|   
+#  515|->       execvp (argv[0], argv);   /* FIXME: should we use "sh -c" ... here?  */
+#  516|   
+#  517|         /* exit like sh, env, nohup, ...  */
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/timeout.c:539:9: warning: implicit declaration of function 'sigsuspend' is invalid in C99
+#        sigsuspend (&cleanup_set);  /* Wait with cleanup signals unblocked.  */
+#        ^
+#  537|   
+#  538|         while ((wait_result = waitpid (monitored_pid, &status, WNOHANG)) == 0)
+#  539|->         sigsuspend (&cleanup_set);  /* Wait with cleanup signals unblocked.  */
+#  540|   
+#  541|         if (wait_result < 0)
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/uname.c:303:13: warning: initializing 'char *' with an expression of type 'const char [8]' discards qualifiers
+#      char *element = unknown;
+#            ^         ~~~~~~~
+#  301|     if (toprint & PRINT_PROCESSOR)
+#  302|       {
+#  303|->       char *element = unknown;
+#  304|   #if HAVE_SYSINFO && defined SI_ARCHITECTURE
+#  305|         {
+
+Error: COMPILER_WARNING:
+coreutils-8.32/src/uname.c:353:13: warning: initializing 'char *' with an expression of type 'const char [8]' discards qualifiers
+#      char *element = unknown;
+#            ^         ~~~~~~~
+#  351|     if (toprint & PRINT_HARDWARE_PLATFORM)
+#  352|       {
+#  353|->       char *element = unknown;
+#  354|   #if HAVE_SYSINFO && defined SI_PLATFORM
+#  355|         {

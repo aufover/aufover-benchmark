@@ -1,0 +1,266 @@
+Error: COMPILER_WARNING:
+sed-4.8/gnulib-tests/pthread_sigmask.c:52:9: warning: implicit declaration of function 'pthread_sigmask' is invalid in C99
+#  ret = pthread_sigmask (how, new_mask, old_mask_ptr);
+#        ^
+#   50|   # endif
+#   51|   
+#   52|->   ret = pthread_sigmask (how, new_mask, old_mask_ptr);
+#   53|   
+#   54|   # if PTHREAD_SIGMASK_INEFFECTIVE
+
+Error: COMPILER_WARNING:
+sed-4.8/gnulib-tests/strerror_r.c:204:9: warning: incompatible pointer to integer conversion assigning to 'int' from 'char *'
+#    ret = strerror_r (errnum, buf, buflen);
+#        ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  202|       }
+#  203|   # else
+#  204|->     ret = strerror_r (errnum, buf, buflen);
+#  205|   
+#  206|       /* Some old implementations may return (-1, EINVAL) instead of EINVAL.
+
+Error: COMPILER_WARNING:
+sed-4.8/gnulib-tests/strerror_r.c:241:60: warning: comparison between pointer and integer ('char *' and 'int')
+#        if (strerror_r (errnum, stackbuf, sizeof stackbuf) == ERANGE)
+#            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^  ~~~~~~
+#  239|   
+#  240|           /* STACKBUF_LEN should have been large enough.  */
+#  241|->         if (strerror_r (errnum, stackbuf, sizeof stackbuf) == ERANGE)
+#  242|             abort ();
+#  243|           safe_copy (buf, buflen, stackbuf);
+
+Error: COMPILER_WARNING:
+sed-4.8/lib/getfilecon.c:36:35: warning: 'security_context_t' is deprecated
+#int getfilecon (char const *file, security_context_t *con);
+#                                  ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   34|   #undef lgetfilecon
+#   35|   #undef fgetfilecon
+#   36|-> int getfilecon (char const *file, security_context_t *con);
+#   37|   int lgetfilecon (char const *file, security_context_t *con);
+#   38|   int fgetfilecon (int fd, security_context_t *con);
+
+Error: COMPILER_WARNING:
+sed-4.8/lib/getfilecon.c:37:36: warning: 'security_context_t' is deprecated
+#int lgetfilecon (char const *file, security_context_t *con);
+#                                   ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   35|   #undef fgetfilecon
+#   36|   int getfilecon (char const *file, security_context_t *con);
+#   37|-> int lgetfilecon (char const *file, security_context_t *con);
+#   38|   int fgetfilecon (int fd, security_context_t *con);
+#   39|   
+
+Error: COMPILER_WARNING:
+sed-4.8/lib/getfilecon.c:38:26: warning: 'security_context_t' is deprecated
+#int fgetfilecon (int fd, security_context_t *con);
+#                         ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   36|   int getfilecon (char const *file, security_context_t *con);
+#   37|   int lgetfilecon (char const *file, security_context_t *con);
+#   38|-> int fgetfilecon (int fd, security_context_t *con);
+#   39|   
+#   40|   /* getfilecon, lgetfilecon, and fgetfilecon can all misbehave, be it
+
+Error: COMPILER_WARNING:
+sed-4.8/lib/getfilecon.c:49:26: warning: 'security_context_t' is deprecated
+#map_to_failure (int ret, security_context_t *con)
+#                         ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   47|   
+#   48|   static int
+#   49|-> map_to_failure (int ret, security_context_t *con)
+#   50|   {
+#   51|     if (ret == 0)
+
+Error: COMPILER_WARNING:
+sed-4.8/lib/getfilecon.c:69:35: warning: 'security_context_t' is deprecated
+#rpl_getfilecon (char const *file, security_context_t *con)
+#                                  ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   67|   
+#   68|   int
+#   69|-> rpl_getfilecon (char const *file, security_context_t *con)
+#   70|   {
+#   71|     int ret = getfilecon (file, con);
+
+Error: COMPILER_WARNING:
+sed-4.8/lib/getfilecon.c:76:36: warning: 'security_context_t' is deprecated
+#rpl_lgetfilecon (char const *file, security_context_t *con)
+#                                   ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   74|   
+#   75|   int
+#   76|-> rpl_lgetfilecon (char const *file, security_context_t *con)
+#   77|   {
+#   78|     int ret = lgetfilecon (file, con);
+
+Error: COMPILER_WARNING:
+sed-4.8/lib/getfilecon.c:83:26: warning: 'security_context_t' is deprecated
+#rpl_fgetfilecon (int fd, security_context_t *con)
+#                         ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   81|   
+#   82|   int
+#   83|-> rpl_fgetfilecon (int fd, security_context_t *con)
+#   84|   {
+#   85|     int ret = fgetfilecon (fd, con);
+
+Error: COMPILER_WARNING:
+sed-4.8/lib/nl_langinfo.c:186:10: warning: implicit declaration of function 'nl_langinfo' is invalid in C99
+#  return nl_langinfo (item);
+#         ^
+#  184|         break;
+#  185|       }
+#  186|->   return nl_langinfo (item);
+#  187|   }
+#  188|   
+
+Error: COMPILER_WARNING:
+sed-4.8/lib/nl_langinfo.c:186:10: warning: incompatible integer to pointer conversion returning 'int' from a function with result type 'char *'
+#  return nl_langinfo (item);
+#         ^~~~~~~~~~~~~~~~~~
+#  184|         break;
+#  185|       }
+#  186|->   return nl_langinfo (item);
+#  187|   }
+#  188|   
+
+Error: COMPILER_WARNING:
+sed-4.8/lib/obstack.c:351:31: warning: incompatible pointer types initializing 'void (*)(void) __attribute__((noreturn))' with an expression of type 'void (void)'
+#__attribute_noreturn__ void (*obstack_alloc_failed_handler) (void)
+#                              ^
+#  349|      variable by default points to the internal function
+#  350|      'print_and_abort'.  */
+#  351|-> __attribute_noreturn__ void (*obstack_alloc_failed_handler) (void)
+#  352|     = print_and_abort;
+#  353|   # endif /* !_OBSTACK_NO_ERROR_HANDLER */
+
+Error: COMPILER_WARNING:
+sed-4.8/sed/compile.c:1073:17: warning: implicit declaration of function 'strverscmp' is invalid in C99
+#            if (strverscmp (compared_version, PACKAGE_VERSION) > 0)
+#                ^
+# 1071|               char const *compared_version;
+# 1072|               compared_version = (*version == '\0') ? "4.0" : version;
+# 1073|->             if (strverscmp (compared_version, PACKAGE_VERSION) > 0)
+# 1074|                 bad_prog (_(ANCIENT_VERSION));
+# 1075|   
+
+Error: COMPILER_WARNING:
+sed-4.8/sed/execute.c:575:7: warning: 'security_context_t' is deprecated
+#      security_context_t old_fscreatecon;
+#      ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#  573|         int input_fd;
+#  574|         char *tmpdir, *p;
+#  575|->       security_context_t old_fscreatecon;
+#  576|         int reset_fscreatecon = 0;
+#  577|         memset (&old_fscreatecon, 0, sizeof (old_fscreatecon));
+
+Error: COMPILER_WARNING:
+sed-4.8/sed/execute.c:596:11: warning: 'security_context_t' is deprecated
+#          security_context_t con;
+#          ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#  594|         if (is_selinux_enabled () > 0)
+#  595|           {
+#  596|->           security_context_t con;
+#  597|             if (lgetfilecon (input->in_file_name, &con) != -1)
+#  598|               {
+
+Error: COMPILER_WARNING:
+sed-4.8/sed/execute.c:1158:15: warning: incompatible integer to pointer conversion assigning to 'FILE *' (aka 'struct _PDCLIB_file *') from 'int'
+#      pipe_fp = popen (line.active, "r");
+#              ^ ~~~~~~~~~~~~~~~~~~~~~~~~
+# 1156|   
+# 1157|         str_append (&line, "", 1);
+# 1158|->       pipe_fp = popen (line.active, "r");
+# 1159|   
+# 1160|         if (pipe_fp != NULL)
+
+Error: COMPILER_WARNING:
+sed-4.8/sed/execute.c:1158:17: warning: implicit declaration of function 'popen' is invalid in C99
+#      pipe_fp = popen (line.active, "r");
+#                ^
+# 1156|   
+# 1157|         str_append (&line, "", 1);
+# 1158|->       pipe_fp = popen (line.active, "r");
+# 1159|   
+# 1160|         if (pipe_fp != NULL)
+
+Error: COMPILER_WARNING:
+sed-4.8/sed/execute.c:1170:11: warning: implicit declaration of function 'pclose' is invalid in C99
+#          pclose (pipe_fp);
+#          ^
+# 1168|               }
+# 1169|   
+# 1170|->           pclose (pipe_fp);
+# 1171|   
+# 1172|             /* Exchange line and s_accum.  This can be much cheaper than copying
+
+Error: COMPILER_WARNING:
+sed-4.8/sed/execute.c:1370:27: warning: incompatible integer to pointer conversion assigning to 'FILE *' (aka 'struct _PDCLIB_file *') from 'int'
+#                  pipe_fp = popen (line.active, "r");
+#                          ^ ~~~~~~~~~~~~~~~~~~~~~~~~
+# 1368|                   {
+# 1369|                     str_append (&line, "", 1);
+# 1370|->                   pipe_fp = popen (line.active, "r");
+# 1371|                   }
+# 1372|                 else
+
+Error: COMPILER_WARNING:
+sed-4.8/sed/execute.c:1370:29: warning: implicit declaration of function 'popen' is invalid in C99
+#                  pipe_fp = popen (line.active, "r");
+#                            ^
+# 1368|                   {
+# 1369|                     str_append (&line, "", 1);
+# 1370|->                   pipe_fp = popen (line.active, "r");
+# 1371|                   }
+# 1372|                 else
+
+Error: COMPILER_WARNING:
+sed-4.8/sed/execute.c:1375:27: warning: incompatible integer to pointer conversion assigning to 'FILE *' (aka 'struct _PDCLIB_file *') from 'int'
+#                  pipe_fp = popen (cur_cmd->x.cmd_txt.text, "r");
+#                          ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1373|                   {
+# 1374|                     cur_cmd->x.cmd_txt.text[cmd_length - 1] = 0;
+# 1375|->                   pipe_fp = popen (cur_cmd->x.cmd_txt.text, "r");
+# 1376|                     output_missing_newline (&output_file);
+# 1377|                   }
+
+Error: COMPILER_WARNING:
+sed-4.8/sed/execute.c:1375:29: warning: implicit declaration of function 'popen' is invalid in C99
+#                  pipe_fp = popen (cur_cmd->x.cmd_txt.text, "r");
+#                            ^
+# 1373|                   {
+# 1374|                     cur_cmd->x.cmd_txt.text[cmd_length - 1] = 0;
+# 1375|->                   pipe_fp = popen (cur_cmd->x.cmd_txt.text, "r");
+# 1376|                     output_missing_newline (&output_file);
+# 1377|                   }
+
+Error: COMPILER_WARNING:
+sed-4.8/sed/execute.c:1394:17: warning: implicit declaration of function 'pclose' is invalid in C99
+#                pclose (pipe_fp);
+#                ^
+# 1392|                       }
+# 1393|   
+# 1394|->                 pclose (pipe_fp);
+# 1395|                   if (!cmd_length)
+# 1396|                     {

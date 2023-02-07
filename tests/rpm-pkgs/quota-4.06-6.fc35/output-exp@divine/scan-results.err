@@ -1,0 +1,529 @@
+Error: COMPILER_WARNING:
+quota-4.06/bylabel.c:274:9: warning: implicit declaration of function 'gettext' is invalid in C99
+#        errstr(_("Found an invalid UUID: %s\n"), s);
+#               ^
+quota-4.06/pot.h:8:14: note: expanded from macro '_'
+##define _(x)    gettext((x))
+#                ^
+#  272|   
+#  273|         bad_uuid:
+#  274|-> 	errstr(_("Found an invalid UUID: %s\n"), s);
+#  275|   	return NULL;
+#  276|   }
+
+Error: COMPILER_WARNING:
+quota-4.06/bylabel.c:274:9: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'char *'
+#        errstr(_("Found an invalid UUID: %s\n"), s);
+#               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+quota-4.06/pot.h:8:14: note: expanded from macro '_'
+##define _(x)    gettext((x))
+#                ^~~~~~~~~~~~
+quota-4.06/common.h:29:19: note: passing argument to parameter here
+#void errstr(char *, ...) __attribute__ ((__format__ (__printf__, 1, 2)));
+#                  ^
+#  272|   
+#  273|         bad_uuid:
+#  274|-> 	errstr(_("Found an invalid UUID: %s\n"), s);
+#  275|   	return NULL;
+#  276|   }
+
+Error: COMPILER_WARNING:
+quota-4.06/bylabel.c:294:10: warning: implicit declaration of function 'gettext' is invalid in C99
+#                errstr(_("Error checking device name: %s\n"), item);
+#                       ^
+quota-4.06/pot.h:8:14: note: expanded from macro '_'
+##define _(x)    gettext((x))
+#                ^
+#  292|   		rc = sstrdup(item);
+#  293|   	if (!rc)
+#  294|-> 		errstr(_("Error checking device name: %s\n"), item);
+#  295|   	return rc;
+#  296|   }
+
+Error: COMPILER_WARNING:
+quota-4.06/bylabel.c:294:10: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'char *'
+#                errstr(_("Error checking device name: %s\n"), item);
+#                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+quota-4.06/pot.h:8:14: note: expanded from macro '_'
+##define _(x)    gettext((x))
+#                ^~~~~~~~~~~~
+quota-4.06/common.h:29:19: note: passing argument to parameter here
+#void errstr(char *, ...) __attribute__ ((__format__ (__printf__, 1, 2)));
+#                  ^
+#  292|   		rc = sstrdup(item);
+#  293|   	if (!rc)
+#  294|-> 		errstr(_("Error checking device name: %s\n"), item);
+#  295|   	return rc;
+#  296|   }
+
+Error: COMPILER_WARNING:
+quota-4.06/common.c:130:9: warning: implicit declaration of function 'gettext' is invalid in C99
+#        printf(_("Quota utilities version %s.\n"), PACKAGE_VERSION);
+#               ^
+quota-4.06/pot.h:8:14: note: expanded from macro '_'
+##define _(x)    gettext((x))
+#                ^
+#  128|   void version(void)
+#  129|   {
+#  130|-> 	printf(_("Quota utilities version %s.\n"), PACKAGE_VERSION);
+#  131|   	printf(_("Compiled with:%s\n"), COMPILE_OPTS);
+#  132|   	printf(_("Bugs to %s\n"), PACKAGE_BUGREPORT);
+
+Error: COMPILER_WARNING:
+quota-4.06/common.c:130:9: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#        printf(_("Quota utilities version %s.\n"), PACKAGE_VERSION);
+#               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+quota-4.06/pot.h:8:14: note: expanded from macro '_'
+##define _(x)    gettext((x))
+#                ^~~~~~~~~~~~
+/opt/divine/include/dios/include/stdio.h:598:43: note: passing argument to parameter 'format' here
+#int printf( const char * _PDCLIB_restrict format, ... ) _PDCLIB_nothrow;
+#                                          ^
+#  128|   void version(void)
+#  129|   {
+#  130|-> 	printf(_("Quota utilities version %s.\n"), PACKAGE_VERSION);
+#  131|   	printf(_("Compiled with:%s\n"), COMPILE_OPTS);
+#  132|   	printf(_("Bugs to %s\n"), PACKAGE_BUGREPORT);
+
+Error: COMPILER_WARNING:
+quota-4.06/common.c:131:9: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#        printf(_("Compiled with:%s\n"), COMPILE_OPTS);
+#               ^~~~~~~~~~~~~~~~~~~~~~~
+quota-4.06/pot.h:8:14: note: expanded from macro '_'
+##define _(x)    gettext((x))
+#                ^~~~~~~~~~~~
+/opt/divine/include/dios/include/stdio.h:598:43: note: passing argument to parameter 'format' here
+#int printf( const char * _PDCLIB_restrict format, ... ) _PDCLIB_nothrow;
+#                                          ^
+#  129|   {
+#  130|   	printf(_("Quota utilities version %s.\n"), PACKAGE_VERSION);
+#  131|-> 	printf(_("Compiled with:%s\n"), COMPILE_OPTS);
+#  132|   	printf(_("Bugs to %s\n"), PACKAGE_BUGREPORT);
+#  133|   }
+
+Error: COMPILER_WARNING:
+quota-4.06/common.c:132:9: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#        printf(_("Bugs to %s\n"), PACKAGE_BUGREPORT);
+#               ^~~~~~~~~~~~~~~~~
+quota-4.06/pot.h:8:14: note: expanded from macro '_'
+##define _(x)    gettext((x))
+#                ^~~~~~~~~~~~
+/opt/divine/include/dios/include/stdio.h:598:43: note: passing argument to parameter 'format' here
+#int printf( const char * _PDCLIB_restrict format, ... ) _PDCLIB_nothrow;
+#                                          ^
+#  130|   	printf(_("Quota utilities version %s.\n"), PACKAGE_VERSION);
+#  131|   	printf(_("Compiled with:%s\n"), COMPILE_OPTS);
+#  132|-> 	printf(_("Bugs to %s\n"), PACKAGE_BUGREPORT);
+#  133|   }
+#  134|   
+
+Error: COMPILER_WARNING:
+quota-4.06/pot.c:13:2: warning: implicit declaration of function 'bindtextdomain' is invalid in C99
+#        bindtextdomain(PACKAGE, PACKAGE_LOCALE_DIR);
+#        ^
+#   11|   #ifdef USE_GETTEXT
+#   12|   	setlocale(LC_ALL, "");
+#   13|-> 	bindtextdomain(PACKAGE, PACKAGE_LOCALE_DIR);
+#   14|   	textdomain(PACKAGE);
+#   15|   #endif
+
+Error: COMPILER_WARNING:
+quota-4.06/pot.c:14:2: warning: implicit declaration of function 'textdomain' is invalid in C99
+#        textdomain(PACKAGE);
+#        ^
+#   12|   	setlocale(LC_ALL, "");
+#   13|   	bindtextdomain(PACKAGE, PACKAGE_LOCALE_DIR);
+#   14|-> 	textdomain(PACKAGE);
+#   15|   #endif
+#   16|   }
+
+Error: COMPILER_WARNING:
+quota-4.06/rquota.c:34:4: warning: implicit declaration of function '__htobe32' is invalid in C99
+#                        IXDR_PUT_U_LONG(buf, objp->rq_bhardlimit);
+#                        ^
+/usr/include/tirpc/rpc/xdr.h:278:34: note: expanded from macro 'IXDR_PUT_U_LONG'
+##define IXDR_PUT_U_LONG(buf, v)         IXDR_PUT_LONG((buf), (v))
+#                                        ^
+/usr/include/tirpc/rpc/xdr.h:268:52: note: expanded from macro 'IXDR_PUT_LONG'
+##define IXDR_PUT_LONG(buf, v)           (*(buf)++ =(int32_t)htonl((u_int32_t)v))
+#                                                            ^
+/opt/divine/include/dios/include/netinet/in.h:49:18: note: expanded from macro 'htonl'
+##define htonl(x)        __htobe32(x)
+#                        ^
+#   32|   				 return FALSE;
+#   33|   		} else {
+#   34|-> 			IXDR_PUT_U_LONG(buf, objp->rq_bhardlimit);
+#   35|   			IXDR_PUT_U_LONG(buf, objp->rq_bsoftlimit);
+#   36|   			IXDR_PUT_U_LONG(buf, objp->rq_curblocks);
+
+Error: COMPILER_WARNING:
+quota-4.06/rquota.c:64:26: warning: implicit declaration of function '__htobe32' is invalid in C99
+#                        objp->rq_bhardlimit = IXDR_GET_U_LONG(buf);
+#                                              ^
+/usr/include/tirpc/rpc/xdr.h:272:40: note: expanded from macro 'IXDR_GET_U_LONG'
+##define IXDR_GET_U_LONG(buf)            ((u_long)IXDR_GET_LONG(buf))
+#                                                 ^
+/usr/include/tirpc/rpc/xdr.h:267:36: note: expanded from macro 'IXDR_GET_LONG'
+##define IXDR_GET_LONG(buf)              ((long)ntohl((u_int32_t)*(buf)++))
+#                                               ^
+/opt/divine/include/dios/include/netinet/in.h:51:18: note: expanded from macro 'ntohl'
+##define ntohl(x)        __htobe32(x)
+#                        ^
+#   62|   				 return FALSE;
+#   63|   		} else {
+#   64|-> 			objp->rq_bhardlimit = IXDR_GET_U_LONG(buf);
+#   65|   			objp->rq_bsoftlimit = IXDR_GET_U_LONG(buf);
+#   66|   			objp->rq_curblocks = IXDR_GET_U_LONG(buf);
+
+Error: COMPILER_WARNING:
+quota-4.06/rquota.c:185:4: warning: implicit declaration of function '__htobe32' is invalid in C99
+#                        IXDR_PUT_LONG(buf, objp->rq_bsize);
+#                        ^
+/usr/include/tirpc/rpc/xdr.h:268:52: note: expanded from macro 'IXDR_PUT_LONG'
+##define IXDR_PUT_LONG(buf, v)           (*(buf)++ =(int32_t)htonl((u_int32_t)v))
+#                                                            ^
+/opt/divine/include/dios/include/netinet/in.h:49:18: note: expanded from macro 'htonl'
+##define htonl(x)        __htobe32(x)
+#                        ^
+#  183|   				 return FALSE;
+#  184|   		} else {
+#  185|-> 			IXDR_PUT_LONG(buf, objp->rq_bsize);
+#  186|   			IXDR_PUT_BOOL(buf, objp->rq_active);
+#  187|   			IXDR_PUT_U_LONG(buf, objp->rq_bhardlimit);
+
+Error: COMPILER_WARNING:
+quota-4.06/rquota.c:221:21: warning: implicit declaration of function '__htobe32' is invalid in C99
+#                        objp->rq_bsize = IXDR_GET_LONG(buf);
+#                                         ^
+/usr/include/tirpc/rpc/xdr.h:267:36: note: expanded from macro 'IXDR_GET_LONG'
+##define IXDR_GET_LONG(buf)              ((long)ntohl((u_int32_t)*(buf)++))
+#                                               ^
+/opt/divine/include/dios/include/netinet/in.h:51:18: note: expanded from macro 'ntohl'
+##define ntohl(x)        __htobe32(x)
+#                        ^
+#  219|   				 return FALSE;
+#  220|   		} else {
+#  221|-> 			objp->rq_bsize = IXDR_GET_LONG(buf);
+#  222|   			objp->rq_active = IXDR_GET_BOOL(buf);
+#  223|   			objp->rq_bhardlimit = IXDR_GET_U_LONG(buf);
+
+Error: COMPILER_WARNING:
+quota-4.06/xqmstats.c:27:11: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#        progname = basename(argv[0]);
+#                 ^ ~~~~~~~~~~~~~~~~~
+#   25|   
+#   26|   	gettexton();
+#   27|-> 	progname = basename(argv[0]);
+#   28|   
+#   29|   	memset(values, 0, sizeof(unsigned) * 8);
+
+Error: COMPILER_WARNING:
+quota-4.06/xqmstats.c:27:13: warning: implicit declaration of function 'basename' is invalid in C99
+#        progname = basename(argv[0]);
+#                   ^
+#   25|   
+#   26|   	gettexton();
+#   27|-> 	progname = basename(argv[0]);
+#   28|   
+#   29|   	memset(values, 0, sizeof(unsigned) * 8);
+
+Error: COMPILER_WARNING:
+quota-4.06/xqmstats.c:32:10: warning: format string is not a string literal (potentially insecure)
+#                errstr(_("The running kernel does not support XFS\n"));
+#                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+quota-4.06/pot.h:8:14: note: expanded from macro '_'
+##define _(x)    gettext((x))
+#                ^~~~~~~~~~~~
+quota-4.06/xqmstats.c:32:10: note: treat the string as an argument to avoid this
+#                errstr(_("The running kernel does not support XFS\n"));
+#                       ^
+quota-4.06/pot.h:8:14: note: expanded from macro '_'
+##define _(x)    gettext((x))
+#                ^
+#   30|   
+#   31|   	if ((xqm = fopen(XQMFILE, "r")) == NULL) {
+#   32|-> 		errstr(_("The running kernel does not support XFS\n"));
+#   33|   		return 1;
+#   34|   	}
+
+Error: COMPILER_WARNING:
+quota-4.06/xqmstats.c:32:10: warning: implicit declaration of function 'gettext' is invalid in C99
+#                errstr(_("The running kernel does not support XFS\n"));
+#                       ^
+quota-4.06/pot.h:8:14: note: expanded from macro '_'
+##define _(x)    gettext((x))
+#                ^
+#   30|   
+#   31|   	if ((xqm = fopen(XQMFILE, "r")) == NULL) {
+#   32|-> 		errstr(_("The running kernel does not support XFS\n"));
+#   33|   		return 1;
+#   34|   	}
+
+Error: COMPILER_WARNING:
+quota-4.06/xqmstats.c:32:10: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'char *'
+#                errstr(_("The running kernel does not support XFS\n"));
+#                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+quota-4.06/pot.h:8:14: note: expanded from macro '_'
+##define _(x)    gettext((x))
+#                ^~~~~~~~~~~~
+quota-4.06/common.h:29:19: note: passing argument to parameter here
+#void errstr(char *, ...) __attribute__ ((__format__ (__printf__, 1, 2)));
+#                  ^
+#   30|   
+#   31|   	if ((xqm = fopen(XQMFILE, "r")) == NULL) {
+#   32|-> 		errstr(_("The running kernel does not support XFS\n"));
+#   33|   		return 1;
+#   34|   	}
+
+Error: COMPILER_WARNING:
+quota-4.06/xqmstats.c:37:11: warning: format string is not a string literal (potentially insecure)
+#                        errstr(_("The running kernel does not support XFS\n"));
+#                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+quota-4.06/pot.h:8:14: note: expanded from macro '_'
+##define _(x)    gettext((x))
+#                ^~~~~~~~~~~~
+quota-4.06/xqmstats.c:37:11: note: treat the string as an argument to avoid this
+#                        errstr(_("The running kernel does not support XFS\n"));
+#                               ^
+quota-4.06/pot.h:8:14: note: expanded from macro '_'
+##define _(x)    gettext((x))
+#                ^
+#   35|   	if ((stats = fopen(XQMSTATS, "r")) == NULL) {
+#   36|   		if ((stats = fopen(STATFILE, "r")) == NULL) {
+#   37|-> 			errstr(_("The running kernel does not support XFS\n"));
+#   38|   			fclose(xqm);
+#   39|   			return 1;
+
+Error: COMPILER_WARNING:
+quota-4.06/xqmstats.c:37:11: warning: implicit declaration of function 'gettext' is invalid in C99
+#                        errstr(_("The running kernel does not support XFS\n"));
+#                               ^
+quota-4.06/pot.h:8:14: note: expanded from macro '_'
+##define _(x)    gettext((x))
+#                ^
+#   35|   	if ((stats = fopen(XQMSTATS, "r")) == NULL) {
+#   36|   		if ((stats = fopen(STATFILE, "r")) == NULL) {
+#   37|-> 			errstr(_("The running kernel does not support XFS\n"));
+#   38|   			fclose(xqm);
+#   39|   			return 1;
+
+Error: COMPILER_WARNING:
+quota-4.06/xqmstats.c:37:11: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'char *'
+#                        errstr(_("The running kernel does not support XFS\n"));
+#                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+quota-4.06/pot.h:8:14: note: expanded from macro '_'
+##define _(x)    gettext((x))
+#                ^~~~~~~~~~~~
+quota-4.06/common.h:29:19: note: passing argument to parameter here
+#void errstr(char *, ...) __attribute__ ((__format__ (__printf__, 1, 2)));
+#                  ^
+#   35|   	if ((stats = fopen(XQMSTATS, "r")) == NULL) {
+#   36|   		if ((stats = fopen(STATFILE, "r")) == NULL) {
+#   37|-> 			errstr(_("The running kernel does not support XFS\n"));
+#   38|   			fclose(xqm);
+#   39|   			return 1;
+
+Error: COMPILER_WARNING:
+quota-4.06/xqmstats.c:50:10: warning: format string is not a string literal (potentially insecure)
+#                printf(_("XFS Quota Manager dquot statistics\n"));
+#                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+quota-4.06/pot.h:8:14: note: expanded from macro '_'
+##define _(x)    gettext((x))
+#                ^~~~~~~~~~~~
+quota-4.06/xqmstats.c:50:10: note: treat the string as an argument to avoid this
+#                printf(_("XFS Quota Manager dquot statistics\n"));
+#                       ^
+quota-4.06/pot.h:8:14: note: expanded from macro '_'
+##define _(x)    gettext((x))
+#                ^
+#   48|   	}
+#   49|   	if (!feof(stats)) {
+#   50|-> 		printf(_("XFS Quota Manager dquot statistics\n"));
+#   51|   		printf(_("  reclaims:        %u\n"), values[0]);
+#   52|   		printf(_("  missed reclaims: %u\n"), values[1]);
+
+Error: COMPILER_WARNING:
+quota-4.06/xqmstats.c:50:10: warning: implicit declaration of function 'gettext' is invalid in C99
+#                printf(_("XFS Quota Manager dquot statistics\n"));
+#                       ^
+quota-4.06/pot.h:8:14: note: expanded from macro '_'
+##define _(x)    gettext((x))
+#                ^
+#   48|   	}
+#   49|   	if (!feof(stats)) {
+#   50|-> 		printf(_("XFS Quota Manager dquot statistics\n"));
+#   51|   		printf(_("  reclaims:        %u\n"), values[0]);
+#   52|   		printf(_("  missed reclaims: %u\n"), values[1]);
+
+Error: COMPILER_WARNING:
+quota-4.06/xqmstats.c:50:10: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#                printf(_("XFS Quota Manager dquot statistics\n"));
+#                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+quota-4.06/pot.h:8:14: note: expanded from macro '_'
+##define _(x)    gettext((x))
+#                ^~~~~~~~~~~~
+/opt/divine/include/dios/include/stdio.h:598:43: note: passing argument to parameter 'format' here
+#int printf( const char * _PDCLIB_restrict format, ... ) _PDCLIB_nothrow;
+#                                          ^
+#   48|   	}
+#   49|   	if (!feof(stats)) {
+#   50|-> 		printf(_("XFS Quota Manager dquot statistics\n"));
+#   51|   		printf(_("  reclaims:        %u\n"), values[0]);
+#   52|   		printf(_("  missed reclaims: %u\n"), values[1]);
+
+Error: COMPILER_WARNING:
+quota-4.06/xqmstats.c:51:10: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#                printf(_("  reclaims:        %u\n"), values[0]);
+#                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+quota-4.06/pot.h:8:14: note: expanded from macro '_'
+##define _(x)    gettext((x))
+#                ^~~~~~~~~~~~
+/opt/divine/include/dios/include/stdio.h:598:43: note: passing argument to parameter 'format' here
+#int printf( const char * _PDCLIB_restrict format, ... ) _PDCLIB_nothrow;
+#                                          ^
+#   49|   	if (!feof(stats)) {
+#   50|   		printf(_("XFS Quota Manager dquot statistics\n"));
+#   51|-> 		printf(_("  reclaims:        %u\n"), values[0]);
+#   52|   		printf(_("  missed reclaims: %u\n"), values[1]);
+#   53|   		printf(_("  dquot dups:      %u\n"), values[2]);
+
+Error: COMPILER_WARNING:
+quota-4.06/xqmstats.c:52:10: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#                printf(_("  missed reclaims: %u\n"), values[1]);
+#                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+quota-4.06/pot.h:8:14: note: expanded from macro '_'
+##define _(x)    gettext((x))
+#                ^~~~~~~~~~~~
+/opt/divine/include/dios/include/stdio.h:598:43: note: passing argument to parameter 'format' here
+#int printf( const char * _PDCLIB_restrict format, ... ) _PDCLIB_nothrow;
+#                                          ^
+#   50|   		printf(_("XFS Quota Manager dquot statistics\n"));
+#   51|   		printf(_("  reclaims:        %u\n"), values[0]);
+#   52|-> 		printf(_("  missed reclaims: %u\n"), values[1]);
+#   53|   		printf(_("  dquot dups:      %u\n"), values[2]);
+#   54|   		printf(_("  cache misses:    %u\n"), values[3]);
+
+Error: COMPILER_WARNING:
+quota-4.06/xqmstats.c:53:10: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#                printf(_("  dquot dups:      %u\n"), values[2]);
+#                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+quota-4.06/pot.h:8:14: note: expanded from macro '_'
+##define _(x)    gettext((x))
+#                ^~~~~~~~~~~~
+/opt/divine/include/dios/include/stdio.h:598:43: note: passing argument to parameter 'format' here
+#int printf( const char * _PDCLIB_restrict format, ... ) _PDCLIB_nothrow;
+#                                          ^
+#   51|   		printf(_("  reclaims:        %u\n"), values[0]);
+#   52|   		printf(_("  missed reclaims: %u\n"), values[1]);
+#   53|-> 		printf(_("  dquot dups:      %u\n"), values[2]);
+#   54|   		printf(_("  cache misses:    %u\n"), values[3]);
+#   55|   		printf(_("  cache hits:      %u\n"), values[4]);
+
+Error: COMPILER_WARNING:
+quota-4.06/xqmstats.c:54:10: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#                printf(_("  cache misses:    %u\n"), values[3]);
+#                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+quota-4.06/pot.h:8:14: note: expanded from macro '_'
+##define _(x)    gettext((x))
+#                ^~~~~~~~~~~~
+/opt/divine/include/dios/include/stdio.h:598:43: note: passing argument to parameter 'format' here
+#int printf( const char * _PDCLIB_restrict format, ... ) _PDCLIB_nothrow;
+#                                          ^
+#   52|   		printf(_("  missed reclaims: %u\n"), values[1]);
+#   53|   		printf(_("  dquot dups:      %u\n"), values[2]);
+#   54|-> 		printf(_("  cache misses:    %u\n"), values[3]);
+#   55|   		printf(_("  cache hits:      %u\n"), values[4]);
+#   56|   		printf(_("  dquot wants:     %u\n"), values[5]);
+
+Error: COMPILER_WARNING:
+quota-4.06/xqmstats.c:55:10: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#                printf(_("  cache hits:      %u\n"), values[4]);
+#                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+quota-4.06/pot.h:8:14: note: expanded from macro '_'
+##define _(x)    gettext((x))
+#                ^~~~~~~~~~~~
+/opt/divine/include/dios/include/stdio.h:598:43: note: passing argument to parameter 'format' here
+#int printf( const char * _PDCLIB_restrict format, ... ) _PDCLIB_nothrow;
+#                                          ^
+#   53|   		printf(_("  dquot dups:      %u\n"), values[2]);
+#   54|   		printf(_("  cache misses:    %u\n"), values[3]);
+#   55|-> 		printf(_("  cache hits:      %u\n"), values[4]);
+#   56|   		printf(_("  dquot wants:     %u\n"), values[5]);
+#   57|   		printf(_("  shake reclaims:  %u\n"), values[6]);
+
+Error: COMPILER_WARNING:
+quota-4.06/xqmstats.c:56:10: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#                printf(_("  dquot wants:     %u\n"), values[5]);
+#                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+quota-4.06/pot.h:8:14: note: expanded from macro '_'
+##define _(x)    gettext((x))
+#                ^~~~~~~~~~~~
+/opt/divine/include/dios/include/stdio.h:598:43: note: passing argument to parameter 'format' here
+#int printf( const char * _PDCLIB_restrict format, ... ) _PDCLIB_nothrow;
+#                                          ^
+#   54|   		printf(_("  cache misses:    %u\n"), values[3]);
+#   55|   		printf(_("  cache hits:      %u\n"), values[4]);
+#   56|-> 		printf(_("  dquot wants:     %u\n"), values[5]);
+#   57|   		printf(_("  shake reclaims:  %u\n"), values[6]);
+#   58|   		printf(_("  inact reclaims:  %u\n"), values[7]);
+
+Error: COMPILER_WARNING:
+quota-4.06/xqmstats.c:57:10: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#                printf(_("  shake reclaims:  %u\n"), values[6]);
+#                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+quota-4.06/pot.h:8:14: note: expanded from macro '_'
+##define _(x)    gettext((x))
+#                ^~~~~~~~~~~~
+/opt/divine/include/dios/include/stdio.h:598:43: note: passing argument to parameter 'format' here
+#int printf( const char * _PDCLIB_restrict format, ... ) _PDCLIB_nothrow;
+#                                          ^
+#   55|   		printf(_("  cache hits:      %u\n"), values[4]);
+#   56|   		printf(_("  dquot wants:     %u\n"), values[5]);
+#   57|-> 		printf(_("  shake reclaims:  %u\n"), values[6]);
+#   58|   		printf(_("  inact reclaims:  %u\n"), values[7]);
+#   59|   	}
+
+Error: COMPILER_WARNING:
+quota-4.06/xqmstats.c:58:10: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#                printf(_("  inact reclaims:  %u\n"), values[7]);
+#                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+quota-4.06/pot.h:8:14: note: expanded from macro '_'
+##define _(x)    gettext((x))
+#                ^~~~~~~~~~~~
+/opt/divine/include/dios/include/stdio.h:598:43: note: passing argument to parameter 'format' here
+#int printf( const char * _PDCLIB_restrict format, ... ) _PDCLIB_nothrow;
+#                                          ^
+#   56|   		printf(_("  dquot wants:     %u\n"), values[5]);
+#   57|   		printf(_("  shake reclaims:  %u\n"), values[6]);
+#   58|-> 		printf(_("  inact reclaims:  %u\n"), values[7]);
+#   59|   	}
+#   60|   	if (fscanf(xqm, "%u %u %u %u\n",
+
+Error: COMPILER_WARNING:
+quota-4.06/xqmstats.c:63:3: warning: implicit declaration of function 'gettext' is invalid in C99
+#                _("Maximum %u dquots (currently %u incore, %u on freelist)\n"),
+#                ^
+quota-4.06/pot.h:8:14: note: expanded from macro '_'
+##define _(x)    gettext((x))
+#                ^
+#   61|   			&values[0], &values[1], &values[2], &values[3]) == 4)
+#   62|   		printf(
+#   63|-> 		_("Maximum %u dquots (currently %u incore, %u on freelist)\n"),
+#   64|   			values[0], values[1], values[3]);
+#   65|   	fclose(stats);
+
+Error: COMPILER_WARNING:
+quota-4.06/xqmstats.c:63:3: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#                _("Maximum %u dquots (currently %u incore, %u on freelist)\n"),
+#                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+quota-4.06/pot.h:8:14: note: expanded from macro '_'
+##define _(x)    gettext((x))
+#                ^~~~~~~~~~~~
+/opt/divine/include/dios/include/stdio.h:598:43: note: passing argument to parameter 'format' here
+#int printf( const char * _PDCLIB_restrict format, ... ) _PDCLIB_nothrow;
+#                                          ^
+#   61|   			&values[0], &values[1], &values[2], &values[3]) == 4)
+#   62|   		printf(
+#   63|-> 		_("Maximum %u dquots (currently %u incore, %u on freelist)\n"),
+#   64|   			values[0], values[1], values[3]);
+#   65|   	fclose(stats);

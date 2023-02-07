@@ -1,0 +1,668 @@
+Error: COMPILER_WARNING:
+rsync-3.2.3/access.c:39:10: warning: implicit declaration of function 'innetgr' is invalid in C99
+#                return innetgr(tok + 1, host, NULL, NULL);
+#                       ^
+#   37|   #ifdef HAVE_INNETGR
+#   38|   	if (*tok == '@' && tok[1])
+#   39|-> 		return innetgr(tok + 1, host, NULL, NULL);
+#   40|   #endif
+#   41|   
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/authenticate.c:365:8: warning: incompatible integer to pointer conversion assigning to 'const char *' from 'int'
+#                pass = getpass("Password: ");
+#                     ^ ~~~~~~~~~~~~~~~~~~~~~
+#  363|   		 * OpenBSD has a readpassphrase() that might be more suitable.
+#  364|   		 */
+#  365|-> 		pass = getpass("Password: ");
+#  366|   	}
+#  367|   
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/authenticate.c:365:10: warning: implicit declaration of function 'getpass' is invalid in C99
+#                pass = getpass("Password: ");
+#                       ^
+#  363|   		 * OpenBSD has a readpassphrase() that might be more suitable.
+#  364|   		 */
+#  365|-> 		pass = getpass("Password: ");
+#  366|   	}
+#  367|   
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/clientname.c:329:6: warning: implicit declaration of function 'IN6_IS_ADDR_V4MAPPED' is invalid in C99
+#         && IN6_IS_ADDR_V4MAPPED(&((struct sockaddr_in6 *)ss)->sin6_addr)) {
+#            ^
+#  327|   #ifdef INET6
+#  328|   	if (GET_SOCKADDR_FAMILY(ss) == AF_INET6
+#  329|-> 	 && IN6_IS_ADDR_V4MAPPED(&((struct sockaddr_in6 *)ss)->sin6_addr)) {
+#  330|   		/* OK, so ss is in the IPv6 family, but it is really
+#  331|   		 * an IPv4 address: something like
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/clientserver.c:906:7: warning: implicit declaration of function 'chroot' is invalid in C99
+#                if (chroot(module_chdir)) {
+#                    ^
+#  904|   		 * in which case we fail.
+#  905|   		 */
+#  906|-> 		if (chroot(module_chdir)) {
+#  907|   			rsyserr(FLOG, errno, "chroot %s failed", module_chdir);
+#  908|   			io_printf(f_out, "@ERROR: chroot failed\n");
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/clientserver.c:935:7: warning: implicit declaration of function 'setgid' is invalid in C99
+#                if (setgid(gid_array[0])) {
+#                    ^
+#  933|   	if (gid_list.count) {
+#  934|   		gid_t *gid_array = gid_list.items;
+#  935|-> 		if (setgid(gid_array[0])) {
+#  936|   			rsyserr(FLOG, errno, "setgid %ld failed", (long)gid_array[0]);
+#  937|   			io_printf(f_out, "@ERROR: setgid failed\n");
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/clientserver.c:942:7: warning: implicit declaration of function 'setgroups' is invalid in C99
+#                if (setgroups(gid_list.count, gid_array)) {
+#                    ^
+#  940|   #ifdef HAVE_SETGROUPS
+#  941|   		/* Set the group(s) we want to be active. */
+#  942|-> 		if (setgroups(gid_list.count, gid_array)) {
+#  943|   			rsyserr(FLOG, errno, "setgroups failed");
+#  944|   			io_printf(f_out, "@ERROR: setgroups failed\n");
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/clientserver.c:960:7: warning: implicit declaration of function 'setuid' is invalid in C99
+#                if (setuid(uid) < 0
+#                    ^
+#  958|   
+#  959|   	if (set_uid) {
+#  960|-> 		if (setuid(uid) < 0
+#  961|   #ifdef HAVE_SETEUID
+#  962|   		 || seteuid(uid) < 0
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/clientserver.c:962:7: warning: implicit declaration of function 'seteuid' is invalid in C99
+#                 || seteuid(uid) < 0
+#                    ^
+#  960|   		if (setuid(uid) < 0
+#  961|   #ifdef HAVE_SETEUID
+#  962|-> 		 || seteuid(uid) < 0
+#  963|   #endif
+#  964|   		) {
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/clientserver.c:1231:7: warning: implicit declaration of function 'chroot' is invalid in C99
+#                if (chroot(p) < 0 || chdir("/") < 0) {
+#                    ^
+# 1229|   	if (*p) {
+# 1230|   		log_init(0); /* Make use we've initialized syslog before chrooting. */
+# 1231|-> 		if (chroot(p) < 0 || chdir("/") < 0) {
+# 1232|   			rsyserr(FLOG, errno, "daemon chroot %s failed", p);
+# 1233|   			return -1;
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/clientserver.c:1243:7: warning: implicit declaration of function 'setgid' is invalid in C99
+#                if (setgid(gid) < 0) {
+#                    ^
+# 1241|   			return -1;
+# 1242|   		}
+# 1243|-> 		if (setgid(gid) < 0) {
+# 1244|   			rsyserr(FLOG, errno, "Unable to set group to daemon gid %ld", (long)gid);
+# 1245|   			return -1;
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/clientserver.c:1256:7: warning: implicit declaration of function 'setuid' is invalid in C99
+#                if (setuid(uid) < 0) {
+#                    ^
+# 1254|   			return -1;
+# 1255|   		}
+# 1256|-> 		if (setuid(uid) < 0) {
+# 1257|   			rsyserr(FLOG, errno, "Unable to set user to daemon uid %ld", (long)uid);
+# 1258|   			return -1;
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/flist.c:438:16: warning: implicit declaration of function 'major' is invalid in C99
+#                        if ((uint32)major(rdev) == rdev_major)
+#                                    ^
+#  436|   		} else {
+#  437|   			rdev = tmp_rdev;
+#  438|-> 			if ((uint32)major(rdev) == rdev_major)
+#  439|   				xflags |= XMIT_SAME_RDEV_MAJOR;
+#  440|   			else
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/flist.c:442:41: warning: implicit declaration of function 'minor' is invalid in C99
+#                        if (protocol_version < 30 && (uint32)minor(rdev) <= 0xFFu)
+#                                                             ^
+#  440|   			else
+#  441|   				rdev_major = major(rdev);
+#  442|-> 			if (protocol_version < 30 && (uint32)minor(rdev) <= 0xFFu)
+#  443|   				xflags |= XMIT_RDEV_MINOR_8_pre30;
+#  444|   		}
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/flist.c:451:11: warning: implicit declaration of function 'makedev' is invalid in C99
+#                        rdev = MAKEDEV(rdev_major, 0);
+#                               ^
+rsync-3.2.3/rsync.h:479:36: note: expanded from macro 'MAKEDEV'
+##define MAKEDEV(devmajor,devminor) makedev(devmajor,devminor)
+#                                   ^
+#  449|   			xflags |= XMIT_SAME_RDEV_pre28;
+#  450|   		else {
+#  451|-> 			rdev = MAKEDEV(rdev_major, 0);
+#  452|   			xflags |= XMIT_SAME_RDEV_MAJOR;
+#  453|   			if (protocol_version < 30)
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/flist.c:457:10: warning: implicit declaration of function 'makedev' is invalid in C99
+#                rdev = MAKEDEV(0, 0);
+#                       ^
+rsync-3.2.3/rsync.h:479:36: note: expanded from macro 'MAKEDEV'
+##define MAKEDEV(devmajor,devminor) makedev(devmajor,devminor)
+#                                   ^
+#  455|   		}
+#  456|   	} else if (protocol_version < 28)
+#  457|-> 		rdev = MAKEDEV(0, 0);
+#  458|   	if (!preserve_uid || ((uid_t)F_OWNER(file) == uid && *lastname))
+#  459|   		xflags |= XMIT_SAME_UID;
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/flist.c:623:23: warning: implicit declaration of function 'major' is invalid in C99
+#                                write_varint30(f, major(rdev));
+#                                                  ^
+#  621|   		} else {
+#  622|   			if (!(xflags & XMIT_SAME_RDEV_MAJOR))
+#  623|-> 				write_varint30(f, major(rdev));
+#  624|   			if (protocol_version >= 30)
+#  625|   				write_varint(f, minor(rdev));
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/flist.c:625:21: warning: implicit declaration of function 'minor' is invalid in C99
+#                                write_varint(f, minor(rdev));
+#                                                ^
+#  623|   				write_varint30(f, major(rdev));
+#  624|   			if (protocol_version >= 30)
+#  625|-> 				write_varint(f, minor(rdev));
+#  626|   			else if (xflags & XMIT_RDEV_MINOR_8_pre30)
+#  627|   				write_byte(f, minor(rdev));
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/flist.c:808:12: warning: implicit declaration of function 'makedev' is invalid in C99
+#                                rdev = MAKEDEV(rdev_major, DEV_MINOR(devp));
+#                                       ^
+rsync-3.2.3/rsync.h:479:36: note: expanded from macro 'MAKEDEV'
+##define MAKEDEV(devmajor,devminor) makedev(devmajor,devminor)
+#                                   ^
+#  806|   				uint32 *devp = F_RDEV_P(first);
+#  807|   				rdev_major = DEV_MAJOR(devp);
+#  808|-> 				rdev = MAKEDEV(rdev_major, DEV_MINOR(devp));
+#  809|   				extra_len += DEV_EXTRA_CNT * EXTRA_LEN;
+#  810|   			}
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/flist.c:912:11: warning: implicit declaration of function 'makedev' is invalid in C99
+#                        rdev = MAKEDEV(rdev_major, rdev_minor);
+#                               ^
+rsync-3.2.3/rsync.h:479:36: note: expanded from macro 'MAKEDEV'
+##define MAKEDEV(devmajor,devminor) makedev(devmajor,devminor)
+#                                   ^
+#  910|   			else
+#  911|   				rdev_minor = read_int(f);
+#  912|-> 			rdev = MAKEDEV(rdev_major, rdev_minor);
+#  913|   		}
+#  914|   		if (IS_DEVICE(mode))
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/flist.c:918:10: warning: implicit declaration of function 'makedev' is invalid in C99
+#                rdev = MAKEDEV(0, 0);
+#                       ^
+rsync-3.2.3/rsync.h:479:36: note: expanded from macro 'MAKEDEV'
+##define MAKEDEV(devmajor,devminor) makedev(devmajor,devminor)
+#                                   ^
+#  916|   		file_length = 0;
+#  917|   	} else if (protocol_version < 28)
+#  918|-> 		rdev = MAKEDEV(0, 0);
+#  919|   
+#  920|   #ifdef SUPPORT_LINKS
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/flist.c:1081:21: warning: implicit declaration of function 'major' is invalid in C99
+#                DEV_MAJOR(devp) = major(rdev);
+#                                  ^
+# 1079|   	if (preserve_devices && IS_DEVICE(mode)) {
+# 1080|   		uint32 *devp = F_RDEV_P(file);
+# 1081|-> 		DEV_MAJOR(devp) = major(rdev);
+# 1082|   		DEV_MINOR(devp) = minor(rdev);
+# 1083|   	}
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/flist.c:1082:21: warning: implicit declaration of function 'minor' is invalid in C99
+#                DEV_MINOR(devp) = minor(rdev);
+#                                  ^
+# 1080|   		uint32 *devp = F_RDEV_P(file);
+# 1081|   		DEV_MAJOR(devp) = major(rdev);
+# 1082|-> 		DEV_MINOR(devp) = minor(rdev);
+# 1083|   	}
+# 1084|   
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/generator.c:383:30: warning: taking address of packed member '' of class or structure 'stat' may result in an unaligned pointer value
+#                delete_in_dir(fbuf, file, &st.st_dev);
+#                                           ^~~~~~~~~
+#  381|   			continue;
+#  382|   
+#  383|-> 		delete_in_dir(fbuf, file, &st.st_dev);
+#  384|   	}
+#  385|   	delete_in_dir(NULL, NULL, &dev_zero);
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/generator.c:516:45: warning: comparison of integers of different signs: 'long long' and '__uint64_t' (aka 'unsigned long')
+#                if (S_ISREG(file->mode) && F_LENGTH(file) != sxp->st.st_size)
+#                                           ~~~~~~~~~~~~~~ ^  ~~~~~~~~~~~~~~~
+#  514|   		    : 1;
+#  515|   
+#  516|-> 		if (S_ISREG(file->mode) && F_LENGTH(file) != sxp->st.st_size)
+#  517|   			iflags |= ITEM_REPORT_SIZE;
+#  518|   		if (file->flags & FLAG_TIME_FAILED) { /* symlinks only */
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/generator.c:607:18: warning: comparison of integers of different signs: '__uint64_t' (aka 'unsigned long') and 'long long'
+#        if (st->st_size != F_LENGTH(file))
+#            ~~~~~~~~~~~ ^  ~~~~~~~~~~~~~~
+#  605|   int unchanged_file(char *fn, struct file_struct *file, STRUCT_STAT *st)
+#  606|   {
+#  607|-> 	if (st->st_size != F_LENGTH(file))
+#  608|   		return 0;
+#  609|   
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/generator.c:1075:24: warning: comparison of integers of different signs: '__uint64_t' (aka 'unsigned long') and 'int'
+#                        if (sxp->st.st_rdev != MAKEDEV(DEV_MAJOR(devp), DEV_MINOR(devp)))
+#                            ~~~~~~~~~~~~~~~ ^  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1073|   		case TYPE_DEVICE:
+# 1074|   			devp = F_RDEV_P(file);
+# 1075|-> 			if (sxp->st.st_rdev != MAKEDEV(DEV_MAJOR(devp), DEV_MINOR(devp)))
+# 1076|   				continue;
+# 1077|   			break;
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/generator.c:1075:27: warning: implicit declaration of function 'makedev' is invalid in C99
+#                        if (sxp->st.st_rdev != MAKEDEV(DEV_MAJOR(devp), DEV_MINOR(devp)))
+#                                               ^
+rsync-3.2.3/rsync.h:479:36: note: expanded from macro 'MAKEDEV'
+##define MAKEDEV(devmajor,devminor) makedev(devmajor,devminor)
+#                                   ^
+# 1073|   		case TYPE_DEVICE:
+# 1074|   			devp = F_RDEV_P(file);
+# 1075|-> 			if (sxp->st.st_rdev != MAKEDEV(DEV_MAJOR(devp), DEV_MINOR(devp)))
+# 1076|   				continue;
+# 1077|   			break;
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/generator.c:1505:23: warning: implicit declaration of function 'major' is invalid in C99
+#                                DEV_MAJOR(devp) = major(real_sx.st.st_dev);
+#                                                  ^
+# 1503|   			if (one_file_system) {
+# 1504|   				uint32 *devp = F_DIR_DEV_P(file);
+# 1505|-> 				DEV_MAJOR(devp) = major(real_sx.st.st_dev);
+# 1506|   				DEV_MINOR(devp) = minor(real_sx.st.st_dev);
+# 1507|   			}
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/generator.c:1506:23: warning: implicit declaration of function 'minor' is invalid in C99
+#                                DEV_MINOR(devp) = minor(real_sx.st.st_dev);
+#                                                  ^
+# 1504|   				uint32 *devp = F_DIR_DEV_P(file);
+# 1505|   				DEV_MAJOR(devp) = major(real_sx.st.st_dev);
+# 1506|-> 				DEV_MINOR(devp) = minor(real_sx.st.st_dev);
+# 1507|   			}
+# 1508|   		}
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/generator.c:1585:44: warning: implicit declaration of function 'makedev' is invalid in C99
+#                if (atomic_create(file, fname, sl, NULL, MAKEDEV(0, 0), &sx, statret == 0 ? DEL_FOR_SYMLINK : 0)) {
+#                                                         ^
+rsync-3.2.3/rsync.h:479:36: note: expanded from macro 'MAKEDEV'
+##define MAKEDEV(devmajor,devminor) makedev(devmajor,devminor)
+#                                   ^
+# 1583|   			}
+# 1584|   		}
+# 1585|-> 		if (atomic_create(file, fname, sl, NULL, MAKEDEV(0, 0), &sx, statret == 0 ? DEL_FOR_SYMLINK : 0)) {
+# 1586|   			set_file_attrs(fname, file, NULL, NULL, 0);
+# 1587|   			if (itemizing) {
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/generator.c:1615:11: warning: implicit declaration of function 'makedev' is invalid in C99
+#                        rdev = MAKEDEV(DEV_MAJOR(devp), DEV_MINOR(devp));
+#                               ^
+rsync-3.2.3/rsync.h:479:36: note: expanded from macro 'MAKEDEV'
+##define MAKEDEV(devmajor,devminor) makedev(devmajor,devminor)
+#                                   ^
+# 1613|   		if (IS_DEVICE(file->mode)) {
+# 1614|   			uint32 *devp = F_RDEV_P(file);
+# 1615|-> 			rdev = MAKEDEV(DEV_MAJOR(devp), DEV_MINOR(devp));
+# 1616|   		} else
+# 1617|   			rdev = 0;
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/generator.c:1663:11: warning: implicit declaration of function 'major' is invalid in C99
+#                                (long)major(rdev), (long)minor(rdev));
+#                                      ^
+# 1661|   			rprintf(FINFO, "mknod(%s, 0%o, [%ld,%ld])\n",
+# 1662|   				fname, (int)file->mode,
+# 1663|-> 				(long)major(rdev), (long)minor(rdev));
+# 1664|   		}
+# 1665|   		if (atomic_create(file, fname, NULL, NULL, rdev, &sx, del_for_flag)) {
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/generator.c:1663:30: warning: implicit declaration of function 'minor' is invalid in C99
+#                                (long)major(rdev), (long)minor(rdev));
+#                                                         ^
+# 1661|   			rprintf(FINFO, "mknod(%s, 0%o, [%ld,%ld])\n",
+# 1662|   				fname, (int)file->mode,
+# 1663|-> 				(long)major(rdev), (long)minor(rdev));
+# 1664|   		}
+# 1665|   		if (atomic_create(file, fname, NULL, NULL, rdev, &sx, del_for_flag)) {
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/generator.c:1821:39: warning: comparison of integers of different signs: '__uint64_t' (aka 'unsigned long') and 'long long'
+#        if (append_mode > 0 && sx.st.st_size >= F_LENGTH(file)) {
+#                               ~~~~~~~~~~~~~ ^  ~~~~~~~~~~~~~~
+# 1819|   	}
+# 1820|   
+# 1821|-> 	if (append_mode > 0 && sx.st.st_size >= F_LENGTH(file)) {
+# 1822|   #ifdef SUPPORT_HARD_LINKS
+# 1823|   		if (F_IS_HLINKED(file))
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/generator.c:2299:16: warning: implicit declaration of function 'makedev' is invalid in C99
+#                                                dirdev = MAKEDEV(DEV_MAJOR(devp), DEV_MINOR(devp));
+#                                                         ^
+rsync-3.2.3/rsync.h:479:36: note: expanded from macro 'MAKEDEV'
+##define MAKEDEV(devmajor,devminor) makedev(devmajor,devminor)
+#                                   ^
+# 2297|   					if (one_file_system) {
+# 2298|   						uint32 *devp = F_DIR_DEV_P(fp);
+# 2299|-> 						dirdev = MAKEDEV(DEV_MAJOR(devp), DEV_MINOR(devp));
+# 2300|   					} else
+# 2301|   						dirdev = MAKEDEV(0, 0);
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/generator.c:2301:16: warning: implicit declaration of function 'makedev' is invalid in C99
+#                                                dirdev = MAKEDEV(0, 0);
+#                                                         ^
+rsync-3.2.3/rsync.h:479:36: note: expanded from macro 'MAKEDEV'
+##define MAKEDEV(devmajor,devminor) makedev(devmajor,devminor)
+#                                   ^
+# 2299|   						dirdev = MAKEDEV(DEV_MAJOR(devp), DEV_MINOR(devp));
+# 2300|   					} else
+# 2301|-> 						dirdev = MAKEDEV(0, 0);
+# 2302|   					delete_in_dir(fbuf, fp, &dirdev);
+# 2303|   				} else
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/hlink.c:230:48: warning: implicit declaration of function 'makedev' is invalid in C99
+#        if (atomic_create(file, fname, NULL, oldname, MAKEDEV(0, 0), sxp, statret == 0 ? DEL_FOR_FILE : 0)) {
+#                                                      ^
+rsync-3.2.3/rsync.h:479:36: note: expanded from macro 'MAKEDEV'
+##define MAKEDEV(devmajor,devminor) makedev(devmajor,devminor)
+#                                   ^
+#  228|   	}
+#  229|   
+#  230|-> 	if (atomic_create(file, fname, NULL, oldname, MAKEDEV(0, 0), sxp, statret == 0 ? DEL_FOR_FILE : 0)) {
+#  231|   		if (itemizing) {
+#  232|   			itemize(fname, file, ndx, statret, sxp,
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/lib/sysxattrs.c:35:9: warning: implicit declaration of function 'lgetxattr' is invalid in C99
+#        return lgetxattr(path, name, value, size);
+#               ^
+#   33|   ssize_t sys_lgetxattr(const char *path, const char *name, void *value, size_t size)
+#   34|   {
+#   35|-> 	return lgetxattr(path, name, value, size);
+#   36|   }
+#   37|   
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/lib/sysxattrs.c:40:9: warning: implicit declaration of function 'fgetxattr' is invalid in C99
+#        return fgetxattr(filedes, name, value, size);
+#               ^
+#   38|   ssize_t sys_fgetxattr(int filedes, const char *name, void *value, size_t size)
+#   39|   {
+#   40|-> 	return fgetxattr(filedes, name, value, size);
+#   41|   }
+#   42|   
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/lib/sysxattrs.c:45:9: warning: implicit declaration of function 'lsetxattr' is invalid in C99
+#        return lsetxattr(path, name, value, size, 0);
+#               ^
+#   43|   int sys_lsetxattr(const char *path, const char *name, const void *value, size_t size)
+#   44|   {
+#   45|-> 	return lsetxattr(path, name, value, size, 0);
+#   46|   }
+#   47|   
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/lib/sysxattrs.c:50:9: warning: implicit declaration of function 'lremovexattr' is invalid in C99
+#        return lremovexattr(path, name);
+#               ^
+#   48|   int sys_lremovexattr(const char *path, const char *name)
+#   49|   {
+#   50|-> 	return lremovexattr(path, name);
+#   51|   }
+#   52|   
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/lib/sysxattrs.c:55:9: warning: implicit declaration of function 'llistxattr' is invalid in C99
+#        return llistxattr(path, list, size);
+#               ^
+#   53|   ssize_t sys_llistxattr(const char *path, char *list, size_t size)
+#   54|   {
+#   55|-> 	return llistxattr(path, list, size);
+#   56|   }
+#   57|   
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/main.c:181:3: warning: implicit declaration of function 'execlp' is invalid in C99
+#                execlp(shell, shell, "-c", cmd, NULL);
+#                ^
+#  179|   
+#  180|   	if (pid == 0) {
+#  181|-> 		execlp(shell, shell, "-c", cmd, NULL);
+#  182|   		_exit(1);
+#  183|   	}
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/main.c:279:6: warning: implicit declaration of function 'setgid' is invalid in C99
+#        if (setgid(gid) < 0) {
+#            ^
+#  277|   	}
+#  278|   
+#  279|-> 	if (setgid(gid) < 0) {
+#  280|   		rsyserr(FERROR, errno, "setgid failed");
+#  281|   		exit_cleanup(RERR_SYNTAX);
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/main.c:284:6: warning: implicit declaration of function 'setgroups' is invalid in C99
+#        if (setgroups(1, &gid)) {
+#            ^
+#  282|   	}
+#  283|   #ifdef HAVE_SETGROUPS
+#  284|-> 	if (setgroups(1, &gid)) {
+#  285|   		rsyserr(FERROR, errno, "setgroups failed");
+#  286|   		exit_cleanup(RERR_SYNTAX);
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/main.c:290:16: warning: implicit declaration of function 'initgroups' is invalid in C99
+#        if (!gname && initgroups(copy_as, gid) < 0) {
+#                      ^
+#  288|   #endif
+#  289|   #ifdef HAVE_INITGROUPS
+#  290|-> 	if (!gname && initgroups(copy_as, gid) < 0) {
+#  291|   		rsyserr(FERROR, errno, "initgroups failed");
+#  292|   		exit_cleanup(RERR_SYNTAX);
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/main.c:296:6: warning: implicit declaration of function 'setuid' is invalid in C99
+#        if (setuid(uid) < 0
+#            ^
+#  294|   #endif
+#  295|   
+#  296|-> 	if (setuid(uid) < 0
+#  297|   #ifdef HAVE_SETEUID
+#  298|   	 || seteuid(uid) < 0
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/main.c:298:6: warning: implicit declaration of function 'seteuid' is invalid in C99
+#         || seteuid(uid) < 0
+#            ^
+#  296|   	if (setuid(uid) < 0
+#  297|   #ifdef HAVE_SETEUID
+#  298|-> 	 || seteuid(uid) < 0
+#  299|   #endif
+#  300|   	) {
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/main.c:472:7: warning: implicit declaration of function 'mallinfo' is invalid in C99
+#        mi = mallinfo();
+#             ^
+#  470|   	struct mallinfo mi;
+#  471|   
+#  472|-> 	mi = mallinfo();
+#  473|   
+#  474|   	rprintf(FCLIENT, "\n");
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/pipe.c:83:3: warning: implicit declaration of function 'execvp' is invalid in C99
+#                execvp(command[0], command);
+#                ^
+#   81|   		if (blocking_io > 0)
+#   82|   			set_blocking(STDOUT_FILENO);
+#   83|-> 		execvp(command[0], command);
+#   84|   		rsyserr(FERROR, errno, "Failed to exec %s", command[0]);
+#   85|   		exit_cleanup(RERR_IPC);
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/progress.c:235:12: warning: implicit declaration of function 'tcgetpgrp' is invalid in C99
+#        tc_pgrp = tcgetpgrp(STDOUT_FILENO);
+#                  ^
+#  233|   
+#  234|   #if defined HAVE_GETPGRP && defined HAVE_TCGETPGRP
+#  235|-> 	tc_pgrp = tcgetpgrp(STDOUT_FILENO);
+#  236|   	if (tc_pgrp != pgrp && tc_pgrp != -1)
+#  237|   		return;
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/sender.c:145:17: warning: comparison of integers of different signs: '__uint64_t' (aka 'unsigned long') and 'long long'
+#        if (st.st_size != F_LENGTH(file) || st.st_mtime != file->modtime
+#            ~~~~~~~~~~ ^  ~~~~~~~~~~~~~~
+#  143|   	}
+#  144|   
+#  145|-> 	if (st.st_size != F_LENGTH(file) || st.st_mtime != file->modtime
+#  146|   #ifdef ST_MTIME_NSEC
+#  147|   	 || (NSEC_BUMP(file) && (uint32)st.ST_MTIME_NSEC != F_MOD_NSEC(file))
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/syscall.c:152:9: warning: implicit declaration of function 'lchown' is invalid in C99
+#        return lchown(path, owner, group);
+#               ^
+#  150|   #define lchown chown
+#  151|   #endif
+#  152|-> 	return lchown(path, owner, group);
+#  153|   }
+#  154|   
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/syscall.c:237:15: warning: implicit declaration of function 'lchmod' is invalid in C99
+#                if ((code = lchmod(path, mode & CHMOD_BITS)) == 0 || errno != ENOTSUP)
+#                            ^
+#  235|   #ifdef HAVE_LCHMOD
+#  236|   #include "case_N.h"
+#  237|-> 		if ((code = lchmod(path, mode & CHMOD_BITS)) == 0 || errno != ENOTSUP)
+#  238|   			break;
+#  239|   		switch_step++;
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/syscall.c:487:9: warning: implicit declaration of function 'lutimes' is invalid in C99
+#        return lutimes(fname, t);
+#               ^
+#  485|   	t[1].tv_usec = 0;
+#  486|   #endif
+#  487|-> 	return lutimes(fname, t);
+#  488|   }
+#  489|   #endif
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/syscall.c:559:8: warning: implicit declaration of function 'fallocate' is invalid in C99
+#        ret = fallocate(fd, opts, offset, length);
+#              ^
+#  557|   		length--;
+#  558|   #if defined HAVE_FALLOCATE
+#  559|-> 	ret = fallocate(fd, opts, offset, length);
+#  560|   #elif defined HAVE_SYS_FALLOCATE
+#  561|   	ret = syscall(SYS_fallocate, fd, opts, (loff_t)offset, (loff_t)length);
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/syscall.c:585:6: warning: implicit declaration of function 'fallocate' is invalid in C99
+#        if (fallocate(fd, FALLOC_FL_PUNCH_HOLE | FALLOC_FL_KEEP_SIZE, pos, len) == 0) {
+#            ^
+#  583|   #ifdef HAVE_FALLOCATE
+#  584|   # ifdef HAVE_FALLOC_FL_PUNCH_HOLE
+#  585|-> 	if (fallocate(fd, FALLOC_FL_PUNCH_HOLE | FALLOC_FL_KEEP_SIZE, pos, len) == 0) {
+#  586|   		if (do_lseek(fd, len, SEEK_CUR) != pos + len)
+#  587|   			return -1;
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/uidlist.c:580:6: warning: implicit declaration of function 'getgrouplist' is invalid in C99
+#        if (getgrouplist(pw->pw_name, pw->pw_gid, gid_list->items, &size) < 0) {
+#            ^
+#  578|   
+#  579|   	/* Get all the process's groups, with the pw_gid group first. */
+#  580|-> 	if (getgrouplist(pw->pw_name, pw->pw_gid, gid_list->items, &size) < 0) {
+#  581|   		if (size > (int)gid_list->malloced) {
+#  582|   			gid_list->count = gid_list->malloced;
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/xattrs.c:1164:17: warning: implicit declaration of function 'makedev' is invalid in C99
+#        xst->st_rdev = MAKEDEV(rdev_major, rdev_minor);
+#                       ^
+rsync-3.2.3/rsync.h:479:36: note: expanded from macro 'MAKEDEV'
+##define MAKEDEV(devmajor,devminor) makedev(devmajor,devminor)
+#                                   ^
+# 1162|   
+# 1163|   	xst->st_mode = from_wire_mode(mode);
+# 1164|-> 	xst->st_rdev = MAKEDEV(rdev_major, rdev_minor);
+# 1165|   	xst->st_uid = uid;
+# 1166|   	xst->st_gid = gid;
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/xattrs.c:1197:10: warning: implicit declaration of function 'makedev' is invalid in C99
+#                rdev = MAKEDEV(DEV_MAJOR(devp), DEV_MINOR(devp));
+#                       ^
+rsync-3.2.3/rsync.h:479:36: note: expanded from macro 'MAKEDEV'
+##define MAKEDEV(devmajor,devminor) makedev(devmajor,devminor)
+#                                   ^
+# 1195|   	if (IS_DEVICE(fmode)) {
+# 1196|   		uint32 *devp = F_RDEV_P(file);
+# 1197|-> 		rdev = MAKEDEV(DEV_MAJOR(devp), DEV_MINOR(devp));
+# 1198|   	} else
+# 1199|   		rdev = 0;
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/xattrs.c:1226:9: warning: implicit declaration of function 'major' is invalid in C99
+#                        (int)major(rdev), (int)minor(rdev),
+#                             ^
+# 1224|   		int len = snprintf(buf, sizeof buf, "%o %u,%u %u:%u",
+# 1225|   			to_wire_mode(fmode),
+# 1226|-> 			(int)major(rdev), (int)minor(rdev),
+# 1227|   			F_OWNER(file), F_GROUP(file));
+# 1228|   		if (sys_lsetxattr(fname, XSTAT_ATTR, buf, len) < 0) {
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/xattrs.c:1226:27: warning: implicit declaration of function 'minor' is invalid in C99
+#                        (int)major(rdev), (int)minor(rdev),
+#                                               ^
+# 1224|   		int len = snprintf(buf, sizeof buf, "%o %u,%u %u:%u",
+# 1225|   			to_wire_mode(fmode),
+# 1226|-> 			(int)major(rdev), (int)minor(rdev),
+# 1227|   			F_OWNER(file), F_GROUP(file));
+# 1228|   		if (sys_lsetxattr(fname, XSTAT_ATTR, buf, len) < 0) {

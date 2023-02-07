@@ -1,0 +1,87 @@
+Error: COMPILER_WARNING:
+grep-3.6/gnulib-tests/glthread/thread.c:24: included_from: Included from here.
+grep-3.6/gnulib-tests/glthread/thread.h:178:17: warning: weak identifier 'pthread_sigmask' never declared
+##   pragma weak pthread_sigmask
+#                ^
+#  176|   
+#  177|   #  ifndef pthread_sigmask /* Do not declare rpl_pthread_sigmask weak.  */
+#  178|-> #   pragma weak pthread_sigmask
+#  179|   #  endif
+#  180|   
+
+Error: COMPILER_WARNING:
+grep-3.6/gnulib-tests/localename.c:3129:24: warning: implicit declaration of function '_NL_ITEM' is invalid in C99
+#          nl_langinfo (_NL_ITEM ((category), _NL_ITEM_INDEX (-1)));
+#                       ^
+# 3127|              See <https://sourceware.org/bugzilla/show_bug.cgi?id=10968>.  */
+# 3128|           const char *name =
+# 3129|->           nl_langinfo (_NL_ITEM ((category), _NL_ITEM_INDEX (-1)));
+# 3130|           if (name[0] == '\0')
+# 3131|             /* Fallback code for glibc < 2.4, which did not implement
+
+Error: COMPILER_WARNING:
+grep-3.6/gnulib-tests/localename.c:3129:46: warning: implicit declaration of function '_NL_ITEM_INDEX' is invalid in C99
+#          nl_langinfo (_NL_ITEM ((category), _NL_ITEM_INDEX (-1)));
+#                                             ^
+# 3127|              See <https://sourceware.org/bugzilla/show_bug.cgi?id=10968>.  */
+# 3128|           const char *name =
+# 3129|->           nl_langinfo (_NL_ITEM ((category), _NL_ITEM_INDEX (-1)));
+# 3130|           if (name[0] == '\0')
+# 3131|             /* Fallback code for glibc < 2.4, which did not implement
+
+Error: COMPILER_WARNING:
+grep-3.6/gnulib-tests/strerror_r.c:205:9: warning: incompatible pointer to integer conversion assigning to 'int' from 'char *'
+#    ret = strerror_r (errnum, buf, buflen);
+#        ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  203|       }
+#  204|   # else
+#  205|->     ret = strerror_r (errnum, buf, buflen);
+#  206|   
+#  207|       /* Some old implementations may return (-1, EINVAL) instead of EINVAL.
+
+Error: COMPILER_WARNING:
+grep-3.6/gnulib-tests/strerror_r.c:242:60: warning: comparison between pointer and integer ('char *' and 'int')
+#        if (strerror_r (errnum, stackbuf, sizeof stackbuf) == ERANGE)
+#            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^  ~~~~~~
+#  240|   
+#  241|           /* STACKBUF_LEN should have been large enough.  */
+#  242|->         if (strerror_r (errnum, stackbuf, sizeof stackbuf) == ERANGE)
+#  243|             abort ();
+#  244|           safe_copy (buf, buflen, stackbuf);
+
+Error: COMPILER_WARNING:
+grep-3.6/gnulib-tests/localename.c:56: included_from: Included from here.
+grep-3.6/lib/glthread/lock.h:262:17: warning: weak identifier 'pthread_rwlockattr_setkind_np' never declared
+##   pragma weak pthread_rwlockattr_setkind_np
+#                ^
+#  260|   #  pragma weak pthread_rwlockattr_init
+#  261|   #  if __GNU_LIBRARY__ > 1
+#  262|-> #   pragma weak pthread_rwlockattr_setkind_np
+#  263|   #  endif
+#  264|   #  pragma weak pthread_rwlockattr_destroy
+
+Error: COMPILER_WARNING:
+grep-3.6/lib/nl_langinfo.c:342:10: warning: implicit declaration of function 'nl_langinfo' is invalid in C99
+#  return nl_langinfo_with_lock (item);
+#         ^
+grep-3.6/lib/nl_langinfo.c:272:33: note: expanded from macro 'nl_langinfo_with_lock'
+##  define nl_langinfo_with_lock nl_langinfo
+#                                ^
+#  340|         break;
+#  341|       }
+#  342|->   return nl_langinfo_with_lock (item);
+#  343|   }
+#  344|   
+
+Error: COMPILER_WARNING:
+grep-3.6/lib/nl_langinfo.c:342:10: warning: incompatible integer to pointer conversion returning 'int' from a function with result type 'char *'
+#  return nl_langinfo_with_lock (item);
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+grep-3.6/lib/nl_langinfo.c:272:33: note: expanded from macro 'nl_langinfo_with_lock'
+##  define nl_langinfo_with_lock nl_langinfo
+#                                ^
+#  340|         break;
+#  341|       }
+#  342|->   return nl_langinfo_with_lock (item);
+#  343|   }
+#  344|   

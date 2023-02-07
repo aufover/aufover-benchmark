@@ -1,0 +1,129 @@
+Error: COMPILER_WARNING:
+npth-1.6/src/npth-sigev.c:91:3: warning: implicit declaration of function 'pthread_sigmask' is invalid in C99
+#  pthread_sigmask (SIG_SETMASK, NULL, &sigev_block);
+#  ^
+#   89|   {
+#   90|     sigemptyset (&sigev_pending);
+#   91|->   pthread_sigmask (SIG_SETMASK, NULL, &sigev_block);
+#   92|     pthread_sigmask (SIG_SETMASK, NULL, &sigev_unblock);
+#   93|   }
+
+Error: COMPILER_WARNING:
+npth-1.6/src/npth-sigev.c:127:3: warning: implicit declaration of function 'pthread_sigmask' is invalid in C99
+#  pthread_sigmask (SIG_SETMASK, &sigev_unblock, NULL);
+#  ^
+#  125|   restore_sigmask_for_child_process (void)
+#  126|   {
+#  127|->   pthread_sigmask (SIG_SETMASK, &sigev_unblock, NULL);
+#  128|   }
+#  129|   #endif
+
+Error: COMPILER_WARNING:
+npth-1.6/src/npth-sigev.c:137:3: warning: implicit declaration of function 'pthread_sigmask' is invalid in C99
+#  pthread_sigmask (SIG_SETMASK, &sigev_block, NULL);
+#  ^
+#  135|   {
+#  136|     /* Block the interesting signals.  */
+#  137|->   pthread_sigmask (SIG_SETMASK, &sigev_block, NULL);
+#  138|   #ifdef HAVE_PTHREAD_ATFORK
+#  139|     pthread_atfork (NULL, NULL, restore_sigmask_for_child_process);
+
+Error: COMPILER_WARNING:
+npth-1.6/src/npth.c:185:9: warning: implicit declaration of function 'sem_post' is invalid in C99
+#  res = sem_post (sceptre);
+#        ^
+#  183|   
+#  184|     got_sceptre = 0;
+#  185|->   res = sem_post (sceptre);
+#  186|     assert (res == 0);
+#  187|   }
+
+Error: COMPILER_WARNING:
+npth-1.6/src/npth.c:197:11: warning: implicit declaration of function 'sem_wait' is invalid in C99
+#    res = sem_wait (sceptre);
+#          ^
+#  195|   
+#  196|     do {
+#  197|->     res = sem_wait (sceptre);
+#  198|     } while (res < 0 && errno == EINTR);
+#  199|   
+
+Error: COMPILER_WARNING:
+npth-1.6/src/npth.c:224:9: warning: implicit declaration of function 'sem_init' is invalid in C99
+#  res = sem_init (sceptre, NPTH_SEMAPHORE_PSHARED, 1);
+#        ^
+#  222|   
+#  223|     /* The semaphore is binary.  */
+#  224|->   res = sem_init (sceptre, NPTH_SEMAPHORE_PSHARED, 1);
+#  225|     /* There are some versions of operating systems which have sem_init
+#  226|        symbol defined but the call actually returns ENOSYS at runtime.
+
+Error: COMPILER_WARNING:
+npth-1.6/src/npth.c:251:10: warning: implicit declaration of function 'pthread_getname_np' is invalid in C99
+#  return pthread_getname_np (target_thread, buf, buflen);
+#         ^
+#  249|   {
+#  250|   #ifdef HAVE_PTHREAD_GETNAME_NP
+#  251|->   return pthread_getname_np (target_thread, buf, buflen);
+#  252|   #else
+#  253|     (void)target_thread;
+
+Error: COMPILER_WARNING:
+npth-1.6/src/npth.c:274:10: warning: implicit declaration of function 'pthread_setname_np' is invalid in C99
+#  return pthread_setname_np (target_thread, name);
+#         ^
+#  272|       return ENOTSUP;
+#  273|   #else
+#  274|->   return pthread_setname_np (target_thread, name);
+#  275|   #endif
+#  276|   #endif
+
+Error: COMPILER_WARNING:
+npth-1.6/src/npth.c:350:9: warning: implicit declaration of function 'pthread_tryjoin_np' is invalid in C99
+#  err = pthread_tryjoin_np (thread, retval);
+#        ^
+#  348|     /* No need to allow competing threads to enter when we can get the
+#  349|        lock immediately.  pthread_tryjoin_np is a GNU extension.  */
+#  350|->   err = pthread_tryjoin_np (thread, retval);
+#  351|     if (err != EBUSY)
+#  352|       return err;
+
+Error: COMPILER_WARNING:
+npth-1.6/src/npth.c:448:9: warning: implicit declaration of function 'pthread_rwlock_timedrdlock' is invalid in C99
+#  err = pthread_rwlock_timedrdlock (rwlock, abstime);
+#        ^
+#  446|     ENTER();
+#  447|   #if HAVE_PTHREAD_RWLOCK_TIMEDRDLOCK
+#  448|->   err = pthread_rwlock_timedrdlock (rwlock, abstime);
+#  449|   #else
+#  450|     err = busy_wait_for ((trylock_func_t) pthread_rwlock_tryrdlock, rwlock,
+
+Error: COMPILER_WARNING:
+npth-1.6/src/npth.c:493:9: warning: implicit declaration of function 'pthread_rwlock_timedwrlock' is invalid in C99
+#  err = pthread_rwlock_timedwrlock (rwlock, abstime);
+#        ^
+#  491|     ENTER();
+#  492|   #if HAVE_PTHREAD_RWLOCK_TIMEDWRLOCK
+#  493|->   err = pthread_rwlock_timedwrlock (rwlock, abstime);
+#  494|   #elif HAVE_PTHREAD_RWLOCK_TRYRDLOCK
+#  495|     err = busy_wait_for ((trylock_func_t) pthread_rwlock_trywrlock, rwlock,
+
+Error: COMPILER_WARNING:
+npth-1.6/src/npth.c:708:9: warning: implicit declaration of function 'recvmsg' is invalid in C99
+#  res = recvmsg (fd, msg, flags);
+#        ^
+#  706|   
+#  707|     ENTER();
+#  708|->   res = recvmsg (fd, msg, flags);
+#  709|     LEAVE();
+#  710|     return res;
+
+Error: COMPILER_WARNING:
+npth-1.6/src/npth.c:720:9: warning: implicit declaration of function 'sendmsg' is invalid in C99
+#  res = sendmsg (fd, msg, flags);
+#        ^
+#  718|   
+#  719|     ENTER();
+#  720|->   res = sendmsg (fd, msg, flags);
+#  721|     LEAVE();
+#  722|     return res;

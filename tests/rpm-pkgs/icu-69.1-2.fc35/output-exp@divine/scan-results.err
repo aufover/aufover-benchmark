@@ -1,0 +1,19 @@
+Error: COMPILER_WARNING:
+icu/source/common/ustr_wcs.cpp:353:30: warning: comparison of integers of different signs: 'int32_t' (aka 'int') and 'unsigned long'
+#                if(remaining < (nulLen * MB_CUR_MAX)){
+#                   ~~~~~~~~~ ^  ~~~~~~~~~~~~~~~~~~~
+#  351|               if((pSrc+nulLen) < pSrcLimit){
+#  352|                   /* check if we have enough room in pCSrc */
+#  353|->                 if(remaining < (nulLen * MB_CUR_MAX)){
+#  354|                       /* should rarely occur */
+#  355|                       int32_t len = (pCSrc-pCSave);
+
+Error: COMPILER_WARNING:
+icu/source/common/ustr_wcs.cpp:406:30: warning: comparison of integers of different signs: 'int32_t' (aka 'int') and 'unsigned long'
+#                if(remaining < (nulLen * MB_CUR_MAX)){
+#                   ~~~~~~~~~ ^  ~~~~~~~~~~~~~~~~~~~
+#  404|                   pWStack[nulLen] =0 ;
+#  405|               
+#  406|->                 if(remaining < (nulLen * MB_CUR_MAX)){
+#  407|                       /* Should rarely occur */
+#  408|                       int32_t len = (pCSrc-pCSave);

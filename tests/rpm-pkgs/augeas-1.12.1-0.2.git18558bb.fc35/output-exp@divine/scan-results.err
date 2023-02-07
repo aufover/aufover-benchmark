@@ -1,0 +1,916 @@
+Error: COMPILER_WARNING:
+augeas-1.12.0/gnulib/lib/getfilecon.c:36:35: warning: 'security_context_t' is deprecated
+#int getfilecon (char const *file, security_context_t *con);
+#                                  ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   34|   #undef lgetfilecon
+#   35|   #undef fgetfilecon
+#   36|-> int getfilecon (char const *file, security_context_t *con);
+#   37|   int lgetfilecon (char const *file, security_context_t *con);
+#   38|   int fgetfilecon (int fd, security_context_t *con);
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/gnulib/lib/getfilecon.c:37:36: warning: 'security_context_t' is deprecated
+#int lgetfilecon (char const *file, security_context_t *con);
+#                                   ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   35|   #undef fgetfilecon
+#   36|   int getfilecon (char const *file, security_context_t *con);
+#   37|-> int lgetfilecon (char const *file, security_context_t *con);
+#   38|   int fgetfilecon (int fd, security_context_t *con);
+#   39|   
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/gnulib/lib/getfilecon.c:38:26: warning: 'security_context_t' is deprecated
+#int fgetfilecon (int fd, security_context_t *con);
+#                         ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   36|   int getfilecon (char const *file, security_context_t *con);
+#   37|   int lgetfilecon (char const *file, security_context_t *con);
+#   38|-> int fgetfilecon (int fd, security_context_t *con);
+#   39|   
+#   40|   /* getfilecon, lgetfilecon, and fgetfilecon can all misbehave, be it
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/gnulib/lib/getfilecon.c:49:26: warning: 'security_context_t' is deprecated
+#map_to_failure (int ret, security_context_t *con)
+#                         ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   47|   
+#   48|   static int
+#   49|-> map_to_failure (int ret, security_context_t *con)
+#   50|   {
+#   51|     if (ret == 0)
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/gnulib/lib/getfilecon.c:69:35: warning: 'security_context_t' is deprecated
+#rpl_getfilecon (char const *file, security_context_t *con)
+#                                  ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   67|   
+#   68|   int
+#   69|-> rpl_getfilecon (char const *file, security_context_t *con)
+#   70|   {
+#   71|     int ret = getfilecon (file, con);
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/gnulib/lib/getfilecon.c:76:36: warning: 'security_context_t' is deprecated
+#rpl_lgetfilecon (char const *file, security_context_t *con)
+#                                   ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   74|   
+#   75|   int
+#   76|-> rpl_lgetfilecon (char const *file, security_context_t *con)
+#   77|   {
+#   78|     int ret = lgetfilecon (file, con);
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/gnulib/lib/getfilecon.c:83:26: warning: 'security_context_t' is deprecated
+#rpl_fgetfilecon (int fd, security_context_t *con)
+#                         ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   81|   
+#   82|   int
+#   83|-> rpl_fgetfilecon (int fd, security_context_t *con)
+#   84|   {
+#   85|     int ret = fgetfilecon (fd, con);
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/gnulib/lib/regex.c:68: included_from: Included from here.
+augeas-1.12.0/gnulib/lib/regex_internal.h:46: included_from: Included from here.
+augeas-1.12.0/gnulib/lib/glthread/lock.h:144:17: warning: weak identifier 'pthread_rwlockattr_setkind_np' never declared
+##   pragma weak pthread_rwlockattr_setkind_np
+#                ^
+#  142|   #  pragma weak pthread_rwlockattr_init
+#  143|   #  if __GNU_LIBRARY__ > 1
+#  144|-> #   pragma weak pthread_rwlockattr_setkind_np
+#  145|   #  endif
+#  146|   #  pragma weak pthread_rwlockattr_destroy
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/gnulib/lib/nl_langinfo.c:138:10: warning: implicit declaration of function 'nl_langinfo' is invalid in C99
+#  return nl_langinfo (item);
+#         ^
+#  136|         break;
+#  137|       }
+#  138|->   return nl_langinfo (item);
+#  139|   }
+#  140|   
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/gnulib/lib/nl_langinfo.c:138:10: warning: incompatible integer to pointer conversion returning 'int' from a function with result type 'char *'
+#  return nl_langinfo (item);
+#         ^~~~~~~~~~~~~~~~~~
+#  136|         break;
+#  137|       }
+#  138|->   return nl_langinfo (item);
+#  139|   }
+#  140|   
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/augmatch.c:339:13: warning: implicit declaration of function 'argz_add' is invalid in C99
+#            argz_add(&loadpath, &loadpath_len, optarg);
+#            ^
+#  337|           switch(opt) {
+#  338|           case 'I':
+#  339|->             argz_add(&loadpath, &loadpath_len, optarg);
+#  340|               break;
+#  341|           case 'l':
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/augmatch.c:339:13: warning: this function declaration is not a prototype
+#  337|           switch(opt) {
+#  338|           case 'I':
+#  339|->             argz_add(&loadpath, &loadpath_len, optarg);
+#  340|               break;
+#  341|           case 'l':
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/augmatch.c:393:5: warning: implicit declaration of function 'argz_stringify' is invalid in C99
+#    argz_stringify(loadpath, loadpath_len, ':');
+#    ^
+#  391|       const char *file = argv[optind];
+#  392|   
+#  393|->     argz_stringify(loadpath, loadpath_len, ':');
+#  394|   
+#  395|       if (lens == NULL) {
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/augmatch.c:393:5: warning: this function declaration is not a prototype
+#  391|       const char *file = argv[optind];
+#  392|   
+#  393|->     argz_stringify(loadpath, loadpath_len, ':');
+#  394|   
+#  395|       if (lens == NULL) {
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/augtool.c:394:13: warning: implicit declaration of function 'argz_add' is invalid in C99
+#            argz_add(&loadpath, &loadpathlen, optarg);
+#            ^
+#  392|               break;
+#  393|           case 'I':
+#  394|->             argz_add(&loadpath, &loadpathlen, optarg);
+#  395|               break;
+#  396|           case 't':
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/augtool.c:394:13: warning: this function declaration is not a prototype
+#  392|               break;
+#  393|           case 'I':
+#  394|->             argz_add(&loadpath, &loadpathlen, optarg);
+#  395|               break;
+#  396|           case 't':
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/augtool.c:442:5: warning: implicit declaration of function 'argz_stringify' is invalid in C99
+#    argz_stringify(loadpath, loadpathlen, PATH_SEP_CHAR);
+#    ^
+#  440|           }
+#  441|       }
+#  442|->     argz_stringify(loadpath, loadpathlen, PATH_SEP_CHAR);
+#  443|   }
+#  444|   
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/augtool.c:442:5: warning: this function declaration is not a prototype
+#  440|           }
+#  441|       }
+#  442|->     argz_stringify(loadpath, loadpathlen, PATH_SEP_CHAR);
+#  443|   }
+#  444|   
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/augtool.c:519:18: warning: taking address of packed member '' of class or structure 'sigaction' may result in an unaligned pointer value
+#    sigemptyset(&sigint_action.sa_mask);
+#                 ^~~~~~~~~~~~~~~~~~~~~
+#  517|       MEMZERO(&sigint_action, 1);
+#  518|       sigint_action.sa_handler = sigint_handler;
+#  519|->     sigemptyset(&sigint_action.sa_mask);
+#  520|       sigint_action.sa_flags = 0;
+#  521|       sigaction(SIGINT, &sigint_action, NULL);
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/augtool.c:664:15: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#    while ((t = argz_next(ts, tslen, t))) {
+#              ^ ~~~~~~~~~~~~~~~~~~~~~~~
+#  662|       bool added_transform = false;
+#  663|   
+#  664|->     while ((t = argz_next(ts, tslen, t))) {
+#  665|           r = _xasprintf(&command, "transform %s", t);
+#  666|           if (r < 0)
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/augtool.c:664:17: warning: implicit declaration of function 'argz_next' is invalid in C99
+#    while ((t = argz_next(ts, tslen, t))) {
+#                ^
+#  662|       bool added_transform = false;
+#  663|   
+#  664|->     while ((t = argz_next(ts, tslen, t))) {
+#  665|           r = _xasprintf(&command, "transform %s", t);
+#  666|           if (r < 0)
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/augtool.c:664:17: warning: this function declaration is not a prototype
+#  662|       bool added_transform = false;
+#  663|   
+#  664|->     while ((t = argz_next(ts, tslen, t))) {
+#  665|           r = _xasprintf(&command, "transform %s", t);
+#  666|           if (r < 0)
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/augtool.c:689:15: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#    while ((t = argz_next(ts, tslen, t))) {
+#              ^ ~~~~~~~~~~~~~~~~~~~~~~~
+#  687|       char *t = NULL;
+#  688|   
+#  689|->     while ((t = argz_next(ts, tslen, t))) {
+#  690|           r = _xasprintf(&command, "load-file %s", t);
+#  691|           if (r < 0)
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/augtool.c:689:17: warning: implicit declaration of function 'argz_next' is invalid in C99
+#    while ((t = argz_next(ts, tslen, t))) {
+#                ^
+#  687|       char *t = NULL;
+#  688|   
+#  689|->     while ((t = argz_next(ts, tslen, t))) {
+#  690|           r = _xasprintf(&command, "load-file %s", t);
+#  691|           if (r < 0)
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/get.c:121:56: warning: type specifier missing, defaults to 'int'
+#    void (*combine)(struct rec_state *, struct lens *, uint);
+#                                                       ^
+#  119|       /* Will either be get_combine or parse_combine, depending on MODE, for
+#  120|          the duration of the whole recursive parse */
+#  121|->     void (*combine)(struct rec_state *, struct lens *, uint);
+#  122|   };
+#  123|   
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/internal.c:313:16: warning: incompatible integer to pointer conversion assigning to 'FILE *' (aka 'struct _PDCLIB_file *') from 'int'
+#    ms->stream = open_memstream(&(ms->buf), &(ms->size));
+#               ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  311|       MEMZERO(ms, 1);
+#  312|   #if HAVE_OPEN_MEMSTREAM
+#  313|->     ms->stream = open_memstream(&(ms->buf), &(ms->size));
+#  314|       return ms->stream == NULL ? -1 : 0;
+#  315|   #else
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/internal.c:313:18: warning: implicit declaration of function 'open_memstream' is invalid in C99
+#    ms->stream = open_memstream(&(ms->buf), &(ms->size));
+#                 ^
+#  311|       MEMZERO(ms, 1);
+#  312|   #if HAVE_OPEN_MEMSTREAM
+#  313|->     ms->stream = open_memstream(&(ms->buf), &(ms->size));
+#  314|       return ms->stream == NULL ? -1 : 0;
+#  315|   #else
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/internal.c:313:18: warning: this function declaration is not a prototype
+#  311|       MEMZERO(ms, 1);
+#  312|   #if HAVE_OPEN_MEMSTREAM
+#  313|->     ms->stream = open_memstream(&(ms->buf), &(ms->size));
+#  314|       return ms->stream == NULL ? -1 : 0;
+#  315|   #else
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:222:28: warning: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#                types[i] = ltype(lens->children[i], t);
+#                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  220|                   continue;
+#  221|               for (int i=0; i < lens->nchildren; i++)
+#  222|->                 types[i] = ltype(lens->children[i], t);
+#  223|               ltype(lens, t) = (*combinator)(info, lens->nchildren, types);
+#  224|           }
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:223:13: warning: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#            ltype(lens, t) = (*combinator)(info, lens->nchildren, types);
+#            ^~~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  221|               for (int i=0; i < lens->nchildren; i++)
+#  222|                   types[i] = ltype(lens->children[i], t);
+#  223|->             ltype(lens, t) = (*combinator)(info, lens->nchildren, types);
+#  224|           }
+#  225|       }
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:367:9: warning: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#        ltype(lens, t) = regexp_iter(info, ltype(l, t), 0, -1);
+#        ^~~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  365|       lens = make_lens_unop(L_STAR, info, l);
+#  366|       for (int t = 0; t < ntypes; t++) {
+#  367|->         ltype(lens, t) = regexp_iter(info, ltype(l, t), 0, -1);
+#  368|       }
+#  369|       lens->recursive = l->recursive;
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:367:44: warning: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#        ltype(lens, t) = regexp_iter(info, ltype(l, t), 0, -1);
+#                                           ^~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  365|       lens = make_lens_unop(L_STAR, info, l);
+#  366|       for (int t = 0; t < ntypes; t++) {
+#  367|->         ltype(lens, t) = regexp_iter(info, ltype(l, t), 0, -1);
+#  368|       }
+#  369|       lens->recursive = l->recursive;
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:397:9: warning: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#        ltype(lens, t) = regexp_maybe(info, ltype(l, t));
+#        ^~~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  395|       lens = make_lens_unop(L_MAYBE, info, l);
+#  396|       for (int t=0; t < ntypes; t++)
+#  397|->         ltype(lens, t) = regexp_maybe(info, ltype(l, t));
+#  398|       lens->value = l->value;
+#  399|       lens->key = l->key;
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:397:45: warning: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#        ltype(lens, t) = regexp_maybe(info, ltype(l, t));
+#                                            ^~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  395|       lens = make_lens_unop(L_MAYBE, info, l);
+#  396|       for (int t=0; t < ntypes; t++)
+#  397|->         ltype(lens, t) = regexp_maybe(info, ltype(l, t));
+#  398|       lens->value = l->value;
+#  399|       lens->key = l->key;
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:498:9: warning: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#        ltype(sqr, t) = ref(ltype(cnt2->lens, t));
+#        ^~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  496|   
+#  497|       for (int t=0; t < ntypes; t++)
+#  498|->         ltype(sqr, t) = ref(ltype(cnt2->lens, t));
+#  499|   
+#  500|       square_precise_type(info, &(sqr->ctype), l1->ctype, l2->ctype);
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:498:29: warning: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#        ltype(sqr, t) = ref(ltype(cnt2->lens, t));
+#                        ~~~~^~~~~~~~~~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^
+augeas-1.12.0/src/ref.h:52:19: note: expanded from macro 'ref'
+##define ref(s) (((s) == NULL || (s)->ref == REF_MAX) ? (s) : ((s)->ref++, (s)))
+#                  ^
+#  496|   
+#  497|       for (int t=0; t < ntypes; t++)
+#  498|->         ltype(sqr, t) = ref(ltype(cnt2->lens, t));
+#  499|   
+#  500|       square_precise_type(info, &(sqr->ctype), l1->ctype, l2->ctype);
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:767:32: warning: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#            s1 = regexp_escape(ltype(l1, typ));
+#                               ^~~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  765|               e_pv = escape(pv, -1, RX_ESCAPES);
+#  766|               e_v = escape(v, -1, RX_ESCAPES);
+#  767|->             s1 = regexp_escape(ltype(l1, typ));
+#  768|               s2 = regexp_escape(ltype(l2, typ));
+#  769|           }
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:768:32: warning: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#            s2 = regexp_escape(ltype(l2, typ));
+#                               ^~~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  766|               e_v = escape(v, -1, RX_ESCAPES);
+#  767|               s1 = regexp_escape(ltype(l1, typ));
+#  768|->             s2 = regexp_escape(ltype(l2, typ));
+#  769|           }
+#  770|           exn = make_exn_value(ref(info), "%s", msg);
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:799:25: warning: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#    struct regexp *r1 = ltype(l1, typ);
+#                        ^~~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  797|       struct fa *fa2 = NULL;
+#  798|       struct value *result = NULL;
+#  799|->     struct regexp *r1 = ltype(l1, typ);
+#  800|       struct regexp *r2 = ltype(l2, typ);
+#  801|   
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:800:25: warning: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#    struct regexp *r2 = ltype(l2, typ);
+#                        ^~~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  798|       struct value *result = NULL;
+#  799|       struct regexp *r1 = ltype(l1, typ);
+#  800|->     struct regexp *r2 = ltype(l2, typ);
+#  801|   
+#  802|       if (r1 == NULL || r2 == NULL)
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:862:25: warning: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#    struct regexp *r1 = ltype(l1, CTYPE);
+#                        ^~~~~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  860|       struct value *exn = NULL;
+#  861|       struct fa *fa1 = NULL, *fa2 = NULL;
+#  862|->     struct regexp *r1 = ltype(l1, CTYPE);
+#  863|       struct regexp *r2 = ltype(l2, CTYPE);
+#  864|   
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:863:25: warning: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#    struct regexp *r2 = ltype(l2, CTYPE);
+#                        ^~~~~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  861|       struct fa *fa1 = NULL, *fa2 = NULL;
+#  862|       struct regexp *r1 = ltype(l1, CTYPE);
+#  863|->     struct regexp *r2 = ltype(l2, CTYPE);
+#  864|   
+#  865|       if (r1 == NULL || r2 == NULL)
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:914:24: warning: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#    struct regexp *r = ltype(l, typ);
+#                       ^~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  912|       struct fa *fas = NULL, *fa = NULL;
+#  913|       struct value *result = NULL;
+#  914|->     struct regexp *r = ltype(l, typ);
+#  915|   
+#  916|       if (r == NULL)
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:1018:15: warning: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#        unref(ltype(lens, t), regexp);
+#        ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^
+augeas-1.12.0/src/ref.h:56:14: note: expanded from macro 'unref'
+#        if ((s) != NULL && (s)->ref != REF_MAX) {                       \
+#             ^
+# 1016|   
+# 1017|       for (int t=0; t < ntypes; t++)
+# 1018|->         unref(ltype(lens, t), regexp);
+# 1019|   
+# 1020|       unref(lens->info, info);
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:1032:24: warning: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#        regexp_release(ltype(lens, t));
+#                       ^~~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1030|   
+# 1031|       for (int t=0; t < ntypes; t++)
+# 1032|->         regexp_release(ltype(lens, t));
+# 1033|   
+# 1034|       if (lens->tag == L_KEY || lens->tag == L_STORE)
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:1102:17: warning: implicitly declaring library function 'stpncpy' with type 'char *(char *, const char *, unsigned long)'
+#            r = stpncpy(r, k, eq - k);
+#                ^
+augeas-1.12.0/src/lens.c:1102:17: note: include the header <string.h> or explicitly provide a declaration for 'stpncpy'
+# 1100|           if (k != eq) {
+# 1101|               r = stpcpy(r, "\"");
+# 1102|->             r = stpncpy(r, k, eq - k);
+# 1103|               r = stpcpy(r, "\"");
+# 1104|           }
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:1534:26: warning: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#        result->re = ref(ltype(l, rtn->lens_type));
+#                     ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^
+augeas-1.12.0/src/ref.h:52:19: note: expanded from macro 'ref'
+##define ref(s) (((s) == NULL || (s)->ref == REF_MAX) ? (s) : ((s)->ref++, (s)))
+#                  ^
+# 1532|       if (l != NULL) {
+# 1533|           result->lens = ref(l);
+# 1534|->         result->re = ref(ltype(l, rtn->lens_type));
+# 1535|       }
+# 1536|    error:
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:2016:27: warning: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#    if (! l->recursive || ltype(l, lt) != NULL)
+#                          ^~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2014|       int r;
+# 2015|   
+# 2016|->     if (! l->recursive || ltype(l, lt) != NULL)
+# 2017|           return;
+# 2018|   
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:2025:24: warning: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#            types[i] = ltype(l->children[i], lt);
+#                       ^~~~~~~~~~~~~~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2023|           for (int i=0; i < l->nchildren; i++) {
+# 2024|               propagate_type(l->children[i], lt);
+# 2025|->             types[i] = ltype(l->children[i], lt);
+# 2026|           }
+# 2027|           ltype(l, lt) = regexp_concat_n(l->info, l->nchildren, types);
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:2027:9: warning: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#        ltype(l, lt) = regexp_concat_n(l->info, l->nchildren, types);
+#        ^~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2025|               types[i] = ltype(l->children[i], lt);
+# 2026|           }
+# 2027|->         ltype(l, lt) = regexp_concat_n(l->info, l->nchildren, types);
+# 2028|           FREE(types);
+# 2029|           break;
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:2035:24: warning: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#            types[i] = ltype(l->children[i], lt);
+#                       ^~~~~~~~~~~~~~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2033|           for (int i=0; i < l->nchildren; i++) {
+# 2034|               propagate_type(l->children[i], lt);
+# 2035|->             types[i] = ltype(l->children[i], lt);
+# 2036|           }
+# 2037|           ltype(l, lt) = regexp_union_n(l->info, l->nchildren, types);
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:2037:9: warning: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#        ltype(l, lt) = regexp_union_n(l->info, l->nchildren, types);
+#        ^~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2035|               types[i] = ltype(l->children[i], lt);
+# 2036|           }
+# 2037|->         ltype(l, lt) = regexp_union_n(l->info, l->nchildren, types);
+# 2038|           FREE(types);
+# 2039|           break;
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:2049:9: warning: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#        ltype(l, lt) = regexp_iter(l->info, ltype(l->child, lt), 0, -1);
+#        ^~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2047|       case L_STAR:
+# 2048|           propagate_type(l->child, lt);
+# 2049|->         ltype(l, lt) = regexp_iter(l->info, ltype(l->child, lt), 0, -1);
+# 2050|           break;
+# 2051|       case L_MAYBE:
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:2049:45: warning: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#        ltype(l, lt) = regexp_iter(l->info, ltype(l->child, lt), 0, -1);
+#                                            ^~~~~~~~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2047|       case L_STAR:
+# 2048|           propagate_type(l->child, lt);
+# 2049|->         ltype(l, lt) = regexp_iter(l->info, ltype(l->child, lt), 0, -1);
+# 2050|           break;
+# 2051|       case L_MAYBE:
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:2053:9: warning: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#        ltype(l, lt) = regexp_maybe(l->info, ltype(l->child, lt));
+#        ^~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2051|       case L_MAYBE:
+# 2052|           propagate_type(l->child, lt);
+# 2053|->         ltype(l, lt) = regexp_maybe(l->info, ltype(l->child, lt));
+# 2054|           break;
+# 2055|       case L_REC:
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:2053:46: warning: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#        ltype(l, lt) = regexp_maybe(l->info, ltype(l->child, lt));
+#                                             ^~~~~~~~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2051|       case L_MAYBE:
+# 2052|           propagate_type(l->child, lt);
+# 2053|->         ltype(l, lt) = regexp_maybe(l->info, ltype(l->child, lt));
+# 2054|           break;
+# 2055|       case L_REC:
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:2060:9: warning: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#        ltype(l, lt) = ref(ltype(l->child, lt));
+#        ^~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2058|       case L_SQUARE:
+# 2059|           propagate_type(l->child, lt);
+# 2060|->         ltype(l, lt) = ref(ltype(l->child, lt));
+# 2061|           break;
+# 2062|       default:
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:2060:28: warning: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#        ltype(l, lt) = ref(ltype(l->child, lt));
+#                       ~~~~^~~~~~~~~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^
+augeas-1.12.0/src/ref.h:52:19: note: expanded from macro 'ref'
+##define ref(s) (((s) == NULL || (s)->ref == REF_MAX) ? (s) : ((s)->ref++, (s)))
+#                  ^
+# 2058|       case L_SQUARE:
+# 2059|           propagate_type(l->child, lt);
+# 2060|->         ltype(l, lt) = ref(ltype(l->child, lt));
+# 2061|           break;
+# 2062|       default:
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:2172:5: warning: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#    ltype(rec, lt) = rtn_reduce(rtn, rec);
+#    ^~~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2170|       rtn = rtn_build(rec, lt);
+# 2171|       RTN_BAIL(rtn);
+# 2172|->     ltype(rec, lt) = rtn_reduce(rtn, rec);
+# 2173|       RTN_BAIL(rtn);
+# 2174|       if (debugging("cf.approx"))
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:2185:30: warning: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#        print_regexp(stdout, ltype(rec, lt));
+#                             ^~~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2183|       if (debugging("cf.approx")) {
+# 2184|           printf("approx %s  => ", lens_type_names[lt]);
+# 2185|->         print_regexp(stdout, ltype(rec, lt));
+# 2186|           printf("\n");
+# 2187|       }
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:2332:9: warning: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#        ltype(top, t) = ref(ltype(rec, t));
+#        ^~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2330|       struct lens *top = result->lens;
+# 2331|       for (int t=0; t < ntypes; t++)
+# 2332|->         ltype(top, t) = ref(ltype(rec, t));
+# 2333|       top->value = rec->value;
+# 2334|       top->key = rec->key;
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:2332:29: warning: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#        ltype(top, t) = ref(ltype(rec, t));
+#                        ~~~~^~~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^
+augeas-1.12.0/src/ref.h:52:19: note: expanded from macro 'ref'
+##define ref(s) (((s) == NULL || (s)->ref == REF_MAX) ? (s) : ((s)->ref++, (s)))
+#                  ^
+# 2330|       struct lens *top = result->lens;
+# 2331|       for (int t=0; t < ntypes; t++)
+# 2332|->         ltype(top, t) = ref(ltype(rec, t));
+# 2333|       top->value = rec->value;
+# 2334|       top->key = rec->key;
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:2377:14: warning: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#        re = ltype(lens, t);
+#             ^~~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2375|   
+# 2376|       for (int t=0; t < ntypes; t++) {
+# 2377|->         re = ltype(lens, t);
+# 2378|           if (re == NULL)
+# 2379|               continue;
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/pathx.c:1197:5: warning: expression result unused
+#    uint old_ctx_len = state->ctx_len;
+#    ^~~~
+# 1195|   
+# 1196|       struct tree *old_ctx = state->ctx;
+# 1197|->     uint old_ctx_len = state->ctx_len;
+# 1198|       uint old_ctx_pos = state->ctx_pos;
+# 1199|   
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/pathx.c:1198:5: warning: expression result unused
+#    uint old_ctx_pos = state->ctx_pos;
+#    ^~~~
+# 1196|       struct tree *old_ctx = state->ctx;
+# 1197|       uint old_ctx_len = state->ctx_len;
+# 1198|->     uint old_ctx_pos = state->ctx_pos;
+# 1199|   
+# 1200|       for (int p=0; p < predicates->nexpr; p++) {
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/pathx.c:1314:5: warning: expression result unused
+#    uint cur_ns = 0;
+#    ^~~~
+# 1312|           goto error;
+# 1313|   
+# 1314|->     uint cur_ns = 0;
+# 1315|       list_for_each(step, lp->steps) {
+# 1316|           struct nodeset *work = (*ns)[cur_ns];
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/pathx.c:1327:22: warning: variable 'node' used in loop condition not modified in loop body
+#                     node != NULL;
+#                     ^~~~
+# 1325|               for (int i=0; i < work->used; i++) {
+# 1326|                   for (struct tree *node = step_first(step, work->nodes[i]);
+# 1327|->                      node != NULL;
+# 1328|                        node = step_next(step, work->nodes[i], node)) {
+# 1329|                       ns_add(next, node, state);
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/ref.c:34:11: warning: cast from 'char *' to 'ref_t *' (aka 'unsigned int *') increases required alignment from 1 to 4
+#        *((ref_t *) ((char*) ptr + ref_ofs)) = 1;
+#          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   32|       } else {
+#   33|           void *ptr = *(void **)ptrptr;
+#   34|->         *((ref_t *) ((char*) ptr + ref_ofs)) = 1;
+#   35|           return 0;
+#   36|       }
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/regexp.c:61:13: warning: implicitly declaring library function 'index' with type 'char *(const char *, int)'
+#        if (index(r->pattern->str, RESERVED_FROM_CH)) {
+#            ^
+augeas-1.12.0/src/regexp.c:61:13: note: include the header <strings.h> or explicitly provide a declaration for 'index'
+#   59|           /* simplify the regexp by removing some artifacts of reserving
+#   60|              chanaracters for internal purposes */
+#   61|->         if (index(r->pattern->str, RESERVED_FROM_CH)) {
+#   62|               char *s = strdup(r->pattern->str);
+#   63|               char *t = s;
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/transform.c:225:13: warning: implicit declaration of function 'glob' is invalid in C99
+#        r = glob(globpat, gl_flags, NULL, &globbuf);
+#            ^
+#  223|               continue;
+#  224|           pathjoin(&globpat, 2, root, f->value);
+#  225|->         r = glob(globpat, gl_flags, NULL, &globbuf);
+#  226|           free(globpat);
+#  227|   
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/transform.c:225:13: warning: this function declaration is not a prototype
+#  223|               continue;
+#  224|           pathjoin(&globpat, 2, root, f->value);
+#  225|->         r = glob(globpat, gl_flags, NULL, &globbuf);
+#  226|           free(globpat);
+#  227|   
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/transform.c:275:5: warning: implicit declaration of function 'globfree' is invalid in C99
+#    globfree(&globbuf);
+#    ^
+#  273|       *nmatches = pathc;
+#  274|    done:
+#  275|->     globfree(&globbuf);
+#  276|       return ret;
+#  277|    error:
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/transform.c:275:5: warning: this function declaration is not a prototype
+#  273|       *nmatches = pathc;
+#  274|    done:
+#  275|->     globfree(&globbuf);
+#  276|       return ret;
+#  277|    error:
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/transform.c:921:5: warning: 'security_context_t' is deprecated
+#    security_context_t con = NULL;
+#    ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#  919|       int ret = 0;
+#  920|       int selinux_enabled = (is_selinux_enabled() > 0);
+#  921|->     security_context_t con = NULL;
+#  922|   
+#  923|       int from_fd;
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/transform.c:1192:19: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#    augorig_canon = canonicalize_file_name(augorig);
+#                  ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1190|       }
+# 1191|   
+# 1192|->     augorig_canon = canonicalize_file_name(augorig);
+# 1193|       augorig_exists = 1;
+# 1194|       if (augorig_canon == NULL) {
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/transform.c:1192:21: warning: implicit declaration of function 'canonicalize_file_name' is invalid in C99
+#    augorig_canon = canonicalize_file_name(augorig);
+#                    ^
+# 1190|       }
+# 1191|   
+# 1192|->     augorig_canon = canonicalize_file_name(augorig);
+# 1193|       augorig_exists = 1;
+# 1194|       if (augorig_canon == NULL) {
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/transform.c:1192:21: warning: this function declaration is not a prototype
+# 1190|       }
+# 1191|   
+# 1192|->     augorig_canon = canonicalize_file_name(augorig);
+# 1193|       augorig_exists = 1;
+# 1194|       if (augorig_canon == NULL) {
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/transform.c:1476:19: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#    augorig_canon = canonicalize_file_name(augorig);
+#                  ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1474|       }
+# 1475|   
+# 1476|->     augorig_canon = canonicalize_file_name(augorig);
+# 1477|       if (augorig_canon == NULL) {
+# 1478|           if (errno == ENOENT) {
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/transform.c:1476:21: warning: implicit declaration of function 'canonicalize_file_name' is invalid in C99
+#    augorig_canon = canonicalize_file_name(augorig);
+#                    ^
+# 1474|       }
+# 1475|   
+# 1476|->     augorig_canon = canonicalize_file_name(augorig);
+# 1477|       if (augorig_canon == NULL) {
+# 1478|           if (errno == ENOENT) {

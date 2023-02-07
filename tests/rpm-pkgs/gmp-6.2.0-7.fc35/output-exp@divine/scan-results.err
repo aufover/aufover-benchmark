@@ -1,0 +1,97 @@
+Error: COMPILER_WARNING:
+gmp-6.2.0/conftest.s: scope_hint: Assembler messages
+gmp-6.2.0/conftest.s:2: Error: no such instruction: `somelabel'
+
+Error: COMPILER_WARNING:
+gmp-6.2.0/mpn/generic/toom_interpolate_5pts.c:70:19: warning: expression result unused
+#  ASSERT_NOCARRY (mpn_divexact_by3 (v2, v2, kk1));    /* v2 <- v2 / 3 */
+#  ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gmp-6.2.0/gmp-impl.h:1662:6: note: expanded from macro 'mpn_divexact_by3'
+#  (3 & mpn_bdiv_dbm1 (dst, src, size, __GMP_CAST (mp_limb_t, GMP_NUMB_MASK / 3)))
+#   ~ ^
+gmp-6.2.0/gmp-impl.h:2459:33: note: expanded from macro 'ASSERT_NOCARRY'
+##define ASSERT_NOCARRY(expr)   (expr)
+#                                ^~~~
+#   68|          v0       v1       hi(vinf)       |vm1|     v2-vm1      EMPTY */
+#   69|   
+#   70|->   ASSERT_NOCARRY (mpn_divexact_by3 (v2, v2, kk1));    /* v2 <- v2 / 3 */
+#   71|   						      /* (5 3 1 1 0)*/
+#   72|   
+
+Error: COMPILER_WARNING:
+gmp-6.2.0/mpn/generic/toom_interpolate_8pts.c:163:18: warning: expression result unused
+#  ASSERT_NOCARRY(mpn_divexact_by3 (r5, r5, 3 * n + 1));
+#  ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gmp-6.2.0/gmp-impl.h:1662:6: note: expanded from macro 'mpn_divexact_by3'
+#  (3 & mpn_bdiv_dbm1 (dst, src, size, __GMP_CAST (mp_limb_t, GMP_NUMB_MASK / 3)))
+#   ~ ^
+gmp-6.2.0/gmp-impl.h:2459:33: note: expanded from macro 'ASSERT_NOCARRY'
+##define ASSERT_NOCARRY(expr)   (expr)
+#                                ^~~~
+#  161|     mpn_divexact_by45 (r3, r3, 3 * n + 1);
+#  162|   
+#  163|->   ASSERT_NOCARRY(mpn_divexact_by3 (r5, r5, 3 * n + 1));
+#  164|   
+#  165|     ASSERT_NOCARRY(DO_mpn_sublsh2_n (r5, r3, 3 * n + 1, ws));
+
+Error: COMPILER_WARNING:
+gmp-6.2.0/mpq/inp_str.c:48:11: warning: implicit declaration of function '__gmpz_inp_str' is invalid in C99
+#  nread = mpz_inp_str (mpq_numref(q), fp, base);
+#          ^
+gmp-6.2.0/gmp.h:880:21: note: expanded from macro 'mpz_inp_str'
+##define mpz_inp_str __gmpz_inp_str
+#                    ^
+#   46|     MPZ_NEWALLOC (DEN(q), 1)[0] = 1;
+#   47|   
+#   48|->   nread = mpz_inp_str (mpq_numref(q), fp, base);
+#   49|     if (nread == 0)
+#   50|       return 0;
+
+Error: COMPILER_WARNING:
+gmp-6.2.0/mpq/inp_str.c:60:15: warning: implicit declaration of function '__gmpz_inp_str_nowhite' is invalid in C99
+#      nread = mpz_inp_str_nowhite (mpq_denref(q), fp, base, c, nread);
+#              ^
+gmp-6.2.0/gmp-impl.h:1716:29: note: expanded from macro 'mpz_inp_str_nowhite'
+##define mpz_inp_str_nowhite __gmpz_inp_str_nowhite
+#                            ^
+#   58|         nread++;
+#   59|   
+#   60|->       nread = mpz_inp_str_nowhite (mpq_denref(q), fp, base, c, nread);
+#   61|         if (nread == 0)
+#   62|   	{
+
+Error: COMPILER_WARNING:
+gmp-6.2.0/mpq/out_str.c:44:13: warning: implicit declaration of function '__gmpz_out_str' is invalid in C99
+#  written = mpz_out_str (stream, base, mpq_numref (q));
+#            ^
+gmp-6.2.0/gmp.h:955:21: note: expanded from macro 'mpz_out_str'
+##define mpz_out_str __gmpz_out_str
+#                    ^
+#   42|       stream = stdout;
+#   43|   
+#   44|->   written = mpz_out_str (stream, base, mpq_numref (q));
+#   45|   
+#   46|     if (mpz_cmp_ui (mpq_denref (q), 1) != 0)
+
+Error: COMPILER_WARNING:
+gmp-6.2.0/mpz/inp_str.c:63:10: warning: implicit declaration of function '__gmpz_inp_str_nowhite' is invalid in C99
+#  return mpz_inp_str_nowhite (x, stream, base, c, nread);
+#         ^
+gmp-6.2.0/gmp-impl.h:1716:29: note: expanded from macro 'mpz_inp_str_nowhite'
+##define mpz_inp_str_nowhite __gmpz_inp_str_nowhite
+#                            ^
+#   61|     while (isspace (c));
+#   62|   
+#   63|->   return mpz_inp_str_nowhite (x, stream, base, c, nread);
+#   64|   }
+#   65|   
+
+Error: COMPILER_WARNING:
+gmp-6.2.0/mpz/mul.c:112:2: warning: add explicit braces to avoid dangling else
+#        else
+#        ^
+#  110|   	    free_me_size = ALLOC (w);
+#  111|   	  }
+#  112|-> 	else
+#  113|   	  (*__gmp_free_func) (wp, (size_t) ALLOC (w) * GMP_LIMB_BYTES);
+#  114|   

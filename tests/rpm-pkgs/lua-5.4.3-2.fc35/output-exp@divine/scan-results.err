@@ -1,0 +1,300 @@
+Error: COMPILER_WARNING:
+lua-5.4.3/lua-5.3.5/src/ldo.c:113:5: warning: implicitly declaring library function '_longjmp' with type 'void (uint64_t *, int) __attribute__((noreturn))' (aka 'void (unsigned long long *, int) __attribute__((noreturn))')
+#    LUAI_THROW(L, L->errorJmp);  /* jump to it */
+#    ^
+lua-5.4.3/lua-5.3.5/src/ldo.c:66:26: note: expanded from macro 'LUAI_THROW'
+##define LUAI_THROW(L,c)         _longjmp((c)->b, 1)
+#                                ^
+lua-5.4.3/lua-5.3.5/src/ldo.c:113:5: note: include the header <setjmp.h> or explicitly provide a declaration for '_longjmp'
+lua-5.4.3/lua-5.3.5/src/ldo.c:66:26: note: expanded from macro 'LUAI_THROW'
+##define LUAI_THROW(L,c)         _longjmp((c)->b, 1)
+#                                ^
+#  111|     if (L->errorJmp) {  /* thread has an error handler? */
+#  112|       L->errorJmp->status = errcode;  /* set status */
+#  113|->     LUAI_THROW(L, L->errorJmp);  /* jump to it */
+#  114|     }
+#  115|     else {  /* thread has no error handler */
+
+Error: COMPILER_WARNING:
+lua-5.4.3/lua-5.3.5/src/ldo.c:142:3: warning: implicitly declaring library function '_setjmp' with type 'int (uint64_t *)' (aka 'int (unsigned long long *)')
+#  LUAI_TRY(L, &lj,
+#  ^
+lua-5.4.3/lua-5.3.5/src/ldo.c:67:30: note: expanded from macro 'LUAI_TRY'
+##define LUAI_TRY(L,c,a)         if (_setjmp((c)->b) == 0) { a }
+#                                    ^
+lua-5.4.3/lua-5.3.5/src/ldo.c:142:3: note: include the header <setjmp.h> or explicitly provide a declaration for '_setjmp'
+lua-5.4.3/lua-5.3.5/src/ldo.c:67:30: note: expanded from macro 'LUAI_TRY'
+##define LUAI_TRY(L,c,a)         if (_setjmp((c)->b) == 0) { a }
+#                                    ^
+#  140|     lj.previous = L->errorJmp;  /* chain new error handler */
+#  141|     L->errorJmp = &lj;
+#  142|->   LUAI_TRY(L, &lj,
+#  143|       (*f)(L, ud);
+#  144|     );
+
+Error: COMPILER_WARNING:
+lua-5.4.3/lua-5.3.5/src/liolib.c:272:29: warning: implicit declaration of function 'pclose' is invalid in C99
+#  return luaL_execresult(L, l_pclose(L, p->f));
+#                            ^
+lua-5.4.3/lua-5.3.5/src/liolib.c:60:27: note: expanded from macro 'l_pclose'
+##define l_pclose(L,file)        (pclose(file))
+#                                 ^
+#  270|   static int io_pclose (lua_State *L) {
+#  271|     LStream *p = tolstream(L);
+#  272|->   return luaL_execresult(L, l_pclose(L, p->f));
+#  273|   }
+#  274|   
+
+Error: COMPILER_WARNING:
+lua-5.4.3/lua-5.3.5/src/liolib.c:280:8: warning: incompatible integer to pointer conversion assigning to 'FILE *' (aka 'struct _PDCLIB_file *') from 'int'
+#  p->f = l_popen(L, filename, mode);
+#       ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  278|     const char *mode = luaL_optstring(L, 2, "r");
+#  279|     LStream *p = newprefile(L);
+#  280|->   p->f = l_popen(L, filename, mode);
+#  281|     p->closef = &io_pclose;
+#  282|     return (p->f == NULL) ? luaL_fileresult(L, 0, filename) : 1;
+
+Error: COMPILER_WARNING:
+lua-5.4.3/lua-5.3.5/src/liolib.c:280:10: warning: implicit declaration of function 'popen' is invalid in C99
+#  p->f = l_popen(L, filename, mode);
+#         ^
+lua-5.4.3/lua-5.3.5/src/liolib.c:59:40: note: expanded from macro 'l_popen'
+##define l_popen(L,c,m)          (fflush(NULL), popen(c,m))
+#                                               ^
+#  278|     const char *mode = luaL_optstring(L, 2, "r");
+#  279|     LStream *p = newprefile(L);
+#  280|->   p->f = l_popen(L, filename, mode);
+#  281|     p->closef = &io_pclose;
+#  282|     return (p->f == NULL) ? luaL_fileresult(L, 0, filename) : 1;
+
+Error: COMPILER_WARNING:
+lua-5.4.3/lua-5.3.5/src/lmathlib.c:249:22: warning: implicit declaration of function 'random' is invalid in C99
+#  double r = (double)l_rand() * (1.0 / ((double)L_RANDMAX + 1.0));
+#                     ^
+lua-5.4.3/lua-5.3.5/src/lmathlib.c:28:18: note: expanded from macro 'l_rand'
+##define l_rand()        random()
+#                        ^
+#  247|   static int math_random (lua_State *L) {
+#  248|     lua_Integer low, up;
+#  249|->   double r = (double)l_rand() * (1.0 / ((double)L_RANDMAX + 1.0));
+#  250|     switch (lua_gettop(L)) {  /* check number of arguments */
+#  251|       case 0: {  /* no arguments */
+
+Error: COMPILER_WARNING:
+lua-5.4.3/lua-5.3.5/src/lmathlib.c:278:3: warning: implicit declaration of function 'srandom' is invalid in C99
+#  l_srand((unsigned int)(lua_Integer)luaL_checknumber(L, 1));
+#  ^
+lua-5.4.3/lua-5.3.5/src/lmathlib.c:29:20: note: expanded from macro 'l_srand'
+##define l_srand(x)      srandom(x)
+#                        ^
+#  276|   
+#  277|   static int math_randomseed (lua_State *L) {
+#  278|->   l_srand((unsigned int)(lua_Integer)luaL_checknumber(L, 1));
+#  279|     (void)l_rand(); /* discard first value to avoid undesirable correlations */
+#  280|     return 0;
+
+Error: COMPILER_WARNING:
+lua-5.4.3/lua-5.3.5/src/lmathlib.c:279:9: warning: implicit declaration of function 'random' is invalid in C99
+#  (void)l_rand(); /* discard first value to avoid undesirable correlations */
+#        ^
+lua-5.4.3/lua-5.3.5/src/lmathlib.c:28:18: note: expanded from macro 'l_rand'
+##define l_rand()        random()
+#                        ^
+#  277|   static int math_randomseed (lua_State *L) {
+#  278|     l_srand((unsigned int)(lua_Integer)luaL_checknumber(L, 1));
+#  279|->   (void)l_rand(); /* discard first value to avoid undesirable correlations */
+#  280|     return 0;
+#  281|   }
+
+Error: COMPILER_WARNING:
+lua-5.4.3/lua-5.3.5/src/lopcodes.c:20:27: warning: 'extern' variable has an initializer
+#LUA_API const char *const luaP_opnames[NUM_OPCODES+1] = {
+#                          ^
+#   18|   /* ORDER OP */
+#   19|   
+#   20|-> LUA_API const char *const luaP_opnames[NUM_OPCODES+1] = {
+#   21|     "MOVE",
+#   22|     "LOADK",
+
+Error: COMPILER_WARNING:
+lua-5.4.3/lua-5.3.5/src/lopcodes.c:74:23: warning: 'extern' variable has an initializer
+#LUA_API const lu_byte luaP_opmodes[NUM_OPCODES] = {
+#                      ^
+#   72|   #define opmode(t,a,b,c,m) (((t)<<7) | ((a)<<6) | ((b)<<4) | ((c)<<2) | (m))
+#   73|   
+#   74|-> LUA_API const lu_byte luaP_opmodes[NUM_OPCODES] = {
+#   75|   /*       T  A    B       C     mode		   opcode	*/
+#   76|     opmode(0, 1, OpArgR, OpArgN, iABC)		/* OP_MOVE */
+
+Error: COMPILER_WARNING:
+lua-5.4.3/lua-5.3.5/src/loslib.c:290:9: warning: incompatible integer to pointer conversion assigning to 'struct tm *' from 'int'
+#    stm = l_gmtime(&t, &tmr);
+#        ^ ~~~~~~~~~~~~~~~~~~
+#  288|     struct tm tmr, *stm;
+#  289|     if (*s == '!') {  /* UTC? */
+#  290|->     stm = l_gmtime(&t, &tmr);
+#  291|       s++;  /* skip '!' */
+#  292|     }
+
+Error: COMPILER_WARNING:
+lua-5.4.3/lua-5.3.5/src/loslib.c:290:11: warning: implicit declaration of function 'gmtime_r' is invalid in C99
+#    stm = l_gmtime(&t, &tmr);
+#          ^
+lua-5.4.3/lua-5.3.5/src/loslib.c:86:24: note: expanded from macro 'l_gmtime'
+##define l_gmtime(t,r)           gmtime_r(t,r)
+#                                ^
+#  288|     struct tm tmr, *stm;
+#  289|     if (*s == '!') {  /* UTC? */
+#  290|->     stm = l_gmtime(&t, &tmr);
+#  291|       s++;  /* skip '!' */
+#  292|     }
+
+Error: COMPILER_WARNING:
+lua-5.4.3/lua-5.3.5/src/loslib.c:294:9: warning: incompatible integer to pointer conversion assigning to 'struct tm *' from 'int'
+#    stm = l_localtime(&t, &tmr);
+#        ^ ~~~~~~~~~~~~~~~~~~~~~
+#  292|     }
+#  293|     else
+#  294|->     stm = l_localtime(&t, &tmr);
+#  295|     if (stm == NULL)  /* invalid date? */
+#  296|       return luaL_error(L,
+
+Error: COMPILER_WARNING:
+lua-5.4.3/lua-5.3.5/src/loslib.c:294:11: warning: implicit declaration of function 'localtime_r' is invalid in C99
+#    stm = l_localtime(&t, &tmr);
+#          ^
+lua-5.4.3/lua-5.3.5/src/loslib.c:87:26: note: expanded from macro 'l_localtime'
+##define l_localtime(t,r)        localtime_r(t,r)
+#                                ^
+#  292|     }
+#  293|     else
+#  294|->     stm = l_localtime(&t, &tmr);
+#  295|     if (stm == NULL)  /* invalid date? */
+#  296|       return luaL_error(L,
+
+Error: COMPILER_WARNING:
+lua-5.4.3/src/ldo.c:118:5: warning: implicitly declaring library function '_longjmp' with type 'void (uint64_t *, int) __attribute__((noreturn))' (aka 'void (unsigned long long *, int) __attribute__((noreturn))')
+#    LUAI_THROW(L, L->errorJmp);  /* jump to it */
+#    ^
+lua-5.4.3/src/ldo.c:66:26: note: expanded from macro 'LUAI_THROW'
+##define LUAI_THROW(L,c)         _longjmp((c)->b, 1)
+#                                ^
+lua-5.4.3/src/ldo.c:118:5: note: include the header <setjmp.h> or explicitly provide a declaration for '_longjmp'
+lua-5.4.3/src/ldo.c:66:26: note: expanded from macro 'LUAI_THROW'
+##define LUAI_THROW(L,c)         _longjmp((c)->b, 1)
+#                                ^
+#  116|     if (L->errorJmp) {  /* thread has an error handler? */
+#  117|       L->errorJmp->status = errcode;  /* set status */
+#  118|->     LUAI_THROW(L, L->errorJmp);  /* jump to it */
+#  119|     }
+#  120|     else {  /* thread has no error handler */
+
+Error: COMPILER_WARNING:
+lua-5.4.3/src/ldo.c:144:3: warning: implicitly declaring library function '_setjmp' with type 'int (uint64_t *)' (aka 'int (unsigned long long *)')
+#  LUAI_TRY(L, &lj,
+#  ^
+lua-5.4.3/src/ldo.c:67:30: note: expanded from macro 'LUAI_TRY'
+##define LUAI_TRY(L,c,a)         if (_setjmp((c)->b) == 0) { a }
+#                                    ^
+lua-5.4.3/src/ldo.c:144:3: note: include the header <setjmp.h> or explicitly provide a declaration for '_setjmp'
+lua-5.4.3/src/ldo.c:67:30: note: expanded from macro 'LUAI_TRY'
+##define LUAI_TRY(L,c,a)         if (_setjmp((c)->b) == 0) { a }
+#                                    ^
+#  142|     lj.previous = L->errorJmp;  /* chain new error handler */
+#  143|     L->errorJmp = &lj;
+#  144|->   LUAI_TRY(L, &lj,
+#  145|       (*f)(L, ud);
+#  146|     );
+
+Error: COMPILER_WARNING:
+lua-5.4.3/src/liolib.c:286:29: warning: implicit declaration of function 'pclose' is invalid in C99
+#  return luaL_execresult(L, l_pclose(L, p->f));
+#                            ^
+lua-5.4.3/src/liolib.c:60:27: note: expanded from macro 'l_pclose'
+##define l_pclose(L,file)        (pclose(file))
+#                                 ^
+#  284|     LStream *p = tolstream(L);
+#  285|     errno = 0;
+#  286|->   return luaL_execresult(L, l_pclose(L, p->f));
+#  287|   }
+#  288|   
+
+Error: COMPILER_WARNING:
+lua-5.4.3/src/liolib.c:295:8: warning: incompatible integer to pointer conversion assigning to 'FILE *' (aka 'struct _PDCLIB_file *') from 'int'
+#  p->f = l_popen(L, filename, mode);
+#       ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  293|     LStream *p = newprefile(L);
+#  294|     luaL_argcheck(L, l_checkmodep(mode), 2, "invalid mode");
+#  295|->   p->f = l_popen(L, filename, mode);
+#  296|     p->closef = &io_pclose;
+#  297|     return (p->f == NULL) ? luaL_fileresult(L, 0, filename) : 1;
+
+Error: COMPILER_WARNING:
+lua-5.4.3/src/liolib.c:295:10: warning: implicit declaration of function 'popen' is invalid in C99
+#  p->f = l_popen(L, filename, mode);
+#         ^
+lua-5.4.3/src/liolib.c:59:40: note: expanded from macro 'l_popen'
+##define l_popen(L,c,m)          (fflush(NULL), popen(c,m))
+#                                               ^
+#  293|     LStream *p = newprefile(L);
+#  294|     luaL_argcheck(L, l_checkmodep(mode), 2, "invalid mode");
+#  295|->   p->f = l_popen(L, filename, mode);
+#  296|     p->closef = &io_pclose;
+#  297|     return (p->f == NULL) ? luaL_fileresult(L, 0, filename) : 1;
+
+Error: COMPILER_WARNING:
+lua-5.4.3/src/loslib.c:311:9: warning: incompatible integer to pointer conversion assigning to 'struct tm *' from 'int'
+#    stm = l_gmtime(&t, &tmr);
+#        ^ ~~~~~~~~~~~~~~~~~~
+#  309|     struct tm tmr, *stm;
+#  310|     if (*s == '!') {  /* UTC? */
+#  311|->     stm = l_gmtime(&t, &tmr);
+#  312|       s++;  /* skip '!' */
+#  313|     }
+
+Error: COMPILER_WARNING:
+lua-5.4.3/src/loslib.c:311:11: warning: implicit declaration of function 'gmtime_r' is invalid in C99
+#    stm = l_gmtime(&t, &tmr);
+#          ^
+lua-5.4.3/src/loslib.c:88:24: note: expanded from macro 'l_gmtime'
+##define l_gmtime(t,r)           gmtime_r(t,r)
+#                                ^
+#  309|     struct tm tmr, *stm;
+#  310|     if (*s == '!') {  /* UTC? */
+#  311|->     stm = l_gmtime(&t, &tmr);
+#  312|       s++;  /* skip '!' */
+#  313|     }
+
+Error: COMPILER_WARNING:
+lua-5.4.3/src/loslib.c:315:9: warning: incompatible integer to pointer conversion assigning to 'struct tm *' from 'int'
+#    stm = l_localtime(&t, &tmr);
+#        ^ ~~~~~~~~~~~~~~~~~~~~~
+#  313|     }
+#  314|     else
+#  315|->     stm = l_localtime(&t, &tmr);
+#  316|     if (stm == NULL)  /* invalid date? */
+#  317|       return luaL_error(L,
+
+Error: COMPILER_WARNING:
+lua-5.4.3/src/loslib.c:315:11: warning: implicit declaration of function 'localtime_r' is invalid in C99
+#    stm = l_localtime(&t, &tmr);
+#          ^
+lua-5.4.3/src/loslib.c:89:26: note: expanded from macro 'l_localtime'
+##define l_localtime(t,r)        localtime_r(t,r)
+#                                ^
+#  313|     }
+#  314|     else
+#  315|->     stm = l_localtime(&t, &tmr);
+#  316|     if (stm == NULL)  /* invalid date? */
+#  317|       return luaL_error(L,
+
+Error: COMPILER_WARNING:
+lua-5.4.3/src/lua.c:49:16: warning: taking address of packed member '' of class or structure 'sigaction' may result in an unaligned pointer value
+#  sigemptyset(&sa.sa_mask);  /* do not mask any signal */
+#               ^~~~~~~~~~
+#   47|     sa.sa_handler = handler;
+#   48|     sa.sa_flags = 0;
+#   49|->   sigemptyset(&sa.sa_mask);  /* do not mask any signal */
+#   50|     sigaction(sig, &sa, NULL);
+#   51|   }

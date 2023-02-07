@@ -1,4 +1,4 @@
-Error: COMPILER_WARNING (CWE-758):
+Error: COMPILER_WARNING:
 findutils-4.8.0/find/exec.c:337:2: warning: implicit declaration of function 'execvp' is invalid in C99
 #        execvp (argv[0], argv);
 #        ^
@@ -8,7 +8,7 @@ findutils-4.8.0/find/exec.c:337:2: warning: implicit declaration of function 'ex
 #  338|         /* TODO: use a pipe to pass back the errno value, like xargs does */
 #  339|         error (0, errno, "%s",
 
-Error: COMPILER_WARNING (CWE-758):
+Error: COMPILER_WARNING:
 findutils-4.8.0/find/util.c:833:5: warning: incompatible integer to pointer conversion assigning to 'const char *' from 'int'
 #  p = strtok_r (arg, delimiters, &token_context);
 #    ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -18,7 +18,7 @@ findutils-4.8.0/find/util.c:833:5: warning: incompatible integer to pointer conv
 #  834|     while (p)
 #  835|       {
 
-Error: COMPILER_WARNING (CWE-758):
+Error: COMPILER_WARNING:
 findutils-4.8.0/find/util.c:833:7: warning: implicit declaration of function 'strtok_r' is invalid in C99
 #  p = strtok_r (arg, delimiters, &token_context);
 #      ^
@@ -28,7 +28,7 @@ findutils-4.8.0/find/util.c:833:7: warning: implicit declaration of function 'st
 #  834|     while (p)
 #  835|       {
 
-Error: COMPILER_WARNING (CWE-758):
+Error: COMPILER_WARNING:
 findutils-4.8.0/find/util.c:851:9: warning: incompatible integer to pointer conversion assigning to 'const char *' from 'int'
 #      p = strtok_r (NULL, delimiters, &token_context);
 #        ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -38,7 +38,44 @@ findutils-4.8.0/find/util.c:851:9: warning: incompatible integer to pointer conv
 #  852|       }
 #  853|     if (empty)
 
-Error: COMPILER_WARNING (CWE-758):
+Error: COMPILER_WARNING:
+findutils-4.8.0/gnulib-tests/localename.c:50: included_from: Included from here.
+findutils-4.8.0/gl/lib/glthread/lock.h:262:17: warning: weak identifier 'pthread_rwlockattr_setkind_np' never declared
+##   pragma weak pthread_rwlockattr_setkind_np
+#                ^
+#  260|   #  pragma weak pthread_rwlockattr_init
+#  261|   #  if __GNU_LIBRARY__ > 1
+#  262|-> #   pragma weak pthread_rwlockattr_setkind_np
+#  263|   #  endif
+#  264|   #  pragma weak pthread_rwlockattr_destroy
+
+Error: COMPILER_WARNING:
+findutils-4.8.0/gl/lib/nl_langinfo.c:342:10: warning: implicit declaration of function 'nl_langinfo' is invalid in C99
+#  return nl_langinfo_with_lock (item);
+#         ^
+findutils-4.8.0/gl/lib/nl_langinfo.c:272:33: note: expanded from macro 'nl_langinfo_with_lock'
+##  define nl_langinfo_with_lock nl_langinfo
+#                                ^
+#  340|         break;
+#  341|       }
+#  342|->   return nl_langinfo_with_lock (item);
+#  343|   }
+#  344|   
+
+Error: COMPILER_WARNING:
+findutils-4.8.0/gl/lib/nl_langinfo.c:342:10: warning: incompatible integer to pointer conversion returning 'int' from a function with result type 'char *'
+#  return nl_langinfo_with_lock (item);
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+findutils-4.8.0/gl/lib/nl_langinfo.c:272:33: note: expanded from macro 'nl_langinfo_with_lock'
+##  define nl_langinfo_with_lock nl_langinfo
+#                                ^
+#  340|         break;
+#  341|       }
+#  342|->   return nl_langinfo_with_lock (item);
+#  343|   }
+#  344|   
+
+Error: COMPILER_WARNING:
 findutils-4.8.0/gl/lib/strerror_r.c:205:9: warning: incompatible pointer to integer conversion assigning to 'int' from 'char *'
 #    ret = strerror_r (errnum, buf, buflen);
 #        ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -48,7 +85,7 @@ findutils-4.8.0/gl/lib/strerror_r.c:205:9: warning: incompatible pointer to inte
 #  206|   
 #  207|       /* Some old implementations may return (-1, EINVAL) instead of EINVAL.
 
-Error: COMPILER_WARNING (CWE-758):
+Error: COMPILER_WARNING:
 findutils-4.8.0/gl/lib/strerror_r.c:242:60: warning: comparison between pointer and integer ('char *' and 'int')
 #        if (strerror_r (errnum, stackbuf, sizeof stackbuf) == ERANGE)
 #            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^  ~~~~~~
@@ -58,7 +95,7 @@ findutils-4.8.0/gl/lib/strerror_r.c:242:60: warning: comparison between pointer 
 #  243|             abort ();
 #  244|           safe_copy (buf, buflen, stackbuf);
 
-Error: COMPILER_WARNING (CWE-758):
+Error: COMPILER_WARNING:
 findutils-4.8.0/gl/lib/time_rz.c:289:12: warning: implicit declaration of function 'timegm' is invalid in C99
 #    return timegm (tm);
 #           ^
@@ -68,7 +105,18 @@ findutils-4.8.0/gl/lib/time_rz.c:289:12: warning: implicit declaration of functi
 #  290|     else
 #  291|       {
 
-Error: COMPILER_WARNING (CWE-758):
+Error: COMPILER_WARNING:
+findutils-4.8.0/gnulib-tests/glthread/thread.c:24: included_from: Included from here.
+findutils-4.8.0/gnulib-tests/glthread/thread.h:178:17: warning: weak identifier 'pthread_sigmask' never declared
+##   pragma weak pthread_sigmask
+#                ^
+#  176|   
+#  177|   #  ifndef pthread_sigmask /* Do not declare rpl_pthread_sigmask weak.  */
+#  178|-> #   pragma weak pthread_sigmask
+#  179|   #  endif
+#  180|   
+
+Error: COMPILER_WARNING:
 findutils-4.8.0/gnulib-tests/localename.c:3123:24: warning: implicit declaration of function '_NL_ITEM' is invalid in C99
 #          nl_langinfo (_NL_ITEM ((category), _NL_ITEM_INDEX (-1)));
 #                       ^
@@ -78,7 +126,7 @@ findutils-4.8.0/gnulib-tests/localename.c:3123:24: warning: implicit declaration
 # 3124|           if (name[0] == '\0')
 # 3125|             /* Fallback code for glibc < 2.4, which did not implement
 
-Error: COMPILER_WARNING (CWE-758):
+Error: COMPILER_WARNING:
 findutils-4.8.0/gnulib-tests/localename.c:3123:46: warning: implicit declaration of function '_NL_ITEM_INDEX' is invalid in C99
 #          nl_langinfo (_NL_ITEM ((category), _NL_ITEM_INDEX (-1)));
 #                                             ^
@@ -88,17 +136,7 @@ findutils-4.8.0/gnulib-tests/localename.c:3123:46: warning: implicit declaration
 # 3124|           if (name[0] == '\0')
 # 3125|             /* Fallback code for glibc < 2.4, which did not implement
 
-Error: COMPILER_WARNING (CWE-758):
-findutils-4.8.0/gnulib-tests/pthread_sigmask.c:52:9: warning: implicit declaration of function 'pthread_sigmask' is invalid in C99
-#  ret = pthread_sigmask (how, new_mask, old_mask_ptr);
-#        ^
-#   50|   # endif
-#   51|   
-#   52|->   ret = pthread_sigmask (how, new_mask, old_mask_ptr);
-#   53|   
-#   54|   # if PTHREAD_SIGMASK_INEFFECTIVE
-
-Error: COMPILER_WARNING (CWE-758):
+Error: COMPILER_WARNING:
 findutils-4.8.0/lib/fdleak.c:161:12: warning: implicit declaration of function 'poll' is invalid in C99
 #      rv = poll (pf, limit, 0);
 #           ^
@@ -108,7 +146,7 @@ findutils-4.8.0/lib/fdleak.c:161:12: warning: implicit declaration of function '
 #  162|         if (-1 == rv)
 #  163|   	{
 
-Error: COMPILER_WARNING (CWE-758):
+Error: COMPILER_WARNING:
 findutils-4.8.0/lib/listfile.c:337:37: warning: taking address of packed member '' of class or structure 'stat' may result in an unaligned pointer value
 #      if ((when_local = localtime (&statp->st_mtime)))
 #                                    ^~~~~~~~~~~~~~~
@@ -118,7 +156,7 @@ findutils-4.8.0/lib/listfile.c:337:37: warning: taking address of packed member 
 #  338|           {
 #  339|             char init_bigbuf[256];
 
-Error: COMPILER_WARNING (CWE-758):
+Error: COMPILER_WARNING:
 findutils-4.8.0/xargs/xargs.c:731:16: warning: taking address of packed member '' of class or structure 'sigaction' may result in an unaligned pointer value
 #  sigemptyset(&sigact.sa_mask);
 #               ^~~~~~~~~~~~~~
@@ -128,7 +166,7 @@ findutils-4.8.0/xargs/xargs.c:731:16: warning: taking address of packed member '
 #  732|     sigact.sa_flags = 0;
 #  733|     if (0 != sigaction (SIGUSR1, &sigact, (struct sigaction *)NULL))
 
-Error: COMPILER_WARNING (CWE-758):
+Error: COMPILER_WARNING:
 findutils-4.8.0/xargs/xargs.c:737:16: warning: taking address of packed member '' of class or structure 'sigaction' may result in an unaligned pointer value
 #  sigemptyset(&sigact.sa_mask);
 #               ^~~~~~~~~~~~~~
@@ -138,7 +176,7 @@ findutils-4.8.0/xargs/xargs.c:737:16: warning: taking address of packed member '
 #  738|     sigact.sa_flags = 0;
 #  739|     if (0 != sigaction (SIGUSR2, &sigact, (struct sigaction *)NULL))
 
-Error: COMPILER_WARNING (CWE-758):
+Error: COMPILER_WARNING:
 findutils-4.8.0/xargs/xargs.c:1334:8: warning: implicit declaration of function 'execvp' is invalid in C99
 #              execvp (argv[0], argv);
 #              ^

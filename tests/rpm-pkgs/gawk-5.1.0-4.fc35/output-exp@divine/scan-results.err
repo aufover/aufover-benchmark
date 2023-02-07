@@ -1,0 +1,338 @@
+Error: COMPILER_WARNING:
+gawk-5.1.0/builtin.c:2161:25: warning: implicit declaration of function 'timegm' is invalid in C99
+#        then_stamp = (do_gmt ? timegm(& then) : mktime(& then));
+#                               ^
+# 2159|   	then.tm_isdst = dst;
+# 2160|   
+# 2161|-> 	then_stamp = (do_gmt ? timegm(& then) : mktime(& then));
+# 2162|   	return make_number((AWKNUM) then_stamp);
+# 2163|   }
+
+Error: COMPILER_WARNING:
+gawk-5.1.0/debug.c:2819:3: warning: implicit declaration of function 'unsetenv' is invalid in C99
+#                unsetenv("DGAWK_RESTART");
+#                ^
+# 2817|   		unserialize_list(HISTORY);
+# 2818|   		unserialize_list(OPTION);
+# 2819|-> 		unsetenv("DGAWK_RESTART");
+# 2820|   		fprintf(out_fp, "Restarting ...\n");
+# 2821|   		if (strcasecmp(run, "true") == 0)
+
+Error: COMPILER_WARNING:
+gawk-5.1.0/debug.c:2916:2: warning: implicit declaration of function 'setenv' is invalid in C99
+#        setenv("DGAWK_RESTART", (run ? "true" : "false"), 1);
+#        ^
+# 2914|   
+# 2915|   	/* tell the new process to restore state from the environment */
+# 2916|-> 	setenv("DGAWK_RESTART", (run ? "true" : "false"), 1);
+# 2917|   
+# 2918|   	/* close all open files */
+
+Error: COMPILER_WARNING:
+gawk-5.1.0/debug.c:2922:2: warning: implicit declaration of function 'execvp' is invalid in C99
+#        execvp(d_argv[0], d_argv);
+#        ^
+# 2920|   
+# 2921|   	/* start a new process replacing the current process */
+# 2922|-> 	execvp(d_argv[0], d_argv);
+# 2923|   
+# 2924|   	/* execvp failed !!! */
+
+Error: COMPILER_WARNING:
+gawk-5.1.0/debug.c:4674:3: warning: implicit declaration of function 'setenv' is invalid in C99
+#                setenv(env_variable[type], buf, 1);
+#                ^
+# 4672|   
+# 4673|   	if (bl > 0)	/* non-empty list */
+# 4674|-> 		setenv(env_variable[type], buf, 1);
+# 4675|   }
+# 4676|   
+
+Error: COMPILER_WARNING:
+gawk-5.1.0/debug.c:4897:2: warning: implicit declaration of function 'unsetenv' is invalid in C99
+#        unsetenv(env_variable[type]);
+#        ^
+# 4895|   #endif
+# 4896|   
+# 4897|-> 	unsetenv(env_variable[type]);
+# 4898|   #undef MAX_FIELD
+# 4899|   }
+
+Error: COMPILER_WARNING:
+gawk-5.1.0/extension/filefuncs.c:417:37: warning: implicit declaration of function 'major' is invalid in C99
+#                array_set_numeric(array, "major", major(sbuf->st_rdev));
+#                                                  ^
+#  415|   	if (S_ISBLK(sbuf->st_mode) || S_ISCHR(sbuf->st_mode)) {
+#  416|   		array_set_numeric(array, "rdev", sbuf->st_rdev);
+#  417|-> 		array_set_numeric(array, "major", major(sbuf->st_rdev));
+#  418|   		array_set_numeric(array, "minor", minor(sbuf->st_rdev));
+#  419|   	}
+
+Error: COMPILER_WARNING:
+gawk-5.1.0/extension/filefuncs.c:418:37: warning: implicit declaration of function 'minor' is invalid in C99
+#                array_set_numeric(array, "minor", minor(sbuf->st_rdev));
+#                                                  ^
+#  416|   		array_set_numeric(array, "rdev", sbuf->st_rdev);
+#  417|   		array_set_numeric(array, "major", major(sbuf->st_rdev));
+#  418|-> 		array_set_numeric(array, "minor", minor(sbuf->st_rdev));
+#  419|   	}
+#  420|   
+
+Error: COMPILER_WARNING:
+gawk-5.1.0/extension/revtwoway.c:300:13: warning: implicit declaration of function 'getdtablesize' is invalid in C99
+#                max_fds = getdtablesize();
+#                          ^
+#  298|   
+#  299|   	if (max_fds + 1 == 0)	/* wrapped. ha! */
+#  300|-> 		max_fds = getdtablesize();
+#  301|   
+#  302|   	/* input side: */
+
+Error: COMPILER_WARNING:
+gawk-5.1.0/extension/revtwoway.c:334:12: warning: implicit declaration of function 'getdtablesize' is invalid in C99
+#        max_fds = getdtablesize();
+#                  ^
+#  332|   	register_two_way_processor(& two_way_processor);
+#  333|   
+#  334|-> 	max_fds = getdtablesize();
+#  335|   
+#  336|   	return awk_true;
+
+Error: COMPILER_WARNING:
+gawk-5.1.0/extension/filefuncs.c:95: included_from: Included from here.
+gawk-5.1.0/gettext.h:157:1: warning: unused function 'pgettext_aux'
+#pgettext_aux (const char *domain,
+#^
+#  155|   #endif
+#  156|   static const char *
+#  157|-> pgettext_aux (const char *domain,
+#  158|                 const char *msg_ctxt_id, const char *msgid,
+#  159|                 int category)
+
+Error: COMPILER_WARNING:
+gawk-5.1.0/gettext.h:176:1: warning: unused function 'npgettext_aux'
+#npgettext_aux (const char *domain,
+#^
+#  174|   #endif
+#  175|   static const char *
+#  176|-> npgettext_aux (const char *domain,
+#  177|                  const char *msg_ctxt_id, const char *msgid,
+#  178|                  const char *msgid_plural, unsigned long int n,
+
+Error: COMPILER_WARNING:
+gawk-5.1.0/gettext.h:220:1: warning: unused function 'dcpgettext_expr'
+#dcpgettext_expr (const char *domain,
+#^
+#  218|   #endif
+#  219|   static const char *
+#  220|-> dcpgettext_expr (const char *domain,
+#  221|                    const char *msgctxt, const char *msgid,
+#  222|                    int category)
+
+Error: COMPILER_WARNING:
+gawk-5.1.0/gettext.h:267:1: warning: unused function 'dcnpgettext_expr'
+#dcnpgettext_expr (const char *domain,
+#^
+#  265|   #endif
+#  266|   static const char *
+#  267|-> dcnpgettext_expr (const char *domain,
+#  268|                     const char *msgctxt, const char *msgid,
+#  269|                     const char *msgid_plural, unsigned long int n,
+
+Error: COMPILER_WARNING:
+gawk-5.1.0/io.c:910:23: warning: incompatible integer to pointer conversion assigning to 'FILE *' (aka 'struct _PDCLIB_file *') from 'int'
+#                        if ((rp->output.fp = popen(str, binmode("w"))) == NULL)
+#                                           ^ ~~~~~~~~~~~~~~~~~~~~~~~~
+#  908|   			 * popen().
+#  909|   			 */
+#  910|-> 			if ((rp->output.fp = popen(str, binmode("w"))) == NULL)
+#  911|   				fatal(_("cannot open pipe `%s' for output: %s"),
+#  912|   						str, strerror(errno));
+
+Error: COMPILER_WARNING:
+gawk-5.1.0/io.c:910:25: warning: implicit declaration of function 'popen' is invalid in C99
+#                        if ((rp->output.fp = popen(str, binmode("w"))) == NULL)
+#                                             ^
+#  908|   			 * popen().
+#  909|   			 */
+#  910|-> 			if ((rp->output.fp = popen(str, binmode("w"))) == NULL)
+#  911|   				fatal(_("cannot open pipe `%s' for output: %s"),
+#  912|   						str, strerror(errno));
+
+Error: COMPILER_WARNING:
+gawk-5.1.0/io.c:1264:12: warning: implicit declaration of function 'shutdown' is invalid in C99
+#                                (void) shutdown(fileno(rp->output.fp), SHUT_WR);
+#                                       ^
+# 1262|   #ifdef HAVE_SOCKETS
+# 1263|   			if ((rp->flag & RED_TCP) != 0)
+# 1264|-> 				(void) shutdown(fileno(rp->output.fp), SHUT_WR);
+# 1265|   #endif /* HAVE_SOCKETS */
+# 1266|   
+
+Error: COMPILER_WARNING:
+gawk-5.1.0/io.c:1280:13: warning: implicit declaration of function 'shutdown' is invalid in C99
+#                                        (void) shutdown(rp->iop->public.fd, SHUT_RD);
+#                                               ^
+# 1278|   #ifdef HAVE_SOCKETS
+# 1279|   				if ((rp->flag & RED_TCP) != 0)
+# 1280|-> 					(void) shutdown(rp->iop->public.fd, SHUT_RD);
+# 1281|   #endif /* HAVE_SOCKETS */
+# 1282|   				(void) iop_close(rp->iop);
+
+Error: COMPILER_WARNING:
+gawk-5.1.0/io.c:1291:33: warning: implicit declaration of function 'pclose' is invalid in C99
+#                status = sanitize_exit_status(pclose(rp->output.fp));
+#                                              ^
+# 1289|   	} else if ((rp->flag & (RED_PIPE|RED_WRITE)) == (RED_PIPE|RED_WRITE)) {
+# 1290|   		/* write to pipe */
+# 1291|-> 		status = sanitize_exit_status(pclose(rp->output.fp));
+# 1292|   		if ((BINMODE & BINMODE_INPUT) != 0)
+# 1293|   			os_setbinmode(fileno(stdin), O_BINARY);
+
+Error: COMPILER_WARNING:
+gawk-5.1.0/io.c:2432:3: warning: implicit declaration of function 'execl' is invalid in C99
+#                execl("/bin/sh", "sh", "-c", str, NULL);
+#                ^
+# 2430|   		/* stderr does NOT get dup'ed onto child's stdout */
+# 2431|   		set_sigpipe_to_default();
+# 2432|-> 		execl("/bin/sh", "sh", "-c", str, NULL);
+# 2433|   		_exit(errno == ENOENT ? 127 : 126);
+# 2434|   	}
+
+Error: COMPILER_WARNING:
+gawk-5.1.0/io.c:2669:3: warning: implicit declaration of function 'execl' is invalid in C99
+#                execl("/bin/sh", "sh", "-c", cmd, NULL);
+#                ^
+# 2667|   			fatal(_("close of pipe failed: %s"), strerror(errno));
+# 2668|   		set_sigpipe_to_default();
+# 2669|-> 		execl("/bin/sh", "sh", "-c", cmd, NULL);
+# 2670|   		_exit(errno == ENOENT ? 127 : 126);
+# 2671|   	}
+
+Error: COMPILER_WARNING:
+gawk-5.1.0/msg.c:91:11: warning: implicit declaration of function 'mpfr_fprintf' is invalid in C99
+#                        (void) mpfr_fprintf(stderr, "FNR=%Zd) ", val->mpg_i);
+#                               ^
+#   89|   			if (file)
+#   90|   				(void) fprintf(stderr, "FILENAME=%.*s ", len, file);
+#   91|-> 			(void) mpfr_fprintf(stderr, "FNR=%Zd) ", val->mpg_i);
+#   92|   		}
+#   93|   	} else
+
+Error: COMPILER_WARNING:
+gawk-5.1.0/str_array.c:783:10: warning: implicit declaration of function 'unsetenv' is invalid in C99
+#                (void) unsetenv(subs->stptr);
+#                       ^
+#  781|   	if (val != NULL) {
+#  782|   		str_terminate(subs, save);
+#  783|-> 		(void) unsetenv(subs->stptr);
+#  784|   		str_restore(subs, save);
+#  785|   	}
+
+Error: COMPILER_WARNING:
+gawk-5.1.0/str_array.c:820:9: warning: implicit declaration of function 'setenv' is invalid in C99
+#        (void) setenv(subs->stptr, newval, 1);
+#               ^
+#  818|   		newval = "";
+#  819|   
+#  820|-> 	(void) setenv(subs->stptr, newval, 1);
+#  821|   
+#  822|   	return val;
+
+Error: COMPILER_WARNING:
+gawk-5.1.0/support/regex.c:73: included_from: Included from here.
+gawk-5.1.0/support/regcomp.c:877:18: warning: implicit declaration of function 'nl_langinfo' is invalid in C99
+#  codeset_name = nl_langinfo (CODESET);
+#                 ^
+#  875|   		       != 0);
+#  876|   #else
+#  877|->   codeset_name = nl_langinfo (CODESET);
+#  878|     if ((codeset_name[0] == 'U' || codeset_name[0] == 'u')
+#  879|         && (codeset_name[1] == 'T' || codeset_name[1] == 't')
+
+Error: COMPILER_WARNING:
+gawk-5.1.0/support/regex.c:74: included_from: Included from here.
+gawk-5.1.0/support/regexec.c:332:8: warning: result of comparison of constant -9223372036854775808 with expression of type 'Idx' (aka 'int') is always false
+#                         || INT_ADD_WRAPV (length1, length2, &len))))
+#                         ~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gawk-5.1.0/support/intprops.h:356:21: note: expanded from macro 'INT_ADD_WRAPV'
+#                    _GL_INT_ADD_RANGE_OVERFLOW)
+#                    ^
+gawk-5.1.0/support/intprops.h:460:45: note: expanded from macro '_GL_INT_OP_WRAPV'
+#    : _GL_INT_OP_WRAPV_LONGISH(a, b, r, op, overflow))
+#                                            ^
+gawk-5.1.0/support/intprops.h:465:41: note: expanded from macro '_GL_INT_OP_WRAPV_LONGISH'
+#        ? _GL_INT_OP_CALC (a, b, r, op, overflow, unsigned long int, \
+#                                        ^
+gawk-5.1.0/support/intprops.h:489:4: note: expanded from macro '_GL_INT_OP_CALC'
+#  (overflow (a, b, tmin, tmax) \
+#   ^
+gawk-5.1.0/support/intprops.h:520:67: note: expanded from macro '_GL_INT_ADD_RANGE_OVERFLOW'
+#       ? ((EXPR_SIGNED (_GL_INT_CONVERT (a, (tmin) - (b))) || (b) < (tmin)) \
+#                                                                  ^
+gawk-5.1.0/support/cdefs.h:405:52: note: expanded from macro '__glibc_unlikely'
+## define __glibc_unlikely(cond) __builtin_expect ((cond), 0)
+#                                                   ^~~~
+#  330|   
+#  331|     if (__glibc_unlikely ((length1 < 0 || length2 < 0 || stop < 0
+#  332|-> 			 || INT_ADD_WRAPV (length1, length2, &len))))
+#  333|       return -2;
+#  334|   
+
+Error: COMPILER_WARNING:
+gawk-5.1.0/support/regex.c:74: included_from: Included from here.
+gawk-5.1.0/support/regexec.c:332:8: warning: result of comparison of constant 9223372036854775807 with expression of type 'Idx' (aka 'int') is always false
+#                         || INT_ADD_WRAPV (length1, length2, &len))))
+#                         ~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gawk-5.1.0/support/intprops.h:356:21: note: expanded from macro 'INT_ADD_WRAPV'
+#                    _GL_INT_ADD_RANGE_OVERFLOW)
+#                    ^
+gawk-5.1.0/support/intprops.h:460:45: note: expanded from macro '_GL_INT_OP_WRAPV'
+#    : _GL_INT_OP_WRAPV_LONGISH(a, b, r, op, overflow))
+#                                            ^
+gawk-5.1.0/support/intprops.h:465:41: note: expanded from macro '_GL_INT_OP_WRAPV_LONGISH'
+#        ? _GL_INT_OP_CALC (a, b, r, op, overflow, unsigned long int, \
+#                                        ^
+gawk-5.1.0/support/intprops.h:489:4: note: expanded from macro '_GL_INT_OP_CALC'
+#  (overflow (a, b, tmin, tmax) \
+#   ^
+gawk-5.1.0/support/intprops.h:523:48: note: expanded from macro '_GL_INT_ADD_RANGE_OVERFLOW'
+#      || ((EXPR_SIGNED (a) ? 0 <= (a) : (tmax) < (a)) && (tmax) < (a) + (b))) \
+#                                               ^
+gawk-5.1.0/support/cdefs.h:405:52: note: expanded from macro '__glibc_unlikely'
+## define __glibc_unlikely(cond) __builtin_expect ((cond), 0)
+#                                                   ^~~~
+#  330|   
+#  331|     if (__glibc_unlikely ((length1 < 0 || length2 < 0 || stop < 0
+#  332|-> 			 || INT_ADD_WRAPV (length1, length2, &len))))
+#  333|       return -2;
+#  334|   
+
+Error: COMPILER_WARNING:
+gawk-5.1.0/support/regex.c:74: included_from: Included from here.
+gawk-5.1.0/support/regexec.c:332:8: warning: result of comparison of constant 9223372036854775807 with expression of type 'int' is always false
+#                         || INT_ADD_WRAPV (length1, length2, &len))))
+#                         ~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gawk-5.1.0/support/intprops.h:356:21: note: expanded from macro 'INT_ADD_WRAPV'
+#                    _GL_INT_ADD_RANGE_OVERFLOW)
+#                    ^
+gawk-5.1.0/support/intprops.h:460:45: note: expanded from macro '_GL_INT_OP_WRAPV'
+#    : _GL_INT_OP_WRAPV_LONGISH(a, b, r, op, overflow))
+#                                            ^
+gawk-5.1.0/support/intprops.h:465:41: note: expanded from macro '_GL_INT_OP_WRAPV_LONGISH'
+#        ? _GL_INT_OP_CALC (a, b, r, op, overflow, unsigned long int, \
+#                                        ^
+gawk-5.1.0/support/intprops.h:489:4: note: expanded from macro '_GL_INT_OP_CALC'
+#  (overflow (a, b, tmin, tmax) \
+#   ^
+gawk-5.1.0/support/intprops.h:523:65: note: expanded from macro '_GL_INT_ADD_RANGE_OVERFLOW'
+#      || ((EXPR_SIGNED (a) ? 0 <= (a) : (tmax) < (a)) && (tmax) < (a) + (b))) \
+#                                                                ^
+gawk-5.1.0/support/cdefs.h:405:52: note: expanded from macro '__glibc_unlikely'
+## define __glibc_unlikely(cond) __builtin_expect ((cond), 0)
+#                                                   ^~~~
+#  330|   
+#  331|     if (__glibc_unlikely ((length1 < 0 || length2 < 0 || stop < 0
+#  332|-> 			 || INT_ADD_WRAPV (length1, length2, &len))))
+#  333|       return -2;
+#  334|   

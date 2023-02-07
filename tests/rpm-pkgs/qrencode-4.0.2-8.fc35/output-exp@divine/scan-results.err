@@ -1,0 +1,35 @@
+Error: DIVINE_WARNING:
+qrencode-4.0.2/tests/test_qrspec.c: scope_hint: In function 'test_newframe':
+qrencode-4.0.2/tests/test_qrspec.c:136: note: Failed to open "frame":: ENOENT (no such file or directory)
+qrencode-4.0.2/tests/test_qrspec.c:136: error: Uncaught signal.
+qrencode-4.0.2/tests/test_qrspec.c:136: note: control error in kernel
+/opt/divine/include/dios/sys/fault.hpp:119: note: void __dios::FaultBase::handler<__dios::Context>(_VM_Fault, _VM_Frame*, void (*)())
+/opt/divine/include/dios/arch/divm/fault.c:12: note: __dios_fault
+/opt/divine/include/dios/sys/sched_base.hpp:408: note: int __dios::Scheduler<__dios::Base>::_kill<__dios::ProcessManager<__dios::Fault<__dios::Scheduler<__dios::Base> > >::kill(int, int)::'lambda'(auto*)>(int, int, auto)
+/opt/divine/include/dios/sys/procmanager.hpp:275: note: __dios::ProcessManager<__dios::Fault<__dios::Scheduler<__dios::Base> > >::kill(int, int)
+/opt/divine/include/dios/include/sys/argpad.hpp:53: note: __dios::SysProxy::kill(int, int)
+/opt/divine/include/dios/include/sys/argpad.hpp:113: note: __libc_kill
+/opt/divine/include/dios/libc/_PDCLIB/glue.c:147: note: raise
+/opt/divine/include/dios/libc/stdlib/abort.c:14: note: abort
+qrencode-4.0.2/tests/test_qrspec.c:136: note: test_newframe
+qrencode-4.0.2/tests/test_qrspec.c:299: note: main
+#  134|   	if(fp == NULL) {
+#  135|   		perror("Failed to open \"frame\":");
+#  136|-> 		abort();
+#  137|   	}
+#  138|   	for(i=1; i<=QRSPEC_VERSION_MAX; i++) {
+
+Error: DIVINE_WARNING:
+qrencode-4.0.2/tests/test_split.c: scope_hint: In function 'test_toupper':
+qrencode-4.0.2/tests/test_split.c:344: error: access of size 1 at [heap*] is 1 bytes out of bounds
+qrencode-4.0.2/tests/test_split.c:344: note: memory error in userspace
+/opt/divine/include/dios/sys/fault.hpp:119: note: void __dios::FaultBase::handler<__dios::Context>(_VM_Fault, _VM_Frame*, void (*)())
+/opt/divine/include/dios/libc/string/strncmp.c:13: note: strncmp
+qrencode-4.0.2/tests/test_split.c:344: note: test_toupper
+qrencode-4.0.2/tests/test_split.c:542: note: main
+/opt/divine/include/dios/libc/sys/start.cpp:91: note: __dios_start
+#  342|   		err++;
+#  343|   	}
+#  344|-> 	if(strncmp((char *)list->data, "ABCDE", list->size)) {
+#  345|   		err++;
+#  346|   	}

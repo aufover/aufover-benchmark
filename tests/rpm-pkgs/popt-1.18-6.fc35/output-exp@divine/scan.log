@@ -1,0 +1,1350 @@
+scan.ini: [scan]
+scan.ini: tool = csmock
+scan.ini: tool-version = csmock-3.3.5-1.fc36
+scan.ini: tool-args = '/usr/bin/csmock' '-o' '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/popt-1.18-6.fc35/divine/output' '-f' '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/popt-1.18-6.fc35/popt-1.18-6.fc35.src.rpm' '-r' 'fedora-35-x86_64' '-t' 'divine' '--divine-timeout=8' '--keep-going'
+scan.ini: host = dell-pe-fm120-1b.dell2.lab.eng.bos.redhat.com
+scan.ini: store-results-to = /home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/popt-1.18-6.fc35/divine/output
+scan.ini: time-created = 2023-01-26 08:05:15
+scan.ini: enabled-plugins = divine, gcc
+scan.ini: mock-config = fedora-35-x86_64
+scan.ini: project-name = popt-1.18-6.fc35
+>>> 2023-01-26 08:05:15	"rpm -qa | sort -V > '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/popt-1.18-6.fc35/divine/output/debug/rpm-list-host.txt'"
+
+>>> 2023-01-26 08:05:16	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--init"
+INFO: mock.py version 3.5 starting (python version = 3.10.9, NVR = mock-3.5-1.fc36)...
+Start(bootstrap): init plugins
+INFO: selinux enabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start: clean chroot
+Finish: clean chroot
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 3.5
+INFO: Mock Version: 3.5
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+Start: unpacking root cache
+Finish: unpacking root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 3.5
+INFO: Mock Version: 3.5
+Finish: chroot init
+Finish: run
+
+>>> 2023-01-26 08:05:23	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--installdeps" "/tmp/csmockru4e3o59/popt-1.18-6.fc35.src.rpm"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+fedora                   [===                 ] ---  B/s |   0  B     --:-- ETAfedora              100% [====================] 8.3 kB/s | 4.5 kB     00:00 ETAfedora                                          8.3 kB/s | 4.5 kB     00:00    
+updates                  [===                 ] ---  B/s |   0  B     --:-- ETAupdates                  [   ===              ] ---  B/s |   0  B     --:-- ETAupdates                                         7.4 kB/s | 2.8 kB     00:00    
+Dependencies resolved.
+================================================================================
+ Package                  Architecture Version              Repository     Size
+================================================================================
+Installing:
+ [1mgcc                     [m x86_64       11.3.1-3.fc35        updates        31 M
+ [1mgettext                 [m x86_64       0.21-8.fc35          fedora        1.1 M
+ [1mmake                    [m x86_64       1:4.3-6.fc35         fedora        533 k
+Installing dependencies:
+ [1mannobin-docs            [m noarch       10.79-1.fc35         updates        91 k
+ [1mannobin-plugin-gcc      [m x86_64       10.79-1.fc35         updates       882 k
+ [1mcpp                     [m x86_64       11.3.1-3.fc35        updates        10 M
+ [1mgc                      [m x86_64       8.0.4-6.fc35         fedora        103 k
+ [1mgettext-libs            [m x86_64       0.21-8.fc35          fedora        303 k
+ [1mglibc-devel             [m x86_64       2.34-49.fc35         updates        45 k
+ [1mglibc-headers-x86       [m noarch       2.34-49.fc35         updates       445 k
+ [1mguile22                 [m x86_64       2.2.7-3.fc35         fedora        6.4 M
+ [1mkernel-headers          [m x86_64       6.0.5-100.fc35       updates       1.3 M
+ [1mlibmpc                  [m x86_64       1.2.1-3.fc35         fedora         62 k
+ [1mlibtool-ltdl            [m x86_64       2.4.6-50.fc35        updates        36 k
+ [1mlibxcrypt-devel         [m x86_64       4.4.33-3.fc35        updates        30 k
+
+Transaction Summary
+================================================================================
+Install  15 Packages
+
+Total size: 53 M
+Installed size: 168 M
+Downloading Packages:
+[SKIPPED] gc-8.0.4-6.fc35.x86_64.rpm: Already downloaded                       
+[SKIPPED] gettext-0.21-8.fc35.x86_64.rpm: Already downloaded                   
+[SKIPPED] gettext-libs-0.21-8.fc35.x86_64.rpm: Already downloaded              
+[SKIPPED] guile22-2.2.7-3.fc35.x86_64.rpm: Already downloaded                  
+[SKIPPED] libmpc-1.2.1-3.fc35.x86_64.rpm: Already downloaded                   
+[SKIPPED] make-4.3-6.fc35.x86_64.rpm: Already downloaded                       
+[SKIPPED] annobin-docs-10.79-1.fc35.noarch.rpm: Already downloaded             
+[SKIPPED] annobin-plugin-gcc-10.79-1.fc35.x86_64.rpm: Already downloaded       
+[SKIPPED] cpp-11.3.1-3.fc35.x86_64.rpm: Already downloaded                     
+[SKIPPED] gcc-11.3.1-3.fc35.x86_64.rpm: Already downloaded                     
+[SKIPPED] glibc-devel-2.34-49.fc35.x86_64.rpm: Already downloaded              
+[SKIPPED] glibc-headers-x86-2.34-49.fc35.noarch.rpm: Already downloaded        
+[SKIPPED] kernel-headers-6.0.5-100.fc35.x86_64.rpm: Already downloaded         
+[SKIPPED] libtool-ltdl-2.4.6-50.fc35.x86_64.rpm: Already downloaded            
+[SKIPPED] libxcrypt-devel-4.4.33-3.fc35.x86_64.rpm: Already downloaded         
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :  [===                                                ] 1/1  Preparing        :  [======                                             ] 1/1  Preparing        :  [==========                                         ] 1/1  Preparing        :  [=============                                      ] 1/1  Preparing        :  [================                                   ] 1/1  Preparing        :  [====================                               ] 1/1  Preparing        :  [=======================                            ] 1/1  Preparing        :  [===========================                        ] 1/1  Preparing        :  [==============================                     ] 1/1  Preparing        :  [=================================                  ] 1/1  Preparing        :  [=====================================              ] 1/1  Preparing        :  [========================================           ] 1/1  Preparing        :  [===========================================        ] 1/1  Preparing        :  [===============================================    ] 1/1  Preparing        :                                                        1/1 
+  Installing       : libmpc-1.2.1-3.fc35.x86_ [                         ]  1/15  Installing       : libmpc-1.2.1-3.fc35.x86_ [=====                    ]  1/15  Installing       : libmpc-1.2.1-3.fc35.x86_ [===========              ]  1/15  Installing       : libmpc-1.2.1-3.fc35.x86_ [=================        ]  1/15  Installing       : libmpc-1.2.1-3.fc35.x86_ [=====================    ]  1/15  Installing       : libmpc-1.2.1-3.fc35.x86_ [======================   ]  1/15  Installing       : libmpc-1.2.1-3.fc35.x86_ [=======================  ]  1/15  Installing       : libmpc-1.2.1-3.fc35.x86_ [======================== ]  1/15  Installing       : libmpc-1.2.1-3.fc35.x86_64                            1/15 
+  Installing       : cpp-11.3.1-3.fc35.x86_64 [                         ]  2/15  Installing       : cpp-11.3.1-3.fc35.x86_64 [=                        ]  2/15  Installing       : cpp-11.3.1-3.fc35.x86_64 [==                       ]  2/15  Installing       : cpp-11.3.1-3.fc35.x86_64 [===                      ]  2/15  Installing       : cpp-11.3.1-3.fc35.x86_64 [====                     ]  2/15  Installing       : cpp-11.3.1-3.fc35.x86_64 [=====                    ]  2/15  Installing       : cpp-11.3.1-3.fc35.x86_64 [======                   ]  2/15  Installing       : cpp-11.3.1-3.fc35.x86_64 [=======                  ]  2/15  Installing       : cpp-11.3.1-3.fc35.x86_64 [========                 ]  2/15  Installing       : cpp-11.3.1-3.fc35.x86_64 [=========                ]  2/15  Installing       : cpp-11.3.1-3.fc35.x86_64 [==========               ]  2/15  Installing       : cpp-11.3.1-3.fc35.x86_64 [===========              ]  2/15  Installing       : cpp-11.3.1-3.fc35.x86_64 [============             ]  2/15  Installing       : cpp-11.3.1-3.fc35.x86_64 [=============            ]  2/15  Installing       : cpp-11.3.1-3.fc35.x86_64 [==============           ]  2/15  Installing       : cpp-11.3.1-3.fc35.x86_64 [===============          ]  2/15  Installing       : cpp-11.3.1-3.fc35.x86_64 [================         ]  2/15  Installing       : cpp-11.3.1-3.fc35.x86_64 [=================        ]  2/15  Installing       : cpp-11.3.1-3.fc35.x86_64 [==================       ]  2/15  Installing       : cpp-11.3.1-3.fc35.x86_64 [===================      ]  2/15  Installing       : cpp-11.3.1-3.fc35.x86_64 [====================     ]  2/15  Installing       : cpp-11.3.1-3.fc35.x86_64 [=====================    ]  2/15  Installing       : cpp-11.3.1-3.fc35.x86_64 [======================   ]  2/15  Installing       : cpp-11.3.1-3.fc35.x86_64 [=======================  ]  2/15  Installing       : cpp-11.3.1-3.fc35.x86_64 [======================== ]  2/15  Installing       : cpp-11.3.1-3.fc35.x86_64                              2/15 
+  Installing       : libtool-ltdl-2.4.6-50.fc [                         ]  3/15  Installing       : libtool-ltdl-2.4.6-50.fc [===========              ]  3/15  Installing       : libtool-ltdl-2.4.6-50.fc [===============          ]  3/15  Installing       : libtool-ltdl-2.4.6-50.fc [======================== ]  3/15  Installing       : libtool-ltdl-2.4.6-50.fc35.x86_64                     3/15 
+  Installing       : kernel-headers-6.0.5-100 [                         ]  4/15  Installing       : kernel-headers-6.0.5-100 [=                        ]  4/15  Installing       : kernel-headers-6.0.5-100 [==                       ]  4/15  Installing       : kernel-headers-6.0.5-100 [===                      ]  4/15  Installing       : kernel-headers-6.0.5-100 [====                     ]  4/15  Installing       : kernel-headers-6.0.5-100 [=====                    ]  4/15  Installing       : kernel-headers-6.0.5-100 [======                   ]  4/15  Installing       : kernel-headers-6.0.5-100 [=======                  ]  4/15  Installing       : kernel-headers-6.0.5-100 [========                 ]  4/15  Installing       : kernel-headers-6.0.5-100 [=========                ]  4/15  Installing       : kernel-headers-6.0.5-100 [==========               ]  4/15  Installing       : kernel-headers-6.0.5-100 [===========              ]  4/15  Installing       : kernel-headers-6.0.5-100 [============             ]  4/15  Installing       : kernel-headers-6.0.5-100 [=============            ]  4/15  Installing       : kernel-headers-6.0.5-100 [==============           ]  4/15  Installing       : kernel-headers-6.0.5-100 [===============          ]  4/15  Installing       : kernel-headers-6.0.5-100 [================         ]  4/15  Installing       : kernel-headers-6.0.5-100 [=================        ]  4/15  Installing       : kernel-headers-6.0.5-100 [==================       ]  4/15  Installing       : kernel-headers-6.0.5-100 [===================      ]  4/15  Installing       : kernel-headers-6.0.5-100 [====================     ]  4/15  Installing       : kernel-headers-6.0.5-100 [=====================    ]  4/15  Installing       : kernel-headers-6.0.5-100 [======================   ]  4/15  Installing       : kernel-headers-6.0.5-100 [=======================  ]  4/15  Installing       : kernel-headers-6.0.5-100 [======================== ]  4/15  Installing       : kernel-headers-6.0.5-100.fc35.x86_64                  4/15 
+  Installing       : glibc-headers-x86-2.34-4 [                         ]  5/15  Installing       : glibc-headers-x86-2.34-4 [=                        ]  5/15  Installing       : glibc-headers-x86-2.34-4 [==                       ]  5/15  Installing       : glibc-headers-x86-2.34-4 [===                      ]  5/15  Installing       : glibc-headers-x86-2.34-4 [====                     ]  5/15  Installing       : glibc-headers-x86-2.34-4 [=====                    ]  5/15  Installing       : glibc-headers-x86-2.34-4 [======                   ]  5/15  Installing       : glibc-headers-x86-2.34-4 [=======                  ]  5/15  Installing       : glibc-headers-x86-2.34-4 [========                 ]  5/15  Installing       : glibc-headers-x86-2.34-4 [=========                ]  5/15  Installing       : glibc-headers-x86-2.34-4 [==========               ]  5/15  Installing       : glibc-headers-x86-2.34-4 [===========              ]  5/15  Installing       : glibc-headers-x86-2.34-4 [============             ]  5/15  Installing       : glibc-headers-x86-2.34-4 [=============            ]  5/15  Installing       : glibc-headers-x86-2.34-4 [==============           ]  5/15  Installing       : glibc-headers-x86-2.34-4 [===============          ]  5/15  Installing       : glibc-headers-x86-2.34-4 [================         ]  5/15  Installing       : glibc-headers-x86-2.34-4 [=================        ]  5/15  Installing       : glibc-headers-x86-2.34-4 [==================       ]  5/15  Installing       : glibc-headers-x86-2.34-4 [===================      ]  5/15  Installing       : glibc-headers-x86-2.34-4 [====================     ]  5/15  Installing       : glibc-headers-x86-2.34-4 [=====================    ]  5/15  Installing       : glibc-headers-x86-2.34-4 [======================   ]  5/15  Installing       : glibc-headers-x86-2.34-4 [=======================  ]  5/15  Installing       : glibc-headers-x86-2.34-4 [======================== ]  5/15  Installing       : glibc-headers-x86-2.34-49.fc35.noarch                 5/15 
+  Installing       : libxcrypt-devel-4.4.33-3 [                         ]  6/15  Installing       : libxcrypt-devel-4.4.33-3 [========                 ]  6/15  Installing       : libxcrypt-devel-4.4.33-3 [=========                ]  6/15  Installing       : libxcrypt-devel-4.4.33-3 [=============            ]  6/15  Installing       : libxcrypt-devel-4.4.33-3 [=================        ]  6/15  Installing       : libxcrypt-devel-4.4.33-3 [====================     ]  6/15  Installing       : libxcrypt-devel-4.4.33-3 [=====================    ]  6/15  Installing       : libxcrypt-devel-4.4.33-3 [=======================  ]  6/15  Installing       : libxcrypt-devel-4.4.33-3 [======================== ]  6/15  Installing       : libxcrypt-devel-4.4.33-3.fc35.x86_64                  6/15 
+  Installing       : glibc-devel-2.34-49.fc35 [                         ]  7/15  Installing       : glibc-devel-2.34-49.fc35 [=                        ]  7/15  Installing       : glibc-devel-2.34-49.fc35 [====                     ]  7/15  Installing       : glibc-devel-2.34-49.fc35 [=======                  ]  7/15  Installing       : glibc-devel-2.34-49.fc35 [========                 ]  7/15  Installing       : glibc-devel-2.34-49.fc35 [=============            ]  7/15  Installing       : glibc-devel-2.34-49.fc35 [=================        ]  7/15  Installing       : glibc-devel-2.34-49.fc35 [==================       ]  7/15  Installing       : glibc-devel-2.34-49.fc35 [====================     ]  7/15  Installing       : glibc-devel-2.34-49.fc35 [======================   ]  7/15  Installing       : glibc-devel-2.34-49.fc35 [======================== ]  7/15  Installing       : glibc-devel-2.34-49.fc35.x86_64                       7/15 
+  Installing       : annobin-docs-10.79-1.fc3 [                         ]  8/15  Installing       : annobin-docs-10.79-1.fc3 [==                       ]  8/15  Installing       : annobin-docs-10.79-1.fc3 [===========              ]  8/15  Installing       : annobin-docs-10.79-1.fc3 [=============            ]  8/15  Installing       : annobin-docs-10.79-1.fc3 [======================   ]  8/15  Installing       : annobin-docs-10.79-1.fc3 [=======================  ]  8/15  Installing       : annobin-docs-10.79-1.fc3 [======================== ]  8/15  Installing       : annobin-docs-10.79-1.fc35.noarch                      8/15 
+  Installing       : gettext-libs-0.21-8.fc35 [                         ]  9/15  Installing       : gettext-libs-0.21-8.fc35 [=                        ]  9/15  Installing       : gettext-libs-0.21-8.fc35 [==                       ]  9/15  Installing       : gettext-libs-0.21-8.fc35 [===                      ]  9/15  Installing       : gettext-libs-0.21-8.fc35 [====                     ]  9/15  Installing       : gettext-libs-0.21-8.fc35 [=====                    ]  9/15  Installing       : gettext-libs-0.21-8.fc35 [======                   ]  9/15  Installing       : gettext-libs-0.21-8.fc35 [=======                  ]  9/15  Installing       : gettext-libs-0.21-8.fc35 [========                 ]  9/15  Installing       : gettext-libs-0.21-8.fc35 [=========                ]  9/15  Installing       : gettext-libs-0.21-8.fc35 [==========               ]  9/15  Installing       : gettext-libs-0.21-8.fc35 [===========              ]  9/15  Installing       : gettext-libs-0.21-8.fc35 [============             ]  9/15  Installing       : gettext-libs-0.21-8.fc35 [=============            ]  9/15  Installing       : gettext-libs-0.21-8.fc35 [==============           ]  9/15  Installing       : gettext-libs-0.21-8.fc35 [===============          ]  9/15  Installing       : gettext-libs-0.21-8.fc35 [================         ]  9/15  Installing       : gettext-libs-0.21-8.fc35 [=================        ]  9/15  Installing       : gettext-libs-0.21-8.fc35 [==================       ]  9/15  Installing       : gettext-libs-0.21-8.fc35 [===================      ]  9/15  Installing       : gettext-libs-0.21-8.fc35 [====================     ]  9/15  Installing       : gettext-libs-0.21-8.fc35 [=====================    ]  9/15  Installing       : gettext-libs-0.21-8.fc35 [======================   ]  9/15  Installing       : gettext-libs-0.21-8.fc35 [=======================  ]  9/15  Installing       : gettext-libs-0.21-8.fc35 [======================== ]  9/15  Installing       : gettext-libs-0.21-8.fc35.x86_64                       9/15 
+  Installing       : gc-8.0.4-6.fc35.x86_64 [                           ] 10/15  Installing       : gc-8.0.4-6.fc35.x86_64 [===                        ] 10/15  Installing       : gc-8.0.4-6.fc35.x86_64 [====                       ] 10/15  Installing       : gc-8.0.4-6.fc35.x86_64 [========                   ] 10/15  Installing       : gc-8.0.4-6.fc35.x86_64 [===========                ] 10/15  Installing       : gc-8.0.4-6.fc35.x86_64 [===============            ] 10/15  Installing       : gc-8.0.4-6.fc35.x86_64 [===================        ] 10/15  Installing       : gc-8.0.4-6.fc35.x86_64 [======================     ] 10/15  Installing       : gc-8.0.4-6.fc35.x86_64 [=========================  ] 10/15  Installing       : gc-8.0.4-6.fc35.x86_64 [========================== ] 10/15  Installing       : gc-8.0.4-6.fc35.x86_64                               10/15 
+  Installing       : guile22-2.2.7-3.fc35.x86 [                         ] 11/15  Installing       : guile22-2.2.7-3.fc35.x86 [=                        ] 11/15  Installing       : guile22-2.2.7-3.fc35.x86 [==                       ] 11/15  Installing       : guile22-2.2.7-3.fc35.x86 [===                      ] 11/15  Installing       : guile22-2.2.7-3.fc35.x86 [====                     ] 11/15  Installing       : guile22-2.2.7-3.fc35.x86 [=====                    ] 11/15  Installing       : guile22-2.2.7-3.fc35.x86 [======                   ] 11/15  Installing       : guile22-2.2.7-3.fc35.x86 [=======                  ] 11/15  Installing       : guile22-2.2.7-3.fc35.x86 [========                 ] 11/15  Installing       : guile22-2.2.7-3.fc35.x86 [=========                ] 11/15  Installing       : guile22-2.2.7-3.fc35.x86 [==========               ] 11/15  Installing       : guile22-2.2.7-3.fc35.x86 [===========              ] 11/15  Installing       : guile22-2.2.7-3.fc35.x86 [============             ] 11/15  Installing       : guile22-2.2.7-3.fc35.x86 [=============            ] 11/15  Installing       : guile22-2.2.7-3.fc35.x86 [==============           ] 11/15  Installing       : guile22-2.2.7-3.fc35.x86 [===============          ] 11/15  Installing       : guile22-2.2.7-3.fc35.x86 [================         ] 11/15  Installing       : guile22-2.2.7-3.fc35.x86 [=================        ] 11/15  Installing       : guile22-2.2.7-3.fc35.x86 [==================       ] 11/15  Installing       : guile22-2.2.7-3.fc35.x86 [===================      ] 11/15  Installing       : guile22-2.2.7-3.fc35.x86 [====================     ] 11/15  Installing       : guile22-2.2.7-3.fc35.x86 [=====================    ] 11/15  Installing       : guile22-2.2.7-3.fc35.x86 [======================   ] 11/15  Installing       : guile22-2.2.7-3.fc35.x86 [=======================  ] 11/15  Installing       : guile22-2.2.7-3.fc35.x86 [======================== ] 11/15  Installing       : guile22-2.2.7-3.fc35.x86_64                          11/15 
+  Installing       : make-1:4.3-6.fc35.x86_64 [                         ] 12/15  Installing       : make-1:4.3-6.fc35.x86_64 [=                        ] 12/15  Installing       : make-1:4.3-6.fc35.x86_64 [==                       ] 12/15  Installing       : make-1:4.3-6.fc35.x86_64 [===                      ] 12/15  Installing       : make-1:4.3-6.fc35.x86_64 [====                     ] 12/15  Installing       : make-1:4.3-6.fc35.x86_64 [=====                    ] 12/15  Installing       : make-1:4.3-6.fc35.x86_64 [======                   ] 12/15  Installing       : make-1:4.3-6.fc35.x86_64 [=======                  ] 12/15  Installing       : make-1:4.3-6.fc35.x86_64 [========                 ] 12/15  Installing       : make-1:4.3-6.fc35.x86_64 [=========                ] 12/15  Installing       : make-1:4.3-6.fc35.x86_64 [==========               ] 12/15  Installing       : make-1:4.3-6.fc35.x86_64 [===========              ] 12/15  Installing       : make-1:4.3-6.fc35.x86_64 [============             ] 12/15  Installing       : make-1:4.3-6.fc35.x86_64 [=============            ] 12/15  Installing       : make-1:4.3-6.fc35.x86_64 [==============           ] 12/15  Installing       : make-1:4.3-6.fc35.x86_64 [===============          ] 12/15  Installing       : make-1:4.3-6.fc35.x86_64 [================         ] 12/15  Installing       : make-1:4.3-6.fc35.x86_64 [=================        ] 12/15  Installing       : make-1:4.3-6.fc35.x86_64 [==================       ] 12/15  Installing       : make-1:4.3-6.fc35.x86_64 [===================      ] 12/15  Installing       : make-1:4.3-6.fc35.x86_64 [====================     ] 12/15  Installing       : make-1:4.3-6.fc35.x86_64 [=====================    ] 12/15  Installing       : make-1:4.3-6.fc35.x86_64 [======================   ] 12/15  Installing       : make-1:4.3-6.fc35.x86_64 [=======================  ] 12/15  Installing       : make-1:4.3-6.fc35.x86_64 [======================== ] 12/15  Installing       : make-1:4.3-6.fc35.x86_64                             12/15 
+  Installing       : gcc-11.3.1-3.fc35.x86_64 [                         ] 13/15  Installing       : gcc-11.3.1-3.fc35.x86_64 [=                        ] 13/15  Installing       : gcc-11.3.1-3.fc35.x86_64 [==                       ] 13/15  Installing       : gcc-11.3.1-3.fc35.x86_64 [===                      ] 13/15  Installing       : gcc-11.3.1-3.fc35.x86_64 [====                     ] 13/15  Installing       : gcc-11.3.1-3.fc35.x86_64 [=====                    ] 13/15  Installing       : gcc-11.3.1-3.fc35.x86_64 [======                   ] 13/15  Installing       : gcc-11.3.1-3.fc35.x86_64 [=======                  ] 13/15  Installing       : gcc-11.3.1-3.fc35.x86_64 [========                 ] 13/15  Installing       : gcc-11.3.1-3.fc35.x86_64 [=========                ] 13/15  Installing       : gcc-11.3.1-3.fc35.x86_64 [==========               ] 13/15  Installing       : gcc-11.3.1-3.fc35.x86_64 [===========              ] 13/15  Installing       : gcc-11.3.1-3.fc35.x86_64 [============             ] 13/15  Installing       : gcc-11.3.1-3.fc35.x86_64 [=============            ] 13/15  Installing       : gcc-11.3.1-3.fc35.x86_64 [==============           ] 13/15  Installing       : gcc-11.3.1-3.fc35.x86_64 [===============          ] 13/15  Installing       : gcc-11.3.1-3.fc35.x86_64 [================         ] 13/15  Installing       : gcc-11.3.1-3.fc35.x86_64 [=================        ] 13/15  Installing       : gcc-11.3.1-3.fc35.x86_64 [==================       ] 13/15  Installing       : gcc-11.3.1-3.fc35.x86_64 [===================      ] 13/15  Installing       : gcc-11.3.1-3.fc35.x86_64 [====================     ] 13/15  Installing       : gcc-11.3.1-3.fc35.x86_64 [=====================    ] 13/15  Installing       : gcc-11.3.1-3.fc35.x86_64 [======================   ] 13/15  Installing       : gcc-11.3.1-3.fc35.x86_64 [=======================  ] 13/15  Installing       : gcc-11.3.1-3.fc35.x86_64 [======================== ] 13/15  Installing       : gcc-11.3.1-3.fc35.x86_64                             13/15 
+  Installing       : annobin-plugin-gcc-10.79 [                         ] 14/15  Installing       : annobin-plugin-gcc-10.79 [=                        ] 14/15  Installing       : annobin-plugin-gcc-10.79 [==                       ] 14/15  Installing       : annobin-plugin-gcc-10.79 [===                      ] 14/15  Installing       : annobin-plugin-gcc-10.79 [====                     ] 14/15  Installing       : annobin-plugin-gcc-10.79 [=====                    ] 14/15  Installing       : annobin-plugin-gcc-10.79 [======                   ] 14/15  Installing       : annobin-plugin-gcc-10.79 [=======                  ] 14/15  Installing       : annobin-plugin-gcc-10.79 [========                 ] 14/15  Installing       : annobin-plugin-gcc-10.79 [=========                ] 14/15  Installing       : annobin-plugin-gcc-10.79 [==========               ] 14/15  Installing       : annobin-plugin-gcc-10.79 [===========              ] 14/15  Installing       : annobin-plugin-gcc-10.79 [============             ] 14/15  Installing       : annobin-plugin-gcc-10.79 [=============            ] 14/15  Installing       : annobin-plugin-gcc-10.79 [==============           ] 14/15  Installing       : annobin-plugin-gcc-10.79 [===============          ] 14/15  Installing       : annobin-plugin-gcc-10.79 [================         ] 14/15  Installing       : annobin-plugin-gcc-10.79 [=================        ] 14/15  Installing       : annobin-plugin-gcc-10.79 [==================       ] 14/15  Installing       : annobin-plugin-gcc-10.79 [===================      ] 14/15  Installing       : annobin-plugin-gcc-10.79 [====================     ] 14/15  Installing       : annobin-plugin-gcc-10.79 [=====================    ] 14/15  Installing       : annobin-plugin-gcc-10.79 [======================   ] 14/15  Installing       : annobin-plugin-gcc-10.79 [=======================  ] 14/15  Installing       : annobin-plugin-gcc-10.79 [======================== ] 14/15  Installing       : annobin-plugin-gcc-10.79-1.fc35.x86_64               14/15 
+  Installing       : gettext-0.21-8.fc35.x86_ [                         ] 15/15  Installing       : gettext-0.21-8.fc35.x86_ [=                        ] 15/15  Installing       : gettext-0.21-8.fc35.x86_ [==                       ] 15/15  Installing       : gettext-0.21-8.fc35.x86_ [===                      ] 15/15  Installing       : gettext-0.21-8.fc35.x86_ [====                     ] 15/15  Installing       : gettext-0.21-8.fc35.x86_ [=====                    ] 15/15  Installing       : gettext-0.21-8.fc35.x86_ [======                   ] 15/15  Installing       : gettext-0.21-8.fc35.x86_ [=======                  ] 15/15  Installing       : gettext-0.21-8.fc35.x86_ [========                 ] 15/15  Installing       : gettext-0.21-8.fc35.x86_ [=========                ] 15/15  Installing       : gettext-0.21-8.fc35.x86_ [==========               ] 15/15  Installing       : gettext-0.21-8.fc35.x86_ [===========              ] 15/15  Installing       : gettext-0.21-8.fc35.x86_ [============             ] 15/15  Installing       : gettext-0.21-8.fc35.x86_ [=============            ] 15/15  Installing       : gettext-0.21-8.fc35.x86_ [==============           ] 15/15  Installing       : gettext-0.21-8.fc35.x86_ [===============          ] 15/15  Installing       : gettext-0.21-8.fc35.x86_ [================         ] 15/15  Installing       : gettext-0.21-8.fc35.x86_ [=================        ] 15/15  Installing       : gettext-0.21-8.fc35.x86_ [==================       ] 15/15  Installing       : gettext-0.21-8.fc35.x86_ [===================      ] 15/15  Installing       : gettext-0.21-8.fc35.x86_ [====================     ] 15/15  Installing       : gettext-0.21-8.fc35.x86_ [=====================    ] 15/15  Installing       : gettext-0.21-8.fc35.x86_ [======================   ] 15/15  Installing       : gettext-0.21-8.fc35.x86_ [=======================  ] 15/15  Installing       : gettext-0.21-8.fc35.x86_ [======================== ] 15/15  Installing       : gettext-0.21-8.fc35.x86_64                           15/15 
+  Running scriptlet: gettext-0.21-8.fc35.x86_64                           15/15 
+  Verifying        : gc-8.0.4-6.fc35.x86_64                                1/15 
+  Verifying        : gettext-0.21-8.fc35.x86_64                            2/15 
+  Verifying        : gettext-libs-0.21-8.fc35.x86_64                       3/15 
+  Verifying        : guile22-2.2.7-3.fc35.x86_64                           4/15 
+  Verifying        : libmpc-1.2.1-3.fc35.x86_64                            5/15 
+  Verifying        : make-1:4.3-6.fc35.x86_64                              6/15 
+  Verifying        : annobin-docs-10.79-1.fc35.noarch                      7/15 
+  Verifying        : annobin-plugin-gcc-10.79-1.fc35.x86_64                8/15 
+  Verifying        : cpp-11.3.1-3.fc35.x86_64                              9/15 
+  Verifying        : gcc-11.3.1-3.fc35.x86_64                             10/15 
+  Verifying        : glibc-devel-2.34-49.fc35.x86_64                      11/15 
+  Verifying        : glibc-headers-x86-2.34-49.fc35.noarch                12/15 
+  Verifying        : kernel-headers-6.0.5-100.fc35.x86_64                 13/15 
+  Verifying        : libtool-ltdl-2.4.6-50.fc35.x86_64                    14/15 
+  Verifying        : libxcrypt-devel-4.4.33-3.fc35.x86_64                 15/15 
+
+Installed:
+  annobin-docs-10.79-1.fc35.noarch       annobin-plugin-gcc-10.79-1.fc35.x86_64 
+  cpp-11.3.1-3.fc35.x86_64               gc-8.0.4-6.fc35.x86_64                 
+  gcc-11.3.1-3.fc35.x86_64               gettext-0.21-8.fc35.x86_64             
+  gettext-libs-0.21-8.fc35.x86_64        glibc-devel-2.34-49.fc35.x86_64        
+  glibc-headers-x86-2.34-49.fc35.noarch  guile22-2.2.7-3.fc35.x86_64            
+  kernel-headers-6.0.5-100.fc35.x86_64   libmpc-1.2.1-3.fc35.x86_64             
+  libtool-ltdl-2.4.6-50.fc35.x86_64      libxcrypt-devel-4.4.33-3.fc35.x86_64   
+  make-1:4.3-6.fc35.x86_64              
+
+Complete!
+
+>>> 2023-01-26 08:05:53	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--addrepo" "https://download.copr.fedorainfracloud.org/results/@aufover/divine/fedora-\$releasever-\$basearch/" "--install" "divine" "csexec" "gcc"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+https://download.cop     [===                 ] ---  B/s |   0  B     --:-- ETAhttps://download.copr.fedorainfracloud.org/resu  25 kB/s | 3.3 kB     00:00    
+fedora                   [===                 ] ---  B/s |   0  B     --:-- ETAfedora                                           16 kB/s | 4.5 kB     00:00    
+updates                  [   ===              ] ---  B/s |   0  B     --:-- ETAupdates                                          14 kB/s | 2.8 kB     00:00    
+Package gcc-11.3.1-3.fc35.x86_64 is already installed.
+Dependencies resolved.
+=====================================================================================================================================================
+ Package                   Arch    Version                    Repository                                                                         Size
+=====================================================================================================================================================
+Installing:
+ [1mcsexec                   [m x86_64  2.2.2-1.fc35               updates                                                                           365 k
+ [1mdivine                   [m x86_64  4.4.2_4_gd47985e0b-14.fc35 downloadcoprfedorainfracloudorg_results_aufover_divine_fedorareleaseverbasearch_   68 M
+Installing dependencies:
+ [1mexpat                    [m x86_64  2.5.0-1.fc35               updates                                                                           115 k
+ [1mgroff-base               [m x86_64  1.22.4-8.fc35              fedora                                                                            1.0 M
+ [1mlibedit                  [m x86_64  3.1-40.20210910cvs.fc35    fedora                                                                            105 k
+ [1mlibyaml                  [m x86_64  0.2.5-6.fc35               fedora                                                                             60 k
+ [1mmpdecimal                [m x86_64  2.5.1-2.fc35               fedora                                                                             99 k
+ [1mncurses                  [m x86_64  6.2-8.20210508.fc35        fedora                                                                            400 k
+ [1mperl-Carp                [m noarch  1.52-478.fc35              fedora                                                                             29 k
+ [1mperl-Class-Struct        [m noarch  0.66-486.fc35              updates                                                                            27 k
+ [1mperl-DynaLoader          [m x86_64  1.50-486.fc35              updates                                                                            30 k
+ [1mperl-Encode              [m x86_64  4:3.15-482.fc35            updates                                                                           1.7 M
+ [1mperl-Errno               [m x86_64  1.33-486.fc35              updates                                                                            19 k
+ [1mperl-Exporter            [m noarch  5.76-479.fc35              fedora                                                                             31 k
+ [1mperl-Fcntl               [m x86_64  1.14-486.fc35              updates                                                                            25 k
+ [1mperl-File-Basename       [m noarch  2.85-486.fc35              updates                                                                            22 k
+ [1mperl-File-Path           [m noarch  2.18-478.fc35              fedora                                                                             35 k
+ [1mperl-File-Temp           [m noarch  1:0.231.100-478.fc35       fedora                                                                             59 k
+ [1mperl-File-stat           [m noarch  1.09-486.fc35              updates                                                                            22 k
+ [1mperl-Getopt-Long         [m noarch  1:2.52-478.fc35            fedora                                                                             60 k
+ [1mperl-Getopt-Std          [m noarch  1.13-486.fc35              updates                                                                            20 k
+ [1mperl-HTTP-Tiny           [m noarch  0.080-1.fc35               updates                                                                            55 k
+ [1mperl-IO                  [m x86_64  1.46-486.fc35              updates                                                                            91 k
+ [1mperl-IPC-Open3           [m noarch  1.21-486.fc35              updates                                                                            27 k
+ [1mperl-MIME-Base64         [m x86_64  3.16-478.fc35              fedora                                                                             30 k
+ [1mperl-POSIX               [m x86_64  1.97-486.fc35              updates                                                                           102 k
+ [1mperl-PathTools           [m x86_64  3.80-478.fc35              fedora                                                                             85 k
+ [1mperl-Pod-Escapes         [m noarch  1:1.07-478.fc35            fedora                                                                             20 k
+ [1mperl-Pod-Perldoc         [m noarch  3.28.01-479.fc35           fedora                                                                             84 k
+ [1mperl-Pod-Simple          [m noarch  1:3.43-2.fc35              fedora                                                                            215 k
+ [1mperl-Pod-Usage           [m noarch  4:2.01-478.fc35            fedora                                                                             40 k
+ [1mperl-Scalar-List-Utils   [m x86_64  5:1.62-463.fc35            updates                                                                            72 k
+ [1mperl-SelectSaver         [m noarch  1.02-486.fc35              updates                                                                            16 k
+ [1mperl-Socket              [m x86_64  4:2.032-2.fc35             fedora                                                                             55 k
+ [1mperl-Storable            [m x86_64  1:3.25-1.fc35              fedora                                                                             95 k
+ [1mperl-Symbol              [m noarch  1.09-486.fc35              updates                                                                            19 k
+ [1mperl-Term-ANSIColor      [m noarch  5.01-479.fc35              fedora                                                                             48 k
+ [1mperl-Term-Cap            [m noarch  1.17-478.fc35              fedora                                                                             22 k
+ [1mperl-Text-ParseWords     [m noarch  3.30-478.fc35              fedora                                                                             16 k
+ [1mperl-Text-Tabs+Wrap      [m noarch  2021.0814-1.fc35           fedora                                                                             22 k
+ [1mperl-Time-Local          [m noarch  2:1.300-478.fc35           fedora                                                                             33 k
+ [1mperl-constant            [m noarch  1.33-479.fc35              fedora                                                                             23 k
+ [1mperl-if                  [m noarch  0.60.900-486.fc35          updates                                                                            18 k
+ [1mperl-interpreter         [m x86_64  4:5.34.1-486.fc35          updates                                                                            76 k
+ [1mperl-libs                [m x86_64  4:5.34.1-486.fc35          updates                                                                           2.1 M
+ [1mperl-mro                 [m x86_64  1.25-486.fc35              updates                                                                            33 k
+ [1mperl-overload            [m noarch  1.33-486.fc35              updates                                                                            50 k
+ [1mperl-overloading         [m noarch  0.02-486.fc35              updates                                                                            17 k
+ [1mperl-parent              [m noarch  1:0.238-478.fc35           fedora                                                                             14 k
+ [1mperl-podlators           [m noarch  1:4.14-478.fc35            fedora                                                                            111 k
+ [1mperl-subs                [m noarch  1.04-486.fc35              updates                                                                            16 k
+ [1mperl-vars                [m noarch  1.05-486.fc35              updates                                                                            17 k
+ [1mpython-pip-wheel         [m noarch  21.2.3-4.fc35              updates                                                                           1.1 M
+ [1mpython-setuptools-wheel  [m noarch  57.4.0-1.fc35              fedora                                                                            505 k
+ [1mpython3                  [m x86_64  3.10.8-3.fc35              updates                                                                            26 k
+ [1mpython3-libs             [m x86_64  3.10.8-3.fc35              updates                                                                           7.5 M
+ [1mpython3-pygments         [m noarch  2.9.0-2.fc35               fedora                                                                            1.9 M
+ [1mpython3-pyyaml           [m x86_64  5.4.1-4.fc35               fedora                                                                            191 k
+
+Transaction Summary
+=====================================================================================================================================================
+Install  58 Packages
+
+Total size: 87 M
+Installed size: 475 M
+Downloading Packages:
+[SKIPPED] divine-4.4.2_4_gd47985e0b-14.fc35.x86_64.rpm: Already downloaded     
+[SKIPPED] groff-base-1.22.4-8.fc35.x86_64.rpm: Already downloaded              
+[SKIPPED] libedit-3.1-40.20210910cvs.fc35.x86_64.rpm: Already downloaded       
+[SKIPPED] libyaml-0.2.5-6.fc35.x86_64.rpm: Already downloaded                  
+[SKIPPED] mpdecimal-2.5.1-2.fc35.x86_64.rpm: Already downloaded                
+[SKIPPED] ncurses-6.2-8.20210508.fc35.x86_64.rpm: Already downloaded           
+[SKIPPED] perl-Carp-1.52-478.fc35.noarch.rpm: Already downloaded               
+[SKIPPED] perl-Exporter-5.76-479.fc35.noarch.rpm: Already downloaded           
+[SKIPPED] perl-File-Path-2.18-478.fc35.noarch.rpm: Already downloaded          
+[SKIPPED] perl-File-Temp-0.231.100-478.fc35.noarch.rpm: Already downloaded     
+[SKIPPED] perl-Getopt-Long-2.52-478.fc35.noarch.rpm: Already downloaded        
+[SKIPPED] perl-MIME-Base64-3.16-478.fc35.x86_64.rpm: Already downloaded        
+[SKIPPED] perl-PathTools-3.80-478.fc35.x86_64.rpm: Already downloaded          
+[SKIPPED] perl-Pod-Escapes-1.07-478.fc35.noarch.rpm: Already downloaded        
+[SKIPPED] perl-Pod-Perldoc-3.28.01-479.fc35.noarch.rpm: Already downloaded     
+[SKIPPED] perl-Pod-Simple-3.43-2.fc35.noarch.rpm: Already downloaded           
+[SKIPPED] perl-Pod-Usage-2.01-478.fc35.noarch.rpm: Already downloaded          
+[SKIPPED] perl-Socket-2.032-2.fc35.x86_64.rpm: Already downloaded              
+[SKIPPED] perl-Storable-3.25-1.fc35.x86_64.rpm: Already downloaded             
+[SKIPPED] perl-Term-ANSIColor-5.01-479.fc35.noarch.rpm: Already downloaded     
+[SKIPPED] perl-Term-Cap-1.17-478.fc35.noarch.rpm: Already downloaded           
+[SKIPPED] perl-Text-ParseWords-3.30-478.fc35.noarch.rpm: Already downloaded    
+[SKIPPED] perl-Text-Tabs+Wrap-2021.0814-1.fc35.noarch.rpm: Already downloaded  
+[SKIPPED] perl-Time-Local-1.300-478.fc35.noarch.rpm: Already downloaded        
+[SKIPPED] perl-constant-1.33-479.fc35.noarch.rpm: Already downloaded           
+[SKIPPED] perl-parent-0.238-478.fc35.noarch.rpm: Already downloaded            
+[SKIPPED] perl-podlators-4.14-478.fc35.noarch.rpm: Already downloaded          
+[SKIPPED] python-setuptools-wheel-57.4.0-1.fc35.noarch.rpm: Already downloaded 
+[SKIPPED] python3-pygments-2.9.0-2.fc35.noarch.rpm: Already downloaded         
+[SKIPPED] python3-pyyaml-5.4.1-4.fc35.x86_64.rpm: Already downloaded           
+[SKIPPED] csexec-2.2.2-1.fc35.x86_64.rpm: Already downloaded                   
+[SKIPPED] expat-2.5.0-1.fc35.x86_64.rpm: Already downloaded                    
+[SKIPPED] perl-Class-Struct-0.66-486.fc35.noarch.rpm: Already downloaded       
+[SKIPPED] perl-DynaLoader-1.50-486.fc35.x86_64.rpm: Already downloaded         
+[SKIPPED] perl-Encode-3.15-482.fc35.x86_64.rpm: Already downloaded             
+[SKIPPED] perl-Errno-1.33-486.fc35.x86_64.rpm: Already downloaded              
+[SKIPPED] perl-Fcntl-1.14-486.fc35.x86_64.rpm: Already downloaded              
+[SKIPPED] perl-File-Basename-2.85-486.fc35.noarch.rpm: Already downloaded      
+[SKIPPED] perl-File-stat-1.09-486.fc35.noarch.rpm: Already downloaded          
+[SKIPPED] perl-Getopt-Std-1.13-486.fc35.noarch.rpm: Already downloaded         
+[SKIPPED] perl-HTTP-Tiny-0.080-1.fc35.noarch.rpm: Already downloaded           
+[SKIPPED] perl-IO-1.46-486.fc35.x86_64.rpm: Already downloaded                 
+[SKIPPED] perl-IPC-Open3-1.21-486.fc35.noarch.rpm: Already downloaded          
+[SKIPPED] perl-POSIX-1.97-486.fc35.x86_64.rpm: Already downloaded              
+[SKIPPED] perl-Scalar-List-Utils-1.62-463.fc35.x86_64.rpm: Already downloaded  
+[SKIPPED] perl-SelectSaver-1.02-486.fc35.noarch.rpm: Already downloaded        
+[SKIPPED] perl-Symbol-1.09-486.fc35.noarch.rpm: Already downloaded             
+[SKIPPED] perl-if-0.60.900-486.fc35.noarch.rpm: Already downloaded             
+[SKIPPED] perl-interpreter-5.34.1-486.fc35.x86_64.rpm: Already downloaded      
+[SKIPPED] perl-libs-5.34.1-486.fc35.x86_64.rpm: Already downloaded             
+[SKIPPED] perl-mro-1.25-486.fc35.x86_64.rpm: Already downloaded                
+[SKIPPED] perl-overload-1.33-486.fc35.noarch.rpm: Already downloaded           
+[SKIPPED] perl-overloading-0.02-486.fc35.noarch.rpm: Already downloaded        
+[SKIPPED] perl-subs-1.04-486.fc35.noarch.rpm: Already downloaded               
+[SKIPPED] perl-vars-1.05-486.fc35.noarch.rpm: Already downloaded               
+[SKIPPED] python-pip-wheel-21.2.3-4.fc35.noarch.rpm: Already downloaded        
+[SKIPPED] python3-3.10.8-3.fc35.x86_64.rpm: Already downloaded                 
+[SKIPPED] python3-libs-3.10.8-3.fc35.x86_64.rpm: Already downloaded            
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :  [                                                   ] 1/1  Preparing        :  [=                                                  ] 1/1  Preparing        :  [==                                                 ] 1/1  Preparing        :  [===                                                ] 1/1  Preparing        :  [====                                               ] 1/1  Preparing        :  [=====                                              ] 1/1  Preparing        :  [======                                             ] 1/1  Preparing        :  [=======                                            ] 1/1  Preparing        :  [========                                           ] 1/1  Preparing        :  [=========                                          ] 1/1  Preparing        :  [==========                                         ] 1/1  Preparing        :  [===========                                        ] 1/1  Preparing        :  [============                                       ] 1/1  Preparing        :  [=============                                      ] 1/1  Preparing        :  [==============                                     ] 1/1  Preparing        :  [===============                                    ] 1/1  Preparing        :  [================                                   ] 1/1  Preparing        :  [=================                                  ] 1/1  Preparing        :  [==================                                 ] 1/1  Preparing        :  [===================                                ] 1/1  Preparing        :  [====================                               ] 1/1  Preparing        :  [=====================                              ] 1/1  Preparing        :  [======================                             ] 1/1  Preparing        :  [=======================                            ] 1/1  Preparing        :  [========================                           ] 1/1  Preparing        :  [=========================                          ] 1/1  Preparing        :  [==========================                         ] 1/1  Preparing        :  [===========================                        ] 1/1  Preparing        :  [============================                       ] 1/1  Preparing        :  [=============================                      ] 1/1  Preparing        :  [==============================                     ] 1/1  Preparing        :  [===============================                    ] 1/1  Preparing        :  [================================                   ] 1/1  Preparing        :  [=================================                  ] 1/1  Preparing        :  [==================================                 ] 1/1  Preparing        :  [===================================                ] 1/1  Preparing        :  [====================================               ] 1/1  Preparing        :  [=====================================              ] 1/1  Preparing        :  [======================================             ] 1/1  Preparing        :  [=======================================            ] 1/1  Preparing        :  [========================================           ] 1/1  Preparing        :  [=========================================          ] 1/1  Preparing        :  [==========================================         ] 1/1  Preparing        :  [===========================================        ] 1/1  Preparing        :  [============================================       ] 1/1  Preparing        :  [=============================================      ] 1/1  Preparing        :  [==============================================     ] 1/1  Preparing        :  [===============================================    ] 1/1  Preparing        :  [================================================   ] 1/1  Preparing        :  [=================================================  ] 1/1  Preparing        :                                                        1/1 
+  Installing       : python-pip-wheel-21.2.3- [                         ]  1/58  Installing       : python-pip-wheel-21.2.3- [=                        ]  1/58  Installing       : python-pip-wheel-21.2.3- [==                       ]  1/58  Installing       : python-pip-wheel-21.2.3- [===                      ]  1/58  Installing       : python-pip-wheel-21.2.3- [====                     ]  1/58  Installing       : python-pip-wheel-21.2.3- [=====                    ]  1/58  Installing       : python-pip-wheel-21.2.3- [======                   ]  1/58  Installing       : python-pip-wheel-21.2.3- [=======                  ]  1/58  Installing       : python-pip-wheel-21.2.3- [========                 ]  1/58  Installing       : python-pip-wheel-21.2.3- [=========                ]  1/58  Installing       : python-pip-wheel-21.2.3- [==========               ]  1/58  Installing       : python-pip-wheel-21.2.3- [===========              ]  1/58  Installing       : python-pip-wheel-21.2.3- [============             ]  1/58  Installing       : python-pip-wheel-21.2.3- [=============            ]  1/58  Installing       : python-pip-wheel-21.2.3- [==============           ]  1/58  Installing       : python-pip-wheel-21.2.3- [===============          ]  1/58  Installing       : python-pip-wheel-21.2.3- [================         ]  1/58  Installing       : python-pip-wheel-21.2.3- [=================        ]  1/58  Installing       : python-pip-wheel-21.2.3- [==================       ]  1/58  Installing       : python-pip-wheel-21.2.3- [===================      ]  1/58  Installing       : python-pip-wheel-21.2.3- [====================     ]  1/58  Installing       : python-pip-wheel-21.2.3- [=====================    ]  1/58  Installing       : python-pip-wheel-21.2.3- [======================   ]  1/58  Installing       : python-pip-wheel-21.2.3- [=======================  ]  1/58  Installing       : python-pip-wheel-21.2.3- [======================== ]  1/58  Installing       : python-pip-wheel-21.2.3-4.fc35.noarch                 1/58 
+  Installing       : expat-2.5.0-1.fc35.x86_6 [                         ]  2/58  Installing       : expat-2.5.0-1.fc35.x86_6 [==                       ]  2/58  Installing       : expat-2.5.0-1.fc35.x86_6 [===                      ]  2/58  Installing       : expat-2.5.0-1.fc35.x86_6 [======                   ]  2/58  Installing       : expat-2.5.0-1.fc35.x86_6 [========                 ]  2/58  Installing       : expat-2.5.0-1.fc35.x86_6 [===========              ]  2/58  Installing       : expat-2.5.0-1.fc35.x86_6 [=============            ]  2/58  Installing       : expat-2.5.0-1.fc35.x86_6 [================         ]  2/58  Installing       : expat-2.5.0-1.fc35.x86_6 [===================      ]  2/58  Installing       : expat-2.5.0-1.fc35.x86_6 [=====================    ]  2/58  Installing       : expat-2.5.0-1.fc35.x86_6 [======================== ]  2/58  Installing       : expat-2.5.0-1.fc35.x86_64                             2/58 
+  Installing       : python-setuptools-wheel- [                         ]  3/58  Installing       : python-setuptools-wheel- [=                        ]  3/58  Installing       : python-setuptools-wheel- [==                       ]  3/58  Installing       : python-setuptools-wheel- [====                     ]  3/58  Installing       : python-setuptools-wheel- [=====                    ]  3/58  Installing       : python-setuptools-wheel- [======                   ]  3/58  Installing       : python-setuptools-wheel- [========                 ]  3/58  Installing       : python-setuptools-wheel- [=========                ]  3/58  Installing       : python-setuptools-wheel- [===========              ]  3/58  Installing       : python-setuptools-wheel- [============             ]  3/58  Installing       : python-setuptools-wheel- [=============            ]  3/58  Installing       : python-setuptools-wheel- [===============          ]  3/58  Installing       : python-setuptools-wheel- [================         ]  3/58  Installing       : python-setuptools-wheel- [=================        ]  3/58  Installing       : python-setuptools-wheel- [===================      ]  3/58  Installing       : python-setuptools-wheel- [====================     ]  3/58  Installing       : python-setuptools-wheel- [======================   ]  3/58  Installing       : python-setuptools-wheel- [=======================  ]  3/58  Installing       : python-setuptools-wheel- [======================== ]  3/58  Installing       : python-setuptools-wheel-57.4.0-1.fc35.noarch          3/58 
+  Installing       : ncurses-6.2-8.20210508.f [                         ]  4/58  Installing       : ncurses-6.2-8.20210508.f [=                        ]  4/58  Installing       : ncurses-6.2-8.20210508.f [===                      ]  4/58  Installing       : ncurses-6.2-8.20210508.f [====                     ]  4/58  Installing       : ncurses-6.2-8.20210508.f [=====                    ]  4/58  Installing       : ncurses-6.2-8.20210508.f [======                   ]  4/58  Installing       : ncurses-6.2-8.20210508.f [=======                  ]  4/58  Installing       : ncurses-6.2-8.20210508.f [========                 ]  4/58  Installing       : ncurses-6.2-8.20210508.f [=========                ]  4/58  Installing       : ncurses-6.2-8.20210508.f [==========               ]  4/58  Installing       : ncurses-6.2-8.20210508.f [============             ]  4/58  Installing       : ncurses-6.2-8.20210508.f [=============            ]  4/58  Installing       : ncurses-6.2-8.20210508.f [===============          ]  4/58  Installing       : ncurses-6.2-8.20210508.f [================         ]  4/58  Installing       : ncurses-6.2-8.20210508.f [=================        ]  4/58  Installing       : ncurses-6.2-8.20210508.f [===================      ]  4/58  Installing       : ncurses-6.2-8.20210508.f [====================     ]  4/58  Installing       : ncurses-6.2-8.20210508.f [=====================    ]  4/58  Installing       : ncurses-6.2-8.20210508.f [======================   ]  4/58  Installing       : ncurses-6.2-8.20210508.f [=======================  ]  4/58  Installing       : ncurses-6.2-8.20210508.f [======================== ]  4/58  Installing       : ncurses-6.2-8.20210508.fc35.x86_64                    4/58 
+  Installing       : mpdecimal-2.5.1-2.fc35.x [                         ]  5/58  Installing       : mpdecimal-2.5.1-2.fc35.x [===                      ]  5/58  Installing       : mpdecimal-2.5.1-2.fc35.x [====                     ]  5/58  Installing       : mpdecimal-2.5.1-2.fc35.x [=======                  ]  5/58  Installing       : mpdecimal-2.5.1-2.fc35.x [==========               ]  5/58  Installing       : mpdecimal-2.5.1-2.fc35.x [==============           ]  5/58  Installing       : mpdecimal-2.5.1-2.fc35.x [=================        ]  5/58  Installing       : mpdecimal-2.5.1-2.fc35.x [====================     ]  5/58  Installing       : mpdecimal-2.5.1-2.fc35.x [======================== ]  5/58  Installing       : mpdecimal-2.5.1-2.fc35.x86_64                         5/58 
+  Installing       : python3-3.10.8-3.fc35.x8 [                         ]  6/58  Installing       : python3-3.10.8-3.fc35.x8 [===========              ]  6/58  Installing       : python3-3.10.8-3.fc35.x8 [============             ]  6/58  Installing       : python3-3.10.8-3.fc35.x8 [===================      ]  6/58  Installing       : python3-3.10.8-3.fc35.x8 [======================== ]  6/58  Installing       : python3-3.10.8-3.fc35.x86_64                          6/58 
+  Installing       : python3-libs-3.10.8-3.fc [                         ]  7/58  Installing       : python3-libs-3.10.8-3.fc [=                        ]  7/58  Installing       : python3-libs-3.10.8-3.fc [==                       ]  7/58  Installing       : python3-libs-3.10.8-3.fc [===                      ]  7/58  Installing       : python3-libs-3.10.8-3.fc [====                     ]  7/58  Installing       : python3-libs-3.10.8-3.fc [=====                    ]  7/58  Installing       : python3-libs-3.10.8-3.fc [======                   ]  7/58  Installing       : python3-libs-3.10.8-3.fc [=======                  ]  7/58  Installing       : python3-libs-3.10.8-3.fc [========                 ]  7/58  Installing       : python3-libs-3.10.8-3.fc [=========                ]  7/58  Installing       : python3-libs-3.10.8-3.fc [==========               ]  7/58  Installing       : python3-libs-3.10.8-3.fc [===========              ]  7/58  Installing       : python3-libs-3.10.8-3.fc [============             ]  7/58  Installing       : python3-libs-3.10.8-3.fc [=============            ]  7/58  Installing       : python3-libs-3.10.8-3.fc [==============           ]  7/58  Installing       : python3-libs-3.10.8-3.fc [===============          ]  7/58  Installing       : python3-libs-3.10.8-3.fc [================         ]  7/58  Installing       : python3-libs-3.10.8-3.fc [=================        ]  7/58  Installing       : python3-libs-3.10.8-3.fc [==================       ]  7/58  Installing       : python3-libs-3.10.8-3.fc [===================      ]  7/58  Installing       : python3-libs-3.10.8-3.fc [====================     ]  7/58  Installing       : python3-libs-3.10.8-3.fc [=====================    ]  7/58  Installing       : python3-libs-3.10.8-3.fc [======================   ]  7/58  Installing       : python3-libs-3.10.8-3.fc [=======================  ]  7/58  Installing       : python3-libs-3.10.8-3.fc [======================== ]  7/58  Installing       : python3-libs-3.10.8-3.fc35.x86_64                     7/58 
+  Installing       : python3-pygments-2.9.0-2 [                         ]  8/58  Installing       : python3-pygments-2.9.0-2 [=                        ]  8/58  Installing       : python3-pygments-2.9.0-2 [==                       ]  8/58  Installing       : python3-pygments-2.9.0-2 [===                      ]  8/58  Installing       : python3-pygments-2.9.0-2 [====                     ]  8/58  Installing       : python3-pygments-2.9.0-2 [=====                    ]  8/58  Installing       : python3-pygments-2.9.0-2 [======                   ]  8/58  Installing       : python3-pygments-2.9.0-2 [=======                  ]  8/58  Installing       : python3-pygments-2.9.0-2 [========                 ]  8/58  Installing       : python3-pygments-2.9.0-2 [=========                ]  8/58  Installing       : python3-pygments-2.9.0-2 [==========               ]  8/58  Installing       : python3-pygments-2.9.0-2 [===========              ]  8/58  Installing       : python3-pygments-2.9.0-2 [============             ]  8/58  Installing       : python3-pygments-2.9.0-2 [=============            ]  8/58  Installing       : python3-pygments-2.9.0-2 [==============           ]  8/58  Installing       : python3-pygments-2.9.0-2 [===============          ]  8/58  Installing       : python3-pygments-2.9.0-2 [================         ]  8/58  Installing       : python3-pygments-2.9.0-2 [=================        ]  8/58  Installing       : python3-pygments-2.9.0-2 [==================       ]  8/58  Installing       : python3-pygments-2.9.0-2 [===================      ]  8/58  Installing       : python3-pygments-2.9.0-2 [====================     ]  8/58  Installing       : python3-pygments-2.9.0-2 [=====================    ]  8/58  Installing       : python3-pygments-2.9.0-2 [======================   ]  8/58  Installing       : python3-pygments-2.9.0-2 [=======================  ]  8/58  Installing       : python3-pygments-2.9.0-2 [======================== ]  8/58  Installing       : python3-pygments-2.9.0-2.fc35.noarch                  8/58 
+  Installing       : libyaml-0.2.5-6.fc35.x86 [                         ]  9/58  Installing       : libyaml-0.2.5-6.fc35.x86 [======                   ]  9/58  Installing       : libyaml-0.2.5-6.fc35.x86 [===========              ]  9/58  Installing       : libyaml-0.2.5-6.fc35.x86 [=================        ]  9/58  Installing       : libyaml-0.2.5-6.fc35.x86 [=======================  ]  9/58  Installing       : libyaml-0.2.5-6.fc35.x86 [======================== ]  9/58  Installing       : libyaml-0.2.5-6.fc35.x86_64                           9/58 
+  Installing       : python3-pyyaml-5.4.1-4.f [                         ] 10/58  Installing       : python3-pyyaml-5.4.1-4.f [=                        ] 10/58  Installing       : python3-pyyaml-5.4.1-4.f [==                       ] 10/58  Installing       : python3-pyyaml-5.4.1-4.f [===                      ] 10/58  Installing       : python3-pyyaml-5.4.1-4.f [====                     ] 10/58  Installing       : python3-pyyaml-5.4.1-4.f [=====                    ] 10/58  Installing       : python3-pyyaml-5.4.1-4.f [======                   ] 10/58  Installing       : python3-pyyaml-5.4.1-4.f [========                 ] 10/58  Installing       : python3-pyyaml-5.4.1-4.f [=========                ] 10/58  Installing       : python3-pyyaml-5.4.1-4.f [==========               ] 10/58  Installing       : python3-pyyaml-5.4.1-4.f [===========              ] 10/58  Installing       : python3-pyyaml-5.4.1-4.f [============             ] 10/58  Installing       : python3-pyyaml-5.4.1-4.f [=============            ] 10/58  Installing       : python3-pyyaml-5.4.1-4.f [==============           ] 10/58  Installing       : python3-pyyaml-5.4.1-4.f [===============          ] 10/58  Installing       : python3-pyyaml-5.4.1-4.f [================         ] 10/58  Installing       : python3-pyyaml-5.4.1-4.f [=================        ] 10/58  Installing       : python3-pyyaml-5.4.1-4.f [==================       ] 10/58  Installing       : python3-pyyaml-5.4.1-4.f [===================      ] 10/58  Installing       : python3-pyyaml-5.4.1-4.f [====================     ] 10/58  Installing       : python3-pyyaml-5.4.1-4.f [=====================    ] 10/58  Installing       : python3-pyyaml-5.4.1-4.f [======================   ] 10/58  Installing       : python3-pyyaml-5.4.1-4.f [=======================  ] 10/58  Installing       : python3-pyyaml-5.4.1-4.f [======================== ] 10/58  Installing       : python3-pyyaml-5.4.1-4.fc35.x86_64                   10/58 
+  Installing       : libedit-3.1-40.20210910c [                         ] 11/58  Installing       : libedit-3.1-40.20210910c [===                      ] 11/58  Installing       : libedit-3.1-40.20210910c [======                   ] 11/58  Installing       : libedit-3.1-40.20210910c [=========                ] 11/58  Installing       : libedit-3.1-40.20210910c [============             ] 11/58  Installing       : libedit-3.1-40.20210910c [================         ] 11/58  Installing       : libedit-3.1-40.20210910c [===================      ] 11/58  Installing       : libedit-3.1-40.20210910c [======================   ] 11/58  Installing       : libedit-3.1-40.20210910c [=======================  ] 11/58  Installing       : libedit-3.1-40.20210910c [======================== ] 11/58  Installing       : libedit-3.1-40.20210910cvs.fc35.x86_64               11/58 
+  Running scriptlet: groff-base-1.22.4-8.fc35.x86_64                      12/58 
+  Installing       : groff-base-1.22.4-8.fc35 [                         ] 12/58  Installing       : groff-base-1.22.4-8.fc35 [=                        ] 12/58  Installing       : groff-base-1.22.4-8.fc35 [==                       ] 12/58  Installing       : groff-base-1.22.4-8.fc35 [===                      ] 12/58  Installing       : groff-base-1.22.4-8.fc35 [====                     ] 12/58  Installing       : groff-base-1.22.4-8.fc35 [=====                    ] 12/58  Installing       : groff-base-1.22.4-8.fc35 [======                   ] 12/58  Installing       : groff-base-1.22.4-8.fc35 [=======                  ] 12/58  Installing       : groff-base-1.22.4-8.fc35 [========                 ] 12/58  Installing       : groff-base-1.22.4-8.fc35 [=========                ] 12/58  Installing       : groff-base-1.22.4-8.fc35 [==========               ] 12/58  Installing       : groff-base-1.22.4-8.fc35 [===========              ] 12/58  Installing       : groff-base-1.22.4-8.fc35 [============             ] 12/58  Installing       : groff-base-1.22.4-8.fc35 [=============            ] 12/58  Installing       : groff-base-1.22.4-8.fc35 [==============           ] 12/58  Installing       : groff-base-1.22.4-8.fc35 [===============          ] 12/58  Installing       : groff-base-1.22.4-8.fc35 [================         ] 12/58  Installing       : groff-base-1.22.4-8.fc35 [=================        ] 12/58  Installing       : groff-base-1.22.4-8.fc35 [==================       ] 12/58  Installing       : groff-base-1.22.4-8.fc35 [===================      ] 12/58  Installing       : groff-base-1.22.4-8.fc35 [====================     ] 12/58  Installing       : groff-base-1.22.4-8.fc35 [=====================    ] 12/58  Installing       : groff-base-1.22.4-8.fc35 [======================   ] 12/58  Installing       : groff-base-1.22.4-8.fc35 [=======================  ] 12/58  Installing       : groff-base-1.22.4-8.fc35 [======================== ] 12/58  Installing       : groff-base-1.22.4-8.fc35.x86_64                      12/58 
+  Running scriptlet: groff-base-1.22.4-8.fc35.x86_64                      12/58 
+  Installing       : perl-Text-Tabs+Wrap-2021 [                         ] 13/58  Installing       : perl-Text-Tabs+Wrap-2021 [=====                    ] 13/58  Installing       : perl-Text-Tabs+Wrap-2021 [======                   ] 13/58  Installing       : perl-Text-Tabs+Wrap-2021 [========                 ] 13/58  Installing       : perl-Text-Tabs+Wrap-2021 [============             ] 13/58  Installing       : perl-Text-Tabs+Wrap-2021 [================         ] 13/58  Installing       : perl-Text-Tabs+Wrap-2021 [======================== ] 13/58  Installing       : perl-Text-Tabs+Wrap-2021.0814-1.fc35.noarch          13/58 
+  Installing       : perl-Time-Local-2:1.300- [                         ] 14/58  Installing       : perl-Time-Local-2:1.300- [=                        ] 14/58  Installing       : perl-Time-Local-2:1.300- [==                       ] 14/58  Installing       : perl-Time-Local-2:1.300- [======                   ] 14/58  Installing       : perl-Time-Local-2:1.300- [==========               ] 14/58  Installing       : perl-Time-Local-2:1.300- [================         ] 14/58  Installing       : perl-Time-Local-2:1.300- [==================       ] 14/58  Installing       : perl-Time-Local-2:1.300- [======================== ] 14/58  Installing       : perl-Time-Local-2:1.300-478.fc35.noarch              14/58 
+  Installing       : perl-if-0.60.900-486.fc3 [                         ] 15/58  Installing       : perl-if-0.60.900-486.fc3 [===========              ] 15/58  Installing       : perl-if-0.60.900-486.fc3 [======================== ] 15/58  Installing       : perl-if-0.60.900-486.fc35.noarch                     15/58 
+  Installing       : perl-File-Path-2.18-478. [                         ] 16/58  Installing       : perl-File-Path-2.18-478. [====                     ] 16/58  Installing       : perl-File-Path-2.18-478. [========                 ] 16/58  Installing       : perl-File-Path-2.18-478. [=====================    ] 16/58  Installing       : perl-File-Path-2.18-478. [======================== ] 16/58  Installing       : perl-File-Path-2.18-478.fc35.noarch                  16/58 
+  Installing       : perl-Pod-Escapes-1:1.07- [                         ] 17/58  Installing       : perl-Pod-Escapes-1:1.07- [==                       ] 17/58  Installing       : perl-Pod-Escapes-1:1.07- [====                     ] 17/58  Installing       : perl-Pod-Escapes-1:1.07- [=======                  ] 17/58  Installing       : perl-Pod-Escapes-1:1.07- [========                 ] 17/58  Installing       : perl-Pod-Escapes-1:1.07- [======================== ] 17/58  Installing       : perl-Pod-Escapes-1:1.07-478.fc35.noarch              17/58 
+  Installing       : perl-Term-ANSIColor-5.01 [                         ] 18/58  Installing       : perl-Term-ANSIColor-5.01 [===                      ] 18/58  Installing       : perl-Term-ANSIColor-5.01 [====                     ] 18/58  Installing       : perl-Term-ANSIColor-5.01 [=====                    ] 18/58  Installing       : perl-Term-ANSIColor-5.01 [=======                  ] 18/58  Installing       : perl-Term-ANSIColor-5.01 [===========              ] 18/58  Installing       : perl-Term-ANSIColor-5.01 [===================      ] 18/58  Installing       : perl-Term-ANSIColor-5.01 [======================== ] 18/58  Installing       : perl-Term-ANSIColor-5.01-479.fc35.noarch             18/58 
+  Installing       : perl-Class-Struct-0.66-4 [                         ] 19/58  Installing       : perl-Class-Struct-0.66-4 [======                   ] 19/58  Installing       : perl-Class-Struct-0.66-4 [======================== ] 19/58  Installing       : perl-Class-Struct-0.66-486.fc35.noarch               19/58 
+  Installing       : perl-POSIX-1.97-486.fc35 [                         ] 20/58  Installing       : perl-POSIX-1.97-486.fc35 [==                       ] 20/58  Installing       : perl-POSIX-1.97-486.fc35 [=====                    ] 20/58  Installing       : perl-POSIX-1.97-486.fc35 [========                 ] 20/58  Installing       : perl-POSIX-1.97-486.fc35 [==========               ] 20/58  Installing       : perl-POSIX-1.97-486.fc35 [==============           ] 20/58  Installing       : perl-POSIX-1.97-486.fc35 [=================        ] 20/58  Installing       : perl-POSIX-1.97-486.fc35 [====================     ] 20/58  Installing       : perl-POSIX-1.97-486.fc35 [======================   ] 20/58  Installing       : perl-POSIX-1.97-486.fc35 [======================== ] 20/58  Installing       : perl-POSIX-1.97-486.fc35.x86_64                      20/58 
+  Installing       : perl-HTTP-Tiny-0.080-1.f [                         ] 21/58  Installing       : perl-HTTP-Tiny-0.080-1.f [===                      ] 21/58  Installing       : perl-HTTP-Tiny-0.080-1.f [=======                  ] 21/58  Installing       : perl-HTTP-Tiny-0.080-1.f [==========               ] 21/58  Installing       : perl-HTTP-Tiny-0.080-1.f [============             ] 21/58  Installing       : perl-HTTP-Tiny-0.080-1.f [=================        ] 21/58  Installing       : perl-HTTP-Tiny-0.080-1.f [======================   ] 21/58  Installing       : perl-HTTP-Tiny-0.080-1.f [======================== ] 21/58  Installing       : perl-HTTP-Tiny-0.080-1.fc35.noarch                   21/58 
+  Installing       : perl-IPC-Open3-1.21-486. [                         ] 22/58  Installing       : perl-IPC-Open3-1.21-486. [===                      ] 22/58  Installing       : perl-IPC-Open3-1.21-486. [=======                  ] 22/58  Installing       : perl-IPC-Open3-1.21-486. [===========              ] 22/58  Installing       : perl-IPC-Open3-1.21-486. [======================== ] 22/58  Installing       : perl-IPC-Open3-1.21-486.fc35.noarch                  22/58 
+  Installing       : perl-subs-1.04-486.fc35. [                         ] 23/58  Installing       : perl-subs-1.04-486.fc35. [================         ] 23/58  Installing       : perl-subs-1.04-486.fc35. [======================== ] 23/58  Installing       : perl-subs-1.04-486.fc35.noarch                       23/58 
+  Installing       : perl-File-Temp-1:0.231.1 [                         ] 24/58  Installing       : perl-File-Temp-1:0.231.1 [==                       ] 24/58  Installing       : perl-File-Temp-1:0.231.1 [=====                    ] 24/58  Installing       : perl-File-Temp-1:0.231.1 [=======                  ] 24/58  Installing       : perl-File-Temp-1:0.231.1 [============             ] 24/58  Installing       : perl-File-Temp-1:0.231.1 [=================        ] 24/58  Installing       : perl-File-Temp-1:0.231.1 [=====================    ] 24/58  Installing       : perl-File-Temp-1:0.231.1 [======================== ] 24/58  Installing       : perl-File-Temp-1:0.231.100-478.fc35.noarch           24/58 
+  Installing       : perl-Pod-Simple-1:3.43-2 [                         ] 25/58  Installing       : perl-Pod-Simple-1:3.43-2 [=                        ] 25/58  Installing       : perl-Pod-Simple-1:3.43-2 [==                       ] 25/58  Installing       : perl-Pod-Simple-1:3.43-2 [===                      ] 25/58  Installing       : perl-Pod-Simple-1:3.43-2 [====                     ] 25/58  Installing       : perl-Pod-Simple-1:3.43-2 [=====                    ] 25/58  Installing       : perl-Pod-Simple-1:3.43-2 [======                   ] 25/58  Installing       : perl-Pod-Simple-1:3.43-2 [=======                  ] 25/58  Installing       : perl-Pod-Simple-1:3.43-2 [========                 ] 25/58  Installing       : perl-Pod-Simple-1:3.43-2 [=========                ] 25/58  Installing       : perl-Pod-Simple-1:3.43-2 [===========              ] 25/58  Installing       : perl-Pod-Simple-1:3.43-2 [============             ] 25/58  Installing       : perl-Pod-Simple-1:3.43-2 [==============           ] 25/58  Installing       : perl-Pod-Simple-1:3.43-2 [===============          ] 25/58  Installing       : perl-Pod-Simple-1:3.43-2 [================         ] 25/58  Installing       : perl-Pod-Simple-1:3.43-2 [=================        ] 25/58  Installing       : perl-Pod-Simple-1:3.43-2 [==================       ] 25/58  Installing       : perl-Pod-Simple-1:3.43-2 [===================      ] 25/58  Installing       : perl-Pod-Simple-1:3.43-2 [=====================    ] 25/58  Installing       : perl-Pod-Simple-1:3.43-2 [======================   ] 25/58  Installing       : perl-Pod-Simple-1:3.43-2 [=======================  ] 25/58  Installing       : perl-Pod-Simple-1:3.43-2 [======================== ] 25/58  Installing       : perl-Pod-Simple-1:3.43-2.fc35.noarch                 25/58 
+  Installing       : perl-Term-Cap-1.17-478.f [                         ] 26/58  Installing       : perl-Term-Cap-1.17-478.f [==                       ] 26/58  Installing       : perl-Term-Cap-1.17-478.f [===                      ] 26/58  Installing       : perl-Term-Cap-1.17-478.f [=====                    ] 26/58  Installing       : perl-Term-Cap-1.17-478.f [========                 ] 26/58  Installing       : perl-Term-Cap-1.17-478.f [======================== ] 26/58  Installing       : perl-Term-Cap-1.17-478.fc35.noarch                   26/58 
+  Installing       : perl-Socket-4:2.032-2.fc [                         ] 27/58  Installing       : perl-Socket-4:2.032-2.fc [======                   ] 27/58  Installing       : perl-Socket-4:2.032-2.fc [=======                  ] 27/58  Installing       : perl-Socket-4:2.032-2.fc [=============            ] 27/58  Installing       : perl-Socket-4:2.032-2.fc [=================        ] 27/58  Installing       : perl-Socket-4:2.032-2.fc [===================      ] 27/58  Installing       : perl-Socket-4:2.032-2.fc [====================     ] 27/58  Installing       : perl-Socket-4:2.032-2.fc [======================   ] 27/58  Installing       : perl-Socket-4:2.032-2.fc [=======================  ] 27/58  Installing       : perl-Socket-4:2.032-2.fc [======================== ] 27/58  Installing       : perl-Socket-4:2.032-2.fc35.x86_64                    27/58 
+  Installing       : perl-SelectSaver-1.02-48 [                         ] 28/58  Installing       : perl-SelectSaver-1.02-48 [===============          ] 28/58  Installing       : perl-SelectSaver-1.02-48 [======================== ] 28/58  Installing       : perl-SelectSaver-1.02-486.fc35.noarch                28/58 
+  Installing       : perl-Symbol-1.09-486.fc3 [                         ] 29/58  Installing       : perl-Symbol-1.09-486.fc3 [=========                ] 29/58  Installing       : perl-Symbol-1.09-486.fc3 [======================== ] 29/58  Installing       : perl-Symbol-1.09-486.fc35.noarch                     29/58 
+  Installing       : perl-File-stat-1.09-486. [                         ] 30/58  Installing       : perl-File-stat-1.09-486. [======                   ] 30/58  Installing       : perl-File-stat-1.09-486. [======================== ] 30/58  Installing       : perl-File-stat-1.09-486.fc35.noarch                  30/58 
+  Installing       : perl-podlators-1:4.14-47 [                         ] 31/58  Installing       : perl-podlators-1:4.14-47 [=                        ] 31/58  Installing       : perl-podlators-1:4.14-47 [==                       ] 31/58  Installing       : perl-podlators-1:4.14-47 [=====                    ] 31/58  Installing       : perl-podlators-1:4.14-47 [======                   ] 31/58  Installing       : perl-podlators-1:4.14-47 [=======                  ] 31/58  Installing       : perl-podlators-1:4.14-47 [========                 ] 31/58  Installing       : perl-podlators-1:4.14-47 [=========                ] 31/58  Installing       : perl-podlators-1:4.14-47 [==========               ] 31/58  Installing       : perl-podlators-1:4.14-47 [===========              ] 31/58  Installing       : perl-podlators-1:4.14-47 [============             ] 31/58  Installing       : perl-podlators-1:4.14-47 [===============          ] 31/58  Installing       : perl-podlators-1:4.14-47 [==================       ] 31/58  Installing       : perl-podlators-1:4.14-47 [===================      ] 31/58  Installing       : perl-podlators-1:4.14-47 [====================     ] 31/58  Installing       : perl-podlators-1:4.14-47 [======================   ] 31/58  Installing       : perl-podlators-1:4.14-47 [=======================  ] 31/58  Installing       : perl-podlators-1:4.14-47 [======================== ] 31/58  Installing       : perl-podlators-1:4.14-478.fc35.noarch                31/58 
+  Installing       : perl-Pod-Perldoc-3.28.01 [                         ] 32/58  Installing       : perl-Pod-Perldoc-3.28.01 [==                       ] 32/58  Installing       : perl-Pod-Perldoc-3.28.01 [===                      ] 32/58  Installing       : perl-Pod-Perldoc-3.28.01 [====                     ] 32/58  Installing       : perl-Pod-Perldoc-3.28.01 [=====                    ] 32/58  Installing       : perl-Pod-Perldoc-3.28.01 [======                   ] 32/58  Installing       : perl-Pod-Perldoc-3.28.01 [=======                  ] 32/58  Installing       : perl-Pod-Perldoc-3.28.01 [============             ] 32/58  Installing       : perl-Pod-Perldoc-3.28.01 [================         ] 32/58  Installing       : perl-Pod-Perldoc-3.28.01 [=================        ] 32/58  Installing       : perl-Pod-Perldoc-3.28.01 [==================       ] 32/58  Installing       : perl-Pod-Perldoc-3.28.01 [====================     ] 32/58  Installing       : perl-Pod-Perldoc-3.28.01 [=====================    ] 32/58  Installing       : perl-Pod-Perldoc-3.28.01 [======================   ] 32/58  Installing       : perl-Pod-Perldoc-3.28.01 [=======================  ] 32/58  Installing       : perl-Pod-Perldoc-3.28.01 [======================== ] 32/58  Installing       : perl-Pod-Perldoc-3.28.01-479.fc35.noarch             32/58 
+  Installing       : perl-Text-ParseWords-3.3 [                         ] 33/58  Installing       : perl-Text-ParseWords-3.3 [=                        ] 33/58  Installing       : perl-Text-ParseWords-3.3 [====                     ] 33/58  Installing       : perl-Text-ParseWords-3.3 [=========                ] 33/58  Installing       : perl-Text-ParseWords-3.3 [==========               ] 33/58  Installing       : perl-Text-ParseWords-3.3 [======================== ] 33/58  Installing       : perl-Text-ParseWords-3.30-478.fc35.noarch            33/58 
+  Installing       : perl-Fcntl-1.14-486.fc35 [                         ] 34/58  Installing       : perl-Fcntl-1.14-486.fc35 [===                      ] 34/58  Installing       : perl-Fcntl-1.14-486.fc35 [======================   ] 34/58  Installing       : perl-Fcntl-1.14-486.fc35 [======================== ] 34/58  Installing       : perl-Fcntl-1.14-486.fc35.x86_64                      34/58 
+  Installing       : perl-mro-1.25-486.fc35.x [                         ] 35/58  Installing       : perl-mro-1.25-486.fc35.x [================         ] 35/58  Installing       : perl-mro-1.25-486.fc35.x [=====================    ] 35/58  Installing       : perl-mro-1.25-486.fc35.x [======================== ] 35/58  Installing       : perl-mro-1.25-486.fc35.x86_64                        35/58 
+  Installing       : perl-IO-1.46-486.fc35.x8 [                         ] 36/58  Installing       : perl-IO-1.46-486.fc35.x8 [=                        ] 36/58  Installing       : perl-IO-1.46-486.fc35.x8 [====                     ] 36/58  Installing       : perl-IO-1.46-486.fc35.x8 [=====                    ] 36/58  Installing       : perl-IO-1.46-486.fc35.x8 [======                   ] 36/58  Installing       : perl-IO-1.46-486.fc35.x8 [=======                  ] 36/58  Installing       : perl-IO-1.46-486.fc35.x8 [===========              ] 36/58  Installing       : perl-IO-1.46-486.fc35.x8 [=============            ] 36/58  Installing       : perl-IO-1.46-486.fc35.x8 [==============           ] 36/58  Installing       : perl-IO-1.46-486.fc35.x8 [==================       ] 36/58  Installing       : perl-IO-1.46-486.fc35.x8 [===================      ] 36/58  Installing       : perl-IO-1.46-486.fc35.x8 [====================     ] 36/58  Installing       : perl-IO-1.46-486.fc35.x8 [=====================    ] 36/58  Installing       : perl-IO-1.46-486.fc35.x8 [======================   ] 36/58  Installing       : perl-IO-1.46-486.fc35.x8 [=======================  ] 36/58  Installing       : perl-IO-1.46-486.fc35.x8 [======================== ] 36/58  Installing       : perl-IO-1.46-486.fc35.x86_64                         36/58 
+  Installing       : perl-overloading-0.02-48 [                         ] 37/58  Installing       : perl-overloading-0.02-48 [========                 ] 37/58  Installing       : perl-overloading-0.02-48 [=========                ] 37/58  Installing       : perl-overloading-0.02-48 [=================        ] 37/58  Installing       : perl-overloading-0.02-48 [======================== ] 37/58  Installing       : perl-overloading-0.02-486.fc35.noarch                37/58 
+  Installing       : perl-Pod-Usage-4:2.01-47 [                         ] 38/58  Installing       : perl-Pod-Usage-4:2.01-47 [=                        ] 38/58  Installing       : perl-Pod-Usage-4:2.01-47 [==                       ] 38/58  Installing       : perl-Pod-Usage-4:2.01-47 [========                 ] 38/58  Installing       : perl-Pod-Usage-4:2.01-47 [=============            ] 38/58  Installing       : perl-Pod-Usage-4:2.01-47 [==============           ] 38/58  Installing       : perl-Pod-Usage-4:2.01-47 [================         ] 38/58  Installing       : perl-Pod-Usage-4:2.01-47 [======================== ] 38/58  Installing       : perl-Pod-Usage-4:2.01-478.fc35.noarch                38/58 
+  Installing       : perl-MIME-Base64-3.16-47 [                         ] 39/58  Installing       : perl-MIME-Base64-3.16-47 [===                      ] 39/58  Installing       : perl-MIME-Base64-3.16-47 [====                     ] 39/58  Installing       : perl-MIME-Base64-3.16-47 [=====                    ] 39/58  Installing       : perl-MIME-Base64-3.16-47 [==============           ] 39/58  Installing       : perl-MIME-Base64-3.16-47 [===================      ] 39/58  Installing       : perl-MIME-Base64-3.16-47 [=====================    ] 39/58  Installing       : perl-MIME-Base64-3.16-47 [=======================  ] 39/58  Installing       : perl-MIME-Base64-3.16-47 [======================== ] 39/58  Installing       : perl-MIME-Base64-3.16-478.fc35.x86_64                39/58 
+  Installing       : perl-constant-1.33-479.f [                         ] 40/58  Installing       : perl-constant-1.33-479.f [====                     ] 40/58  Installing       : perl-constant-1.33-479.f [======                   ] 40/58  Installing       : perl-constant-1.33-479.f [=======                  ] 40/58  Installing       : perl-constant-1.33-479.f [===========              ] 40/58  Installing       : perl-constant-1.33-479.f [======================== ] 40/58  Installing       : perl-constant-1.33-479.fc35.noarch                   40/58 
+  Installing       : perl-parent-1:0.238-478. [                         ] 41/58  Installing       : perl-parent-1:0.238-478. [============             ] 41/58  Installing       : perl-parent-1:0.238-478. [=================        ] 41/58  Installing       : perl-parent-1:0.238-478. [======================== ] 41/58  Installing       : perl-parent-1:0.238-478.fc35.noarch                  41/58 
+  Installing       : perl-Errno-1.33-486.fc35 [                         ] 42/58  Installing       : perl-Errno-1.33-486.fc35 [=================        ] 42/58  Installing       : perl-Errno-1.33-486.fc35 [======================== ] 42/58  Installing       : perl-Errno-1.33-486.fc35.x86_64                      42/58 
+  Installing       : perl-File-Basename-2.85- [                         ] 43/58  Installing       : perl-File-Basename-2.85- [======                   ] 43/58  Installing       : perl-File-Basename-2.85- [======================== ] 43/58  Installing       : perl-File-Basename-2.85-486.fc35.noarch              43/58 
+  Installing       : perl-Getopt-Std-1.13-486 [                         ] 44/58  Installing       : perl-Getopt-Std-1.13-486 [======                   ] 44/58  Installing       : perl-Getopt-Std-1.13-486 [=======                  ] 44/58  Installing       : perl-Getopt-Std-1.13-486 [======================== ] 44/58  Installing       : perl-Getopt-Std-1.13-486.fc35.noarch                 44/58 
+  Installing       : perl-Scalar-List-Utils-5 [                         ] 45/58  Installing       : perl-Scalar-List-Utils-5 [====                     ] 45/58  Installing       : perl-Scalar-List-Utils-5 [======                   ] 45/58  Installing       : perl-Scalar-List-Utils-5 [=======                  ] 45/58  Installing       : perl-Scalar-List-Utils-5 [=============            ] 45/58  Installing       : perl-Scalar-List-Utils-5 [=================        ] 45/58  Installing       : perl-Scalar-List-Utils-5 [=====================    ] 45/58  Installing       : perl-Scalar-List-Utils-5 [=======================  ] 45/58  Installing       : perl-Scalar-List-Utils-5 [======================== ] 45/58  Installing       : perl-Scalar-List-Utils-5:1.62-463.fc35.x86_64        45/58 
+  Installing       : perl-Storable-1:3.25-1.f [                         ] 46/58  Installing       : perl-Storable-1:3.25-1.f [===                      ] 46/58  Installing       : perl-Storable-1:3.25-1.f [=====                    ] 46/58  Installing       : perl-Storable-1:3.25-1.f [=========                ] 46/58  Installing       : perl-Storable-1:3.25-1.f [============             ] 46/58  Installing       : perl-Storable-1:3.25-1.f [================         ] 46/58  Installing       : perl-Storable-1:3.25-1.f [=================        ] 46/58  Installing       : perl-Storable-1:3.25-1.f [==================       ] 46/58  Installing       : perl-Storable-1:3.25-1.f [=====================    ] 46/58  Installing       : perl-Storable-1:3.25-1.f [======================   ] 46/58  Installing       : perl-Storable-1:3.25-1.f [=======================  ] 46/58  Installing       : perl-Storable-1:3.25-1.f [======================== ] 46/58  Installing       : perl-Storable-1:3.25-1.fc35.x86_64                   46/58 
+  Installing       : perl-overload-1.33-486.f [                         ] 47/58  Installing       : perl-overload-1.33-486.f [======                   ] 47/58  Installing       : perl-overload-1.33-486.f [=================        ] 47/58  Installing       : perl-overload-1.33-486.f [======================== ] 47/58  Installing       : perl-overload-1.33-486.fc35.noarch                   47/58 
+  Installing       : perl-vars-1.05-486.fc35. [                         ] 48/58  Installing       : perl-vars-1.05-486.fc35. [============             ] 48/58  Installing       : perl-vars-1.05-486.fc35. [======================== ] 48/58  Installing       : perl-vars-1.05-486.fc35.noarch                       48/58 
+  Installing       : perl-Getopt-Long-1:2.52- [                         ] 49/58  Installing       : perl-Getopt-Long-1:2.52- [===                      ] 49/58  Installing       : perl-Getopt-Long-1:2.52- [====                     ] 49/58  Installing       : perl-Getopt-Long-1:2.52- [=====                    ] 49/58  Installing       : perl-Getopt-Long-1:2.52- [======                   ] 49/58  Installing       : perl-Getopt-Long-1:2.52- [=======                  ] 49/58  Installing       : perl-Getopt-Long-1:2.52- [=========                ] 49/58  Installing       : perl-Getopt-Long-1:2.52- [===============          ] 49/58  Installing       : perl-Getopt-Long-1:2.52- [=====================    ] 49/58  Installing       : perl-Getopt-Long-1:2.52- [======================== ] 49/58  Installing       : perl-Getopt-Long-1:2.52-478.fc35.noarch              49/58 
+  Installing       : perl-Carp-1.52-478.fc35. [                         ] 50/58  Installing       : perl-Carp-1.52-478.fc35. [==                       ] 50/58  Installing       : perl-Carp-1.52-478.fc35. [===                      ] 50/58  Installing       : perl-Carp-1.52-478.fc35. [=====                    ] 50/58  Installing       : perl-Carp-1.52-478.fc35. [======                   ] 50/58  Installing       : perl-Carp-1.52-478.fc35. [======================   ] 50/58  Installing       : perl-Carp-1.52-478.fc35. [======================== ] 50/58  Installing       : perl-Carp-1.52-478.fc35.noarch                       50/58 
+  Installing       : perl-Exporter-5.76-479.f [                         ] 51/58  Installing       : perl-Exporter-5.76-479.f [=                        ] 51/58  Installing       : perl-Exporter-5.76-479.f [=========                ] 51/58  Installing       : perl-Exporter-5.76-479.f [============             ] 51/58  Installing       : perl-Exporter-5.76-479.f [=============            ] 51/58  Installing       : perl-Exporter-5.76-479.f [=====================    ] 51/58  Installing       : perl-Exporter-5.76-479.f [======================== ] 51/58  Installing       : perl-Exporter-5.76-479.fc35.noarch                   51/58 
+  Installing       : perl-DynaLoader-1.50-486 [                         ] 52/58  Installing       : perl-DynaLoader-1.50-486 [==================       ] 52/58  Installing       : perl-DynaLoader-1.50-486 [======================== ] 52/58  Installing       : perl-DynaLoader-1.50-486.fc35.x86_64                 52/58 
+  Installing       : perl-PathTools-3.80-478. [                         ] 53/58  Installing       : perl-PathTools-3.80-478. [===                      ] 53/58  Installing       : perl-PathTools-3.80-478. [====                     ] 53/58  Installing       : perl-PathTools-3.80-478. [=====                    ] 53/58  Installing       : perl-PathTools-3.80-478. [========                 ] 53/58  Installing       : perl-PathTools-3.80-478. [=========                ] 53/58  Installing       : perl-PathTools-3.80-478. [===========              ] 53/58  Installing       : perl-PathTools-3.80-478. [=============            ] 53/58  Installing       : perl-PathTools-3.80-478. [===============          ] 53/58  Installing       : perl-PathTools-3.80-478. [====================     ] 53/58  Installing       : perl-PathTools-3.80-478. [=====================    ] 53/58  Installing       : perl-PathTools-3.80-478. [======================   ] 53/58  Installing       : perl-PathTools-3.80-478. [=======================  ] 53/58  Installing       : perl-PathTools-3.80-478. [======================== ] 53/58  Installing       : perl-PathTools-3.80-478.fc35.x86_64                  53/58 
+  Installing       : perl-Encode-4:3.15-482.f [                         ] 54/58  Installing       : perl-Encode-4:3.15-482.f [=                        ] 54/58  Installing       : perl-Encode-4:3.15-482.f [==                       ] 54/58  Installing       : perl-Encode-4:3.15-482.f [===                      ] 54/58  Installing       : perl-Encode-4:3.15-482.f [====                     ] 54/58  Installing       : perl-Encode-4:3.15-482.f [=====                    ] 54/58  Installing       : perl-Encode-4:3.15-482.f [======                   ] 54/58  Installing       : perl-Encode-4:3.15-482.f [=======                  ] 54/58  Installing       : perl-Encode-4:3.15-482.f [========                 ] 54/58  Installing       : perl-Encode-4:3.15-482.f [=========                ] 54/58  Installing       : perl-Encode-4:3.15-482.f [==========               ] 54/58  Installing       : perl-Encode-4:3.15-482.f [===========              ] 54/58  Installing       : perl-Encode-4:3.15-482.f [============             ] 54/58  Installing       : perl-Encode-4:3.15-482.f [=============            ] 54/58  Installing       : perl-Encode-4:3.15-482.f [==============           ] 54/58  Installing       : perl-Encode-4:3.15-482.f [===============          ] 54/58  Installing       : perl-Encode-4:3.15-482.f [================         ] 54/58  Installing       : perl-Encode-4:3.15-482.f [=================        ] 54/58  Installing       : perl-Encode-4:3.15-482.f [==================       ] 54/58  Installing       : perl-Encode-4:3.15-482.f [===================      ] 54/58  Installing       : perl-Encode-4:3.15-482.f [====================     ] 54/58  Installing       : perl-Encode-4:3.15-482.f [=====================    ] 54/58  Installing       : perl-Encode-4:3.15-482.f [======================   ] 54/58  Installing       : perl-Encode-4:3.15-482.f [=======================  ] 54/58  Installing       : perl-Encode-4:3.15-482.f [======================== ] 54/58  Installing       : perl-Encode-4:3.15-482.fc35.x86_64                   54/58 
+  Installing       : perl-libs-4:5.34.1-486.f [                         ] 55/58  Installing       : perl-libs-4:5.34.1-486.f [=                        ] 55/58  Installing       : perl-libs-4:5.34.1-486.f [==                       ] 55/58  Installing       : perl-libs-4:5.34.1-486.f [===                      ] 55/58  Installing       : perl-libs-4:5.34.1-486.f [====                     ] 55/58  Installing       : perl-libs-4:5.34.1-486.f [=====                    ] 55/58  Installing       : perl-libs-4:5.34.1-486.f [======                   ] 55/58  Installing       : perl-libs-4:5.34.1-486.f [=======                  ] 55/58  Installing       : perl-libs-4:5.34.1-486.f [========                 ] 55/58  Installing       : perl-libs-4:5.34.1-486.f [=========                ] 55/58  Installing       : perl-libs-4:5.34.1-486.f [==========               ] 55/58  Installing       : perl-libs-4:5.34.1-486.f [===========              ] 55/58  Installing       : perl-libs-4:5.34.1-486.f [============             ] 55/58  Installing       : perl-libs-4:5.34.1-486.f [=============            ] 55/58  Installing       : perl-libs-4:5.34.1-486.f [==============           ] 55/58  Installing       : perl-libs-4:5.34.1-486.f [===============          ] 55/58  Installing       : perl-libs-4:5.34.1-486.f [================         ] 55/58  Installing       : perl-libs-4:5.34.1-486.f [=================        ] 55/58  Installing       : perl-libs-4:5.34.1-486.f [==================       ] 55/58  Installing       : perl-libs-4:5.34.1-486.f [===================      ] 55/58  Installing       : perl-libs-4:5.34.1-486.f [====================     ] 55/58  Installing       : perl-libs-4:5.34.1-486.f [=====================    ] 55/58  Installing       : perl-libs-4:5.34.1-486.f [======================   ] 55/58  Installing       : perl-libs-4:5.34.1-486.f [=======================  ] 55/58  Installing       : perl-libs-4:5.34.1-486.f [======================== ] 55/58  Installing       : perl-libs-4:5.34.1-486.fc35.x86_64                   55/58 
+  Installing       : perl-interpreter-4:5.34. [                         ] 56/58  Installing       : perl-interpreter-4:5.34. [=                        ] 56/58  Installing       : perl-interpreter-4:5.34. [======                   ] 56/58  Installing       : perl-interpreter-4:5.34. [==========               ] 56/58  Installing       : perl-interpreter-4:5.34. [================         ] 56/58  Installing       : perl-interpreter-4:5.34. [=====================    ] 56/58  Installing       : perl-interpreter-4:5.34. [======================== ] 56/58  Installing       : perl-interpreter-4:5.34.1-486.fc35.x86_64            56/58 
+  Installing       : divine-4.4.2_4_gd47985e0 [                         ] 57/58  Installing       : divine-4.4.2_4_gd47985e0 [=                        ] 57/58  Installing       : divine-4.4.2_4_gd47985e0 [==                       ] 57/58  Installing       : divine-4.4.2_4_gd47985e0 [===                      ] 57/58  Installing       : divine-4.4.2_4_gd47985e0 [====                     ] 57/58  Installing       : divine-4.4.2_4_gd47985e0 [=====                    ] 57/58  Installing       : divine-4.4.2_4_gd47985e0 [======                   ] 57/58  Installing       : divine-4.4.2_4_gd47985e0 [=======                  ] 57/58  Installing       : divine-4.4.2_4_gd47985e0 [========                 ] 57/58  Installing       : divine-4.4.2_4_gd47985e0 [=========                ] 57/58  Installing       : divine-4.4.2_4_gd47985e0 [==========               ] 57/58  Installing       : divine-4.4.2_4_gd47985e0 [===========              ] 57/58  Installing       : divine-4.4.2_4_gd47985e0 [============             ] 57/58  Installing       : divine-4.4.2_4_gd47985e0 [=============            ] 57/58  Installing       : divine-4.4.2_4_gd47985e0 [==============           ] 57/58  Installing       : divine-4.4.2_4_gd47985e0 [===============          ] 57/58  Installing       : divine-4.4.2_4_gd47985e0 [================         ] 57/58  Installing       : divine-4.4.2_4_gd47985e0 [=================        ] 57/58  Installing       : divine-4.4.2_4_gd47985e0 [==================       ] 57/58  Installing       : divine-4.4.2_4_gd47985e0 [===================      ] 57/58  Installing       : divine-4.4.2_4_gd47985e0 [====================     ] 57/58  Installing       : divine-4.4.2_4_gd47985e0 [=====================    ] 57/58  Installing       : divine-4.4.2_4_gd47985e0 [======================   ] 57/58  Installing       : divine-4.4.2_4_gd47985e0 [=======================  ] 57/58  Installing       : divine-4.4.2_4_gd47985e0 [======================== ] 57/58  Installing       : divine-4.4.2_4_gd47985e0b-14.fc35.x86_64             57/58 
+  Installing       : csexec-2.2.2-1.fc35.x86_ [                         ] 58/58  Installing       : csexec-2.2.2-1.fc35.x86_ [=                        ] 58/58  Installing       : csexec-2.2.2-1.fc35.x86_ [==                       ] 58/58  Installing       : csexec-2.2.2-1.fc35.x86_ [===                      ] 58/58  Installing       : csexec-2.2.2-1.fc35.x86_ [====                     ] 58/58  Installing       : csexec-2.2.2-1.fc35.x86_ [=====                    ] 58/58  Installing       : csexec-2.2.2-1.fc35.x86_ [======                   ] 58/58  Installing       : csexec-2.2.2-1.fc35.x86_ [=======                  ] 58/58  Installing       : csexec-2.2.2-1.fc35.x86_ [========                 ] 58/58  Installing       : csexec-2.2.2-1.fc35.x86_ [=========                ] 58/58  Installing       : csexec-2.2.2-1.fc35.x86_ [==========               ] 58/58  Installing       : csexec-2.2.2-1.fc35.x86_ [===========              ] 58/58  Installing       : csexec-2.2.2-1.fc35.x86_ [============             ] 58/58  Installing       : csexec-2.2.2-1.fc35.x86_ [=============            ] 58/58  Installing       : csexec-2.2.2-1.fc35.x86_ [==============           ] 58/58  Installing       : csexec-2.2.2-1.fc35.x86_ [===============          ] 58/58  Installing       : csexec-2.2.2-1.fc35.x86_ [================         ] 58/58  Installing       : csexec-2.2.2-1.fc35.x86_ [=================        ] 58/58  Installing       : csexec-2.2.2-1.fc35.x86_ [==================       ] 58/58  Installing       : csexec-2.2.2-1.fc35.x86_ [===================      ] 58/58  Installing       : csexec-2.2.2-1.fc35.x86_ [====================     ] 58/58  Installing       : csexec-2.2.2-1.fc35.x86_ [=====================    ] 58/58  Installing       : csexec-2.2.2-1.fc35.x86_ [======================   ] 58/58  Installing       : csexec-2.2.2-1.fc35.x86_ [=======================  ] 58/58  Installing       : csexec-2.2.2-1.fc35.x86_ [======================== ] 58/58  Installing       : csexec-2.2.2-1.fc35.x86_64                           58/58 
+  Running scriptlet: csexec-2.2.2-1.fc35.x86_64                           58/58 
+  Verifying        : divine-4.4.2_4_gd47985e0b-14.fc35.x86_64              1/58 
+  Verifying        : groff-base-1.22.4-8.fc35.x86_64                       2/58 
+  Verifying        : libedit-3.1-40.20210910cvs.fc35.x86_64                3/58 
+  Verifying        : libyaml-0.2.5-6.fc35.x86_64                           4/58 
+  Verifying        : mpdecimal-2.5.1-2.fc35.x86_64                         5/58 
+  Verifying        : ncurses-6.2-8.20210508.fc35.x86_64                    6/58 
+  Verifying        : perl-Carp-1.52-478.fc35.noarch                        7/58 
+  Verifying        : perl-Exporter-5.76-479.fc35.noarch                    8/58 
+  Verifying        : perl-File-Path-2.18-478.fc35.noarch                   9/58 
+  Verifying        : perl-File-Temp-1:0.231.100-478.fc35.noarch           10/58 
+  Verifying        : perl-Getopt-Long-1:2.52-478.fc35.noarch              11/58 
+  Verifying        : perl-MIME-Base64-3.16-478.fc35.x86_64                12/58 
+  Verifying        : perl-PathTools-3.80-478.fc35.x86_64                  13/58 
+  Verifying        : perl-Pod-Escapes-1:1.07-478.fc35.noarch              14/58 
+  Verifying        : perl-Pod-Perldoc-3.28.01-479.fc35.noarch             15/58 
+  Verifying        : perl-Pod-Simple-1:3.43-2.fc35.noarch                 16/58 
+  Verifying        : perl-Pod-Usage-4:2.01-478.fc35.noarch                17/58 
+  Verifying        : perl-Socket-4:2.032-2.fc35.x86_64                    18/58 
+  Verifying        : perl-Storable-1:3.25-1.fc35.x86_64                   19/58 
+  Verifying        : perl-Term-ANSIColor-5.01-479.fc35.noarch             20/58 
+  Verifying        : perl-Term-Cap-1.17-478.fc35.noarch                   21/58 
+  Verifying        : perl-Text-ParseWords-3.30-478.fc35.noarch            22/58 
+  Verifying        : perl-Text-Tabs+Wrap-2021.0814-1.fc35.noarch          23/58 
+  Verifying        : perl-Time-Local-2:1.300-478.fc35.noarch              24/58 
+  Verifying        : perl-constant-1.33-479.fc35.noarch                   25/58 
+  Verifying        : perl-parent-1:0.238-478.fc35.noarch                  26/58 
+  Verifying        : perl-podlators-1:4.14-478.fc35.noarch                27/58 
+  Verifying        : python-setuptools-wheel-57.4.0-1.fc35.noarch         28/58 
+  Verifying        : python3-pygments-2.9.0-2.fc35.noarch                 29/58 
+  Verifying        : python3-pyyaml-5.4.1-4.fc35.x86_64                   30/58 
+  Verifying        : csexec-2.2.2-1.fc35.x86_64                           31/58 
+  Verifying        : expat-2.5.0-1.fc35.x86_64                            32/58 
+  Verifying        : perl-Class-Struct-0.66-486.fc35.noarch               33/58 
+  Verifying        : perl-DynaLoader-1.50-486.fc35.x86_64                 34/58 
+  Verifying        : perl-Encode-4:3.15-482.fc35.x86_64                   35/58 
+  Verifying        : perl-Errno-1.33-486.fc35.x86_64                      36/58 
+  Verifying        : perl-Fcntl-1.14-486.fc35.x86_64                      37/58 
+  Verifying        : perl-File-Basename-2.85-486.fc35.noarch              38/58 
+  Verifying        : perl-File-stat-1.09-486.fc35.noarch                  39/58 
+  Verifying        : perl-Getopt-Std-1.13-486.fc35.noarch                 40/58 
+  Verifying        : perl-HTTP-Tiny-0.080-1.fc35.noarch                   41/58 
+  Verifying        : perl-IO-1.46-486.fc35.x86_64                         42/58 
+  Verifying        : perl-IPC-Open3-1.21-486.fc35.noarch                  43/58 
+  Verifying        : perl-POSIX-1.97-486.fc35.x86_64                      44/58 
+  Verifying        : perl-Scalar-List-Utils-5:1.62-463.fc35.x86_64        45/58 
+  Verifying        : perl-SelectSaver-1.02-486.fc35.noarch                46/58 
+  Verifying        : perl-Symbol-1.09-486.fc35.noarch                     47/58 
+  Verifying        : perl-if-0.60.900-486.fc35.noarch                     48/58 
+  Verifying        : perl-interpreter-4:5.34.1-486.fc35.x86_64            49/58 
+  Verifying        : perl-libs-4:5.34.1-486.fc35.x86_64                   50/58 
+  Verifying        : perl-mro-1.25-486.fc35.x86_64                        51/58 
+  Verifying        : perl-overload-1.33-486.fc35.noarch                   52/58 
+  Verifying        : perl-overloading-0.02-486.fc35.noarch                53/58 
+  Verifying        : perl-subs-1.04-486.fc35.noarch                       54/58 
+  Verifying        : perl-vars-1.05-486.fc35.noarch                       55/58 
+  Verifying        : python-pip-wheel-21.2.3-4.fc35.noarch                56/58 
+  Verifying        : python3-3.10.8-3.fc35.x86_64                         57/58 
+  Verifying        : python3-libs-3.10.8-3.fc35.x86_64                    58/58 
+
+Installed:
+  csexec-2.2.2-1.fc35.x86_64                                                    
+  divine-4.4.2_4_gd47985e0b-14.fc35.x86_64                                      
+  expat-2.5.0-1.fc35.x86_64                                                     
+  groff-base-1.22.4-8.fc35.x86_64                                               
+  libedit-3.1-40.20210910cvs.fc35.x86_64                                        
+  libyaml-0.2.5-6.fc35.x86_64                                                   
+  mpdecimal-2.5.1-2.fc35.x86_64                                                 
+  ncurses-6.2-8.20210508.fc35.x86_64                                            
+  perl-Carp-1.52-478.fc35.noarch                                                
+  perl-Class-Struct-0.66-486.fc35.noarch                                        
+  perl-DynaLoader-1.50-486.fc35.x86_64                                          
+  perl-Encode-4:3.15-482.fc35.x86_64                                            
+  perl-Errno-1.33-486.fc35.x86_64                                               
+  perl-Exporter-5.76-479.fc35.noarch                                            
+  perl-Fcntl-1.14-486.fc35.x86_64                                               
+  perl-File-Basename-2.85-486.fc35.noarch                                       
+  perl-File-Path-2.18-478.fc35.noarch                                           
+  perl-File-Temp-1:0.231.100-478.fc35.noarch                                    
+  perl-File-stat-1.09-486.fc35.noarch                                           
+  perl-Getopt-Long-1:2.52-478.fc35.noarch                                       
+  perl-Getopt-Std-1.13-486.fc35.noarch                                          
+  perl-HTTP-Tiny-0.080-1.fc35.noarch                                            
+  perl-IO-1.46-486.fc35.x86_64                                                  
+  perl-IPC-Open3-1.21-486.fc35.noarch                                           
+  perl-MIME-Base64-3.16-478.fc35.x86_64                                         
+  perl-POSIX-1.97-486.fc35.x86_64                                               
+  perl-PathTools-3.80-478.fc35.x86_64                                           
+  perl-Pod-Escapes-1:1.07-478.fc35.noarch                                       
+  perl-Pod-Perldoc-3.28.01-479.fc35.noarch                                      
+  perl-Pod-Simple-1:3.43-2.fc35.noarch                                          
+  perl-Pod-Usage-4:2.01-478.fc35.noarch                                         
+  perl-Scalar-List-Utils-5:1.62-463.fc35.x86_64                                 
+  perl-SelectSaver-1.02-486.fc35.noarch                                         
+  perl-Socket-4:2.032-2.fc35.x86_64                                             
+  perl-Storable-1:3.25-1.fc35.x86_64                                            
+  perl-Symbol-1.09-486.fc35.noarch                                              
+  perl-Term-ANSIColor-5.01-479.fc35.noarch                                      
+  perl-Term-Cap-1.17-478.fc35.noarch                                            
+  perl-Text-ParseWords-3.30-478.fc35.noarch                                     
+  perl-Text-Tabs+Wrap-2021.0814-1.fc35.noarch                                   
+  perl-Time-Local-2:1.300-478.fc35.noarch                                       
+  perl-constant-1.33-479.fc35.noarch                                            
+  perl-if-0.60.900-486.fc35.noarch                                              
+  perl-interpreter-4:5.34.1-486.fc35.x86_64                                     
+  perl-libs-4:5.34.1-486.fc35.x86_64                                            
+  perl-mro-1.25-486.fc35.x86_64                                                 
+  perl-overload-1.33-486.fc35.noarch                                            
+  perl-overloading-0.02-486.fc35.noarch                                         
+  perl-parent-1:0.238-478.fc35.noarch                                           
+  perl-podlators-1:4.14-478.fc35.noarch                                         
+  perl-subs-1.04-486.fc35.noarch                                                
+  perl-vars-1.05-486.fc35.noarch                                                
+  python-pip-wheel-21.2.3-4.fc35.noarch                                         
+  python-setuptools-wheel-57.4.0-1.fc35.noarch                                  
+  python3-3.10.8-3.fc35.x86_64                                                  
+  python3-libs-3.10.8-3.fc35.x86_64                                             
+  python3-pygments-2.9.0-2.fc35.noarch                                          
+  python3-pyyaml-5.4.1-4.fc35.x86_64                                            
+
+Complete!
+
+>>> 2023-01-26 08:06:46	"'/usr/bin/mock' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa' | sort -V > /home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/popt-1.18-6.fc35/divine/output/debug/rpm-list-mock.txt"
+
+>>> 2023-01-26 08:06:52	"'/usr/bin/mock' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa --provides' | sort -V > /tmp/csmockru4e3o59/rpm-list-mock-provides.txt"
+
+>>> 2023-01-26 08:06:57	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--copyin" "/tmp/csmockru4e3o59/popt-1.18-6.fc35.src.rpm" "/builddir/popt-1.18-6.fc35.src.rpm"
+
+>>> 2023-01-26 08:07:02	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "chown mockbuild -R /builddir"
+
+>>> 2023-01-26 08:07:08	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"rpm -Uvh --nodeps '/builddir/popt-1.18-6.fc35.src.rpm'\""
+Updating / installing...
+popt-1.18-6.fc35                      ########################################
+
+>>> 2023-01-26 08:07:14	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"sed -e 's|^ExclusiveArch:.*\\\$||' -i /builddir/build/SPECS/popt.spec\""
+
+>>> 2023-01-26 08:07:19	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"rpmbuild -bs --nodeps /builddir/build/SPECS/popt.spec '--define' '_unpackaged_files_terminate_build 0' '--define' 'apidocs 0' '--define' 'with_publican 0' '--without' 'docs' '--without' 'langpacks' '--define' '__cc dioscc' '--define' '__cxx diosc++' '--define' '__cpp dioscc -E' '--define' 'toolchain clang' '--define' 'optflags -O0' '--define' 'build_ldflags -O0' && sh -c 'cd /builddir/build/SRPMS && eval mv -v *.src.rpm /builddir/popt-1.18-6.fc35.src.rpm || :'\""
+setting SOURCE_DATE_EPOCH=1626998400
+Wrote: /builddir/build/SRPMS/popt-1.18-6.fc35.src.rpm
+renamed 'popt-1.18-6.fc35.src.rpm' -> '/builddir/popt-1.18-6.fc35.src.rpm'
+
+>>> 2023-01-26 08:07:25	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--disable-plugin=selinux" "--copyout" "/builddir/popt-1.18-6.fc35.src.rpm" "/tmp/csmockru4e3o59/popt-1.18-6.fc35.src.rpm"
+
+>>> 2023-01-26 08:07:31	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--installdeps" "/tmp/csmockru4e3o59/popt-1.18-6.fc35.src.rpm"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+fedora                   [===                 ] ---  B/s |   0  B     --:-- ETAfedora                                           23 kB/s | 4.5 kB     00:00    
+updates                  [===                 ] ---  B/s |   0  B     --:-- ETAupdates                                          14 kB/s | 2.8 kB     00:00    
+Package gcc-11.3.1-3.fc35.x86_64 is already installed.
+Package gettext-0.21-8.fc35.x86_64 is already installed.
+Package make-1:4.3-6.fc35.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+
+>>> 2023-01-26 08:07:42	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--addrepo" "https://download.copr.fedorainfracloud.org/results/@aufover/divine/fedora-\$releasever-\$basearch/" "--install" "divine" "csexec" "gcc"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+https://download.cop     [===                 ] ---  B/s |   0  B     --:-- ETAhttps://download.copr.fedorainfracloud.org/resu  25 kB/s | 3.3 kB     00:00    
+fedora                   [===                 ] ---  B/s |   0  B     --:-- ETAfedora                                           37 kB/s | 4.5 kB     00:00    
+updates                  [   ===              ] ---  B/s |   0  B     --:-- ETAupdates                                          19 kB/s | 2.8 kB     00:00    
+Package divine-4.4.2_4_gd47985e0b-14.fc35.x86_64 is already installed.
+Package csexec-2.2.2-1.fc35.x86_64 is already installed.
+Package gcc-11.3.1-3.fc35.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+
+>>> 2023-01-26 08:07:53	"'/usr/bin/mock' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa' | sort -V > /home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/popt-1.18-6.fc35/divine/output/debug/rpm-list-mock.txt"
+
+>>> 2023-01-26 08:07:59	"'/usr/bin/mock' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa --provides' | sort -V > /tmp/csmockru4e3o59/rpm-list-mock-provides.txt"
+
+>>> 2023-01-26 08:08:04	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--addrepo" "https://download.copr.fedorainfracloud.org/results/@aufover/divine/fedora-\$releasever-\$basearch/" "--install" "csdiff"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+https://download.cop     [===                 ] ---  B/s |   0  B     --:-- ETAhttps://download.copr.fedorainfracloud.org/resu  25 kB/s | 3.3 kB     00:00    
+fedora                   [===                 ] ---  B/s |   0  B     --:-- ETAfedora                   [   ===              ] ---  B/s |   0  B     --:-- ETAfedora                                           12 kB/s | 4.5 kB     00:00    
+updates                  [      ===           ] ---  B/s |   0  B     --:-- ETAupdates                                          20 kB/s | 2.8 kB     00:00    
+Dependencies resolved.
+================================================================================
+ Package                    Arch        Version              Repository    Size
+================================================================================
+Installing:
+ [1mcsdiff                    [m x86_64      2.7.0-1.fc35         updates      894 k
+Installing dependencies:
+ [1mboost-filesystem          [m x86_64      1.76.0-5.fc35        updates       58 k
+ [1mboost-program-options     [m x86_64      1.76.0-5.fc35        updates      107 k
+ [1mboost-system              [m x86_64      1.76.0-5.fc35        updates       14 k
+
+Transaction Summary
+================================================================================
+Install  4 Packages
+
+Total size: 1.0 M
+Installed size: 4.2 M
+Downloading Packages:
+[SKIPPED] boost-filesystem-1.76.0-5.fc35.x86_64.rpm: Already downloaded        
+[SKIPPED] boost-program-options-1.76.0-5.fc35.x86_64.rpm: Already downloaded   
+[SKIPPED] boost-system-1.76.0-5.fc35.x86_64.rpm: Already downloaded            
+[SKIPPED] csdiff-2.7.0-1.fc35.x86_64.rpm: Already downloaded                   
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :  [============                                       ] 1/1  Preparing        :  [=========================                          ] 1/1  Preparing        :  [======================================             ] 1/1  Preparing        :                                                        1/1 
+  Installing       : boost-system-1.76.0-5.fc3 [                          ] 1/4  Installing       : boost-system-1.76.0-5.fc3 [=======================   ] 1/4  Installing       : boost-system-1.76.0-5.fc3 [========================= ] 1/4  Installing       : boost-system-1.76.0-5.fc35.x86_64                      1/4 
+  Installing       : boost-filesystem-1.76.0-5 [                          ] 2/4  Installing       : boost-filesystem-1.76.0-5 [======                    ] 2/4  Installing       : boost-filesystem-1.76.0-5 [=============             ] 2/4  Installing       : boost-filesystem-1.76.0-5 [====================      ] 2/4  Installing       : boost-filesystem-1.76.0-5 [========================= ] 2/4  Installing       : boost-filesystem-1.76.0-5.fc35.x86_64                  2/4 
+  Installing       : boost-program-options-1.7 [                          ] 3/4  Installing       : boost-program-options-1.7 [==                        ] 3/4  Installing       : boost-program-options-1.7 [=====                     ] 3/4  Installing       : boost-program-options-1.7 [========                  ] 3/4  Installing       : boost-program-options-1.7 [===========               ] 3/4  Installing       : boost-program-options-1.7 [==============            ] 3/4  Installing       : boost-program-options-1.7 [=================         ] 3/4  Installing       : boost-program-options-1.7 [====================      ] 3/4  Installing       : boost-program-options-1.7 [=======================   ] 3/4  Installing       : boost-program-options-1.7 [========================= ] 3/4  Installing       : boost-program-options-1.76.0-5.fc35.x86_64             3/4 
+  Installing       : csdiff-2.7.0-1.fc35.x86_6 [                          ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [=                         ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [==                        ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [===                       ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [====                      ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [=====                     ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [======                    ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [=======                   ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [========                  ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [=========                 ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [==========                ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [===========               ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [============              ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [=============             ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [==============            ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [===============           ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [================          ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [=================         ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [==================        ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [===================       ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [====================      ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [=====================     ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [======================    ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [=======================   ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [========================  ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [========================= ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_64                             4/4 
+  Running scriptlet: csdiff-2.7.0-1.fc35.x86_64                             4/4 
+  Verifying        : boost-filesystem-1.76.0-5.fc35.x86_64                  1/4 
+  Verifying        : boost-program-options-1.76.0-5.fc35.x86_64             2/4 
+  Verifying        : boost-system-1.76.0-5.fc35.x86_64                      3/4 
+  Verifying        : csdiff-2.7.0-1.fc35.x86_64                             4/4 
+
+Installed:
+  boost-filesystem-1.76.0-5.fc35.x86_64                                         
+  boost-program-options-1.76.0-5.fc35.x86_64                                    
+  boost-system-1.76.0-5.fc35.x86_64                                             
+  csdiff-2.7.0-1.fc35.x86_64                                                    
+
+Complete!
+
+>>> 2023-01-26 08:08:18	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--addrepo" "https://download.copr.fedorainfracloud.org/results/@aufover/divine/fedora-\$releasever-\$basearch/" "--install" "glibc-devel(x86-32)"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+https://download.cop     [===                 ] ---  B/s |   0  B     --:-- ETAhttps://download.copr.fedorainfracloud.org/resu  25 kB/s | 3.3 kB     00:00    
+fedora                   [===                 ] ---  B/s |   0  B     --:-- ETAfedora                                           33 kB/s | 4.5 kB     00:00    
+updates                  [   ===              ] ---  B/s |   0  B     --:-- ETAupdates                                          21 kB/s | 2.8 kB     00:00    
+Dependencies resolved.
+================================================================================
+ Package                  Arch        Version              Repository      Size
+================================================================================
+Installing:
+ [1mglibc-devel             [m i686        2.34-49.fc35         updates         45 k
+Installing dependencies:
+ [1mglibc                   [m i686        2.34-49.fc35         updates        1.9 M
+ [1mglibc-gconv-extra       [m i686        2.34-49.fc35         updates        1.6 M
+ [1mlibgcc                  [m i686        11.3.1-3.fc35        updates        127 k
+ [1mlibxcrypt               [m i686        4.4.33-3.fc35        updates        125 k
+ [1mlibxcrypt-devel         [m i686        4.4.33-3.fc35        updates         30 k
+
+Transaction Summary
+================================================================================
+Install  6 Packages
+
+Total size: 3.7 M
+Installed size: 14 M
+Downloading Packages:
+[SKIPPED] glibc-2.34-49.fc35.i686.rpm: Already downloaded                      
+[SKIPPED] glibc-devel-2.34-49.fc35.i686.rpm: Already downloaded                
+[SKIPPED] glibc-gconv-extra-2.34-49.fc35.i686.rpm: Already downloaded          
+[SKIPPED] libgcc-11.3.1-3.fc35.i686.rpm: Already downloaded                    
+[SKIPPED] libxcrypt-4.4.33-3.fc35.i686.rpm: Already downloaded                 
+[SKIPPED] libxcrypt-devel-4.4.33-3.fc35.i686.rpm: Already downloaded           
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :  [========                                           ] 1/1  Preparing        :  [================                                   ] 1/1  Preparing        :  [=========================                          ] 1/1  Preparing        :  [=================================                  ] 1/1  Preparing        :  [==========================================         ] 1/1  Preparing        :                                                        1/1 
+  Installing       : libgcc-11.3.1-3.fc35.i686 [                          ] 1/6  Installing       : libgcc-11.3.1-3.fc35.i686 [===                       ] 1/6  Installing       : libgcc-11.3.1-3.fc35.i686 [========                  ] 1/6  Installing       : libgcc-11.3.1-3.fc35.i686 [===========               ] 1/6  Installing       : libgcc-11.3.1-3.fc35.i686 [==============            ] 1/6  Installing       : libgcc-11.3.1-3.fc35.i686 [================          ] 1/6  Installing       : libgcc-11.3.1-3.fc35.i686 [====================      ] 1/6  Installing       : libgcc-11.3.1-3.fc35.i686 [========================  ] 1/6  Installing       : libgcc-11.3.1-3.fc35.i686 [========================= ] 1/6  Installing       : libgcc-11.3.1-3.fc35.i686                              1/6 
+  Running scriptlet: libgcc-11.3.1-3.fc35.i686                              1/6 
+  Installing       : glibc-gconv-extra-2.34-49 [                          ] 2/6  Installing       : glibc-gconv-extra-2.34-49 [=                         ] 2/6  Installing       : glibc-gconv-extra-2.34-49 [==                        ] 2/6  Installing       : glibc-gconv-extra-2.34-49 [===                       ] 2/6  Installing       : glibc-gconv-extra-2.34-49 [====                      ] 2/6  Installing       : glibc-gconv-extra-2.34-49 [=====                     ] 2/6  Installing       : glibc-gconv-extra-2.34-49 [======                    ] 2/6  Installing       : glibc-gconv-extra-2.34-49 [=======                   ] 2/6  Installing       : glibc-gconv-extra-2.34-49 [========                  ] 2/6  Installing       : glibc-gconv-extra-2.34-49 [=========                 ] 2/6  Installing       : glibc-gconv-extra-2.34-49 [==========                ] 2/6  Installing       : glibc-gconv-extra-2.34-49 [===========               ] 2/6  Installing       : glibc-gconv-extra-2.34-49 [============              ] 2/6  Installing       : glibc-gconv-extra-2.34-49 [=============             ] 2/6  Installing       : glibc-gconv-extra-2.34-49 [==============            ] 2/6  Installing       : glibc-gconv-extra-2.34-49 [===============           ] 2/6  Installing       : glibc-gconv-extra-2.34-49 [================          ] 2/6  Installing       : glibc-gconv-extra-2.34-49 [=================         ] 2/6  Installing       : glibc-gconv-extra-2.34-49 [==================        ] 2/6  Installing       : glibc-gconv-extra-2.34-49 [===================       ] 2/6  Installing       : glibc-gconv-extra-2.34-49 [====================      ] 2/6  Installing       : glibc-gconv-extra-2.34-49 [=====================     ] 2/6  Installing       : glibc-gconv-extra-2.34-49 [======================    ] 2/6  Installing       : glibc-gconv-extra-2.34-49 [=======================   ] 2/6  Installing       : glibc-gconv-extra-2.34-49 [========================  ] 2/6  Installing       : glibc-gconv-extra-2.34-49 [========================= ] 2/6  Installing       : glibc-gconv-extra-2.34-49.fc35.i686                    2/6 
+  Running scriptlet: glibc-gconv-extra-2.34-49.fc35.i686                    2/6 
+  Running scriptlet: glibc-2.34-49.fc35.i686                                3/6 
+  Installing       : glibc-2.34-49.fc35.i686 [                            ] 3/6  Installing       : glibc-2.34-49.fc35.i686 [=                           ] 3/6  Installing       : glibc-2.34-49.fc35.i686 [==                          ] 3/6  Installing       : glibc-2.34-49.fc35.i686 [===                         ] 3/6  Installing       : glibc-2.34-49.fc35.i686 [====                        ] 3/6  Installing       : glibc-2.34-49.fc35.i686 [=====                       ] 3/6  Installing       : glibc-2.34-49.fc35.i686 [======                      ] 3/6  Installing       : glibc-2.34-49.fc35.i686 [=======                     ] 3/6  Installing       : glibc-2.34-49.fc35.i686 [========                    ] 3/6  Installing       : glibc-2.34-49.fc35.i686 [=========                   ] 3/6  Installing       : glibc-2.34-49.fc35.i686 [==========                  ] 3/6  Installing       : glibc-2.34-49.fc35.i686 [===========                 ] 3/6  Installing       : glibc-2.34-49.fc35.i686 [============                ] 3/6  Installing       : glibc-2.34-49.fc35.i686 [=============               ] 3/6  Installing       : glibc-2.34-49.fc35.i686 [==============              ] 3/6  Installing       : glibc-2.34-49.fc35.i686 [===============             ] 3/6  Installing       : glibc-2.34-49.fc35.i686 [================            ] 3/6  Installing       : glibc-2.34-49.fc35.i686 [=================           ] 3/6  Installing       : glibc-2.34-49.fc35.i686 [==================          ] 3/6  Installing       : glibc-2.34-49.fc35.i686 [===================         ] 3/6  Installing       : glibc-2.34-49.fc35.i686 [====================        ] 3/6  Installing       : glibc-2.34-49.fc35.i686 [=====================       ] 3/6  Installing       : glibc-2.34-49.fc35.i686 [==========================  ] 3/6  Installing       : glibc-2.34-49.fc35.i686 [=========================== ] 3/6  Installing       : glibc-2.34-49.fc35.i686                                3/6 
+  Running scriptlet: glibc-2.34-49.fc35.i686                                3/6 
+  Installing       : libxcrypt-4.4.33-3.fc35.i [                          ] 4/6  Installing       : libxcrypt-4.4.33-3.fc35.i [==                        ] 4/6  Installing       : libxcrypt-4.4.33-3.fc35.i [=====                     ] 4/6  Installing       : libxcrypt-4.4.33-3.fc35.i [========                  ] 4/6  Installing       : libxcrypt-4.4.33-3.fc35.i [===========               ] 4/6  Installing       : libxcrypt-4.4.33-3.fc35.i [==============            ] 4/6  Installing       : libxcrypt-4.4.33-3.fc35.i [=================         ] 4/6  Installing       : libxcrypt-4.4.33-3.fc35.i [==================        ] 4/6  Installing       : libxcrypt-4.4.33-3.fc35.i [=====================     ] 4/6  Installing       : libxcrypt-4.4.33-3.fc35.i [======================    ] 4/6  Installing       : libxcrypt-4.4.33-3.fc35.i [========================  ] 4/6  Installing       : libxcrypt-4.4.33-3.fc35.i [========================= ] 4/6  Installing       : libxcrypt-4.4.33-3.fc35.i686                           4/6 
+  Installing       : glibc-devel-2.34-49.fc35. [                          ] 5/6  Installing       : glibc-devel-2.34-49.fc35. [=                         ] 5/6  Installing       : glibc-devel-2.34-49.fc35. [====                      ] 5/6  Installing       : glibc-devel-2.34-49.fc35. [========                  ] 5/6  Installing       : glibc-devel-2.34-49.fc35. [=============             ] 5/6  Installing       : glibc-devel-2.34-49.fc35. [=================         ] 5/6  Installing       : glibc-devel-2.34-49.fc35. [===================       ] 5/6  Installing       : glibc-devel-2.34-49.fc35. [====================      ] 5/6  Installing       : glibc-devel-2.34-49.fc35. [=====================     ] 5/6  Installing       : glibc-devel-2.34-49.fc35. [=======================   ] 5/6  Installing       : glibc-devel-2.34-49.fc35. [========================= ] 5/6  Installing       : glibc-devel-2.34-49.fc35.i686                          5/6 
+  Installing       : libxcrypt-devel-4.4.33-3. [                          ] 6/6  Installing       : libxcrypt-devel-4.4.33-3. [========                  ] 6/6  Installing       : libxcrypt-devel-4.4.33-3. [=========                 ] 6/6  Installing       : libxcrypt-devel-4.4.33-3. [==============            ] 6/6  Installing       : libxcrypt-devel-4.4.33-3. [=================         ] 6/6  Installing       : libxcrypt-devel-4.4.33-3. [=====================     ] 6/6  Installing       : libxcrypt-devel-4.4.33-3. [======================    ] 6/6  Installing       : libxcrypt-devel-4.4.33-3. [========================  ] 6/6  Installing       : libxcrypt-devel-4.4.33-3. [========================= ] 6/6  Installing       : libxcrypt-devel-4.4.33-3.fc35.i686                     6/6 
+  Running scriptlet: libxcrypt-devel-4.4.33-3.fc35.i686                     6/6 
+  Verifying        : glibc-2.34-49.fc35.i686                                1/6 
+  Verifying        : glibc-devel-2.34-49.fc35.i686                          2/6 
+  Verifying        : glibc-gconv-extra-2.34-49.fc35.i686                    3/6 
+  Verifying        : libgcc-11.3.1-3.fc35.i686                              4/6 
+  Verifying        : libxcrypt-4.4.33-3.fc35.i686                           5/6 
+  Verifying        : libxcrypt-devel-4.4.33-3.fc35.i686                     6/6 
+
+Installed:
+  glibc-2.34-49.fc35.i686                 glibc-devel-2.34-49.fc35.i686         
+  glibc-gconv-extra-2.34-49.fc35.i686     libgcc-11.3.1-3.fc35.i686             
+  libxcrypt-4.4.33-3.fc35.i686            libxcrypt-devel-4.4.33-3.fc35.i686    
+
+Complete!
+
+>>> 2023-01-26 08:08:34	"'/usr/bin/mock' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa' | sort -V > /home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/popt-1.18-6.fc35/divine/output/debug/rpm-list-mock.txt"
+
+>>> 2023-01-26 08:08:40	"'/usr/bin/mock' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa --provides' | sort -V > /tmp/csmockru4e3o59/rpm-list-mock-provides.txt"
+
+>>> 2023-01-26 08:08:46	"tar -cP '/usr/share/csmock/scripts' '/usr/bin/cswrap' '/usr/lib64/cswrap' '/tmp/csmockru4e3o59/popt-1.18-6.fc35.src.rpm' | '/usr/bin/mock' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'tar -xC/'"
+tar: Removing leading `/' from member names
+
+scan.ini: analyzer-version-divine = 4.4.2_4_gd47985e0b
+>>> 2023-01-26 08:08:51	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"mkdir -pv '/builddir/divine-capture'\""
+mkdir: created directory '/builddir/divine-capture'
+
+scan.ini: analyzer-version-gcc = 11.3.1
+>>> 2023-01-26 08:08:57	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "rpm -Uvh --nodeps '/tmp/csmockru4e3o59/popt-1.18-6.fc35.src.rpm'"
+Updating / installing...
+popt-1.18-6.fc35                      ########################################
+
+>>> 2023-01-26 08:09:02	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "chmod -R +r /builddir"
+
+>>> 2023-01-26 08:09:08	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "ln -fv '/usr/share/csmock/scripts/enable-keep-going.sh' '/usr/share/csmock/scripts/chroot-fixups'"
+'/usr/share/csmock/scripts/chroot-fixups/enable-keep-going.sh' => '/usr/share/csmock/scripts/enable-keep-going.sh'
+
+>>> 2023-01-26 08:09:13	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--shell" "for i in /usr/share/csmock/scripts/chroot-fixups/*; do test -x \$i && echo RUN: \$i >&2 && \$i; done"
+RUN: /usr/share/csmock/scripts/chroot-fixups/enable-keep-going.sh
+renamed '/usr/bin/make' -> '/usr/bin/make.orig'
++ ls -l /usr/bin/make
+-rwxr-xr-x. 1 root root 42 Jan 26 08:09 /usr/bin/make
++ cat /usr/bin/make
+#!/bin/sh
+exec /usr/bin/make.orig -k "$@"
+RUN: /usr/share/csmock/scripts/chroot-fixups/gdk-pixbuf2-triggers.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/glib2-triggers.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/kpathsea-texhash.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/openssl-public-header-files.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/qt5-core-abi.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/rpm-build-scripts.sh
++ sed -e s/fail=1/fail=0/ -i /usr/lib/rpm/redhat/brp-mangle-shebangs
+'/usr/lib/rpm/brp-strip-static-archive' -> '/bin/true'
+RUN: /usr/share/csmock/scripts/chroot-fixups/rpm-macros.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/rpm-python-extras.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/shared-mime-info-triggers.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/symbiotic-timeout.sh
+
+>>> 2023-01-26 08:09:19	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--chroot" "/bin/su mockbuild -l -c \"rpmbuild -bp --nodeps /builddir/build/SPECS/popt.spec '--define' '_unpackaged_files_terminate_build 0' '--define' 'apidocs 0' '--define' 'with_publican 0' '--without' 'docs' '--without' 'langpacks' '--define' '__cc dioscc' '--define' '__cxx diosc++' '--define' '__cpp dioscc -E' '--define' 'toolchain clang' '--define' 'optflags -O0' '--define' 'build_ldflags -O0'\""
+INFO: mock.py version 3.5 starting (python version = 3.10.9, NVR = mock-3.5-1.fc36)...
+Start(bootstrap): init plugins
+INFO: selinux enabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 3.5
+INFO: Mock Version: 3.5
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 3.5
+INFO: Mock Version: 3.5
+Finish: chroot init
+INFO: Running in chroot: ['/bin/su mockbuild -l -c "rpmbuild -bp --nodeps /builddir/build/SPECS/popt.spec \'--define\' \'_unpackaged_files_terminate_build 0\' \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc dioscc\' \'--define\' \'__cxx diosc++\' \'--define\' \'__cpp dioscc -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'"']
+Start: chroot ['/bin/su mockbuild -l -c "rpmbuild -bp --nodeps /builddir/build/SPECS/popt.spec \'--define\' \'_unpackaged_files_terminate_build 0\' \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc dioscc\' \'--define\' \'__cxx diosc++\' \'--define\' \'__cpp dioscc -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'"']
+setting SOURCE_DATE_EPOCH=1626998400
+Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.4mKUZp
++ umask 022
++ cd /builddir/build/BUILD
++ cd /builddir/build/BUILD
++ rm -rf popt-1.18
++ /usr/bin/gzip -dc /builddir/build/SOURCES/popt-1.18.tar.gz
++ /usr/bin/tar -xof -
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd popt-1.18
++ /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
++ /usr/bin/cat /builddir/build/SOURCES/popt-1.18-ltname.patch
++ /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Finish: chroot ['/bin/su mockbuild -l -c "rpmbuild -bp --nodeps /builddir/build/SPECS/popt.spec \'--define\' \'_unpackaged_files_terminate_build 0\' \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc dioscc\' \'--define\' \'__cxx diosc++\' \'--define\' \'__cpp dioscc -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'"']
+
+>>> 2023-01-26 08:09:25	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "chmod -R +r /builddir/build"
+
+>>> 2023-01-26 08:09:30	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--chroot" "/bin/su mockbuild -l -c \"PATH=/usr/lib64/cswrap:\\\$PATH CSWRAP_CAP_FILE=\\\$'/builddir/cswrap-capture.err' CSWRAP_TIMEOUT=\\\$'30' CSWRAP_TIMEOUT_FOR=\\\$':' CC=\\\$'dioscc' CXX=\\\$'diosc++' CSEXEC_WRAP_CMD=\\\$'--skip-ld-linux\\\\a/usr/bin/csexec-divine\\\\a-l\\\\a/builddir/divine-capture\\\\a-d\\\\acheck --lart stubs -o ignore:notimplemented -o ignore:exit --max-time 8 ' CSWRAP_ADD_CFLAGS=\\\$'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader' CSWRAP_DEL_CFLAGS=\\\$'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register' CSWRAP_ADD_CXXFLAGS=\\\$'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader' CSWRAP_DEL_CXXFLAGS=\\\$'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register' sh -c \\\"rpmbuild -bc --nodeps --short-circuit /builddir/build/SPECS/popt.spec '--define' '_unpackaged_files_terminate_build 0' '--define' 'apidocs 0' '--define' 'with_publican 0' '--without' 'docs' '--without' 'langpacks' '--define' '__cc dioscc' '--define' '__cxx diosc++' '--define' '__cpp dioscc -E' '--define' 'toolchain clang' '--define' 'optflags -O0' '--define' 'build_ldflags -O0'\\\"\""
+INFO: mock.py version 3.5 starting (python version = 3.10.9, NVR = mock-3.5-1.fc36)...
+Start(bootstrap): init plugins
+INFO: selinux enabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 3.5
+INFO: Mock Version: 3.5
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 3.5
+INFO: Mock Version: 3.5
+Finish: chroot init
+INFO: Running in chroot: ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'dioscc\' CXX=\\$\'diosc++\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\a/usr/bin/csexec-divine\\\\a-l\\\\a/builddir/divine-capture\\\\a-d\\\\acheck --lart stubs -o ignore:notimplemented -o ignore:exit --max-time 8 \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bc --nodeps --short-circuit /builddir/build/SPECS/popt.spec \'--define\' \'_unpackaged_files_terminate_build 0\' \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc dioscc\' \'--define\' \'__cxx diosc++\' \'--define\' \'__cpp dioscc -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+Start: chroot ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'dioscc\' CXX=\\$\'diosc++\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\a/usr/bin/csexec-divine\\\\a-l\\\\a/builddir/divine-capture\\\\a-d\\\\acheck --lart stubs -o ignore:notimplemented -o ignore:exit --max-time 8 \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bc --nodeps --short-circuit /builddir/build/SPECS/popt.spec \'--define\' \'_unpackaged_files_terminate_build 0\' \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc dioscc\' \'--define\' \'__cxx diosc++\' \'--define\' \'__cpp dioscc -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+setting SOURCE_DATE_EPOCH=1626998400
+Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.GnHzvg
++ umask 022
++ cd /builddir/build/BUILD
++ cd popt-1.18
++ CFLAGS=-O0
++ export CFLAGS
++ CXXFLAGS=-O0
++ export CXXFLAGS
++ FFLAGS='-O0 -I/usr/lib64/gfortran/modules'
++ export FFLAGS
++ FCFLAGS='-O0 -I/usr/lib64/gfortran/modules'
++ export FCFLAGS
++ LDFLAGS=-O0
++ export LDFLAGS
++ LT_SYS_LIBRARY_PATH=/usr/lib64:
++ export LT_SYS_LIBRARY_PATH
++ CC=dioscc
++ export CC
++ CXX=diosc++
++ export CXX
++ '[' -fltox '!=' x ']'
+++ find . -type f -name configure -print
++ for file in $(find . -type f -name configure -print)
++ /usr/bin/sed -r --in-place=.backup 's/^char \(\*f\) \(\) = /__attribute__ ((used)) char (*f) () = /g' ./configure
++ diff -u ./configure.backup ./configure
++ mv ./configure.backup ./configure
++ /usr/bin/sed -r --in-place=.backup 's/^char \(\*f\) \(\);/__attribute__ ((used)) char (*f) ();/g' ./configure
++ diff -u ./configure.backup ./configure
++ mv ./configure.backup ./configure
++ /usr/bin/sed -r --in-place=.backup 's/^char \$2 \(\);/__attribute__ ((used)) char \$2 ();/g' ./configure
++ diff -u ./configure.backup ./configure
+--- ./configure.backup	2020-06-23 07:15:20.000000000 -0400
++++ ./configure	2023-01-26 08:09:35.985267511 -0500
+@@ -1869,7 +1869,7 @@
+ #ifdef __cplusplus
+ extern "C"
+ #endif
+-char $2 ();
++__attribute__ ((used)) char $2 ();
+ /* The GNU C library defines this for functions which it implements
+     to always fail with ENOSYS.  Some functions are actually named
+     something starting with __ and the normal name is an alias.  */
++ /usr/bin/sed --in-place=.backup '1{$!N;$!N};$!N;s/int x = 1;\nint y = 0;\nint z;\nint nan;/volatile int x = 1; volatile int y = 0; volatile int z, nan;/;P;D' ./configure
++ diff -u ./configure.backup ./configure
++ mv ./configure.backup ./configure
++ /usr/bin/sed --in-place=.backup 's#^lt_cv_sys_global_symbol_to_cdecl=.*#lt_cv_sys_global_symbol_to_cdecl="sed -n -e '\''s/^T .* \\(.*\\)$/extern int \\1();/p'\'' -e '\''s/^$symcode* .* \\(.*\\)$/extern char \\1;/p'\''"#' ./configure
++ diff -u ./configure.backup ./configure
+--- ./configure.backup	2023-01-26 08:09:35.985267511 -0500
++++ ./configure	2023-01-26 08:09:36.045266687 -0500
+@@ -7514,7 +7514,7 @@
+ # Transform an extracted symbol line into a proper C declaration.
+ # Some systems (esp. on ia64) link data and code symbols differently,
+ # so use this general approach.
+-lt_cv_sys_global_symbol_to_cdecl="sed -n"\
++lt_cv_sys_global_symbol_to_cdecl="sed -n -e 's/^T .* \(.*\)$/extern int \1();/p' -e 's/^$symcode* .* \(.*\)$/extern char \1;/p'"
+ $lt_cdecl_hook\
+ " -e 's/^T .* \(.*\)$/extern int \1();/p'"\
+ " -e 's/^$symcode$symcode* .* \(.*\)$/extern char \1;/p'"
+@@ -16660,7 +16660,7 @@
+ compiler='`$ECHO "$compiler" | $SED "$delay_single_quote_subst"`'
+ GCC='`$ECHO "$GCC" | $SED "$delay_single_quote_subst"`'
+ lt_cv_sys_global_symbol_pipe='`$ECHO "$lt_cv_sys_global_symbol_pipe" | $SED "$delay_single_quote_subst"`'
+-lt_cv_sys_global_symbol_to_cdecl='`$ECHO "$lt_cv_sys_global_symbol_to_cdecl" | $SED "$delay_single_quote_subst"`'
++lt_cv_sys_global_symbol_to_cdecl="sed -n -e 's/^T .* \(.*\)$/extern int \1();/p' -e 's/^$symcode* .* \(.*\)$/extern char \1;/p'"
+ lt_cv_sys_global_symbol_to_import='`$ECHO "$lt_cv_sys_global_symbol_to_import" | $SED "$delay_single_quote_subst"`'
+ lt_cv_sys_global_symbol_to_c_name_address='`$ECHO "$lt_cv_sys_global_symbol_to_c_name_address" | $SED "$delay_single_quote_subst"`'
+ lt_cv_sys_global_symbol_to_c_name_address_lib_prefix='`$ECHO "$lt_cv_sys_global_symbol_to_c_name_address_lib_prefix" | $SED "$delay_single_quote_subst"`'
++ '[' 1 = 1 ']'
++++ dirname ./configure
+++ find . -name config.guess -o -name config.sub
++ for i in $(find $(dirname ./configure) -name config.guess -o -name config.sub)
+++ basename ./build-aux/config.guess
++ '[' -f /usr/lib/rpm/redhat/config.guess ']'
++ /usr/bin/rm -f ./build-aux/config.guess
+++ basename ./build-aux/config.guess
++ /usr/bin/cp -fv /usr/lib/rpm/redhat/config.guess ./build-aux/config.guess
+'/usr/lib/rpm/redhat/config.guess' -> './build-aux/config.guess'
++ for i in $(find $(dirname ./configure) -name config.guess -o -name config.sub)
+++ basename ./build-aux/config.sub
++ '[' -f /usr/lib/rpm/redhat/config.sub ']'
++ /usr/bin/rm -f ./build-aux/config.sub
+++ basename ./build-aux/config.sub
++ /usr/bin/cp -fv /usr/lib/rpm/redhat/config.sub ./build-aux/config.sub
+'/usr/lib/rpm/redhat/config.sub' -> './build-aux/config.sub'
++ '[' 1 = 1 ']'
++ '[' x '!=' 'x-Wl,-z,now ' ']'
+++ find . -name ltmain.sh
++ for i in $(find . -name ltmain.sh)
++ /usr/bin/sed -i.backup -e 's~compiler_flags=$~compiler_flags="-Wl,-z,now "~' ./build-aux/ltmain.sh
++ ./configure --build=x86_64-redhat-linux-gnu --host=x86_64-redhat-linux-gnu --program-prefix= --disable-dependency-tracking --prefix=/usr --exec-prefix=/usr --bindir=/usr/bin --sbindir=/usr/sbin --sysconfdir=/etc --datadir=/usr/share --includedir=/usr/include --libdir=/usr/lib64 --libexecdir=/usr/libexec --localstatedir=/var --sharedstatedir=/var/lib --mandir=/usr/share/man --infodir=/usr/share/info
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether make supports the include directive... yes (GNU style)
+checking for x86_64-redhat-linux-gnu-gcc... dioscc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether dioscc accepts -g... yes
+checking for dioscc option to accept ISO C89... none needed
+checking whether dioscc understands -c and -o together... yes
+checking dependency style of dioscc... none
+checking for dioscc option to accept ISO C99... none needed
+checking for dioscc option to accept ISO Standard C... (cached) none needed
+checking for x86_64-redhat-linux-gnu-gcc... (cached) dioscc
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether dioscc accepts -g... (cached) yes
+checking for dioscc option to accept ISO C89... (cached) none needed
+checking whether dioscc understands -c and -o together... (cached) yes
+checking dependency style of dioscc... (cached) none
+checking how to run the C preprocessor... dioscc -E
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for x86_64-redhat-linux-gnu-ar... no
+checking for x86_64-redhat-linux-gnu-lib... no
+checking for x86_64-redhat-linux-gnu-link... no
+checking for ar... ar
+checking the archiver (ar) interface... ar
+checking build system type... x86_64-redhat-linux-gnu
+checking host system type... x86_64-redhat-linux-gnu
+checking how to print strings... printf
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for fgrep... /usr/bin/grep -F
+checking for ld used by dioscc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-redhat-linux-gnu file names to x86_64-redhat-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-redhat-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for x86_64-redhat-linux-gnu-objdump... no
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for x86_64-redhat-linux-gnu-dlltool... no
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for x86_64-redhat-linux-gnu-ar... ar
+checking for archiver @FILE support... @
+checking for x86_64-redhat-linux-gnu-strip... no
+checking for strip... strip
+checking for x86_64-redhat-linux-gnu-ranlib... no
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from dioscc object... ./configure: line 7520:  -e 's/^T .* \(.*\)$/extern int \1();/p' -e 's/^[ABCDGIRSTW][ABCDGIRSTW]* .* \(.*\)$/extern char \1;/p': No such file or directory
+ok
+checking for sysroot... no
+checking for a working dd... /usr/bin/dd
+checking how to truncate binary pipes... /usr/bin/dd bs=4096 count=1
+checking for x86_64-redhat-linux-gnu-mt... no
+checking for mt... no
+checking if : is a manifest tool... no
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if dioscc supports -fno-rtti -fno-exceptions... yes
+checking for dioscc option to produce PIC... -fPIC -DPIC
+checking if dioscc PIC flag -fPIC -DPIC works... yes
+checking if dioscc static flag -static works... no
+checking if dioscc supports -c -o file.o... yes
+checking if dioscc supports -c -o file.o... (cached) yes
+checking whether the dioscc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... yes
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... no
+checking fnmatch.h usability... yes
+checking fnmatch.h presence... yes
+checking for fnmatch.h... yes
+checking glob.h usability... no
+checking glob.h presence... yes
+configure: WARNING: glob.h: present but cannot be compiled
+configure: WARNING: glob.h:     check for missing prerequisite headers?
+configure: WARNING: glob.h: see the Autoconf documentation
+configure: WARNING: glob.h:     section "Present But Cannot Be Compiled"
+configure: WARNING: glob.h: proceeding with the compiler's result
+configure: WARNING:     ## -------------------------------------- ##
+configure: WARNING:     ## Report this to rpm-maint@lists.rpm.org ##
+configure: WARNING:     ## -------------------------------------- ##
+checking for glob.h... no
+checking langinfo.h usability... no
+checking langinfo.h presence... no
+checking for langinfo.h... no
+checking libintl.h usability... no
+checking libintl.h presence... yes
+configure: WARNING: libintl.h: present but cannot be compiled
+configure: WARNING: libintl.h:     check for missing prerequisite headers?
+configure: WARNING: libintl.h: see the Autoconf documentation
+configure: WARNING: libintl.h:     section "Present But Cannot Be Compiled"
+configure: WARNING: libintl.h: proceeding with the compiler's result
+configure: WARNING:     ## -------------------------------------- ##
+configure: WARNING:     ## Report this to rpm-maint@lists.rpm.org ##
+configure: WARNING:     ## -------------------------------------- ##
+checking for libintl.h... no
+checking mcheck.h usability... no
+checking mcheck.h presence... yes
+configure: WARNING: mcheck.h: present but cannot be compiled
+configure: WARNING: mcheck.h:     check for missing prerequisite headers?
+configure: WARNING: mcheck.h: see the Autoconf documentation
+configure: WARNING: mcheck.h:     section "Present But Cannot Be Compiled"
+configure: WARNING: mcheck.h: proceeding with the compiler's result
+configure: WARNING:     ## -------------------------------------- ##
+configure: WARNING:     ## Report this to rpm-maint@lists.rpm.org ##
+configure: WARNING:     ## -------------------------------------- ##
+checking for mcheck.h... no
+checking stdalign.h usability... yes
+checking stdalign.h presence... yes
+checking for stdalign.h... yes
+checking for library containing setreuid... none required
+checking for getuid... yes
+checking for geteuid... yes
+checking for iconv... yes
+checking for mtrace... yes
+checking for secure_getenv... yes
+checking for __secure_getenv... no
+checking for setreuid... yes
+checking for setuid... yes
+checking for stpcpy... yes
+checking for strerror... yes
+checking for vasprintf... yes
+checking for srandom... yes
+checking whether NLS is requested... yes
+checking for msgfmt... /usr/bin/msgfmt
+checking for gmsgfmt... /usr/bin/msgfmt
+checking for xgettext... /usr/bin/xgettext
+checking for msgmerge... /usr/bin/msgmerge
+checking for ld used by dioscc... /usr/bin/ld -m elf_x86_64
+checking if the linker (/usr/bin/ld -m elf_x86_64) is GNU ld... yes
+checking for shared library run path origin... done
+checking for CFPreferencesCopyAppValue... no
+checking for CFLocaleCopyCurrent... no
+checking for GNU gettext in libc... no
+checking for iconv... yes
+checking for working iconv... yes
+checking for GNU gettext in libintl... no
+checking whether to use NLS... no
+checking for iconv... (cached) yes
+checking for working iconv... (cached) yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating po/Makefile.in
+config.status: creating Doxyfile
+config.status: creating Makefile
+config.status: creating src/Makefile
+config.status: creating popt.pc
+config.status: creating tests/test-poptrc
+config.status: creating tests/Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+config.status: executing po-directories commands
+config.status: creating po/POTFILES
+config.status: creating po/Makefile
++ /usr/bin/make -O -j4 V=1 VERBOSE=1
+/usr/bin/make.orig  all-recursive
+Making all in src
+make.orig[2]: Entering directory '/builddir/build/BUILD/popt-1.18/src'
+/bin/sh ../libtool  --tag=CC   --mode=compile dioscc -DHAVE_CONFIG_H -I. -I..  -I. -I.. -DPOPT_SYSCONFDIR="\"/etc\""   -O0 -c -o poptparse.lo poptparse.c
+libtool: compile:  dioscc -DHAVE_CONFIG_H -I. -I.. -I. -I.. -DPOPT_SYSCONFDIR=\"/etc\" -O0 -c poptparse.c  -fPIC -DPIC -o .libs/poptparse.o
+libtool: compile:  dioscc -DHAVE_CONFIG_H -I. -I.. -I. -I.. -DPOPT_SYSCONFDIR=\"/etc\" -O0 -c poptparse.c -o poptparse.o >/dev/null 2>&1
+make.orig[2]: Leaving directory '/builddir/build/BUILD/popt-1.18/src'
+make.orig[2]: Entering directory '/builddir/build/BUILD/popt-1.18/src'
+/bin/sh ../libtool  --tag=CC   --mode=compile dioscc -DHAVE_CONFIG_H -I. -I..  -I. -I.. -DPOPT_SYSCONFDIR="\"/etc\""   -O0 -c -o popthelp.lo popthelp.c
+libtool: compile:  dioscc -DHAVE_CONFIG_H -I. -I.. -I. -I.. -DPOPT_SYSCONFDIR=\"/etc\" -O0 -c popthelp.c  -fPIC -DPIC -o .libs/popthelp.o
+libtool: compile:  dioscc -DHAVE_CONFIG_H -I. -I.. -I. -I.. -DPOPT_SYSCONFDIR=\"/etc\" -O0 -c popthelp.c -o popthelp.o >/dev/null 2>&1
+make.orig[2]: Leaving directory '/builddir/build/BUILD/popt-1.18/src'
+make.orig[2]: Entering directory '/builddir/build/BUILD/popt-1.18/src'
+/bin/sh ../libtool  --tag=CC   --mode=compile dioscc -DHAVE_CONFIG_H -I. -I..  -I. -I.. -DPOPT_SYSCONFDIR="\"/etc\""   -O0 -c -o poptint.lo poptint.c
+libtool: compile:  dioscc -DHAVE_CONFIG_H -I. -I.. -I. -I.. -DPOPT_SYSCONFDIR=\"/etc\" -O0 -c poptint.c  -fPIC -DPIC -o .libs/poptint.o
+libtool: compile:  dioscc -DHAVE_CONFIG_H -I. -I.. -I. -I.. -DPOPT_SYSCONFDIR=\"/etc\" -O0 -c poptint.c -o poptint.o >/dev/null 2>&1
+make.orig[2]: Leaving directory '/builddir/build/BUILD/popt-1.18/src'
+make.orig[2]: Entering directory '/builddir/build/BUILD/popt-1.18/src'
+/bin/sh ../libtool  --tag=CC   --mode=compile dioscc -DHAVE_CONFIG_H -I. -I..  -I. -I.. -DPOPT_SYSCONFDIR="\"/etc\""   -O0 -c -o popt.lo popt.c
+libtool: compile:  dioscc -DHAVE_CONFIG_H -I. -I.. -I. -I.. -DPOPT_SYSCONFDIR=\"/etc\" -O0 -c popt.c  -fPIC -DPIC -o .libs/popt.o
+libtool: compile:  dioscc -DHAVE_CONFIG_H -I. -I.. -I. -I.. -DPOPT_SYSCONFDIR=\"/etc\" -O0 -c popt.c -o popt.o >/dev/null 2>&1
+make.orig[2]: Leaving directory '/builddir/build/BUILD/popt-1.18/src'
+/builddir/build/BUILD/popt-1.18/src/popt.c:183:9: warning: implicit declaration of function 'secure_getenv' is invalid in C99 <--[dioscc]
+    if (getenv("POSIXLY_CORRECT") || getenv("POSIX_ME_HARDER"))
+        ^
+/builddir/build/BUILD/popt-1.18/src/system.h:57:20: note: expanded from macro 'getenv' <--[dioscc]
+#define getenv(_s)      secure_getenv(_s)
+                        ^
+/builddir/build/BUILD/popt-1.18/src/popt.c:414:17: warning: implicit declaration of function 'secure_getenv' is invalid in C99 <--[dioscc]
+    if ((path = getenv("PATH")) == NULL || (path = xstrdup(path)) == NULL)
+                ^
+/builddir/build/BUILD/popt-1.18/src/system.h:57:20: note: expanded from macro 'getenv' <--[dioscc]
+#define getenv(_s)      secure_getenv(_s)
+                        ^
+/builddir/build/BUILD/popt-1.18/src/popt.c:414:15: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int' <--[dioscc]
+    if ((path = getenv("PATH")) == NULL || (path = xstrdup(path)) == NULL)
+              ^ ~~~~~~~~~~~~~~
+/builddir/build/BUILD/popt-1.18/src/popt.c:503:10: warning: implicit declaration of function 'setgid' is invalid in C99 <--[dioscc]
+    rc = setgid(getgid());
+         ^
+/builddir/build/BUILD/popt-1.18/src/popt.c:505:10: warning: implicit declaration of function 'setuid' is invalid in C99 <--[dioscc]
+    rc = setuid(getuid());
+         ^
+/builddir/build/BUILD/popt-1.18/src/popt.c:531:10: warning: implicit declaration of function 'execvp' is invalid in C99 <--[dioscc]
+    rc = execvp(argv[0], (char *const *)argv);
+         ^
+/builddir/build/BUILD/popt-1.18/src/popt.c:912:49: warning: '_Alignof' applied to an expression is a GNU extension <--[dioscc]
+    if (arg == NULL || (((unsigned long)arg) & (ALIGNOF(*arg)-1)))
+                                                ^
+/builddir/build/BUILD/popt-1.18/src/popt.c:23:20: note: expanded from macro 'ALIGNOF' <--[dioscc]
+#define ALIGNOF(x) alignof(x)
+                   ^
+/opt/divine/include/dios/include/stdalign.h:11:17: note: expanded from macro 'alignof' <--[dioscc]
+#define alignof _Alignof
+                ^
+/builddir/build/BUILD/popt-1.18/src/popt.c:918:6: warning: implicit declaration of function 'srandom' is invalid in C99 <--[dioscc]
+            srandom((unsigned)getpid());
+            ^
+/builddir/build/BUILD/popt-1.18/src/popt.c:919:24: warning: implicit declaration of function 'random' is invalid in C99 <--[dioscc]
+            srandom((unsigned)random());
+                              ^
+/builddir/build/BUILD/popt-1.18/src/popt.c:921:26: warning: implicit declaration of function 'random' is invalid in C99 <--[dioscc]
+        aLongLong = (long long)(random() % (aLongLong > 0 ? aLongLong : -aLongLong));
+                                ^
+/builddir/build/BUILD/popt-1.18/src/popt.c:953:49: warning: '_Alignof' applied to an expression is a GNU extension <--[dioscc]
+    if (arg == NULL || (((unsigned long)arg) & (ALIGNOF(*arg)-1)))
+                                                ^
+/builddir/build/BUILD/popt-1.18/src/popt.c:23:20: note: expanded from macro 'ALIGNOF' <--[dioscc]
+#define ALIGNOF(x) alignof(x)
+                   ^
+/opt/divine/include/dios/include/stdalign.h:11:17: note: expanded from macro 'alignof' <--[dioscc]
+#define alignof _Alignof
+                ^
+/builddir/build/BUILD/popt-1.18/src/popt.c:959:6: warning: implicit declaration of function 'srandom' is invalid in C99 <--[dioscc]
+            srandom((unsigned)getpid());
+            ^
+/builddir/build/BUILD/popt-1.18/src/popt.c:960:24: warning: implicit declaration of function 'random' is invalid in C99 <--[dioscc]
+            srandom((unsigned)random());
+                              ^
+/builddir/build/BUILD/popt-1.18/src/popt.c:962:10: warning: implicit declaration of function 'random' is invalid in C99 <--[dioscc]
+        aLong = random() % (aLong > 0 ? aLong : -aLong);
+                ^
+/builddir/build/BUILD/popt-1.18/src/popt.c:986:49: warning: '_Alignof' applied to an expression is a GNU extension <--[dioscc]
+    if (arg == NULL || (((unsigned long)arg) & (ALIGNOF(*arg)-1)))
+                                                ^
+/builddir/build/BUILD/popt-1.18/src/popt.c:23:20: note: expanded from macro 'ALIGNOF' <--[dioscc]
+#define ALIGNOF(x) alignof(x)
+                   ^
+/opt/divine/include/dios/include/stdalign.h:11:17: note: expanded from macro 'alignof' <--[dioscc]
+#define alignof _Alignof
+                ^
+/builddir/build/BUILD/popt-1.18/src/popt.c:992:6: warning: implicit declaration of function 'srandom' is invalid in C99 <--[dioscc]
+            srandom((unsigned)getpid());
+            ^
+/builddir/build/BUILD/popt-1.18/src/popt.c:993:24: warning: implicit declaration of function 'random' is invalid in C99 <--[dioscc]
+            srandom((unsigned)random());
+                              ^
+/builddir/build/BUILD/popt-1.18/src/popt.c:995:10: warning: implicit declaration of function 'random' is invalid in C99 <--[dioscc]
+        aLong = random() % (aLong > 0 ? aLong : -aLong);
+                ^
+/builddir/build/BUILD/popt-1.18/src/popt.c:1019:49: warning: '_Alignof' applied to an expression is a GNU extension <--[dioscc]
+    if (arg == NULL || (((unsigned long)arg) & (ALIGNOF(*arg)-1)))
+                                                ^
+/builddir/build/BUILD/popt-1.18/src/popt.c:23:20: note: expanded from macro 'ALIGNOF' <--[dioscc]
+#define ALIGNOF(x) alignof(x)
+                   ^
+/opt/divine/include/dios/include/stdalign.h:11:17: note: expanded from macro 'alignof' <--[dioscc]
+#define alignof _Alignof
+                ^
+/builddir/build/BUILD/popt-1.18/src/popt.c:1025:6: warning: implicit declaration of function 'srandom' is invalid in C99 <--[dioscc]
+            srandom((unsigned)getpid());
+            ^
+/builddir/build/BUILD/popt-1.18/src/popt.c:1026:24: warning: implicit declaration of function 'random' is invalid in C99 <--[dioscc]
+            srandom((unsigned)random());
+                              ^
+/builddir/build/BUILD/popt-1.18/src/popt.c:1028:10: warning: implicit declaration of function 'random' is invalid in C99 <--[dioscc]
+        aLong = random() % (aLong > 0 ? aLong : -aLong);
+                ^
+22 warnings generated.
+/builddir/build/BUILD/popt-1.18/src/poptconfig.c:464:17: warning: implicit declaration of function 'secure_getenv' is invalid in C99 <--[dioscc]
+    if ((home = getenv("HOME"))) {
+                ^
+/builddir/build/BUILD/popt-1.18/src/system.h:57:20: note: expanded from macro 'getenv' <--[dioscc]
+#define getenv(_s)      secure_getenv(_s)
+                        ^
+/builddir/build/BUILD/popt-1.18/src/poptconfig.c:464:15: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int' <--[dioscc]
+    if ((home = getenv("HOME"))) {
+              ^ ~~~~~~~~~~~~~~
+2 warnings generated.
+make.orig[2]: Entering directory '/builddir/build/BUILD/popt-1.18/src'
+/bin/sh ../libtool  --tag=CC   --mode=compile dioscc -DHAVE_CONFIG_H -I. -I..  -I. -I.. -DPOPT_SYSCONFDIR="\"/etc\""   -O0 -c -o poptconfig.lo poptconfig.c
+libtool: compile:  dioscc -DHAVE_CONFIG_H -I. -I.. -I. -I.. -DPOPT_SYSCONFDIR=\"/etc\" -O0 -c poptconfig.c  -fPIC -DPIC -o .libs/poptconfig.o
+libtool: compile:  dioscc -DHAVE_CONFIG_H -I. -I.. -I. -I.. -DPOPT_SYSCONFDIR=\"/etc\" -O0 -c poptconfig.c -o poptconfig.o >/dev/null 2>&1
+make.orig[2]: Leaving directory '/builddir/build/BUILD/popt-1.18/src'
+make.orig[2]: Entering directory '/builddir/build/BUILD/popt-1.18/src'
+/bin/sh ../libtool  --tag=CC   --mode=link dioscc  -O0 -no-undefined -version-info 0:1:0 -Wl,--version-script=../src/libpopt.vers -O0 -o libpopt.la -rpath /usr/lib64 popt.lo poptparse.lo poptconfig.lo popthelp.lo poptint.lo  
+libtool: link: dioscc -shared  -fPIC -DPIC  .libs/popt.o .libs/poptparse.o .libs/poptconfig.o .libs/popthelp.o .libs/poptint.o   -lc -Wl,-z,now  -O0 -Wl,--version-script=../src/libpopt.vers -O0   -Wl,-soname -Wl,libpopt.so.0 -o .libs/libpopt.so.0.0.1
+libtool: link: (cd ".libs" && rm -f "libpopt.so.0" && ln -s "libpopt.so.0.0.1" "libpopt.so.0")
+libtool: link: (cd ".libs" && rm -f "libpopt.so" && ln -s "libpopt.so.0.0.1" "libpopt.so")
+libtool: link: ar cru .libs/libpopt.a  popt.o poptparse.o poptconfig.o popthelp.o poptint.o
+libtool: link: ranlib .libs/libpopt.a
+libtool: link: ( cd ".libs" && rm -f "libpopt.la" && ln -s "../libpopt.la" "libpopt.la" )
+make.orig[2]: Leaving directory '/builddir/build/BUILD/popt-1.18/src'
+Making all in po
+make.orig[2]: Nothing to be done for 'all'.
+Making all in tests
+make.orig[2]: Entering directory '/builddir/build/BUILD/popt-1.18/tests'
+dioscc -DHAVE_CONFIG_H -I. -I..  -I. -I../src   -O0 -c -o test2.o test2.c
+make.orig[2]: Leaving directory '/builddir/build/BUILD/popt-1.18/tests'
+make.orig[2]: Entering directory '/builddir/build/BUILD/popt-1.18/tests'
+dioscc -DHAVE_CONFIG_H -I. -I..  -I. -I../src   -O0 -c -o tdict.o tdict.c
+make.orig[2]: Leaving directory '/builddir/build/BUILD/popt-1.18/tests'
+make.orig[2]: Entering directory '/builddir/build/BUILD/popt-1.18/tests'
+dioscc -DHAVE_CONFIG_H -I. -I..  -I. -I../src   -O0 -c -o test1.o test1.c
+make.orig[2]: Leaving directory '/builddir/build/BUILD/popt-1.18/tests'
+make.orig[2]: Entering directory '/builddir/build/BUILD/popt-1.18/tests'
+/bin/sh ../libtool  --tag=CC   --mode=link dioscc  -O0  -O0 -o tdict tdict.o ../src/libpopt.la 
+libtool: link: dioscc -O0 -O0 -o .libs/tdict tdict.o  ../src/.libs/libpopt.so
+make.orig[2]: Leaving directory '/builddir/build/BUILD/popt-1.18/tests'
+make.orig[2]: Entering directory '/builddir/build/BUILD/popt-1.18/tests'
+/bin/sh ../libtool  --tag=CC   --mode=link dioscc  -O0  -O0 -o test2 test2.o ../src/libpopt.la 
+libtool: link: dioscc -O0 -O0 -o .libs/test2 test2.o  ../src/.libs/libpopt.so
+make.orig[2]: Leaving directory '/builddir/build/BUILD/popt-1.18/tests'
+make.orig[2]: Entering directory '/builddir/build/BUILD/popt-1.18/tests'
+/bin/sh ../libtool  --tag=CC   --mode=link dioscc  -O0  -O0 -o test1 test1.o ../src/libpopt.la 
+libtool: link: dioscc -O0 -O0 -o .libs/test1 test1.o  ../src/.libs/libpopt.so
+make.orig[2]: Leaving directory '/builddir/build/BUILD/popt-1.18/tests'
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Finish: chroot ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'dioscc\' CXX=\\$\'diosc++\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\a/usr/bin/csexec-divine\\\\a-l\\\\a/builddir/divine-capture\\\\a-d\\\\acheck --lart stubs -o ignore:notimplemented -o ignore:exit --max-time 8 \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bc --nodeps --short-circuit /builddir/build/SPECS/popt.spec \'--define\' \'_unpackaged_files_terminate_build 0\' \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc dioscc\' \'--define\' \'__cxx diosc++\' \'--define\' \'__cpp dioscc -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+
+>>> 2023-01-26 08:10:01	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--chroot" "/bin/su mockbuild -l -c \"PATH=/usr/lib64/cswrap:\\\$PATH CSWRAP_CAP_FILE=\\\$'/builddir/cswrap-capture.err' CSWRAP_TIMEOUT=\\\$'30' CSWRAP_TIMEOUT_FOR=\\\$':' CC=\\\$'dioscc' CXX=\\\$'diosc++' CSEXEC_WRAP_CMD=\\\$'--skip-ld-linux\\\\a/usr/bin/csexec-divine\\\\a-l\\\\a/builddir/divine-capture\\\\a-d\\\\acheck --lart stubs -o ignore:notimplemented -o ignore:exit --max-time 8 ' CSWRAP_ADD_CFLAGS=\\\$'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader' CSWRAP_DEL_CFLAGS=\\\$'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register' CSWRAP_ADD_CXXFLAGS=\\\$'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader' CSWRAP_DEL_CXXFLAGS=\\\$'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register' sh -c \\\"rpmbuild -bi --nodeps --short-circuit /builddir/build/SPECS/popt.spec '--define' '_unpackaged_files_terminate_build 0' '--define' 'apidocs 0' '--define' 'with_publican 0' '--without' 'docs' '--without' 'langpacks' '--define' '__cc dioscc' '--define' '__cxx diosc++' '--define' '__cpp dioscc -E' '--define' 'toolchain clang' '--define' 'optflags -O0' '--define' 'build_ldflags -O0'\\\"\""
+INFO: mock.py version 3.5 starting (python version = 3.10.9, NVR = mock-3.5-1.fc36)...
+Start(bootstrap): init plugins
+INFO: selinux enabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 3.5
+INFO: Mock Version: 3.5
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 3.5
+INFO: Mock Version: 3.5
+Finish: chroot init
+INFO: Running in chroot: ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'dioscc\' CXX=\\$\'diosc++\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\a/usr/bin/csexec-divine\\\\a-l\\\\a/builddir/divine-capture\\\\a-d\\\\acheck --lart stubs -o ignore:notimplemented -o ignore:exit --max-time 8 \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bi --nodeps --short-circuit /builddir/build/SPECS/popt.spec \'--define\' \'_unpackaged_files_terminate_build 0\' \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc dioscc\' \'--define\' \'__cxx diosc++\' \'--define\' \'__cpp dioscc -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+Start: chroot ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'dioscc\' CXX=\\$\'diosc++\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\a/usr/bin/csexec-divine\\\\a-l\\\\a/builddir/divine-capture\\\\a-d\\\\acheck --lart stubs -o ignore:notimplemented -o ignore:exit --max-time 8 \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bi --nodeps --short-circuit /builddir/build/SPECS/popt.spec \'--define\' \'_unpackaged_files_terminate_build 0\' \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc dioscc\' \'--define\' \'__cxx diosc++\' \'--define\' \'__cpp dioscc -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+setting SOURCE_DATE_EPOCH=1626998400
+Executing(%install): /bin/sh -e /var/tmp/rpm-tmp.FL7kpb
++ umask 022
++ cd /builddir/build/BUILD
++ '[' /builddir/build/BUILDROOT/popt-1.18-6.fc35.x86_64 '!=' / ']'
++ rm -rf /builddir/build/BUILDROOT/popt-1.18-6.fc35.x86_64
+++ dirname /builddir/build/BUILDROOT/popt-1.18-6.fc35.x86_64
++ mkdir -p /builddir/build/BUILDROOT
++ mkdir /builddir/build/BUILDROOT/popt-1.18-6.fc35.x86_64
++ cd popt-1.18
++ /usr/bin/make install DESTDIR=/builddir/build/BUILDROOT/popt-1.18-6.fc35.x86_64 'INSTALL=/usr/bin/install -p'
+/usr/bin/make.orig  install-recursive
+make.orig[1]: Entering directory '/builddir/build/BUILD/popt-1.18'
+Making install in src
+make.orig[2]: Entering directory '/builddir/build/BUILD/popt-1.18/src'
+make.orig[3]: Entering directory '/builddir/build/BUILD/popt-1.18/src'
+ /usr/bin/mkdir -p '/builddir/build/BUILDROOT/popt-1.18-6.fc35.x86_64/usr/lib64'
+ /bin/sh ../libtool   --mode=install /usr/bin/install -p   libpopt.la '/builddir/build/BUILDROOT/popt-1.18-6.fc35.x86_64/usr/lib64'
+libtool: install: /usr/bin/install -p .libs/libpopt.so.0.0.1 /builddir/build/BUILDROOT/popt-1.18-6.fc35.x86_64/usr/lib64/libpopt.so.0.0.1
+libtool: install: (cd /builddir/build/BUILDROOT/popt-1.18-6.fc35.x86_64/usr/lib64 && { ln -s -f libpopt.so.0.0.1 libpopt.so.0 || { rm -f libpopt.so.0 && ln -s libpopt.so.0.0.1 libpopt.so.0; }; })
+libtool: install: (cd /builddir/build/BUILDROOT/popt-1.18-6.fc35.x86_64/usr/lib64 && { ln -s -f libpopt.so.0.0.1 libpopt.so || { rm -f libpopt.so && ln -s libpopt.so.0.0.1 libpopt.so; }; })
+libtool: install: /usr/bin/install -p .libs/libpopt.lai /builddir/build/BUILDROOT/popt-1.18-6.fc35.x86_64/usr/lib64/libpopt.la
+libtool: install: /usr/bin/install -p .libs/libpopt.a /builddir/build/BUILDROOT/popt-1.18-6.fc35.x86_64/usr/lib64/libpopt.a
+libtool: install: chmod 644 /builddir/build/BUILDROOT/popt-1.18-6.fc35.x86_64/usr/lib64/libpopt.a
+libtool: install: ranlib /builddir/build/BUILDROOT/popt-1.18-6.fc35.x86_64/usr/lib64/libpopt.a
+libtool: warning: remember to run 'libtool --finish /usr/lib64'
+ /usr/bin/mkdir -p '/builddir/build/BUILDROOT/popt-1.18-6.fc35.x86_64/usr/include'
+ /usr/bin/install -p -m 644 popt.h '/builddir/build/BUILDROOT/popt-1.18-6.fc35.x86_64/usr/include'
+make.orig[3]: Leaving directory '/builddir/build/BUILD/popt-1.18/src'
+make.orig[2]: Leaving directory '/builddir/build/BUILD/popt-1.18/src'
+Making install in po
+make.orig[2]: Entering directory '/builddir/build/BUILD/popt-1.18/po'
+if test "popt" = "gettext-tools"; then \
+  /usr/bin/mkdir -p /builddir/build/BUILDROOT/popt-1.18-6.fc35.x86_64/usr/share/gettext/po; \
+  for file in Makefile.in.in remove-potcdate.sin quot.sed boldquot.sed en@quot.header en@boldquot.header insert-header.sin Rules-quot   Makevars.template; do \
+    /usr/bin/install -p -m 644 ./$file \
+		    /builddir/build/BUILDROOT/popt-1.18-6.fc35.x86_64/usr/share/gettext/po/$file; \
+  done; \
+  for file in Makevars; do \
+    rm -f /builddir/build/BUILDROOT/popt-1.18-6.fc35.x86_64/usr/share/gettext/po/$file; \
+  done; \
+else \
+  : ; \
+fi
+make.orig[2]: Leaving directory '/builddir/build/BUILD/popt-1.18/po'
+Making install in tests
+make.orig[2]: Entering directory '/builddir/build/BUILD/popt-1.18/tests'
+make.orig[3]: Entering directory '/builddir/build/BUILD/popt-1.18/tests'
+make.orig[3]: Nothing to be done for 'install-exec-am'.
+make.orig[3]: Nothing to be done for 'install-data-am'.
+make.orig[3]: Leaving directory '/builddir/build/BUILD/popt-1.18/tests'
+make.orig[2]: Leaving directory '/builddir/build/BUILD/popt-1.18/tests'
+make.orig[2]: Entering directory '/builddir/build/BUILD/popt-1.18'
+make.orig[3]: Entering directory '/builddir/build/BUILD/popt-1.18'
+make.orig[3]: Nothing to be done for 'install-exec-am'.
+ /usr/bin/mkdir -p '/builddir/build/BUILDROOT/popt-1.18-6.fc35.x86_64/usr/share/man/man3'
+ /usr/bin/install -p -m 644 popt.3 '/builddir/build/BUILDROOT/popt-1.18-6.fc35.x86_64/usr/share/man/man3'
+ /usr/bin/mkdir -p '/builddir/build/BUILDROOT/popt-1.18-6.fc35.x86_64/usr/lib64/pkgconfig'
+ /usr/bin/install -p -m 644 popt.pc '/builddir/build/BUILDROOT/popt-1.18-6.fc35.x86_64/usr/lib64/pkgconfig'
+make.orig[3]: Leaving directory '/builddir/build/BUILD/popt-1.18'
+make.orig[2]: Leaving directory '/builddir/build/BUILD/popt-1.18'
+make.orig[1]: Leaving directory '/builddir/build/BUILD/popt-1.18'
++ rm -f /builddir/build/BUILDROOT/popt-1.18-6.fc35.x86_64/usr/lib64/libpopt.la
++ mkdir -p /builddir/build/BUILDROOT/popt-1.18-6.fc35.x86_64/etc/popt.d/
++ /usr/lib/rpm/find-lang.sh /builddir/build/BUILDROOT/popt-1.18-6.fc35.x86_64 popt
+No translations found for popt in /builddir/build/BUILDROOT/popt-1.18-6.fc35.x86_64
+
+RPM build errors:
+error: Bad exit status from /var/tmp/rpm-tmp.FL7kpb (%install)
+    Bad exit status from /var/tmp/rpm-tmp.FL7kpb (%install)
+Finish: chroot ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'dioscc\' CXX=\\$\'diosc++\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\a/usr/bin/csexec-divine\\\\a-l\\\\a/builddir/divine-capture\\\\a-d\\\\acheck --lart stubs -o ignore:notimplemented -o ignore:exit --max-time 8 \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bi --nodeps --short-circuit /builddir/build/SPECS/popt.spec \'--define\' \'_unpackaged_files_terminate_build 0\' \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc dioscc\' \'--define\' \'__cxx diosc++\' \'--define\' \'__cpp dioscc -E\' \'--define\' \'toolchain clang\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+
+!!! 2023-01-26 08:10:08	error: %install failed
+
+>>> 2023-01-26 08:10:08	"'/usr/bin/mock' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'tar -c --remove-files '/builddir/cswrap-capture.err' '/builddir/divine-capture'' | tar -xC '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/popt-1.18-6.fc35/divine/output/debug/raw-results'"
+tar: Removing leading `/' from member names
+tar: Removing leading `/' from hard link targets
+
+>>> 2023-01-26 08:10:13	"chmod" "-R" "+r" "/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/popt-1.18-6.fc35/divine/output/debug/raw-results/builddir/divine-capture"
+
+>>> 2023-01-26 08:10:13	"cd '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/popt-1.18-6.fc35/divine/output/debug/raw-results/builddir/divine-capture' && touch empty.conv && csgrep --mode=json --remove-duplicates *.conv > '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/popt-1.18-6.fc35/divine/output/debug/uni-results/divine-capture.js'"
+
+scan.ini: time-finished = 2023-01-26 08:10:13
+scan.ini: exit-code = 1
+>>> 2023-01-26 08:10:13	"cslinker --quiet --cwelist '/usr/share/csmock/cwe-map.csv' --inifile '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/popt-1.18-6.fc35/divine/output/scan.ini' '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/popt-1.18-6.fc35/divine/output/debug/uni-results'/* > '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/popt-1.18-6.fc35/divine/output/debug/scan-results-all.js'"
+
+>>> 2023-01-26 08:10:13	"'/usr/bin/mock' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'csgrep --mode=json --embed-context 3' < '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/popt-1.18-6.fc35/divine/output/debug/scan-results-all.js' > '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/popt-1.18-6.fc35/divine/output/debug/scan-results-all.js.tmp'"
+
+>>> 2023-01-26 08:10:19	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--clean"
+
+>>> 2023-01-26 08:10:33	"cat '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/popt-1.18-6.fc35/divine/output/debug/scan-results-all.js' | sed 's|/builddir/build/BUILDROOT/[^/]*/|/builddir/build/BUILD//|' | csgrep --mode=json --path '^/builddir/build/BUILD/' --strip-path-prefix /builddir/build/BUILD/ | csgrep --mode=json --invert-match --path '^ksh-.*[0-9]+\\.c\$' | csgrep --mode=json --invert-match --path 'CMakeFiles/CMakeTmp|conftest.c' | cssort --key=path > '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/popt-1.18-6.fc35/divine/output/scan-results.js'"
+
+>>> 2023-01-26 08:10:33	"sed 's|/builddir/build/BUILDROOT/[^/]*/|/builddir/build/BUILD//|' '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/popt-1.18-6.fc35/divine/output/debug/scan-results-all.js' | csgrep --mode=json --strip-path-prefix /builddir/build/BUILD/ | csdiff --show-internal '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/popt-1.18-6.fc35/divine/output/scan-results.js' - | cssort > '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/popt-1.18-6.fc35/divine/output/debug/suppressed-results.js'"
+
+>>> 2023-01-26 08:10:33	"csgrep --mode=grep --invert-match --event \"internal warning\" --prune-events=1 '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/popt-1.18-6.fc35/divine/output/debug/suppressed-results.js' > '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/popt-1.18-6.fc35/divine/output/debug/suppressed-results.err'"
+
+>>> 2023-01-26 08:10:33	"csgrep --mode=json --invert-match --event \"internal warning\" --prune-events=1 '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/popt-1.18-6.fc35/divine/output/debug/suppressed-results.js' | cshtml - > '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/popt-1.18-6.fc35/divine/output/debug/suppressed-results.html'"
+
+>>> 2023-01-26 08:10:33	"csgrep --mode=evtstat --invert-match --event \"internal warning\" --prune-events=1 '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/popt-1.18-6.fc35/divine/output/debug/suppressed-results.js' | tee '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/popt-1.18-6.fc35/divine/output/debug/suppressed-results-summary.txt'"
+
+>>> 2023-01-26 08:10:33	"csgrep --mode=grep --invert-match --event \"internal warning\" --prune-events=1 '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/popt-1.18-6.fc35/divine/output/scan-results.js' > '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/popt-1.18-6.fc35/divine/output/scan-results.err'"
+
+>>> 2023-01-26 08:10:33	"csgrep --mode=json --invert-match --event \"internal warning\" --prune-events=1 '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/popt-1.18-6.fc35/divine/output/scan-results.js' | cshtml - > '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/popt-1.18-6.fc35/divine/output/scan-results.html'"
+
+>>> 2023-01-26 08:10:33	"csgrep --mode=evtstat --invert-match --event \"internal warning\" --prune-events=1 '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/popt-1.18-6.fc35/divine/output/scan-results.js' | tee '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/popt-1.18-6.fc35/divine/output/scan-results-summary.txt'"
+     24	COMPILER_WARNING                                	warning
+
+<<< 2023-01-26 08:10:33	csmock exit code: 1
+

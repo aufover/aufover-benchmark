@@ -1,0 +1,659 @@
+Error: COMPILER_WARNING:
+libarchive-3.5.2/cpio/cpio.c:149:16: warning: taking address of packed member '' of class or structure 'sigaction' may result in an unaligned pointer value
+#                sigemptyset(&sa.sa_mask);
+#                             ^~~~~~~~~~
+#  147|   	{ /* Ignore SIGPIPE signals. */
+#  148|   		struct sigaction sa;
+#  149|-> 		sigemptyset(&sa.sa_mask);
+#  150|   		sa.sa_flags = 0;
+#  151|   		sa.sa_handler = SIG_IGN;
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/cpio/cpio.c:936:24: warning: implicit declaration of function 'futimes' is invalid in C99
+#        if (fd >= 0 && futimes(fd, times) == 0)
+#                       ^
+#  934|   
+#  935|   #if defined(HAVE_FUTIMES) && !defined(__CYGWIN__)
+#  936|->         if (fd >= 0 && futimes(fd, times) == 0)
+#  937|   		return (fd);
+#  938|   #endif
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/cpio/cpio.c:949:13: warning: implicit declaration of function 'lutimes' is invalid in C99
+#        if (lutimes(name, times) != 0)
+#            ^
+#  947|   
+#  948|   #ifdef HAVE_LUTIMES
+#  949|->         if (lutimes(name, times) != 0)
+#  950|   #else
+#  951|           if ((AE_IFLNK != archive_entry_filetype(entry))
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/cpio/cpio.c:1209:8: warning: incompatible integer to pointer conversion assigning to 'struct tm *' from 'int'
+#        ltime = localtime_r(&mtime, &tmbuf);
+#              ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1207|   #endif
+# 1208|   #if defined(HAVE_LOCALTIME_R)
+# 1209|-> 	ltime = localtime_r(&mtime, &tmbuf);
+# 1210|   #elif defined(HAVE__LOCALTIME64_S)
+# 1211|   	tmptime = mtime;
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/cpio/cpio.c:1209:10: warning: implicit declaration of function 'localtime_r' is invalid in C99
+#        ltime = localtime_r(&mtime, &tmbuf);
+#                ^
+# 1207|   #endif
+# 1208|   #if defined(HAVE_LOCALTIME_R)
+# 1209|-> 	ltime = localtime_r(&mtime, &tmbuf);
+# 1210|   #elif defined(HAVE__LOCALTIME64_S)
+# 1211|   	tmptime = mtime;
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/archive_digest.c:246:3: warning: ignoring return value of function declared with 'warn_unused_result' attribute
+#  EVP_DigestInit(*ctx, EVP_md5());
+#  ^~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~
+#  244|     if ((*ctx = EVP_MD_CTX_new()) == NULL)
+#  245|   	return (ARCHIVE_FAILED);
+#  246|->   EVP_DigestInit(*ctx, EVP_md5());
+#  247|     return (ARCHIVE_OK);
+#  248|   }
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/archive_digest.c:254:3: warning: ignoring return value of function declared with 'warn_unused_result' attribute
+#  EVP_DigestUpdate(*ctx, indata, insize);
+#  ^~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~
+#  252|       size_t insize)
+#  253|   {
+#  254|->   EVP_DigestUpdate(*ctx, indata, insize);
+#  255|     return (ARCHIVE_OK);
+#  256|   }
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/archive_digest.c:266:5: warning: ignoring return value of function declared with 'warn_unused_result' attribute
+#    EVP_DigestFinal(*ctx, md, NULL);
+#    ^~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~
+#  264|      */
+#  265|     if (*ctx) {
+#  266|->     EVP_DigestFinal(*ctx, md, NULL);
+#  267|       EVP_MD_CTX_free(*ctx);
+#  268|       *ctx = NULL;
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/archive_digest.c:437:3: warning: ignoring return value of function declared with 'warn_unused_result' attribute
+#  EVP_DigestInit(*ctx, EVP_ripemd160());
+#  ^~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~
+#  435|     if ((*ctx = EVP_MD_CTX_new()) == NULL)
+#  436|   	return (ARCHIVE_FAILED);
+#  437|->   EVP_DigestInit(*ctx, EVP_ripemd160());
+#  438|     return (ARCHIVE_OK);
+#  439|   }
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/archive_digest.c:445:3: warning: ignoring return value of function declared with 'warn_unused_result' attribute
+#  EVP_DigestUpdate(*ctx, indata, insize);
+#  ^~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~
+#  443|       size_t insize)
+#  444|   {
+#  445|->   EVP_DigestUpdate(*ctx, indata, insize);
+#  446|     return (ARCHIVE_OK);
+#  447|   }
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/archive_digest.c:453:5: warning: ignoring return value of function declared with 'warn_unused_result' attribute
+#    EVP_DigestFinal(*ctx, md, NULL);
+#    ^~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~
+#  451|   {
+#  452|     if (*ctx) {
+#  453|->     EVP_DigestFinal(*ctx, md, NULL);
+#  454|       EVP_MD_CTX_free(*ctx);
+#  455|       *ctx = NULL;
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/archive_digest.c:627:3: warning: ignoring return value of function declared with 'warn_unused_result' attribute
+#  EVP_DigestInit(*ctx, EVP_sha1());
+#  ^~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~
+#  625|     if ((*ctx = EVP_MD_CTX_new()) == NULL)
+#  626|   	return (ARCHIVE_FAILED);
+#  627|->   EVP_DigestInit(*ctx, EVP_sha1());
+#  628|     return (ARCHIVE_OK);
+#  629|   }
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/archive_digest.c:635:3: warning: ignoring return value of function declared with 'warn_unused_result' attribute
+#  EVP_DigestUpdate(*ctx, indata, insize);
+#  ^~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~
+#  633|       size_t insize)
+#  634|   {
+#  635|->   EVP_DigestUpdate(*ctx, indata, insize);
+#  636|     return (ARCHIVE_OK);
+#  637|   }
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/archive_digest.c:647:5: warning: ignoring return value of function declared with 'warn_unused_result' attribute
+#    EVP_DigestFinal(*ctx, md, NULL);
+#    ^~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~
+#  645|      */
+#  646|     if (*ctx) {
+#  647|->     EVP_DigestFinal(*ctx, md, NULL);
+#  648|       EVP_MD_CTX_free(*ctx);
+#  649|       *ctx = NULL;
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/archive_digest.c:890:3: warning: ignoring return value of function declared with 'warn_unused_result' attribute
+#  EVP_DigestInit(*ctx, EVP_sha256());
+#  ^~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~
+#  888|     if ((*ctx = EVP_MD_CTX_new()) == NULL)
+#  889|   	return (ARCHIVE_FAILED);
+#  890|->   EVP_DigestInit(*ctx, EVP_sha256());
+#  891|     return (ARCHIVE_OK);
+#  892|   }
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/archive_digest.c:898:3: warning: ignoring return value of function declared with 'warn_unused_result' attribute
+#  EVP_DigestUpdate(*ctx, indata, insize);
+#  ^~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~
+#  896|       size_t insize)
+#  897|   {
+#  898|->   EVP_DigestUpdate(*ctx, indata, insize);
+#  899|     return (ARCHIVE_OK);
+#  900|   }
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/archive_digest.c:906:5: warning: ignoring return value of function declared with 'warn_unused_result' attribute
+#    EVP_DigestFinal(*ctx, md, NULL);
+#    ^~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~
+#  904|   {
+#  905|     if (*ctx) {
+#  906|->     EVP_DigestFinal(*ctx, md, NULL);
+#  907|       EVP_MD_CTX_free(*ctx);
+#  908|       *ctx = NULL;
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/archive_digest.c:1125:3: warning: ignoring return value of function declared with 'warn_unused_result' attribute
+#  EVP_DigestInit(*ctx, EVP_sha384());
+#  ^~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~
+# 1123|     if ((*ctx = EVP_MD_CTX_new()) == NULL)
+# 1124|   	return (ARCHIVE_FAILED);
+# 1125|->   EVP_DigestInit(*ctx, EVP_sha384());
+# 1126|     return (ARCHIVE_OK);
+# 1127|   }
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/archive_digest.c:1133:3: warning: ignoring return value of function declared with 'warn_unused_result' attribute
+#  EVP_DigestUpdate(*ctx, indata, insize);
+#  ^~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~
+# 1131|       size_t insize)
+# 1132|   {
+# 1133|->   EVP_DigestUpdate(*ctx, indata, insize);
+# 1134|     return (ARCHIVE_OK);
+# 1135|   }
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/archive_digest.c:1141:5: warning: ignoring return value of function declared with 'warn_unused_result' attribute
+#    EVP_DigestFinal(*ctx, md, NULL);
+#    ^~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~
+# 1139|   {
+# 1140|     if (*ctx) {
+# 1141|->     EVP_DigestFinal(*ctx, md, NULL);
+# 1142|       EVP_MD_CTX_free(*ctx);
+# 1143|       *ctx = NULL;
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/archive_digest.c:1384:3: warning: ignoring return value of function declared with 'warn_unused_result' attribute
+#  EVP_DigestInit(*ctx, EVP_sha512());
+#  ^~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~
+# 1382|     if ((*ctx = EVP_MD_CTX_new()) == NULL)
+# 1383|   	return (ARCHIVE_FAILED);
+# 1384|->   EVP_DigestInit(*ctx, EVP_sha512());
+# 1385|     return (ARCHIVE_OK);
+# 1386|   }
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/archive_digest.c:1392:3: warning: ignoring return value of function declared with 'warn_unused_result' attribute
+#  EVP_DigestUpdate(*ctx, indata, insize);
+#  ^~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~
+# 1390|       size_t insize)
+# 1391|   {
+# 1392|->   EVP_DigestUpdate(*ctx, indata, insize);
+# 1393|     return (ARCHIVE_OK);
+# 1394|   }
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/archive_digest.c:1400:5: warning: ignoring return value of function declared with 'warn_unused_result' attribute
+#    EVP_DigestFinal(*ctx, md, NULL);
+#    ^~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~
+# 1398|   {
+# 1399|     if (*ctx) {
+# 1400|->     EVP_DigestFinal(*ctx, md, NULL);
+# 1401|       EVP_MD_CTX_free(*ctx);
+# 1402|       *ctx = NULL;
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/archive_getdate.c:735:8: warning: incompatible integer to pointer conversion assigning to 'struct tm *' from 'int'
+#        ltime = localtime_r(&Julian, &tmbuf);
+#              ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  733|   	Julian += Hours * HOUR + Minutes * MINUTE + Seconds;
+#  734|   #if defined(HAVE_LOCALTIME_R)
+#  735|-> 	ltime = localtime_r(&Julian, &tmbuf);
+#  736|   #elif defined(HAVE__LOCALTIME64_S)
+#  737|   	tmptime = Julian;
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/archive_getdate.c:735:10: warning: implicit declaration of function 'localtime_r' is invalid in C99
+#        ltime = localtime_r(&Julian, &tmbuf);
+#                ^
+#  733|   	Julian += Hours * HOUR + Minutes * MINUTE + Seconds;
+#  734|   #if defined(HAVE_LOCALTIME_R)
+#  735|-> 	ltime = localtime_r(&Julian, &tmbuf);
+#  736|   #elif defined(HAVE__LOCALTIME64_S)
+#  737|   	tmptime = Julian;
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/archive_getdate.c:767:8: warning: incompatible integer to pointer conversion assigning to 'struct tm *' from 'int'
+#        ltime = localtime_r(&Start, &tmbuf);
+#              ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  765|   
+#  766|   #if defined(HAVE_LOCALTIME_R)
+#  767|-> 	ltime = localtime_r(&Start, &tmbuf);
+#  768|   #elif defined(HAVE__LOCALTIME64_S)
+#  769|   	tmptime = Start;
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/archive_getdate.c:767:10: warning: implicit declaration of function 'localtime_r' is invalid in C99
+#        ltime = localtime_r(&Start, &tmbuf);
+#                ^
+#  765|   
+#  766|   #if defined(HAVE_LOCALTIME_R)
+#  767|-> 	ltime = localtime_r(&Start, &tmbuf);
+#  768|   #elif defined(HAVE__LOCALTIME64_S)
+#  769|   	tmptime = Start;
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/archive_getdate.c:780:8: warning: incompatible integer to pointer conversion assigning to 'struct tm *' from 'int'
+#        ltime = localtime_r(&Future, &tmbuf);
+#              ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  778|   	StartDay = (ltime->tm_hour + 1) % 24;
+#  779|   #if defined(HAVE_LOCALTIME_R)
+#  780|-> 	ltime = localtime_r(&Future, &tmbuf);
+#  781|   #elif defined(HAVE__LOCALTIME64_S)
+#  782|   	tmptime = Future;
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/archive_getdate.c:812:5: warning: incompatible integer to pointer conversion assigning to 'struct tm *' from 'int'
+#        tm = gmtime_r(&t, &tmbuf);
+#           ^ ~~~~~~~~~~~~~~~~~~~~
+#  810|   	t = Start - zone;
+#  811|   #if defined(HAVE_GMTIME_R)
+#  812|-> 	tm = gmtime_r(&t, &tmbuf);
+#  813|   #elif defined(HAVE__GMTIME64_S)
+#  814|   	tmptime = t;
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/archive_getdate.c:812:7: warning: implicit declaration of function 'gmtime_r' is invalid in C99
+#        tm = gmtime_r(&t, &tmbuf);
+#             ^
+#  810|   	t = Start - zone;
+#  811|   #if defined(HAVE_GMTIME_R)
+#  812|-> 	tm = gmtime_r(&t, &tmbuf);
+#  813|   #elif defined(HAVE__GMTIME64_S)
+#  814|   	tmptime = t;
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/archive_getdate.c:849:5: warning: incompatible integer to pointer conversion assigning to 'struct tm *' from 'int'
+#        tm = localtime_r(&Start, &tmbuf);
+#           ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  847|   		return 0;
+#  848|   #if defined(HAVE_LOCALTIME_R)
+#  849|-> 	tm = localtime_r(&Start, &tmbuf);
+#  850|   #elif defined(HAVE__LOCALTIME64_S)
+#  851|   	tmptime = Start;
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/archive_getdate.c:849:7: warning: implicit declaration of function 'localtime_r' is invalid in C99
+#        tm = localtime_r(&Start, &tmbuf);
+#             ^
+#  847|   		return 0;
+#  848|   #if defined(HAVE_LOCALTIME_R)
+#  849|-> 	tm = localtime_r(&Start, &tmbuf);
+#  850|   #elif defined(HAVE__LOCALTIME64_S)
+#  851|   	tmptime = Start;
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/archive_getdate.c:1009:5: warning: incompatible integer to pointer conversion assigning to 'struct tm *' from 'int'
+#        tm = localtime_r(&now, &local);
+#           ^ ~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1007|   	/* Look up the current time. */
+# 1008|   #if defined(HAVE_LOCALTIME_R)
+# 1009|-> 	tm = localtime_r(&now, &local);
+# 1010|   #elif defined(HAVE__LOCALTIME64_S)
+# 1011|   	tmptime = now;
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/archive_getdate.c:1009:7: warning: implicit declaration of function 'localtime_r' is invalid in C99
+#        tm = localtime_r(&now, &local);
+#             ^
+# 1007|   	/* Look up the current time. */
+# 1008|   #if defined(HAVE_LOCALTIME_R)
+# 1009|-> 	tm = localtime_r(&now, &local);
+# 1010|   #elif defined(HAVE__LOCALTIME64_S)
+# 1011|   	tmptime = now;
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/archive_getdate.c:1030:10: warning: incompatible integer to pointer conversion assigning to 'struct tm *' from 'int'
+#        gmt_ptr = gmtime_r(&now, &gmt);
+#                ^ ~~~~~~~~~~~~~~~~~~~~
+# 1028|   	 * timezone offset. */
+# 1029|   #if defined(HAVE_GMTIME_R)
+# 1030|-> 	gmt_ptr = gmtime_r(&now, &gmt);
+# 1031|   #elif defined(HAVE__GMTIME64_S)
+# 1032|   	tmptime = now;
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/archive_getdate.c:1030:12: warning: implicit declaration of function 'gmtime_r' is invalid in C99
+#        gmt_ptr = gmtime_r(&now, &gmt);
+#                  ^
+# 1028|   	 * timezone offset. */
+# 1029|   #if defined(HAVE_GMTIME_R)
+# 1030|-> 	gmt_ptr = gmtime_r(&now, &gmt);
+# 1031|   #elif defined(HAVE__GMTIME64_S)
+# 1032|   	tmptime = now;
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/archive_getdate.c:1080:11: warning: incompatible integer to pointer conversion assigning to 'struct tm *' from 'int'
+#                gmt_ptr = gmtime_r(&now, &gmt);
+#                        ^ ~~~~~~~~~~~~~~~~~~~~
+# 1078|   		now -= gds->Timezone;
+# 1079|   #if defined(HAVE_GMTIME_R)
+# 1080|-> 		gmt_ptr = gmtime_r(&now, &gmt);
+# 1081|   #elif defined(HAVE__GMTIME64_S)
+# 1082|   		tmptime = now;
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/archive_read_disk_posix.c:1527:63: warning: declaration of 'struct statvfs' will not be visible outside of this function
+#set_statvfs_transfer_size(struct filesystem *fs, const struct statvfs *sfs)
+#                                                              ^
+# 1525|   #if defined(HAVE_STATVFS)
+# 1526|   static inline __LA_UNUSED void
+# 1527|-> set_statvfs_transfer_size(struct filesystem *fs, const struct statvfs *sfs)
+# 1528|   {
+# 1529|   	fs->xfer_align = sfs->f_frsize > 0 ? (long)sfs->f_frsize : -1;
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/archive_read_disk_posix.c:2052:6: warning: implicit declaration of function 'futimesat' is invalid in C99
+#        if (futimesat(tree_current_dir_fd(t), rt->name, times) == 0)
+#            ^
+# 2050|   	close(fd);
+# 2051|   #if defined(HAVE_FUTIMESAT)
+# 2052|-> 	if (futimesat(tree_current_dir_fd(t), rt->name, times) == 0)
+# 2053|   		return (0);
+# 2054|   #endif
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/archive_read_disk_posix.c:2056:6: warning: implicit declaration of function 'lutimes' is invalid in C99
+#        if (lutimes(rt->name, times) != 0)
+#            ^
+# 2054|   #endif
+# 2055|   #ifdef HAVE_LUTIMES
+# 2056|-> 	if (lutimes(rt->name, times) != 0)
+# 2057|   #else
+# 2058|   	if (AE_IFLNK != rt->filetype && utimes(rt->name, times) != 0)
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/archive_read_support_format_iso9660.c:3184:17: warning: implicit declaration of function 'timegm' is invalid in C99
+#        return (timegm(t));
+#                ^
+# 3182|   #if HAVE_TIMEGM
+# 3183|           /* Use platform timegm() if available. */
+# 3184|->         return (timegm(t));
+# 3185|   #elif HAVE__MKGMTIME64
+# 3186|           return (_mkgmtime64(t));
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/archive_read_support_format_rar.c:1770:10: warning: incompatible integer to pointer conversion assigning to 'struct tm *' from 'int'
+#      tm = localtime_r(&t, &tmbuf);
+#         ^ ~~~~~~~~~~~~~~~~~~~~~~~
+# 1768|         }
+# 1769|   #if defined(HAVE_LOCALTIME_R)
+# 1770|->       tm = localtime_r(&t, &tmbuf);
+# 1771|   #elif defined(HAVE__LOCALTIME64_S)
+# 1772|         tmptime = t;
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/archive_read_support_format_rar.c:1770:12: warning: implicit declaration of function 'localtime_r' is invalid in C99
+#      tm = localtime_r(&t, &tmbuf);
+#           ^
+# 1768|         }
+# 1769|   #if defined(HAVE_LOCALTIME_R)
+# 1770|->       tm = localtime_r(&t, &tmbuf);
+# 1771|   #elif defined(HAVE__LOCALTIME64_S)
+# 1772|         tmptime = t;
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/archive_read_support_format_warc.c:535:17: warning: implicit declaration of function 'timegm' is invalid in C99
+#        return (timegm(t));
+#                ^
+#  533|   #if HAVE_TIMEGM
+#  534|           /* Use platform timegm() if available. */
+#  535|->         return (timegm(t));
+#  536|   #elif HAVE__MKGMTIME64
+#  537|           return (_mkgmtime64(t));
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/archive_read_support_format_xar.c:1140:17: warning: implicit declaration of function 'timegm' is invalid in C99
+#        return (timegm(t));
+#                ^
+# 1138|   #if HAVE_TIMEGM
+# 1139|           /* Use platform timegm() if available. */
+# 1140|->         return (timegm(t));
+# 1141|   #elif HAVE__MKGMTIME64
+# 1142|           return (_mkgmtime64(t));
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/archive_string.c:431:9: warning: implicit declaration of function 'nl_langinfo' is invalid in C99
+#        return nl_langinfo(CODESET);
+#               ^
+#  429|   	return locale_charset();
+#  430|   #elif HAVE_NL_LANGINFO
+#  431|-> 	return nl_langinfo(CODESET);
+#  432|   #else
+#  433|   	return "";
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/archive_write_disk_posix.c:2537:4: warning: implicit declaration of function 'lchmod' is invalid in C99
+#                        lchmod(p->name, p->mode & 07777);
+#                        ^
+# 2535|   #endif
+# 2536|   #ifdef HAVE_LCHMOD
+# 2537|-> 			lchmod(p->name, p->mode & 07777);
+# 2538|   #else
+# 2539|   			chmod(p->name, p->mode & 07777);
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/archive_write_disk_posix.c:3412:6: warning: implicit declaration of function 'lchown' is invalid in C99
+#        if (lchown(a->name, a->uid, a->gid) == 0) {
+#            ^
+# 3410|   	/* Of course, if we have neither, this will always fail. */
+# 3411|   #ifdef HAVE_LCHOWN
+# 3412|-> 	if (lchown(a->name, a->uid, a->gid) == 0) {
+# 3413|   		/* We've set owner and know uid/gid are correct. */
+# 3414|   		a->todo &= ~(TODO_OWNER | TODO_SGID_CHECK | TODO_SUID_CHECK);
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/archive_write_disk_posix.c:3708:7: warning: implicit declaration of function 'lchmod' is invalid in C99
+#                if (lchmod(a->name, mode) != 0) {
+#                    ^
+# 3706|   		 * impact.
+# 3707|   		 */
+# 3708|-> 		if (lchmod(a->name, mode) != 0) {
+# 3709|   			switch (errno) {
+# 3710|   			case ENOTSUP:
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/archive_write_set_format_iso9660.c:2526:2: warning: implicit declaration of function 'localtime_r' is invalid in C99
+#        localtime_r(t, tm);
+#        ^
+# 2524|   #if HAVE_LOCALTIME_R
+# 2525|   	tzset();
+# 2526|-> 	localtime_r(t, tm);
+# 2527|   #elif HAVE__LOCALTIME64_S
+# 2528|   	__time64_t tmp_t = (__time64_t) *t; //time_t may be shorter than 64 bits
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/archive_write_set_format_iso9660.c:4083:2: warning: implicit declaration of function 'ctime_r' is invalid in C99
+#        ctime_r(&(iso9660->birth_time), buf);
+#        ^
+# 4081|   	}
+# 4082|   #elif defined(HAVE_CTIME_R)
+# 4083|-> 	ctime_r(&(iso9660->birth_time), buf);
+# 4084|   #else
+# 4085|   	strncpy(buf, ctime(&(iso9660->birth_time)), sizeof(buf)-1);
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/archive_write_set_format_warc.c:343:10: warning: incompatible integer to pointer conversion assigning to 'struct tm *' from 'int'
+#        if ((rt = gmtime_r(&t, &timeHere)) == NULL)
+#                ^ ~~~~~~~~~~~~~~~~~~~~~~~
+#  341|   
+#  342|   #ifdef HAVE_GMTIME_R
+#  343|-> 	if ((rt = gmtime_r(&t, &timeHere)) == NULL)
+#  344|   		return;
+#  345|   #elif defined(HAVE__GMTIME64_S)
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/archive_write_set_format_warc.c:343:12: warning: implicit declaration of function 'gmtime_r' is invalid in C99
+#        if ((rt = gmtime_r(&t, &timeHere)) == NULL)
+#                  ^
+#  341|   
+#  342|   #ifdef HAVE_GMTIME_R
+#  343|-> 	if ((rt = gmtime_r(&t, &timeHere)) == NULL)
+#  344|   		return;
+#  345|   #elif defined(HAVE__GMTIME64_S)
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/archive_write_set_format_xar.c:914:2: warning: implicit declaration of function 'gmtime_r' is invalid in C99
+#        gmtime_r(&t, &tm);
+#        ^
+#  912|   
+#  913|   #if defined(HAVE_GMTIME_R)
+#  914|-> 	gmtime_r(&t, &tm);
+#  915|   #elif defined(HAVE__GMTIME64_S)
+#  916|   	tmptime = t;
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/archive_write_set_format_zip.c:655:21: warning: implicit declaration of function 'nl_langinfo' is invalid in C99
+#                } else if (strcmp(nl_langinfo(CODESET), "UTF-8") == 0) {
+#                                  ^
+#  653|   				zip->entry_flags |= ZIP_ENTRY_FLAG_UTF8_NAME;
+#  654|   #if HAVE_NL_LANGINFO
+#  655|-> 		} else if (strcmp(nl_langinfo(CODESET), "UTF-8") == 0) {
+#  656|   			zip->entry_flags |= ZIP_ENTRY_FLAG_UTF8_NAME;
+#  657|   #endif
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/archive_write_set_format_zip.c:1392:4: warning: incompatible integer to pointer conversion assigning to 'struct tm *' from 'int'
+#        t = localtime_r(&unix_time, &tmbuf);
+#          ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1390|   	 * on two systems with different time zones. */
+# 1391|   #if defined(HAVE_LOCALTIME_R)
+# 1392|-> 	t = localtime_r(&unix_time, &tmbuf);
+# 1393|   #elif defined(HAVE__LOCALTIME64_S)
+# 1394|   	tmptime = unix_time;
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/archive_write_set_format_zip.c:1392:6: warning: implicit declaration of function 'localtime_r' is invalid in C99
+#        t = localtime_r(&unix_time, &tmbuf);
+#            ^
+# 1390|   	 * on two systems with different time zones. */
+# 1391|   #if defined(HAVE_LOCALTIME_R)
+# 1392|-> 	t = localtime_r(&unix_time, &tmbuf);
+# 1393|   #elif defined(HAVE__LOCALTIME64_S)
+# 1394|   	tmptime = unix_time;
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/filter_fork_posix.c:112:6: warning: implicit declaration of function 'posix_spawn_file_actions_init' is invalid in C99
+#        r = posix_spawn_file_actions_init(&actions);
+#            ^
+#  110|   #if HAVE_POSIX_SPAWNP
+#  111|   
+#  112|-> 	r = posix_spawn_file_actions_init(&actions);
+#  113|   	if (r != 0) {
+#  114|   		errno = r;
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/filter_fork_posix.c:117:6: warning: implicit declaration of function 'posix_spawn_file_actions_addclose' is invalid in C99
+#        r = posix_spawn_file_actions_addclose(&actions, stdin_pipe[1]);
+#            ^
+#  115|   		goto stdout_opened;
+#  116|   	}
+#  117|-> 	r = posix_spawn_file_actions_addclose(&actions, stdin_pipe[1]);
+#  118|   	if (r != 0)
+#  119|   		goto actions_inited;
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/filter_fork_posix.c:124:6: warning: implicit declaration of function 'posix_spawn_file_actions_adddup2' is invalid in C99
+#        r = posix_spawn_file_actions_adddup2(&actions, stdin_pipe[0], 0);
+#            ^
+#  122|   		goto actions_inited;
+#  123|   	/* Setup for stdin. */
+#  124|-> 	r = posix_spawn_file_actions_adddup2(&actions, stdin_pipe[0], 0);
+#  125|   	if (r != 0)
+#  126|   		goto actions_inited;
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/filter_fork_posix.c:141:6: warning: implicit declaration of function 'posix_spawnp' is invalid in C99
+#        r = posix_spawnp(&child, cmdline->path, &actions, NULL,
+#            ^
+#  139|   			goto actions_inited;
+#  140|   	}
+#  141|-> 	r = posix_spawnp(&child, cmdline->path, &actions, NULL,
+#  142|   		cmdline->argv, NULL);
+#  143|   	if (r != 0)
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/libarchive/filter_fork_posix.c:145:2: warning: implicit declaration of function 'posix_spawn_file_actions_destroy' is invalid in C99
+#        posix_spawn_file_actions_destroy(&actions);
+#        ^
+#  143|   	if (r != 0)
+#  144|   		goto actions_inited;
+#  145|-> 	posix_spawn_file_actions_destroy(&actions);
+#  146|   
+#  147|   #else /* HAVE_POSIX_SPAWNP */
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/tar/bsdtar.c:184:16: warning: taking address of packed member '' of class or structure 'sigaction' may result in an unaligned pointer value
+#                sigemptyset(&sa.sa_mask);
+#                             ^~~~~~~~~~
+#  182|   		struct sigaction sa;
+#  183|   		sa.sa_handler = siginfo_handler;
+#  184|-> 		sigemptyset(&sa.sa_mask);
+#  185|   		sa.sa_flags = 0;
+#  186|   #ifdef SIGINFO
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/tar/read.c:239:7: warning: implicit declaration of function 'chroot' is invalid in C99
+#                if (chroot(".") != 0)
+#                    ^
+#  237|   	if (mode == 'x' && (bsdtar->flags & OPTFLAG_CHROOT)) {
+#  238|   #if HAVE_CHROOT
+#  239|-> 		if (chroot(".") != 0)
+#  240|   			lafe_errc(1, errno, "Can't chroot to \".\"");
+#  241|   #else
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/tar/util.c:749:8: warning: incompatible integer to pointer conversion assigning to 'struct tm *' from 'int'
+#        ltime = localtime_r(&tim, &tmbuf);
+#              ^ ~~~~~~~~~~~~~~~~~~~~~~~~~
+#  747|   		fmt = bsdtar->day_first ? DAY_FMT " %b %H:%M" : "%b " DAY_FMT " %H:%M";
+#  748|   #if defined(HAVE_LOCALTIME_R)
+#  749|-> 	ltime = localtime_r(&tim, &tmbuf);
+#  750|   #elif defined(HAVE__LOCALTIME64_S)
+#  751|   	tmptime = tim;
+
+Error: COMPILER_WARNING:
+libarchive-3.5.2/tar/util.c:749:10: warning: implicit declaration of function 'localtime_r' is invalid in C99
+#        ltime = localtime_r(&tim, &tmbuf);
+#                ^
+#  747|   		fmt = bsdtar->day_first ? DAY_FMT " %b %H:%M" : "%b " DAY_FMT " %H:%M";
+#  748|   #if defined(HAVE_LOCALTIME_R)
+#  749|-> 	ltime = localtime_r(&tim, &tmbuf);
+#  750|   #elif defined(HAVE__LOCALTIME64_S)
+#  751|   	tmptime = tim;

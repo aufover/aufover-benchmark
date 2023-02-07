@@ -1,0 +1,184 @@
+Error: COMPILER_WARNING:
+libpipeline-1.5.3/gl/lib/xalloc-die.c:28: included_from: Included from here.
+libpipeline-1.5.3/gl/lib/gettext.h:149:1: warning: unused function 'pgettext_aux'
+#pgettext_aux (const char *domain,
+#^
+#  147|   #endif
+#  148|   static const char *
+#  149|-> pgettext_aux (const char *domain,
+#  150|                 const char *msg_ctxt_id, const char *msgid,
+#  151|                 int category)
+
+Error: COMPILER_WARNING:
+libpipeline-1.5.3/gl/lib/gettext.h:168:1: warning: unused function 'npgettext_aux'
+#npgettext_aux (const char *domain,
+#^
+#  166|   #endif
+#  167|   static const char *
+#  168|-> npgettext_aux (const char *domain,
+#  169|                  const char *msg_ctxt_id, const char *msgid,
+#  170|                  const char *msgid_plural, unsigned long int n,
+
+Error: COMPILER_WARNING:
+libpipeline-1.5.3/gl/lib/gettext.h:219:1: warning: unused function 'dcpgettext_expr'
+#dcpgettext_expr (const char *domain,
+#^
+#  217|   #endif
+#  218|   static const char *
+#  219|-> dcpgettext_expr (const char *domain,
+#  220|                    const char *msgctxt, const char *msgid,
+#  221|                    int category)
+
+Error: COMPILER_WARNING:
+libpipeline-1.5.3/gl/lib/gettext.h:266:1: warning: unused function 'dcnpgettext_expr'
+#dcnpgettext_expr (const char *domain,
+#^
+#  264|   #endif
+#  265|   static const char *
+#  266|-> dcnpgettext_expr (const char *domain,
+#  267|                     const char *msgctxt, const char *msgid,
+#  268|                     const char *msgid_plural, unsigned long int n,
+
+Error: COMPILER_WARNING:
+libpipeline-1.5.3/lib/pipeline.c:802:4: warning: implicit declaration of function 'clearenv' is invalid in C99
+#                        clearenv ();
+#                        ^
+#  800|   				unsetenv (cmd->env[i].name);
+#  801|   		} else
+#  802|-> 			clearenv ();
+#  803|   	}
+#  804|   
+
+Error: COMPILER_WARNING:
+libpipeline-1.5.3/lib/pipeline.c:802:4: warning: this function declaration is not a prototype
+#  800|   				unsetenv (cmd->env[i].name);
+#  801|   		} else
+#  802|-> 			clearenv ();
+#  803|   	}
+#  804|   
+
+Error: COMPILER_WARNING:
+libpipeline-1.5.3/lib/pipeline.c:810:4: warning: implicit declaration of function 'execvp' is invalid in C99
+#                        execvp (cmd->name, cmdp->argv);
+#                        ^
+#  808|   			if (cmd->pre_exec_func)
+#  809|   				cmd->pre_exec_func (cmd->pre_exec_data);
+#  810|-> 			execvp (cmd->name, cmdp->argv);
+#  811|   			break;
+#  812|   		}
+
+Error: COMPILER_WARNING:
+libpipeline-1.5.3/lib/pipeline.c:810:4: warning: this function declaration is not a prototype
+#  808|   			if (cmd->pre_exec_func)
+#  809|   				cmd->pre_exec_func (cmd->pre_exec_data);
+#  810|-> 			execvp (cmd->name, cmdp->argv);
+#  811|   			break;
+#  812|   		}
+
+Error: COMPILER_WARNING:
+libpipeline-1.5.3/lib/pipeline.c:847:18: warning: taking address of packed member '' of class or structure 'sigaction' may result in an unaligned pointer value
+#                        sigemptyset (&sa.sa_mask);
+#                                      ^~~~~~~~~~
+#  845|   			memset (&sa, 0, sizeof sa);
+#  846|   			sa.sa_handler = SIG_DFL;
+#  847|-> 			sigemptyset (&sa.sa_mask);
+#  848|   			sa.sa_flags = 0;
+#  849|   			if (sigaction (SIGCHLD, &sa, NULL) == -1)
+
+Error: COMPILER_WARNING:
+libpipeline-1.5.3/lib/pipeline.c:1388:16: warning: taking address of packed member '' of class or structure 'sigaction' may result in an unaligned pointer value
+#        sigemptyset (&act.sa_mask);
+#                      ^~~~~~~~~~~
+# 1386|   	memset (&act, 0, sizeof act);
+# 1387|   	act.sa_handler = &pipeline_sigchld;
+# 1388|-> 	sigemptyset (&act.sa_mask);
+# 1389|   	sigaddset (&act.sa_mask, SIGINT);
+# 1390|   	sigaddset (&act.sa_mask, SIGTERM);
+
+Error: COMPILER_WARNING:
+libpipeline-1.5.3/lib/pipeline.c:1389:14: warning: taking address of packed member '' of class or structure 'sigaction' may result in an unaligned pointer value
+#        sigaddset (&act.sa_mask, SIGINT);
+#                    ^~~~~~~~~~~
+# 1387|   	act.sa_handler = &pipeline_sigchld;
+# 1388|   	sigemptyset (&act.sa_mask);
+# 1389|-> 	sigaddset (&act.sa_mask, SIGINT);
+# 1390|   	sigaddset (&act.sa_mask, SIGTERM);
+# 1391|   	sigaddset (&act.sa_mask, SIGHUP);
+
+Error: COMPILER_WARNING:
+libpipeline-1.5.3/lib/pipeline.c:1390:14: warning: taking address of packed member '' of class or structure 'sigaction' may result in an unaligned pointer value
+#        sigaddset (&act.sa_mask, SIGTERM);
+#                    ^~~~~~~~~~~
+# 1388|   	sigemptyset (&act.sa_mask);
+# 1389|   	sigaddset (&act.sa_mask, SIGINT);
+# 1390|-> 	sigaddset (&act.sa_mask, SIGTERM);
+# 1391|   	sigaddset (&act.sa_mask, SIGHUP);
+# 1392|   	sigaddset (&act.sa_mask, SIGCHLD);
+
+Error: COMPILER_WARNING:
+libpipeline-1.5.3/lib/pipeline.c:1391:14: warning: taking address of packed member '' of class or structure 'sigaction' may result in an unaligned pointer value
+#        sigaddset (&act.sa_mask, SIGHUP);
+#                    ^~~~~~~~~~~
+# 1389|   	sigaddset (&act.sa_mask, SIGINT);
+# 1390|   	sigaddset (&act.sa_mask, SIGTERM);
+# 1391|-> 	sigaddset (&act.sa_mask, SIGHUP);
+# 1392|   	sigaddset (&act.sa_mask, SIGCHLD);
+# 1393|   	act.sa_flags = 0;
+
+Error: COMPILER_WARNING:
+libpipeline-1.5.3/lib/pipeline.c:1392:14: warning: taking address of packed member '' of class or structure 'sigaction' may result in an unaligned pointer value
+#        sigaddset (&act.sa_mask, SIGCHLD);
+#                    ^~~~~~~~~~~
+# 1390|   	sigaddset (&act.sa_mask, SIGTERM);
+# 1391|   	sigaddset (&act.sa_mask, SIGHUP);
+# 1392|-> 	sigaddset (&act.sa_mask, SIGCHLD);
+# 1393|   	act.sa_flags = 0;
+# 1394|   #ifdef SA_NOCLDSTOP
+
+Error: COMPILER_WARNING:
+libpipeline-1.5.3/lib/pipeline.c:1446:17: warning: taking address of packed member '' of class or structure 'sigaction' may result in an unaligned pointer value
+#                sigemptyset (&sa.sa_mask);
+#                              ^~~~~~~~~~
+# 1444|   		memset (&sa, 0, sizeof sa);
+# 1445|   		sa.sa_handler = SIG_IGN;
+# 1446|-> 		sigemptyset (&sa.sa_mask);
+# 1447|   		sa.sa_flags = 0;
+# 1448|   		if (sigaction (SIGINT, &sa, &osa_sigint) < 0)
+
+Error: COMPILER_WARNING:
+libpipeline-1.5.3/lib/pipeline.c:1901:16: warning: taking address of packed member '' of class or structure 'sigaction' may result in an unaligned pointer value
+#        sigemptyset (&sa.sa_mask);
+#                      ^~~~~~~~~~
+# 1899|   	memset (&sa, 0, sizeof sa);
+# 1900|   	sa.sa_handler = SIG_IGN;
+# 1901|-> 	sigemptyset (&sa.sa_mask);
+# 1902|   	sa.sa_flags = 0;
+# 1903|   	sigaction (SIGPIPE, &sa, &osa_sigpipe);
+
+Error: COMPILER_WARNING:
+libpipeline-1.5.3/tests/inspect.c:83:16: warning: taking address of packed member '' of class or structure 'sigaction' may result in an unaligned pointer value
+#        sigemptyset (&sa.sa_mask);
+#                      ^~~~~~~~~~
+#   81|   	memset (&sa, 0, sizeof sa);
+#   82|   	sa.sa_handler = SIG_DFL;
+#   83|-> 	sigemptyset (&sa.sa_mask);
+#   84|   	sa.sa_flags = 0;
+#   85|   	if (sigaction (SIGTERM, &sa, NULL) == -1)
+
+Error: COMPILER_WARNING:
+libpipeline-1.5.3/tests/inspect.c:90:2: warning: implicit declaration of function 'pause' is invalid in C99
+#        pause ();
+#        ^
+#   88|   	printf ("%ld\n", (long) getpid ());
+#   89|   	fflush (stdout);
+#   90|-> 	pause ();
+#   91|   }
+#   92|   
+
+Error: COMPILER_WARNING:
+libpipeline-1.5.3/tests/inspect.c:90:2: warning: this function declaration is not a prototype
+#   88|   	printf ("%ld\n", (long) getpid ());
+#   89|   	fflush (stdout);
+#   90|-> 	pause ();
+#   91|   }
+#   92|   

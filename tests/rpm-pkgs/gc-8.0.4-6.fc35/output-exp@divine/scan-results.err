@@ -1,0 +1,992 @@
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:51: included_from: Included from here.
+gc-8.0.4/alloc.c:278:20: warning: incompatible pointer to integer conversion assigning to 'word' (aka 'unsigned long') from 'char *'
+#        stack_size = GC_stackbottom - GC_approx_sp();
+#                   ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  276|           stack_size = GC_approx_sp() - GC_stackbottom;
+#  277|   #     else
+#  278|->         stack_size = GC_stackbottom - GC_approx_sp();
+#  279|   #     endif
+#  280|       }
+
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:41: included_from: Included from here.
+gc-8.0.4/blacklst.c:59:33: warning: incompatible integer to pointer conversion passing 'ptr_t' (aka 'unsigned long') to parameter of type 'void *'
+#    ptr_t base = (ptr_t)GC_base(p);
+#                                ^
+gc-8.0.4/include/gc.h:545:61: note: passing argument to parameter here
+#GC_API void * GC_CALL GC_base(void * /* displaced_pointer */);
+#                                                            ^
+#   57|   GC_INNER void GC_default_print_heap_obj_proc(ptr_t p)
+#   58|   {
+#   59|->     ptr_t base = (ptr_t)GC_base(p);
+#   60|       int kind = HDR(base)->hb_obj_kind;
+#   61|   
+
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:41: included_from: Included from here.
+gc-8.0.4/blacklst.c:63:56: warning: incompatible integer to pointer conversion passing 'ptr_t' (aka 'unsigned long') to parameter of type 'const void *'
+#                  (void *)base, (unsigned long)GC_size(base),
+#                                                       ^~~~
+gc-8.0.4/include/gc.h:556:58: note: passing argument to parameter here
+#GC_API size_t GC_CALL GC_size(const void * /* obj_addr */) GC_ATTR_NONNULL(1);
+#                                                         ^
+#   61|   
+#   62|       GC_err_printf("object at %p of appr. %lu bytes (%s)\n",
+#   63|->                   (void *)base, (unsigned long)GC_size(base),
+#   64|                     kind == PTRFREE ? "atomic" :
+#   65|                       IS_UNCOLLECTABLE(kind) ? "uncollectable" : "composite");
+
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:52: included_from: Included from here.
+gc-8.0.4/dbg_mlc.c:39:23: warning: incompatible integer to pointer conversion passing 'ptr_t' (aka 'unsigned long') to parameter of type 'const void *'
+#    word sz = GC_size(p);
+#                      ^
+gc-8.0.4/include/gc.h:556:58: note: passing argument to parameter here
+#GC_API size_t GC_CALL GC_size(const void * /* obj_addr */) GC_ATTR_NONNULL(1);
+#                                                         ^
+#   37|     {
+#   38|       ptr_t body = (ptr_t)((oh *)p + 1);
+#   39|->     word sz = GC_size(p);
+#   40|   
+#   41|       if (HBLKPTR(p) != HBLKPTR((ptr_t)body)
+
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:52: included_from: Included from here.
+gc-8.0.4/dbg_mlc.c:329:26: warning: incompatible integer to pointer conversion passing 'ptr_t' (aka 'unsigned long') to parameter of type 'const void *'
+#    word gc_sz = GC_size((ptr_t)ohdr);
+#                         ^~~~~~~~~~~
+gc-8.0.4/include/gc.h:556:58: note: passing argument to parameter here
+#GC_API size_t GC_CALL GC_size(const void * /* obj_addr */) GC_ATTR_NONNULL(1);
+#                                                         ^
+#  327|     {
+#  328|       ptr_t body = (ptr_t)(ohdr + 1);
+#  329|->     word gc_sz = GC_size((ptr_t)ohdr);
+#  330|       if (ohdr -> oh_sz + DEBUG_BYTES > gc_sz) {
+#  331|           return((ptr_t)(&(ohdr -> oh_sz)));
+
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:52: included_from: Included from here.
+gc-8.0.4/dbg_mlc.c:369:31: warning: incompatible integer to pointer conversion passing 'ptr_t' (aka 'unsigned long') to parameter of type 'void *'
+#    oh * ohdr = (oh *)GC_base(p);
+#                              ^
+gc-8.0.4/include/gc.h:545:61: note: passing argument to parameter here
+#GC_API void * GC_CALL GC_base(void * /* displaced_pointer */);
+#                                                            ^
+#  367|   STATIC void GC_print_obj(ptr_t p)
+#  368|   {
+#  369|->     oh * ohdr = (oh *)GC_base(p);
+#  370|       ptr_t q;
+#  371|       hdr * hhdr;
+
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:52: included_from: Included from here.
+gc-8.0.4/dbg_mlc.c:390:38: warning: incompatible integer to pointer conversion passing 'ptr_t' (aka 'unsigned long') to parameter of type 'void *'
+#        (GC_describe_type_fns[kind])(q, buffer);
+#                                     ^
+#  388|           /* thread-local allocation.                             */
+#  389|           buffer[GC_TYPE_DESCR_LEN] = 0;
+#  390|->         (GC_describe_type_fns[kind])(q, buffer);
+#  391|           GC_ASSERT(buffer[GC_TYPE_DESCR_LEN] == 0);
+#  392|           kind_str = buffer;
+
+Error: COMPILER_WARNING:
+gc-8.0.4/dbg_mlc.c:461:41: warning: incompatible integer to pointer conversion passing 'ptr_t' (aka 'unsigned long') to parameter of type 'const void *'
+#                (unsigned long)(GC_size((ptr_t)ohdr) - DEBUG_BYTES));
+#                                        ^~~~~~~~~~~
+gc-8.0.4/include/gc.h:556:58: note: passing argument to parameter here
+#GC_API size_t GC_CALL GC_size(const void * /* obj_addr */) GC_ATTR_NONNULL(1);
+#                                                         ^
+#  459|                   "%s %p in or near object at %p(<smashed>, appr. sz = %lu)\n",
+#  460|                   msg, (void *)clobbered_addr, p,
+#  461|->                 (unsigned long)(GC_size((ptr_t)ohdr) - DEBUG_BYTES));
+#  462|       } else {
+#  463|           GC_err_printf("%s %p in or near object at %p (%s:%d, sz=%lu)\n",
+
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:52: included_from: Included from here.
+gc-8.0.4/dbg_mlc.c:769:27: warning: incompatible integer to pointer conversion passing 'ptr_t' (aka 'unsigned long') to parameter of type 'const void *'
+#        word sz = GC_size(base);
+#                          ^~~~
+gc-8.0.4/include/gc.h:556:58: note: passing argument to parameter here
+#GC_API size_t GC_CALL GC_size(const void * /* obj_addr */) GC_ATTR_NONNULL(1);
+#                                                         ^
+#  767|   #     ifndef SHORT_DBG_HDRS
+#  768|           ptr_t clobbered = GC_check_annotated_obj((oh *)base);
+#  769|->         word sz = GC_size(base);
+#  770|           if (clobbered != 0) {
+#  771|             GC_have_errors = TRUE;
+
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:52: included_from: Included from here.
+gc-8.0.4/dbg_mlc.c:791:15: warning: incompatible integer to pointer conversion passing 'ptr_t' (aka 'unsigned long') to parameter of type 'void *'
+#      GC_free(base);
+#              ^~~~
+gc-8.0.4/include/gc.h:517:35: note: passing argument to parameter here
+#GC_API void GC_CALL GC_free(void *);
+#                                  ^
+#  789|   #       endif
+#  790|           ) {
+#  791|->       GC_free(base);
+#  792|       } else {
+#  793|         hdr * hhdr = HDR(p);
+
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:52: included_from: Included from here.
+gc-8.0.4/dbg_mlc.c:799:17: warning: incompatible integer to pointer conversion passing 'ptr_t' (aka 'unsigned long') to parameter of type 'void *'
+#        GC_free(base);
+#                ^~~~
+gc-8.0.4/include/gc.h:517:35: note: passing argument to parameter here
+#GC_API void GC_CALL GC_free(void *);
+#                                  ^
+#  797|   #         endif
+#  798|             ) {
+#  799|->         GC_free(base);
+#  800|         } else {
+#  801|           word i;
+
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:52: included_from: Included from here.
+gc-8.0.4/dbg_mlc.c:949:37: warning: incompatible integer to pointer conversion passing 'ptr_t' (aka 'unsigned long') to parameter of type 'void *'
+#        ptr_t base = (ptr_t)GC_base(GC_smashed[i]);
+#                                    ^~~~~~~~~~~~~
+gc-8.0.4/include/gc.h:545:61: note: passing argument to parameter here
+#GC_API void * GC_CALL GC_base(void * /* displaced_pointer */);
+#                                                            ^
+#  947|                     GC_n_smashed);
+#  948|       for (i = 0; i < GC_n_smashed; ++i) {
+#  949|->         ptr_t base = (ptr_t)GC_base(GC_smashed[i]);
+#  950|   
+#  951|   #       ifdef LINT2
+
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:52: included_from: Included from here.
+gc-8.0.4/dbg_mlc.c:954:34: warning: incompatible integer to pointer conversion passing 'unsigned long' to parameter of type 'void *'
+#        GC_print_smashed_obj("", base + sizeof(oh), GC_smashed[i]);
+#                                 ^~~~~~~~~~~~~~~~~
+gc-8.0.4/dbg_mlc.c:447:59: note: passing argument to parameter 'p' here
+#  STATIC void GC_print_smashed_obj(const char *msg, void *p,
+#                                                          ^
+#  952|             if (!base) ABORT("Invalid GC_smashed element");
+#  953|   #       endif
+#  954|->         GC_print_smashed_obj("", base + sizeof(oh), GC_smashed[i]);
+#  955|           GC_smashed[i] = 0;
+#  956|       }
+
+Error: COMPILER_WARNING:
+gc-8.0.4/dbg_mlc.c:1013:25: warning: incompatible integer to pointer conversion passing 'ptr_t' (aka 'unsigned long') to parameter of type 'const void *'
+#        GC_set_mark_bit(base); /* do not reclaim it in this cycle */
+#                        ^~~~
+gc-8.0.4/include/gc_mark.h:278:49: note: passing argument to parameter here
+#GC_API void GC_CALL GC_set_mark_bit(const void *) GC_ATTR_NONNULL(1);
+#                                                ^
+# 1011|     for (i = 0; i < obj_sz; ++i)
+# 1012|       if (p[i] != GC_FREED_MEM_MARKER) {
+# 1013|->         GC_set_mark_bit(base); /* do not reclaim it in this cycle */
+# 1014|           GC_add_smashed((ptr_t)(&p[i])); /* alter-after-free detected */
+# 1015|           break; /* don't report any other smashed locations in the object */
+
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:52: included_from: Included from here.
+gc-8.0.4/dbg_mlc.c:1100:29: warning: incompatible integer to pointer conversion passing 'ptr_t' (aka 'unsigned long') to parameter of type 'void *'
+#      GC_register_finalizer(base, 0, 0, &my_old_fn, &my_old_cd);
+#                            ^~~~
+gc-8.0.4/include/gc.h:1044:59: note: passing argument to parameter here
+#GC_API void GC_CALL GC_register_finalizer(void * /* obj */,
+#                                                          ^
+# 1098|       }
+# 1099|       if (0 == fn) {
+# 1100|->       GC_register_finalizer(base, 0, 0, &my_old_fn, &my_old_cd);
+# 1101|       } else {
+# 1102|         cd = GC_make_closure(fn, cd);
+
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:52: included_from: Included from here.
+gc-8.0.4/dbg_mlc.c:1104:29: warning: incompatible integer to pointer conversion passing 'ptr_t' (aka 'unsigned long') to parameter of type 'void *'
+#      GC_register_finalizer(base, GC_debug_invoke_finalizer,
+#                            ^~~~
+gc-8.0.4/include/gc.h:1044:59: note: passing argument to parameter here
+#GC_API void GC_CALL GC_register_finalizer(void * /* obj */,
+#                                                          ^
+# 1102|         cd = GC_make_closure(fn, cd);
+# 1103|         if (cd == 0) return; /* out of memory */
+# 1104|->       GC_register_finalizer(base, GC_debug_invoke_finalizer,
+# 1105|                               cd, &my_old_fn, &my_old_cd);
+# 1106|       }
+
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:52: included_from: Included from here.
+gc-8.0.4/dbg_mlc.c:1129:38: warning: incompatible integer to pointer conversion passing 'ptr_t' (aka 'unsigned long') to parameter of type 'void *'
+#      GC_register_finalizer_no_order(base, 0, 0, &my_old_fn, &my_old_cd);
+#                                     ^~~~
+gc-8.0.4/include/gc.h:1114:68: note: passing argument to parameter here
+#GC_API void GC_CALL GC_register_finalizer_no_order(void * /* obj */,
+#                                                                   ^
+# 1127|       }
+# 1128|       if (0 == fn) {
+# 1129|->       GC_register_finalizer_no_order(base, 0, 0, &my_old_fn, &my_old_cd);
+# 1130|       } else {
+# 1131|         cd = GC_make_closure(fn, cd);
+
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:52: included_from: Included from here.
+gc-8.0.4/dbg_mlc.c:1133:38: warning: incompatible integer to pointer conversion passing 'ptr_t' (aka 'unsigned long') to parameter of type 'void *'
+#      GC_register_finalizer_no_order(base, GC_debug_invoke_finalizer,
+#                                     ^~~~
+gc-8.0.4/include/gc.h:1114:68: note: passing argument to parameter here
+#GC_API void GC_CALL GC_register_finalizer_no_order(void * /* obj */,
+#                                                                   ^
+# 1131|         cd = GC_make_closure(fn, cd);
+# 1132|         if (cd == 0) return; /* out of memory */
+# 1133|->       GC_register_finalizer_no_order(base, GC_debug_invoke_finalizer,
+# 1134|                                        cd, &my_old_fn, &my_old_cd);
+# 1135|       }
+
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:52: included_from: Included from here.
+gc-8.0.4/dbg_mlc.c:1158:41: warning: incompatible integer to pointer conversion passing 'ptr_t' (aka 'unsigned long') to parameter of type 'void *'
+#      GC_register_finalizer_unreachable(base, 0, 0, &my_old_fn, &my_old_cd);
+#                                        ^~~~
+gc-8.0.4/include/gc.h:1139:71: note: passing argument to parameter here
+#GC_API void GC_CALL GC_register_finalizer_unreachable(void * /* obj */,
+#                                                                      ^
+# 1156|       }
+# 1157|       if (0 == fn) {
+# 1158|->       GC_register_finalizer_unreachable(base, 0, 0, &my_old_fn, &my_old_cd);
+# 1159|       } else {
+# 1160|         cd = GC_make_closure(fn, cd);
+
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:52: included_from: Included from here.
+gc-8.0.4/dbg_mlc.c:1162:41: warning: incompatible integer to pointer conversion passing 'ptr_t' (aka 'unsigned long') to parameter of type 'void *'
+#      GC_register_finalizer_unreachable(base, GC_debug_invoke_finalizer,
+#                                        ^~~~
+gc-8.0.4/include/gc.h:1139:71: note: passing argument to parameter here
+#GC_API void GC_CALL GC_register_finalizer_unreachable(void * /* obj */,
+#                                                                      ^
+# 1160|         cd = GC_make_closure(fn, cd);
+# 1161|         if (cd == 0) return; /* out of memory */
+# 1162|->       GC_register_finalizer_unreachable(base, GC_debug_invoke_finalizer,
+# 1163|                                           cd, &my_old_fn, &my_old_cd);
+# 1164|       }
+
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:52: included_from: Included from here.
+gc-8.0.4/dbg_mlc.c:1187:41: warning: incompatible integer to pointer conversion passing 'ptr_t' (aka 'unsigned long') to parameter of type 'void *'
+#      GC_register_finalizer_ignore_self(base, 0, 0, &my_old_fn, &my_old_cd);
+#                                        ^~~~
+gc-8.0.4/include/gc.h:1101:71: note: passing argument to parameter here
+#GC_API void GC_CALL GC_register_finalizer_ignore_self(void * /* obj */,
+#                                                                      ^
+# 1185|       }
+# 1186|       if (0 == fn) {
+# 1187|->       GC_register_finalizer_ignore_self(base, 0, 0, &my_old_fn, &my_old_cd);
+# 1188|       } else {
+# 1189|         cd = GC_make_closure(fn, cd);
+
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:52: included_from: Included from here.
+gc-8.0.4/dbg_mlc.c:1191:41: warning: incompatible integer to pointer conversion passing 'ptr_t' (aka 'unsigned long') to parameter of type 'void *'
+#      GC_register_finalizer_ignore_self(base, GC_debug_invoke_finalizer,
+#                                        ^~~~
+gc-8.0.4/include/gc.h:1101:71: note: passing argument to parameter here
+#GC_API void GC_CALL GC_register_finalizer_ignore_self(void * /* obj */,
+#                                                                      ^
+# 1189|         cd = GC_make_closure(fn, cd);
+# 1190|         if (cd == 0) return; /* out of memory */
+# 1191|->       GC_register_finalizer_ignore_self(base, GC_debug_invoke_finalizer,
+# 1192|                                           cd, &my_old_fn, &my_old_cd);
+# 1193|       }
+
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:53: included_from: Included from here.
+gc-8.0.4/finalize.c:176:56: warning: incompatible integer to pointer conversion passing 'ptr_t' (aka 'unsigned long') to parameter of type 'const void *'
+#    return(GC_general_register_disappearing_link(link, base));
+#                                                       ^~~~
+gc-8.0.4/include/gc.h:1180:75: note: passing argument to parameter here
+#                                                    const void * /* obj */)
+#                                                                          ^
+#  174|       if (base == 0)
+#  175|           ABORT("Bad arg to GC_register_disappearing_link");
+#  176|->     return(GC_general_register_disappearing_link(link, base));
+#  177|   }
+#  178|   
+
+Error: COMPILER_WARNING:
+gc-8.0.4/finalize.c:659:23: warning: variables 'q' and 'scan_limit' used in loop condition not modified in loop body
+#    for (q = p; (word)q <= (word)scan_limit; q += ALIGNMENT) {
+#                      ^          ~~~~~~~~~~
+#  657|          scan_limit = target_limit + 1 - sizeof(word);
+#  658|       }
+#  659|->     for (q = p; (word)q <= (word)scan_limit; q += ALIGNMENT) {
+#  660|           word r = *(word *)q;
+#  661|   
+
+Error: COMPILER_WARNING:
+gc-8.0.4/finalize.c:963:54: warning: incompatible integer to pointer conversion passing 'ptr_t' (aka 'unsigned long') to parameter of type 'const void *'
+#        if (NULL == real_link || EXPECT(GC_is_marked(real_link), TRUE)) {
+#                                                     ^~~~~~~~~
+gc-8.0.4/include/private/gc_priv.h:112:49: note: expanded from macro 'EXPECT'
+## define EXPECT(expr, outcome) __builtin_expect(expr,outcome)
+#                                                ^~~~
+gc-8.0.4/include/gc_mark.h:276:45: note: passing argument to parameter here
+#GC_API int GC_CALL GC_is_marked(const void *) GC_ATTR_NONNULL(1);
+#                                            ^
+#  961|                                                   curr_dl->dl_hidden_link));
+#  962|   
+#  963|->         if (NULL == real_link || EXPECT(GC_is_marked(real_link), TRUE)) {
+#  964|             prev_dl = curr_dl;
+#  965|             continue;
+
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:53: included_from: Included from here.
+gc-8.0.4/finalize.c:968:33: warning: incompatible integer to pointer conversion passing 'ptr_t' (aka 'unsigned long') to parameter of type 'const void *'
+#        if (EXPECT(GC_is_marked((ptr_t)GC_REVEAL_POINTER(
+#            ~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+gc-8.0.4/include/private/gc_priv.h:112:49: note: expanded from macro 'EXPECT'
+## define EXPECT(expr, outcome) __builtin_expect(expr,outcome)
+#                                                ^~~~
+gc-8.0.4/include/gc_mark.h:276:45: note: passing argument to parameter here
+#GC_API int GC_CALL GC_is_marked(const void *) GC_ATTR_NONNULL(1);
+#                                            ^
+#  966|           }
+#  967|         } else {
+#  968|->         if (EXPECT(GC_is_marked((ptr_t)GC_REVEAL_POINTER(
+#  969|                                           curr_dl->dl_hidden_obj)), TRUE)) {
+#  970|             prev_dl = curr_dl;
+
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:53: included_from: Included from here.
+gc-8.0.4/finalize.c:1026:27: warning: incompatible integer to pointer conversion passing 'ptr_t' (aka 'unsigned long') to parameter of type 'const void *'
+#        if (!GC_is_marked(real_ptr)) {
+#                          ^~~~~~~~
+gc-8.0.4/include/gc_mark.h:276:45: note: passing argument to parameter here
+#GC_API int GC_CALL GC_is_marked(const void *) GC_ATTR_NONNULL(1);
+#                                            ^
+# 1024|           GC_ASSERT(GC_size(curr_fo) >= sizeof(struct finalizable_object));
+# 1025|           real_ptr = (ptr_t)GC_REVEAL_POINTER(curr_fo->fo_hidden_base);
+# 1026|->         if (!GC_is_marked(real_ptr)) {
+# 1027|               GC_MARKED_FOR_FINALIZATION(real_ptr);
+# 1028|               GC_MARK_FO(real_ptr, curr_fo -> fo_mark_proc);
+
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:53: included_from: Included from here.
+gc-8.0.4/finalize.c:1028:24: warning: incompatible integer to pointer conversion passing 'ptr_t' (aka 'unsigned long') to parameter of type 'const void *'
+#            GC_MARK_FO(real_ptr, curr_fo -> fo_mark_proc);
+#                       ^~~~~~~~
+gc-8.0.4/include/private/gc_pmark.h:440:25: note: expanded from macro 'GC_MARK_FO'
+#        GC_set_mark_bit(real_ptr); \
+#                        ^~~~~~~~
+gc-8.0.4/include/gc_mark.h:278:49: note: passing argument to parameter here
+#GC_API void GC_CALL GC_set_mark_bit(const void *) GC_ATTR_NONNULL(1);
+#                                                ^
+# 1026|           if (!GC_is_marked(real_ptr)) {
+# 1027|               GC_MARKED_FOR_FINALIZATION(real_ptr);
+# 1028|->             GC_MARK_FO(real_ptr, curr_fo -> fo_mark_proc);
+# 1029|               if (GC_is_marked(real_ptr)) {
+# 1030|                   WARN("Finalization cycle involving %p\n", real_ptr);
+
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:53: included_from: Included from here.
+gc-8.0.4/finalize.c:1029:30: warning: incompatible integer to pointer conversion passing 'ptr_t' (aka 'unsigned long') to parameter of type 'const void *'
+#            if (GC_is_marked(real_ptr)) {
+#                             ^~~~~~~~
+gc-8.0.4/include/gc_mark.h:276:45: note: passing argument to parameter here
+#GC_API int GC_CALL GC_is_marked(const void *) GC_ATTR_NONNULL(1);
+#                                            ^
+# 1027|               GC_MARKED_FOR_FINALIZATION(real_ptr);
+# 1028|               GC_MARK_FO(real_ptr, curr_fo -> fo_mark_proc);
+# 1029|->             if (GC_is_marked(real_ptr)) {
+# 1030|                   WARN("Finalization cycle involving %p\n", real_ptr);
+# 1031|               }
+
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:53: included_from: Included from here.
+gc-8.0.4/finalize.c:1043:27: warning: incompatible integer to pointer conversion passing 'ptr_t' (aka 'unsigned long') to parameter of type 'const void *'
+#        if (!GC_is_marked(real_ptr)) {
+#                          ^~~~~~~~
+gc-8.0.4/include/gc_mark.h:276:45: note: passing argument to parameter here
+#GC_API int GC_CALL GC_is_marked(const void *) GC_ATTR_NONNULL(1);
+#                                            ^
+# 1041|         while (curr_fo != 0) {
+# 1042|           real_ptr = (ptr_t)GC_REVEAL_POINTER(curr_fo->fo_hidden_base);
+# 1043|->         if (!GC_is_marked(real_ptr)) {
+# 1044|               if (!GC_java_finalization) {
+# 1045|                 GC_set_mark_bit(real_ptr);
+
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:53: included_from: Included from here.
+gc-8.0.4/finalize.c:1045:31: warning: incompatible integer to pointer conversion passing 'ptr_t' (aka 'unsigned long') to parameter of type 'const void *'
+#              GC_set_mark_bit(real_ptr);
+#                              ^~~~~~~~
+gc-8.0.4/include/gc_mark.h:278:49: note: passing argument to parameter here
+#GC_API void GC_CALL GC_set_mark_bit(const void *) GC_ATTR_NONNULL(1);
+#                                                ^
+# 1043|           if (!GC_is_marked(real_ptr)) {
+# 1044|               if (!GC_java_finalization) {
+# 1045|->               GC_set_mark_bit(real_ptr);
+# 1046|               }
+# 1047|               /* Delete from hash table */
+
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:53: included_from: Included from here.
+gc-8.0.4/finalize.c:1062:42: warning: incompatible integer to pointer conversion passing 'ptr_t' (aka 'unsigned long') to parameter of type 'void *'
+#                GC_object_finalized_proc(real_ptr);
+#                                         ^~~~~~~~
+# 1060|                 GC_fo_entries--;
+# 1061|                 if (GC_object_finalized_proc)
+# 1062|->                 GC_object_finalized_proc(real_ptr);
+# 1063|   
+# 1064|               /* Add to list of objects awaiting finalization.    */
+
+Error: COMPILER_WARNING:
+gc-8.0.4/finalize.c:1090:27: warning: incompatible integer to pointer conversion passing 'ptr_t' (aka 'unsigned long') to parameter of type 'const void *'
+#        if (!GC_is_marked(real_ptr)) {
+#                          ^~~~~~~~
+gc-8.0.4/include/gc_mark.h:276:45: note: passing argument to parameter here
+#GC_API int GC_CALL GC_is_marked(const void *) GC_ATTR_NONNULL(1);
+#                                            ^
+# 1088|              curr_fo != NULL; curr_fo = fo_next(curr_fo)) {
+# 1089|           real_ptr = (ptr_t)curr_fo -> fo_hidden_base;
+# 1090|->         if (!GC_is_marked(real_ptr)) {
+# 1091|               if (curr_fo -> fo_mark_proc == GC_null_finalize_mark_proc) {
+# 1092|                   GC_MARK_FO(real_ptr, GC_normal_finalize_mark_proc);
+
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:53: included_from: Included from here.
+gc-8.0.4/finalize.c:1092:28: warning: incompatible integer to pointer conversion passing 'ptr_t' (aka 'unsigned long') to parameter of type 'const void *'
+#                GC_MARK_FO(real_ptr, GC_normal_finalize_mark_proc);
+#                           ^~~~~~~~
+gc-8.0.4/include/private/gc_pmark.h:440:25: note: expanded from macro 'GC_MARK_FO'
+#        GC_set_mark_bit(real_ptr); \
+#                        ^~~~~~~~
+gc-8.0.4/include/gc_mark.h:278:49: note: passing argument to parameter here
+#GC_API void GC_CALL GC_set_mark_bit(const void *) GC_ATTR_NONNULL(1);
+#                                                ^
+# 1090|           if (!GC_is_marked(real_ptr)) {
+# 1091|               if (curr_fo -> fo_mark_proc == GC_null_finalize_mark_proc) {
+# 1092|->                 GC_MARK_FO(real_ptr, GC_normal_finalize_mark_proc);
+# 1093|               }
+# 1094|               if (curr_fo -> fo_mark_proc != GC_unreachable_finalize_mark_proc) {
+
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:53: included_from: Included from here.
+gc-8.0.4/finalize.c:1095:33: warning: incompatible integer to pointer conversion passing 'ptr_t' (aka 'unsigned long') to parameter of type 'const void *'
+#                GC_set_mark_bit(real_ptr);
+#                                ^~~~~~~~
+gc-8.0.4/include/gc_mark.h:278:49: note: passing argument to parameter here
+#GC_API void GC_CALL GC_set_mark_bit(const void *) GC_ATTR_NONNULL(1);
+#                                                ^
+# 1093|               }
+# 1094|               if (curr_fo -> fo_mark_proc != GC_unreachable_finalize_mark_proc) {
+# 1095|->                 GC_set_mark_bit(real_ptr);
+# 1096|               }
+# 1097|           }
+
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:53: included_from: Included from here.
+gc-8.0.4/finalize.c:1113:31: warning: incompatible integer to pointer conversion passing 'ptr_t' (aka 'unsigned long') to parameter of type 'const void *'
+#            if (!GC_is_marked(real_ptr)) {
+#                              ^~~~~~~~
+gc-8.0.4/include/gc_mark.h:276:45: note: passing argument to parameter here
+#GC_API int GC_CALL GC_is_marked(const void *) GC_ATTR_NONNULL(1);
+#                                            ^
+# 1111|             if (curr_fo -> fo_mark_proc == GC_unreachable_finalize_mark_proc) {
+# 1112|               real_ptr = (ptr_t)curr_fo -> fo_hidden_base;
+# 1113|->             if (!GC_is_marked(real_ptr)) {
+# 1114|                 GC_set_mark_bit(real_ptr);
+# 1115|               } else {
+
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:53: included_from: Included from here.
+gc-8.0.4/finalize.c:1114:31: warning: incompatible integer to pointer conversion passing 'ptr_t' (aka 'unsigned long') to parameter of type 'const void *'
+#              GC_set_mark_bit(real_ptr);
+#                              ^~~~~~~~
+gc-8.0.4/include/gc_mark.h:278:49: note: passing argument to parameter here
+#GC_API void GC_CALL GC_set_mark_bit(const void *) GC_ATTR_NONNULL(1);
+#                                                ^
+# 1112|               real_ptr = (ptr_t)curr_fo -> fo_hidden_base;
+# 1113|               if (!GC_is_marked(real_ptr)) {
+# 1114|->               GC_set_mark_bit(real_ptr);
+# 1115|               } else {
+# 1116|                 if (NULL == prev_fo) {
+
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:53: included_from: Included from here.
+gc-8.0.4/finalize.c:1185:22: warning: incompatible integer to pointer conversion passing 'ptr_t' (aka 'unsigned long') to parameter of type 'const void *'
+#          GC_MARK_FO(real_ptr, GC_normal_finalize_mark_proc);
+#                     ^~~~~~~~
+gc-8.0.4/include/private/gc_pmark.h:440:25: note: expanded from macro 'GC_MARK_FO'
+#        GC_set_mark_bit(real_ptr); \
+#                        ^~~~~~~~
+gc-8.0.4/include/gc_mark.h:278:49: note: passing argument to parameter here
+#GC_API void GC_CALL GC_set_mark_bit(const void *) GC_ATTR_NONNULL(1);
+#                                                ^
+# 1183|             ptr_t real_ptr = (ptr_t)GC_REVEAL_POINTER(curr_fo->fo_hidden_base);
+# 1184|   
+# 1185|->           GC_MARK_FO(real_ptr, GC_normal_finalize_mark_proc);
+# 1186|             GC_set_mark_bit(real_ptr);
+# 1187|   
+
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:53: included_from: Included from here.
+gc-8.0.4/finalize.c:1186:27: warning: incompatible integer to pointer conversion passing 'ptr_t' (aka 'unsigned long') to parameter of type 'const void *'
+#          GC_set_mark_bit(real_ptr);
+#                          ^~~~~~~~
+gc-8.0.4/include/gc_mark.h:278:49: note: passing argument to parameter here
+#GC_API void GC_CALL GC_set_mark_bit(const void *) GC_ATTR_NONNULL(1);
+#                                                ^
+# 1184|   
+# 1185|             GC_MARK_FO(real_ptr, GC_normal_finalize_mark_proc);
+# 1186|->           GC_set_mark_bit(real_ptr);
+# 1187|   
+# 1188|             next_fo = fo_next(curr_fo);
+
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:53: included_from: Included from here.
+gc-8.0.4/finalize.c:1281:31: warning: incompatible integer to pointer conversion passing 'ptr_t' (aka 'unsigned long') to parameter of type 'void *'
+#        (*(curr_fo -> fo_fn))((ptr_t)(curr_fo -> fo_hidden_base),
+#                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1279|   #       endif
+# 1280|           fo_set_next(curr_fo, 0);
+# 1281|->         (*(curr_fo -> fo_fn))((ptr_t)(curr_fo -> fo_hidden_base),
+# 1282|                                 curr_fo -> fo_client_data);
+# 1283|           curr_fo -> fo_client_data = 0;
+
+Error: COMPILER_WARNING:
+gc-8.0.4/finalize.c:1282:31: warning: incompatible integer to pointer conversion passing 'ptr_t' (aka 'unsigned long') to parameter of type 'void *'
+#                              curr_fo -> fo_client_data);
+#                              ^~~~~~~~~~~~~~~~~~~~~~~~~
+# 1280|           fo_set_next(curr_fo, 0);
+# 1281|           (*(curr_fo -> fo_fn))((ptr_t)(curr_fo -> fo_hidden_base),
+# 1282|->                               curr_fo -> fo_client_data);
+# 1283|           curr_fo -> fo_client_data = 0;
+# 1284|           ++count;
+
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:43: included_from: Included from here.
+gc-8.0.4/gcj_mlc.c:199:14: warning: incompatible integer to pointer conversion passing 'ptr_t' (aka 'unsigned long') to parameter of type 'const void *'
+#    GC_dirty(op);
+#             ^~
+gc-8.0.4/include/private/gc_priv.h:2198:54: note: expanded from macro 'GC_dirty'
+## define GC_dirty(p) (GC_manual_vdb ? GC_dirty_inner(p) : (void)0)
+#                                                     ^
+gc-8.0.4/include/private/gc_priv.h:2197:44: note: passing argument to parameter 'p' here
+#  GC_INNER void GC_dirty_inner(const void *p); /* does not require locking */
+#                                           ^
+#  197|       *(void **)op = ptr_to_struct_containing_descr;
+#  198|       UNLOCK();
+#  199|->     GC_dirty(op);
+#  200|       REACHABLE_AFTER_DIRTY(ptr_to_struct_containing_descr);
+#  201|       return (void *)op;
+
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:43: included_from: Included from here.
+gc-8.0.4/gcj_mlc.c:275:14: warning: incompatible integer to pointer conversion passing 'ptr_t' (aka 'unsigned long') to parameter of type 'const void *'
+#    GC_dirty(op);
+#             ^~
+gc-8.0.4/include/private/gc_priv.h:2198:54: note: expanded from macro 'GC_dirty'
+## define GC_dirty(p) (GC_manual_vdb ? GC_dirty_inner(p) : (void)0)
+#                                                     ^
+gc-8.0.4/include/private/gc_priv.h:2197:44: note: passing argument to parameter 'p' here
+#  GC_INNER void GC_dirty_inner(const void *p); /* does not require locking */
+#                                           ^
+#  273|       *(void **)op = ptr_to_struct_containing_descr;
+#  274|       UNLOCK();
+#  275|->     GC_dirty(op);
+#  276|       REACHABLE_AFTER_DIRTY(ptr_to_struct_containing_descr);
+#  277|       return (void *)op;
+
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:44: included_from: Included from here.
+gc-8.0.4/headers.c:78:28: warning: comparison of integers of different signs: 'unsigned long' and 'ptrdiff_t' (aka 'long')
+#            || p - current >= (ptrdiff_t)(hhdr->hb_sz)) {
+#               ~~~~~~~~~~~ ^  ~~~~~~~~~~~~~~~~~~~~~~~~
+#   76|               return 0;
+#   77|           if (HBLK_IS_FREE(hhdr)
+#   78|->             || p - current >= (ptrdiff_t)(hhdr->hb_sz)) {
+#   79|               GC_ADD_TO_BLACK_LIST_NORMAL(p, source);
+#   80|               /* Pointer past the end of the block */
+
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:55: included_from: Included from here.
+gc-8.0.4/malloc.c:78:16: warning: incompatible pointer to integer conversion assigning to 'ptr_t' (aka 'unsigned long') from 'char [4096]'
+#        result = h -> hb_body;
+#               ^ ~~~~~~~~~~~~
+#   76|           }
+#   77|           /* FIXME: Do we need some way to reset GC_max_large_allocd_bytes? */
+#   78|->         result = h -> hb_body;
+#   79|       }
+#   80|       return result;
+
+Error: COMPILER_WARNING:
+gc-8.0.4/malloc.c:96:15: warning: incompatible integer to pointer conversion passing 'ptr_t' (aka 'unsigned long') to parameter of type 'void *'
+#        BZERO(result, n_blocks * HBLKSIZE);
+#              ^~~~~~
+gc-8.0.4/include/private/gc_priv.h:515:31: note: expanded from macro 'BZERO'
+##   define BZERO(x,n)  memset(x, 0, (size_t)(n))
+#                              ^
+/opt/divine/include/dios/include/string.h:233:23: note: passing argument to parameter 's' here
+#void * memset( void * s, int c, size_t n ) _PDCLIB_nothrow;
+#                      ^
+#   94|   
+#   95|           /* Clear the whole block, in case of GC_realloc call. */
+#   96|->         BZERO(result, n_blocks * HBLKSIZE);
+#   97|       }
+#   98|       return result;
+
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:55: included_from: Included from here.
+gc-8.0.4/malloc.c:191:16: warning: incompatible integer to pointer conversion assigning to 'void *' from 'ptr_t' (aka 'unsigned long')
+#            op = GC_allocobj(lg, k);
+#               ^ ~~~~~~~~~~~~~~~~~~
+#  189|                   !GC_alloc_reclaim_list(kind))
+#  190|                 return NULL;
+#  191|->             op = GC_allocobj(lg, k);
+#  192|               if (0 == op)
+#  193|                 return NULL;
+
+Error: COMPILER_WARNING:
+gc-8.0.4/malloc.c:200:12: warning: incompatible integer to pointer conversion assigning to 'void *' from 'ptr_t' (aka 'unsigned long')
+#        op = (ptr_t)GC_alloc_large_and_clear(ADD_SLOP(lb), k, 0);
+#           ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  198|           GC_bytes_allocd += GRANULES_TO_BYTES((word)lg);
+#  199|       } else {
+#  200|->         op = (ptr_t)GC_alloc_large_and_clear(ADD_SLOP(lb), k, 0);
+#  201|           if (op != NULL)
+#  202|               GC_bytes_allocd += lb;
+
+Error: COMPILER_WARNING:
+gc-8.0.4/malloc.c:222:8: warning: incompatible integer to pointer conversion assigning to 'void *' from 'ptr_t' (aka 'unsigned long')
+#    op = GC_alloc_large_and_clear(lb_adjusted, k, IGNORE_OFF_PAGE);
+#       ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  220|       GC_ASSERT(k < MAXOBJKINDS);
+#  221|       lb_adjusted = ADD_SLOP(lb);
+#  222|->     op = GC_alloc_large_and_clear(lb_adjusted, k, IGNORE_OFF_PAGE);
+#  223|       if (op != NULL)
+#  224|           GC_bytes_allocd += lb_adjusted;
+
+Error: COMPILER_WARNING:
+gc-8.0.4/malloc.c:264:16: warning: incompatible integer to pointer conversion assigning to 'void *' from 'ptr_t' (aka 'unsigned long')
+#        result = (ptr_t)GC_alloc_large(lb_rounded, k, 0);
+#               ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  262|           init = GC_obj_kinds[k].ok_init;
+#  263|           LOCK();
+#  264|->         result = (ptr_t)GC_alloc_large(lb_rounded, k, 0);
+#  265|           if (0 != result) {
+#  266|             if (GC_debugging_started) {
+
+Error: COMPILER_WARNING:
+gc-8.0.4/malloc.c:606:14: warning: incompatible integer to pointer conversion assigning to 'void *' from 'ptr_t' (aka 'unsigned long')
+#        *flh = (ptr_t)p;
+#             ^ ~~~~~~~~
+#  604|           flh = &(ok -> ok_freelist[ngranules]);
+#  605|           obj_link(p) = *flh;
+#  606|->         *flh = (ptr_t)p;
+#  607|           UNLOCK();
+#  608|       } else {
+
+Error: COMPILER_WARNING:
+gc-8.0.4/malloc.c:651:14: warning: incompatible integer to pointer conversion assigning to 'void *' from 'ptr_t' (aka 'unsigned long')
+#        *flh = (ptr_t)p;
+#             ^ ~~~~~~~~
+#  649|           flh = &(ok -> ok_freelist[ngranules]);
+#  650|           obj_link(p) = *flh;
+#  651|->         *flh = (ptr_t)p;
+#  652|       } else {
+#  653|           size_t nblocks = OBJ_SZ_TO_BLOCKS(sz);
+
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:56: included_from: Included from here.
+gc-8.0.4/mallocx.c:154:23: warning: incompatible integer to pointer conversion passing 'unsigned long' to parameter of type 'void *'
+#                BZERO(((ptr_t)p) + lb, orig_sz - lb);
+#                      ^~~~~~~~~~~~~~~
+gc-8.0.4/include/private/gc_priv.h:515:31: note: expanded from macro 'BZERO'
+##   define BZERO(x,n)  memset(x, 0, (size_t)(n))
+#                              ^
+/opt/divine/include/dios/include/string.h:233:23: note: passing argument to parameter 's' here
+#void * memset( void * s, int c, size_t n ) _PDCLIB_nothrow;
+#                      ^
+#  152|                 /* Clear unneeded part of object to avoid bogus pointer */
+#  153|                 /* tracing.                                             */
+#  154|->                 BZERO(((ptr_t)p) + lb, orig_sz - lb);
+#  155|               }
+#  156|               return(p);
+
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:56: included_from: Included from here.
+gc-8.0.4/mallocx.c:218:12: warning: incompatible integer to pointer conversion assigning to 'void *' from 'ptr_t' (aka 'unsigned long')
+#    result = (ptr_t)GC_alloc_large(ADD_SLOP(lb), k, IGNORE_OFF_PAGE);
+#           ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  216|       GC_DBG_COLLECT_AT_MALLOC(lb);
+#  217|       LOCK();
+#  218|->     result = (ptr_t)GC_alloc_large(ADD_SLOP(lb), k, IGNORE_OFF_PAGE);
+#  219|       if (NULL == result) {
+#  220|           GC_oom_func oom_fn = GC_oom_fn;
+
+Error: COMPILER_WARNING:
+gc-8.0.4/mallocx.c:378:16: warning: incompatible integer to pointer conversion assigning to 'void *' from 'ptr_t' (aka 'unsigned long')
+#            op = GC_reclaim_generic(hbp, hhdr, lb,
+#               ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  376|                 }
+#  377|   #           endif
+#  378|->             op = GC_reclaim_generic(hbp, hhdr, lb,
+#  379|                                       ok -> ok_init, 0, &my_bytes_allocd);
+#  380|               if (op != 0) {
+
+Error: COMPILER_WARNING:
+gc-8.0.4/mallocx.c:454:18: warning: incompatible integer to pointer conversion assigning to 'void *' from 'ptr_t' (aka 'unsigned long')
+#              op = GC_build_fl(h, lw,
+#                 ^ ~~~~~~~~~~~~~~~~~~
+#  452|                 GC_release_mark_lock();
+#  453|   
+#  454|->               op = GC_build_fl(h, lw,
+#  455|                           (ok -> ok_init || GC_debugging_started), 0);
+#  456|   
+
+Error: COMPILER_WARNING:
+gc-8.0.4/mallocx.c:466:14: warning: incompatible integer to pointer conversion assigning to 'void *' from 'ptr_t' (aka 'unsigned long')
+#          op = GC_build_fl(h, lw, (ok -> ok_init || GC_debugging_started), 0);
+#             ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  464|               }
+#  465|   #         endif
+#  466|->           op = GC_build_fl(h, lw, (ok -> ok_init || GC_debugging_started), 0);
+#  467|             goto out;
+#  468|           }
+
+Error: COMPILER_WARNING:
+gc-8.0.4/mallocx.c:530:12: warning: incompatible integer to pointer conversion returning 'ptr_t' (aka 'unsigned long') from a function with result type 'void *'
+#    return result;
+#           ^~~~~~
+#  528|       result += offset;
+#  529|       GC_ASSERT((word)result % align == 0);
+#  530|->     return result;
+#  531|   }
+#  532|   
+
+Error: COMPILER_WARNING:
+gc-8.0.4/mark.c:740:17: warning: incompatible integer to pointer conversion passing 'ptr_t' (aka 'unsigned long') to parameter of type 'const void *'
+#                PREFETCH((ptr_t)current);
+#                ^~~~~~~~~~~~~~~~~~~~~~~~
+gc-8.0.4/include/private/gcconfig.h:3193:43: note: expanded from macro 'PREFETCH'
+##   define PREFETCH(x) __builtin_prefetch((x), 0, 0)
+#                                          ^~~
+#  738|                 FIXUP_POINTER(current);
+#  739|                 if (current >= (word)least_ha && current < (word)greatest_ha) {
+#  740|->                 PREFETCH((ptr_t)current);
+#  741|   #               ifdef ENABLE_TRACE
+#  742|                     if (GC_trace_addr == current_p) {
+
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:57: included_from: Included from here.
+gc-8.0.4/mark.c:835:11: warning: incompatible integer to pointer conversion passing 'unsigned long' to parameter of type 'const void *'
+#          PREFETCH(limit - PREF_DIST*CACHE_LINE_SIZE);
+#          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gc-8.0.4/include/private/gcconfig.h:3193:43: note: expanded from macro 'PREFETCH'
+##   define PREFETCH(x) __builtin_prefetch((x), 0, 0)
+#                                          ^~~
+#  833|           /* for this loop is still not great.                            */
+#  834|           for(;;) {
+#  835|->           PREFETCH(limit - PREF_DIST*CACHE_LINE_SIZE);
+#  836|             GC_ASSERT((word)limit >= (word)current_p);
+#  837|             deferred = *(word *)limit;
+
+Error: COMPILER_WARNING:
+gc-8.0.4/mark.c:841:13: warning: incompatible integer to pointer conversion passing 'ptr_t' (aka 'unsigned long') to parameter of type 'const void *'
+#            PREFETCH((ptr_t)deferred);
+#            ^~~~~~~~~~~~~~~~~~~~~~~~~
+gc-8.0.4/include/private/gcconfig.h:3193:43: note: expanded from macro 'PREFETCH'
+##   define PREFETCH(x) __builtin_prefetch((x), 0, 0)
+#                                          ^~~
+#  839|             limit -= ALIGNMENT;
+#  840|             if (deferred >= (word)least_ha && deferred < (word)greatest_ha) {
+#  841|->             PREFETCH((ptr_t)deferred);
+#  842|               break;
+#  843|             }
+
+Error: COMPILER_WARNING:
+gc-8.0.4/mark.c:851:13: warning: incompatible integer to pointer conversion passing 'ptr_t' (aka 'unsigned long') to parameter of type 'const void *'
+#            PREFETCH((ptr_t)deferred);
+#            ^~~~~~~~~~~~~~~~~~~~~~~~~
+gc-8.0.4/include/private/gcconfig.h:3193:43: note: expanded from macro 'PREFETCH'
+##   define PREFETCH(x) __builtin_prefetch((x), 0, 0)
+#                                          ^~~
+#  849|             limit -= ALIGNMENT;
+#  850|             if (deferred >= (word)least_ha && deferred < (word)greatest_ha) {
+#  851|->             PREFETCH((ptr_t)deferred);
+#  852|               break;
+#  853|             }
+
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:57: included_from: Included from here.
+gc-8.0.4/mark.c:864:9: warning: incompatible integer to pointer conversion passing 'unsigned long' to parameter of type 'const void *'
+#        PREFETCH(current_p + PREF_DIST*CACHE_LINE_SIZE);
+#        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gc-8.0.4/include/private/gcconfig.h:3193:43: note: expanded from macro 'PREFETCH'
+##   define PREFETCH(x) __builtin_prefetch((x), 0, 0)
+#                                          ^~~
+#  862|           current = *(word *)current_p;
+#  863|           FIXUP_POINTER(current);
+#  864|->         PREFETCH(current_p + PREF_DIST*CACHE_LINE_SIZE);
+#  865|           if (current >= (word)least_ha && current < (word)greatest_ha) {
+#  866|             /* Prefetch the contents of the object we just pushed.  It's  */
+
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:57: included_from: Included from here.
+gc-8.0.4/mark.c:868:11: warning: incompatible integer to pointer conversion passing 'ptr_t' (aka 'unsigned long') to parameter of type 'const void *'
+#          PREFETCH((ptr_t)current);
+#          ^~~~~~~~~~~~~~~~~~~~~~~~
+gc-8.0.4/include/private/gcconfig.h:3193:43: note: expanded from macro 'PREFETCH'
+##   define PREFETCH(x) __builtin_prefetch((x), 0, 0)
+#                                          ^~~
+#  866|             /* Prefetch the contents of the object we just pushed.  It's  */
+#  867|             /* likely we will need them soon.                             */
+#  868|->           PREFETCH((ptr_t)current);
+#  869|   #         ifdef ENABLE_TRACE
+#  870|               if (GC_trace_addr == current_p) {
+
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:45: included_from: Included from here.
+gc-8.0.4/new_hblk.c:61:9: warning: incompatible integer to pointer conversion passing 'ptr_t' (aka 'unsigned long') to parameter of type 'const void *'
+#        GC_PREFETCH_FOR_WRITE((ptr_t)(p + 64));
+#        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gc-8.0.4/include/private/gcconfig.h:3201:56: note: expanded from macro 'GC_PREFETCH_FOR_WRITE'
+##   define GC_PREFETCH_FOR_WRITE(x) __builtin_prefetch((x), 1)
+#                                                       ^~~
+#   59|       p += 4;
+#   60|       for (; (word)p < (word)lim; p += 4) {
+#   61|->         GC_PREFETCH_FOR_WRITE((ptr_t)(p + 64));
+#   62|           p[0] = (word)(p-4);
+#   63|           p[1] = 0;
+
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:45: included_from: Included from here.
+gc-8.0.4/new_hblk.c:95:9: warning: incompatible integer to pointer conversion passing 'ptr_t' (aka 'unsigned long') to parameter of type 'const void *'
+#        GC_PREFETCH_FOR_WRITE((ptr_t)(p + 64));
+#        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gc-8.0.4/include/private/gcconfig.h:3201:56: note: expanded from macro 'GC_PREFETCH_FOR_WRITE'
+##   define GC_PREFETCH_FOR_WRITE(x) __builtin_prefetch((x), 1)
+#                                                       ^~~
+#   93|       p += 8;
+#   94|       for (; (word)p < (word)lim; p += 8) {
+#   95|->         GC_PREFETCH_FOR_WRITE((ptr_t)(p + 64));
+#   96|           p[0] = (word)(p-4);
+#   97|           p[4] = (word)p;
+
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:45: included_from: Included from here.
+gc-8.0.4/new_hblk.c:119:5: warning: incompatible integer to pointer conversion passing 'ptr_t' (aka 'unsigned long') to parameter of type 'const void *'
+#    GC_PREFETCH_FOR_WRITE((ptr_t)h);
+#    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gc-8.0.4/include/private/gcconfig.h:3201:56: note: expanded from macro 'GC_PREFETCH_FOR_WRITE'
+##   define GC_PREFETCH_FOR_WRITE(x) __builtin_prefetch((x), 1)
+#                                                       ^~~
+#  117|     /* the loops.  But write prefetches usually don't seem to     */
+#  118|     /* matter much.                                               */
+#  119|->     GC_PREFETCH_FOR_WRITE((ptr_t)h);
+#  120|       GC_PREFETCH_FOR_WRITE((ptr_t)h + 128);
+#  121|       GC_PREFETCH_FOR_WRITE((ptr_t)h + 256);
+
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:45: included_from: Included from here.
+gc-8.0.4/new_hblk.c:120:5: warning: incompatible integer to pointer conversion passing 'unsigned long' to parameter of type 'const void *'
+#    GC_PREFETCH_FOR_WRITE((ptr_t)h + 128);
+#    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gc-8.0.4/include/private/gcconfig.h:3201:56: note: expanded from macro 'GC_PREFETCH_FOR_WRITE'
+##   define GC_PREFETCH_FOR_WRITE(x) __builtin_prefetch((x), 1)
+#                                                       ^~~
+#  118|     /* matter much.                                               */
+#  119|       GC_PREFETCH_FOR_WRITE((ptr_t)h);
+#  120|->     GC_PREFETCH_FOR_WRITE((ptr_t)h + 128);
+#  121|       GC_PREFETCH_FOR_WRITE((ptr_t)h + 256);
+#  122|       GC_PREFETCH_FOR_WRITE((ptr_t)h + 378);
+
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:45: included_from: Included from here.
+gc-8.0.4/new_hblk.c:121:5: warning: incompatible integer to pointer conversion passing 'unsigned long' to parameter of type 'const void *'
+#    GC_PREFETCH_FOR_WRITE((ptr_t)h + 256);
+#    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gc-8.0.4/include/private/gcconfig.h:3201:56: note: expanded from macro 'GC_PREFETCH_FOR_WRITE'
+##   define GC_PREFETCH_FOR_WRITE(x) __builtin_prefetch((x), 1)
+#                                                       ^~~
+#  119|       GC_PREFETCH_FOR_WRITE((ptr_t)h);
+#  120|       GC_PREFETCH_FOR_WRITE((ptr_t)h + 128);
+#  121|->     GC_PREFETCH_FOR_WRITE((ptr_t)h + 256);
+#  122|       GC_PREFETCH_FOR_WRITE((ptr_t)h + 378);
+#  123|   # ifndef SMALL_CONFIG
+
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:45: included_from: Included from here.
+gc-8.0.4/new_hblk.c:122:5: warning: incompatible integer to pointer conversion passing 'unsigned long' to parameter of type 'const void *'
+#    GC_PREFETCH_FOR_WRITE((ptr_t)h + 378);
+#    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gc-8.0.4/include/private/gcconfig.h:3201:56: note: expanded from macro 'GC_PREFETCH_FOR_WRITE'
+##   define GC_PREFETCH_FOR_WRITE(x) __builtin_prefetch((x), 1)
+#                                                       ^~~
+#  120|       GC_PREFETCH_FOR_WRITE((ptr_t)h + 128);
+#  121|       GC_PREFETCH_FOR_WRITE((ptr_t)h + 256);
+#  122|->     GC_PREFETCH_FOR_WRITE((ptr_t)h + 378);
+#  123|   # ifndef SMALL_CONFIG
+#  124|       /* Handle small objects sizes more efficiently.  For larger objects */
+
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:45: included_from: Included from here.
+gc-8.0.4/new_hblk.c:155:21: warning: incompatible integer to pointer conversion assigning to 'void *' from 'ptr_t' (aka 'unsigned long')
+#        obj_link(p) = (ptr_t)prev;
+#                    ^ ~~~~~~~~~~~
+#  153|       while ((word)p <= (word)last_object) {
+#  154|         /* current object's link points to last object */
+#  155|->         obj_link(p) = (ptr_t)prev;
+#  156|           prev = p;
+#  157|           p += sz;
+
+Error: COMPILER_WARNING:
+gc-8.0.4/new_hblk.c:188:44: warning: incompatible integer to pointer conversion assigning to 'void *' from 'ptr_t' (aka 'unsigned long')
+#      GC_obj_kinds[kind].ok_freelist[gran] =
+#                                           ^
+#  186|   
+#  187|     /* Build the free list */
+#  188|->       GC_obj_kinds[kind].ok_freelist[gran] =
+#  189|           GC_build_fl(h, GRANULES_TO_WORDS(gran), clear,
+#  190|                       (ptr_t)GC_obj_kinds[kind].ok_freelist[gran]);
+
+Error: COMPILER_WARNING:
+gc-8.0.4/extra/gc.c:47: included_from: Included from here.
+gc-8.0.4/ptr_chck.c:99:31: warning: incompatible integer to pointer conversion passing 'ptr_t' (aka 'unsigned long') to parameter of type 'void *'
+#    (*GC_same_obj_print_proc)((ptr_t)p, (ptr_t)q);
+#                              ^~~~~~~~
+#   97|       return(p);
+#   98|   fail:
+#   99|->     (*GC_same_obj_print_proc)((ptr_t)p, (ptr_t)q);
+#  100|       return(p);
+#  101|   }
+
+Error: COMPILER_WARNING:
+gc-8.0.4/ptr_chck.c:99:41: warning: incompatible integer to pointer conversion passing 'ptr_t' (aka 'unsigned long') to parameter of type 'void *'
+#    (*GC_same_obj_print_proc)((ptr_t)p, (ptr_t)q);
+#                                        ^~~~~~~~
+#   97|       return(p);
+#   98|   fail:
+#   99|->     (*GC_same_obj_print_proc)((ptr_t)p, (ptr_t)q);
+#  100|       return(p);
+#  101|   }
+
+Error: COMPILER_WARNING:
+gc-8.0.4/ptr_chck.c:148:44: warning: incompatible integer to pointer conversion passing 'ptr_t' (aka 'unsigned long') to parameter of type 'void *'
+#    (*GC_is_valid_displacement_print_proc)((ptr_t)p);
+#                                           ^~~~~~~~
+#  146|       return(p);
+#  147|   fail:
+#  148|->     (*GC_is_valid_displacement_print_proc)((ptr_t)p);
+#  149|       return(p);
+#  150|   }
+
+Error: COMPILER_WARNING:
+gc-8.0.4/ptr_chck.c:255:33: warning: incompatible integer to pointer conversion passing 'ptr_t' (aka 'unsigned long') to parameter of type 'void *'
+#    (*GC_is_visible_print_proc)((ptr_t)p);
+#                                ^~~~~~~~
+#  253|   #   endif
+#  254|   fail:
+#  255|->     (*GC_is_visible_print_proc)((ptr_t)p);
+#  256|       return(p);
+#  257|   }

@@ -1,0 +1,59 @@
+Error: COMPILER_WARNING:
+authselect-1.2.4/src/cli/main.c:832:29: warning: taking address of packed member '' of class or structure 'stat' may result in an unaligned pointer value
+#            tm = localtime(&st.st_ctim.tv_sec);
+#                            ^~~~~~~~~~~~~~~~~
+#  830|               free(path);
+#  831|   
+#  832|->             tm = localtime(&st.st_ctim.tv_sec);
+#  833|               memset(fmttime, '\0', sizeof(fmttime));
+#  834|               strftime(fmttime, 255, "%c", tm);
+
+Error: COMPILER_WARNING:
+authselect-1.2.4/src/cli/main.c:919:7: warning: assigning to 'char *' from 'const char *' discards qualifiers
+#    c = bindtextdomain(PACKAGE, LOCALEDIR);
+#      ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  917|   
+#  918|       errno = 0;
+#  919|->     c = bindtextdomain(PACKAGE, LOCALEDIR);
+#  920|       if (c == NULL) {
+#  921|           return errno;
+
+Error: COMPILER_WARNING:
+authselect-1.2.4/src/cli/main.c:925:7: warning: assigning to 'char *' from 'const char *' discards qualifiers
+#    c = textdomain(PACKAGE);
+#      ^ ~~~~~~~~~~~~~~~~~~~
+#  923|   
+#  924|       errno = 0;
+#  925|->     c = textdomain(PACKAGE);
+#  926|       if (c == NULL) {
+#  927|           return errno;
+
+Error: COMPILER_WARNING:
+authselect-1.2.4/src/lib/util/dir.c:101:30: warning: taking address of packed member '' of class or structure 'stat' may result in an unaligned pointer value
+#    return compare_timespec(&stat_a.st_ctim, &stat_b.st_ctim);
+#                             ^~~~~~~~~~~~~~
+#   99|       }
+#  100|   
+#  101|->     return compare_timespec(&stat_a.st_ctim, &stat_b.st_ctim);
+#  102|   }
+#  103|   
+
+Error: COMPILER_WARNING:
+authselect-1.2.4/src/lib/util/dir.c:101:47: warning: taking address of packed member '' of class or structure 'stat' may result in an unaligned pointer value
+#    return compare_timespec(&stat_a.st_ctim, &stat_b.st_ctim);
+#                                              ^~~~~~~~~~~~~~
+#   99|       }
+#  100|   
+#  101|->     return compare_timespec(&stat_a.st_ctim, &stat_b.st_ctim);
+#  102|   }
+#  103|   
+
+Error: COMPILER_WARNING:
+authselect-1.2.4/src/lib/util/dir.c:245:9: warning: implicit declaration of function 'qsort_r' is invalid in C99
+#        qsort_r(items, string_array_count(items), sizeof(char *),
+#        ^
+#  243|   
+#  244|       if (flags & DIR_LIST_SORT_BY_CTIME) {
+#  245|->         qsort_r(items, string_array_count(items), sizeof(char *),
+#  246|                   sort_by_ctime, &dirfd);
+#  247|       }

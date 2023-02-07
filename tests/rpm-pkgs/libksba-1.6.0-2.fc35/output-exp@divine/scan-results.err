@@ -1,0 +1,27 @@
+Error: COMPILER_WARNING:
+libksba-1.6.0/src/time.c:159:6: warning: incompatible integer to pointer conversion assigning to 'struct tm *' from 'int'
+#  tp = gmtime_r ( &epoch, &tmbuf);
+#     ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  157|     struct tm tmbuf;
+#  158|   
+#  159|->   tp = gmtime_r ( &epoch, &tmbuf);
+#  160|   #else
+#  161|     tp = gmtime ( &epoch );
+
+Error: COMPILER_WARNING:
+libksba-1.6.0/src/time.c:159:8: warning: implicit declaration of function 'gmtime_r' is invalid in C99
+#  tp = gmtime_r ( &epoch, &tmbuf);
+#       ^
+#  157|     struct tm tmbuf;
+#  158|   
+#  159|->   tp = gmtime_r ( &epoch, &tmbuf);
+#  160|   #else
+#  161|     tp = gmtime ( &epoch );
+
+Error: COMPILER_WARNING:
+libksba-1.6.0/src/time.c:159:8: warning: this function declaration is not a prototype
+#  157|     struct tm tmbuf;
+#  158|   
+#  159|->   tp = gmtime_r ( &epoch, &tmbuf);
+#  160|   #else
+#  161|     tp = gmtime ( &epoch );

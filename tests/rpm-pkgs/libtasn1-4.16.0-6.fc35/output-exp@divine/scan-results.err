@@ -1,0 +1,65 @@
+Error: COMPILER_WARNING:
+libtasn1-4.16.0/fuzz/libtasn1_parser2tree_fuzzer.c:43:12: warning: implicit declaration of function 'fmemopen' is invalid in C99
+#    return fmemopen((void *) g_data, g_size, mode);
+#           ^
+#   41|   
+#   42|     if (!strcmp(pathname, "pkix.asn"))
+#   43|->     return fmemopen((void *) g_data, g_size, mode);
+#   44|   
+#   45|     return libc_fopen(pathname, mode);
+
+Error: COMPILER_WARNING:
+libtasn1-4.16.0/fuzz/libtasn1_parser2tree_fuzzer.c:43:12: warning: incompatible integer to pointer conversion returning 'int' from a function with result type 'FILE *' (aka 'struct _PDCLIB_file *')
+#    return fmemopen((void *) g_data, g_size, mode);
+#           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   41|   
+#   42|     if (!strcmp(pathname, "pkix.asn"))
+#   43|->     return fmemopen((void *) g_data, g_size, mode);
+#   44|   
+#   45|     return libc_fopen(pathname, mode);
+
+Error: COMPILER_WARNING:
+libtasn1-4.16.0/fuzz/libtasn1_parser2tree_fuzzer.c:43:12: warning: this function declaration is not a prototype
+#   41|   
+#   42|     if (!strcmp(pathname, "pkix.asn"))
+#   43|->     return fmemopen((void *) g_data, g_size, mode);
+#   44|   
+#   45|     return libc_fopen(pathname, mode);
+
+Error: COMPILER_WARNING:
+libtasn1-4.16.0/fuzz/main.c:74:41: warning: comparison of integers of different signs: 'ssize_t' (aka 'long') and '__uint64_t' (aka 'unsigned long')
+#                        if ((n = read(fd, data, st.st_size)) == st.st_size) {
+#                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ^  ~~~~~~~~~~
+#   72|   			uint8_t *data = malloc(st.st_size);
+#   73|   			ssize_t n;
+#   74|-> 			if ((n = read(fd, data, st.st_size)) == st.st_size) {
+#   75|   				printf("testing %llu bytes from '%s'\n", (unsigned long long) st.st_size, fname);
+#   76|   				LLVMFuzzerTestOneInput(data, st.st_size);
+
+Error: COMPILER_WARNING:
+libtasn1-4.16.0/lib/version.c:47:23: warning: implicit declaration of function 'strverscmp' is invalid in C99
+#  if (!req_version || strverscmp (req_version, ASN1_VERSION) <= 0)
+#                      ^
+#   45|   asn1_check_version (const char *req_version)
+#   46|   {
+#   47|->   if (!req_version || strverscmp (req_version, ASN1_VERSION) <= 0)
+#   48|       return ASN1_VERSION;
+#   49|   
+
+Error: COMPILER_WARNING:
+libtasn1-4.16.0/lib/version.c:47:23: warning: this function declaration is not a prototype
+#   45|   asn1_check_version (const char *req_version)
+#   46|   {
+#   47|->   if (!req_version || strverscmp (req_version, ASN1_VERSION) <= 0)
+#   48|       return ASN1_VERSION;
+#   49|   
+
+Error: COMPILER_WARNING:
+libtasn1-4.16.0/src/asn1Decoding.c:98:17: warning: comparison of integers of different signs: 'off_t' (aka 'long') and '__uint64_t' (aka 'unsigned long')
+#  if ((off_t)*l != st.st_size)
+#      ~~~~~~~~~ ^  ~~~~~~~~~~
+#   96|   
+#   97|     *l = fread(out, 1, st.st_size, fp);
+#   98|->   if ((off_t)*l != st.st_size)
+#   99|       {
+#  100|         fprintf(stderr, "Error reading contents (got: %ld, expected %ld)!\n",

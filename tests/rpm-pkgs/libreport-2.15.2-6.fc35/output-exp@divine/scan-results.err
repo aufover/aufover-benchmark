@@ -1,0 +1,1047 @@
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/cli/run-command.c:46:20: warning: implicit declaration of function 'tcgetpgrp' is invalid in C99
+#  cmd->bck_tcgrp = tcgetpgrp(cmd->tty_fd);
+#                   ^
+#   44|   
+#   45|     /* save current foreground process group id */
+#   46|->   cmd->bck_tcgrp = tcgetpgrp(cmd->tty_fd);
+#   47|     if (cmd->bck_tcgrp < 0)
+#   48|       perror_msg_and_die("tcgetpgrp");
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/cli/run-command.c:51:7: warning: implicit declaration of function 'tcgetattr' is invalid in C99
+#  if (tcgetattr(cmd->tty_fd, &cmd->bck_tmodes) < 0)
+#      ^
+#   49|   
+#   50|     /* save tty's attrs */
+#   51|->   if (tcgetattr(cmd->tty_fd, &cmd->bck_tmodes) < 0)
+#   52|       perror_msg_and_die("tcsetattr");
+#   53|   
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/cli/run-command.c:79:9: warning: implicit declaration of function 'tcsetpgrp' is invalid in C99
+#    if (tcsetpgrp(0, pgrp) < 0)
+#        ^
+#   77|         _exit(127);
+#   78|       }
+#   79|->     if (tcsetpgrp(0, pgrp) < 0)
+#   80|       {
+#   81|         perror_msg("tcsetpgrp");
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/cli/run-command.c:87:5: warning: implicit declaration of function 'execvp' is invalid in C99
+#    execvp(cmd->argv[0], cmd->argv);
+#    ^
+#   85|       signal(SIGTTOU, SIG_DFL);
+#   86|   
+#   87|->     execvp(cmd->argv[0], cmd->argv);
+#   88|       /* Better to use _exit (not exit) after fork:
+#   89|        * we don't want to mess up parent's memory state
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/gtk-helpers/config_dialog.c:266:54: warning: missing sentinel in function call
+#                                                 NULL);
+#                                                     ^
+/usr/include/gtk-3.0/gtk/gtktreeviewcolumn.h:111:25: note: function has been explicitly marked sentinel here
+#GtkTreeViewColumn      *gtk_tree_view_column_new_with_attributes (const gchar             *title,
+#                        ^
+#  264|                                                    "markup",
+#  265|                                                    COLUMN_UINAME,
+#  266|->                                                  NULL);
+#  267|       gtk_tree_view_column_set_resizable(column, TRUE);
+#  268|       g_object_set(G_OBJECT(renderer), "wrap-mode", PANGO_WRAP_WORD, NULL);
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/gtk-helpers/config_dialog.c:268:72: warning: missing sentinel in function call
+#    g_object_set(G_OBJECT(renderer), "wrap-mode", PANGO_WRAP_WORD, NULL);
+#                                                                       ^
+/usr/include/glib-2.0/gobject/gobject.h:450:10: note: function has been explicitly marked sentinel here
+#void        g_object_set                      (gpointer        object,
+#            ^
+#  266|                                                    NULL);
+#  267|       gtk_tree_view_column_set_resizable(column, TRUE);
+#  268|->     g_object_set(G_OBJECT(renderer), "wrap-mode", PANGO_WRAP_WORD, NULL);
+#  269|       g_object_set(G_OBJECT(renderer), "wrap-width", 440, NULL);
+#  270|       gtk_tree_view_append_column(GTK_TREE_VIEW(tv), column);
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/gtk-helpers/config_dialog.c:269:61: warning: missing sentinel in function call
+#    g_object_set(G_OBJECT(renderer), "wrap-width", 440, NULL);
+#                                                            ^
+/usr/include/glib-2.0/gobject/gobject.h:450:10: note: function has been explicitly marked sentinel here
+#void        g_object_set                      (gpointer        object,
+#            ^
+#  267|       gtk_tree_view_column_set_resizable(column, TRUE);
+#  268|       g_object_set(G_OBJECT(renderer), "wrap-mode", PANGO_WRAP_WORD, NULL);
+#  269|->     g_object_set(G_OBJECT(renderer), "wrap-width", 440, NULL);
+#  270|       gtk_tree_view_append_column(GTK_TREE_VIEW(tv), column);
+#  271|       gtk_tree_view_set_headers_visible (GTK_TREE_VIEW(tv), FALSE);
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/gtk-helpers/event_config_dialog.c:347:29: warning: missing sentinel in function call
+#                        NULL);
+#                            ^
+/usr/include/gtk-3.0/gtk/gtkdialog.h:149:12: note: function has been explicitly marked sentinel here
+#GtkWidget* gtk_dialog_new_with_buttons (const gchar     *title,
+#           ^
+#  345|                           _("_OK"),
+#  346|                           GTK_RESPONSE_APPLY,
+#  347|->                         NULL);
+#  348|   
+#  349|       gtk_dialog_set_default_response(GTK_DIALOG(dialog), GTK_RESPONSE_APPLY);
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/gtk-helpers/problem_details_dialog.c:35:17: warning: missing sentinel in function call
+#            NULL
+#                ^
+/usr/include/gtk-3.0/gtk/gtkdialog.h:149:12: note: function has been explicitly marked sentinel here
+#GtkWidget* gtk_dialog_new_with_buttons (const gchar     *title,
+#           ^
+#   33|               _("OK"),
+#   34|               GTK_RESPONSE_NONE,
+#   35|->             NULL
+#   36|               );
+#   37|   
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/gtk-helpers/problem_details_widget.c:128:52: warning: implicit conversion from enumeration type 'GtkWrapMode' to different enumeration type 'PangoWrapMode'
+#    gtk_label_set_line_wrap_mode(GTK_LABEL(value), GTK_WRAP_WORD);
+#    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~                   ^~~~~~~~~~~~~
+#  126|       gtk_label_set_selectable(GTK_LABEL(value), TRUE);
+#  127|       gtk_label_set_line_wrap(GTK_LABEL(value), TRUE);
+#  128|->     gtk_label_set_line_wrap_mode(GTK_LABEL(value), GTK_WRAP_WORD);
+#  129|       gtk_widget_set_halign(value, GTK_ALIGN_START);
+#  130|       gtk_widget_set_hexpand(value, TRUE);
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/gtk-helpers/problem_details_widget.c:157:56: warning: implicit conversion from enumeration type 'GtkWrapMode' to different enumeration type 'PangoWrapMode'
+#        gtk_label_set_line_wrap_mode(GTK_LABEL(value), GTK_WRAP_WORD);
+#        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~                   ^~~~~~~~~~~~~
+#  155|       {
+#  156|           gtk_label_set_line_wrap(GTK_LABEL(value), TRUE);
+#  157|->         gtk_label_set_line_wrap_mode(GTK_LABEL(value), GTK_WRAP_WORD);
+#  158|           gtk_widget_set_margin_bottom(value, 12);
+#  159|       }
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/gtk-helpers/problem_details_widget.c:197:17: warning: incompatible integer to pointer conversion initializing 'const char *' with an expression of type 'int'
+#    const char *ret = strptime(stamp, "%s", &tm);
+#                ^     ~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  195|       memset(&tm, 0, sizeof(struct tm));
+#  196|   
+#  197|->     const char *ret = strptime(stamp, "%s", &tm);
+#  198|   
+#  199|       if (ret == NULL || ret[0] != '\0')
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/gtk-helpers/problem_details_widget.c:197:23: warning: implicit declaration of function 'strptime' is invalid in C99
+#    const char *ret = strptime(stamp, "%s", &tm);
+#                      ^
+#  195|       memset(&tm, 0, sizeof(struct tm));
+#  196|   
+#  197|->     const char *ret = strptime(stamp, "%s", &tm);
+#  198|   
+#  199|       if (ret == NULL || ret[0] != '\0')
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/gtk-helpers/secrets.c:185:51: warning: implicit conversion from enumeration type 'GDBusProxyFlags' to different enumeration type 'GDBusCallFlags'
+#                                                  G_DBUS_PROXY_FLAGS_NONE,
+#                                                  ^~~~~~~~~~~~~~~~~~~~~~~
+#  183|                                                     method,
+#  184|                                                     args,
+#  185|->                                                   G_DBUS_PROXY_FLAGS_NONE,
+#  186|                                                     SECRETS_CALL_DEFAULT_TIMEOUT,
+#  187|                                                     /* GCancellable */ NULL,
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/gtk-helpers/secrets.c:830:32: warning: implicit conversion from enumeration type 'GDBusProxyFlags' to different enumeration type 'GDBusCallFlags'
+#                               G_DBUS_PROXY_FLAGS_NONE, SECRETS_CALL_DEFAULT_TIMEOUT,
+#                               ^~~~~~~~~~~~~~~~~~~~~~~
+#  828|       GVariant *const resp =
+#  829|           g_dbus_proxy_call_sync(g_service_object->proxy, "ReadAlias", g_variant_new("(s)", alias),
+#  830|->                                G_DBUS_PROXY_FLAGS_NONE, SECRETS_CALL_DEFAULT_TIMEOUT,
+#  831|                                  NULL, &error);
+#  832|   
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/gtk-helpers/secrets.c:1091:39: warning: implicit conversion from enumeration type 'GDBusProxyFlags' to different enumeration type 'GDBusCallFlags'
+#                                      G_DBUS_PROXY_FLAGS_NONE, SECRETS_CALL_DEFAULT_TIMEOUT,
+#                                      ^~~~~~~~~~~~~~~~~~~~~~~
+# 1089|                                                               g_variant_ref(secret),
+# 1090|                                                               options[choice]),
+# 1091|->                                       G_DBUS_PROXY_FLAGS_NONE, SECRETS_CALL_DEFAULT_TIMEOUT,
+# 1092|                                         NULL, &error);
+# 1093|   
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/gtk-helpers/secrets.c:1275:55: warning: implicit conversion from enumeration type 'GDBusProxyFlags' to different enumeration type 'GDBusCallFlags'
+#                                                      G_DBUS_PROXY_FLAGS_NONE,
+#                                                      ^~~~~~~~~~~~~~~~~~~~~~~
+# 1273|                                                         g_variant_new("(o)",
+# 1274|                                                           g_dbus_proxy_get_object_path(session)),
+# 1275|->                                                       G_DBUS_PROXY_FLAGS_NONE,
+# 1276|                                                         SECRETS_CALL_DEFAULT_TIMEOUT,
+# 1277|                                                         /* GCancellable */ NULL,
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/gtk-helpers/workflow_config_dialog.c:94:29: warning: missing sentinel in function call
+#                        NULL);
+#                            ^
+/usr/include/gtk-3.0/gtk/gtkdialog.h:149:12: note: function has been explicitly marked sentinel here
+#GtkWidget* gtk_dialog_new_with_buttons (const gchar     *title,
+#           ^
+#   92|                           _("_OK"),
+#   93|                           GTK_RESPONSE_APPLY,
+#   94|->                         NULL);
+#   95|   
+#   96|       gtk_dialog_set_default_response(GTK_DIALOG(dialog), GTK_RESPONSE_APPLY);
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/gui-wizard-gtk/wizard.c:469:76: warning: missing sentinel in function call
+#        gtk_text_buffer_insert_with_tags(tb, &text_iter, url, -1, tag, NULL);
+#                                                                           ^
+/usr/include/gtk-3.0/gtk/gtktextbuffer.h:224:9: note: function has been explicitly marked sentinel here
+#void    gtk_text_buffer_insert_with_tags          (GtkTextBuffer     *buffer,
+#        ^
+#  467|           g_object_set_data_full(G_OBJECT(tag), "url", url, g_free);
+#  468|   
+#  469|->         gtk_text_buffer_insert_with_tags(tb, &text_iter, url, -1, tag, NULL);
+#  470|   
+#  471|           last = t->start + t->len;
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/gui-wizard-gtk/wizard.c:715:86: warning: missing sentinel in function call
+#    arg[1] = g_build_filename(g_dump_dir_name ? g_dump_dir_name : "", item_name, NULL);
+#                                                                                     ^
+/usr/include/glib-2.0/glib/gfileutils.h:173:10: note: function has been explicitly marked sentinel here
+#gchar   *g_build_filename     (const gchar *first_element,
+#         ^
+#  713|       gchar *arg[3];
+#  714|       arg[0] = (char *) "xdg-open";
+#  715|->     arg[1] = g_build_filename(g_dump_dir_name ? g_dump_dir_name : "", item_name, NULL);
+#  716|       arg[2] = NULL;
+#  717|   
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/gui-wizard-gtk/wizard.c:727:23: warning: missing sentinel in function call
+#            NULL, NULL);
+#                      ^
+/usr/include/gtk-3.0/gtk/gtkdialog.h:149:12: note: function has been explicitly marked sentinel here
+#GtkWidget* gtk_dialog_new_with_buttons (const gchar     *title,
+#           ^
+#  725|               GTK_WINDOW(g_wnd_assistant),
+#  726|               GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
+#  727|->             NULL, NULL);
+#  728|           GtkWidget *vbox = gtk_dialog_get_content_area(GTK_DIALOG(dialog));
+#  729|           GtkWidget *scrolled = gtk_scrolled_window_new(NULL, NULL);
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/gui-wizard-gtk/wizard.c:807:21: warning: missing sentinel in function call
+#                NULL);
+#                    ^
+/usr/include/glib-2.0/gobject/gobject.h:450:10: note: function has been explicitly marked sentinel here
+#void        g_object_set                      (gpointer        object,
+#            ^
+#  805|       g_object_set(G_OBJECT(g_tv_details_renderer_value),
+#  806|                   "editable", editable,
+#  807|->                 NULL);
+#  808|   }
+#  809|   
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/gui-wizard-gtk/wizard.c:1239:9: warning: implicit declaration of function 'unsetenv' is invalid in C99
+#        unsetenv("EXCLUDE_FROM_REPORT");
+#        ^
+# 1237|           }
+# 1238|       } else {
+# 1239|->         unsetenv("EXCLUDE_FROM_REPORT");
+# 1240|       }
+# 1241|   }
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/gui-wizard-gtk/wizard.c:1478:59: warning: missing sentinel in function call
+#    g_object_set(G_OBJECT(textbox), "editable", TRUE, NULL);
+#                                                          ^
+/usr/include/glib-2.0/gobject/gobject.h:450:10: note: function has been explicitly marked sentinel here
+#void        g_object_set                      (gpointer        object,
+#            ^
+# 1476|        * g_object_set
+# 1477|        */
+# 1478|->     g_object_set(G_OBJECT(textbox), "editable", TRUE, NULL);
+# 1479|       g_signal_connect(textbox, "activate", G_CALLBACK(gtk_entry_emit_dialog_response_ok), dialog);
+# 1480|   
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/gui-wizard-gtk/wizard.c:2892:17: warning: missing sentinel in function call
+#            NULL
+#                ^
+/usr/include/gtk-3.0/gtk/gtkfilechooserdialog.h:63:12: note: function has been explicitly marked sentinel here
+#GtkWidget *gtk_file_chooser_dialog_new              (const gchar          *title,
+#           ^
+# 2890|               _("_Cancel"), GTK_RESPONSE_CANCEL,
+# 2891|               _("_Open"), GTK_RESPONSE_ACCEPT,
+# 2892|->             NULL
+# 2893|       );
+# 2894|       g_autofree char *filename = NULL;
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/gui-wizard-gtk/wizard.c:2924:93: warning: missing sentinel in function call
+#                g_autofree char *new_name = g_build_filename(g_dump_dir_name, basename, NULL);
+#                                                                                            ^
+/usr/include/glib-2.0/glib/gfileutils.h:173:10: note: function has been explicitly marked sentinel here
+#gchar   *g_build_filename     (const gchar *first_element,
+#         ^
+# 2922|               {
+# 2923|                   dd_close(dd);
+# 2924|->                 g_autofree char *new_name = g_build_filename(g_dump_dir_name, basename, NULL);
+# 2925|                   if (strcmp(filename, new_name) == 0)
+# 2926|                       message = g_strdup(_("You are trying to copy a file onto itself"));
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/gui-wizard-gtk/wizard.c:2992:102: warning: missing sentinel in function call
+#                        g_autofree char *filename = g_build_filename(g_dump_dir_name, item_name, NULL);
+#                                                                                                     ^
+/usr/include/glib-2.0/glib/gfileutils.h:173:10: note: function has been explicitly marked sentinel here
+#gchar   *g_build_filename     (const gchar *first_element,
+#         ^
+# 2990|                       if (dd)
+# 2991|                       {
+# 2992|->                         g_autofree char *filename = g_build_filename(g_dump_dir_name, item_name, NULL);
+# 2993|                           unlink(filename);
+# 2994|                           dd_close(dd);
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/gui-wizard-gtk/wizard.c:3130:21: warning: missing sentinel in function call
+#                NULL);
+#                    ^
+/usr/include/gtk-3.0/gtk/gtktreeviewcolumn.h:111:25: note: function has been explicitly marked sentinel here
+#GtkTreeViewColumn      *gtk_tree_view_column_new_with_attributes (const gchar             *title,
+#                        ^
+# 3128|                   /* which "attr" of renderer to set from which COLUMN? (can be repeated) */
+# 3129|                   "active", DETAIL_COLUMN_CHECKBOX,
+# 3130|->                 NULL);
+# 3131|       g_tv_details_col_checkbox = column;
+# 3132|       gtk_tree_view_append_column(g_tv_details, column);
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/gui-wizard-gtk/wizard.c:3140:21: warning: missing sentinel in function call
+#                NULL);
+#                    ^
+/usr/include/gtk-3.0/gtk/gtktreeviewcolumn.h:111:25: note: function has been explicitly marked sentinel here
+#GtkTreeViewColumn      *gtk_tree_view_column_new_with_attributes (const gchar             *title,
+#                        ^
+# 3138|                   _("Name"), renderer,
+# 3139|                   "text", DETAIL_COLUMN_NAME,
+# 3140|->                 NULL);
+# 3141|       gtk_tree_view_append_column(g_tv_details, column);
+# 3142|       /* This column has a clickable header for sorting */
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/gui-wizard-gtk/wizard.c:3150:21: warning: missing sentinel in function call
+#                NULL);
+#                    ^
+/usr/include/gtk-3.0/gtk/gtktreeviewcolumn.h:111:25: note: function has been explicitly marked sentinel here
+#GtkTreeViewColumn      *gtk_tree_view_column_new_with_attributes (const gchar             *title,
+#                        ^
+# 3148|                   _("Value"), renderer,
+# 3149|                   "text", DETAIL_COLUMN_VALUE,
+# 3150|->                 NULL);
+# 3151|       gtk_tree_view_append_column(g_tv_details, column);
+# 3152|       /* This column has a clickable header for sorting */
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/lib/abrt_sock.c:58:9: warning: implicit declaration of function 'shutdown' is invalid in C99
+#        shutdown(socketfd, SHUT_WR);
+#        ^
+#   56|           libreport_full_write(socketfd, dump_dir_name, strlen(dump_dir_name));
+#   57|           libreport_full_write(socketfd, " HTTP/1.1\r\n\r\n", strlen(" HTTP/1.1\r\n\r\n"));
+#   58|->         shutdown(socketfd, SHUT_WR);
+#   59|   
+#   60|           char response[64];
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/lib/abrt_sock.c:117:9: warning: implicit declaration of function 'shutdown' is invalid in C99
+#        shutdown(socketfd, SHUT_WR);
+#        ^
+#  115|               libreport_full_write(socketfd, msg, strlen(msg)+1 /* yes, +1 coz we want to send the trailing 0 */);
+#  116|           }
+#  117|->         shutdown(socketfd, SHUT_WR);
+#  118|   
+#  119|           char response[64];
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/lib/client.c:38:9: warning: implicit declaration of function 'tcgetattr' is invalid in C99
+#    if (tcgetattr(STDIN_FILENO, &t) < 0)
+#        ^
+#   36|       struct termios t;
+#   37|       int chvalue = 0;
+#   38|->     if (tcgetattr(STDIN_FILENO, &t) < 0)
+#   39|           return 0;
+#   40|   
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/lib/client.c:57:9: warning: implicit declaration of function 'tcsetattr' is invalid in C99
+#    if (tcsetattr(STDIN_FILENO, TCSANOW, &t) < 0)
+#        ^
+#   55|           return 0;
+#   56|   
+#   57|->     if (tcsetattr(STDIN_FILENO, TCSANOW, &t) < 0)
+#   58|           perror_msg_and_die("tcsetattr");
+#   59|   
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/lib/concat_path_file.c:24:22: warning: incompatible integer to pointer conversion initializing 'char *' with an expression of type 'int'
+#    g_autofree char *abspath = realpath(filename, NULL);
+#                     ^         ~~~~~~~~~~~~~~~~~~~~~~~~
+#   22|   char *libreport_concat_path_basename(const char *path, const char *filename)
+#   23|   {
+#   24|->     g_autofree char *abspath = realpath(filename, NULL);
+#   25|       char *base = strrchr((abspath ? abspath : filename), '/');
+#   26|   
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/lib/concat_path_file.c:24:32: warning: implicit declaration of function 'realpath' is invalid in C99
+#    g_autofree char *abspath = realpath(filename, NULL);
+#                               ^
+#   22|   char *libreport_concat_path_basename(const char *path, const char *filename)
+#   23|   {
+#   24|->     g_autofree char *abspath = realpath(filename, NULL);
+#   25|       char *base = strrchr((abspath ? abspath : filename), '/');
+#   26|   
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/lib/concat_path_file.c:41:63: warning: missing sentinel in function call
+#    char *name = g_build_filename(path ? path : "", base, NULL);
+#                                                              ^
+/usr/include/glib-2.0/glib/gfileutils.h:173:10: note: function has been explicitly marked sentinel here
+#gchar   *g_build_filename     (const gchar *first_element,
+#         ^
+#   39|           base = buf;
+#   40|       }
+#   41|->     char *name = g_build_filename(path ? path : "", base, NULL);
+#   42|       return name;
+#   43|   }
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/lib/configuration_files.c:36:9: warning: implicit declaration of function 'realpath' is invalid in C99
+#    if (realpath(path, canon_path) != NULL)
+#        ^
+#   34|   static bool canonicalize_path(const char *path, char *canon_path)
+#   35|   {
+#   36|->     if (realpath(path, canon_path) != NULL)
+#   37|           return true;
+#   38|   
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/lib/configuration_files.c:326:99: warning: missing sentinel in function call
+#        base_dir = g_build_filename(user_config_dir ? user_config_dir : "", "abrt/settings/", NULL);
+#                                                                                                  ^
+/usr/include/glib-2.0/glib/gfileutils.h:173:10: note: function has been explicitly marked sentinel here
+#gchar   *g_build_filename     (const gchar *first_element,
+#         ^
+#  324|       {
+#  325|           char* user_config_dir = (char*)g_get_user_config_dir();
+#  326|->         base_dir = g_build_filename(user_config_dir ? user_config_dir : "", "abrt/settings/", NULL);
+#  327|       }
+#  328|   
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/lib/configuration_files.c:348:86: warning: missing sentinel in function call
+#        g_autofree char *conf_file = g_build_filename(directories[i], base_name, NULL);
+#                                                                                     ^
+/usr/include/glib-2.0/glib/gfileutils.h:173:10: note: function has been explicitly marked sentinel here
+#gchar   *g_build_filename     (const gchar *first_element,
+#         ^
+#  346|       for (size_t i = 0; directories[i] != NULL; ++i)
+#  347|       {
+#  348|->         g_autofree char *conf_file = g_build_filename(directories[i], base_name, NULL);
+#  349|           if (!libreport_load_conf_file(conf_file, settings, skipKeysWithoutValue))
+#  350|           {
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/lib/configuration_files.c:501:79: warning: missing sentinel in function call
+#    g_autofree char *conf_path = g_build_filename(plugins_conf_dir, name, NULL);
+#                                                                              ^
+/usr/include/glib-2.0/glib/gfileutils.h:173:10: note: function has been explicitly marked sentinel here
+#gchar   *g_build_filename     (const gchar *first_element,
+#         ^
+#  499|           plugins_conf_dir = PLUGINS_CONF_DIR;
+#  500|   
+#  501|->     g_autofree char *conf_path = g_build_filename(plugins_conf_dir, name, NULL);
+#  502|       bool ret = libreport_save_conf_file(conf_path, settings);
+#  503|   
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/lib/create_dump_dir.c:43:96: warning: missing sentinel in function call
+#    g_autofree char *path = g_build_filename(base_dir_name ? base_dir_name : "", dir_name, NULL);
+#                                                                                               ^
+/usr/include/glib-2.0/glib/gfileutils.h:173:10: note: function has been explicitly marked sentinel here
+#gchar   *g_build_filename     (const gchar *first_element,
+#         ^
+#   41|   static struct dump_dir *try_dd_create(const char *base_dir_name, const char *dir_name, uid_t uid)
+#   42|   {
+#   43|->     g_autofree char *path = g_build_filename(base_dir_name ? base_dir_name : "", dir_name, NULL);
+#   44|       struct dump_dir *dd = dd_create(path, uid, DEFAULT_DUMP_DIR_MODE);
+#   45|       return dd;
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/lib/create_dump_dir.c:82:58: warning: missing sentinel in function call
+#                home = g_build_filename(home, "tmp", NULL);
+#                                                         ^
+/usr/include/glib-2.0/glib/gfileutils.h:173:10: note: function has been explicitly marked sentinel here
+#gchar   *g_build_filename     (const gchar *first_element,
+#         ^
+#   80|               if (home && home[0])
+#   81|               {
+#   82|->                 home = g_build_filename(home, "tmp", NULL);
+#   83|                   /*mkdir(home, 0777); - do we want this? */
+#   84|                   dd = try_dd_create(home, problem_id, uid);
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/lib/create_dump_dir.c:143:102: warning: missing sentinel in function call
+#    g_autofree char* new_path = g_build_filename(base_dir_name ? base_dir_name : "", problem_id, NULL);
+#                                                                                                     ^
+/usr/include/glib-2.0/glib/gfileutils.h:173:10: note: function has been explicitly marked sentinel here
+#gchar   *g_build_filename     (const gchar *first_element,
+#         ^
+#  141|   
+#  142|       problem_id[strlen(problem_id) - strlen(NEW_PD_SUFFIX)] = '\0';
+#  143|->     g_autofree char* new_path = g_build_filename(base_dir_name ? base_dir_name : "", problem_id, NULL);
+#  144|       log_info("Renaming from '%s' to '%s'", dd->dd_dirname, new_path);
+#  145|       dd_rename(dd, new_path);
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/lib/curl.c:511:21: warning: incompatible integer to pointer conversion assigning to 'FILE *' (aka 'struct _PDCLIB_file *') from 'int'
+#        body_stream = open_memstream(&state->body, &state->body_size);
+#                    ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  509|       if (state->flags & POST_WANT_BODY)
+#  510|       {
+#  511|->         body_stream = open_memstream(&state->body, &state->body_size);
+#  512|           if (!body_stream)
+#  513|               error_msg_and_die("out of memory");
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/lib/curl.c:511:23: warning: implicit declaration of function 'open_memstream' is invalid in C99
+#        body_stream = open_memstream(&state->body, &state->body_size);
+#                      ^
+#  509|       if (state->flags & POST_WANT_BODY)
+#  510|       {
+#  511|->         body_stream = open_memstream(&state->body, &state->body_size);
+#  512|           if (!body_stream)
+#  513|               error_msg_and_die("out of memory");
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/lib/curl.c:625:90: warning: missing sentinel in function call
+#        whole_url = g_build_filename(clean_url, strrchr(filename, '/') ? : filename, NULL);
+#                                                                                         ^
+/usr/include/glib-2.0/glib/gfileutils.h:173:10: note: function has been explicitly marked sentinel here
+#gchar   *g_build_filename     (const gchar *first_element,
+#         ^
+#  623|       unsigned len = strlen(clean_url);
+#  624|       if (len > 0 && clean_url[len-1] == '/')
+#  625|->         whole_url = g_build_filename(clean_url, strrchr(filename, '/') ? : filename, NULL);
+#  626|       else
+#  627|           whole_url = g_strdup(clean_url);
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/lib/dirsize.c:38:74: warning: missing sentinel in function call
+#        g_autofree char *dname = g_build_filename(pPath, ep->d_name, NULL);
+#                                                                         ^
+/usr/include/glib-2.0/glib/gfileutils.h:173:10: note: function has been explicitly marked sentinel here
+#gchar   *g_build_filename     (const gchar *first_element,
+#         ^
+#   36|           if (libreport_dot_or_dotdot(ep->d_name))
+#   37|               continue;
+#   38|->         g_autofree char *dname = g_build_filename(pPath, ep->d_name, NULL);
+#   39|           if (lstat(dname, &statbuf) != 0)
+#   40|           {
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/lib/dirsize.c:96:87: warning: missing sentinel in function call
+#        g_autofree char *dname = g_build_filename(pPath ? pPath : "", ep->d_name, NULL);
+#                                                                                      ^
+/usr/include/glib-2.0/glib/gfileutils.h:173:10: note: function has been explicitly marked sentinel here
+#gchar   *g_build_filename     (const gchar *first_element,
+#         ^
+#   94|           if (libreport_dot_or_dotdot(ep->d_name))
+#   95|               continue;
+#   96|->         g_autofree char *dname = g_build_filename(pPath ? pPath : "", ep->d_name, NULL);
+#   97|           g_autofree char *sosreport_path = g_build_filename(dname, "sosreport.log", NULL);
+#   98|           g_autofree char *lock_path = g_build_filename(dname, ".lock", NULL);
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/lib/dirsize.c:97:88: warning: missing sentinel in function call
+#        g_autofree char *sosreport_path = g_build_filename(dname, "sosreport.log", NULL);
+#                                                                                       ^
+/usr/include/glib-2.0/glib/gfileutils.h:173:10: note: function has been explicitly marked sentinel here
+#gchar   *g_build_filename     (const gchar *first_element,
+#         ^
+#   95|               continue;
+#   96|           g_autofree char *dname = g_build_filename(pPath ? pPath : "", ep->d_name, NULL);
+#   97|->         g_autofree char *sosreport_path = g_build_filename(dname, "sosreport.log", NULL);
+#   98|           g_autofree char *lock_path = g_build_filename(dname, ".lock", NULL);
+#   99|           if (lstat(sosreport_path, &statbuf) == 0)
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/lib/dirsize.c:98:75: warning: missing sentinel in function call
+#        g_autofree char *lock_path = g_build_filename(dname, ".lock", NULL);
+#                                                                          ^
+/usr/include/glib-2.0/glib/gfileutils.h:173:10: note: function has been explicitly marked sentinel here
+#gchar   *g_build_filename     (const gchar *first_element,
+#         ^
+#   96|           g_autofree char *dname = g_build_filename(pPath ? pPath : "", ep->d_name, NULL);
+#   97|           g_autofree char *sosreport_path = g_build_filename(dname, "sosreport.log", NULL);
+#   98|->         g_autofree char *lock_path = g_build_filename(dname, ".lock", NULL);
+#   99|           if (lstat(sosreport_path, &statbuf) == 0)
+#  100|           {
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/lib/dump_dir.c:1762:100: warning: missing sentinel in function call
+#    g_autofree char *chrooted_name = g_build_filename(chroot_dir ? chroot_dir : "", file_path, NULL);
+#                                                                                                   ^
+/usr/include/glib-2.0/glib/gfileutils.h:173:10: note: function has been explicitly marked sentinel here
+#gchar   *g_build_filename     (const gchar *first_element,
+#         ^
+# 1760|   static void copy_file_from_chroot(struct dump_dir* dd, const char *name, const char *chroot_dir, const char *file_path)
+# 1761|   {
+# 1762|->     g_autofree char *chrooted_name = g_build_filename(chroot_dir ? chroot_dir : "", file_path, NULL);
+# 1763|       g_autofree char *data = load_text_file(chrooted_name,
+# 1764|                       DD_LOAD_TEXT_RETURN_NULL_ON_FAILURE | DD_OPEN_FOLLOW);
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/lib/dump_dir.c:2138:95: warning: missing sentinel in function call
+#        *full_name = g_build_filename(dd->dd_dirname ? dd->dd_dirname : "", dent->d_name, NULL);
+#                                                                                              ^
+/usr/include/glib-2.0/glib/gfileutils.h:173:10: note: function has been explicitly marked sentinel here
+#gchar   *g_build_filename     (const gchar *first_element,
+#         ^
+# 2136|           *short_name = g_strdup(dent->d_name);
+# 2137|       if (full_name)
+# 2138|->         *full_name = g_build_filename(dd->dd_dirname ? dd->dd_dirname : "", dent->d_name, NULL);
+# 2139|       return 1;
+# 2140|   }
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/lib/event_config.c:287:84: warning: missing sentinel in function call
+#    cache_directory = g_build_filename(user_cache_directory, "abrt", "events", NULL);
+#                                                                                   ^
+/usr/include/glib-2.0/glib/gfileutils.h:173:10: note: function has been explicitly marked sentinel here
+#gchar   *g_build_filename     (const gchar *first_element,
+#         ^
+#  285|   
+#  286|       user_cache_directory = g_get_user_cache_dir();
+#  287|->     cache_directory = g_build_filename(user_cache_directory, "abrt", "events", NULL);
+#  288|   
+#  289|       load_config_files(cache_directory);
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/lib/file_list.c:37:78: warning: missing sentinel in function call
+#        g_autofree char *fullname = g_build_filename(path, dent->d_name, NULL);
+#                                                                             ^
+/usr/include/glib-2.0/glib/gfileutils.h:173:10: note: function has been explicitly marked sentinel here
+#gchar   *g_build_filename     (const gchar *first_element,
+#         ^
+#   35|           if (strcmp(dent->d_name, ".") == 0 || strcmp(dent->d_name, "..") == 0)
+#   36|               continue;
+#   37|->         g_autofree char *fullname = g_build_filename(path, dent->d_name, NULL);
+#   38|           char *ext = NULL;
+#   39|   
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/lib/file_list.c:79:59: warning: missing sentinel in function call
+#            fullname = g_build_filename(path, target, NULL);
+#                                                          ^
+/usr/include/glib-2.0/glib/gfileutils.h:173:10: note: function has been explicitly marked sentinel here
+#gchar   *g_build_filename     (const gchar *first_element,
+#         ^
+#   77|                   *ext = '\0';
+#   78|               }
+#   79|->             fullname = g_build_filename(path, target, NULL);
+#   80|               files = g_list_prepend(files, libreport_new_file_obj(fullname, target));
+#   81|   
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/lib/iso_date_string.c:46:17: warning: incompatible integer to pointer conversion initializing 'const char *' with an expression of type 'int'
+#    const char *r = strptime(date, LIBREPORT_ISO_DATE_STRING_FORMAT, &local);
+#                ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   44|   {
+#   45|       struct tm local;
+#   46|->     const char *r = strptime(date, LIBREPORT_ISO_DATE_STRING_FORMAT, &local);
+#   47|   
+#   48|       if (r == NULL)
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/lib/iso_date_string.c:46:21: warning: implicit declaration of function 'strptime' is invalid in C99
+#    const char *r = strptime(date, LIBREPORT_ISO_DATE_STRING_FORMAT, &local);
+#                    ^
+#   44|   {
+#   45|       struct tm local;
+#   46|->     const char *r = strptime(date, LIBREPORT_ISO_DATE_STRING_FORMAT, &local);
+#   47|   
+#   48|       if (r == NULL)
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/lib/logging.c:156:29: warning: missing sentinel in function call
+#                        NULL);
+#                            ^
+/usr/include/systemd/sd-journal.h:37:5: note: function has been explicitly marked sentinel here
+#int sd_journal_send(const char *format, ...) _sd_printf_(1, 0) _sd_sentinel_;
+#    ^
+#  154|                           "CODE_FUNC=%s", func,
+#  155|                           "SYSLOG_FACILITY=1",
+#  156|->                         NULL);
+#  157|       }
+#  158|   }
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/lib/problem_report.c:798:22: warning: incompatible integer to pointer conversion assigning to 'FILE *' (aka 'struct _PDCLIB_file *') from 'int'
+#    self->msb_stream = open_memstream(&(self->msb_buffer), &(self->msb_size));
+#                     ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  796|   
+#  797|       self->msb_buffer = NULL;
+#  798|->     self->msb_stream = open_memstream(&(self->msb_buffer), &(self->msb_size));
+#  799|   
+#  800|       return self;
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/lib/problem_report.c:798:24: warning: implicit declaration of function 'open_memstream' is invalid in C99
+#    self->msb_stream = open_memstream(&(self->msb_buffer), &(self->msb_size));
+#                       ^
+#  796|   
+#  797|       self->msb_buffer = NULL;
+#  798|->     self->msb_stream = open_memstream(&(self->msb_buffer), &(self->msb_size));
+#  799|   
+#  800|       return self;
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/lib/problem_report.c:1199:15: warning: incompatible integer to pointer conversion initializing 'FILE *' (aka 'struct _PDCLIB_file *') with an expression of type 'int'
+#        FILE *fp = fmemopen((void *)fmt, len, "r");
+#              ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1197|       if (len != 0)
+# 1198|       {
+# 1199|->         FILE *fp = fmemopen((void *)fmt, len, "r");
+# 1200|           if (fp == NULL)
+# 1201|           {
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/lib/problem_report.c:1199:20: warning: implicit declaration of function 'fmemopen' is invalid in C99
+#        FILE *fp = fmemopen((void *)fmt, len, "r");
+#                   ^
+# 1197|       if (len != 0)
+# 1198|       {
+# 1199|->         FILE *fp = fmemopen((void *)fmt, len, "r");
+# 1200|           if (fp == NULL)
+# 1201|           {
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/lib/report.c:154:9: warning: implicit declaration of function 'execv' is invalid in C99
+#        execv(path, args);
+#        ^
+#  152|           path = path1;
+#  153|           log_info("Executing: %s", path);
+#  154|->         execv(path, args);
+#  155|           /* Did not find the desired executable in the installation directory.
+#  156|            * Trying to find it in PATH.
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/lib/report.c:159:9: warning: implicit declaration of function 'execvp' is invalid in C99
+#        execvp(path, args);
+#        ^
+#  157|            */
+#  158|           path = path2;
+#  159|->         execvp(path, args);
+#  160|           perror_msg_and_die("Can't execute %s", path);
+#  161|       }
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/lib/run_event.c:292:13: warning: implicit declaration of function 'glob' is invalid in C99
+#            glob(name_to_glob, 0, NULL, &globbuf);
+#            ^
+#  290|               memset(&globbuf, 0, sizeof(globbuf));
+#  291|               log_parser("globbing '%s'", name_to_glob);
+#  292|->             glob(name_to_glob, 0, NULL, &globbuf);
+#  293|               char **name = globbuf.gl_pathv;
+#  294|               if (name) while (*name)
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/lib/run_event.c:301:13: warning: implicit declaration of function 'globfree' is invalid in C99
+#            globfree(&globbuf);
+#            ^
+#  299|                   name++;
+#  300|               }
+#  301|->             globfree(&globbuf);
+#  302|           }
+#  303|           else
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/lib/run_event.c:510:22: warning: incompatible integer to pointer conversion initializing 'char *' with an expression of type 'int'
+#    g_autofree char *full_name = realpath(dump_dir_name, NULL);
+#                     ^           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  508|        * be able to find problem directory by using $DUMP_DIR...
+#  509|        */
+#  510|->     g_autofree char *full_name = realpath(dump_dir_name, NULL);
+#  511|       /* Export some useful environment variables for children */
+#  512|       GPtrArray *env_array;
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/lib/run_event.c:510:34: warning: implicit declaration of function 'realpath' is invalid in C99
+#    g_autofree char *full_name = realpath(dump_dir_name, NULL);
+#                                 ^
+#  508|        * be able to find problem directory by using $DUMP_DIR...
+#  509|        */
+#  510|->     g_autofree char *full_name = realpath(dump_dir_name, NULL);
+#  511|       /* Export some useful environment variables for children */
+#  512|       GPtrArray *env_array;
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/lib/run_event.c:660:34: warning: unused variable 'logged'
+#                g_autofree char *logged = state->logging_callback(g_strdup(msg), state->logging_param);
+#                                 ^
+#  658|               else if (state->logging_callback)
+#  659|               {
+#  660|->                 g_autofree char *logged = state->logging_callback(g_strdup(msg), state->logging_param);
+#  661|               }
+#  662|   
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/lib/spawn.c:91:4: warning: implicit declaration of function 'setgroups' is invalid in C99
+#                        setgroups(1, &gid);
+#                        ^
+#   89|   
+#   90|   		if (flags & EXECFLG_SETGUID) {
+#   91|-> 			setgroups(1, &gid);
+#   92|   			libreport_xsetregid(gid, gid);
+#   93|   			libreport_xsetreuid(uid, uid);
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/lib/spawn.c:135:3: warning: implicit declaration of function 'execvp' is invalid in C99
+#                execvp(argv[0], argv);
+#                ^
+#  133|   			setpgid(0, 0);
+#  134|   
+#  135|-> 		execvp(argv[0], argv);
+#  136|   		if (!(flags & EXECFLG_QUIET))
+#  137|   			perror_msg("Can't execute '%s'", argv[0]);
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/lib/steal_directory.c:50:84: warning: missing sentinel in function call
+#    char *dst_dir_name = g_build_filename(base_dir ? base_dir : "", base_name, NULL);
+#                                                                                   ^
+/usr/include/glib-2.0/glib/gfileutils.h:173:10: note: function has been explicitly marked sentinel here
+#gchar   *g_build_filename     (const gchar *first_element,
+#         ^
+#   48|       struct dump_dir *dd_dst;
+#   49|       unsigned count = 100;
+#   50|->     char *dst_dir_name = g_build_filename(base_dir ? base_dir : "", base_name, NULL);
+#   51|       while (1)
+#   52|       {
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/lib/steal_directory.c:96:106: warning: missing sentinel in function call
+#    g_autofree char *spooldir = g_build_filename(user_cache_dir ? user_cache_dir : "", "abrt/spool", NULL);
+#                                                                                                         ^
+/usr/include/glib-2.0/glib/gfileutils.h:173:10: note: function has been explicitly marked sentinel here
+#gchar   *g_build_filename     (const gchar *first_element,
+#         ^
+#   94|   
+#   95|       g_autofree char *user_cache_dir = (char*)g_get_user_cache_dir();
+#   96|->     g_autofree char *spooldir = g_build_filename(user_cache_dir ? user_cache_dir : "", "abrt/spool", NULL);
+#   97|   
+#   98|       if (ask && !ask(spooldir, dump_dir_name))
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/lib/ureport.c:127:27: warning: unused variable 'settings'
+#    g_autoptr(GHashTable) settings = NULL;
+#                          ^
+#  125|           return;
+#  126|   
+#  127|->     g_autoptr(GHashTable) settings = NULL;
+#  128|   
+#  129|       g_autofree const char *username = NULL;
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/lib/ureport.c:574:110: warning: missing sentinel in function call
+#    g_autofree char *bthash_url = g_build_filename(config->ur_url ? config->ur_url : "", BTHASH_URL_SFX, NULL);
+#                                                                                                             ^
+/usr/include/glib-2.0/glib/gfileutils.h:173:10: note: function has been explicitly marked sentinel here
+#gchar   *g_build_filename     (const gchar *first_element,
+#         ^
+#  572|                                          struct ureport_server_config *config)
+#  573|   {
+#  574|->     g_autofree char *bthash_url = g_build_filename(config->ur_url ? config->ur_url : "", BTHASH_URL_SFX, NULL);
+#  575|       char *report_url = g_build_filename(bthash_url, resp->urr_bthash, NULL);
+#  576|       return report_url;
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/lib/ureport.c:575:75: warning: missing sentinel in function call
+#    char *report_url = g_build_filename(bthash_url, resp->urr_bthash, NULL);
+#                                                                          ^
+/usr/include/glib-2.0/glib/gfileutils.h:173:10: note: function has been explicitly marked sentinel here
+#gchar   *g_build_filename     (const gchar *first_element,
+#         ^
+#  573|   {
+#  574|       g_autofree char *bthash_url = g_build_filename(config->ur_url ? config->ur_url : "", BTHASH_URL_SFX, NULL);
+#  575|->     char *report_url = g_build_filename(bthash_url, resp->urr_bthash, NULL);
+#  576|       return report_url;
+#  577|   }
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/lib/ureport.c:665:101: warning: missing sentinel in function call
+#    g_autofree char *dest_url = g_build_filename(config->ur_url ? config->ur_url : "", url_sfx, NULL);
+#                                                                                                    ^
+/usr/include/glib-2.0/glib/gfileutils.h:173:10: note: function has been explicitly marked sentinel here
+#gchar   *g_build_filename     (const gchar *first_element,
+#         ^
+#  663|           NULL,
+#  664|       };
+#  665|->     g_autofree char *dest_url = g_build_filename(config->ur_url ? config->ur_url : "", url_sfx, NULL);
+#  666|   
+#  667|       post_string_as_form_data(post_state, dest_url, "application/json",
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/lib/user_settings.c:32:91: warning: missing sentinel in function call
+#    conf = g_build_filename(libreport_get_user_conf_base_dir(), s != NULL ? s : name, NULL);
+#                                                                                          ^
+/usr/include/glib-2.0/glib/gfileutils.h:173:10: note: function has been explicitly marked sentinel here
+#gchar   *g_build_filename     (const gchar *first_element,
+#         ^
+#   30|           s = g_strdup_printf("%s.%s", name, suffix);
+#   31|   
+#   32|->     conf = g_build_filename(libreport_get_user_conf_base_dir(), s != NULL ? s : name, NULL);
+#   33|   
+#   34|       return conf;
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/lib/user_settings.c:111:100: warning: missing sentinel in function call
+#    file_list = g_list_prepend(file_list, g_build_filename(CONF_DIR ? CONF_DIR : "", filename, NULL));
+#                                                                                                   ^
+/usr/include/glib-2.0/glib/gfileutils.h:173:10: note: function has been explicitly marked sentinel here
+#gchar   *g_build_filename     (const gchar *first_element,
+#         ^
+#  109|       GList *words_list = NULL;
+#  110|       GList *file_list = NULL;
+#  111|->     file_list = g_list_prepend(file_list, g_build_filename(CONF_DIR ? CONF_DIR : "", filename, NULL));
+#  112|       file_list = g_list_prepend(file_list, get_user_config_file_path(filename, /*don't append suffix*/NULL));
+#  113|       GList *file_list_cur = file_list;
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/lib/xfuncs.c:148:5: warning: implicit declaration of function 'unsetenv' is invalid in C99
+#    unsetenv(name);
+#    ^
+#  146|       memcpy(name, var_val, len);
+#  147|       name[len] = '\0';
+#  148|->     unsetenv(name);
+#  149|   }
+#  150|   
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/plugins/reporter-bugzilla.c:134:82: warning: missing sentinel in function call
+#    b->b_bugzilla_xmlrpc = g_build_filename(b->b_bugzilla_url, "xmlrpc.cgi", NULL);
+#                                                                                 ^
+/usr/include/glib-2.0/glib/gfileutils.h:173:10: note: function has been explicitly marked sentinel here
+#gchar   *g_build_filename     (const gchar *first_element,
+#         ^
+#  132|               *last_slash = '\0';
+#  133|       }
+#  134|->     b->b_bugzilla_xmlrpc = g_build_filename(b->b_bugzilla_url, "xmlrpc.cgi", NULL);
+#  135|   
+#  136|       environ = getenv("Bugzilla_Product");
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/plugins/reporter-mailx.c:161:26: warning: incompatible integer to pointer conversion initializing 'char *' with an expression of type 'int'
+#        g_autofree char *resolved_path = realpath(dump_dir_name, NULL);
+#                         ^               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  159|       {
+#  160|           g_ptr_array_add(args, (gpointer)"-a");
+#  161|->         g_autofree char *resolved_path = realpath(dump_dir_name, NULL);
+#  162|           g_autofree char *full_name = g_build_filename(resolved_path ? resolved_path : "", a->data, NULL);
+#  163|           g_ptr_array_add(args, (gpointer)full_name);
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/plugins/reporter-mailx.c:161:42: warning: implicit declaration of function 'realpath' is invalid in C99
+#        g_autofree char *resolved_path = realpath(dump_dir_name, NULL);
+#                                         ^
+#  159|       {
+#  160|           g_ptr_array_add(args, (gpointer)"-a");
+#  161|->         g_autofree char *resolved_path = realpath(dump_dir_name, NULL);
+#  162|           g_autofree char *full_name = g_build_filename(resolved_path ? resolved_path : "", a->data, NULL);
+#  163|           g_ptr_array_add(args, (gpointer)full_name);
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/plugins/reporter-mailx.c:162:104: warning: missing sentinel in function call
+#        g_autofree char *full_name = g_build_filename(resolved_path ? resolved_path : "", a->data, NULL);
+#                                                                                                       ^
+/usr/include/glib-2.0/glib/gfileutils.h:173:10: note: function has been explicitly marked sentinel here
+#gchar   *g_build_filename     (const gchar *first_element,
+#         ^
+#  160|           g_ptr_array_add(args, (gpointer)"-a");
+#  161|           g_autofree char *resolved_path = realpath(dump_dir_name, NULL);
+#  162|->         g_autofree char *full_name = g_build_filename(resolved_path ? resolved_path : "", a->data, NULL);
+#  163|           g_ptr_array_add(args, (gpointer)full_name);
+#  164|       }
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/plugins/reporter-mantisbt.c:149:100: warning: missing sentinel in function call
+#    m->m_mantisbt_soap_url = g_build_filename(m->m_mantisbt_url, "api/soap/mantisconnect.php", NULL);
+#                                                                                                   ^
+/usr/include/glib-2.0/glib/gfileutils.h:173:10: note: function has been explicitly marked sentinel here
+#gchar   *g_build_filename     (const gchar *first_element,
+#         ^
+#  147|               *last_slash = '\0';
+#  148|       }
+#  149|->     m->m_mantisbt_soap_url = g_build_filename(m->m_mantisbt_url, "api/soap/mantisconnect.php", NULL);
+#  150|   
+#  151|       environ = getenv("Mantisbt_Project");
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/plugins/reporter-mantisbt.c:410:19: warning: incompatible integer to pointer conversion initializing 'char *' with an expression of type 'int'
+#            char *filename = basename(path);
+#                  ^          ~~~~~~~~~~~~~~
+#  408|           {
+#  409|               const char *path = *argv++;
+#  410|->             char *filename = basename(path);
+#  411|               log_warning(_("Attaching file '%s' to issue %s"), filename, ticket_no);
+#  412|               mantisbt_attach_file(&mbt_settings, ticket_no, filename, path);
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/plugins/reporter-mantisbt.c:410:30: warning: implicit declaration of function 'basename' is invalid in C99
+#            char *filename = basename(path);
+#                             ^
+#  408|           {
+#  409|               const char *path = *argv++;
+#  410|->             char *filename = basename(path);
+#  411|               log_warning(_("Attaching file '%s' to issue %s"), filename, ticket_no);
+#  412|               mantisbt_attach_file(&mbt_settings, ticket_no, filename, path);
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/plugins/reporter-print.c:72:71: warning: missing sentinel in function call
+#            output_file = g_build_filename(HOME, output_file + 2, NULL);
+#                                                                      ^
+/usr/include/glib-2.0/glib/gfileutils.h:173:10: note: function has been explicitly marked sentinel here
+#gchar   *g_build_filename     (const gchar *first_element,
+#         ^
+#   70|            && (HOME = getenv("HOME")) != NULL
+#   71|           ) {
+#   72|->             output_file = g_build_filename(HOME, output_file + 2, NULL);
+#   73|           }
+#   74|           else
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/plugins/reporter-systemd-journal.c:310:22: warning: incompatible integer to pointer conversion initializing 'char *' with an expression of type 'int'
+#    g_autofree char *abspath = realpath(dump_dir_name, NULL);
+#                     ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  308|   
+#  309|       /* add problem dir path into problem data */
+#  310|->     g_autofree char *abspath = realpath(dump_dir_name, NULL);
+#  311|       if (abspath)
+#  312|           problem_data_add_text_noteditable(problem_data, DUMPDIR_PATH, abspath);
+
+Error: COMPILER_WARNING:
+libreport-2.15.2/src/plugins/reporter-systemd-journal.c:310:32: warning: implicit declaration of function 'realpath' is invalid in C99
+#    g_autofree char *abspath = realpath(dump_dir_name, NULL);
+#                               ^
+#  308|   
+#  309|       /* add problem dir path into problem data */
+#  310|->     g_autofree char *abspath = realpath(dump_dir_name, NULL);
+#  311|       if (abspath)
+#  312|           problem_data_add_text_noteditable(problem_data, DUMPDIR_PATH, abspath);

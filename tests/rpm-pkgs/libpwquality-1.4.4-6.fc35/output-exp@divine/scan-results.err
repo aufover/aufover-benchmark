@@ -1,0 +1,9 @@
+Error: COMPILER_WARNING:
+libpwquality-1.4.4/src/pam_pwquality.c:115:24: warning: implicit declaration of function 'fgetpwent_r' is invalid in C99
+#                errn = fgetpwent_r(fp, &pw, buf, sizeof (buf), &pwp);
+#                       ^
+#  113|   
+#  114|           for (;;) {
+#  115|->                 errn = fgetpwent_r(fp, &pw, buf, sizeof (buf), &pwp);
+#  116|                   if (errn == ERANGE) {
+#  117|                           pam_syslog(pamh, LOG_WARNING, "%s contains very long lines; corrupted?",

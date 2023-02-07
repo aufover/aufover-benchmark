@@ -1,0 +1,39 @@
+Error: COMPILER_WARNING:
+libxslt-1.1.34/libexslt/date.c:775:10: warning: implicit declaration of function 'gmtime_r' is invalid in C99
+#            if (gmtime_r(&secs, &localTm) != NULL)
+#                ^
+#  773|   	if (errno == 0) {
+#  774|   #if HAVE_GMTIME_R
+#  775|-> 	    if (gmtime_r(&secs, &localTm) != NULL)
+#  776|   	        override = 1;
+#  777|   #else
+
+Error: COMPILER_WARNING:
+libxslt-1.1.34/libexslt/date.c:793:2: warning: implicit declaration of function 'localtime_r' is invalid in C99
+#        localtime_r(&secs, &localTm);
+#        ^
+#  791|   
+#  792|   #if HAVE_LOCALTIME_R
+#  793|-> 	localtime_r(&secs, &localTm);
+#  794|   #else
+#  795|   	localTm = *localtime(&secs);
+
+Error: COMPILER_WARNING:
+libxslt-1.1.34/libexslt/date.c:812:5: warning: implicit declaration of function 'gmtime_r' is invalid in C99
+#    gmtime_r(&secs, &gmTm);
+#    ^
+#  810|       /* determine the time zone offset from local to gm time */
+#  811|   #if HAVE_GMTIME_R
+#  812|->     gmtime_r(&secs, &gmTm);
+#  813|   #else
+#  814|       tb = gmtime(&secs);
+
+Error: COMPILER_WARNING:
+libxslt-1.1.34/libxslt/xsltlocale.c:373:15: warning: implicit declaration of function 'strxfrm_l' is invalid in C99
+#    xstrlen = strxfrm_l(NULL, (const char *)string, 0, locale) + 1;
+#              ^
+#  371|   
+#  372|   #ifdef XSLT_LOCALE_POSIX
+#  373|->     xstrlen = strxfrm_l(NULL, (const char *)string, 0, locale) + 1;
+#  374|       xstr = (xsltLocaleChar *) xmlMalloc(xstrlen);
+#  375|       if (xstr == NULL) {

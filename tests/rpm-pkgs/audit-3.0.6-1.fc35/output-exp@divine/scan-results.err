@@ -1,0 +1,612 @@
+Error: COMPILER_WARNING:
+audit-3.0.6/audisp/audispd-pconfig.c:305:6: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#        ptr = strtok_r(buf, " ", &saved);
+#            ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  303|   	nv->value = NULL;
+#  304|   	nv->option = NULL;
+#  305|-> 	ptr = strtok_r(buf, " ", &saved);
+#  306|   	if (ptr == NULL)
+#  307|   		return 0; /* If there's nothing, go to next line */
+
+Error: COMPILER_WARNING:
+audit-3.0.6/audisp/audispd-pconfig.c:305:8: warning: implicit declaration of function 'strtok_r' is invalid in C99
+#        ptr = strtok_r(buf, " ", &saved);
+#              ^
+#  303|   	nv->value = NULL;
+#  304|   	nv->option = NULL;
+#  305|-> 	ptr = strtok_r(buf, " ", &saved);
+#  306|   	if (ptr == NULL)
+#  307|   		return 0; /* If there's nothing, go to next line */
+
+Error: COMPILER_WARNING:
+audit-3.0.6/audisp/audispd-pconfig.c:313:6: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#        ptr = strtok_r(NULL, " ", &saved);
+#            ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  311|   
+#  312|   	/* Check for a '=' */
+#  313|-> 	ptr = strtok_r(NULL, " ", &saved);
+#  314|   	if (ptr == NULL)
+#  315|   		return 1;
+
+Error: COMPILER_WARNING:
+audit-3.0.6/audisp/audispd-pconfig.c:320:6: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#        ptr = strtok_r(NULL, " ", &saved);
+#            ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  318|   
+#  319|   	/* get the value */
+#  320|-> 	ptr = strtok_r(NULL, " ", &saved);
+#  321|   	if (ptr == NULL)
+#  322|   		return 1;
+
+Error: COMPILER_WARNING:
+audit-3.0.6/audisp/audispd-pconfig.c:326:6: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#        ptr = strtok_r(NULL, " ", &saved);
+#            ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  324|   
+#  325|   	/* See if there's an option */
+#  326|-> 	ptr = strtok_r(NULL, " ", &saved);
+#  327|   	if (ptr) {
+#  328|   		nv->option = ptr;
+
+Error: COMPILER_WARNING:
+audit-3.0.6/audisp/audispd-pconfig.c:331:7: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#                ptr = strtok_r(NULL, " ", &saved);
+#                    ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  329|   
+#  330|   		/* Make sure there's nothing else */
+#  331|-> 		ptr = strtok_r(NULL, " ", &saved);
+#  332|   		if (ptr)
+#  333|   			return 1;
+
+Error: COMPILER_WARNING:
+audit-3.0.6/audisp/audispd.c:358:2: warning: implicit declaration of function 'pthread_sigmask' is invalid in C99
+#        pthread_sigmask(SIG_SETMASK, &sigs, NULL);
+#        ^
+#  356|   	sigaddset(&sigs, SIGCHLD);
+#  357|   	sigaddset(&sigs, SIGCONT);
+#  358|-> 	pthread_sigmask(SIG_SETMASK, &sigs, NULL);
+#  359|   
+#  360|   	/* Start event loop */
+
+Error: COMPILER_WARNING:
+audit-3.0.6/audisp/audispd.c:430:2: warning: implicit declaration of function 'execve' is invalid in C99
+#        execve(conf->path, argv, NULL);
+#        ^
+#  428|   		argv[i] = conf->args[i];
+#  429|   	argv[i] = NULL;
+#  430|-> 	execve(conf->path, argv, NULL);
+#  431|   	exit(1);		/* Failed to exec */
+#  432|   }
+
+Error: COMPILER_WARNING:
+audit-3.0.6/audisp/plugins/statsd/audisp-statsd.c:316:15: warning: taking address of packed member '' of class or structure 'sigaction' may result in an unaligned pointer value
+#        sigemptyset(&sa.sa_mask);
+#                     ^~~~~~~~~~
+#  314|   	// Setup signal handlers
+#  315|   	sa.sa_flags = 0;
+#  316|-> 	sigemptyset(&sa.sa_mask);
+#  317|   
+#  318|   	/* Set handler for the ones we care about */
+
+Error: COMPILER_WARNING:
+audit-3.0.6/audisp/plugins/statsd/audisp-statsd.c:353:13: warning: implicit declaration of function 'timerfd_create' is invalid in C99
+#        timer_fd = timerfd_create (CLOCK_MONOTONIC, 0);
+#                   ^
+#  351|   
+#  352|   	// Initialize interval timer
+#  353|-> 	timer_fd = timerfd_create (CLOCK_MONOTONIC, 0);
+#  354|   	pfd[1].fd = timer_fd;
+#  355|   	pfd[1].events = POLLIN;
+
+Error: COMPILER_WARNING:
+audit-3.0.6/audisp/plugins/statsd/audisp-statsd.c:360:2: warning: implicit declaration of function 'timerfd_settime' is invalid in C99
+#        timerfd_settime(timer_fd, 0, &itval, NULL);
+#        ^
+#  358|   	itval.it_value.tv_sec = itval.it_interval.tv_sec;
+#  359|   	itval.it_value.tv_nsec = 0;
+#  360|-> 	timerfd_settime(timer_fd, 0, &itval, NULL);
+#  361|   
+#  362|   	// Start event loop
+
+Error: COMPILER_WARNING:
+audit-3.0.6/audisp/plugins/statsd/audisp-statsd.c:364:8: warning: implicit declaration of function 'poll' is invalid in C99
+#                rc = poll(pfd, 2, -1);
+#                     ^
+#  362|   	// Start event loop
+#  363|   	while (!stop) {
+#  364|-> 		rc = poll(pfd, 2, -1);
+#  365|   		if (rc < 0) {
+#  366|   			if (errno == EINTR)
+
+Error: COMPILER_WARNING:
+audit-3.0.6/audisp/queue.c:89:2: warning: implicit declaration of function 'execve' is invalid in C99
+#        execve(init_pgm, argv, NULL);
+#        ^
+#   87|   	argv[1] = (char *)level;
+#   88|   	argv[2] = NULL;
+#   89|-> 	execve(init_pgm, argv, NULL);
+#   90|   	syslog(LOG_ALERT, "Audispd failed to exec %s", init_pgm);
+#   91|   	exit(1);
+
+Error: COMPILER_WARNING:
+audit-3.0.6/auparse/auparse.c:71:6: warning: implicit declaration of function 'secure_getenv' is invalid in C99
+#        if (secure_getenv("AUPARSE_DEBUG"))
+#            ^
+#   69|   
+#   70|   	/* Load config so we know where logs are */
+#   71|-> 	if (secure_getenv("AUPARSE_DEBUG"))
+#   72|   		set_aumessage_mode(au, MSG_STDERR, DBG_NO);
+#   73|   	aup_load_config(au, &config, TEST_SEARCH);
+
+Error: COMPILER_WARNING:
+audit-3.0.6/auparse/auparse.c:419:6: warning: implicit declaration of function 'secure_getenv' is invalid in C99
+#        if (secure_getenv("AUPARSE_DEBUG"))
+#            ^
+#  417|   
+#  418|   	/* Load config so we know where logs are */
+#  419|-> 	if (secure_getenv("AUPARSE_DEBUG"))
+#  420|   		set_aumessage_mode(au, MSG_STDERR, DBG_NO);
+#  421|   	aup_load_config(au, &config, TEST_SEARCH);
+
+Error: COMPILER_WARNING:
+audit-3.0.6/auparse/ellist.c:212:11: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#                                        ptr2 = strtok_r(key, key_sep, &saved2);
+#                                             ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  210|   						continue;
+#  211|   					}
+#  212|-> 					ptr2 = strtok_r(key, key_sep, &saved2);
+#  213|   					while (ptr2) {
+#  214|   						n.name = strdup("key");
+
+Error: COMPILER_WARNING:
+audit-3.0.6/auparse/ellist.c:212:13: warning: implicit declaration of function 'strtok_r' is invalid in C99
+#                                        ptr2 = strtok_r(key, key_sep, &saved2);
+#                                               ^
+#  210|   						continue;
+#  211|   					}
+#  212|-> 					ptr2 = strtok_r(key, key_sep, &saved2);
+#  213|   					while (ptr2) {
+#  214|   						n.name = strdup("key");
+
+Error: COMPILER_WARNING:
+audit-3.0.6/auparse/ellist.c:220:12: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#                                                ptr2 = strtok_r(NULL,
+#                                                     ^ ~~~~~~~~~~~~~~
+#  218|   							free(n.val);
+#  219|   						}
+#  220|-> 						ptr2 = strtok_r(NULL,
+#  221|   							key_sep, &saved2);
+#  222|   					}
+
+Error: COMPILER_WARNING:
+audit-3.0.6/auparse/interpret.c:3009:10: warning: initializing 'nvlist *' with an expression of type 'const nvlist *' discards qualifiers
+#        nvlist *nv = &r->nv;
+#                ^    ~~~~~~
+# 3007|   const char *do_interpret(const rnode *r, auparse_esc_t escape_mode)
+# 3008|   {
+# 3009|-> 	nvlist *nv = &r->nv;
+# 3010|   	int type;
+# 3011|   	idata id;
+
+Error: COMPILER_WARNING:
+audit-3.0.6/bindings/python/auparse_python.c:294:14: warning: 'PyEval_CallObjectWithKeywords' is deprecated
+#    result = PyEval_CallObject(cb->func, arglist);
+#             ^
+/usr/include/python3.10/ceval.h:24:5: note: expanded from macro 'PyEval_CallObject'
+#    PyEval_CallObjectWithKeywords(callable, arg, (PyObject *)NULL)
+#    ^
+/usr/include/python3.10/ceval.h:17:1: note: 'PyEval_CallObjectWithKeywords' has been explicitly marked deprecated here
+#Py_DEPRECATED(3.9) PyAPI_FUNC(PyObject *) PyEval_CallObjectWithKeywords(
+#^
+/usr/include/python3.10/pyport.h:513:54: note: expanded from macro 'Py_DEPRECATED'
+##define Py_DEPRECATED(VERSION_UNUSED) __attribute__((__deprecated__))
+#                                                     ^
+#  292|   
+#  293|       arglist = Py_BuildValue("OiO", cb->py_AuParser, cb_event_type, cb->user_data);
+#  294|->     result = PyEval_CallObject(cb->func, arglist);
+#  295|       Py_DECREF(arglist);
+#  296|       Py_XDECREF(result);
+
+Error: COMPILER_WARNING:
+audit-3.0.6/bindings/python/auparse_python.c:375:31: warning: assigning to 'char *' from 'const char *' discards qualifiers
+#                if ((files[i] = PYSTR_ASSTRING(item)) == NULL) {
+#                              ^ ~~~~~~~~~~~~~~~~~~~~
+#  373|               for (i = 0; i < n; i++) {
+#  374|                   item = PySequence_GetItem(source, i);
+#  375|->                 if ((files[i] = PYSTR_ASSTRING(item)) == NULL) {
+#  376|                       PyErr_SetString(PyExc_ValueError, "members of source sequence must be a string when source_type is AUSOURCE_FILE_ARRAY");
+#  377|                       Py_DECREF(item);
+
+Error: COMPILER_WARNING:
+audit-3.0.6/bindings/python/auparse_python.c:418:33: warning: assigning to 'char *' from 'const char *' discards qualifiers
+#                if ((buffers[i] = PYSTR_ASSTRING(item)) == NULL) {
+#                                ^ ~~~~~~~~~~~~~~~~~~~~
+#  416|               for (i = 0; i < n; i++) {
+#  417|                   item = PySequence_GetItem(source, i);
+#  418|->                 if ((buffers[i] = PYSTR_ASSTRING(item)) == NULL) {
+#  419|                       PyErr_SetString(PyExc_ValueError, "members of source sequence must be a string when source_type is AUSOURCE_BUFFER_ARRAY");
+#  420|                       Py_DECREF(item);
+
+Error: COMPILER_WARNING:
+audit-3.0.6/bindings/swig/python3/audit_wrap.c:4698:13: warning: address of array 'arg1->buf' will always evaluate to 'true'
+#  if (arg1->buf) free((char*)arg1->buf);
+#  ~~  ~~~~~~^~~
+# 4696|     }
+# 4697|     arg2 = (char *)(buf2);
+# 4698|->   if (arg1->buf) free((char*)arg1->buf);
+# 4699|     if (arg2) {
+# 4700|       size_t size = strlen((const char *)(arg2)) + 1;
+
+Error: COMPILER_WARNING (CWE-681):
+audit-3.0.6/lib/gen_tables.c:89:22: warning[-Woverflow]: overflow in conversion from 'long long unsigned int' to 'int' changes value from '4294967296' to '0'
+#   89 | #define _S(VAL, S) { (VAL), (S), 0, 0 },
+#      |                      ^
+audit-3.0.6/auparse/clone-flagtab.h:47:1: note: in expansion of macro '_S'
+#   47 | _S(0x100000000ULL,      "CLONE_CLEAR_SIGHAND")
+#      | ^~
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#   87|   /* The mapping to store. */
+#   88|   static struct value values[] = {
+#   89|-> #define _S(VAL, S) { (VAL), (S), 0, 0 },
+#   90|   #include TABLE_H
+#   91|   #undef _S
+
+Error: COMPILER_WARNING:
+audit-3.0.6/lib/libaudit.c:380:10: warning: implicit declaration of function 'poll' is invalid in C99
+#                                rc = poll(pfd, 1, 100);
+#                                     ^
+#  378|   	        for (i = 0; i < timeout; i++) {
+#  379|   			do {
+#  380|-> 				rc = poll(pfd, 1, 100);
+#  381|   			} while (rc < 0 && errno == EINTR);
+#  382|   
+
+Error: COMPILER_WARNING:
+audit-3.0.6/lib/libaudit.c:462:8: warning: implicit declaration of function 'poll' is invalid in C99
+#                rc = poll(pfd, 1, 100); /* .1 second */
+#                     ^
+#  460|   	pfd[0].events = POLLIN;
+#  461|   	do {
+#  462|-> 		rc = poll(pfd, 1, 100);	/* .1 second */
+#  463|   	} while (rc < 0 && errno == EINTR);
+#  464|   
+
+Error: COMPILER_WARNING:
+audit-3.0.6/lib/libaudit.c:638:10: warning: implicit declaration of function 'poll' is invalid in C99
+#                                rc = poll(pfd, 1, 100);
+#                                     ^
+#  636|   	        for (i = 0; i < timeout; i++) {
+#  637|   			do {
+#  638|-> 				rc = poll(pfd, 1, 100);
+#  639|   			} while (rc < 0 && errno == EINTR);
+#  640|   
+
+Error: COMPILER_WARNING:
+audit-3.0.6/lib/netlink.c:281:8: warning: implicit declaration of function 'poll' is invalid in C99
+#                rc = poll(pfd, 1, 500); /* .5 second */
+#                     ^
+#  279|   	pfd[0].events = POLLIN;
+#  280|   	do {
+#  281|-> 		rc = poll(pfd, 1, 500); /* .5 second */
+#  282|   	} while (rc < 0 && errno == EINTR);
+#  283|   
+
+Error: COMPILER_WARNING:
+audit-3.0.6/src/ausearch-options.c:291:7: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#                ptr = strtok_r(tmp, ",", &saved);
+#                    ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  289|   		if (tmp == NULL)
+#  290|   			return -1;
+#  291|-> 		ptr = strtok_r(tmp, ",", &saved);
+#  292|   		while (ptr) {
+#  293|   			retval = convert_str_to_msg(ptr);
+
+Error: COMPILER_WARNING:
+audit-3.0.6/src/ausearch-options.c:291:9: warning: implicit declaration of function 'strtok_r' is invalid in C99
+#                ptr = strtok_r(tmp, ",", &saved);
+#                      ^
+#  289|   		if (tmp == NULL)
+#  290|   			return -1;
+#  291|-> 		ptr = strtok_r(tmp, ",", &saved);
+#  292|   		while (ptr) {
+#  293|   			retval = convert_str_to_msg(ptr);
+
+Error: COMPILER_WARNING:
+audit-3.0.6/src/ausearch-options.c:296:8: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#                        ptr = strtok_r(NULL, ",", &saved);
+#                            ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  294|   			if (retval != 0)
+#  295|   				break;
+#  296|-> 			ptr = strtok_r(NULL, ",", &saved);
+#  297|   		}
+#  298|   		free(tmp);
+
+Error: COMPILER_WARNING:
+audit-3.0.6/src/ausearch-parse.c:640:12: warning: incompatible integer to pointer conversion initializing 'char *' with an expression of type 'int'
+#                                        char *kptr = strtok_r(keyptr,
+#                                              ^      ~~~~~~~~~~~~~~~~
+#  638|   					if (keyptr == NULL)
+#  639|   						return 45;
+#  640|-> 					char *kptr = strtok_r(keyptr,
+#  641|   							key_sep, &saved);
+#  642|   					while (kptr) {
+
+Error: COMPILER_WARNING:
+audit-3.0.6/src/ausearch-parse.c:640:19: warning: implicit declaration of function 'strtok_r' is invalid in C99
+#                                        char *kptr = strtok_r(keyptr,
+#                                                     ^
+#  638|   					if (keyptr == NULL)
+#  639|   						return 45;
+#  640|-> 					char *kptr = strtok_r(keyptr,
+#  641|   							key_sep, &saved);
+#  642|   					while (kptr) {
+
+Error: COMPILER_WARNING:
+audit-3.0.6/src/ausearch-parse.c:649:12: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#                                                kptr = strtok_r(NULL,
+#                                                     ^ ~~~~~~~~~~~~~~
+#  647|   						sn.hits = 1;
+#  648|   						slist_append(s->key, &sn);
+#  649|-> 						kptr = strtok_r(NULL,
+#  650|   							key_sep, &saved);
+#  651|   					}
+
+Error: COMPILER_WARNING:
+audit-3.0.6/src/ausearch-parse.c:2399:12: warning: incompatible integer to pointer conversion initializing 'char *' with an expression of type 'int'
+#                                        char *kptr = strtok_r(keyptr,
+#                                              ^      ~~~~~~~~~~~~~~~~
+# 2397|   					if (keyptr == NULL)
+# 2398|   						return 8;
+# 2399|-> 					char *kptr = strtok_r(keyptr,
+# 2400|   						key_sep, &saved);
+# 2401|   					while (kptr) {
+
+Error: COMPILER_WARNING:
+audit-3.0.6/src/ausearch-parse.c:2399:19: warning: implicit declaration of function 'strtok_r' is invalid in C99
+#                                        char *kptr = strtok_r(keyptr,
+#                                                     ^
+# 2397|   					if (keyptr == NULL)
+# 2398|   						return 8;
+# 2399|-> 					char *kptr = strtok_r(keyptr,
+# 2400|   						key_sep, &saved);
+# 2401|   					while (kptr) {
+
+Error: COMPILER_WARNING:
+audit-3.0.6/src/ausearch-parse.c:2408:12: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#                                                kptr = strtok_r(NULL,
+#                                                     ^ ~~~~~~~~~~~~~~
+# 2406|   						sn.hits = 1;
+# 2407|   						slist_append(s->key, &sn);
+# 2408|-> 						kptr = strtok_r(NULL,
+# 2409|   							key_sep, &saved);
+# 2410|   					}
+
+Error: COMPILER_WARNING:
+audit-3.0.6/src/ausearch-time.c:288:8: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#                        ret = strptime(da, "%x", &d);
+#                            ^ ~~~~~~~~~~~~~~~~~~~~~~
+#  286|   	else {
+#  287|   		if (lookup_and_set_time(da, &d) < 0) {
+#  288|-> 			ret = strptime(da, "%x", &d);
+#  289|   			if (ret == NULL) {
+#  290|   				fprintf(stderr,
+
+Error: COMPILER_WARNING:
+audit-3.0.6/src/ausearch-time.c:288:10: warning: implicit declaration of function 'strptime' is invalid in C99
+#                        ret = strptime(da, "%x", &d);
+#                              ^
+#  286|   	else {
+#  287|   		if (lookup_and_set_time(da, &d) < 0) {
+#  288|-> 			ret = strptime(da, "%x", &d);
+#  289|   			if (ret == NULL) {
+#  290|   				fprintf(stderr,
+
+Error: COMPILER_WARNING:
+audit-3.0.6/src/ausearch-time.c:321:7: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#                ret = strptime(tmp_t, "%X", &d);
+#                    ^ ~~~~~~~~~~~~~~~~~~~~~~~~~
+#  319|   			strncat(tmp_t, ti, sizeof(tmp_t)-1);
+#  320|   		}
+#  321|-> 		ret = strptime(tmp_t, "%X", &d);
+#  322|   		if (ret == NULL) {
+#  323|   			fprintf(stderr,
+
+Error: COMPILER_WARNING:
+audit-3.0.6/src/ausearch-time.c:321:9: warning: implicit declaration of function 'strptime' is invalid in C99
+#                ret = strptime(tmp_t, "%X", &d);
+#                      ^
+#  319|   			strncat(tmp_t, ti, sizeof(tmp_t)-1);
+#  320|   		}
+#  321|-> 		ret = strptime(tmp_t, "%X", &d);
+#  322|   		if (ret == NULL) {
+#  323|   			fprintf(stderr,
+
+Error: COMPILER_WARNING:
+audit-3.0.6/src/ausearch-time.c:362:8: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#                        ret = strptime(da, "%x", &d);
+#                            ^ ~~~~~~~~~~~~~~~~~~~~~~
+#  360|   	else {
+#  361|   		if (lookup_and_set_time(da, &d) < 0) {
+#  362|-> 			ret = strptime(da, "%x", &d);
+#  363|   			if (ret == NULL) {
+#  364|   				fprintf(stderr,
+
+Error: COMPILER_WARNING:
+audit-3.0.6/src/ausearch-time.c:362:10: warning: implicit declaration of function 'strptime' is invalid in C99
+#                        ret = strptime(da, "%x", &d);
+#                              ^
+#  360|   	else {
+#  361|   		if (lookup_and_set_time(da, &d) < 0) {
+#  362|-> 			ret = strptime(da, "%x", &d);
+#  363|   			if (ret == NULL) {
+#  364|   				fprintf(stderr,
+
+Error: COMPILER_WARNING:
+audit-3.0.6/src/ausearch-time.c:401:7: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#                ret = strptime(tmp_t, "%X", &d);
+#                    ^ ~~~~~~~~~~~~~~~~~~~~~~~~~
+#  399|   			strncat(tmp_t, ti, sizeof(tmp_t)-1);
+#  400|   		}
+#  401|-> 		ret = strptime(tmp_t, "%X", &d);
+#  402|   		if (ret == NULL) {
+#  403|   			fprintf(stderr,
+
+Error: COMPILER_WARNING:
+audit-3.0.6/src/ausearch-time.c:401:9: warning: implicit declaration of function 'strptime' is invalid in C99
+#                ret = strptime(tmp_t, "%X", &d);
+#                      ^
+#  399|   			strncat(tmp_t, ti, sizeof(tmp_t)-1);
+#  400|   		}
+#  401|-> 		ret = strptime(tmp_t, "%X", &d);
+#  402|   		if (ret == NULL) {
+#  403|   			fprintf(stderr,
+
+Error: COMPILER_WARNING:
+audit-3.0.6/src/ausearch.c:524:6: warning: implicit declaration of function 'siginterrupt' is invalid in C99
+#            siginterrupt(SIGALRM, 1) == -1)
+#            ^
+#  522|   
+#  523|   	if (signal(SIGALRM, alarm_handler) == SIG_ERR ||
+#  524|-> 	    siginterrupt(SIGALRM, 1) == -1)
+#  525|   		return -1;
+#  526|   
+
+Error: COMPILER_WARNING:
+audit-3.0.6/src/autrace.c:225:4: warning: implicit declaration of function 'execvp' is invalid in C99
+#                        execvp(argv[cmd], &argv[cmd]);
+#                        ^
+#  223|   				/* blank */ ;
+#  224|   			close(fd[0]);
+#  225|-> 			execvp(argv[cmd], &argv[cmd]);
+#  226|   			fprintf(stderr, "Failed to exec %s\n", argv[cmd]);
+#  227|   			return 1;
+
+Error: COMPILER_WARNING:
+audit-3.0.6/src/autrace.c:239:6: warning: implicit declaration of function 'kill' is invalid in C99
+#                                        kill(pid,SIGTERM);
+#                                        ^
+#  237|   				snprintf(field, sizeof(field), "pid=%d", pid);
+#  238|   				if (insert_rule(audit_fd, field)) {
+#  239|-> 					kill(pid,SIGTERM);
+#  240|   					(void)delete_all_rules(audit_fd);
+#  241|   					exit(1);
+
+Error: COMPILER_WARNING:
+audit-3.0.6/src/autrace.c:245:6: warning: implicit declaration of function 'kill' is invalid in C99
+#                                        kill(pid,SIGTERM);
+#                                        ^
+#  243|   				snprintf(field, sizeof(field), "ppid=%d", pid);
+#  244|   				if (insert_rule(audit_fd, field)) {
+#  245|-> 					kill(pid,SIGTERM);
+#  246|   					(void)delete_all_rules(audit_fd);
+#  247|   					exit(1);
+
+Error: COMPILER_WARNING:
+audit-3.0.6/src/autrace.c:251:6: warning: implicit declaration of function 'kill' is invalid in C99
+#                                        kill(pid,SIGTERM);
+#                                        ^
+#  249|   				sleep(1);
+#  250|   				if (write(fd[1],"1", 1) != 1) {
+#  251|-> 					kill(pid,SIGTERM);
+#  252|   					(void)delete_all_rules(audit_fd);
+#  253|   					exit(1);
+
+Error: COMPILER_WARNING:
+audit-3.0.6/src/delete_all.c:49:2: warning: implicit declaration of function 'FD_ZERO' is invalid in C99
+#        FD_ZERO(&read_mask);
+#        ^
+#   47|   		return -1;
+#   48|   
+#   49|-> 	FD_ZERO(&read_mask);
+#   50|   	FD_SET(fd, &read_mask);
+#   51|   	list_create(&l);
+
+Error: COMPILER_WARNING:
+audit-3.0.6/src/delete_all.c:50:2: warning: implicit declaration of function 'FD_SET' is invalid in C99
+#        FD_SET(fd, &read_mask);
+#        ^
+#   48|   
+#   49|   	FD_ZERO(&read_mask);
+#   50|-> 	FD_SET(fd, &read_mask);
+#   51|   	list_create(&l);
+#   52|   
+
+Error: COMPILER_WARNING:
+audit-3.0.6/src/delete_all.c:59:9: warning: implicit declaration of function 'select' is invalid in C99
+#                        rc = select(fd+1, &read_mask, NULL, NULL, &t);
+#                             ^
+#   57|   		t.tv_usec = 100000; /* .1 second */
+#   58|   		do {
+#   59|-> 			rc = select(fd+1, &read_mask, NULL, NULL, &t);
+#   60|   		} while (rc < 0 && errno == EINTR);
+#   61|   		// We'll try to read just in case
+
+Error: COMPILER_WARNING:
+audit-3.0.6/src/libev/ev.c:2146:31: warning: 'extern' variable has an initializer
+#  EV_API_DECL struct ev_loop *ev_default_loop_ptr = 0; /* needs to be initialised to make it a definition despite extern */
+#                              ^
+# 2144|   
+# 2145|     static struct ev_loop default_loop_struct;
+# 2146|->   EV_API_DECL struct ev_loop *ev_default_loop_ptr = 0; /* needs to be initialised to make it a definition despite extern */
+# 2147|   
+# 2148|   #else
+
+Error: COMPILER_WARNING:
+audit-3.0.6/src/libev/ev.c:4634:22: warning: taking address of packed member '' of class or structure 'sigaction' may result in an unaligned pointer value
+#        sigfillset (&sa.sa_mask);
+#                     ^~~~~~~~~~
+# 4632|   
+# 4633|           sa.sa_handler = ev_sighandler;
+# 4634|->         sigfillset (&sa.sa_mask);
+# 4635|           sa.sa_flags = SA_RESTART; /* if restarting works we save one iteration */
+# 4636|           sigaction (w->signum, &sa, 0);
+
+Error: COMPILER_WARNING:
+audit-3.0.6/src/libev/ev.c:4640:27: warning: taking address of packed member '' of class or structure 'sigaction' may result in an unaligned pointer value
+#            sigemptyset (&sa.sa_mask);
+#                          ^~~~~~~~~~
+# 4638|           if (origflags & EVFLAG_NOSIGMASK)
+# 4639|             {
+# 4640|->             sigemptyset (&sa.sa_mask);
+# 4641|               sigaddset (&sa.sa_mask, w->signum);
+# 4642|               sigprocmask (SIG_UNBLOCK, &sa.sa_mask, 0);
+
+Error: COMPILER_WARNING:
+audit-3.0.6/src/libev/ev.c:4641:25: warning: taking address of packed member '' of class or structure 'sigaction' may result in an unaligned pointer value
+#            sigaddset (&sa.sa_mask, w->signum);
+#                        ^~~~~~~~~~
+# 4639|             {
+# 4640|               sigemptyset (&sa.sa_mask);
+# 4641|->             sigaddset (&sa.sa_mask, w->signum);
+# 4642|               sigprocmask (SIG_UNBLOCK, &sa.sa_mask, 0);
+# 4643|             }
+
+Error: COMPILER_WARNING:
+audit-3.0.6/src/libev/ev.c:4642:40: warning: taking address of packed member '' of class or structure 'sigaction' may result in an unaligned pointer value
+#            sigprocmask (SIG_UNBLOCK, &sa.sa_mask, 0);
+#                                       ^~~~~~~~~~
+# 4640|               sigemptyset (&sa.sa_mask);
+# 4641|               sigaddset (&sa.sa_mask, w->signum);
+# 4642|->             sigprocmask (SIG_UNBLOCK, &sa.sa_mask, 0);
+# 4643|             }
+# 4644|   #endif
+
+Error: COMPILER_WARNING:
+audit-3.0.6/tools/ausyscall/ausyscall.c:128:14: warning: implicit declaration of function 'strcasestr' is invalid in C99
+#                                if (n && strcasestr(n, name)) {
+#                                         ^
+#  126|   			for (i=0; i< LAST_SYSCALL; i++) {
+#  127|   				const char *n = audit_syscall_to_name(i, machine);
+#  128|-> 				if (n && strcasestr(n, name)) {
+#  129|   					found = 1;
+#  130|   					printf("%-18s %d\n", n, i);
+
+Error: COMPILER_WARNING:
+audit-3.0.6/tools/auvirt/auvirt.c:1426:3: warning: implicit declaration of function 'ctime_r' is invalid in C99
+#                ctime_r(&stime, start_buf);
+#                ^
+# 1424|   
+# 1425|   	if (stime)
+# 1426|-> 		ctime_r(&stime, start_buf);
+# 1427|   	else
+# 1428|   		strcpy(start_buf, "undef");

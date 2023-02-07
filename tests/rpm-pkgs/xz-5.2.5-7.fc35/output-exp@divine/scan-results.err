@@ -1,0 +1,134 @@
+Error: COMPILER_WARNING:
+xz-5.2.5/src/liblzma/common/block_util.c:13: included_from: Included from here.
+xz-5.2.5/src/liblzma/common/common.h:17: included_from: Included from here.
+xz-5.2.5/src/common/mythread.h:146:12: warning: implicit declaration of function 'pthread_sigmask' is invalid in C99
+#        int ret = pthread_sigmask(how, set, oset);
+#                  ^
+#  144|   	(void)oset;
+#  145|   #else
+#  146|-> 	int ret = pthread_sigmask(how, set, oset);
+#  147|   	assert(ret == 0);
+#  148|   	(void)ret;
+
+Error: COMPILER_WARNING:
+xz-5.2.5/src/common/mythread.h:146:12: warning: this function declaration is not a prototype
+#  144|   	(void)oset;
+#  145|   #else
+#  146|-> 	int ret = pthread_sigmask(how, set, oset);
+#  147|   	assert(ret == 0);
+#  148|   	(void)ret;
+
+Error: COMPILER_WARNING:
+xz-5.2.5/src/common/tuklib_mbstr_width.c:50:24: warning: implicit declaration of function 'wcwidth' is invalid in C99
+#                const int wc_width = wcwidth(wc);
+#                                     ^
+#   48|   		i += ret;
+#   49|   
+#   50|-> 		const int wc_width = wcwidth(wc);
+#   51|   		if (wc_width < 0)
+#   52|   			return (size_t)-1;
+
+Error: COMPILER_WARNING:
+xz-5.2.5/src/common/tuklib_mbstr_width.c:50:24: warning: this function declaration is not a prototype
+#   48|   		i += ret;
+#   49|   
+#   50|-> 		const int wc_width = wcwidth(wc);
+#   51|   		if (wc_width < 0)
+#   52|   			return (size_t)-1;
+
+Error: COMPILER_WARNING:
+xz-5.2.5/src/liblzma/lzma/lzma_encoder.c:16: included_from: Included from here.
+xz-5.2.5/src/liblzma/lzma/fastpos.h:132:11: warning: comparison of integers of different signs: 'uint32_t' (aka 'unsigned int') and 'int'
+#        if (dist < fastpos_limit(FULL_DISTANCES_BITS - 1, 1))
+#            ~~~~ ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  130|   		return fastpos_result(dist, FULL_DISTANCES_BITS - 1, 0);
+#  131|   
+#  132|-> 	if (dist < fastpos_limit(FULL_DISTANCES_BITS - 1, 1))
+#  133|   		return fastpos_result(dist, FULL_DISTANCES_BITS - 1, 1);
+#  134|   
+
+Error: COMPILER_WARNING:
+xz-5.2.5/src/xz/file_io.c:257:19: warning: implicit declaration of function 'poll' is invalid in C99
+#                const int ret = poll(pfd, 2, timeout);
+#                                ^
+#  255|   
+#  256|   	while (true) {
+#  257|-> 		const int ret = poll(pfd, 2, timeout);
+#  258|   
+#  259|   		if (user_abort)
+
+Error: COMPILER_WARNING:
+xz-5.2.5/src/xz/file_io.c:257:19: warning: this function declaration is not a prototype
+#  255|   
+#  256|   	while (true) {
+#  257|-> 		const int ret = poll(pfd, 2, timeout);
+#  258|   
+#  259|   		if (user_abort)
+
+Error: COMPILER_WARNING:
+xz-5.2.5/src/xz/file_io.c:530:9: warning: implicit declaration of function 'posix_fadvise' is invalid in C99
+#                (void)posix_fadvise(STDIN_FILENO, 0, 0,
+#                      ^
+#  528|   #ifdef HAVE_POSIX_FADVISE
+#  529|   		// It will fail if stdin is a pipe and that's fine.
+#  530|-> 		(void)posix_fadvise(STDIN_FILENO, 0, 0,
+#  531|   				opt_mode == MODE_LIST
+#  532|   					? POSIX_FADV_RANDOM
+
+Error: COMPILER_WARNING:
+xz-5.2.5/src/xz/file_io.c:530:9: warning: this function declaration is not a prototype
+#  528|   #ifdef HAVE_POSIX_FADVISE
+#  529|   		// It will fail if stdin is a pipe and that's fine.
+#  530|-> 		(void)posix_fadvise(STDIN_FILENO, 0, 0,
+#  531|   				opt_mode == MODE_LIST
+#  532|   					? POSIX_FADV_RANDOM
+
+Error: COMPILER_WARNING:
+xz-5.2.5/src/xz/file_io.c:724:8: warning: implicit declaration of function 'posix_fadvise' is invalid in C99
+#        (void)posix_fadvise(pair->src_fd, 0, 0,
+#              ^
+#  722|   #ifdef HAVE_POSIX_FADVISE
+#  723|   	// It will fail with some special files like FIFOs but that is fine.
+#  724|-> 	(void)posix_fadvise(pair->src_fd, 0, 0,
+#  725|   			opt_mode == MODE_LIST
+#  726|   				? POSIX_FADV_RANDOM
+
+Error: COMPILER_WARNING:
+xz-5.2.5/src/xz/file_io.c:974:6: warning: comparison of integers of different signs: 'off_t' (aka 'long') and '__uint64_t' (aka 'unsigned long')
+#                                        != pair->dest_st.st_size) {
+#                                        ^  ~~~~~~~~~~~~~~~~~~~~~
+#  972|   
+#  973|   			} else if (lseek(STDOUT_FILENO, 0, SEEK_CUR)
+#  974|-> 					!= pair->dest_st.st_size) {
+#  975|   				// Writing won't start exactly at the end
+#  976|   				// of the file. We cannot use sparse output,
+
+Error: COMPILER_WARNING:
+xz-5.2.5/src/xz/message.c:147:15: warning: taking address of packed member '' of class or structure 'sigaction' may result in an unaligned pointer value
+#        sigemptyset(&sa.sa_mask);
+#                     ^~~~~~~~~~
+#  145|   	// progress info should be updated.
+#  146|   	struct sigaction sa;
+#  147|-> 	sigemptyset(&sa.sa_mask);
+#  148|   	sa.sa_flags = 0;
+#  149|   	sa.sa_handler = &progress_signal_handler;
+
+Error: COMPILER_WARNING:
+xz-5.2.5/src/xz/message.c:729:20: warning: format string is not a string literal
+#                vfprintf(stderr, fmt, ap);
+#                                 ^~~
+#  727|   		// a space before a colon.
+#  728|   		fprintf(stderr, _("%s: "), progname);
+#  729|-> 		vfprintf(stderr, fmt, ap);
+#  730|   		fputc('\n', stderr);
+#  731|   
+
+Error: COMPILER_WARNING:
+xz-5.2.5/src/xz/signals.c:166:15: warning: taking address of packed member '' of class or structure 'sigaction' may result in an unaligned pointer value
+#                sigfillset(&sa.sa_mask);
+#                            ^~~~~~~~~~
+#  164|   		struct sigaction sa;
+#  165|   		sa.sa_handler = SIG_DFL;
+#  166|-> 		sigfillset(&sa.sa_mask);
+#  167|   		sa.sa_flags = 0;
+#  168|   		sigaction(sig, &sa, NULL);

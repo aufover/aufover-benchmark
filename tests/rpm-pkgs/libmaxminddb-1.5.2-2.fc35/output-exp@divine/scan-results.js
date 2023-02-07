@@ -1,20 +1,18 @@
 {
-    "scan":
-    {
+    "scan": {
         "analyzer-version-divine": "4.4.2_4_gd47985e0b",
-        "analyzer-version-gcc": "11.2.1",
+        "analyzer-version-gcc": "11.3.1",
         "enabled-plugins": "divine, gcc",
         "exit-code": 1,
-        "host": "cov03.lab.eng.brq.redhat.com",
-        "known-false-positives": "/usr/share/csmock/known-false-positives.js",
+        "host": "dell-pe-fm120-1b.dell2.lab.eng.bos.redhat.com",
         "mock-config": "fedora-35-x86_64",
         "project-name": "libmaxminddb-1.5.2-2.fc35",
-        "store-results-to": "/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output",
-        "time-created": "2021-12-01 14:53:42",
-        "time-finished": "2021-12-01 14:55:16",
+        "store-results-to": "/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output",
+        "time-created": "2023-01-26 10:55:57",
+        "time-finished": "2023-01-26 11:01:13",
         "tool": "csmock",
-        "tool-args": "'/usr/bin/csmock' '-o' '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output' '-f' '/home/kdudka/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/libmaxminddb-1.5.2-2.fc35.src.rpm' '-r' 'fedora-35-x86_64' '-t' 'divine' '--divine-timeout=8' '--keep-going'",
-        "tool-version": "csmock-3.1.0.20211130.175245.g27e99a8.internal-1.el7"
+        "tool-args": "'/usr/bin/csmock' '-o' '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/divine/output' '-f' '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmaxminddb-1.5.2-2.fc35/libmaxminddb-1.5.2-2.fc35.src.rpm' '-r' 'fedora-35-x86_64' '-t' 'divine' '--divine-timeout=8' '--keep-going'",
+        "tool-version": "csmock-3.3.5-1.fc36"
     },
     "defects": ""
 }

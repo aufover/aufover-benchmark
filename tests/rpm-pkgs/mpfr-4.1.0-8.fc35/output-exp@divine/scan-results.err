@@ -1,0 +1,28 @@
+Error: COMPILER_WARNING:
+mpfr-4.1.0/src/dump.c:101:11: warning: implicit declaration of function '__gmp_fprintf' is invalid in C99
+#          gmp_fprintf (stream, "E%Zd", MPFR_ZEXP (x));
+#          ^
+/usr/include/gmp-x86_64.h:538:21: note: expanded from macro 'gmp_fprintf'
+##define gmp_fprintf __gmp_fprintf
+#                    ^
+#   99|           {
+#  100|   #ifndef MPFR_USE_MINI_GMP
+#  101|->           gmp_fprintf (stream, "E%Zd", MPFR_ZEXP (x));
+#  102|   #else /* mini-gmp has no gmp_fprintf */
+#  103|             fprintf (stream, "E");
+
+Error: COMPILER_WARNING:
+mpfr-4.1.0/src/vasprintf.c:1926:3: warning: result of comparison of constant 9223372036854775807 with expression of type 'int' is always false
+#  INCR_TOTAL (np->ip_trailing_digits);
+#  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+mpfr-4.1.0/src/vasprintf.c:1916:28: note: expanded from macro 'INCR_TOTAL'
+#    if (MPFR_UNLIKELY ((v) > MPFR_INTMAX_MAX))          \
+#        ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+mpfr-4.1.0/src/mpfr-impl.h:1485:48: note: expanded from macro 'MPFR_UNLIKELY'
+## define MPFR_UNLIKELY(x) (__builtin_expect(!!(x), 0))
+#                                               ^
+# 1924|     INCR_TOTAL (np->prefix_size);
+# 1925|     INCR_TOTAL (np->ip_size);
+# 1926|->   INCR_TOTAL (np->ip_trailing_digits);
+# 1927|     MPFR_ASSERTD (np->ip_size + np->ip_trailing_digits >= 1);
+# 1928|     if (np->thousands_sep)

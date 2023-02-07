@@ -1,0 +1,77 @@
+Error: COMPILER_WARNING:
+libp11-0.4.11/examples/auth.c:120:7: warning: implicit declaration of function 'tcgetattr' is invalid in C99
+#                if (tcgetattr(0, &old) != 0) {
+#                    ^
+#  118|   
+#  119|   		/* Turn echoing off and fail if we can't. */
+#  120|-> 		if (tcgetattr(0, &old) != 0) {
+#  121|   			rc = 4;
+#  122|   			goto failed;
+
+Error: COMPILER_WARNING:
+libp11-0.4.11/examples/auth.c:127:7: warning: implicit declaration of function 'tcsetattr' is invalid in C99
+#                if (tcsetattr(0, TCSAFLUSH, &new) != 0) {
+#                    ^
+#  125|   		new = old;
+#  126|   		new.c_lflag &= ~ECHO;
+#  127|-> 		if (tcsetattr(0, TCSAFLUSH, &new) != 0) {
+#  128|   			rc = 5;
+#  129|   			goto failed;
+
+Error: COMPILER_WARNING:
+libp11-0.4.11/examples/auth.c:252:7: warning: 'PKCS11_sign' is deprecated
+#        rc = PKCS11_sign(NID_sha1, random, RANDOM_SIZE,
+#             ^
+libp11-0.4.11/src/libp11.h:470:1: note: 'PKCS11_sign' has been explicitly marked deprecated here
+#P11_DEPRECATED_FUNC extern int PKCS11_sign(int type,
+#^
+libp11-0.4.11/src/libp11.h:432:2: note: expanded from macro 'P11_DEPRECATED_FUNC'
+#        P11_DEPRECATED("This function will be removed in libp11 0.5.0")
+#        ^
+libp11-0.4.11/src/libp11.h:423:45: note: expanded from macro 'P11_DEPRECATED'
+##define P11_DEPRECATED(msg) __attribute__ ((deprecated))
+#                                            ^
+#  250|   	}
+#  251|   
+#  252|-> 	rc = PKCS11_sign(NID_sha1, random, RANDOM_SIZE,
+#  253|   		signature, &siglen, authkey);
+#  254|   	if (rc != 1) {
+
+Error: COMPILER_WARNING:
+libp11-0.4.11/examples/decrypt.c:202:6: warning: implicit declaration of function 'tcgetattr' is invalid in C99
+#        if (tcgetattr(0, &old) != 0) {
+#            ^
+#  200|   #if !defined(_WIN32) || defined(__CYGWIN__)
+#  201|   	/* Turn echoing off and fail if we can't. */
+#  202|-> 	if (tcgetattr(0, &old) != 0) {
+#  203|   		rc = 13;
+#  204|   		goto failed;
+
+Error: COMPILER_WARNING:
+libp11-0.4.11/examples/decrypt.c:209:6: warning: implicit declaration of function 'tcsetattr' is invalid in C99
+#        if (tcsetattr(0, TCSAFLUSH, &new) != 0) {
+#            ^
+#  207|   	new = old;
+#  208|   	new.c_lflag &= ~ECHO;
+#  209|-> 	if (tcsetattr(0, TCSAFLUSH, &new) != 0) {
+#  210|   		rc = 14;
+#  211|   		goto failed;
+
+Error: COMPILER_WARNING:
+libp11-0.4.11/examples/decrypt.c:261:7: warning: 'PKCS11_private_decrypt' is deprecated
+#        rc = PKCS11_private_decrypt(len, encrypted,
+#             ^
+libp11-0.4.11/src/libp11.h:494:1: note: 'PKCS11_private_decrypt' has been explicitly marked deprecated here
+#P11_DEPRECATED_FUNC extern int PKCS11_private_decrypt(
+#^
+libp11-0.4.11/src/libp11.h:432:2: note: expanded from macro 'P11_DEPRECATED_FUNC'
+#        P11_DEPRECATED("This function will be removed in libp11 0.5.0")
+#        ^
+libp11-0.4.11/src/libp11.h:423:45: note: expanded from macro 'P11_DEPRECATED'
+##define P11_DEPRECATED(msg) __attribute__ ((deprecated))
+#                                            ^
+#  259|   	}
+#  260|   
+#  261|-> 	rc = PKCS11_private_decrypt(len, encrypted,
+#  262|   			decrypted, authkey, RSA_PKCS1_PADDING);
+#  263|   	if (rc != RANDOM_SIZE) {

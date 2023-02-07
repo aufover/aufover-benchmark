@@ -1,0 +1,185 @@
+Error: COMPILER_WARNING:
+acl-2.3.1/libacl/acl_delete_def_file.c:35:10: warning: implicit declaration of function 'removexattr' is invalid in C99
+#        error = removexattr(path_p, ACL_EA_DEFAULT);
+#                ^
+#   33|   	int error;
+#   34|   	
+#   35|-> 	error = removexattr(path_p, ACL_EA_DEFAULT);
+#   36|   	if (error < 0 && errno != ENOATTR && errno != ENODATA)
+#   37|   		return -1;
+
+Error: COMPILER_WARNING:
+acl-2.3.1/libacl/acl_extended_fd.c:36:11: warning: implicit declaration of function 'fgetxattr' is invalid in C99
+#        retval = fgetxattr(fd, ACL_EA_ACCESS, NULL, 0);
+#                 ^
+#   34|   	int retval;
+#   35|   
+#   36|-> 	retval = fgetxattr(fd, ACL_EA_ACCESS, NULL, 0);
+#   37|   	if (retval < 0 && errno != ENOATTR && errno != ENODATA)
+#   38|   		return -1;
+
+Error: COMPILER_WARNING:
+acl-2.3.1/libacl/acl_get_fd.c:44:11: warning: implicit declaration of function 'fgetxattr' is invalid in C99
+#        retval = fgetxattr(fd, ACL_EA_ACCESS, ext_acl_p, size_guess);
+#                 ^
+#   42|   	if (!ext_acl_p)
+#   43|   		return NULL;
+#   44|-> 	retval = fgetxattr(fd, ACL_EA_ACCESS, ext_acl_p, size_guess);
+#   45|   	if (retval == -1 && errno == ERANGE) {
+#   46|   		retval = fgetxattr(fd, ACL_EA_ACCESS, NULL, 0);
+
+Error: COMPILER_WARNING:
+acl-2.3.1/libacl/acl_get_file.c:57:11: warning: implicit declaration of function 'getxattr' is invalid in C99
+#        retval = getxattr(path_p, name, ext_acl_p, size_guess);
+#                 ^
+#   55|   	if (!ext_acl_p)
+#   56|   		return NULL;
+#   57|-> 	retval = getxattr(path_p, name, ext_acl_p, size_guess);
+#   58|   	if (retval == -1 && errno == ERANGE) {
+#   59|   		retval = getxattr(path_p, name, NULL, 0);
+
+Error: COMPILER_WARNING:
+acl-2.3.1/libacl/acl_set_fd.c:47:10: warning: implicit declaration of function 'fsetxattr' is invalid in C99
+#        error = fsetxattr(fd, name, (char *)ext_acl_p, size, 0);
+#                ^
+#   45|   	if (!ext_acl_p)
+#   46|   		return -1;
+#   47|-> 	error = fsetxattr(fd, name, (char *)ext_acl_p, size, 0);
+#   48|   	free(ext_acl_p);
+#   49|   	return error;
+
+Error: COMPILER_WARNING:
+acl-2.3.1/libacl/acl_set_file.c:61:10: warning: implicit declaration of function 'setxattr' is invalid in C99
+#        error = setxattr(path_p, name, (char *)ext_acl_p, size, 0);
+#                ^
+#   59|   	if (!ext_acl_p)
+#   60|   		return -1;
+#   61|-> 	error = setxattr(path_p, name, (char *)ext_acl_p, size, 0);
+#   62|   	free(ext_acl_p);
+#   63|   	return error;
+
+Error: COMPILER_WARNING:
+acl-2.3.1/libacl/perm_copy_fd.c:180:25: warning: taking address of packed member '' of class or structure 'stat' may result in an unaligned pointer value
+#                __apply_mask_to_mode(&st.st_mode, acl);
+#                                      ^~~~~~~~~~
+#  178|   	if (acl_set_fd (dst_fd, acl) != 0) {
+#  179|   		int saved_errno = errno;
+#  180|-> 		__apply_mask_to_mode(&st.st_mode, acl);
+#  181|   		ret = fchmod (dst_fd, st.st_mode);
+#  182|   		if ((errno != ENOSYS && errno != ENOTSUP) ||
+
+Error: COMPILER_WARNING:
+acl-2.3.1/libacl/perm_copy_file.c:193:25: warning: taking address of packed member '' of class or structure 'stat' may result in an unaligned pointer value
+#                __apply_mask_to_mode(&st.st_mode, acl);
+#                                      ^~~~~~~~~~
+#  191|   	if (acl_set_file (dst_path, ACL_TYPE_ACCESS, acl) != 0) {
+#  192|   		int saved_errno = errno;
+#  193|-> 		__apply_mask_to_mode(&st.st_mode, acl);
+#  194|   		ret = chmod (dst_path, st.st_mode);
+#  195|   		if ((errno != ENOSYS && errno != ENOTSUP) ||
+
+Error: COMPILER_WARNING:
+acl-2.3.1/tools/chacl.c:335:12: warning: incompatible integer to pointer conversion assigning to 'struct dirent64 *' from 'int'
+#        while ((d = readdir64(dir)) != NULL) {
+#                  ^ ~~~~~~~~~~~~~~
+#  333|   	}
+#  334|   
+#  335|-> 	while ((d = readdir64(dir)) != NULL) {
+#  336|   		/* skip "." and ".." entries */
+#  337|   		if (strcmp(d->d_name, ".") == 0 || strcmp(d->d_name, "..") == 0)
+
+Error: COMPILER_WARNING:
+acl-2.3.1/tools/chacl.c:335:14: warning: implicit declaration of function 'readdir64' is invalid in C99
+#        while ((d = readdir64(dir)) != NULL) {
+#                    ^
+#  333|   	}
+#  334|   
+#  335|-> 	while ((d = readdir64(dir)) != NULL) {
+#  336|   		/* skip "." and ".." entries */
+#  337|   		if (strcmp(d->d_name, ".") == 0 || strcmp(d->d_name, "..") == 0)
+
+Error: COMPILER_WARNING:
+acl-2.3.1/tools/getfacl.c:141:9: warning: comparison of function 'dup' not equal to a null pointer is always true
+#                                if (id_p != NULL) {
+#                                    ^~~~    ~~~~
+acl-2.3.1/tools/getfacl.c:141:9: note: prefix with the address-of operator to silence this warning
+#                                if (id_p != NULL) {
+#                                    ^
+#  139|   			case ACL_USER:
+#  140|   				id_p = acl_get_qualifier(ent);
+#  141|-> 				if (id_p != NULL) {
+#  142|   					name = user_name(*id_p, opt_numeric);
+#  143|   					acl_free(id_p);
+
+Error: COMPILER_WARNING:
+acl-2.3.1/tools/getfacl.c:153:9: warning: comparison of function 'dup' not equal to a null pointer is always true
+#                                if (id_p != NULL) {
+#                                    ^~~~    ~~~~
+acl-2.3.1/tools/getfacl.c:153:9: note: prefix with the address-of operator to silence this warning
+#                                if (id_p != NULL) {
+#                                    ^
+#  151|   			case ACL_GROUP:
+#  152|   				id_p = acl_get_qualifier(ent);
+#  153|-> 				if (id_p != NULL) {
+#  154|   					name = group_name(*id_p, opt_numeric);
+#  155|   					acl_free(id_p);
+
+Error: COMPILER_WARNING:
+acl-2.3.1/tools/getfacl.c:392:26: warning: ordered comparison of function pointers ('acl_t (*)(acl_t)' (aka 'struct __acl_ext *(*)(struct __acl_ext *)') and 'acl_t (*)(acl_t)')
+#                                        id_cmp = (*acl_id_p > *dacl_id_p) -
+#                                                  ~~~~~~~~~ ^ ~~~~~~~~~~
+#  390|   					id_t *dacl_id_p = acl_get_qualifier(dacl_ent);
+#  391|   
+#  392|-> 					id_cmp = (*acl_id_p > *dacl_id_p) -
+#  393|   						 (*acl_id_p < *dacl_id_p);
+#  394|   					acl_free(acl_id_p);
+
+Error: COMPILER_WARNING:
+acl-2.3.1/tools/getfacl.c:393:19: warning: ordered comparison of function pointers ('acl_t (*)(acl_t)' (aka 'struct __acl_ext *(*)(struct __acl_ext *)') and 'acl_t (*)(acl_t)')
+#                                                 (*acl_id_p < *dacl_id_p);
+#                                                  ~~~~~~~~~ ^ ~~~~~~~~~~
+#  391|   
+#  392|   					id_cmp = (*acl_id_p > *dacl_id_p) -
+#  393|-> 						 (*acl_id_p < *dacl_id_p);
+#  394|   					acl_free(acl_id_p);
+#  395|   					acl_free(dacl_id_p);
+
+Error: COMPILER_WARNING:
+acl-2.3.1/tools/parse.c:427:10: warning: incompatible pointer to integer conversion assigning to 'uid_t' (aka 'unsigned int') from 'gid_t *' (aka 'unsigned int *'); dereference with *
+#                *uid_p = ACL_UNDEFINED_ID;
+#                       ^ ~~~~~~~~~~~~~~~~
+#  425|   		*path_p = NULL;
+#  426|   	if (uid_p)
+#  427|-> 		*uid_p = ACL_UNDEFINED_ID;
+#  428|   	if (gid_p)
+#  429|   		*gid_p = ACL_UNDEFINED_ID;
+
+Error: COMPILER_WARNING:
+acl-2.3.1/tools/parse.c:429:10: warning: incompatible pointer to integer conversion assigning to 'gid_t' (aka 'unsigned int') from 'gid_t *' (aka 'unsigned int *'); dereference with *
+#                *gid_p = ACL_UNDEFINED_ID;
+#                       ^ ~~~~~~~~~~~~~~~~
+#  427|   		*uid_p = ACL_UNDEFINED_ID;
+#  428|   	if (gid_p)
+#  429|-> 		*gid_p = ACL_UNDEFINED_ID;
+#  430|   	if (flags)
+#  431|   		*flags = 0;
+
+Error: COMPILER_WARNING:
+acl-2.3.1/tools/parse.c:482:16: warning: comparison between pointer and integer ('uid_t' (aka 'unsigned int') and 'gid_t *' (aka 'unsigned int *'))
+#                                if (*uid_p != ACL_UNDEFINED_ID)
+#                                    ~~~~~~ ^  ~~~~~~~~~~~~~~~~
+#  480|   				
+#  481|   			if (uid_p) {
+#  482|-> 				if (*uid_p != ACL_UNDEFINED_ID)
+#  483|   					goto fail;
+#  484|   				if (get_uid(__acl_unquote(cp), uid_p) != 0)
+
+Error: COMPILER_WARNING:
+acl-2.3.1/tools/parse.c:492:16: warning: comparison between pointer and integer ('gid_t' (aka 'unsigned int') and 'gid_t *' (aka 'unsigned int *'))
+#                                if (*gid_p != ACL_UNDEFINED_ID)
+#                                    ~~~~~~ ^  ~~~~~~~~~~~~~~~~
+#  490|   				
+#  491|   			if (gid_p) {
+#  492|-> 				if (*gid_p != ACL_UNDEFINED_ID)
+#  493|   					goto fail;
+#  494|   				if (get_gid(__acl_unquote(cp), gid_p) != 0)

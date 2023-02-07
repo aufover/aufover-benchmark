@@ -1,0 +1,659 @@
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/classify.c:477:9: warning: incompatible integer to pointer conversion assigning to 'FILE *' (aka 'struct _PDCLIB_file *') from 'int'
+#        output = popen(cmd, "r");
+#               ^ ~~~~~~~~~~~~~~~
+#  475|   
+#  476|   	sprintf(cmd, "exec %s %s %d", script, path, irq);
+#  477|-> 	output = popen(cmd, "r");
+#  478|   	if (!output) {
+#  479|   		log(TO_ALL, LOG_WARNING, "Unable to execute user policy script %s\n", script);
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/classify.c:477:11: warning: implicit declaration of function 'popen' is invalid in C99
+#        output = popen(cmd, "r");
+#                 ^
+#  475|   
+#  476|   	sprintf(cmd, "exec %s %s %d", script, path, irq);
+#  477|-> 	output = popen(cmd, "r");
+#  478|   	if (!output) {
+#  479|   		log(TO_ALL, LOG_WARNING, "Unable to execute user policy script %s\n", script);
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/classify.c:488:21: warning: implicit declaration of function 'pclose' is invalid in C99
+#        return WEXITSTATUS(pclose(output));
+#                           ^
+#  486|   			parse_user_policy_key(brc, irq, pol);
+#  487|   	}
+#  488|-> 	return WEXITSTATUS(pclose(output));
+#  489|   }
+#  490|   
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/activate.c:33: included_from: Included from here.
+irqbalance-1.7.0/irqbalance.h:7: included_from: Included from here.
+irqbalance-1.7.0/cpumask.h:202:16: warning: implicit declaration of function 'ffs' is invalid in C99
+#        return ffs(*srcp->bits)-1;
+#               ^
+#  200|   static inline int __first_cpu(const cpumask_t *srcp)
+#  201|   {
+#  202|->         return ffs(*srcp->bits)-1;
+#  203|   }
+#  204|   
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/cputree.c:397:68: warning: format specifies type 'unsigned long' but the argument has type 'uint64_t' (aka 'unsigned long long')
+#            info->irq, irq_numa_node(info)->number, classes[info->class], info->load, (info->irq_count - info->last_irq_count));
+#                                                                          ^~~~~~~~~~
+irqbalance-1.7.0/irqbalance.h:154:17: note: expanded from macro 'log'
+#                printf(fmt, ##args);                                            \
+#                       ~~~    ^~~~
+#  395|   	indent[i] = '\0';
+#  396|   	log(TO_CONSOLE, LOG_INFO, "%sInterrupt %i node_num is %d (%s/%lu:%lu) \n", indent,
+#  397|-> 	    info->irq, irq_numa_node(info)->number, classes[info->class], info->load, (info->irq_count - info->last_irq_count));
+#  398|   	free(indent);
+#  399|   }
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/cputree.c:397:80: warning: format specifies type 'unsigned long' but the argument has type 'unsigned long long'
+#            info->irq, irq_numa_node(info)->number, classes[info->class], info->load, (info->irq_count - info->last_irq_count));
+#                                                                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+irqbalance-1.7.0/irqbalance.h:154:17: note: expanded from macro 'log'
+#                printf(fmt, ##args);                                            \
+#                       ~~~    ^~~~
+#  395|   	indent[i] = '\0';
+#  396|   	log(TO_CONSOLE, LOG_INFO, "%sInterrupt %i node_num is %d (%s/%lu:%lu) \n", indent,
+#  397|-> 	    info->irq, irq_numa_node(info)->number, classes[info->class], info->load, (info->irq_count - info->last_irq_count));
+#  398|   	free(indent);
+#  399|   }
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/irqbalance.c:344:52: warning: format specifies type 'unsigned long' but the argument has type 'uint64_t' (aka 'unsigned long long')
+#                        "IRQ %d LOAD %lu DIFF %lu CLASS %d ", irq->irq, irq->load,
+#                                     ~~~                                ^~~~~~~~~
+#  342|   
+#  343|   	sprintf(*irqdata + strlen(*irqdata),
+#  344|-> 			"IRQ %d LOAD %lu DIFF %lu CLASS %d ", irq->irq, irq->load,
+#  345|   			(irq->irq_count - irq->last_irq_count), irq->class);
+#  346|   }
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/irqbalance.c:345:4: warning: format specifies type 'unsigned long' but the argument has type 'unsigned long long'
+#                        (irq->irq_count - irq->last_irq_count), irq->class);
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  343|   	sprintf(*irqdata + strlen(*irqdata),
+#  344|   			"IRQ %d LOAD %lu DIFF %lu CLASS %d ", irq->irq, irq->load,
+#  345|-> 			(irq->irq_count - irq->last_irq_count), irq->class);
+#  346|   }
+#  347|   
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/irqbalance.c:383:38: warning: format specifies type 'unsigned long' but the argument has type 'uint64_t' (aka 'unsigned long long')
+#                        object->obj_type, object->number, object->load,
+#                                                          ^~~~~~~~~~~~
+#  381|   
+#  382|   	sprintf(*stats + strlen(*stats), "TYPE %d NUMBER %d LOAD %lu SAVE_MODE %d %s",
+#  383|-> 			object->obj_type, object->number, object->load,
+#  384|   			object->powersave_mode, irq_data ? irq_data : "");
+#  385|   	free(irq_data);
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/irqbalance.c:402:27: warning: implicit declaration of function 'CMSG_SPACE' is invalid in C99
+#        msg.msg_control = malloc(CMSG_SPACE(sizeof(struct ucred)));
+#                                 ^
+#  400|   	msg.msg_iov = &iov;
+#  401|   	msg.msg_iovlen = 1;
+#  402|-> 	msg.msg_control = malloc(CMSG_SPACE(sizeof(struct ucred)));
+#  403|   	msg.msg_controllen = CMSG_SPACE(sizeof(struct ucred));
+#  404|   
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/irqbalance.c:413:20: warning: implicit declaration of function 'recvmsg' is invalid in C99
+#                if ((recv_size = recvmsg(sock, &msg, 0)) < 0) {
+#                                 ^
+#  411|   			goto out;
+#  412|   		}
+#  413|-> 		if ((recv_size = recvmsg(sock, &msg, 0)) < 0) {
+#  414|   			log(TO_ALL, LOG_WARNING, "Error while receiving data.\n");
+#  415|   			goto out_close;
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/irqbalance.c:417:8: warning: incompatible integer to pointer conversion assigning to 'struct cmsghdr *' from 'int'
+#                cmsg = CMSG_FIRSTHDR(&msg);
+#                     ^ ~~~~~~~~~~~~~~~~~~~
+#  415|   			goto out_close;
+#  416|   		}
+#  417|-> 		cmsg = CMSG_FIRSTHDR(&msg);
+#  418|   		if (!cmsg) {
+#  419|   			log(TO_ALL, LOG_WARNING, "Connection no memory.\n");
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/irqbalance.c:417:10: warning: implicit declaration of function 'CMSG_FIRSTHDR' is invalid in C99
+#                cmsg = CMSG_FIRSTHDR(&msg);
+#                       ^
+#  415|   			goto out_close;
+#  416|   		}
+#  417|-> 		cmsg = CMSG_FIRSTHDR(&msg);
+#  418|   		if (!cmsg) {
+#  419|   			log(TO_ALL, LOG_WARNING, "Connection no memory.\n");
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/irqbalance.c:424:32: warning: cast to 'struct ucred *' from smaller integer type 'int'
+#                        struct ucred *credentials = (struct ucred *) CMSG_DATA(cmsg);
+#                                                    ^
+#  422|   		if ((cmsg->cmsg_level == SOL_SOCKET) &&
+#  423|   				(cmsg->cmsg_type == SCM_CREDENTIALS)) {
+#  424|-> 			struct ucred *credentials = (struct ucred *) CMSG_DATA(cmsg);
+#  425|   			if (!credentials->uid) {
+#  426|   				valid_user = 1;
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/irqbalance.c:424:49: warning: implicit declaration of function 'CMSG_DATA' is invalid in C99
+#                        struct ucred *credentials = (struct ucred *) CMSG_DATA(cmsg);
+#                                                                     ^
+#  422|   		if ((cmsg->cmsg_level == SOL_SOCKET) &&
+#  423|   				(cmsg->cmsg_type == SCM_CREDENTIALS)) {
+#  424|-> 			struct ucred *credentials = (struct ucred *) CMSG_DATA(cmsg);
+#  425|   			if (!credentials->uid) {
+#  426|   				valid_user = 1;
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/irqbalance.c:642:7: warning: implicit declaration of function 'daemon' is invalid in C99
+#                if (daemon(0,0))
+#                    ^
+#  640|   	if (!foreground_mode) {
+#  641|   		int pidfd = -1;
+#  642|-> 		if (daemon(0,0))
+#  643|   			exit(EXIT_FAILURE);
+#  644|   		/* Write pidfile which can be used to avoid starting multiple instances */
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/procinterrupts.c:194:12: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#                irq_name = strtok_r(savedline, " ", &savedptr);
+#                         ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  192|   		if (!savedline)
+#  193|   			break;
+#  194|-> 		irq_name = strtok_r(savedline, " ", &savedptr);
+#  195|   		if (strstr(irq_name, "xen-dyn") != NULL)
+#  196|   			is_xen_dyn = 1;
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/procinterrupts.c:194:14: warning: implicit declaration of function 'strtok_r' is invalid in C99
+#                irq_name = strtok_r(savedline, " ", &savedptr);
+#                           ^
+#  192|   		if (!savedline)
+#  193|   			break;
+#  194|-> 		irq_name = strtok_r(savedline, " ", &savedptr);
+#  195|   		if (strstr(irq_name, "xen-dyn") != NULL)
+#  196|   			is_xen_dyn = 1;
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/procinterrupts.c:197:14: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#                last_token = strtok_r(NULL, " ", &savedptr);
+#                           ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  195|   		if (strstr(irq_name, "xen-dyn") != NULL)
+#  196|   			is_xen_dyn = 1;
+#  197|-> 		last_token = strtok_r(NULL, " ", &savedptr);
+#  198|   		while ((p = strtok_r(NULL, " ", &savedptr))) {
+#  199|   			irq_name = last_token;
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/procinterrupts.c:198:13: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#                while ((p = strtok_r(NULL, " ", &savedptr))) {
+#                          ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  196|   			is_xen_dyn = 1;
+#  197|   		last_token = strtok_r(NULL, " ", &savedptr);
+#  198|-> 		while ((p = strtok_r(NULL, " ", &savedptr))) {
+#  199|   			irq_name = last_token;
+#  200|   			if (strstr(irq_name, "xen-dyn") != NULL)
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/ui/irqbalance-ui.c:35:28: warning: implicit declaration of function 'CMSG_SPACE' is invalid in C99
+#        msg->msg_control = malloc(CMSG_SPACE(sizeof(struct ucred)));
+#                                  ^
+#   33|   	memset(msg, 0, sizeof(struct msghdr));
+#   34|   	msg->msg_iovlen = 1;
+#   35|-> 	msg->msg_control = malloc(CMSG_SPACE(sizeof(struct ucred)));
+#   36|   	msg->msg_controllen = CMSG_SPACE(sizeof(struct ucred));
+#   37|   
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/ui/irqbalance-ui.c:38:18: warning: incompatible integer to pointer conversion initializing 'struct cmsghdr *' with an expression of type 'int'
+#        struct cmsghdr *cmsg = CMSG_FIRSTHDR(msg);
+#                        ^      ~~~~~~~~~~~~~~~~~~
+#   36|   	msg->msg_controllen = CMSG_SPACE(sizeof(struct ucred));
+#   37|   
+#   38|-> 	struct cmsghdr *cmsg = CMSG_FIRSTHDR(msg);
+#   39|   	cmsg->cmsg_level = SOL_SOCKET;
+#   40|   	cmsg->cmsg_type = SCM_CREDENTIALS;
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/ui/irqbalance-ui.c:38:25: warning: implicit declaration of function 'CMSG_FIRSTHDR' is invalid in C99
+#        struct cmsghdr *cmsg = CMSG_FIRSTHDR(msg);
+#                               ^
+#   36|   	msg->msg_controllen = CMSG_SPACE(sizeof(struct ucred));
+#   37|   
+#   38|-> 	struct cmsghdr *cmsg = CMSG_FIRSTHDR(msg);
+#   39|   	cmsg->cmsg_level = SOL_SOCKET;
+#   40|   	cmsg->cmsg_type = SCM_CREDENTIALS;
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/ui/irqbalance-ui.c:41:19: warning: implicit declaration of function 'CMSG_LEN' is invalid in C99
+#        cmsg->cmsg_len = CMSG_LEN(sizeof(struct ucred));
+#                         ^
+#   39|   	cmsg->cmsg_level = SOL_SOCKET;
+#   40|   	cmsg->cmsg_type = SCM_CREDENTIALS;
+#   41|-> 	cmsg->cmsg_len = CMSG_LEN(sizeof(struct ucred));
+#   42|   	memcpy(CMSG_DATA(cmsg), credentials, sizeof(struct ucred));
+#   43|   
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/ui/irqbalance-ui.c:42:9: warning: implicit declaration of function 'CMSG_DATA' is invalid in C99
+#        memcpy(CMSG_DATA(cmsg), credentials, sizeof(struct ucred));
+#               ^
+#   40|   	cmsg->cmsg_type = SCM_CREDENTIALS;
+#   41|   	cmsg->cmsg_len = CMSG_LEN(sizeof(struct ucred));
+#   42|-> 	memcpy(CMSG_DATA(cmsg), credentials, sizeof(struct ucred));
+#   43|   
+#   44|   	free(credentials);
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/ui/irqbalance-ui.c:42:9: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'void *'
+#        memcpy(CMSG_DATA(cmsg), credentials, sizeof(struct ucred));
+#               ^~~~~~~~~~~~~~~
+/opt/divine/include/dios/include/string.h:43:40: note: passing argument to parameter 's1' here
+#void * memcpy( void * _PDCLIB_restrict s1, const void * _PDCLIB_restrict s2, size_t n ) _PDCLIB_nothrow;
+#                                       ^
+#   40|   	cmsg->cmsg_type = SCM_CREDENTIALS;
+#   41|   	cmsg->cmsg_len = CMSG_LEN(sizeof(struct ucred));
+#   42|-> 	memcpy(CMSG_DATA(cmsg), credentials, sizeof(struct ucred));
+#   43|   
+#   44|   	free(credentials);
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/ui/irqbalance-ui.c:94:2: warning: implicit declaration of function 'sendmsg' is invalid in C99
+#        sendmsg(socket_fd, msg, 0);
+#        ^
+#   92|   	iov.iov_len = strlen(data);
+#   93|   	msg->msg_iov = &iov;
+#   94|-> 	sendmsg(socket_fd, msg, 0);
+#   95|   
+#   96|   	close(socket_fd);
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/ui/irqbalance-ui.c:116:2: warning: implicit declaration of function 'sendmsg' is invalid in C99
+#        sendmsg(socket_fd, msg, 0);
+#        ^
+#  114|   	iov.iov_len = strlen(string);
+#  115|   	msg->msg_iov = &iov;
+#  116|-> 	sendmsg(socket_fd, msg, 0);
+#  117|   
+#  118|   	/*
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/ui/irqbalance-ui.c:145:8: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#        token = strtok_r(copy, " ", &ptr);
+#              ^ ~~~~~~~~~~~~~~~~~~~~~~~~~
+#  143|   	setup.banned_irqs = NULL;
+#  144|   	setup.banned_cpus = NULL;
+#  145|-> 	token = strtok_r(copy, " ", &ptr);
+#  146|   	if(strncmp(token, "SLEEP", strlen("SLEEP"))) goto out;
+#  147|   	setup.sleep = strtol(strtok_r(NULL, " ", &ptr), NULL, 10);
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/ui/irqbalance-ui.c:145:10: warning: implicit declaration of function 'strtok_r' is invalid in C99
+#        token = strtok_r(copy, " ", &ptr);
+#                ^
+#  143|   	setup.banned_irqs = NULL;
+#  144|   	setup.banned_cpus = NULL;
+#  145|-> 	token = strtok_r(copy, " ", &ptr);
+#  146|   	if(strncmp(token, "SLEEP", strlen("SLEEP"))) goto out;
+#  147|   	setup.sleep = strtol(strtok_r(NULL, " ", &ptr), NULL, 10);
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/ui/irqbalance-ui.c:147:23: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#        setup.sleep = strtol(strtok_r(NULL, " ", &ptr), NULL, 10);
+#                             ^~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/divine/include/dios/include/stdlib.h:80:48: note: passing argument to parameter 'nptr' here
+#long int strtol( const char * _PDCLIB_restrict nptr, char * * _PDCLIB_restrict endptr, int base ) _PDCLIB_nothrow;
+#                                               ^
+#  145|   	token = strtok_r(copy, " ", &ptr);
+#  146|   	if(strncmp(token, "SLEEP", strlen("SLEEP"))) goto out;
+#  147|-> 	setup.sleep = strtol(strtok_r(NULL, " ", &ptr), NULL, 10);
+#  148|   	token = strtok_r(NULL, " ", &ptr);
+#  149|   	/* Parse banned IRQ data */
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/ui/irqbalance-ui.c:148:8: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#        token = strtok_r(NULL, " ", &ptr);
+#              ^ ~~~~~~~~~~~~~~~~~~~~~~~~~
+#  146|   	if(strncmp(token, "SLEEP", strlen("SLEEP"))) goto out;
+#  147|   	setup.sleep = strtol(strtok_r(NULL, " ", &ptr), NULL, 10);
+#  148|-> 	token = strtok_r(NULL, " ", &ptr);
+#  149|   	/* Parse banned IRQ data */
+#  150|   	while(!strncmp(token, "IRQ", strlen("IRQ"))) {
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/ui/irqbalance-ui.c:152:28: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#                new_irq->vector = strtol(strtok_r(NULL, " ", &ptr), NULL, 10);
+#                                         ^~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/divine/include/dios/include/stdlib.h:80:48: note: passing argument to parameter 'nptr' here
+#long int strtol( const char * _PDCLIB_restrict nptr, char * * _PDCLIB_restrict endptr, int base ) _PDCLIB_nothrow;
+#                                               ^
+#  150|   	while(!strncmp(token, "IRQ", strlen("IRQ"))) {
+#  151|   		new_irq = malloc(sizeof(irq_t));
+#  152|-> 		new_irq->vector = strtol(strtok_r(NULL, " ", &ptr), NULL, 10);
+#  153|   		token = strtok_r(NULL, " ", &ptr);
+#  154|   		if(strncmp(token, "LOAD", strlen("LOAD"))) goto out;
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/ui/irqbalance-ui.c:153:9: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#                token = strtok_r(NULL, " ", &ptr);
+#                      ^ ~~~~~~~~~~~~~~~~~~~~~~~~~
+#  151|   		new_irq = malloc(sizeof(irq_t));
+#  152|   		new_irq->vector = strtol(strtok_r(NULL, " ", &ptr), NULL, 10);
+#  153|-> 		token = strtok_r(NULL, " ", &ptr);
+#  154|   		if(strncmp(token, "LOAD", strlen("LOAD"))) goto out;
+#  155|   		new_irq->load = strtol(strtok_r(NULL, " ", &ptr), NULL, 10);
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/ui/irqbalance-ui.c:155:26: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#                new_irq->load = strtol(strtok_r(NULL, " ", &ptr), NULL, 10);
+#                                       ^~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/divine/include/dios/include/stdlib.h:80:48: note: passing argument to parameter 'nptr' here
+#long int strtol( const char * _PDCLIB_restrict nptr, char * * _PDCLIB_restrict endptr, int base ) _PDCLIB_nothrow;
+#                                               ^
+#  153|   		token = strtok_r(NULL, " ", &ptr);
+#  154|   		if(strncmp(token, "LOAD", strlen("LOAD"))) goto out;
+#  155|-> 		new_irq->load = strtol(strtok_r(NULL, " ", &ptr), NULL, 10);
+#  156|   		token = strtok_r(NULL, " ", &ptr);
+#  157|   		if(strncmp(token, "DIFF", strlen("DIFF"))) goto out;
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/ui/irqbalance-ui.c:156:9: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#                token = strtok_r(NULL, " ", &ptr);
+#                      ^ ~~~~~~~~~~~~~~~~~~~~~~~~~
+#  154|   		if(strncmp(token, "LOAD", strlen("LOAD"))) goto out;
+#  155|   		new_irq->load = strtol(strtok_r(NULL, " ", &ptr), NULL, 10);
+#  156|-> 		token = strtok_r(NULL, " ", &ptr);
+#  157|   		if(strncmp(token, "DIFF", strlen("DIFF"))) goto out;
+#  158|   		new_irq->diff = strtol(strtok_r(NULL, " ", &ptr), NULL, 10);
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/ui/irqbalance-ui.c:158:26: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#                new_irq->diff = strtol(strtok_r(NULL, " ", &ptr), NULL, 10);
+#                                       ^~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/divine/include/dios/include/stdlib.h:80:48: note: passing argument to parameter 'nptr' here
+#long int strtol( const char * _PDCLIB_restrict nptr, char * * _PDCLIB_restrict endptr, int base ) _PDCLIB_nothrow;
+#                                               ^
+#  156|   		token = strtok_r(NULL, " ", &ptr);
+#  157|   		if(strncmp(token, "DIFF", strlen("DIFF"))) goto out;
+#  158|-> 		new_irq->diff = strtol(strtok_r(NULL, " ", &ptr), NULL, 10);
+#  159|   		token = strtok_r(ptr, " ", &ptr);
+#  160|   		if(strncmp(token, "CLASS", strlen("CLASS"))) goto out;
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/ui/irqbalance-ui.c:159:9: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#                token = strtok_r(ptr, " ", &ptr);
+#                      ^ ~~~~~~~~~~~~~~~~~~~~~~~~
+#  157|   		if(strncmp(token, "DIFF", strlen("DIFF"))) goto out;
+#  158|   		new_irq->diff = strtol(strtok_r(NULL, " ", &ptr), NULL, 10);
+#  159|-> 		token = strtok_r(ptr, " ", &ptr);
+#  160|   		if(strncmp(token, "CLASS", strlen("CLASS"))) goto out;
+#  161|   		new_irq->class = strtol(strtok_r(NULL, " ", &ptr), NULL, 10);
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/ui/irqbalance-ui.c:161:27: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#                new_irq->class = strtol(strtok_r(NULL, " ", &ptr), NULL, 10);
+#                                        ^~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/divine/include/dios/include/stdlib.h:80:48: note: passing argument to parameter 'nptr' here
+#long int strtol( const char * _PDCLIB_restrict nptr, char * * _PDCLIB_restrict endptr, int base ) _PDCLIB_nothrow;
+#                                               ^
+#  159|   		token = strtok_r(ptr, " ", &ptr);
+#  160|   		if(strncmp(token, "CLASS", strlen("CLASS"))) goto out;
+#  161|-> 		new_irq->class = strtol(strtok_r(NULL, " ", &ptr), NULL, 10);
+#  162|   		new_irq->is_banned = 1;
+#  163|   		new_irq->assigned_to = NULL;
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/ui/irqbalance-ui.c:165:9: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#                token = strtok_r(NULL, " ", &ptr);
+#                      ^ ~~~~~~~~~~~~~~~~~~~~~~~~~
+#  163|   		new_irq->assigned_to = NULL;
+#  164|   		setup.banned_irqs = g_list_append(setup.banned_irqs, new_irq);
+#  165|-> 		token = strtok_r(NULL, " ", &ptr);
+#  166|   		new_irq = NULL;
+#  167|   	}
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/ui/irqbalance-ui.c:170:8: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#        token = strtok_r(NULL, " ", &ptr);
+#              ^ ~~~~~~~~~~~~~~~~~~~~~~~~~
+#  168|   
+#  169|   	if(strncmp(token, "BANNED", strlen("BANNED"))) goto out;
+#  170|-> 	token = strtok_r(NULL, " ", &ptr);
+#  171|   	for(i = strlen(token) - 1; i >= 0; i--) {
+#  172|   		char *map = hex_to_bitmap(token[i]);
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/ui/irqbalance-ui.c:270:8: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#        token = strtok_r(copy, " ", &ptr);
+#              ^ ~~~~~~~~~~~~~~~~~~~~~~~~~
+#  268|   		return;
+#  269|   
+#  270|-> 	token = strtok_r(copy, " ", &ptr);
+#  271|   	while(token != NULL) {
+#  272|   		/* Parse node data */
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/ui/irqbalance-ui.c:270:10: warning: implicit declaration of function 'strtok_r' is invalid in C99
+#        token = strtok_r(copy, " ", &ptr);
+#                ^
+#  268|   		return;
+#  269|   
+#  270|-> 	token = strtok_r(copy, " ", &ptr);
+#  271|   	while(token != NULL) {
+#  272|   		/* Parse node data */
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/ui/irqbalance-ui.c:282:22: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#                new->type = strtol(strtok_r(NULL, " ", &ptr), NULL, 10);
+#                                   ^~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/divine/include/dios/include/stdlib.h:80:48: note: passing argument to parameter 'nptr' here
+#long int strtol( const char * _PDCLIB_restrict nptr, char * * _PDCLIB_restrict endptr, int base ) _PDCLIB_nothrow;
+#                                               ^
+#  280|   		new->cpu_list = NULL;
+#  281|   		new->cpu_mask = NULL;
+#  282|-> 		new->type = strtol(strtok_r(NULL, " ", &ptr), NULL, 10);
+#  283|   		if(new->type == OBJ_TYPE_NODE) {
+#  284|   			parent = NULL;
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/ui/irqbalance-ui.c:288:9: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#                token = strtok_r(NULL, " ", &ptr);
+#                      ^ ~~~~~~~~~~~~~~~~~~~~~~~~~
+#  286|   			parent = parent->parent;
+#  287|   		}
+#  288|-> 		token = strtok_r(NULL, " ", &ptr);
+#  289|   		if(strncmp(token, "NUMBER", strlen("NUMBER"))) goto out;
+#  290|   		new->number = strtol(strtok_r(NULL, " ", &ptr), NULL, 10);
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/ui/irqbalance-ui.c:290:24: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#                new->number = strtol(strtok_r(NULL, " ", &ptr), NULL, 10);
+#                                     ^~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/divine/include/dios/include/stdlib.h:80:48: note: passing argument to parameter 'nptr' here
+#long int strtol( const char * _PDCLIB_restrict nptr, char * * _PDCLIB_restrict endptr, int base ) _PDCLIB_nothrow;
+#                                               ^
+#  288|   		token = strtok_r(NULL, " ", &ptr);
+#  289|   		if(strncmp(token, "NUMBER", strlen("NUMBER"))) goto out;
+#  290|-> 		new->number = strtol(strtok_r(NULL, " ", &ptr), NULL, 10);
+#  291|   		token = strtok_r(NULL, " ", &ptr);
+#  292|   		if(strncmp(token, "LOAD", strlen("LOAD"))) goto out;
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/ui/irqbalance-ui.c:291:9: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#                token = strtok_r(NULL, " ", &ptr);
+#                      ^ ~~~~~~~~~~~~~~~~~~~~~~~~~
+#  289|   		if(strncmp(token, "NUMBER", strlen("NUMBER"))) goto out;
+#  290|   		new->number = strtol(strtok_r(NULL, " ", &ptr), NULL, 10);
+#  291|-> 		token = strtok_r(NULL, " ", &ptr);
+#  292|   		if(strncmp(token, "LOAD", strlen("LOAD"))) goto out;
+#  293|   		new->load = strtol(strtok_r(NULL, " ", &ptr), NULL, 10);
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/ui/irqbalance-ui.c:293:22: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#                new->load = strtol(strtok_r(NULL, " ", &ptr), NULL, 10);
+#                                   ^~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/divine/include/dios/include/stdlib.h:80:48: note: passing argument to parameter 'nptr' here
+#long int strtol( const char * _PDCLIB_restrict nptr, char * * _PDCLIB_restrict endptr, int base ) _PDCLIB_nothrow;
+#                                               ^
+#  291|   		token = strtok_r(NULL, " ", &ptr);
+#  292|   		if(strncmp(token, "LOAD", strlen("LOAD"))) goto out;
+#  293|-> 		new->load = strtol(strtok_r(NULL, " ", &ptr), NULL, 10);
+#  294|   		token = strtok_r(NULL, " ", &ptr);
+#  295|   		if(strncmp(token, "SAVE_MODE", strlen("SAVE_MODE"))) goto out;
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/ui/irqbalance-ui.c:294:9: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#                token = strtok_r(NULL, " ", &ptr);
+#                      ^ ~~~~~~~~~~~~~~~~~~~~~~~~~
+#  292|   		if(strncmp(token, "LOAD", strlen("LOAD"))) goto out;
+#  293|   		new->load = strtol(strtok_r(NULL, " ", &ptr), NULL, 10);
+#  294|-> 		token = strtok_r(NULL, " ", &ptr);
+#  295|   		if(strncmp(token, "SAVE_MODE", strlen("SAVE_MODE"))) goto out;
+#  296|   		new->is_powersave = strtol(strtok_r(NULL, " ", &ptr), NULL, 10);
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/ui/irqbalance-ui.c:296:30: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#                new->is_powersave = strtol(strtok_r(NULL, " ", &ptr), NULL, 10);
+#                                           ^~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/divine/include/dios/include/stdlib.h:80:48: note: passing argument to parameter 'nptr' here
+#long int strtol( const char * _PDCLIB_restrict nptr, char * * _PDCLIB_restrict endptr, int base ) _PDCLIB_nothrow;
+#                                               ^
+#  294|   		token = strtok_r(NULL, " ", &ptr);
+#  295|   		if(strncmp(token, "SAVE_MODE", strlen("SAVE_MODE"))) goto out;
+#  296|-> 		new->is_powersave = strtol(strtok_r(NULL, " ", &ptr), NULL, 10);
+#  297|   		token = strtok_r(NULL, " ", &ptr);
+#  298|   
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/ui/irqbalance-ui.c:297:9: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#                token = strtok_r(NULL, " ", &ptr);
+#                      ^ ~~~~~~~~~~~~~~~~~~~~~~~~~
+#  295|   		if(strncmp(token, "SAVE_MODE", strlen("SAVE_MODE"))) goto out;
+#  296|   		new->is_powersave = strtol(strtok_r(NULL, " ", &ptr), NULL, 10);
+#  297|-> 		token = strtok_r(NULL, " ", &ptr);
+#  298|   
+#  299|   		/* Parse assigned IRQ data */
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/ui/irqbalance-ui.c:302:29: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#                        new_irq->vector = strtol(strtok_r(NULL, " ", &ptr), NULL, 10);
+#                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/divine/include/dios/include/stdlib.h:80:48: note: passing argument to parameter 'nptr' here
+#long int strtol( const char * _PDCLIB_restrict nptr, char * * _PDCLIB_restrict endptr, int base ) _PDCLIB_nothrow;
+#                                               ^
+#  300|   		while((token != NULL) && (!strncmp(token, "IRQ", strlen("IRQ")))) {
+#  301|   			new_irq = malloc(sizeof(irq_t));
+#  302|-> 			new_irq->vector = strtol(strtok_r(NULL, " ", &ptr), NULL, 10);
+#  303|   			token = strtok_r(NULL, " ", &ptr);
+#  304|   			if(strncmp(token, "LOAD", strlen("LOAD"))) goto out;
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/ui/irqbalance-ui.c:303:10: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#                        token = strtok_r(NULL, " ", &ptr);
+#                              ^ ~~~~~~~~~~~~~~~~~~~~~~~~~
+#  301|   			new_irq = malloc(sizeof(irq_t));
+#  302|   			new_irq->vector = strtol(strtok_r(NULL, " ", &ptr), NULL, 10);
+#  303|-> 			token = strtok_r(NULL, " ", &ptr);
+#  304|   			if(strncmp(token, "LOAD", strlen("LOAD"))) goto out;
+#  305|   			new_irq->load = strtol(strtok_r(NULL, " ", &ptr), NULL, 10);
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/ui/irqbalance-ui.c:305:27: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#                        new_irq->load = strtol(strtok_r(NULL, " ", &ptr), NULL, 10);
+#                                               ^~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/divine/include/dios/include/stdlib.h:80:48: note: passing argument to parameter 'nptr' here
+#long int strtol( const char * _PDCLIB_restrict nptr, char * * _PDCLIB_restrict endptr, int base ) _PDCLIB_nothrow;
+#                                               ^
+#  303|   			token = strtok_r(NULL, " ", &ptr);
+#  304|   			if(strncmp(token, "LOAD", strlen("LOAD"))) goto out;
+#  305|-> 			new_irq->load = strtol(strtok_r(NULL, " ", &ptr), NULL, 10);
+#  306|   			token = strtok_r(NULL, " ", &ptr);
+#  307|   			if(strncmp(token, "DIFF", strlen("DIFF"))) goto out;
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/ui/irqbalance-ui.c:306:10: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#                        token = strtok_r(NULL, " ", &ptr);
+#                              ^ ~~~~~~~~~~~~~~~~~~~~~~~~~
+#  304|   			if(strncmp(token, "LOAD", strlen("LOAD"))) goto out;
+#  305|   			new_irq->load = strtol(strtok_r(NULL, " ", &ptr), NULL, 10);
+#  306|-> 			token = strtok_r(NULL, " ", &ptr);
+#  307|   			if(strncmp(token, "DIFF", strlen("DIFF"))) goto out;
+#  308|   			new_irq->diff = strtol(strtok_r(NULL, " ", &ptr), NULL, 10);
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/ui/irqbalance-ui.c:308:27: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#                        new_irq->diff = strtol(strtok_r(NULL, " ", &ptr), NULL, 10);
+#                                               ^~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/divine/include/dios/include/stdlib.h:80:48: note: passing argument to parameter 'nptr' here
+#long int strtol( const char * _PDCLIB_restrict nptr, char * * _PDCLIB_restrict endptr, int base ) _PDCLIB_nothrow;
+#                                               ^
+#  306|   			token = strtok_r(NULL, " ", &ptr);
+#  307|   			if(strncmp(token, "DIFF", strlen("DIFF"))) goto out;
+#  308|-> 			new_irq->diff = strtol(strtok_r(NULL, " ", &ptr), NULL, 10);
+#  309|   			token = strtok_r(NULL, " ", &ptr);
+#  310|   			if(strncmp(token, "CLASS", strlen("CLASS"))) goto out;
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/ui/irqbalance-ui.c:309:10: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#                        token = strtok_r(NULL, " ", &ptr);
+#                              ^ ~~~~~~~~~~~~~~~~~~~~~~~~~
+#  307|   			if(strncmp(token, "DIFF", strlen("DIFF"))) goto out;
+#  308|   			new_irq->diff = strtol(strtok_r(NULL, " ", &ptr), NULL, 10);
+#  309|-> 			token = strtok_r(NULL, " ", &ptr);
+#  310|   			if(strncmp(token, "CLASS", strlen("CLASS"))) goto out;
+#  311|   			new_irq->class = strtol(strtok_r(NULL, " ", &ptr), NULL, 10);
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/ui/irqbalance-ui.c:311:28: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#                        new_irq->class = strtol(strtok_r(NULL, " ", &ptr), NULL, 10);
+#                                                ^~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/divine/include/dios/include/stdlib.h:80:48: note: passing argument to parameter 'nptr' here
+#long int strtol( const char * _PDCLIB_restrict nptr, char * * _PDCLIB_restrict endptr, int base ) _PDCLIB_nothrow;
+#                                               ^
+#  309|   			token = strtok_r(NULL, " ", &ptr);
+#  310|   			if(strncmp(token, "CLASS", strlen("CLASS"))) goto out;
+#  311|-> 			new_irq->class = strtol(strtok_r(NULL, " ", &ptr), NULL, 10);
+#  312|   			new_irq->is_banned = 0;
+#  313|   			new->irqs = g_list_append(new->irqs, new_irq);
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/ui/irqbalance-ui.c:314:10: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#                        token = strtok_r(NULL, " ", &ptr);
+#                              ^ ~~~~~~~~~~~~~~~~~~~~~~~~~
+#  312|   			new_irq->is_banned = 0;
+#  313|   			new->irqs = g_list_append(new->irqs, new_irq);
+#  314|-> 			token = strtok_r(NULL, " ", &ptr);
+#  315|   			new_irq = NULL;
+#  316|   		}
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/ui/ui.c:566:61: warning: format specifies type 'unsigned long' but the argument has type 'uint64_t' (aka 'unsigned long long')
+#        snprintf(info + strlen(info), 128 - strlen(info), "%lu\n", setup.sleep);
+#                                                           ~~~     ^~~~~~~~~~~
+#  564|   	char info[128] = "Current sleep interval between rebalancing: \0";
+#  565|   	uint8_t sleep_input_offset = strlen(info) + 3;
+#  566|-> 	snprintf(info + strlen(info), 128 - strlen(info), "%lu\n", setup.sleep);
+#  567|   	attrset(COLOR_PAIR(1));
+#  568|   	mvprintw(2, 3, info);
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/ui/ui.c:591:55: warning: format specifies type 'unsigned long' but the argument has type 'uint64_t' (aka 'unsigned long long')
+#                                snprintf(settings_data, 128, "%s %lu", SET_SLEEP, new_sleep);
+#                                                                 ~~~              ^~~~~~~~~
+#  589|   				setup.sleep = new_sleep;
+#  590|   				char settings_data[128];
+#  591|-> 				snprintf(settings_data, 128, "%s %lu", SET_SLEEP, new_sleep);
+#  592|   				send_settings(settings_data);
+#  593|   			}

@@ -1,0 +1,49 @@
+Error: COMPILER_WARNING:
+gdbm-1.20/src/gdbmtool.c:1913:10: warning: incompatible integer to pointer conversion assigning to 'FILE *' (aka 'struct _PDCLIB_file *') from 'int'
+#          pagfp = popen (pager, "w");
+#                ^ ~~~~~~~~~~~~~~~~~~
+# 1911|         if (pager && expected_lines > get_screen_lines ())
+# 1912|   	{
+# 1913|-> 	  pagfp = popen (pager, "w");
+# 1914|   	  if (pagfp)
+# 1915|   	    param.fp = pagfp;
+
+Error: COMPILER_WARNING:
+gdbm-1.20/src/gdbmtool.c:1913:12: warning: implicit declaration of function 'popen' is invalid in C99
+#          pagfp = popen (pager, "w");
+#                  ^
+# 1911|         if (pager && expected_lines > get_screen_lines ())
+# 1912|   	{
+# 1913|-> 	  pagfp = popen (pager, "w");
+# 1914|   	  if (pagfp)
+# 1915|   	    param.fp = pagfp;
+
+Error: COMPILER_WARNING:
+gdbm-1.20/src/gdbmtool.c:1934:2: warning: implicit declaration of function 'pclose' is invalid in C99
+#        pclose (pagfp);
+#        ^
+# 1932|   
+# 1933|         if (pagfp)
+# 1934|-> 	pclose (pagfp);
+# 1935|       }
+# 1936|   
+
+Error: COMPILER_WARNING:
+gdbm-1.20/src/lock.c:75:2: warning: implicit declaration of function 'lockf' is invalid in C99
+#        lockf (dbf->desc, F_ULOCK, (off_t)0L);
+#        ^
+#   73|         case LOCKING_LOCKF:
+#   74|   #if HAVE_LOCKF
+#   75|-> 	lockf (dbf->desc, F_ULOCK, (off_t)0L);
+#   76|   #endif
+#   77|   	break;
+
+Error: COMPILER_WARNING:
+gdbm-1.20/src/lock.c:124:14: warning: implicit declaration of function 'lockf' is invalid in C99
+#  lock_val = lockf (dbf->desc, F_LOCK, (off_t)0L);
+#             ^
+#  122|   #if HAVE_LOCKF
+#  123|     /* Mask doesn't matter for lockf. */
+#  124|->   lock_val = lockf (dbf->desc, F_LOCK, (off_t)0L);
+#  125|     if ((lock_val == -1) && (errno == EDEADLK))
+#  126|       {
