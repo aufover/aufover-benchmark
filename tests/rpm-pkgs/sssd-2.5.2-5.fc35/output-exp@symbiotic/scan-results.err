@@ -1,0 +1,358 @@
+Error: COMPILER_WARNING (CWE-704):
+sssd-2.5.2/src/p11_child/p11_child_openssl.c:1016:53: warning[-Wcast-qual]: cast from 'void **' to 'const unsigned char **' must have all intermediate pointers const qualified to be safe
+#                            (const unsigned char **)&item->attributes[2].pValue,
+#                                                    ^
+# 1014|                * not use item->attributes[2].pValue after this call. */
+# 1015|               item->cert = d2i_X509(NULL,
+# 1016|->                             (const unsigned char **)&item->attributes[2].pValue,
+# 1017|                               item->attributes[2].ulValueLen);
+# 1018|               if (item->cert == NULL) {
+
+Error: COMPILER_WARNING:
+sssd-2.5.2/src/providers/be_dyndns.c:1285:35: warning[-Wcast-align]: cast from 'const struct sockaddr *' to 'const struct sockaddr_in *' increases required alignment from 2 to 4
+#        addr_a = (const void *) &((const struct sockaddr_in *) sa)->sin_addr;
+#                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1283|       if (sa->sa_family == AF_INET) {
+# 1284|           addrsize = sizeof(struct in_addr);
+# 1285|->         addr_a = (const void *) &((const struct sockaddr_in *) sa)->sin_addr;
+# 1286|           addr_b = (const void *) &((const struct sockaddr_in *) sb)->sin_addr;
+# 1287|       } else if (sa->sa_family == AF_INET6) {
+
+Error: COMPILER_WARNING:
+sssd-2.5.2/src/providers/be_dyndns.c:1286:35: warning[-Wcast-align]: cast from 'const struct sockaddr *' to 'const struct sockaddr_in *' increases required alignment from 2 to 4
+#        addr_b = (const void *) &((const struct sockaddr_in *) sb)->sin_addr;
+#                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1284|           addrsize = sizeof(struct in_addr);
+# 1285|           addr_a = (const void *) &((const struct sockaddr_in *) sa)->sin_addr;
+# 1286|->         addr_b = (const void *) &((const struct sockaddr_in *) sb)->sin_addr;
+# 1287|       } else if (sa->sa_family == AF_INET6) {
+# 1288|           addrsize = sizeof(struct in6_addr);
+
+Error: COMPILER_WARNING:
+sssd-2.5.2/src/providers/be_dyndns.c:1289:35: warning[-Wcast-align]: cast from 'const struct sockaddr *' to 'const struct sockaddr_in6 *' increases required alignment from 2 to 4
+#        addr_a = (const void *) &((const struct sockaddr_in6 *) sa)->sin6_addr;
+#                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1287|       } else if (sa->sa_family == AF_INET6) {
+# 1288|           addrsize = sizeof(struct in6_addr);
+# 1289|->         addr_a = (const void *) &((const struct sockaddr_in6 *) sa)->sin6_addr;
+# 1290|           addr_b = (const void *) &((const struct sockaddr_in6 *) sb)->sin6_addr;
+# 1291|       } else {
+
+Error: COMPILER_WARNING:
+sssd-2.5.2/src/providers/be_dyndns.c:1290:35: warning[-Wcast-align]: cast from 'const struct sockaddr *' to 'const struct sockaddr_in6 *' increases required alignment from 2 to 4
+#        addr_b = (const void *) &((const struct sockaddr_in6 *) sb)->sin6_addr;
+#                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1288|           addrsize = sizeof(struct in6_addr);
+# 1289|           addr_a = (const void *) &((const struct sockaddr_in6 *) sa)->sin6_addr;
+# 1290|->         addr_b = (const void *) &((const struct sockaddr_in6 *) sb)->sin6_addr;
+# 1291|       } else {
+# 1292|           res = false;
+
+Error: COMPILER_WARNING:
+sssd-2.5.2/src/providers/ldap/sdap_async.c:1298:23: warning[-Wcast-align]: cast from 'struct sockaddr *' to 'struct sockaddr_in *' increases required alignment from 2 to 4
+#        port = ntohs(((struct sockaddr_in *)s_addr)->sin_port);
+#                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1296|       switch (s_addr->sa_family) {
+# 1297|       case AF_INET:
+# 1298|->         port = ntohs(((struct sockaddr_in *)s_addr)->sin_port);
+# 1299|           DEBUG(SSSDBG_TRACE_INTERNAL, "Searching %s:%d\n", ip, port);
+# 1300|           break;
+
+Error: COMPILER_WARNING:
+sssd-2.5.2/src/providers/ldap/sdap_async.c:1302:23: warning[-Wcast-align]: cast from 'struct sockaddr *' to 'struct sockaddr_in6 *' increases required alignment from 2 to 4
+#        port = ntohs(((struct sockaddr_in6 *)s_addr)->sin6_port);
+#                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1300|           break;
+# 1301|       case AF_INET6:
+# 1302|->         port = ntohs(((struct sockaddr_in6 *)s_addr)->sin6_port);
+# 1303|           DEBUG(SSSDBG_TRACE_INTERNAL, "Searching %s:%d\n", ip, port);
+# 1304|           break;
+
+Error: COMPILER_WARNING (CWE-694):
+sssd-2.5.2/src/providers/ldap/sdap_sudo_shared.c:169:11: warning[-Wshadow]: declaration shadows a variable in the global scope
+#    char *timezone = NULL;
+#          ^
+/usr/include/time.h:233:17: note: previous declaration is here
+#extern long int timezone;
+#                ^
+#  167|       unsigned long usn_number;
+#  168|       char *newusn;
+#  169|->     char *timezone = NULL;
+#  170|       errno_t ret;
+#  171|   
+
+Error: COMPILER_WARNING (CWE-704):
+sssd-2.5.2/src/sss_client/pam_sss.c:2274:47: warning[-Wcast-qual]: cast from 'int **' to 'const void **' must have all intermediate pointers const qualified to be safe
+#                              (const void **) &authtok_type);
+#                                              ^
+# 2272|   
+# 2273|       pam_status = pam_get_data(pamh, PAM_SSS_AUTHOK_TYPE,
+# 2274|->                               (const void **) &authtok_type);
+# 2275|       if (pam_status != PAM_SUCCESS) {
+# 2276|           D(("pam_get_data failed."));
+
+Error: COMPILER_WARNING (CWE-704):
+sssd-2.5.2/src/sss_client/pam_sss.c:2281:47: warning[-Wcast-qual]: cast from 'size_t **' (aka 'unsigned long **') to 'const void **' must have all intermediate pointers const qualified to be safe
+#                              (const void **) &authtok_size);
+#                                              ^
+# 2279|   
+# 2280|       pam_status = pam_get_data(pamh, PAM_SSS_AUTHOK_SIZE,
+# 2281|->                               (const void **) &authtok_size);
+# 2282|       if (pam_status != PAM_SUCCESS) {
+# 2283|           D(("pam_get_data failed."));
+
+Error: COMPILER_WARNING (CWE-704):
+sssd-2.5.2/src/sss_client/pam_sss.c:2288:47: warning[-Wcast-qual]: cast from 'char **' to 'const void **' must have all intermediate pointers const qualified to be safe
+#                              (const void **) &authtok_data);
+#                                              ^
+# 2286|   
+# 2287|       pam_status = pam_get_data(pamh, PAM_SSS_AUTHOK_DATA,
+# 2288|->                               (const void **) &authtok_data);
+# 2289|       if (pam_status != PAM_SUCCESS) {
+# 2290|           D(("pam_get_data failed."));
+
+Error: COMPILER_WARNING (CWE-252):
+sssd-2.5.2/src/util/crypto/libcrypto/crypto_sha512crypt.c:136:5: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#    EVP_DigestUpdate(ctx, (const unsigned char *)key, key_len);
+#    ^~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  134|   
+#  135|       /* Add the key string.  */
+#  136|->     EVP_DigestUpdate(ctx, (const unsigned char *)key, key_len);
+#  137|   
+#  138|       /* The last part is the salt string. This must be at most 16
+
+Error: COMPILER_WARNING (CWE-252):
+sssd-2.5.2/src/util/crypto/libcrypto/crypto_sha512crypt.c:141:5: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#    EVP_DigestUpdate(ctx, (const unsigned char *)salt, salt_len);
+#    ^~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  139|        * characters and it ends at the first `$' character (for
+#  140|        * compatibility with existing implementations). */
+#  141|->     EVP_DigestUpdate(ctx, (const unsigned char *)salt, salt_len);
+#  142|   
+#  143|       /* Compute alternate SHA512 sum with input KEY, SALT, and KEY.
+
+Error: COMPILER_WARNING (CWE-252):
+sssd-2.5.2/src/util/crypto/libcrypto/crypto_sha512crypt.c:151:5: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#    EVP_DigestUpdate(alt_ctx, (const unsigned char *)key, key_len);
+#    ^~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  149|   
+#  150|       /* Add key. */
+#  151|->     EVP_DigestUpdate(alt_ctx, (const unsigned char *)key, key_len);
+#  152|   
+#  153|       /* Add salt. */
+
+Error: COMPILER_WARNING (CWE-252):
+sssd-2.5.2/src/util/crypto/libcrypto/crypto_sha512crypt.c:154:5: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#    EVP_DigestUpdate(alt_ctx, (const unsigned char *)salt, salt_len);
+#    ^~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  152|   
+#  153|       /* Add salt. */
+#  154|->     EVP_DigestUpdate(alt_ctx, (const unsigned char *)salt, salt_len);
+#  155|   
+#  156|       /* Add key again. */
+
+Error: COMPILER_WARNING (CWE-252):
+sssd-2.5.2/src/util/crypto/libcrypto/crypto_sha512crypt.c:157:5: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#    EVP_DigestUpdate(alt_ctx, (const unsigned char *)key, key_len);
+#    ^~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  155|   
+#  156|       /* Add key again. */
+#  157|->     EVP_DigestUpdate(alt_ctx, (const unsigned char *)key, key_len);
+#  158|   
+#  159|       /* Now get result of this (64 bytes) and add it to the other context. */
+
+Error: COMPILER_WARNING (CWE-252):
+sssd-2.5.2/src/util/crypto/libcrypto/crypto_sha512crypt.c:160:5: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#    EVP_DigestFinal_ex(alt_ctx, alt_result, &part);
+#    ^~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  158|   
+#  159|       /* Now get result of this (64 bytes) and add it to the other context. */
+#  160|->     EVP_DigestFinal_ex(alt_ctx, alt_result, &part);
+#  161|   
+#  162|       /* Add for any character in the key one byte of the alternate sum. */
+
+Error: COMPILER_WARNING (CWE-252):
+sssd-2.5.2/src/util/crypto/libcrypto/crypto_sha512crypt.c:164:9: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#        EVP_DigestUpdate(ctx, alt_result, 64);
+#        ^~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~
+#  162|       /* Add for any character in the key one byte of the alternate sum. */
+#  163|       for (cnt = key_len; cnt > 64; cnt -= 64) {
+#  164|->         EVP_DigestUpdate(ctx, alt_result, 64);
+#  165|       }
+#  166|       EVP_DigestUpdate(ctx, alt_result, cnt);
+
+Error: COMPILER_WARNING (CWE-252):
+sssd-2.5.2/src/util/crypto/libcrypto/crypto_sha512crypt.c:166:5: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#    EVP_DigestUpdate(ctx, alt_result, cnt);
+#    ^~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~
+#  164|           EVP_DigestUpdate(ctx, alt_result, 64);
+#  165|       }
+#  166|->     EVP_DigestUpdate(ctx, alt_result, cnt);
+#  167|   
+#  168|       /* Take the binary representation of the length of the key and for every
+
+Error: COMPILER_WARNING (CWE-252):
+sssd-2.5.2/src/util/crypto/libcrypto/crypto_sha512crypt.c:172:13: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#            EVP_DigestUpdate(ctx, alt_result, 64);
+#            ^~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~
+#  170|       for (cnt = key_len; cnt > 0; cnt >>= 1) {
+#  171|           if ((cnt & 1) != 0) {
+#  172|->             EVP_DigestUpdate(ctx, alt_result, 64);
+#  173|           } else {
+#  174|               EVP_DigestUpdate(ctx, (const unsigned char *)key, key_len);
+
+Error: COMPILER_WARNING (CWE-252):
+sssd-2.5.2/src/util/crypto/libcrypto/crypto_sha512crypt.c:174:13: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#            EVP_DigestUpdate(ctx, (const unsigned char *)key, key_len);
+#            ^~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  172|               EVP_DigestUpdate(ctx, alt_result, 64);
+#  173|           } else {
+#  174|->             EVP_DigestUpdate(ctx, (const unsigned char *)key, key_len);
+#  175|           }
+#  176|       }
+
+Error: COMPILER_WARNING (CWE-252):
+sssd-2.5.2/src/util/crypto/libcrypto/crypto_sha512crypt.c:179:5: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#    EVP_DigestFinal_ex(ctx, alt_result, &part);
+#    ^~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~
+#  177|   
+#  178|       /* Create intermediate result. */
+#  179|->     EVP_DigestFinal_ex(ctx, alt_result, &part);
+#  180|   
+#  181|       /* Start computation of P byte sequence. */
+
+Error: COMPILER_WARNING (CWE-252):
+sssd-2.5.2/src/util/crypto/libcrypto/crypto_sha512crypt.c:189:9: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#        EVP_DigestUpdate(alt_ctx, (const unsigned char *)key, key_len);
+#        ^~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  187|       /* For every character in the password add the entire password. */
+#  188|       for (cnt = 0; cnt < key_len; cnt++) {
+#  189|->         EVP_DigestUpdate(alt_ctx, (const unsigned char *)key, key_len);
+#  190|       }
+#  191|   
+
+Error: COMPILER_WARNING (CWE-252):
+sssd-2.5.2/src/util/crypto/libcrypto/crypto_sha512crypt.c:193:5: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#    EVP_DigestFinal_ex(alt_ctx, temp_result, &part);
+#    ^~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  191|   
+#  192|       /* Finish the digest. */
+#  193|->     EVP_DigestFinal_ex(alt_ctx, temp_result, &part);
+#  194|   
+#  195|       /* Create byte sequence P. */
+
+Error: COMPILER_WARNING (CWE-252):
+sssd-2.5.2/src/util/crypto/libcrypto/crypto_sha512crypt.c:209:9: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#        EVP_DigestUpdate(alt_ctx, (const unsigned char *)salt, salt_len);
+#        ^~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  207|   
+#  208|       for (cnt = 0; cnt < 16 + alt_result[0]; cnt++) {
+#  209|->         EVP_DigestUpdate(alt_ctx, (const unsigned char *)salt, salt_len);
+#  210|       }
+#  211|   
+
+Error: COMPILER_WARNING (CWE-252):
+sssd-2.5.2/src/util/crypto/libcrypto/crypto_sha512crypt.c:213:5: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#    EVP_DigestFinal_ex(alt_ctx, temp_result, &part);
+#    ^~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  211|   
+#  212|       /* Finish the digest. */
+#  213|->     EVP_DigestFinal_ex(alt_ctx, temp_result, &part);
+#  214|   
+#  215|       /* Create byte sequence S.  */
+
+Error: COMPILER_WARNING (CWE-252):
+sssd-2.5.2/src/util/crypto/libcrypto/crypto_sha512crypt.c:232:13: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#            EVP_DigestUpdate(ctx, (const unsigned char *)p_bytes, key_len);
+#            ^~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  230|           /* Add key or last result. */
+#  231|           if ((cnt & 1) != 0) {
+#  232|->             EVP_DigestUpdate(ctx, (const unsigned char *)p_bytes, key_len);
+#  233|           } else {
+#  234|               EVP_DigestUpdate(ctx, alt_result, 64);
+
+Error: COMPILER_WARNING (CWE-252):
+sssd-2.5.2/src/util/crypto/libcrypto/crypto_sha512crypt.c:234:13: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#            EVP_DigestUpdate(ctx, alt_result, 64);
+#            ^~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~
+#  232|               EVP_DigestUpdate(ctx, (const unsigned char *)p_bytes, key_len);
+#  233|           } else {
+#  234|->             EVP_DigestUpdate(ctx, alt_result, 64);
+#  235|           }
+#  236|   
+
+Error: COMPILER_WARNING (CWE-252):
+sssd-2.5.2/src/util/crypto/libcrypto/crypto_sha512crypt.c:239:13: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#            EVP_DigestUpdate(ctx, (const unsigned char *)s_bytes, salt_len);
+#            ^~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  237|           /* Add salt for numbers not divisible by 3. */
+#  238|           if (cnt % 3 != 0) {
+#  239|->             EVP_DigestUpdate(ctx, (const unsigned char *)s_bytes, salt_len);
+#  240|           }
+#  241|   
+
+Error: COMPILER_WARNING (CWE-252):
+sssd-2.5.2/src/util/crypto/libcrypto/crypto_sha512crypt.c:244:13: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#            EVP_DigestUpdate(ctx, (const unsigned char *)p_bytes, key_len);
+#            ^~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  242|           /* Add key for numbers not divisible by 7. */
+#  243|           if (cnt % 7 != 0) {
+#  244|->             EVP_DigestUpdate(ctx, (const unsigned char *)p_bytes, key_len);
+#  245|           }
+#  246|   
+
+Error: COMPILER_WARNING (CWE-252):
+sssd-2.5.2/src/util/crypto/libcrypto/crypto_sha512crypt.c:249:13: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#            EVP_DigestUpdate(ctx, alt_result, 64);
+#            ^~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~
+#  247|           /* Add key or last result. */
+#  248|           if ((cnt & 1) != 0) {
+#  249|->             EVP_DigestUpdate(ctx, alt_result, 64);
+#  250|           } else {
+#  251|               EVP_DigestUpdate(ctx, (const unsigned char *)p_bytes, key_len);
+
+Error: COMPILER_WARNING (CWE-252):
+sssd-2.5.2/src/util/crypto/libcrypto/crypto_sha512crypt.c:251:13: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#            EVP_DigestUpdate(ctx, (const unsigned char *)p_bytes, key_len);
+#            ^~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  249|               EVP_DigestUpdate(ctx, alt_result, 64);
+#  250|           } else {
+#  251|->             EVP_DigestUpdate(ctx, (const unsigned char *)p_bytes, key_len);
+#  252|           }
+#  253|   
+
+Error: COMPILER_WARNING (CWE-252):
+sssd-2.5.2/src/util/crypto/libcrypto/crypto_sha512crypt.c:255:9: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#        EVP_DigestFinal_ex(ctx, alt_result, &part);
+#        ^~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~
+#  253|   
+#  254|           /* Create intermediate result. */
+#  255|->         EVP_DigestFinal_ex(ctx, alt_result, &part);
+#  256|       }
+#  257|   
+
+Error: COMPILER_WARNING:
+sssd-2.5.2/src/util/inotify.c:320:24: warning[-Wcast-align]: cast from 'const char *' to 'const struct inotify_event *' increases required alignment from 1 to 4
+#            in_event = (const struct inotify_event *) ptr;
+#                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  318|                ptr += sizeof(struct inotify_event) + in_event->len) {
+#  319|   
+#  320|->             in_event = (const struct inotify_event *) ptr;
+#  321|   
+#  322|   #if 0
+
+Error: COMPILER_WARNING (CWE-477):
+sssd-2.5.2/src/util/server.c:545:37: warning[-Wdeprecated-declarations]: 'talloc_autofree_context' is deprecated
+#    event_ctx = tevent_context_init(talloc_autofree_context());
+#                                    ^
+/usr/include/talloc.h:1071:46: note: 'talloc_autofree_context' has been explicitly marked deprecated here
+#_PUBLIC_ void *talloc_autofree_context(void) _DEPRECATED_;
+#                                             ^
+/usr/include/talloc.h:119:38: note: expanded from macro '_DEPRECATED_'
+##define _DEPRECATED_ __attribute__ ((deprecated))
+#                                     ^
+#  543|       /* the event context is the top level structure.
+#  544|        * Everything else should hang off that */
+#  545|->     event_ctx = tevent_context_init(talloc_autofree_context());
+#  546|       if (event_ctx == NULL) {
+#  547|           DEBUG(SSSDBG_FATAL_FAILURE,

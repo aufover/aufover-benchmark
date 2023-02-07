@@ -1,0 +1,623 @@
+Error: COMPILER_WARNING (CWE-477):
+augeas-1.12.0/gnulib/lib/getfilecon.c:36:35: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#int getfilecon (char const *file, security_context_t *con);
+#                                  ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   34|   #undef lgetfilecon
+#   35|   #undef fgetfilecon
+#   36|-> int getfilecon (char const *file, security_context_t *con);
+#   37|   int lgetfilecon (char const *file, security_context_t *con);
+#   38|   int fgetfilecon (int fd, security_context_t *con);
+
+Error: COMPILER_WARNING (CWE-477):
+augeas-1.12.0/gnulib/lib/getfilecon.c:37:36: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#int lgetfilecon (char const *file, security_context_t *con);
+#                                   ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   35|   #undef fgetfilecon
+#   36|   int getfilecon (char const *file, security_context_t *con);
+#   37|-> int lgetfilecon (char const *file, security_context_t *con);
+#   38|   int fgetfilecon (int fd, security_context_t *con);
+#   39|   
+
+Error: COMPILER_WARNING (CWE-477):
+augeas-1.12.0/gnulib/lib/getfilecon.c:38:26: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#int fgetfilecon (int fd, security_context_t *con);
+#                         ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   36|   int getfilecon (char const *file, security_context_t *con);
+#   37|   int lgetfilecon (char const *file, security_context_t *con);
+#   38|-> int fgetfilecon (int fd, security_context_t *con);
+#   39|   
+#   40|   /* getfilecon, lgetfilecon, and fgetfilecon can all misbehave, be it
+
+Error: COMPILER_WARNING (CWE-477):
+augeas-1.12.0/gnulib/lib/getfilecon.c:49:26: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#map_to_failure (int ret, security_context_t *con)
+#                         ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   47|   
+#   48|   static int
+#   49|-> map_to_failure (int ret, security_context_t *con)
+#   50|   {
+#   51|     if (ret == 0)
+
+Error: COMPILER_WARNING (CWE-477):
+augeas-1.12.0/gnulib/lib/getfilecon.c:69:35: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#rpl_getfilecon (char const *file, security_context_t *con)
+#                                  ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   67|   
+#   68|   int
+#   69|-> rpl_getfilecon (char const *file, security_context_t *con)
+#   70|   {
+#   71|     int ret = getfilecon (file, con);
+
+Error: COMPILER_WARNING (CWE-477):
+augeas-1.12.0/gnulib/lib/getfilecon.c:76:36: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#rpl_lgetfilecon (char const *file, security_context_t *con)
+#                                   ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   74|   
+#   75|   int
+#   76|-> rpl_lgetfilecon (char const *file, security_context_t *con)
+#   77|   {
+#   78|     int ret = lgetfilecon (file, con);
+
+Error: COMPILER_WARNING (CWE-477):
+augeas-1.12.0/gnulib/lib/getfilecon.c:83:26: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#rpl_fgetfilecon (int fd, security_context_t *con)
+#                         ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   81|   
+#   82|   int
+#   83|-> rpl_fgetfilecon (int fd, security_context_t *con)
+#   84|   {
+#   85|     int ret = fgetfilecon (fd, con);
+
+Error: COMPILER_WARNING (CWE-563):
+augeas-1.12.0/src/jmt.c:1539:12: warning[-Wunused-but-set-variable]: variable 'count' set but not used
+#    size_t count, removed;
+#           ^
+# 1537|   static void collect(struct jmt *jmt) {
+# 1538|       struct array worklist;
+# 1539|->     size_t count, removed;
+# 1540|       int r;
+# 1541|   
+
+Error: COMPILER_WARNING (CWE-563):
+augeas-1.12.0/src/jmt.c:1539:19: warning[-Wunused-but-set-variable]: variable 'removed' set but not used
+#    size_t count, removed;
+#                  ^
+# 1537|   static void collect(struct jmt *jmt) {
+# 1538|       struct array worklist;
+# 1539|->     size_t count, removed;
+# 1540|       int r;
+# 1541|   
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:222:28: warning[-Wcast-align]: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#                types[i] = ltype(lens->children[i], t);
+#                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  220|                   continue;
+#  221|               for (int i=0; i < lens->nchildren; i++)
+#  222|->                 types[i] = ltype(lens->children[i], t);
+#  223|               ltype(lens, t) = (*combinator)(info, lens->nchildren, types);
+#  224|           }
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:223:13: warning[-Wcast-align]: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#            ltype(lens, t) = (*combinator)(info, lens->nchildren, types);
+#            ^~~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  221|               for (int i=0; i < lens->nchildren; i++)
+#  222|                   types[i] = ltype(lens->children[i], t);
+#  223|->             ltype(lens, t) = (*combinator)(info, lens->nchildren, types);
+#  224|           }
+#  225|       }
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:367:9: warning[-Wcast-align]: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#        ltype(lens, t) = regexp_iter(info, ltype(l, t), 0, -1);
+#        ^~~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  365|       lens = make_lens_unop(L_STAR, info, l);
+#  366|       for (int t = 0; t < ntypes; t++) {
+#  367|->         ltype(lens, t) = regexp_iter(info, ltype(l, t), 0, -1);
+#  368|       }
+#  369|       lens->recursive = l->recursive;
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:367:44: warning[-Wcast-align]: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#        ltype(lens, t) = regexp_iter(info, ltype(l, t), 0, -1);
+#                                           ^~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  365|       lens = make_lens_unop(L_STAR, info, l);
+#  366|       for (int t = 0; t < ntypes; t++) {
+#  367|->         ltype(lens, t) = regexp_iter(info, ltype(l, t), 0, -1);
+#  368|       }
+#  369|       lens->recursive = l->recursive;
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:397:9: warning[-Wcast-align]: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#        ltype(lens, t) = regexp_maybe(info, ltype(l, t));
+#        ^~~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  395|       lens = make_lens_unop(L_MAYBE, info, l);
+#  396|       for (int t=0; t < ntypes; t++)
+#  397|->         ltype(lens, t) = regexp_maybe(info, ltype(l, t));
+#  398|       lens->value = l->value;
+#  399|       lens->key = l->key;
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:397:45: warning[-Wcast-align]: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#        ltype(lens, t) = regexp_maybe(info, ltype(l, t));
+#                                            ^~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  395|       lens = make_lens_unop(L_MAYBE, info, l);
+#  396|       for (int t=0; t < ntypes; t++)
+#  397|->         ltype(lens, t) = regexp_maybe(info, ltype(l, t));
+#  398|       lens->value = l->value;
+#  399|       lens->key = l->key;
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:498:9: warning[-Wcast-align]: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#        ltype(sqr, t) = ref(ltype(cnt2->lens, t));
+#        ^~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  496|   
+#  497|       for (int t=0; t < ntypes; t++)
+#  498|->         ltype(sqr, t) = ref(ltype(cnt2->lens, t));
+#  499|   
+#  500|       square_precise_type(info, &(sqr->ctype), l1->ctype, l2->ctype);
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:498:29: warning[-Wcast-align]: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#        ltype(sqr, t) = ref(ltype(cnt2->lens, t));
+#                        ~~~~^~~~~~~~~~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^
+augeas-1.12.0/src/ref.h:52:19: note: expanded from macro 'ref'
+##define ref(s) (((s) == NULL || (s)->ref == REF_MAX) ? (s) : ((s)->ref++, (s)))
+#                  ^
+#  496|   
+#  497|       for (int t=0; t < ntypes; t++)
+#  498|->         ltype(sqr, t) = ref(ltype(cnt2->lens, t));
+#  499|   
+#  500|       square_precise_type(info, &(sqr->ctype), l1->ctype, l2->ctype);
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:767:32: warning[-Wcast-align]: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#            s1 = regexp_escape(ltype(l1, typ));
+#                               ^~~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+#  765|               e_pv = escape(pv, -1, RX_ESCAPES);
+#  766|               e_v = escape(v, -1, RX_ESCAPES);
+#  767|->             s1 = regexp_escape(ltype(l1, typ));
+#  768|               s2 = regexp_escape(ltype(l2, typ));
+#  769|           }
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:768:32: warning[-Wcast-align]: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#            s2 = regexp_escape(ltype(l2, typ));
+#                               ^~~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  766|               e_v = escape(v, -1, RX_ESCAPES);
+#  767|               s1 = regexp_escape(ltype(l1, typ));
+#  768|->             s2 = regexp_escape(ltype(l2, typ));
+#  769|           }
+#  770|           exn = make_exn_value(ref(info), "%s", msg);
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:799:25: warning[-Wcast-align]: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#    struct regexp *r1 = ltype(l1, typ);
+#                        ^~~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  797|       struct fa *fa2 = NULL;
+#  798|       struct value *result = NULL;
+#  799|->     struct regexp *r1 = ltype(l1, typ);
+#  800|       struct regexp *r2 = ltype(l2, typ);
+#  801|   
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:800:25: warning[-Wcast-align]: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#    struct regexp *r2 = ltype(l2, typ);
+#                        ^~~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  798|       struct value *result = NULL;
+#  799|       struct regexp *r1 = ltype(l1, typ);
+#  800|->     struct regexp *r2 = ltype(l2, typ);
+#  801|   
+#  802|       if (r1 == NULL || r2 == NULL)
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:862:25: warning[-Wcast-align]: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#    struct regexp *r1 = ltype(l1, CTYPE);
+#                        ^~~~~~~~~~~~~~~~
+#
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^
+augeas-1.12.0/src/ref.h:52:64: note: expanded from macro 'ref'
+##define ref(s) (((s) == NULL || (s)->ref == REF_MAX) ? (s) : ((s)->ref++, (s)))
+#                                                               ^
+#        ltype(sqr, t) = ref(ltype(cnt2->lens, t));
+#                        ~~~~^~~~~~~~~~~~~~~~~~~~~
+#    struct regexp *r2 = ltype(l2, CTYPE);
+#                        ^~~~~~~~~~~~~~~~
+augeas-1.12.0/src/ref.h:52:76: note: expanded from macro 'ref'
+#  860|       struct value *exn = NULL;
+#  861|       struct fa *fa1 = NULL, *fa2 = NULL;
+#  862|->     struct regexp *r1 = ltype(l1, CTYPE);
+#  863|       struct regexp *r2 = ltype(l2, CTYPE);
+#  864|   
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:863:25: warning[-Wcast-align]: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#    struct regexp *r2 = ltype(l2, CTYPE);
+#                        ^~~~~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  861|       struct fa *fa1 = NULL, *fa2 = NULL;
+#  862|       struct regexp *r1 = ltype(l1, CTYPE);
+#  863|->     struct regexp *r2 = ltype(l2, CTYPE);
+#  864|   
+#  865|       if (r1 == NULL || r2 == NULL)
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:914:24: warning[-Wcast-align]: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#    struct regexp *r = ltype(l, typ);
+#                       ^~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  912|       struct fa *fas = NULL, *fa = NULL;
+#  913|       struct value *result = NULL;
+#  914|->     struct regexp *r = ltype(l, typ);
+#  915|   
+#  916|       if (r == NULL)
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:1018:15: warning[-Wcast-align]: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#        unref(ltype(lens, t), regexp);
+#        ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^
+augeas-1.12.0/src/ref.h:56:14: note: expanded from macro 'unref'
+#        if ((s) != NULL && (s)->ref != REF_MAX) {                       \
+#             ^
+# 1016|   
+# 1017|       for (int t=0; t < ntypes; t++)
+# 1018|->         unref(ltype(lens, t), regexp);
+# 1019|   
+# 1020|       unref(lens->info, info);
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:1032:24: warning[-Wcast-align]: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#        regexp_release(ltype(lens, t));
+#                       ^~~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1030|   
+# 1031|       for (int t=0; t < ntypes; t++)
+# 1032|->         regexp_release(ltype(lens, t));
+# 1033|   
+# 1034|       if (lens->tag == L_KEY || lens->tag == L_STORE)
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:1534:26: warning[-Wcast-align]: 47:25: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^
+augeas-1.12.0/src/ref.h:52:64: note: expanded from macro 'ref'
+##define ref(s) (((s) == NULL || (s)->ref == REF_MAX) ? (s) : ((s)->ref++, (s)))
+#                                                               ^
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^
+augeas-1.12.0/src/ref.h:52:76: note: expanded from macro 'ref'
+##define ref(s) (((s) == NULL || (s)->ref == REF_MAX) ? (s) : ((s)->ref++, (s)))
+#                                                                           ^
+# 1532|       if (l != NULL) {
+# 1533|           result->lens = ref(l);
+# 1534|->         result->re = ref(ltype(l, rtn->lens_type));
+# 1535|       }
+# 1536|    error:
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:1534:26: warning[-Wcast-align]: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#        result->re = ref(ltype(l, rtn->lens_type));
+#                     ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^
+augeas-1.12.0/src/ref.h:52:19: note: expanded from macro 'ref'
+##define ref(s) (((s) == NULL || (s)->ref == REF_MAX) ? (s) : ((s)->ref++, (s)))
+#                  ^
+# 1532|       if (l != NULL) {
+# 1533|           result->lens = ref(l);
+# 1534|->         result->re = ref(ltype(l, rtn->lens_type));
+# 1535|       }
+# 1536|    error:
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:2016:27: warning[-Wcast-align]: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#    if (! l->recursive || ltype(l, lt) != NULL)
+#                          ^~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2014|       int r;
+# 2015|   
+# 2016|->     if (! l->recursive || ltype(l, lt) != NULL)
+# 2017|           return;
+# 2018|   
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:2025:24: warning[-Wcast-align]: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#            types[i] = ltype(l->children[i], lt);
+#                       ^~~~~~~~~~~~~~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2023|           for (int i=0; i < l->nchildren; i++) {
+# 2024|               propagate_type(l->children[i], lt);
+# 2025|->             types[i] = ltype(l->children[i], lt);
+# 2026|           }
+# 2027|           ltype(l, lt) = regexp_concat_n(l->info, l->nchildren, types);
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:2027:9: warning[-Wcast-align]: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#        ltype(l, lt) = regexp_concat_n(l->info, l->nchildren, types);
+#        ^~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2025|               types[i] = ltype(l->children[i], lt);
+# 2026|           }
+# 2027|->         ltype(l, lt) = regexp_concat_n(l->info, l->nchildren, types);
+# 2028|           FREE(types);
+# 2029|           break;
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:2035:24: warning[-Wcast-align]: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#            types[i] = ltype(l->children[i], lt);
+#                       ^~~~~~~~~~~~~~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2033|           for (int i=0; i < l->nchildren; i++) {
+# 2034|               propagate_type(l->children[i], lt);
+# 2035|->             types[i] = ltype(l->children[i], lt);
+# 2036|           }
+# 2037|           ltype(l, lt) = regexp_union_n(l->info, l->nchildren, types);
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:2037:9: warning[-Wcast-align]: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#        ltype(l, lt) = regexp_union_n(l->info, l->nchildren, types);
+#        ^~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2035|               types[i] = ltype(l->children[i], lt);
+# 2036|           }
+# 2037|->         ltype(l, lt) = regexp_union_n(l->info, l->nchildren, types);
+# 2038|           FREE(types);
+# 2039|           break;
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:2049:9: warning[-Wcast-align]: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#        ltype(l, lt) = regexp_iter(l->info, ltype(l->child, lt), 0, -1);
+#        ^~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2047|       case L_STAR:
+# 2048|           propagate_type(l->child, lt);
+# 2049|->         ltype(l, lt) = regexp_iter(l->info, ltype(l->child, lt), 0, -1);
+# 2050|           break;
+# 2051|       case L_MAYBE:
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:2049:45: warning[-Wcast-align]: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#        ltype(l, lt) = regexp_iter(l->info, ltype(l->child, lt), 0, -1);
+#                                            ^~~~~~~~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2047|       case L_STAR:
+# 2048|           propagate_type(l->child, lt);
+# 2049|->         ltype(l, lt) = regexp_iter(l->info, ltype(l->child, lt), 0, -1);
+# 2050|           break;
+# 2051|       case L_MAYBE:
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:2053:9: warning[-Wcast-align]: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#        ltype(l, lt) = regexp_maybe(l->info, ltype(l->child, lt));
+#        ^~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2051|       case L_MAYBE:
+# 2052|           propagate_type(l->child, lt);
+# 2053|->         ltype(l, lt) = regexp_maybe(l->info, ltype(l->child, lt));
+# 2054|           break;
+# 2055|       case L_REC:
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:2053:46: warning[-Wcast-align]: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#        ltype(l, lt) = regexp_maybe(l->info, ltype(l->child, lt));
+#                                             ^~~~~~~~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2051|       case L_MAYBE:
+# 2052|           propagate_type(l->child, lt);
+# 2053|->         ltype(l, lt) = regexp_maybe(l->info, ltype(l->child, lt));
+# 2054|           break;
+# 2055|       case L_REC:
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:2060:9: warning[-Wcast-align]: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#        ltype(l, lt) = ref(ltype(l->child, lt));
+#        ^~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2058|       case L_SQUARE:
+# 2059|           propagate_type(l->child, lt);
+# 2060|->         ltype(l, lt) = ref(ltype(l->child, lt));
+# 2061|           break;
+# 2062|       default:
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:2060:28: warning[-Wcast-align]: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#        ltype(l, lt) = ref(ltype(l->child, lt));
+#                       ~~~~^~~~~~~~~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^
+augeas-1.12.0/src/ref.h:52:19: note: expanded from macro 'ref'
+##define ref(s) (((s) == NULL || (s)->ref == REF_MAX) ? (s) : ((s)->ref++, (s)))
+#                  ^
+# 2058|       case L_SQUARE:
+# 2059|           propagate_type(l->child, lt);
+# 2060|->         ltype(l, lt) = ref(ltype(l->child, lt));
+# 2061|           break;
+# 2062|       default:
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:2172:5: warning[-Wcast-align]: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#    ltype(rec, lt) = rtn_reduce(rtn, rec);
+#    ^~~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2170|       rtn = rtn_build(rec, lt);
+# 2171|       RTN_BAIL(rtn);
+# 2172|->     ltype(rec, lt) = rtn_reduce(rtn, rec);
+# 2173|       RTN_BAIL(rtn);
+# 2174|       if (debugging("cf.approx"))
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:2185:30: warning[-Wcast-align]: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#        print_regexp(stdout, ltype(rec, lt));
+#                             ^~~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2183|       if (debugging("cf.approx")) {
+# 2184|           printf("approx %s  => ", lens_type_names[lt]);
+# 2185|->         print_regexp(stdout, ltype(rec, lt));
+# 2186|           printf("\n");
+# 2187|       }
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:2332:9: warning[-Wcast-align]: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#        ltype(top, t) = ref(ltype(rec, t));
+#        ^~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2330|       struct lens *top = result->lens;
+# 2331|       for (int t=0; t < ntypes; t++)
+# 2332|->         ltype(top, t) = ref(ltype(rec, t));
+# 2333|       top->value = rec->value;
+# 2334|       top->key = rec->key;
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:2332:29: warning[-Wcast-align]: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#        ltype(top, t) = ref(ltype(rec, t));
+#                        ~~~~^~~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^
+augeas-1.12.0/src/ref.h:52:19: note: expanded from macro 'ref'
+##define ref(s) (((s) == NULL || (s)->ref == REF_MAX) ? (s) : ((s)->ref++, (s)))
+#                  ^
+# 2330|       struct lens *top = result->lens;
+# 2331|       for (int t=0; t < ntypes; t++)
+# 2332|->         ltype(top, t) = ref(ltype(rec, t));
+# 2333|       top->value = rec->value;
+# 2334|       top->key = rec->key;
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/lens.c:2377:14: warning[-Wcast-align]: cast from 'char *' to 'struct regexp **' increases required alignment from 1 to 8
+#        re = ltype(lens, t);
+#             ^~~~~~~~~~~~~~
+augeas-1.12.0/src/lens.c:47:25: note: expanded from macro 'ltype'
+##define ltype(lns, t) *((struct regexp **) ((char *) lns + type_offs[t]))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2375|   
+# 2376|       for (int t=0; t < ntypes; t++) {
+# 2377|->         re = ltype(lens, t);
+# 2378|           if (re == NULL)
+# 2379|               continue;
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/ref.c:34:11: warning[-Wcast-align]: cast from 'char *' to 'ref_t *' (aka 'unsigned int *') increases required alignment from 1 to 4
+#        *((ref_t *) ((char*) ptr + ref_ofs)) = 1;
+#          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   32|       } else {
+#   33|           void *ptr = *(void **)ptrptr;
+#   34|->         *((ref_t *) ((char*) ptr + ref_ofs)) = 1;
+#   35|           return 0;
+#   36|       }
+
+Error: COMPILER_WARNING (CWE-477):
+augeas-1.12.0/src/transform.c:921:5: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#    security_context_t con = NULL;
+#    ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#  919|       int ret = 0;
+#  920|       int selinux_enabled = (is_selinux_enabled() > 0);
+#  921|->     security_context_t con = NULL;
+#  922|   
+#  923|       int from_fd;

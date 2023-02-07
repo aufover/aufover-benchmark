@@ -1,0 +1,59 @@
+Error: COMPILER_WARNING (CWE-682):
+libfastjson-0.99.9/tests/parse_flags.c:34:26: warning[-Wsizeof-array-div]: expression does not compute the number of elements in this array; element type is 'struct (unnamed struct at parse_flags.c:14:8)', not 'struct (unnamed struct at parse_flags.c:14:8) *'
+#                for (jj = 0; jj < (int)NELEM(format_args); jj++)
+#                                       ^     ~~~~~~~~~~~
+libfastjson-0.99.9/tests/parse_flags.c:24:29: note: expanded from macro 'NELEM'
+##define NELEM(x) (sizeof(x) / sizeof(&x[0]))
+#                         ~  ^
+libfastjson-0.99.9/tests/parse_flags.c:17:3: note: array 'format_args' declared here
+#} format_args[] = {
+#  ^
+libfastjson-0.99.9/tests/parse_flags.c:34:26: note: place parentheses around the 'sizeof (&format_args[0])' expression to silence this warning
+#                for (jj = 0; jj < (int)NELEM(format_args); jj++)
+#                                       ^
+libfastjson-0.99.9/tests/parse_flags.c:24:29: note: expanded from macro 'NELEM'
+##define NELEM(x) (sizeof(x) / sizeof(&x[0]))
+#                            ^
+#   32|   	{
+#   33|   		int jj;
+#   34|-> 		for (jj = 0; jj < (int)NELEM(format_args); jj++)
+#   35|   		{
+#   36|   			if (strcasecmp(argv[arg_idx], format_args[jj].arg) == 0)
+
+Error: SYMBIOTIC_WARNING:
+libfastjson-0.99.9/tests/parse_flags.c:36: error: memory error: out of bound pointer
+libfastjson-0.99.9/tests/parse_flags.c:36: note: call stack: function parse_flags (=2, =0)
+libfastjson-0.99.9/tests/test2.c:28: note: call stack: function main (=2, =0)
+libfastjson-0.99.9/tests/parse_flags.c:36: note: Additional Info: address: 37:48
+libfastjson-0.99.9/tests/parse_flags.c:36: note: Additional Info: pointing to: object at Segment: [37] of size 48
+libfastjson-0.99.9/tests/parse_flags.c:36: note: Additional Info: MO26[48] allocated at global:format_args
+libfastjson-0.99.9/tests/parse_flags.c:36:8: note: Non-deterministic values: strcasecmp: len 4 bytes, [0x1|3 times 0x0] (i32: 1)
+libfastjson-0.99.9/tests/parse_flags.c:36:8: note: Non-deterministic values: strcasecmp: len 4 bytes, [0x1|3 times 0x0] (i32: 1)
+libfastjson-0.99.9/tests/parse_flags.c:36:8: note: Non-deterministic values: strcasecmp: len 4 bytes, [0x1|3 times 0x0] (i32: 1)
+#   34|   		for (jj = 0; jj < (int)NELEM(format_args); jj++)
+#   35|   		{
+#   36|-> 			if (strcasecmp(argv[arg_idx], format_args[jj].arg) == 0)
+#   37|   			{
+#   38|   				sflags |= format_args[jj].flag;
+
+Error: COMPILER_WARNING (CWE-682):
+libfastjson-0.99.9/tests/parse_flags.c:42:13: warning[-Wsizeof-array-div]: expression does not compute the number of elements in this array; element type is 'struct (unnamed struct at parse_flags.c:14:8)', not 'struct (unnamed struct at parse_flags.c:14:8) *'
+#                if (jj == NELEM(format_args))
+#                          ^     ~~~~~~~~~~~
+libfastjson-0.99.9/tests/parse_flags.c:24:29: note: expanded from macro 'NELEM'
+##define NELEM(x) (sizeof(x) / sizeof(&x[0]))
+#                         ~  ^
+libfastjson-0.99.9/tests/parse_flags.c:17:3: note: array 'format_args' declared here
+#} format_args[] = {
+#  ^
+libfastjson-0.99.9/tests/parse_flags.c:42:13: note: place parentheses around the 'sizeof (&format_args[0])' expression to silence this warning
+#                if (jj == NELEM(format_args))
+#                          ^
+libfastjson-0.99.9/tests/parse_flags.c:24:29: note: expanded from macro 'NELEM'
+##define NELEM(x) (sizeof(x) / sizeof(&x[0]))
+#                            ^
+#   40|   			}
+#   41|   		}
+#   42|-> 		if (jj == NELEM(format_args))
+#   43|   		{
+#   44|   			printf("Unknown arg: %s\n", argv[arg_idx]);

@@ -1,0 +1,23 @@
+Error: COMPILER_WARNING (CWE-1164):
+dbus-python-1.2.18/dbus_bindings/mainloop.c:40:1: warning[-Wunused-function]: unused function 'NativeMainLoop_CheckExact'
+#DEFINE_CHECK(NativeMainLoop)
+#^
+dbus-python-1.2.18/dbus_bindings/dbus_bindings-internal.h:65:19: note: expanded from macro 'DEFINE_CHECK'
+#static inline int type##_CheckExact (PyObject *o) \
+#                  ^
+<scratch space>:119:1: note: expanded from here
+#NativeMainLoop_CheckExact
+#^
+#   38|   static PyTypeObject NativeMainLoop_Type;
+#   39|   
+#   40|-> DEFINE_CHECK(NativeMainLoop)
+#   41|   
+#   42|   typedef struct {
+
+Error: COMPILER_WARNING (CWE-1164):
+dbus-python-1.2.18/dbus_bindings/pending-call.c:37:19: warning[-Wunused-function]: unused function 'PendingCall_Check'
+#   35|   static PyTypeObject PendingCallType;
+#   36|   
+#   37|-> static inline int PendingCall_Check (PyObject *o)
+#   38|   {
+#   39|       return (Py_TYPE(o) == &PendingCallType)

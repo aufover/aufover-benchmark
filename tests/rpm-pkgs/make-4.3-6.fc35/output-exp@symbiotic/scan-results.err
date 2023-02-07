@@ -1,0 +1,155 @@
+Error: COMPILER_WARNING:
+make-4.3/src/main.c:784:11: warning[-Wstring-compare]: result of comparison against a string literal is unspecified (use an explicit string comparison function instead)
+#      if (streq (output_sync_option, "none"))
+#          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+make-4.3/src/makeint.h:316:9: note: expanded from macro 'streq'
+#   ((a) == (b) || \
+#        ^  ~~~
+#  782|     if (output_sync_option)
+#  783|       {
+#  784|->       if (streq (output_sync_option, "none"))
+#  785|           output_sync = OUTPUT_SYNC_NONE;
+#  786|         else if (streq (output_sync_option, "line"))
+
+Error: COMPILER_WARNING:
+make-4.3/src/main.c:786:16: warning[-Wstring-compare]: result of comparison against a string literal is unspecified (use an explicit string comparison function instead)
+#      else if (streq (output_sync_option, "line"))
+#               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+make-4.3/src/makeint.h:316:9: note: expanded from macro 'streq'
+#   ((a) == (b) || \
+#        ^  ~~~
+#  784|         if (streq (output_sync_option, "none"))
+#  785|           output_sync = OUTPUT_SYNC_NONE;
+#  786|->       else if (streq (output_sync_option, "line"))
+#  787|           output_sync = OUTPUT_SYNC_LINE;
+#  788|         else if (streq (output_sync_option, "target"))
+
+Error: COMPILER_WARNING:
+make-4.3/src/main.c:788:16: warning[-Wstring-compare]: result of comparison against a string literal is unspecified (use an explicit string comparison function instead)
+#      else if (streq (output_sync_option, "target"))
+#               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+make-4.3/src/makeint.h:316:9: note: expanded from macro 'streq'
+#   ((a) == (b) || \
+#        ^  ~~~
+#  786|         else if (streq (output_sync_option, "line"))
+#  787|           output_sync = OUTPUT_SYNC_LINE;
+#  788|->       else if (streq (output_sync_option, "target"))
+#  789|           output_sync = OUTPUT_SYNC_TARGET;
+#  790|         else if (streq (output_sync_option, "recurse"))
+
+Error: COMPILER_WARNING:
+make-4.3/src/main.c:790:16: warning[-Wstring-compare]: result of comparison against a string literal is unspecified (use an explicit string comparison function instead)
+#      else if (streq (output_sync_option, "recurse"))
+#               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+make-4.3/src/makeint.h:316:9: note: expanded from macro 'streq'
+#   ((a) == (b) || \
+#        ^  ~~~
+#  788|         else if (streq (output_sync_option, "target"))
+#  789|           output_sync = OUTPUT_SYNC_TARGET;
+#  790|->       else if (streq (output_sync_option, "recurse"))
+#  791|           output_sync = OUTPUT_SYNC_RECURSE;
+#  792|         else
+
+Error: COMPILER_WARNING:
+make-4.3/src/main.c:1401:13: warning[-Wstring-compare]: result of comparison against a string literal is unspecified (use an explicit string comparison function instead)
+#        if (streq (v->name, "SHELL"))
+#            ^~~~~~~~~~~~~~~~~~~~~~~~
+make-4.3/src/makeint.h:316:9: note: expanded from macro 'streq'
+#   ((a) == (b) || \
+#        ^  ~~~
+# 1399|           /* POSIX says the value of SHELL set in the makefile won't change the
+# 1400|              value of SHELL given to subprocesses.  */
+# 1401|->         if (streq (v->name, "SHELL"))
+# 1402|             {
+# 1403|   #ifndef __MSDOS__
+
+Error: COMPILER_WARNING:
+make-4.3/src/read.c:2081:30: warning[-Wstring-compare]: result of comparison against a string literal is unspecified (use an explicit string comparison function instead)
+#      if (!posix_pedantic && streq (name, ".POSIX"))
+#                             ^~~~~~~~~~~~~~~~~~~~~~
+make-4.3/src/makeint.h:316:9: note: expanded from macro 'streq'
+#   ((a) == (b) || \
+#        ^  ~~~
+# 2079|         /* Check for special targets.  Do it here instead of, say, snap_deps()
+# 2080|            so that we can immediately use the value.  */
+# 2081|->       if (!posix_pedantic && streq (name, ".POSIX"))
+# 2082|           {
+# 2083|             posix_pedantic = 1;
+
+Error: COMPILER_WARNING:
+make-4.3/src/read.c:2095:37: warning[-Wstring-compare]: result of comparison against a string literal is unspecified (use an explicit string comparison function instead)
+#      else if (!second_expansion && streq (name, ".SECONDEXPANSION"))
+#                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+make-4.3/src/makeint.h:316:9: note: expanded from macro 'streq'
+#   ((a) == (b) || \
+#        ^  ~~~
+# 2093|             define_variable_cname ("SCCSGETFLAGS", "-s", o_default, 0);
+# 2094|           }
+# 2095|->       else if (!second_expansion && streq (name, ".SECONDEXPANSION"))
+# 2096|           second_expansion = 1;
+# 2097|   #if !defined (__MSDOS__) && !defined (__EMX__)
+
+Error: COMPILER_WARNING:
+make-4.3/src/read.c:2098:30: warning[-Wstring-compare]: result of comparison against a string literal is unspecified (use an explicit string comparison function instead)
+#      else if (!one_shell && streq (name, ".ONESHELL"))
+#                             ^~~~~~~~~~~~~~~~~~~~~~~~~
+make-4.3/src/makeint.h:316:9: note: expanded from macro 'streq'
+#   ((a) == (b) || \
+#        ^  ~~~
+# 2096|           second_expansion = 1;
+# 2097|   #if !defined (__MSDOS__) && !defined (__EMX__)
+# 2098|->       else if (!one_shell && streq (name, ".ONESHELL"))
+# 2099|           one_shell = 1;
+# 2100|   #endif
+
+Error: COMPILER_WARNING:
+make-4.3/src/remake.c:1417:49: warning[-Wimplicit-const-int-float-conversion]: implicit conversion from 'unsigned long' to 'double' changes value from 18446744073709551615 to 18446744073709551616
+#              if (from_now >= 99 && from_now <= ULONG_MAX)
+#                                             ~~ ^~~~~~~~~
+/usr/lib64/clang/13.0.1/include/limits.h:57:37: note: expanded from macro 'ULONG_MAX'
+##define ULONG_MAX (__LONG_MAX__ *2UL+1UL)
+#                   ~~~~~~~~~~~~~~~~~^~~~
+# 1415|                 char from_now_string[100];
+# 1416|   
+# 1417|->               if (from_now >= 99 && from_now <= ULONG_MAX)
+# 1418|                   sprintf (from_now_string, "%lu", (unsigned long) from_now);
+# 1419|                 else
+
+Error: COMPILER_WARNING:
+make-4.3/src/variable.c:405:47: warning[-Wstring-compare]: result of comparison against a string literal is unspecified (use an explicit string comparison function instead)
+#  if (variable_changenum != last_changenum && streq (var->name, ".VARIABLES"))
+#                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+make-4.3/src/makeint.h:316:9: note: expanded from macro 'streq'
+#   ((a) == (b) || \
+#        ^  ~~~
+#  403|     */
+#  404|   
+#  405|->   if (variable_changenum != last_changenum && streq (var->name, ".VARIABLES"))
+#  406|       {
+#  407|         size_t max = EXPANSION_INCREMENT (strlen (var->value));
+
+Error: COMPILER_WARNING:
+make-4.3/src/variable.c:1055:23: warning[-Wstring-compare]: result of comparison against a string literal is unspecified (use an explicit string comparison function instead)
+#                  if (streq (v->name, "SHELL") && shell_var.value)
+#                      ^~~~~~~~~~~~~~~~~~~~~~~~
+make-4.3/src/makeint.h:316:9: note: expanded from macro 'streq'
+#   ((a) == (b) || \
+#        ^  ~~~
+# 1053|                        then add the value from our original environment, if
+# 1054|                        the original environment defined a value for SHELL.  */
+# 1055|->                   if (streq (v->name, "SHELL") && shell_var.value)
+# 1056|                       {
+# 1057|                         v = &shell_var;
+
+Error: COMPILER_WARNING:
+make-4.3/src/variable.c:1126:7: warning[-Wstring-compare]: result of comparison against a string literal is unspecified (use an explicit string comparison function instead)
+#  if (streq (var->name, RECIPEPREFIX_NAME))
+#      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+make-4.3/src/makeint.h:316:9: note: expanded from macro 'streq'
+#   ((a) == (b) || \
+#        ^  ~~~
+# 1124|   set_special_var (struct variable *var)
+# 1125|   {
+# 1126|->   if (streq (var->name, RECIPEPREFIX_NAME))
+# 1127|       {
+# 1128|         /* The user is resetting the command introduction prefix.  This has to

@@ -1,0 +1,151 @@
+Error: COMPILER_WARNING (CWE-1164):
+man-db-2.9.4/gl/lib/argp-help.c:48: included_from: Included from here.
+man-db-2.9.4/gl/lib/gettext.h:149:1: warning[-Wunused-function]: unused function 'pgettext_aux'
+#pgettext_aux (const char *domain,
+#^
+#  147|   #endif
+#  148|   static const char *
+#  149|-> pgettext_aux (const char *domain,
+#  150|                 const char *msg_ctxt_id, const char *msgid,
+#  151|                 int category)
+
+Error: COMPILER_WARNING (CWE-1164):
+man-db-2.9.4/gl/lib/gettext.h:168:1: warning[-Wunused-function]: unused function 'npgettext_aux'
+#npgettext_aux (const char *domain,
+#^
+#  166|   #endif
+#  167|   static const char *
+#  168|-> npgettext_aux (const char *domain,
+#  169|                  const char *msg_ctxt_id, const char *msgid,
+#  170|                  const char *msgid_plural, unsigned long int n,
+
+Error: COMPILER_WARNING (CWE-1164):
+man-db-2.9.4/gl/lib/gettext.h:219:1: warning[-Wunused-function]: unused function 'dcpgettext_expr'
+#dcpgettext_expr (const char *domain,
+#^
+#  217|   #endif
+#  218|   static const char *
+#  219|-> dcpgettext_expr (const char *domain,
+#  220|                    const char *msgctxt, const char *msgid,
+#  221|                    int category)
+
+Error: COMPILER_WARNING (CWE-1164):
+man-db-2.9.4/gl/lib/gettext.h:266:1: warning[-Wunused-function]: unused function 'dcnpgettext_expr'
+#dcnpgettext_expr (const char *domain,
+#^
+#  264|   #endif
+#  265|   static const char *
+#  266|-> dcnpgettext_expr (const char *domain,
+#  267|                     const char *msgctxt, const char *msgid,
+#  268|                     const char *msgid_plural, unsigned long int n,
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/gl/lib/hash.c:549:11: warning[-Wimplicit-const-int-float-conversion]: implicit conversion from 'unsigned long' to 'float' changes value from 18446744073709551615 to 18446744073709551616
+#      if (SIZE_MAX <= new_candidate)
+#          ^~~~~~~~ ~~
+/usr/include/stdint.h:227:22: note: expanded from macro 'SIZE_MAX'
+##  define SIZE_MAX              (18446744073709551615UL)
+#                                 ^~~~~~~~~~~~~~~~~~~~~~
+#  547|       {
+#  548|         float new_candidate = candidate / tuning->growth_threshold;
+#  549|->       if (SIZE_MAX <= new_candidate)
+#  550|           return 0;
+#  551|         candidate = new_candidate;
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/gl/lib/hash.c:1079:15: warning[-Wimplicit-const-int-float-conversion]: implicit conversion from 'unsigned long' to 'float' changes value from 18446744073709551615 to 18446744073709551616
+#          if (SIZE_MAX <= candidate)
+#              ^~~~~~~~ ~~
+# 1077|                   * tuning->growth_threshold));
+# 1078|   
+# 1079|->           if (SIZE_MAX <= candidate)
+# 1080|               return -1;
+# 1081|   
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/lib/orderfiles.c:109:18: warning[-Wgnu-variable-sized-type-not-at-end]: field 'fiemap' with variable sized type 'struct fiemap' not at the end of a struct or class is a GNU extension
+#                        struct fiemap fiemap;
+#                                      ^
+#  107|   	GL_LIST_FOREACH_START (basenames, name) {
+#  108|   		struct {
+#  109|-> 			struct fiemap fiemap;
+#  110|   			struct fiemap_extent extent;
+#  111|   		} fm;
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/src/check_mandirs.c:109:32: warning[-Wunknown-warning-option]: unknown warning group '-Wlogical-op', ignored
+##pragma GCC diagnostic ignored "-Wlogical-op"
+#                               ^
+#  107|    */
+#  108|   #pragma GCC diagnostic push
+#  109|-> #pragma GCC diagnostic ignored "-Wlogical-op"
+#  110|   static inline bool is_eagain (int err)
+#  111|   {
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/src/lexgrog.c:13:32: warning[-Wunknown-warning-option]: unknown warning group '-Wsuggest-attribute=pure', ignored
+##pragma GCC diagnostic ignored "-Wsuggest-attribute=pure"
+#                               ^
+#   11|   #  pragma GCC diagnostic ignored "-Wsuggest-attribute=malloc"
+#   12|   #endif
+#   13|-> #pragma GCC diagnostic ignored "-Wsuggest-attribute=pure"
+#   14|   #pragma GCC diagnostic ignored "-Wunused-macros"
+#   15|   
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/src/lexgrog.l:877:17: warning[-Wconstant-logical-operand]: use of logical '&&' with constant operand
+#        if (p_lg->type && *COL) {
+#                       ^  ~~~~
+man-db-2.9.4/src/lexgrog.l:877:17: note: use '&' for a bitwise operation
+#        if (p_lg->type && *COL) {
+#                       ^~
+man-db-2.9.4/src/lexgrog.l:877:17: note: remove constant to silence this warning
+#        if (p_lg->type && *COL) {
+#                      ~^~~~~~~
+#  875|   	free (page_encoding);
+#  876|   	if (p_lg->type && *COL) {
+#  877|-> 		pipecmd *col_cmd;
+#  878|   		col_cmd = pipecmd_new_args (COL, "-b", "-p", "-x", (void *) 0);
+#  879|   		pipecmd_pre_exec (col_cmd, sandbox_load, sandbox_free,
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/src/man.c:1400:14: warning[-Wconstant-logical-operand]: use of logical '&&' with constant operand
+#                if (!troff && *COL) {
+#                           ^  ~~~~
+man-db-2.9.4/src/man.c:1400:14: note: use '&' for a bitwise operation
+#                if (!troff && *COL) {
+#                           ^~
+man-db-2.9.4/src/man.c:1400:14: note: remove constant to silence this warning
+#                if (!troff && *COL) {
+#                          ~^~~~~~~
+# 1398|   		} while (*pp_string++);
+# 1399|   
+# 1400|-> 		if (!troff && *COL) {
+# 1401|   			const char *man_keep_formatting =
+# 1402|   				getenv ("MAN_KEEP_FORMATTING");
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/src/man.c:1608:13: warning[-Wconstant-logical-operand]: use of logical '&&' with constant operand
+#        if (!troff && *COL) {
+#                   ^  ~~~~
+man-db-2.9.4/src/man.c:1608:13: note: use '&' for a bitwise operation
+#        if (!troff && *COL) {
+#                   ^~
+man-db-2.9.4/src/man.c:1608:13: note: remove constant to silence this warning
+#        if (!troff && *COL) {
+#                  ~^~~~~~~
+# 1606|   		add_output_iconv (p, encoding, locale_charset);
+# 1607|   
+# 1608|-> 	if (!troff && *COL) {
+# 1609|   		/* get rid of special characters if not writing to a
+# 1610|   		 * terminal
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/src/zsoelim.c:13:32: warning[-Wunknown-warning-option]: unknown warning group '-Wsuggest-attribute=pure', ignored
+##pragma GCC diagnostic ignored "-Wsuggest-attribute=pure"
+#                               ^
+#   11|   #  pragma GCC diagnostic ignored "-Wsuggest-attribute=malloc"
+#   12|   #endif
+#   13|-> #pragma GCC diagnostic ignored "-Wsuggest-attribute=pure"
+#   14|   #pragma GCC diagnostic ignored "-Wunused-macros"
+#   15|   

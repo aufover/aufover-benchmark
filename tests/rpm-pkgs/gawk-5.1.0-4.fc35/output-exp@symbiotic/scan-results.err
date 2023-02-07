@@ -1,0 +1,124 @@
+Error: COMPILER_WARNING:
+gawk-5.1.0/builtin.c:1851:19: warning[-Wimplicit-const-int-float-conversion]: implicit conversion from 'unsigned long' to 'double' changes value from 18446744073709551615 to 18446744073709551616
+#                        if (d_length > SIZE_MAX)
+#                                     ~ ^~~~~~~~
+/usr/include/stdint.h:227:22: note: expanded from macro 'SIZE_MAX'
+##  define SIZE_MAX              (18446744073709551615UL)
+#                                 ^~~~~~~~~~~~~~~~~~~~~~
+# 1849|   					d_length);
+# 1850|   
+# 1851|-> 			if (d_length > SIZE_MAX)
+# 1852|   				lintwarn(
+# 1853|   			_("substr: length %g too big for string indexing, truncating to %g"),
+
+Error: COMPILER_WARNING:
+gawk-5.1.0/builtin.c:1856:18: warning[-Wimplicit-const-int-float-conversion]: implicit conversion from 'unsigned long' to 'double' changes value from 18446744073709551615 to 18446744073709551616
+#                if (d_length < SIZE_MAX)
+#                             ~ ^~~~~~~~
+/usr/include/stdint.h:227:22: note: expanded from macro 'SIZE_MAX'
+##  define SIZE_MAX              (18446744073709551615UL)
+#                                 ^~~~~~~~~~~~~~~~~~~~~~
+# 1854|   					d_length, (double) SIZE_MAX);
+# 1855|   		}
+# 1856|-> 		if (d_length < SIZE_MAX)
+# 1857|   			length = d_length;
+# 1858|   		else
+
+Error: COMPILER_WARNING:
+gawk-5.1.0/builtin.c:1874:17: warning[-Wimplicit-const-int-float-conversion]: implicit conversion from 'unsigned long' to 'double' changes value from 18446744073709551615 to 18446744073709551616
+#        if (d_index <= SIZE_MAX)
+#                    ~~ ^~~~~~~~
+/usr/include/stdint.h:227:22: note: expanded from macro 'SIZE_MAX'
+##  define SIZE_MAX              (18446744073709551615UL)
+#                                 ^~~~~~~~~~~~~~~~~~~~~~
+# 1872|   
+# 1873|   	/* awk indices are from 1, C's are from 0 */
+# 1874|-> 	if (d_index <= SIZE_MAX)
+# 1875|   		indx = d_index - 1;
+# 1876|   	else
+
+Error: COMPILER_WARNING:
+gawk-5.1.0/builtin.c:2917:17: warning[-Wimplicit-const-int-float-conversion]: implicit conversion from 'long' to 'double' changes value from 9223372036854775807 to 9223372036854775808
+#                        else if (d < LONG_MAX)
+#                                   ~ ^~~~~~~~
+/usr/lib64/clang/13.0.1/include/limits.h:47:19: note: expanded from macro 'LONG_MAX'
+##define LONG_MAX  __LONG_MAX__
+#                  ^~~~~~~~~~~~
+<built-in>:39:22: note: expanded from here
+##define __LONG_MAX__ 9223372036854775807L
+#                     ^~~~~~~~~~~~~~~~~~~~
+# 2915|   			if (d < 1)
+# 2916|   				how_many = 1;
+# 2917|-> 			else if (d < LONG_MAX)
+# 2918|   				how_many = d;
+# 2919|   			else
+
+Error: COMPILER_WARNING (CWE-1164):
+gawk-5.1.0/extension/readdir_test.c:67: included_from: Included from here.
+gawk-5.1.0/gettext.h:157:1: warning[-Wunused-function]: unused function 'pgettext_aux'
+#pgettext_aux (const char *domain,
+#^
+#  155|   #endif
+#  156|   static const char *
+#  157|-> pgettext_aux (const char *domain,
+#  158|                 const char *msg_ctxt_id, const char *msgid,
+#  159|                 int category)
+
+Error: COMPILER_WARNING (CWE-1164):
+gawk-5.1.0/gettext.h:176:1: warning[-Wunused-function]: unused function 'npgettext_aux'
+#npgettext_aux (const char *domain,
+#^
+#  174|   #endif
+#  175|   static const char *
+#  176|-> npgettext_aux (const char *domain,
+#  177|                  const char *msg_ctxt_id, const char *msgid,
+#  178|                  const char *msgid_plural, unsigned long int n,
+
+Error: COMPILER_WARNING (CWE-1164):
+gawk-5.1.0/gettext.h:220:1: warning[-Wunused-function]: unused function 'dcpgettext_expr'
+#dcpgettext_expr (const char *domain,
+#^
+#  218|   #endif
+#  219|   static const char *
+#  220|-> dcpgettext_expr (const char *domain,
+#  221|                    const char *msgctxt, const char *msgid,
+#  222|                    int category)
+
+Error: COMPILER_WARNING (CWE-1164):
+gawk-5.1.0/gettext.h:267:1: warning[-Wunused-function]: unused function 'dcnpgettext_expr'
+#dcnpgettext_expr (const char *domain,
+#^
+#  265|   #endif
+#  266|   static const char *
+#  267|-> dcnpgettext_expr (const char *domain,
+#  268|                     const char *msgctxt, const char *msgid,
+#  269|                     const char *msgid_plural, unsigned long int n,
+
+Error: COMPILER_WARNING:
+gawk-5.1.0/main.c:1012:34: warning[-Wimplicit-const-int-float-conversion]: implicit conversion from 'mpfr_prec_t' (aka 'long') to 'double' changes value from 9223372036854775551 to 9223372036854775808
+#        update_PROCINFO_num("prec_max", MPFR_PREC_MAX);
+#        ~~~~~~~~~~~~~~~~~~~             ^~~~~~~~~~~~~
+/usr/include/mpfr.h:181:24: note: expanded from macro 'MPFR_PREC_MAX'
+##define MPFR_PREC_MAX ((mpfr_prec_t) ((((mpfr_uprec_t) -1) >> 1) - 256))
+#                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1010|   	sprintf(name, "GNU MP %s", gmp_version);
+# 1011|   	update_PROCINFO_str("gmp_version", name);
+# 1012|-> 	update_PROCINFO_num("prec_max", MPFR_PREC_MAX);
+# 1013|   	update_PROCINFO_num("prec_min", MPFR_PREC_MIN);
+# 1014|   #endif
+
+Error: COMPILER_WARNING:
+gawk-5.1.0/node.c:226:33: warning[-Wimplicit-const-int-float-conversion]: implicit conversion from 'long' to 'double' changes value from 9223372036854775807 to 9223372036854775808
+#                        || val <= LONG_MIN || val >= LONG_MAX
+#                                                  ~~ ^~~~~~~~
+/usr/lib64/clang/13.0.1/include/limits.h:47:19: note: expanded from macro 'LONG_MAX'
+##define LONG_MAX  __LONG_MAX__
+#                  ^~~~~~~~~~~~
+<built-in>:39:22: note: expanded from here
+##define __LONG_MAX__ 9223372036854775807L
+#                     ^~~~~~~~~~~~~~~~~~~~
+#  224|   		return make_string(result, strlen(result));
+#  225|   	} else if ((val = double_to_int(s->numbr)) != s->numbr
+#  226|-> 			|| val <= LONG_MIN || val >= LONG_MAX
+#  227|   	) {
+#  228|   		/* not an integral value, or out of integer range */

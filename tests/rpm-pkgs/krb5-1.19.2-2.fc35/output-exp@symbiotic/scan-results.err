@@ -1,0 +1,470 @@
+Error: SYMBIOTIC_WARNING:
+krb5-1.19.2/src/kdc/rtest.c:108: error: memory error: memory leak detected
+krb5-1.19.2/src/kdc/rtest.c:108: note: call stack: function main (=5, =0)
+krb5-1.19.2/src/kdc/rtest.c:108: note: Additional Info: address: 99:0
+krb5-1.19.2/src/kdc/rtest.c:108: note: Additional Info: pointing to: object at Segment: [99] of size 4
+krb5-1.19.2/src/kdc/rtest.c:108: note: Additional Info: MO88[4] allocated at make_princ():  %22 = call noalias align 16 i8* @malloc(i64 %21) #12, !dbg !208
+krb5-1.19.2/src/kdc/rtest.c:74:12: note: Non-deterministic values: krb5int_init_context_kdc: len 4 bytes, [4 times 0x0] (i32: 0)
+krb5-1.19.2/src/kdc/kdc_transit.c:377:13: note: Non-deterministic values: krb5int_strlcat: len 8 bytes, [0xb|7 times 0x0] (i64: 11)
+#  106|       krb5_free_context(ctx);
+#  107|   
+#  108|->     exit(0);
+#  109|   }
+#  110|   
+
+Error: SYMBIOTIC_WARNING:
+krb5-1.19.2/src/lib/crypto/crypto_tests/t_derive.c:305: error: memory error: out of bound pointer
+krb5-1.19.2/src/lib/crypto/crypto_tests/t_derive.c:305: note: call stack: function main (=2, =0)
+krb5-1.19.2/src/lib/crypto/crypto_tests/t_derive.c:305: note: Additional Info: address: 0:16
+krb5-1.19.2/src/lib/crypto/crypto_tests/t_derive.c:305: note: Additional Info: pointing to: none
+krb5-1.19.2/src/lib/crypto/crypto_tests/t_derive.c:297:15: note: Non-deterministic values: krb5_k_create_key: len 4 bytes, [4 times 0x0] (i32: 0)
+krb5-1.19.2/src/lib/crypto/crypto_tests/t_derive.c:302:19: note: Non-deterministic values: krb5int_derive_key: len 4 bytes, [4 times 0x0] (i32: 0)
+#  303|                                        test->alg);
+#  304|               assert(!ret);
+#  305|->             outcmp = make_data(key->keyblock.contents, key->keyblock.length);
+#  306|           } else {
+#  307|               ret = alloc_data(&rnd, test->expected_key.length);
+
+Error: SYMBIOTIC_WARNING:
+krb5-1.19.2/src/lib/crypto/crypto_tests/t_encrypt.c:57: error: abort failure
+krb5-1.19.2/src/lib/crypto/crypto_tests/t_encrypt.c:57: note: call stack: function test (=0, )
+krb5-1.19.2/src/lib/crypto/crypto_tests/t_encrypt.c:109: note: call stack: function main ()
+krb5-1.19.2/src/lib/crypto/crypto_tests/t_encrypt.c:110:11: note: Non-deterministic values: krb5_c_random_seed: len 4 bytes, [0x1|3 times 0x0] (i32: 1)
+#   55|       if (retval) {
+#   56|           printf("Failed: %s\n", error_message(retval));
+#   57|->         abort();
+#   58|       } else
+#   59|           printf("OK\n");
+
+Error: SYMBIOTIC_WARNING:
+krb5-1.19.2/src/lib/crypto/crypto_tests/t_encrypt.c:142: error: memory error: out of bound pointer
+krb5-1.19.2/src/lib/crypto/crypto_tests/t_encrypt.c:142: note: call stack: function main ()
+krb5-1.19.2/src/lib/crypto/crypto_tests/t_encrypt.c:142: note: Additional Info: address: 0:12370169555311111087
+krb5-1.19.2/src/lib/crypto/crypto_tests/t_encrypt.c:142: note: Additional Info: pointing to: none
+krb5-1.19.2/src/lib/crypto/crypto_tests/t_encrypt.c:110:11: note: Non-deterministic values: krb5_c_random_seed: len 4 bytes, [4 times 0x0] (i32: 0)
+krb5-1.19.2/src/lib/crypto/crypto_tests/t_encrypt.c:132:15: note: Non-deterministic values: krb5_init_keyblock: len 4 bytes, [4 times 0x0] (i32: 0)
+krb5-1.19.2/src/lib/crypto/crypto_tests/t_encrypt.c:134:15: note: Non-deterministic values: krb5_c_make_random_key: len 4 bytes, [4 times 0x0] (i32: 0)
+krb5-1.19.2/src/lib/crypto/crypto_tests/t_encrypt.c:136:15: note: Non-deterministic values: krb5_k_create_key: len 4 bytes, [4 times 0x0] (i32: 0)
+#  140|           /* We use an intermediate `len' because size_t may be different size
+#  141|              than `int' */
+#  142|->         krb5_c_encrypt_length (context, keyblock->enctype, in.length, &len);
+#  143|           enc_out.ciphertext.length = len;
+#  144|   
+
+Error: SYMBIOTIC_WARNING:
+krb5-1.19.2/src/lib/crypto/crypto_tests/t_str2key.c:451: error: memory error: out of bound pointer
+krb5-1.19.2/src/lib/crypto/crypto_tests/t_str2key.c:451: note: call stack: function main (=2, =0)
+krb5-1.19.2/src/lib/crypto/crypto_tests/t_str2key.c:451: note: Additional Info: address: 0:12370169555311111091
+krb5-1.19.2/src/lib/crypto/crypto_tests/t_str2key.c:451: note: Additional Info: pointing to: none
+krb5-1.19.2/src/lib/crypto/crypto_tests/t_str2key.c:424:15: note: Non-deterministic values: krb5_init_keyblock: len 4 bytes, [4 times 0x0] (i32: 0)
+krb5-1.19.2/src/lib/crypto/crypto_tests/t_str2key.c:427:15: note: Non-deterministic values: krb5_c_string_to_key_with_params: len 4 bytes, [4 times 0x0] (i32: 0)
+#  449|               continue;
+#  450|           }
+#  451|->         assert(keyblock->length == test->expected_key.length);
+#  452|           if (memcmp(keyblock->contents, test->expected_key.data,
+#  453|                      keyblock->length) != 0) {
+
+Error: SYMBIOTIC_WARNING:
+krb5-1.19.2/src/lib/kadm5/unit-test/destroy-test.c:38: error: memory error: out of bound pointer
+krb5-1.19.2/src/lib/kadm5/unit-test/destroy-test.c:38: note: call stack: function main ()
+krb5-1.19.2/src/lib/kadm5/unit-test/destroy-test.c:38: note: Additional Info: address: 0:12370169555311111099
+krb5-1.19.2/src/lib/kadm5/unit-test/destroy-test.c:38: note: Additional Info: pointing to: none
+krb5-1.19.2/src/lib/kadm5/unit-test/destroy-test.c:24:11: note: Non-deterministic values: kadm5_init_krb5_context: len 4 bytes, [4 times 0x0] (i32: 0)
+krb5-1.19.2/src/lib/kadm5/unit-test/destroy-test.c:30:15: note: Non-deterministic values: kadm5_init: len 8 bytes, [8 times 0x0] (i64: 0)
+#   36|           }
+#   37|           handle = (kadm5_server_handle_t) server_handle;
+#   38|->         cp = strdup(strchr(handle->cache_name, ':') + 1);
+#   39|           kadm5_destroy(server_handle);
+#   40|           if(access(cp, F_OK) == 0) {
+
+Error: SYMBIOTIC_WARNING:
+krb5-1.19.2/src/lib/kadm5/unit-test/setkey-test.c:91: error: memory error: out of bound pointer
+krb5-1.19.2/src/lib/kadm5/unit-test/setkey-test.c:91: note: call stack: function main (=2, =0)
+krb5-1.19.2/src/lib/kadm5/unit-test/setkey-test.c:91: note: Additional Info: address: 0:12370169555311111095
+krb5-1.19.2/src/lib/kadm5/unit-test/setkey-test.c:91: note: Additional Info: pointing to: none
+krb5-1.19.2/src/lib/kadm5/unit-test/setkey-test.c:84:11: note: Non-deterministic values: krb5_parse_name: len 4 bytes, [4 times 0x0] (i32: 0)
+#   89|   
+#   90|       if((ret = krb5_build_principal_ext(context, &server,
+#   91|->                                        krb5_princ_realm(kcontext, princ)->length,
+#   92|                                          krb5_princ_realm(kcontext, princ)->data,
+#   93|                                          tgtname.length, tgtname.data,
+
+Error: SYMBIOTIC_WARNING:
+krb5-1.19.2/src/lib/kdb/t_ulog.c:71: error: memory error: out of bound pointer
+krb5-1.19.2/src/lib/kdb/t_ulog.c:71: note: call stack: function main (=2, =0)
+krb5-1.19.2/src/lib/kdb/t_ulog.c:71: note: Additional Info: address: 0:8
+krb5-1.19.2/src/lib/kdb/t_ulog.c:71: note: Additional Info: pointing to: none
+krb5-1.19.2/src/lib/kdb/t_ulog.c:68:9: note: Non-deterministic values: ulog_map: len 4 bytes, [4 times 0x0] (i32: 0)
+#   69|           abort();
+#   70|       lctx = context->kdblog_context;
+#   71|->     ulog = lctx->ulog;
+#   72|   
+#   73|       /* Modify the ulog to look like it has reached the last serial number.
+
+Error: SYMBIOTIC_WARNING:
+krb5-1.19.2/src/lib/krb5/krb/t_authdata.c:87: error: memory error: out of bound pointer
+krb5-1.19.2/src/lib/krb5/krb/t_authdata.c:87: note: call stack: function main ()
+krb5-1.19.2/src/lib/krb5/krb/t_authdata.c:87: note: Additional Info: address: 0:12370169555311111083
+krb5-1.19.2/src/lib/krb5/krb/t_authdata.c:87: note: Additional Info: pointing to: none
+krb5-1.19.2/src/lib/krb5/krb/t_authdata.c:85:5: note: Non-deterministic values: krb5_init_context: len 4 bytes, [4 times 0x0] (i32: 0)
+krb5-1.19.2/src/lib/krb5/krb/t_authdata.c:86:5: note: Non-deterministic values: krb5_merge_authdata: len 4 bytes, [4 times 0x0] (i32: 0)
+#   85|       assert(krb5_init_context(&context) == 0);
+#   86|       assert(krb5_merge_authdata(context, adseq1, adseq2, &results) == 0);
+#   87|->     compare_authdata(results[0], &ad1);
+#   88|       compare_authdata( results[1], &ad2);
+#   89|       compare_authdata(results[2], &ad4);
+
+Error: SYMBIOTIC_WARNING:
+krb5-1.19.2/src/lib/krb5/krb/t_copy_context.c:44: error: abort failure
+krb5-1.19.2/src/lib/krb5/krb/t_copy_context.c:44: note: call stack: function check ()
+krb5-1.19.2/src/lib/krb5/krb/t_copy_context.c:120: note: call stack: function main (=2, =0)
+krb5-1.19.2/src/lib/krb5/krb/t_copy_context.c:120:11: note: Non-deterministic values: krb5_init_context: len 4 bytes, [0x1|3 times 0x0] (i32: 1)
+#   42|   {
+#   43|       if (!cond)
+#   44|->         abort();
+#   45|   }
+#   46|   
+
+Error: SYMBIOTIC_WARNING:
+krb5-1.19.2/src/lib/krb5/krb/t_copy_context.c:73: error: memory error: out of bound pointer
+krb5-1.19.2/src/lib/krb5/krb/t_copy_context.c:73: note: call stack: function check_context (=12370169555311111083, =12370169555311111083)
+krb5-1.19.2/src/lib/krb5/krb/t_copy_context.c:122: note: call stack: function main (=2, =0)
+krb5-1.19.2/src/lib/krb5/krb/t_copy_context.c:73: note: Additional Info: address: 0:12370169555311111091
+krb5-1.19.2/src/lib/krb5/krb/t_copy_context.c:73: note: Additional Info: pointing to: none
+krb5-1.19.2/src/lib/krb5/krb/t_copy_context.c:120:11: note: Non-deterministic values: krb5_init_context: len 4 bytes, [4 times 0x0] (i32: 0)
+krb5-1.19.2/src/lib/krb5/krb/t_copy_context.c:121:11: note: Non-deterministic values: krb5_copy_context: len 4 bytes, [4 times 0x0] (i32: 0)
+#   71|   
+#   72|       /* Check fields which should have been propagated from r. */
+#   73|->     compare_etypes(c->tgs_etypes, r->tgs_etypes);
+#   74|       check(c->os_context.time_offset == r->os_context.time_offset);
+#   75|       check(c->os_context.usec_offset == r->os_context.usec_offset);
+
+Error: SYMBIOTIC_WARNING:
+krb5-1.19.2/src/lib/krb5/krb/t_sname_match.c:108: error: memory error: out of bound pointer
+krb5-1.19.2/src/lib/krb5/krb/t_sname_match.c:108: note: call stack: function main ()
+krb5-1.19.2/src/lib/krb5/krb/t_sname_match.c:108: note: Additional Info: address: 0:12370169555311111271
+krb5-1.19.2/src/lib/krb5/krb/t_sname_match.c:108: note: Additional Info: pointing to: none
+krb5-1.19.2/src/lib/krb5/krb/t_sname_match.c:90:9: note: Non-deterministic values: krb5_init_context: len 4 bytes, [4 times 0x0] (i32: 0)
+krb5-1.19.2/src/lib/krb5/krb/t_sname_match.c:105:13: note: Non-deterministic values: krb5_parse_name: len 4 bytes, [4 times 0x0] (i32: 0)
+#  106|               abort();
+#  107|   
+#  108|->         ctx->ignore_acceptor_hostname = t->ignore_acceptor_hostname;
+#  109|           if (krb5_sname_match(ctx, matching, princ) != t->result)
+#  110|               abort();
+
+Error: SYMBIOTIC_WARNING:
+krb5-1.19.2/src/lib/krb5/krb/valid_times.c:50: error: memory error: out of bound pointer
+krb5-1.19.2/src/lib/krb5/krb/valid_times.c:50: note: call stack: function krb5int_validate_times (=12370169555311111083, =0)
+krb5-1.19.2/src/lib/krb5/krb/t_valid_times.c:52: note: call stack: function main ()
+krb5-1.19.2/src/lib/krb5/krb/valid_times.c:50: note: Additional Info: address: 0:12370169555311111147
+krb5-1.19.2/src/lib/krb5/krb/valid_times.c:50: note: Additional Info: pointing to: none
+krb5-1.19.2/src/lib/krb5/krb/t_valid_times.c:45:11: note: Non-deterministic values: krb5_init_context: len 4 bytes, [4 times 0x0] (i32: 0)
+krb5-1.19.2/src/lib/krb5/krb/valid_times.c:41:19: note: Non-deterministic values: krb5_timeofday: len 4 bytes, [4 times 0x0] (i32: 0)
+#   48|           starttime = times->authtime;
+#   49|   
+#   50|->     if (ts_after(starttime, ts_incr(currenttime, context->clockskew)))
+#   51|           return KRB5KRB_AP_ERR_TKT_NYV;  /* ticket not yet valid */
+#   52|   
+
+Error: COMPILER_WARNING (CWE-483):
+krb5-1.19.2/src/lib/krb5/krb/x-deltat.y:212:6: warning[-Wmisleading-indentation]: misleading indentation; statement is not part of the previous 'if'
+#            num *= 10;
+#            ^
+krb5-1.19.2/src/lib/krb5/krb/x-deltat.y:210:4: note: previous statement is here
+#          if (num > MAX_TIME / 10)
+#          ^
+#  210|   	  if (num > MAX_TIME / 10)
+#  211|   	    return tok_OVERFLOW;
+#  212|-> 	    num *= 10;
+#  213|   	    if (num > MAX_TIME - (*P - '0'))
+#  214|   	      return tok_OVERFLOW;
+
+Error: COMPILER_WARNING:
+krb5-1.19.2/src/lib/krb5/os/dnsglue.c:349:19: warning[-Wtautological-constant-out-of-range-compare]: result of comparison of constant 2147483647 with expression of type 'unsigned short' is always false
+#        if (rdlen > INT_MAX)
+#            ~~~~~ ^ ~~~~~~~
+#  347|           if (!INCR_OK(ds->ansp, ds->anslen, p, rdlen))
+#  348|               return -1;
+#  349|->         if (rdlen > INT_MAX)
+#  350|               return -1;
+#  351|           if (nclass == ds->nclass && ntype == ds->ntype) {
+
+Error: SYMBIOTIC_WARNING:
+krb5-1.19.2/src/lib/krb5/os/t_expand_path.c:16: error: memory error: invalid pointer: free
+krb5-1.19.2/src/lib/krb5/os/t_expand_path.c:16: note: call stack: function main (=2, =0)
+krb5-1.19.2/src/lib/krb5/os/t_expand_path.c:16: note: Additional Info: address: 0:12370169555311111083
+krb5-1.19.2/src/lib/krb5/os/t_expand_path.c:16: note: Additional Info: pointing to: none
+krb5-1.19.2/src/lib/krb5/os/t_expand_path.c:9:9: note: Non-deterministic values: k5_expand_path_tokens_extra: len 4 bytes, [4 times 0x0] (i32: 0)
+#   14|       else if (strcmp(path, argv[2]) != 0)
+#   15|   	return 1;
+#   16|->     free(path);
+#   17|       return 0;
+#   18|   }
+
+Error: COMPILER_WARNING (CWE-563):
+krb5-1.19.2/src/plugins/kdb/db2/libdb2/hash/hash_page.c:308:22: warning[-Wunused-but-set-variable]: variable 'next_key' set but not used
+#        int16_t delta, len, next_key;
+#                            ^
+#  306|   	indx_t ndx;
+#  307|   	short check_ndx;
+#  308|-> 	int16_t delta, len, next_key;
+#  309|   	int32_t n;
+#  310|   	u_int8_t *src, *dest;
+
+Error: COMPILER_WARNING (CWE-563):
+krb5-1.19.2/src/plugins/kdb/ldap/ldap_util/kdb5_ldap_realm.c:138:18: warning[-Wunused-but-set-variable]: variable 'no_msg' set but not used
+#    krb5_boolean no_msg = FALSE;
+#                 ^
+#  136|       int mask = 0;
+#  137|       krb5_error_code retval = 0;
+#  138|->     krb5_boolean no_msg = FALSE;
+#  139|   
+#  140|       krb5_boolean print_usage = FALSE;
+
+Error: COMPILER_WARNING (CWE-563):
+krb5-1.19.2/src/plugins/kdb/ldap/ldap_util/kdb5_ldap_realm.c:140:18: warning[-Wunused-but-set-variable]: variable 'print_usage' set but not used
+#    krb5_boolean print_usage = FALSE;
+#                 ^
+#  138|       krb5_boolean no_msg = FALSE;
+#  139|   
+#  140|->     krb5_boolean print_usage = FALSE;
+#  141|       char *me = progname;
+#  142|   
+
+Error: COMPILER_WARNING (CWE-252):
+krb5-1.19.2/src/plugins/preauth/pkinit/pkinit_crypto_openssl.c:1258:9: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#        EVP_DigestInit_ex(ctx, EVP_sha1(), NULL);
+#        ^~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~
+# 1256|           if (ctx == NULL)
+# 1257|               goto cleanup;
+# 1258|->         EVP_DigestInit_ex(ctx, EVP_sha1(), NULL);
+# 1259|           EVP_DigestUpdate(ctx, data, data_len);
+# 1260|           md_tmp = EVP_MD_CTX_md(ctx);
+
+Error: COMPILER_WARNING (CWE-252):
+krb5-1.19.2/src/plugins/preauth/pkinit/pkinit_crypto_openssl.c:1259:9: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#        EVP_DigestUpdate(ctx, data, data_len);
+#        ^~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~
+# 1257|               goto cleanup;
+# 1258|           EVP_DigestInit_ex(ctx, EVP_sha1(), NULL);
+# 1259|->         EVP_DigestUpdate(ctx, data, data_len);
+# 1260|           md_tmp = EVP_MD_CTX_md(ctx);
+# 1261|           EVP_DigestFinal_ex(ctx, md_data, &md_len);
+
+Error: COMPILER_WARNING (CWE-252):
+krb5-1.19.2/src/plugins/preauth/pkinit/pkinit_crypto_openssl.c:1261:9: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#        EVP_DigestFinal_ex(ctx, md_data, &md_len);
+#        ^~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~
+# 1259|           EVP_DigestUpdate(ctx, data, data_len);
+# 1260|           md_tmp = EVP_MD_CTX_md(ctx);
+# 1261|->         EVP_DigestFinal_ex(ctx, md_data, &md_len);
+# 1262|           EVP_MD_CTX_free(ctx);
+# 1263|   
+
+Error: COMPILER_WARNING (CWE-252):
+krb5-1.19.2/src/plugins/preauth/pkinit/pkinit_crypto_openssl.c:1299:13: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#            EVP_DigestInit_ex(ctx, md_tmp, NULL);
+#            ^~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~
+# 1297|               if (ctx == NULL)
+# 1298|                   goto cleanup;
+# 1299|->             EVP_DigestInit_ex(ctx, md_tmp, NULL);
+# 1300|               EVP_DigestUpdate(ctx, abuf, alen);
+# 1301|               EVP_DigestFinal_ex(ctx, md_data2, &md_len2);
+
+Error: COMPILER_WARNING (CWE-252):
+krb5-1.19.2/src/plugins/preauth/pkinit/pkinit_crypto_openssl.c:1300:13: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#            EVP_DigestUpdate(ctx, abuf, alen);
+#            ^~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~
+# 1298|                   goto cleanup;
+# 1299|               EVP_DigestInit_ex(ctx, md_tmp, NULL);
+# 1300|->             EVP_DigestUpdate(ctx, abuf, alen);
+# 1301|               EVP_DigestFinal_ex(ctx, md_data2, &md_len2);
+# 1302|               EVP_MD_CTX_free(ctx);
+
+Error: COMPILER_WARNING (CWE-252):
+krb5-1.19.2/src/plugins/preauth/pkinit/pkinit_crypto_openssl.c:1301:13: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#            EVP_DigestFinal_ex(ctx, md_data2, &md_len2);
+#            ^~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~
+# 1299|               EVP_DigestInit_ex(ctx, md_tmp, NULL);
+# 1300|               EVP_DigestUpdate(ctx, abuf, alen);
+# 1301|->             EVP_DigestFinal_ex(ctx, md_data2, &md_len2);
+# 1302|               EVP_MD_CTX_free(ctx);
+# 1303|   
+
+Error: COMPILER_WARNING (CWE-252):
+krb5-1.19.2/src/plugins/preauth/pkinit/pkinit_crypto_openssl.c:4150:5: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#    EVP_SignInit(ctx, EVP_sha1());
+#    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/openssl/evp.h:500:42: note: expanded from macro 'EVP_SignInit'
+## define EVP_SignInit(a,b)               EVP_DigestInit(a,b)
+#                                         ^~~~~~~~~~~~~~ ~~~
+# 4148|       if (ctx == NULL)
+# 4149|           return ENOMEM;
+# 4150|->     EVP_SignInit(ctx, EVP_sha1());
+# 4151|       EVP_SignUpdate(ctx, data, data_len);
+# 4152|       *sig_len = EVP_PKEY_size(pkey);
+
+Error: COMPILER_WARNING (CWE-252):
+krb5-1.19.2/src/plugins/preauth/pkinit/pkinit_crypto_openssl.c:4151:5: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#    EVP_SignUpdate(ctx, data, data_len);
+#    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/openssl/evp.h:501:42: note: expanded from macro 'EVP_SignUpdate'
+## define EVP_SignUpdate(a,b,c)           EVP_DigestUpdate(a,b,c)
+#                                         ^~~~~~~~~~~~~~~~ ~~~~~
+# 4149|           return ENOMEM;
+# 4150|       EVP_SignInit(ctx, EVP_sha1());
+# 4151|->     EVP_SignUpdate(ctx, data, data_len);
+# 4152|       *sig_len = EVP_PKEY_size(pkey);
+# 4153|       if ((*sig = malloc(*sig_len)) == NULL)
+
+Error: COMPILER_WARNING (CWE-252):
+krb5-1.19.2/src/plugins/preauth/pkinit/pkinit_crypto_openssl.c:4155:5: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#    EVP_SignFinal(ctx, *sig, sig_len, pkey);
+#    ^~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~
+# 4153|       if ((*sig = malloc(*sig_len)) == NULL)
+# 4154|           goto cleanup;
+# 4155|->     EVP_SignFinal(ctx, *sig, sig_len, pkey);
+# 4156|   
+# 4157|       retval = 0;
+
+Error: SYMBIOTIC_WARNING:
+krb5-1.19.2/src/tests/gssapi/t_oid.c:127: error: memory error: out of bound pointer
+krb5-1.19.2/src/tests/gssapi/t_oid.c:127: note: call stack: function oid_equal (=12370169555311111083, =16)
+krb5-1.19.2/src/tests/gssapi/t_oid.c:158: note: call stack: function main ()
+krb5-1.19.2/src/tests/gssapi/t_oid.c:127: note: Additional Info: address: 0:12370169555311111083
+krb5-1.19.2/src/tests/gssapi/t_oid.c:127: note: Additional Info: pointing to: none
+krb5-1.19.2/src/tests/gssapi/t_oid.c:143:17: note: Non-deterministic values: gss_oid_to_str: len 4 bytes, [4 times 0x0] (i32: 0)
+krb5-1.19.2/src/tests/gssapi/t_oid.c:156:17: note: Non-deterministic values: gss_str_to_oid: len 4 bytes, [4 times 0x0] (i32: 0)
+#  125|   oid_equal(gss_OID o1, gss_OID o2)
+#  126|   {
+#  127|->     return o1->length == o2->length &&
+#  128|           memcmp(o1->elements, o2->elements, o1->length) == 0;
+#  129|   }
+
+Error: SYMBIOTIC_WARNING:
+krb5-1.19.2/src/tests/gssapi/t_prf.c:103: error: abort failure
+krb5-1.19.2/src/tests/gssapi/t_prf.c:103: note: call stack: function fromhex (=0, =0)
+krb5-1.19.2/src/tests/gssapi/t_prf.c:142: note: call stack: function main (=2, =0)
+krb5-1.19.2/src/tests/gssapi/t_prf.c:102:9: note: Non-deterministic values: k5_hex_decode: len 4 bytes, [0x1|3 times 0x0] (i32: 1)
+#  101|   
+#  102|       if (k5_hex_decode(hexstr, &bytes, &len) != 0)
+#  103|->         abort();
+#  104|       memcpy(out, bytes, len);
+#  105|       free(bytes);
+
+Error: SYMBIOTIC_WARNING:
+krb5-1.19.2/src/tests/misc/test_getpw.c:49: error: memory error: out of bound pointer
+krb5-1.19.2/src/tests/misc/test_getpw.c:49: note: call stack: function main ()
+krb5-1.19.2/src/tests/misc/test_getpw.c:49: note: Additional Info: address: 0:12370169555311111083
+krb5-1.19.2/src/tests/misc/test_getpw.c:49: note: Additional Info: pointing to: none
+krb5-1.19.2/src/tests/misc/test_getpw.c:42:14: note: Non-deterministic values: getuid: len 4 bytes, [4 times 0x0] (i32: 0)
+krb5-1.19.2/src/tests/misc/test_getpw.c:45:9: note: Non-deterministic values: getpwuid_r: len 4 bytes, [4 times 0x0] (i32: 0)
+#   47|       if (x != 0)
+#   48|           exit(1);
+#   49|->     printf("    username is '%s'\n", pwd->pw_name);
+#   50|       exit(0);
+#   51|   }
+
+Error: COMPILER_WARNING (CWE-477):
+krb5-1.19.2/src/util/support/selinux.c:99:8: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#static security_context_t
+#       ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   97|   }
+#   98|   
+#   99|-> static security_context_t
+#  100|   push_fscreatecon(const char *pathname, mode_t mode)
+#  101|   {
+
+Error: COMPILER_WARNING (CWE-477):
+krb5-1.19.2/src/util/support/selinux.c:102:5: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#    security_context_t previous, configuredsc, currentsc, derivedsc;
+#    ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#  100|   push_fscreatecon(const char *pathname, mode_t mode)
+#  101|   {
+#  102|->     security_context_t previous, configuredsc, currentsc, derivedsc;
+#  103|       context_t current, derived;
+#  104|       const char *fullpath, *currentuser;
+
+Error: COMPILER_WARNING (CWE-477):
+krb5-1.19.2/src/util/support/selinux.c:237:17: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#pop_fscreatecon(security_context_t previous)
+#                ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#  235|   
+#  236|   static void
+#  237|-> pop_fscreatecon(security_context_t previous)
+#  238|   {
+#  239|       if (!is_selinux_enabled()) {
+
+Error: COMPILER_WARNING (CWE-477):
+krb5-1.19.2/src/util/support/selinux.c:291:5: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#    security_context_t ctx;
+#    ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#  289|       FILE *fp;
+#  290|       int errno_save;
+#  291|->     security_context_t ctx;
+#  292|   
+#  293|       if ((strcmp(mode, "r") == 0) ||
+
+Error: COMPILER_WARNING (CWE-477):
+krb5-1.19.2/src/util/support/selinux.c:317:5: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#    security_context_t ctx;
+#    ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#  315|       int fd;
+#  316|       int errno_save;
+#  317|->     security_context_t ctx;
+#  318|   
+#  319|       k5_once(&labeled_once, label_mutex_init);
+
+Error: COMPILER_WARNING (CWE-477):
+krb5-1.19.2/src/util/support/selinux.c:338:5: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#    security_context_t ctx;
+#    ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#  336|       int ret;
+#  337|       int errno_save;
+#  338|->     security_context_t ctx;
+#  339|   
+#  340|       k5_once(&labeled_once, label_mutex_init);
+
+Error: COMPILER_WARNING (CWE-477):
+krb5-1.19.2/src/util/support/selinux.c:359:5: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#    security_context_t ctx;
+#    ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#  357|       int ret;
+#  358|       int errno_save;
+#  359|->     security_context_t ctx;
+#  360|   
+#  361|       k5_once(&labeled_once, label_mutex_init);
+
+Error: COMPILER_WARNING (CWE-477):
+krb5-1.19.2/src/util/support/selinux.c:380:5: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#    security_context_t ctx;
+#    ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#  378|       int fd;
+#  379|       int errno_save;
+#  380|->     security_context_t ctx;
+#  381|       mode_t mode;
+#  382|       va_list ap;

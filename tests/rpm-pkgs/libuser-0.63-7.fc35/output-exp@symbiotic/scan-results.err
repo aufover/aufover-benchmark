@@ -1,0 +1,242 @@
+Error: COMPILER_WARNING (CWE-477):
+libuser-0.63/apps/apputil.c:41:2: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#        security_context_t user_context;
+#        ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   39|   {
+#   40|   	int status;
+#   41|-> 	security_context_t user_context;
+#   42|   
+#   43|   	status = -1;
+
+Error: COMPILER_WARNING (CWE-477):
+libuser-0.63/apps/apputil.c:228:5: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#                                security_context_t user_context;
+#                                ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#  226|   			perm = string_to_av_perm(class, "chfn");
+#  227|   			if (check_access(user, perm) != 0) {
+#  228|-> 				security_context_t user_context;
+#  229|   
+#  230|   				if (getprevcon(&user_context) < 0)
+
+Error: COMPILER_WARNING:
+libuser-0.63/lib/common.c:25: included_from: Included from here.
+libuser-0.63/lib/user_private.h:28: included_from: Included from here.
+libuser-0.63/config.h:9:9: warning[-Wmacro-redefined]: 'GLIB_VERSION_MIN_REQUIRED' macro redefined
+##define GLIB_VERSION_MIN_REQUIRED GLIB_VERSION_2_30
+#        ^
+/usr/include/glib-2.0/glib/gversionmacros.h:325:10: note: previous definition is here
+## define GLIB_VERSION_MIN_REQUIRED      (GLIB_VERSION_CUR_STABLE)
+#         ^
+#    7|   
+#    8|   /* Shut up warnings about deprecated GValueArray */
+#    9|-> #define GLIB_VERSION_MIN_REQUIRED GLIB_VERSION_2_30
+#   10|   
+#   11|   /* Stay away from deprecated glib functionality. */
+
+Error: COMPILER_WARNING (CWE-477):
+libuser-0.63/apps/apputil.c:33: included_from: Included from here.
+libuser-0.63/lib/user_private.h:311:9: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#typedef security_context_t lu_security_context_t;
+#        ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#  309|      intentionally not compatible with libuser built !WITH_SELINUX. */
+#  310|   #ifdef WITH_SELINUX
+#  311|-> typedef security_context_t lu_security_context_t;
+#  312|   gboolean lu_util_fscreate_save(security_context_t *ctx,
+#  313|   				      struct lu_error **error);
+
+Error: COMPILER_WARNING (CWE-477):
+libuser-0.63/apps/apputil.c:33: included_from: Included from here.
+libuser-0.63/lib/user_private.h:312:32: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#gboolean lu_util_fscreate_save(security_context_t *ctx,
+#                               ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#  310|   #ifdef WITH_SELINUX
+#  311|   typedef security_context_t lu_security_context_t;
+#  312|-> gboolean lu_util_fscreate_save(security_context_t *ctx,
+#  313|   				      struct lu_error **error);
+#  314|   void lu_util_fscreate_restore(security_context_t ctx);
+
+Error: COMPILER_WARNING (CWE-477):
+libuser-0.63/apps/apputil.c:33: included_from: Included from here.
+libuser-0.63/lib/user_private.h:314:31: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#void lu_util_fscreate_restore(security_context_t ctx);
+#                              ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#  312|   gboolean lu_util_fscreate_save(security_context_t *ctx,
+#  313|   				      struct lu_error **error);
+#  314|-> void lu_util_fscreate_restore(security_context_t ctx);
+#  315|   gboolean lu_util_fscreate_from_fd(int fd, const char *path,
+#  316|   				  struct lu_error **error);
+
+Error: COMPILER_WARNING (CWE-477):
+libuser-0.63/lib/util.c:748:23: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#lu_util_fscreate_save(security_context_t *ctx, struct lu_error **error)
+#                      ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#  746|   /* Store current fscreate context to ctx. */
+#  747|   gboolean
+#  748|-> lu_util_fscreate_save(security_context_t *ctx, struct lu_error **error)
+#  749|   {
+#  750|   	*ctx = NULL;
+
+Error: COMPILER_WARNING (CWE-477):
+libuser-0.63/lib/util.c:762:26: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#lu_util_fscreate_restore(security_context_t ctx)
+#                         ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#  760|   /* Restore fscreate context from ctx, and free it. */
+#  761|   void
+#  762|-> lu_util_fscreate_restore(security_context_t ctx)
+#  763|   {
+#  764|   	if (is_selinux_enabled() > 0) {
+
+Error: COMPILER_WARNING (CWE-477):
+libuser-0.63/lib/util.c:776:3: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#                security_context_t ctx;
+#                ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#  774|   {
+#  775|   	if (is_selinux_enabled() > 0) {
+#  776|-> 		security_context_t ctx;
+#  777|   
+#  778|   		if (fgetfilecon(fd, &ctx) < 0) {
+
+Error: COMPILER_WARNING (CWE-477):
+libuser-0.63/lib/util.c:802:3: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#                security_context_t ctx;
+#                ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#  800|   {
+#  801|   	if (is_selinux_enabled() > 0) {
+#  802|-> 		security_context_t ctx;
+#  803|   
+#  804|   		if (getfilecon(file, &ctx) < 0) {
+
+Error: COMPILER_WARNING (CWE-477):
+libuser-0.63/lib/util.c:828:3: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#                security_context_t ctx;
+#                ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#  826|   {
+#  827|   	if (is_selinux_enabled() > 0) {
+#  828|-> 		security_context_t ctx;
+#  829|   
+#  830|   		if (lgetfilecon(file, &ctx) < 0) {
+
+Error: COMPILER_WARNING (CWE-477):
+libuser-0.63/lib/util.c:855:3: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#                security_context_t ctx;
+#                ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#  853|   {
+#  854|   	if (is_selinux_enabled() > 0) {
+#  855|-> 		security_context_t ctx;
+#  856|   
+#  857|   		if (matchpathcon(path, mode, &ctx) < 0) {
+
+Error: COMPILER_WARNING (CWE-477):
+libuser-0.63/lib/util.c:857:7: warning[-Wdeprecated-declarations]: 'matchpathcon' is deprecated: Use selabel_lookup instead
+#                if (matchpathcon(path, mode, &ctx) < 0) {
+#                    ^
+/usr/include/selinux/selinux.h:505:18: note: 'matchpathcon' has been explicitly marked deprecated here
+#        __attribute__ ((deprecated("Use selabel_lookup instead")))
+#                        ^
+#  855|   		security_context_t ctx;
+#  856|   
+#  857|-> 		if (matchpathcon(path, mode, &ctx) < 0) {
+#  858|   			if (errno == ENOENT)
+#  859|   				ctx = NULL;
+
+Error: COMPILER_WARNING (CWE-704):
+libuser-0.63/python/admin.c:1515:2: warning[-Wint-conversion]: incompatible pointer to integer conversion initializing 'Py_ssize_t' (aka 'long') with an expression of type 'void *'
+#        NULL,                   /* tp_print */
+#        ^~~~
+/usr/lib64/clang/13.0.1/include/stddef.h:89:16: note: expanded from macro 'NULL'
+##  define NULL ((void*)0)
+#               ^~~~~~~~~~
+# 1513|   	0,			/* tp_itemsize */
+# 1514|   	libuser_admin_destroy,	/* tp_dealloc */
+# 1515|-> 	NULL,			/* tp_print */
+# 1516|   	NULL,			/* tp_getattr */
+# 1517|   	NULL,			/* tp_setattr */
+
+Error: COMPILER_WARNING:
+libuser-0.63/python/ent.c:273:7: warning[-Wincompatible-pointer-types-discards-qualifiers]: assigning to 'char *' from 'const char *' discards qualifiers
+#        name = PYSTRTYPE_ASSTRING(attr_name);
+#             ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  271|   		return -1;
+#  272|   	}
+#  273|-> 	name = PYSTRTYPE_ASSTRING(attr_name);
+#  274|   	if (name == NULL) {
+#  275|   		DEBUG_EXIT;
+
+Error: COMPILER_WARNING:
+libuser-0.63/python/ent.c:630:7: warning[-Wincompatible-pointer-types-discards-qualifiers]: assigning to 'char *' from 'const char *' discards qualifiers
+#        attr = PYSTRTYPE_ASSTRING(item);
+#             ^ ~~~~~~~~~~~~~~~~~~~~~~~~
+#  628|   		return NULL;
+#  629|   	}
+#  630|-> 	attr = PYSTRTYPE_ASSTRING(item);
+#  631|   
+#  632|   	if (!lu_ent_has(me->ent, attr)) {
+
+Error: COMPILER_WARNING:
+libuser-0.63/python/ent.c:682:7: warning[-Wincompatible-pointer-types-discards-qualifiers]: assigning to 'char *' from 'const char *' discards qualifiers
+#        attr = PYSTRTYPE_ASSTRING(item);
+#             ^ ~~~~~~~~~~~~~~~~~~~~~~~~
+#  680|   		return -1;
+#  681|   	}
+#  682|-> 	attr = PYSTRTYPE_ASSTRING(item);
+#  683|   #ifdef DEBUG_BINDING
+#  684|   	fprintf(stderr, "%sSetting item (`%s')...\n", getindent(), attr);
+
+Error: COMPILER_WARNING (CWE-704):
+libuser-0.63/python/ent.c:803:2: warning[-Wint-conversion]: incompatible pointer to integer conversion initializing 'Py_ssize_t' (aka 'long') with an expression of type 'void *'
+#        NULL,                   /* tp_print */
+#        ^~~~
+/usr/lib64/clang/13.0.1/include/stddef.h:89:16: note: expanded from macro 'NULL'
+##  define NULL ((void*)0)
+#               ^~~~~~~~~~
+#  801|   	0,			/* tp_itemsize */
+#  802|   	libuser_entity_destroy, /* tp_dealloc */
+#  803|-> 	NULL,			/* tp_print */
+#  804|   	NULL,			/* tp_getattr */
+#  805|   	NULL,			/* tp_setattr */
+
+Error: COMPILER_WARNING (CWE-704):
+libuser-0.63/python/misc.c:496:2: warning[-Wint-conversion]: incompatible pointer to integer conversion initializing 'Py_ssize_t' (aka 'long') with an expression of type 'void *'
+#        NULL,                   /* tp_print */
+#        ^~~~
+/usr/lib64/clang/13.0.1/include/stddef.h:89:16: note: expanded from macro 'NULL'
+##  define NULL ((void*)0)
+#               ^~~~~~~~~~
+#  494|   	0,			/* tp_itemsize */
+#  495|   	libuser_prompt_destroy,	/* tp_dealloc */
+#  496|-> 	NULL,			/* tp_print */
+#  497|   	NULL,			/* tp_getattr */
+#  498|   	NULL,			/* tp_setattr */

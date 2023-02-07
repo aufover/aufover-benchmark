@@ -1,0 +1,245 @@
+Error: COMPILER_WARNING (CWE-563):
+cracklib-2.9.6/lib/fascist.c:714:11: warning[-Wunused-variable]: unused variable 'maxrepeat'
+#    int i,maxrepeat;
+#          ^
+#  712|   		const char *user, const char *gecos)
+#  713|   {
+#  714|->     int i,maxrepeat;
+#  715|       char *ptr;
+#  716|       char *jptr;
+
+Error: COMPILER_WARNING (CWE-563):
+cracklib-2.9.6/lib/packlib.c:21:19: warning[-Wunused-const-variable]: unused variable 'vers_id'
+#static const char vers_id[] = "packlib.c : v2.3p2 Alec Muffett 18 May 1993";
+#                  ^
+#   19|   #include "packer.h"
+#   20|   
+#   21|-> static const char vers_id[] = "packlib.c : v2.3p2 Alec Muffett 18 May 1993";
+#   22|   
+#   23|   #define DEBUG 0
+
+Error: COMPILER_WARNING (CWE-563):
+cracklib-2.9.6/lib/rules.c:7:19: warning[-Wunused-const-variable]: unused variable 'vers_id'
+#static const char vers_id[] = "rules.c : v5.0p3 Alec Muffett 20 May 1993";
+#                  ^
+#    5|    */
+#    6|   
+#    7|-> static const char vers_id[] = "rules.c : v5.0p3 Alec Muffett 20 May 1993";
+#    8|   
+#    9|   #include "config.h"
+
+Error: COMPILER_WARNING (CWE-704):
+cracklib-2.9.6/lib/rules.c:348:45: warning[-Wint-conversion]: incompatible integer to pointer conversion passing 'char' to parameter of type 'char *'; take the address with &
+#  346|   
+#  347|       default:
+#  348|-> 	Debug(1, "MatchClass: unknown class %c\n", class);
+#  349|   	return (0);
+#  350|   	break;
+
+Error: COMPILER_WARNING:
+cracklib-2.9.6/lib/rules.c:348:50: warning: too few arguments in call to 'Debug'
+#        Debug(1, "MatchClass: unknown class %c\n", class);
+#        ~~~~~                                           ^
+#  346|   
+#  347|       default:
+#  348|-> 	Debug(1, "MatchClass: unknown class %c\n", class);
+#  349|   	return (0);
+#  350|   	break;
+
+Error: COMPILER_WARNING:
+cracklib-2.9.6/lib/rules.c:476:61: warning: too few arguments in call to 'Debug'
+#                Debug(1, "Mangle: '>' missing argument in '%s'\n", control);
+#                ~~~~~                                                     ^
+#  474|   	    if (!ptr[1])
+#  475|   	    {
+#  476|-> 		Debug(1, "Mangle: '>' missing argument in '%s'\n", control);
+#  477|   		return NULL;
+#  478|   	    } else
+
+Error: COMPILER_WARNING:
+cracklib-2.9.6/lib/rules.c:483:63: warning: too few arguments in call to 'Debug'
+#                    Debug(1, "Mangle: '>' weird argument in '%s'\n", control);
+#                    ~~~~~                                                   ^
+#  481|   		if (limit < 0)
+#  482|   		{
+#  483|-> 		    Debug(1, "Mangle: '>' weird argument in '%s'\n", control);
+#  484|   		    return NULL;
+#  485|   		}
+
+Error: COMPILER_WARNING:
+cracklib-2.9.6/lib/rules.c:502:63: warning: too few arguments in call to 'Debug'
+#                    Debug(1, "Mangle: '<' weird argument in '%s'\n", control);
+#                    ~~~~~                                                   ^
+#                Debug(1, "Mangle: '>' missing argument in '%s'\n", control);
+#                ~~~~~                                                     ^
+#  500|   		if (limit < 0)
+#  501|   		{
+#  502|-> 		    Debug(1, "Mangle: '<' weird argument in '%s'\n", control);
+#  503|   		    return NULL;
+#  504|   		}
+
+Error: COMPILER_WARNING:
+cracklib-2.9.6/lib/rules.c:514:65: warning: too few arguments in call to 'Debug'
+#                Debug(1, "Mangle: prepend missing argument in '%s'\n", control);
+#                ~~~~~                                                         ^
+#  512|   	    if (!ptr[1])
+#  513|   	    {
+#  514|-> 		Debug(1, "Mangle: prepend missing argument in '%s'\n", control);
+#  515|   		return NULL;
+#  516|   	    } else
+
+Error: COMPILER_WARNING:
+cracklib-2.9.6/lib/rules.c:527:64: warning: too few arguments in call to 'Debug'
+#                Debug(1, "Mangle: append missing argument in '%s'\n", control);
+#                ~~~~~                                                        ^
+#  525|   	    if (!ptr[1])
+#  526|   	    {
+#  527|-> 		Debug(1, "Mangle: append missing argument in '%s'\n", control);
+#  528|   		return NULL;
+#  529|   	    } else
+
+Error: COMPILER_WARNING:
+cracklib-2.9.6/lib/rules.c:543:65: warning: too few arguments in call to 'Debug'
+#  541|   	    if (!ptr[1] || !ptr[2])
+#  542|   	    {
+#  543|-> 		Debug(1, "Mangle: extract missing argument in '%s'\n", control);
+#  544|   		return NULL;
+#  545|   	    } else
+
+Error: COMPILER_WARNING:
+cracklib-2.9.6/lib/rules.c:568:68: warning: too few arguments in call to 'Debug'rules.c:705:61: warning: too few arguments in call to 'Debug'
+#                Debug(1, "Mangle: '=' missing argument in '%s'\n", control);
+#                ~~~~~                                                     ^
+#  566|   	    if (!ptr[1] || !ptr[2])
+#  567|   	    {
+#  568|-> 		Debug(1, "Mangle: overstrike missing argument in '%s'\n", control);
+#  569|   		return NULL;
+#  570|   	    } else
+
+Error: COMPILER_WARNING:
+cracklib-2.9.6/lib/rules.c:577:13: warning: too few arguments in call to 'Debug'
+#  575|   		{
+#  576|   		    Debug(1, "Mangle: overstrike weird argument in '%s'\n",
+#  577|-> 			  control);
+#  578|   		    return NULL;
+#  579|   		} else
+
+Error: COMPILER_WARNING:
+cracklib-2.9.6/lib/rules.c:592:64: warning: too few arguments in call to 'Debug'
+#                Debug(1, "Mangle: insert missing argument in '%s'\n", control);
+#                ~~~~~                                                        ^
+#  590|   	    if (!ptr[1] || !ptr[2])
+#  591|   	    {
+#  592|-> 		Debug(1, "Mangle: insert missing argument in '%s'\n", control);
+#  593|   		return NULL;
+#  594|   	    } else
+
+Error: COMPILER_WARNING:
+cracklib-2.9.6/lib/rules.c:627:65: warning: too few arguments in call to 'Debug'
+#                Debug(1, "Mangle: delete missing arguments in '%s'\n", control);
+#                ~~~~~                                                         ^
+#  625|   	    if (!ptr[1] || (ptr[1] == RULE_CLASS && !ptr[2]))
+#  626|   	    {
+#  627|-> 		Debug(1, "Mangle: delete missing arguments in '%s'\n", control);
+#  628|   		return NULL;
+#  629|   	    } else if (ptr[1] != RULE_CLASS)
+
+Error: COMPILER_WARNING:
+cracklib-2.9.6/lib/rules.c:641:63: warning: too few arguments in call to 'Debug'
+#                Debug(1, "Mangle: subst missing argument in '%s'\n", control);
+#                ~~~~~                                                       ^
+#  639|   	    if (!ptr[1] || !ptr[2] || (ptr[1] == RULE_CLASS && !ptr[3]))
+#  640|   	    {
+#  641|-> 		Debug(1, "Mangle: subst missing argument in '%s'\n", control);
+#  642|   		return NULL;
+#  643|   	    } else if (ptr[1] != RULE_CLASS)
+
+Error: COMPILER_WARNING:
+cracklib-2.9.6/lib/rules.c:656:61: warning: too few arguments in call to 'Debug'
+#                Debug(1, "Mangle: '/' missing argument in '%s'\n", control);
+#                ~~~~~                                                     ^
+#  654|   	    if (!ptr[1] || (ptr[1] == RULE_CLASS && !ptr[2]))
+#  655|   	    {
+#  656|-> 		Debug(1, "Mangle: '/' missing argument in '%s'\n", control);
+#  657|   		return NULL;
+#  658|   	    } else if (ptr[1] != RULE_CLASS)
+
+Error: COMPILER_WARNING:
+cracklib-2.9.6/lib/rules.c:676:61: warning: too few arguments in call to 'Debug'
+#                Debug(1, "Mangle: '!' missing argument in '%s'\n", control);
+#                ~~~~~                                                     ^
+#  674|   	    if (!ptr[1] || (ptr[1] == RULE_CLASS && !ptr[2]))
+#  675|   	    {
+#  676|-> 		Debug(1, "Mangle: '!' missing argument in '%s'\n", control);
+#  677|   		return NULL;
+#  678|   	    } else if (ptr[1] != RULE_CLASS)
+
+Error: COMPILER_WARNING:
+cracklib-2.9.6/lib/rules.c:705:61: warning: too few arguments in call to 'Debug'
+#                Debug(1, "Mangle: '=' missing argument in '%s'\n", control);
+#                ~~~~~                                                     ^
+#  703|   	    if (!ptr[1] || !ptr[2] || (ptr[2] == RULE_CLASS && !ptr[3]))
+#  704|   	    {
+#  705|-> 		Debug(1, "Mangle: '=' missing argument in '%s'\n", control);
+#  706|   		return NULL;
+#  707|   	    } else
+
+Error: COMPILER_WARNING:
+cracklib-2.9.6/lib/rules.c:712:63: warning: too few arguments in call to 'Debug'
+#                    Debug(1, "Mangle: '=' weird argument in '%s'\n", control);
+#                    ~~~~~                                                   ^
+#  710|   		if ((i = Char2Int(ptr[1])) < 0)
+#  711|   		{
+#  712|-> 		    Debug(1, "Mangle: '=' weird argument in '%s'\n", control);
+#  713|   		    return NULL;
+#  714|   		}
+
+Error: COMPILER_WARNING:
+cracklib-2.9.6/lib/rules.c:757:61: warning: too few arguments in call to 'Debug'
+#                Debug(1, "Mangle: '(' missing argument in '%s'\n", control);
+#                ~~~~~                                                     ^
+#  755|   	    if (!ptr[1] || (ptr[1] == RULE_CLASS && !ptr[2]))
+#  756|   	    {
+#  757|-> 		Debug(1, "Mangle: '(' missing argument in '%s'\n", control);
+#  758|   		return NULL;
+#  759|   	    } else
+
+Error: COMPILER_WARNING:
+cracklib-2.9.6/lib/rules.c:782:61: warning: too few arguments in call to 'Debug'
+#                Debug(1, "Mangle: ')' missing argument in '%s'\n", control);
+#                ~~~~~                                                     ^
+#  780|   	    if (!ptr[1] || (ptr[1] == RULE_CLASS && !ptr[2]))
+#  781|   	    {
+#  782|-> 		Debug(1, "Mangle: ')' missing argument in '%s'\n", control);
+#  783|   		return NULL;
+#  784|   	    } else
+
+Error: COMPILER_WARNING (CWE-704):
+cracklib-2.9.6/lib/rules.c:817:53: warning[-Wint-conversion]: incompatible integer to pointer conversion passing 'char' to parameter of type 'char *'; remove *
+#            Debug(1, "Mangle: unknown command %c in %s\n", *ptr, control);
+#                                                           ^~~~
+#  815|   
+#  816|   	default:
+#  817|-> 	    Debug(1, "Mangle: unknown command %c in %s\n", *ptr, control);
+#  818|   	    return NULL;
+#  819|   	    break;
+
+Error: COMPILER_WARNING:
+cracklib-2.9.6/lib/rules.c:817:66: warning: too few arguments in call to 'Debug'
+#            Debug(1, "Mangle: unknown command %c in %s\n", *ptr, control);
+#            ~~~~~                                                       ^
+#  815|   
+#  816|   	default:
+#  817|-> 	    Debug(1, "Mangle: unknown command %c in %s\n", *ptr, control);
+#  818|   	    return NULL;
+#  819|   	    break;
+
+Error: COMPILER_WARNING (CWE-563):
+cracklib-2.9.6/lib/stringlib.c:15:19: warning[-Wunused-const-variable]: unused variable 'vers_id'
+#static const char vers_id[] = "stringlib.c : v2.3p2 Alec Muffett 18 May 1993";
+#                  ^
+#   13|   #include "packer.h"
+#   14|   
+#   15|-> static const char vers_id[] = "stringlib.c : v2.3p2 Alec Muffett 18 May 1993";
+#   16|   
+#   17|   char

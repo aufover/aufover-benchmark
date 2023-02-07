@@ -1,0 +1,294 @@
+Error: COMPILER_WARNING:
+cyrus-sasl-2.1.27/include/makemd5.c:132:32: warning[-Wunknown-warning-option]: unknown warning group '-Wformat-overflow', ignored
+##pragma GCC diagnostic ignored "-Wformat-overflow"
+#                               ^
+#  130|   {
+#  131|   /* Local macros for not-installed program. No coverity/compiler issues! */
+#  132|-> #pragma GCC diagnostic ignored "-Wformat-overflow"
+#  133|   #ifdef HAVE_INT8_T
+#  134|       BITSIZE(int8_t);
+
+Error: COMPILER_WARNING:
+cyrus-sasl-2.1.27/plugins/digestmd5.c:2513:19: warning[-Wparentheses-equality]: equality comparison with extraneous parentheses
+#    if ((username == NULL)) {
+#         ~~~~~~~~~^~~~~~~
+cyrus-sasl-2.1.27/plugins/digestmd5.c:2513:19: note: remove extraneous parentheses around the comparison to silence this warning
+#    if ((username == NULL)) {
+#        ~         ^      ~
+cyrus-sasl-2.1.27/plugins/digestmd5.c:2513:19: note: use '=' to turn this equality comparison into an assignment
+#    if ((username == NULL)) {
+#                  ^~
+# 2511|        */
+# 2512|       /* Verifing that all required parameters were received */
+# 2513|->     if ((username == NULL)) {
+# 2514|   	SETERROR(sparams->utils, "required parameters missing: username");
+# 2515|   	result = SASL_BADAUTH;
+
+Error: COMPILER_WARNING:
+cyrus-sasl-2.1.27/plugins/digestmd5.c:2518:16: warning[-Wparentheses-equality]: equality comparison with extraneous parentheses
+#    if ((nonce == NULL)) {
+#         ~~~~~~^~~~~~~
+cyrus-sasl-2.1.27/plugins/digestmd5.c:2518:16: note: remove extraneous parentheses around the comparison to silence this warning
+#    if ((nonce == NULL)) {
+#        ~      ^      ~
+cyrus-sasl-2.1.27/plugins/digestmd5.c:2518:16: note: use '=' to turn this equality comparison into an assignment
+#    if ((nonce == NULL)) {
+#               ^~
+# 2516|   	goto FreeAllMem;
+# 2517|       }
+# 2518|->     if ((nonce == NULL)) {
+# 2519|   	SETERROR(sparams->utils, "required parameters missing: nonce");
+# 2520|   	result = SASL_BADAUTH;
+
+Error: COMPILER_WARNING:
+cyrus-sasl-2.1.27/plugins/digestmd5.c:2523:21: warning[-Wparentheses-equality]: equality comparison with extraneous parentheses
+#    if ((noncecount == 0)) {
+#         ~~~~~~~~~~~^~~~
+cyrus-sasl-2.1.27/plugins/digestmd5.c:2523:21: note: remove extraneous parentheses around the comparison to silence this warning
+#    if ((noncecount == 0)) {
+#        ~           ^   ~
+cyrus-sasl-2.1.27/plugins/digestmd5.c:2523:21: note: use '=' to turn this equality comparison into an assignment
+#    if ((noncecount == 0)) {
+#                    ^~
+# 2521|   	goto FreeAllMem;
+# 2522|       }
+# 2523|->     if ((noncecount == 0)) {
+# 2524|   	SETERROR(sparams->utils, "required parameters missing: noncecount");
+# 2525|   	result = SASL_BADAUTH;
+
+Error: COMPILER_WARNING:
+cyrus-sasl-2.1.27/plugins/digestmd5.c:2528:17: warning[-Wparentheses-equality]: equality comparison with extraneous parentheses
+#    if ((cnonce == NULL)) {
+#         ~~~~~~~^~~~~~~
+cyrus-sasl-2.1.27/plugins/digestmd5.c:2528:17: note: remove extraneous parentheses around the comparison to silence this warning
+#    if ((cnonce == NULL)) {
+#        ~       ^      ~
+cyrus-sasl-2.1.27/plugins/digestmd5.c:2528:17: note: use '=' to turn this equality comparison into an assignment
+#    if ((cnonce == NULL)) {
+#                ^~
+# 2526|   	goto FreeAllMem;
+# 2527|       }
+# 2528|->     if ((cnonce == NULL)) {
+# 2529|   	SETERROR(sparams->utils, "required parameters missing: cnonce");
+# 2530|   	result = SASL_BADAUTH;
+
+Error: COMPILER_WARNING:
+cyrus-sasl-2.1.27/plugins/digestmd5.c:2533:20: warning[-Wparentheses-equality]: equality comparison with extraneous parentheses
+#    if ((digesturi == NULL)) {
+#         ~~~~~~~~~~^~~~~~~
+cyrus-sasl-2.1.27/plugins/digestmd5.c:2533:20: note: remove extraneous parentheses around the comparison to silence this warning
+#    if ((digesturi == NULL)) {
+#        ~          ^      ~
+# 2531|   	goto FreeAllMem;
+# 2532|       }
+# 2533|->     if ((digesturi == NULL)) {
+# 2534|   	SETERROR(sparams->utils, "required parameters missing: digesturi");
+# 2535|   	result = SASL_BADAUTH;
+
+Error: COMPILER_WARNING:
+cyrus-sasl-2.1.27/plugins/digestmd5.c:2538:19: warning[-Wparentheses-equality]: equality comparison with extraneous parentheses
+#    if ((response == NULL)) {
+#         ~~~~~~~~~^~~~~~~
+cyrus-sasl-2.1.27/plugins/digestmd5.c:2513:19: note: remove extraneous parentheses around the comparison to silence this warning
+#    if ((username == NULL)) {
+#        ~         ^      ~
+cyrus-sasl-2.1.27/plugins/digestmd5.c:2538:19: note: remove extraneous parentheses around the comparison to silence this warning
+#    if ((response == NULL)) {
+#        ~         ^      ~
+cyrus-sasl-2.1.27/plugins/digestmd5.c:2513:19: note: use '=' to turn this equality comparison into an assignment
+cyrus-sasl-2.1.27/plugins/digestmd5.c:2538:19: note: use '=' to turn this equality comparison into an assignment
+#    if ((username == NULL)) {
+#                  ^~
+# 2536|   	goto FreeAllMem;
+# 2537|       }
+# 2538|->     if ((response == NULL)) {
+# 2539|   	SETERROR(sparams->utils, "required parameters missing: response");
+# 2540|   	result = SASL_BADAUTH;
+
+Error: COMPILER_WARNING:
+cyrus-sasl-2.1.27/plugins/gssapi.c:909:35: warning[-Wincompatible-pointer-types-discards-qualifiers]: assigning to 'void *' from 'const unsigned char *const' discards qualifiers
+#        cb.application_data.value = params->cbinding->data;
+#                                  ^ ~~~~~~~~~~~~~~~~~~~~~~
+#  907|       if (params->cbinding != NULL) {
+#  908|           cb.application_data.length = params->cbinding->len;
+#  909|->         cb.application_data.value = params->cbinding->data;
+#  910|           bindings = &cb;
+#  911|       }
+
+Error: COMPILER_WARNING:
+cyrus-sasl-2.1.27/plugins/gssapi.c:1826:39: warning[-Wincompatible-pointer-types-discards-qualifiers]: assigning to 'void *' from 'const unsigned char *const' discards qualifiers
+#            cb.application_data.value = params->cbinding->data;
+#                                      ^ ~~~~~~~~~~~~~~~~~~~~~~
+# 1824|           if (params->cbinding != NULL) {
+# 1825|               cb.application_data.length = params->cbinding->len;
+# 1826|->             cb.application_data.value = params->cbinding->data;
+# 1827|               bindings = &cb;
+# 1828|           }
+
+Error: COMPILER_WARNING (CWE-195):
+cyrus-sasl-2.1.27/plugins/ntlm.c:383:21: warning[-Wsign-compare]: comparison of integers of different signs: 'unsigned long' and 'int'
+#    if (passwd->len < Plen) {
+#        ~~~~~~~~~~~ ^ ~~~~
+#  381|   
+#  382|       Plen = sizeof(P14);
+#  383|->     if (passwd->len < Plen) {
+#  384|           Plen = passwd->len;
+#  385|       }
+
+Error: COMPILER_WARNING (CWE-252):
+cyrus-sasl-2.1.27/saslauthd/lak.c:1808:2: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#        EVP_DigestInit(mdctx, md);
+#        ^~~~~~~~~~~~~~ ~~~~~~~~~
+# 1806|   	}
+# 1807|   
+# 1808|-> 	EVP_DigestInit(mdctx, md);
+# 1809|   	EVP_DigestUpdate(mdctx, passwd, strlen(passwd));
+# 1810|   	if (hrock->salted) {
+
+Error: COMPILER_WARNING (CWE-252):
+cyrus-sasl-2.1.27/saslauthd/lak.c:1809:2: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#        EVP_DigestUpdate(mdctx, passwd, strlen(passwd));
+#        ^~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1807|   
+# 1808|   	EVP_DigestInit(mdctx, md);
+# 1809|-> 	EVP_DigestUpdate(mdctx, passwd, strlen(passwd));
+# 1810|   	if (hrock->salted) {
+# 1811|   		EVP_DigestUpdate(mdctx, &cred[EVP_MD_size(md)],
+
+Error: COMPILER_WARNING (CWE-252):
+cyrus-sasl-2.1.27/saslauthd/lak.c:1811:3: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+# 1809|   	EVP_DigestUpdate(mdctx, passwd, strlen(passwd));
+# 1810|   	if (hrock->salted) {
+# 1811|-> 		EVP_DigestUpdate(mdctx, &cred[EVP_MD_size(md)],
+# 1812|   				 clen - EVP_MD_size(md));
+# 1813|   	}
+
+Error: COMPILER_WARNING (CWE-252):
+cyrus-sasl-2.1.27/saslauthd/lak.c:1814:2: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#        EVP_DigestUpdate(mdctx, passwd, strlen(passwd));
+#        ^~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#        EVP_DigestFinal(mdctx, digest, NULL);
+#        ^~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~
+# 1812|   				 clen - EVP_MD_size(md));
+# 1813|   	}
+# 1814|-> 	EVP_DigestFinal(mdctx, digest, NULL);
+# 1815|   	EVP_MD_CTX_free(mdctx);
+# 1816|   
+
+Error: COMPILER_WARNING:
+cyrus-sasl-2.1.27/saslauthd/md5.c:363:33: warning[-Wincompatible-pointer-types-discards-qualifiers]: passing 'const unsigned char *' to parameter of type 'unsigned char *' discards qualifiers
+#    _saslauthd_MD5Update(&tctx, key, key_len); 
+#                                ^~~
+#  361|   
+#  362|       _saslauthd_MD5Init(&tctx); 
+#  363|->     _saslauthd_MD5Update(&tctx, key, key_len); 
+#  364|       _saslauthd_MD5Final(tk, &tctx); 
+#  365|   
+
+Error: COMPILER_WARNING:
+cyrus-sasl-2.1.27/saslauthd/md5.c:384:23: warning[-Wincompatible-pointer-types-discards-qualifiers]: passing 'const unsigned char *' to parameter of type 'POINTER' (aka 'unsigned char *') discards qualifiers
+#    _saslauthd_MD5Update(&tctx, key, key_len); 
+#                                ^~~
+#  MD5_memcpy( k_ipad, key, key_len);
+#                      ^~~
+#  382|     MD5_memset(k_ipad, '\0', sizeof k_ipad);
+#  383|     MD5_memset(k_opad, '\0', sizeof k_opad);
+#  384|->   MD5_memcpy( k_ipad, key, key_len);
+#  385|     MD5_memcpy( k_opad, key, key_len);
+#  386|   
+
+Error: COMPILER_WARNING:
+cyrus-sasl-2.1.27/saslauthd/md5.c:385:23: warning[-Wincompatible-pointer-types-discards-qualifiers]: passing 'const unsigned char *' to parameter of type 'POINTER' (aka 'unsigned char *') discards qualifiers
+#  MD5_memcpy( k_opad, key, key_len);
+#                      ^~~
+#  383|     MD5_memset(k_opad, '\0', sizeof k_opad);
+#  384|     MD5_memcpy( k_ipad, key, key_len);
+#  385|->   MD5_memcpy( k_opad, key, key_len);
+#  386|   
+#  387|     /* XOR key with ipad and opad values */
+
+Error: COMPILER_WARNING (CWE-843):
+cyrus-sasl-2.1.27/saslauthd/md5.c:400:14: warning[-Wincompatible-pointer-types]: incompatible pointer types passing 'unsigned char (*)[65]' to parameter of type 'POINTER' (aka 'unsigned char *')
+#  MD5_memset(&k_ipad, 0, sizeof(k_ipad));
+#             ^~~~~~~
+#  398|   
+#  399|     /* scrub the pads and key context (if used) */
+#  400|->   MD5_memset(&k_ipad, 0, sizeof(k_ipad));
+#  401|     MD5_memset(&k_opad, 0, sizeof(k_opad));
+#  402|     MD5_memset(&tk, 0, sizeof(tk));
+
+Error: COMPILER_WARNING (CWE-843):
+cyrus-sasl-2.1.27/saslauthd/md5.c:401:14: warning[-Wincompatible-pointer-types]: incompatible pointer types passing 'unsigned char (*)[65]' to parameter of type 'POINTER' (aka 'unsigned char *')
+#  399|     /* scrub the pads and key context (if used) */
+#  400|     MD5_memset(&k_ipad, 0, sizeof(k_ipad));
+#  401|->   MD5_memset(&k_opad, 0, sizeof(k_opad));
+#  402|     MD5_memset(&tk, 0, sizeof(tk));
+#  403|   
+
+Error: COMPILER_WARNING (CWE-843):
+cyrus-sasl-2.1.27/saslauthd/md5.c:402:14: warning[-Wincompatible-pointer-types]: incompatible pointer types passing 'unsigned char (*)[16]' to parameter of type 'POINTER' (aka 'unsigned char *')
+#  MD5_memset(&tk, 0, sizeof(tk));
+#             ^~~
+#  400|     MD5_memset(&k_ipad, 0, sizeof(k_ipad));
+#  401|     MD5_memset(&k_opad, 0, sizeof(k_opad));
+#  402|->   MD5_memset(&tk, 0, sizeof(tk));
+#  403|   
+#  404|     /* and we're done. */
+
+Error: COMPILER_WARNING (CWE-843):
+cyrus-sasl-2.1.27/saslauthd/md5.c:435:14: warning[-Wincompatible-pointer-types]: incompatible pointer types passing 'HMAC_MD5_CTX *' (aka 'struct HMAC_MD5_CTX_s *') to parameter of type 'POINTER' (aka 'unsigned char *')
+#  MD5_memset(hmac, 0, sizeof(HMAC_MD5_CTX));
+#             ^~~~
+#  433|   {
+#  434|     unsigned lupe;
+#  435|->   MD5_memset(hmac, 0, sizeof(HMAC_MD5_CTX));
+#  436|     for (lupe = 0; lupe < 4; lupe++) {
+#  437|       hmac->ictx.state[lupe] = ntohl(state->istate[lupe]);
+
+Error: COMPILER_WARNING:
+cyrus-sasl-2.1.27/saslauthd/md5.c:478:33: warning[-Wincompatible-pointer-types-discards-qualifiers]: passing 'const unsigned char *' to parameter of type 'unsigned char *' discards qualifiers
+#    _saslauthd_MD5Update(&tctx, key, key_len); 
+#                                ^~~
+#  476|   
+#  477|       _saslauthd_MD5Init(&tctx); 
+#  478|->     _saslauthd_MD5Update(&tctx, key, key_len); 
+#  479|       _saslauthd_MD5Final(tk, &tctx); 
+#  480|   
+
+Error: COMPILER_WARNING:
+cyrus-sasl-2.1.27/saslauthd/md5.c:499:23: warning[-Wincompatible-pointer-types-discards-qualifiers]: passing 'const unsigned char *' to parameter of type 'POINTER' (aka 'unsigned char *') discards qualifiers
+#  MD5_memcpy( k_ipad, key, key_len);
+#                      ^~~
+#  497|     MD5_memset(k_ipad, '\0', sizeof k_ipad);
+#  498|     MD5_memset(k_opad, '\0', sizeof k_opad);
+#  499|->   MD5_memcpy( k_ipad, key, key_len);
+#  500|     MD5_memcpy( k_opad, key, key_len);
+#  501|   
+
+Error: COMPILER_WARNING:
+cyrus-sasl-2.1.27/saslauthd/md5.c:500:23: warning[-Wincompatible-pointer-types-discards-qualifiers]: passing 'const unsigned char *' to parameter of type 'POINTER' (aka 'unsigned char *') discards qualifiers
+#  MD5_memcpy( k_opad, key, key_len);
+#                      ^~~
+#  498|     MD5_memset(k_opad, '\0', sizeof k_opad);
+#  499|     MD5_memcpy( k_ipad, key, key_len);
+#  500|->   MD5_memcpy( k_opad, key, key_len);
+#  501|   
+#  502|     /* XOR key with ipad and opad values */
+
+Error: COMPILER_WARNING:
+cyrus-sasl-2.1.27/saslauthd/md5.c:514:34: warning[-Wincompatible-pointer-types-discards-qualifiers]: passing 'const unsigned char *' to parameter of type 'unsigned char *' discards qualifiers
+#  _saslauthd_MD5Update(&context, text, text_len); /* then text of datagram */
+#                                 ^~~~
+#  512|   					       * pass */
+#  513|     _saslauthd_MD5Update(&context, k_ipad, 64);      /* start with inner pad */
+#  514|->   _saslauthd_MD5Update(&context, text, text_len); /* then text of datagram */
+#  515|     _saslauthd_MD5Final(digest, &context);          /* finish up 1st pass */
+#  516|   
+
+Error: COMPILER_WARNING (CWE-681):
+cyrus-sasl-2.1.27/tests/t_gssapi_srv.c:101:27: warning[-Wpointer-sign]: passing 'unsigned char [256]' to parameter of type 'char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not
+#   99|           switch (c) {
+#  100|           case 'c':
+#  101|->             parse_cb(&cb, cb_buf, 256, optarg);
+#  102|               break;
+#  103|           case 'z':

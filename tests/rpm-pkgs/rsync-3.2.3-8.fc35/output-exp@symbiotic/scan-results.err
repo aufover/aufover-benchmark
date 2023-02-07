@@ -1,0 +1,78 @@
+Error: COMPILER_WARNING (CWE-477):
+rsync-3.2.3/main.c:472:7: warning[-Wdeprecated-declarations]: 'mallinfo' is deprecated
+#        mi = mallinfo();
+#             ^
+/usr/include/malloc.h:113:48: note: 'mallinfo' has been explicitly marked deprecated here
+#extern struct mallinfo mallinfo (void) __THROW __MALLOC_DEPRECATED;
+#                                               ^
+/usr/include/malloc.h:31:30: note: expanded from macro '__MALLOC_DEPRECATED'
+## define __MALLOC_DEPRECATED __attribute_deprecated__
+#                             ^
+/usr/include/sys/cdefs.h:329:51: note: expanded from macro '__attribute_deprecated__'
+## define __attribute_deprecated__ __attribute__ ((__deprecated__))
+#                                                  ^
+#  470|   	struct mallinfo mi;
+#  471|   
+#  472|-> 	mi = mallinfo();
+#  473|   
+#  474|   	rprintf(FCLIENT, "\n");
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/simd-checksum-x86_64.cpp:202:25: warning[-Walign-mismatch]: passing 1-byte aligned argument to 16-byte aligned parameter 1 of '_mm_store_si128' may result in an unaligned pointer access
+#        _mm_store_si128((__m128i_u*)x, ss1);
+#                        ^
+#  200|           }
+#  201|   
+#  202|->         _mm_store_si128((__m128i_u*)x, ss1);
+#  203|           *ps1 = x[0];
+#  204|           _mm_store_si128((__m128i_u*)x, ss2);
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/simd-checksum-x86_64.cpp:204:25: warning[-Walign-mismatch]: passing 1-byte aligned argument to 16-byte aligned parameter 1 of '_mm_store_si128' may result in an unaligned pointer access
+#        _mm_store_si128((__m128i_u*)x, ss2);
+#                        ^
+#  202|           _mm_store_si128((__m128i_u*)x, ss1);
+#  203|           *ps1 = x[0];
+#  204|->         _mm_store_si128((__m128i_u*)x, ss2);
+#  205|           *ps2 = x[0];
+#  206|       }
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/simd-checksum-x86_64.cpp:306:25: warning[-Walign-mismatch]: passing 1-byte aligned argument to 16-byte aligned parameter 1 of '_mm_store_si128' may result in an unaligned pointer access
+#        _mm_store_si128((__m128i_u*)x, ss1);
+#                        ^
+#  304|           }
+#  305|   
+#  306|->         _mm_store_si128((__m128i_u*)x, ss1);
+#  307|           *ps1 = x[0];
+#  308|           _mm_store_si128((__m128i_u*)x, ss2);
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/simd-checksum-x86_64.cpp:308:25: warning[-Walign-mismatch]: passing 1-byte aligned argument to 16-byte aligned parameter 1 of '_mm_store_si128' may result in an unaligned pointer access
+#        _mm_store_si128((__m128i_u*)x, ss2);
+#                        ^
+#  306|           _mm_store_si128((__m128i_u*)x, ss1);
+#  307|           *ps1 = x[0];
+#  308|->         _mm_store_si128((__m128i_u*)x, ss2);
+#  309|           *ps2 = x[0];
+#  310|       }
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/simd-checksum-x86_64.cpp:428:28: warning[-Walign-mismatch]: passing 1-byte aligned argument to 32-byte aligned parameter 1 of '_mm256_store_si256' may result in an unaligned pointer access
+#        _mm256_store_si256((__m256i_u*)x, ss1);
+#                           ^
+#  426|           }
+#  427|   
+#  428|->         _mm256_store_si256((__m256i_u*)x, ss1);
+#  429|           *ps1 = x[0];
+#  430|           _mm256_store_si256((__m256i_u*)x, ss2);
+
+Error: COMPILER_WARNING:
+rsync-3.2.3/simd-checksum-x86_64.cpp:430:28: warning[-Walign-mismatch]: passing 1-byte aligned argument to 32-byte aligned parameter 1 of '_mm256_store_si256' may result in an unaligned pointer access
+#        _mm256_store_si256((__m256i_u*)x, ss2);
+#                           ^
+#  428|           _mm256_store_si256((__m256i_u*)x, ss1);
+#  429|           *ps1 = x[0];
+#  430|->         _mm256_store_si256((__m256i_u*)x, ss2);
+#  431|           *ps2 = x[0];
+#  432|       }

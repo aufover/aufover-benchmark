@@ -1,0 +1,14 @@
+Error: SYMBIOTIC_WARNING:
+dbus-broker-29/subprojects/c-dvar/src/c-dvar.h:247: error: memory error: out of bound pointer
+dbus-broker-29/subprojects/c-dvar/src/c-dvar.h:247: note: call stack: function c_dvar_type_new_from_string (=0)
+dbus-broker-29/subprojects/c-dvar/src/test-api.c:59: note: call stack: function test_api ()
+dbus-broker-29/subprojects/c-dvar/src/test-api.c:200: note: call stack: function main (=2, =0)
+dbus-broker-29/subprojects/c-dvar/src/c-dvar.h:247: note: Additional Info: address: 0:0
+dbus-broker-29/subprojects/c-dvar/src/c-dvar.h:247: note: Additional Info: pointing to: none
+dbus-broker-29/subprojects/c-dvar/src/test-api.c:56:13: note: Non-deterministic values: c_dvar_type_new_from_signature: len 4 bytes, [0x1|3 times 0x0] (i32: 1)
+dbus-broker-29/subprojects/c-dvar/src/c-dvar.h:243:13: note: Non-deterministic values: c_dvar_type_new_from_signature: len 4 bytes, [4 times 0x0] (i32: 0)
+#  245|                   return r;
+#  246|   
+#  247|->         if (n != type->length) {
+#  248|                   if (!*typep)
+#  249|                           c_dvar_type_free(type);

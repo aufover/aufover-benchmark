@@ -1,0 +1,49 @@
+Error: COMPILER_WARNING:
+libproxy-0.4.17/libmodman/test/main.cpp:63:22: warning[-Wpotentially-evaluated-expression]: expression with side effects will be evaluated despite being used as an operand to 'typeid'
+#                if (!strstr(typeid(*(exts[i])).name(), argv[i+2])) {
+#                                   ^
+#   61|   
+#   62|   	for (unsigned int i=0 ; i < exts.size() ; i++) {
+#   63|-> 		if (!strstr(typeid(*(exts[i])).name(), argv[i+2])) {
+#   64|   			cout << "Unable to find extension! Here's the list:" << endl;
+#   65|   			for (unsigned int j=0 ; j < exts.size() ; j++)
+
+Error: COMPILER_WARNING:
+libproxy-0.4.17/libmodman/test/main.cpp:66:28: warning[-Wpotentially-evaluated-expression]: expression with side effects will be evaluated despite being used as an operand to 'typeid'
+#                                cout << "\t" << typeid(*(exts[j])).name() << endl;
+#                                                       ^
+#   64|   			cout << "Unable to find extension! Here's the list:" << endl;
+#   65|   			for (unsigned int j=0 ; j < exts.size() ; j++)
+#   66|-> 				cout << "\t" << typeid(*(exts[j])).name() << endl;
+#   67|   			return 5;
+#   68|   		}
+
+Error: COMPILER_WARNING:
+libproxy-0.4.17/libproxy/proxy.cpp:328:54: warning[-Wpotentially-evaluated-expression]: expression with side effects will be evaluated despite being used as an operand to 'typeid'
+#                                if (debug) cerr << "WPAD search via: " << typeid(**i).name() << endl;
+#                                                                                 ^
+#  326|   			vector<wpad_extension*> wpads = this->mm.get_extensions<wpad_extension>();
+#  327|   			for (vector<wpad_extension*>::iterator i=wpads.begin() ; i != wpads.end() ; i++) {
+#  328|-> 				if (debug) cerr << "WPAD search via: " << typeid(**i).name() << endl;
+#  329|   				if ((this->pacurl = (*i)->next(&this->pac))) {
+#  330|   					if (debug) cerr << "PAC found!" << endl;
+
+Error: COMPILER_WARNING:
+libproxy-0.4.17/libproxy/proxy.cpp:352:57: warning[-Wpotentially-evaluated-expression]: expression with side effects will be evaluated despite being used as an operand to 'typeid'
+#                                                        if (debug) cerr << "WPAD search via: " << typeid(**i).name() << endl;
+#                                                                                                         ^
+#  350|   						// Attempt to find a PAC
+#  351|   						for (i=wpads.begin() ; i != wpads.end() ; i++) {
+#  352|-> 							if (debug) cerr << "WPAD search via: " << typeid(**i).name() << endl;
+#  353|   							if ((this->pacurl = (*i)->next(&this->pac))) {
+#  354|   								if (debug) cerr << "PAC found!" << endl;
+
+Error: COMPILER_WARNING:
+libproxy-0.4.17/libproxy/proxy.cpp:418:52: warning[-Wpotentially-evaluated-expression]: expression with side effects will be evaluated despite being used as an operand to 'typeid'
+#                if (debug) cerr << "Using pacrunner: " << typeid(*pacrunners[0]).name() << endl;
+#                                                                 ^
+#  416|   
+#  417|   		/* Run the PAC, but only try one PACRunner */
+#  418|-> 		if (debug) cerr << "Using pacrunner: " << typeid(*pacrunners[0]).name() << endl;
+#  419|   		pacrunner* runner = pacrunners[0]->get(this->pac, this->pacurl->to_string());
+#  420|   		string pacresp = runner->run(realurl);

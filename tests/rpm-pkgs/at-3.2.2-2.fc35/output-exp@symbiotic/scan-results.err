@@ -2,10 +2,9 @@ Error: COMPILER_WARNING (CWE-477):
 at-3.2.2/atd.c:223:5: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
 #    security_context_t user_context = NULL;
 #    ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
 #__attribute__ ((deprecated))
 #                ^
-#    security_context_t user_context = NULL;
-#    ^
 /usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
 #__attribute__ ((deprecated))
 #                ^
@@ -15,19 +14,18 @@ at-3.2.2/atd.c:223:5: warning[-Wdeprecated-declarations]: 'security_context_t' i
 #  224|       security_context_t file_context = NULL;
 #  225|       int retval = 0;
 
-Error: COMPILER_WARNING (CWE-758):
-at-3.2.2/atd.c:224:5: warning: 'security_context_t' is deprecated [-Wdeprecated-declarations]    security_context_t file_context = NULL;
-#
-#    ^
-17: note: 'security_context_t' has been explicitly marked deprecated here
-#  222|   set_selinux_context(const char *name, const char *filename) {
-#  223|       security_context_t user_context = NULL;
-#  224|->     security_context_t file_context = NULL;
-#  225|       int retval = 0;
-#  226|       char *seuser = NULL;
-
 Error: COMPILER_WARNING (CWE-477):
 at-3.2.2/atd.c:224:5: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#    security_context_t file_context = NULL;
+#    ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#    security_context_t file_context = NULL;
+#    ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
 #  222|   set_selinux_context(const char *name, const char *filename) {
 #  223|       security_context_t user_context = NULL;
 #  224|->     security_context_t file_context = NULL;
@@ -54,7 +52,7 @@ at-3.2.2/lex.yy.c:1507:17: warning[-Wunused-function]: unused function 'yyunput'
 # 1508|       static void yyunput (int c, char * yy_bp )
 # 1509|   {
 
-Error: COMPILER_WARNING (CWE-758):
+Error: COMPILER_WARNING:
 at-3.2.2/lex.yy.c:1550:16: warning[-Wunneeded-internal-declaration]: function 'input' is not needed and will not be emitted
 #    static int input  (void)
 #               ^
@@ -64,12 +62,8 @@ at-3.2.2/lex.yy.c:1550:16: warning[-Wunneeded-internal-declaration]: function 'i
 # 1551|       static int input  (void)
 # 1552|   #endif
 
-Error: COMPILER_WARNING (CWE-758):
+Error: COMPILER_WARNING:
 at-3.2.2/parsetime.y:13:9: warning[-Wmacro-redefined]: '__isleap' macro redefined
-##define __isleap(y) \
-#        ^
-##define __isleap(year)  \
-#        ^
 ##define __isleap(y) \
 #        ^
 /usr/include/time.h:239:9: note: previous definition is here

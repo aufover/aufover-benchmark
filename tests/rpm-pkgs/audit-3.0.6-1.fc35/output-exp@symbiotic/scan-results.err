@@ -1,0 +1,138 @@
+Error: COMPILER_WARNING:
+audit-3.0.6/audisp/plugins/zos-remote/zos-remote-plugin.c:106:30: warning[-Wincompatible-pointer-types-discards-qualifiers]: passing 'volatile ZOS_REMOTE *' (aka 'volatile struct opaque *') to parameter of type 'ZOS_REMOTE *' (aka 'struct opaque *') discards qualifiers
+#        rc = zos_remote_init(&zos_remote_inst, conf.server, 
+#                             ^~~~~~~~~~~~~~~~
+audit-3.0.6/audisp/plugins/zos-remote/zos-remote-ldap.h:297:33: note: passing argument to parameter here
+#int zos_remote_init(ZOS_REMOTE *, const char *, int, const char *, 
+#                                ^
+#  104|           log_debug("Starting event submission thread");
+#  105|           
+#  106|->         rc = zos_remote_init(&zos_remote_inst, conf.server, 
+#  107|                             conf.port, conf.user,
+#  108|                             conf.password,
+
+Error: COMPILER_WARNING:
+audit-3.0.6/audisp/plugins/zos-remote/zos-remote-plugin.c:128:39: warning[-Wincompatible-pointer-types-discards-qualifiers]: passing 'volatile ZOS_REMOTE *' (aka 'volatile struct opaque *') to parameter of type 'ZOS_REMOTE *' (aka 'struct opaque *') discards qualifiers
+#                rc = submit_request_s(&zos_remote_inst, ber);
+#                                      ^~~~~~~~~~~~~~~~
+audit-3.0.6/audisp/plugins/zos-remote/zos-remote-ldap.h:309:34: note: passing argument to parameter here
+#int submit_request_s(ZOS_REMOTE *, BerElement *);
+#                                 ^
+#  126|                   }
+#  127|                   debug_ber(ber);
+#  128|->                 rc = submit_request_s(&zos_remote_inst, ber);
+#  129|                   if (rc == ICTX_E_FATAL) {
+#  130|                           log_err("Error - Fatal error in event submission. Aborting");
+
+Error: COMPILER_WARNING:
+audit-3.0.6/audisp/plugins/zos-remote/zos-remote-plugin.c:141:28: warning[-Wincompatible-pointer-types-discards-qualifiers]: passing 'volatile ZOS_REMOTE *' (aka 'volatile struct opaque *') to parameter of type 'ZOS_REMOTE *' (aka 'struct opaque *') discards qualifiers
+#        zos_remote_destroy(&zos_remote_inst);
+#                           ^~~~~~~~~~~~~~~~
+audit-3.0.6/audisp/plugins/zos-remote/zos-remote-ldap.h:303:37: note: passing argument to parameter here
+#void zos_remote_destroy(ZOS_REMOTE *);
+#                                    ^
+#  139|           }
+#  140|           log_debug("Stopping event submission thread");
+#  141|->         zos_remote_destroy(&zos_remote_inst);
+#  142|           
+#  143|           return 0;
+
+Error: COMPILER_WARNING (CWE-477):
+audit-3.0.6/bindings/python/auparse_python.c:294:14: warning[-Wdeprecated-declarations]: 'PyEval_CallObjectWithKeywords' is deprecated
+#    result = PyEval_CallObject(cb->func, arglist);
+#             ^
+/usr/include/python3.10/ceval.h:24:5: note: expanded from macro 'PyEval_CallObject'
+#    PyEval_CallObjectWithKeywords(callable, arg, (PyObject *)NULL)
+#    ^
+/usr/include/python3.10/ceval.h:17:1: note: 'PyEval_CallObjectWithKeywords' has been explicitly marked deprecated here
+#  292|   
+#  293|       arglist = Py_BuildValue("OiO", cb->py_AuParser, cb_event_type, cb->user_data);
+#  294|->     result = PyEval_CallObject(cb->func, arglist);
+#  295|       Py_DECREF(arglist);
+#  296|       Py_XDECREF(result);
+
+Error: COMPILER_WARNING:
+audit-3.0.6/bindings/python/auparse_python.c:375:31: warning[-Wincompatible-pointer-types-discards-qualifiers]: assigning to 'char *' from 'const char *' discards qualifiers
+#                if ((files[i] = PYSTR_ASSTRING(item)) == NULL) {
+#                              ^ ~~~~~~~~~~~~~~~~~~~~
+#  373|               for (i = 0; i < n; i++) {
+#  374|                   item = PySequence_GetItem(source, i);
+#  375|->                 if ((files[i] = PYSTR_ASSTRING(item)) == NULL) {
+#  376|                       PyErr_SetString(PyExc_ValueError, "members of source sequence must be a string when source_type is AUSOURCE_FILE_ARRAY");
+#  377|                       Py_DECREF(item);
+
+Error: COMPILER_WARNING:
+audit-3.0.6/bindings/python/auparse_python.c:418:33: warning[-Wincompatible-pointer-types-discards-qualifiers]: assigning to 'char *' from 'const char *' discards qualifiers
+#                if ((buffers[i] = PYSTR_ASSTRING(item)) == NULL) {
+#                                ^ ~~~~~~~~~~~~~~~~~~~~
+#  416|               for (i = 0; i < n; i++) {
+#  417|                   item = PySequence_GetItem(source, i);
+#  418|->                 if ((buffers[i] = PYSTR_ASSTRING(item)) == NULL) {
+#  419|                       PyErr_SetString(PyExc_ValueError, "members of source sequence must be a string when source_type is AUSOURCE_BUFFER_ARRAY");
+#  420|                       Py_DECREF(item);
+
+Error: COMPILER_WARNING:
+audit-3.0.6/bindings/swig/python3/audit_wrap.c:4698:13: warning[-Wpointer-bool-conversion]: address of array 'arg1->buf' will always evaluate to 'true'
+#  if (arg1->buf) free((char*)arg1->buf);
+#  ~~  ~~~~~~^~~
+# 4696|     }
+# 4697|     arg2 = (char *)(buf2);
+# 4698|->   if (arg1->buf) free((char*)arg1->buf);
+# 4699|     if (arg2) {
+# 4700|       size_t size = strlen((const char *)(arg2)) + 1;
+
+Error: COMPILER_WARNING (CWE-477):
+audit-3.0.6/src/ausearch.c:524:6: warning[-Wdeprecated-declarations]: 'siginterrupt' is deprecated: Use sigaction with SA_RESTART instead
+#            siginterrupt(SIGALRM, 1) == -1)
+#            ^
+/usr/include/signal.h:325:3: note: 'siginterrupt' has been explicitly marked deprecated here
+#  __attribute_deprecated_msg__ ("Use sigaction with SA_RESTART instead");
+#  ^
+/usr/include/sys/cdefs.h:340:19: note: expanded from macro '__attribute_deprecated_msg__'
+#         __attribute__ ((__deprecated__ (msg)))
+#                         ^
+#  522|   
+#  523|   	if (signal(SIGALRM, alarm_handler) == SIG_ERR ||
+#  524|-> 	    siginterrupt(SIGALRM, 1) == -1)
+#  525|   		return -1;
+#  526|   
+
+Error: COMPILER_WARNING:
+audit-3.0.6/src/libev/ev.c:2146:31: warning[-Wextern-initializer]: 'extern' variable has an initializer
+#  EV_API_DECL struct ev_loop *ev_default_loop_ptr = 0; /* needs to be initialised to make it a definition despite extern */
+#                              ^
+# 2144|   
+# 2145|     static struct ev_loop default_loop_struct;
+# 2146|->   EV_API_DECL struct ev_loop *ev_default_loop_ptr = 0; /* needs to be initialised to make it a definition despite extern */
+# 2147|   
+# 2148|   #else
+
+Error: COMPILER_WARNING (CWE-393):
+audit-3.0.6/src/libev/ev.c:3108: included_from: Included from here.
+audit-3.0.6/src/libev/ev_iouring.c:300:1: warning[-Wreturn-type]: non-void function does not return a value
+#}
+#^
+#  298|     /*ECB_MEMORY_FENCE_RELEASE; * for the time being we assume this is not needed */
+#  299|     ++iouring_to_submit;
+#  300|-> }
+#  301|   
+#  302|   /*****************************************************************************/
+
+Error: COMPILER_WARNING (CWE-563):
+audit-3.0.6/src/libev/ev_iouring.c:428:16: warning[-Wunused-value]: expression result unused
+#  ev_io_set   (EV_A_ &iouring_tfd_w, iouring_tfd, EV_READ);
+#               ^~~~~
+audit-3.0.6/src/libev/ev.h:180:16: note: expanded from macro 'EV_A_'
+## define EV_A_ EV_A,                              /* a loop as first of multiple arguments */
+#               ^~~~
+audit-3.0.6/src/libev/ev.h:179:16: note: expanded from macro 'EV_A'
+## define EV_A  loop                               /* a loop as sole argument to a function call */
+#               ^~~~
+audit-3.0.6/src/libev/ev.h:698:52: note: expanded from macro 'ev_io_set'
+##define ev_io_set(ev,fd_,events_)            do { (ev)->fd = (fd_); (ev)->events = (events_) | EV__IOFDSET; } while (0)
+#                                                   ^~
+#  426|   
+#  427|     ev_io_stop  (EV_A_ &iouring_tfd_w);
+#  428|->   ev_io_set   (EV_A_ &iouring_tfd_w, iouring_tfd, EV_READ);
+#  429|     ev_io_start (EV_A_ &iouring_tfd_w);
+#  430|   }

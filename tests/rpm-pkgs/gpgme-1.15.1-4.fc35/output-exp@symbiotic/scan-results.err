@@ -1,0 +1,4174 @@
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/cpp/src/key.cpp:482:16: warning[-Wzero-as-null-pointer-constant]: zero as null pointer constant
+#        return NULL;
+#               ^~~~
+/usr/lib64/clang/13.0.1/include/stddef.h:84:18: note: expanded from macro 'NULL'
+##    define NULL __null
+#                 ^
+#  480|   {
+#  481|       if (algo == AlgoUnknown) {
+#  482|->         return NULL;
+#  483|       }
+#  484|       return gpgme_pubkey_algo_name(static_cast<gpgme_pubkey_algo_t>(algo));
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/cpp/src/key.cpp:749:27: warning[-Wzero-as-null-pointer-constant]: zero as null pointer constant
+#    gpgme_key_sig_t ret = NULL;
+#                          ^~~~
+/usr/lib64/clang/13.0.1/include/stddef.h:84:18: note: expanded from macro 'NULL'
+##    define NULL __null
+#                 ^
+#  747|           return nullptr;
+#  748|       }
+#  749|->     gpgme_key_sig_t ret = NULL;
+#  750|       for (gpgme_key_sig_t s = uid->signatures ; s ; s = s->next) {
+#  751|           if (s->keyid && !strcmp(keyid, s->keyid)) {
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/cpp/src/swdbresult.cpp:27: included_from: Included from here.
+gpgme-1.15.1/lang/cpp/src/swdbresult.h:62:65: warning[-Wzero-as-null-pointer-constant]: zero as null pointer constant
+#                                         const char *iversion = NULL,
+#                                                                ^~~~
+/usr/lib64/clang/13.0.1/include/stddef.h:84:18: note: expanded from macro 'NULL'
+##    define NULL __null
+#                 ^
+#   60|        */
+#   61|       static std::vector<SwdbResult> query(const char *name,
+#   62|->                                          const char *iversion = NULL,
+#   63|                                            Error *err = NULL);
+#   64|   
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/cpp/src/swdbresult.cpp:27: included_from: Included from here.
+gpgme-1.15.1/lang/cpp/src/swdbresult.h:63:55: warning[-Wzero-as-null-pointer-constant]: zero as null pointer constant
+#                                         Error *err = NULL);
+#                                                      ^~~~
+/usr/lib64/clang/13.0.1/include/stddef.h:84:18: note: expanded from macro 'NULL'
+##    define NULL __null
+#                 ^
+#   61|       static std::vector<SwdbResult> query(const char *name,
+#   62|                                            const char *iversion = NULL,
+#   63|->                                          Error *err = NULL);
+#   64|   
+#   65|       const SwdbResult &operator=(SwdbResult other)
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:4030:14: warning[-Wsometimes-uninitialized]: variable 'arg1' is used uninitialized whenever 'if' condition is false
+#    else if (PyInt_Check(swig_obj[0]))
+#             ^~~~~~~~~~~~~~~~~~~~~~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:753:24: note: expanded from macro 'PyInt_Check'
+##define PyInt_Check(x) PyLong_Check(x)
+#                       ^~~~~~~~~~~~~~~
+/usr/include/python3.10/longobject.h:15:9: note: expanded from macro 'PyLong_Check'
+#        PyType_FastSubclass(Py_TYPE(op), Py_TPFLAGS_LONG_SUBCLASS)
+#        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##define PyType_FastSubclass(type, flag) PyType_HasFeature(type, flag)
+#                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#    else if (PyInt_Check(swig_obj[0]))
+#             ^~~~~~~~~~~~~~~~~~~~~~~~
+#
+#                       ^~~~~~~~~~~~~~~
+/usr/include/python3.10/longobject.h:15:9: note: expanded from macro 'PyLong_Check'
+#        PyType_FastSubclass(Py_TYPE(op), Py_TPFLAGS_LONG_SUBCLASS)
+#        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/python3.10/object.h:734:41: note: expanded from macro 'PyType_FastSubclass'
+##define PyType_FastSubclass(type, flag) PyType_HasFeature(type, flag)
+#                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:4048:29: note: uninitialized use occurs here
+#    result = gpgme_err_make(arg1,arg2);
+#                            ^~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:4030:10: note: remove the 'if' if its condition is always true
+#    else if (PyInt_Check(swig_obj[0]))
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:4020:3: note: variable 'arg1' is declared here
+#  gpgme_err_source_t arg1 ;
+#  ^
+# 4028|       arg1 = PyLong_AsLong(swig_obj[0]);
+# 4029|       
+# 4030|->     else if (PyInt_Check(swig_obj[0]))
+# 4031|       arg1 = PyInt_AsLong(swig_obj[0]);
+# 4032|       
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:4040:14: warning[-Wsometimes-uninitialized]: variable 'arg2' is used uninitialized whenever 'if' condition is false
+#    else if (PyInt_Check(swig_obj[1]))
+#             ^~~~~~~~~~~~~~~~~~~~~~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:753:24: note: expanded from macro 'PyInt_Check'
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:4030:10: note: remove the 'if' if its condition is always true
+##define PyInt_Check(x) PyLong_Check(x)
+#                       ^~~~~~~~~~~~~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:4020:3: note: variable 'arg1' is declared here
+#        PyType_FastSubclass(Py_TYPE(op), Py_TPFLAGS_LONG_SUBCLASS)
+#        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  gpgme_err_source_t arg1 ;
+#  ^
+/usr/include/python3.10/object.h:734:41: note: expanded from macro 'PyType_FastSubclass'
+# 4038|       arg2 = PyLong_AsLong(swig_obj[1]);
+# 4039|       
+# 4040|->     else if (PyInt_Check(swig_obj[1]))
+# 4041|       arg2 = PyInt_AsLong(swig_obj[1]);
+# 4042|       
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:4072:14: warning[-Wsometimes-uninitialized]: variable 'arg1' is used uninitialized whenever 'if' condition is false
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:753:24: note: expanded from macro 'PyInt_Check'
+#    else if (PyInt_Check(swig_obj[0]))
+#             ^~~~~~~~~~~~~~~~~~~~~~~~
+##define PyInt_Check(x) PyLong_Check(x)
+#                       ^~~~~~~~~~~~~~~
+##define PyInt_Check(x) PyLong_Check(x)
+#                       ^~~~~~~~~~~~~~~
+/usr/include/python3.10/object.h:734:41: note: expanded from macro 'PyType_FastSubclass'
+#        PyType_FastSubclass(Py_TYPE(op), Py_TPFLAGS_LONG_SUBCLASS)
+#        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:4080:26: note: uninitialized use occurs here
+##define PyType_FastSubclass(type, flag) PyType_HasFeature(type, flag)
+#                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#    result = gpgme_error(arg1);
+#                         ^~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:4080:26: note: uninitialized use occurs here
+#    result = gpgme_error(arg1);
+#                         ^~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:4072:10: note: remove the 'if' if its condition is always true
+# 4070|       arg1 = PyLong_AsLong(swig_obj[0]);
+# 4071|       
+# 4072|->     else if (PyInt_Check(swig_obj[0]))
+# 4073|       arg1 = PyInt_AsLong(swig_obj[0]);
+# 4074|       
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:4104:14: warning[-Wsometimes-uninitialized]: variable 'arg1' is used uninitialized whenever 'if' condition is false
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:753:24: note: expanded from macro 'PyInt_Check'
+#
+#                       ^~~~~~~~~~~~~~~
+##define PyInt_Check(x) PyLong_Check(x)
+#                       ^~~~~~~~~~~~~~~
+#        PyType_FastSubclass(Py_TYPE(op), Py_TPFLAGS_LONG_SUBCLASS)
+#        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#        PyType_FastSubclass(Py_TYPE(op), Py_TPFLAGS_LONG_SUBCLASS)
+#        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##define PyType_FastSubclass(type, flag) PyType_HasFeature(type, flag)
+#                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#    result = gpgme_err_code(arg1);
+#                            ^~~~
+##define PyType_FastSubclass(type, flag) PyType_HasFeature(type, flag)
+#                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:4112:29: note: uninitialized use occurs here
+#    result = gpgme_err_code(arg1);
+#                            ^~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:4104:10: note: remove the 'if' if its condition is always true
+#    else if (PyInt_Check(swig_obj[0]))
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:4104:10: note: remove the 'if' if its condition is always true
+#    else if (PyInt_Check(swig_obj[0]))
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:4094:21: note: initialize the variable 'arg1' to silence this warning
+#  gpgme_error_t arg1 ;
+#                    ^
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:4094:21: note: initialize the variable 'arg1' to silence this warning
+#  gpgme_error_t arg1 ;
+#                    ^
+# 4102|       arg1 = PyLong_AsLong(swig_obj[0]);
+# 4103|       
+# 4104|->     else if (PyInt_Check(swig_obj[0]))
+# 4105|       arg1 = PyInt_AsLong(swig_obj[0]);
+# 4106|       
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:4136:14: warning[-Wsometimes-uninitialized]: variable 'arg1' is used uninitialized whenever 'if' condition is false
+#    else if (PyInt_Check(swig_obj[0]))
+#             ^~~~~~~~~~~~~~~~~~~~~~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:753:24: note: expanded from macro 'PyInt_Check'
+##define PyInt_Check(x) PyLong_Check(x)
+#                       ^~~~~~~~~~~~~~~
+#        PyType_FastSubclass(Py_TYPE(op), Py_TPFLAGS_LONG_SUBCLASS)
+#        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#    else if (PyInt_Check(swig_obj[0]))
+#             ^~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/python3.10/object.h:734:41: note: expanded from macro 'PyType_FastSubclass'
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:753:24: note: expanded from macro 'PyInt_Check'
+#
+#                       ^~~~~~~~~~~~~~~
+#    result = gpgme_err_source(arg1);
+#                              ^~~~
+#        PyType_FastSubclass(Py_TYPE(op), Py_TPFLAGS_LONG_SUBCLASS)
+#        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/python3.10/object.h:734:41: note: expanded from macro 'PyType_FastSubclass'
+##define PyType_FastSubclass(type, flag) PyType_HasFeature(type, flag)
+#                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:4144:31: note: uninitialized use occurs here
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:4126:21: note: initialize the variable 'arg1' to silence this warning
+#    else if (PyInt_Check(swig_obj[0]))
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:4126:21: note: initialize the variable 'arg1' to silence this warning
+#  gpgme_error_t arg1 ;
+#                    ^
+# 4134|       arg1 = PyLong_AsLong(swig_obj[0]);
+# 4135|       
+# 4136|->     else if (PyInt_Check(swig_obj[0]))
+# 4137|       arg1 = PyInt_AsLong(swig_obj[0]);
+# 4138|       
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:4168:14: warning[-Wsometimes-uninitialized]: variable 'arg1' is used uninitialized whenever 'if' condition is false
+#    else if (PyInt_Check(swig_obj[0]))
+#             ^~~~~~~~~~~~~~~~~~~~~~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:753:24: note: expanded from macro 'PyInt_Check'
+##define PyInt_Check(x) PyLong_Check(x)
+#                       ^~~~~~~~~~~~~~~
+/usr/include/python3.10/longobject.h:15:9: note: expanded from macro 'PyLong_Check'
+#        PyType_FastSubclass(Py_TYPE(op), Py_TPFLAGS_LONG_SUBCLASS)
+#        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/python3.10/object.h:734:41: note: expanded from macro 'PyType_FastSubclass'
+# 4166|       arg1 = PyLong_AsLong(swig_obj[0]);
+# 4167|       
+# 4168|->     else if (PyInt_Check(swig_obj[0]))
+# 4169|       arg1 = PyInt_AsLong(swig_obj[0]);
+# 4170|       
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:4262:14: warning[-Wsometimes-uninitialized]: variable 'arg1' is used uninitialized whenever 'if' condition is false
+#    else if (PyInt_Check(swig_obj[0]))
+#             ^~~~~~~~~~~~~~~~~~~~~~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:753:24: note: expanded from macro 'PyInt_Check'
+##define PyInt_Check(x) PyLong_Check(x)
+#                       ^~~~~~~~~~~~~~~
+/usr/include/python3.10/longobject.h:15:9: note: expanded from macro 'PyLong_Check'
+#        PyType_FastSubclass(Py_TYPE(op), Py_TPFLAGS_LONG_SUBCLASS)
+#        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/python3.10/object.h:734:41: note: expanded from macro 'PyType_FastSubclass'
+#    result = (char *)gpgme_strsource(arg1);
+#                                     ^~~~
+#    else if (PyInt_Check(swig_obj[0]))
+#             ^~~~~~~~~~~~~~~~~~~~~~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:753:24: note: expanded from macro 'PyInt_Check'
+##define PyInt_Check(x) PyLong_Check(x)
+#                       ^~~~~~~~~~~~~~~
+/usr/include/python3.10/longobject.h:15:9: note: expanded from macro 'PyLong_Check'
+#        PyType_FastSubclass(Py_TYPE(op), Py_TPFLAGS_LONG_SUBCLASS)
+#        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#    else if (PyInt_Check(swig_obj[0]))
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##define PyType_FastSubclass(type, flag) PyType_HasFeature(type, flag)
+#                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:4270:38: note: uninitialized use occurs here
+#    result = (char *)gpgme_strsource(arg1);
+#                                     ^~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:4252:21: note: initialize the variable 'arg1' to silence this warning
+#  gpgme_error_t arg1 ;
+#                    ^
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:4262:10: note: remove the 'if' if its condition is always true
+#    else if (PyInt_Check(swig_obj[0]))
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:4252:21: note: initialize the variable 'arg1' to silence this warning
+#  gpgme_error_t arg1 ;
+#                    ^
+# 4260|       arg1 = PyLong_AsLong(swig_obj[0]);
+# 4261|       
+# 4262|->     else if (PyInt_Check(swig_obj[0]))
+# 4263|       arg1 = PyInt_AsLong(swig_obj[0]);
+# 4264|       
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:4321:14: warning[-Wsometimes-uninitialized]: variable 'arg1' is used uninitialized whenever 'if' condition is false
+#    else if (PyInt_Check(swig_obj[0]))
+#             ^~~~~~~~~~~~~~~~~~~~~~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:753:24: note: expanded from macro 'PyInt_Check'
+##define PyInt_Check(x) PyLong_Check(x)
+#                       ^~~~~~~~~~~~~~~
+/usr/include/python3.10/longobject.h:15:9: note: expanded from macro 'PyLong_Check'
+#        PyType_FastSubclass(Py_TYPE(op), Py_TPFLAGS_LONG_SUBCLASS)
+#        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/python3.10/object.h:734:41: note: expanded from macro 'PyType_FastSubclass'
+##define PyType_FastSubclass(type, flag) PyType_HasFeature(type, flag)
+#                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 4319|       arg1 = PyLong_AsLong(swig_obj[0]);
+# 4320|       
+# 4321|->     else if (PyInt_Check(swig_obj[0]))
+# 4322|       arg1 = PyInt_AsLong(swig_obj[0]);
+# 4323|       
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:30404:7: warning[-Wsometimes-uninitialized]: variable 'size2' is used uninitialized whenever 'if' condition is true
+#  if (!SWIG_Python_UnpackTuple(args, "gpgme_op_export_ext_start", 4, 4, swig_obj)) SWIG_fail;
+#      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:30597:21: note: uninitialized use occurs here
+#    for (i = 0; i < size2; i++)
+#                    ^~~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:30404:3: note: remove the 'if' if its condition is always false
+#  if (!SWIG_Python_UnpackTuple(args, "gpgme_op_export_ext_start", 4, 4, swig_obj)) SWIG_fail;
+#  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:30393:15: note: initialize the variable 'size2' to silence this warning
+#  size_t size2 ;
+#              ^
+#30402|     gpgme_error_t result;
+#30403|     
+#30404|->   if (!SWIG_Python_UnpackTuple(args, "gpgme_op_export_ext_start", 4, 4, swig_obj)) SWIG_fail;
+#30405|     res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_gpgme_context, 0 |  0 );
+#30406|     if (!SWIG_IsOK(res1)) {
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:30406:7: warning[-Wsometimes-uninitialized]: variable 'size2' is used uninitialized whenever 'if' condition is true
+#  if (!SWIG_IsOK(res1)) {
+#      ^~~~~~~~~~~~~~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:30597:21: note: uninitialized use occurs here
+#    for (i = 0; i < size2; i++)
+#                    ^~~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:30406:3: note: remove the 'if' if its condition is always false
+#  if (!SWIG_IsOK(res1)) {
+#  ^~~~~~~~~~~~~~~~~~~~~~~
+#30404|     if (!SWIG_Python_UnpackTuple(args, "gpgme_op_export_ext_start", 4, 4, swig_obj)) SWIG_fail;
+#30405|     res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_gpgme_context, 0 |  0 );
+#30406|->   if (!SWIG_IsOK(res1)) {
+#30407|       SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "gpgme_op_export_ext_start" "', argument " "1"" of type '" "gpgme_ctx_t""'"); 
+#30408|     }
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:30719:7: warning[-Wsometimes-uninitialized]: variable 'size2' is used uninitialized whenever 'if' condition is true
+#  if (!SWIG_Python_UnpackTuple(args, "gpgme_op_export_ext", 4, 4, swig_obj)) SWIG_fail;
+#      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:30912:21: note: uninitialized use occurs here
+#    for (i = 0; i < size2; i++)
+#                    ^~~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:30719:3: note: remove the 'if' if its condition is always false
+#  if (!SWIG_Python_UnpackTuple(args, "gpgme_op_export_ext", 4, 4, swig_obj)) SWIG_fail;
+#  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:30708:15: note: initialize the variable 'size2' to silence this warning
+#  size_t size2 ;
+#              ^
+#30717|     gpgme_error_t result;
+#30718|     
+#30719|->   if (!SWIG_Python_UnpackTuple(args, "gpgme_op_export_ext", 4, 4, swig_obj)) SWIG_fail;
+#30720|     res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_gpgme_context, 0 |  0 );
+#30721|     if (!SWIG_IsOK(res1)) {
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:30721:7: warning[-Wsometimes-uninitialized]: variable 'size2' is used uninitialized whenever 'if' condition is true
+#  if (!SWIG_IsOK(res1)) {
+#      ^~~~~~~~~~~~~~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:30912:21: note: uninitialized use occurs here
+#    for (i = 0; i < size2; i++)
+#                    ^~~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:30721:3: note: remove the 'if' if its condition is always false
+#  if (!SWIG_IsOK(res1)) {
+#  ^~~~~~~~~~~~~~~~~~~~~~~
+#30719|     if (!SWIG_Python_UnpackTuple(args, "gpgme_op_export_ext", 4, 4, swig_obj)) SWIG_fail;
+#30720|     res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_gpgme_context, 0 |  0 );
+#30721|->   if (!SWIG_IsOK(res1)) {
+#30722|       SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "gpgme_op_export_ext" "', argument " "1"" of type '" "gpgme_ctx_t""'"); 
+#30723|     }
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:35991:7: warning[-Wsometimes-uninitialized]: variable 'size2' is used uninitialized whenever 'if' condition is true
+#  if (!SWIG_Python_UnpackTuple(args, "gpgme_op_keylist_ext_start", 4, 4, swig_obj)) SWIG_fail;
+#      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:36067:21: note: uninitialized use occurs here
+#    for (i = 0; i < size2; i++)
+#                    ^~~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:35991:3: note: remove the 'if' if its condition is always false
+#  if (!SWIG_Python_UnpackTuple(args, "gpgme_op_keylist_ext_start", 4, 4, swig_obj)) SWIG_fail;
+#  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:35982:15: note: initialize the variable 'size2' to silence this warning
+#  size_t size2 ;
+#              ^
+#35989|     gpgme_error_t result;
+#35990|     
+#35991|->   if (!SWIG_Python_UnpackTuple(args, "gpgme_op_keylist_ext_start", 4, 4, swig_obj)) SWIG_fail;
+#35992|     res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_gpgme_context, 0 |  0 );
+#35993|     if (!SWIG_IsOK(res1)) {
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:35993:7: warning[-Wsometimes-uninitialized]: variable 'size2' is used uninitialized whenever 'if' condition is true
+#  if (!SWIG_IsOK(res1)) {
+#      ^~~~~~~~~~~~~~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:36067:21: note: uninitialized use occurs here
+#    for (i = 0; i < size2; i++)
+#                    ^~~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:35993:3: note: remove the 'if' if its condition is always false
+#  if (!SWIG_IsOK(res1)) {
+#  ^~~~~~~~~~~~~~~~~~~~~~~
+#35991|     if (!SWIG_Python_UnpackTuple(args, "gpgme_op_keylist_ext_start", 4, 4, swig_obj)) SWIG_fail;
+#35992|     res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_gpgme_context, 0 |  0 );
+#35993|->   if (!SWIG_IsOK(res1)) {
+#35994|       SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "gpgme_op_keylist_ext_start" "', argument " "1"" of type '" "gpgme_ctx_t""'"); 
+#35995|     }
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:37490:7: warning[-Wsometimes-uninitialized]: variable 'size3' is used uninitialized whenever 'if' condition is true
+#  if (!SWIG_Python_UnpackTuple(args, "gpgme_op_spawn_start", 7, 7, swig_obj)) SWIG_fail;
+#      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:37601:21: note: uninitialized use occurs here
+#    for (i = 0; i < size3; i++)
+#                    ^~~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:37490:3: note: remove the 'if' if its condition is always false
+#  if (!SWIG_Python_UnpackTuple(args, "gpgme_op_spawn_start", 7, 7, swig_obj)) SWIG_fail;
+#  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:37477:15: note: initialize the variable 'size3' to silence this warning
+#  size_t size3 ;
+#              ^
+#37488|     gpgme_error_t result;
+#37489|     
+#37490|->   if (!SWIG_Python_UnpackTuple(args, "gpgme_op_spawn_start", 7, 7, swig_obj)) SWIG_fail;
+#37491|     res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_gpgme_context, 0 |  0 );
+#37492|     if (!SWIG_IsOK(res1)) {
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:37492:7: warning[-Wsometimes-uninitialized]: variable 'size3' is used uninitialized whenever 'if' condition is true
+#  if (!SWIG_IsOK(res1)) {
+#      ^~~~~~~~~~~~~~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:37601:21: note: uninitialized use occurs here
+#    for (i = 0; i < size3; i++)
+#                    ^~~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:37492:3: note: remove the 'if' if its condition is always false
+#  if (!SWIG_IsOK(res1)) {
+#  ^~~~~~~~~~~~~~~~~~~~~~~
+#37490|     if (!SWIG_Python_UnpackTuple(args, "gpgme_op_spawn_start", 7, 7, swig_obj)) SWIG_fail;
+#37491|     res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_gpgme_context, 0 |  0 );
+#37492|->   if (!SWIG_IsOK(res1)) {
+#37493|       SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "gpgme_op_spawn_start" "', argument " "1"" of type '" "gpgme_ctx_t""'"); 
+#37494|     }
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:37634:7: warning[-Wsometimes-uninitialized]: variable 'size3' is used uninitialized whenever 'if' condition is true
+#  if (!SWIG_Python_UnpackTuple(args, "gpgme_op_spawn", 7, 7, swig_obj)) SWIG_fail;
+#      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:37745:21: note: uninitialized use occurs here
+#    for (i = 0; i < size3; i++)
+#                    ^~~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:37634:3: note: remove the 'if' if its condition is always false
+#  if (!SWIG_Python_UnpackTuple(args, "gpgme_op_spawn", 7, 7, swig_obj)) SWIG_fail;
+#  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#37632|     gpgme_error_t result;
+#37633|     
+#37634|->   if (!SWIG_Python_UnpackTuple(args, "gpgme_op_spawn", 7, 7, swig_obj)) SWIG_fail;
+#37635|     res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_gpgme_context, 0 |  0 );
+#37636|     if (!SWIG_IsOK(res1)) {
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:37636:7: warning[-Wsometimes-uninitialized]: variable 'size3' is used uninitialized whenever 'if' condition is true
+#  if (!SWIG_IsOK(res1)) {
+#      ^~~~~~~~~~~~~~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:37745:21: note: uninitialized use occurs here
+#    for (i = 0; i < size3; i++)
+#                    ^~~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:37636:3: note: remove the 'if' if its condition is always false
+#  if (!SWIG_IsOK(res1)) {
+#  ^~~~~~~~~~~~~~~~~~~~~~~
+#37634|     if (!SWIG_Python_UnpackTuple(args, "gpgme_op_spawn", 7, 7, swig_obj)) SWIG_fail;
+#37635|     res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_gpgme_context, 0 |  0 );
+#37636|->   if (!SWIG_IsOK(res1)) {
+#37637|       SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "gpgme_op_spawn" "', argument " "1"" of type '" "gpgme_ctx_t""'"); 
+#37638|     }
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:44641:14: warning[-Wsometimes-uninitialized]: variable 'arg1' is used uninitialized whenever 'if' condition is false
+#    else if (PyInt_Check(swig_obj[0]))
+#             ^~~~~~~~~~~~~~~~~~~~~~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:753:24: note: expanded from macro 'PyInt_Check'
+##define PyInt_Check(x) PyLong_Check(x)
+#                       ^~~~~~~~~~~~~~~
+/usr/include/python3.10/longobject.h:15:9: note: expanded from macro 'PyLong_Check'
+#        PyType_FastSubclass(Py_TYPE(op), Py_TPFLAGS_LONG_SUBCLASS)
+#        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/python3.10/object.h:734:41: note: expanded from macro 'PyType_FastSubclass'
+##define PyType_FastSubclass(type, flag) PyType_HasFeature(type, flag)
+#                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:44649:52: note: uninitialized use occurs here
+#    result = (gpgme_error_t *)copy_gpgme_error_t_p(arg1);
+#                                                   ^~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:44641:10: note: remove the 'if' if its condition is always true
+#    else if (PyInt_Check(swig_obj[0]))
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:44631:21: note: initialize the variable 'arg1' to silence this warning
+#  gpgme_error_t arg1 ;
+#                    ^
+#44639|       arg1 = PyLong_AsLong(swig_obj[0]);
+#44640|       
+#44641|->     else if (PyInt_Check(swig_obj[0]))
+#44642|       arg1 = PyInt_AsLong(swig_obj[0]);
+#44643|       
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:44703:14: warning[-Wsometimes-uninitialized]: variable 'arg2' is used uninitialized whenever 'if' condition is false
+#    else if (PyInt_Check(swig_obj[1]))
+#             ^~~~~~~~~~~~~~~~~~~~~~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:753:24: note: expanded from macro 'PyInt_Check'
+##define PyInt_Check(x) PyLong_Check(x)
+#                       ^~~~~~~~~~~~~~~
+/usr/include/python3.10/longobject.h:15:9: note: expanded from macro 'PyLong_Check'
+#        PyType_FastSubclass(Py_TYPE(op), Py_TPFLAGS_LONG_SUBCLASS)
+#        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/python3.10/object.h:734:41: note: expanded from macro 'PyType_FastSubclass'
+##define PyType_FastSubclass(type, flag) PyType_HasFeature(type, flag)
+#                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:44711:33: note: uninitialized use occurs here
+#    gpgme_error_t_p_assign(arg1,arg2);
+#                                ^~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:44703:10: note: remove the 'if' if its condition is always true
+#    else if (PyInt_Check(swig_obj[1]))
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gpgme-1.15.1/lang/python/python3.10-gpg/gpgme_wrap.c:44688:21: note: initialize the variable 'arg2' to silence this warning
+#  gpgme_error_t arg2 ;
+#                    ^
+#44701|       arg2 = PyLong_AsLong(swig_obj[1]);
+#44702|       
+#44703|->     else if (PyInt_Check(swig_obj[1]))
+#44704|       arg2 = PyInt_AsLong(swig_obj[1]);
+#44705|       
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:52: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/importjob.h:38: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/abstractimportjob.h:53:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   51|   class QGPGME_EXPORT AbstractImportJob : public Job
+#   52|   {
+#   53|->     Q_OBJECT
+#   54|   protected:
+#   55|       explicit AbstractImportJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:52: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/importjob.h:38: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/abstractimportjob.h:53:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   51|   class QGPGME_EXPORT AbstractImportJob : public Job
+#   52|   {
+#   53|->     Q_OBJECT
+#   54|   protected:
+#   55|       explicit AbstractImportJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:52: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/importjob.h:38: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/abstractimportjob.h:53:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   51|   class QGPGME_EXPORT AbstractImportJob : public Job
+#   52|   {
+#   53|->     Q_OBJECT
+#   54|   protected:
+#   55|       explicit AbstractImportJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:61: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/adduseridjob.h:66:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   64|   class QGPGME_EXPORT AddUserIDJob : public Job
+#   65|   {
+#   66|->     Q_OBJECT
+#   67|   protected:
+#   68|       explicit AddUserIDJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:61: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/adduseridjob.h:66:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   64|   class QGPGME_EXPORT AddUserIDJob : public Job
+#   65|   {
+#   66|->     Q_OBJECT
+#   67|   protected:
+#   68|       explicit AddUserIDJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:61: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/adduseridjob.h:66:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   64|   class QGPGME_EXPORT AddUserIDJob : public Job
+#   65|   {
+#   66|->     Q_OBJECT
+#   67|   protected:
+#   68|       explicit AddUserIDJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: scope_hint: In file included from job.cpp:55
+gpgme-1.15.1/lang/qt/src/changeexpiryjob.h:73:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   71|   class QGPGME_EXPORT ChangeExpiryJob : public Job
+#   72|   {
+#   73|->     Q_OBJECT
+#   74|   protected:
+#   75|       explicit ChangeExpiryJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:55: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/changeexpiryjob.h:73:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   71|   class QGPGME_EXPORT ChangeExpiryJob : public Job
+#   72|   {
+#   73|->     Q_OBJECT
+#   74|   protected:
+#   75|       explicit ChangeExpiryJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:55: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/changeexpiryjob.h:73:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   71|   class QGPGME_EXPORT ChangeExpiryJob : public Job
+#   72|   {
+#   73|->     Q_OBJECT
+#   74|   protected:
+#   75|       explicit ChangeExpiryJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:56: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/changeownertrustjob.h:64:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   62|   class QGPGME_EXPORT ChangeOwnerTrustJob : public Job
+#   63|   {
+#   64|->     Q_OBJECT
+#   65|   protected:
+#   66|       explicit ChangeOwnerTrustJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:56: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/changeownertrustjob.h:64:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   62|   class QGPGME_EXPORT ChangeOwnerTrustJob : public Job
+#   63|   {
+#   64|->     Q_OBJECT
+#   65|   protected:
+#   66|       explicit ChangeOwnerTrustJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:56: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/changeownertrustjob.h:64:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   62|   class QGPGME_EXPORT ChangeOwnerTrustJob : public Job
+#   63|   {
+#   64|->     Q_OBJECT
+#   65|   protected:
+#   66|       explicit ChangeOwnerTrustJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:57: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/changepasswdjob.h:64:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   62|   class QGPGME_EXPORT ChangePasswdJob : public Job
+#   63|   {
+#   64|->     Q_OBJECT
+#   65|   protected:
+#   66|       explicit ChangePasswdJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:57: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/changepasswdjob.h:64:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   62|   class QGPGME_EXPORT ChangePasswdJob : public Job
+#   63|   {
+#   64|->     Q_OBJECT
+#   65|   protected:
+#   66|       explicit ChangePasswdJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:57: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/changepasswdjob.h:64:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   62|   class QGPGME_EXPORT ChangePasswdJob : public Job
+#   63|   {
+#   64|->     Q_OBJECT
+#   65|   protected:
+#   66|       explicit ChangePasswdJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:44: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/decryptjob.h:69:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   67|   class QGPGME_EXPORT DecryptJob : public Job
+#   68|   {
+#   69|->     Q_OBJECT
+#   70|   protected:
+#   71|       explicit DecryptJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:44: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/decryptjob.h:69:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   67|   class QGPGME_EXPORT DecryptJob : public Job
+#   68|   {
+#   69|->     Q_OBJECT
+#   70|   protected:
+#   71|       explicit DecryptJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:44: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/decryptjob.h:69:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   67|   class QGPGME_EXPORT DecryptJob : public Job
+#   68|   {
+#   69|->     Q_OBJECT
+#   70|   protected:
+#   71|       explicit DecryptJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:45: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/decryptverifyjob.h:70:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   68|   class QGPGME_EXPORT DecryptVerifyJob : public Job
+#   69|   {
+#   70|->     Q_OBJECT
+#   71|   protected:
+#   72|       explicit DecryptVerifyJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:45: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/decryptverifyjob.h:70:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   68|   class QGPGME_EXPORT DecryptVerifyJob : public Job
+#   69|   {
+#   70|->     Q_OBJECT
+#   71|   protected:
+#   72|       explicit DecryptVerifyJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:45: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/decryptverifyjob.h:70:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   68|   class QGPGME_EXPORT DecryptVerifyJob : public Job
+#   69|   {
+#   70|->     Q_OBJECT
+#   71|   protected:
+#   72|       explicit DecryptVerifyJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/defaultkeygenerationjob.cpp:35: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/defaultkeygenerationjob.h:50:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   48|   class QGPGME_EXPORT DefaultKeyGenerationJob : public Job
+#   49|   {
+#   50|->     Q_OBJECT
+#   51|   public:
+#   52|       explicit DefaultKeyGenerationJob(QObject *parent = Q_NULLPTR);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/defaultkeygenerationjob.cpp:35: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/defaultkeygenerationjob.h:50:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   48|   class QGPGME_EXPORT DefaultKeyGenerationJob : public Job
+#   49|   {
+#   50|->     Q_OBJECT
+#   51|   public:
+#   52|       explicit DefaultKeyGenerationJob(QObject *parent = Q_NULLPTR);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/defaultkeygenerationjob.cpp:35: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/defaultkeygenerationjob.h:50:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   48|   class QGPGME_EXPORT DefaultKeyGenerationJob : public Job
+#   49|   {
+#   50|->     Q_OBJECT
+#   51|   public:
+#   52|       explicit DefaultKeyGenerationJob(QObject *parent = Q_NULLPTR);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:59: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/deletejob.h:65:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   63|   class QGPGME_EXPORT DeleteJob : public Job
+#   64|   {
+#   65|->     Q_OBJECT
+#   66|   protected:
+#   67|       explicit DeleteJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:59: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/deletejob.h:65:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   63|   class QGPGME_EXPORT DeleteJob : public Job
+#   64|   {
+#   65|->     Q_OBJECT
+#   66|   protected:
+#   67|       explicit DeleteJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:59: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/deletejob.h:65:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   63|   class QGPGME_EXPORT DeleteJob : public Job
+#   64|   {
+#   65|->     Q_OBJECT
+#   66|   protected:
+#   67|       explicit DeleteJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/dn.cpp:126:17: warning[-Wzero-as-null-pointer-constant]: zero as null pointer constant
+#    for (mark = NULL, p = string; *p; p++) {
+#                ^~~~
+/usr/lib64/clang/13.0.1/include/stddef.h:84:18: note: expanded from macro 'NULL'
+##    define NULL __null
+#                 ^
+#  124|       char *p, *mark;
+#  125|   
+#  126|->     for (mark = NULL, p = string; *p; p++) {
+#  127|           if (isspace(*p)) {
+#  128|               if (!mark) {
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/dn.cpp:132:20: warning[-Wzero-as-null-pointer-constant]: zero as null pointer constant
+#            mark = NULL;
+#                   ^~~~
+/usr/lib64/clang/13.0.1/include/stddef.h:84:18: note: expanded from macro 'NULL'
+##    define NULL __null
+#                 ^
+#  130|               }
+#  131|           } else {
+#  132|->             mark = NULL;
+#  133|           }
+#  134|       }
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/dn.cpp:156:16: warning[-Wzero-as-null-pointer-constant]: zero as null pointer constant
+#        return NULL;    /* error */
+#               ^~~~
+/usr/lib64/clang/13.0.1/include/stddef.h:84:18: note: expanded from macro 'NULL'
+##    define NULL __null
+#                 ^
+#  154|           ;
+#  155|       if (!*s) {
+#  156|->         return NULL;    /* error */
+#  157|       }
+#  158|       n = s - string;
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/dn.cpp:160:16: warning[-Wzero-as-null-pointer-constant]: zero as null pointer constant
+#        return NULL;    /* empty key */
+#               ^~~~
+/usr/lib64/clang/13.0.1/include/stddef.h:84:18: note: expanded from macro 'NULL'
+##    define NULL __null
+#                 ^
+#  158|       n = s - string;
+#  159|       if (!n) {
+#  160|->         return NULL;    /* empty key */
+#  161|       }
+#  162|       p = (char *)malloc(n + 1);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/dn.cpp:184:20: warning[-Wzero-as-null-pointer-constant]: zero as null pointer constant
+#            return NULL;    /* empty or odd number of digits */
+#                   ^~~~
+/usr/lib64/clang/13.0.1/include/stddef.h:84:18: note: expanded from macro 'NULL'
+##    define NULL __null
+#                 ^
+#  182|           n = s - string;
+#  183|           if (!n || (n & 1)) {
+#  184|->             return NULL;    /* empty or odd number of digits */
+#  185|           }
+#  186|           n /= 2;
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/dn.cpp:207:28: warning[-Wzero-as-null-pointer-constant]: zero as null pointer constant
+#                    return NULL;    /* invalid escape sequence */
+#                           ^~~~
+/usr/lib64/clang/13.0.1/include/stddef.h:84:18: note: expanded from macro 'NULL'
+##    define NULL __null
+#                 ^
+#  205|                       n++;
+#  206|                   } else {
+#  207|->                     return NULL;    /* invalid escape sequence */
+#  208|                   }
+#  209|               } else if (*s == '\"') {
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/dn.cpp:210:24: warning[-Wzero-as-null-pointer-constant]: zero as null pointer constant
+#                return NULL;    /* invalid encoding */
+#                       ^~~~
+/usr/lib64/clang/13.0.1/include/stddef.h:84:18: note: expanded from macro 'NULL'
+##    define NULL __null
+#                 ^
+#  208|                   }
+#  209|               } else if (*s == '\"') {
+#  210|->                 return NULL;    /* invalid encoding */
+#  211|               } else if (*s == ',' || *s == '=' || *s == '+'
+#  212|                          || *s == '<' || *s == '>' || *s == '#' || *s == ';') {
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:58: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/downloadjob.h:71:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   69|   class QGPGME_EXPORT DownloadJob : public Job
+#   70|   {
+#   71|->     Q_OBJECT
+#   72|   protected:
+#   73|       explicit DownloadJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:58: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/downloadjob.h:71:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   69|   class QGPGME_EXPORT DownloadJob : public Job
+#   70|   {
+#   71|->     Q_OBJECT
+#   72|   protected:
+#   73|       explicit DownloadJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:58: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/downloadjob.h:71:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   69|   class QGPGME_EXPORT DownloadJob : public Job
+#   70|   {
+#   71|->     Q_OBJECT
+#   72|   protected:
+#   73|       explicit DownloadJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/encryptjob.h:77:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   75|   class QGPGME_EXPORT EncryptJob : public Job
+#   76|   {
+#   77|->     Q_OBJECT
+#   78|   protected:
+#   79|       explicit EncryptJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:43: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/encryptjob.h:77:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   75|   class QGPGME_EXPORT EncryptJob : public Job
+#   76|   {
+#   77|->     Q_OBJECT
+#   78|   protected:
+#   79|       explicit EncryptJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:43: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/encryptjob.h:77:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   75|   class QGPGME_EXPORT EncryptJob : public Job
+#   76|   {
+#   77|->     Q_OBJECT
+#   78|   protected:
+#   79|       explicit EncryptJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/exportjob.h:68:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   66|   class QGPGME_EXPORT ExportJob : public Job
+#   67|   {
+#   68|->     Q_OBJECT
+#   69|   protected:
+#   70|       explicit ExportJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:54: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/exportjob.h:68:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   66|   class QGPGME_EXPORT ExportJob : public Job
+#   67|   {
+#   68|->     Q_OBJECT
+#   69|   protected:
+#   70|       explicit ExportJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:54: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/exportjob.h:68:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   66|   class QGPGME_EXPORT ExportJob : public Job
+#   67|   {
+#   68|->     Q_OBJECT
+#   69|   protected:
+#   70|       explicit ExportJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:68: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/gpgcardjob.h:67:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   65|   class QGPGME_EXPORT GpgCardJob: public Job
+#   66|   {
+#   67|->     Q_OBJECT
+#   68|   protected:
+#   69|       explicit GpgCardJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:68: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/gpgcardjob.h:67:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   65|   class QGPGME_EXPORT GpgCardJob: public Job
+#   66|   {
+#   67|->     Q_OBJECT
+#   68|   protected:
+#   69|       explicit GpgCardJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:68: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/gpgcardjob.h:67:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   65|   class QGPGME_EXPORT GpgCardJob: public Job
+#   66|   {
+#   67|->     Q_OBJECT
+#   68|   protected:
+#   69|       explicit GpgCardJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.h:74:5: scope_hint: In file included from job.cpp:53
+gpgme-1.15.1/lang/qt/src/importfromkeyserverjob.h:68:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/abstractimportjob.h:53:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   66|   class QGPGME_EXPORT ImportFromKeyserverJob : public AbstractImportJob
+#   67|   {
+#   68|->     Q_OBJECT
+#   69|   protected:
+#   70|       explicit ImportFromKeyserverJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:53: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/importfromkeyserverjob.h:68:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/abstractimportjob.h:53:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   66|   class QGPGME_EXPORT ImportFromKeyserverJob : public AbstractImportJob
+#   67|   {
+#   68|->     Q_OBJECT
+#   69|   protected:
+#   70|       explicit ImportFromKeyserverJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:53: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/importfromkeyserverjob.h:68:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/abstractimportjob.h:53:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   66|   class QGPGME_EXPORT ImportFromKeyserverJob : public AbstractImportJob
+#   67|   {
+#   68|->     Q_OBJECT
+#   69|   protected:
+#   70|       explicit ImportFromKeyserverJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:52: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/importjob.h:67:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/abstractimportjob.h:53:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   65|   class QGPGME_EXPORT ImportJob : public AbstractImportJob
+#   66|   {
+#   67|->     Q_OBJECT
+#   68|   protected:
+#   69|       explicit ImportJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:52: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/importjob.h:67:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/abstractimportjob.h:53:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   65|   class QGPGME_EXPORT ImportJob : public AbstractImportJob
+#   66|   {
+#   67|->     Q_OBJECT
+#   68|   protected:
+#   69|       explicit ImportJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:52: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/importjob.h:67:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/abstractimportjob.h:53:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   65|   class QGPGME_EXPORT ImportJob : public AbstractImportJob
+#   66|   {
+#   67|->     Q_OBJECT
+#   68|   protected:
+#   69|       explicit ImportJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:39: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/job.h:74:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+/usr/include/qt5/QtCore/qobject.h:129:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   72|   class QGPGME_EXPORT Job : public QObject
+#   73|   {
+#   74|->     Q_OBJECT
+#   75|   protected:
+#   76|       explicit Job(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:39: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/job.h:74:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+/usr/include/qt5/QtCore/qobject.h:129:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   72|   class QGPGME_EXPORT Job : public QObject
+#   73|   {
+#   74|->     Q_OBJECT
+#   75|   protected:
+#   76|       explicit Job(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:39: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/job.h:74:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+/usr/include/qt5/QtCore/qobject.h:129:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   72|   class QGPGME_EXPORT Job : public QObject
+#   73|   {
+#   74|->     Q_OBJECT
+#   75|   protected:
+#   76|       explicit Job(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:63: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/keyformailboxjob.h:75:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   73|   class QGPGME_EXPORT KeyForMailboxJob: public Job
+#   74|   {
+#   75|->     Q_OBJECT
+#   76|   protected:
+#   77|       explicit KeyForMailboxJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:63: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/keyformailboxjob.h:75:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   73|   class QGPGME_EXPORT KeyForMailboxJob: public Job
+#   74|   {
+#   75|->     Q_OBJECT
+#   76|   protected:
+#   77|       explicit KeyForMailboxJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:63: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/keyformailboxjob.h:75:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   73|   class QGPGME_EXPORT KeyForMailboxJob: public Job
+#   74|   {
+#   75|->     Q_OBJECT
+#   76|   protected:
+#   77|       explicit KeyForMailboxJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+In file included from job.cpp:51: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/keygenerationjob.h:67:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   65|   class QGPGME_EXPORT KeyGenerationJob : public Job
+#   66|   {
+#   67|->     Q_OBJECT
+#   68|   protected:
+#   69|       explicit KeyGenerationJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:51: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/keygenerationjob.h:67:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   65|   class QGPGME_EXPORT KeyGenerationJob : public Job
+#   66|   {
+#   67|->     Q_OBJECT
+#   68|   protected:
+#   69|       explicit KeyGenerationJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:51: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/keygenerationjob.h:67:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   65|   class QGPGME_EXPORT KeyGenerationJob : public Job
+#   66|   {
+#   67|->     Q_OBJECT
+#   68|   protected:
+#   69|       explicit KeyGenerationJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:41: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/keylistjob.h:77:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   75|   class QGPGME_EXPORT KeyListJob : public Job
+#   76|   {
+#   77|->     Q_OBJECT
+#   78|   protected:
+#   79|       explicit KeyListJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:41: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/keylistjob.h:77:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   75|   class QGPGME_EXPORT KeyListJob : public Job
+#   76|   {
+#   77|->     Q_OBJECT
+#   78|   protected:
+#   79|       explicit KeyListJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:41: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/keylistjob.h:77:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   75|   class QGPGME_EXPORT KeyListJob : public Job
+#   76|   {
+#   77|->     Q_OBJECT
+#   78|   protected:
+#   79|       explicit KeyListJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:42: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/listallkeysjob.h:76:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   74|   class QGPGME_EXPORT ListAllKeysJob : public Job
+#   75|   {
+#   76|->     Q_OBJECT
+#   77|   protected:
+#   78|       explicit ListAllKeysJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:42: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/listallkeysjob.h:76:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   74|   class QGPGME_EXPORT ListAllKeysJob : public Job
+#   75|   {
+#   76|->     Q_OBJECT
+#   77|   protected:
+#   78|       explicit ListAllKeysJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:42: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/listallkeysjob.h:76:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   74|   class QGPGME_EXPORT ListAllKeysJob : public Job
+#   75|   {
+#   76|->     Q_OBJECT
+#   77|   protected:
+#   78|       explicit ListAllKeysJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/multideletejob.cpp:37: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/multideletejob.h:74:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   72|   class QGPGME_EXPORT MultiDeleteJob : public Job
+#   73|   {
+#   74|->     Q_OBJECT
+#   75|   public:
+#   76|       explicit MultiDeleteJob(const Protocol *protocol);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/multideletejob.cpp:37: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/multideletejob.h:74:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   72|   class QGPGME_EXPORT MultiDeleteJob : public Job
+#   73|   {
+#   74|->     Q_OBJECT
+#   75|   public:
+#   76|       explicit MultiDeleteJob(const Protocol *protocol);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/multideletejob.cpp:37: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/multideletejob.h:74:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   72|   class QGPGME_EXPORT MultiDeleteJob : public Job
+#   73|   {
+#   74|->     Q_OBJECT
+#   75|   public:
+#   76|       explicit MultiDeleteJob(const Protocol *protocol);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmeadduseridjob.cpp:39: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmeadduseridjob.h:52:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/adduseridjob.h:66:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   50|   #endif
+#   51|   {
+#   52|->     Q_OBJECT
+#   53|   #ifdef Q_MOC_RUN
+#   54|   private Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmeadduseridjob.cpp:39: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmeadduseridjob.h:52:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/adduseridjob.h:66:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   50|   #endif
+#   51|   {
+#   52|->     Q_OBJECT
+#   53|   #ifdef Q_MOC_RUN
+#   54|   private Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmeadduseridjob.cpp:39: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmeadduseridjob.h:52:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/adduseridjob.h:66:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   50|   #endif
+#   51|   {
+#   52|->     Q_OBJECT
+#   53|   #ifdef Q_MOC_RUN
+#   54|   private Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmechangeexpiryjob.cpp:39: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmechangeexpiryjob.h:52:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/changeexpiryjob.h:73:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   50|   #endif
+#   51|   {
+#   52|->     Q_OBJECT
+#   53|   #ifdef Q_MOC_RUN
+#   54|   private Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmechangeexpiryjob.cpp:39: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmechangeexpiryjob.h:52:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/changeexpiryjob.h:73:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   50|   #endif
+#   51|   {
+#   52|->     Q_OBJECT
+#   53|   #ifdef Q_MOC_RUN
+#   54|   private Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmechangeexpiryjob.cpp:39: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmechangeexpiryjob.h:52:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/changeexpiryjob.h:73:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   50|   #endif
+#   51|   {
+#   52|->     Q_OBJECT
+#   53|   #ifdef Q_MOC_RUN
+#   54|   private Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmechangeownertrustjob.cpp:39: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmechangeownertrustjob.h:52:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/changeownertrustjob.h:64:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   50|   #endif
+#   51|   {
+#   52|->     Q_OBJECT
+#   53|   #ifdef Q_MOC_RUN
+#   54|   private Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmechangeownertrustjob.cpp:39: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmechangeownertrustjob.h:52:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/changeownertrustjob.h:64:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   50|   #endif
+#   51|   {
+#   52|->     Q_OBJECT
+#   53|   #ifdef Q_MOC_RUN
+#   54|   private Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmechangeownertrustjob.cpp:39: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmechangeownertrustjob.h:52:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/changeownertrustjob.h:64:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   50|   #endif
+#   51|   {
+#   52|->     Q_OBJECT
+#   53|   #ifdef Q_MOC_RUN
+#   54|   private Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:58: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmechangepasswdjob.h:52:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/changepasswdjob.h:64:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   50|   #endif
+#   51|   {
+#   52|->     Q_OBJECT
+#   53|   #ifdef Q_MOC_RUN
+#   54|   private Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:58: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmechangepasswdjob.h:52:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/changepasswdjob.h:64:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   50|   #endif
+#   51|   {
+#   52|->     Q_OBJECT
+#   53|   #ifdef Q_MOC_RUN
+#   54|   private Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:58: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmechangepasswdjob.h:52:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/changepasswdjob.h:64:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   50|   #endif
+#   51|   {
+#   52|->     Q_OBJECT
+#   53|   #ifdef Q_MOC_RUN
+#   54|   private Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/protocol_p.h:41: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmedecryptjob.h:58:5: warning: 'metaObject' overrides a member function but is not marked 'override' [-Wsuggest-override]    virtual const QMetaObject *metaObject() const; \
+#
+#                               ^
+#    Q_OBJECT
+#    ^
+#   56|   #endif
+#   57|   {
+#   58|->     Q_OBJECT
+#   59|   #ifdef Q_MOC_RUN
+#   60|   private Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:41: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmedecryptjob.h:58:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/decryptjob.h:69:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   56|   #endif
+#   57|   {
+#   58|->     Q_OBJECT
+#   59|   #ifdef Q_MOC_RUN
+#   60|   private Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:41: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmedecryptjob.h:58:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/decryptjob.h:69:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   56|   #endif
+#   57|   {
+#   58|->     Q_OBJECT
+#   59|   #ifdef Q_MOC_RUN
+#   60|   private Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:41: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmedecryptjob.h:58:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/decryptjob.h:69:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   56|   #endif
+#   57|   {
+#   58|->     Q_OBJECT
+#   59|   #ifdef Q_MOC_RUN
+#   60|   private Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:42: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmedecryptverifyjob.h:63:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/decryptverifyjob.h:70:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   61|   #endif
+#   62|   {
+#   63|->     Q_OBJECT
+#   64|   #ifdef Q_MOC_RUN
+#   65|   private Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:42: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmedecryptverifyjob.h:63:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/decryptverifyjob.h:70:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   61|   #endif
+#   62|   {
+#   63|->     Q_OBJECT
+#   64|   #ifdef Q_MOC_RUN
+#   65|   private Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:42: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmedecryptverifyjob.h:63:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/decryptverifyjob.h:70:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   61|   #endif
+#   62|   {
+#   63|->     Q_OBJECT
+#   64|   #ifdef Q_MOC_RUN
+#   65|   private Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:44: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmedeletejob.h:57:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/deletejob.h:65:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   55|   #endif
+#   56|   {
+#   57|->     Q_OBJECT
+#   58|   #ifdef Q_MOC_RUN
+#   59|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:44: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmedeletejob.h:57:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/deletejob.h:65:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   55|   #endif
+#   56|   {
+#   57|->     Q_OBJECT
+#   58|   #ifdef Q_MOC_RUN
+#   59|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:44: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmedeletejob.h:57:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/deletejob.h:65:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   55|   #endif
+#   56|   {
+#   57|->     Q_OBJECT
+#   58|   #ifdef Q_MOC_RUN
+#   59|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmedownloadjob.h:52:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/downloadjob.h:71:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   50|   #endif
+#   51|   {
+#   52|->     Q_OBJECT
+#   53|   #ifdef Q_MOC_RUN
+#   54|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmedownloadjob.h:52:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/downloadjob.h:71:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   50|   #endif
+#   51|   {
+#   52|->     Q_OBJECT
+#   53|   #ifdef Q_MOC_RUN
+#   54|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmedownloadjob.h:52:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/downloadjob.h:71:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   50|   #endif
+#   51|   {
+#   52|->     Q_OBJECT
+#   53|   #ifdef Q_MOC_RUN
+#   54|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+In file included from qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:48: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmeencryptjob.h:63:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/encryptjob.h:77:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   61|   #endif
+#   62|   {
+#   63|->     Q_OBJECT
+#   64|   #ifdef Q_MOC_RUN
+#   65|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:48: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmeencryptjob.h:63:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/encryptjob.h:77:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   61|   #endif
+#   62|   {
+#   63|->     Q_OBJECT
+#   64|   #ifdef Q_MOC_RUN
+#   65|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:48: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmeencryptjob.h:63:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/encryptjob.h:77:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   61|   #endif
+#   62|   {
+#   63|->     Q_OBJECT
+#   64|   #ifdef Q_MOC_RUN
+#   65|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:51: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmeexportjob.h:52:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/exportjob.h:68:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   50|   #endif
+#   51|   {
+#   52|->     Q_OBJECT
+#   53|   #ifdef Q_MOC_RUN
+#   54|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:51: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmeexportjob.h:52:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#   50|   #endif
+#   51|   {
+#   52|->     Q_OBJECT
+#   53|   #ifdef Q_MOC_RUN
+#   54|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:51: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmeexportjob.h:52:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/exportjob.h:68:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   50|   #endif
+#   51|   {
+#   52|->     Q_OBJECT
+#   53|   #ifdef Q_MOC_RUN
+#   54|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:41: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmegpgcardjob.h:48:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/gpgcardjob.h:67:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   46|   #endif
+#   47|   {
+#   48|->     Q_OBJECT
+#   49|   #ifdef Q_MOC_RUN
+#   50|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:41: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmegpgcardjob.h:48:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/gpgcardjob.h:67:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   46|   #endif
+#   47|   {
+#   48|->     Q_OBJECT
+#   49|   #ifdef Q_MOC_RUN
+#   50|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:41: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmegpgcardjob.h:48:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/gpgcardjob.h:67:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   46|   #endif
+#   47|   {
+#   48|->     Q_OBJECT
+#   49|   #ifdef Q_MOC_RUN
+#   50|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:54: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmeimportfromkeyserverjob.h:58:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/importfromkeyserverjob.h:68:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   56|   #endif
+#   57|   {
+#   58|->     Q_OBJECT
+#   59|   #ifdef Q_MOC_RUN
+#   60|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:54: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmeimportfromkeyserverjob.h:58:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/importfromkeyserverjob.h:68:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   56|   #endif
+#   57|   {
+#   58|->     Q_OBJECT
+#   59|   #ifdef Q_MOC_RUN
+#   60|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:54: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmeimportfromkeyserverjob.h:58:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/importfromkeyserverjob.h:68:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   56|   #endif
+#   57|   {
+#   58|->     Q_OBJECT
+#   59|   #ifdef Q_MOC_RUN
+#   60|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:53: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmeimportjob.h:58:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/importjob.h:67:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   56|   #endif
+#   57|   {
+#   58|->     Q_OBJECT
+#   59|   #ifdef Q_MOC_RUN
+#   60|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:53: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmeimportjob.h:58:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/importjob.h:67:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   56|   #endif
+#   57|   {
+#   58|->     Q_OBJECT
+#   59|   #ifdef Q_MOC_RUN
+#   60|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:53: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmeimportjob.h:58:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/importjob.h:67:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   56|   #endif
+#   57|   {
+#   58|->     Q_OBJECT
+#   59|   #ifdef Q_MOC_RUN
+#   60|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:60: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmekeyformailboxjob.h:60:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/keyformailboxjob.h:75:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   58|   #endif
+#   59|   {
+#   60|->     Q_OBJECT
+#   61|   #ifdef Q_MOC_RUN
+#   62|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:60: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmekeyformailboxjob.h:60:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/keyformailboxjob.h:75:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   58|   #endif
+#   59|   {
+#   60|->     Q_OBJECT
+#   61|   #ifdef Q_MOC_RUN
+#   62|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:60: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmekeyformailboxjob.h:60:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/keyformailboxjob.h:75:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   58|   #endif
+#   59|   {
+#   60|->     Q_OBJECT
+#   61|   #ifdef Q_MOC_RUN
+#   62|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:38: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmekeygenerationjob.h:58:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/keygenerationjob.h:67:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   56|   #endif
+#   57|   {
+#   58|->     Q_OBJECT
+#   59|   #ifdef Q_MOC_RUN
+#   60|   private Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:38: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmekeygenerationjob.h:58:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/keygenerationjob.h:67:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   56|   #endif
+#   57|   {
+#   58|->     Q_OBJECT
+#   59|   #ifdef Q_MOC_RUN
+#   60|   private Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:38: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmekeygenerationjob.h:58:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/keygenerationjob.h:67:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   56|   #endif
+#   57|   {
+#   58|->     Q_OBJECT
+#   59|   #ifdef Q_MOC_RUN
+#   60|   private Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:39: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmekeylistjob.h:63:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/keylistjob.h:77:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   61|   #endif
+#   62|   {
+#   63|->     Q_OBJECT
+#   64|   #ifdef Q_MOC_RUN
+#   65|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:39: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmekeylistjob.h:63:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/keylistjob.h:77:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   61|   #endif
+#   62|   {
+#   63|->     Q_OBJECT
+#   64|   #ifdef Q_MOC_RUN
+#   65|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:39: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmekeylistjob.h:63:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/keylistjob.h:77:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   61|   #endif
+#   62|   {
+#   63|->     Q_OBJECT
+#   64|   #ifdef Q_MOC_RUN
+#   65|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:40: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmelistallkeysjob.h:63:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/listallkeysjob.h:76:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   61|   #endif
+#   62|   {
+#   63|->     Q_OBJECT
+#   64|   #ifdef Q_MOC_RUN
+#   65|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:40: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmelistallkeysjob.h:63:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/listallkeysjob.h:76:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   61|   #endif
+#   62|   {
+#   63|->     Q_OBJECT
+#   64|   #ifdef Q_MOC_RUN
+#   65|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:40: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmelistallkeysjob.h:63:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/listallkeysjob.h:76:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   61|   #endif
+#   62|   {
+#   63|->     Q_OBJECT
+#   64|   #ifdef Q_MOC_RUN
+#   65|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:63: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmequickjob.h:53:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/quickjob.h:57:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   51|   #endif
+#   52|   {
+#   53|->     Q_OBJECT
+#   54|   #ifdef Q_MOC_RUN
+#   55|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:63: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmequickjob.h:53:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/quickjob.h:57:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   51|   #endif
+#   52|   {
+#   53|->     Q_OBJECT
+#   54|   #ifdef Q_MOC_RUN
+#   55|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:63: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmequickjob.h:53:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/quickjob.h:57:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   51|   #endif
+#   52|   {
+#   53|->     Q_OBJECT
+#   54|   #ifdef Q_MOC_RUN
+#   55|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:43: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmerefreshkeysjob.h:53:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/refreshkeysjob.h:69:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   51|   class QGpgMERefreshKeysJob : public RefreshKeysJob
+#   52|   {
+#   53|->     Q_OBJECT
+#   54|   public:
+#   55|       QGpgMERefreshKeysJob();
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:43: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmerefreshkeysjob.h:53:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/refreshkeysjob.h:69:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   51|   class QGpgMERefreshKeysJob : public RefreshKeysJob
+#   52|   {
+#   53|->     Q_OBJECT
+#   54|   public:
+#   55|       QGpgMERefreshKeysJob();
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:43: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmerefreshkeysjob.h:53:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/refreshkeysjob.h:69:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   51|   class QGpgMERefreshKeysJob : public RefreshKeysJob
+#   52|   {
+#   53|->     Q_OBJECT
+#   54|   public:
+#   55|       QGpgMERefreshKeysJob();
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:45: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmesecretkeyexportjob.h:56:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/exportjob.h:68:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   54|   class QGpgMESecretKeyExportJob : public ExportJob
+#   55|   {
+#   56|->     Q_OBJECT
+#   57|   public:
+#   58|       QGpgMESecretKeyExportJob(bool armour, const QString &charset);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:45: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmesecretkeyexportjob.h:56:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/exportjob.h:68:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   54|   class QGpgMESecretKeyExportJob : public ExportJob
+#   55|   {
+#   56|->     Q_OBJECT
+#   57|   public:
+#   58|       QGpgMESecretKeyExportJob(bool armour, const QString &charset);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:45: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmesecretkeyexportjob.h:56:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/exportjob.h:68:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   54|   class QGpgMESecretKeyExportJob : public ExportJob
+#   55|   {
+#   56|->     Q_OBJECT
+#   57|   public:
+#   58|       QGpgMESecretKeyExportJob(bool armour, const QString &charset);
+
+Error: COMPILER_WARNING:
+In file included from qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:47: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmesignencryptjob.h:70:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/signencryptjob.h:82:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   68|   #endif
+#   69|   {
+#   70|->     Q_OBJECT
+#   71|   #ifdef Q_MOC_RUN
+#   72|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:47: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmesignencryptjob.h:70:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/signencryptjob.h:82:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   68|   #endif
+#   69|   {
+#   70|->     Q_OBJECT
+#   71|   #ifdef Q_MOC_RUN
+#   72|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:47: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmesignencryptjob.h:70:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/signencryptjob.h:82:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   68|   #endif
+#   69|   {
+#   70|->     Q_OBJECT
+#   71|   #ifdef Q_MOC_RUN
+#   72|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+In file included from qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:49: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmesignjob.h:63:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/signjob.h:78:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   61|   #endif
+#   62|   {
+#   63|->     Q_OBJECT
+#   64|   #ifdef Q_MOC_RUN
+#   65|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:49: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmesignjob.h:63:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/signjob.h:78:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   61|   #endif
+#   62|   {
+#   63|->     Q_OBJECT
+#   64|   #ifdef Q_MOC_RUN
+#   65|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:49: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmesignjob.h:63:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/signjob.h:78:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   61|   #endif
+#   62|   {
+#   63|->     Q_OBJECT
+#   64|   #ifdef Q_MOC_RUN
+#   65|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:50: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmesignkeyjob.h:60:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/signkeyjob.h:68:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   58|   #endif
+#   59|   {
+#   60|->     Q_OBJECT
+#   61|   #ifdef Q_MOC_RUN
+#   62|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:50: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmesignkeyjob.h:60:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/signkeyjob.h:68:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   58|   #endif
+#   59|   {
+#   60|->     Q_OBJECT
+#   61|   #ifdef Q_MOC_RUN
+#   62|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:50: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmesignkeyjob.h:60:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/signkeyjob.h:68:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   58|   #endif
+#   59|   {
+#   60|->     Q_OBJECT
+#   61|   #ifdef Q_MOC_RUN
+#   62|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:62: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmetofupolicyjob.h:51:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/tofupolicyjob.h:56:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   49|   #endif
+#   50|   {
+#   51|->     Q_OBJECT
+#   52|   #ifdef Q_MOC_RUN
+#   53|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:62: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmetofupolicyjob.h:51:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/tofupolicyjob.h:56:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   49|   #endif
+#   50|   {
+#   51|->     Q_OBJECT
+#   52|   #ifdef Q_MOC_RUN
+#   53|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:62: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmetofupolicyjob.h:51:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/tofupolicyjob.h:56:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   49|   #endif
+#   50|   {
+#   51|->     Q_OBJECT
+#   52|   #ifdef Q_MOC_RUN
+#   53|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:52: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmeverifydetachedjob.h:58:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/verifydetachedjob.h:70:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   56|   #endif
+#   57|   {
+#   58|->     Q_OBJECT
+#   59|   #ifdef Q_MOC_RUN
+#   60|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:52: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmeverifydetachedjob.h:58:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/verifydetachedjob.h:70:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   56|   #endif
+#   57|   {
+#   58|->     Q_OBJECT
+#   59|   #ifdef Q_MOC_RUN
+#   60|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:52: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmeverifydetachedjob.h:58:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/verifydetachedjob.h:70:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   56|   #endif
+#   57|   {
+#   58|->     Q_OBJECT
+#   59|   #ifdef Q_MOC_RUN
+#   60|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:55: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmeverifyopaquejob.h:58:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/verifyopaquejob.h:69:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   56|   #endif
+#   57|   {
+#   58|->     Q_OBJECT
+#   59|   #ifdef Q_MOC_RUN
+#   60|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:55: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmeverifyopaquejob.h:58:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/verifyopaquejob.h:69:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   56|   #endif
+#   57|   {
+#   58|->     Q_OBJECT
+#   59|   #ifdef Q_MOC_RUN
+#   60|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:55: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmeverifyopaquejob.h:58:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/verifyopaquejob.h:69:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   56|   #endif
+#   57|   {
+#   58|->     Q_OBJECT
+#   59|   #ifdef Q_MOC_RUN
+#   60|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/protocol_p.h:61: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmewkspublishjob.h:55:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/wkspublishjob.h:63:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   53|   #endif
+#   54|   {
+#   55|->     Q_OBJECT
+#   56|   #ifdef Q_MOC_RUN
+#   57|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:61: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmewkspublishjob.h:55:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/wkspublishjob.h:63:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   53|   #endif
+#   54|   {
+#   55|->     Q_OBJECT
+#   56|   #ifdef Q_MOC_RUN
+#   57|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/qgpgmebackend.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/protocol_p.h:61: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/qgpgmewkspublishjob.h:55:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/wkspublishjob.h:63:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   53|   #endif
+#   54|   {
+#   55|->     Q_OBJECT
+#   56|   #ifdef Q_MOC_RUN
+#   57|   public Q_SLOTS:
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:67: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/quickjob.h:57:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   55|   class QGPGME_EXPORT QuickJob : public Job
+#   56|   {
+#   57|->     Q_OBJECT
+#   58|   public:
+#   59|       explicit QuickJob(QObject *parent = Q_NULLPTR);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:67: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/quickjob.h:57:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   55|   class QGPGME_EXPORT QuickJob : public Job
+#   56|   {
+#   57|->     Q_OBJECT
+#   58|   public:
+#   59|       explicit QuickJob(QObject *parent = Q_NULLPTR);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:67: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/quickjob.h:57:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   55|   class QGPGME_EXPORT QuickJob : public Job
+#   56|   {
+#   57|->     Q_OBJECT
+#   58|   public:
+#   59|       explicit QuickJob(QObject *parent = Q_NULLPTR);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:60: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/refreshkeysjob.h:69:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   67|   class QGPGME_EXPORT RefreshKeysJob : public Job
+#   68|   {
+#   69|->     Q_OBJECT
+#   70|   protected:
+#   71|       explicit RefreshKeysJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:60: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/refreshkeysjob.h:69:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   67|   class QGPGME_EXPORT RefreshKeysJob : public Job
+#   68|   {
+#   69|->     Q_OBJECT
+#   70|   protected:
+#   71|       explicit RefreshKeysJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:60: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/refreshkeysjob.h:69:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   67|   class QGPGME_EXPORT RefreshKeysJob : public Job
+#   68|   {
+#   69|->     Q_OBJECT
+#   70|   protected:
+#   71|       explicit RefreshKeysJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:48: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/signencryptjob.h:82:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   80|   class QGPGME_EXPORT SignEncryptJob : public Job
+#   81|   {
+#   82|->     Q_OBJECT
+#   83|   protected:
+#   84|       explicit SignEncryptJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:48: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/signencryptjob.h:82:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   80|   class QGPGME_EXPORT SignEncryptJob : public Job
+#   81|   {
+#   82|->     Q_OBJECT
+#   83|   protected:
+#   84|       explicit SignEncryptJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:48: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/signencryptjob.h:82:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   80|   class QGPGME_EXPORT SignEncryptJob : public Job
+#   81|   {
+#   82|->     Q_OBJECT
+#   83|   protected:
+#   84|       explicit SignEncryptJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/signjob.h:78:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   76|   class QGPGME_EXPORT SignJob : public Job
+#   77|   {
+#   78|->     Q_OBJECT
+#   79|   protected:
+#   80|       explicit SignJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/signjob.h:78:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   76|   class QGPGME_EXPORT SignJob : public Job
+#   77|   {
+#   78|->     Q_OBJECT
+#   79|   protected:
+#   80|       explicit SignJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:46: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/signjob.h:78:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   76|   class QGPGME_EXPORT SignJob : public Job
+#   77|   {
+#   78|->     Q_OBJECT
+#   79|   protected:
+#   80|       explicit SignJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:47: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/signkeyjob.h:68:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#   66|   class QGPGME_EXPORT SignKeyJob : public Job
+#   67|   {
+#   68|->     Q_OBJECT
+#   69|   protected:
+#   70|       explicit SignKeyJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:47: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/signkeyjob.h:68:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   66|   class QGPGME_EXPORT SignKeyJob : public Job
+#   67|   {
+#   68|->     Q_OBJECT
+#   69|   protected:
+#   70|       explicit SignKeyJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:47: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/signkeyjob.h:68:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   66|   class QGPGME_EXPORT SignKeyJob : public Job
+#   67|   {
+#   68|->     Q_OBJECT
+#   69|   protected:
+#   70|       explicit SignKeyJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:62: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/specialjob.h:72:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   70|   class QGPGME_EXPORT SpecialJob : public Job
+#   71|   {
+#   72|->     Q_OBJECT
+#   73|   protected:
+#   74|       explicit SpecialJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:62: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/specialjob.h:72:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   70|   class QGPGME_EXPORT SpecialJob : public Job
+#   71|   {
+#   72|->     Q_OBJECT
+#   73|   protected:
+#   74|       explicit SpecialJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:62: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/specialjob.h:72:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   70|   class QGPGME_EXPORT SpecialJob : public Job
+#   71|   {
+#   72|->     Q_OBJECT
+#   73|   protected:
+#   74|       explicit SpecialJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/tofupolicyjob.h:56:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   54|   class QGPGME_EXPORT TofuPolicyJob: public Job
+#   55|   {
+#   56|->     Q_OBJECT
+#   57|   protected:
+#   58|       explicit TofuPolicyJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:65: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/tofupolicyjob.h:56:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   54|   class QGPGME_EXPORT TofuPolicyJob: public Job
+#   55|   {
+#   56|->     Q_OBJECT
+#   57|   protected:
+#   58|       explicit TofuPolicyJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:65: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/tofupolicyjob.h:56:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   54|   class QGPGME_EXPORT TofuPolicyJob: public Job
+#   55|   {
+#   56|->     Q_OBJECT
+#   57|   protected:
+#   58|       explicit TofuPolicyJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+In file included from job.cpp:49: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/verifydetachedjob.h:70:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   68|   class QGPGME_EXPORT VerifyDetachedJob : public Job
+#   69|   {
+#   70|->     Q_OBJECT
+#   71|   protected:
+#   72|       explicit VerifyDetachedJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:49: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/verifydetachedjob.h:70:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   68|   class QGPGME_EXPORT VerifyDetachedJob : public Job
+#   69|   {
+#   70|->     Q_OBJECT
+#   71|   protected:
+#   72|       explicit VerifyDetachedJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:49: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/verifydetachedjob.h:70:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#   68|   class QGPGME_EXPORT VerifyDetachedJob : public Job
+#   69|   {
+#   70|->     Q_OBJECT
+#   71|   protected:
+#   72|       explicit VerifyDetachedJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/verifyopaquejob.h:69:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   67|   class QGPGME_EXPORT VerifyOpaqueJob : public Job
+#   68|   {
+#   69|->     Q_OBJECT
+#   70|   protected:
+#   71|       explicit VerifyOpaqueJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:50: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/verifyopaquejob.h:69:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   67|   class QGPGME_EXPORT VerifyOpaqueJob : public Job
+#   68|   {
+#   69|->     Q_OBJECT
+#   70|   protected:
+#   71|       explicit VerifyOpaqueJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:50: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/verifyopaquejob.h:69:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   67|   class QGPGME_EXPORT VerifyOpaqueJob : public Job
+#   68|   {
+#   69|->     Q_OBJECT
+#   70|   protected:
+#   71|       explicit VerifyOpaqueJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:64: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/wkspublishjob.h:63:5: warning[-Wsuggest-override]: 'metaObject' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:175:32: note: expanded from macro 'Q_OBJECT'
+#    virtual const QMetaObject *metaObject() const; \
+#                               ^
+#   61|   class QGPGME_EXPORT WKSPublishJob: public Job
+#   62|   {
+#   63|->     Q_OBJECT
+#   64|   protected:
+#   65|       explicit WKSPublishJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:64: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/wkspublishjob.h:63:5: warning[-Wsuggest-override]: 'qt_metacall' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:177:17: note: expanded from macro 'Q_OBJECT'
+#    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+#                ^
+#   61|   class QGPGME_EXPORT WKSPublishJob: public Job
+#   62|   {
+#   63|->     Q_OBJECT
+#   64|   protected:
+#   65|       explicit WKSPublishJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/lang/qt/src/job.cpp:64: included_from: Included from here.
+gpgme-1.15.1/lang/qt/src/wkspublishjob.h:63:5: warning[-Wsuggest-override]: 'qt_metacast' overrides a member function but is not marked 'override'
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+gpgme-1.15.1/lang/qt/src/job.h:74:5: note: overridden virtual function is here
+#    Q_OBJECT
+#    ^
+/usr/include/qt5/QtCore/qobjectdefs.h:176:19: note: expanded from macro 'Q_OBJECT'
+#    virtual void *qt_metacast(const char *); \
+#                  ^
+#   61|   class QGPGME_EXPORT WKSPublishJob: public Job
+#   62|   {
+#   63|->     Q_OBJECT
+#   64|   protected:
+#   65|       explicit WKSPublishJob(QObject *parent);
+
+Error: COMPILER_WARNING:
+gpgme-1.15.1/src/posix-io.c:392:29: warning[-Wcast-align]: cast from 'char *' to 'struct linux_dirent64 *' increases required alignment from 1 to 8
+#                dir_entry = (struct linux_dirent64 *) (dir_buf + pos);
+#                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  390|               for (pos = 0; pos < r; pos += dir_entry->d_reclen)
+#  391|                 {
+#  392|->                 dir_entry = (struct linux_dirent64 *) (dir_buf + pos);
+#  393|                   s = dir_entry->d_name;
+#  394|                   if (*s < '0' || *s > '9')

@@ -1,0 +1,25 @@
+Error: SYMBIOTIC_WARNING:
+libeconf-0.4.0/tests/tst-groups3.c:50: error: memory error: out of bound pointer
+libeconf-0.4.0/tests/tst-groups3.c:50: note: call stack: function main ()
+libeconf-0.4.0/tests/tst-groups3.c:50: note: Additional Info: address: 0:12370169555311111083
+libeconf-0.4.0/tests/tst-groups3.c:50: note: Additional Info: pointing to: none
+libeconf-0.4.0/tests/tst-groups3.c:24:16: note: Non-deterministic values: econf_readFile: len 4 bytes, [4 times 0x0] (i32: 0)
+libeconf-0.4.0/tests/tst-groups3.c:30:16: note: Non-deterministic values: econf_getGroups: len 4 bytes, [4 times 0x0] (i32: 0)
+#   48|     printf ("Found the following groups:\n");
+#   49|     for (size_t i = 0; i < group_number; i++)
+#   50|->     printf ("%zu: %s\n", i, groups[i]);
+#   51|   
+#   52|     /* Try to get the key for each group and check, it is the correct one */
+
+Error: SYMBIOTIC_WARNING:
+libeconf-0.4.0/tests/tst-logindefs2.c:45: error: memory error: out of bound pointer
+libeconf-0.4.0/tests/tst-logindefs2.c:45: note: call stack: function main ()
+libeconf-0.4.0/tests/tst-logindefs2.c:45: note: Additional Info: address: 0:12370169555311111083
+libeconf-0.4.0/tests/tst-logindefs2.c:45: note: Additional Info: pointing to: none
+libeconf-0.4.0/tests/tst-logindefs2.c:24:16: note: Non-deterministic values: econf_readFile: len 4 bytes, [4 times 0x0] (i32: 0)
+libeconf-0.4.0/tests/tst-logindefs2.c:30:16: note: Non-deterministic values: econf_getKeys: len 4 bytes, [4 times 0x0] (i32: 0)
+#   43|       {
+#   44|         char *value = NULL;
+#   45|->       econf_getStringValue(key_file, NULL, keys[i], &value);
+#   46|         printf ("%zu: %s: '%s'\n", i, keys[i], value);
+#   47|         if (value != NULL)

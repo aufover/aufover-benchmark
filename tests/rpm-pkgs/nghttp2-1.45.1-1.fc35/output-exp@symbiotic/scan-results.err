@@ -1,0 +1,201 @@
+Error: COMPILER_WARNING (CWE-252):
+nghttp2-1.45.1/src/HttpServer.cc:2142:5: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#    SSL_CTX_set_session_id_context(ssl_ctx, sid_ctx, sizeof(sid_ctx) - 1);
+#    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2140|   
+# 2141|       const unsigned char sid_ctx[] = "nghttpd";
+# 2142|->     SSL_CTX_set_session_id_context(ssl_ctx, sid_ctx, sizeof(sid_ctx) - 1);
+# 2143|       SSL_CTX_set_session_cache_mode(ssl_ctx, SSL_SESS_CACHE_SERVER);
+# 2144|   
+
+Error: COMPILER_WARNING (CWE-252):
+nghttp2-1.45.1/src/h2load.cc:560:7: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#      SSL_set_fd(ssl, fd);
+#      ^~~~~~~~~~ ~~~~~~~
+#  558|         }
+#  559|   
+#  560|->       SSL_set_fd(ssl, fd);
+#  561|         SSL_set_connect_state(ssl);
+#  562|       }
+
+Error: COMPILER_WARNING (CWE-252):
+nghttp2-1.45.1/src/h2load.cc:2873:3: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#  SSL_CTX_set_alpn_protos(ssl_ctx, proto_list.data(), proto_list.size());
+#  ^~~~~~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2871|     }
+# 2872|   
+# 2873|->   SSL_CTX_set_alpn_protos(ssl_ctx, proto_list.data(), proto_list.size());
+# 2874|   #endif // OPENSSL_VERSION_NUMBER >= 0x10002000L
+# 2875|   
+
+Error: COMPILER_WARNING (CWE-252):
+nghttp2-1.45.1/src/nghttp.cc:679:7: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#      SSL_set_fd(ssl, fd);
+#      ^~~~~~~~~~ ~~~~~~~
+#  677|         }
+#  678|   
+#  679|->       SSL_set_fd(ssl, fd);
+#  680|         SSL_set_connect_state(ssl);
+#  681|   
+
+Error: COMPILER_WARNING (CWE-252):
+nghttp2-1.45.1/src/nghttp.cc:2332:5: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#    SSL_CTX_set_alpn_protos(ssl_ctx, proto_list.data(), proto_list.size());
+#    ^~~~~~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2330|       auto proto_list = util::get_default_alpn();
+# 2331|   
+# 2332|->     SSL_CTX_set_alpn_protos(ssl_ctx, proto_list.data(), proto_list.size());
+# 2333|   #endif // OPENSSL_VERSION_NUMBER >= 0x10002000L
+# 2334|     }
+
+Error: COMPILER_WARNING (CWE-252):
+nghttp2-1.45.1/src/shrpx_connection.cc:322:3: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#  SSL_set_app_data(tls.ssl, this);
+#  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/openssl/ssl.h:967:43: note: expanded from macro 'SSL_set_app_data'
+## define SSL_set_app_data(s,arg)         (SSL_set_ex_data(s,0,(char *)(arg)))
+#                                          ^~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~
+#  320|     }
+#  321|   
+#  322|->   SSL_set_app_data(tls.ssl, this);
+#  323|   }
+#  324|   
+
+Error: COMPILER_WARNING (CWE-252):
+nghttp2-1.45.1/src/shrpx_http2_session.cc:467:11: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#          SSL_set_session(conn_.tls.ssl, tls_session);
+#          ^~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  465|           auto tls_session = tls::reuse_tls_session(addr_->tls_session_cache);
+#  466|           if (tls_session) {
+#  467|->           SSL_set_session(conn_.tls.ssl, tls_session);
+#  468|             SSL_SESSION_free(tls_session);
+#  469|           }
+
+Error: COMPILER_WARNING (CWE-252):
+nghttp2-1.45.1/src/shrpx_http_downstream_connection.cc:421:9: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#        SSL_set_session(conn_.tls.ssl, session);
+#        ^~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~
+#  419|         auto session = tls::reuse_tls_session(addr_->tls_session_cache);
+#  420|         if (session) {
+#  421|->         SSL_set_session(conn_.tls.ssl, session);
+#  422|           SSL_SESSION_free(session);
+#  423|         }
+
+Error: COMPILER_WARNING (CWE-252):
+nghttp2-1.45.1/src/shrpx_live_check.cc:308:7: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#      SSL_set_session(conn_.tls.ssl, session);
+#      ^~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~
+#  306|       auto session = tls::reuse_tls_session(addr_->tls_session_cache);
+#  307|       if (session) {
+#  308|->       SSL_set_session(conn_.tls.ssl, session);
+#  309|         SSL_SESSION_free(session);
+#  310|       }
+
+Error: COMPILER_WARNING (CWE-252):
+nghttp2-1.45.1/src/shrpx_memcached_connection.cc:191:7: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#      SSL_set_session(conn_.tls.ssl, session);
+#      ^~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~
+#  189|       auto session = tls::reuse_tls_session(tls_session_cache_);
+#  190|       if (session) {
+#  191|->       SSL_set_session(conn_.tls.ssl, session);
+#  192|         SSL_SESSION_free(session);
+#  193|       }
+
+Error: COMPILER_WARNING (CWE-252):
+nghttp2-1.45.1/src/shrpx_tls.cc:415:3: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#  i2d_SSL_SESSION(session, &buf);
+#  ^~~~~~~~~~~~~~~ ~~~~~~~~~~~~~
+#  413|     req->value.resize(sessionlen);
+#  414|     auto buf = &req->value[0];
+#  415|->   i2d_SSL_SESSION(session, &buf);
+#  416|     req->expiry = 12_h;
+#  417|     req->cb = [](MemcachedRequest *req, MemcachedResult res) {
+
+Error: COMPILER_WARNING (CWE-252):
+nghttp2-1.45.1/src/shrpx_tls.cc:950:3: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#  SSL_CTX_set_session_id_context(ssl_ctx, sid_ctx, sizeof(sid_ctx) - 1);
+#  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  948|   
+#  949|     const unsigned char sid_ctx[] = "shrpx";
+#  950|->   SSL_CTX_set_session_id_context(ssl_ctx, sid_ctx, sizeof(sid_ctx) - 1);
+#  951|     SSL_CTX_set_session_cache_mode(ssl_ctx, SSL_SESS_CACHE_SERVER);
+#  952|   
+
+Error: COMPILER_WARNING (CWE-252):
+nghttp2-1.45.1/src/shrpx_tls.cc:958:3: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#  SSL_CTX_set_timeout(ssl_ctx, tlsconf.session_timeout.count());
+#  ^~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  956|     }
+#  957|   
+#  958|->   SSL_CTX_set_timeout(ssl_ctx, tlsconf.session_timeout.count());
+#  959|   
+#  960|     if (SSL_CTX_set_cipher_list(ssl_ctx, tlsconf.ciphers.c_str()) == 0) {
+
+Error: COMPILER_WARNING (CWE-252):
+nghttp2-1.45.1/src/shrpx_tls.cc:1185:3: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#  SSL_CTX_set_app_data(ssl_ctx, tls_ctx_data);
+#  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/openssl/ssl.h:973:43: note: expanded from macro 'SSL_CTX_set_app_data'
+## define SSL_CTX_set_app_data(ctx,arg)   (SSL_CTX_set_ex_data(ctx,0, \
+#                                          ^~~~~~~~~~~~~~~~~~~ ~~~~~~~~
+# 1183|     tls_ctx_data->sct_data = sct_data;
+# 1184|   
+# 1185|->   SSL_CTX_set_app_data(ssl_ctx, tls_ctx_data);
+# 1186|   
+# 1187|     return ssl_ctx;
+
+Error: COMPILER_WARNING (CWE-252):
+nghttp2-1.45.1/src/shrpx_tls.cc:2392:3: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#  SSL_set_alpn_protos(ssl, alpn.data(), alpn.size());
+#  ^~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2390|     // ALPN advertisement
+# 2391|     auto alpn = util::get_default_alpn();
+# 2392|->   SSL_set_alpn_protos(ssl, alpn.data(), alpn.size());
+# 2393|   #endif // OPENSSL_VERSION_NUMBER >= 0x10002000L
+# 2394|   }
+
+Error: COMPILER_WARNING (CWE-252):
+nghttp2-1.45.1/src/shrpx_tls.cc:2399:3: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#  SSL_set_alpn_protos(ssl, NGHTTP2_H1_1_ALPN.byte(), NGHTTP2_H1_1_ALPN.size());
+#  ^~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2397|   #if OPENSSL_VERSION_NUMBER >= 0x10002000L
+# 2398|     // ALPN advertisement
+# 2399|->   SSL_set_alpn_protos(ssl, NGHTTP2_H1_1_ALPN.byte(), NGHTTP2_H1_1_ALPN.size());
+# 2400|   #endif // OPENSSL_VERSION_NUMBER >= 0x10002000L
+# 2401|   }
+
+Error: COMPILER_WARNING (CWE-252):
+nghttp2-1.45.1/src/shrpx_tls.cc:2416:3: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#  i2d_SSL_SESSION(session, &p);
+#  ^~~~~~~~~~~~~~~ ~~~~~~~~~~~
+# 2414|     auto buf = std::vector<uint8_t>(len);
+# 2415|     auto p = buf.data();
+# 2416|->   i2d_SSL_SESSION(session, &p);
+# 2417|   
+# 2418|     return buf;
+
+Error: COMPILER_WARNING (CWE-252):
+nghttp2-1.45.1/src/shrpx_tls_test.cc:128:3: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#  SSL_CTX_set_app_data(nghttp2_ssl_ctx, nghttp2_tls_ctx_data.get());
+#  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/openssl/ssl.h:973:43: note: expanded from macro 'SSL_CTX_set_app_data'
+## define SSL_CTX_set_app_data(ctx,arg)   (SSL_CTX_set_ex_data(ctx,0, \
+#                                          ^~~~~~~~~~~~~~~~~~~ ~~~~~~~~
+#  126|     auto nghttp2_tls_ctx_data = std::make_unique<tls::TLSContextData>();
+#  127|     nghttp2_tls_ctx_data->cert_file = nghttp2_certfile;
+#  128|->   SSL_CTX_set_app_data(nghttp2_ssl_ctx, nghttp2_tls_ctx_data.get());
+#  129|     rv = SSL_CTX_use_certificate_chain_file(nghttp2_ssl_ctx, nghttp2_certfile);
+#  130|   
+
+Error: COMPILER_WARNING (CWE-252):
+nghttp2-1.45.1/src/shrpx_tls_test.cc:139:3: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#  SSL_CTX_set_app_data(examples_ssl_ctx, examples_tls_ctx_data.get());
+#  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/openssl/ssl.h:973:43: note: expanded from macro 'SSL_CTX_set_app_data'
+## define SSL_CTX_set_app_data(ctx,arg)   (SSL_CTX_set_ex_data(ctx,0, \
+#                                          ^~~~~~~~~~~~~~~~~~~ ~~~~~~~~
+#  137|     auto examples_tls_ctx_data = std::make_unique<tls::TLSContextData>();
+#  138|     examples_tls_ctx_data->cert_file = examples_certfile;
+#  139|->   SSL_CTX_set_app_data(examples_ssl_ctx, examples_tls_ctx_data.get());
+#  140|     rv = SSL_CTX_use_certificate_chain_file(examples_ssl_ctx, examples_certfile);
+#  141|   

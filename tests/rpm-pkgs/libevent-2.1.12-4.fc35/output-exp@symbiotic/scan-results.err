@@ -1,0 +1,159 @@
+Error: COMPILER_WARNING (CWE-252):
+libevent-2.1.12-stable/test/regress_http.c:125:2: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#        SSL_use_certificate(ssl, ssl_getcert(ssl_getkey()));
+#        ^~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  123|   	SSL *ssl = SSL_new(get_ssl_ctx());
+#  124|   
+#  125|-> 	SSL_use_certificate(ssl, ssl_getcert(ssl_getkey()));
+#  126|   	SSL_use_PrivateKey(ssl, ssl_getkey());
+#  127|   
+
+Error: COMPILER_WARNING (CWE-252):
+libevent-2.1.12-stable/test/regress_http.c:126:2: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#        SSL_use_PrivateKey(ssl, ssl_getkey());
+#        ^~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~
+#  124|   
+#  125|   	SSL_use_certificate(ssl, ssl_getcert(ssl_getkey()));
+#  126|-> 	SSL_use_PrivateKey(ssl, ssl_getkey());
+#  127|   
+#  128|   	return bufferevent_openssl_socket_new(
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/regress_http.c:1468:3: warning[-Wvoid-pointer-to-enum-cast]: cast to smaller integer type 'enum http_cancel_test_type' from 'void *'
+#                (enum http_cancel_test_type)data->setup_data;
+#                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1466|   
+# 1467|   	enum http_cancel_test_type type =
+# 1468|-> 		(enum http_cancel_test_type)data->setup_data;
+# 1469|   	struct evhttp *http = http_setup(&port, data->base, 0);
+# 1470|   
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/regress_ssl.c:326:9: warning[-Wvoid-pointer-to-enum-cast]: cast to smaller integer type 'enum regress_openssl_type' from 'void *'
+#        type = (enum regress_openssl_type)ctx;
+#               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  324|   
+#  325|   	enum regress_openssl_type type;
+#  326|-> 	type = (enum regress_openssl_type)ctx;
+#  327|   
+#  328|   	line = evbuffer_readln(b, NULL, EVBUFFER_EOL_LF);
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/regress_ssl.c:369:9: warning[-Wvoid-pointer-to-enum-cast]: cast to smaller integer type 'enum regress_openssl_type' from 'void *'
+#        type = (enum regress_openssl_type)ctx;
+#               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  367|   	enum regress_openssl_type type;
+#  368|   
+#  369|-> 	type = (enum regress_openssl_type)ctx;
+#  370|   
+#  371|   	TT_BLATHER(("Got event %d", (int)what));
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/regress_ssl.c:469:9: warning[-Wvoid-pointer-to-enum-cast]: cast to smaller integer type 'enum regress_openssl_type' from 'void *'
+#        type = (enum regress_openssl_type)data->setup_data;
+#               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  467|   
+#  468|   	enum regress_openssl_type type;
+#  469|-> 	type = (enum regress_openssl_type)data->setup_data;
+#  470|   
+#  471|   	if (type & REGRESS_OPENSSL_RENEGOTIATE) {
+
+Error: COMPILER_WARNING (CWE-252):
+libevent-2.1.12-stable/test/regress_ssl.c:484:2: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#        SSL_use_certificate(ssl2, the_cert);
+#        ^~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~
+#  482|   	ssl2 = SSL_new(get_ssl_ctx());
+#  483|   
+#  484|-> 	SSL_use_certificate(ssl2, the_cert);
+#  485|   	SSL_use_PrivateKey(ssl2, the_key);
+#  486|   
+
+Error: COMPILER_WARNING (CWE-252):
+libevent-2.1.12-stable/test/regress_ssl.c:485:2: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#        SSL_use_PrivateKey(ssl2, the_key);
+#        ^~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~
+#  483|   
+#  484|   	SSL_use_certificate(ssl2, the_cert);
+#  485|-> 	SSL_use_PrivateKey(ssl2, the_key);
+#  486|   
+#  487|   	if (!(type & REGRESS_OPENSSL_OPEN))
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/regress_ssl.c:586:9: warning[-Wvoid-pointer-to-enum-cast]: cast to smaller integer type 'enum regress_openssl_type' from 'void *'
+#        type = (enum regress_openssl_type)data->setup_data;
+#               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  584|   	SSL *ssl = SSL_new(get_ssl_ctx());
+#  585|   
+#  586|-> 	type = (enum regress_openssl_type)data->setup_data;
+#  587|   
+#  588|   	SSL_use_certificate(ssl, the_cert);
+
+Error: COMPILER_WARNING (CWE-252):
+libevent-2.1.12-stable/test/regress_ssl.c:588:2: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#        SSL_use_certificate(ssl, the_cert);
+#        ^~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~
+#  586|   	type = (enum regress_openssl_type)data->setup_data;
+#  587|   
+#  588|-> 	SSL_use_certificate(ssl, the_cert);
+#  589|   	SSL_use_PrivateKey(ssl, the_key);
+#  590|   
+
+Error: COMPILER_WARNING (CWE-252):
+libevent-2.1.12-stable/test/regress_ssl.c:589:2: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#        SSL_use_PrivateKey(ssl, the_key);
+#        ^~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~
+#  587|   
+#  588|   	SSL_use_certificate(ssl, the_cert);
+#  589|-> 	SSL_use_PrivateKey(ssl, the_key);
+#  590|   
+#  591|   	bev = bufferevent_openssl_socket_new(
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/regress_ssl.c:742:9: warning[-Wvoid-pointer-to-enum-cast]: cast to smaller integer type 'enum regress_openssl_type' from 'void *'
+#        type = (enum regress_openssl_type)data->setup_data;
+#               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  740|   	enum regress_openssl_type type;
+#  741|   
+#  742|-> 	type = (enum regress_openssl_type)data->setup_data;
+#  743|   
+#  744|   	memset(&sin, 0, sizeof(sin));
+
+Error: COMPILER_WARNING (CWE-252):
+libevent-2.1.12-stable/test/regress_ssl.c:864:2: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#        SSL_use_certificate(ssl, the_cert);
+#        ^~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~
+#  862|   	SSL *ssl = SSL_new(get_ssl_ctx());
+#  863|   
+#  864|-> 	SSL_use_certificate(ssl, the_cert);
+#  865|   	SSL_use_PrivateKey(ssl, the_key);
+#  866|   
+
+Error: COMPILER_WARNING (CWE-252):
+libevent-2.1.12-stable/test/regress_ssl.c:865:2: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#        SSL_use_PrivateKey(ssl, the_key);
+#        ^~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~
+#  863|   
+#  864|   	SSL_use_certificate(ssl, the_cert);
+#  865|-> 	SSL_use_PrivateKey(ssl, the_key);
+#  866|   
+#  867|   	bev = bufferevent_openssl_socket_new(
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/regress_ssl.c:892:3: warning[-Wvoid-pointer-to-enum-cast]: cast to smaller integer type 'enum regress_openssl_type' from 'void *'
+#                (enum regress_openssl_type)data->setup_data;
+#                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  890|   	struct sockaddr_storage ss;
+#  891|   	enum regress_openssl_type type =
+#  892|-> 		(enum regress_openssl_type)data->setup_data;
+#  893|   	int bev_flags = BEV_OPT_CLOSE_ON_FREE;
+#  894|   	ev_socklen_t slen;
+
+Error: COMPILER_WARNING (CWE-563):
+libevent-2.1.12-stable/test/regress_util.c:934:15: warning[-Wunused-but-set-variable]: variable 'n' set but not used
+#        int i, j, k, n=0;
+#                     ^
+#  932|   	char buf2[32];
+#  933|   	int counts[256];
+#  934|-> 	int i, j, k, n=0;
+#  935|   	struct evutil_weakrand_state seed = { 12346789U };
+#  936|   

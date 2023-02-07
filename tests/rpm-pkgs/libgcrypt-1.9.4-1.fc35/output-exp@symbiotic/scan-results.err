@@ -1,0 +1,22 @@
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/tests/fipsdrv.c:860:8: warning[-Wunsequenced]: unsequenced modification and access to 'p'
+#     *p++ = tolower(*p);
+#       ^             ~
+#  858|     p = buf;
+#  859|     while (*p)
+#  860|->      *p++ = tolower(*p);
+#  861|     p = buf;
+#  862|     if (no_lz && p[0] == '0' && p[1] == '0' && p[2])
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/tests/fipsdrv.c:2004:42: warning[-Wstring-plus-int]: adding 'int' to a string does not append to the string
+#      l2 = gcry_sexp_find_token (l1, "xy"+idx, 1);
+#                                     ~~~~^~~~
+libgcrypt-1.9.4/tests/fipsdrv.c:2004:42: note: use array indexing to silence this warning
+#      l2 = gcry_sexp_find_token (l1, "xy"+idx, 1);
+#                                         ^
+# 2002|     for (idx=0; "xy"[idx]; idx++) 
+# 2003|       {
+# 2004|->       l2 = gcry_sexp_find_token (l1, "xy"+idx, 1);
+# 2005|         if (!l2)
+# 2006|           die ("no %c parameter in returned public key\n", "xy"[idx]);

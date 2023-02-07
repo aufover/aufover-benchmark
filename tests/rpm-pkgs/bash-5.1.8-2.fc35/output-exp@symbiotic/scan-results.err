@@ -1,0 +1,1805 @@
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/bashhist.c:726:15: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  while (temp = previous_history ())
+#         ~~~~~^~~~~~~~~~~~~~~~~~~~~
+bash-5.1/bashhist.c:726:15: note: place parentheses around the assignment to silence this warning
+#  while (temp = previous_history ())
+#              ^
+bash-5.1/bashhist.c:726:15: note: use '==' to turn this assignment into an equality comparison
+#  while (temp = previous_history ())
+#              ^
+#  724|   
+#  725|     using_history ();
+#  726|->   while (temp = previous_history ())
+#  727|       {
+#  728|         if (STREQ (temp->line, line))
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/bashline.c:796:15: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  while (temp = fgets (buffer, 255, file))
+#         ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/bashline.c:796:15: note: place parentheses around the assignment to silence this warning
+#  while (temp = fgets (buffer, 255, file))
+#              ^
+bash-5.1/bashline.c:796:15: note: use '==' to turn this assignment into an equality comparison
+#  while (temp = fgets (buffer, 255, file))
+#              ^
+#  794|       return;
+#  795|   
+#  796|->   while (temp = fgets (buffer, 255, file))
+#  797|       {
+#  798|         /* Skip to first character. */
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/bashline.c:1637:29: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#      while (was_assignment = assignment (n, 0));
+#             ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~
+bash-5.1/bashline.c:1637:29: note: place parentheses around the assignment to silence this warning
+#      while (was_assignment = assignment (n, 0));
+#                            ^
+bash-5.1/bashline.c:1637:29: note: use '==' to turn this assignment into an equality comparison
+#      while (was_assignment = assignment (n, 0));
+#                            ^
+# 1635|   	  s = e1 + 1;
+# 1636|   	}
+# 1637|->       while (was_assignment = assignment (n, 0));
+# 1638|         s = s1;		/* reset to index where name begins */
+# 1639|   
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/bashline.c:2131:18: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#      while (val = glob_matches[local_index++])
+#             ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/bashline.c:2131:18: note: place parentheses around the assignment to silence this warning
+#      while (val = glob_matches[local_index++])
+#                 ^
+bash-5.1/bashline.c:2131:18: note: use '==' to turn this assignment into an equality comparison
+#      while (val = glob_matches[local_index++])
+#                 ^
+# 2129|   	}
+# 2130|   
+# 2131|->       while (val = glob_matches[local_index++])
+# 2132|           {
+# 2133|   	  if (executable_or_directory (val))
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/bashline.c:2525:17: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  while (srvent = getservent ())
+#         ~~~~~~~^~~~~~~~~~~~~~~
+bash-5.1/bashline.c:2525:17: note: place parentheses around the assignment to silence this warning
+#  while (srvent = getservent ())
+#                ^
+bash-5.1/bashline.c:2525:17: note: use '==' to turn this assignment into an equality comparison
+#  while (srvent = getservent ())
+#                ^
+# 2523|       }
+# 2524|   
+# 2525|->   while (srvent = getservent ())
+# 2526|       {
+# 2527|         afound = 0;
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/bashline.c:2581:16: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  while (grent = getgrent ())
+#         ~~~~~~^~~~~~~~~~~~~
+bash-5.1/bashline.c:2581:16: note: place parentheses around the assignment to silence this warning
+#  while (grent = getgrent ())
+#               ^
+bash-5.1/bashline.c:2581:16: note: use '==' to turn this assignment into an equality comparison
+#  while (grent = getgrent ())
+#               ^
+# 2579|       }
+# 2580|   
+# 2581|->   while (grent = getgrent ())
+# 2582|       {
+# 2583|         if (gnamelen == 0 || (STREQN (gname, grent->gr_name, gnamelen)))
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/bashline.c:3295:9: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  if (t = mbschr (local_dirname, '$'))
+#      ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/bashline.c:3295:9: note: place parentheses around the assignment to silence this warning
+#  if (t = mbschr (local_dirname, '$'))
+#        ^
+bash-5.1/bashline.c:3295:9: note: use '==' to turn this assignment into an equality comparison
+#  if (t = mbschr (local_dirname, '$'))
+#        ^
+# 3293|     local_dirname = *dirname;
+# 3294|     should_expand_dirname = return_value = 0;
+# 3295|->   if (t = mbschr (local_dirname, '$'))
+# 3296|       should_expand_dirname = '$';
+# 3297|     else if (t = mbschr (local_dirname, '`'))	/* XXX */
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/bashline.c:3297:14: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  else if (t = mbschr (local_dirname, '`'))     /* XXX */
+#           ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/bashline.c:3297:14: note: place parentheses around the assignment to silence this warning
+#  else if (t = mbschr (local_dirname, '`'))     /* XXX */
+#             ^
+bash-5.1/bashline.c:3297:14: note: use '==' to turn this assignment into an equality comparison
+#  else if (t = mbschr (local_dirname, '`'))     /* XXX */
+#             ^
+# 3295|     if (t = mbschr (local_dirname, '$'))
+# 3296|       should_expand_dirname = '$';
+# 3297|->   else if (t = mbschr (local_dirname, '`'))	/* XXX */
+# 3298|       should_expand_dirname = '`';
+# 3299|   
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/bashline.c:3375:9: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  if (t = mbschr (local_dirname, '$'))
+#      ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/bashline.c:3375:9: note: place parentheses around the assignment to silence this warning
+#  if (t = mbschr (local_dirname, '$'))
+#        ^
+bash-5.1/bashline.c:3375:9: note: use '==' to turn this assignment into an equality comparison
+#  if (t = mbschr (local_dirname, '$'))
+#        ^
+# 3373|     local_dirname = *dirname;
+# 3374|   
+# 3375|->   if (t = mbschr (local_dirname, '$'))
+# 3376|       {
+# 3377|         should_expand_dirname = '$';
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/bashline.c:3433:26: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#              for (i = j = 0; c = default_filename_quote_characters[i]; i++)
+#                              ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/bashline.c:3433:26: note: place parentheses around the assignment to silence this warning
+#              for (i = j = 0; c = default_filename_quote_characters[i]; i++)
+#                                ^
+bash-5.1/bashline.c:3433:26: note: use '==' to turn this assignment into an equality comparison
+#              for (i = j = 0; c = default_filename_quote_characters[i]; i++)
+#                                ^
+# 3431|   	      i = strlen (default_filename_quote_characters);
+# 3432|   	      custom_filename_quote_characters = xrealloc (custom_filename_quote_characters, i+1);
+# 3433|-> 	      for (i = j = 0; c = default_filename_quote_characters[i]; i++)
+# 3434|   		{
+# 3435|   		  if (c == should_expand_dirname || c == nextch || c == closer)
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/bashline.c:4470:21: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  for (passc = 0; c = string[i]; i++)
+#                  ~~^~~~~~~~~~~
+# 4468|       *startp = delim ? ++i : i;
+# 4469|   
+# 4470|->   for (passc = 0; c = string[i]; i++)
+# 4471|       {
+# 4472|         if (passc)
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/braces.c:435:10: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#          if (t = (char *)malloc (2))
+#              ~~^~~~~~~~~~~~~~~~~~~~
+bash-5.1/braces.c:435:10: note: place parentheses around the assignment to silence this warning
+#          if (t = (char *)malloc (2))
+#                ^
+bash-5.1/braces.c:435:10: note: use '==' to turn this assignment into an equality comparison
+#          if (t = (char *)malloc (2))
+#                ^
+#  433|         else
+#  434|   	{
+#  435|-> 	  if (t = (char *)malloc (2))
+#  436|   	    {
+#  437|   	      t[0] = n;
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/braces.c:615:12: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  while (c = text[i])
+#         ~~^~~~~~~~~
+bash-5.1/braces.c:615:12: note: place parentheses around the assignment to silence this warning
+#  while (c = text[i])
+#           ^
+bash-5.1/braces.c:615:12: note: use '==' to turn this assignment into an equality comparison
+#  while (c = text[i])
+#           ^
+#  613|   
+#  614|     i = *indx;
+#  615|->   while (c = text[i])
+#  616|       {
+#  617|         if (pass_next)
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/builtins/cd.def:370:19: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#      while (path = extract_colon_unit (cdpath, &path_index))
+#             ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/builtins/cd.def:370:19: note: place parentheses around the assignment to silence this warning
+#      while (path = extract_colon_unit (cdpath, &path_index))
+#                  ^
+bash-5.1/builtins/cd.def:370:19: note: use '==' to turn this assignment into an equality comparison
+#      while (path = extract_colon_unit (cdpath, &path_index))
+#                  ^
+#  368|         /* Find directory in $CDPATH. */
+#  369|         path_index = 0;
+#  370|->       while (path = extract_colon_unit (cdpath, &path_index))
+#  371|   	{
+#  372|   	  /* OPT is 1 if the path element is non-empty */
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/builtins/echo.def:141:16: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#      while (i = *temp++)
+#             ~~^~~~~~~~~
+bash-5.1/builtins/echo.def:141:16: note: place parentheses around the assignment to silence this warning
+#      while (i = *temp++)
+#               ^
+bash-5.1/builtins/echo.def:141:16: note: use '==' to turn this assignment into an equality comparison
+#      while (i = *temp++)
+#               ^
+#  139|         /* All of the options in TEMP are valid options to ECHO.
+#  140|   	 Handle them. */
+#  141|->       while (i = *temp++)
+#  142|   	{
+#  143|   	  switch (i)
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/builtins/evalstring.c:402:21: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#          else if (command = global_command)
+#                   ~~~~~~~~^~~~~~~~~~~~~~~~
+bash-5.1/builtins/evalstring.c:402:21: note: place parentheses around the assignment to silence this warning
+#          else if (command = global_command)
+#                           ^
+bash-5.1/builtins/evalstring.c:402:21: note: use '==' to turn this assignment into an equality comparison
+#          else if (command = global_command)
+#                           ^
+#  400|   	      global_command = (COMMAND *)NULL;
+#  401|   	    }
+#  402|-> 	  else if (command = global_command)
+#  403|   	    {
+#  404|   	      struct fd_bitmap *bitmap;
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/builtins/getopt.c:182:17: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  if (sh_badopt = (temp == NULL || c == ':'))
+#      ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/builtins/getopt.c:182:17: note: place parentheses around the assignment to silence this warning
+#  if (sh_badopt = (temp == NULL || c == ':'))
+#                ^
+bash-5.1/builtins/getopt.c:182:17: note: use '==' to turn this assignment into an equality comparison
+#  if (sh_badopt = (temp == NULL || c == ':'))
+#                ^
+#  180|       }
+#  181|   
+#  182|->   if (sh_badopt = (temp == NULL || c == ':'))
+#  183|       {
+#  184|         if (sh_opterr)
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/builtins/help.def:145:21: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#          for (i = 0; name = shell_builtins[i].name; i++)
+#                      ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/builtins/help.def:145:21: note: place parentheses around the assignment to silence this warning
+#          for (i = 0; name = shell_builtins[i].name; i++)
+#                           ^
+bash-5.1/builtins/help.def:145:21: note: use '==' to turn this assignment into an equality comparison
+#          for (i = 0; name = shell_builtins[i].name; i++)
+#                           ^
+#  143|         for (pass = 1, this_found = 0; pass < 3; pass++)
+#  144|   	{
+#  145|-> 	  for (i = 0; name = shell_builtins[i].name; i++)
+#  146|   	    {
+#  147|   	      QUIT;
+
+Error: COMPILER_WARNING:
+bash-5.1/builtins/mkbuiltins.c:580:20: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]mkbuiltins.c
+#  for (i = 0; line = defs->lines->array[i]; i++)
+#              ~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/builtins/mkbuiltins.c:580:20: note: place parentheses around the assignment to silence this warning
+#  for (i = 0; line = defs->lines->array[i]; i++)
+#                   ^
+bash-5.1/builtins/mkbuiltins.c:580:20: note: use '==' to turn this assignment into an equality comparison
+#  for (i = 0; line = defs->lines->array[i]; i++)
+#                   ^
+bash-5.1/builtins/mkbuiltins.c:580:20: note: place parentheses around the assignment to silence this warning
+#  for (i = 0; line = defs->lines->array[i]; i++)
+#                   ^
+bash-5.1/builtins/mkbuiltins.c:580:20: note: use '==' to turn this assignment into an equality comparison
+#  for (i = 0; line = defs->lines->array[i]; i++)
+#                   ^
+#  578|   
+#  579|     /* Process each line in the array. */
+#  580|->   for (i = 0; line = defs->lines->array[i]; i++)
+#  581|       {
+#  582|         defs->line_number = i;
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/builtins/mkbuiltins.c:696:27: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#      for (i = 0; builtin = (BUILTIN_DESC *)defs->builtins->array[i]; i++)
+#                  ~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/builtins/mkbuiltins.c:696:27: note: use '==' to turn this assignment into an equality comparison
+#      for (i = 0; builtin = (BUILTIN_DESC *)defs->builtins->array[i]; i++)
+#                          ^
+bash-5.1/builtins/mkbuiltins.c:696:27: note: place parentheses around the assignment to silence this warning
+#      for (i = 0; builtin = (BUILTIN_DESC *)defs->builtins->array[i]; i++)
+#                          ^
+bash-5.1/builtins/mkbuiltins.c:696:27: note: use '==' to turn this assignment into an equality comparison
+#      for (i = 0; builtin = (BUILTIN_DESC *)defs->builtins->array[i]; i++)
+#                          ^
+#  694|     if (defs->builtins)
+#  695|       {
+#  696|->       for (i = 0; builtin = (BUILTIN_DESC *)defs->builtins->array[i]; i++)
+#  697|   	{
+#  698|   	  free_builtin (builtin);
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/builtins/set.def:617:16: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  while (vname = extract_colon_unit (value, &vptr))
+#         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/builtins/set.def:617:16: note: place parentheses around the assignment to silence this warning
+#  while (vname = extract_colon_unit (value, &vptr))
+#               ^
+bash-5.1/builtins/set.def:617:16: note: use '==' to turn this assignment into an equality comparison
+#  while (vname = extract_colon_unit (value, &vptr))
+#               ^
+#  615|   
+#  616|     vptr = 0;
+#  617|->   while (vname = extract_colon_unit (value, &vptr))
+#  618|       {
+#  619|         set_minus_o_option (FLAG_ON, vname);
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/builtins/set.def:742:21: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#          while (flag_name = *++arg)
+#                 ~~~~~~~~~~^~~~~~~~
+bash-5.1/builtins/set.def:742:21: note: place parentheses around the assignment to silence this warning
+#          while (flag_name = *++arg)
+#                           ^
+bash-5.1/builtins/set.def:742:21: note: use '==' to turn this assignment into an equality comparison
+#          while (flag_name = *++arg)
+#                           ^
+#  740|         if ((on_or_off = *arg) && (on_or_off == '-' || on_or_off == '+'))
+#  741|   	{
+#  742|-> 	  while (flag_name = *++arg)
+#  743|   	    {
+#  744|   	      if (flag_name == '?')
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/builtins/set.def:946:12: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#          if (var = find_function (name))
+#              ~~~~^~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/builtins/set.def:946:12: note: place parentheses around the assignment to silence this warning
+#          if (var = find_function (name))
+#                  ^
+bash-5.1/builtins/set.def:946:12: note: use '==' to turn this assignment into an equality comparison
+#          if (var = find_function (name))
+#                  ^
+#  944|         if (var == 0 && nameref == 0 &&  unset_variable == 0 && unset_function == 0)
+#  945|   	{
+#  946|-> 	  if (var = find_function (name))
+#  947|   	    unset_function = 1;
+#  948|   	}
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/builtins/set.def:985:13: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#                  if (var = array_variable_part (tname, 0, &t, (int *)0))
+#                      ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/builtins/set.def:985:13: note: place parentheses around the assignment to silence this warning
+#                  if (var = array_variable_part (tname, 0, &t, (int *)0))
+#                          ^
+bash-5.1/builtins/set.def:985:13: note: use '==' to turn this assignment into an equality comparison
+#                  if (var = array_variable_part (tname, 0, &t, (int *)0))
+#                          ^
+#  983|   		{
+#  984|   		  tname = savestring (nameref_cell (var));
+#  985|-> 		  if (var = array_variable_part (tname, 0, &t, (int *)0))
+#  986|   		    tem = unbind_array_element (var, t, vflags);	/* XXX new third arg */
+#  987|   		  free (tname);
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/builtins/setattr.def:320:20: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#          for (i = 0; var = variable_list[i]; i++)
+#                      ~~~~^~~~~~~~~~~~~~~~~~
+bash-5.1/builtins/setattr.def:320:20: note: place parentheses around the assignment to silence this warning
+#          for (i = 0; var = variable_list[i]; i++)
+#                          ^
+bash-5.1/builtins/setattr.def:320:20: note: use '==' to turn this assignment into an equality comparison
+#          for (i = 0; var = variable_list[i]; i++)
+#                          ^
+#  318|         if (variable_list)
+#  319|   	{
+#  320|-> 	  for (i = 0; var = variable_list[i]; i++)
+#  321|   	    {
+#  322|   #if defined (ARRAY_VARS)
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/builtins/setattr.def:337:20: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#                  if (any_failed = sh_chkwrite (any_failed))
+#                      ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/builtins/setattr.def:337:20: note: place parentheses around the assignment to silence this warning
+#                  if (any_failed = sh_chkwrite (any_failed))
+#                                 ^
+bash-5.1/builtins/setattr.def:337:20: note: use '==' to turn this assignment into an equality comparison
+#                  if (any_failed = sh_chkwrite (any_failed))
+#                                 ^
+#  335|   		{
+#  336|   		  show_var_attributes (var, READONLY_OR_EXPORT, nodefs);
+#  337|-> 		  if (any_failed = sh_chkwrite (any_failed))
+#  338|   		    break;
+#  339|   		}
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/builtins/setattr.def:364:32: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  for (i = any_failed = 0; var = variable_list[i]; i++)
+#                           ~~~~^~~~~~~~~~~~~~~~~~
+bash-5.1/builtins/setattr.def:364:32: note: place parentheses around the assignment to silence this warning
+#  for (i = any_failed = 0; var = variable_list[i]; i++)
+#                               ^
+bash-5.1/builtins/setattr.def:364:32: note: use '==' to turn this assignment into an equality comparison
+#  for (i = any_failed = 0; var = variable_list[i]; i++)
+#                               ^
+#  362|       return (EXECUTION_SUCCESS);
+#  363|   
+#  364|->   for (i = any_failed = 0; var = variable_list[i]; i++)
+#  365|       {
+#  366|         show_var_attributes (var, READONLY_OR_EXPORT, nodefs);
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/builtins/setattr.def:367:22: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#      if (any_failed = sh_chkwrite (any_failed))
+#          ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/builtins/setattr.def:367:22: note: place parentheses around the assignment to silence this warning
+#      if (any_failed = sh_chkwrite (any_failed))
+#                     ^
+bash-5.1/builtins/setattr.def:367:22: note: use '==' to turn this assignment into an equality comparison
+#      if (any_failed = sh_chkwrite (any_failed))
+#                     ^
+#  365|       {
+#  366|         show_var_attributes (var, READONLY_OR_EXPORT, nodefs);
+#  367|->       if (any_failed = sh_chkwrite (any_failed))
+#  368|           break;
+#  369|       }
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/builtins/setattr.def:388:32: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  for (i = any_failed = 0; var = variable_list[i]; i++)
+#                           ~~~~^~~~~~~~~~~~~~~~~~
+bash-5.1/builtins/setattr.def:388:32: note: place parentheses around the assignment to silence this warning
+#  for (i = any_failed = 0; var = variable_list[i]; i++)
+#                               ^
+bash-5.1/builtins/setattr.def:388:32: note: use '==' to turn this assignment into an equality comparison
+#  for (i = any_failed = 0; var = variable_list[i]; i++)
+#                               ^
+#  386|       return (EXECUTION_SUCCESS);
+#  387|   
+#  388|->   for (i = any_failed = 0; var = variable_list[i]; i++)
+#  389|       {
+#  390|         show_var_attributes (var, READONLY_OR_EXPORT, nodefs);
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/builtins/setattr.def:391:22: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#      if (any_failed = sh_chkwrite (any_failed))
+#          ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/builtins/setattr.def:391:22: note: place parentheses around the assignment to silence this warning
+#      if (any_failed = sh_chkwrite (any_failed))
+#                     ^
+bash-5.1/builtins/setattr.def:391:22: note: use '==' to turn this assignment into an equality comparison
+#      if (any_failed = sh_chkwrite (any_failed))
+#                     ^
+#  389|       {
+#  390|         show_var_attributes (var, READONLY_OR_EXPORT, nodefs);
+#  391|->       if (any_failed = sh_chkwrite (any_failed))
+#  392|           break;
+#  393|       }
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/builtins/shopt.def:458:9: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  if (v = find_variable ("BASHOPTS"))
+#      ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/builtins/shopt.def:458:9: note: place parentheses around the assignment to silence this warning
+#  if (v = find_variable ("BASHOPTS"))
+#        ^
+bash-5.1/builtins/shopt.def:458:9: note: use '==' to turn this assignment into an equality comparison
+#  if (v = find_variable ("BASHOPTS"))
+#        ^
+#  456|   
+#  457|     /* Don't set $BASHOPTS here if it hasn't already been initialized */
+#  458|->   if (v = find_variable ("BASHOPTS"))
+#  459|       set_bashopts ();
+#  460|     return (rval);
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/builtins/shopt.def:862:16: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  while (vname = extract_colon_unit (value, &vptr))
+#         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/builtins/shopt.def:862:16: note: place parentheses around the assignment to silence this warning
+#  while (vname = extract_colon_unit (value, &vptr))
+#               ^
+bash-5.1/builtins/shopt.def:862:16: note: use '==' to turn this assignment into an equality comparison
+#  while (vname = extract_colon_unit (value, &vptr))
+#               ^
+#  860|   
+#  861|     vptr = 0;
+#  862|->   while (vname = extract_colon_unit (value, &vptr))
+#  863|       {
+#  864|         ind = find_shopt (vname);
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/builtins/type.def:338:21: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#      if (full_path = phash_search (command))
+#          ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/builtins/type.def:338:21: note: place parentheses around the assignment to silence this warning
+#      if (full_path = phash_search (command))
+#                    ^
+bash-5.1/builtins/type.def:338:21: note: use '==' to turn this assignment into an equality comparison
+#      if (full_path = phash_search (command))
+#                    ^
+#  336|     if (all == 0 || (dflags & CDESC_FORCE_PATH))
+#  337|       {
+#  338|->       if (full_path = phash_search (command))
+#  339|   	{
+#  340|   	  if (dflags & CDESC_TYPE)
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/eval.c:147:29: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#          else if (current_command = global_command)
+#                   ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+bash-5.1/eval.c:147:29: note: place parentheses around the assignment to silence this warning
+#          else if (current_command = global_command)
+#                                   ^
+bash-5.1/eval.c:147:29: note: use '==' to turn this assignment into an equality comparison
+#          else if (current_command = global_command)
+#                                   ^
+#  145|   	      global_command = (COMMAND *)NULL;
+#  146|   	    }
+#  147|-> 	  else if (current_command = global_command)
+#  148|   	    {
+#  149|   	      global_command = (COMMAND *)NULL;
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/findcmd.c:269:11: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  if (var = find_variable_tempenv ("PATH"))     /* XXX could be array? */
+#      ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/findcmd.c:269:11: note: place parentheses around the assignment to silence this warning
+#  if (var = find_variable_tempenv ("PATH"))     /* XXX could be array? */
+#          ^
+bash-5.1/findcmd.c:269:11: note: use '==' to turn this assignment into an equality comparison
+#  if (var = find_variable_tempenv ("PATH"))     /* XXX could be array? */
+#          ^
+#  267|     /* Search for the value of PATH in both the temporary environments and
+#  268|        in the regular list of variables. */
+#  269|->   if (var = find_variable_tempenv ("PATH"))	/* XXX could be array? */
+#  270|       path_list = value_cell (var);
+#  271|     else
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/general.c:457:12: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  while (c = string[indx])
+#         ~~^~~~~~~~~~~~~~
+bash-5.1/general.c:457:12: note: place parentheses around the assignment to silence this warning
+#  while (c = string[indx])
+#           ^
+bash-5.1/general.c:457:12: note: use '==' to turn this assignment into an equality comparison
+#  while (c = string[indx])
+#           ^
+#  455|       return (0);
+#  456|   
+#  457|->   while (c = string[indx])
+#  458|       {
+#  459|         /* The following is safe.  Note that '=' at the start of a word
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/jobs.c:1464:12: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  if (temp = jobs[job_index])
+#      ~~~~~^~~~~~~~~~~~~~~~~
+bash-5.1/jobs.c:1464:12: note: place parentheses around the assignment to silence this warning
+#  if (temp = jobs[job_index])
+#           ^
+bash-5.1/jobs.c:1464:12: note: use '==' to turn this assignment into an equality comparison
+#  if (temp = jobs[job_index])
+#           ^
+# 1462|       return;
+# 1463|   
+# 1464|->   if (temp = jobs[job_index])
+# 1465|       temp->flags |= J_NOHUP;
+# 1466|   }
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/lib/glob/glob.c:230:12: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  while (t = glob_patscan (pp, pe, '|'))
+#         ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/lib/glob/glob.c:230:12: note: place parentheses around the assignment to silence this warning
+#  while (t = glob_patscan (pp, pe, '|'))
+#           ^
+bash-5.1/lib/glob/glob.c:230:12: note: use '==' to turn this assignment into an equality comparison
+#  while (t = glob_patscan (pp, pe, '|'))
+#           ^
+#  228|   
+#  229|     /* check every subpattern */
+#  230|->   while (t = glob_patscan (pp, pe, '|'))
+#  231|       {
+#  232|         n = t[-1];	/* ( */
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/lib/glob/glob.c:348:12: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  while (t = glob_patscan_wc (pp, pe, '|'))
+#         ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/lib/glob/glob.c:348:12: note: place parentheses around the assignment to silence this warning
+#  while (t = glob_patscan_wc (pp, pe, '|'))
+#           ^
+bash-5.1/lib/glob/glob.c:348:12: note: use '==' to turn this assignment into an equality comparison
+#  while (t = glob_patscan_wc (pp, pe, '|'))
+#           ^
+#  346|   
+#  347|     /* check every subpattern */
+#  348|->   while (t = glob_patscan_wc (pp, pe, '|'))
+#  349|       {
+#  350|         n = t[-1];	/* ( */
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/lib/glob/gmisc.c:57: included_from: Included from here.
+bash-5.1/lib/glob/gm_loop.c:85:12: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  while (c = *pat++)
+#         ~~^~~~~~~~
+bash-5.1/lib/glob/gm_loop.c:85:12: note: place parentheses around the assignment to silence this warning
+#  while (c = *pat++)
+#           ^
+bash-5.1/lib/glob/gm_loop.c:85:12: note: use '==' to turn this assignment into an equality comparison
+#  while (c = *pat++)
+#           ^
+#   83|   
+#   84|     matlen = in_cclass = in_collsym = in_equiv = 0;
+#   85|->   while (c = *pat++)
+#   86|       {
+#   87|         switch (c)
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/lib/glob/smatch.c:330: included_from: Included from here.
+bash-5.1/lib/glob/sm_loop.c:404:11: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  if (not = (*p == L('!') || *p == L('^')))
+#      ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/lib/glob/sm_loop.c:404:11: note: place parentheses around the assignment to silence this warning
+#  if (not = (*p == L('!') || *p == L('^')))
+#          ^
+bash-5.1/lib/glob/sm_loop.c:404:11: note: use '==' to turn this assignment into an equality comparison
+#  if (not = (*p == L('!') || *p == L('^')))
+#          ^
+#  402|        expression starting with an unquoted circumflex character produces
+#  403|        unspecified results.  This implementation treats the two identically. */
+#  404|->   if (not = (*p == L('!') || *p == L('^')))
+#  405|       ++p;
+#  406|   
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/lib/glob/sm_loop.c:683:22: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  for (s = string; c = *s; s++)
+#                   ~~^~~~
+bash-5.1/lib/glob/sm_loop.c:683:22: note: place parentheses around the assignment to silence this warning
+#  for (s = string; c = *s; s++)
+#                     ^
+bash-5.1/lib/glob/sm_loop.c:683:22: note: use '==' to turn this assignment into an equality comparison
+#  for (s = string; c = *s; s++)
+#                     ^
+#  681|       return (NULL);
+#  682|   
+#  683|->   for (s = string; c = *s; s++)
+#  684|       {
+#  685|         if (s >= end)
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/lib/glob/sm_loop.c:894:15: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#              if (m1 = (GMATCH (s, srest, psub, pnext - 1, NULL, flags) == 0))
+#                  ~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/lib/glob/sm_loop.c:894:15: note: place parentheses around the assignment to silence this warning
+#              if (m1 = (GMATCH (s, srest, psub, pnext - 1, NULL, flags) == 0))
+#                     ^
+bash-5.1/lib/glob/sm_loop.c:894:15: note: use '==' to turn this assignment into an equality comparison
+#              if (m1 = (GMATCH (s, srest, psub, pnext - 1, NULL, flags) == 0))
+#                     ^
+#  892|   	      pnext = PATSCAN (psub, pe, L('|'));
+#  893|   	      /* If one of the patterns matches, just bail immediately. */
+#  894|-> 	      if (m1 = (GMATCH (s, srest, psub, pnext - 1, NULL, flags) == 0))
+#  895|   		break;
+#  896|   	      if (pnext == prest)
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/lib/glob/smatch.c:525:12: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  while (p = strchr (p, '['))
+#         ~~^~~~~~~~~~~~~~~~~
+bash-5.1/lib/glob/smatch.c:525:12: note: place parentheses around the assignment to silence this warning
+#  while (p = strchr (p, '['))
+#           ^
+bash-5.1/lib/glob/smatch.c:525:12: note: use '==' to turn this assignment into an equality comparison
+#  while (p = strchr (p, '['))
+#           ^
+#  523|   
+#  524|     p = pattern;
+#  525|->   while (p = strchr (p, '['))
+#  526|       {
+#  527|         if (p[1] != ':')
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/lib/readline/bind.c:1496:31: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  for (i = start,passc = 0; c = string[i]; i++)
+#                            ~~^~~~~~~~~~~
+bash-5.1/lib/readline/bind.c:1496:31: note: place parentheses around the assignment to silence this warning
+#  for (i = start,passc = 0; c = string[i]; i++)
+#                              ^
+bash-5.1/lib/readline/bind.c:1496:31: note: use '==' to turn this assignment into an equality comparison
+#  for (i = start,passc = 0; c = string[i]; i++)
+#                              ^
+# 1494|     int i, c, passc;
+# 1495|   
+# 1496|->   for (i = start,passc = 0; c = string[i]; i++)
+# 1497|       {
+# 1498|         if (passc)
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/lib/readline/bind.c:2694:20: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  for (i = 0; name = names[i]; i++)
+#              ~~~~~^~~~~~~~~~
+bash-5.1/lib/readline/bind.c:2694:20: note: place parentheses around the assignment to silence this warning
+#  for (i = 0; name = names[i]; i++)
+#                   ^
+bash-5.1/lib/readline/bind.c:2694:20: note: use '==' to turn this assignment into an equality comparison
+#  for (i = 0; name = names[i]; i++)
+#                   ^
+# 2692|     fprintf (rl_outstream, "\n");
+# 2693|   
+# 2694|->   for (i = 0; name = names[i]; i++)
+# 2695|       {
+# 2696|         rl_command_func_t *function;
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/lib/readline/complete.c:1149:23: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#      while (rl_point = MB_PREVCHAR (rl_line_buffer, rl_point, MB_FIND_ANY))
+#             ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/lib/readline/complete.c:1149:23: note: place parentheses around the assignment to silence this warning
+#      while (rl_point = MB_PREVCHAR (rl_line_buffer, rl_point, MB_FIND_ANY))
+#                      ^
+bash-5.1/lib/readline/complete.c:1149:23: note: use '==' to turn this assignment into an equality comparison
+#      while (rl_point = MB_PREVCHAR (rl_line_buffer, rl_point, MB_FIND_ANY))
+#                      ^
+# 1147|            completion, so use the word break characters to find the
+# 1148|            substring on which to complete. */
+# 1149|->       while (rl_point = MB_PREVCHAR (rl_line_buffer, rl_point, MB_FIND_ANY))
+# 1150|   	{
+# 1151|   	  scan = rl_line_buffer[rl_point];
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/lib/readline/complete.c:2217:17: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  while (string = (*entry_function) (text, matches))
+#         ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/lib/readline/complete.c:2217:17: note: place parentheses around the assignment to silence this warning
+#  while (string = (*entry_function) (text, matches))
+#                ^
+bash-5.1/lib/readline/complete.c:2217:17: note: use '==' to turn this assignment into an equality comparison
+#  while (string = (*entry_function) (text, matches))
+#                ^
+# 2215|     match_list[1] = (char *)NULL;
+# 2216|   
+# 2217|->   while (string = (*entry_function) (text, matches))
+# 2218|       {
+# 2219|         if (RL_SIG_RECEIVED ())
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/lib/readline/complete.c:2289:16: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  while (entry = getpwent ())
+#         ~~~~~~^~~~~~~~~~~~~
+bash-5.1/lib/readline/complete.c:2289:16: note: place parentheses around the assignment to silence this warning
+#  while (entry = getpwent ())
+#               ^
+bash-5.1/lib/readline/complete.c:2289:16: note: use '==' to turn this assignment into an equality comparison
+#  while (entry = getpwent ())
+#               ^
+# 2287|   
+# 2288|   #if defined (HAVE_GETPWENT)
+# 2289|->   while (entry = getpwent ())
+# 2290|       {
+# 2291|         /* Null usernames should result in all users as possible completions. */
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/lib/readline/histexpand.c:213:27: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  for (local_index = i; c = string[i]; i++)
+#                        ~~^~~~~~~~~~~
+bash-5.1/lib/readline/histexpand.c:213:27: note: place parentheses around the assignment to silence this warning
+#  for (local_index = i; c = string[i]; i++)
+#                          ^
+bash-5.1/lib/readline/histexpand.c:213:27: note: use '==' to turn this assignment into an equality comparison
+#  for (local_index = i; c = string[i]; i++)
+#                          ^
+#  211|   
+#  212|     /* Only a closing `?' or a newline delimit a substring search string. */
+#  213|->   for (local_index = i; c = string[i]; i++)
+#  214|       {
+#  215|   #if defined (HANDLE_MULTIBYTE)
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/lib/readline/histsearch.c:212:27: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  if (unescaped_backslash = (string[ret] == '\\'))
+#      ~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/lib/readline/histsearch.c:212:27: note: place parentheses around the assignment to silence this warning
+#  if (unescaped_backslash = (string[ret] == '\\'))
+#                          ^
+bash-5.1/lib/readline/histsearch.c:212:27: note: use '==' to turn this assignment into an equality comparison
+#  if (unescaped_backslash = (string[ret] == '\\'))
+#                          ^
+#  210|     /* fnmatch is required to reject a pattern that ends with an unescaped
+#  211|        backslash */
+#  212|->   if (unescaped_backslash = (string[ret] == '\\'))
+#  213|       {
+#  214|         while (ret > 0 && string[--ret] == '\\')
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/lib/readline/input.c:486:13: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#      if (c = _rl_next_macro_key ())
+#          ~~^~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/lib/readline/input.c:486:13: note: place parentheses around the assignment to silence this warning
+#      if (c = _rl_next_macro_key ())
+#            ^
+bash-5.1/lib/readline/input.c:486:13: note: use '==' to turn this assignment into an equality comparison
+#      if (c = _rl_next_macro_key ())
+#            ^
+#  484|       {
+#  485|         /* If input is coming from a macro, then use that. */
+#  486|->       if (c = _rl_next_macro_key ())
+#  487|   	return ((unsigned char)c);
+#  488|   
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/lib/readline/misc.c:450:14: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#      if (ul = (UNDO_LIST *)entry->data)
+#          ~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/lib/readline/misc.c:450:14: note: place parentheses around the assignment to silence this warning
+#      if (ul = (UNDO_LIST *)entry->data)
+#             ^
+bash-5.1/lib/readline/misc.c:450:14: note: use '==' to turn this assignment into an equality comparison
+#      if (ul = (UNDO_LIST *)entry->data)
+#             ^
+#  448|     while (entry)
+#  449|       {
+#  450|->       if (ul = (UNDO_LIST *)entry->data)
+#  451|   	{
+#  452|   	  if (ul == saved_undo_list)
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/lib/readline/misc.c:510:14: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#      if (ul = (UNDO_LIST *)hent->data)
+#          ~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/lib/readline/misc.c:510:14: note: place parentheses around the assignment to silence this warning
+#      if (ul = (UNDO_LIST *)hent->data)
+#             ^
+bash-5.1/lib/readline/misc.c:510:14: note: use '==' to turn this assignment into an equality comparison
+#      if (ul = (UNDO_LIST *)hent->data)
+#             ^
+#  508|       {
+#  509|         hent = hlist[i];
+#  510|->       if (ul = (UNDO_LIST *)hent->data)
+#  511|   	{
+#  512|   	  if (ul == saved_undo_list)
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/lib/readline/tilde.c:195:14: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  if (result = strchr (string, '~'))
+#      ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/lib/readline/tilde.c:195:14: note: place parentheses around the assignment to silence this warning
+#  if (result = strchr (string, '~'))
+#             ^
+bash-5.1/lib/readline/tilde.c:195:14: note: use '==' to turn this assignment into an equality comparison
+#  if (result = strchr (string, '~'))
+#             ^
+#  193|   
+#  194|     result_index = result_size = 0;
+#  195|->   if (result = strchr (string, '~'))
+#  196|       result = (char *)xmalloc (result_size = (strlen (string) + 16));
+#  197|     else
+
+Error: COMPILER_WARNING:
+bash-5.1/lib/sh/getenv.c:55:7: warning[-Wtautological-pointer-compare]: comparison of nonnull parameter 'name' equal to a null pointer is 'false' on first encounter
+#  if (name == 0 || *name == '\0')
+#      ^~~~    ~
+/usr/include/stdlib.h:639:50: note: declared 'nonnull' here
+#extern char *getenv (const char *__name) __THROW __nonnull ((1)) __wur;
+#                                                 ^
+/usr/include/sys/cdefs.h:380:28: note: expanded from macro '__nonnull'
+## define __nonnull(params) __attribute_nonnull__ (params)
+#                           ^
+/usr/include/sys/cdefs.h:374:57: note: expanded from macro '__attribute_nonnull__'
+##  define __attribute_nonnull__(params) __attribute__ ((__nonnull__ params))
+#                                                        ^
+#   53|     SHELL_VAR *var;
+#   54|   
+#   55|->   if (name == 0 || *name == '\0')
+#   56|       return ((char *)NULL);
+#   57|   
+
+Error: COMPILER_WARNING:
+bash-5.1/lib/sh/getenv.c:112:7: warning[-Wtautological-pointer-compare]: comparison of nonnull parameter 'str' equal to a null pointer is 'false' on first encounter
+#  if (str == 0 || *str == '\0')
+#      ^~~    ~
+/usr/include/stdlib.h:652:44: note: declared 'nonnull' here
+#extern int putenv (char *__string) __THROW __nonnull ((1));
+#                                           ^
+/usr/include/sys/cdefs.h:380:28: note: expanded from macro '__nonnull'
+## define __nonnull(params) __attribute_nonnull__ (params)
+#                           ^
+/usr/include/sys/cdefs.h:374:57: note: expanded from macro '__attribute_nonnull__'
+##  define __attribute_nonnull__(params) __attribute__ ((__nonnull__ params))
+#                                                        ^
+#  110|     int offset;
+#  111|   
+#  112|->   if (str == 0 || *str == '\0')
+#  113|       {
+#  114|         errno = EINVAL;
+
+Error: COMPILER_WARNING:
+bash-5.1/lib/sh/getenv.c:214:7: warning[-Wtautological-pointer-compare]: comparison of nonnull parameter 'name' equal to a null pointer is 'false' on first encounter
+#  if (name == 0 || *name == '\0' || strchr (name, '=') != 0)
+#      ^~~~    ~
+/usr/include/stdlib.h:662:50: note: declared 'nonnull' here
+#extern int unsetenv (const char *__name) __THROW __nonnull ((1));
+#                                                 ^
+/usr/include/sys/cdefs.h:380:28: note: expanded from macro '__nonnull'
+## define __nonnull(params) __attribute_nonnull__ (params)
+#                           ^
+/usr/include/sys/cdefs.h:374:57: note: expanded from macro '__attribute_nonnull__'
+##  define __attribute_nonnull__(params) __attribute__ ((__nonnull__ params))
+#                                                        ^
+#  212|        const char *name;
+#  213|   {
+#  214|->   if (name == 0 || *name == '\0' || strchr (name, '=') != 0)
+#  215|       {
+#  216|         errno = EINVAL;
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/lib/sh/makepath.c:123:15: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  while (*r++ = *s++)
+#         ~~~~~^~~~~~
+bash-5.1/lib/sh/makepath.c:123:15: note: place parentheses around the assignment to silence this warning
+#  while (*r++ = *s++)
+#              ^
+bash-5.1/lib/sh/makepath.c:123:15: note: use '==' to turn this assignment into an equality comparison
+#  while (*r++ = *s++)
+#              ^
+#  121|       *r++ = '/';      
+#  122|     s = xdir;
+#  123|->   while (*r++ = *s++)
+#  124|       ;
+#  125|     if (xpath != path && xpath != nullpath)
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/lib/sh/pathcanon.c:117:14: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  if (rooted = ROOTEDPATH(path))
+#      ~~~~~~~^~~~~~~~~~~~~~~~~~
+bash-5.1/lib/sh/pathcanon.c:117:14: note: place parentheses around the assignment to silence this warning
+#  if (rooted = ROOTEDPATH(path))
+#             ^
+bash-5.1/lib/sh/pathcanon.c:117:14: note: use '==' to turn this assignment into an equality comparison
+#  if (rooted = ROOTEDPATH(path))
+#             ^
+#  115|     /* POSIX.2 says to leave a leading `//' alone.  On cygwin, we skip over any
+#  116|        leading `x:' (dos drive name). */
+#  117|->   if (rooted = ROOTEDPATH(path))
+#  118|       {
+#  119|         stub_char = DIRSEP;
+
+Error: COMPILER_WARNING (CWE-704):
+bash-5.1/lib/sh/random.c:93:8: warning[-Wpointer-to-int-cast]: cast to smaller integer type 'unsigned int' from 'void (*)(void)'
+#  iv = (u_bits32_t)seedrand;            /* let the compiler truncate */
+#       ^~~~~~~~~~~~~~~~~~~~
+#   91|   
+#   92|     gettimeofday (&tv, NULL);
+#   93|->   iv = (u_bits32_t)seedrand;		/* let the compiler truncate */
+#   94|     iv = tv.tv_sec ^ tv.tv_usec ^ getpid () ^ getppid () ^ current_user.uid ^ iv;
+#   95|     return (iv);
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/lib/sh/spell.c:98:26: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#      for (p = best; *np = *p++; np++)
+#                     ~~~~^~~~~~
+bash-5.1/lib/sh/spell.c:98:26: note: place parentheses around the assignment to silence this warning
+#      for (p = best; *np = *p++; np++)
+#                         ^
+bash-5.1/lib/sh/spell.c:98:26: note: use '==' to turn this assignment into an equality comparison
+#      for (p = best; *np = *p++; np++)
+#                         ^
+#   96|          *  Add to end of newname
+#   97|          */
+#   98|->       for (p = best; *np = *p++; np++)
+#   99|   	;
+#  100|       }
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/lib/sh/strtrans.c:253:19: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  for (s = str; c = *s; s++)
+#                ~~^~~~
+bash-5.1/lib/sh/strtrans.c:253:19: note: place parentheses around the assignment to silence this warning
+#  for (s = str; c = *s; s++)
+#                  ^
+bash-5.1/lib/sh/strtrans.c:253:19: note: use '==' to turn this assignment into an equality comparison
+#  for (s = str; c = *s; s++)
+#                  ^
+#  251|     *r++ = '\'';
+#  252|   
+#  253|->   for (s = str; c = *s; s++)
+#  254|       {
+#  255|         b = l = 1;		/* 1 == add backslash; 0 == no backslash */
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/lib/sh/strtrans.c:337:25: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  for (wcs = wcstr; wcc = *wcs; wcs++)
+#                    ~~~~^~~~~~
+bash-5.1/lib/sh/strtrans.c:337:25: note: place parentheses around the assignment to silence this warning
+#  for (wcs = wcstr; wcc = *wcs; wcs++)
+#                        ^
+bash-5.1/lib/sh/strtrans.c:337:25: note: use '==' to turn this assignment into an equality comparison
+#  for (wcs = wcstr; wcc = *wcs; wcs++)
+#                        ^
+#  335|     mbstowcs (wcstr, string, slen + 1);
+#  336|   
+#  337|->   for (wcs = wcstr; wcc = *wcs; wcs++)
+#  338|       if (iswprint(wcc) == 0)
+#  339|         {
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/lib/sh/strtrans.c:360:22: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  for (s = string; c = *s; s++)
+#                   ~~^~~~
+bash-5.1/lib/sh/strtrans.c:360:22: note: place parentheses around the assignment to silence this warning
+#  for (s = string; c = *s; s++)
+#                     ^
+bash-5.1/lib/sh/strtrans.c:360:22: note: use '==' to turn this assignment into an equality comparison
+#  for (s = string; c = *s; s++)
+#                     ^
+#  358|       return 0;
+#  359|   
+#  360|->   for (s = string; c = *s; s++)
+#  361|       {
+#  362|   #if defined (HANDLE_MULTIBYTE)
+
+Error: COMPILER_WARNING:
+bash-5.1/lib/sh/tmpfile.c:160: warning: the use of `mktemp' is dangerous, better use `mkstemp' or `mkdtemp'
+#  158|     else
+#  159|       sprintf (filename, "%s/%s.XXXXXX", tdir, lroot);
+#  160|->   if (mktemp (filename) == 0)
+#  161|       {
+#  162|         free (filename);
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/lib/tilde/tilde.c:195:14: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  if (result = strchr (string, '~'))
+#      ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/lib/tilde/tilde.c:195:14: note: place parentheses around the assignment to silence this warning
+#  if (result = strchr (string, '~'))
+#             ^
+bash-5.1/lib/tilde/tilde.c:195:14: note: use '==' to turn this assignment into an equality comparison
+#  if (result = strchr (string, '~'))
+#             ^
+#  193|   
+#  194|     result_index = result_size = 0;
+#  195|->   if (result = strchr (string, '~'))
+#  196|       result = (char *)xmalloc (result_size = (strlen (string) + 16));
+#  197|     else
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/mailcheck.c:394:19: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  while (mailfile = extract_colon_unit (mailpaths, &i))
+#         ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/mailcheck.c:394:19: note: place parentheses around the assignment to silence this warning
+#  while (mailfile = extract_colon_unit (mailpaths, &i))
+#                  ^
+bash-5.1/mailcheck.c:394:19: note: use '==' to turn this assignment into an equality comparison
+#  while (mailfile = extract_colon_unit (mailpaths, &i))
+#                  ^
+#  392|       }
+#  393|   
+#  394|->   while (mailfile = extract_colon_unit (mailpaths, &i))
+#  395|       {
+#  396|         mp = parse_mailpath_spec (mailfile);
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/mailcheck.c:468:13: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#          if (temp = expand_string_to_string (message, Q_DOUBLE_QUOTES))
+#              ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/mailcheck.c:468:13: note: place parentheses around the assignment to silence this warning
+#          if (temp = expand_string_to_string (message, Q_DOUBLE_QUOTES))
+#                   ^
+bash-5.1/mailcheck.c:468:13: note: use '==' to turn this assignment into an equality comparison
+#          if (temp = expand_string_to_string (message, Q_DOUBLE_QUOTES))
+#                   ^
+#  466|   #undef mtime
+#  467|   
+#  468|-> 	  if (temp = expand_string_to_string (message, Q_DOUBLE_QUOTES))
+#  469|   	    {
+#  470|   	      puts (temp);
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/make_cmd.c:613:20: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  while (full_line = read_secondary_line (delim_unquoted))
+#         ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/make_cmd.c:613:20: note: place parentheses around the assignment to silence this warning
+#  while (full_line = read_secondary_line (delim_unquoted))
+#                   ^
+bash-5.1/make_cmd.c:613:20: note: use '==' to turn this assignment into an equality comparison
+#  while (full_line = read_secondary_line (delim_unquoted))
+#                   ^
+#  611|        need to perform backslash-quoted newline removal. */
+#  612|     delim_unquoted = (temp->redirectee.filename->flags & W_QUOTED) == 0;
+#  613|->   while (full_line = read_secondary_line (delim_unquoted))
+#  614|       {
+#  615|         register char *line;
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/parse.y:4701:17: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#      if (etext = error_token_from_token (cond_token))
+#          ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/parse.y:4701:17: note: place parentheses around the assignment to silence this warning
+#      if (etext = error_token_from_token (cond_token))
+#                ^
+bash-5.1/parse.y:4701:17: note: use '==' to turn this assignment into an equality comparison
+#      if (etext = error_token_from_token (cond_token))
+#                ^
+# 4699|     else if (cond_token != COND_ERROR)
+# 4700|       {
+# 4701|->       if (etext = error_token_from_token (cond_token))
+# 4702|   	{
+# 4703|   	  parser_error (cond_lineno, _("syntax error in conditional expression: unexpected token `%s'"), etext);
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/parse.y:4783:14: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#          if (etext = error_token_from_token (cond_token))
+#              ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/parse.y:4783:14: note: place parentheses around the assignment to silence this warning
+#          if (etext = error_token_from_token (cond_token))
+#                    ^
+bash-5.1/parse.y:4783:14: note: use '==' to turn this assignment into an equality comparison
+#          if (etext = error_token_from_token (cond_token))
+#                    ^
+# 4781|   	  if (term)
+# 4782|   	    dispose_cond_node (term);		/* ( */
+# 4783|-> 	  if (etext = error_token_from_token (cond_token))
+# 4784|   	    {
+# 4785|   	      parser_error (lineno, _("unexpected token `%s', expected `)'"), etext);
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/parse.y:4815:14: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#          if (etext = error_token_from_token (tok))
+#              ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/parse.y:4815:14: note: place parentheses around the assignment to silence this warning
+#          if (etext = error_token_from_token (tok))
+#                    ^
+bash-5.1/parse.y:4815:14: note: use '==' to turn this assignment into an equality comparison
+#          if (etext = error_token_from_token (tok))
+#                    ^
+# 4813|   	{
+# 4814|   	  dispose_word (op);
+# 4815|-> 	  if (etext = error_token_from_token (tok))
+# 4816|   	    {
+# 4817|   	      parser_error (line_number, _("unexpected argument `%s' to conditional unary operator"), etext);
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/parse.y:4865:14: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#          if (etext = error_token_from_token (tok))
+#              ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/parse.y:4865:14: note: place parentheses around the assignment to silence this warning
+#          if (etext = error_token_from_token (tok))
+#                    ^
+bash-5.1/parse.y:4865:14: note: use '==' to turn this assignment into an equality comparison
+#          if (etext = error_token_from_token (tok))
+#                    ^
+# 4863|         else
+# 4864|   	{
+# 4865|-> 	  if (etext = error_token_from_token (tok))
+# 4866|   	    {
+# 4867|   	      parser_error (line_number, _("unexpected token `%s', conditional binary operator expected"), etext);
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/parse.y:4891:14: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#          if (etext = error_token_from_token (tok))
+#              ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/parse.y:4891:14: note: place parentheses around the assignment to silence this warning
+#          if (etext = error_token_from_token (tok))
+#                    ^
+bash-5.1/parse.y:4891:14: note: use '==' to turn this assignment into an equality comparison
+#          if (etext = error_token_from_token (tok))
+#                    ^
+# 4889|         else
+# 4890|   	{
+# 4891|-> 	  if (etext = error_token_from_token (tok))
+# 4892|   	    {
+# 4893|   	      parser_error (line_number, _("unexpected argument `%s' to conditional binary operator"), etext);
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/parse.y:4909:22: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#      else if (etext = error_token_from_token (tok))
+#               ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/parse.y:4909:22: note: place parentheses around the assignment to silence this warning
+#      else if (etext = error_token_from_token (tok))
+#                     ^
+bash-5.1/parse.y:4909:22: note: use '==' to turn this assignment into an equality comparison
+#      else if (etext = error_token_from_token (tok))
+#                     ^
+# 4907|         if (tok < 256)
+# 4908|   	parser_error (line_number, _("unexpected token `%c' in conditional command"), tok);
+# 4909|->       else if (etext = error_token_from_token (tok))
+# 4910|   	{
+# 4911|   	  parser_error (line_number, _("unexpected token `%s' in conditional command"), etext);
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/parse.y:5811:12: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  while (c = *string++)
+#         ~~^~~~~~~~~~~
+bash-5.1/parse.y:5811:12: note: place parentheses around the assignment to silence this warning
+#  while (c = *string++)
+#           ^
+bash-5.1/parse.y:5811:12: note: use '==' to turn this assignment into an equality comparison
+#  while (c = *string++)
+#           ^
+# 5809|     orig_string = string;
+# 5810|   
+# 5811|->   while (c = *string++)
+# 5812|       {
+# 5813|         if (posixly_correct && c == '!')
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/parse.y:6216:9: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  if (t = find_token_in_alist (tok, word_token_alist, 0))
+#      ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/parse.y:6216:9: note: place parentheses around the assignment to silence this warning
+#  if (t = find_token_in_alist (tok, word_token_alist, 0))
+#        ^
+bash-5.1/parse.y:6216:9: note: use '==' to turn this assignment into an equality comparison
+#  if (t = find_token_in_alist (tok, word_token_alist, 0))
+#        ^
+# 6214|     char *t;
+# 6215|   
+# 6216|->   if (t = find_token_in_alist (tok, word_token_alist, 0))
+# 6217|       return t;
+# 6218|   
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/parse.y:6219:9: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  if (t = find_token_in_alist (tok, other_token_alist, 0))
+#      ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/parse.y:6219:9: note: place parentheses around the assignment to silence this warning
+#  if (t = find_token_in_alist (tok, other_token_alist, 0))
+#        ^
+bash-5.1/parse.y:6219:9: note: use '==' to turn this assignment into an equality comparison
+#  if (t = find_token_in_alist (tok, other_token_alist, 0))
+#        ^
+# 6217|       return t;
+# 6218|   
+# 6219|->   if (t = find_token_in_alist (tok, other_token_alist, 0))
+# 6220|       return t;
+# 6221|   
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/pathexp.c:78:12: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  while (c = *string++)
+#         ~~^~~~~~~~~~~
+bash-5.1/pathexp.c:78:12: note: place parentheses around the assignment to silence this warning
+#  while (c = *string++)
+#           ^
+bash-5.1/pathexp.c:78:12: note: use '==' to turn this assignment into an equality comparison
+#  while (c = *string++)
+#           ^
+#   76|     send = string + strlen (string);
+#   77|   
+#   78|->   while (c = *string++)
+#   79|       {
+#   80|         switch (c)
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/pathexp.c:673:20: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  while (colon_bit = split_ignorespec (this_ignoreval, &ptr))
+#         ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/pathexp.c:673:20: note: place parentheses around the assignment to silence this warning
+#  while (colon_bit = split_ignorespec (this_ignoreval, &ptr))
+#                   ^
+bash-5.1/pathexp.c:673:20: note: use '==' to turn this assignment into an equality comparison
+#  while (colon_bit = split_ignorespec (this_ignoreval, &ptr))
+#                   ^
+#  671|     while (colon_bit = extract_colon_unit (this_ignoreval, &ptr))
+#  672|   #else
+#  673|->   while (colon_bit = split_ignorespec (this_ignoreval, &ptr))
+#  674|   #endif
+#  675|       {
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/redir.c:1462:10: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  if (vr = valid_array_reference (w, 0))
+#      ~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/redir.c:1462:10: note: place parentheses around the assignment to silence this warning
+#  if (vr = valid_array_reference (w, 0))
+#         ^
+bash-5.1/redir.c:1462:10: note: use '==' to turn this assignment into an equality comparison
+#  if (vr = valid_array_reference (w, 0))
+#         ^
+# 1460|     /* XXX - handle set -u here? */
+# 1461|   #if defined (ARRAY_VARS)
+# 1462|->   if (vr = valid_array_reference (w, 0))
+# 1463|       {
+# 1464|         v = array_variable_part (w, 0, &sub, &len);
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/redir.c:1477:15: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#              if (vr = valid_array_reference (w, 0))
+#                  ~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/redir.c:1477:15: note: place parentheses around the assignment to silence this warning
+#              if (vr = valid_array_reference (w, 0))
+#                     ^
+bash-5.1/redir.c:1477:15: note: use '==' to turn this assignment into an equality comparison
+#              if (vr = valid_array_reference (w, 0))
+#                     ^
+# 1475|   	    {
+# 1476|   	      w = nameref_cell (v);
+# 1477|-> 	      if (vr = valid_array_reference (w, 0))
+# 1478|   		v = array_variable_part (w, 0, &sub, &len);
+# 1479|   	      else
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/shell.c:906:28: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#      while (arg_character = arg_string[i++])
+#             ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+bash-5.1/shell.c:906:28: note: place parentheses around the assignment to silence this warning
+#      while (arg_character = arg_string[i++])
+#                           ^
+bash-5.1/shell.c:906:28: note: use '==' to turn this assignment into an equality comparison
+#      while (arg_character = arg_string[i++])
+#                           ^
+#  904|         i = 1;
+#  905|         on_or_off = arg_string[0];
+#  906|->       while (arg_character = arg_string[i++])
+#  907|   	{
+#  908|   	  switch (arg_character)
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/subst.c:804:12: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  while (c = string[i])
+#         ~~^~~~~~~~~~~
+bash-5.1/subst.c:804:12: note: place parentheses around the assignment to silence this warning
+#  while (c = string[i])
+#           ^
+bash-5.1/subst.c:804:12: note: use '==' to turn this assignment into an equality comparison
+#  while (c = string[i])
+#           ^
+#  802|     i = *sindex;
+#  803|     found = 0;
+#  804|->   while (c = string[i])
+#  805|       {
+#  806|         if (c == '\\')
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/subst.c:878:12: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  while (c = string[i])
+#         ~~^~~~~~~~~~~
+bash-5.1/subst.c:878:12: note: place parentheses around the assignment to silence this warning
+#  while (c = string[i])
+#           ^
+bash-5.1/subst.c:878:12: note: use '==' to turn this assignment into an equality comparison
+#  while (c = string[i])
+#           ^
+#  876|     j = 0;
+#  877|     i = *sindex;
+#  878|->   while (c = string[i])
+#  879|       {
+#  880|         /* Process a character that was quoted by a backslash. */
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/subst.c:1030:12: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  while (c = string[i])
+#         ~~^~~~~~~~~~~
+bash-5.1/subst.c:1030:12: note: place parentheses around the assignment to silence this warning
+#  while (c = string[i])
+#           ^
+bash-5.1/subst.c:1030:12: note: use '==' to turn this assignment into an equality comparison
+#  while (c = string[i])
+#           ^
+# 1028|     pass_next = backquote = 0;
+# 1029|     i = sind;
+# 1030|->   while (c = string[i])
+# 1031|       {
+# 1032|         if (pass_next)
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/subst.c:1182:12: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  while (c = string[i])
+#         ~~^~~~~~~~~~~
+bash-5.1/subst.c:1182:12: note: place parentheses around the assignment to silence this warning
+#  while (c = string[i])
+#           ^
+bash-5.1/subst.c:1182:12: note: use '==' to turn this assignment into an equality comparison
+#  while (c = string[i])
+#           ^
+# 1180|     wcharlist = 0;
+# 1181|   #endif
+# 1182|->   while (c = string[i])
+# 1183|       {
+# 1184|   #if defined (HANDLE_MULTIBYTE)
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/subst.c:1532:12: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  while (c = string[i])
+#         ~~^~~~~~~~~~~
+bash-5.1/subst.c:1532:12: note: place parentheses around the assignment to silence this warning
+#  while (c = string[i])
+#           ^
+bash-5.1/subst.c:1532:12: note: use '==' to turn this assignment into an equality comparison
+#  while (c = string[i])
+#           ^
+# 1530|   
+# 1531|     i = *sindex;
+# 1532|->   while (c = string[i])
+# 1533|       {
+# 1534|         if (pass_character)
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/subst.c:1764:12: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  while (c = string[i])
+#         ~~^~~~~~~~~~~
+bash-5.1/subst.c:1764:12: note: place parentheses around the assignment to silence this warning
+#  while (c = string[i])
+#           ^
+bash-5.1/subst.c:1764:12: note: use '==' to turn this assignment into an equality comparison
+#  while (c = string[i])
+#           ^
+# 1762|     pass_next = backq = 0;
+# 1763|     ss = (char *)string;
+# 1764|->   while (c = string[i])
+# 1765|       {
+# 1766|         if (pass_next)
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/subst.c:1887:12: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  while (c = string[i])
+#         ~~^~~~~~~~~~~
+bash-5.1/subst.c:1887:12: note: place parentheses around the assignment to silence this warning
+#  while (c = string[i])
+#           ^
+bash-5.1/subst.c:1887:12: note: use '==' to turn this assignment into an equality comparison
+#  while (c = string[i])
+#           ^
+# 1885|     i = start;
+# 1886|     pass_next = backq = dquote = 0;
+# 1887|->   while (c = string[i])
+# 1888|       {
+# 1889|         /* If this is non-zero, we should not let quote characters be delimiters
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/subst.c:2062:12: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  while (c = string[i])
+#         ~~^~~~~~~~~~~
+bash-5.1/subst.c:2062:12: note: place parentheses around the assignment to silence this warning
+#  while (c = string[i])
+#           ^
+bash-5.1/subst.c:2062:12: note: use '==' to turn this assignment into an equality comparison
+#  while (c = string[i])
+#           ^
+# 2060|     i = start;
+# 2061|     pass_next = backq = dquote = 0;
+# 2062|->   while (c = string[i])
+# 2063|       {
+# 2064|         if (pass_next)
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/subst.c:3277:9: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  if (t = mbschr (name, LBRACK))
+#      ~~^~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/subst.c:3277:9: note: place parentheses around the assignment to silence this warning
+#  if (t = mbschr (name, LBRACK))
+#        ^
+bash-5.1/subst.c:3277:9: note: use '==' to turn this assignment into an equality comparison
+#  if (t = mbschr (name, LBRACK))
+#        ^
+# 3275|   
+# 3276|   #if defined (ARRAY_VARS)
+# 3277|->   if (t = mbschr (name, LBRACK))
+# 3278|       {
+# 3279|         if (assign_list)
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/subst.c:6843:16: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  else if (var = find_variable (name))
+#           ~~~~^~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/subst.c:6843:16: note: place parentheses around the assignment to silence this warning
+#  else if (var = find_variable (name))
+#               ^
+bash-5.1/subst.c:6843:16: note: use '==' to turn this assignment into an equality comparison
+#  else if (var = find_variable (name))
+#               ^
+# 6841|       }
+# 6842|   #endif
+# 6843|->   else if (var = find_variable (name))
+# 6844|       {
+# 6845|         if (var_isset (var) && invisible_p (var) == 0)
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/subst.c:6876:16: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  else if (var = find_variable_last_nameref (name, 0))
+#           ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/subst.c:6876:16: note: place parentheses around the assignment to silence this warning
+#  else if (var = find_variable_last_nameref (name, 0))
+#               ^
+bash-5.1/subst.c:6876:16: note: use '==' to turn this assignment into an equality comparison
+#  else if (var = find_variable_last_nameref (name, 0))
+#               ^
+# 6874|   	temp = (char *)NULL;
+# 6875|       }
+# 6876|->   else if (var = find_variable_last_nameref (name, 0))
+# 6877|       {
+# 6878|         temp = nameref_cell (var);
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/subst.c:8891:9: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  if (c = string[sindex])
+#      ~~^~~~~~~~~~~~~~~~
+bash-5.1/subst.c:8891:9: note: place parentheses around the assignment to silence this warning
+#  if (c = string[sindex])
+#        ^
+bash-5.1/subst.c:8891:9: note: use '==' to turn this assignment into an equality comparison
+#  if (c = string[sindex])
+#        ^
+# 8889|     /* Find out what character ended the variable name.  Then
+# 8890|        do the appropriate thing. */
+# 8891|->   if (c = string[sindex])
+# 8892|       sindex++;
+# 8893|   
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/subst.c:8901:13: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#      if (c = string[sindex])
+#          ~~^~~~~~~~~~~~~~~~
+bash-5.1/subst.c:8901:13: note: place parentheses around the assignment to silence this warning
+#      if (c = string[sindex])
+#            ^
+bash-5.1/subst.c:8901:13: note: use '==' to turn this assignment into an equality comparison
+#      if (c = string[sindex])
+#            ^
+# 8899|       {
+# 8900|         check_nullness++;
+# 8901|->       if (c = string[sindex])
+# 8902|   	sindex++;
+# 8903|       }
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/subst.c:10989:31: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  for (dquote = sindex = 0; c = string[sindex];)
+#                            ~~^~~~~~~~~~~~~~~~
+bash-5.1/subst.c:10989:31: note: place parentheses around the assignment to silence this warning
+#  for (dquote = sindex = 0; c = string[sindex];)
+#                              ^
+bash-5.1/subst.c:10989:31: note: use '==' to turn this assignment into an equality comparison
+#  for (dquote = sindex = 0; c = string[sindex];)
+#                              ^
+#10987|     r = result_string = (char *)xmalloc (slen + 1);
+#10988|   
+#10989|->   for (dquote = sindex = 0; c = string[sindex];)
+#10990|       {
+#10991|         switch (c)
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/subst.c:11527:33: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#          for (eindex = 0; temp_string = expansions[eindex]; eindex++)
+#                           ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+bash-5.1/subst.c:11527:33: note: place parentheses around the assignment to silence this warning
+#          for (eindex = 0; temp_string = expansions[eindex]; eindex++)
+#                                       ^
+bash-5.1/subst.c:11527:33: note: use '==' to turn this assignment into an equality comparison
+#          for (eindex = 0; temp_string = expansions[eindex]; eindex++)
+#                                       ^
+#11525|   	  expansions = brace_expand (tlist->word->word);
+#11526|   
+#11527|-> 	  for (eindex = 0; temp_string = expansions[eindex]; eindex++)
+#11528|   	    {
+#11529|   	      w = alloc_word_desc ();
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/support/bashversion.c:70:16: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  if (progname = strrchr (argv[0], '/'))
+#      ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/support/bashversion.c:70:16: note: place parentheses around the assignment to silence this warning
+#  if (progname = strrchr (argv[0], '/'))
+#               ^
+bash-5.1/support/bashversion.c:70:16: note: use '==' to turn this assignment into an equality comparison
+#  if (progname = strrchr (argv[0], '/'))
+#               ^
+#   68|     char dv[128], *rv;
+#   69|   
+#   70|->   if (progname = strrchr (argv[0], '/'))
+#   71|       progname++;
+#   72|     else
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/support/man2html.c:3693:44: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#                                for (i = 0; owndef->st[deflen + 2 + i] = owndef->st[i]; i++);
+#                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+bash-5.1/support/man2html.c:3693:44: note: place parentheses around the assignment to silence this warning
+#                                for (i = 0; owndef->st[deflen + 2 + i] = owndef->st[i]; i++);
+#                                                                       ^
+bash-5.1/support/man2html.c:3693:44: note: use '==' to turn this assignment into an equality comparison
+#                                for (i = 0; owndef->st[deflen + 2 + i] = owndef->st[i]; i++);
+#                                                                       ^
+# 3691|   					wordlist[i] = NULL;
+# 3692|   				deflen = strlen(owndef->st);
+# 3693|-> 				for (i = 0; owndef->st[deflen + 2 + i] = owndef->st[i]; i++);
+# 3694|   				oldargument = argument;
+# 3695|   				argument = wordlist;
+
+Error: SYMBIOTIC_WARNING:
+bash-5.1/support/printenv.c:59: error: memory error: out of bound pointer
+bash-5.1/support/printenv.c:59: note: call stack: function main (=2, =0)
+bash-5.1/support/printenv.c:59: note: Additional Info: address: 0:(ReadLSB w64 0 environ)
+bash-5.1/support/printenv.c:59: note: Additional Info: example: 0:255
+bash-5.1/support/printenv.c:59: note: Additional Info: segment range: [0, 0]
+bash-5.1/support/printenv.c:59: note: Additional Info: offset range: [1, 18446744073709551615]
+bash-5.1/support/printenv.c:59: note: Additional Info: pointing to: none
+#   57|     for (envp = environ; *envp; envp++)
+#   58|       {
+#   59|->       if (**argv == **envp && strncmp (*envp, *argv, len) == 0)
+#   60|   	{
+#   61|   	  eval = *envp + len;
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/unwind_prot.c:271:14: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  while (elt = unwind_protect_list)
+#         ~~~~^~~~~~~~~~~~~~~~~~~~~
+bash-5.1/unwind_prot.c:271:14: note: place parentheses around the assignment to silence this warning
+#  while (elt = unwind_protect_list)
+#             ^
+bash-5.1/unwind_prot.c:271:14: note: use '==' to turn this assignment into an equality comparison
+#  while (elt = unwind_protect_list)
+#             ^
+#  269|   
+#  270|     found = 0;
+#  271|->   while (elt = unwind_protect_list)
+#  272|       {
+#  273|         unwind_protect_list = unwind_protect_list->head.next;
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/unwind_prot.c:306:14: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  while (elt = unwind_protect_list)
+#         ~~~~^~~~~~~~~~~~~~~~~~~~~
+bash-5.1/unwind_prot.c:306:14: note: place parentheses around the assignment to silence this warning
+#  while (elt = unwind_protect_list)
+#             ^
+bash-5.1/unwind_prot.c:306:14: note: use '==' to turn this assignment into an equality comparison
+#  while (elt = unwind_protect_list)
+#             ^
+#  304|   
+#  305|     found = 0;
+#  306|->   while (elt = unwind_protect_list)
+#  307|       {
+#  308|         unwind_protect_list = elt->head.next;
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/variables.c:408:17: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#          if (temp_var = find_function (tname))
+#              ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/variables.c:408:17: note: place parentheses around the assignment to silence this warning
+#          if (temp_var = find_function (tname))
+#                       ^
+#  406|   	    free (temp_string);		/* parse_and_execute does this */
+#  407|   
+#  408|-> 	  if (temp_var = find_function (tname))
+#  409|   	    {
+#  410|   	      VSETATTR (temp_var, (att_exported|att_imported));
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/variables.c:415:21: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#              if (temp_var = bind_invalid_envvar (name, string, 0))
+#                  ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/variables.c:415:21: note: place parentheses around the assignment to silence this warning
+#              if (temp_var = bind_invalid_envvar (name, string, 0))
+#                           ^
+bash-5.1/variables.c:415:21: note: use '==' to turn this assignment into an equality comparison
+#              if (temp_var = bind_invalid_envvar (name, string, 0))
+#                           ^
+bash-5.1/variables.c:408:17: note: use '==' to turn this assignment into an equality comparison
+#          if (temp_var = find_function (tname))
+#                       ^
+#  413|   	  else
+#  414|   	    {
+#  415|-> 	      if (temp_var = bind_invalid_envvar (name, string, 0))
+#  416|   		{
+#  417|   		  VSETATTR (temp_var, (att_exported | att_imported | att_invisible));
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/variables.c:2015:11: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#    if (v = hash_lookup (name, vc->table))
+#        ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/variables.c:2015:11: note: place parentheses around the assignment to silence this warning
+#    if (v = hash_lookup (name, vc->table))
+#          ^
+bash-5.1/variables.c:2015:11: note: use '==' to turn this assignment into an equality comparison
+#    if (v = hash_lookup (name, vc->table))
+#          ^
+# 2013|     v = (SHELL_VAR *)NULL;
+# 2014|     for (vc = vcontext; vc; vc = vc->down)
+# 2015|->     if (v = hash_lookup (name, vc->table))
+# 2016|         break;
+# 2017|   
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/variables.c:3915:13: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#    if (elt = hash_remove (name, v->table, 0))
+#        ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/variables.c:3915:13: note: place parentheses around the assignment to silence this warning
+#    if (elt = hash_remove (name, v->table, 0))
+#            ^
+bash-5.1/variables.c:3915:13: note: use '==' to turn this assignment into an equality comparison
+#    if (elt = hash_remove (name, v->table, 0))
+#            ^
+# 3913|   
+# 3914|     for (elt = (BUCKET_CONTENTS *)NULL, v = vc; v; v = v->down)
+# 3915|->     if (elt = hash_remove (name, v->table, 0))
+# 3916|         break;
+# 3917|   
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/variables.c:3944:13: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#    if (elt = hash_remove (name, v->table, 0))
+#        ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/variables.c:3944:13: note: place parentheses around the assignment to silence this warning
+#    if (elt = hash_remove (name, v->table, 0))
+#            ^
+bash-5.1/variables.c:3944:13: note: use '==' to turn this assignment into an equality comparison
+#    if (elt = hash_remove (name, v->table, 0))
+#            ^
+# 3942|   
+# 3943|     for (elt = (BUCKET_CONTENTS *)NULL, v = vc; v; v = v->down)
+# 3944|->     if (elt = hash_remove (name, v->table, 0))
+# 3945|         break;
+# 3946|   
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/variables.c:4810:35: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  for (i = 0, list_index = 0; var = vars[i]; i++)
+#                              ~~~~^~~~~~~~~
+bash-5.1/variables.c:4810:35: note: place parentheses around the assignment to silence this warning
+#  for (i = 0, list_index = 0; var = vars[i]; i++)
+#                                  ^
+bash-5.1/variables.c:4810:35: note: use '==' to turn this assignment into an equality comparison
+#  for (i = 0, list_index = 0; var = vars[i]; i++)
+#                                  ^
+# 4808|   #define USE_EXPORTSTR (value == var->exportstr)
+# 4809|   
+# 4810|->   for (i = 0, list_index = 0; var = vars[i]; i++)
+# 4811|       {
+# 4812|   #if defined (__CYGWIN__)
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/variables.c:5335:11: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  if (ret = vcxt->down)
+#      ~~~~^~~~~~~~~~~~
+bash-5.1/variables.c:5335:11: note: place parentheses around the assignment to silence this warning
+#  if (ret = vcxt->down)
+#          ^
+bash-5.1/variables.c:5335:11: note: use '==' to turn this assignment into an equality comparison
+#  if (ret = vcxt->down)
+#          ^
+# 5333|       }
+# 5334|   
+# 5335|->   if (ret = vcxt->down)
+# 5336|       {
+# 5337|         ret->up = (VAR_CONTEXT *)NULL;
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/variables.c:6078:14: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  while (val = extract_colon_unit (temp, &tptr))
+#         ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/variables.c:6078:14: note: place parentheses around the assignment to silence this warning
+#  while (val = extract_colon_unit (temp, &tptr))
+#             ^
+bash-5.1/variables.c:6078:14: note: use '==' to turn this assignment into an equality comparison
+#  while (val = extract_colon_unit (temp, &tptr))
+#             ^
+# 6076|   
+# 6077|     tptr = 0;
+# 6078|->   while (val = extract_colon_unit (temp, &tptr))
+# 6079|       {
+# 6080|         if (STREQ (val, "ignorespace"))
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/variables.c:6127:9: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  if (v = find_variable (name))
+#      ~~^~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/variables.c:6127:9: note: place parentheses around the assignment to silence this warning
+#  if (v = find_variable (name))
+#        ^
+bash-5.1/variables.c:6127:9: note: use '==' to turn this assignment into an equality comparison
+#  if (v = find_variable (name))
+#        ^
+# 6125|     SHELL_VAR *v;
+# 6126|   
+# 6127|->   if (v = find_variable (name))
+# 6128|       {
+# 6129|         if (history_comment_char == 0)

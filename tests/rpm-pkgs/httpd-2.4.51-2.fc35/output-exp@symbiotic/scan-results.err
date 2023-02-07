@@ -1,0 +1,12 @@
+Error: COMPILER_WARNING (CWE-477):
+httpd-2.4.51/server/core.c:5154:13: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#            security_context_t con;
+#            ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+# 5152|           
+# 5153|           if (is_enabled && !already_warned) {
+# 5154|->             security_context_t con;
+# 5155|               
+# 5156|               if (getcon(&con) == 0) {
