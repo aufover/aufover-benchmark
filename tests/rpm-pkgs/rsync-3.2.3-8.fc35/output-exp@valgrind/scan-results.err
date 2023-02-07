@@ -1,0 +1,646 @@
+Error: COMPILER_WARNING (CWE-457):
+rsync-3.2.3/acls.c: scope_hint: In function 'unpack_smb_acl'
+rsync-3.2.3/acls.c:319:25: warning[-Wmaybe-uninitialized]: 'g_u_id' may be used uninitialized in this function
+#  319 |                 ida->id = g_u_id;
+#      |                         ^
+rsync-3.2.3/acls.c:275:22: note: 'g_u_id' was declared here
+#  275 |                 id_t g_u_id;
+#      |                      ^
+#  317|   		}
+#  318|   		ida = EXPAND_ITEM_LIST(&temp_ida_list, id_access, -10);
+#  319|-> 		ida->id = g_u_id;
+#  320|   		ida->access = access;
+#  321|   	}
+
+Error: VALGRIND_WARNING:
+rsync-3.2.3/getgroups: note: while executing process 1571
+rsync-3.2.3/getgroups.c:39: warning[Leak_DefinitelyLost]: 8 bytes in 1 blocks are definitely lost in loss record 1 of 1
+rsync-3.2.3/getgroups.c:39: note: called from main()
+#   37|   #endif
+#   38|   
+#   39|-> 	list = (gid_t*)malloc(sizeof (gid_t) * (n + 1));
+#   40|   	if (!list) {
+#   41|   		fprintf(stderr, "out of memory!\n");
+
+Error: VALGRIND_WARNING:
+rsync-3.2.3/rsync: note: while executing process 3021 with arguments: --config=/builddir/build/BUILD/rsync-3.2.3/testtmp/daemon-gzip-upload/test-rsyncd.conf --daemon
+rsync-3.2.3/lib/compat.c:120: warning[UninitCondition]: Conditional jump or move depends on uninitialised value(s)
+rsync-3.2.3/lib/compat.c:120: note: called from UnknownInlinedFun()
+rsync-3.2.3/log.c:300: note: called from rwrite()
+rsync-3.2.3/io.c:1598: note: called from read_a_msg.lto_priv.0()
+rsync-3.2.3/io.c:1675: note: called from UnknownInlinedFun()
+rsync-3.2.3/generator.c:2344: note: called from generate_files()
+rsync-3.2.3/main.c:1106: note: called from do_recv()
+rsync-3.2.3/main.c:1219: note: called from UnknownInlinedFun()
+rsync-3.2.3/main.c:1253: note: called from start_server()
+rsync-3.2.3/clientserver.c:1135: note: called from rsync_module()
+rsync-3.2.3/clientserver.c:1318: note: called from start_daemon()
+rsync-3.2.3/clientserver.c:1432: note: called from UnknownInlinedFun()
+rsync-3.2.3/main.c:1787: note: called from main()
+#  118|    size_t strlcpy(char *d, const char *s, size_t bufsize)
+#  119|   {
+#  120|-> 	size_t len = strlen(s);
+#  121|   	size_t ret = len;
+#  122|   	if (bufsize > 0) {
+
+Error: COMPILER_WARNING (CWE-477):
+rsync-3.2.3/main.c: scope_hint: In function 'show_malloc_stats'
+rsync-3.2.3/main.c:472:9: warning[-Wdeprecated-declarations]: 'mallinfo' is deprecated
+#  472 |         mi = mallinfo();
+#      |         ^~
+rsync-3.2.3/rsync.h:346: included_from: Included from here.
+rsync-3.2.3/main.c:23: included_from: Included from here.
+/usr/include/malloc.h:113:24: note: declared here
+#  113 | extern struct mallinfo mallinfo (void) __THROW __MALLOC_DEPRECATED;
+#      |                        ^~~~~~~~
+#  470|   	struct mallinfo mi;
+#  471|   
+#  472|-> 	mi = mallinfo();
+#  473|   
+#  474|   	rprintf(FCLIENT, "\n");
+
+Error: VALGRIND_WARNING:
+rsync-3.2.3/rsync: note: while executing process 6538 with arguments: -ai --include=/down/ --exclude=/* /builddir/build/BUILD/rsync-3.2.3/testtmp/relative/from/ /builddir/build/BUILD/rsync-3.2.3/testtmp/relative/chk/
+rsync-3.2.3/options.c:1368: warning[Leak_DefinitelyLost]: 10 bytes in 2 blocks are definitely lost in loss record 10 of 35
+/usr/lib64/libpopt.so.0.0.1: note: called from here
+/usr/lib64/libpopt.so.0.0.1: note: called from poptGetNextOpt()
+rsync-3.2.3/options.c:1368: note: called from parse_arguments()
+rsync-3.2.3/main.c:1744: note: called from main()
+# 1366|   	}
+# 1367|   
+# 1368|-> 	while ((opt = poptGetNextOpt(pc)) != -1) {
+# 1369|   		/* most options are handled automatically by popt;
+# 1370|   		 * only special cases are returned and listed here. */
+
+Error: VALGRIND_WARNING:
+rsync-3.2.3/rsync: note: while executing process 2479 with arguments: -av --include=text --include=*/ --exclude=* /builddir/build/BUILD/rsync-3.2.3/testtmp/compare-dest/from/ /builddir/build/BUILD/rsync-3.2.3/testtmp/compare-dest/alt1/
+rsync-3.2.3/options.c:1368: warning[Leak_DefinitelyLost]: 10 bytes in 3 blocks are definitely lost in loss record 10 of 34
+/usr/lib64/libpopt.so.0.0.1: note: called from here
+/usr/lib64/libpopt.so.0.0.1: note: called from poptGetNextOpt()
+rsync-3.2.3/options.c:1368: note: called from parse_arguments()
+rsync-3.2.3/main.c:1744: note: called from main()
+# 1366|   	}
+# 1367|   
+# 1368|-> 	while ((opt = poptGetNextOpt(pc)) != -1) {
+# 1369|   		/* most options are handled automatically by popt;
+# 1370|   		 * only special cases are returned and listed here. */
+
+Error: VALGRIND_WARNING:
+rsync-3.2.3/rsync: note: while executing process 1411 with arguments: -av --exclude=foobar.baz /builddir/build/BUILD/rsync-3.2.3/testtmp/batch-mode/from/ /builddir/build/BUILD/rsync-3.2.3/testtmp/batch-mode/chk/
+rsync-3.2.3/options.c:1368: warning[Leak_DefinitelyLost]: 11 bytes in 1 blocks are definitely lost in loss record 10 of 35
+/usr/lib64/libpopt.so.0.0.1: note: called from here
+/usr/lib64/libpopt.so.0.0.1: note: called from poptGetNextOpt()
+rsync-3.2.3/options.c:1368: note: called from parse_arguments()
+rsync-3.2.3/main.c:1744: note: called from main()
+# 1366|   	}
+# 1367|   
+# 1368|-> 	while ((opt = poptGetNextOpt(pc)) != -1) {
+# 1369|   		/* most options are handled automatically by popt;
+# 1370|   		 * only special cases are returned and listed here. */
+
+Error: VALGRIND_WARNING:
+rsync-3.2.3/rsync: note: while executing process 3595 with arguments: -av -f exclude,! */ /builddir/build/BUILD/rsync-3.2.3/testtmp/delete/from/ /builddir/build/BUILD/rsync-3.2.3/testtmp/delete/chk/empty/
+rsync-3.2.3/options.c:1368: warning[Leak_DefinitelyLost]: 13 bytes in 1 blocks are definitely lost in loss record 10 of 34
+/usr/lib64/libpopt.so.0.0.1: note: called from here
+/usr/lib64/libpopt.so.0.0.1: note: called from poptGetNextOpt()
+rsync-3.2.3/options.c:1368: note: called from parse_arguments()
+rsync-3.2.3/main.c:1744: note: called from main()
+# 1366|   	}
+# 1367|   
+# 1368|-> 	while ((opt = poptGetNextOpt(pc)) != -1) {
+# 1369|   		/* most options are handled automatically by popt;
+# 1370|   		 * only special cases are returned and listed here. */
+
+Error: VALGRIND_WARNING:
+rsync-3.2.3/rsync: note: while executing process 1809 with arguments: -avv --chmod ug-s,a+rX,D+w /builddir/build/BUILD/rsync-3.2.3/testtmp/chmod-option/from/ /builddir/build/BUILD/rsync-3.2.3/testtmp/chmod-option/to/
+rsync-3.2.3/options.c:1368: warning[Leak_DefinitelyLost]: 14 bytes in 1 blocks are definitely lost in loss record 9 of 32
+/usr/lib64/libpopt.so.0.0.1: note: called from here
+/usr/lib64/libpopt.so.0.0.1: note: called from poptGetNextOpt()
+rsync-3.2.3/options.c:1368: note: called from parse_arguments()
+rsync-3.2.3/main.c:1744: note: called from main()
+# 1366|   	}
+# 1367|   
+# 1368|-> 	while ((opt = poptGetNextOpt(pc)) != -1) {
+# 1369|   		/* most options are handled automatically by popt;
+# 1370|   		 * only special cases are returned and listed here. */
+
+Error: VALGRIND_WARNING:
+rsync-3.2.3/rsync: note: while executing process 5145 with arguments: -avH --bwlimit=0 --debug=all0,deltasum0 /builddir/build/BUILD/rsync-3.2.3/testtmp/hands/from/ /builddir/build/BUILD/rsync-3.2.3/testtmp/hands/to
+rsync-3.2.3/options.c:1368: warning[Leak_DefinitelyLost]: 15 bytes in 1 blocks are definitely lost in loss record 10 of 39
+/usr/lib64/libpopt.so.0.0.1: note: called from here
+/usr/lib64/libpopt.so.0.0.1: note: called from poptGetNextOpt()
+rsync-3.2.3/options.c:1368: note: called from parse_arguments()
+rsync-3.2.3/main.c:1744: note: called from main()
+# 1366|   	}
+# 1367|   
+# 1368|-> 	while ((opt = poptGetNextOpt(pc)) != -1) {
+# 1369|   		/* most options are handled automatically by popt;
+# 1370|   		 * only special cases are returned and listed here. */
+
+Error: VALGRIND_WARNING:
+rsync-3.2.3/rsync: note: while executing process 2523 with arguments: -av --include=etc-ltr-list --include=*/ --exclude=* /builddir/build/BUILD/rsync-3.2.3/testtmp/compare-dest/from/ /builddir/build/BUILD/rsync-3.2.3/testtmp/compare-dest/alt2/
+rsync-3.2.3/options.c:1368: warning[Leak_DefinitelyLost]: 18 bytes in 3 blocks are definitely lost in loss record 12 of 34
+/usr/lib64/libpopt.so.0.0.1: note: called from here
+/usr/lib64/libpopt.so.0.0.1: note: called from poptGetNextOpt()
+rsync-3.2.3/options.c:1368: note: called from parse_arguments()
+rsync-3.2.3/main.c:1744: note: called from main()
+# 1366|   	}
+# 1367|   
+# 1368|-> 	while ((opt = poptGetNextOpt(pc)) != -1) {
+# 1369|   		/* most options are handled automatically by popt;
+# 1370|   		 * only special cases are returned and listed here. */
+
+Error: VALGRIND_WARNING:
+rsync-3.2.3/rsync: note: while executing process 5145 with arguments: -avH --bwlimit=0 --debug=all0,deltasum0 /builddir/build/BUILD/rsync-3.2.3/testtmp/hands/from/ /builddir/build/BUILD/rsync-3.2.3/testtmp/hands/to
+rsync-3.2.3/options.c:1368: warning[Leak_DefinitelyLost]: 2 bytes in 1 blocks are definitely lost in loss record 2 of 39
+/usr/lib64/libpopt.so.0.0.1: note: called from poptGetNextOpt()
+rsync-3.2.3/options.c:1368: note: called from parse_arguments()
+rsync-3.2.3/main.c:1744: note: called from main()
+# 1366|   	}
+# 1367|   
+# 1368|-> 	while ((opt = poptGetNextOpt(pc)) != -1) {
+# 1369|   		/* most options are handled automatically by popt;
+# 1370|   		 * only special cases are returned and listed here. */
+
+Error: VALGRIND_WARNING:
+rsync-3.2.3/rsync: note: while executing process 4746 with arguments: -a --exclude=dir/text --exclude=subsubdir/** /builddir/build/BUILD/rsync-3.2.3/testtmp/files-from/from/ /builddir/build/BUILD/rsync-3.2.3/testtmp/files-from/chk/
+rsync-3.2.3/options.c:1368: warning[Leak_DefinitelyLost]: 22 bytes in 2 blocks are definitely lost in loss record 12 of 34
+/usr/lib64/libpopt.so.0.0.1: note: called from here
+/usr/lib64/libpopt.so.0.0.1: note: called from poptGetNextOpt()
+rsync-3.2.3/options.c:1368: note: called from parse_arguments()
+rsync-3.2.3/main.c:1744: note: called from main()
+# 1366|   	}
+# 1367|   
+# 1368|-> 	while ((opt = poptGetNextOpt(pc)) != -1) {
+# 1369|   		/* most options are handled automatically by popt;
+# 1370|   		 * only special cases are returned and listed here. */
+
+Error: VALGRIND_WARNING:
+rsync-3.2.3/rsync: note: while executing process 4287 with arguments: -av -f -_foo/too/ -f -_foo/down/ -f -_foo/and/ -f -_new/ /builddir/build/BUILD/rsync-3.2.3/testtmp/exclude/from/ /builddir/build/BUILD/rsync-3.2.3/testtmp/exclude/chk/
+rsync-3.2.3/options.c:1368: warning[Leak_DefinitelyLost]: 41 bytes in 4 blocks are definitely lost in loss record 15 of 35
+/usr/lib64/libpopt.so.0.0.1: note: called from here
+/usr/lib64/libpopt.so.0.0.1: note: called from poptGetNextOpt()
+rsync-3.2.3/options.c:1368: note: called from parse_arguments()
+rsync-3.2.3/main.c:1744: note: called from main()
+# 1366|   	}
+# 1367|   
+# 1368|-> 	while ((opt = poptGetNextOpt(pc)) != -1) {
+# 1369|   		/* most options are handled automatically by popt;
+# 1370|   		 * only special cases are returned and listed here. */
+
+Error: VALGRIND_WARNING:
+rsync-3.2.3/rsync: note: while executing process 746 with arguments: --info=help
+rsync-3.2.3/options.c:1368: warning[Leak_DefinitelyLost]: 5 bytes in 1 blocks are definitely lost in loss record 2 of 14
+/usr/lib64/libpopt.so.0.0.1: note: called from here
+/usr/lib64/libpopt.so.0.0.1: note: called from poptGetNextOpt()
+rsync-3.2.3/options.c:1368: note: called from parse_arguments()
+rsync-3.2.3/main.c:1744: note: called from main()
+# 1366|   	}
+# 1367|   
+# 1368|-> 	while ((opt = poptGetNextOpt(pc)) != -1) {
+# 1369|   		/* most options are handled automatically by popt;
+# 1370|   		 * only special cases are returned and listed here. */
+
+Error: VALGRIND_WARNING:
+rsync-3.2.3/rsync: note: while executing process 6494 with arguments: -av --existing --include=*/ --exclude=* /builddir/build/BUILD/rsync-3.2.3/testtmp/relative/from/ /builddir/build/BUILD/rsync-3.2.3/testtmp/relative/from/extra/
+rsync-3.2.3/options.c:1368: warning[Leak_DefinitelyLost]: 5 bytes in 2 blocks are definitely lost in loss record 5 of 34
+/usr/lib64/libpopt.so.0.0.1: note: called from here
+/usr/lib64/libpopt.so.0.0.1: note: called from poptGetNextOpt()
+rsync-3.2.3/options.c:1368: note: called from parse_arguments()
+rsync-3.2.3/main.c:1744: note: called from main()
+# 1366|   	}
+# 1367|   
+# 1368|-> 	while ((opt = poptGetNextOpt(pc)) != -1) {
+# 1369|   		/* most options are handled automatically by popt;
+# 1370|   		 * only special cases are returned and listed here. */
+
+Error: VALGRIND_WARNING:
+rsync-3.2.3/rsync: note: while executing process 5527 with arguments: -a -f -! */ /builddir/build/BUILD/rsync-3.2.3/testtmp/itemize/from/ /builddir/build/BUILD/rsync-3.2.3/testtmp/itemize/to
+rsync-3.2.3/options.c:1368: warning[Leak_DefinitelyLost]: 6 bytes in 1 blocks are definitely lost in loss record 7 of 34
+/usr/lib64/libpopt.so.0.0.1: note: called from here
+/usr/lib64/libpopt.so.0.0.1: note: called from poptGetNextOpt()
+rsync-3.2.3/options.c:1368: note: called from parse_arguments()
+rsync-3.2.3/main.c:1744: note: called from main()
+# 1366|   	}
+# 1367|   
+# 1368|-> 	while ((opt = poptGetNextOpt(pc)) != -1) {
+# 1369|   		/* most options are handled automatically by popt;
+# 1370|   		 * only special cases are returned and listed here. */
+
+Error: VALGRIND_WARNING:
+rsync-3.2.3/rsync: note: while executing process 1185 with arguments: -ai --info=backup /builddir/build/BUILD/rsync-3.2.3/testtmp/backup/from/ /builddir/build/BUILD/rsync-3.2.3/testtmp/backup/to/
+rsync-3.2.3/options.c:1368: warning[Leak_DefinitelyLost]: 7 bytes in 1 blocks are definitely lost in loss record 8 of 32
+/usr/lib64/libpopt.so.0.0.1: note: called from here
+/usr/lib64/libpopt.so.0.0.1: note: called from poptGetNextOpt()
+rsync-3.2.3/options.c:1368: note: called from parse_arguments()
+rsync-3.2.3/main.c:1744: note: called from main()
+# 1366|   	}
+# 1367|   
+# 1368|-> 	while ((opt = poptGetNextOpt(pc)) != -1) {
+# 1369|   		/* most options are handled automatically by popt;
+# 1370|   		 * only special cases are returned and listed here. */
+
+Error: COMPILER_WARNING (CWE-457):
+rsync-3.2.3/receiver.c: scope_hint: In function 'receive_data'
+rsync-3.2.3/receiver.c:330:41: warning[-Wmaybe-uninitialized]: 'data' may be used uninitialized in this function
+#  330 |                         if (fd != -1 && write_file(fd, 0, offset, data, i) != i)
+#      |                                         ^
+rsync-3.2.3/receiver.c:247:15: note: 'data' was declared here
+#  247 |         char *data;
+#      |               ^
+#  328|   			sum_update(data, i);
+#  329|   
+#  330|-> 			if (fd != -1 && write_file(fd, 0, offset, data, i) != i)
+#  331|   				goto report_write_error;
+#  332|   			offset += i;
+
+Error: COMPILER_WARNING (CWE-563):
+rsync-3.2.3/rounding.c:35:20: warning[-Wunused-but-set-variable]: variable 'test_array' set but not used
+#   33|    int main(UNUSED(int argc), UNUSED(char *argv[]))
+#   34|   {
+#   35|-> 	static int test_array[1 - 2 * (ACTUAL_SIZE != EXPECTED_SIZE)];
+#   36|   	test_array[0] = 0;
+#   37|   	return 0;
+
+Error: COMPILER_WARNING (CWE-1164):
+rsync-3.2.3/simd-checksum-x86_64.cpp:90:52: warning[-Wunused-function]: 'int32_t get_checksum1_sse2_32(signed char*, int32_t, int32_t, uint32_t*, uint32_t*)' defined but not used
+#   90 | __attribute__ ((target("default"))) MVSTATIC int32 get_checksum1_sse2_32(schar* buf, int32 len, int32 i, uint32* ps1, uint32* ps2) { return i; }
+#      |                                                    ^~~~~~~~~~~~~~~~~~~~~
+#   88|   __attribute__ ((target("default"))) MVSTATIC int32 get_checksum1_avx2_64(schar* buf, int32 len, int32 i, uint32* ps1, uint32* ps2) { return i; }
+#   89|   __attribute__ ((target("default"))) MVSTATIC int32 get_checksum1_ssse3_32(schar* buf, int32 len, int32 i, uint32* ps1, uint32* ps2) { return i; }
+#   90|-> __attribute__ ((target("default"))) MVSTATIC int32 get_checksum1_sse2_32(schar* buf, int32 len, int32 i, uint32* ps1, uint32* ps2) { return i; }
+#   91|   
+#   92|   /*
+
+Error: COMPILER_WARNING (CWE-457):
+rsync-3.2.3/syscall.c: scope_hint: In function 'do_chmod'
+rsync-3.2.3/syscall.c:259:12: warning[-Wmaybe-uninitialized]: 'code' may be used uninitialized in this function
+#  259 |         if (code != 0 && (preserve_perms || preserve_executability))
+#      |            ^
+#  257|   		break;
+#  258|   	}
+#  259|-> 	if (code != 0 && (preserve_perms || preserve_executability))
+#  260|   		return code;
+#  261|   	return 0;
+
+Error: VALGRIND_WARNING:
+rsync-3.2.3/rsync: note: while executing process 1411 with arguments: -av --exclude=foobar.baz /builddir/build/BUILD/rsync-3.2.3/testtmp/batch-mode/from/ /builddir/build/BUILD/rsync-3.2.3/testtmp/batch-mode/chk/
+rsync-3.2.3/util2.c:83: warning[Leak_DefinitelyLost]: 21 bytes in 1 blocks are definitely lost in loss record 13 of 35
+rsync-3.2.3/util2.c:83: note: called from my_alloc()
+rsync-3.2.3/flist.c:1346: note: called from make_file()
+rsync-3.2.3/flist.c:1498: note: called from send_file_name()
+rsync-3.2.3/flist.c:1839: note: called from send_directory()
+rsync-3.2.3/flist.c:1992: note: called from send1extra()
+rsync-3.2.3/flist.c:2078: note: called from send_extra_file_list()
+rsync-3.2.3/sender.c:211: note: called from send_files()
+rsync-3.2.3/main.c:1317: note: called from client_run()
+rsync-3.2.3/main.c:1580: note: called from UnknownInlinedFun()
+rsync-3.2.3/main.c:1812: note: called from main()
+#   81|   	}
+#   82|   	if (!ptr)
+#   83|-> 		ptr = malloc(num * size);
+#   84|   	else if (ptr == do_calloc)
+#   85|   		ptr = calloc(num, size);
+
+Error: VALGRIND_WARNING:
+rsync-3.2.3/rsync: note: while executing process 6084 with arguments: -n -r -R --no-implied-dirs -y /builddir/build/BUILD/rsync-3.2.3/testtmp/missing/from/./subdir/file /builddir/build/BUILD/rsync-3.2.3/testtmp/missing/to/
+rsync-3.2.3/util2.c:83: warning[Leak_DefinitelyLost]: 256 bytes in 1 blocks are definitely lost in loss record 20 of 27
+rsync-3.2.3/util2.c:83: note: called from my_alloc()
+rsync-3.2.3/util.c:1645: note: called from expand_item_list()
+rsync-3.2.3/flist.c:1949: note: called from send_implied_dirs()
+rsync-3.2.3/flist.c:2384: note: called from send_file_list()
+rsync-3.2.3/main.c:1309: note: called from client_run()
+rsync-3.2.3/main.c:1580: note: called from UnknownInlinedFun()
+rsync-3.2.3/main.c:1812: note: called from main()
+#   81|   	}
+#   82|   	if (!ptr)
+#   83|-> 		ptr = malloc(num * size);
+#   84|   	else if (ptr == do_calloc)
+#   85|   		ptr = calloc(num, size);
+
+Error: VALGRIND_WARNING:
+rsync-3.2.3/rsync: note: while executing process 2809 with arguments: --config=/builddir/build/BUILD/rsync-3.2.3/testtmp/daemon-gzip-download/test-rsyncd.conf --daemon
+rsync-3.2.3/util2.c:83: warning[Leak_DefinitelyLost]: 27 bytes in 1 blocks are definitely lost in loss record 23 of 60
+rsync-3.2.3/util2.c:83: note: called from my_alloc()
+rsync-3.2.3/ifuncs.h:108: note: called from UnknownInlinedFun()
+rsync-3.2.3/loadparm.c:265: note: called from UnknownInlinedFun()
+rsync-3.2.3/loadparm.c:453: note: called from do_parameter.lto_priv.0()
+rsync-3.2.3/params.c:553: note: called from Parse()
+rsync-3.2.3/params.c:627: note: called from pm_process()
+rsync-3.2.3/clientserver.c:1222: note: called from start_daemon()
+rsync-3.2.3/clientserver.c:1432: note: called from UnknownInlinedFun()
+rsync-3.2.3/main.c:1787: note: called from main()
+#   81|   	}
+#   82|   	if (!ptr)
+#   83|-> 		ptr = malloc(num * size);
+#   84|   	else if (ptr == do_calloc)
+#   85|   		ptr = calloc(num, size);
+
+Error: VALGRIND_WARNING:
+rsync-3.2.3/rsync: note: while executing process 4428 with arguments: -avv /builddir/build/BUILD/rsync-3.2.3/testtmp/exclude/from/ /builddir/build/BUILD/rsync-3.2.3/testtmp/exclude/chk/
+rsync-3.2.3/util2.c:83: warning[Leak_DefinitelyLost]: 28 bytes in 2 blocks are definitely lost in loss record 10 of 31
+rsync-3.2.3/util2.c:83: note: called from my_alloc()
+rsync-3.2.3/flist.c:1346: note: called from make_file()
+rsync-3.2.3/flist.c:1498: note: called from send_file_name()
+rsync-3.2.3/flist.c:1839: note: called from send_directory()
+rsync-3.2.3/flist.c:1992: note: called from send1extra()
+rsync-3.2.3/flist.c:2078: note: called from send_extra_file_list()
+rsync-3.2.3/sender.c:211: note: called from send_files()
+rsync-3.2.3/main.c:1317: note: called from client_run()
+rsync-3.2.3/main.c:1580: note: called from UnknownInlinedFun()
+rsync-3.2.3/main.c:1812: note: called from main()
+#   81|   	}
+#   82|   	if (!ptr)
+#   83|-> 		ptr = malloc(num * size);
+#   84|   	else if (ptr == do_calloc)
+#   85|   		ptr = calloc(num, size);
+
+Error: VALGRIND_WARNING:
+rsync-3.2.3/rsync: note: while executing process 6538 with arguments: -ai --include=/down/ --exclude=/* /builddir/build/BUILD/rsync-3.2.3/testtmp/relative/from/ /builddir/build/BUILD/rsync-3.2.3/testtmp/relative/chk/
+rsync-3.2.3/util2.c:83: warning[Leak_DefinitelyLost]: 33 bytes in 1 blocks are definitely lost in loss record 15 of 35
+rsync-3.2.3/util2.c:83: note: called from my_alloc()
+rsync-3.2.3/flist.c:1346: note: called from make_file()
+rsync-3.2.3/flist.c:1498: note: called from send_file_name()
+rsync-3.2.3/flist.c:1839: note: called from send_directory()
+rsync-3.2.3/flist.c:1992: note: called from send1extra()
+rsync-3.2.3/flist.c:2078: note: called from send_extra_file_list()
+rsync-3.2.3/sender.c:211: note: called from send_files()
+rsync-3.2.3/main.c:1317: note: called from client_run()
+rsync-3.2.3/main.c:1580: note: called from UnknownInlinedFun()
+rsync-3.2.3/main.c:1812: note: called from main()
+#   81|   	}
+#   82|   	if (!ptr)
+#   83|-> 		ptr = malloc(num * size);
+#   84|   	else if (ptr == do_calloc)
+#   85|   		ptr = calloc(num, size);
+
+Error: VALGRIND_WARNING:
+rsync-3.2.3/rsync: note: while executing process 4287 with arguments: -av -f -_foo/too/ -f -_foo/down/ -f -_foo/and/ -f -_new/ /builddir/build/BUILD/rsync-3.2.3/testtmp/exclude/from/ /builddir/build/BUILD/rsync-3.2.3/testtmp/exclude/chk/
+rsync-3.2.3/util2.c:83: warning[Leak_DefinitelyLost]: 44 bytes in 3 blocks are definitely lost in loss record 16 of 35
+rsync-3.2.3/util2.c:83: note: called from my_alloc()
+rsync-3.2.3/flist.c:1346: note: called from make_file()
+rsync-3.2.3/flist.c:1498: note: called from send_file_name()
+rsync-3.2.3/flist.c:1839: note: called from send_directory()
+rsync-3.2.3/flist.c:1992: note: called from send1extra()
+rsync-3.2.3/flist.c:2078: note: called from send_extra_file_list()
+rsync-3.2.3/sender.c:211: note: called from send_files()
+rsync-3.2.3/main.c:1317: note: called from client_run()
+rsync-3.2.3/main.c:1580: note: called from UnknownInlinedFun()
+rsync-3.2.3/main.c:1812: note: called from main()
+#   81|   	}
+#   82|   	if (!ptr)
+#   83|-> 		ptr = malloc(num * size);
+#   84|   	else if (ptr == do_calloc)
+#   85|   		ptr = calloc(num, size);
+
+Error: VALGRIND_WARNING:
+rsync-3.2.3/rsync: note: while executing process 4331 with arguments: -av --prune-empty-dirs /builddir/build/BUILD/rsync-3.2.3/testtmp/exclude/from/ /builddir/build/BUILD/rsync-3.2.3/testtmp/exclude/to/
+rsync-3.2.3/util2.c:83: warning[Leak_DefinitelyLost]: 5 bytes in 1 blocks are definitely lost in loss record 3 of 34
+rsync-3.2.3/util2.c:83: note: called from my_alloc()
+rsync-3.2.3/ifuncs.h:108: note: called from UnknownInlinedFun()
+rsync-3.2.3/uidlist.c:110: note: called from uid_to_user()
+rsync-3.2.3/uidlist.c:391: note: called from UnknownInlinedFun()
+rsync-3.2.3/uidlist.c:378: note: called from send_one_list.lto_priv.0()
+rsync-3.2.3/uidlist.c:400: note: called from UnknownInlinedFun()
+rsync-3.2.3/flist.c:2470: note: called from send_file_list()
+rsync-3.2.3/main.c:1309: note: called from client_run()
+rsync-3.2.3/main.c:1580: note: called from UnknownInlinedFun()
+rsync-3.2.3/main.c:1812: note: called from main()
+#   81|   	}
+#   82|   	if (!ptr)
+#   83|-> 		ptr = malloc(num * size);
+#   84|   	else if (ptr == do_calloc)
+#   85|   		ptr = calloc(num, size);
+
+Error: VALGRIND_WARNING:
+rsync-3.2.3/rsync: note: while executing process 5697 with arguments: --delete -avH /builddir/build/BUILD/rsync-3.2.3/testtmp/longdir/from/ /builddir/build/BUILD/rsync-3.2.3/testtmp/longdir/to
+rsync-3.2.3/util2.c:83: warning[Leak_DefinitelyLost]: 534 bytes in 2 blocks are definitely lost in loss record 25 of 33
+rsync-3.2.3/util2.c:83: note: called from my_alloc()
+rsync-3.2.3/flist.c:1346: note: called from make_file()
+rsync-3.2.3/flist.c:1498: note: called from send_file_name()
+rsync-3.2.3/flist.c:1839: note: called from send_directory()
+rsync-3.2.3/flist.c:1992: note: called from send1extra()
+rsync-3.2.3/flist.c:2078: note: called from send_extra_file_list()
+rsync-3.2.3/sender.c:211: note: called from send_files()
+rsync-3.2.3/main.c:1317: note: called from client_run()
+rsync-3.2.3/main.c:1580: note: called from UnknownInlinedFun()
+rsync-3.2.3/main.c:1812: note: called from main()
+#   81|   	}
+#   82|   	if (!ptr)
+#   83|-> 		ptr = malloc(num * size);
+#   84|   	else if (ptr == do_calloc)
+#   85|   		ptr = calloc(num, size);
+
+Error: VALGRIND_WARNING:
+rsync-3.2.3/rsync: note: while executing process 7105 with arguments: -avv from/safe/ to
+rsync-3.2.3/util2.c:83: warning[Leak_DefinitelyLost]: 6 bytes in 1 blocks are definitely lost in loss record 5 of 31
+rsync-3.2.3/util2.c:83: note: called from my_alloc()
+rsync-3.2.3/flist.c:1346: note: called from make_file()
+rsync-3.2.3/flist.c:1498: note: called from send_file_name()
+rsync-3.2.3/flist.c:1839: note: called from send_directory()
+rsync-3.2.3/flist.c:1992: note: called from send1extra()
+rsync-3.2.3/flist.c:2078: note: called from send_extra_file_list()
+rsync-3.2.3/sender.c:211: note: called from send_files()
+rsync-3.2.3/main.c:1317: note: called from client_run()
+rsync-3.2.3/main.c:1580: note: called from UnknownInlinedFun()
+rsync-3.2.3/main.c:1812: note: called from main()
+#   81|   	}
+#   82|   	if (!ptr)
+#   83|-> 		ptr = malloc(num * size);
+#   84|   	else if (ptr == do_calloc)
+#   85|   		ptr = calloc(num, size);
+
+Error: VALGRIND_WARNING:
+rsync-3.2.3/rsync: note: while executing process 3317 with arguments: -r localhost::test-hidden
+rsync-3.2.3/util2.c:83: warning[Leak_DefinitelyLost]: 8 bytes in 1 blocks are definitely lost in loss record 5 of 26
+rsync-3.2.3/util2.c:83: note: called from my_alloc()
+rsync-3.2.3/flist.c:762: note: called from recv_file_entry()
+rsync-3.2.3/flist.c:2585: note: called from recv_file_list()
+rsync-3.2.3/io.c:1699: note: called from wait_for_receiver.part.0()
+rsync-3.2.3/io.c:1674: note: called from UnknownInlinedFun()
+rsync-3.2.3/generator.c:2344: note: called from generate_files()
+rsync-3.2.3/main.c:1106: note: called from do_recv()
+rsync-3.2.3/main.c:1362: note: called from client_run()
+rsync-3.2.3/clientserver.c:145: note: called from UnknownInlinedFun()
+rsync-3.2.3/main.c:1535: note: called from UnknownInlinedFun()
+rsync-3.2.3/main.c:1812: note: called from main()
+#   81|   	}
+#   82|   	if (!ptr)
+#   83|-> 		ptr = malloc(num * size);
+#   84|   	else if (ptr == do_calloc)
+#   85|   		ptr = calloc(num, size);
+
+Error: VALGRIND_WARNING:
+rsync-3.2.3/rsync: note: while executing process 2809 with arguments: --config=/builddir/build/BUILD/rsync-3.2.3/testtmp/daemon-gzip-download/test-rsyncd.conf --daemon
+rsync-3.2.3/util2.c:83: warning[Leak_DefinitelyLost]: 9 bytes in 1 blocks are definitely lost in loss record 6 of 60
+rsync-3.2.3/util2.c:83: note: called from my_alloc()
+rsync-3.2.3/ifuncs.h:108: note: called from UnknownInlinedFun()
+rsync-3.2.3/options.c:1305: note: called from popt_unalias()
+rsync-3.2.3/options.c:1364: note: called from parse_arguments()
+rsync-3.2.3/main.c:1744: note: called from main()
+#   81|   	}
+#   82|   	if (!ptr)
+#   83|-> 		ptr = malloc(num * size);
+#   84|   	else if (ptr == do_calloc)
+#   85|   		ptr = calloc(num, size);
+
+Error: VALGRIND_WARNING:
+rsync-3.2.3/rsync: note: while executing process 3140 with arguments: -ve src/support/lsh.sh --no-cd --rsync-path=/builddir/build/BUILD/rsync-3.2.3/rsync  --config=/builddir/build/BUILD/rsync-3.2.3/testtmp/daemon/test-rsyncd.conf localhost::
+rsync-3.2.3/util2.c:83: warning[Leak_PossiblyLost]: 12 bytes in 1 blocks are possibly lost in loss record 8 of 22
+rsync-3.2.3/util2.c:83: note: called from my_alloc()
+rsync-3.2.3/ifuncs.h:108: note: called from UnknownInlinedFun()
+rsync-3.2.3/main.c:1383: note: called from UnknownInlinedFun()
+rsync-3.2.3/main.c:1404: note: called from UnknownInlinedFun()
+rsync-3.2.3/main.c:1812: note: called from main()
+#   81|   	}
+#   82|   	if (!ptr)
+#   83|-> 		ptr = malloc(num * size);
+#   84|   	else if (ptr == do_calloc)
+#   85|   		ptr = calloc(num, size);
+
+Error: VALGRIND_WARNING:
+rsync-3.2.3/rsync: note: while executing process 2978 with arguments: -avvvvzz /builddir/build/BUILD/rsync-3.2.3/testtmp/daemon-gzip-upload/from/ localhost::test-to/
+rsync-3.2.3/util2.c:83: warning[Leak_PossiblyLost]: 20 bytes in 1 blocks are possibly lost in loss record 11 of 47
+rsync-3.2.3/util2.c:83: note: called from my_alloc()
+rsync-3.2.3/ifuncs.h:108: note: called from UnknownInlinedFun()
+rsync-3.2.3/main.c:1383: note: called from UnknownInlinedFun()
+rsync-3.2.3/main.c:1404: note: called from UnknownInlinedFun()
+rsync-3.2.3/main.c:1812: note: called from main()
+#   81|   	}
+#   82|   	if (!ptr)
+#   83|-> 		ptr = malloc(num * size);
+#   84|   	else if (ptr == do_calloc)
+#   85|   		ptr = calloc(num, size);
+
+Error: VALGRIND_WARNING:
+rsync-3.2.3/rsync: note: while executing process 2766 with arguments: -avvvvzz localhost::test-from/ /builddir/build/BUILD/rsync-3.2.3/testtmp/daemon-gzip-download/to/
+rsync-3.2.3/util2.c:83: warning[Leak_PossiblyLost]: 22 bytes in 1 blocks are possibly lost in loss record 12 of 31
+rsync-3.2.3/util2.c:83: note: called from my_alloc()
+rsync-3.2.3/ifuncs.h:108: note: called from UnknownInlinedFun()
+rsync-3.2.3/main.c:1383: note: called from UnknownInlinedFun()
+rsync-3.2.3/main.c:1404: note: called from UnknownInlinedFun()
+rsync-3.2.3/main.c:1812: note: called from main()
+#   81|   	}
+#   82|   	if (!ptr)
+#   83|-> 		ptr = malloc(num * size);
+#   84|   	else if (ptr == do_calloc)
+#   85|   		ptr = calloc(num, size);
+
+Error: VALGRIND_WARNING:
+rsync-3.2.3/rsync: note: while executing process 3317 with arguments: -r localhost::test-hidden
+rsync-3.2.3/util2.c:83: warning[Leak_PossiblyLost]: 23 bytes in 1 blocks are possibly lost in loss record 12 of 26
+rsync-3.2.3/util2.c:83: note: called from my_alloc()
+rsync-3.2.3/ifuncs.h:108: note: called from UnknownInlinedFun()
+rsync-3.2.3/main.c:1383: note: called from UnknownInlinedFun()
+rsync-3.2.3/main.c:1404: note: called from UnknownInlinedFun()
+rsync-3.2.3/main.c:1812: note: called from main()
+#   81|   	}
+#   82|   	if (!ptr)
+#   83|-> 		ptr = malloc(num * size);
+#   84|   	else if (ptr == do_calloc)
+#   85|   		ptr = calloc(num, size);
+
+Error: VALGRIND_WARNING:
+rsync-3.2.3/rsync: note: while executing process 6651 with arguments: -avH -e /builddir/build/BUILD/rsync-3.2.3/testtmp/ssh-basic/src/support/lsh.sh --rsync-path=/builddir/build/BUILD/rsync-3.2.3/rsync  /builddir/build/BUILD/rsync-3.2.3/testtmp/ssh-basic/from/ localhost:/builddir/build/BUILD/rsync-3.2.3/testtmp/ssh-basic/to
+rsync-3.2.3/util2.c:83: warning[Leak_PossiblyLost]: 65 bytes in 1 blocks are possibly lost in loss record 22 of 38
+rsync-3.2.3/util2.c:83: note: called from my_alloc()
+rsync-3.2.3/ifuncs.h:108: note: called from UnknownInlinedFun()
+rsync-3.2.3/main.c:1383: note: called from UnknownInlinedFun()
+rsync-3.2.3/main.c:1404: note: called from UnknownInlinedFun()
+rsync-3.2.3/main.c:1812: note: called from main()
+#   81|   	}
+#   82|   	if (!ptr)
+#   83|-> 		ptr = malloc(num * size);
+#   84|   	else if (ptr == do_calloc)
+#   85|   		ptr = calloc(num, size);
+
+Error: VALGRIND_WARNING:
+rsync-3.2.3/wildtest: note: while executing process 7311 with arguments: /builddir/build/BUILD/rsync-3.2.3/wildtest.txt
+rsync-3.2.3/wildtest.c:115: warning[Leak_DefinitelyLost]: 857 (792 direct, 65 indirect) bytes in 1 blocks are definitely lost in loss record 5 of 5
+/usr/lib64/libpopt.so.0.0.1: note: called from poptGetContext()
+rsync-3.2.3/wildtest.c:115: note: called from main()
+#  113|       FILE *fp;
+#  114|       int opt, line, i, flag[2];
+#  115|->     poptContext pc = poptGetContext("wildtest", argc, (const char**)argv,
+#  116|   				    long_options, 0);
+#  117|   
+
+Error: VALGRIND_WARNING:
+rsync-3.2.3/wildtest: note: while executing process 7332 with arguments: -x1 /builddir/build/BUILD/rsync-3.2.3/wildtest.txt
+rsync-3.2.3/wildtest.c:115: warning[Leak_DefinitelyLost]: 895 (792 direct, 103 indirect) bytes in 1 blocks are definitely lost in loss record 8 of 8
+/usr/lib64/libpopt.so.0.0.1: note: called from poptGetContext()
+rsync-3.2.3/wildtest.c:115: note: called from main()
+#  113|       FILE *fp;
+#  114|       int opt, line, i, flag[2];
+#  115|->     poptContext pc = poptGetContext("wildtest", argc, (const char**)argv,
+#  116|   				    long_options, 0);
+#  117|   
+
+Error: VALGRIND_WARNING:
+rsync-3.2.3/wildtest: note: while executing process 7351 with arguments: -x1 -e1 /builddir/build/BUILD/rsync-3.2.3/wildtest.txt
+rsync-3.2.3/wildtest.c:115: warning[Leak_DefinitelyLost]: 929 (792 direct, 137 indirect) bytes in 1 blocks are definitely lost in loss record 8 of 8
+/usr/lib64/libpopt.so.0.0.1: note: called from poptGetContext()
+rsync-3.2.3/wildtest.c:115: note: called from main()
+#  113|       FILE *fp;
+#  114|       int opt, line, i, flag[2];
+#  115|->     poptContext pc = poptGetContext("wildtest", argc, (const char**)argv,
+#  116|   				    long_options, 0);
+#  117|   
+
+Error: VALGRIND_WARNING:
+rsync-3.2.3/wildtest: note: while executing process 7408 with arguments: -x2 -ese /builddir/build/BUILD/rsync-3.2.3/wildtest.txt
+rsync-3.2.3/wildtest.c:115: warning[Leak_DefinitelyLost]: 930 (792 direct, 138 indirect) bytes in 1 blocks are definitely lost in loss record 8 of 8
+/usr/lib64/libpopt.so.0.0.1: note: called from poptGetContext()
+rsync-3.2.3/wildtest.c:115: note: called from main()
+#  113|       FILE *fp;
+#  114|       int opt, line, i, flag[2];
+#  115|->     poptContext pc = poptGetContext("wildtest", argc, (const char**)argv,
+#  116|   				    long_options, 0);
+#  117|   
+
+Error: VALGRIND_WARNING:
+rsync-3.2.3/wildtest: note: while executing process 7370 with arguments: -x1 -e1se /builddir/build/BUILD/rsync-3.2.3/wildtest.txt
+rsync-3.2.3/wildtest.c:115: warning[Leak_DefinitelyLost]: 931 (792 direct, 139 indirect) bytes in 1 blocks are definitely lost in loss record 8 of 8
+/usr/lib64/libpopt.so.0.0.1: note: called from poptGetContext()
+rsync-3.2.3/wildtest.c:115: note: called from main()
+#  113|       FILE *fp;
+#  114|       int opt, line, i, flag[2];
+#  115|->     poptContext pc = poptGetContext("wildtest", argc, (const char**)argv,
+#  116|   				    long_options, 0);
+#  117|   
+
+Error: VALGRIND_WARNING:
+rsync-3.2.3/wildtest: note: while executing process 7351 with arguments: -x1 -e1 /builddir/build/BUILD/rsync-3.2.3/wildtest.txt
+rsync-3.2.3/wildtest.c:118: warning[Leak_DefinitelyLost]: 2 bytes in 1 blocks are definitely lost in loss record 1 of 8
+/usr/lib64/libpopt.so.0.0.1: note: called from here
+/usr/lib64/libpopt.so.0.0.1: note: called from poptGetNextOpt()
+rsync-3.2.3/wildtest.c:118: note: called from main()
+#  116|   				    long_options, 0);
+#  117|   
+#  118|->     while ((opt = poptGetNextOpt(pc)) != -1) {
+#  119|   	switch (opt) {
+#  120|   	  case 'e':
+
+Error: VALGRIND_WARNING:
+rsync-3.2.3/wildtest: note: while executing process 7408 with arguments: -x2 -ese /builddir/build/BUILD/rsync-3.2.3/wildtest.txt
+rsync-3.2.3/wildtest.c:118: warning[Leak_DefinitelyLost]: 3 bytes in 1 blocks are definitely lost in loss record 1 of 8
+/usr/lib64/libpopt.so.0.0.1: note: called from here
+/usr/lib64/libpopt.so.0.0.1: note: called from poptGetNextOpt()
+rsync-3.2.3/wildtest.c:118: note: called from main()
+#  116|   				    long_options, 0);
+#  117|   
+#  118|->     while ((opt = poptGetNextOpt(pc)) != -1) {
+#  119|   	switch (opt) {
+#  120|   	  case 'e':
+
+Error: VALGRIND_WARNING:
+rsync-3.2.3/wildtest: note: while executing process 7370 with arguments: -x1 -e1se /builddir/build/BUILD/rsync-3.2.3/wildtest.txt
+rsync-3.2.3/wildtest.c:118: warning[Leak_DefinitelyLost]: 4 bytes in 1 blocks are definitely lost in loss record 1 of 8
+/usr/lib64/libpopt.so.0.0.1: note: called from here
+/usr/lib64/libpopt.so.0.0.1: note: called from poptGetNextOpt()
+rsync-3.2.3/wildtest.c:118: note: called from main()
+#  116|   				    long_options, 0);
+#  117|   
+#  118|->     while ((opt = poptGetNextOpt(pc)) != -1) {
+#  119|   	switch (opt) {
+#  120|   	  case 'e':

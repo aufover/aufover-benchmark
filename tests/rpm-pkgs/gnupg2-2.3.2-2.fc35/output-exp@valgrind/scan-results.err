@@ -1,0 +1,414 @@
+Error: COMPILER_WARNING (CWE-704):
+gnupg-2.3.2/agent/cvt-openpgp.h:27:13: warning[-Wlto-type-mismatch]: type of 'convert_from_openpgp_native' does not match original declaration
+#   27 | gpg_error_t convert_from_openpgp_native (ctrl_t ctrl,
+#      |             ^
+gnupg-2.3.2/agent/t-protect.c:344:1: note: type mismatch in parameter 4
+#  344 | convert_from_openpgp_native (gcry_sexp_t s_pgp, const char *passphrase,
+#      | ^
+gnupg-2.3.2/agent/t-protect.c:344:1: note: 'convert_from_openpgp_native' was previously declared here
+#   25|                                     const char *cache_nonce,
+#   26|                                     unsigned char **r_key, char **r_passphrase);
+#   27|-> gpg_error_t convert_from_openpgp_native (ctrl_t ctrl,
+#   28|                                            gcry_sexp_t s_pgp,
+#   29|                                            const char *passphrase,
+
+Error: COMPILER_WARNING (CWE-252):
+gnupg-2.3.2/common/dotlock.c: scope_hint: In function 'use_hardlinks_p'
+gnupg-2.3.2/common/dotlock.c:641:10: warning[-Wunused-result]: ignoring return value of 'link' declared with attribute 'warn_unused_result'
+#  641 |   (void) link (tname, lname);
+#      |          ^~~~~~~~~~~~~~~~~~~
+#  639|   
+#  640|     /* We ignore the return value of link() because it is unreliable.  */
+#  641|->   (void) link (tname, lname);
+#  642|   
+#  643|     if (stat (tname, &sb))
+
+Error: COMPILER_WARNING (CWE-252):
+gnupg-2.3.2/common/dotlock.c: scope_hint: In function 'dotlock_take_unix'
+gnupg-2.3.2/common/dotlock.c:1084:14: warning[-Wunused-result]: ignoring return value of 'link' declared with attribute 'warn_unused_result'
+# 1084 |       (void) link (h->tname, h->lockname);
+#      |              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1082|   
+# 1083|         /* We ignore the return value of link() because it is unreliable.  */
+# 1084|->       (void) link (h->tname, h->lockname);
+# 1085|   
+# 1086|         if (stat (h->tname, &sb))
+
+Error: COMPILER_WARNING (CWE-252):
+gnupg-2.3.2/common/signal.c: scope_hint: In function 'got_fatal_signal'
+gnupg-2.3.2/common/signal.c:111:9: warning[-Wunused-result]: ignoring return value of 'write' declared with attribute 'warn_unused_result'
+#  111 |   (void)write (2, "\n", 1 );
+#      |         ^~~~~~~~~~~~~~~~~~~
+#  109|       cleanup_fnc ();
+#  110|     /* Better don't translate these messages. */
+#  111|->   (void)write (2, "\n", 1 );
+#  112|     s = log_get_prefix (NULL);
+#  113|     if (s)
+
+Error: COMPILER_WARNING (CWE-252):
+gnupg-2.3.2/common/signal.c:114:11: warning[-Wunused-result]: ignoring return value of 'write' declared with attribute 'warn_unused_result'
+#  114 |     (void)write(2, s, strlen (s));
+#      |           ^~~~~~~~~~~~~~~~~~~~~~~
+#  112|     s = log_get_prefix (NULL);
+#  113|     if (s)
+#  114|->     (void)write(2, s, strlen (s));
+#  115|     (void)write (2, ": signal ", 9 );
+#  116|     s = get_signal_name(sig);
+
+Error: COMPILER_WARNING (CWE-252):
+gnupg-2.3.2/common/signal.c:115:9: warning[-Wunused-result]: ignoring return value of 'write' declared with attribute 'warn_unused_result'
+#  115 |   (void)write (2, ": signal ", 9 );
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+#  113|     if (s)
+#  114|       (void)write(2, s, strlen (s));
+#  115|->   (void)write (2, ": signal ", 9 );
+#  116|     s = get_signal_name(sig);
+#  117|     if (s)
+
+Error: COMPILER_WARNING (CWE-252):
+gnupg-2.3.2/common/signal.c:118:12: warning[-Wunused-result]: ignoring return value of 'write' declared with attribute 'warn_unused_result'
+#  118 |     (void) write (2, s, strlen(s) );
+#      |            ^~~~~~~~~~~~~~~~~~~~~~~~
+#  116|     s = get_signal_name(sig);
+#  117|     if (s)
+#  118|->     (void) write (2, s, strlen(s) );
+#  119|     else
+#  120|       {
+
+Error: COMPILER_WARNING (CWE-252):
+gnupg-2.3.2/common/signal.c:128:15: warning[-Wunused-result]: ignoring return value of 'write' declared with attribute 'warn_unused_result'
+#  128 |         (void)write (2, "?", 1);
+#      |               ^~~~~~~~~~~~~~~~~
+#  126|            this is a bug in that system, we will protect against it.  */
+#  127|         if (sig < 0 || sig >= 100000)
+#  128|->         (void)write (2, "?", 1);
+#  129|         else
+#  130|           {
+
+Error: COMPILER_WARNING (CWE-252):
+gnupg-2.3.2/common/signal.c:137:25: warning[-Wunused-result]: ignoring return value of 'write' declared with attribute 'warn_unused_result'
+#  137 |                   (void)write (2, &"0123456789"[value/i], 1);
+#      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  135|                 if (value >= i || ((any || i==1) && !(value/i)))
+#  136|                   {
+#  137|->                   (void)write (2, &"0123456789"[value/i], 1);
+#  138|                     if ((value/i))
+#  139|                       any = 1;
+
+Error: COMPILER_WARNING (CWE-252):
+gnupg-2.3.2/common/signal.c:145:9: warning[-Wunused-result]: ignoring return value of 'write' declared with attribute 'warn_unused_result'
+#  145 |   (void)write (2, " caught ... exiting\n", 20);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  143|           }
+#  144|       }
+#  145|->   (void)write (2, " caught ... exiting\n", 20);
+#  146|   
+#  147|     /* Reset action to default action and raise signal again */
+
+Error: COMPILER_WARNING (CWE-252):
+gnupg-2.3.2/common/t-exechelp.c: scope_hint: In function 'test_close_all_fds'
+gnupg-2.3.2/common/t-exechelp.c:96:3: warning[-Wunused-result]: ignoring return value of 'dup' declared with attribute 'warn_unused_result'
+#   96 |   dup (1);
+#      |   ^~~~~~~
+#   94|   
+#   95|     /* Some dups to get more file descriptors and close one. */
+#   96|->   dup (1);
+#   97|     dup (1);
+#   98|     fd = dup (1);
+
+Error: COMPILER_WARNING (CWE-252):
+gnupg-2.3.2/common/t-exechelp.c:97:3: warning[-Wunused-result]: ignoring return value of 'dup' declared with attribute 'warn_unused_result'
+#   97 |   dup (1);
+#      |   ^~~~~~~
+#   95|     /* Some dups to get more file descriptors and close one. */
+#   96|     dup (1);
+#   97|->   dup (1);
+#   98|     fd = dup (1);
+#   99|     dup (1);
+
+Error: COMPILER_WARNING (CWE-252):
+gnupg-2.3.2/common/t-exechelp.c:99:3: warning[-Wunused-result]: ignoring return value of 'dup' declared with attribute 'warn_unused_result'
+#   99 |   dup (1);
+#      |   ^~~~~~~
+#   97|     dup (1);
+#   98|     fd = dup (1);
+#   99|->   dup (1);
+#  100|     close (fd);
+#  101|   
+
+Error: COMPILER_WARNING (CWE-252):
+gnupg-2.3.2/common/t-exechelp.c:140:9: warning[-Wunused-result]: ignoring return value of 'dup' declared with attribute 'warn_unused_result'
+#  140 |         dup (1);
+#      |         ^~~~~~~
+#  138|   
+#  139|         for (n=initial_count; n < 31; n++)
+#  140|->         dup (1);
+#  141|         array = xget_all_open_fds ();
+#  142|         if (verbose)
+
+Error: COMPILER_WARNING (CWE-252):
+gnupg-2.3.2/common/t-exechelp.c:147:11: warning[-Wunused-result]: ignoring return value of 'dup' declared with attribute 'warn_unused_result'
+#  147 |           dup (1);
+#      |           ^~~~~~~
+#  145|         for (n=0; n < 5; n++)
+#  146|           {
+#  147|->           dup (1);
+#  148|             array = xget_all_open_fds ();
+#  149|             if (verbose)
+
+Error: VALGRIND_WARNING:
+./t-ldap-misc: note: while executing process 4465
+gnupg-2.3.2/dirmngr/ldap-misc.c:244: warning[Leak_DefinitelyLost]: 126 bytes in 3 blocks are definitely lost in loss record 1 of 1
+/usr/lib64/libgcrypt.so.20.3.4: note: called from gcry_malloc()
+gnupg-2.3.2/dirmngr/ldap-misc.c:244: note: called from UnknownInlinedFun()
+gnupg-2.3.2/dirmngr/t-ldap-misc.c:94: note: called from test_ldap_parse_extfilter()
+gnupg-2.3.2/dirmngr/t-ldap-misc.c:155: note: called from main()
+#  242|       {
+#  243|         string++;
+#  244|->       base = xtrymalloc (strlen (string)+1);
+#  245|         if (!base)
+#  246|           {
+
+Error: COMPILER_WARNING (CWE-704):
+gnupg-2.3.2/g10/keyserver-internal.h:34:24: warning[-Wlto-type-mismatch]: type of 'parse_keyserver_uri' does not match original declaration
+#   34 | struct keyserver_spec *parse_keyserver_uri (const char *string,
+#      |                        ^
+gnupg-2.3.2/g10/gpgv.c:610:1: note: type mismatch in parameter 3
+#  610 | parse_keyserver_uri (const char *uri, int require_scheme,
+#      | ^
+gnupg-2.3.2/g10/gpgv.c:610:1: note: 'parse_keyserver_uri' was previously declared here
+#   32|   void free_keyserver_spec(struct keyserver_spec *keyserver);
+#   33|   struct keyserver_spec *keyserver_match(struct keyserver_spec *spec);
+#   34|-> struct keyserver_spec *parse_keyserver_uri (const char *string,
+#   35|                                               int require_scheme);
+#   36|   struct keyserver_spec *parse_preferred_keyserver(PKT_signature *sig);
+
+Error: COMPILER_WARNING (CWE-704):
+gnupg-2.3.2/g10/keyserver-internal.h:45:5: warning[-Wlto-type-mismatch]: type of 'keyserver_import_keyid' does not match original declaration
+#   45 | int keyserver_import_keyid (ctrl_t ctrl, u32 *keyid,
+#      |     ^
+gnupg-2.3.2/g10/gpgv.c:426:1: note: type mismatch in parameter 3
+#  426 | keyserver_import_keyid (u32 *keyid, void *dummy, unsigned int flags)
+#      | ^
+gnupg-2.3.2/g10/gpgv.c:426:1: note: 'keyserver_import_keyid' was previously declared here
+#   43|   int keyserver_import_fprint_ntds (ctrl_t ctrl,
+#   44|                                     const byte *fprint, size_t fprint_len);
+#   45|-> int keyserver_import_keyid (ctrl_t ctrl, u32 *keyid,
+#   46|                               struct keyserver_spec *keyserver,
+#   47|                               unsigned int flags);
+
+Error: COMPILER_WARNING (CWE-704):
+gnupg-2.3.2/g10/keyserver-internal.h:51:5: warning[-Wlto-type-mismatch]: type of 'keyserver_import_cert' does not match original declaration
+#   51 | int keyserver_import_cert (ctrl_t ctrl, const char *name, int dane_mode,
+#      |     ^
+gnupg-2.3.2/g10/gpgv.c:457:1: note: type mismatch in parameter 2
+#  457 | keyserver_import_cert (const char *name)
+#      | ^
+gnupg-2.3.2/g10/gpgv.c:457:1: note: 'keyserver_import_cert' was previously declared here
+#   49|   gpg_error_t keyserver_search (ctrl_t ctrl, strlist_t tokens);
+#   50|   int keyserver_fetch (ctrl_t ctrl, strlist_t urilist, int origin);
+#   51|-> int keyserver_import_cert (ctrl_t ctrl, const char *name, int dane_mode,
+#   52|                              unsigned char **fpr,size_t *fpr_len);
+#   53|   gpg_error_t keyserver_import_wkd (ctrl_t ctrl, const char *name,
+
+Error: COMPILER_WARNING (CWE-704):
+gnupg-2.3.2/g10/keyserver-internal.h:58:5: warning[-Wlto-type-mismatch]: type of 'keyserver_import_mbox' does not match original declaration
+#   58 | int keyserver_import_mbox (ctrl_t ctrl, const char *mbox,
+#      |     ^
+gnupg-2.3.2/g10/gpgv.c:476:1: note: type mismatch in parameter 3
+#  476 | keyserver_import_mbox (const char *name,struct keyserver_spec *spec)
+#      | ^
+gnupg-2.3.2/g10/gpgv.c:476:1: note: 'keyserver_import_mbox' was previously declared here
+#   56|   int keyserver_import_ntds (ctrl_t ctrl, const char *name,
+#   57|                              unsigned char **fpr,size_t *fpr_len);
+#   58|-> int keyserver_import_mbox (ctrl_t ctrl, const char *mbox,
+#   59|                              unsigned char **fpr,size_t *fpr_len,
+#   60|                              struct keyserver_spec *keyserver);
+
+Error: COMPILER_WARNING (CWE-704):
+gnupg-2.3.2/g10/keyserver-internal.h:61:5: warning[-Wlto-type-mismatch]: type of 'keyserver_import_ldap' does not match original declaration
+#   61 | int keyserver_import_ldap (ctrl_t ctrl, const char *name,
+#      |     ^
+gnupg-2.3.2/g10/gpgv.c:495:1: note: type mismatch in parameter 2
+#  495 | keyserver_import_ldap (const char *name)
+#      | ^
+gnupg-2.3.2/g10/gpgv.c:495:1: note: 'keyserver_import_ldap' was previously declared here
+#   59|                              unsigned char **fpr,size_t *fpr_len,
+#   60|                              struct keyserver_spec *keyserver);
+#   61|-> int keyserver_import_ldap (ctrl_t ctrl, const char *name,
+#   62|                              unsigned char **fpr,size_t *fpr_len);
+#   63|   
+
+Error: COMPILER_WARNING (CWE-252):
+gnupg-2.3.2/g10/photoid.c: scope_hint: In function 'run_with_pipe'
+gnupg-2.3.2/g10/photoid.c:512:7: warning[-Wunused-result]: ignoring return value of 'write' declared with attribute 'warn_unused_result'
+#  512 |       write (to[1], image, len);
+#      |       ^~~~~~~~~~~~~~~~~~~~~~~~~
+#  510|     else
+#  511|       {
+#  512|->       write (to[1], image, len);
+#  513|         close (to[1]);
+#  514|   
+
+Error: COMPILER_WARNING (CWE-704):
+gnupg-2.3.2/g10/photoid.h:31:6: warning[-Wlto-type-mismatch]: type of 'show_photos' does not match original declaration
+#   31 | void show_photos (ctrl_t ctrl, const struct user_attribute *attrs, int count,
+#      |      ^
+gnupg-2.3.2/g10/gpgv.c:628:1: note: type mismatch in parameter 2
+#  628 | show_photos (const struct user_attribute *attrs, int count, PKT_public_key *pk)
+#      | ^
+gnupg-2.3.2/g10/gpgv.c:628:1: note: 'show_photos' was previously declared here
+#   29|   int parse_image_header(const struct user_attribute *attr,byte *type,u32 *len);
+#   30|   const char *image_type_to_string(byte type,int style);
+#   31|-> void show_photos (ctrl_t ctrl, const struct user_attribute *attrs, int count,
+#   32|                     PKT_public_key *pk, PKT_user_id *uid);
+#   33|   
+
+Error: COMPILER_WARNING (CWE-252):
+gnupg-2.3.2/scd/scdaemon.c: scope_hint: In function 'scd_kick_the_loop'
+gnupg-2.3.2/scd/scdaemon.c:1230:3: warning[-Wunused-result]: ignoring return value of 'write' declared with attribute 'warn_unused_result'
+# 1230 |   write (notify_fd, "", 1);
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+# 1228|                  w32_strerror (-1));
+# 1229|   #elif defined(HAVE_PSELECT_NO_EINTR)
+# 1230|->   write (notify_fd, "", 1);
+# 1231|   #else
+# 1232|     int ret = kill (main_thread_pid, SIGCONT);
+
+Error: COMPILER_WARNING (CWE-252):
+gnupg-2.3.2/scd/scdaemon.c: scope_hint: In function 'handle_connections'
+gnupg-2.3.2/scd/scdaemon.c:1391:11: warning[-Wunused-result]: ignoring return value of 'read' declared with attribute 'warn_unused_result'
+# 1391 |           read (pipe_fd[0], buf, sizeof buf);
+#      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1389|             char buf[256];
+# 1390|   
+# 1391|->           read (pipe_fd[0], buf, sizeof buf);
+# 1392|           }
+# 1393|   #endif
+
+Error: COMPILER_WARNING:
+gnupg-2.3.2/sm/call-dirmngr.c: scope_hint: In function 'gpgsm_dirmngr_isvalid.part.0'
+gnupg-2.3.2/sm/call-dirmngr.c:575:24: warning[-Wstringop-overflow=]: 'gpgsm_validate_chain' accessing 16 bytes in a region of size 1
+#  575 |                   rc = gpgsm_validate_chain (ctrl, rspcert, "", NULL, 0, NULL,
+#      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  576 |                                              VALIDATE_FLAG_NO_DIRMNGR, NULL);
+#      |                                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gnupg-2.3.2/sm/call-dirmngr.c:575:24: note: referencing argument 3 of type 'char *'
+gnupg-2.3.2/sm/call-dirmngr.c:30: included_from: Included from here.
+gnupg-2.3.2/sm/gpgsm.h:352:5: note: in a call to function 'gpgsm_validate_chain'
+#  352 | int gpgsm_validate_chain (ctrl_t ctrl, ksba_cert_t cert,
+#      |     ^~~~~~~~~~~~~~~~~~~~
+#  573|                     /* Note the no_dirmngr flag: This avoids checking
+#  574|                        this certificate over and over again. */
+#  575|->                   rc = gpgsm_validate_chain (ctrl, rspcert, "", NULL, 0, NULL,
+#  576|                                                VALIDATE_FLAG_NO_DIRMNGR, NULL);
+#  577|                     if (rc)
+
+Error: COMPILER_WARNING:
+gnupg-2.3.2/sm/certlist.c: scope_hint: In function 'gpgsm_add_to_certlist'
+gnupg-2.3.2/sm/certlist.c:447:22: warning[-Wstringop-overflow=]: 'gpgsm_validate_chain' accessing 16 bytes in a region of size 1
+#  447 |                 rc = gpgsm_validate_chain (ctrl, cert, "", NULL,
+#      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  448 |                                            0, NULL, 0, NULL);
+#      |                                            ~~~~~~~~~~~~~~~~~
+gnupg-2.3.2/sm/certlist.c:447:22: note: referencing argument 3 of type 'char *'
+gnupg-2.3.2/sm/certlist.c:29: included_from: Included from here.
+gnupg-2.3.2/sm/gpgsm.h:352:5: note: in a call to function 'gpgsm_validate_chain'
+#  352 | int gpgsm_validate_chain (ctrl_t ctrl, ksba_cert_t cert,
+#      |     ^~~~~~~~~~~~~~~~~~~~
+#  445|                   }
+#  446|                 if (!rc)
+#  447|->                 rc = gpgsm_validate_chain (ctrl, cert, "", NULL,
+#  448|                                              0, NULL, 0, NULL);
+#  449|                 if (!rc)
+
+Error: COMPILER_WARNING:
+gnupg-2.3.2/sm/import.c: scope_hint: In function 'check_and_store'
+gnupg-2.3.2/sm/import.c:194:10: warning[-Wstringop-overflow=]: 'gpgsm_validate_chain' accessing 16 bytes in a region of size 1
+#  194 |     rc = gpgsm_validate_chain (ctrl, cert, "", NULL, 0, NULL, 0, NULL);
+#      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gnupg-2.3.2/sm/import.c:194:10: note: referencing argument 3 of type 'char *'
+gnupg-2.3.2/sm/import.c:28: included_from: Included from here.
+gnupg-2.3.2/sm/gpgsm.h:352:5: note: in a call to function 'gpgsm_validate_chain'
+#  352 | int gpgsm_validate_chain (ctrl_t ctrl, ksba_cert_t cert,
+#      |     ^~~~~~~~~~~~~~~~~~~~
+#  192|     rc = gpgsm_basic_cert_check (ctrl, cert);
+#  193|     if (!rc && ctrl->with_validation)
+#  194|->     rc = gpgsm_validate_chain (ctrl, cert, "", NULL, 0, NULL, 0, NULL);
+#  195|     if (!rc || (!ctrl->with_validation
+#  196|                 && (gpg_err_code (rc) == GPG_ERR_MISSING_CERT
+
+Error: COMPILER_WARNING:
+gnupg-2.3.2/sm/keylist.c: scope_hint: In function 'list_cert_colon'
+gnupg-2.3.2/sm/keylist.c:451:14: warning[-Wstringop-overflow=]: 'gpgsm_validate_chain' accessing 16 bytes in a region of size 1
+#  451 |     valerr = gpgsm_validate_chain (ctrl, cert, "", NULL, 1, NULL, 0, NULL);
+#      |              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gnupg-2.3.2/sm/keylist.c:451:14: note: referencing argument 3 of type 'char *'
+gnupg-2.3.2/sm/keylist.c:29: included_from: Included from here.
+gnupg-2.3.2/sm/gpgsm.h:352:5: note: in a call to function 'gpgsm_validate_chain'
+#  352 | int gpgsm_validate_chain (ctrl_t ctrl, ksba_cert_t cert,
+#      |     ^~~~~~~~~~~~~~~~~~~~
+#  449|   
+#  450|     if (ctrl->with_validation)
+#  451|->     valerr = gpgsm_validate_chain (ctrl, cert, "", NULL, 1, NULL, 0, NULL);
+#  452|     else
+#  453|       valerr = 0;
+
+Error: COMPILER_WARNING:
+gnupg-2.3.2/sm/keylist.c: scope_hint: In function 'list_cert_raw.constprop.0'
+gnupg-2.3.2/sm/keylist.c:1176:13: warning[-Wstringop-overflow=]: 'gpgsm_validate_chain' accessing 16 bytes in a region of size 1
+# 1176 |       err = gpgsm_validate_chain (ctrl, cert, "", NULL, 1, fp, 0, NULL);
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gnupg-2.3.2/sm/keylist.c:1176:13: note: referencing argument 3 of type 'char *'
+gnupg-2.3.2/sm/keylist.c:29: included_from: Included from here.
+gnupg-2.3.2/sm/gpgsm.h:352:5: note: in a call to function 'gpgsm_validate_chain'
+#  352 | int gpgsm_validate_chain (ctrl_t ctrl, ksba_cert_t cert,
+#      |     ^~~~~~~~~~~~~~~~~~~~
+# 1174|     if (with_validation)
+# 1175|       {
+# 1176|->       err = gpgsm_validate_chain (ctrl, cert, "", NULL, 1, fp, 0, NULL);
+# 1177|         if (!err)
+# 1178|           es_fprintf (fp, "  [certificate is good]\n");
+
+Error: COMPILER_WARNING:
+gnupg-2.3.2/sm/keylist.c: scope_hint: In function 'list_cert_std'
+gnupg-2.3.2/sm/keylist.c:1425:13: warning[-Wstringop-overflow=]: 'gpgsm_validate_chain' accessing 16 bytes in a region of size 1
+# 1425 |       err = gpgsm_validate_chain (ctrl, cert, "", NULL, 1, fp, 0, NULL);
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gnupg-2.3.2/sm/keylist.c:1425:13: note: referencing argument 3 of type 'char *'
+gnupg-2.3.2/sm/keylist.c:29: included_from: Included from here.
+gnupg-2.3.2/sm/gpgsm.h:352:5: note: in a call to function 'gpgsm_validate_chain'
+#  352 | int gpgsm_validate_chain (ctrl_t ctrl, ksba_cert_t cert,
+#      |     ^~~~~~~~~~~~~~~~~~~~
+# 1423|         char buffer[1];
+# 1424|   
+# 1425|->       err = gpgsm_validate_chain (ctrl, cert, "", NULL, 1, fp, 0, NULL);
+# 1426|         tmperr = ksba_cert_get_user_data (cert, "is_qualified",
+# 1427|                                           &buffer, sizeof (buffer), &buflen);
+
+Error: COMPILER_WARNING:
+gnupg-2.3.2/sm/sign.c: scope_hint: In function 'gpgsm_sign'
+gnupg-2.3.2/sm/sign.c:507:14: warning[-Wstringop-overflow=]: 'gpgsm_validate_chain' accessing 16 bytes in a region of size 1
+#  507 |         rc = gpgsm_validate_chain (ctrl, cert, "", NULL, 0, NULL, 0, NULL);
+#      |              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gnupg-2.3.2/sm/sign.c:507:14: note: referencing argument 3 of type 'char *'
+gnupg-2.3.2/sm/sign.c:29: included_from: Included from here.
+gnupg-2.3.2/sm/gpgsm.h:352:5: note: in a call to function 'gpgsm_validate_chain'
+#  352 | int gpgsm_validate_chain (ctrl_t ctrl, ksba_cert_t cert,
+#      |     ^~~~~~~~~~~~~~~~~~~~
+#  505|         rc = gpgsm_cert_use_sign_p (cert, 0);
+#  506|         if (!rc)
+#  507|->         rc = gpgsm_validate_chain (ctrl, cert, "", NULL, 0, NULL, 0, NULL);
+#  508|         if (rc)
+#  509|           {
+
+Error: COMPILER_WARNING (CWE-252):
+gnupg-2.3.2/tests/gpgscm/ffi.c: scope_hint: In function 'do_file_equal'
+gnupg-2.3.2/tests/gpgscm/ffi.c:1044:3: warning[-Wunused-result]: ignoring return value of 'fread' declared with attribute 'warn_unused_result'
+# 1044 |   fread (b_buf, 1, 1, b_stream);
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1042|       }
+# 1043|   
+# 1044|->   fread (b_buf, 1, 1, b_stream);
+# 1045|     if (! feof (b_stream))
+# 1046|       goto out;	/* b is longer */

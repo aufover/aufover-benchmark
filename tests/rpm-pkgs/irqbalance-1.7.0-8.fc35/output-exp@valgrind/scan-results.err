@@ -1,0 +1,123 @@
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/cputree.c: scope_hint: In function 'parse_cpu_tree'
+irqbalance-1.7.0/cputree.c:270:57: warning[-Wformat-truncation=]: '/online' directive output may be truncated writing 7 bytes into a region of size between 1 and 4096
+#  270 |         snprintf(new_path, ADJ_SIZE(path,"/online"), "%s/online", path);
+#      |                                                         ^~~~~~~
+/usr/include/stdio.h:888: included_from: Included from here.
+irqbalance-1.7.0/cputree.c:29: included_from: Included from here.
+/usr/include/bits/stdio2.h:71:10: note: '__snprintf_chk' output between 8 and 4103 bytes into a destination of size 4096
+#   71 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+#      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   72 |                                    __glibc_objsize (__s), __fmt,
+#      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   73 |                                    __va_arg_pack ());
+#      |                                    ~~~~~~~~~~~~~~~~~
+#  268|   
+#  269|   	/* skip offline cpus */
+#  270|-> 	snprintf(new_path, ADJ_SIZE(path,"/online"), "%s/online", path);
+#  271|   	process_one_line(new_path, get_int, &online_status);
+#  272|   	if (!online_status)
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/cputree.c:303:21: warning[-Wformat-truncation=]: '/topology/core_siblings' directive output may be truncated writing 23 bytes into a region of size between 1 and 4096
+#  303 |                  "%s/topology/core_siblings", path);
+#      |                     ^~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/stdio.h:888: included_from: Included from here.
+irqbalance-1.7.0/cputree.c:29: included_from: Included from here.
+/usr/include/bits/stdio2.h:71:10: note: '__snprintf_chk' output between 24 and 4119 bytes into a destination of size 4096
+#   71 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+#      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   72 |                                    __glibc_objsize (__s), __fmt,
+#      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   73 |                                    __va_arg_pack ());
+#      |                                    ~~~~~~~~~~~~~~~~~
+#  301|   	/* try to read the package mask; if it doesn't exist assume solitary */
+#  302|   	snprintf(new_path, ADJ_SIZE(path, "/topology/core_siblings"),
+#  303|-> 		 "%s/topology/core_siblings", path);
+#  304|   	if (process_one_line(new_path, get_mask_from_bitmap, &package_mask)) {
+#  305|   		cpus_clear(package_mask);
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/cputree.c:311:21: warning[-Wformat-truncation=]: '/topology/physical_package_id' directive output may be truncated writing 29 bytes into a region of size between 1 and 4096
+#  311 |                  "%s/topology/physical_package_id", path);
+#      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/stdio.h:888: included_from: Included from here.
+irqbalance-1.7.0/cputree.c:29: included_from: Included from here.
+/usr/include/bits/stdio2.h:71:10: note: '__snprintf_chk' output between 30 and 4125 bytes into a destination of size 4096
+#   71 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+#      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   72 |                                    __glibc_objsize (__s), __fmt,
+#      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   73 |                                    __va_arg_pack ());
+#      |                                    ~~~~~~~~~~~~~~~~~
+#  309|   	/* try to read the package id */
+#  310|   	snprintf(new_path, ADJ_SIZE(path, "/topology/physical_package_id"),
+#  311|-> 		 "%s/topology/physical_package_id", path);
+#  312|   	process_one_line(new_path, get_int, &packageid);
+#  313|   
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/cputree.c:322:29: warning[-Wformat-truncation=]: '/cache/index' directive output may be truncated writing 12 bytes into a region of size between 1 and 4096
+#  322 |                          "%s/cache/index%d/shared_cpu_map", path, cache_index);
+#      |                             ^~~~~~~~~~~~
+irqbalance-1.7.0/cputree.c:322:26: note: using the range [-2147483648, 2147483647] for directive argument
+#  322 |                          "%s/cache/index%d/shared_cpu_map", path, cache_index);
+#      |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/stdio.h:888: included_from: Included from here.
+irqbalance-1.7.0/cputree.c:29: included_from: Included from here.
+/usr/include/bits/stdio2.h:71:10: note: '__snprintf_chk' output between 29 and 4134 bytes into a destination of size 4096
+#   71 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+#      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   72 |                                    __glibc_objsize (__s), __fmt,
+#      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   73 |                                    __va_arg_pack ());
+#      |                                    ~~~~~~~~~~~~~~~~~
+#  320|   		/* Extra 10 subtraction is for the max character length of %d */
+#  321|   		snprintf(new_path, ADJ_SIZE(path, "/cache/index%d/shared_cpu_map") - 10,
+#  322|-> 			 "%s/cache/index%d/shared_cpu_map", path, cache_index);
+#  323|   		cache_stat = stat(new_path, &sb);
+#  324|   		if (!cache_stat) {
+
+Error: COMPILER_WARNING:
+irqbalance-1.7.0/cputree.c:335:29: warning[-Wformat-truncation=]: '/cache/index' directive output may be truncated writing 12 bytes into a region of size between 1 and 4096
+#  335 |                          "%s/cache/index%d/shared_cpu_map", path, max_cache_index);
+#      |                             ^~~~~~~~~~~~
+irqbalance-1.7.0/cputree.c:335:26: note: using the range [-2147483648, 2147483647] for directive argument
+#  335 |                          "%s/cache/index%d/shared_cpu_map", path, max_cache_index);
+#      |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/stdio.h:888: included_from: Included from here.
+irqbalance-1.7.0/cputree.c:29: included_from: Included from here.
+/usr/include/bits/stdio2.h:71:10: note: '__snprintf_chk' output between 29 and 4134 bytes into a destination of size 4096
+#   71 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+#      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   72 |                                    __glibc_objsize (__s), __fmt,
+#      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   73 |                                    __va_arg_pack ());
+#      |                                    ~~~~~~~~~~~~~~~~~
+#  333|   		/* Extra 10 subtraction is for the max character length of %d */
+#  334|   		snprintf(new_path, ADJ_SIZE(path, "/cache/index%d/shared_cpu_map") - 10,
+#  335|-> 			 "%s/cache/index%d/shared_cpu_map", path, max_cache_index);
+#  336|   		process_one_line(new_path, get_mask_from_bitmap, &cache_mask);
+#  337|   	}
+
+Error: COMPILER_WARNING (CWE-252):
+irqbalance-1.7.0/irqbalance.c: scope_hint: In function 'main'
+irqbalance-1.7.0/irqbalance.c:650:25: warning[-Wunused-result]: ignoring return value of 'write' declared with attribute 'warn_unused_result'
+#  650 |                         write(pidfd, str, strlen(str));
+#      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  648|   			char str[16];
+#  649|   			snprintf(str, sizeof(str), "%u\n", getpid());
+#  650|-> 			write(pidfd, str, strlen(str));
+#  651|   			close(pidfd);
+#  652|   		}
+
+Error: COMPILER_WARNING (CWE-252):
+irqbalance-1.7.0/ui/irqbalance-ui.c: scope_hint: In function 'main'
+irqbalance-1.7.0/ui/irqbalance-ui.c:419:41: warning[-Wunused-result]: ignoring return value of 'fgets' declared with attribute 'warn_unused_result'
+#  419 |                                         fgets(cmdstring, 255, f);
+#      |                                         ^~~~~~~~~~~~~~~~~~~~~~~~
+#  417|   						continue;
+#  418|   					}
+#  419|-> 					fgets(cmdstring, 255, f);
+#  420|   					if((strstr(cmdstring, "irqbalance") != NULL) &&
+#  421|   							(strstr(cmdstring, "irqbalance-ui") == NULL)) {

@@ -1,0 +1,37 @@
+Error: VALGRIND_WARNING:
+bin/test_tevent_tag: note: while executing process 433
+tevent-0.11.0/bin/default/../../tevent.c:97: warning[Leak_PossiblyLost]: 128 bytes in 1 blocks are possibly lost in loss record 1 of 5
+/usr/lib64/libtalloc.so.2.3.3: note: called from here
+/usr/lib64/libtalloc.so.2.3.3: note: called from talloc_named_const()
+tevent-0.11.0/bin/default/../../tevent.c:97: note: called from UnknownInlinedFun()
+tevent-0.11.0/bin/default/../../tevent.c:86: note: called from tevent_register_backend()
+tevent-0.11.0/bin/default/../../tevent_poll.c:644: note: called from UnknownInlinedFun()
+tevent-0.11.0/bin/default/../../tevent.c:129: note: called from tevent_backend_init.part.0()
+tevent-0.11.0/bin/default/../../tevent.c:123: note: called from UnknownInlinedFun()
+tevent-0.11.0/bin/default/../../tevent.c:144: note: called from tevent_find_ops_byname()
+tevent-0.11.0/bin/default/../../tevent.c:536: note: called from tevent_context_init_byname()
+tevent-0.11.0/bin/default/../../tests/test_tevent_tag.c:77: note: called from test_setup()
+/usr/lib64/libcmocka.so.0.7.0: note: called from here
+/usr/lib64/libcmocka.so.0.7.0: note: called from _cmocka_run_group_tests()
+tevent-0.11.0/bin/default/../../tests/test_tevent_tag.c:211: note: called from main()
+#   95|   	}
+#   96|   
+#   97|-> 	e = talloc(NULL, struct tevent_ops_list);
+#   98|   	if (e == NULL) return false;
+#   99|   
+
+Error: VALGRIND_WARNING:
+bin/test_tevent_tag: note: while executing process 433
+tevent-0.11.0/bin/default/../../tevent_signal.c:258: warning[Leak_PossiblyLost]: 2,864 bytes in 1 blocks are possibly lost in loss record 5 of 5
+/usr/lib64/libtalloc.so.2.3.3: note: called from here
+/usr/lib64/libtalloc.so.2.3.3: note: called from _talloc_zero()
+tevent-0.11.0/bin/default/../../tevent_signal.c:258: note: called from tevent_common_add_signal.part.0()
+tevent-0.11.0/bin/default/../../tests/test_tevent_tag.c:153: note: called from test_signal_tag()
+/usr/lib64/libcmocka.so.0.7.0: note: called from here
+/usr/lib64/libcmocka.so.0.7.0: note: called from _cmocka_run_group_tests()
+tevent-0.11.0/bin/default/../../tests/test_tevent_tag.c:211: note: called from main()
+#  256|   	   multiple event contexts */
+#  257|   	if (sig_state == NULL) {
+#  258|-> 		sig_state = talloc_zero(NULL, struct tevent_sig_state);
+#  259|   		if (sig_state == NULL) {
+#  260|   			return NULL;

@@ -1,0 +1,4503 @@
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/array.c:66:14: warning[-Wunused-variable]: 'spacesep' defined but not used
+#   66 | static char *spacesep = " ";
+#      |              ^~~~~~~~
+#   64|   static char *array_to_string_internal PARAMS((ARRAY_ELEMENT *, ARRAY_ELEMENT *, char *, int));
+#   65|   
+#   66|-> static char *spacesep = " ";
+#   67|   
+#   68|   #define IS_LASTREF(a)	(a->lastref)
+
+Error: COMPILER_WARNING (CWE-457):
+bash-5.1/variables.h:25: included_from: Included from here.
+bash-5.1/shell.h:31: included_from: Included from here.
+bash-5.1/subst.c:46: included_from: Included from here.
+bash-5.1/subst.c: scope_hint: In function 'parameter_brace_substring'
+bash-5.1/array.h:97:37: warning[-Wmaybe-uninitialized]: 'a' may be used uninitialized in this function
+#   97 | #define array_num_elements(a)   ((a)->num_elements)
+#      |                                     ^~
+bash-5.1/subst.c:7429:9: note: 'a' was declared here
+# 7429 |  ARRAY *a;
+#      |         ^
+#   95|   #define AS_DISPOSE	0x01
+#   96|   
+#   97|-> #define array_num_elements(a)	((a)->num_elements)
+#   98|   #define array_max_index(a)	((a)->max_index)
+#   99|   #define array_first_index(a)	((a)->head->next->ind)
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/arrayfunc.c: scope_hint: In function 'quote_compound_array_word'
+bash-5.1/arrayfunc.c:887:31: warning[-Wunused-variable]: unused variable 't'
+#  887 |   char *nword, *sub, *value, *t;
+#      |                               ^
+#  885|        int type;
+#  886|   {
+#  887|->   char *nword, *sub, *value, *t;
+#  888|     int ind, wlen, i;
+#  889|   
+
+Error: COMPILER_WARNING (CWE-457):
+bash-5.1/arrayfunc.c: scope_hint: In function 'array_value_internal'
+bash-5.1/arrayfunc.c:1442:45: warning[-Wmaybe-uninitialized]: 'ind' may be used uninitialized in this function
+# 1442 |         return (ind == 0 ? value_cell (var) : (char *)NULL);
+#      |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+# 1440|   	}
+# 1441|         if (array_p (var) == 0 && assoc_p (var) == 0)
+# 1442|-> 	return (ind == 0 ? value_cell (var) : (char *)NULL);
+# 1443|         else if (assoc_p (var))
+# 1444|           {
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/arrayfunc.c: scope_hint: In function 'array_keys'
+bash-5.1/arrayfunc.c:1485:22: warning[-Wunused-variable]: unused variable 'temp'
+# 1485 |   char *retval, *t, *temp;
+#      |                      ^~~~
+# 1483|   {
+# 1484|     int len;
+# 1485|->   char *retval, *t, *temp;
+# 1486|     WORD_LIST *l;
+# 1487|     SHELL_VAR *var;
+
+Error: COMPILER_WARNING (CWE-457):
+bash-5.1/variables.h:26: included_from: Included from here.
+bash-5.1/shell.h:31: included_from: Included from here.
+bash-5.1/subst.c:46: included_from: Included from here.
+bash-5.1/assoc.h:31:37: warning[-Wmaybe-uninitialized]: 'h' may be used uninitialized in this function
+#   31 | #define assoc_num_elements(h)   ((h)->nentries)
+#      |                                     ^~
+bash-5.1/subst.c:7430:14: note: 'h' was declared here
+# 7430 |  HASH_TABLE *h;
+#      |              ^
+#   29|   
+#   30|   #define assoc_empty(h)		((h)->nentries == 0)
+#   31|-> #define assoc_num_elements(h)	((h)->nentries)
+#   32|   
+#   33|   #define assoc_create(n)		(hash_create((n)))
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/bashhist.c: scope_hint: In function 'hc_erasedups'
+bash-5.1/bashhist.c:726:10: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  726 |   while (temp = previous_history ())
+#      |          ^~~~
+#  724|   
+#  725|     using_history ();
+#  726|->   while (temp = previous_history ())
+#  727|       {
+#  728|         if (STREQ (temp->line, line))
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/bashline.c: scope_hint: At top level
+bash-5.1/bashline.c:209:12: warning[-Wunused-function]: 'set_saved_history' declared 'static' but never defined
+#  209 | static int set_saved_history PARAMS((void));
+#      |            ^~~~~~~~~~~~~~~~~
+#  207|   static int isolate_sequence PARAMS((char *, int, int, int *));
+#  208|   
+#  209|-> static int set_saved_history PARAMS((void));
+#  210|   
+#  211|   #if defined (ALIAS)
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/bashline.c: scope_hint: In function 'snarf_hosts_from_file'
+bash-5.1/bashline.c:796:10: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  796 |   while (temp = fgets (buffer, 255, file))
+#      |          ^~~~
+#  794|       return;
+#  795|   
+#  796|->   while (temp = fgets (buffer, 255, file))
+#  797|       {
+#  798|         /* Skip to first character. */
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/bashline.c: scope_hint: In function 'attempt_shell_completion'
+bash-5.1/bashline.c:1637:14: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+# 1637 |       while (was_assignment = assignment (n, 0));
+#      |              ^~~~~~~~~~~~~~
+# 1635|   	  s = e1 + 1;
+# 1636|   	}
+# 1637|->       while (was_assignment = assignment (n, 0));
+# 1638|         s = s1;		/* reset to index where name begins */
+# 1639|   
+
+Error: COMPILER_WARNING (CWE-457):
+bash-5.1/bashline.c: scope_hint: In function 'attempt_shell_completion'
+bash-5.1/bashline.c:1650:44: warning[-Wmaybe-uninitialized]: 'e1' may be used uninitialized in this function
+# 1650 |       else if (start == end && start == s1 && e != 0 && e1 > end)       /* beginning of command name, leading whitespace */
+#      |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~
+# 1648|         if (start == 0 && end == 0 && e != 0 && text[0] == '\0')	/* beginning of non-empty line */
+# 1649|           foundcs = 0;
+# 1650|->       else if (start == end && start == s1 && e != 0 && e1 > end)	/* beginning of command name, leading whitespace */
+# 1651|   	foundcs = 0;
+# 1652|         else if (e == 0 && e == s && text[0] == '\0' && have_progcomps)	/* beginning of empty line */
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/bashline.c: scope_hint: In function 'command_word_completion_function'
+bash-5.1/bashline.c:2131:14: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+# 2131 |       while (val = glob_matches[local_index++])
+#      |              ^~~
+# 2129|   	}
+# 2130|   
+# 2131|->       while (val = glob_matches[local_index++])
+# 2132|           {
+# 2133|   	  if (executable_or_directory (val))
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/bashline.c: scope_hint: In function 'bash_servicename_completion_function'
+bash-5.1/bashline.c:2525:10: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+# 2525 |   while (srvent = getservent ())
+#      |          ^~~~~~
+# 2523|       }
+# 2524|   
+# 2525|->   while (srvent = getservent ())
+# 2526|       {
+# 2527|         afound = 0;
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/bashline.c: scope_hint: In function 'bash_groupname_completion_function'
+bash-5.1/bashline.c:2581:10: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+# 2581 |   while (grent = getgrent ())
+#      |          ^~~~~
+# 2579|       }
+# 2580|   
+# 2581|->   while (grent = getgrent ())
+# 2582|       {
+# 2583|         if (gnamelen == 0 || (STREQN (gname, grent->gr_name, gnamelen)))
+
+Error: COMPILER_WARNING (CWE-457):
+bash-5.1/bashline.c: scope_hint: In function '_ignore_completion_names'
+bash-5.1/bashline.c:2964:9: warning[-Wmaybe-uninitialized]: 'oldnames' may be used uninitialized in this function
+# 2964 |         free (oldnames[--oidx]);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~
+# 2962|       {
+# 2963|         while (oidx)
+# 2964|-> 	free (oldnames[--oidx]);
+# 2965|         free (oldnames);
+# 2966|       }
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/bashline.c: scope_hint: In function 'bash_filename_stat_hook'
+bash-5.1/bashline.c:3295:7: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+# 3295 |   if (t = mbschr (local_dirname, '$'))
+#      |       ^
+# 3293|     local_dirname = *dirname;
+# 3294|     should_expand_dirname = return_value = 0;
+# 3295|->   if (t = mbschr (local_dirname, '$'))
+# 3296|       should_expand_dirname = '$';
+# 3297|     else if (t = mbschr (local_dirname, '`'))	/* XXX */
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/bashline.c:3297:12: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+# 3297 |   else if (t = mbschr (local_dirname, '`'))     /* XXX */
+#      |            ^
+# 3295|     if (t = mbschr (local_dirname, '$'))
+# 3296|       should_expand_dirname = '$';
+# 3297|->   else if (t = mbschr (local_dirname, '`'))	/* XXX */
+# 3298|       should_expand_dirname = '`';
+# 3299|   
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/bashline.c: scope_hint: In function 'bash_directory_completion_hook'
+bash-5.1/bashline.c:3375:7: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+# 3375 |   if (t = mbschr (local_dirname, '$'))
+#      |       ^
+# 3373|     local_dirname = *dirname;
+# 3374|   
+# 3375|->   if (t = mbschr (local_dirname, '$'))
+# 3376|       {
+# 3377|         should_expand_dirname = '$';
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/bashline.c:3433:31: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+# 3433 |               for (i = j = 0; c = default_filename_quote_characters[i]; i++)
+#      |                               ^
+# 3431|   	      i = strlen (default_filename_quote_characters);
+# 3432|   	      custom_filename_quote_characters = xrealloc (custom_filename_quote_characters, i+1);
+# 3433|-> 	      for (i = j = 0; c = default_filename_quote_characters[i]; i++)
+# 3434|   		{
+# 3435|   		  if (c == should_expand_dirname || c == nextch || c == closer)
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/bashline.c:4232:1: warning[-Wunused-function]: 'putx' defined but not used
+# 4232 | putx(c)
+#      | ^~~~
+# 4230|   static int
+# 4231|   #endif
+# 4232|-> putx(c)
+# 4233|        int c;
+# 4234|   {
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/bashline.c: scope_hint: In function 'bash_execute_unix_command'
+bash-5.1/bashline.c:4293:27: warning[-Wunused-variable]: unused variable 'old_ch'
+# 4293 |   char *cmd, *value, *ce, old_ch;
+#      |                           ^~~~~~
+# 4291|     intmax_t mi;
+# 4292|     sh_parser_state_t ps;
+# 4293|->   char *cmd, *value, *ce, old_ch;
+# 4294|     SHELL_VAR *v;
+# 4295|     char ibuf[INT_STRLEN_BOUND(int) + 1];
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/bashline.c:4405:1: warning[-Wunused-function]: 'get_cmd_xmap_from_edit_mode' defined but not used
+# 4405 | get_cmd_xmap_from_edit_mode ()
+#      | ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 4403|   
+# 4404|   static Keymap
+# 4405|-> get_cmd_xmap_from_edit_mode ()
+# 4406|   {
+# 4407|     if (emacs_std_cmd_xmap == 0)
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/bashline.c: scope_hint: In function 'isolate_sequence'
+bash-5.1/bashline.c:4470:19: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+# 4470 |   for (passc = 0; c = string[i]; i++)
+#      |                   ^
+# 4468|       *startp = delim ? ++i : i;
+# 4469|   
+# 4470|->   for (passc = 0; c = string[i]; i++)
+# 4471|       {
+# 4472|         if (passc)
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/braces.c: scope_hint: In function 'mkseq'
+bash-5.1/braces.c:428:15: warning[-Wunused-but-set-variable]: variable 'len' set but not used
+#  428 |           int len, arg;
+#      |               ^~~
+#  426|         else if (type == ST_ZINT)
+#  427|   	{
+#  428|-> 	  int len, arg;
+#  429|   	  arg = n;
+#  430|   	  len = asprintf (&t, "%0*d", width, arg);
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/braces.c:435:15: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  435 |           if (t = (char *)malloc (2))
+#      |               ^
+#  433|         else
+#  434|   	{
+#  435|-> 	  if (t = (char *)malloc (2))
+#  436|   	    {
+#  437|   	      t[0] = n;
+
+Error: COMPILER_WARNING (CWE-457):
+bash-5.1/braces.c: scope_hint: In function 'brace_expand'
+bash-5.1/braces.c:462:51: warning[-Wmaybe-uninitialized]: 'tr' may be used uninitialized in this function
+#  462 |       if ((incr < 0 && n < end) || (incr > 0 && n > end))
+#      |                                                 ~~^~~~~
+bash-5.1/braces.c:479:16: note: 'tr' was declared here
+#  479 |   intmax_t tl, tr;
+#      |                ^~
+#  460|         n += incr;
+#  461|   
+#  462|->       if ((incr < 0 && n < end) || (incr > 0 && n > end))
+#  463|   	break;
+#  464|       }
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/braces.c: scope_hint: In function 'brace_gobbler'
+bash-5.1/braces.c:615:10: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  615 |   while (c = text[i])
+#      |          ^
+#  613|   
+#  614|     i = *indx;
+#  615|->   while (c = text[i])
+#  616|       {
+#  617|         if (pass_next)
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/builtins/cd.def:198:1: warning[-Wunused-function]: 'cdxattr' defined but not used
+#  198 | cdxattr (dir, ndirp)
+#      | ^~~~~~~
+#  196|   
+#  197|   static int
+#  198|-> cdxattr (dir, ndirp)
+#  199|        char *dir;		/* don't assume we can always free DIR */
+#  200|        char **ndirp;	/* return new constructed directory name */
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/builtins/cd.def: scope_hint: In function 'cd_builtin'
+bash-5.1/builtins/cd.def:370:14: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  370 |       while (path = extract_colon_unit (cdpath, &path_index))
+#      |              ^~~~
+#  368|         /* Find directory in $CDPATH. */
+#  369|         path_index = 0;
+#  370|->       while (path = extract_colon_unit (cdpath, &path_index))
+#  371|   	{
+#  372|   	  /* OPT is 1 if the path element is non-empty */
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/builtins/cd.def: scope_hint: In function 'change_to_directory'
+bash-5.1/builtins/cd.def:555:20: warning[-Wunused-variable]: unused variable 'ndir'
+#  555 |   char *t, *tdir, *ndir;
+#      |                    ^~~~
+#  553|        int nolinks, xattr;
+#  554|   {
+#  555|->   char *t, *tdir, *ndir;
+#  556|     int err, canon_failed, r, ndlen;
+#  557|   
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/builtins/declare.def: scope_hint: In function 'declare_internal'
+bash-5.1/builtins/declare.def:319:11: warning[-Wunused-but-set-variable]: variable 'var_exists' set but not used
+#  319 |       int var_exists, array_exists, creating_array, array_subscript_assignment;
+#      |           ^~~~~~~~~~
+#  317|   #if defined (ARRAY_VARS)
+#  318|         int making_array_special, compound_array_assign, simple_array_assign;
+#  319|->       int var_exists, array_exists, creating_array, array_subscript_assignment;
+#  320|   #endif
+#  321|   
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/builtins/echo.def: scope_hint: In function 'echo_builtin'
+bash-5.1/builtins/echo.def:141:14: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  141 |       while (i = *temp++)
+#      |              ^
+#  139|         /* All of the options in TEMP are valid options to ECHO.
+#  140|   	 Handle them. */
+#  141|->       while (i = *temp++)
+#  142|   	{
+#  143|   	  switch (i)
+
+Error: COMPILER_WARNING (CWE-457):
+bash-5.1/builtins/enable.def: scope_hint: In function 'enable_builtin'
+bash-5.1/builtins/enable.def:373:14: warning[-Wmaybe-uninitialized]: 'filename' may be used uninitialized in this function
+#  373 |           if (name != filename)
+#      |              ^
+bash-5.1/builtins/enable.def:114:9: note: 'filename' was declared here
+#  114 |   char *filename;
+#      |         ^~~~~~~~
+#  371|   	  builtin_error (_("cannot find %s in shared object %s: %s"),
+#  372|   			  struct_name, name, dlerror ());
+#  373|-> 	  if (name != filename)
+#  374|   	    free (name);
+#  375|   	  free (struct_name);
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/builtins/evalstring.c: scope_hint: In function 'parse_and_execute'
+bash-5.1/builtins/evalstring.c:402:20: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  402 |           else if (command = global_command)
+#      |                    ^~~~~~~
+#  400|   	      global_command = (COMMAND *)NULL;
+#  401|   	    }
+#  402|-> 	  else if (command = global_command)
+#  403|   	    {
+#  404|   	      struct fd_bitmap *bitmap;
+
+Error: COMPILER_WARNING (CWE-457):
+bash-5.1/builtins/exec.def: scope_hint: In function 'exec_builtin'
+bash-5.1/builtins/exec.def:268:6: warning[-Wmaybe-uninitialized]: 'orig_job_control' may be used uninitialized in this function
+#  268 |   if (orig_job_control)
+#      |      ^
+#  266|   
+#  267|   #if defined (JOB_CONTROL)
+#  268|->   if (orig_job_control)
+#  269|       restart_job_control ();
+#  270|   #endif /* JOB_CONTROL */
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/builtins/getopt.c: scope_hint: In function 'sh_getopt'
+bash-5.1/builtins/getopt.c:182:7: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  182 |   if (sh_badopt = (temp == NULL || c == ':'))
+#      |       ^~~~~~~~~
+#  180|       }
+#  181|   
+#  182|->   if (sh_badopt = (temp == NULL || c == ':'))
+#  183|       {
+#  184|         if (sh_opterr)
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/builtins/help.def: scope_hint: In function 'help_builtin'
+bash-5.1/builtins/help.def:145:23: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  145 |           for (i = 0; name = shell_builtins[i].name; i++)
+#      |                       ^~~~
+#  143|         for (pass = 1, this_found = 0; pass < 3; pass++)
+#  144|   	{
+#  145|-> 	  for (i = 0; name = shell_builtins[i].name; i++)
+#  146|   	    {
+#  147|   	      QUIT;
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/builtins/help.def: scope_hint: In function 'show_desc'
+bash-5.1/builtins/help.def:261:19: warning[-Wunused-but-set-variable]: variable 'r' set but not used
+#  261 |   register int j, r;
+#      |                   ^
+#  259|        int i;
+#  260|   {
+#  261|->   register int j, r;
+#  262|     char **doc, *line;
+#  263|     int fd, usefile;
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/builtins/help.def:519:10: warning[-Wunused-variable]: unused variable 'j'
+#  519 |   int i, j;
+#      |          ^
+#  517|   show_builtin_command_help ()
+#  518|   {
+#  519|->   int i, j;
+#  520|     int height, width;
+#  521|     char *t, blurb[128];
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/builtins/help.def: scope_hint: In function 'show_builtin_command_help'
+bash-5.1/builtins/help.def:521:9: warning[-Wunused-variable]: unused variable 't'
+#  521 |   char *t, blurb[128];
+#      |         ^
+#  519|     int i, j;
+#  520|     int height, width;
+#  521|->   char *t, blurb[128];
+#  522|   
+#  523|     printf (
+
+Error: COMPILER_WARNING (CWE-457):
+bash-5.1/builtins/history.def: scope_hint: In function 'history_builtin'
+bash-5.1/builtins/history.def:188:11: warning[-Wmaybe-uninitialized]: 'delete_arg' may be used uninitialized in this function
+#  188 |           sh_erange (delete_arg, _("history position"));
+#      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  186|   	{
+#  187|   	  range[-1] = '-';
+#  188|-> 	  sh_erange (delete_arg, _("history position"));
+#  189|   	  return (EXECUTION_FAILURE);
+#  190|   	}
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/builtins/mkbuiltins.c: scope_hint: In function 'extract_info'
+bash-5.1/builtins/mkbuiltins.c:580:15: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  580 |   for (i = 0; line = defs->lines->array[i]; i++)
+#      |               ^~~~
+#  578|   
+#  579|     /* Process each line in the array. */
+#  580|->   for (i = 0; line = defs->lines->array[i]; i++)
+#  581|       {
+#  582|         defs->line_number = i;
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/builtins/mkbuiltins.c: scope_hint: In function 'free_defs'
+bash-5.1/builtins/mkbuiltins.c:696:19: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  696 |       for (i = 0; builtin = (BUILTIN_DESC *)defs->builtins->array[i]; i++)
+#      |                   ^~~~~~~
+#  694|     if (defs->builtins)
+#  695|       {
+#  696|->       for (i = 0; builtin = (BUILTIN_DESC *)defs->builtins->array[i]; i++)
+#  697|   	{
+#  698|   	  free_builtin (builtin);
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/builtins/set.def: scope_hint: In function 'parse_shellopts'
+bash-5.1/builtins/set.def:617:10: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  617 |   while (vname = extract_colon_unit (value, &vptr))
+#      |          ^~~~~
+#  615|   
+#  616|     vptr = 0;
+#  617|->   while (vname = extract_colon_unit (value, &vptr))
+#  618|       {
+#  619|         set_minus_o_option (FLAG_ON, vname);
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/builtins/set.def: scope_hint: In function 'set_builtin'
+bash-5.1/builtins/set.def:742:18: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  742 |           while (flag_name = *++arg)
+#      |                  ^~~~~~~~~
+#  740|         if ((on_or_off = *arg) && (on_or_off == '-' || on_or_off == '+'))
+#  741|   	{
+#  742|-> 	  while (flag_name = *++arg)
+#  743|   	    {
+#  744|   	      if (flag_name == '?')
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/builtins/set.def: scope_hint: In function 'unset_builtin'
+bash-5.1/builtins/set.def:946:15: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  946 |           if (var = find_function (name))
+#      |               ^~~
+#  944|         if (var == 0 && nameref == 0 &&  unset_variable == 0 && unset_function == 0)
+#  945|   	{
+#  946|-> 	  if (var = find_function (name))
+#  947|   	    unset_function = 1;
+#  948|   	}
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/builtins/set.def:985:23: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  985 |                   if (var = array_variable_part (tname, 0, &t, (int *)0))
+#      |                       ^~~
+#  983|   		{
+#  984|   		  tname = savestring (nameref_cell (var));
+#  985|-> 		  if (var = array_variable_part (tname, 0, &t, (int *)0))
+#  986|   		    tem = unbind_array_element (var, t, vflags);	/* XXX new third arg */
+#  987|   		  free (tname);
+
+Error: COMPILER_WARNING (CWE-457):
+bash-5.1/builtins/set.def:1003:15: warning[-Wmaybe-uninitialized]: 'tem' may be used uninitialized in this function
+# 1003 |       if (tem == -1 && nameref == 0 && unset_function == 0 && unset_variable == 0)
+#      |           ~~~~^~~~~
+# 1001|   	 that name does not exist, a function by that name, if any,
+# 1002|   	 shall be unset.'' */
+# 1003|->       if (tem == -1 && nameref == 0 && unset_function == 0 && unset_variable == 0)
+# 1004|   	tem = unbind_func (name);
+# 1005|   
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/builtins/setattr.def: scope_hint: In function 'set_or_show_attributes'
+bash-5.1/builtins/setattr.def:320:23: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  320 |           for (i = 0; var = variable_list[i]; i++)
+#      |                       ^~~
+#  318|         if (variable_list)
+#  319|   	{
+#  320|-> 	  for (i = 0; var = variable_list[i]; i++)
+#  321|   	    {
+#  322|   #if defined (ARRAY_VARS)
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/builtins/setattr.def:337:23: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  337 |                   if (any_failed = sh_chkwrite (any_failed))
+#      |                       ^~~~~~~~~~
+#  335|   		{
+#  336|   		  show_var_attributes (var, READONLY_OR_EXPORT, nodefs);
+#  337|-> 		  if (any_failed = sh_chkwrite (any_failed))
+#  338|   		    break;
+#  339|   		}
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/builtins/setattr.def: scope_hint: In function 'show_all_var_attributes'
+bash-5.1/builtins/setattr.def:364:28: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  364 |   for (i = any_failed = 0; var = variable_list[i]; i++)
+#      |                            ^~~
+#  362|       return (EXECUTION_SUCCESS);
+#  363|   
+#  364|->   for (i = any_failed = 0; var = variable_list[i]; i++)
+#  365|       {
+#  366|         show_var_attributes (var, READONLY_OR_EXPORT, nodefs);
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/builtins/setattr.def:367:11: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  367 |       if (any_failed = sh_chkwrite (any_failed))
+#      |           ^~~~~~~~~~
+#  365|       {
+#  366|         show_var_attributes (var, READONLY_OR_EXPORT, nodefs);
+#  367|->       if (any_failed = sh_chkwrite (any_failed))
+#  368|           break;
+#  369|       }
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/builtins/setattr.def: scope_hint: In function 'show_local_var_attributes'
+bash-5.1/builtins/setattr.def:388:28: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  388 |   for (i = any_failed = 0; var = variable_list[i]; i++)
+#      |                            ^~~
+#  386|       return (EXECUTION_SUCCESS);
+#  387|   
+#  388|->   for (i = any_failed = 0; var = variable_list[i]; i++)
+#  389|       {
+#  390|         show_var_attributes (var, READONLY_OR_EXPORT, nodefs);
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/builtins/setattr.def:391:11: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  391 |       if (any_failed = sh_chkwrite (any_failed))
+#      |           ^~~~~~~~~~
+#  389|       {
+#  390|         show_var_attributes (var, READONLY_OR_EXPORT, nodefs);
+#  391|->       if (any_failed = sh_chkwrite (any_failed))
+#  392|           break;
+#  393|       }
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/builtins/shopt.def: scope_hint: In function 'toggle_shopts'
+bash-5.1/builtins/shopt.def:458:7: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  458 |   if (v = find_variable ("BASHOPTS"))
+#      |       ^
+#  456|   
+#  457|     /* Don't set $BASHOPTS here if it hasn't already been initialized */
+#  458|->   if (v = find_variable ("BASHOPTS"))
+#  459|       set_bashopts ();
+#  460|     return (rval);
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/builtins/shopt.def: scope_hint: In function 'set_bashopts'
+bash-5.1/builtins/shopt.def:801:24: warning[-Wunused-variable]: unused variable 'ip'
+#  801 |   int vsize, i, vptr, *ip, exported;
+#      |                        ^~
+#  799|     char *value;
+#  800|     char tflag[N_SHOPT_OPTIONS];
+#  801|->   int vsize, i, vptr, *ip, exported;
+#  802|     SHELL_VAR *v;
+#  803|   
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/builtins/shopt.def: scope_hint: In function 'parse_bashopts'
+bash-5.1/builtins/shopt.def:862:10: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  862 |   while (vname = extract_colon_unit (value, &vptr))
+#      |          ^~~~~
+#  860|   
+#  861|     vptr = 0;
+#  862|->   while (vname = extract_colon_unit (value, &vptr))
+#  863|       {
+#  864|         ind = find_shopt (vname);
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/builtins/type.def: scope_hint: In function 'describe_command'
+bash-5.1/builtins/type.def:338:11: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  338 |       if (full_path = phash_search (command))
+#      |           ^~~~~~~~~
+#  336|     if (all == 0 || (dflags & CDESC_FORCE_PATH))
+#  337|       {
+#  338|->       if (full_path = phash_search (command))
+#  339|   	{
+#  340|   	  if (dflags & CDESC_TYPE)
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/builtins/ulimit.def:774:1: warning[-Wunused-function]: 'set_all_limits' defined but not used
+#  774 | set_all_limits (mode, newlim)
+#      | ^~~~~~~~~~~~~~
+#  772|   
+#  773|   static int
+#  774|-> set_all_limits (mode, newlim)
+#  775|        int mode;
+#  776|        RLIMTYPE newlim;
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/builtins/wait.def: scope_hint: In function 'wait_builtin'
+bash-5.1/builtins/wait.def:116:14: warning[-Wunused-but-set-variable]: variable 'pidvar' set but not used
+#  116 |   SHELL_VAR *pidvar;
+#      |              ^~~~~~
+#  114|     int status, code, opt, nflag, wflags;
+#  115|     char *vname;
+#  116|->   SHELL_VAR *pidvar;
+#  117|     struct procstat pstat;
+#  118|   
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/builtins/wait.def: scope_hint: In function 'set_waitlist'
+bash-5.1/builtins/wait.def:321:12: warning[-Wunused-variable]: unused variable 'r'
+#  321 |   int job, r, njob;
+#      |            ^
+#  319|   {
+#  320|     sigset_t set, oset;
+#  321|->   int job, r, njob;
+#  322|     intmax_t pid;
+#  323|     WORD_LIST *l;
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/eval.c: scope_hint: In function 'reader_loop'
+bash-5.1/eval.c:147:20: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  147 |           else if (current_command = global_command)
+#      |                    ^~~~~~~~~~~~~~~
+#  145|   	      global_command = (COMMAND *)NULL;
+#  146|   	    }
+#  147|-> 	  else if (current_command = global_command)
+#  148|   	    {
+#  149|   	      global_command = (COMMAND *)NULL;
+
+Error: COMPILER_WARNING (CWE-252):
+bash-5.1/eval.c: scope_hint: In function 'alrm_catcher'
+bash-5.1/eval.c:244:3: warning[-Wunused-result]: ignoring return value of 'write' declared with attribute 'warn_unused_result'
+#  244 |   write (1, msg, strlen (msg));
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  242|   
+#  243|     msg = _("\007timed out waiting for input: auto-logout\n");
+#  244|->   write (1, msg, strlen (msg));
+#  245|   
+#  246|     bash_logout ();	/* run ~/.bash_logout if this is a login shell */
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/execute_cmd.c:280:12: warning[-Wunused-variable]: 'connection_count' defined but not used
+#  280 | static int connection_count;
+#      |            ^~~~~~~~~~~~~~~~
+#  278|   static int showing_function_line;
+#  279|   
+#  280|-> static int connection_count;
+#  281|   
+#  282|   /* $LINENO ($BASH_LINENO) for use by an ERR trap.  Global so parse_and_execute
+
+Error: COMPILER_WARNING (CWE-457):
+bash-5.1/execute_cmd.c: scope_hint: In function 'execute_command_internal'
+bash-5.1/execute_cmd.c:1109:7: warning[-Wmaybe-uninitialized]: 'ofifo_list' may be used uninitialized in this function
+# 1109 |       free ((void *)ofifo_list);
+#      |       ^~~~~~~~~~~~~~~~~~~~~~~~~
+# 1107|         if (nfifo > ofifo)
+# 1108|   	close_new_fifos ((void *)ofifo_list, osize);
+# 1109|->       free ((void *)ofifo_list);
+# 1110|         discard_unwind_frame ("internal_fifos");
+# 1111|       }
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/execute_cmd.c: scope_hint: At top level
+bash-5.1/execute_cmd.c:1748:13: warning[-Wunused-function]: 'cpl_prune' declared 'static' but never defined
+# 1748 | static void cpl_prune PARAMS((void));
+#      |             ^~~~~~~~~
+# 1746|   static struct cpelement *cpl_search PARAMS((pid_t));
+# 1747|   static struct cpelement *cpl_searchbyname PARAMS((const char *));
+# 1748|-> static void cpl_prune PARAMS((void));
+# 1749|   
+# 1750|   static void coproc_free PARAMS((struct coproc *));
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/execute_cmd.c:1779:1: warning[-Wunused-function]: 'cpl_add' defined but not used
+# 1779 | cpl_add (cp)
+#      | ^~~~~~~
+# 1777|   
+# 1778|   static struct cpelement *
+# 1779|-> cpl_add (cp)
+# 1780|        Coproc *cp;
+# 1781|   {
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/execute_cmd.c:1802:1: warning[-Wunused-function]: 'cpl_delete' defined but not used
+# 1802 | cpl_delete (pid)
+#      | ^~~~~~~~~~
+# 1800|   
+# 1801|   static struct cpelement *
+# 1802|-> cpl_delete (pid)
+# 1803|        pid_t pid;
+# 1804|   {
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/execute_cmd.c:1837:1: warning[-Wunused-function]: 'cpl_reap' defined but not used
+# 1837 | cpl_reap ()
+#      | ^~~~~~~~
+# 1835|   
+# 1836|   static void
+# 1837|-> cpl_reap ()
+# 1838|   {
+# 1839|     struct cpelement *p, *next, *nh, *nt;
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/execute_cmd.c:1882:1: warning[-Wunused-function]: 'cpl_flush' defined but not used
+# 1882 | cpl_flush ()
+#      | ^~~~~~~~~
+# 1880|   /* Clear out the list of saved statuses */
+# 1881|   static void
+# 1882|-> cpl_flush ()
+# 1883|   {
+# 1884|     struct cpelement *cpe, *p;
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/execute_cmd.c:1900:1: warning[-Wunused-function]: 'cpl_closeall' defined but not used
+# 1900 | cpl_closeall ()
+#      | ^~~~~~~~~~~~
+# 1898|   
+# 1899|   static void
+# 1900|-> cpl_closeall ()
+# 1901|   {
+# 1902|     struct cpelement *cpe;
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/execute_cmd.c:1909:1: warning[-Wunused-function]: 'cpl_fdchk' defined but not used
+# 1909 | cpl_fdchk (fd)
+#      | ^~~~~~~~~
+# 1907|   
+# 1908|   static void
+# 1909|-> cpl_fdchk (fd)
+# 1910|        int fd;
+# 1911|   {
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/execute_cmd.c:1921:1: warning[-Wunused-function]: 'cpl_search' defined but not used
+# 1921 | cpl_search (pid)
+#      | ^~~~~~~~~~
+# 1919|      found.  If not found, return NULL. */
+# 1920|   static struct cpelement *
+# 1921|-> cpl_search (pid)
+# 1922|        pid_t pid;
+# 1923|   {
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/execute_cmd.c:1935:1: warning[-Wunused-function]: 'cpl_searchbyname' defined but not used
+# 1935 | cpl_searchbyname (name)
+#      | ^~~~~~~~~~~~~~~~
+# 1933|      cpelement struct if found.  If not found, return NULL. */
+# 1934|   static struct cpelement *
+# 1935|-> cpl_searchbyname (name)
+# 1936|        const char *name;
+# 1937|   {
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/execute_cmd.c:1947:1: warning[-Wunused-function]: 'cpl_firstactive' defined but not used
+# 1947 | cpl_firstactive ()
+#      | ^~~~~~~~~~~~~~~
+# 1945|   
+# 1946|   static pid_t
+# 1947|-> cpl_firstactive ()
+# 1948|   {
+# 1949|     struct cpelement *cpe;
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/execute_cmd.c:2042:1: warning[-Wunused-function]: 'coproc_free' defined but not used
+# 2042 | coproc_free (cp)
+#      | ^~~~~~~~~~~
+# 2040|   
+# 2041|   static void
+# 2042|-> coproc_free (cp)
+# 2043|        struct coproc *cp;
+# 2044|   {
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/execute_cmd.c:3144:12: warning[-Wunused-variable]: 'LINES' defined but not used
+# 3144 | static int LINES, COLS, tabsize;
+#      |            ^~~~~
+# 3142|   
+# 3143|   #if defined (SELECT_COMMAND)
+# 3144|-> static int LINES, COLS, tabsize;
+# 3145|   
+# 3146|   #define RP_SPACE ") "
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/execute_cmd.c: scope_hint: In function 'select_query'
+bash-5.1/execute_cmd.c:3281:23: warning[-Wunused-variable]: unused variable 't'
+# 3281 |   char *repl_string, *t;
+#      |                       ^
+# 3279|     intmax_t reply;
+# 3280|     WORD_LIST *l;
+# 3281|->   char *repl_string, *t;
+# 3282|   
+# 3283|     COLS = default_columns ();
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/expr.c: scope_hint: In function 'exppower'
+bash-5.1/expr.c:961:33: warning[-Wunused-variable]: unused variable 'c'
+#  961 |   register intmax_t val1, val2, c;
+#      |                                 ^
+#  959|   exppower ()
+#  960|   {
+#  961|->   register intmax_t val1, val2, c;
+#  962|   
+#  963|     val1 = exp1 ();
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/expr.c:1122:1: warning[-Wunused-function]: 'alloc_lvalue' defined but not used
+# 1122 | alloc_lvalue ()
+#      | ^~~~~~~~~~~~
+# 1120|   
+# 1121|   static struct lvalue *
+# 1122|-> alloc_lvalue ()
+# 1123|   {
+# 1124|     struct lvalue *lv;
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/expr.c:1132:1: warning[-Wunused-function]: 'free_lvalue' defined but not used
+# 1132 | free_lvalue (lv)
+#      | ^~~~~~~~~~~
+# 1130|   
+# 1131|   static void
+# 1132|-> free_lvalue (lv)
+# 1133|        struct lvalue *lv;
+# 1134|   {
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/expr.c: scope_hint: In function 'readtok'
+bash-5.1/expr.c:1308:17: warning[-Wunused-variable]: unused variable 'lval'
+# 1308 |   struct lvalue lval;
+#      |                 ^~~~
+# 1306|     register unsigned char c, c1;
+# 1307|     register int e;
+# 1308|->   struct lvalue lval;
+# 1309|   
+# 1310|     /* Skip leading whitespace. */
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/findcmd.c: scope_hint: In function '_find_user_command_internal'
+bash-5.1/findcmd.c:269:7: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  269 |   if (var = find_variable_tempenv ("PATH"))     /* XXX could be array? */
+#      |       ^~~
+#  267|     /* Search for the value of PATH in both the temporary environments and
+#  268|        in the regular list of variables. */
+#  269|->   if (var = find_variable_tempenv ("PATH"))	/* XXX could be array? */
+#  270|       path_list = value_cell (var);
+#  271|     else
+
+Error: COMPILER_WARNING (CWE-665):
+bash-5.1/general.c:91:1: warning[-Wmissing-braces]: missing braces around initializer
+#   91 | {
+#      | ^
+#   92 |   &interactive_comments,
+#      |   {                    }
+#   93 |   &source_uses_path,
+#      |   {                }
+#   94 |   &expand_aliases,
+#      |   {              }
+#   95 |   &inherit_errexit,
+#      |   {               }
+#   96 |   &print_shift_error,
+#      |   {                 }
+#   97 |   0
+#      |   {
+#   98 | };
+#      | }
+#   89|     int *posix_mode_var;
+#   90|   } posix_vars[] = 
+#   91|-> {
+#   92|     &interactive_comments,
+#   93|     &source_uses_path,
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/general.c: scope_hint: In function 'assignment'
+bash-5.1/general.c:457:10: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  457 |   while (c = string[indx])
+#      |          ^
+#  455|       return (0);
+#  456|   
+#  457|->   while (c = string[indx])
+#  458|       {
+#  459|         /* The following is safe.  Note that '=' at the start of a word
+
+Error: COMPILER_WARNING (CWE-457):
+bash-5.1/shell.h:29: included_from: Included from here.
+bash-5.1/parse.y:47: included_from: Included from here.
+bash-5.1/parse.y: scope_hint: In function 'parse_comsub.constprop.0'
+bash-5.1/general.h:168:58: warning[-Wmaybe-uninitialized]: 'hdlen' may be used uninitialized in this function
+#  168 |                                   : ((a)[0] == (b)[0] && strncmp(a, b, n) == 0))
+#      |                                                          ^~~~~~~
+bash-5.1/parse.y:3911:32: note: 'hdlen' was declared here
+# 3911 |   int retind, retsize, rflags, hdlen;
+#      |                                ^~~~~
+#  166|   #define STREQ(a, b) ((a)[0] == (b)[0] && strcmp(a, b) == 0)
+#  167|   #define STREQN(a, b, n) ((n == 0) ? (1) \
+#  168|-> 				  : ((a)[0] == (b)[0] && strncmp(a, b, n) == 0))
+#  169|   
+#  170|   /* More convenience definitions that possibly save system or libc calls. */
+
+Error: COMPILER_WARNING (CWE-457):
+bash-5.1/shell.h:29: included_from: Included from here.
+bash-5.1/subst.c:46: included_from: Included from here.
+bash-5.1/subst.c: scope_hint: In function 'parameter_brace_expand_length'
+bash-5.1/general.h:171:42: warning[-Wmaybe-uninitialized]: 't' may be used uninitialized in this function
+#  171 | #define STRLEN(s) (((s) && (s)[0]) ? ((s)[1] ? ((s)[2] ? strlen(s) : 2) : 1) : 0)
+#      |                                          ^
+bash-5.1/subst.c:7296:9: note: 't' was declared here
+# 7296 |   char *t, *newname;
+#      |         ^
+#  169|   
+#  170|   /* More convenience definitions that possibly save system or libc calls. */
+#  171|-> #define STRLEN(s) (((s) && (s)[0]) ? ((s)[1] ? ((s)[2] ? strlen(s) : 2) : 1) : 0)
+#  172|   #define FREE(s)  do { if (s) free (s); } while (0)
+#  173|   #define MEMBER(c, s) (((c) && c == (s)[0] && !(s)[1]) || (member(c, s)))
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/hashlib.c:169:1: warning[-Wunused-function]: 'hash_shrink' defined but not used
+#  169 | hash_shrink (table)
+#      | ^~~~~~~~~~~
+#  167|   
+#  168|   static void
+#  169|-> hash_shrink (table)
+#  170|        HASH_TABLE *table;
+#  171|   {
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/jobs.c: scope_hint: In function 'procsub_waitall'
+bash-5.1/jobs.c:1102:7: warning[-Wunused-but-set-variable]: variable 'r' set but not used
+# 1102 |   int r;
+#      |       ^
+# 1100|   {
+# 1101|     PROCESS *p;
+# 1102|->   int r;
+# 1103|   
+# 1104|     for (p = procsubs.head; p; p = p->next)
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/jobs.c:1135:20: warning[-Wunused-but-set-variable]: variable 'oend' set but not used
+# 1135 |   PROCESS *ohead, *oend, *ps, *p;
+#      |                    ^~~~
+# 1133|   procsub_prune ()
+# 1134|   {
+# 1135|->   PROCESS *ohead, *oend, *ps, *p;
+# 1136|     int onproc;
+# 1137|   
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/jobs.c: scope_hint: In function 'procsub_prune'
+bash-5.1/jobs.c:1136:7: warning[-Wunused-but-set-variable]: variable 'onproc' set but not used
+# 1136 |   int onproc;
+#      |       ^~~~~~
+# 1134|   {
+# 1135|     PROCESS *ohead, *oend, *ps, *p;
+# 1136|->   int onproc;
+# 1137|   
+# 1138|     if (procsubs.nproc == 0)
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/jobs.c: scope_hint: In function 'cleanup_dead_jobs'
+bash-5.1/jobs.c:1213:12: warning[-Wunused-variable]: unused variable 'discard'
+# 1213 |   PROCESS *discard;
+#      |            ^~~~~~~
+# 1211|     register int i;
+# 1212|     int os;
+# 1213|->   PROCESS *discard;
+# 1214|   
+# 1215|     if (js.j_jobslots == 0 || jobs_list_frozen)
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/jobs.c: scope_hint: In function 'nohup_job'
+bash-5.1/jobs.c:1464:7: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+# 1464 |   if (temp = jobs[job_index])
+#      |       ^~~~
+# 1462|       return;
+# 1463|   
+# 1464|->   if (temp = jobs[job_index])
+# 1465|       temp->flags |= J_NOHUP;
+# 1466|   }
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/jobs.c:2137:23: warning[-Wunused-variable]: unused variable 'termset'
+# 2137 |   sigset_t set, oset, termset, chldset, oset_copy;
+#      |                       ^~~~~~~
+# 2135|   {
+# 2136|     int async_p, forksleep;
+# 2137|->   sigset_t set, oset, termset, chldset, oset_copy;
+# 2138|     pid_t pid;
+# 2139|     SigHandler *oterm;
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/jobs.c: scope_hint: In function 'make_child'
+bash-5.1/jobs.c:2137:32: warning[-Wunused-variable]: unused variable 'chldset'
+# 2137 |   sigset_t set, oset, termset, chldset, oset_copy;
+#      |                                ^~~~~~~
+# 2135|   {
+# 2136|     int async_p, forksleep;
+# 2137|->   sigset_t set, oset, termset, chldset, oset_copy;
+# 2138|     pid_t pid;
+# 2139|     SigHandler *oterm;
+
+Error: COMPILER_WARNING (CWE-457):
+bash-5.1/jobs.c: scope_hint: In function 'make_child'
+bash-5.1/jobs.c:2197:7: warning[-Wmaybe-uninitialized]: 'oterm' may be used uninitialized in this function
+# 2197 |       set_signal_handler (SIGTERM, oterm);
+#      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2195|     if (pid != 0)
+# 2196|       if (interactive_shell)
+# 2197|->       set_signal_handler (SIGTERM, oterm);
+# 2198|   
+# 2199|     if (pid < 0)
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/jobs.c:2661:7: warning[-Wunused-but-set-variable]: variable 'any_stopped' set but not used
+# 2661 |   int any_stopped, check_async;
+#      |       ^~~~~~~~~~~
+# 2659|   {
+# 2660|     register int i, r;
+# 2661|->   int any_stopped, check_async;
+# 2662|     sigset_t set, oset;
+# 2663|     pid_t pid;
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/jobs.c: scope_hint: In function 'wait_for_background_pids'
+bash-5.1/jobs.c:2661:20: warning[-Wunused-but-set-variable]: variable 'check_async' set but not used
+# 2661 |   int any_stopped, check_async;
+#      |                    ^~~~~~~~~~~
+# 2659|   {
+# 2660|     register int i, r;
+# 2661|->   int any_stopped, check_async;
+# 2662|     sigset_t set, oset;
+# 2663|     pid_t pid;
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/jobs.c: scope_hint: In function 'sigchld_handler'
+bash-5.1/jobs.c:3754:7: warning[-Wunused-but-set-variable]: variable 'n' set but not used
+# 3754 |   int n, oerrno;
+#      |       ^
+# 3752|        int sig;
+# 3753|   {
+# 3754|->   int n, oerrno;
+# 3755|   
+# 3756|     oerrno = errno;
+
+Error: COMPILER_WARNING (CWE-457):
+bash-5.1/lib/glob/glob.c: scope_hint: In function 'skipname.isra.0'
+bash-5.1/lib/glob/glob.c:197:10: warning[-Wmaybe-uninitialized]: 'r' may be used uninitialized in this function
+#  197 |   int n, r, negate, wild, nullpat;
+#      |          ^
+#  195|   {
+#  196|     char *pp, *pe, *t, *se;
+#  197|->   int n, r, negate, wild, nullpat;
+#  198|   
+#  199|     negate = *pat == '!';
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/glob/glob.c:197:13: warning[-Wunused-but-set-variable]: variable 'negate' set but not used
+#  197 |   int n, r, negate, wild, nullpat;
+#      |             ^~~~~~
+#  195|   {
+#  196|     char *pp, *pe, *t, *se;
+#  197|->   int n, r, negate, wild, nullpat;
+#  198|   
+#  199|     negate = *pat == '!';
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/glob/glob.c:197:27: warning[-Wunused-but-set-variable]: variable 'nullpat' set but not used
+#  197 |   int n, r, negate, wild, nullpat;
+#      |                           ^~~~~~~
+#  195|   {
+#  196|     char *pp, *pe, *t, *se;
+#  197|->   int n, r, negate, wild, nullpat;
+#  198|   
+#  199|     negate = *pat == '!';
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/lib/glob/glob.c: scope_hint: In function 'extglob_skipname'
+bash-5.1/lib/glob/glob.c:230:10: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  230 |   while (t = glob_patscan (pp, pe, '|'))
+#      |          ^
+#  228|   
+#  229|     /* check every subpattern */
+#  230|->   while (t = glob_patscan (pp, pe, '|'))
+#  231|       {
+#  232|         n = t[-1];	/* ( */
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/glob/glob.c:324:10: warning[-Wunused-but-set-variable]: variable 'negate' set but not used
+#  324 |   int r, negate, wild, nullpat;
+#      |          ^~~~~~
+#  322|   #if EXTENDED_GLOB
+#  323|     wchar_t *pp, *pe, *t, n, *se;
+#  324|->   int r, negate, wild, nullpat;
+#  325|   
+#  326|     negate = *pat == L'!';
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/glob/glob.c:324:24: warning[-Wunused-but-set-variable]: variable 'nullpat' set but not used
+#  324 |   int r, negate, wild, nullpat;
+#      |                        ^~~~~~~
+#  322|   #if EXTENDED_GLOB
+#  323|     wchar_t *pp, *pe, *t, n, *se;
+#  324|->   int r, negate, wild, nullpat;
+#  325|   
+#  326|     negate = *pat == L'!';
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/lib/glob/glob.c: scope_hint: In function 'wextglob_skipname'
+bash-5.1/lib/glob/glob.c:348:10: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  348 |   while (t = glob_patscan_wc (pp, pe, '|'))
+#      |          ^
+#  346|   
+#  347|     /* check every subpattern */
+#  348|->   while (t = glob_patscan_wc (pp, pe, '|'))
+#  349|       {
+#  350|         n = t[-1];	/* ( */
+
+Error: COMPILER_WARNING (CWE-457):
+bash-5.1/lib/glob/glob.c: scope_hint: In function 'mbskipname.isra.0'
+bash-5.1/lib/glob/glob.c:408:10: warning[-Wmaybe-uninitialized]: 'ret' may be used uninitialized in this function
+#  408 |   return ret;
+#      |          ^~~
+#  406|     FREE (dn_wc);
+#  407|   
+#  408|->   return ret;
+#  409|   }
+#  410|   #endif /* HANDLE_MULTIBYTE */
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/glob/glob.c:462:7: warning[-Wunused-variable]: unused variable 'i'
+#  462 |   int i, j;
+#      |       ^
+#  460|     size_t len, n;
+#  461|     wchar_t *wpathname;
+#  462|->   int i, j;
+#  463|     wchar_t *orig_wpathname;
+#  464|   
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/glob/glob.c: scope_hint: In function 'wdequote_pathname'
+bash-5.1/lib/glob/glob.c:462:10: warning[-Wunused-variable]: unused variable 'j'
+#  462 |   int i, j;
+#      |          ^
+#  460|     size_t len, n;
+#  461|     wchar_t *wpathname;
+#  462|->   int i, j;
+#  463|     wchar_t *orig_wpathname;
+#  464|   
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/glob/glob.c: scope_hint: In function 'finddirs'
+bash-5.1/lib/glob/glob.c:565:14: warning[-Wunused-variable]: unused variable 'n'
+#  565 |   char **r, *n;
+#      |              ^
+#  563|        int *np;
+#  564|   {
+#  565|->   char **r, *n;
+#  566|     int ndirs;
+#  567|     struct globval *ret, *e, *g;
+
+Error: COMPILER_WARNING (CWE-457):
+bash-5.1/lib/glob/glob.c: scope_hint: In function 'glob_vector'
+bash-5.1/lib/glob/glob.c:836:18: warning[-Wmaybe-uninitialized]: 'isdir' may be used uninitialized in this function
+#  836 |               if (isdir == 0)
+#      |                  ^
+#  834|   	  if (flags & GX_ALLDIRS)
+#  835|   	    {
+#  836|-> 	      if (isdir == 0)
+#  837|   		{
+#  838|   		  dirlist = finddirs (pat, subdir, (flags & ~GX_ADDCURDIR), &e, &ndirs);
+
+Error: COMPILER_WARNING (CWE-457):
+bash-5.1/lib/glob/glob.c:841:23: warning[-Wmaybe-uninitialized]: 'subdir' may be used uninitialized in this function
+#  841 |                       free (subdir);
+#      |                       ^~~~~~~~~~~~~
+#  839|   		  if (dirlist == &finddirs_error_return)
+#  840|   		    {
+#  841|-> 		      free (subdir);
+#  842|   		      lose = 1;
+#  843|   		      break;
+
+Error: VALGRIND_WARNING:
+bash-5.1/bash: note: while executing process 6000 with arguments: ./globstar2.sub
+bash-5.1/lib/glob/glob.c:860: warning[Leak_DefinitelyLost]: 156 bytes in 26 blocks are definitely lost in loss record 367 of 406
+bash-5.1/lib/glob/glob.c:860: note: called from glob_vector()
+bash-5.1/lib/glob/glob.c:571: note: called from UnknownInlinedFun()
+bash-5.1/lib/glob/glob.c:838: note: called from glob_vector()
+bash-5.1/lib/glob/glob.c:571: note: called from UnknownInlinedFun()
+bash-5.1/lib/glob/glob.c:838: note: called from glob_vector()
+bash-5.1/lib/glob/glob.c:1492: note: called from glob_filename()
+bash-5.1/lib/glob/glob.c:1223: note: called from glob_filename()
+bash-5.1/pathexp.c:470: note: called from shell_glob_filename()
+bash-5.1/subst.c:11411: note: called from UnknownInlinedFun()
+bash-5.1/subst.c:12024: note: called from expand_word_list_internal.lto_priv.0()
+bash-5.1/subst.c:11359: note: called from UnknownInlinedFun()
+bash-5.1/execute_cmd.c:4389: note: called from execute_simple_command()
+bash-5.1/execute_cmd.c:858: note: called from execute_command_internal()
+bash-5.1/execute_cmd.c:399: note: called from execute_command()
+bash-5.1/eval.c:171: note: called from reader_loop()
+#  858|   		firstmalloc = nextlink;
+#  859|   	      sdlen = strlen (subdir);
+#  860|-> 	      nextname = (char *) malloc (sdlen + 1);
+#  861|   	      if (nextlink == 0 || nextname == 0)
+#  862|   		{
+
+Error: VALGRIND_WARNING:
+bash-5.1/bash: note: while executing process 6000 with arguments: ./globstar2.sub
+bash-5.1/lib/glob/glob.c:860: warning[Leak_DefinitelyLost]: 16 bytes in 8 blocks are definitely lost in loss record 173 of 406
+bash-5.1/lib/glob/glob.c:860: note: called from glob_vector()
+bash-5.1/lib/glob/glob.c:1492: note: called from glob_filename()
+bash-5.1/lib/glob/glob.c:1223: note: called from glob_filename()
+bash-5.1/pathexp.c:470: note: called from shell_glob_filename()
+bash-5.1/subst.c:11411: note: called from UnknownInlinedFun()
+bash-5.1/subst.c:12024: note: called from expand_word_list_internal.lto_priv.0()
+bash-5.1/subst.c:11359: note: called from UnknownInlinedFun()
+bash-5.1/execute_cmd.c:4389: note: called from execute_simple_command()
+bash-5.1/execute_cmd.c:858: note: called from execute_command_internal()
+bash-5.1/execute_cmd.c:399: note: called from execute_command()
+bash-5.1/eval.c:171: note: called from reader_loop()
+bash-5.1/shell.c:821: note: called from main()
+#  858|   		firstmalloc = nextlink;
+#  859|   	      sdlen = strlen (subdir);
+#  860|-> 	      nextname = (char *) malloc (sdlen + 1);
+#  861|   	      if (nextlink == 0 || nextname == 0)
+#  862|   		{
+
+Error: VALGRIND_WARNING:
+bash-5.1/bash: note: while executing process 6000 with arguments: ./globstar2.sub
+bash-5.1/lib/glob/glob.c:860: warning[Leak_DefinitelyLost]: 384 bytes in 48 blocks are definitely lost in loss record 377 of 406
+bash-5.1/lib/glob/glob.c:860: note: called from glob_vector()
+bash-5.1/lib/glob/glob.c:571: note: called from UnknownInlinedFun()
+bash-5.1/lib/glob/glob.c:838: note: called from glob_vector()
+bash-5.1/lib/glob/glob.c:571: note: called from UnknownInlinedFun()
+bash-5.1/lib/glob/glob.c:838: note: called from glob_vector()
+bash-5.1/lib/glob/glob.c:571: note: called from UnknownInlinedFun()
+bash-5.1/lib/glob/glob.c:838: note: called from glob_vector()
+bash-5.1/lib/glob/glob.c:1492: note: called from glob_filename()
+bash-5.1/lib/glob/glob.c:1223: note: called from glob_filename()
+bash-5.1/pathexp.c:470: note: called from shell_glob_filename()
+bash-5.1/subst.c:11411: note: called from UnknownInlinedFun()
+bash-5.1/subst.c:12024: note: called from expand_word_list_internal.lto_priv.0()
+bash-5.1/subst.c:11359: note: called from UnknownInlinedFun()
+bash-5.1/execute_cmd.c:4389: note: called from execute_simple_command()
+bash-5.1/execute_cmd.c:858: note: called from execute_command_internal()
+bash-5.1/execute_cmd.c:399: note: called from execute_command()
+#  858|   		firstmalloc = nextlink;
+#  859|   	      sdlen = strlen (subdir);
+#  860|-> 	      nextname = (char *) malloc (sdlen + 1);
+#  861|   	      if (nextlink == 0 || nextname == 0)
+#  862|   		{
+
+Error: VALGRIND_WARNING:
+bash-5.1/bash: note: while executing process 6000 with arguments: ./globstar2.sub
+bash-5.1/lib/glob/glob.c:860: warning[Leak_DefinitelyLost]: 56 bytes in 14 blocks are definitely lost in loss record 339 of 406
+bash-5.1/lib/glob/glob.c:860: note: called from glob_vector()
+bash-5.1/lib/glob/glob.c:571: note: called from UnknownInlinedFun()
+bash-5.1/lib/glob/glob.c:838: note: called from glob_vector()
+bash-5.1/lib/glob/glob.c:1492: note: called from glob_filename()
+bash-5.1/lib/glob/glob.c:1223: note: called from glob_filename()
+bash-5.1/pathexp.c:470: note: called from shell_glob_filename()
+bash-5.1/subst.c:11411: note: called from UnknownInlinedFun()
+bash-5.1/subst.c:12024: note: called from expand_word_list_internal.lto_priv.0()
+bash-5.1/subst.c:11359: note: called from UnknownInlinedFun()
+bash-5.1/execute_cmd.c:4389: note: called from execute_simple_command()
+bash-5.1/execute_cmd.c:858: note: called from execute_command_internal()
+bash-5.1/execute_cmd.c:399: note: called from execute_command()
+bash-5.1/eval.c:171: note: called from reader_loop()
+bash-5.1/shell.c:821: note: called from main()
+#  858|   		firstmalloc = nextlink;
+#  859|   	      sdlen = strlen (subdir);
+#  860|-> 	      nextname = (char *) malloc (sdlen + 1);
+#  861|   	      if (nextlink == 0 || nextname == 0)
+#  862|   		{
+
+Error: VALGRIND_WARNING:
+bash-5.1/bash: note: while executing process 6000 with arguments: ./globstar2.sub
+bash-5.1/lib/glob/glob.c:920: warning[Leak_DefinitelyLost]: 10 bytes in 5 blocks are definitely lost in loss record 88 of 406
+bash-5.1/lib/glob/glob.c:920: note: called from glob_vector()
+bash-5.1/lib/glob/glob.c:1492: note: called from glob_filename()
+bash-5.1/lib/glob/glob.c:1223: note: called from glob_filename()
+bash-5.1/pathexp.c:470: note: called from shell_glob_filename()
+bash-5.1/subst.c:11411: note: called from UnknownInlinedFun()
+bash-5.1/subst.c:12024: note: called from expand_word_list_internal.lto_priv.0()
+bash-5.1/subst.c:11359: note: called from UnknownInlinedFun()
+bash-5.1/execute_cmd.c:4389: note: called from execute_simple_command()
+bash-5.1/execute_cmd.c:858: note: called from execute_command_internal()
+bash-5.1/execute_cmd.c:399: note: called from execute_command()
+bash-5.1/eval.c:171: note: called from reader_loop()
+bash-5.1/shell.c:821: note: called from main()
+#  918|       {
+#  919|         sdlen = strlen (dir);
+#  920|->       nextname = (char *)malloc (sdlen + 1);
+#  921|         nextlink = (struct globval *) malloc (sizeof (struct globval));
+#  922|         if (nextlink == 0 || nextname == 0)
+
+Error: VALGRIND_WARNING:
+bash-5.1/bash: note: while executing process 6000 with arguments: ./globstar2.sub
+bash-5.1/lib/glob/glob.c:921: warning[Leak_DefinitelyLost]: 512 bytes in 32 blocks are definitely lost in loss record 384 of 406
+bash-5.1/lib/glob/glob.c:921: note: called from glob_vector()
+bash-5.1/lib/glob/glob.c:1318: note: called from glob_filename()
+bash-5.1/pathexp.c:470: note: called from shell_glob_filename()
+bash-5.1/subst.c:11411: note: called from UnknownInlinedFun()
+bash-5.1/subst.c:12024: note: called from expand_word_list_internal.lto_priv.0()
+bash-5.1/subst.c:11359: note: called from UnknownInlinedFun()
+bash-5.1/execute_cmd.c:4389: note: called from execute_simple_command()
+bash-5.1/execute_cmd.c:858: note: called from execute_command_internal()
+bash-5.1/execute_cmd.c:399: note: called from execute_command()
+bash-5.1/eval.c:171: note: called from reader_loop()
+bash-5.1/shell.c:821: note: called from main()
+#  919|         sdlen = strlen (dir);
+#  920|         nextname = (char *)malloc (sdlen + 1);
+#  921|->       nextlink = (struct globval *) malloc (sizeof (struct globval));
+#  922|         if (nextlink == 0 || nextname == 0)
+#  923|   	{
+
+Error: VALGRIND_WARNING:
+bash-5.1/bash: note: while executing process 5975 with arguments: ./globstar1.sub
+bash-5.1/lib/glob/glob.c:943: warning[Leak_DefinitelyLost]: 16 bytes in 1 blocks are definitely lost in loss record 153 of 359
+bash-5.1/lib/glob/glob.c:943: note: called from glob_vector()
+bash-5.1/lib/glob/glob.c:1318: note: called from glob_filename()
+bash-5.1/pathexp.c:470: note: called from shell_glob_filename()
+bash-5.1/subst.c:11411: note: called from UnknownInlinedFun()
+bash-5.1/subst.c:12024: note: called from expand_word_list_internal.lto_priv.0()
+bash-5.1/subst.c:11359: note: called from UnknownInlinedFun()
+bash-5.1/execute_cmd.c:4389: note: called from execute_simple_command()
+bash-5.1/execute_cmd.c:858: note: called from execute_command_internal()
+bash-5.1/execute_cmd.c:399: note: called from execute_command()
+bash-5.1/eval.c:171: note: called from reader_loop()
+bash-5.1/shell.c:821: note: called from main()
+#  941|     if (lose == 0)
+#  942|       {
+#  943|->       name_vector = (char **) malloc ((count + 1) * sizeof (char *));
+#  944|         lose |= name_vector == NULL;
+#  945|       }
+
+Error: VALGRIND_WARNING:
+bash-5.1/bash: note: while executing process 5975 with arguments: ./globstar1.sub
+bash-5.1/lib/glob/glob.c:943: warning[Leak_DefinitelyLost]: 32 bytes in 2 blocks are definitely lost in loss record 260 of 359
+bash-5.1/lib/glob/glob.c:943: note: called from glob_vector()
+bash-5.1/lib/glob/glob.c:1318: note: called from glob_filename()
+bash-5.1/lib/glob/glob.c:1223: note: called from glob_filename()
+bash-5.1/pathexp.c:470: note: called from shell_glob_filename()
+bash-5.1/subst.c:11411: note: called from UnknownInlinedFun()
+bash-5.1/subst.c:12024: note: called from expand_word_list_internal.lto_priv.0()
+bash-5.1/subst.c:11359: note: called from UnknownInlinedFun()
+bash-5.1/execute_cmd.c:4389: note: called from execute_simple_command()
+bash-5.1/execute_cmd.c:858: note: called from execute_command_internal()
+bash-5.1/execute_cmd.c:399: note: called from execute_command()
+bash-5.1/eval.c:171: note: called from reader_loop()
+bash-5.1/shell.c:821: note: called from main()
+#  941|     if (lose == 0)
+#  942|       {
+#  943|->       name_vector = (char **) malloc ((count + 1) * sizeof (char *));
+#  944|         lose |= name_vector == NULL;
+#  945|       }
+
+Error: VALGRIND_WARNING:
+bash-5.1/bash: note: while executing process 6000 with arguments: ./globstar2.sub
+bash-5.1/lib/glob/glob.c:943: warning[Leak_DefinitelyLost]: 64 bytes in 4 blocks are definitely lost in loss record 352 of 406
+bash-5.1/lib/glob/glob.c:943: note: called from glob_vector()
+bash-5.1/lib/glob/glob.c:1318: note: called from glob_filename()
+bash-5.1/lib/glob/glob.c:1223: note: called from glob_filename()
+bash-5.1/pathexp.c:470: note: called from shell_glob_filename()
+bash-5.1/subst.c:11411: note: called from UnknownInlinedFun()
+bash-5.1/subst.c:12024: note: called from expand_word_list_internal.lto_priv.0()
+bash-5.1/subst.c:11359: note: called from UnknownInlinedFun()
+bash-5.1/execute_cmd.c:4389: note: called from execute_simple_command()
+bash-5.1/execute_cmd.c:858: note: called from execute_command_internal()
+bash-5.1/execute_cmd.c:399: note: called from execute_command()
+bash-5.1/eval.c:171: note: called from reader_loop()
+bash-5.1/shell.c:821: note: called from main()
+#  941|     if (lose == 0)
+#  942|       {
+#  943|->       name_vector = (char **) malloc ((count + 1) * sizeof (char *));
+#  944|         lose |= name_vector == NULL;
+#  945|       }
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/glob/glob.c: scope_hint: In function 'glob_filename'
+bash-5.1/lib/glob/glob.c:1285:19: warning[-Wunused-variable]: unused variable 'dlen'
+# 1285 |               int dlen;
+#      |                   ^~~~
+# 1283|   	  if (all_starstar && (dflags & GX_NULLDIR) == 0)
+# 1284|   	    {
+# 1285|-> 	      int dlen;
+# 1286|   
+# 1287|   	      /* If we have a directory name that is not null (GX_NULLDIR above)
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/glob/gm_loop.c:79:25: warning[-Wunused-variable]: unused variable 't'
+#   79 |   int matlen, bracklen, t, in_cclass, in_collsym, in_equiv;
+#      |                         ^
+#   77|   {
+#   78|     CHAR c;
+#   79|->   int matlen, bracklen, t, in_cclass, in_collsym, in_equiv;
+#   80|   
+#   81|     if (*pat == 0)
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/lib/glob/gmisc.c:57: included_from: Included from here.
+bash-5.1/lib/glob/gm_loop.c: scope_hint: In function 'umatchlen'
+bash-5.1/lib/glob/gm_loop.c:85:10: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#   85 |   while (c = *pat++)
+#      |          ^
+#   83|   
+#   84|     matlen = in_cclass = in_collsym = in_equiv = 0;
+#   85|->   while (c = *pat++)
+#   86|       {
+#   87|         switch (c)
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/lib/glob/smatch.c:330: included_from: Included from here.
+bash-5.1/lib/glob/sm_loop.c: scope_hint: In function 'brackmatch'
+bash-5.1/lib/glob/sm_loop.c:404:7: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  404 |   if (not = (*p == L('!') || *p == L('^')))
+#      |       ^~~
+#  402|        expression starting with an unquoted circumflex character produces
+#  403|        unspecified results.  This implementation treats the two identically. */
+#  404|->   if (not = (*p == L('!') || *p == L('^')))
+#  405|       ++p;
+#  406|   
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/lib/glob/sm_loop.c: scope_hint: In function 'glob_patscan'
+bash-5.1/lib/glob/sm_loop.c:683:20: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  683 |   for (s = string; c = *s; s++)
+#      |                    ^
+#  681|       return (NULL);
+#  682|   
+#  683|->   for (s = string; c = *s; s++)
+#  684|       {
+#  685|         if (s >= end)
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/lib/glob/sm_loop.c: scope_hint: In function 'extmatch'
+bash-5.1/lib/glob/sm_loop.c:894:19: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  894 |               if (m1 = (GMATCH (s, srest, psub, pnext - 1, NULL, flags) == 0))
+#      |                   ^~
+#  892|   	      pnext = PATSCAN (psub, pe, L('|'));
+#  893|   	      /* If one of the patterns matches, just bail immediately. */
+#  894|-> 	      if (m1 = (GMATCH (s, srest, psub, pnext - 1, NULL, flags) == 0))
+#  895|   		break;
+#  896|   	      if (pnext == prest)
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/glob/smatch.c: scope_hint: In function 'charcmp'
+bash-5.1/lib/glob/smatch.c:108:7: warning[-Wunused-variable]: unused variable 'ret'
+#  108 |   int ret;
+#      |       ^~~
+#  106|     static char s1[2] = { ' ', '\0' };
+#  107|     static char s2[2] = { ' ', '\0' };
+#  108|->   int ret;
+#  109|   
+#  110|     /* Eight bits only.  Period. */
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/glob/smatch.c: scope_hint: In function 'charcmp_wc'
+bash-5.1/lib/glob/smatch.c:386:7: warning[-Wunused-variable]: unused variable 'r'
+#  386 |   int r;
+#      |       ^
+#  384|     static wchar_t s1[2] = { L' ', L'\0' };
+#  385|     static wchar_t s2[2] = { L' ', L'\0' };
+#  386|->   int r;
+#  387|   
+#  388|     if (c1 == c2)
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/lib/glob/smatch.c: scope_hint: In function 'posix_cclass_only'
+bash-5.1/lib/glob/smatch.c:525:10: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  525 |   while (p = strchr (p, '['))
+#      |          ^
+#  523|   
+#  524|     p = pattern;
+#  525|->   while (p = strchr (p, '['))
+#  526|       {
+#  527|         if (p[1] != ':')
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/glob/smatch.c:589:10: warning[-Wunused-variable]: unused variable 'plen'
+#  589 |   size_t plen, slen, mplen, mslen;
+#      |          ^~~~
+#  587|     size_t n;
+#  588|     wchar_t *wpattern, *wstring;
+#  589|->   size_t plen, slen, mplen, mslen;
+#  590|   
+#  591|     if (MB_CUR_MAX == 1)
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/glob/smatch.c:589:16: warning[-Wunused-variable]: unused variable 'slen'
+#  589 |   size_t plen, slen, mplen, mslen;
+#      |                ^~~~
+#  587|     size_t n;
+#  588|     wchar_t *wpattern, *wstring;
+#  589|->   size_t plen, slen, mplen, mslen;
+#  590|   
+#  591|     if (MB_CUR_MAX == 1)
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/glob/smatch.c:589:22: warning[-Wunused-variable]: unused variable 'mplen'
+#  589 |   size_t plen, slen, mplen, mslen;
+#      |                      ^~~~~
+#  587|     size_t n;
+#  588|     wchar_t *wpattern, *wstring;
+#  589|->   size_t plen, slen, mplen, mslen;
+#  590|   
+#  591|     if (MB_CUR_MAX == 1)
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/glob/smatch.c: scope_hint: In function 'xstrmatch'
+bash-5.1/lib/glob/smatch.c:589:29: warning[-Wunused-variable]: unused variable 'mslen'
+#  589 |   size_t plen, slen, mplen, mslen;
+#      |                             ^~~~~
+#  587|     size_t n;
+#  588|     wchar_t *wpattern, *wstring;
+#  589|->   size_t plen, slen, mplen, mslen;
+#  590|   
+#  591|     if (MB_CUR_MAX == 1)
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/glob/xmbsrtowcs.c:429:13: warning[-Wunused-variable]: unused variable 'prev_state'
+#  429 |   mbstate_t prev_state;
+#      |             ^~~~~~~~~~
+#  427|     char buf[64], *destptr, *tmp_dest;
+#  428|     unsigned char uc;
+#  429|->   mbstate_t prev_state;
+#  430|   
+#  431|     cur_max = MB_CUR_MAX;
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/lib/glob/xmbsrtowcs.c: scope_hint: In function 'xwcsrtombs'
+bash-5.1/lib/glob/xmbsrtowcs.c:456:1: warning[-Wunused-label]: label 'handle_byte' defined but not used
+#  456 | handle_byte:
+#      | ^~~~~~~~~~~
+#  454|   		 treat invalid wide character sequences as bytes.  This is
+#  455|   		 intended to be symmetric with xdupmbstowcs2. */
+#  456|-> handle_byte:
+#  457|   	      destptr = tmp_dest;	/* in case wcrtomb modified it */
+#  458|   	      uc = wc;
+
+Error: COMPILER_WARNING (CWE-457):
+bash-5.1/lib/readline/bind.c: scope_hint: In function 'parser_if'
+bash-5.1/lib/readline/bind.c:1315:43: warning[-Wmaybe-uninitialized]: 'opresult' may be used uninitialized in this function
+# 1315 |       _rl_parsing_conditionalized_out = 1 - opresult;
+#      |                                         ~~^~~~~~~~~~
+# 1313|   	  break;
+# 1314|   	}
+# 1315|->       _rl_parsing_conditionalized_out = 1 - opresult;
+# 1316|       }
+# 1317|     /* Check to see if the first word in ARGS is the same as the
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/lib/readline/bind.c: scope_hint: In function '_rl_skip_to_delim'
+bash-5.1/lib/readline/bind.c:1496:29: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+# 1496 |   for (i = start,passc = 0; c = string[i]; i++)
+#      |                             ^
+# 1494|     int i, c, passc;
+# 1495|   
+# 1496|->   for (i = start,passc = 0; c = string[i]; i++)
+# 1497|       {
+# 1498|         if (passc)
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/readline/bind.c: scope_hint: In function 'rl_parse_and_bind'
+bash-5.1/lib/readline/bind.c:1590:11: warning[-Wunused-variable]: unused variable 's'
+# 1590 |       int s;
+#      |           ^
+# 1588|       {
+# 1589|         char *var, *value, *e;
+# 1590|->       int s;
+# 1591|   
+# 1592|         var = string + i;
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/lib/readline/bind.c: scope_hint: In function 'rl_function_dumper'
+bash-5.1/lib/readline/bind.c:2694:15: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+# 2694 |   for (i = 0; name = names[i]; i++)
+#      |               ^~~~
+# 2692|     fprintf (rl_outstream, "\n");
+# 2693|   
+# 2694|->   for (i = 0; name = names[i]; i++)
+# 2695|       {
+# 2696|         rl_command_func_t *function;
+
+Error: COMPILER_WARNING (CWE-457):
+bash-5.1/lib/readline/complete.c: scope_hint: In function 'print_filename'
+bash-5.1/lib/readline/complete.c:1042:22: warning[-Wmaybe-uninitialized]: 'printed_len' may be used uninitialized in this function
+# 1042 |           printed_len++;
+#      |           ~~~~~~~~~~~^~
+# 1040|   	{
+# 1041|   	  putc (extension_char, rl_outstream);
+# 1042|-> 	  printed_len++;
+# 1043|   	}
+# 1044|       }
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/lib/readline/complete.c: scope_hint: In function '_rl_find_completion_word'
+bash-5.1/lib/readline/complete.c:1149:14: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+# 1149 |       while (rl_point = MB_PREVCHAR (rl_line_buffer, rl_point, MB_FIND_ANY))
+#      |              ^~~~~~~~
+# 1147|            completion, so use the word break characters to find the
+# 1148|            substring on which to complete. */
+# 1149|->       while (rl_point = MB_PREVCHAR (rl_line_buffer, rl_point, MB_FIND_ANY))
+# 1150|   	{
+# 1151|   	  scan = rl_line_buffer[rl_point];
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/readline/complete.c: scope_hint: In function 'compute_lcd_of_matches'
+bash-5.1/lib/readline/complete.c:1321:7: warning[-Wunused-variable]: unused variable 'v'
+# 1321 |   int v;
+#      |       ^
+# 1319|     char *dtext;		/* dequoted TEXT, if needed */
+# 1320|   #if defined (HANDLE_MULTIBYTE)
+# 1321|->   int v;
+# 1322|     size_t v1, v2;
+# 1323|     mbstate_t ps1, ps2;
+
+Error: COMPILER_WARNING (CWE-457):
+bash-5.1/lib/readline/complete.c: scope_hint: In function 'rl_complete_internal'
+bash-5.1/lib/readline/complete.c:2086:14: warning[-Wmaybe-uninitialized]: 'tlen' may be used uninitialized in this function
+# 2086 |           if (mlen >= tlen)
+#      |              ^
+# 2084|   	{
+# 2085|   	  mlen = *matches[0] ? strlen (matches[0]) : 0;
+# 2086|-> 	  if (mlen >= tlen)
+# 2087|   	    insert_match (matches[0], start, matches[1] ? MULT_MATCH : SINGLE_MATCH, &quote_char);
+# 2088|   	}
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/lib/readline/complete.c: scope_hint: In function 'rl_completion_matches'
+bash-5.1/lib/readline/complete.c:2217:10: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+# 2217 |   while (string = (*entry_function) (text, matches))
+#      |          ^~~~~~
+# 2215|     match_list[1] = (char *)NULL;
+# 2216|   
+# 2217|->   while (string = (*entry_function) (text, matches))
+# 2218|       {
+# 2219|         if (RL_SIG_RECEIVED ())
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/lib/readline/complete.c: scope_hint: In function 'rl_username_completion_function'
+bash-5.1/lib/readline/complete.c:2289:10: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+# 2289 |   while (entry = getpwent ())
+#      |          ^~~~~
+# 2287|   
+# 2288|   #if defined (HAVE_GETPWENT)
+# 2289|->   while (entry = getpwent ())
+# 2290|       {
+# 2291|         /* Null usernames should result in all users as possible completions. */
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/readline/complete.c:2826:25: warning[-Wunused-variable]: 'cstate' defined but not used
+# 2824|     static int orig_start, orig_end;
+# 2825|     static char quote_char;
+# 2826|->   static int delimiter, cstate;
+# 2827|   
+# 2828|     /* The first time through, we generate the list of matches and set things
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/readline/complete.c: scope_hint: In function 'rl_menu_complete'
+bash-5.1/lib/readline/complete.c:2826:25: warning[-Wunused-variable]: unused variable 'cstate'
+# 2826 |   static int delimiter, cstate;
+#      |                         ^~~~~~
+# 2824|     static int orig_start, orig_end;
+# 2825|     static char quote_char;
+# 2826|->   static int delimiter, cstate;
+# 2827|   
+# 2828|     /* The first time through, we generate the list of matches and set things
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/readline/display.c:746:29: warning[-Wunused-variable]: unused variable 'n0'
+#  746 |   int newlines, lpos, temp, n0, num, prompt_lines_estimate;
+#      |                             ^~
+#  744|     int in, out, c, linenum, cursor_linenum;
+#  745|     int inv_botlin, lb_botlin, lb_linenum, o_cpos;
+#  746|->   int newlines, lpos, temp, n0, num, prompt_lines_estimate;
+#  747|     char *prompt_this_line;
+#  748|     char cur_face;
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/readline/display.c:746:33: warning[-Wunused-but-set-variable]: variable 'num' set but not used
+#  746 |   int newlines, lpos, temp, n0, num, prompt_lines_estimate;
+#      |                                 ^~~
+#  744|     int in, out, c, linenum, cursor_linenum;
+#  745|     int inv_botlin, lb_botlin, lb_linenum, o_cpos;
+#  746|->   int newlines, lpos, temp, n0, num, prompt_lines_estimate;
+#  747|     char *prompt_this_line;
+#  748|     char cur_face;
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/readline/display.c: scope_hint: In function 'rl_redisplay'
+bash-5.1/lib/readline/display.c:746:38: warning[-Wunused-but-set-variable]: variable 'prompt_lines_estimate' set but not used
+#  746 |   int newlines, lpos, temp, n0, num, prompt_lines_estimate;
+#      |                                      ^~~~~~~~~~~~~~~~~~~~~
+#  744|     int in, out, c, linenum, cursor_linenum;
+#  745|     int inv_botlin, lb_botlin, lb_linenum, o_cpos;
+#  746|->   int newlines, lpos, temp, n0, num, prompt_lines_estimate;
+#  747|     char *prompt_this_line;
+#  748|     char cur_face;
+
+Error: COMPILER_WARNING (CWE-457):
+bash-5.1/lib/readline/display.c: scope_hint: In function 'rl_redisplay'
+bash-5.1/lib/readline/display.c:1141:29: warning[-Wmaybe-uninitialized]: 'wc_width' may be used uninitialized in this function
+# 1141 |               for (i = 0; i < wc_width; i++)
+#      |                           ~~^~~~~~~~~~
+# 1139|   	      for (i = in; i < in+wc_bytes; i++)
+# 1140|   		invis_addc (&out, rl_line_buffer[i], cur_face);
+# 1141|-> 	      for (i = 0; i < wc_width; i++)
+# 1142|   		CHECK_LPOS();
+# 1143|   	    }
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/readline/display.c:1634:39: warning[-Wunused-variable]: unused variable 'twidth'
+# 1634 |   int temp, lendiff, wsatend, od, nd, twidth, o_cpos;
+#      |                                       ^~~~~~
+# 1632|     char *ofd, *ols, *oe, *nfd, *nls, *ne;
+# 1633|     char *ofdf, *nfdf, *olsf, *nlsf;
+# 1634|->   int temp, lendiff, wsatend, od, nd, twidth, o_cpos;
+# 1635|     int current_invis_chars;
+# 1636|     int col_lendiff, col_temp;
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/readline/display.c:1765:19: warning[-Wunused-variable]: unused variable 'count'
+# 1765 |               int count, i, j;
+#      |                   ^~~~~
+# 1763|   	  if (newwidth > 0)
+# 1764|   	    {
+# 1765|-> 	      int count, i, j;
+# 1766|   	      char *optr;
+# 1767|   
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/readline/display.c: scope_hint: In function 'update_line'
+bash-5.1/lib/readline/display.c:1766:21: warning[-Wunused-variable]: unused variable 'optr'
+# 1766 |               char *optr;
+#      |                     ^~~~
+# 1764|   	    {
+# 1765|   	      int count, i, j;
+# 1766|-> 	      char *optr;
+# 1767|   
+# 1768|   	      puts_face (new, new_face, newbytes);
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/lib/readline/display.c:3202:1: warning[-Wunused-function]: 'insert_some_chars' defined but not used
+# 3202 | insert_some_chars (char *string, int count, int col)
+#      | ^~~~~~~~~~~~~~~~~
+# 3200|   /* Insert COUNT characters from STRING to the output stream at column COL. */
+# 3201|   static void
+# 3202|-> insert_some_chars (char *string, int count, int col)
+# 3203|   {
+# 3204|     open_some_spaces (col);
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/lib/readline/histexpand.c: scope_hint: In function 'get_history_event'
+bash-5.1/lib/readline/histexpand.c:213:25: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  213 |   for (local_index = i; c = string[i]; i++)
+#      |                         ^
+#  211|   
+#  212|     /* Only a closing `?' or a newline delimit a substring search string. */
+#  213|->   for (local_index = i; c = string[i]; i++)
+#  214|       {
+#  215|   #if defined (HANDLE_MULTIBYTE)
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/readline/histexpand.c: scope_hint: In function 'history_expand_internal'
+bash-5.1/lib/readline/histexpand.c:682:48: warning[-Wunused-but-set-variable]: variable 'ws' set but not used
+#  682 |             int delimiter, failed, si, l_temp, ws, we;
+#      |                                                ^~
+#  680|   	  {
+#  681|   	    char *new_event;
+#  682|-> 	    int delimiter, failed, si, l_temp, ws, we;
+#  683|   
+#  684|   	    if (c == 's')
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/lib/readline/histfile.c:189:1: warning[-Wunused-function]: 'history_backupfile' defined but not used
+#  189 | history_backupfile (const char *filename)
+#      | ^~~~~~~~~~~~~~~~~~
+#  187|   
+#  188|   static char *
+#  189|-> history_backupfile (const char *filename)
+#  190|   {
+#  191|     const char *fn;
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/readline/histfile.c: scope_hint: In function 'history_backupfile'
+bash-5.1/lib/readline/histfile.c:195:15: warning[-Wunused-variable]: unused variable 'fs'
+#  195 |   struct stat fs;
+#      |               ^~
+#  193|     size_t len;
+#  194|     ssize_t n;
+#  195|->   struct stat fs;
+#  196|   
+#  197|     fn = filename;  
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/readline/histfile.c: scope_hint: In function 'history_tempfile'
+bash-5.1/lib/readline/histfile.c:223:15: warning[-Wunused-variable]: unused variable 'fs'
+#  223 |   struct stat fs;
+#      |               ^~
+#  221|     size_t len;
+#  222|     ssize_t n;
+#  223|->   struct stat fs;
+#  224|     int pid;
+#  225|   
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/lib/readline/histfile.c:475:1: warning[-Wunused-function]: 'histfile_backup' defined but not used
+#  475 | histfile_backup (const char *filename, const char *back)
+#      | ^~~~~~~~~~~~~~~
+#  473|      (e.g., ~/.bash_history -> .histfiles/.bash_history.$HOSTNAME) */
+#  474|   static int
+#  475|-> histfile_backup (const char *filename, const char *back)
+#  476|   {
+#  477|   #if defined (HAVE_READLINK)
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/readline/histfile.c: scope_hint: In function 'history_truncate_file'
+bash-5.1/lib/readline/histfile.c:523:49: warning[-Wunused-but-set-variable]: variable 'r' set but not used
+#  523 |   int file, chars_read, rv, orig_lines, exists, r;
+#      |                                                 ^
+#  521|   {
+#  522|     char *buffer, *filename, *tempname, *bp, *bp1;		/* bp1 == bp+1 */
+#  523|->   int file, chars_read, rv, orig_lines, exists, r;
+#  524|     struct stat finfo, nfinfo;
+#  525|     size_t file_size;
+
+Error: COMPILER_WARNING (CWE-457):
+bash-5.1/lib/readline/histfile.c: scope_hint: In function 'history_truncate_file'
+bash-5.1/lib/readline/histfile.c:648:46: warning[-Wmaybe-uninitialized]: 'orig_lines' may be used uninitialized
+#  648 |   history_lines_written_to_file = orig_lines - lines;
+#      |                                   ~~~~~~~~~~~^~~~~~~
+#  646|     FREE (buffer);
+#  647|   
+#  648|->   history_lines_written_to_file = orig_lines - lines;
+#  649|   
+#  650|     if (rv == 0 && filename && tempname)
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/readline/histfile.c: scope_hint: In function 'history_do_write'
+bash-5.1/lib/readline/histfile.c:685:22: warning[-Wunused-variable]: unused variable 'nfinfo'
+#  685 |   struct stat finfo, nfinfo;
+#      |                      ^~~~~~
+#  683|     char *output, *tempname, *histname;
+#  684|     int file, mode, rv, exists;
+#  685|->   struct stat finfo, nfinfo;
+#  686|   #ifdef HISTORY_USE_MMAP
+#  687|     size_t cursize;
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/readline/history.c: scope_hint: In function 'add_history'
+bash-5.1/lib/readline/history.c:279:20: warning[-Wunused-variable]: unused variable 'i'
+#  279 |       register int i;
+#      |                    ^
+#  277|     if (history_stifled && (history_length == history_max_entries))
+#  278|       {
+#  279|->       register int i;
+#  280|   
+#  281|         /* If the history is stifled, and history_length is zero,
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/readline/history.c: scope_hint: In function 'remove_history'
+bash-5.1/lib/readline/history.c:482:16: warning[-Wunused-variable]: unused variable 'i'
+#  482 |   register int i;
+#      |                ^
+#  480|   {
+#  481|     HIST_ENTRY *return_value;
+#  482|->   register int i;
+#  483|   #if 1
+#  484|     int nentries;
+
+Error: VALGRIND_WARNING:
+bash-5.1/bash: note: while executing process 6393 with arguments: ./history3.sub
+bash-5.1/lib/readline/history.c:526: warning[Leak_DefinitelyLost]: 48 bytes in 2 blocks are definitely lost in loss record 321 of 365
+bash-5.1/lib/readline/history.c:526: note: called from remove_history_range()
+bash-5.1/bashhist.c:376: note: called from bash_delete_history_range()
+bash-5.1/builtins/./history.def:221: note: called from history_builtin()
+bash-5.1/execute_cmd.c:4840: note: called from execute_builtin.lto_priv.0()
+bash-5.1/execute_cmd.c:5353: note: called from UnknownInlinedFun()
+bash-5.1/execute_cmd.c:4609: note: called from execute_simple_command()
+bash-5.1/execute_cmd.c:858: note: called from execute_command_internal()
+bash-5.1/execute_cmd.c:399: note: called from execute_command()
+bash-5.1/eval.c:171: note: called from reader_loop()
+bash-5.1/shell.c:821: note: called from main()
+#  524|   
+#  525|     nentries = last - first + 1;
+#  526|->   return_value = (HIST_ENTRY **)malloc ((nentries + 1) * sizeof (HIST_ENTRY *));
+#  527|     if (return_value == 0)
+#  528|       return return_value;
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/lib/readline/histsearch.c: scope_hint: In function '_hs_history_patsearch'
+bash-5.1/lib/readline/histsearch.c:212:7: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  212 |   if (unescaped_backslash = (string[ret] == '\\'))
+#      |       ^~~~~~~~~~~~~~~~~~~
+#  210|     /* fnmatch is required to reject a pattern that ends with an unescaped
+#  211|        backslash */
+#  212|->   if (unescaped_backslash = (string[ret] == '\\'))
+#  213|       {
+#  214|         while (ret > 0 && string[--ret] == '\\')
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/lib/readline/input.c: scope_hint: In function 'rl_read_key'
+bash-5.1/lib/readline/input.c:486:11: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  486 |       if (c = _rl_next_macro_key ())
+#      |           ^
+#  484|       {
+#  485|         /* If input is coming from a macro, then use that. */
+#  486|->       if (c = _rl_next_macro_key ())
+#  487|   	return ((unsigned char)c);
+#  488|   
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/readline/input.c:529:12: warning[-Wunused-variable]: unused variable 'empty_set'
+#  529 |   sigset_t empty_set;
+#      |            ^~~~~~~~~
+#  527|     unsigned char c;
+#  528|   #if defined (HAVE_PSELECT)
+#  529|->   sigset_t empty_set;
+#  530|     fd_set readfds;
+#  531|   #endif
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/lib/readline/input.c: scope_hint: In function 'rl_getc'
+bash-5.1/lib/readline/input.c:595:1: warning[-Wunused-label]: label 'handle_error' defined but not used
+#  595 | handle_error:
+#      | ^~~~~~~~~~~~
+#  593|   /* fprintf(stderr, "rl_getc: result = %d errno = %d\n", result, errno); */
+#  594|   
+#  595|-> handle_error:
+#  596|         /* If the error that we received was EINTR, then try again,
+#  597|   	 this is simply an interrupted system call to read ().  We allow
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/readline/isearch.c: scope_hint: In function '_rl_isearch_dispatch'
+bash-5.1/lib/readline/isearch.c:341:37: warning[-Wunused-variable]: unused variable 'incr'
+#  341 |   int n, wstart, wlen, limit, cval, incr;
+#      |                                     ^~~~
+#  339|   _rl_isearch_dispatch (_rl_search_cxt *cxt, int c)
+#  340|   {
+#  341|->   int n, wstart, wlen, limit, cval, incr;
+#  342|     char *paste;
+#  343|     size_t pastelen;
+
+Error: VALGRIND_WARNING:
+bash-5.1/bash: note: while executing process 6452 with arguments: --norc -i
+bash-5.1/lib/readline/isearch.c:701: warning[UninitCondition]: Conditional jump or move depends on uninitialised value(s)
+bash-5.1/lib/readline/isearch.c:701: note: called from _rl_isearch_dispatch.part.0()
+bash-5.1/lib/readline/isearch.c:349: note: called from UnknownInlinedFun()
+bash-5.1/lib/readline/isearch.c:862: note: called from rl_search_history.constprop.0()
+bash-5.1/lib/readline/readline.c:934: note: called from _rl_dispatch_subseq()
+bash-5.1/lib/readline/readline.c:880: note: called from UnknownInlinedFun()
+bash-5.1/lib/readline/readline.c:692: note: called from readline_internal_char()
+bash-5.1/lib/readline/readline.c:741: note: called from UnknownInlinedFun()
+bash-5.1/lib/readline/readline.c:753: note: called from UnknownInlinedFun()
+bash-5.1/lib/readline/readline.c:432: note: called from readline()
+bash-5.1/./parse.y:1488: note: called from yy_readline_get()
+bash-5.1/./parse.y:1422: note: called from UnknownInlinedFun()
+bash-5.1/./parse.y:2358: note: called from shell_getc.lto_priv.0()
+bash-5.1/./parse.y:3290: note: called from read_token.part.0()
+bash-5.1/./parse.y:3254: note: called from UnknownInlinedFun()
+bash-5.1/./parse.y:2797: note: called from UnknownInlinedFun()
+bash-5.1/y.tab.c:1836: note: called from yyparse()
+bash-5.1/eval.c:348: note: called from parse_command()
+bash-5.1/eval.c:392: note: called from read_command()
+bash-5.1/eval.c:138: note: called from reader_loop()
+#  699|       default:
+#  700|   #if defined (HANDLE_MULTIBYTE)
+#  701|->       wlen = (cxt->mb[0] == 0 || cxt->mb[1] == 0) ? 1 : RL_STRLEN (cxt->mb);
+#  702|   #else
+#  703|         wlen = 1;
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/readline/isearch.c: scope_hint: In function 'rl_search_history'
+bash-5.1/lib/readline/isearch.c:845:7: warning[-Wunused-but-set-variable]: variable 'c' set but not used
+#  845 |   int c, r;
+#      |       ^
+#  843|   {
+#  844|     _rl_search_cxt *cxt;		/* local for now, but saved globally */
+#  845|->   int c, r;
+#  846|   
+#  847|     RL_SETSTATE(RL_STATE_ISEARCH);
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/readline/isearch.c: scope_hint: In function '_rl_isearch_callback'
+bash-5.1/lib/readline/isearch.c:882:7: warning[-Wunused-but-set-variable]: variable 'c' set but not used
+#  882 |   int c, r;
+#      |       ^
+#  880|   _rl_isearch_callback (_rl_search_cxt *cxt)
+#  881|   {
+#  882|->   int c, r;
+#  883|   
+#  884|     c = _rl_search_getchar (cxt);
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/readline/kill.c:725:15: warning[-Wunused-variable]: unused variable 'c'
+#  725 |   int retval, c;
+#      |               ^
+#  723|   rl_bracketed_paste_begin (int count, int key)
+#  724|   {
+#  725|->   int retval, c;
+#  726|     size_t len, cap;
+#  727|     char *buf;
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/readline/kill.c: scope_hint: In function 'rl_bracketed_paste_begin'
+bash-5.1/lib/readline/kill.c:726:15: warning[-Wunused-variable]: unused variable 'cap'
+#  726 |   size_t len, cap;
+#      |               ^~~
+#  724|   {
+#  725|     int retval, c;
+#  726|->   size_t len, cap;
+#  727|     char *buf;
+#  728|   
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/readline/kill.c: scope_hint: In function '_rl_read_bracketed_paste_prefix'
+bash-5.1/lib/readline/kill.c:743:17: warning[-Wunused-variable]: unused variable 'j'
+#  743 |   int key, ind, j;
+#      |                 ^
+#  741|   {
+#  742|     char pbuf[BRACK_PASTE_SLEN+1], *pbpref;
+#  743|->   int key, ind, j;
+#  744|   
+#  745|     pbpref = BRACK_PASTE_PREF;		/* XXX - debugging */
+
+Error: COMPILER_WARNING (CWE-457):
+bash-5.1/lib/readline/kill.c: scope_hint: In function '_rl_read_bracketed_paste_prefix'
+bash-5.1/lib/readline/kill.c:766:29: warning[-Wmaybe-uninitialized]: 'key' may be used uninitialized in this function
+#  766 |       return (key < 0 ? key : 0);
+#      |              ~~~~~~~~~~~~~~~^~~~
+#  764|         while (ind >= 0)
+#  765|   	_rl_unget_char (pbuf[ind--]);
+#  766|->       return (key < 0 ? key : 0);
+#  767|       }
+#  768|     return (key < 0 ? key : 1);
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/readline/kill.c: scope_hint: In function '_rl_bracketed_read_mbstring'
+bash-5.1/lib/readline/kill.c:815:10: warning[-Wunused-variable]: unused variable 'r'
+#  815 |   int c, r;
+#      |          ^
+#  813|   _rl_bracketed_read_mbstring (char *mb, int mlen)
+#  814|   {
+#  815|->   int c, r;
+#  816|   
+#  817|     c = _rl_bracketed_read_key ();
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/lib/readline/mbutil.c:87:1: warning[-Wunused-function]: '_rl_utf8_mblen' defined but not used
+#   87 | _rl_utf8_mblen (const char *s, size_t n)
+#      | ^~~~~~~~~~~~~~
+#   85|      at S. Encoding is UTF-8. */
+#   86|   static int
+#   87|-> _rl_utf8_mblen (const char *s, size_t n)
+#   88|   {
+#   89|     unsigned char c, c1, c2, c3;
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/readline/mbutil.c: scope_hint: In function '_rl_find_prev_utf8char'
+bash-5.1/lib/readline/mbutil.c:247:9: warning[-Wunused-variable]: unused variable 's'
+#  247 |   char *s;
+#      |         ^
+#  245|   _rl_find_prev_utf8char (char *string, int seed, int find_non_zero)
+#  246|   {
+#  247|->   char *s;
+#  248|     unsigned char b;
+#  249|     int save, prev;
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/lib/readline/misc.c: scope_hint: In function '_rl_revert_previous_lines'
+bash-5.1/lib/readline/misc.c:450:11: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  450 |       if (ul = (UNDO_LIST *)entry->data)
+#      |           ^~
+#  448|     while (entry)
+#  449|       {
+#  450|->       if (ul = (UNDO_LIST *)entry->data)
+#  451|   	{
+#  452|   	  if (ul == saved_undo_list)
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/lib/readline/misc.c: scope_hint: In function 'rl_clear_history'
+bash-5.1/lib/readline/misc.c:510:11: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  510 |       if (ul = (UNDO_LIST *)hent->data)
+#      |           ^~
+#  508|       {
+#  509|         hent = hlist[i];
+#  510|->       if (ul = (UNDO_LIST *)hent->data)
+#  511|   	{
+#  512|   	  if (ul == saved_undo_list)
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/readline/nls.c: scope_hint: In function 'utf8locale'
+bash-5.1/lib/readline/nls.c:106:10: warning[-Wunused-variable]: unused variable 'len'
+#  106 |   size_t len;
+#      |          ^~~
+#  104|   {
+#  105|     char *cp;
+#  106|->   size_t len;
+#  107|   
+#  108|   #if HAVE_LANGINFO_CODESET
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/readline/nls.c: scope_hint: In function '_rl_init_eightbit'
+bash-5.1/lib/readline/nls.c:154:9: warning[-Wunused-variable]: unused variable 'lspec'
+#  154 |   char *lspec, *t;
+#      |         ^~~~~
+#  152|      value, and go into eight-bit mode if it's not C or POSIX. */
+#  153|   #if defined (HAVE_SETLOCALE)
+#  154|->   char *lspec, *t;
+#  155|   
+#  156|     t = _rl_init_locale ();	/* returns static pointer */
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/lib/readline/nls.c:244:1: warning[-Wunused-function]: 'find_codeset' defined but not used
+#  244 | find_codeset (char *name, size_t *lenp)
+#      | ^~~~~~~~~~~~
+#  242|   /* Isolate codeset portion of locale specification. */
+#  243|   static char *
+#  244|-> find_codeset (char *name, size_t *lenp)
+#  245|   {
+#  246|     char *cp, *language, *result;
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/readline/parens.c: scope_hint: In function 'rl_insert_close'
+bash-5.1/lib/readline/parens.c:118:36: warning[-Wunused-but-set-variable]: variable 'ready' set but not used
+#  118 |       int orig_point, match_point, ready;
+#      |                                    ^~~~~
+#  116|       {
+#  117|   #if defined (HAVE_SELECT)
+#  118|->       int orig_point, match_point, ready;
+#  119|         struct timeval timer;
+#  120|         fd_set readfds;
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/lib/readline/readline.c:358:1: warning[-Wunused-function]: 'audit_tty' defined but not used
+#  358 | audit_tty (char *string)
+#      | ^~~~~~~~~
+#  356|   /* Report STRING to the audit system. */
+#  357|   static void
+#  358|-> audit_tty (char *string)
+#  359|   {
+#  360|     struct sockaddr_nl addr;
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/readline/readline.c:595:21: warning[-Wunused-variable]: 'eof_found' defined but not used
+#  593|   #endif
+#  594|   {
+#  595|->   static int lastc, eof_found;
+#  596|     int c, code, lk, r;
+#  597|   
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/readline/readline.c:595:21: warning[-Wunused-variable]: unused variable 'eof_found'
+#  595 |   static int lastc, eof_found;
+#      |                     ^~~~~~~~~
+#  593|   #endif
+#  594|   {
+#  595|->   static int lastc, eof_found;
+#  596|     int c, code, lk, r;
+#  597|   
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/readline/readline.c: scope_hint: In function 'readline_internal_char'
+bash-5.1/lib/readline/readline.c:596:20: warning[-Wunused-but-set-variable]: variable 'r' set but not used
+#  596 |   int c, code, lk, r;
+#      |                    ^
+#  594|   {
+#  595|     static int lastc, eof_found;
+#  596|->   int c, code, lk, r;
+#  597|   
+#  598|     lastc = EOF;
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/lib/readline/readline.c:1358:1: warning[-Wunused-function]: 'reset_default_bindings' defined but not used
+# 1358 | reset_default_bindings (void)
+#      | ^~~~~~~~~~~~~~~~~~~~~~
+# 1356|      interested in back to rl_insert and read the new ones. */
+# 1357|   static void
+# 1358|-> reset_default_bindings (void)
+# 1359|   {
+# 1360|     if (_rl_bind_stty_chars)
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/readline/search.c: scope_hint: In function 'rl_history_search_internal'
+bash-5.1/lib/readline/search.c:524:9: warning[-Wunused-variable]: unused variable 't'
+#  524 |   char *t;
+#      |         ^
+#  522|     HIST_ENTRY *temp;
+#  523|     int ret, oldpos, newcol;
+#  524|->   char *t;
+#  525|   
+#  526|     rl_maybe_save_line ();
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/readline/shell.c:125:13: warning[-Wunused-variable]: 'putenv_buf1' defined but not used
+#  125 | static char putenv_buf1[INT_STRLEN_BOUND (int) + 6 + 1];        /* sizeof("LINES=") == 6 */
+#      |             ^~~~~~~~~~~
+#  123|      respectively. */
+#  124|   static char setenv_buf[INT_STRLEN_BOUND (int) + 1];
+#  125|-> static char putenv_buf1[INT_STRLEN_BOUND (int) + 6 + 1];	/* sizeof("LINES=") == 6 */
+#  126|   static char putenv_buf2[INT_STRLEN_BOUND (int) + 8 + 1];	/* sizeof("COLUMNS=") == 8 */
+#  127|   
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/readline/shell.c:126:13: warning[-Wunused-variable]: 'putenv_buf2' defined but not used
+#  126 | static char putenv_buf2[INT_STRLEN_BOUND (int) + 8 + 1];        /* sizeof("COLUMNS=") == 8 */
+#      |             ^~~~~~~~~~~
+#  124|   static char setenv_buf[INT_STRLEN_BOUND (int) + 1];
+#  125|   static char putenv_buf1[INT_STRLEN_BOUND (int) + 6 + 1];	/* sizeof("LINES=") == 6 */
+#  126|-> static char putenv_buf2[INT_STRLEN_BOUND (int) + 8 + 1];	/* sizeof("COLUMNS=") == 8 */
+#  127|   
+#  128|   void
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/readline/signals.c:439:25: warning[-Wunused-variable]: 'oset' defined but not used
+#  437|   #if defined (HAVE_POSIX_SIGNALS)
+#  438|     static int sigmask_set = 0;
+#  439|->   static sigset_t bset, oset;
+#  440|   #endif
+#  441|   
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/readline/signals.c: scope_hint: In function 'rl_set_signals'
+bash-5.1/lib/readline/signals.c:439:25: warning[-Wunused-variable]: unused variable 'oset'
+#  439 |   static sigset_t bset, oset;
+#      |                         ^~~~
+#  437|   #if defined (HAVE_POSIX_SIGNALS)
+#  438|     static int sigmask_set = 0;
+#  439|->   static sigset_t bset, oset;
+#  440|   #endif
+#  441|   
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/readline/signals.c:650:17: warning[-Wunused-variable]: 'sigint_set' defined but not used
+#  650 | static sigset_t sigint_set, sigint_oset;
+#      |                 ^~~~~~~~~~
+#  648|   
+#  649|   #if defined (HAVE_POSIX_SIGNALS)
+#  650|-> static sigset_t sigint_set, sigint_oset;
+#  651|   static sigset_t sigwinch_set, sigwinch_oset;
+#  652|   #else /* !HAVE_POSIX_SIGNALS */
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/readline/signals.c:650:29: warning[-Wunused-variable]: 'sigint_oset' defined but not used
+#  650 | static sigset_t sigint_set, sigint_oset;
+#      |                             ^~~~~~~~~~~
+#  648|   
+#  649|   #if defined (HAVE_POSIX_SIGNALS)
+#  650|-> static sigset_t sigint_set, sigint_oset;
+#  651|   static sigset_t sigwinch_set, sigwinch_oset;
+#  652|   #else /* !HAVE_POSIX_SIGNALS */
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/readline/text.c: scope_hint: In function '_rl_overwrite_char'
+bash-5.1/lib/readline/text.c:919:7: warning[-Wunused-but-set-variable]: variable 'k' set but not used
+#  919 |   int k;
+#      |       ^
+#  917|   #if defined (HANDLE_MULTIBYTE)
+#  918|     char mbkey[MB_LEN_MAX];
+#  919|->   int k;
+#  920|   
+#  921|     /* Read an entire multibyte character sequence to insert COUNT times. */
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/lib/readline/tilde.c: scope_hint: In function 'tilde_expand'
+bash-5.1/lib/readline/tilde.c:195:7: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  195 |   if (result = strchr (string, '~'))
+#      |       ^~~~~~
+#  193|   
+#  194|     result_index = result_size = 0;
+#  195|->   if (result = strchr (string, '~'))
+#  196|       result = (char *)xmalloc (result_size = (strlen (string) + 16));
+#  197|     else
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/readline/undo.c: scope_hint: In function 'rl_free_undo_list'
+bash-5.1/lib/readline/undo.c:121:14: warning[-Wunused-variable]: unused variable 'release'
+#  121 |   UNDO_LIST *release, *orig_list;
+#      |              ^~~~~~~
+#  119|   rl_free_undo_list (void)
+#  120|   {
+#  121|->   UNDO_LIST *release, *orig_list;
+#  122|   
+#  123|     orig_list = rl_undo_list;
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/readline/vi_mode.c:104:12: warning[-Wunused-variable]: 'vi_continued_command' defined but not used
+#  104 | static int vi_continued_command;
+#      |            ^~~~~~~~~~~~~~~~~~~~
+#  102|      us implicitly into insert mode.  Some people want this text to be
+#  103|      attached to the command so that it is `redoable' with `.'. */
+#  104|-> static int vi_continued_command;
+#  105|   static char *vi_insert_buffer;
+#  106|   static int vi_insert_buffer_size;
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/readline/vi_mode.c: scope_hint: In function 'rl_vi_fword'
+bash-5.1/lib/readline/vi_mode.c:639:7: warning[-Wunused-but-set-variable]: variable 'opoint' set but not used
+#  639 |   int opoint;
+#      |       ^~~~~~
+#  637|   rl_vi_fword (int count, int ignore)
+#  638|   {
+#  639|->   int opoint;
+#  640|   
+#  641|     while (count-- && rl_point < (rl_end - 1))
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/readline/vi_mode.c: scope_hint: In function 'rl_vi_domove'
+bash-5.1/lib/readline/vi_mode.c:1360:7: warning[-Wunused-variable]: unused variable 'r'
+# 1360 |   int r;
+#      |       ^
+# 1358|   rl_vi_domove (int x, int *ignore)
+# 1359|   {
+# 1360|->   int r;
+# 1361|     _rl_vimotion_cxt *m;
+# 1362|   
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/sh/casemod.c: scope_hint: In function 'sh_modcase'
+bash-5.1/lib/sh/casemod.c:109:15: warning[-Wunused-variable]: unused variable 'c'
+#  109 |   int inword, c, nc, nop, match, usewords;
+#      |               ^
+#  107|   {
+#  108|     int start, next, end, retind;
+#  109|->   int inword, c, nc, nop, match, usewords;
+#  110|     char *ret, *s;
+#  111|     wchar_t wc;
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/lib/sh/eaccess.c:176:1: warning[-Wunused-function]: 'sh_euidaccess' defined but not used
+#  176 | sh_euidaccess (path, mode)
+#      | ^~~~~~~~~~~~~
+#  174|      the effective and real uid and gid as appropriate. */
+#  175|   static int
+#  176|-> sh_euidaccess (path, mode)
+#  177|        const char *path;
+#  178|        int mode;
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/sh/fnxform.c:49:14: warning[-Wunused-variable]: 'outbuf' defined but not used
+#   49 | static char *outbuf = 0;
+#      |              ^~~~~~
+#   47|   #define OUTLEN_MAX 4096
+#   48|   
+#   49|-> static char *outbuf = 0;
+#   50|   static size_t outlen = 0;
+#   51|   
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/sh/fnxform.c:50:15: warning[-Wunused-variable]: 'outlen' defined but not used
+#   50 | static size_t outlen = 0;
+#      |               ^~~~~~
+#   48|   
+#   49|   static char *outbuf = 0;
+#   50|-> static size_t outlen = 0;
+#   51|   
+#   52|   static char *curencoding PARAMS((void));
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/lib/sh/fnxform.c:80:1: warning[-Wunused-function]: 'init_tofs' defined but not used
+#   80 | init_tofs ()
+#      | ^~~~~~~~~
+#   78|   
+#   79|   static void
+#   80|-> init_tofs ()
+#   81|   {
+#   82|     char *cur;
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/lib/sh/fnxform.c:89:1: warning[-Wunused-function]: 'init_fromfs' defined but not used
+#   89 | init_fromfs ()
+#      | ^~~~~~~~~~~
+#   87|   
+#   88|   static void
+#   89|-> init_fromfs ()
+#   90|   {
+#   91|     char *cur;
+
+Error: COMPILER_WARNING:
+bash-5.1/lib/sh/getenv.c: scope_hint: In function 'getenv'
+bash-5.1/lib/sh/getenv.c:55:6: warning[-Wnonnull-compare]: 'nonnull' argument 'name' compared to NULL
+#   55 |   if (name == 0 || *name == '\0')
+#      |      ^
+#   53|     SHELL_VAR *var;
+#   54|   
+#   55|->   if (name == 0 || *name == '\0')
+#   56|       return ((char *)NULL);
+#   57|   
+
+Error: COMPILER_WARNING:
+bash-5.1/lib/sh/getenv.c: scope_hint: In function 'putenv'
+bash-5.1/lib/sh/getenv.c:112:6: warning[-Wnonnull-compare]: 'nonnull' argument 'str' compared to NULL
+#  112 |   if (str == 0 || *str == '\0')
+#      |      ^
+#  110|     int offset;
+#  111|   
+#  112|->   if (str == 0 || *str == '\0')
+#  113|       {
+#  114|         errno = EINVAL;
+
+Error: COMPILER_WARNING:
+bash-5.1/lib/sh/getenv.c: scope_hint: In function 'unsetenv'
+bash-5.1/lib/sh/getenv.c:214:6: warning[-Wnonnull-compare]: 'nonnull' argument 'name' compared to NULL
+#  214 |   if (name == 0 || *name == '\0' || strchr (name, '=') != 0)
+#      |      ^
+#  212|        const char *name;
+#  213|   {
+#  214|->   if (name == 0 || *name == '\0' || strchr (name, '=') != 0)
+#  215|       {
+#  216|         errno = EINVAL;
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/lib/sh/makepath.c: scope_hint: In function 'sh_makepath'
+bash-5.1/lib/sh/makepath.c:123:10: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  123 |   while (*r++ = *s++)
+#      |          ^
+#  121|       *r++ = '/';      
+#  122|     s = xdir;
+#  123|->   while (*r++ = *s++)
+#  124|       ;
+#  125|     if (xpath != path && xpath != nullpath)
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/lib/sh/pathcanon.c: scope_hint: In function 'sh_canonpath'
+bash-5.1/lib/sh/pathcanon.c:117:7: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  117 |   if (rooted = ROOTEDPATH(path))
+#      |       ^~~~~~
+#  115|     /* POSIX.2 says to leave a leading `//' alone.  On cygwin, we skip over any
+#  116|        leading `x:' (dos drive name). */
+#  117|->   if (rooted = ROOTEDPATH(path))
+#  118|       {
+#  119|         stub_char = DIRSEP;
+
+Error: COMPILER_WARNING (CWE-704):
+bash-5.1/lib/sh/random.c: scope_hint: In function 'genseed'
+bash-5.1/lib/sh/random.c:93:8: warning[-Wpointer-to-int-cast]: cast from pointer to integer of different size
+#   93 |   iv = (u_bits32_t)seedrand;            /* let the compiler truncate */
+#      |        ^
+#   91|   
+#   92|     gettimeofday (&tv, NULL);
+#   93|->   iv = (u_bits32_t)seedrand;		/* let the compiler truncate */
+#   94|     iv = tv.tv_sec ^ tv.tv_usec ^ getpid () ^ getppid () ^ current_user.uid ^ iv;
+#   95|     return (iv);
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/sh/random.c: scope_hint: In function 'brand32'
+bash-5.1/lib/sh/random.c:143:14: warning[-Wunused-variable]: unused variable 'ret'
+#  143 |   u_bits32_t ret;
+#      |              ^~~
+#  141|   brand32 ()
+#  142|   {
+#  143|->   u_bits32_t ret;
+#  144|   
+#  145|     rseed32 = intrand32 (rseed32);
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/lib/sh/spell.c: scope_hint: In function 'spname'
+bash-5.1/lib/sh/spell.c:98:22: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#   98 |       for (p = best; *np = *p++; np++)
+#      |                      ^
+#   96|          *  Add to end of newname
+#   97|          */
+#   98|->       for (p = best; *np = *p++; np++)
+#   99|   	;
+#  100|       }
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/sh/strtrans.c: scope_hint: In function 'ansicstr'
+bash-5.1/lib/sh/strtrans.c:59:7: warning[-Wunused-variable]: unused variable 'b'
+#   59 |   int b, mb_cur_max;
+#      |       ^
+#   57|     unsigned long v;
+#   58|     size_t clen;
+#   59|->   int b, mb_cur_max;
+#   60|   #if defined (HANDLE_MULTIBYTE)
+#   61|     wchar_t wc;
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/lib/sh/strtrans.c: scope_hint: In function 'ansic_quote'
+bash-5.1/lib/sh/strtrans.c:253:17: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  253 |   for (s = str; c = *s; s++)
+#      |                 ^
+#  251|     *r++ = '\'';
+#  252|   
+#  253|->   for (s = str; c = *s; s++)
+#  254|       {
+#  255|         b = l = 1;		/* 1 == add backslash; 0 == no backslash */
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/lib/sh/strtrans.c: scope_hint: In function 'ansic_wshouldquote'
+bash-5.1/lib/sh/strtrans.c:337:21: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  337 |   for (wcs = wcstr; wcc = *wcs; wcs++)
+#      |                     ^~~
+#  335|     mbstowcs (wcstr, string, slen + 1);
+#  336|   
+#  337|->   for (wcs = wcstr; wcc = *wcs; wcs++)
+#  338|       if (iswprint(wcc) == 0)
+#  339|         {
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/lib/sh/strtrans.c: scope_hint: In function 'ansic_shouldquote'
+bash-5.1/lib/sh/strtrans.c:360:20: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  360 |   for (s = string; c = *s; s++)
+#      |                    ^
+#  358|       return 0;
+#  359|   
+#  360|->   for (s = string; c = *s; s++)
+#  361|       {
+#  362|   #if defined (HANDLE_MULTIBYTE)
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/sh/tmpfile.c:61:12: warning[-Wunused-variable]: 'ntmpfiles' defined but not used
+#   61 | static int ntmpfiles;
+#      |            ^~~~~~~~~
+#   59|   
+#   60|   static char *sys_tmpdir = (char *)NULL;
+#   61|-> static int ntmpfiles;
+#   62|   static int tmpnamelen = -1;
+#   63|   static unsigned long filenum = 1L;
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/sh/tmpfile.c:63:22: warning[-Wunused-variable]: 'filenum' defined but not used
+#   63 | static unsigned long filenum = 1L;
+#      |                      ^~~~~~~
+#   61|   static int ntmpfiles;
+#   62|   static int tmpnamelen = -1;
+#   63|-> static unsigned long filenum = 1L;
+#   64|   
+#   65|   static char *
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/lib/sh/tmpfile.c:118:1: warning[-Wunused-function]: 'sh_seedrand' defined but not used
+#  118 | sh_seedrand ()
+#      | ^~~~~~~~~~~
+#  116|   
+#  117|   static void
+#  118|-> sh_seedrand ()
+#  119|   {
+#  120|   #if HAVE_RANDOM
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/sh/tmpfile.c:140:15: warning[-Wunused-variable]: unused variable 'sb'
+#  140 |   struct stat sb;
+#      |               ^~
+#  138|   {
+#  139|     char *filename, *tdir, *lroot;
+#  140|->   struct stat sb;
+#  141|     int r, tdlen;
+#  142|     static int seeded = 0;
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/sh/tmpfile.c:141:7: warning[-Wunused-variable]: unused variable 'r'
+#  141 |   int r, tdlen;
+#      |       ^
+#  139|     char *filename, *tdir, *lroot;
+#  140|     struct stat sb;
+#  141|->   int r, tdlen;
+#  142|     static int seeded = 0;
+#  143|   
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/sh/tmpfile.c:141:10: warning[-Wunused-but-set-variable]: variable 'tdlen' set but not used
+#  141 |   int r, tdlen;
+#      |          ^~~~~
+#  139|     char *filename, *tdir, *lroot;
+#  140|     struct stat sb;
+#  141|->   int r, tdlen;
+#  142|     static int seeded = 0;
+#  143|   
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/sh/tmpfile.c:142:14: warning[-Wunused-variable]: 'seeded' defined but not used
+#  142 |   static int seeded = 0;
+#      |              ^~~~~~
+#  140|     struct stat sb;
+#  141|     int r, tdlen;
+#  142|->   static int seeded = 0;
+#  143|   
+#  144|     filename = (char *)xmalloc (PATH_MAX + 1);
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/sh/tmpfile.c: scope_hint: In function 'sh_mktmpname'
+bash-5.1/lib/sh/tmpfile.c:142:14: warning[-Wunused-variable]: unused variable 'seeded'
+#  142 |   static int seeded = 0;
+#      |              ^~~~~~
+#  140|     struct stat sb;
+#  141|     int r, tdlen;
+#  142|->   static int seeded = 0;
+#  143|   
+#  144|     filename = (char *)xmalloc (PATH_MAX + 1);
+
+Error: COMPILER_WARNING:
+bash-5.1/lib/sh/tmpfile.c:160: warning: the use of `mktemp' is dangerous, better use `mkstemp' or `mkdtemp'
+#  158|     else
+#  159|       sprintf (filename, "%s/%s.XXXXXX", tdir, lroot);
+#  160|->   if (mktemp (filename) == 0)
+#  161|       {
+#  162|         free (filename);
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/sh/tmpfile.c: scope_hint: In function 'sh_mktmpfd'
+bash-5.1/lib/sh/tmpfile.c:196:11: warning[-Wunused-but-set-variable]: variable 'tdlen' set but not used
+#  196 |   int fd, tdlen;
+#      |           ^~~~~
+#  194|   {
+#  195|     char *filename, *tdir, *lroot;
+#  196|->   int fd, tdlen;
+#  197|     
+#  198|     filename = (char *)xmalloc (PATH_MAX + 1);
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/sh/tmpfile.c:271:7: warning[-Wunused-variable]: unused variable 'fd'
+#  271 |   int fd, tdlen;
+#      |       ^~
+#  269|   {
+#  270|     char *filename, *tdir, *lroot, *dirname;
+#  271|->   int fd, tdlen;
+#  272|     
+#  273|   #ifdef USE_MKDTEMP
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/sh/tmpfile.c: scope_hint: In function 'sh_mktmpdir'
+bash-5.1/lib/sh/tmpfile.c:271:11: warning[-Wunused-but-set-variable]: variable 'tdlen' set but not used
+#  271 |   int fd, tdlen;
+#      |           ^~~~~
+#  269|   {
+#  270|     char *filename, *tdir, *lroot, *dirname;
+#  271|->   int fd, tdlen;
+#  272|     
+#  273|   #ifdef USE_MKDTEMP
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/lib/sh/ufuncs.c: scope_hint: In function 'fsleep'
+bash-5.1/lib/sh/ufuncs.c:92:26: warning[-Wunused-variable]: unused variable 'prevmask'
+#   92 |   sigset_t blocked_sigs, prevmask;
+#      |                          ^~~~~~~~
+#   90|   {
+#   91|     int e, r;
+#   92|->   sigset_t blocked_sigs, prevmask;
+#   93|   #if defined (HAVE_PSELECT)
+#   94|     struct timespec ts;
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/lib/tilde/tilde.c: scope_hint: In function 'tilde_expand'
+bash-5.1/lib/tilde/tilde.c:195:7: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  195 |   if (result = strchr (string, '~'))
+#      |       ^~~~~~
+#  193|   
+#  194|     result_index = result_size = 0;
+#  195|->   if (result = strchr (string, '~'))
+#  196|       result = (char *)xmalloc (result_size = (strlen (string) + 16));
+#  197|     else
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/locale.c: scope_hint: In function 'reset_locale_vars'
+bash-5.1/locale.c:361:9: warning[-Wunused-but-set-variable]: variable 't' set but not used
+#  361 |   char *t, *x;
+#      |         ^
+#  359|   reset_locale_vars ()
+#  360|   {
+#  361|->   char *t, *x;
+#  362|   #if defined (HAVE_SETLOCALE)
+#  363|     if (lang == 0 || *lang == '\0')
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/locale.c: scope_hint: In function 'locale_isutf8'
+bash-5.1/locale.c:595:14: warning[-Wunused-variable]: unused variable 'encoding'
+#  595 |   char *cp, *encoding;
+#      |              ^~~~~~~~
+#  593|        char *lspec;
+#  594|   {
+#  595|->   char *cp, *encoding;
+#  596|   
+#  597|   #if HAVE_LANGINFO_CODESET
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/mailcheck.c: scope_hint: In function 'remember_mail_dates'
+bash-5.1/mailcheck.c:394:10: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  394 |   while (mailfile = extract_colon_unit (mailpaths, &i))
+#      |          ^~~~~~~~
+#  392|       }
+#  393|   
+#  394|->   while (mailfile = extract_colon_unit (mailpaths, &i))
+#  395|       {
+#  396|         mp = parse_mailpath_spec (mailfile);
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/mailcheck.c: scope_hint: In function 'check_mail'
+bash-5.1/mailcheck.c:468:15: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  468 |           if (temp = expand_string_to_string (message, Q_DOUBLE_QUOTES))
+#      |               ^~~~
+#  466|   #undef mtime
+#  467|   
+#  468|-> 	  if (temp = expand_string_to_string (message, Q_DOUBLE_QUOTES))
+#  469|   	    {
+#  470|   	      puts (temp);
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/make_cmd.c: scope_hint: In function 'make_here_document'
+bash-5.1/make_cmd.c:613:10: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  613 |   while (full_line = read_secondary_line (delim_unquoted))
+#      |          ^~~~~~~~~
+#  611|        need to perform backslash-quoted newline removal. */
+#  612|     delim_unquoted = (temp->redirectee.filename->flags & W_QUOTED) == 0;
+#  613|->   while (full_line = read_secondary_line (delim_unquoted))
+#  614|       {
+#  615|         register char *line;
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/parse.y:324:14: warning[-Wunused-variable]: 'yyoutstream' defined but not used
+#  324 | static FILE *yyoutstream;
+#      |              ^~~~~~~~~~~
+#  322|   static REDIRECTEE redir;
+#  323|   
+#  324|-> static FILE *yyoutstream;
+#  325|   static FILE *yyerrstream;
+#  326|   %}
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/parse.y:325:14: warning[-Wunused-variable]: 'yyerrstream' defined but not used
+#  325 | static FILE *yyerrstream;
+#      |              ^~~~~~~~~~~
+#  323|   
+#  324|   static FILE *yyoutstream;
+#  325|-> static FILE *yyerrstream;
+#  326|   %}
+#  327|   
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/parse.y:2125:7: warning[-Wunused-variable]: unused variable 'n'
+# 2125 |   int n, c;
+#      |       ^
+# 2123|   {
+# 2124|     char *ret;
+# 2125|->   int n, c;
+# 2126|   
+# 2127|     prompt_string_pointer = &ps2_prompt;
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/parse.y: scope_hint: In function 'read_secondary_line'
+bash-5.1/parse.y:2125:10: warning[-Wunused-variable]: unused variable 'c'
+# 2125 |   int n, c;
+#      |          ^
+# 2123|   {
+# 2124|     char *ret;
+# 2125|->   int n, c;
+# 2126|   
+# 2127|     prompt_string_pointer = &ps2_prompt;
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/parse.y: scope_hint: In function 'parse_matched_pair'
+bash-5.1/parse.y:3550:18: warning[-Wunused-but-set-variable]: variable 'prevch' set but not used
+# 3550 |   int count, ch, prevch, tflags;
+#      |                  ^~~~~~
+# 3548|        int *lenp, flags;
+# 3549|   {
+# 3550|->   int count, ch, prevch, tflags;
+# 3551|     int nestlen, ttranslen, start_lineno;
+# 3552|     char *ret, *nestret, *ttrans;
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/parse.y: scope_hint: In function 'parse_comsub'
+bash-5.1/parse.y:3946:1: warning[-Wunused-label]: label 'comsub_readchar' defined but not used
+# 3946 | comsub_readchar:
+#      | ^~~~~~~~~~~~~~~
+# 3944|     while (count)
+# 3945|       {
+# 3946|-> comsub_readchar:
+# 3947|         ch = shell_getc (qc != '\'' && (tflags & (LEX_INCOMMENT|LEX_PASSNEXT|LEX_QUOTEDDOC)) == 0);
+# 3948|   
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/parse.y: scope_hint: In function 'xparse_dolparen'
+bash-5.1/parse.y:4457:7: warning[-Wunused-but-set-variable]: variable 'orig_ind' set but not used
+# 4457 |   int orig_ind, nc, sflags, orig_eof_token, start_lineno;
+#      |       ^~~~~~~~
+# 4455|     sh_parser_state_t ps;
+# 4456|     sh_input_line_state_t ls;
+# 4457|->   int orig_ind, nc, sflags, orig_eof_token, start_lineno;
+# 4458|     char *ret, *ep, *ostring;
+# 4459|   #if defined (ALIAS) || defined (DPAREN_ARITHMETIC)
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/parse.y: scope_hint: In function 'parse_dparen'
+bash-5.1/parse.y:4585:15: warning[-Wunused-but-set-variable]: variable 'sline' set but not used
+# 4585 |   int cmdtyp, sline;
+#      |               ^~~~~
+# 4583|        int c;
+# 4584|   {
+# 4585|->   int cmdtyp, sline;
+# 4586|     char *wval;
+# 4587|     WORD_DESC *wd;
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/parse.y: scope_hint: In function 'parse_arith_cmd'
+bash-5.1/parse.y:4646:7: warning[-Wunused-but-set-variable]: variable 'exp_lineno' set but not used
+# 4646 |   int exp_lineno, rval, c;
+#      |       ^~~~~~~~~~
+# 4644|        int adddq;
+# 4645|   {
+# 4646|->   int exp_lineno, rval, c;
+# 4647|     char *ttok, *tokstr;
+# 4648|     int ttoklen;
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/parse.y: scope_hint: In function 'cond_error'
+bash-5.1/parse.y:4701:11: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+# 4701 |       if (etext = error_token_from_token (cond_token))
+#      |           ^~~~~
+# 4699|     else if (cond_token != COND_ERROR)
+# 4700|       {
+# 4701|->       if (etext = error_token_from_token (cond_token))
+# 4702|   	{
+# 4703|   	  parser_error (cond_lineno, _("syntax error in conditional expression: unexpected token `%s'"), etext);
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/parse.y: scope_hint: In function 'cond_term'
+bash-5.1/parse.y:4783:15: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+# 4783 |           if (etext = error_token_from_token (cond_token))
+#      |               ^~~~~
+# 4781|   	  if (term)
+# 4782|   	    dispose_cond_node (term);		/* ( */
+# 4783|-> 	  if (etext = error_token_from_token (cond_token))
+# 4784|   	    {
+# 4785|   	      parser_error (lineno, _("unexpected token `%s', expected `)'"), etext);
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/parse.y:4815:15: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+# 4815 |           if (etext = error_token_from_token (tok))
+#      |               ^~~~~
+# 4813|   	{
+# 4814|   	  dispose_word (op);
+# 4815|-> 	  if (etext = error_token_from_token (tok))
+# 4816|   	    {
+# 4817|   	      parser_error (line_number, _("unexpected argument `%s' to conditional unary operator"), etext);
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/parse.y:4865:15: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+# 4865 |           if (etext = error_token_from_token (tok))
+#      |               ^~~~~
+# 4863|         else
+# 4864|   	{
+# 4865|-> 	  if (etext = error_token_from_token (tok))
+# 4866|   	    {
+# 4867|   	      parser_error (line_number, _("unexpected token `%s', conditional binary operator expected"), etext);
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/parse.y:4891:15: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+# 4891 |           if (etext = error_token_from_token (tok))
+#      |               ^~~~~
+# 4889|         else
+# 4890|   	{
+# 4891|-> 	  if (etext = error_token_from_token (tok))
+# 4892|   	    {
+# 4893|   	      parser_error (line_number, _("unexpected argument `%s' to conditional binary operator"), etext);
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/parse.y:4909:16: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+# 4909 |       else if (etext = error_token_from_token (tok))
+#      |                ^~~~~
+# 4907|         if (tok < 256)
+# 4908|   	parser_error (line_number, _("unexpected token `%c' in conditional command"), tok);
+# 4909|->       else if (etext = error_token_from_token (tok))
+# 4910|   	{
+# 4911|   	  parser_error (line_number, _("unexpected token `%s' in conditional command"), etext);
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/parse.y: scope_hint: In function 'decode_prompt_string'
+bash-5.1/parse.y:5811:10: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+# 5811 |   while (c = *string++)
+#      |          ^
+# 5809|     orig_string = string;
+# 5810|   
+# 5811|->   while (c = *string++)
+# 5812|       {
+# 5813|         if (posixly_correct && c == '!')
+
+Error: COMPILER_WARNING (CWE-457):
+bash-5.1/parse.y: scope_hint: In function 'decode_prompt_string'
+bash-5.1/parse.y:5897:18: warning[-Wmaybe-uninitialized]: 'n' may be used uninitialized in this function
+# 5897 |               if (n == 0)
+#      |                  ^
+# 5895|   		n = strftime (timebuf, sizeof (timebuf), "%H:%M", tm);
+# 5896|   
+# 5897|-> 	      if (n == 0)
+# 5898|   		timebuf[0] = '\0';
+# 5899|   	      else
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/parse.y: scope_hint: In function 'error_token_from_token'
+bash-5.1/parse.y:6216:7: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+# 6216 |   if (t = find_token_in_alist (tok, word_token_alist, 0))
+#      |       ^
+# 6214|     char *t;
+# 6215|   
+# 6216|->   if (t = find_token_in_alist (tok, word_token_alist, 0))
+# 6217|       return t;
+# 6218|   
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/parse.y:6219:7: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+# 6219 |   if (t = find_token_in_alist (tok, other_token_alist, 0))
+#      |       ^
+# 6217|       return t;
+# 6218|   
+# 6219|->   if (t = find_token_in_alist (tok, other_token_alist, 0))
+# 6220|       return t;
+# 6221|   
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/parse.y:6386:1: warning[-Wunused-function]: 'discard_parser_constructs' defined but not used
+# 6386 | discard_parser_constructs (error_p)
+#      | ^~~~~~~~~~~~~~~~~~~~~~~~~
+# 6384|      (dispose_command () will actually free the command.) */
+# 6385|   static void
+# 6386|-> discard_parser_constructs (error_p)
+# 6387|        int error_p;
+# 6388|   {
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/parse.y: scope_hint: In function 'parse_string_to_word_list'
+bash-5.1/parse.y:6478:43: warning[-Wunused-variable]: unused variable 'ea'
+# 6478 |   int old_echo_input, old_expand_aliases, ea;
+#      |                                           ^~
+# 6476|     int tok, orig_current_token, orig_line_number, orig_input_terminator;
+# 6477|     int orig_line_count;
+# 6478|->   int old_echo_input, old_expand_aliases, ea;
+# 6479|   #if defined (HISTORY)
+# 6480|     int old_remember_on_history, old_history_expansion_inhibited;
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/parse.y: scope_hint: In function 'restore_parser_state'
+bash-5.1/parse.y:6714:7: warning[-Wunused-variable]: unused variable 'i'
+# 6714 |   int i;
+#      |       ^
+# 6712|        sh_parser_state_t *ps;
+# 6713|   {
+# 6714|->   int i;
+# 6715|   
+# 6716|     if (ps == 0)
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/pathexp.c: scope_hint: In function 'unquoted_glob_pattern_p'
+bash-5.1/pathexp.c:78:10: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#   78 |   while (c = *string++)
+#      |          ^
+#   76|     send = string + strlen (string);
+#   77|   
+#   78|->   while (c = *string++)
+#   79|       {
+#   80|         switch (c)
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/pathexp.c: scope_hint: In function 'shell_glob_filename'
+bash-5.1/pathexp.c:464:15: warning[-Wunused-variable]: unused variable 'quoted_pattern'
+#  464 |   int gflags, quoted_pattern;
+#      |               ^~~~~~~~~~~~~~
+#  462|   
+#  463|     char *temp, **results;
+#  464|->   int gflags, quoted_pattern;
+#  465|   
+#  466|     noglob_dot_filenames = glob_dot_filenames == 0;
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/pathexp.c: scope_hint: In function 'setup_ignore_patterns'
+bash-5.1/pathexp.c:673:10: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  673 |   while (colon_bit = split_ignorespec (this_ignoreval, &ptr))
+#      |          ^~~~~~~~~
+#  671|     while (colon_bit = extract_colon_unit (this_ignoreval, &ptr))
+#  672|   #else
+#  673|->   while (colon_bit = split_ignorespec (this_ignoreval, &ptr))
+#  674|   #endif
+#  675|       {
+
+Error: COMPILER_WARNING:
+bash-5.1/print_cmd.c: scope_hint: In function 'make_command_string_internal'
+bash-5.1/print_cmd.c:173:14: warning[-Wformat-zero-length]: zero-length gnu_printf format string
+#  173 |     cprintf ("");
+#      |              ^~
+#  171|   
+#  172|     if (command == 0)
+#  173|->     cprintf ("");
+#  174|     else
+#  175|       {
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/print_cmd.c:969:1: warning[-Wunused-function]: 'print_heredocs' defined but not used
+#  969 | print_heredocs (heredocs)
+#      | ^~~~~~~~~~~~~~
+#  967|   
+#  968|   static void
+#  969|-> print_heredocs (heredocs)
+#  970|        REDIRECT *heredocs;
+#  971|   {
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/redir.c:762:1: warning[-Wunused-function]: 'undoablefd' defined but not used
+#  762 | undoablefd (fd)
+#      | ^~~~~~~~~~
+#  760|   
+#  761|   static int
+#  762|-> undoablefd (fd)
+#  763|        int fd;
+#  764|   {
+
+Error: COMPILER_WARNING (CWE-457):
+bash-5.1/redir.c:882:10: warning[-Wmaybe-uninitialized]: 'new_redirect' may be used uninitialized in this function
+#  882 |       ri = new_redirect->instruction;
+#      |       ~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  880|         redir_fd = new_redirect->redirectee.dest;
+#  881|         redirector = new_redirect->redirector.dest;
+#  882|->       ri = new_redirect->instruction;
+#  883|   
+#  884|         /* Overwrite the flags element of the old redirect with the new value. */
+
+Error: COMPILER_WARNING (CWE-457):
+bash-5.1/redir.c: scope_hint: In function 'do_redirection_internal.constprop.0'
+bash-5.1/redir.c:906:27: warning[-Wmaybe-uninitialized]: 'oflags' may be used uninitialized in this function
+#  906 |         redirectee->flags = oflags;
+#      |         ~~~~~~~~~~~~~~~~~~^~~~~~~~
+#  904|         redirectee_word = redirection_expand (redirectee);
+#  905|         if (posixly_correct && interactive_shell == 0)
+#  906|-> 	redirectee->flags = oflags;
+#  907|   
+#  908|         if (redirectee_word == 0)
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/redir.c: scope_hint: In function 'redir_varvalue'
+bash-5.1/redir.c:1462:7: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+# 1462 |   if (vr = valid_array_reference (w, 0))
+#      |       ^~
+# 1460|     /* XXX - handle set -u here? */
+# 1461|   #if defined (ARRAY_VARS)
+# 1462|->   if (vr = valid_array_reference (w, 0))
+# 1463|       {
+# 1464|         v = array_variable_part (w, 0, &sub, &len);
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/redir.c:1477:19: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+# 1477 |               if (vr = valid_array_reference (w, 0))
+#      |                   ^~
+# 1475|   	    {
+# 1476|   	      w = nameref_cell (v);
+# 1477|-> 	      if (vr = valid_array_reference (w, 0))
+# 1478|   		v = array_variable_part (w, 0, &sub, &len);
+# 1479|   	      else
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/shell.c: scope_hint: In function 'parse_shell_options'
+bash-5.1/shell.c:906:14: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  906 |       while (arg_character = arg_string[i++])
+#      |              ^~~~~~~~~~~~~
+#  904|         i = 1;
+#  905|         on_or_off = arg_string[0];
+#  906|->       while (arg_character = arg_string[i++])
+#  907|   	{
+#  908|   	  switch (arg_character)
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/shell.c: scope_hint: In function 'disable_priv_mode'
+bash-5.1/shell.c:1320:7: warning[-Wunused-but-set-variable]: variable 'e' set but not used
+# 1320 |   int e;
+#      |       ^
+# 1318|   disable_priv_mode ()
+# 1319|   {
+# 1320|->   int e;
+# 1321|   
+# 1322|   #if HAVE_SETRESUID
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/subst.c:215:53: warning[-Wunused-variable]: 'expand_param_unset' defined but not used
+#  215 | static char expand_param_error, expand_param_fatal, expand_param_unset;
+#      |                                                     ^~~~~~~~~~~~~~~~~~
+#  213|   static WORD_LIST expand_word_error, expand_word_fatal;
+#  214|   static WORD_DESC expand_wdesc_error, expand_wdesc_fatal;
+#  215|-> static char expand_param_error, expand_param_fatal, expand_param_unset;
+#  216|   static char extract_string_error, extract_string_fatal;
+#  217|   
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/subst.c: scope_hint: At top level
+bash-5.1/subst.c:229:14: warning[-Wunused-function]: 'quoted_substring' declared 'static' but never defined
+#  229 | static char *quoted_substring PARAMS((char *, int, int));
+#      |              ^~~~~~~~~~~~~~~~
+#  227|   static WORD_LIST *garglist = (WORD_LIST *)NULL;
+#  228|   
+#  229|-> static char *quoted_substring PARAMS((char *, int, int));
+#  230|   static int quoted_strlen PARAMS((char *));
+#  231|   static char *quoted_strchr PARAMS((char *, int, int));
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/subst.c:230:12: warning[-Wunused-function]: 'quoted_strlen' declared 'static' but never defined
+#  230 | static int quoted_strlen PARAMS((char *));
+#      |            ^~~~~~~~~~~~~
+#  228|   
+#  229|   static char *quoted_substring PARAMS((char *, int, int));
+#  230|-> static int quoted_strlen PARAMS((char *));
+#  231|   static char *quoted_strchr PARAMS((char *, int, int));
+#  232|   
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/subst.c:231:14: warning[-Wunused-function]: 'quoted_strchr' declared 'static' but never defined
+#  231 | static char *quoted_strchr PARAMS((char *, int, int));
+#      |              ^~~~~~~~~~~~~
+#  229|   static char *quoted_substring PARAMS((char *, int, int));
+#  230|   static int quoted_strlen PARAMS((char *));
+#  231|-> static char *quoted_strchr PARAMS((char *, int, int));
+#  232|   
+#  233|   static char *expand_string_if_necessary PARAMS((char *, int, EXPFUNC *));
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/subst.c:244:19: warning[-Wunused-function]: 'list_dequote_escapes' declared 'static' but never defined
+#  244 | static WORD_LIST *list_dequote_escapes PARAMS((WORD_LIST *));
+#      |                   ^~~~~~~~~~~~~~~~~~~~
+#  242|   
+#  243|   static WORD_LIST *list_quote_escapes PARAMS((WORD_LIST *));
+#  244|-> static WORD_LIST *list_dequote_escapes PARAMS((WORD_LIST *));
+#  245|   
+#  246|   static char *make_quoted_char PARAMS((int));
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/subst.c:249:12: warning[-Wunused-function]: 'unquoted_substring' declared 'static' but never defined
+#  249 | static int unquoted_substring PARAMS((char *, char *));
+#      |            ^~~~~~~~~~~~~~~~~~
+#  247|   static WORD_LIST *quote_list PARAMS((WORD_LIST *));
+#  248|   
+#  249|-> static int unquoted_substring PARAMS((char *, char *));
+#  250|   static int unquoted_member PARAMS((int, char *));
+#  251|   
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/subst.c:250:12: warning[-Wunused-function]: 'unquoted_member' declared 'static' but never defined
+#  250 | static int unquoted_member PARAMS((int, char *));
+#      |            ^~~~~~~~~~~~~~~
+#  248|   
+#  249|   static int unquoted_substring PARAMS((char *, char *));
+#  250|-> static int unquoted_member PARAMS((int, char *));
+#  251|   
+#  252|   #if defined (ARRAY_VARS)
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/subst.c:269:23: warning[-Wunused-function]: 'mb_getcharlens' declared 'static' but never defined
+#  269 | static unsigned char *mb_getcharlens PARAMS((char *, int));
+#      |                       ^~~~~~~~~~~~~~
+#  267|   static char *pos_params PARAMS((char *, int, int, int, int));
+#  268|   
+#  269|-> static unsigned char *mb_getcharlens PARAMS((char *, int));
+#  270|   
+#  271|   static char *remove_upattern PARAMS((char *, char *, int));
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/subst.c:284:14: warning[-Wunused-function]: 'variable_remove_pattern' declared 'static' but never defined
+#  284 | static char *variable_remove_pattern PARAMS((char *, char *, int, int));
+#      |              ^~~~~~~~~~~~~~~~~~~~~~~
+#  282|   static int getpatspec PARAMS((int, char *));
+#  283|   static char *getpattern PARAMS((char *, int, int));
+#  284|-> static char *variable_remove_pattern PARAMS((char *, char *, int, int));
+#  285|   static char *list_remove_pattern PARAMS((WORD_LIST *, char *, int, int, int));
+#  286|   static char *parameter_list_remove_pattern PARAMS((int, char *, int, int));
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/subst.c:333:12: warning[-Wunused-function]: 'shouldexp_replacement' declared 'static' but never defined
+#  333 | static int shouldexp_replacement PARAMS((char *));
+#      |            ^~~~~~~~~~~~~~~~~~~~~
+#  331|   static char *parameter_brace_substring PARAMS((char *, char *, int, char *, int, int, int));
+#  332|   
+#  333|-> static int shouldexp_replacement PARAMS((char *));
+#  334|   
+#  335|   static char *pos_params_pat_subst PARAMS((char *, char *, char *, int));
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/subst.c:339:14: warning[-Wunused-function]: 'pos_params_casemod' declared 'static' but never defined
+#  339 | static char *pos_params_casemod PARAMS((char *, char *, int, int));
+#      |              ^~~~~~~~~~~~~~~~~~
+#  337|   static char *parameter_brace_patsub PARAMS((char *, char *, int, char *, int, int, int));
+#  338|   
+#  339|-> static char *pos_params_casemod PARAMS((char *, char *, int, int));
+#  340|   static char *parameter_brace_casemod PARAMS((char *, char *, int, int, char *, int, int, int));
+#  341|   
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/subst.c: scope_hint: In function 'string_extract'
+bash-5.1/subst.c:804:10: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  804 |   while (c = string[i])
+#      |          ^
+#  802|     i = *sindex;
+#  803|     found = 0;
+#  804|->   while (c = string[i])
+#  805|       {
+#  806|         if (c == '\\')
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/subst.c: scope_hint: In function 'string_extract_double_quoted'
+bash-5.1/subst.c:878:10: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  878 |   while (c = string[i])
+#      |          ^
+#  876|     j = 0;
+#  877|     i = *sindex;
+#  878|->   while (c = string[i])
+#  879|       {
+#  880|         /* Process a character that was quoted by a backslash. */
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/subst.c:1024:9: warning[-Wunused-but-set-variable]: variable 'ret' set but not used
+# 1024 |   char *ret;
+#      |         ^~~
+# 1022|   {
+# 1023|     int c, i;
+# 1024|->   char *ret;
+# 1025|     int pass_next, backquote, si;
+# 1026|     DECLARE_MBSTATE;
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/subst.c: scope_hint: In function 'skip_double_quoted'
+bash-5.1/subst.c:1030:10: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+# 1030 |   while (c = string[i])
+#      |          ^
+# 1028|     pass_next = backquote = 0;
+# 1029|     i = sind;
+# 1030|->   while (c = string[i])
+# 1031|       {
+# 1032|         if (pass_next)
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/subst.c: scope_hint: In function 'string_extract_verbatim'
+bash-5.1/subst.c:1182:10: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+# 1182 |   while (c = string[i])
+#      |          ^
+# 1180|     wcharlist = 0;
+# 1181|   #endif
+# 1182|->   while (c = string[i])
+# 1183|       {
+# 1184|   #if defined (HANDLE_MULTIBYTE)
+
+Error: VALGRIND_WARNING:
+bash-5.1/bash: note: while executing process 6751 with arguments: ./intl3.sub
+bash-5.1/subst.c:1229: warning[UninitCondition]: Conditional jump or move depends on uninitialised value(s)
+bash-5.1/subst.c:1229: note: called from string_extract_verbatim()
+bash-5.1/subst.c:2850: note: called from list_string()
+bash-5.1/subst.c:11163: note: called from UnknownInlinedFun()
+bash-5.1/subst.c:11182: note: called from word_list_split.lto_priv.0()
+bash-5.1/subst.c:11916: note: called from UnknownInlinedFun()
+bash-5.1/subst.c:12016: note: called from expand_word_list_internal.lto_priv.0()
+bash-5.1/subst.c:11359: note: called from UnknownInlinedFun()
+bash-5.1/execute_cmd.c:4389: note: called from execute_simple_command()
+bash-5.1/execute_cmd.c:858: note: called from execute_command_internal()
+bash-5.1/execute_cmd.c:399: note: called from execute_command()
+bash-5.1/eval.c:171: note: called from reader_loop()
+bash-5.1/shell.c:821: note: called from main()
+# 1227|   		}
+# 1228|   
+# 1229|-> 	      if (wcschr (wcharlist, wc))
+# 1230|   		break;
+# 1231|   	    }
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/subst.c: scope_hint: In function 'extract_delimited_string'
+bash-5.1/subst.c:1345:9: warning[-Wunused-but-set-variable]: variable 't' set but not used
+# 1345 |   char *t, *result;
+#      |         ^
+# 1343|     int i, c, si;
+# 1344|     size_t slen;
+# 1345|->   char *t, *result;
+# 1346|     int pass_character, nesting_level, in_comment;
+# 1347|     int len_closer, len_opener, len_alt_opener;
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/subst.c:1516:18: warning[-Wunused-but-set-variable]: variable 't' set but not used
+# 1516 |   char *result, *t;
+#      |                  ^
+# 1514|     size_t slen;
+# 1515|     int pass_character, nesting_level, si, dolbrace_state;
+# 1516|->   char *result, *t;
+# 1517|     DECLARE_MBSTATE;
+# 1518|   
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/subst.c: scope_hint: In function 'extract_dollar_brace_string'
+bash-5.1/subst.c:1532:10: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+# 1532 |   while (c = string[i])
+#      |          ^
+# 1530|   
+# 1531|     i = *sindex;
+# 1532|->   while (c = string[i])
+# 1533|       {
+# 1534|         if (pass_character)
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/subst.c:1753:9: warning[-Wunused-but-set-variable]: variable 'temp' set but not used
+# 1753 |   char *temp, *ss;
+#      |         ^~~~
+# 1751|     int i, pass_next, backq, si, c, count, oldjmp;
+# 1752|     size_t slen;
+# 1753|->   char *temp, *ss;
+# 1754|     DECLARE_MBSTATE;
+# 1755|   
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/subst.c: scope_hint: In function 'skip_matched_pair'
+bash-5.1/subst.c:1764:10: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+# 1764 |   while (c = string[i])
+#      |          ^
+# 1762|     pass_next = backq = 0;
+# 1763|     ss = (char *)string;
+# 1764|->   while (c = string[i])
+# 1765|       {
+# 1766|         if (pass_next)
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/subst.c:1870:9: warning[-Wunused-but-set-variable]: variable 'temp' set but not used
+# 1870 |   char *temp, open[3];
+#      |         ^~~~
+# 1868|     int arithexp, skipcol;
+# 1869|     size_t slen;
+# 1870|->   char *temp, open[3];
+# 1871|     DECLARE_MBSTATE;
+# 1872|   
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/subst.c: scope_hint: In function 'skip_to_delim'
+bash-5.1/subst.c:1887:10: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+# 1887 |   while (c = string[i])
+#      |          ^
+# 1885|     i = start;
+# 1886|     pass_next = backq = dquote = 0;
+# 1887|->   while (c = string[i])
+# 1888|       {
+# 1889|         /* If this is non-zero, we should not let quote characters be delimiters
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/subst.c: scope_hint: In function 'skip_to_histexp'
+bash-5.1/subst.c:2062:10: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+# 2062 |   while (c = string[i])
+#      |          ^
+# 2060|     i = start;
+# 2061|     pass_next = backq = dquote = 0;
+# 2062|->   while (c = string[i])
+# 2063|       {
+# 2064|         if (pass_next)
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/subst.c: scope_hint: In function 'do_assignment_internal'
+bash-5.1/subst.c:3277:7: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+# 3277 |   if (t = mbschr (name, LBRACK))
+#      |       ^
+# 3275|   
+# 3276|   #if defined (ARRAY_VARS)
+# 3277|->   if (t = mbschr (name, LBRACK))
+# 3278|       {
+# 3279|         if (assign_list)
+
+Error: COMPILER_WARNING (CWE-457):
+bash-5.1/subst.c: scope_hint: In function 'command_substitute'
+bash-5.1/subst.c:6250:49: warning[-Wmaybe-uninitialized]: 'bufp' may be used uninitialized in this function
+# 6250 |                 istring[istring_index++] = *bufp++;
+#      |                                             ~~~~^~
+bash-5.1/subst.c:6172:29: note: 'bufp' was declared here
+# 6172 |   char *istring, buf[512], *bufp;
+#      |                             ^~~~
+# 6248|   	      istring[istring_index++] = c;
+# 6249|   	      for (i = 0; i < mblen-1; i++)
+# 6250|-> 		istring[istring_index++] = *bufp++;
+# 6251|   	      bufn -= mblen - 1;
+# 6252|   	    }
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/subst.c: scope_hint: In function 'parameter_brace_expand_word'
+bash-5.1/subst.c:6843:12: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+# 6843 |   else if (var = find_variable (name))
+#      |            ^~~
+# 6841|       }
+# 6842|   #endif
+# 6843|->   else if (var = find_variable (name))
+# 6844|       {
+# 6845|         if (var_isset (var) && invisible_p (var) == 0)
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/subst.c:6876:12: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+# 6876 |   else if (var = find_variable_last_nameref (name, 0))
+#      |            ^~~
+# 6874|   	temp = (char *)NULL;
+# 6875|       }
+# 6876|->   else if (var = find_variable_last_nameref (name, 0))
+# 6877|       {
+# 6878|         temp = nameref_cell (var);
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/subst.c: scope_hint: In function 'pat_subst'
+bash-5.1/subst.c:8313:18: warning[-Wunused-variable]: unused variable 'clen'
+# 8313 |           size_t clen;
+#      |                  ^~~~
+# 8311|   	     we increment one character to avoid infinite recursion. */
+# 8312|   	  char *p, *origp, *origs;
+# 8313|-> 	  size_t clen;
+# 8314|   
+# 8315|   	  RESIZE_MALLOCED_BUFFER (ret, rptr, locale_mb_cur_max, rsize, 64);
+
+Error: COMPILER_WARNING (CWE-457):
+bash-5.1/subst.c: scope_hint: In function 'parameter_brace_patsub'
+bash-5.1/subst.c:8392:15: warning[-Wmaybe-uninitialized]: 'temp' may be used uninitialized in this function
+# 8392 |   char *val, *temp, *pat, *rep, *p, *lpatsub, *tt, *oname;
+#      |               ^~~~
+# 8390|   {
+# 8391|     int vtype, mflags, starsub, delim;
+# 8392|->   char *val, *temp, *pat, *rep, *p, *lpatsub, *tt, *oname;
+# 8393|     SHELL_VAR *v;
+# 8394|   
+
+Error: COMPILER_WARNING (CWE-457):
+bash-5.1/subst.c: scope_hint: In function 'parameter_brace_casemod'
+bash-5.1/subst.c:8629:15: warning[-Wmaybe-uninitialized]: 'temp' may be used uninitialized in this function
+# 8629 |   char *val, *temp, *pat, *p, *lpat, *tt, *oname;
+#      |               ^~~~
+# 8627|   {
+# 8628|     int vtype, starsub, modop, mflags, x;
+# 8629|->   char *val, *temp, *pat, *p, *lpat, *tt, *oname;
+# 8630|     SHELL_VAR *v;
+# 8631|   
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/subst.c: scope_hint: In function 'parameter_brace_expand'
+bash-5.1/subst.c:8891:7: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+# 8891 |   if (c = string[sindex])
+#      |       ^
+# 8889|     /* Find out what character ended the variable name.  Then
+# 8890|        do the appropriate thing. */
+# 8891|->   if (c = string[sindex])
+# 8892|       sindex++;
+# 8893|   
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/subst.c:8901:11: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+# 8901 |       if (c = string[sindex])
+#      |           ^
+# 8899|       {
+# 8900|         check_nullness++;
+# 8901|->       if (c = string[sindex])
+# 8902|   	sindex++;
+# 8903|       }
+
+Error: COMPILER_WARNING (CWE-457):
+bash-5.1/subst.c: scope_hint: In function 'param_expand'
+bash-5.1/subst.c:9258:15: warning[-Wmaybe-uninitialized]: 'modspec' may be used uninitialized in this function
+# 9258 |       temp1 = parameter_brace_casemod (name, temp, ind, modspec, value, quoted, pflags, (tflag & W_ARRAYIND) ? AV_USEIND : 0);
+#      |               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/subst.c:8813:34: note: 'modspec' was declared here
+# 8813 |   int t_index, sindex, c, tflag, modspec, local_pflags, all_element_arrayref;
+#      |                                  ^~~~~~~
+# 9256|     else if (want_casemod)
+# 9257|       {
+# 9258|->       temp1 = parameter_brace_casemod (name, temp, ind, modspec, value, quoted, pflags, (tflag & W_ARRAYIND) ? AV_USEIND : 0);
+# 9259|         FREE (value);
+# 9260|         FREE (temp);
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/subst.c:10086:7: warning[-Wunused-but-set-variable]: variable 'local_expanded' set but not used
+#10086 |   int local_expanded;
+#      |       ^~~~~~~~~~~~~~
+#10084|     int has_dollar_at, temp_has_dollar_at;
+#10085|     int split_on_spaces;
+#10086|->   int local_expanded;
+#10087|     int tflag;
+#10088|     int pflags;			/* flags passed to param_expand */
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/subst.c: scope_hint: In function 'expand_word_internal'
+bash-5.1/subst.c:10739:1: warning[-Wunused-label]: label 'add_quoted_character' defined but not used
+#10739 | add_quoted_character:
+#      | ^~~~~~~~~~~~~~~~~~~~
+#10737|   	      if ((quoted&(Q_HERE_DOCUMENT|Q_DOUBLE_QUOTES)) == 0)
+#10738|   		has_quoted_ifs++;
+#10739|-> add_quoted_character:
+#10740|   	      if (string[sindex])	/* from old goto dollar_add_string */
+#10741|   		sindex++;
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/subst.c: scope_hint: In function 'string_quote_removal'
+bash-5.1/subst.c:10989:29: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#10989 |   for (dquote = sindex = 0; c = string[sindex];)
+#      |                             ^
+#10987|     r = result_string = (char *)xmalloc (slen + 1);
+#10988|   
+#10989|->   for (dquote = sindex = 0; c = string[sindex];)
+#10990|       {
+#10991|         switch (c)
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/subst.c: scope_hint: In function 'glob_expand_word_list'
+bash-5.1/subst.c:11387:7: warning[-Wunused-variable]: unused variable 'x'
+#11387 |   int x;
+#      |       ^
+#11385|     WORD_LIST *glob_list, *output_list, *disposables, *next;
+#11386|     WORD_DESC *tword;
+#11387|->   int x;
+#11388|   
+#11389|     output_list = disposables = (WORD_LIST *)NULL;
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/subst.c: scope_hint: In function 'brace_expand_word_list'
+bash-5.1/subst.c:11527:28: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#11527 |           for (eindex = 0; temp_string = expansions[eindex]; eindex++)
+#      |                            ^~~~~~~~~~~
+#11525|   	  expansions = brace_expand (tlist->word->word);
+#11526|   
+#11527|-> 	  for (eindex = 0; temp_string = expansions[eindex]; eindex++)
+#11528|   	    {
+#11529|   	      w = alloc_word_desc ();
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/subst.c:11732:28: warning[-Wunused-but-set-variable]: variable 'inheriting' set but not used
+#11732 |   int t, opti, oind, skip, inheriting;
+#      |                            ^~~~~~~~~~
+#11730|   {
+#11731|     char opts[16], omap[128];
+#11732|->   int t, opti, oind, skip, inheriting;
+#11733|     WORD_LIST *l;
+#11734|   
+
+Error: COMPILER_WARNING (CWE-823):
+bash-5.1/subst.c: scope_hint: In function 'expand_declaration_argument'
+bash-5.1/subst.c:11785:33: warning[-Wchar-subscripts]: array subscript has type 'char'
+#11785 |               omap[l->word->word[oind]] = 1;
+#      |                    ~~~~~~~~~~~~~^~~~~~
+#11783|   	    case 'u':
+#11784|   	    case 'c':
+#11785|-> 	      omap[l->word->word[oind]] = 1;
+#11786|   	      if (opti == 0)
+#11787|   		opts[opti++] = '-';
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/support/bashversion.c: scope_hint: In function 'main'
+bash-5.1/support/bashversion.c:70:7: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#   70 |   if (progname = strrchr (argv[0], '/'))
+#      |       ^~~~~~~~
+#   68|     char dv[128], *rv;
+#   69|   
+#   70|->   if (progname = strrchr (argv[0], '/'))
+#   71|       progname++;
+#   72|     else
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/support/man2html.c:104:13: warning[-Wunused-variable]: 'location_base' defined but not used
+#  104 | static char location_base[NULL_TERMINATED(MED_STR_MAX)] = "";
+#      |             ^~~~~~~~~~~~~
+#  102|   #endif
+#  103|   
+#  104|-> static char location_base[NULL_TERMINATED(MED_STR_MAX)] = "";
+#  105|   
+#  106|   static char th_page_and_sec[128] = { '\0' };
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/support/man2html.c:148:1: warning[-Wunused-function]: 'strgrow' defined but not used
+#  148 | strgrow(char *old, int len)
+#      | ^~~~~~~
+#  146|   
+#  147|   static char *
+#  148|-> strgrow(char *old, int len)
+#  149|   {
+#  150|   	char   *new = realloc(old, (strlen(old) + len + 1) * sizeof(char));
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/support/man2html.c:190:1: warning[-Wunused-function]: 'strduplicate' defined but not used
+#  190 | strduplicate(char *from)
+#      | ^~~~~~~~~~~~
+#  188|    */
+#  189|   static char *
+#  190|-> strduplicate(char *from)
+#  191|   {
+#  192|   	char   *new = stralloc(strlen(from));
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/support/man2html.c:210:1: warning[-Wunused-function]: 'strmaxcat' defined but not used
+#  210 | strmaxcat(char *to, char *from, int n)
+#      | ^~~~~~~~~
+#  208|   
+#  209|   static char *
+#  210|-> strmaxcat(char *to, char *from, int n)
+#  211|   {
+#  212|   	int     to_len = strlen(to);
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/support/man2html.c:240:1: warning[-Wunused-function]: 'escape_input' defined but not used
+#  240 | escape_input(char *str)
+#      | ^~~~~~~~~~~~
+#  238|    */
+#  239|   static char *
+#  240|-> escape_input(char *str)
+#  241|   {
+#  242|   	int     i, j = 0;
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/support/man2html.c:298:14: warning[-Wunused-variable]: 'fname' defined but not used
+#  298 | static char *fname;
+#      |              ^~~~~
+#  296|   #define INDEXFILE "/tmp/manindex.list"
+#  297|   
+#  298|-> static char *fname;
+#  299|   static FILE *idxfile;
+#  300|   
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/support/man2html.c:299:14: warning[-Wunused-variable]: 'idxfile' defined but not used
+#  299 | static FILE *idxfile;
+#      |              ^~~~~~~
+#  297|   
+#  298|   static char *fname;
+#  299|-> static FILE *idxfile;
+#  300|   
+#  301|   static STRDEF *chardef, *strdef, *defdef;
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/support/man2html.c:428:13: warning[-Wunused-variable]: 'eqndelimopen' defined but not used
+#  428 | static char eqndelimopen = 0, eqndelimclose = 0;
+#      |             ^~~~~~~~~~~~
+#  426|   
+#  427|   
+#  428|-> static char eqndelimopen = 0, eqndelimclose = 0;
+#  429|   static char escapesym = '\\', nobreaksym = '\'', controlsym = '.', fieldsym = 0, padsym = 0;
+#  430|   
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/support/man2html.c:428:31: warning[-Wunused-variable]: 'eqndelimclose' defined but not used
+#  428 | static char eqndelimopen = 0, eqndelimclose = 0;
+#      |                               ^~~~~~~~~~~~~
+#  426|   
+#  427|   
+#  428|-> static char eqndelimopen = 0, eqndelimclose = 0;
+#  429|   static char escapesym = '\\', nobreaksym = '\'', controlsym = '.', fieldsym = 0, padsym = 0;
+#  430|   
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/support/man2html.c: scope_hint: In function 'read_man_page'
+bash-5.1/support/man2html.c:508:17: warning[-Wunused-variable]: unused variable 'i'
+#  508 |         int     i;
+#      |                 ^
+#  506|   {
+#  507|   	char   *man_buf = NULL;
+#  508|-> 	int     i;
+#  509|   	FILE   *man_stream = NULL;
+#  510|   	struct stat stbuf;
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/support/man2html.c:937:12: warning[-Wunused-variable]: 'asint' defined but not used
+#  937 | static int asint = 0;
+#      |            ^~~~~
+#  935|   }
+#  936|   
+#  937|-> static int asint = 0;
+#  938|   static int intresult = 0;
+#  939|   
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/support/man2html.c:1439:17: warning[-Wunused-variable]: unused variable 't'
+# 1439 |         char   *t, *h, *g;
+#      |                 ^
+# 1437|   scan_table(char *c)
+# 1438|   {
+# 1439|-> 	char   *t, *h, *g;
+# 1440|   	int     center = 0, expand = 0, box = 0, border = 0, linesize = 1;
+# 1441|   	int     i, j, maxcol = 0, finished = 0;
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/support/man2html.c: scope_hint: In function 'scan_table'
+bash-5.1/support/man2html.c:1444:44: warning[-Wunused-variable]: unused variable 'ftable'
+# 1444 |         TABLEROW *layout = NULL, *currow, *ftable;
+#      |                                            ^~~~~~
+# 1442|   	int     oldfont, oldsize, oldfillout;
+# 1443|   	char    itemsep = '\t';
+# 1444|-> 	TABLEROW *layout = NULL, *currow, *ftable;
+# 1445|   	TABLEITEM *curfield;
+# 1446|   
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/support/man2html.c: scope_hint: In function 'scan_expression'
+bash-5.1/support/man2html.c:1774:36: warning[-Wunused-variable]: unused variable 'j'
+# 1774 |         int     value = 0, value2, j = 0, sign = 1, opex = 0;
+#      |                                    ^
+# 1772|   scan_expression(char *c, int *result)
+# 1773|   {
+# 1774|-> 	int     value = 0, value2, j = 0, sign = 1, opex = 0;
+# 1775|   	char    oper = 'c';
+# 1776|   
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/support/man2html.c: scope_hint: In function 'skip_till_newline'
+bash-5.1/support/man2html.c:2151:19: warning[-Wparentheses]: suggest parentheses around '&&' within '||'
+# 2151 |         while (*c && *c != '\n' || lvl > 0) {
+#      |                ~~~^~~~~~~~~~~~~
+# 2149|   	int     lvl = 0;
+# 2150|   
+# 2151|-> 	while (*c && *c != '\n' || lvl > 0) {
+# 2152|   		if (*c == '\\') {
+# 2153|   			c++;
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/support/man2html.c: scope_hint: In function 'scan_request'
+bash-5.1/support/man2html.c:2243:41: warning[-Wunused-variable]: unused variable 'oldcurpos'
+# 2243 |                                 int     oldcurpos = curpos;
+#      |                                         ^~~~~~~~~
+# 2241|   			{
+# 2242|   				STRDEF *de;
+# 2243|-> 				int     oldcurpos = curpos;
+# 2244|   
+# 2245|   				c = c + j;
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/support/man2html.c:2540:41: warning[-Wunused-variable]: unused variable 'f'
+# 2540 |                                 FILE   *f;
+#      |                                         ^
+# 2538|   		case V('s', 'o'):
+# 2539|   			{
+# 2540|-> 				FILE   *f;
+# 2541|   				struct stat stbuf;
+# 2542|   				int     l = 0;
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/support/man2html.c:3693:45: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+# 3693 |                                 for (i = 0; owndef->st[deflen + 2 + i] = owndef->st[i]; i++);
+#      |                                             ^~~~~~
+# 3691|   					wordlist[i] = NULL;
+# 3692|   				deflen = strlen(owndef->st);
+# 3693|-> 				for (i = 0; owndef->st[deflen + 2 + i] = owndef->st[i]; i++);
+# 3694|   				oldargument = argument;
+# 3695|   				argument = wordlist;
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/support/man2html.c:3748:1: warning[-Wunused-function]: 'flush' defined but not used
+# 3748 | flush(void)
+#      | ^~~~~
+# 3746|   
+# 3747|   static void
+# 3748|-> flush(void)
+# 3749|   {
+# 3750|   }
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/support/man2html.c:3763:17: warning[-Wunused-variable]: unused variable 'i'
+# 3763 |         int     i;
+#      |                 ^
+# 3761|   	char    intbuff[NULL_TERMINATED(MED_STR_MAX)];
+# 3762|   	int     ibp = 0;
+# 3763|-> 	int     i;
+# 3764|   	char   *exbuffer;
+# 3765|   	int     exbuffpos, exbuffmax, exscaninbuff, exnewline_for_fun;
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/support/man2html.c: scope_hint: In function 'scan_troff'
+bash-5.1/support/man2html.c:3822:33: warning[-Wunused-variable]: unused variable 'mx'
+# 3822 |                         int     mx;
+#      |                                 ^~
+# 3820|   				h--;
+# 3821|   		} else {
+# 3822|-> 			int     mx;
+# 3823|   
+# 3824|   			if (h[-1] == '\n' && still_dd && isalnum(*h)) {
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/support/man2html.c:3992:17: warning[-Wunused-variable]: unused variable 'f'
+# 3992 |         FILE   *f;
+#      |                 ^
+# 3990|   main(int argc, char **argv)
+# 3991|   {
+# 3992|-> 	FILE   *f;
+# 3993|   	char   *t;
+# 3994|   	int     l, i;
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/support/man2html.c:3994:17: warning[-Wunused-variable]: unused variable 'l'
+# 3994 |         int     l, i;
+#      |                 ^
+# 3992|   	FILE   *f;
+# 3993|   	char   *t;
+# 3994|-> 	int     l, i;
+# 3995|   	char   *buf;
+# 3996|   	char   *h, *fullname;
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/support/man2html.c: scope_hint: In function 'main'
+bash-5.1/support/man2html.c:3996:21: warning[-Wunused-variable]: unused variable 'fullname'
+# 3996 |         char   *h, *fullname;
+#      |                     ^~~~~~~~
+# 3994|   	int     l, i;
+# 3995|   	char   *buf;
+# 3996|-> 	char   *h, *fullname;
+# 3997|   	STRDEF *stdf;
+# 3998|   
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/unwind_prot.c: scope_hint: In function 'unwind_frame_discard_internal'
+bash-5.1/unwind_prot.c:271:10: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  271 |   while (elt = unwind_protect_list)
+#      |          ^~~
+#  269|   
+#  270|     found = 0;
+#  271|->   while (elt = unwind_protect_list)
+#  272|       {
+#  273|         unwind_protect_list = unwind_protect_list->head.next;
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/unwind_prot.c: scope_hint: In function 'unwind_frame_run_internal'
+bash-5.1/unwind_prot.c:306:10: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  306 |   while (elt = unwind_protect_list)
+#      |          ^~~
+#  304|   
+#  305|     found = 0;
+#  306|->   while (elt = unwind_protect_list)
+#  307|       {
+#  308|         unwind_protect_list = elt->head.next;
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/variables.c:176:21: warning[-Wunused-variable]: 'last_context_searched' defined but not used
+#  176 | static VAR_CONTEXT *last_context_searched;
+#      |                     ^~~~~~~~~~~~~~~~~~~~~
+#  174|   
+#  175|   static HASH_TABLE *last_table_searched;	/* hash_lookup sets this */
+#  176|-> static VAR_CONTEXT *last_context_searched;
+#  177|   
+#  178|   /* Some forward declarations. */
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/variables.c: scope_hint: In function 'initialize_shell_variables'
+bash-5.1/variables.c:408:15: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  408 |           if (temp_var = find_function (tname))
+#      |               ^~~~~~~~
+#  406|   	    free (temp_string);		/* parse_and_execute does this */
+#  407|   
+#  408|-> 	  if (temp_var = find_function (tname))
+#  409|   	    {
+#  410|   	      VSETATTR (temp_var, (att_exported|att_imported));
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/variables.c:415:19: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  415 |               if (temp_var = bind_invalid_envvar (name, string, 0))
+#      |                   ^~~~~~~~
+#  413|   	  else
+#  414|   	    {
+#  415|-> 	      if (temp_var = bind_invalid_envvar (name, string, 0))
+#  416|   		{
+#  417|   		  VSETATTR (temp_var, (att_exported | att_imported | att_invisible));
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/variables.c: scope_hint: In function 'set_machine_vars'
+bash-5.1/variables.c:689:14: warning[-Wunused-but-set-variable]: variable 'temp_var' set but not used
+#  689 |   SHELL_VAR *temp_var;
+#      |              ^~~~~~~~
+#  687|   set_machine_vars ()
+#  688|   {
+#  689|->   SHELL_VAR *temp_var;
+#  690|   
+#  691|     temp_var = set_if_not ("HOSTTYPE", HOSTTYPE);
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/variables.c: scope_hint: In function 'var_lookup'
+bash-5.1/variables.c:2015:9: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+# 2015 |     if (v = hash_lookup (name, vc->table))
+#      |         ^
+# 2013|     v = (SHELL_VAR *)NULL;
+# 2014|     for (vc = vcontext; vc; vc = vc->down)
+# 2015|->     if (v = hash_lookup (name, vc->table))
+# 2016|         break;
+# 2017|   
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/variables.c: scope_hint: In function 'nameref_transform_name'
+bash-5.1/variables.c:2325:9: warning[-Wunused-variable]: unused variable 'newname'
+# 2325 |   char *newname;
+#      |         ^~~~~~~
+# 2323|   {
+# 2324|     SHELL_VAR *v;
+# 2325|->   char *newname;
+# 2326|   
+# 2327|     v = 0;
+
+Error: COMPILER_WARNING (CWE-1164):
+bash-5.1/variables.c:2557:1: warning[-Wunused-function]: 'var_sametype' defined but not used
+# 2557 | var_sametype (v1, v2)
+#      | ^~~~~~~~~~~~
+# 2555|   
+# 2556|   static int
+# 2557|-> var_sametype (v1, v2)
+# 2558|        SHELL_VAR *v1;
+# 2559|        SHELL_VAR *v2;
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/variables.c: scope_hint: In function 'delete_var'
+bash-5.1/variables.c:3915:9: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+# 3915 |     if (elt = hash_remove (name, v->table, 0))
+#      |         ^~~
+# 3913|   
+# 3914|     for (elt = (BUCKET_CONTENTS *)NULL, v = vc; v; v = v->down)
+# 3915|->     if (elt = hash_remove (name, v->table, 0))
+# 3916|         break;
+# 3917|   
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/variables.c: scope_hint: In function 'makunbound'
+bash-5.1/variables.c:3944:9: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+# 3944 |     if (elt = hash_remove (name, v->table, 0))
+#      |         ^~~
+# 3942|   
+# 3943|     for (elt = (BUCKET_CONTENTS *)NULL, v = vc; v; v = v->down)
+# 3944|->     if (elt = hash_remove (name, v->table, 0))
+# 3945|         break;
+# 3946|   
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/variables.c: scope_hint: In function 'push_posix_temp_var'
+bash-5.1/variables.c:4513:15: warning[-Wunused-but-set-variable]: variable 'binding_table' set but not used
+# 4513 |   HASH_TABLE *binding_table;
+#      |               ^~~~~~~~~~~~~
+# 4511|   {
+# 4512|     SHELL_VAR *var, *v;
+# 4513|->   HASH_TABLE *binding_table;
+# 4514|   
+# 4515|     var = (SHELL_VAR *)data;
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/variables.c: scope_hint: In function 'make_env_array_from_var_list'
+bash-5.1/variables.c:4810:31: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+# 4810 |   for (i = 0, list_index = 0; var = vars[i]; i++)
+#      |                               ^~~
+# 4808|   #define USE_EXPORTSTR (value == var->exportstr)
+# 4809|   
+# 4810|->   for (i = 0, list_index = 0; var = vars[i]; i++)
+# 4811|       {
+# 4812|   #if defined (__CYGWIN__)
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/variables.c: scope_hint: In function 'pop_var_context'
+bash-5.1/variables.c:5335:7: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+# 5335 |   if (ret = vcxt->down)
+#      |       ^~~
+# 5333|       }
+# 5334|   
+# 5335|->   if (ret = vcxt->down)
+# 5336|       {
+# 5337|         ret->up = (VAR_CONTEXT *)NULL;
+
+Error: COMPILER_WARNING (CWE-563):
+bash-5.1/variables.c: scope_hint: In function 'pop_scope'
+bash-5.1/variables.c:5419:7: warning[-Wunused-but-set-variable]: variable 'is_bltinenv' set but not used
+# 5419 |   int is_bltinenv;
+#      |       ^~~~~~~~~~~
+# 5417|   {
+# 5418|     VAR_CONTEXT *vcxt, *ret;
+# 5419|->   int is_bltinenv;
+# 5420|   
+# 5421|     vcxt = shell_variables;
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/variables.c: scope_hint: In function 'sv_history_control'
+bash-5.1/variables.c:6078:10: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+# 6078 |   while (val = extract_colon_unit (temp, &tptr))
+#      |          ^~~
+# 6076|   
+# 6077|     tptr = 0;
+# 6078|->   while (val = extract_colon_unit (temp, &tptr))
+# 6079|       {
+# 6080|         if (STREQ (val, "ignorespace"))
+
+Error: COMPILER_WARNING (CWE-569):
+bash-5.1/variables.c: scope_hint: In function 'sv_histtimefmt'
+bash-5.1/variables.c:6127:7: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+# 6127 |   if (v = find_variable (name))
+#      |       ^
+# 6125|     SHELL_VAR *v;
+# 6126|   
+# 6127|->   if (v = find_variable (name))
+# 6128|       {
+# 6129|         if (history_comment_char == 0)
+
+Error: VALGRIND_WARNING:
+bash-5.1/bash: note: while executing process 5752 with arguments: ./getopts1.sub -a -b
+bash-5.1/xmalloc.c:114: warning[Leak_DefinitelyLost]: 1,238 (32 direct, 1,206 indirect) bytes in 1 blocks are definitely lost in loss record 379 of 390
+bash-5.1/xmalloc.c:114: note: called from UnknownInlinedFun()
+bash-5.1/make_cmd.c:179: note: called from UnknownInlinedFun()
+bash-5.1/make_cmd.c:414: note: called from UnknownInlinedFun()
+bash-5.1/make_cmd.c:421: note: called from UnknownInlinedFun()
+bash-5.1/./parse.y:781: note: called from yyparse()
+bash-5.1/eval.c:348: note: called from parse_command()
+bash-5.1/eval.c:392: note: called from read_command()
+bash-5.1/eval.c:138: note: called from reader_loop()
+bash-5.1/shell.c:821: note: called from main()
+#  112|   
+#  113|     FINDBRK();
+#  114|->   temp = malloc (bytes);
+#  115|   
+#  116|     if (temp == 0)
+
+Error: VALGRIND_WARNING:
+bash-5.1/bash: note: while executing process 6144 with arguments: ./heredoc3.sub
+bash-5.1/xmalloc.c:114: warning[Leak_DefinitelyLost]: 108 (32 direct, 76 indirect) bytes in 1 blocks are definitely lost in loss record 365 of 407
+bash-5.1/xmalloc.c:114: note: called from UnknownInlinedFun()
+bash-5.1/make_cmd.c:506: note: called from UnknownInlinedFun()
+bash-5.1/make_cmd.c:533: note: called from make_simple_command()
+bash-5.1/./parse.y:745: note: called from yyparse()
+bash-5.1/eval.c:348: note: called from parse_command()
+bash-5.1/eval.c:392: note: called from read_command()
+bash-5.1/eval.c:138: note: called from reader_loop()
+bash-5.1/shell.c:821: note: called from main()
+#  112|   
+#  113|     FINDBRK();
+#  114|->   temp = malloc (bytes);
+#  115|   
+#  116|     if (temp == 0)
+
+Error: VALGRIND_WARNING:
+bash-5.1/bash: note: while executing process 3472 with arguments: -c for (( i=0; "i < 3" ))
+do
+	echo $i
+done
+bash-5.1/xmalloc.c:114: warning[Leak_DefinitelyLost]: 109 (32 direct, 77 indirect) bytes in 1 blocks are definitely lost in loss record 313 of 337
+bash-5.1/xmalloc.c:114: note: called from UnknownInlinedFun()
+bash-5.1/make_cmd.c:506: note: called from UnknownInlinedFun()
+bash-5.1/make_cmd.c:533: note: called from make_simple_command()
+bash-5.1/./parse.y:745: note: called from yyparse()
+bash-5.1/eval.c:348: note: called from parse_command()
+bash-5.1/builtins/evalstring.c:394: note: called from parse_and_execute()
+bash-5.1/shell.c:1450: note: called from run_one_command.isra.0()
+bash-5.1/shell.c:751: note: called from main()
+#  112|   
+#  113|     FINDBRK();
+#  114|->   temp = malloc (bytes);
+#  115|   
+#  116|     if (temp == 0)
+
+Error: VALGRIND_WARNING:
+bash-5.1/bash: note: while executing process 3901 with arguments: ./attr.tests
+bash-5.1/xmalloc.c:114: warning[Leak_DefinitelyLost]: 116 (16 direct, 100 indirect) bytes in 1 blocks are definitely lost in loss record 369 of 420
+bash-5.1/xmalloc.c:114: note: called from UnknownInlinedFun()
+bash-5.1/make_cmd.c:165: note: called from UnknownInlinedFun()
+bash-5.1/./parse.y:6530: note: called from parse_string_to_word_list()
+bash-5.1/arrayfunc.c:526: note: called from expand_compound_array_assignment()
+bash-5.1/subst.c:11624: note: called from UnknownInlinedFun()
+bash-5.1/subst.c:11684: note: called from UnknownInlinedFun()
+bash-5.1/subst.c:11825: note: called from UnknownInlinedFun()
+bash-5.1/subst.c:11888: note: called from UnknownInlinedFun()
+bash-5.1/subst.c:12016: note: called from expand_word_list_internal.lto_priv.0()
+bash-5.1/subst.c:11359: note: called from UnknownInlinedFun()
+bash-5.1/execute_cmd.c:4389: note: called from execute_simple_command()
+bash-5.1/execute_cmd.c:858: note: called from execute_command_internal()
+bash-5.1/execute_cmd.c:1025: note: called from execute_command_internal()
+bash-5.1/execute_cmd.c:5110: note: called from execute_function.lto_priv.0()
+bash-5.1/execute_cmd.c:5355: note: called from UnknownInlinedFun()
+bash-5.1/execute_cmd.c:4609: note: called from execute_simple_command()
+bash-5.1/execute_cmd.c:858: note: called from execute_command_internal()
+bash-5.1/execute_cmd.c:399: note: called from execute_command()
+bash-5.1/eval.c:171: note: called from reader_loop()
+#  112|   
+#  113|     FINDBRK();
+#  114|->   temp = malloc (bytes);
+#  115|   
+#  116|     if (temp == 0)
+
+Error: VALGRIND_WARNING:
+bash-5.1/bash: note: while executing process 5140 with arguments: ./errors3.sub
+bash-5.1/xmalloc.c:114: warning[Leak_DefinitelyLost]: 120 (32 direct, 88 indirect) bytes in 1 blocks are definitely lost in loss record 337 of 361
+bash-5.1/xmalloc.c:114: note: called from UnknownInlinedFun()
+bash-5.1/make_cmd.c:179: note: called from UnknownInlinedFun()
+bash-5.1/make_cmd.c:198: note: called from command_connect()
+bash-5.1/./parse.y:1212: note: called from yyparse()
+bash-5.1/eval.c:348: note: called from parse_command()
+bash-5.1/eval.c:392: note: called from read_command()
+bash-5.1/eval.c:138: note: called from reader_loop()
+bash-5.1/shell.c:821: note: called from main()
+#  112|   
+#  113|     FINDBRK();
+#  114|->   temp = malloc (bytes);
+#  115|   
+#  116|     if (temp == 0)
+
+Error: VALGRIND_WARNING:
+bash-5.1/bash: note: while executing process 3919 with arguments: ./attr1.sub
+bash-5.1/xmalloc.c:114: warning[Leak_DefinitelyLost]: 144 (16 direct, 128 indirect) bytes in 1 blocks are definitely lost in loss record 440 of 484
+bash-5.1/xmalloc.c:114: note: called from UnknownInlinedFun()
+bash-5.1/make_cmd.c:165: note: called from UnknownInlinedFun()
+bash-5.1/copy_cmd.c:77: note: called from copy_word_list()
+bash-5.1/copy_cmd.c:333: note: called from UnknownInlinedFun()
+bash-5.1/copy_cmd.c:439: note: called from copy_command()
+bash-5.1/copy_cmd.c:449: note: called from copy_command()
+bash-5.1/copy_cmd.c:448: note: called from copy_command()
+bash-5.1/copy_cmd.c:219: note: called from UnknownInlinedFun()
+bash-5.1/copy_cmd.c:402: note: called from copy_command()
+bash-5.1/variables.c:3516: note: called from bind_function()
+bash-5.1/execute_cmd.c:6256: note: called from UnknownInlinedFun()
+bash-5.1/execute_cmd.c:6212: note: called from execute_intern_function.lto_priv.0()
+bash-5.1/execute_cmd.c:1068: note: called from execute_command_internal()
+bash-5.1/execute_cmd.c:399: note: called from execute_command()
+bash-5.1/eval.c:171: note: called from reader_loop()
+bash-5.1/shell.c:821: note: called from main()
+#  112|   
+#  113|     FINDBRK();
+#  114|->   temp = malloc (bytes);
+#  115|   
+#  116|     if (temp == 0)
+
+Error: VALGRIND_WARNING:
+bash-5.1/bash: note: while executing process 8436 with arguments: -c case in do do) echo in; esac bash5
+bash-5.1/xmalloc.c:114: warning[Leak_DefinitelyLost]: 19 (16 direct, 3 indirect) bytes in 1 blocks are definitely lost in loss record 144 of 326
+bash-5.1/xmalloc.c:114: note: called from UnknownInlinedFun()
+bash-5.1/make_cmd.c:78: note: called from alloc_word_desc()
+bash-5.1/./parse.y:5378: note: called from UnknownInlinedFun()
+bash-5.1/./parse.y:3484: note: called from read_token.part.0()
+bash-5.1/./parse.y:3254: note: called from UnknownInlinedFun()
+bash-5.1/./parse.y:2797: note: called from UnknownInlinedFun()
+bash-5.1/y.tab.c:1836: note: called from yyparse()
+bash-5.1/eval.c:348: note: called from parse_command()
+bash-5.1/builtins/evalstring.c:394: note: called from parse_and_execute()
+bash-5.1/shell.c:1450: note: called from run_one_command.isra.0()
+bash-5.1/shell.c:751: note: called from main()
+#  112|   
+#  113|     FINDBRK();
+#  114|->   temp = malloc (bytes);
+#  115|   
+#  116|     if (temp == 0)
+
+Error: VALGRIND_WARNING:
+bash-5.1/bash: note: while executing process 3472 with arguments: -c for (( i=0; "i < 3" ))
+do
+	echo $i
+done
+bash-5.1/xmalloc.c:114: warning[Leak_DefinitelyLost]: 20 (16 direct, 4 indirect) bytes in 1 blocks are definitely lost in loss record 149 of 337
+bash-5.1/xmalloc.c:114: note: called from UnknownInlinedFun()
+bash-5.1/make_cmd.c:78: note: called from UnknownInlinedFun()
+bash-5.1/make_cmd.c:90: note: called from make_bare_word()
+bash-5.1/make_cmd.c:142: note: called from UnknownInlinedFun()
+bash-5.1/make_cmd.c:255: note: called from UnknownInlinedFun()
+bash-5.1/make_cmd.c:247: note: called from UnknownInlinedFun()
+bash-5.1/make_cmd.c:300: note: called from make_arith_for_command()
+bash-5.1/./parse.y:844: note: called from yyparse()
+bash-5.1/eval.c:348: note: called from parse_command()
+bash-5.1/builtins/evalstring.c:394: note: called from parse_and_execute()
+bash-5.1/shell.c:1450: note: called from run_one_command.isra.0()
+bash-5.1/shell.c:751: note: called from main()
+#  112|   
+#  113|     FINDBRK();
+#  114|->   temp = malloc (bytes);
+#  115|   
+#  116|     if (temp == 0)
+
+Error: VALGRIND_WARNING:
+bash-5.1/bash: note: while executing process 3492 with arguments: -c for (( i=0; i < 3; i++; 7 ))
+do
+	echo $i
+done
+bash-5.1/xmalloc.c:114: warning[Leak_DefinitelyLost]: 22 (16 direct, 6 indirect) bytes in 1 blocks are definitely lost in loss record 153 of 339
+bash-5.1/xmalloc.c:114: note: called from UnknownInlinedFun()
+bash-5.1/make_cmd.c:78: note: called from UnknownInlinedFun()
+bash-5.1/make_cmd.c:90: note: called from make_bare_word()
+bash-5.1/make_cmd.c:142: note: called from UnknownInlinedFun()
+bash-5.1/make_cmd.c:255: note: called from UnknownInlinedFun()
+bash-5.1/make_cmd.c:247: note: called from UnknownInlinedFun()
+bash-5.1/make_cmd.c:303: note: called from make_arith_for_command()
+bash-5.1/./parse.y:844: note: called from yyparse()
+bash-5.1/eval.c:348: note: called from parse_command()
+bash-5.1/builtins/evalstring.c:394: note: called from parse_and_execute()
+bash-5.1/shell.c:1450: note: called from run_one_command.isra.0()
+bash-5.1/shell.c:751: note: called from main()
+#  112|   
+#  113|     FINDBRK();
+#  114|->   temp = malloc (bytes);
+#  115|   
+#  116|     if (temp == 0)
+
+Error: VALGRIND_WARNING:
+bash-5.1/bash: note: while executing process 4683 with arguments: ./coproc.tests
+bash-5.1/xmalloc.c:114: warning[Leak_DefinitelyLost]: 24 (16 direct, 8 indirect) bytes in 1 blocks are definitely lost in loss record 198 of 396
+bash-5.1/xmalloc.c:114: note: called from UnknownInlinedFun()
+bash-5.1/make_cmd.c:78: note: called from alloc_word_desc()
+bash-5.1/subst.c:2877: note: called from list_string()
+bash-5.1/subst.c:11163: note: called from UnknownInlinedFun()
+bash-5.1/subst.c:11182: note: called from word_list_split.lto_priv.0()
+bash-5.1/subst.c:11916: note: called from UnknownInlinedFun()
+bash-5.1/subst.c:12016: note: called from expand_word_list_internal.lto_priv.0()
+bash-5.1/subst.c:11359: note: called from UnknownInlinedFun()
+bash-5.1/execute_cmd.c:4389: note: called from execute_simple_command()
+bash-5.1/execute_cmd.c:858: note: called from execute_command_internal()
+bash-5.1/execute_cmd.c:399: note: called from execute_command()
+bash-5.1/eval.c:171: note: called from reader_loop()
+bash-5.1/shell.c:821: note: called from main()
+#  112|   
+#  113|     FINDBRK();
+#  114|->   temp = malloc (bytes);
+#  115|   
+#  116|     if (temp == 0)
+
+Error: VALGRIND_WARNING:
+bash-5.1/bash: note: while executing process 9930 with arguments: ./tilde.tests
+bash-5.1/xmalloc.c:114: warning[Leak_DefinitelyLost]: 24 bytes in 1 blocks are definitely lost in loss record 172 of 372
+bash-5.1/xmalloc.c:114: note: called from UnknownInlinedFun()
+bash-5.1/lib/sh/stringvec.c:40: note: called from UnknownInlinedFun()
+bash-5.1/general.c:1113: note: called from tilde_initialize.part.0()
+bash-5.1/shell.c:1945: note: called from shell_initialize()
+bash-5.1/shell.c:582: note: called from main()
+#  112|   
+#  113|     FINDBRK();
+#  114|->   temp = malloc (bytes);
+#  115|   
+#  116|     if (temp == 0)
+
+Error: VALGRIND_WARNING:
+bash-5.1/bash: note: while executing process 3472 with arguments: -c for (( i=0; "i < 3" ))
+do
+	echo $i
+done
+bash-5.1/xmalloc.c:114: warning[Leak_DefinitelyLost]: 25 (16 direct, 9 indirect) bytes in 1 blocks are definitely lost in loss record 163 of 337
+bash-5.1/xmalloc.c:114: note: called from UnknownInlinedFun()
+bash-5.1/make_cmd.c:78: note: called from UnknownInlinedFun()
+bash-5.1/make_cmd.c:90: note: called from make_bare_word()
+bash-5.1/make_cmd.c:142: note: called from UnknownInlinedFun()
+bash-5.1/make_cmd.c:255: note: called from UnknownInlinedFun()
+bash-5.1/make_cmd.c:247: note: called from UnknownInlinedFun()
+bash-5.1/make_cmd.c:303: note: called from make_arith_for_command()
+bash-5.1/./parse.y:844: note: called from yyparse()
+bash-5.1/eval.c:348: note: called from parse_command()
+bash-5.1/builtins/evalstring.c:394: note: called from parse_and_execute()
+bash-5.1/shell.c:1450: note: called from run_one_command.isra.0()
+bash-5.1/shell.c:751: note: called from main()
+#  112|   
+#  113|     FINDBRK();
+#  114|->   temp = malloc (bytes);
+#  115|   
+#  116|     if (temp == 0)
+
+Error: VALGRIND_WARNING:
+bash-5.1/bash: note: while executing process 4771 with arguments: ./dbg-support.tests
+bash-5.1/xmalloc.c:114: warning[Leak_DefinitelyLost]: 286 bytes in 11 blocks are definitely lost in loss record 877 of 903
+bash-5.1/xmalloc.c:114: note: called from UnknownInlinedFun()
+bash-5.1/trap.c:743: note: called from UnknownInlinedFun()
+bash-5.1/trap.c:636: note: called from UnknownInlinedFun()
+bash-5.1/trap.c:684: note: called from maybe_set_return_trap()
+bash-5.1/unwind_prot.c:325: note: called from unwind_frame_run_internal.constprop.0()
+bash-5.1/unwind_prot.c:117: note: called from UnknownInlinedFun()
+bash-5.1/unwind_prot.c:143: note: called from UnknownInlinedFun()
+bash-5.1/execute_cmd.c:5133: note: called from execute_function.lto_priv.0()
+bash-5.1/execute_cmd.c:5355: note: called from UnknownInlinedFun()
+bash-5.1/execute_cmd.c:4609: note: called from execute_simple_command()
+bash-5.1/execute_cmd.c:858: note: called from execute_command_internal()
+bash-5.1/builtins/evalstring.c:489: note: called from parse_and_execute()
+bash-5.1/trap.c:1067: note: called from _run_trap_internal.lto_priv.0()
+bash-5.1/trap.c:1152: note: called from run_debug_trap.part.0()
+bash-5.1/sig.c:566: note: called from UnknownInlinedFun()
+bash-5.1/execute_cmd.c:4287: note: called from execute_simple_command()
+bash-5.1/execute_cmd.c:858: note: called from execute_command_internal()
+bash-5.1/execute_cmd.c:399: note: called from execute_command()
+#  112|   
+#  113|     FINDBRK();
+#  114|->   temp = malloc (bytes);
+#  115|   
+#  116|     if (temp == 0)
+
+Error: VALGRIND_WARNING:
+bash-5.1/bash: note: while executing process 3901 with arguments: ./attr.tests
+bash-5.1/xmalloc.c:114: warning[Leak_DefinitelyLost]: 288 (16 direct, 272 indirect) bytes in 1 blocks are definitely lost in loss record 398 of 420
+bash-5.1/xmalloc.c:114: note: called from UnknownInlinedFun()
+bash-5.1/make_cmd.c:165: note: called from UnknownInlinedFun()
+bash-5.1/copy_cmd.c:80: note: called from copy_word_list()
+bash-5.1/subst.c:11968: note: called from expand_word_list_internal.lto_priv.0()
+bash-5.1/subst.c:11359: note: called from UnknownInlinedFun()
+bash-5.1/execute_cmd.c:4389: note: called from execute_simple_command()
+bash-5.1/execute_cmd.c:858: note: called from execute_command_internal()
+bash-5.1/execute_cmd.c:1025: note: called from execute_command_internal()
+bash-5.1/execute_cmd.c:5110: note: called from execute_function.lto_priv.0()
+bash-5.1/execute_cmd.c:5355: note: called from UnknownInlinedFun()
+bash-5.1/execute_cmd.c:4609: note: called from execute_simple_command()
+bash-5.1/execute_cmd.c:858: note: called from execute_command_internal()
+bash-5.1/execute_cmd.c:399: note: called from execute_command()
+bash-5.1/eval.c:171: note: called from reader_loop()
+bash-5.1/shell.c:821: note: called from main()
+#  112|   
+#  113|     FINDBRK();
+#  114|->   temp = malloc (bytes);
+#  115|   
+#  116|     if (temp == 0)
+
+Error: VALGRIND_WARNING:
+bash-5.1/bash: note: while executing process 9470 with arguments: ./rsh1.sub
+bash-5.1/xmalloc.c:114: warning[Leak_DefinitelyLost]: 4 bytes in 2 blocks are definitely lost in loss record 30 of 375
+bash-5.1/xmalloc.c:114: note: called from UnknownInlinedFun()
+bash-5.1/subst.c:2479: note: called from string_list_internal()
+bash-5.1/subst.c:2522: note: called from UnknownInlinedFun()
+bash-5.1/subst.c:3546: note: called from UnknownInlinedFun()
+bash-5.1/subst.c:3576: note: called from UnknownInlinedFun()
+bash-5.1/arrayfunc.c:371: note: called from UnknownInlinedFun()
+bash-5.1/arrayfunc.c:348: note: called from assign_array_element()
+bash-5.1/subst.c:3284: note: called from do_assignment_internal.lto_priv.0()
+bash-5.1/subst.c:3345: note: called from UnknownInlinedFun()
+bash-5.1/subst.c:11982: note: called from expand_word_list_internal.lto_priv.0()
+bash-5.1/subst.c:11359: note: called from UnknownInlinedFun()
+bash-5.1/execute_cmd.c:4389: note: called from execute_simple_command()
+bash-5.1/execute_cmd.c:858: note: called from execute_command_internal()
+bash-5.1/execute_cmd.c:399: note: called from execute_command()
+bash-5.1/eval.c:171: note: called from reader_loop()
+bash-5.1/shell.c:821: note: called from main()
+#  112|   
+#  113|     FINDBRK();
+#  114|->   temp = malloc (bytes);
+#  115|   
+#  116|     if (temp == 0)
+
+Error: VALGRIND_WARNING:
+bash-5.1/bash: note: while executing process 8873 with arguments: ./printf2.sub
+bash-5.1/xmalloc.c:114: warning[Leak_DefinitelyLost]: 415 (32 direct, 383 indirect) bytes in 1 blocks are definitely lost in loss record 355 of 373
+bash-5.1/xmalloc.c:114: note: called from UnknownInlinedFun()
+bash-5.1/make_cmd.c:179: note: called from UnknownInlinedFun()
+bash-5.1/make_cmd.c:371: note: called from make_case_command()
+bash-5.1/./parse.y:917: note: called from yyparse()
+bash-5.1/eval.c:348: note: called from parse_command()
+bash-5.1/eval.c:392: note: called from read_command()
+bash-5.1/eval.c:138: note: called from reader_loop()
+bash-5.1/shell.c:821: note: called from main()
+#  112|   
+#  113|     FINDBRK();
+#  114|->   temp = malloc (bytes);
+#  115|   
+#  116|     if (temp == 0)
+
+Error: VALGRIND_WARNING:
+bash-5.1/bash: note: while executing process 3472 with arguments: -c for (( i=0; "i < 3" ))
+do
+	echo $i
+done
+bash-5.1/xmalloc.c:114: warning[Leak_DefinitelyLost]: 51 (16 direct, 35 indirect) bytes in 1 blocks are definitely lost in loss record 306 of 337
+bash-5.1/xmalloc.c:114: note: called from UnknownInlinedFun()
+bash-5.1/make_cmd.c:165: note: called from make_word_list()
+bash-5.1/./parse.y:4598: note: called from UnknownInlinedFun()
+bash-5.1/./parse.y:3405: note: called from read_token.part.0()
+bash-5.1/./parse.y:3254: note: called from UnknownInlinedFun()
+bash-5.1/./parse.y:2797: note: called from UnknownInlinedFun()
+bash-5.1/y.tab.c:1836: note: called from yyparse()
+bash-5.1/eval.c:348: note: called from parse_command()
+bash-5.1/builtins/evalstring.c:394: note: called from parse_and_execute()
+bash-5.1/shell.c:1450: note: called from run_one_command.isra.0()
+bash-5.1/shell.c:751: note: called from main()
+#  112|   
+#  113|     FINDBRK();
+#  114|->   temp = malloc (bytes);
+#  115|   
+#  116|     if (temp == 0)
+
+Error: VALGRIND_WARNING:
+bash-5.1/bash: note: while executing process 8378 with arguments: -c case x in esac) echo done; esac bash5
+bash-5.1/xmalloc.c:114: warning[Leak_DefinitelyLost]: 56 (32 direct, 24 indirect) bytes in 1 blocks are definitely lost in loss record 297 of 326
+bash-5.1/xmalloc.c:114: note: called from UnknownInlinedFun()
+bash-5.1/make_cmd.c:179: note: called from UnknownInlinedFun()
+bash-5.1/make_cmd.c:371: note: called from make_case_command()
+bash-5.1/./parse.y:912: note: called from yyparse()
+bash-5.1/eval.c:348: note: called from parse_command()
+bash-5.1/builtins/evalstring.c:394: note: called from parse_and_execute()
+bash-5.1/shell.c:1450: note: called from run_one_command.isra.0()
+bash-5.1/shell.c:751: note: called from main()
+#  112|   
+#  113|     FINDBRK();
+#  114|->   temp = malloc (bytes);
+#  115|   
+#  116|     if (temp == 0)
+
+Error: VALGRIND_WARNING:
+bash-5.1/bash: note: while executing process 3492 with arguments: -c for (( i=0; i < 3; i++; 7 ))
+do
+	echo $i
+done
+bash-5.1/xmalloc.c:114: warning[Leak_DefinitelyLost]: 57 (16 direct, 41 indirect) bytes in 1 blocks are definitely lost in loss record 308 of 339
+bash-5.1/xmalloc.c:114: note: called from UnknownInlinedFun()
+bash-5.1/make_cmd.c:165: note: called from make_word_list()
+bash-5.1/./parse.y:4598: note: called from UnknownInlinedFun()
+bash-5.1/./parse.y:3405: note: called from read_token.part.0()
+bash-5.1/./parse.y:3254: note: called from UnknownInlinedFun()
+bash-5.1/./parse.y:2797: note: called from UnknownInlinedFun()
+bash-5.1/y.tab.c:1836: note: called from yyparse()
+bash-5.1/eval.c:348: note: called from parse_command()
+bash-5.1/builtins/evalstring.c:394: note: called from parse_and_execute()
+bash-5.1/shell.c:1450: note: called from run_one_command.isra.0()
+bash-5.1/shell.c:751: note: called from main()
+#  112|   
+#  113|     FINDBRK();
+#  114|->   temp = malloc (bytes);
+#  115|   
+#  116|     if (temp == 0)
+
+Error: VALGRIND_WARNING:
+bash-5.1/bash: note: while executing process 5158 with arguments: ./errors4.sub
+bash-5.1/xmalloc.c:114: warning[Leak_DefinitelyLost]: 64 (32 direct, 32 indirect) bytes in 1 blocks are definitely lost in loss record 336 of 373
+bash-5.1/xmalloc.c:114: note: called from UnknownInlinedFun()
+bash-5.1/make_cmd.c:179: note: called from UnknownInlinedFun()
+bash-5.1/make_cmd.c:217: note: called from UnknownInlinedFun()
+bash-5.1/make_cmd.c:227: note: called from make_for_command()
+bash-5.1/./parse.y:822: note: called from yyparse()
+bash-5.1/eval.c:348: note: called from parse_command()
+bash-5.1/eval.c:392: note: called from read_command()
+bash-5.1/eval.c:138: note: called from reader_loop()
+bash-5.1/shell.c:821: note: called from main()
+#  112|   
+#  113|     FINDBRK();
+#  114|->   temp = malloc (bytes);
+#  115|   
+#  116|     if (temp == 0)
+
+Error: VALGRIND_WARNING:
+bash-5.1/bash: note: while executing process 3919 with arguments: ./attr1.sub
+bash-5.1/xmalloc.c:114: warning[Leak_DefinitelyLost]: 81 (16 direct, 65 indirect) bytes in 1 blocks are definitely lost in loss record 425 of 484
+bash-5.1/xmalloc.c:114: note: called from UnknownInlinedFun()
+bash-5.1/make_cmd.c:165: note: called from UnknownInlinedFun()
+bash-5.1/copy_cmd.c:80: note: called from copy_word_list()
+bash-5.1/copy_cmd.c:333: note: called from UnknownInlinedFun()
+bash-5.1/copy_cmd.c:439: note: called from copy_command()
+bash-5.1/copy_cmd.c:449: note: called from copy_command()
+bash-5.1/copy_cmd.c:448: note: called from copy_command()
+bash-5.1/copy_cmd.c:219: note: called from UnknownInlinedFun()
+bash-5.1/copy_cmd.c:402: note: called from copy_command()
+bash-5.1/variables.c:3516: note: called from bind_function()
+bash-5.1/execute_cmd.c:6256: note: called from UnknownInlinedFun()
+bash-5.1/execute_cmd.c:6212: note: called from execute_intern_function.lto_priv.0()
+bash-5.1/execute_cmd.c:1068: note: called from execute_command_internal()
+bash-5.1/execute_cmd.c:399: note: called from execute_command()
+bash-5.1/eval.c:171: note: called from reader_loop()
+bash-5.1/shell.c:821: note: called from main()
+#  112|   
+#  113|     FINDBRK();
+#  114|->   temp = malloc (bytes);
+#  115|   
+#  116|     if (temp == 0)
+
+Error: COMPILER_WARNING:
+bash-5.1/xmalloc.c:135:20: warning[-Walloc-size-larger-than=]: argument 2 value '18446744073709551615' exceeds maximum object size 9223372036854775807
+#  135 |   temp = pointer ? realloc (pointer, bytes) : malloc (bytes);
+#      |                    ^
+bash-5.1/xmalloc.c: scope_hint: In function 'shell_getc'
+/usr/include/stdlib.h:550:14: note: in a call to allocation function 'realloc' declared here
+#  550 | extern void *realloc (void *__ptr, size_t __size)
+#      |              ^
+#  133|   
+#  134|     FINDBRK();
+#  135|->   temp = pointer ? realloc (pointer, bytes) : malloc (bytes);
+#  136|   
+#  137|     if (temp == 0)
+
+Error: COMPILER_WARNING:
+bash-5.1/xmalloc.c:135:47: warning[-Walloc-size-larger-than=]: argument 1 value '18446744073709551615' exceeds maximum object size 9223372036854775807
+#  135 |   temp = pointer ? realloc (pointer, bytes) : malloc (bytes);
+#      |                                               ^
+bash-5.1/xmalloc.c: scope_hint: In function 'shell_getc'
+/usr/include/stdlib.h:539:14: note: in a call to allocation function 'malloc' declared here
+#  539 | extern void *malloc (size_t __size) __THROW __attribute_malloc__
+#      |              ^
+#  133|   
+#  134|     FINDBRK();
+#  135|->   temp = pointer ? realloc (pointer, bytes) : malloc (bytes);
+#  136|   
+#  137|     if (temp == 0)

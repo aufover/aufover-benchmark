@@ -1,0 +1,80 @@
+Error: COMPILER_WARNING:
+libcap-ng-0.8.2/src/cap-ng.c: scope_hint: In function 'log_problem'
+libcap-ng-0.8.2/src/cap-ng.c:727:44: warning[-Wformat-truncation=]: '%s' directive output may be truncated writing up to 4096 bytes into a region of size 2046
+#  727 |                 snprintf(exename, size, "\"%s\"", tmp);
+#      |                                            ^~     ~~~
+/usr/include/stdio.h:888: included_from: Included from here.
+libcap-ng-0.8.2/src/cap-ng.c:27: included_from: Included from here.
+/usr/include/bits/stdio2.h:71:10: note: '__snprintf_chk' output between 3 and 4099 bytes into a destination of size 2047
+#   71 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+#      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   72 |                                    __glibc_objsize (__s), __fmt,
+#      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   73 |                                    __va_arg_pack ());
+#      |                                    ~~~~~~~~~~~~~~~~~
+#  725|           else {
+#  726|                   tmp[res] = '\0';
+#  727|->                 snprintf(exename, size, "\"%s\"", tmp);
+#  728|           }
+#  729|           return exename;
+
+Error: COMPILER_WARNING (CWE-252):
+libcap-ng-0.8.2/utils/captest.c: scope_hint: In function 'report'
+libcap-ng-0.8.2/utils/captest.c:75:25: warning[-Wunused-result]: ignoring return value of 'setuid' declared with attribute 'warn_unused_result'
+#   75 |                         setuid(0);
+#      |                         ^~~~~~~~~
+#   73|   						 CAP_SETUID)) {
+#   74|   			printf("Attempting to regain root...");
+#   75|-> 			setuid(0);
+#   76|   			getresuid(&uid, &euid, &suid);
+#   77|   			if (uid == 0) {
+
+Error: COMPILER_WARNING (CWE-252):
+libcap-ng-0.8.2/utils/captest.c:79:33: warning[-Wunused-result]: ignoring return value of 'setgid' declared with attribute 'warn_unused_result'
+#   79 |                                 setgid(0);
+#      |                                 ^~~~~~~~~
+#   77|   			if (uid == 0) {
+#   78|   				printf("SUCCESS - PRIVILEGE ESCALATION POSSIBLE\n");
+#   79|-> 				setgid(0);
+#   80|   				getresgid(&gid, &egid, &sgid);
+#   81|   				escalated = 1;
+
+Error: COMPILER_WARNING (CWE-252):
+libcap-ng-0.8.2/utils/captest.c:198:25: warning[-Wunused-result]: ignoring return value of 'system' declared with attribute 'warn_unused_result'
+#  198 |                         system("/usr/bin/captest --no-child --text");
+#      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  196|   			printf("FAILED\n");
+#  197|   		if (text)
+#  198|-> 			system("/usr/bin/captest --no-child --text");
+#  199|   		else
+#  200|   			system("/usr/bin/captest --no-child");
+
+Error: COMPILER_WARNING (CWE-252):
+libcap-ng-0.8.2/utils/captest.c:200:25: warning[-Wunused-result]: ignoring return value of 'system' declared with attribute 'warn_unused_result'
+#  200 |                         system("/usr/bin/captest --no-child");
+#      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  198|   			system("/usr/bin/captest --no-child --text");
+#  199|   		else
+#  200|-> 			system("/usr/bin/captest --no-child");
+#  201|   	}
+#  202|   }
+
+Error: COMPILER_WARNING:
+libcap-ng-0.8.2/utils/netcap.c: scope_hint: In function 'collect_process_info'
+libcap-ng-0.8.2/utils/netcap.c:191:47: warning[-Wformat-truncation=]: '%s' directive output may be truncated writing up to 255 bytes into a region of size between 156 and 255
+#  191 |                         snprintf(ln, 256, "%s/%s", buf, ent->d_name);
+#      |                                               ^~
+/usr/include/stdio.h:888: included_from: Included from here.
+libcap-ng-0.8.2/utils/netcap.c:28: included_from: Included from here.
+/usr/include/bits/stdio2.h:71:10: note: '__snprintf_chk' output between 2 and 356 bytes into a destination of size 256
+#   71 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+#      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   72 |                                    __glibc_objsize (__s), __fmt,
+#      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   73 |                                    __va_arg_pack ());
+#      |                                    ~~~~~~~~~~~~~~~~~
+#  189|   			if (ent->d_name[0] == '.')
+#  190|   				continue;
+#  191|-> 			snprintf(ln, 256, "%s/%s", buf, ent->d_name);
+#  192|   			if ((llen = readlink(ln, line, sizeof(line)-1)) < 0)
+#  193|   				continue;

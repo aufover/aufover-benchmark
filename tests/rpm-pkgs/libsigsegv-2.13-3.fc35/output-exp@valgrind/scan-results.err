@@ -1,0 +1,22 @@
+Error: VALGRIND_WARNING:
+libsigsegv-2.13/tests/.libs/sigsegv1: note: while executing process 336
+libsigsegv-2.13/tests/sigsegv1.c:59: warning[InvalidWrite]: Invalid write of size 4
+libsigsegv-2.13/tests/sigsegv1.c:59: note: Address 0x678 is not stack'd, malloc'd or (recently) free'd
+libsigsegv-2.13/tests/sigsegv1.c:59: note: called from UnknownInlinedFun()
+libsigsegv-2.13/tests/sigsegv1.c:109: note: called from main()
+#   57|   crasher (uintptr_t p)
+#   58|   {
+#   59|->   *(volatile int *) (p + 0x678) = 42;
+#   60|   }
+#   61|   
+
+Error: VALGRIND_WARNING:
+libsigsegv-2.13/tests/.libs/stackoverflow2: note: while executing process 460
+libsigsegv-2.13/tests/stackoverflow2.c:187: warning[InvalidWrite]: Invalid write of size 4
+libsigsegv-2.13/tests/stackoverflow2.c:187: note: Address 0x0 is not stack'd, malloc'd or (recently) free'd
+libsigsegv-2.13/tests/stackoverflow2.c:187: note: called from main()
+#  185|         break;
+#  186|       case 3:
+#  187|->       *(volatile int *) 0 = 42;
+#  188|         break;
+#  189|       case 4:

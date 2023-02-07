@@ -1,0 +1,59 @@
+Error: COMPILER_WARNING (CWE-457):
+libexpat-R_2_4_1/expat/lib/xmltok.c:57: included_from: Included from here.
+libexpat-R_2_4_1/expat/lib/xmltok_ns.c: scope_hint: In function 'findEncodingNS'
+libexpat-R_2_4_1/expat/lib/xmltok.h:276:10: warning[-Wmaybe-uninitialized]: 'buf' may be used uninitialized
+#  276 |   (((enc)->utf8Convert)(enc, fromP, fromLim, toP, toLim))
+#      |   ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libexpat-R_2_4_1/expat/lib/xmltok.h:276:10: note: by argument 5 of type 'const char *' to 'XML_Convert_Result <T6d5> (const struct ENCODING *, const char * *, const char *, char * *, const char *)'
+libexpat-R_2_4_1/expat/lib/xmltok.c:1665: included_from: Included from here.
+libexpat-R_2_4_1/expat/lib/xmltok_ns.c:96:8: note: 'buf' declared here
+#   96 |   char buf[ENCODING_MAX];
+#      |        ^~~
+#  274|   
+#  275|   #define XmlUtf8Convert(enc, fromP, fromLim, toP, toLim)                        \
+#  276|->   (((enc)->utf8Convert)(enc, fromP, fromLim, toP, toLim))
+#  277|   
+#  278|   #define XmlUtf16Convert(enc, fromP, fromLim, toP, toLim)                       \
+
+Error: COMPILER_WARNING (CWE-457):
+libexpat-R_2_4_1/expat/lib/xmltok_ns.c: scope_hint: In function 'findEncoding'
+libexpat-R_2_4_1/expat/lib/xmltok_ns.c:99:3: warning[-Wmaybe-uninitialized]: 'buf' may be used uninitialized
+#   99 |   XmlUtf8Convert(enc, &ptr, end, &p, p + ENCODING_MAX - 1);
+#      |   ^
+libexpat-R_2_4_1/expat/lib/xmltok_ns.c:99:3: note: by argument 5 of type 'const char *' to 'XML_Convert_Result <T662> (const struct ENCODING *, const char * *, const char *, char * *, const char *)'
+libexpat-R_2_4_1/expat/lib/xmltok_ns.c:96:8: note: 'buf' declared here
+#   96 |   char buf[ENCODING_MAX];
+#      |        ^
+#   97|     char *p = buf;
+#   98|     int i;
+#   99|->   XmlUtf8Convert(enc, &ptr, end, &p, p + ENCODING_MAX - 1);
+#  100|     if (ptr != end)
+#  101|       return 0;
+
+Error: COMPILER_WARNING (CWE-457):
+libexpat-R_2_4_1/expat/tests/runtests.c: scope_hint: In function 'test_reset_in_entity'
+libexpat-R_2_4_1/expat/tests/runtests.c:2940:6: warning[-Wmaybe-uninitialized]: 'MEM <unsigned int> [(struct  *)&status]' may be used uninitialized
+# 2940 |   if (status.parsing != XML_SUSPENDED)
+#      |      ^
+libexpat-R_2_4_1/expat/tests/runtests.c:2932:21: note: 'MEM <unsigned int> [(struct  *)&status]' was declared here
+# 2932 |   XML_ParsingStatus status;
+#      |                     ^
+# 2938|       xml_failure(g_parser);
+# 2939|     XML_GetParsingStatus(g_parser, &status);
+# 2940|->   if (status.parsing != XML_SUSPENDED)
+# 2941|       fail("Parsing status not SUSPENDED");
+# 2942|     XML_ParserReset(g_parser, NULL);
+
+Error: COMPILER_WARNING (CWE-457):
+libexpat-R_2_4_1/expat/tests/runtests.c: scope_hint: In function 'test_ns_parser_reset'
+libexpat-R_2_4_1/expat/tests/runtests.c:6852:6: warning[-Wmaybe-uninitialized]: 'MEM <unsigned int> [(struct  *)&status]' may be used uninitialized in this function
+# 6852 |   if (status.parsing != XML_INITIALIZED)
+#      |      ^
+libexpat-R_2_4_1/expat/tests/runtests.c:6849:21: note: 'MEM <unsigned int> [(struct  *)&status]' was declared here
+# 6849 |   XML_ParsingStatus status;
+#      |                     ^
+# 6850|   
+# 6851|     XML_GetParsingStatus(g_parser, &status);
+# 6852|->   if (status.parsing != XML_INITIALIZED)
+# 6853|       fail("parsing status doesn't start INITIALIZED");
+# 6854|     test_return_ns_triplet();

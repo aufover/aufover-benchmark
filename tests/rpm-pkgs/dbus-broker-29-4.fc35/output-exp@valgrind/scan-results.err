@@ -1,0 +1,150 @@
+Error: COMPILER_WARNING (CWE-457):
+dbus-broker-29/src/bus/match.c: scope_hint: In function ‘match_owner_ref_rule’
+dbus-broker-29/src/bus/match.c:974:74: warning[-Wmaybe-uninitialized]: ‘rule’ may be used uninitialized
+#  974 |         slot = c_rbtree_find_slot(&owner->rule_tree, match_rule_compare, &rule->keys, &parent);
+#      |                                                                          ^~~~~~~~~~~
+#  972|           ++rule->n_user_refs;
+#  973|   
+#  974|->         slot = c_rbtree_find_slot(&owner->rule_tree, match_rule_compare, &rule->keys, &parent);
+#  975|           if (!slot) {
+#  976|                   /* one already exists, take a ref on that instead and drop the one we created */
+
+Error: COMPILER_WARNING (CWE-457):
+dbus-broker-29/src/bus/name.c: scope_hint: In function ‘name_registry_request_name’
+dbus-broker-29/src/bus/name.c:51:19: warning[-Wmaybe-uninitialized]: ‘ownership’ may be used uninitialized
+#   51 |         c_assert(!c_rbnode_is_linked(&ownership->owner_node));
+#      |                   ^~~~~~~~~~~~~~~~~~
+dbus-broker-29/src/bus/name.c:396:24: note: ‘ownership’ was declared here
+#  396 |         NameOwnership *ownership;
+#      |                        ^~~~~~~~~
+#   49|   
+#   50|   static void name_ownership_link(NameOwnership *ownership, CRBNode *parent, CRBNode **slot) {
+#   51|->         c_assert(!c_rbnode_is_linked(&ownership->owner_node));
+#   52|   
+#   53|           c_rbtree_add(&ownership->owner->ownership_tree, parent, slot, &ownership->owner_node);
+
+Error: COMPILER_WARNING (CWE-457):
+dbus-broker-29/src/bus/policy.c: scope_hint: In function ‘policy_batch_at_name’
+dbus-broker-29/src/bus/policy.c:246:17: warning[-Wmaybe-uninitialized]: ‘name’ may be used uninitialized
+#  246 |                 c_rbtree_add(&name->batch->name_tree, parent, slot, &name->batch_node);
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  244|                           return error_trace(r);
+#  245|   
+#  246|->                 c_rbtree_add(&name->batch->name_tree, parent, slot, &name->batch_node);
+#  247|           } else {
+#  248|                   name = c_container_of(parent, PolicyBatchName, batch_node);
+
+Error: COMPILER_WARNING (CWE-457):
+dbus-broker-29/src/bus/policy.c: scope_hint: In function ‘policy_registry_at_uidgid’
+dbus-broker-29/src/bus/policy.c:496:17: warning[-Wmaybe-uninitialized]: ‘node’ may be used uninitialized
+#  496 |                 c_rbtree_add(tree, parent, slot, &node->registry_node);
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  494|                           return error_trace(r);
+#  495|   
+#  496|->                 c_rbtree_add(tree, parent, slot, &node->registry_node);
+#  497|           } else {
+#  498|                   node = c_container_of(parent, PolicyRegistryNode, registry_node);
+
+Error: COMPILER_WARNING (CWE-457):
+dbus-broker-29/src/launch/nss-cache.c:187:25: warning[-Wmaybe-uninitialized]: ‘parent_by_name’ may be used uninitialized in this function
+#  187 |                         c_rbtree_add(tree_by_name,
+#      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+#  188 |                                      parent_by_name,
+#      |                                      ~~~~~~~~~~~~~~~
+#  189 |                                      slot_by_name,
+#      |                                      ~~~~~~~~~~~~~
+#  190 |                                      &node->rb_by_name);
+#      |                                      ~~~~~~~~~~~~~~~~~~
+#  185|   
+#  186|                   if (name)
+#  187|->                         c_rbtree_add(tree_by_name,
+#  188|                                        parent_by_name,
+#  189|                                        slot_by_name,
+
+Error: COMPILER_WARNING (CWE-457):
+dbus-broker-29/src/launch/nss-cache.c:187:25: warning[-Wmaybe-uninitialized]: ‘slot_by_name’ may be used uninitialized in this function
+#  187 |                         c_rbtree_add(tree_by_name,
+#      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+#  188 |                                      parent_by_name,
+#      |                                      ~~~~~~~~~~~~~~~
+#  189 |                                      slot_by_name,
+#      |                                      ~~~~~~~~~~~~~
+#  190 |                                      &node->rb_by_name);
+#      |                                      ~~~~~~~~~~~~~~~~~~
+#  185|   
+#  186|                   if (name)
+#  187|->                         c_rbtree_add(tree_by_name,
+#  188|                                        parent_by_name,
+#  189|                                        slot_by_name,
+
+Error: COMPILER_WARNING (CWE-457):
+dbus-broker-29/src/launch/nss-cache.c:192:25: warning[-Wmaybe-uninitialized]: ‘parent_by_id’ may be used uninitialized in this function
+#  192 |                         c_rbtree_add(tree_by_id,
+#      |                         ^~~~~~~~~~~~~~~~~~~~~~~~
+#  193 |                                      parent_by_id,
+#      |                                      ~~~~~~~~~~~~~
+#  194 |                                      slot_by_id,
+#      |                                      ~~~~~~~~~~~
+#  195 |                                      &node->rb_by_id);
+#      |                                      ~~~~~~~~~~~~~~~~
+#  190|                                        &node->rb_by_name);
+#  191|                   if (id != (uint32_t)-1)
+#  192|->                         c_rbtree_add(tree_by_id,
+#  193|                                        parent_by_id,
+#  194|                                        slot_by_id,
+
+Error: COMPILER_WARNING (CWE-457):
+dbus-broker-29/src/launch/nss-cache.c: scope_hint: In function ‘nss_cache_add’
+dbus-broker-29/src/launch/nss-cache.c:192:25: warning[-Wmaybe-uninitialized]: ‘slot_by_id’ may be used uninitialized in this function
+#  192 |                         c_rbtree_add(tree_by_id,
+#      |                         ^~~~~~~~~~~~~~~~~~~~~~~~
+#  193 |                                      parent_by_id,
+#      |                                      ~~~~~~~~~~~~~
+#  194 |                                      slot_by_id,
+#      |                                      ~~~~~~~~~~~
+#  195 |                                      &node->rb_by_id);
+#      |                                      ~~~~~~~~~~~~~~~~
+#  190|                                        &node->rb_by_name);
+#  191|                   if (id != (uint32_t)-1)
+#  192|->                         c_rbtree_add(tree_by_id,
+#  193|                                        parent_by_id,
+#  194|                                        slot_by_id,
+
+Error: COMPILER_WARNING (CWE-457):
+dbus-broker-29/src/launch/policy.c: scope_hint: In function ‘policy_at_uidgid’
+dbus-broker-29/src/launch/policy.c:210:17: warning[-Wmaybe-uninitialized]: ‘node’ may be used uninitialized
+#  210 |                 c_rbtree_add(tree, parent, slot, &node->policy_node);
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  208|                           return error_trace(r);
+#  209|   
+#  210|->                 c_rbtree_add(tree, parent, slot, &node->policy_node);
+#  211|           } else {
+#  212|                   node = c_container_of(parent, PolicyNode, policy_node);
+
+Error: COMPILER_WARNING (CWE-457):
+dbus-broker-29/src/util/user.c: scope_hint: In function ‘user_charge’
+dbus-broker-29/src/util/user.c:34:16: warning[-Wmaybe-uninitialized]: ‘usage’ may be used uninitialized
+#   34 |         ++usage->user->n_usages;
+#      |           ~~~~~^~~~~~
+dbus-broker-29/src/util/user.c:206:20: note: ‘usage’ was declared here
+#  206 |         UserUsage *usage;
+#      |                    ^~~~~
+#   32|   
+#   33|   static void user_usage_link(UserUsage *usage, CRBNode *parent, CRBNode **slot) {
+#   34|->         ++usage->user->n_usages;
+#   35|           c_rbtree_add(&usage->user->usage_tree, parent, slot, &usage->user_node);
+#   36|   }
+
+Error: COMPILER_WARNING (CWE-457):
+dbus-broker-29/src/util/user.c: scope_hint: In function ‘user_registry_ref_user’
+dbus-broker-29/src/util/user.c:161:9: warning[-Wmaybe-uninitialized]: ‘user’ may be used uninitialized
+#  161 |         c_rbtree_add(&user->registry->user_tree, parent, slot, &user->registry_node);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+dbus-broker-29/src/util/user.c:423:15: note: ‘user’ was declared here
+#  423 |         User *user;
+#      |               ^~~~
+#  159|   
+#  160|   static void user_link(User *user, CRBNode *parent, CRBNode **slot) {
+#  161|->         c_rbtree_add(&user->registry->user_tree, parent, slot, &user->registry_node);
+#  162|   }
+#  163|   

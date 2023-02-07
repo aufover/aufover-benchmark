@@ -1,0 +1,61 @@
+Error: VALGRIND_WARNING:
+elfutils-0.185/tests/backtrace-dwarf: note: while executing process 9212
+elfutils-0.185/libdw/fde.c:73: warning[Leak_PossiblyLost]: 36,760 bytes in 919 blocks are possibly lost in loss record 46 of 47
+elfutils-0.185/libdw/fde.c:73: note: called from intern_fde()
+elfutils-0.185/libdw/fde.c:307: note: called from __libdw_find_fde()
+elfutils-0.185/libdw/dwarf_cfi_addrframe.c:42: note: called from dwarf_cfi_addrframe()
+elfutils-0.185/libdwfl/frame_unwind.c:542: note: called from handle_cfi()
+elfutils-0.185/libdwfl/frame_unwind.c:741: note: called from __libdwfl_frame_unwind()
+elfutils-0.185/libdwfl/dwfl_frame.c:437: note: called from dwfl_thread_getframes()
+elfutils-0.185/tests/backtrace-dwarf.c:119: note: called from thread_callback()
+elfutils-0.185/libdwfl/dwfl_frame.c:285: note: called from dwfl_getthreads()
+elfutils-0.185/tests/backtrace-dwarf: note: called from main()
+#   71|       return (void *) -1l;
+#   72|   
+#   73|->   struct dwarf_fde *fde = malloc (sizeof (struct dwarf_fde));
+#   74|     if (fde == NULL)
+#   75|       {
+
+Error: VALGRIND_WARNING:
+elfutils-0.185/tests/backtrace-dwarf: note: while executing process 9212
+elfutils-0.185/libdw/fde.c:122: warning[Leak_PossiblyLost]: 22,056 bytes in 919 blocks are possibly lost in loss record 41 of 47
+/usr/lib64/libc.so.6: note: called from tsearch()
+elfutils-0.185/libdw/fde.c:122: note: called from intern_fde()
+elfutils-0.185/libdw/fde.c:307: note: called from __libdw_find_fde()
+elfutils-0.185/libdw/dwarf_cfi_addrframe.c:42: note: called from dwarf_cfi_addrframe()
+elfutils-0.185/libdwfl/frame_unwind.c:542: note: called from handle_cfi()
+elfutils-0.185/libdwfl/frame_unwind.c:741: note: called from __libdwfl_frame_unwind()
+elfutils-0.185/libdwfl/dwfl_frame.c:437: note: called from dwfl_thread_getframes()
+elfutils-0.185/tests/backtrace-dwarf.c:119: note: called from thread_callback()
+elfutils-0.185/libdwfl/dwfl_frame.c:285: note: called from dwfl_getthreads()
+elfutils-0.185/tests/backtrace-dwarf: note: called from main()
+#  120|   
+#  121|     /* Add the new entry to the search tree.  */
+#  122|->   struct dwarf_fde **tres = tsearch (fde, &cache->fde_tree, &compare_fde);
+#  123|     if (tres == NULL)
+#  124|       {
+
+Error: VALGRIND_WARNING:
+elfutils-0.185/src/unstrip: note: while executing process 11538 with arguments: -o testfile.unstrip testfile1.strip testfile1.debug
+elfutils-0.185/libelf/common.h:74: warning[Leak_DefinitelyLost]: 264 bytes in 1 blocks are definitely lost in loss record 4 of 9
+elfutils-0.185/libelf/common.h:74: note: called from allocate_elf()
+elfutils-0.185/libelf/elf_begin.c:632: note: called from read_unmmaped_file()
+elfutils-0.185/libelf/elf_begin.c:713: note: called from read_file()
+elfutils-0.185/src/unstrip.c:2246: note: called from handle_explicit_files()
+elfutils-0.185/src/unstrip.c:2615: note: called from main()
+#   72|                 Elf_Cmd cmd, Elf *parent, Elf_Kind kind, size_t extra)
+#   73|   {
+#   74|->   Elf *result = (Elf *) calloc (1, sizeof (Elf) + extra);
+#   75|     if (result == NULL)
+#   76|       __libelf_seterrno (ELF_E_NOMEM);
+
+Error: COMPILER_WARNING (CWE-573):
+elfutils-0.185/tests/test-7904/native.c:1:1: warning[-Wimplicit-int]: return type defaults to 'int'
+#    1 | main () { while (1) pause (); }
+#      | ^~~~
+
+Error: COMPILER_WARNING (CWE-686):
+elfutils-0.185/tests/test-7904/native.c: scope_hint: In function 'main'
+elfutils-0.185/tests/test-7904/native.c:1:21: warning[-Wimplicit-function-declaration]: implicit declaration of function 'pause'
+#    1 | main () { while (1) pause (); }
+#      |                     ^~~~~

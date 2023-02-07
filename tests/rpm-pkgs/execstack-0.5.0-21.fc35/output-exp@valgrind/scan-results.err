@@ -1,0 +1,21 @@
+Error: COMPILER_WARNING (CWE-563):
+prelink-4c79120bcdbde0616f592458ccde7035e92ca3d8/src/dso.c: scope_hint: In function 'fdopen_dso'
+prelink-4c79120bcdbde0616f592458ccde7035e92ca3d8/src/dso.c:274:16: warning[-Wunused-but-set-variable]: variable 'last' set but not used
+#  274 |   int i, j, k, last, *sections, *invsections;
+#      |                ^~~~
+#  272|     GElf_Ehdr ehdr;
+#  273|     GElf_Addr last_off;
+#  274|->   int i, j, k, last, *sections, *invsections;
+#  275|     DSO *dso = NULL;
+#  276|     struct PLArch *plarch;
+
+Error: COMPILER_WARNING (CWE-477):
+prelink-4c79120bcdbde0616f592458ccde7035e92ca3d8/src/dso.c: scope_hint: In function 'set_security_context'
+prelink-4c79120bcdbde0616f592458ccde7035e92ca3d8/src/dso.c:1792:7: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+# 1792 |       security_context_t scontext;
+#      |       ^~~~~~~~~~~~~~~~~~
+# 1790|     if (selinux_enabled > 0)
+# 1791|       {
+# 1792|->       security_context_t scontext;
+# 1793|         if (getfilecon (name, &scontext) < 0)
+# 1794|   	{

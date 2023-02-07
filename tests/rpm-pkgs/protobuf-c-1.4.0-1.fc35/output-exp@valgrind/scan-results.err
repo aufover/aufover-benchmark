@@ -1,0 +1,21 @@
+Error: COMPILER_WARNING (CWE-195):
+protobuf-c-1.4.0/protoc-c/c_helpers.cc: scope_hint: In function 'void google::protobuf::compiler::c::PrintComment(google::protobuf::io::Printer*, std::string)'
+protobuf-c-1.4.0/protoc-c/c_helpers.cc:237:25: warning[-Wsign-compare]: comparison of integer expressions of different signedness: 'int' and 'std::vector<std::__cxx11::basic_string<char> >::size_type' {aka 'long unsigned int'}
+#  237 |       for (int i = 0; i < comment_lines.size(); i++)
+#      |                       ~~^~~~~~~~~~~~~~~~~~~~~~
+#  235|         SplitStringUsing (comment, "\r\n", &comment_lines);
+#  236|         printer->Print ("/*\n");
+#  237|->       for (int i = 0; i < comment_lines.size(); i++)
+#  238|         {
+#  239|            if (!comment_lines[i].empty())
+
+Error: COMPILER_WARNING (CWE-195):
+protobuf-c-1.4.0/protoc-c/c_helpers.cc: scope_hint: In function 'std::set<std::__cxx11::basic_string<char> > google::protobuf::compiler::c::MakeKeywordsMap()'
+protobuf-c-1.4.0/protoc-c/c_helpers.cc:289:21: warning[-Wsign-compare]: comparison of integer expressions of different signedness: 'int' and 'long unsigned int'
+#  289 |   for (int i = 0; i < GOOGLE_ARRAYSIZE(kKeywordList); i++) {
+#      |                     ^
+#  287|   std::set<std::string> MakeKeywordsMap() {
+#  288|     std::set<std::string> result;
+#  289|->   for (int i = 0; i < GOOGLE_ARRAYSIZE(kKeywordList); i++) {
+#  290|       result.insert(kKeywordList[i]);
+#  291|     }

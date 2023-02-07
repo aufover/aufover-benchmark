@@ -1,0 +1,498 @@
+Error: VALGRIND_WARNING:
+parted-3.4/parted/.libs/parted: note: while executing process 12984 with arguments: -s dev-file mklabel amiga mkpart PTNNAME ext2 4096s 6143s
+parted-3.4/libparted/arch/linux.c:2089: warning[SyscallParam]: Syscall param write(buf) points to uninitialised byte(s)
+parted-3.4/libparted/arch/linux.c:2089: note: Address 0x4fc6900 is 256 bytes inside a block of size 1,024 alloc'd
+/usr/lib64/libc.so.6: note: called from write()
+parted-3.4/libparted/arch/linux.c:2089: note: called from linux_write()
+parted-3.4/libparted/labels/rdb.c:741: note: called from amiga_write()
+parted-3.4/libparted/disk.c:501: note: called from ped_disk_commit_to_dev()
+parted-3.4/libparted/disk.c:530: note: called from UnknownInlinedFun()
+parted-3.4/libparted/disk.c:522: note: called from ped_disk_commit()
+parted-3.4/parted/parted.c:828: note: called from do_mkpart()
+parted-3.4/parted/command.c:142: note: called from UnknownInlinedFun()
+parted-3.4/parted/ui.c:1687: note: called from non_interactive_mode()
+parted-3.4/parted/parted.c:2375: note: called from main()
+# 2087|           diobuf_start = diobuf;
+# 2088|           while (1) {
+# 2089|->                 ssize_t status = write (arch_specific->fd, diobuf, write_length);
+# 2090|                   if (status == write_length) break;
+# 2091|                   if (status > 0) {
+
+Error: COMPILER_WARNING (CWE-681):
+parted-3.4/libparted/fs/r/fat/bootsector.c: scope_hint: In function 'fat_boot_sector_set_boot_code'
+parted-3.4/libparted/fs/r/fat/bootsector.c:282:28: warning[-Wpointer-sign]: pointer targets in passing argument 1 of 'strcpy' differ in signedness
+#  282 |         strcpy (bs->u.fat32.boot_code, FAT_BOOT_CODE);
+#      |                 ~~~~~~~~~~~^~~~~~~~~~
+#      |                            |
+#      |                            uint8_t * {aka unsigned char *}
+/usr/include/features.h:490: included_from: Included from here.
+/usr/include/time.h:25: included_from: Included from here.
+parted-3.4/lib/time.h:47: included_from: Included from here.
+parted-3.4/include/parted/timer.h:30: included_from: Included from here.
+parted-3.4/include/parted/geom.h:43: included_from: Included from here.
+parted-3.4/include/parted/filesys.h:35: included_from: Included from here.
+parted-3.4/include/parted/disk.h:110: included_from: Included from here.
+parted-3.4/include/parted/natmath.h:32: included_from: Included from here.
+parted-3.4/include/parted/device.h:100: included_from: Included from here.
+parted-3.4/include/parted/constraint.h:25: included_from: Included from here.
+parted-3.4/include/parted/parted.h:35: included_from: Included from here.
+parted-3.4/libparted/fs/r/fat/fat.h:23: included_from: Included from here.
+parted-3.4/libparted/fs/r/fat/bootsector.c:21: included_from: Included from here.
+/usr/include/bits/string_fortified.h:77:1: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+#   77 | __NTH (strcpy (char *__restrict __dest, const char *__restrict __src))
+#      | ^~~~~
+#  280|   	memcpy (bs->boot_jump, FAT_BOOT_JUMP, 3);
+#  281|   	PED_ASSERT (sizeof(FAT_BOOT_CODE) < sizeof(bs->u.fat32.boot_code));
+#  282|-> 	strcpy (bs->u.fat32.boot_code, FAT_BOOT_CODE);
+#  283|   	return 1;
+#  284|   }
+
+Error: COMPILER_WARNING (CWE-681):
+parted-3.4/libparted/labels/atari.c: scope_hint: In function 'atari_probe'
+parted-3.4/libparted/labels/atari.c:261:62: warning[-Wpointer-sign]: pointer targets in passing argument 1 of 'atr_pid_known' differ in signedness
+#  261 | #define atr_part_known(part, pid_list) (atr_pid_known ((part)->id, pid_list))
+#      |                                                        ~~~~~~^~~~
+#      |                                                              |
+#      |                                                              uint8_t * {aka unsigned char *}
+parted-3.4/libparted/labels/atari.c:423:23: note: in expansion of macro 'atr_part_known'
+#  423 |                    && atr_part_known (&table.icd_part[0], atr_known_icd_pid)) {
+#      |                       ^~~~~~~~~~~~~~
+parted-3.4/libparted/labels/atari.c:233:28: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+#  233 | atr_pid_known (const char* pid, const char** pid_list)
+#      |                ~~~~~~~~~~~~^~~
+#  259|   }
+#  260|   
+#  261|-> #define atr_part_known(part, pid_list) (atr_pid_known ((part)->id, pid_list))
+#  262|   
+#  263|   #define atr_part_valid(part, sz) (atr_part_used(part)\
+
+Error: COMPILER_WARNING (CWE-681):
+parted-3.4/libparted/labels/atari.c: scope_hint: In function 'atr_parse_add_rawpart'
+parted-3.4/libparted/labels/atari.c:555:39: warning[-Wpointer-sign]: pointer targets in passing argument 2 of 'atr_part_sysraw' differ in signedness
+#  555 |         atr_part_sysraw (part, rawpart->id, rawpart->flag);
+#      |                                ~~~~~~~^~~~
+#      |                                       |
+#      |                                       const uint8_t * {aka const unsigned char *}
+parted-3.4/libparted/labels/atari.c:512:50: note: expected 'const char *' but argument is of type 'const uint8_t *' {aka 'const unsigned char *'}
+#  512 | atr_part_sysraw (PedPartition* part, const char* id, uint8_t flag)
+#      |                                      ~~~~~~~~~~~~^~
+#  553|   	else
+#  554|   		part->fs_type = NULL;
+#  555|-> 	atr_part_sysraw (part, rawpart->id, rawpart->flag);
+#  556|   
+#  557|   	const_exact = ped_constraint_exact (&part->geom);
+
+Error: VALGRIND_WARNING:
+parted-3.4/parted/.libs/parted: note: while executing process 5425 with arguments: ---pretend-input-tty bad u s p
+parted-3.4/libparted/labels/gpt.c:651: warning[UninitCondition]: Conditional jump or move depends on uninitialised value(s)
+parted-3.4/libparted/labels/gpt.c:651: note: called from _header_is_valid()
+parted-3.4/libparted/labels/gpt.c:938: note: called from UnknownInlinedFun()
+parted-3.4/libparted/labels/gpt.c:991: note: called from gpt_read()
+parted-3.4/libparted/disk.c:201: note: called from ped_disk_new()
+parted-3.4/parted/parted.c:1088: note: called from do_print()
+parted-3.4/parted/command.c:142: note: called from UnknownInlinedFun()
+parted-3.4/parted/ui.c:1687: note: called from non_interactive_mode()
+parted-3.4/parted/parted.c:2375: note: called from main()
+#  649|     PedDevice const *dev = disk->dev;
+#  650|   
+#  651|->   if (PED_LE64_TO_CPU (gpt->Signature) != GPT_HEADER_SIGNATURE)
+#  652|       return 0;
+#  653|     /*
+
+Error: VALGRIND_WARNING:
+parted-3.4/tests/.libs/print-flags: note: while executing process 18944 with arguments: dev-file 2
+parted-3.4/libparted/libparted.c:244: warning[Leak_DefinitelyLost]: 1,308 (48 direct, 1,260 indirect) bytes in 1 blocks are definitely lost in loss record 7 of 7
+parted-3.4/libparted/libparted.c:244: note: called from ped_malloc()
+parted-3.4/libparted/disk.c:401: note: called from _ped_disk_alloc()
+parted-3.4/libparted/labels/mac.c:286: note: called from mac_alloc()
+parted-3.4/libparted/disk.c:380: note: called from ped_disk_new_fresh()
+parted-3.4/libparted/disk.c:198: note: called from ped_disk_new()
+parted-3.4/tests/print-flags.c:34: note: called from main()
+#  242|   	void*		mem;
+#  243|   
+#  244|-> 	mem = (void*) malloc (size);
+#  245|   	if (!mem) {
+#  246|   		ped_exception_throw (PED_EXCEPTION_FATAL, PED_EXCEPTION_CANCEL,
+
+Error: VALGRIND_WARNING:
+parted-3.4/parted/.libs/parted: note: while executing process 10791 with arguments: -s loop-file mklabel msdos
+parted-3.4/libparted/libparted.c:244: warning[Leak_DefinitelyLost]: 136 (48 direct, 88 indirect) bytes in 1 blocks are definitely lost in loss record 3 of 3
+parted-3.4/libparted/libparted.c:244: note: called from ped_malloc()
+parted-3.4/libparted/disk.c:401: note: called from _ped_disk_alloc()
+parted-3.4/libparted/labels/loop.c:84: note: called from loop_alloc()
+parted-3.4/libparted/disk.c:380: note: called from ped_disk_new_fresh()
+parted-3.4/libparted/disk.c:198: note: called from ped_disk_new()
+parted-3.4/parted/parted.c:524: note: called from do_mklabel()
+parted-3.4/parted/command.c:142: note: called from UnknownInlinedFun()
+parted-3.4/parted/ui.c:1687: note: called from non_interactive_mode()
+parted-3.4/parted/parted.c:2375: note: called from main()
+#  242|   	void*		mem;
+#  243|   
+#  244|-> 	mem = (void*) malloc (size);
+#  245|   	if (!mem) {
+#  246|   		ped_exception_throw (PED_EXCEPTION_FATAL, PED_EXCEPTION_CANCEL,
+
+Error: VALGRIND_WARNING:
+parted-3.4/tests/.libs/print-flags: note: while executing process 13051 with arguments: dev-file 1
+parted-3.4/libparted/libparted.c:244: warning[Leak_DefinitelyLost]: 2,448 (48 direct, 2,400 indirect) bytes in 1 blocks are definitely lost in loss record 7 of 7
+parted-3.4/libparted/libparted.c:244: note: called from ped_malloc()
+parted-3.4/libparted/disk.c:401: note: called from _ped_disk_alloc()
+parted-3.4/libparted/labels/rdb.c:358: note: called from amiga_alloc()
+parted-3.4/libparted/disk.c:380: note: called from ped_disk_new_fresh()
+parted-3.4/libparted/disk.c:198: note: called from ped_disk_new()
+parted-3.4/tests/print-flags.c:34: note: called from main()
+#  242|   	void*		mem;
+#  243|   
+#  244|-> 	mem = (void*) malloc (size);
+#  245|   	if (!mem) {
+#  246|   		ped_exception_throw (PED_EXCEPTION_FATAL, PED_EXCEPTION_CANCEL,
+
+Error: VALGRIND_WARNING:
+parted-3.4/parted/.libs/parted: note: while executing process 10629 with arguments: -s loop-file mklabel gpt
+parted-3.4/libparted/libparted.c:244: warning[Leak_DefinitelyLost]: 228 (48 direct, 180 indirect) bytes in 1 blocks are definitely lost in loss record 5 of 5
+parted-3.4/libparted/libparted.c:244: note: called from ped_malloc()
+parted-3.4/libparted/disk.c:401: note: called from _ped_disk_alloc()
+parted-3.4/libparted/labels/dos.c:349: note: called from msdos_alloc()
+parted-3.4/libparted/disk.c:380: note: called from ped_disk_new_fresh()
+parted-3.4/libparted/disk.c:198: note: called from ped_disk_new()
+parted-3.4/parted/parted.c:524: note: called from do_mklabel()
+parted-3.4/parted/command.c:142: note: called from UnknownInlinedFun()
+parted-3.4/parted/ui.c:1687: note: called from non_interactive_mode()
+parted-3.4/parted/parted.c:2375: note: called from main()
+#  242|   	void*		mem;
+#  243|   
+#  244|-> 	mem = (void*) malloc (size);
+#  245|   	if (!mem) {
+#  246|   		ped_exception_throw (PED_EXCEPTION_FATAL, PED_EXCEPTION_CANCEL,
+
+Error: VALGRIND_WARNING:
+parted-3.4/parted/.libs/parted: note: while executing process 24151 with arguments: -s loop-file mklabel msdos
+parted-3.4/libparted/libparted.c:244: warning[Leak_DefinitelyLost]: 228 (88 direct, 140 indirect) bytes in 1 blocks are definitely lost in loss record 5 of 5
+parted-3.4/libparted/libparted.c:244: note: called from ped_malloc()
+parted-3.4/libparted/disk.c:1197: note: called from _ped_partition_alloc()
+parted-3.4/libparted/labels/dos.c:1340: note: called from msdos_partition_new.lto_priv.0()
+parted-3.4/libparted/disk.c:1295: note: called from ped_partition_new()
+parted-3.4/libparted/labels/dos.c:2296: note: called from add_metadata_part.lto_priv.0()
+parted-3.4/libparted/labels/dos.c:2445: note: called from UnknownInlinedFun()
+parted-3.4/libparted/labels/dos.c:2468: note: called from msdos_alloc_metadata.lto_priv.0()
+parted-3.4/libparted/disk.c:1011: note: called from UnknownInlinedFun()
+parted-3.4/libparted/disk.c:1164: note: called from UnknownInlinedFun()
+parted-3.4/libparted/disk.c:1151: note: called from _disk_pop_update_mode()
+parted-3.4/libparted/disk.c:2104: note: called from UnknownInlinedFun()
+parted-3.4/libparted/disk.c:2085: note: called from ped_disk_delete_all()
+parted-3.4/libparted/labels/dos.c:1110: note: called from msdos_read()
+parted-3.4/libparted/disk.c:201: note: called from ped_disk_new()
+parted-3.4/parted/parted.c:524: note: called from do_mklabel()
+#  242|   	void*		mem;
+#  243|   
+#  244|-> 	mem = (void*) malloc (size);
+#  245|   	if (!mem) {
+#  246|   		ped_exception_throw (PED_EXCEPTION_FATAL, PED_EXCEPTION_CANCEL,
+
+Error: VALGRIND_WARNING:
+parted-3.4/parted/.libs/parted: note: while executing process 24293 with arguments: -s loop-file mklabel msdos
+parted-3.4/libparted/libparted.c:244: warning[Leak_DefinitelyLost]: 316 (48 direct, 268 indirect) bytes in 1 blocks are definitely lost in loss record 6 of 6
+parted-3.4/libparted/libparted.c:244: note: called from ped_malloc()
+parted-3.4/libparted/disk.c:401: note: called from _ped_disk_alloc()
+parted-3.4/libparted/labels/dos.c:349: note: called from msdos_alloc()
+parted-3.4/libparted/disk.c:380: note: called from ped_disk_new_fresh()
+parted-3.4/libparted/disk.c:198: note: called from ped_disk_new()
+parted-3.4/parted/parted.c:524: note: called from do_mklabel()
+parted-3.4/parted/command.c:142: note: called from UnknownInlinedFun()
+parted-3.4/parted/ui.c:1687: note: called from non_interactive_mode()
+parted-3.4/parted/parted.c:2375: note: called from main()
+#  242|   	void*		mem;
+#  243|   
+#  244|-> 	mem = (void*) malloc (size);
+#  245|   	if (!mem) {
+#  246|   		ped_exception_throw (PED_EXCEPTION_FATAL, PED_EXCEPTION_CANCEL,
+
+Error: VALGRIND_WARNING:
+parted-3.4/tests/.libs/duplicate: note: while executing process 11007 with arguments: msdos
+parted-3.4/libparted/libparted.c:244: warning[Leak_DefinitelyLost]: 32 bytes in 1 blocks are definitely lost in loss record 1 of 2
+parted-3.4/libparted/libparted.c:244: note: called from ped_malloc()
+parted-3.4/libparted/cs/geom.c:80: note: called from ped_geometry_new()
+parted-3.4/tests/duplicate.c:50: note: called from main()
+#  242|   	void*		mem;
+#  243|   
+#  244|-> 	mem = (void*) malloc (size);
+#  245|   	if (!mem) {
+#  246|   		ped_exception_throw (PED_EXCEPTION_FATAL, PED_EXCEPTION_CANCEL,
+
+Error: VALGRIND_WARNING:
+parted-3.4/parted/.libs/parted: note: while executing process 10380 with arguments: -s loop-file mklabel msdos
+parted-3.4/libparted/libparted.c:244: warning[Leak_DefinitelyLost]: 376 (88 direct, 288 indirect) bytes in 1 blocks are definitely lost in loss record 6 of 6
+parted-3.4/libparted/libparted.c:244: note: called from ped_malloc()
+parted-3.4/libparted/disk.c:1197: note: called from _ped_partition_alloc()
+parted-3.4/libparted/labels/gpt.c:1372: note: called from gpt_partition_new()
+parted-3.4/libparted/disk.c:1295: note: called from ped_partition_new()
+parted-3.4/libparted/labels/gpt.c:1345: note: called from add_metadata_part.lto_priv.1()
+parted-3.4/libparted/labels/gpt.c:1592: note: called from gpt_alloc_metadata()
+parted-3.4/libparted/disk.c:1011: note: called from UnknownInlinedFun()
+parted-3.4/libparted/disk.c:1164: note: called from UnknownInlinedFun()
+parted-3.4/libparted/disk.c:1151: note: called from _disk_pop_update_mode()
+parted-3.4/libparted/disk.c:2104: note: called from UnknownInlinedFun()
+parted-3.4/libparted/disk.c:2085: note: called from ped_disk_delete_all()
+parted-3.4/libparted/labels/gpt.c:980: note: called from gpt_read()
+parted-3.4/libparted/disk.c:201: note: called from ped_disk_new()
+parted-3.4/parted/parted.c:524: note: called from do_mklabel()
+#  242|   	void*		mem;
+#  243|   
+#  244|-> 	mem = (void*) malloc (size);
+#  245|   	if (!mem) {
+#  246|   		ped_exception_throw (PED_EXCEPTION_FATAL, PED_EXCEPTION_CANCEL,
+
+Error: VALGRIND_WARNING:
+parted-3.4/parted/.libs/parted: note: while executing process 25188 with arguments: -s loop-file mklabel dvh
+parted-3.4/libparted/libparted.c:244: warning[Leak_DefinitelyLost]: 480 (48 direct, 432 indirect) bytes in 1 blocks are definitely lost in loss record 8 of 8
+parted-3.4/libparted/libparted.c:244: note: called from ped_malloc()
+parted-3.4/libparted/disk.c:401: note: called from _ped_disk_alloc()
+parted-3.4/libparted/labels/dvh.c:88: note: called from dvh_alloc()
+parted-3.4/libparted/disk.c:380: note: called from ped_disk_new_fresh()
+parted-3.4/libparted/disk.c:198: note: called from ped_disk_new()
+parted-3.4/parted/parted.c:524: note: called from do_mklabel()
+parted-3.4/parted/command.c:142: note: called from UnknownInlinedFun()
+parted-3.4/parted/ui.c:1687: note: called from non_interactive_mode()
+parted-3.4/parted/parted.c:2375: note: called from main()
+#  242|   	void*		mem;
+#  243|   
+#  244|-> 	mem = (void*) malloc (size);
+#  245|   	if (!mem) {
+#  246|   		ped_exception_throw (PED_EXCEPTION_FATAL, PED_EXCEPTION_CANCEL,
+
+Error: VALGRIND_WARNING:
+parted-3.4/tests/.libs/print-flags: note: while executing process 19695 with arguments: dev-file 1
+parted-3.4/libparted/libparted.c:244: warning[Leak_DefinitelyLost]: 524 (88 direct, 436 indirect) bytes in 1 blocks are definitely lost in loss record 8 of 8
+parted-3.4/libparted/libparted.c:244: note: called from ped_malloc()
+parted-3.4/libparted/disk.c:1197: note: called from _ped_partition_alloc()
+parted-3.4/libparted/labels/dos.c:1340: note: called from msdos_partition_new.lto_priv.0()
+parted-3.4/libparted/disk.c:1295: note: called from ped_partition_new()
+parted-3.4/libparted/labels/dos.c:945: note: called from UnknownInlinedFun()
+parted-3.4/libparted/labels/dos.c:1049: note: called from read_table()
+parted-3.4/libparted/labels/dos.c:1111: note: called from msdos_read()
+parted-3.4/libparted/disk.c:201: note: called from ped_disk_new()
+parted-3.4/tests/print-flags.c:34: note: called from main()
+#  242|   	void*		mem;
+#  243|   
+#  244|-> 	mem = (void*) malloc (size);
+#  245|   	if (!mem) {
+#  246|   		ped_exception_throw (PED_EXCEPTION_FATAL, PED_EXCEPTION_CANCEL,
+
+Error: VALGRIND_WARNING:
+parted-3.4/parted/.libs/parted: note: while executing process 15231 with arguments: -s dev-file mklabel gpt mkpart PTNNAME ext2 4096s 6143s
+parted-3.4/libparted/libparted.c:244: warning[Leak_DefinitelyLost]: 588 (48 direct, 540 indirect) bytes in 1 blocks are definitely lost in loss record 8 of 8
+parted-3.4/libparted/libparted.c:244: note: called from ped_malloc()
+parted-3.4/libparted/disk.c:401: note: called from _ped_disk_alloc()
+parted-3.4/libparted/labels/dvh.c:88: note: called from dvh_alloc()
+parted-3.4/libparted/disk.c:380: note: called from ped_disk_new_fresh()
+parted-3.4/libparted/disk.c:198: note: called from ped_disk_new()
+parted-3.4/parted/parted.c:524: note: called from do_mklabel()
+parted-3.4/parted/command.c:142: note: called from UnknownInlinedFun()
+parted-3.4/parted/ui.c:1687: note: called from non_interactive_mode()
+parted-3.4/parted/parted.c:2375: note: called from main()
+#  242|   	void*		mem;
+#  243|   
+#  244|-> 	mem = (void*) malloc (size);
+#  245|   	if (!mem) {
+#  246|   		ped_exception_throw (PED_EXCEPTION_FATAL, PED_EXCEPTION_CANCEL,
+
+Error: VALGRIND_WARNING:
+parted-3.4/tests/.libs/print-flags: note: while executing process 14754 with arguments: dev-file 1
+parted-3.4/libparted/libparted.c:244: warning[Leak_DefinitelyLost]: 588 (88 direct, 500 indirect) bytes in 1 blocks are definitely lost in loss record 8 of 8
+parted-3.4/libparted/libparted.c:244: note: called from ped_malloc()
+parted-3.4/libparted/disk.c:1197: note: called from _ped_partition_alloc()
+parted-3.4/libparted/labels/dvh.c:508: note: called from dvh_partition_new()
+parted-3.4/libparted/disk.c:1295: note: called from ped_partition_new()
+parted-3.4/libparted/labels/dvh.c:224: note: called from UnknownInlinedFun()
+parted-3.4/libparted/labels/dvh.c:331: note: called from dvh_read()
+parted-3.4/libparted/disk.c:201: note: called from ped_disk_new()
+parted-3.4/tests/print-flags.c:34: note: called from main()
+#  242|   	void*		mem;
+#  243|   
+#  244|-> 	mem = (void*) malloc (size);
+#  245|   	if (!mem) {
+#  246|   		ped_exception_throw (PED_EXCEPTION_FATAL, PED_EXCEPTION_CANCEL,
+
+Error: VALGRIND_WARNING:
+parted-3.4/parted/.libs/parted: note: while executing process 11522 with arguments: -s /dev/loop0 mklabel msdos mkpart primary ext2 1m 5m mkpart primary ext2 5m 10m
+parted-3.4/libparted/libparted.c:244: warning[Leak_DefinitelyLost]: 612 (88 direct, 524 indirect) bytes in 1 blocks are definitely lost in loss record 9 of 9
+parted-3.4/libparted/libparted.c:244: note: called from ped_malloc()
+parted-3.4/libparted/disk.c:1197: note: called from _ped_partition_alloc()
+parted-3.4/libparted/labels/dos.c:1340: note: called from msdos_partition_new.lto_priv.0()
+parted-3.4/libparted/disk.c:1295: note: called from ped_partition_new()
+parted-3.4/libparted/labels/dos.c:945: note: called from UnknownInlinedFun()
+parted-3.4/libparted/labels/dos.c:1049: note: called from read_table()
+parted-3.4/libparted/labels/dos.c:1111: note: called from msdos_read()
+parted-3.4/libparted/disk.c:201: note: called from ped_disk_new()
+parted-3.4/parted/parted.c:524: note: called from do_mklabel()
+parted-3.4/parted/command.c:142: note: called from UnknownInlinedFun()
+parted-3.4/parted/ui.c:1687: note: called from non_interactive_mode()
+parted-3.4/parted/parted.c:2375: note: called from main()
+#  242|   	void*		mem;
+#  243|   
+#  244|-> 	mem = (void*) malloc (size);
+#  245|   	if (!mem) {
+#  246|   		ped_exception_throw (PED_EXCEPTION_FATAL, PED_EXCEPTION_CANCEL,
+
+Error: VALGRIND_WARNING:
+parted-3.4/parted/.libs/parted: note: while executing process 32552 with arguments: -s loop-file mklabel msdos
+parted-3.4/libparted/libparted.c:244: warning[Leak_DefinitelyLost]: 656 (48 direct, 608 indirect) bytes in 1 blocks are definitely lost in loss record 4 of 4
+parted-3.4/libparted/libparted.c:244: note: called from ped_malloc()
+parted-3.4/libparted/disk.c:401: note: called from _ped_disk_alloc()
+parted-3.4/libparted/labels/sun.c:181: note: called from sun_alloc()
+parted-3.4/libparted/disk.c:380: note: called from ped_disk_new_fresh()
+parted-3.4/libparted/disk.c:198: note: called from ped_disk_new()
+parted-3.4/parted/parted.c:524: note: called from do_mklabel()
+parted-3.4/parted/command.c:142: note: called from UnknownInlinedFun()
+parted-3.4/parted/ui.c:1687: note: called from non_interactive_mode()
+parted-3.4/parted/parted.c:2375: note: called from main()
+#  242|   	void*		mem;
+#  243|   
+#  244|-> 	mem = (void*) malloc (size);
+#  245|   	if (!mem) {
+#  246|   		ped_exception_throw (PED_EXCEPTION_FATAL, PED_EXCEPTION_CANCEL,
+
+Error: VALGRIND_WARNING:
+parted-3.4/parted/.libs/parted: note: while executing process 31413 with arguments: -s loop-file mklabel bsd
+parted-3.4/libparted/libparted.c:244: warning[Leak_DefinitelyLost]: 656 (88 direct, 568 indirect) bytes in 1 blocks are definitely lost in loss record 4 of 4
+parted-3.4/libparted/libparted.c:244: note: called from ped_malloc()
+parted-3.4/libparted/disk.c:1197: note: called from _ped_partition_alloc()
+parted-3.4/libparted/labels/sun.c:505: note: called from sun_partition_new()
+parted-3.4/libparted/disk.c:1295: note: called from ped_partition_new()
+parted-3.4/libparted/disk.c:1109: note: called from UnknownInlinedFun()
+parted-3.4/libparted/disk.c:1166: note: called from UnknownInlinedFun()
+parted-3.4/libparted/disk.c:1151: note: called from _disk_pop_update_mode()
+parted-3.4/libparted/disk.c:2104: note: called from UnknownInlinedFun()
+parted-3.4/libparted/disk.c:2085: note: called from ped_disk_delete_all()
+parted-3.4/libparted/labels/sun.c:324: note: called from sun_read()
+parted-3.4/libparted/disk.c:201: note: called from ped_disk_new()
+parted-3.4/parted/parted.c:524: note: called from do_mklabel()
+parted-3.4/parted/command.c:142: note: called from UnknownInlinedFun()
+parted-3.4/parted/ui.c:1687: note: called from non_interactive_mode()
+parted-3.4/parted/parted.c:2375: note: called from main()
+#  242|   	void*		mem;
+#  243|   
+#  244|-> 	mem = (void*) malloc (size);
+#  245|   	if (!mem) {
+#  246|   		ped_exception_throw (PED_EXCEPTION_FATAL, PED_EXCEPTION_CANCEL,
+
+Error: VALGRIND_WARNING:
+parted-3.4/parted/.libs/parted: note: while executing process 25542 with arguments: -s loop-file mklabel dvh
+parted-3.4/libparted/libparted.c:244: warning[Leak_DefinitelyLost]: 676 (48 direct, 628 indirect) bytes in 1 blocks are definitely lost in loss record 9 of 9
+parted-3.4/libparted/libparted.c:244: note: called from ped_malloc()
+parted-3.4/libparted/disk.c:401: note: called from _ped_disk_alloc()
+parted-3.4/libparted/labels/dvh.c:88: note: called from dvh_alloc()
+parted-3.4/libparted/disk.c:380: note: called from ped_disk_new_fresh()
+parted-3.4/libparted/disk.c:198: note: called from ped_disk_new()
+parted-3.4/parted/parted.c:524: note: called from do_mklabel()
+parted-3.4/parted/command.c:142: note: called from UnknownInlinedFun()
+parted-3.4/parted/ui.c:1687: note: called from non_interactive_mode()
+parted-3.4/parted/parted.c:2375: note: called from main()
+#  242|   	void*		mem;
+#  243|   
+#  244|-> 	mem = (void*) malloc (size);
+#  245|   	if (!mem) {
+#  246|   		ped_exception_throw (PED_EXCEPTION_FATAL, PED_EXCEPTION_CANCEL,
+
+Error: VALGRIND_WARNING:
+parted-3.4/parted/.libs/parted: note: while executing process 18877 with arguments: -s dev-file mklabel mac mkpart PTNNAME ext2 4096s 6143s
+parted-3.4/libparted/libparted.c:244: warning[Leak_DefinitelyLost]: 736 (48 direct, 688 indirect) bytes in 1 blocks are definitely lost in loss record 8 of 8
+parted-3.4/libparted/libparted.c:244: note: called from ped_malloc()
+parted-3.4/libparted/disk.c:401: note: called from _ped_disk_alloc()
+parted-3.4/libparted/labels/gpt.c:527: note: called from gpt_alloc()
+parted-3.4/libparted/disk.c:380: note: called from ped_disk_new_fresh()
+parted-3.4/libparted/disk.c:198: note: called from ped_disk_new()
+parted-3.4/parted/parted.c:524: note: called from do_mklabel()
+parted-3.4/parted/command.c:142: note: called from UnknownInlinedFun()
+parted-3.4/parted/ui.c:1687: note: called from non_interactive_mode()
+parted-3.4/parted/parted.c:2375: note: called from main()
+#  242|   	void*		mem;
+#  243|   
+#  244|-> 	mem = (void*) malloc (size);
+#  245|   	if (!mem) {
+#  246|   		ped_exception_throw (PED_EXCEPTION_FATAL, PED_EXCEPTION_CANCEL,
+
+Error: VALGRIND_WARNING:
+parted-3.4/tests/.libs/print-flags: note: while executing process 15298 with arguments: dev-file 1
+parted-3.4/libparted/libparted.c:244: warning[Leak_DefinitelyLost]: 736 (88 direct, 648 indirect) bytes in 1 blocks are definitely lost in loss record 7 of 7
+parted-3.4/libparted/libparted.c:244: note: called from ped_malloc()
+parted-3.4/libparted/disk.c:1197: note: called from _ped_partition_alloc()
+parted-3.4/libparted/labels/gpt.c:1372: note: called from gpt_partition_new()
+parted-3.4/libparted/disk.c:1295: note: called from ped_partition_new()
+parted-3.4/libparted/labels/gpt.c:816: note: called from UnknownInlinedFun()
+parted-3.4/libparted/labels/gpt.c:1103: note: called from gpt_read()
+parted-3.4/libparted/disk.c:201: note: called from ped_disk_new()
+parted-3.4/tests/print-flags.c:34: note: called from main()
+#  242|   	void*		mem;
+#  243|   
+#  244|-> 	mem = (void*) malloc (size);
+#  245|   	if (!mem) {
+#  246|   		ped_exception_throw (PED_EXCEPTION_FATAL, PED_EXCEPTION_CANCEL,
+
+Error: VALGRIND_WARNING:
+parted-3.4/tests/.libs/print-flags: note: while executing process 22306 with arguments: dev-file 1
+parted-3.4/libparted/libparted.c:244: warning[Leak_DefinitelyLost]: 852 (88 direct, 764 indirect) bytes in 1 blocks are definitely lost in loss record 6 of 6
+parted-3.4/libparted/libparted.c:244: note: called from ped_malloc()
+parted-3.4/libparted/disk.c:1197: note: called from _ped_partition_alloc()
+parted-3.4/libparted/labels/sun.c:505: note: called from sun_partition_new()
+parted-3.4/libparted/disk.c:1295: note: called from ped_partition_new()
+parted-3.4/libparted/labels/sun.c:354: note: called from sun_read()
+parted-3.4/libparted/disk.c:201: note: called from ped_disk_new()
+parted-3.4/tests/print-flags.c:34: note: called from main()
+#  242|   	void*		mem;
+#  243|   
+#  244|-> 	mem = (void*) malloc (size);
+#  245|   	if (!mem) {
+#  246|   		ped_exception_throw (PED_EXCEPTION_FATAL, PED_EXCEPTION_CANCEL,
+
+Error: VALGRIND_WARNING:
+parted-3.4/parted/.libs/parted: note: while executing process 14687 with arguments: -s dev-file mklabel dvh mkpart primary ext2 4096s 6143s
+parted-3.4/libparted/libparted.c:244: warning[Leak_DefinitelyLost]: 928 (48 direct, 880 indirect) bytes in 1 blocks are definitely lost in loss record 8 of 8
+parted-3.4/libparted/libparted.c:244: note: called from ped_malloc()
+parted-3.4/libparted/disk.c:401: note: called from _ped_disk_alloc()
+parted-3.4/libparted/labels/bsd.c:183: note: called from bsd_alloc()
+parted-3.4/libparted/disk.c:380: note: called from ped_disk_new_fresh()
+parted-3.4/libparted/disk.c:198: note: called from ped_disk_new()
+parted-3.4/parted/parted.c:524: note: called from do_mklabel()
+parted-3.4/parted/command.c:142: note: called from UnknownInlinedFun()
+parted-3.4/parted/ui.c:1687: note: called from non_interactive_mode()
+parted-3.4/parted/parted.c:2375: note: called from main()
+#  242|   	void*		mem;
+#  243|   
+#  244|-> 	mem = (void*) malloc (size);
+#  245|   	if (!mem) {
+#  246|   		ped_exception_throw (PED_EXCEPTION_FATAL, PED_EXCEPTION_CANCEL,
+
+Error: VALGRIND_WARNING:
+parted-3.4/tests/.libs/print-flags: note: while executing process 14006 with arguments: dev-file 1
+parted-3.4/libparted/libparted.c:244: warning[Leak_DefinitelyLost]: 928 (88 direct, 840 indirect) bytes in 1 blocks are definitely lost in loss record 7 of 7
+parted-3.4/libparted/libparted.c:244: note: called from ped_malloc()
+parted-3.4/libparted/disk.c:1197: note: called from _ped_partition_alloc()
+parted-3.4/libparted/labels/bsd.c:382: note: called from bsd_partition_new()
+parted-3.4/libparted/disk.c:1295: note: called from ped_partition_new()
+parted-3.4/libparted/labels/bsd.c:281: note: called from bsd_read()
+parted-3.4/libparted/disk.c:201: note: called from ped_disk_new()
+parted-3.4/tests/print-flags.c:34: note: called from main()
+#  242|   	void*		mem;
+#  243|   
+#  244|-> 	mem = (void*) malloc (size);
+#  245|   	if (!mem) {
+#  246|   		ped_exception_throw (PED_EXCEPTION_FATAL, PED_EXCEPTION_CANCEL,
+
+Error: VALGRIND_WARNING:
+parted-3.4/parted/.libs/parted: note: while executing process 31145 with arguments: -s loop-file mklabel bsd
+parted-3.4/libparted/libparted.c:244: warning[Leak_DefinitelyLost]: 980 (48 direct, 932 indirect) bytes in 1 blocks are definitely lost in loss record 7 of 7
+parted-3.4/libparted/libparted.c:244: note: called from ped_malloc()
+parted-3.4/libparted/disk.c:401: note: called from _ped_disk_alloc()
+parted-3.4/libparted/labels/mac.c:286: note: called from mac_alloc()
+parted-3.4/libparted/disk.c:380: note: called from ped_disk_new_fresh()
+parted-3.4/libparted/disk.c:198: note: called from ped_disk_new()
+parted-3.4/parted/parted.c:524: note: called from do_mklabel()
+parted-3.4/parted/command.c:142: note: called from UnknownInlinedFun()
+parted-3.4/parted/ui.c:1687: note: called from non_interactive_mode()
+parted-3.4/parted/parted.c:2375: note: called from main()
+#  242|   	void*		mem;
+#  243|   
+#  244|-> 	mem = (void*) malloc (size);
+#  245|   	if (!mem) {
+#  246|   		ped_exception_throw (PED_EXCEPTION_FATAL, PED_EXCEPTION_CANCEL,

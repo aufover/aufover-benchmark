@@ -28,76 +28,6 @@ libp11-0.4.11/src/libp11.h:494:32: note: declared here
 #  262|   			decrypted, authkey, RSA_PKCS1_PADDING);
 #  263|   	if (rc != RANDOM_SIZE) {
 
-Error: VALGRIND_WARNING:
-./check-privkey: note: while executing process 144922 with arguments: output.144805/ec-cert.pem pkcs11:token=libp11-test;id=%01%02%03%04;object=server-key;type=private;pin-value=1234 /usr/lib64/pkcs11/libsofthsm2.so output.144805/engines.cnf
-libp11-0.4.11/tests/check-privkey.c:101: warning[Leak_DefinitelyLost]: 7,456 (192 direct, 7,264 indirect) bytes in 1 blocks are definitely lost in loss record 164 of 165
-/usr/lib64/libcrypto.so.1.1.1l: note: called from CRYPTO_zalloc()
-/usr/lib64/libcrypto.so.1.1.1l: note: called from ENGINE_new()
-/usr/lib64/libcrypto.so.1.1.1l: note: called from ENGINE_by_id()
-/usr/lib64/libcrypto.so.1.1.1l: note: called from ENGINE_by_id()
-libp11-0.4.11/tests/check-privkey.c:101: note: called from main()
-#   99|   	ENGINE_load_builtin_engines();
-#  100|   
-#  101|-> 	engine = ENGINE_by_id("pkcs11");
-#  102|   	if (engine == NULL) {
-#  103|   		printf("Could not get engine\n");
-
-Error: VALGRIND_WARNING:
-./evp-sign: note: while executing process 145468 with arguments: ctrl 1234 output.144386/engines.cnf label_server-key label_server-key /usr/lib64/pkcs11/libsofthsm2.so
-libp11-0.4.11/tests/evp-sign.c:199: warning[Leak_DefinitelyLost]: 4,717 (192 direct, 4,525 indirect) bytes in 1 blocks are definitely lost in loss record 84 of 86
-/usr/lib64/libcrypto.so.1.1.1l: note: called from CRYPTO_zalloc()
-/usr/lib64/libcrypto.so.1.1.1l: note: called from ENGINE_new()
-/usr/lib64/libcrypto.so.1.1.1l: note: called from ENGINE_by_id()
-/usr/lib64/libcrypto.so.1.1.1l: note: called from ENGINE_by_id()
-libp11-0.4.11/tests/evp-sign.c:199: note: called from main()
-#  197|   
-#  198|   	ENGINE_load_builtin_engines();
-#  199|-> 	e = ENGINE_by_id("pkcs11");
-#  200|   	if (e == NULL) {
-#  201|   		display_openssl_errors(__LINE__);
-
-Error: VALGRIND_WARNING:
-./evp-sign: note: while executing process 144491 with arguments: ctrl false output.144386/engines.cnf pkcs11:token=libp11-test;id=%01%02%03%04;object=server-key;type=private;pin-value=1234 pkcs11:token=libp11-test;id=%01%02%03%04;object=server-key;type=public;pin-value=1234 /usr/lib64/pkcs11/libsofthsm2.so
-libp11-0.4.11/tests/evp-sign.c:199: warning[Leak_DefinitelyLost]: 4,745 (192 direct, 4,553 indirect) bytes in 1 blocks are definitely lost in loss record 84 of 86
-/usr/lib64/libcrypto.so.1.1.1l: note: called from CRYPTO_zalloc()
-/usr/lib64/libcrypto.so.1.1.1l: note: called from ENGINE_new()
-/usr/lib64/libcrypto.so.1.1.1l: note: called from ENGINE_by_id()
-/usr/lib64/libcrypto.so.1.1.1l: note: called from ENGINE_by_id()
-libp11-0.4.11/tests/evp-sign.c:199: note: called from main()
-#  197|   
-#  198|   	ENGINE_load_builtin_engines();
-#  199|-> 	e = ENGINE_by_id("pkcs11");
-#  200|   	if (e == NULL) {
-#  201|   		display_openssl_errors(__LINE__);
-
-Error: VALGRIND_WARNING:
-./evp-sign: note: while executing process 145205 with arguments: ctrl 1234 output.144389/engines.cnf label_server-key label_server-key /usr/lib64/pkcs11/libsofthsm2.so
-libp11-0.4.11/tests/evp-sign.c:199: warning[Leak_DefinitelyLost]: 5,789 (192 direct, 5,597 indirect) bytes in 1 blocks are definitely lost in loss record 124 of 125
-/usr/lib64/libcrypto.so.1.1.1l: note: called from CRYPTO_zalloc()
-/usr/lib64/libcrypto.so.1.1.1l: note: called from ENGINE_new()
-/usr/lib64/libcrypto.so.1.1.1l: note: called from ENGINE_by_id()
-/usr/lib64/libcrypto.so.1.1.1l: note: called from ENGINE_by_id()
-libp11-0.4.11/tests/evp-sign.c:199: note: called from main()
-#  197|   
-#  198|   	ENGINE_load_builtin_engines();
-#  199|-> 	e = ENGINE_by_id("pkcs11");
-#  200|   	if (e == NULL) {
-#  201|   		display_openssl_errors(__LINE__);
-
-Error: VALGRIND_WARNING:
-./evp-sign: note: while executing process 144610 with arguments: ctrl false output.144389/engines.cnf pkcs11:token=libp11-test;id=%01%02%03%04;object=server-key;type=private;pin-value=1234 pkcs11:token=libp11-test;id=%01%02%03%04;object=server-key;type=public;pin-value=1234 /usr/lib64/pkcs11/libsofthsm2.so
-libp11-0.4.11/tests/evp-sign.c:199: warning[Leak_DefinitelyLost]: 5,817 (192 direct, 5,625 indirect) bytes in 1 blocks are definitely lost in loss record 124 of 125
-/usr/lib64/libcrypto.so.1.1.1l: note: called from CRYPTO_zalloc()
-/usr/lib64/libcrypto.so.1.1.1l: note: called from ENGINE_new()
-/usr/lib64/libcrypto.so.1.1.1l: note: called from ENGINE_by_id()
-/usr/lib64/libcrypto.so.1.1.1l: note: called from ENGINE_by_id()
-libp11-0.4.11/tests/evp-sign.c:199: note: called from main()
-#  197|   
-#  198|   	ENGINE_load_builtin_engines();
-#  199|-> 	e = ENGINE_by_id("pkcs11");
-#  200|   	if (e == NULL) {
-#  201|   		display_openssl_errors(__LINE__);
-
 Error: COMPILER_WARNING (CWE-563):
 libp11-0.4.11/tests/list-tokens.c: scope_hint: In function 'main'
 libp11-0.4.11/tests/list-tokens.c:42:22: warning[-Wunused-variable]: unused variable 'certs'
@@ -108,31 +38,3 @@ libp11-0.4.11/tests/list-tokens.c:42:22: warning[-Wunused-variable]: unused vari
 #   42|-> 	PKCS11_CERT *certs;
 #   43|   
 #   44|   	int rc = 0, token_found = 0;
-
-Error: VALGRIND_WARNING:
-./rsa-oaep: note: while executing process 144758 with arguments: 1234 output.144743/engines.cnf pkcs11:token=libp11-test;id=%01%02%03%04;object=server-key;type=private;pin-value=1234 pkcs11:token=libp11-test;id=%01%02%03%04;object=server-key;type=public;pin-value=1234 /usr/lib64/pkcs11/libsofthsm2.so
-libp11-0.4.11/tests/rsa-oaep.c:110: warning[Leak_DefinitelyLost]: 4,745 (192 direct, 4,553 indirect) bytes in 1 blocks are definitely lost in loss record 80 of 82
-/usr/lib64/libcrypto.so.1.1.1l: note: called from CRYPTO_zalloc()
-/usr/lib64/libcrypto.so.1.1.1l: note: called from ENGINE_new()
-/usr/lib64/libcrypto.so.1.1.1l: note: called from ENGINE_by_id()
-/usr/lib64/libcrypto.so.1.1.1l: note: called from ENGINE_by_id()
-libp11-0.4.11/tests/rsa-oaep.c:110: note: called from main()
-#  108|   	ENGINE_load_builtin_engines();
-#  109|   
-#  110|-> 	e = ENGINE_by_id("pkcs11");
-#  111|   	if (e == NULL) {
-#  112|   		display_openssl_errors(__LINE__);
-
-Error: VALGRIND_WARNING:
-./rsa-pss-sign: note: while executing process 144464 with arguments: 1234 output.144385/engines.cnf pkcs11:token=libp11-test;id=%01%02%03%04;object=server-key;type=private;pin-value=1234 pkcs11:token=libp11-test;id=%01%02%03%04;object=server-key;type=public;pin-value=1234 /usr/lib64/pkcs11/libsofthsm2.so
-libp11-0.4.11/tests/rsa-pss-sign.c:111: warning[Leak_DefinitelyLost]: 4,745 (192 direct, 4,553 indirect) bytes in 1 blocks are definitely lost in loss record 80 of 82
-/usr/lib64/libcrypto.so.1.1.1l: note: called from CRYPTO_zalloc()
-/usr/lib64/libcrypto.so.1.1.1l: note: called from ENGINE_new()
-/usr/lib64/libcrypto.so.1.1.1l: note: called from ENGINE_by_id()
-/usr/lib64/libcrypto.so.1.1.1l: note: called from ENGINE_by_id()
-libp11-0.4.11/tests/rsa-pss-sign.c:111: note: called from main()
-#  109|   
-#  110|   	ENGINE_load_builtin_engines();
-#  111|-> 	e = ENGINE_by_id("pkcs11");
-#  112|   	if (e == NULL) {
-#  113|   		display_openssl_errors(__LINE__);

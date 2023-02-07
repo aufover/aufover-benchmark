@@ -1,0 +1,1682 @@
+Error: VALGRIND_WARNING:
+krb5-1.19.2/src/appl/gss-sample/gss-server: note: while executing process 26663 with arguments: -export -port 61021 host
+krb5-1.19.2/src/appl/gss-sample/gss-server.c:774: warning[Leak_DefinitelyLost]: 24 bytes in 1 blocks are definitely lost in loss record 33 of 72
+krb5-1.19.2/src/appl/gss-sample/gss-server.c:774: note: called from main()
+#  772|   
+#  773|               do {
+#  774|->                 struct _work_plan *work = malloc(sizeof(struct _work_plan));
+#  775|   
+#  776|                   if (work == NULL) {
+
+Error: COMPILER_WARNING:
+krb5-1.19.2/src/clients/kinit/kinit.c: scope_hint: In function 'extended_com_err_fn'
+krb5-1.19.2/src/clients/kinit/kinit.c:196:5: warning[-Wsuggest-attribute=format]: function 'extended_com_err_fn' might be a candidate for 'gnu_printf' format attribute
+#  196 |     vfprintf(stderr, fmt, args);
+#      |     ^~~~~~~~
+#  194|       fprintf(stderr, "%s: %s ", myprog, emsg);
+#  195|       krb5_free_error_message(errctx, emsg);
+#  196|->     vfprintf(stderr, fmt, args);
+#  197|       fprintf(stderr, "\n");
+#  198|   }
+
+Error: COMPILER_WARNING:
+krb5-1.19.2/src/clients/klist/klist.c: scope_hint: In function 'extended_com_err_fn'
+krb5-1.19.2/src/clients/klist/klist.c:120:5: warning[-Wsuggest-attribute=format]: function 'extended_com_err_fn' might be a candidate for 'gnu_printf' format attribute
+#  120 |     vfprintf(stderr, fmt, args);
+#      |     ^~~~~~~~
+#  118|       fprintf(stderr, "%s: %s%s", prog, msg, (*fmt == '\0') ? "" : " ");
+#  119|       krb5_free_error_message(context, msg);
+#  120|->     vfprintf(stderr, fmt, args);
+#  121|       fprintf(stderr, "\n");
+#  122|   }
+
+Error: COMPILER_WARNING (CWE-252):
+krb5-1.19.2/src/clients/ksu/authorization.c: scope_hint: In function 'fcmd_resolve'
+krb5-1.19.2/src/clients/ksu/authorization.c:352:13: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+#  352 |             asprintf(&err, _("Error: bad entry - %s in %s file, must be "
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  353 |                              "either full path or just the cmd name\n"),
+#      |                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  354 |                      fcmd, KRB5_USERS_NAME);
+#      |                      ~~~~~~~~~~~~~~~~~~~~~~
+#  350|           /* must be either full path or just the cmd name */
+#  351|           if (strchr(fcmd, '/')){
+#  352|->             asprintf(&err, _("Error: bad entry - %s in %s file, must be "
+#  353|                                "either full path or just the cmd name\n"),
+#  354|                        fcmd, KRB5_USERS_NAME);
+
+Error: COMPILER_WARNING (CWE-252):
+krb5-1.19.2/src/clients/ksu/authorization.c:375:13: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+#  375 |             asprintf(&err, _("Error: bad entry - %s in %s file, CMD_PATH "
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  376 |                              "contains no paths \n"), fcmd, KRB5_USERS_NAME);
+#      |                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  373|   
+#  374|           if (! tc){
+#  375|->             asprintf(&err, _("Error: bad entry - %s in %s file, CMD_PATH "
+#  376|                                "contains no paths \n"), fcmd, KRB5_USERS_NAME);
+#  377|               *out_err = err;
+
+Error: COMPILER_WARNING (CWE-252):
+krb5-1.19.2/src/clients/ksu/authorization.c:384:17: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+#  384 |                 asprintf(&err, _("Error: bad path %s in CMD_PATH for %s must "
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  385 |                                  "start with '/' \n"), tc, KRB5_USERS_NAME );
+#      |                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  382|           do{
+#  383|               if (*tc != '/'){  /* must be full path */
+#  384|->                 asprintf(&err, _("Error: bad path %s in CMD_PATH for %s must "
+#  385|                                    "start with '/' \n"), tc, KRB5_USERS_NAME );
+#  386|                   *out_err = err;
+
+Error: COMPILER_WARNING (CWE-252):
+krb5-1.19.2/src/clients/ksu/main.c: scope_hint: In function 'set_env_var'
+krb5-1.19.2/src/clients/ksu/main.c:1090:5: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+# 1090 |     asprintf(&env_var_buf,"%s=%s",name, value);
+#      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1088|       char * env_var_buf;
+# 1089|   
+# 1090|->     asprintf(&env_var_buf,"%s=%s",name, value);
+# 1091|       return putenv(env_var_buf);
+# 1092|   
+
+Error: COMPILER_WARNING:
+krb5-1.19.2/src/clients/ksu/xmalloc.c: scope_hint: In function 'xasprintf'
+krb5-1.19.2/src/clients/ksu/xmalloc.c:74:5: warning[-Wsuggest-attribute=format]: function 'xasprintf' might be a candidate for 'gnu_printf' format attribute
+#   74 |     if (vasprintf(&out, format, args) < 0) {
+#      |     ^~
+#   72|   
+#   73|       va_start (args, format);
+#   74|->     if (vasprintf(&out, format, args) < 0) {
+#   75|           perror (prog_name);
+#   76|           exit (1);
+
+Error: COMPILER_WARNING:
+krb5-1.19.2/src/clients/kvno/kvno.c: scope_hint: In function 'extended_com_err_fn'
+krb5-1.19.2/src/clients/kvno/kvno.c:193:5: warning[-Wsuggest-attribute=format]: function 'extended_com_err_fn' might be a candidate for 'gnu_printf' format attribute
+#  193 |     vfprintf(stderr, fmt, args);
+#      |     ^~~~~~~~
+#  191|       fprintf(stderr, "%s: %s ", myprog, emsg);
+#  192|       krb5_free_error_message(context, emsg);
+#  193|->     vfprintf(stderr, fmt, args);
+#  194|       fprintf(stderr, "\n");
+#  195|   }
+
+Error: COMPILER_WARNING (CWE-252):
+krb5-1.19.2/src/clients/ksu/ksu.h:30: included_from: Included from here.
+krb5-1.19.2/src/clients/ksu/krb_auth_su.c:29: included_from: Included from here.
+krb5-1.19.2/src/clients/ksu/krb_auth_su.c: scope_hint: In function 'krb5_auth_check'
+krb5-1.19.2/src/include/k5-util.h:67:34: warning[-Wunused-result]: ignoring return value of 'seteuid' declared with attribute 'warn_unused_result'
+#   67 | #  define krb5_seteuid(EUID)    (seteuid((uid_t)(EUID)))
+#      |                                 ~^~~~~~~~~~~~~~~~~~~~~~~
+krb5-1.19.2/src/clients/ksu/krb_auth_su.c:108:13: note: in expansion of macro 'krb5_seteuid'
+#  108 |             krb5_seteuid(0);
+#      |             ^~~~~~~~~~~~
+#   65|   
+#   66|   #if defined(HAVE_SETEUID)
+#   67|-> #  define krb5_seteuid(EUID)    (seteuid((uid_t)(EUID)))
+#   68|   #elif defined(HAVE_SETRESUID)
+#   69|   #  define krb5_seteuid(EUID)    setresuid(getuid(), (uid_t)(EUID), geteuid())
+
+Error: COMPILER_WARNING:
+krb5-1.19.2/src/kadmin/cli/kadmin.c: scope_hint: In function 'extended_com_err_fn'
+krb5-1.19.2/src/kadmin/cli/kadmin.c:240:5: warning[-Wsuggest-attribute=format]: function 'extended_com_err_fn' might be a candidate for 'gnu_printf' format attribute
+#  240 |     vfprintf(stderr, fmt, args);
+#      |     ^~~~~~~~
+#  238|           error("%s: ", myprog);
+#  239|       }
+#  240|->     vfprintf(stderr, fmt, args);
+#  241|       error("\n");
+#  242|   }
+
+Error: COMPILER_WARNING (CWE-252):
+krb5-1.19.2/src/kadmin/cli/kadmin.c: scope_hint: In function 'kadmin_startup'
+krb5-1.19.2/src/kadmin/cli/kadmin.c:356:13: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+#  356 |             asprintf(&db_name, "dbname=%s", optarg);
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  354|               /* db_name has to be passed as part of the db_args. */
+#  355|               free(db_name);
+#  356|->             asprintf(&db_name, "dbname=%s", optarg);
+#  357|   
+#  358|               db_args_size++;
+
+Error: COMPILER_WARNING (CWE-252):
+krb5-1.19.2/src/kadmin/cli/kadmin.c: scope_hint: In function 'kadmin_delprinc'
+krb5-1.19.2/src/kadmin/cli/kadmin.c:692:9: warning[-Wunused-result]: ignoring return value of 'fgets' declared with attribute 'warn_unused_result'
+#  692 |         fgets(reply, sizeof (reply), stdin);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  690|           printf(_("Are you sure you want to delete the principal \"%s\"? "
+#  691|                    "(yes/no): "), canon);
+#  692|->         fgets(reply, sizeof (reply), stdin);
+#  693|           if (strcmp("yes\n", reply)) {
+#  694|               fprintf(stderr, _("Principal \"%s\" not deleted\n"), canon);
+
+Error: COMPILER_WARNING (CWE-252):
+krb5-1.19.2/src/kadmin/cli/kadmin.c: scope_hint: In function 'kadmin_renameprinc'
+krb5-1.19.2/src/kadmin/cli/kadmin.c:753:9: warning[-Wunused-result]: ignoring return value of 'fgets' declared with attribute 'warn_unused_result'
+#  753 |         fgets(reply, sizeof(reply), stdin);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  751|           printf(_("Are you sure you want to rename the principal \"%s\" "
+#  752|                    "to \"%s\"? (yes/no): "), ocanon, ncanon);
+#  753|->         fgets(reply, sizeof(reply), stdin);
+#  754|           if (strcmp("yes\n", reply)) {
+#  755|               fprintf(stderr, _("Principal \"%s\" not renamed\n"), ocanon);
+
+Error: COMPILER_WARNING (CWE-252):
+krb5-1.19.2/src/kadmin/cli/kadmin.c: scope_hint: In function 'kadmin_delpol'
+krb5-1.19.2/src/kadmin/cli/kadmin.c:1716:9: warning[-Wunused-result]: ignoring return value of 'fgets' declared with attribute 'warn_unused_result'
+# 1716 |         fgets(reply, sizeof(reply), stdin);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1714|           printf(_("Are you sure you want to delete the policy \"%s\"? "
+# 1715|                    "(yes/no): "), argv[1]);
+# 1716|->         fgets(reply, sizeof(reply), stdin);
+# 1717|           if (strcmp("yes\n", reply)) {
+# 1718|               fprintf(stderr, _("Policy \"%s\" not deleted.\n"), argv[1]);
+
+Error: COMPILER_WARNING (CWE-704):
+krb5-1.19.2/src/kadmin/cli/kadmin_ct.c:10:13: warning[-Wlto-type-mismatch]: type of 'kadmin_addprinc' does not match original declaration
+#   10 | extern void kadmin_addprinc __SS_PROTO;
+#      |             ^
+krb5-1.19.2/src/kadmin/cli/kadmin.c:1193:1: note: type mismatch in parameter 3
+# 1193 | kadmin_addprinc(int argc, char *argv[])
+#      | ^
+krb5-1.19.2/src/kadmin/cli/kadmin.c:1193:1: note: type 'void' should match type 'int'
+krb5-1.19.2/src/kadmin/cli/kadmin.c:1193:1: note: 'kadmin_addprinc' was previously declared here
+#    8|       (char const *)0
+#    9|   };
+#   10|-> extern void kadmin_addprinc __SS_PROTO;
+#   11|   static char const * const ssu00002[] = {
+#   12|   "delete_principal",
+
+Error: COMPILER_WARNING (CWE-704):
+krb5-1.19.2/src/kadmin/cli/kadmin_ct.c:16:13: warning[-Wlto-type-mismatch]: type of 'kadmin_delprinc' does not match original declaration
+#   16 | extern void kadmin_delprinc __SS_PROTO;
+#      |             ^
+krb5-1.19.2/src/kadmin/cli/kadmin.c:666:1: note: type mismatch in parameter 3
+#  666 | kadmin_delprinc(int argc, char *argv[])
+#      | ^
+krb5-1.19.2/src/kadmin/cli/kadmin.c:666:1: note: type 'void' should match type 'int'
+krb5-1.19.2/src/kadmin/cli/kadmin.c:666:1: note: 'kadmin_delprinc' was previously declared here
+#   14|       (char const *)0
+#   15|   };
+#   16|-> extern void kadmin_delprinc __SS_PROTO;
+#   17|   static char const * const ssu00003[] = {
+#   18|   "modify_principal",
+
+Error: COMPILER_WARNING (CWE-704):
+krb5-1.19.2/src/kadmin/cli/kadmin_ct.c:22:13: warning[-Wlto-type-mismatch]: type of 'kadmin_modprinc' does not match original declaration
+#   22 | extern void kadmin_modprinc __SS_PROTO;
+#      |             ^
+krb5-1.19.2/src/kadmin/cli/kadmin.c:1316:1: note: type mismatch in parameter 3
+# 1316 | kadmin_modprinc(int argc, char *argv[])
+#      | ^
+krb5-1.19.2/src/kadmin/cli/kadmin.c:1316:1: note: type 'void' should match type 'int'
+krb5-1.19.2/src/kadmin/cli/kadmin.c:1316:1: note: 'kadmin_modprinc' was previously declared here
+#   20|       (char const *)0
+#   21|   };
+#   22|-> extern void kadmin_modprinc __SS_PROTO;
+#   23|   static char const * const ssu00004[] = {
+#   24|   "rename_principal",
+
+Error: COMPILER_WARNING (CWE-704):
+krb5-1.19.2/src/kadmin/cli/kadmin_ct.c:28:13: warning[-Wlto-type-mismatch]: type of 'kadmin_renameprinc' does not match original declaration
+#   28 | extern void kadmin_renameprinc __SS_PROTO;
+#      |             ^
+krb5-1.19.2/src/kadmin/cli/kadmin.c:714:1: note: type mismatch in parameter 3
+#  714 | kadmin_renameprinc(int argc, char *argv[])
+#      | ^
+krb5-1.19.2/src/kadmin/cli/kadmin.c:714:1: note: type 'void' should match type 'int'
+krb5-1.19.2/src/kadmin/cli/kadmin.c:714:1: note: 'kadmin_renameprinc' was previously declared here
+#   26|       (char const *)0
+#   27|   };
+#   28|-> extern void kadmin_renameprinc __SS_PROTO;
+#   29|   static char const * const ssu00005[] = {
+#   30|   "change_password",
+
+Error: COMPILER_WARNING (CWE-704):
+krb5-1.19.2/src/kadmin/cli/kadmin_ct.c:34:13: warning[-Wlto-type-mismatch]: type of 'kadmin_cpw' does not match original declaration
+#   34 | extern void kadmin_cpw __SS_PROTO;
+#      |             ^
+krb5-1.19.2/src/kadmin/cli/kadmin.c:787:1: note: type mismatch in parameter 3
+#  787 | kadmin_cpw(int argc, char *argv[])
+#      | ^
+krb5-1.19.2/src/kadmin/cli/kadmin.c:787:1: note: type 'void' should match type 'int'
+krb5-1.19.2/src/kadmin/cli/kadmin.c:787:1: note: 'kadmin_cpw' was previously declared here
+#   32|       (char const *)0
+#   33|   };
+#   34|-> extern void kadmin_cpw __SS_PROTO;
+#   35|   static char const * const ssu00006[] = {
+#   36|   "get_principal",
+
+Error: COMPILER_WARNING (CWE-704):
+krb5-1.19.2/src/kadmin/cli/kadmin_ct.c:40:13: warning[-Wlto-type-mismatch]: type of 'kadmin_getprinc' does not match original declaration
+#   40 | extern void kadmin_getprinc __SS_PROTO;
+#      |             ^
+krb5-1.19.2/src/kadmin/cli/kadmin.c:1389:1: note: type mismatch in parameter 3
+# 1389 | kadmin_getprinc(int argc, char *argv[])
+#      | ^
+krb5-1.19.2/src/kadmin/cli/kadmin.c:1389:1: note: type 'void' should match type 'int'
+krb5-1.19.2/src/kadmin/cli/kadmin.c:1389:1: note: 'kadmin_getprinc' was previously declared here
+#   38|       (char const *)0
+#   39|   };
+#   40|-> extern void kadmin_getprinc __SS_PROTO;
+#   41|   static char const * const ssu00007[] = {
+#   42|   "list_principals",
+
+Error: COMPILER_WARNING (CWE-704):
+krb5-1.19.2/src/kadmin/cli/kadmin_ct.c:48:13: warning[-Wlto-type-mismatch]: type of 'kadmin_getprincs' does not match original declaration
+#   48 | extern void kadmin_getprincs __SS_PROTO;
+#      |             ^
+krb5-1.19.2/src/kadmin/cli/kadmin.c:1525:1: note: type mismatch in parameter 3
+# 1525 | kadmin_getprincs(int argc, char *argv[])
+#      | ^
+krb5-1.19.2/src/kadmin/cli/kadmin.c:1525:1: note: type 'void' should match type 'int'
+krb5-1.19.2/src/kadmin/cli/kadmin.c:1525:1: note: 'kadmin_getprincs' was previously declared here
+#   46|       (char const *)0
+#   47|   };
+#   48|-> extern void kadmin_getprincs __SS_PROTO;
+#   49|   static char const * const ssu00008[] = {
+#   50|   "add_policy",
+
+Error: COMPILER_WARNING (CWE-704):
+krb5-1.19.2/src/kadmin/cli/kadmin_ct.c:54:13: warning[-Wlto-type-mismatch]: type of 'kadmin_addpol' does not match original declaration
+#   54 | extern void kadmin_addpol __SS_PROTO;
+#      |             ^
+krb5-1.19.2/src/kadmin/cli/kadmin.c:1662:1: note: type mismatch in parameter 3
+# 1662 | kadmin_addpol(int argc, char *argv[])
+#      | ^
+krb5-1.19.2/src/kadmin/cli/kadmin.c:1662:1: note: type 'void' should match type 'int'
+krb5-1.19.2/src/kadmin/cli/kadmin.c:1662:1: note: 'kadmin_addpol' was previously declared here
+#   52|       (char const *)0
+#   53|   };
+#   54|-> extern void kadmin_addpol __SS_PROTO;
+#   55|   static char const * const ssu00009[] = {
+#   56|   "modify_policy",
+
+Error: COMPILER_WARNING (CWE-704):
+krb5-1.19.2/src/kadmin/cli/kadmin_ct.c:60:13: warning[-Wlto-type-mismatch]: type of 'kadmin_modpol' does not match original declaration
+#   60 | extern void kadmin_modpol __SS_PROTO;
+#      |             ^
+krb5-1.19.2/src/kadmin/cli/kadmin.c:1683:1: note: type mismatch in parameter 3
+# 1683 | kadmin_modpol(int argc, char *argv[])
+#      | ^
+krb5-1.19.2/src/kadmin/cli/kadmin.c:1683:1: note: type 'void' should match type 'int'
+krb5-1.19.2/src/kadmin/cli/kadmin.c:1683:1: note: 'kadmin_modpol' was previously declared here
+#   58|       (char const *)0
+#   59|   };
+#   60|-> extern void kadmin_modpol __SS_PROTO;
+#   61|   static char const * const ssu00010[] = {
+#   62|   "delete_policy",
+
+Error: COMPILER_WARNING (CWE-704):
+krb5-1.19.2/src/kadmin/cli/kadmin_ct.c:66:13: warning[-Wlto-type-mismatch]: type of 'kadmin_delpol' does not match original declaration
+#   66 | extern void kadmin_delpol __SS_PROTO;
+#      |             ^
+krb5-1.19.2/src/kadmin/cli/kadmin.c:1704:1: note: type mismatch in parameter 3
+# 1704 | kadmin_delpol(int argc, char *argv[])
+#      | ^
+krb5-1.19.2/src/kadmin/cli/kadmin.c:1704:1: note: type 'void' should match type 'int'
+krb5-1.19.2/src/kadmin/cli/kadmin.c:1704:1: note: 'kadmin_delpol' was previously declared here
+#   64|       (char const *)0
+#   65|   };
+#   66|-> extern void kadmin_delpol __SS_PROTO;
+#   67|   static char const * const ssu00011[] = {
+#   68|   "get_policy",
+
+Error: COMPILER_WARNING (CWE-704):
+krb5-1.19.2/src/kadmin/cli/kadmin_ct.c:72:13: warning[-Wlto-type-mismatch]: type of 'kadmin_getpol' does not match original declaration
+#   72 | extern void kadmin_getpol __SS_PROTO;
+#      |             ^
+krb5-1.19.2/src/kadmin/cli/kadmin.c:1730:1: note: type mismatch in parameter 3
+# 1730 | kadmin_getpol(int argc, char *argv[])
+#      | ^
+krb5-1.19.2/src/kadmin/cli/kadmin.c:1730:1: note: type 'void' should match type 'int'
+krb5-1.19.2/src/kadmin/cli/kadmin.c:1730:1: note: 'kadmin_getpol' was previously declared here
+#   70|       (char const *)0
+#   71|   };
+#   72|-> extern void kadmin_getpol __SS_PROTO;
+#   73|   static char const * const ssu00012[] = {
+#   74|   "list_policies",
+
+Error: COMPILER_WARNING (CWE-704):
+krb5-1.19.2/src/kadmin/cli/kadmin_ct.c:80:13: warning[-Wlto-type-mismatch]: type of 'kadmin_getpols' does not match original declaration
+#   80 | extern void kadmin_getpols __SS_PROTO;
+#      |             ^
+krb5-1.19.2/src/kadmin/cli/kadmin.c:1776:1: note: type mismatch in parameter 3
+# 1776 | kadmin_getpols(int argc, char *argv[])
+#      | ^
+krb5-1.19.2/src/kadmin/cli/kadmin.c:1776:1: note: type 'void' should match type 'int'
+krb5-1.19.2/src/kadmin/cli/kadmin.c:1776:1: note: 'kadmin_getpols' was previously declared here
+#   78|       (char const *)0
+#   79|   };
+#   80|-> extern void kadmin_getpols __SS_PROTO;
+#   81|   static char const * const ssu00013[] = {
+#   82|   "get_privs",
+
+Error: COMPILER_WARNING (CWE-704):
+krb5-1.19.2/src/kadmin/cli/kadmin_ct.c:86:13: warning[-Wlto-type-mismatch]: type of 'kadmin_getprivs' does not match original declaration
+#   86 | extern void kadmin_getprivs __SS_PROTO;
+#      |             ^
+krb5-1.19.2/src/kadmin/cli/kadmin.c:1798:1: note: type mismatch in parameter 3
+# 1798 | kadmin_getprivs(int argc, char *argv[])
+#      | ^
+krb5-1.19.2/src/kadmin/cli/kadmin.c:1798:1: note: type 'void' should match type 'int'
+krb5-1.19.2/src/kadmin/cli/kadmin.c:1798:1: note: 'kadmin_getprivs' was previously declared here
+#   84|       (char const *)0
+#   85|   };
+#   86|-> extern void kadmin_getprivs __SS_PROTO;
+#   87|   static char const * const ssu00014[] = {
+#   88|   "ktadd",
+
+Error: COMPILER_WARNING (CWE-704):
+krb5-1.19.2/src/kadmin/cli/kadmin_ct.c:92:13: warning[-Wlto-type-mismatch]: type of 'kadmin_keytab_add' does not match original declaration
+#   92 | extern void kadmin_keytab_add __SS_PROTO;
+#      |             ^
+krb5-1.19.2/src/kadmin/cli/keytab.c:114:1: note: type mismatch in parameter 3
+#  114 | kadmin_keytab_add(int argc, char **argv)
+#      | ^
+krb5-1.19.2/src/kadmin/cli/keytab.c:114:1: note: type 'void' should match type 'int'
+krb5-1.19.2/src/kadmin/cli/keytab.c:114:1: note: 'kadmin_keytab_add' was previously declared here
+#   90|       (char const *)0
+#   91|   };
+#   92|-> extern void kadmin_keytab_add __SS_PROTO;
+#   93|   static char const * const ssu00015[] = {
+#   94|   "ktremove",
+
+Error: COMPILER_WARNING (CWE-704):
+krb5-1.19.2/src/kadmin/cli/kadmin_ct.c:98:13: warning[-Wlto-type-mismatch]: type of 'kadmin_keytab_remove' does not match original declaration
+#   98 | extern void kadmin_keytab_remove __SS_PROTO;
+#      |             ^
+krb5-1.19.2/src/kadmin/cli/keytab.c:206:1: note: type mismatch in parameter 3
+#  206 | kadmin_keytab_remove(int argc, char **argv)
+#      | ^
+krb5-1.19.2/src/kadmin/cli/keytab.c:206:1: note: type 'void' should match type 'int'
+krb5-1.19.2/src/kadmin/cli/keytab.c:206:1: note: 'kadmin_keytab_remove' was previously declared here
+#   96|       (char const *)0
+#   97|   };
+#   98|-> extern void kadmin_keytab_remove __SS_PROTO;
+#   99|   static char const * const ssu00016[] = {
+#  100|   "lock",
+
+Error: COMPILER_WARNING (CWE-704):
+krb5-1.19.2/src/kadmin/cli/kadmin_ct.c:103:13: warning[-Wlto-type-mismatch]: type of 'kadmin_lock' does not match original declaration
+#  103 | extern void kadmin_lock __SS_PROTO;
+#      |             ^
+krb5-1.19.2/src/kadmin/cli/kadmin.c:636:1: note: type mismatch in parameter 3
+#  636 | kadmin_lock(int argc, char *argv[])
+#      | ^
+krb5-1.19.2/src/kadmin/cli/kadmin.c:636:1: note: type 'void' should match type 'int'
+krb5-1.19.2/src/kadmin/cli/kadmin.c:636:1: note: 'kadmin_lock' was previously declared here
+#  101|       (char const *)0
+#  102|   };
+#  103|-> extern void kadmin_lock __SS_PROTO;
+#  104|   static char const * const ssu00017[] = {
+#  105|   "unlock",
+
+Error: COMPILER_WARNING (CWE-704):
+krb5-1.19.2/src/kadmin/cli/kadmin_ct.c:108:13: warning[-Wlto-type-mismatch]: type of 'kadmin_unlock' does not match original declaration
+#  108 | extern void kadmin_unlock __SS_PROTO;
+#      |             ^
+krb5-1.19.2/src/kadmin/cli/kadmin.c:651:1: note: type mismatch in parameter 3
+#  651 | kadmin_unlock(int argc, char *argv[])
+#      | ^
+krb5-1.19.2/src/kadmin/cli/kadmin.c:651:1: note: type 'void' should match type 'int'
+krb5-1.19.2/src/kadmin/cli/kadmin.c:651:1: note: 'kadmin_unlock' was previously declared here
+#  106|       (char const *)0
+#  107|   };
+#  108|-> extern void kadmin_unlock __SS_PROTO;
+#  109|   static char const * const ssu00018[] = {
+#  110|   "purgekeys",
+
+Error: COMPILER_WARNING (CWE-704):
+krb5-1.19.2/src/kadmin/cli/kadmin_ct.c:113:13: warning[-Wlto-type-mismatch]: type of 'kadmin_purgekeys' does not match original declaration
+#  113 | extern void kadmin_purgekeys __SS_PROTO;
+#      |             ^
+krb5-1.19.2/src/kadmin/cli/kadmin.c:1823:1: note: type mismatch in parameter 3
+# 1823 | kadmin_purgekeys(int argc, char *argv[])
+#      | ^
+krb5-1.19.2/src/kadmin/cli/kadmin.c:1823:1: note: type 'void' should match type 'int'
+krb5-1.19.2/src/kadmin/cli/kadmin.c:1823:1: note: 'kadmin_purgekeys' was previously declared here
+#  111|       (char const *)0
+#  112|   };
+#  113|-> extern void kadmin_purgekeys __SS_PROTO;
+#  114|   static char const * const ssu00019[] = {
+#  115|   "get_strings",
+
+Error: COMPILER_WARNING (CWE-704):
+krb5-1.19.2/src/kadmin/cli/kadmin_ct.c:119:13: warning[-Wlto-type-mismatch]: type of 'kadmin_getstrings' does not match original declaration
+#  119 | extern void kadmin_getstrings __SS_PROTO;
+#      |             ^
+krb5-1.19.2/src/kadmin/cli/kadmin.c:1875:1: note: type mismatch in parameter 3
+# 1875 | kadmin_getstrings(int argc, char *argv[])
+#      | ^
+krb5-1.19.2/src/kadmin/cli/kadmin.c:1875:1: note: type 'void' should match type 'int'
+krb5-1.19.2/src/kadmin/cli/kadmin.c:1875:1: note: 'kadmin_getstrings' was previously declared here
+#  117|       (char const *)0
+#  118|   };
+#  119|-> extern void kadmin_getstrings __SS_PROTO;
+#  120|   static char const * const ssu00020[] = {
+#  121|   "set_string",
+
+Error: COMPILER_WARNING (CWE-704):
+krb5-1.19.2/src/kadmin/cli/kadmin_ct.c:125:13: warning[-Wlto-type-mismatch]: type of 'kadmin_setstring' does not match original declaration
+#  125 | extern void kadmin_setstring __SS_PROTO;
+#      |             ^
+krb5-1.19.2/src/kadmin/cli/kadmin.c:1921:1: note: type mismatch in parameter 3
+# 1921 | kadmin_setstring(int argc, char *argv[])
+#      | ^
+krb5-1.19.2/src/kadmin/cli/kadmin.c:1921:1: note: type 'void' should match type 'int'
+krb5-1.19.2/src/kadmin/cli/kadmin.c:1921:1: note: 'kadmin_setstring' was previously declared here
+#  123|       (char const *)0
+#  124|   };
+#  125|-> extern void kadmin_setstring __SS_PROTO;
+#  126|   static char const * const ssu00021[] = {
+#  127|   "del_string",
+
+Error: COMPILER_WARNING (CWE-704):
+krb5-1.19.2/src/kadmin/cli/kadmin_ct.c:131:13: warning[-Wlto-type-mismatch]: type of 'kadmin_delstring' does not match original declaration
+#  131 | extern void kadmin_delstring __SS_PROTO;
+#      |             ^
+krb5-1.19.2/src/kadmin/cli/kadmin.c:1962:1: note: type mismatch in parameter 3
+# 1962 | kadmin_delstring(int argc, char *argv[])
+#      | ^
+krb5-1.19.2/src/kadmin/cli/kadmin.c:1962:1: note: type 'void' should match type 'int'
+krb5-1.19.2/src/kadmin/cli/kadmin.c:1962:1: note: 'kadmin_delstring' was previously declared here
+#  129|       (char const *)0
+#  130|   };
+#  131|-> extern void kadmin_delstring __SS_PROTO;
+#  132|   static char const * const ssu00022[] = {
+#  133|   "list_requests",
+
+Error: COMPILER_WARNING (CWE-252):
+krb5-1.19.2/src/kadmin/dbutil/dump.c: scope_hint: In function 'update_ok_file'
+krb5-1.19.2/src/kadmin/dbutil/dump.c:239:5: warning[-Wunused-result]: ignoring return value of 'write' declared with attribute 'warn_unused_result'
+#  239 |     write(fd, "", 1);
+#      |     ^~~~~~~~~~~~~~~~
+#  237|   update_ok_file(krb5_context context, int fd)
+#  238|   {
+#  239|->     write(fd, "", 1);
+#  240|       krb5_lock_file(context, fd, KRB5_LOCKMODE_UNLOCK);
+#  241|       close(fd);
+
+Error: COMPILER_WARNING:
+krb5-1.19.2/src/kadmin/dbutil/kdb5_util.c: scope_hint: In function 'extended_com_err_fn'
+krb5-1.19.2/src/kadmin/dbutil/kdb5_util.c:176:5: warning[-Wsuggest-attribute=format]: function 'extended_com_err_fn' might be a candidate for 'gnu_printf' format attribute
+#  176 |     vfprintf (stderr, fmt, args);
+#      |     ^~~~~~~~
+#  174|           fprintf (stderr, "%s: ", myprog);
+#  175|       }
+#  176|->     vfprintf (stderr, fmt, args);
+#  177|       fprintf (stderr, "\n");
+#  178|   }
+
+Error: COMPILER_WARNING:
+krb5-1.19.2/src/kadmin/dbutil/tdumputil.c: scope_hint: In function 'writequoted'
+krb5-1.19.2/src/kadmin/dbutil/tdumputil.c:109:5: warning[-Wsuggest-attribute=format]: function 'writequoted' might be a candidate for 'gnu_printf' format attribute
+#  109 |     ret = vasprintf(&s, fmt, ap);
+#      |     ^~~
+#  107|   
+#  108|       assert(fl.quotechar != '\0');
+#  109|->     ret = vasprintf(&s, fmt, ap);
+#  110|       if (ret < 0)
+#  111|           return ret;
+
+Error: COMPILER_WARNING (CWE-704):
+krb5-1.19.2/src/kadmin/ktutil/ktutil_ct.c:9:13: warning[-Wlto-type-mismatch]: type of 'ktutil_clear_list' does not match original declaration
+#    9 | extern void ktutil_clear_list __SS_PROTO;
+#      |             ^
+krb5-1.19.2/src/kadmin/ktutil/ktutil.c:66:6: note: type mismatch in parameter 3
+#   66 | void ktutil_clear_list(argc, argv)
+#      |      ^
+krb5-1.19.2/src/kadmin/ktutil/ktutil.c:66:6: note: type 'void' should match type 'int'
+krb5-1.19.2/src/kadmin/ktutil/ktutil.c:66:6: note: 'ktutil_clear_list' was previously declared here
+#    7|       (char const *)0
+#    8|   };
+#    9|-> extern void ktutil_clear_list __SS_PROTO;
+#   10|   static char const * const ssu00002[] = {
+#   11|   "read_kt",
+
+Error: COMPILER_WARNING (CWE-704):
+krb5-1.19.2/src/kadmin/ktutil/ktutil_ct.c:15:13: warning[-Wlto-type-mismatch]: type of 'ktutil_read_v5' does not match original declaration
+#   15 | extern void ktutil_read_v5 __SS_PROTO;
+#      |             ^
+krb5-1.19.2/src/kadmin/ktutil/ktutil.c:82:6: note: type mismatch in parameter 3
+#   82 | void ktutil_read_v5(argc, argv)
+#      |      ^
+krb5-1.19.2/src/kadmin/ktutil/ktutil.c:82:6: note: type 'void' should match type 'int'
+krb5-1.19.2/src/kadmin/ktutil/ktutil.c:82:6: note: 'ktutil_read_v5' was previously declared here
+#   13|       (char const *)0
+#   14|   };
+#   15|-> extern void ktutil_read_v5 __SS_PROTO;
+#   16|   static char const * const ssu00003[] = {
+#   17|   "read_st",
+
+Error: COMPILER_WARNING (CWE-704):
+krb5-1.19.2/src/kadmin/ktutil/ktutil_ct.c:21:13: warning[-Wlto-type-mismatch]: type of 'ktutil_read_v4' does not match original declaration
+#   21 | extern void ktutil_read_v4 __SS_PROTO;
+#      |             ^
+krb5-1.19.2/src/kadmin/ktutil/ktutil.c:97:6: note: type mismatch in parameter 3
+#   97 | void ktutil_read_v4(argc, argv)
+#      |      ^
+krb5-1.19.2/src/kadmin/ktutil/ktutil.c:97:6: note: type 'void' should match type 'int'
+krb5-1.19.2/src/kadmin/ktutil/ktutil.c:97:6: note: 'ktutil_read_v4' was previously declared here
+#   19|       (char const *)0
+#   20|   };
+#   21|-> extern void ktutil_read_v4 __SS_PROTO;
+#   22|   static char const * const ssu00004[] = {
+#   23|   "write_kt",
+
+Error: COMPILER_WARNING (CWE-704):
+krb5-1.19.2/src/kadmin/ktutil/ktutil_ct.c:27:13: warning[-Wlto-type-mismatch]: type of 'ktutil_write_v5' does not match original declaration
+#   27 | extern void ktutil_write_v5 __SS_PROTO;
+#      |             ^
+krb5-1.19.2/src/kadmin/ktutil/ktutil.c:105:6: note: type mismatch in parameter 3
+#  105 | void ktutil_write_v5(argc, argv)
+#      |      ^
+krb5-1.19.2/src/kadmin/ktutil/ktutil.c:105:6: note: type 'void' should match type 'int'
+krb5-1.19.2/src/kadmin/ktutil/ktutil.c:105:6: note: 'ktutil_write_v5' was previously declared here
+#   25|       (char const *)0
+#   26|   };
+#   27|-> extern void ktutil_write_v5 __SS_PROTO;
+#   28|   static char const * const ssu00005[] = {
+#   29|   "write_st",
+
+Error: COMPILER_WARNING (CWE-704):
+krb5-1.19.2/src/kadmin/ktutil/ktutil_ct.c:33:13: warning[-Wlto-type-mismatch]: type of 'ktutil_write_v4' does not match original declaration
+#   33 | extern void ktutil_write_v4 __SS_PROTO;
+#      |             ^
+krb5-1.19.2/src/kadmin/ktutil/ktutil.c:120:6: note: type mismatch in parameter 3
+#  120 | void ktutil_write_v4(argc, argv)
+#      |      ^
+krb5-1.19.2/src/kadmin/ktutil/ktutil.c:120:6: note: type 'void' should match type 'int'
+krb5-1.19.2/src/kadmin/ktutil/ktutil.c:120:6: note: 'ktutil_write_v4' was previously declared here
+#   31|       (char const *)0
+#   32|   };
+#   33|-> extern void ktutil_write_v4 __SS_PROTO;
+#   34|   static char const * const ssu00006[] = {
+#   35|   "add_entry",
+
+Error: COMPILER_WARNING (CWE-704):
+krb5-1.19.2/src/kadmin/ktutil/ktutil_ct.c:39:13: warning[-Wlto-type-mismatch]: type of 'ktutil_add_entry' does not match original declaration
+#   39 | extern void ktutil_add_entry __SS_PROTO;
+#      |             ^
+krb5-1.19.2/src/kadmin/ktutil/ktutil.c:128:6: note: type mismatch in parameter 3
+#  128 | void ktutil_add_entry(argc, argv)
+#      |      ^
+krb5-1.19.2/src/kadmin/ktutil/ktutil.c:128:6: note: type 'void' should match type 'int'
+krb5-1.19.2/src/kadmin/ktutil/ktutil.c:128:6: note: 'ktutil_add_entry' was previously declared here
+#   37|       (char const *)0
+#   38|   };
+#   39|-> extern void ktutil_add_entry __SS_PROTO;
+#   40|   static char const * const ssu00007[] = {
+#   41|   "delete_entry",
+
+Error: COMPILER_WARNING (CWE-704):
+krb5-1.19.2/src/kadmin/ktutil/ktutil_ct.c:45:13: warning[-Wlto-type-mismatch]: type of 'ktutil_delete_entry' does not match original declaration
+#   45 | extern void ktutil_delete_entry __SS_PROTO;
+#      |             ^
+krb5-1.19.2/src/kadmin/ktutil/ktutil.c:186:6: note: type mismatch in parameter 3
+#  186 | void ktutil_delete_entry(argc, argv)
+#      |      ^
+krb5-1.19.2/src/kadmin/ktutil/ktutil.c:186:6: note: type 'void' should match type 'int'
+krb5-1.19.2/src/kadmin/ktutil/ktutil.c:186:6: note: 'ktutil_delete_entry' was previously declared here
+#   43|       (char const *)0
+#   44|   };
+#   45|-> extern void ktutil_delete_entry __SS_PROTO;
+#   46|   static char const * const ssu00008[] = {
+#   47|   "list",
+
+Error: COMPILER_WARNING (CWE-704):
+krb5-1.19.2/src/kadmin/ktutil/ktutil_ct.c:51:13: warning[-Wlto-type-mismatch]: type of 'ktutil_list' does not match original declaration
+#   51 | extern void ktutil_list __SS_PROTO;
+#      |             ^
+krb5-1.19.2/src/kadmin/ktutil/ktutil.c:201:6: note: type mismatch in parameter 3
+#  201 | void ktutil_list(argc, argv)
+#      |      ^
+krb5-1.19.2/src/kadmin/ktutil/ktutil.c:201:6: note: type 'void' should match type 'int'
+krb5-1.19.2/src/kadmin/ktutil/ktutil.c:201:6: note: 'ktutil_list' was previously declared here
+#   49|       (char const *)0
+#   50|   };
+#   51|-> extern void ktutil_list __SS_PROTO;
+#   52|   static char const * const ssu00009[] = {
+#   53|   "list_requests",
+
+Error: COMPILER_WARNING (CWE-252):
+krb5-1.19.2/src/kadmin/ktutil/ktutil_funcs.c: scope_hint: In function 'ktutil_add'
+krb5-1.19.2/src/kadmin/ktutil/ktutil_funcs.c:215:9: warning[-Wunused-result]: ignoring return value of 'fgets' declared with attribute 'warn_unused_result'
+#  215 |         fgets(buf, BUFSIZ, stdin);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~
+#  213|       } else {
+#  214|           printf(_("Key for %s (hex): "), princ_full);
+#  215|->         fgets(buf, BUFSIZ, stdin);
+#  216|           /*
+#  217|            * We need to get rid of the trailing '\n' from fgets.
+
+Error: COMPILER_WARNING:
+krb5-1.19.2/src/kadmin/testing/util/tcl_kadm5.c: scope_hint: In function '_tcl_kadm5_init_any.part.0'
+krb5-1.19.2/src/kadmin/testing/util/tcl_kadm5.c:129:35: warning[-Wformat-overflow=]: '%d' directive writing between 1 and 10 bytes into a region of size 8
+#  129 |         sprintf(buf, "kadm5_handle%d", i);
+#      |                                   ^~
+krb5-1.19.2/src/kadmin/testing/util/tcl_kadm5.c:129:22: note: directive argument in the range [1, 2147483647]
+#  129 |         sprintf(buf, "kadm5_handle%d", i);
+#      |                      ^~~~~~~~~~~~~~~~
+/usr/include/stdio.h:888: included_from: Included from here.
+krb5-1.19.2/src/kadmin/testing/util/tcl_kadm5.c:3: included_from: Included from here.
+/usr/include/bits/stdio2.h:38:10: note: '__sprintf_chk' output between 14 and 23 bytes into a destination of size 20
+#   38 |   return __builtin___sprintf_chk (__s, __USE_FORTIFY_LEVEL - 1,
+#      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   39 |                                   __glibc_objsize (__s), __fmt,
+#      |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   40 |                                   __va_arg_pack ());
+#      |                                   ~~~~~~~~~~~~~~~~~
+#  127|   
+#  128|       do {
+#  129|->         sprintf(buf, "kadm5_handle%d", i);
+#  130|           entry = Tcl_CreateHashEntry(struct_table, buf, &newPtr);
+#  131|           i++;
+
+Error: COMPILER_WARNING (CWE-252):
+krb5-1.19.2/src/kprop/kprop.c: scope_hint: In function 'update_last_prop_file'
+krb5-1.19.2/src/kprop/kprop.c:594:5: warning[-Wunused-result]: ignoring return value of 'write' declared with attribute 'warn_unused_result'
+#  594 |     write(fd, "", 1);
+#      |     ^~~~~~~~~~~~~~~~
+#  592|           return;
+#  593|       }
+#  594|->     write(fd, "", 1);
+#  595|       free(file_last_prop);
+#  596|       close(fd);
+
+Error: COMPILER_WARNING (CWE-252):
+krb5-1.19.2/src/kprop/kpropd.c: scope_hint: In function 'alarm_handler'
+krb5-1.19.2/src/kprop/kpropd.c:215:5: warning[-Wunused-result]: ignoring return value of 'write' declared with attribute 'warn_unused_result'
+#  215 |     write(STDERR_FILENO, timeout_msg, strlen(timeout_msg));
+#      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  213|       static char *timeout_msg = "Full propagation timed out\n";
+#  214|   
+#  215|->     write(STDERR_FILENO, timeout_msg, strlen(timeout_msg));
+#  216|       exit(1);
+#  217|   }
+
+Error: COMPILER_WARNING (CWE-252):
+krb5-1.19.2/src/kprop/kpropd.c: scope_hint: In function 'main'
+krb5-1.19.2/src/kprop/kpropd.c:275:13: warning[-Wunused-result]: ignoring return value of 'daemon' declared with attribute 'warn_unused_result'
+#  275 |             daemon(0, 0);
+#      |             ^~~~~~~~~~~~
+#  273|           /* "ready" is a sentinel for the test framework. */
+#  274|           if (!debug && !nodaemon) {
+#  275|->             daemon(0, 0);
+#  276|           } else {
+#  277|               printf(_("ready\n"));
+
+Error: COMPILER_WARNING:
+krb5-1.19.2/src/kprop/kpropd.c: scope_hint: In function 'parse_args'
+krb5-1.19.2/src/kprop/kpropd.c:1140:26: warning[-Wsuggest-attribute=format]: argument 1 of 'set_com_err_hook' might be a candidate for a format attribute
+# 1140 |         set_com_err_hook(kpropd_com_err_proc);
+#      |                          ^~~~~~~~~~~~~~~~~~~
+# 1138|       openlog("kpropd", LOG_PID | LOG_ODELAY, SYSLOG_CLASS);
+# 1139|       if (!debug)
+# 1140|->         set_com_err_hook(kpropd_com_err_proc);
+# 1141|   
+# 1142|       if (realm == NULL) {
+
+Error: COMPILER_WARNING (CWE-563):
+krb5-1.19.2/src/lib/apputils/net-server.c: scope_hint: In function 'loop_add_address'
+krb5-1.19.2/src/lib/apputils/net-server.c:193:39: warning[-Wunused-value]: right-hand operand of comma expression has no effect
+#  193 |     (set.data[idx] = set.data[--set.n], 0)
+#      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+krb5-1.19.2/src/lib/apputils/net-server.c:328:13: note: in expansion of macro 'DEL'
+#  328 |             DEL(bind_addresses, i);
+#      |             ^~~
+#  191|   
+#  192|   #define DEL(set, idx)                           \
+#  193|->     (set.data[idx] = set.data[--set.n], 0)
+#  194|   
+#  195|   #define FREE_SET_DATA(set)                                      \
+
+Error: COMPILER_WARNING (CWE-252):
+krb5-1.19.2/src/lib/crypto/crypto_tests/t_prng.c: scope_hint: In function 'main'
+krb5-1.19.2/src/lib/crypto/crypto_tests/t_prng.c:62:17: warning[-Wunused-result]: ignoring return value of 'scanf' declared with attribute 'warn_unused_result'
+#   62 |                 scanf ("%2x",  &i);
+#      |                 ^~~~~~~~~~~~~~~~~~
+#   60|               assert(!ret);
+#   61|               for (lc = seed_length; lc > 0; lc--) {
+#   62|->                 scanf ("%2x",  &i);
+#   63|                   input.data[seed_length-lc] = (unsigned) (i&0xff);
+#   64|               }
+
+Error: COMPILER_WARNING:
+krb5-1.19.2/src/lib/kadm5/logger.c: scope_hint: In function 'krb5_klog_init'
+krb5-1.19.2/src/lib/kadm5/logger.c:518:37: warning[-Wsuggest-attribute=format]: argument 1 of 'set_com_err_hook' might be a candidate for a format attribute
+#  518 |             (void) set_com_err_hook(klog_com_err_proc);
+#      |                                     ^~~~~~~~~~~~~~~~~
+#  516|           }
+#  517|           if (do_com_err)
+#  518|->             (void) set_com_err_hook(klog_com_err_proc);
+#  519|       }
+#  520|       return((log_control.log_nentries) ? 0 : ENOENT);
+
+Error: COMPILER_WARNING:
+krb5-1.19.2/src/lib/kadm5/srv/svr_principal.c: scope_hint: In function 'apply_keysalt_policy'
+krb5-1.19.2/src/lib/kadm5/srv/svr_principal.c:212:14: warning[-Walloc-size-larger-than=]: argument 1 range [18446744071562067968, 18446744073709551615] exceeds maximum object size 9223372036854775807
+#  212 |     subset = calloc(n_ks_tuple, sizeof(*subset));
+#      |              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+krb5-1.19.2/src/include/k5-platform.h:61: included_from: Included from here.
+krb5-1.19.2/src/include/k5-int.h:130: included_from: Included from here.
+krb5-1.19.2/src/lib/kadm5/srv/svr_principal.c:7: included_from: Included from here.
+/usr/include/stdlib.h:542:14: note: in a call to allocation function 'calloc' declared here
+#  542 | extern void *calloc (size_t __nmemb, size_t __size)
+#      |              ^~~~~~
+#  210|        * then skip this), but we don't bother.
+#  211|        */
+#  212|->     subset = calloc(n_ks_tuple, sizeof(*subset));
+#  213|       if (subset == NULL) {
+#  214|           ret = ENOMEM;
+
+Error: COMPILER_WARNING:
+krb5-1.19.2/src/lib/krb5/asn.1/asn1_encode.c:42:19: warning[-Wstringop-overflow=]: writing 1 byte into a region of size 0
+#   42 |         *buf->ptr = o;
+#      |         ~~~~~~~~~~^~~
+#   40|       if (buf->ptr != NULL) {
+#   41|           buf->ptr--;
+#   42|->         *buf->ptr = o;
+#   43|       }
+#   44|       buf->count++;
+
+Error: VALGRIND_WARNING:
+./uuserver: note: while executing process 26121 with arguments: 9999
+krb5-1.19.2/src/lib/krb5/ccache/../../../include/k5-int.h:2306: warning[Leak_DefinitelyLost]: 73 (40 direct, 33 indirect) bytes in 1 blocks are definitely lost in loss record 26 of 40
+krb5-1.19.2/src/lib/krb5/ccache/../../../include/k5-int.h:2306: note: called from UnknownInlinedFun()
+krb5-1.19.2/src/lib/krb5/ccache/../../../include/k5-int.h:2315: note: called from UnknownInlinedFun()
+krb5-1.19.2/src/lib/krb5/ccache/ccmarshal.c:163: note: called from unmarshal_princ()
+krb5-1.19.2/src/lib/krb5/ccache/ccmarshal.c:324: note: called from k5_unmarshal_princ()
+krb5-1.19.2/src/lib/krb5/ccache/cc_file.c:319: note: called from read_principal.isra.0()
+krb5-1.19.2/src/lib/krb5/ccache/cc_file.c:956: note: called from fcc_get_principal.lto_priv.0()
+krb5-1.19.2/src/appl/user_user/server.c:135: note: called from main()
+# 2304|   
+# 2305|       /* Allocate at least one byte since zero-byte allocs may return NULL. */
+# 2306|->     ptr = calloc(nmemb ? nmemb : 1, size ? size : 1);
+# 2307|       *code = (ptr == NULL) ? ENOMEM : 0;
+# 2308|       return ptr;
+
+Error: VALGRIND_WARNING:
+./uuserver: note: while executing process 26121 with arguments: 9999
+krb5-1.19.2/src/lib/krb5/ccache/cc_file.c:676: warning[Leak_DefinitelyLost]: 156 (24 direct, 132 indirect) bytes in 1 blocks are definitely lost in loss record 32 of 40
+krb5-1.19.2/src/lib/krb5/ccache/cc_file.c:676: note: called from fcc_resolve.lto_priv.0()
+krb5-1.19.2/src/appl/user_user/server.c:128: note: called from main()
+#  674|       }
+#  675|   
+#  676|->     lid = malloc(sizeof(struct _krb5_ccache));
+#  677|       if (lid == NULL) {
+#  678|           free_fccdata(context, data);
+
+Error: COMPILER_WARNING (CWE-569):
+krb5-1.19.2/src/lib/krb5/ccache/t_cc.c: scope_hint: In function 'cc_test'
+krb5-1.19.2/src/lib/krb5/ccache/t_cc.c:429:35: warning[-Wparentheses]: suggest parentheses around comparison in operand of '!='
+#  429 |         CHECK(creds.times.endtime == 0, "no-lifetime cred");
+#      |               ~~~~~~~~~~~~~~~~~~~~^~~~
+krb5-1.19.2/src/lib/krb5/ccache/t_cc.c:186:9: note: in definition of macro 'CHECK'
+#  186 |     if (kret != KRB5_OK) {                              \
+#      |         ^~~~
+#  427|           CHECK(kret, "next_cred for remove-iter: %s");
+#  428|   
+#  429|->         CHECK(creds.times.endtime == 0, "no-lifetime cred");
+#  430|   
+#  431|           krb5_free_cred_contents(context, &creds);
+
+Error: VALGRIND_WARNING:
+./krb5_decode_test: note: while executing process 26874
+krb5-1.19.2/src/lib/krb5/krb/../../../include/k5-int.h:2306: warning[Leak_DefinitelyLost]: 100 (40 direct, 60 indirect) bytes in 1 blocks are definitely lost in loss record 10 of 13
+krb5-1.19.2/src/lib/krb5/krb/../../../include/k5-int.h:2306: note: called from UnknownInlinedFun()
+krb5-1.19.2/src/lib/krb5/krb/../../../include/k5-int.h:2315: note: called from UnknownInlinedFun()
+krb5-1.19.2/src/lib/krb5/krb/parse.c:50: note: called from UnknownInlinedFun()
+krb5-1.19.2/src/lib/krb5/krb/parse.c:190: note: called from krb5_parse_name_flags()
+krb5-1.19.2/src/tests/asn.1/ktest.c:50: note: called from ktest_make_sample_principal()
+krb5-1.19.2/src/tests/asn.1/krb5_decode_test.c:1218: note: called from main()
+# 2304|   
+# 2305|       /* Allocate at least one byte since zero-byte allocs may return NULL. */
+# 2306|->     ptr = calloc(nmemb ? nmemb : 1, size ? size : 1);
+# 2307|       *code = (ptr == NULL) ? ENOMEM : 0;
+# 2308|       return ptr;
+
+Error: VALGRIND_WARNING:
+./uuserver: note: while executing process 26121 with arguments: 9999
+krb5-1.19.2/src/lib/krb5/krb/../../../include/k5-int.h:2306: warning[Leak_DefinitelyLost]: 73 (40 direct, 33 indirect) bytes in 1 blocks are definitely lost in loss record 27 of 40
+krb5-1.19.2/src/lib/krb5/krb/../../../include/k5-int.h:2306: note: called from UnknownInlinedFun()
+krb5-1.19.2/src/lib/krb5/krb/../../../include/k5-int.h:2315: note: called from UnknownInlinedFun()
+krb5-1.19.2/src/lib/krb5/krb/parse.c:50: note: called from UnknownInlinedFun()
+krb5-1.19.2/src/lib/krb5/krb/parse.c:190: note: called from krb5_parse_name_flags()
+krb5-1.19.2/src/appl/user_user/server.c:144: note: called from main()
+# 2304|   
+# 2305|       /* Allocate at least one byte since zero-byte allocs may return NULL. */
+# 2306|->     ptr = calloc(nmemb ? nmemb : 1, size ? size : 1);
+# 2307|       *code = (ptr == NULL) ? ENOMEM : 0;
+# 2308|       return ptr;
+
+Error: VALGRIND_WARNING:
+./uuserver: note: while executing process 26121 with arguments: 9999
+krb5-1.19.2/src/lib/krb5/krb/init_ctx.c:207: warning[Leak_DefinitelyLost]: 779 (464 direct, 315 indirect) bytes in 1 blocks are definitely lost in loss record 37 of 40
+krb5-1.19.2/src/lib/krb5/krb/init_ctx.c:207: note: called from krb5_init_context_profile()
+krb5-1.19.2/src/appl/user_user/server.c:61: note: called from main()
+#  205|       *context_out = NULL;
+#  206|   
+#  207|->     ctx = calloc(1, sizeof(struct _krb5_context));
+#  208|       if (!ctx)
+#  209|           return ENOMEM;
+
+Error: COMPILER_WARNING (CWE-704):
+krb5-1.19.2/src/lib/krb5/krb/ser_ctx.c:30:17: warning[-Wlto-type-mismatch]: type of 'profile_ser_size' does not match original declaration
+#   30 | krb5_error_code profile_ser_size(krb5_context, profile_t, size_t *);
+#      |                 ^
+krb5-1.19.2/src/util/profile/prof_init.c:524:11: note: return value type mismatch
+#  524 | errcode_t profile_ser_size(const char *unused, profile_t profile,
+#      |           ^
+krb5-1.19.2/src/util/profile/prof_init.c:524:11: note: type 'errcode_t' should match type 'krb5_error_code'
+krb5-1.19.2/src/util/profile/prof_init.c:524:11: note: 'profile_ser_size' was previously declared here
+krb5-1.19.2/src/util/profile/prof_init.c:524:11: note: code may be misoptimized unless '-fno-strict-aliasing' is used
+#   28|   #include "int-proto.h"
+#   29|   
+#   30|-> krb5_error_code profile_ser_size(krb5_context, profile_t, size_t *);
+#   31|   krb5_error_code profile_ser_externalize(krb5_context, profile_t,
+#   32|                                           krb5_octet **, size_t *);
+
+Error: COMPILER_WARNING (CWE-704):
+krb5-1.19.2/src/lib/krb5/krb/ser_ctx.c:31:17: warning[-Wlto-type-mismatch]: type of 'profile_ser_externalize' does not match original declaration
+#   31 | krb5_error_code profile_ser_externalize(krb5_context, profile_t,
+#      |                 ^
+krb5-1.19.2/src/util/profile/prof_init.c:546:11: note: return value type mismatch
+#  546 | errcode_t profile_ser_externalize(const char *unused, profile_t profile,
+#      |           ^
+krb5-1.19.2/src/util/profile/prof_init.c:546:11: note: type 'errcode_t' should match type 'krb5_error_code'
+krb5-1.19.2/src/util/profile/prof_init.c:546:11: note: 'profile_ser_externalize' was previously declared here
+krb5-1.19.2/src/util/profile/prof_init.c:546:11: note: code may be misoptimized unless '-fno-strict-aliasing' is used
+#   29|   
+#   30|   krb5_error_code profile_ser_size(krb5_context, profile_t, size_t *);
+#   31|-> krb5_error_code profile_ser_externalize(krb5_context, profile_t,
+#   32|                                           krb5_octet **, size_t *);
+#   33|   krb5_error_code profile_ser_internalize(krb5_context, profile_t *,
+
+Error: COMPILER_WARNING (CWE-704):
+krb5-1.19.2/src/lib/krb5/krb/ser_ctx.c:33:17: warning[-Wlto-type-mismatch]: type of 'profile_ser_internalize' does not match original declaration
+#   33 | krb5_error_code profile_ser_internalize(krb5_context, profile_t *,
+#      |                 ^
+krb5-1.19.2/src/util/profile/prof_init.c:600:11: note: return value type mismatch
+#  600 | errcode_t profile_ser_internalize(const char *unused, profile_t *profilep,
+#      |           ^
+krb5-1.19.2/src/util/profile/prof_init.c:600:11: note: type 'errcode_t' should match type 'krb5_error_code'
+krb5-1.19.2/src/util/profile/prof_init.c:600:11: note: 'profile_ser_internalize' was previously declared here
+krb5-1.19.2/src/util/profile/prof_init.c:600:11: note: code may be misoptimized unless '-fno-strict-aliasing' is used
+#   31|   krb5_error_code profile_ser_externalize(krb5_context, profile_t,
+#   32|                                           krb5_octet **, size_t *);
+#   33|-> krb5_error_code profile_ser_internalize(krb5_context, profile_t *,
+#   34|                                           krb5_octet **, size_t *);
+#   35|   
+
+Error: COMPILER_WARNING (CWE-252):
+krb5-1.19.2/src/lib/krb5/krb/t_princ.c: scope_hint: In function 'test_princ'
+krb5-1.19.2/src/lib/krb5/krb/t_princ.c:106:5: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+#  106 |     asprintf(&princ_reformed, "%s@%s", princ_short, realm);
+#      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  104|       realm = p->realm.data;
+#  105|   
+#  106|->     asprintf(&princ_reformed, "%s@%s", princ_short, realm);
+#  107|   
+#  108|       ret = krb5_parse_name(context, princ_reformed, &p2);
+
+Error: COMPILER_WARNING:
+krb5-1.19.2/src/lib/krb5/os/t_locate_kdc.c:11: included_from: Included from here.
+krb5-1.19.2/src/lib/krb5/os/locate_kdc.c: scope_hint: In function 'Tprintf'
+krb5-1.19.2/src/lib/krb5/os/locate_kdc.c:116:5: warning[-Wsuggest-attribute=format]: function 'Tprintf' might be a candidate for 'gnu_printf' format attribute
+#  116 |     vfprintf(stderr, fmt, ap);
+#      |     ^~~~~~~~
+#  114|       va_list ap;
+#  115|       va_start(ap, fmt);
+#  116|->     vfprintf(stderr, fmt, ap);
+#  117|       va_end(ap);
+#  118|   #endif
+
+Error: VALGRIND_WARNING:
+./uuserver: note: while executing process 26121 with arguments: 9999
+krb5-1.19.2/src/lib/krb5/os/read_msg.c:52: warning[Leak_DefinitelyLost]: 17 bytes in 1 blocks are definitely lost in loss record 10 of 40
+krb5-1.19.2/src/lib/krb5/os/read_msg.c:52: note: called from krb5_read_message()
+krb5-1.19.2/src/appl/user_user/server.c:115: note: called from main()
+#   50|            * We may want to include a sanity check here someday....
+#   51|            */
+#   52|->         if (!(buf = malloc(ilen))) {
+#   53|               return(ENOMEM);
+#   54|           }
+
+Error: VALGRIND_WARNING:
+./uuserver: note: while executing process 26121 with arguments: 9999
+krb5-1.19.2/src/lib/krb5/os/read_msg.c:52: warning[Leak_DefinitelyLost]: 318 bytes in 1 blocks are definitely lost in loss record 35 of 40
+krb5-1.19.2/src/lib/krb5/os/read_msg.c:52: note: called from krb5_read_message()
+krb5-1.19.2/src/appl/user_user/server.c:122: note: called from main()
+#   50|            * We may want to include a sanity check here someday....
+#   51|            */
+#   52|->         if (!(buf = malloc(ilen))) {
+#   53|               return(ENOMEM);
+#   54|           }
+
+Error: COMPILER_WARNING (CWE-252):
+krb5-1.19.2/src/lib/krb5/os/trace.c: scope_hint: In function 'hash_bytes'
+krb5-1.19.2/src/lib/krb5/os/trace.c:100:16: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+#  100 |         (void) asprintf(&s, "%02X%02X", cksum.contents[0], cksum.contents[1]);
+#      |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   98|           return NULL;
+#   99|       if (cksum.length >= 2)
+#  100|->         (void) asprintf(&s, "%02X%02X", cksum.contents[0], cksum.contents[1]);
+#  101|       krb5_free_checksum_contents(context, &cksum);
+#  102|       return s;
+
+Error: COMPILER_WARNING (CWE-252):
+krb5-1.19.2/src/lib/krb5/os/trace.c: scope_hint: In function 'file_trace_cb'
+krb5-1.19.2/src/lib/krb5/os/trace.c:449:12: warning[-Wunused-result]: ignoring return value of 'write' declared with attribute 'warn_unused_result'
+#  449 |     (void) write(*fd, info->message, strlen(info->message));
+#      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  447|       }
+#  448|   
+#  449|->     (void) write(*fd, info->message, strlen(info->message));
+#  450|   }
+#  451|   
+
+Error: COMPILER_WARNING (CWE-252):
+krb5-1.19.2/src/lib/rpc/unit-test/server.c: scope_hint: In function 'rpc_test_echo_1_svc'
+krb5-1.19.2/src/lib/rpc/unit-test/server.c:161:6: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+#  161 |      asprintf(&res, "Echo: %s", *arg);
+#      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  159|        if (res)
+#  160|   	  free(res);
+#  161|->      asprintf(&res, "Echo: %s", *arg);
+#  162|        return &res;
+#  163|   }
+
+Error: COMPILER_WARNING:
+krb5-1.19.2/src/plugins/kadm5_auth/test/main.c: scope_hint: In function 'welcomer_end'
+krb5-1.19.2/src/plugins/kadm5_auth/test/main.c:257:33: warning[-Wformat-truncation=]: '%d' directive output may be truncated writing between 1 and 11 bytes into a region of size 10
+#  257 |     snprintf(buf, sizeof(buf), "%d", atoi(val) + 1);
+#      |                                 ^~
+krb5-1.19.2/src/plugins/kadm5_auth/test/main.c:257:32: note: directive argument in the range [-2147483647, 2147483647]
+#  257 |     snprintf(buf, sizeof(buf), "%d", atoi(val) + 1);
+#      |                                ^~~~
+/usr/include/stdio.h:888: included_from: Included from here.
+krb5-1.19.2/src/include/k5-platform.h:62: included_from: Included from here.
+krb5-1.19.2/src/include/k5-int.h:130: included_from: Included from here.
+krb5-1.19.2/src/plugins/kadm5_auth/test/main.c:43: included_from: Included from here.
+/usr/include/bits/stdio2.h:71:10: note: '__snprintf_chk' output between 2 and 12 bytes into a destination of size 10
+#   71 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+#      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   72 |                                    __glibc_objsize (__s), __fmt,
+#      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   73 |                                    __va_arg_pack ());
+#      |                                    ~~~~~~~~~~~~~~~~~
+#  255|       if (krb5_dbe_get_string(context, ent, "ends", &val) != 0 || val == NULL)
+#  256|           goto cleanup;
+#  257|->     snprintf(buf, sizeof(buf), "%d", atoi(val) + 1);
+#  258|       if (krb5_dbe_set_string(context, ent, "ends", buf) != 0)
+#  259|           goto cleanup;
+
+Error: COMPILER_WARNING (CWE-563):
+krb5-1.19.2/src/plugins/kdb/db2/libdb2/hash/hash_page.c: scope_hint: In function '__kdb2_delpair'
+krb5-1.19.2/src/plugins/kdb/db2/libdb2/hash/hash_page.c:308:29: warning[-Wunused-but-set-variable]: variable 'next_key' set but not used
+#  308 |         int16_t delta, len, next_key;
+#      |                             ^~~~~~~~
+#  306|   	indx_t ndx;
+#  307|   	short check_ndx;
+#  308|-> 	int16_t delta, len, next_key;
+#  309|   	int32_t n;
+#  310|   	u_int8_t *src, *dest;
+
+Error: COMPILER_WARNING (CWE-252):
+krb5-1.19.2/src/plugins/kdb/db2/libdb2/hash/hash_page.c: scope_hint: In function 'overflow_page'
+krb5-1.19.2/src/plugins/kdb/db2/libdb2/hash/hash_page.c:1130:31: warning[-Wunused-result]: ignoring return value of 'write' declared with attribute 'warn_unused_result'
+# 1130 |                         (void)write(STDERR_FILENO, OVMSG, sizeof(OVMSG) - 1);
+#      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1128|   	if (offset > SPLITMASK) {
+# 1129|   		if (++splitnum >= NCACHED) {
+# 1130|-> 			(void)write(STDERR_FILENO, OVMSG, sizeof(OVMSG) - 1);
+# 1131|   			return (0);
+# 1132|   		}
+
+Error: COMPILER_WARNING (CWE-252):
+krb5-1.19.2/src/plugins/kdb/db2/libdb2/hash/hash_page.c:1142:31: warning[-Wunused-result]: ignoring return value of 'write' declared with attribute 'warn_unused_result'
+# 1142 |                         (void)write(STDERR_FILENO, OVMSG, sizeof(OVMSG) - 1);
+#      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1140|   		free_page++;
+# 1141|   		if (free_page >= NCACHED) {
+# 1142|-> 			(void)write(STDERR_FILENO, OVMSG, sizeof(OVMSG) - 1);
+# 1143|   			return (0);
+# 1144|   		}
+
+Error: COMPILER_WARNING (CWE-252):
+krb5-1.19.2/src/plugins/kdb/db2/libdb2/hash/hash_page.c:1166:39: warning[-Wunused-result]: ignoring return value of 'write' declared with attribute 'warn_unused_result'
+# 1166 |                                 (void)write(STDERR_FILENO,
+#      |                                       ^~~~~~~~~~~~~~~~~~~~
+# 1167 |                                     OVMSG, sizeof(OVMSG) - 1);
+#      |                                     ~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1164|   		if (offset > SPLITMASK) {
+# 1165|   			if (++splitnum >= NCACHED) {
+# 1166|-> 				(void)write(STDERR_FILENO,
+# 1167|   				    OVMSG, sizeof(OVMSG) - 1);
+# 1168|   				return (0);
+
+Error: COMPILER_WARNING (CWE-252):
+krb5-1.19.2/src/plugins/kdb/db2/libdb2/hash/hash_page.c:1193:23: warning[-Wunused-result]: ignoring return value of 'write' declared with attribute 'warn_unused_result'
+# 1193 |                 (void)write(STDERR_FILENO, OVMSG, sizeof(OVMSG) - 1);
+#      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1191|   
+# 1192|   	if (OADDR_TO_PAGE(addr) > MAX_PAGES(hashp)) {
+# 1193|-> 		(void)write(STDERR_FILENO, OVMSG, sizeof(OVMSG) - 1);
+# 1194|   		return (0);
+# 1195|   	}
+
+Error: COMPILER_WARNING (CWE-252):
+krb5-1.19.2/src/plugins/kdb/db2/libdb2/hash/hash_page.c:1226:23: warning[-Wunused-result]: ignoring return value of 'write' declared with attribute 'warn_unused_result'
+# 1226 |                 (void)write(STDERR_FILENO, OVMSG, sizeof(OVMSG) - 1);
+#      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1224|   
+# 1225|   	if (OADDR_TO_PAGE(addr) > MAX_PAGES(hashp)) {
+# 1226|-> 		(void)write(STDERR_FILENO, OVMSG, sizeof(OVMSG) - 1);
+# 1227|   		return (0);
+# 1228|   	}
+
+Error: COMPILER_WARNING (CWE-563):
+krb5-1.19.2/src/plugins/kdb/ldap/ldap_util/kdb5_ldap_realm.c:138:18: warning[-Wunused-but-set-variable]: variable 'no_msg' set but not used
+#  138 |     krb5_boolean no_msg = FALSE;
+#      |                  ^~~~~~
+#  136|       int mask = 0;
+#  137|       krb5_error_code retval = 0;
+#  138|->     krb5_boolean no_msg = FALSE;
+#  139|   
+#  140|       krb5_boolean print_usage = FALSE;
+
+Error: COMPILER_WARNING (CWE-563):
+krb5-1.19.2/src/plugins/kdb/ldap/ldap_util/kdb5_ldap_realm.c: scope_hint: In function 'get_ticket_policy'
+krb5-1.19.2/src/plugins/kdb/ldap/ldap_util/kdb5_ldap_realm.c:140:18: warning[-Wunused-but-set-variable]: variable 'print_usage' set but not used
+#  140 |     krb5_boolean print_usage = FALSE;
+#      |                  ^~~~~~~~~~~
+#  138|       krb5_boolean no_msg = FALSE;
+#  139|   
+#  140|->     krb5_boolean print_usage = FALSE;
+#  141|       char *me = progname;
+#  142|   
+
+Error: COMPILER_WARNING:
+krb5-1.19.2/src/plugins/kdb/ldap/ldap_util/kdb5_ldap_util.c: scope_hint: In function 'extended_com_err_fn'
+krb5-1.19.2/src/plugins/kdb/ldap/ldap_util/kdb5_ldap_util.c:230:5: warning[-Wsuggest-attribute=format]: function 'extended_com_err_fn' might be a candidate for 'gnu_printf' format attribute
+#  230 |     vfprintf (stderr, fmt, args);
+#      |     ^~~~~~~~
+#  228|       fprintf (stderr, "%s: %s ", myprog, emsg);
+#  229|       krb5_free_error_message (util_context, emsg);
+#  230|->     vfprintf (stderr, fmt, args);
+#  231|       fprintf (stderr, "\n");
+#  232|   }
+
+Error: COMPILER_WARNING (CWE-252):
+krb5-1.19.2/src/plugins/preauth/pkinit/pkinit_crypto_openssl.c: scope_hint: In function 'cms_signeddata_create'
+krb5-1.19.2/src/plugins/preauth/pkinit/pkinit_crypto_openssl.c:1258:9: warning[-Wunused-result]: ignoring return value of 'EVP_DigestInit_ex' declared with attribute 'warn_unused_result'
+# 1258 |         EVP_DigestInit_ex(ctx, EVP_sha1(), NULL);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1256|           if (ctx == NULL)
+# 1257|               goto cleanup;
+# 1258|->         EVP_DigestInit_ex(ctx, EVP_sha1(), NULL);
+# 1259|           EVP_DigestUpdate(ctx, data, data_len);
+# 1260|           md_tmp = EVP_MD_CTX_md(ctx);
+
+Error: COMPILER_WARNING (CWE-252):
+krb5-1.19.2/src/plugins/preauth/pkinit/pkinit_crypto_openssl.c:1259:9: warning[-Wunused-result]: ignoring return value of 'EVP_DigestUpdate' declared with attribute 'warn_unused_result'
+# 1259 |         EVP_DigestUpdate(ctx, data, data_len);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1257|               goto cleanup;
+# 1258|           EVP_DigestInit_ex(ctx, EVP_sha1(), NULL);
+# 1259|->         EVP_DigestUpdate(ctx, data, data_len);
+# 1260|           md_tmp = EVP_MD_CTX_md(ctx);
+# 1261|           EVP_DigestFinal_ex(ctx, md_data, &md_len);
+
+Error: COMPILER_WARNING (CWE-252):
+krb5-1.19.2/src/plugins/preauth/pkinit/pkinit_crypto_openssl.c:1261:9: warning[-Wunused-result]: ignoring return value of 'EVP_DigestFinal_ex' declared with attribute 'warn_unused_result'
+# 1261 |         EVP_DigestFinal_ex(ctx, md_data, &md_len);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1259|           EVP_DigestUpdate(ctx, data, data_len);
+# 1260|           md_tmp = EVP_MD_CTX_md(ctx);
+# 1261|->         EVP_DigestFinal_ex(ctx, md_data, &md_len);
+# 1262|           EVP_MD_CTX_free(ctx);
+# 1263|   
+
+Error: COMPILER_WARNING (CWE-252):
+krb5-1.19.2/src/plugins/preauth/pkinit/pkinit_crypto_openssl.c:1299:13: warning[-Wunused-result]: ignoring return value of 'EVP_DigestInit_ex' declared with attribute 'warn_unused_result'
+# 1299 |             EVP_DigestInit_ex(ctx, md_tmp, NULL);
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1297|               if (ctx == NULL)
+# 1298|                   goto cleanup;
+# 1299|->             EVP_DigestInit_ex(ctx, md_tmp, NULL);
+# 1300|               EVP_DigestUpdate(ctx, abuf, alen);
+# 1301|               EVP_DigestFinal_ex(ctx, md_data2, &md_len2);
+
+Error: COMPILER_WARNING (CWE-252):
+krb5-1.19.2/src/plugins/preauth/pkinit/pkinit_crypto_openssl.c:1300:13: warning[-Wunused-result]: ignoring return value of 'EVP_DigestUpdate' declared with attribute 'warn_unused_result'
+# 1300 |             EVP_DigestUpdate(ctx, abuf, alen);
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1298|                   goto cleanup;
+# 1299|               EVP_DigestInit_ex(ctx, md_tmp, NULL);
+# 1300|->             EVP_DigestUpdate(ctx, abuf, alen);
+# 1301|               EVP_DigestFinal_ex(ctx, md_data2, &md_len2);
+# 1302|               EVP_MD_CTX_free(ctx);
+
+Error: COMPILER_WARNING (CWE-252):
+krb5-1.19.2/src/plugins/preauth/pkinit/pkinit_crypto_openssl.c:1301:13: warning[-Wunused-result]: ignoring return value of 'EVP_DigestFinal_ex' declared with attribute 'warn_unused_result'
+# 1301 |             EVP_DigestFinal_ex(ctx, md_data2, &md_len2);
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1299|               EVP_DigestInit_ex(ctx, md_tmp, NULL);
+# 1300|               EVP_DigestUpdate(ctx, abuf, alen);
+# 1301|->             EVP_DigestFinal_ex(ctx, md_data2, &md_len2);
+# 1302|               EVP_MD_CTX_free(ctx);
+# 1303|   
+
+Error: COMPILER_WARNING (CWE-252):
+krb5-1.19.2/src/plugins/preauth/pkinit/pkinit_crypto_openssl.c: scope_hint: In function 'create_signature'
+krb5-1.19.2/src/plugins/preauth/pkinit/pkinit_crypto_openssl.c:4155:5: warning[-Wunused-result]: ignoring return value of 'EVP_SignFinal' declared with attribute 'warn_unused_result'
+# 4155 |     EVP_SignFinal(ctx, *sig, sig_len, pkey);
+#      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 4153|       if ((*sig = malloc(*sig_len)) == NULL)
+# 4154|           goto cleanup;
+# 4155|->     EVP_SignFinal(ctx, *sig, sig_len, pkey);
+# 4156|   
+# 4157|       retval = 0;
+
+Error: COMPILER_WARNING (CWE-252):
+krb5-1.19.2/src/plugins/tls/k5tls/openssl.c: scope_hint: In function 'write_tls'
+krb5-1.19.2/src/plugins/tls/k5tls/openssl.c:514:11: warning[-Wunused-result]: ignoring return value of 'SSL_set_ex_data' declared with attribute 'warn_unused_result'
+#  514 |     (void)SSL_set_ex_data(handle->ssl, ex_context_id, NULL);
+#      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  512|           return ERROR_TLS;
+#  513|       nwritten = SSL_write(handle->ssl, data, len);
+#  514|->     (void)SSL_set_ex_data(handle->ssl, ex_context_id, NULL);
+#  515|       if (nwritten > 0)
+#  516|           return DONE;
+
+Error: COMPILER_WARNING (CWE-252):
+krb5-1.19.2/src/plugins/tls/k5tls/openssl.c: scope_hint: In function 'read_tls'
+krb5-1.19.2/src/plugins/tls/k5tls/openssl.c:540:11: warning[-Wunused-result]: ignoring return value of 'SSL_set_ex_data' declared with attribute 'warn_unused_result'
+#  540 |     (void)SSL_set_ex_data(handle->ssl, ex_context_id, NULL);
+#      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  538|           return ERROR_TLS;
+#  539|       nread = SSL_read(handle->ssl, data, data_size);
+#  540|->     (void)SSL_set_ex_data(handle->ssl, ex_context_id, NULL);
+#  541|       if (nread > 0) {
+#  542|           *len_out = nread;
+
+Error: VALGRIND_WARNING:
+./krb5_decode_test: note: while executing process 26874
+krb5-1.19.2/src/tests/asn.1/utility.c:40: warning[Leak_DefinitelyLost]: 165 bytes in 1 blocks are definitely lost in loss record 11 of 13
+krb5-1.19.2/src/tests/asn.1/utility.c:40: note: called from ealloc()
+krb5-1.19.2/src/tests/asn.1/utility.c:107: note: called from krb5_data_hex_parse()
+krb5-1.19.2/src/tests/asn.1/krb5_decode_test.c:323: note: called from main()
+#   38|   ealloc(size_t size)
+#   39|   {
+#   40|->     void *ptr = calloc(1, size);
+#   41|   
+#   42|       if (ptr == NULL)
+
+Error: VALGRIND_WARNING:
+./krb5_decode_test: note: while executing process 26874
+krb5-1.19.2/src/tests/asn.1/utility.c:40: warning[Leak_DefinitelyLost]: 173 bytes in 1 blocks are definitely lost in loss record 12 of 13
+krb5-1.19.2/src/tests/asn.1/utility.c:40: note: called from ealloc()
+krb5-1.19.2/src/tests/asn.1/utility.c:107: note: called from krb5_data_hex_parse()
+krb5-1.19.2/src/tests/asn.1/krb5_decode_test.c:344: note: called from main()
+#   38|   ealloc(size_t size)
+#   39|   {
+#   40|->     void *ptr = calloc(1, size);
+#   41|   
+#   42|       if (ptr == NULL)
+
+Error: VALGRIND_WARNING:
+./krb5_encode_test: note: while executing process 26779
+krb5-1.19.2/src/tests/asn.1/utility.c:40: warning[Leak_DefinitelyLost]: 24 bytes in 1 blocks are definitely lost in loss record 1 of 1
+krb5-1.19.2/src/tests/asn.1/utility.c:40: note: called from ealloc()
+krb5-1.19.2/src/tests/asn.1/ktest.c:217: note: called from ktest_make_sample_pa_data_array()
+krb5-1.19.2/src/tests/asn.1/ktest.c:972: note: called from UnknownInlinedFun()
+krb5-1.19.2/src/tests/asn.1/krb5_encode_test.c:758: note: called from main()
+#   38|   ealloc(size_t size)
+#   39|   {
+#   40|->     void *ptr = calloc(1, size);
+#   41|   
+#   42|       if (ptr == NULL)
+
+Error: VALGRIND_WARNING:
+./krb5_decode_test: note: while executing process 26874
+krb5-1.19.2/src/tests/asn.1/utility.c:40: warning[Leak_DefinitelyLost]: 32 bytes in 1 blocks are definitely lost in loss record 6 of 13
+krb5-1.19.2/src/tests/asn.1/utility.c:40: note: called from ealloc()
+krb5-1.19.2/src/tests/asn.1/utility.c:107: note: called from krb5_data_hex_parse()
+krb5-1.19.2/src/tests/asn.1/krb5_decode_test.c:359: note: called from main()
+#   38|   ealloc(size_t size)
+#   39|   {
+#   40|->     void *ptr = calloc(1, size);
+#   41|   
+#   42|       if (ptr == NULL)
+
+Error: VALGRIND_WARNING:
+./krb5_decode_test: note: while executing process 26874
+krb5-1.19.2/src/tests/asn.1/utility.c:40: warning[Leak_DefinitelyLost]: 39 bytes in 1 blocks are definitely lost in loss record 7 of 13
+krb5-1.19.2/src/tests/asn.1/utility.c:40: note: called from ealloc()
+krb5-1.19.2/src/tests/asn.1/utility.c:107: note: called from krb5_data_hex_parse()
+krb5-1.19.2/src/tests/asn.1/krb5_decode_test.c:360: note: called from main()
+#   38|   ealloc(size_t size)
+#   39|   {
+#   40|->     void *ptr = calloc(1, size);
+#   41|   
+#   42|       if (ptr == NULL)
+
+Error: VALGRIND_WARNING:
+./krb5_decode_test: note: while executing process 26874
+krb5-1.19.2/src/tests/asn.1/utility.c:40: warning[Leak_DefinitelyLost]: 416 bytes in 1 blocks are definitely lost in loss record 13 of 13
+krb5-1.19.2/src/tests/asn.1/utility.c:40: note: called from ealloc()
+krb5-1.19.2/src/tests/asn.1/utility.c:107: note: called from krb5_data_hex_parse()
+krb5-1.19.2/src/tests/asn.1/krb5_decode_test.c:484: note: called from main()
+#   38|   ealloc(size_t size)
+#   39|   {
+#   40|->     void *ptr = calloc(1, size);
+#   41|   
+#   42|       if (ptr == NULL)
+
+Error: VALGRIND_WARNING:
+./krb5_decode_test: note: while executing process 26874
+krb5-1.19.2/src/tests/asn.1/utility.c:40: warning[Leak_DefinitelyLost]: 45 bytes in 1 blocks are definitely lost in loss record 8 of 13
+krb5-1.19.2/src/tests/asn.1/utility.c:40: note: called from ealloc()
+krb5-1.19.2/src/tests/asn.1/utility.c:107: note: called from krb5_data_hex_parse()
+krb5-1.19.2/src/tests/asn.1/krb5_decode_test.c:362: note: called from main()
+#   38|   ealloc(size_t size)
+#   39|   {
+#   40|->     void *ptr = calloc(1, size);
+#   41|   
+#   42|       if (ptr == NULL)
+
+Error: VALGRIND_WARNING:
+./krb5_decode_test: note: while executing process 26874
+krb5-1.19.2/src/tests/asn.1/utility.c:40: warning[Leak_DefinitelyLost]: 51 bytes in 1 blocks are definitely lost in loss record 9 of 13
+krb5-1.19.2/src/tests/asn.1/utility.c:40: note: called from ealloc()
+krb5-1.19.2/src/tests/asn.1/utility.c:107: note: called from krb5_data_hex_parse()
+krb5-1.19.2/src/tests/asn.1/krb5_decode_test.c:361: note: called from main()
+#   38|   ealloc(size_t size)
+#   39|   {
+#   40|->     void *ptr = calloc(1, size);
+#   41|   
+#   42|       if (ptr == NULL)
+
+Error: COMPILER_WARNING:
+krb5-1.19.2/src/tests/create/kdb5_mkdums.c: scope_hint: In function 'main'
+krb5-1.19.2/src/tests/create/kdb5_mkdums.c:183:44: warning[-Wformat-truncation=]: '%s' directive output may be truncated writing up to 8191 bytes into a region of size 4096
+#  183 |         (void) snprintf(tmp, sizeof(tmp), "%s-DEPTH-1", principal_string);
+#      |                                            ^~           ~~~~~~~~~~~~~~~~
+/usr/include/stdio.h:888: included_from: Included from here.
+krb5-1.19.2/src/include/k5-platform.h:62: included_from: Included from here.
+krb5-1.19.2/src/include/k5-int.h:130: included_from: Included from here.
+krb5-1.19.2/src/tests/create/kdb5_mkdums.c:32: included_from: Included from here.
+/usr/include/bits/stdio2.h:71:10: note: '__snprintf_chk' output between 9 and 8200 bytes into a destination of size 4096
+#   71 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+#      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   72 |                                    __glibc_objsize (__s), __fmt,
+#      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   73 |                                    __va_arg_pack ());
+#      |                                    ~~~~~~~~~~~~~~~~~
+#  181|              again given a prefix and count to test the db lib and kdb */
+#  182|           (void) snprintf(suffix, suffix_size, "%d", n);
+#  183|->         (void) snprintf(tmp, sizeof(tmp), "%s-DEPTH-1", principal_string);
+#  184|           tmp[sizeof(tmp) - 1] = '\0';
+#  185|           str_newprinc = tmp;
+
+Error: COMPILER_WARNING:
+krb5-1.19.2/src/tests/create/kdb5_mkdums.c:189:53: warning[-Wformat-truncation=]: '-DEPTH-' directive output may be truncated writing 7 bytes into a region of size between 0 and 8191
+#  189 |             (void) snprintf(tmp2, sizeof(tmp2), "/%s-DEPTH-%d",
+#      |                                                     ^~~~~~~
+krb5-1.19.2/src/tests/create/kdb5_mkdums.c:189:49: note: directive argument in the range [2, 2147483647]
+#  189 |             (void) snprintf(tmp2, sizeof(tmp2), "/%s-DEPTH-%d",
+#      |                                                 ^~~~~~~~~~~~~~
+/usr/include/stdio.h:888: included_from: Included from here.
+krb5-1.19.2/src/include/k5-platform.h:62: included_from: Included from here.
+krb5-1.19.2/src/include/k5-int.h:130: included_from: Included from here.
+krb5-1.19.2/src/tests/create/kdb5_mkdums.c:32: included_from: Included from here.
+/usr/include/bits/stdio2.h:71:10: note: '__snprintf_chk' output between 10 and 8210 bytes into a destination of size 8192
+#   71 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+#      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   72 |                                    __glibc_objsize (__s), __fmt,
+#      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   73 |                                    __va_arg_pack ());
+#      |                                    ~~~~~~~~~~~~~~~~~
+#  187|   
+#  188|           for (i = 2; i <= depth; i++) {
+#  189|->             (void) snprintf(tmp2, sizeof(tmp2), "/%s-DEPTH-%d",
+#  190|                               principal_string, i);
+#  191|               tmp2[sizeof(tmp2) - 1] = '\0';
+
+Error: COMPILER_WARNING:
+krb5-1.19.2/src/tests/hammer/kdc5_hammer.c: scope_hint: In function 'main'
+krb5-1.19.2/src/tests/hammer/kdc5_hammer.c:214:54: warning[-Wformat-truncation=]: '%d' directive output may be truncated writing between 1 and 10 bytes into a region of size between 0 and 8192
+#  214 |           (void) snprintf(ctmp2, sizeof(ctmp2), "%s%s%d-DEPTH-%d",
+#      |                                                      ^~
+krb5-1.19.2/src/tests/hammer/kdc5_hammer.c:214:49: note: directive argument in the range [1, 2147483647]
+#  214 |           (void) snprintf(ctmp2, sizeof(ctmp2), "%s%s%d-DEPTH-%d",
+#      |                                                 ^~~~~~~~~~~~~~~~~
+krb5-1.19.2/src/tests/hammer/kdc5_hammer.c:214:49: note: directive argument in the range [1, 2147483647]
+/usr/include/stdio.h:888: included_from: Included from here.
+krb5-1.19.2/src/include/k5-platform.h:62: included_from: Included from here.
+krb5-1.19.2/src/include/k5-int.h:130: included_from: Included from here.
+krb5-1.19.2/src/tests/hammer/kdc5_hammer.c:26: included_from: Included from here.
+/usr/include/bits/stdio2.h:71:10: note: '__snprintf_chk' output between 10 and 8220 bytes into a destination of size 8192
+#   71 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+#      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   72 |                                    __glibc_objsize (__s), __fmt,
+#      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   73 |                                    __va_arg_pack ());
+#      |                                    ~~~~~~~~~~~~~~~~~
+#  212|   	ctmp[0] = '\0';
+#  213|   	for (i = 1; i <= depth; i++) {
+#  214|-> 	  (void) snprintf(ctmp2, sizeof(ctmp2), "%s%s%d-DEPTH-%d",
+#  215|   			  (i != 1) ? "/" : "", prefix, n, i);
+#  216|   	  ctmp2[sizeof(ctmp2) - 1] = '\0';
+
+Error: COMPILER_WARNING:
+krb5-1.19.2/src/tests/hammer/kdc5_hammer.c:230:56: warning[-Wformat-truncation=]: '%d' directive output may be truncated writing between 1 and 10 bytes into a region of size between 0 and 8192
+#  230 |             (void) snprintf(stmp2, sizeof(stmp2), "%s%s%d-DEPTH-%d",
+#      |                                                        ^~
+krb5-1.19.2/src/tests/hammer/kdc5_hammer.c:230:51: note: directive argument in the range [1, 2147483647]
+#  230 |             (void) snprintf(stmp2, sizeof(stmp2), "%s%s%d-DEPTH-%d",
+#      |                                                   ^~~~~~~~~~~~~~~~~
+krb5-1.19.2/src/tests/hammer/kdc5_hammer.c:230:51: note: directive argument in the range [1, 2147483647]
+/usr/include/stdio.h:888: included_from: Included from here.
+krb5-1.19.2/src/include/k5-platform.h:62: included_from: Included from here.
+krb5-1.19.2/src/include/k5-int.h:130: included_from: Included from here.
+krb5-1.19.2/src/tests/hammer/kdc5_hammer.c:26: included_from: Included from here.
+/usr/include/bits/stdio2.h:71:10: note: '__snprintf_chk' output between 10 and 8220 bytes into a destination of size 8192
+#   71 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+#      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   72 |                                    __glibc_objsize (__s), __fmt,
+#      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   73 |                                    __va_arg_pack ());
+#      |                                    ~~~~~~~~~~~~~~~~~
+#  228|   	  stmp[0] = '\0';
+#  229|   	  for (j = 1; j <= depth; j++) {
+#  230|-> 	    (void) snprintf(stmp2, sizeof(stmp2), "%s%s%d-DEPTH-%d",
+#  231|   			    (j != 1) ? "/" : "", prefix, n, j);
+#  232|   	    stmp2[sizeof (stmp2) - 1] = '\0';
+
+Error: COMPILER_WARNING:
+krb5-1.19.2/src/tests/softpkcs11/main.c: scope_hint: In function 'application_error'
+krb5-1.19.2/src/tests/softpkcs11/main.c:161:5: warning[-Wsuggest-attribute=format]: function 'application_error' might be a candidate for 'gnu_printf' format attribute
+#  161 |     vprintf(fmt, ap);
+#      |     ^~~~~~~
+#  159|       va_list ap;
+#  160|       va_start(ap, fmt);
+#  161|->     vprintf(fmt, ap);
+#  162|       va_end(ap);
+#  163|       if (soft_token.flags.app_error_fatal)
+
+Error: COMPILER_WARNING:
+krb5-1.19.2/src/tests/softpkcs11/main.c: scope_hint: In function 'st_logf'
+krb5-1.19.2/src/tests/softpkcs11/main.c:174:5: warning[-Wsuggest-attribute=format]: function 'st_logf' might be a candidate for 'gnu_printf' format attribute
+#  174 |     vfprintf(soft_token.logfile, fmt, ap);
+#      |     ^~~~~~~~
+#  172|           return;
+#  173|       va_start(ap, fmt);
+#  174|->     vfprintf(soft_token.logfile, fmt, ap);
+#  175|       va_end(ap);
+#  176|       fflush(soft_token.logfile);
+
+Error: COMPILER_WARNING:
+krb5-1.19.2/src/tests/softpkcs11/main.c: scope_hint: In function 'snprintf_fill'
+krb5-1.19.2/src/tests/softpkcs11/main.c:185:5: warning[-Wsuggest-attribute=format]: function 'snprintf_fill' might be a candidate for 'gnu_printf' format attribute
+#  185 |     len = vsnprintf(str, size, fmt, ap);
+#      |     ^~~
+#  183|       va_list ap;
+#  184|       va_start(ap, fmt);
+#  185|->     len = vsnprintf(str, size, fmt, ap);
+#  186|       va_end(ap);
+#  187|       if (len < 0 || len > size)
+
+Error: COMPILER_WARNING:
+krb5-1.19.2/src/tests/verify/kdb5_verify.c: scope_hint: In function 'main'
+krb5-1.19.2/src/tests/verify/kdb5_verify.c:185:44: warning[-Wformat-truncation=]: '%s' directive output may be truncated writing up to 8191 bytes into a region of size 4096
+#  185 |         (void) snprintf(tmp, sizeof(tmp), "%s-DEPTH-1", principal_string);
+#      |                                            ^~           ~~~~~~~~~~~~~~~~
+/usr/include/stdio.h:888: included_from: Included from here.
+krb5-1.19.2/src/include/k5-platform.h:62: included_from: Included from here.
+krb5-1.19.2/src/include/k5-int.h:130: included_from: Included from here.
+krb5-1.19.2/src/tests/verify/kdb5_verify.c:27: included_from: Included from here.
+/usr/include/bits/stdio2.h:71:10: note: '__snprintf_chk' output between 9 and 8200 bytes into a destination of size 4096
+#   71 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+#      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   72 |                                    __glibc_objsize (__s), __fmt,
+#      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   73 |                                    __va_arg_pack ());
+#      |                                    ~~~~~~~~~~~~~~~~~
+#  183|              again given a prefix and count to test the db lib and kdb */
+#  184|           (void) snprintf(suffix, suffix_size, "%d", n);
+#  185|->         (void) snprintf(tmp, sizeof(tmp), "%s-DEPTH-1", principal_string);
+#  186|           str_princ = tmp;
+#  187|           if (check_princ(context, str_princ)) errors++;
+
+Error: COMPILER_WARNING:
+krb5-1.19.2/src/tests/verify/kdb5_verify.c:190:53: warning[-Wformat-truncation=]: '-DEPTH-' directive output may be truncated writing 7 bytes into a region of size between 0 and 8191
+#  190 |             (void) snprintf(tmp2, sizeof(tmp2), "/%s-DEPTH-%d",
+#      |                                                     ^~~~~~~
+krb5-1.19.2/src/tests/verify/kdb5_verify.c:190:49: note: directive argument in the range [2, 2147483647]
+#  190 |             (void) snprintf(tmp2, sizeof(tmp2), "/%s-DEPTH-%d",
+#      |                                                 ^~~~~~~~~~~~~~
+/usr/include/stdio.h:888: included_from: Included from here.
+krb5-1.19.2/src/include/k5-platform.h:62: included_from: Included from here.
+krb5-1.19.2/src/include/k5-int.h:130: included_from: Included from here.
+krb5-1.19.2/src/tests/verify/kdb5_verify.c:27: included_from: Included from here.
+/usr/include/bits/stdio2.h:71:10: note: '__snprintf_chk' output between 10 and 8210 bytes into a destination of size 8192
+#   71 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+#      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   72 |                                    __glibc_objsize (__s), __fmt,
+#      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   73 |                                    __va_arg_pack ());
+#      |                                    ~~~~~~~~~~~~~~~~~
+#  188|   
+#  189|           for (i = 2; i <= depth; i++) {
+#  190|->             (void) snprintf(tmp2, sizeof(tmp2), "/%s-DEPTH-%d",
+#  191|                               principal_string, i);
+#  192|               tmp2[sizeof(tmp2) - 1] = '\0';
+
+Error: VALGRIND_WARNING:
+./profile_tcl: note: while executing process 7281 with arguments: ./prof_test1
+krb5-1.19.2/src/util/profile/profile_tcl.c:1858: warning[Leak_PossiblyLost]: 16,384 bytes in 1 blocks are possibly lost in loss record 31 of 39
+/usr/lib64/libtcl8.6.so: note: called from TclpAlloc()
+/usr/lib64/libtcl8.6.so: note: called from Tcl_Alloc()
+/usr/lib64/libtcl8.6.so: note: called from here
+/usr/lib64/libtcl8.6.so: note: called from here
+/usr/lib64/libtcl8.6.so: note: called from here
+/usr/lib64/libtcl8.6.so: note: called from TclNRRunCallbacks()
+/usr/lib64/libtcl8.6.so: note: called from here
+/usr/lib64/libtcl8.6.so: note: called from Tcl_EvalEx()
+/usr/lib64/libtcl8.6.so: note: called from Tcl_Eval()
+krb5-1.19.2/src/util/profile/profile_tcl.c:1858: note: called from Tcl_AppInit()
+/usr/lib64/libtcl8.6.so: note: called from Tcl_MainEx()
+# 1856|   int Tcl_AppInit(Tcl_Interp *interp){
+# 1857|   
+# 1858|->   if (Tcl_Init(interp) == TCL_ERROR)
+# 1859|       return TCL_ERROR;
+# 1860|   
+
+Error: VALGRIND_WARNING:
+./profile_tcl: note: while executing process 7281 with arguments: ./prof_test1
+krb5-1.19.2/src/util/profile/profile_tcl.c:1858: warning[Leak_PossiblyLost]: 32,768 bytes in 2 blocks are possibly lost in loss record 36 of 39
+/usr/lib64/libtcl8.6.so: note: called from TclpAlloc()
+/usr/lib64/libtcl8.6.so: note: called from TclpRealloc()
+/usr/lib64/libtcl8.6.so: note: called from here
+/usr/lib64/libtcl8.6.so: note: called from here
+/usr/lib64/libtcl8.6.so: note: called from Tcl_AppendLimitedToObj()
+/usr/lib64/libtcl8.6.so: note: called from here
+/usr/lib64/libtcl8.6.so: note: called from here
+/usr/lib64/libtcl8.6.so: note: called from Tcl_EvalEx()
+/usr/lib64/libtcl8.6.so: note: called from Tcl_Eval()
+krb5-1.19.2/src/util/profile/profile_tcl.c:1858: note: called from Tcl_AppInit()
+/usr/lib64/libtcl8.6.so: note: called from Tcl_MainEx()
+# 1856|   int Tcl_AppInit(Tcl_Interp *interp){
+# 1857|   
+# 1858|->   if (Tcl_Init(interp) == TCL_ERROR)
+# 1859|       return TCL_ERROR;
+# 1860|   
+
+Error: VALGRIND_WARNING:
+./profile_tcl: note: while executing process 7281 with arguments: ./prof_test1
+krb5-1.19.2/src/util/profile/profile_tcl.c:1858: warning[Leak_PossiblyLost]: 49,152 bytes in 3 blocks are possibly lost in loss record 39 of 39
+/usr/lib64/libtcl8.6.so: note: called from TclpAlloc()
+/usr/lib64/libtcl8.6.so: note: called from Tcl_Alloc()
+/usr/lib64/libtcl8.6.so: note: called from Tcl_NewStringObj()
+/usr/lib64/libtcl8.6.so: note: called from TclCreateProc()
+/usr/lib64/libtcl8.6.so: note: called from Tcl_ProcObjCmd()
+/usr/lib64/libtcl8.6.so: note: called from TclNRRunCallbacks()
+/usr/lib64/libtcl8.6.so: note: called from here
+/usr/lib64/libtcl8.6.so: note: called from Tcl_EvalEx()
+/usr/lib64/libtcl8.6.so: note: called from Tcl_Eval()
+krb5-1.19.2/src/util/profile/profile_tcl.c:1858: note: called from Tcl_AppInit()
+/usr/lib64/libtcl8.6.so: note: called from Tcl_MainEx()
+# 1856|   int Tcl_AppInit(Tcl_Interp *interp){
+# 1857|   
+# 1858|->   if (Tcl_Init(interp) == TCL_ERROR)
+# 1859|       return TCL_ERROR;
+# 1860|   
+
+Error: VALGRIND_WARNING:
+./profile_tcl: note: while executing process 7281 with arguments: ./prof_test1
+krb5-1.19.2/src/util/profile/profile_tcl.c:1892: warning[Leak_PossiblyLost]: 16,384 bytes in 1 blocks are possibly lost in loss record 10 of 39
+/usr/lib64/libtcl8.6.so: note: called from TclpAlloc()
+/usr/lib64/libtcl8.6.so: note: called from Tcl_Alloc()
+/usr/lib64/libtcl8.6.so: note: called from here
+/usr/lib64/libtcl8.6.so: note: called from Tcl_CreateInterp()
+krb5-1.19.2/src/util/profile/profile_tcl.c:1892: note: called from main()
+# 1890|   #endif
+# 1891|   
+# 1892|->   Tcl_Main(argc, argv, Tcl_AppInit);
+# 1893|     return(0);
+# 1894|   
+
+Error: VALGRIND_WARNING:
+./profile_tcl: note: while executing process 7281 with arguments: ./prof_test1
+krb5-1.19.2/src/util/profile/profile_tcl.c:1892: warning[Leak_PossiblyLost]: 24,214 bytes in 1 blocks are possibly lost in loss record 35 of 39
+/usr/lib64/libtcl8.6.so: note: called from TclpAlloc()
+/usr/lib64/libtcl8.6.so: note: called from TclpRealloc()
+/usr/lib64/libtcl8.6.so: note: called from here
+/usr/lib64/libtcl8.6.so: note: called from here
+/usr/lib64/libtcl8.6.so: note: called from Tcl_AppendLimitedToObj()
+/usr/lib64/libtcl8.6.so: note: called from here
+/usr/lib64/libtcl8.6.so: note: called from here
+/usr/lib64/libtcl8.6.so: note: called from Tcl_FSEvalFileEx()
+/usr/lib64/libtcl8.6.so: note: called from Tcl_MainEx()
+krb5-1.19.2/src/util/profile/profile_tcl.c:1892: note: called from main()
+# 1890|   #endif
+# 1891|   
+# 1892|->   Tcl_Main(argc, argv, Tcl_AppInit);
+# 1893|     return(0);
+# 1894|   
+
+Error: VALGRIND_WARNING:
+./profile_tcl: note: while executing process 7281 with arguments: ./prof_test1
+krb5-1.19.2/src/util/profile/profile_tcl.c:1892: warning[Leak_PossiblyLost]: 38,400 bytes in 1 blocks are possibly lost in loss record 37 of 39
+/usr/lib64/libtcl8.6.so: note: called from here
+/usr/lib64/libtcl8.6.so: note: called from Tcl_NewObj()
+/usr/lib64/libtcl8.6.so: note: called from Tcl_CreateInterp()
+krb5-1.19.2/src/util/profile/profile_tcl.c:1892: note: called from main()
+# 1890|   #endif
+# 1891|   
+# 1892|->   Tcl_Main(argc, argv, Tcl_AppInit);
+# 1893|     return(0);
+# 1894|   
+
+Error: COMPILER_WARNING (CWE-252):
+krb5-1.19.2/src/util/profile/testmod/testmod_main.c: scope_hint: In function 'get_values'
+krb5-1.19.2/src/util/profile/testmod/testmod_main.c:48:5: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+#   48 |     asprintf(&(*ret_values)[1], "%d", d->gen);
+#      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   46|       *ret_values = calloc(3, sizeof(*ret_values));
+#   47|       (*ret_values)[0] = strdup(d->residual);
+#   48|->     asprintf(&(*ret_values)[1], "%d", d->gen);
+#   49|       (*ret_values)[2] = NULL;
+#   50|       return 0;
+
+Error: COMPILER_WARNING (CWE-477):
+krb5-1.19.2/src/util/support/selinux.c:101:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#  101 | {
+#      | ^
+#   99|   static security_context_t
+#  100|   push_fscreatecon(const char *pathname, mode_t mode)
+#  101|-> {
+#  102|       security_context_t previous, configuredsc, currentsc, derivedsc;
+#  103|       context_t current, derived;
+
+Error: COMPILER_WARNING (CWE-477):
+krb5-1.19.2/src/util/support/selinux.c: scope_hint: In function 'push_fscreatecon'
+krb5-1.19.2/src/util/support/selinux.c:102:5: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#  102 |     security_context_t previous, configuredsc, currentsc, derivedsc;
+#      |     ^~~~~~~~~~~~~~~~~~
+#  100|   push_fscreatecon(const char *pathname, mode_t mode)
+#  101|   {
+#  102|->     security_context_t previous, configuredsc, currentsc, derivedsc;
+#  103|       context_t current, derived;
+#  104|       const char *fullpath, *currentuser;
+
+Error: COMPILER_WARNING (CWE-477):
+krb5-1.19.2/src/util/support/selinux.c: scope_hint: At top level
+krb5-1.19.2/src/util/support/selinux.c:237:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#  237 | pop_fscreatecon(security_context_t previous)
+#      | ^~~~~~~~~~~~~~~
+#  235|   
+#  236|   static void
+#  237|-> pop_fscreatecon(security_context_t previous)
+#  238|   {
+#  239|       if (!is_selinux_enabled()) {
+
+Error: COMPILER_WARNING (CWE-477):
+krb5-1.19.2/src/util/support/selinux.c: scope_hint: In function 'krb5int_labeled_fopen'
+krb5-1.19.2/src/util/support/selinux.c:291:5: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#  291 |     security_context_t ctx;
+#      |     ^~~~~~~~~~~~~~~~~~
+#  289|       FILE *fp;
+#  290|       int errno_save;
+#  291|->     security_context_t ctx;
+#  292|   
+#  293|       if ((strcmp(mode, "r") == 0) ||
+
+Error: COMPILER_WARNING (CWE-477):
+krb5-1.19.2/src/util/support/selinux.c: scope_hint: In function 'krb5int_labeled_creat'
+krb5-1.19.2/src/util/support/selinux.c:317:5: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#  317 |     security_context_t ctx;
+#      |     ^~~~~~~~~~~~~~~~~~
+#  315|       int fd;
+#  316|       int errno_save;
+#  317|->     security_context_t ctx;
+#  318|   
+#  319|       k5_once(&labeled_once, label_mutex_init);
+
+Error: COMPILER_WARNING (CWE-477):
+krb5-1.19.2/src/util/support/selinux.c: scope_hint: In function 'krb5int_labeled_mknod'
+krb5-1.19.2/src/util/support/selinux.c:338:5: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#  338 |     security_context_t ctx;
+#      |     ^~~~~~~~~~~~~~~~~~
+#  336|       int ret;
+#  337|       int errno_save;
+#  338|->     security_context_t ctx;
+#  339|   
+#  340|       k5_once(&labeled_once, label_mutex_init);
+
+Error: COMPILER_WARNING (CWE-477):
+krb5-1.19.2/src/util/support/selinux.c: scope_hint: In function 'krb5int_labeled_mkdir'
+krb5-1.19.2/src/util/support/selinux.c:359:5: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#  359 |     security_context_t ctx;
+#      |     ^~~~~~~~~~~~~~~~~~
+#  357|       int ret;
+#  358|       int errno_save;
+#  359|->     security_context_t ctx;
+#  360|   
+#  361|       k5_once(&labeled_once, label_mutex_init);
+
+Error: COMPILER_WARNING (CWE-477):
+krb5-1.19.2/src/util/support/selinux.c: scope_hint: In function 'krb5int_labeled_open'
+krb5-1.19.2/src/util/support/selinux.c:380:5: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#  380 |     security_context_t ctx;
+#      |     ^~~~~~~~~~~~~~~~~~
+#  378|       int fd;
+#  379|       int errno_save;
+#  380|->     security_context_t ctx;
+#  381|       mode_t mode;
+#  382|       va_list ap;

@@ -1,0 +1,288 @@
+Error: COMPILER_WARNING (CWE-252):
+glib-2.70.0/gio/gio-tool-mount.c: scope_hint: In function ‘prompt_for’
+glib-2.70.0/gio/gio-tool-mount.c:113:3: warning[-Wunused-result]: ignoring return value of ‘fgets’ declared with attribute ‘warn_unused_result’
+#  113 |   fgets(data, sizeof (data), stdin);
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  111|   #endif
+#  112|   
+#  113|->   fgets(data, sizeof (data), stdin);
+#  114|   
+#  115|   #ifdef HAVE_TERMIOS_H
+
+Error: COMPILER_WARNING (CWE-252):
+glib-2.70.0/glib/gbacktrace.c: scope_hint: In function ‘g_on_error_query’
+glib-2.70.0/glib/gbacktrace.c:176:5: warning[-Wunused-result]: ignoring return value of ‘fgets’ declared with attribute ‘warn_unused_result’
+#  176 |     fgets (buf, 8, stdin);
+#      |     ^~~~~~~~~~~~~~~~~~~~~
+#  174|   
+#  175|     if (isatty(0) && isatty(1))
+#  176|->     fgets (buf, 8, stdin);
+#  177|     else
+#  178|       strcpy (buf, "E\n");
+
+Error: COMPILER_WARNING (CWE-252):
+glib-2.70.0/glib/gbacktrace.c: scope_hint: In function ‘stack_trace’
+glib-2.70.0/glib/gbacktrace.c:345:18: warning[-Wunused-result]: ignoring return value of ‘dup’ declared with attribute ‘warn_unused_result’
+#  345 |       close (0); dup (in_fd[0]);   /* set the stdin to the in pipe */
+#      |                  ^~~~~~~~~~~~~~
+#  343|           fcntl (old_err, F_SETFD, fcntl (old_err, F_GETFD) | FD_CLOEXEC);
+#  344|   
+#  345|->       close (0); dup (in_fd[0]);   /* set the stdin to the in pipe */
+#  346|         close (1); dup (out_fd[1]);  /* set the stdout to the out pipe */
+#  347|         close (2); dup (out_fd[1]);  /* set the stderr to the out pipe */
+
+Error: COMPILER_WARNING (CWE-252):
+glib-2.70.0/glib/gbacktrace.c:346:18: warning[-Wunused-result]: ignoring return value of ‘dup’ declared with attribute ‘warn_unused_result’
+#  346 |       close (1); dup (out_fd[1]);  /* set the stdout to the out pipe */
+#      |                  ^~~~~~~~~~~~~~~
+#  344|   
+#  345|         close (0); dup (in_fd[0]);   /* set the stdin to the in pipe */
+#  346|->       close (1); dup (out_fd[1]);  /* set the stdout to the out pipe */
+#  347|         close (2); dup (out_fd[1]);  /* set the stderr to the out pipe */
+#  348|   
+
+Error: COMPILER_WARNING (CWE-252):
+glib-2.70.0/glib/gbacktrace.c:347:18: warning[-Wunused-result]: ignoring return value of ‘dup’ declared with attribute ‘warn_unused_result’
+#  347 |       close (2); dup (out_fd[1]);  /* set the stderr to the out pipe */
+#      |                  ^~~~~~~~~~~~~~~
+#  345|         close (0); dup (in_fd[0]);   /* set the stdin to the in pipe */
+#  346|         close (1); dup (out_fd[1]);  /* set the stdout to the out pipe */
+#  347|->       close (2); dup (out_fd[1]);  /* set the stderr to the out pipe */
+#  348|   
+#  349|         execvp (args[0], (char **) args);      /* exec gdb */
+
+Error: COMPILER_WARNING (CWE-252):
+glib-2.70.0/glib/gbacktrace.c:355:11: warning[-Wunused-result]: ignoring return value of ‘dup’ declared with attribute ‘warn_unused_result’
+#  355 |           dup (old_err);
+#      |           ^~~~~~~~~~~~~
+#  353|           {
+#  354|             close (2);
+#  355|->           dup (old_err);
+#  356|           }
+#  357|         perror ("exec " DEBUGGER " failed");
+
+Error: COMPILER_WARNING (CWE-252):
+glib-2.70.0/glib/gbacktrace.c:375:3: warning[-Wunused-result]: ignoring return value of ‘write’ declared with attribute ‘warn_unused_result’
+#  375 |   write (in_fd[1], "backtrace\n", 10);
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  373|     write (in_fd[1], "quit\n", 5);
+#  374|   #else
+#  375|->   write (in_fd[1], "backtrace\n", 10);
+#  376|     write (in_fd[1], "p x = 0\n", 8);
+#  377|     write (in_fd[1], "quit\n", 5);
+
+Error: COMPILER_WARNING (CWE-252):
+glib-2.70.0/glib/gbacktrace.c:376:3: warning[-Wunused-result]: ignoring return value of ‘write’ declared with attribute ‘warn_unused_result’
+#  376 |   write (in_fd[1], "p x = 0\n", 8);
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  374|   #else
+#  375|     write (in_fd[1], "backtrace\n", 10);
+#  376|->   write (in_fd[1], "p x = 0\n", 8);
+#  377|     write (in_fd[1], "quit\n", 5);
+#  378|   #endif
+
+Error: COMPILER_WARNING (CWE-252):
+glib-2.70.0/glib/gbacktrace.c:377:3: warning[-Wunused-result]: ignoring return value of ‘write’ declared with attribute ‘warn_unused_result’
+#  377 |   write (in_fd[1], "quit\n", 5);
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  375|     write (in_fd[1], "backtrace\n", 10);
+#  376|     write (in_fd[1], "p x = 0\n", 8);
+#  377|->   write (in_fd[1], "quit\n", 5);
+#  378|   #endif
+#  379|   
+
+Error: COMPILER_WARNING (CWE-252):
+glib-2.70.0/glib/tests/fileutils.c: scope_hint: In function ‘test_set_contents’
+glib-2.70.0/glib/tests/fileutils.c:957:3: warning[-Wunused-result]: ignoring return value of ‘write’ declared with attribute ‘warn_unused_result’
+#  957 |   write (fd, "a", 1);
+#      |   ^~~~~~~~~~~~~~~~~~
+#  955|     fd = g_file_open_tmp (NULL, &name, &error);
+#  956|     g_assert_no_error (error);
+#  957|->   write (fd, "a", 1);
+#  958|     g_assert_cmpint (g_fsync (fd), ==, 0);
+#  959|     close (fd);
+
+Error: COMPILER_WARNING (CWE-252):
+glib-2.70.0/glib/tests/fileutils.c: scope_hint: In function ‘test_set_contents_full’
+glib-2.70.0/glib/tests/fileutils.c:1047:17: warning[-Wunused-result]: ignoring return value of ‘write’ declared with attribute ‘warn_unused_result’
+# 1047 |                 write (fd, "a", 1);
+#      |                 ^~~~~~~~~~~~~~~~~~
+# 1045|                   fd = g_file_open_tmp (NULL, &file_name, &error);
+# 1046|                   g_assert_no_error (error);
+# 1047|->                 write (fd, "a", 1);
+# 1048|                   g_assert_no_errno (g_fsync (fd));
+# 1049|                   close (fd);
+
+Error: COMPILER_WARNING (CWE-252):
+glib-2.70.0/glib/tests/fileutils.c: scope_hint: In function ‘test_set_contents_full_read_only_file’
+glib-2.70.0/glib/tests/fileutils.c:1170:3: warning[-Wunused-result]: ignoring return value of ‘write’ declared with attribute ‘warn_unused_result’
+# 1170 |   write (fd, "a", 1);
+#      |   ^~~~~~~~~~~~~~~~~~
+# 1168|     fd = g_file_open_tmp (NULL, &file_name, &error);
+# 1169|     g_assert_no_error (error);
+# 1170|->   write (fd, "a", 1);
+# 1171|     g_assert_no_errno (g_fsync (fd));
+# 1172|     close (fd);
+
+Error: COMPILER_WARNING (CWE-252):
+glib-2.70.0/glib/tests/fileutils.c: scope_hint: In function ‘test_set_contents_full_read_only_directory’
+glib-2.70.0/glib/tests/fileutils.c:1225:7: warning[-Wunused-result]: ignoring return value of ‘write’ declared with attribute ‘warn_unused_result’
+# 1225 |       write (fd, "a", 1);
+#      |       ^~~~~~~~~~~~~~~~~~
+# 1223|         fd = g_open (file_name, O_CREAT | O_RDWR, 0644);
+# 1224|         g_assert_cmpint (fd, >=, 0);
+# 1225|->       write (fd, "a", 1);
+# 1226|         g_assert_no_errno (g_fsync (fd));
+# 1227|         close (fd);
+
+Error: COMPILER_WARNING (CWE-681):
+glib-2.70.0/glib/tests/hmac.c: scope_hint: In function ‘test_gnutls_fips_mode’
+glib-2.70.0/glib/tests/hmac.c:510:38: warning[-Wpointer-sign]: pointer targets in passing argument 2 of ‘g_hmac_new’ differ in signedness
+#  510 |   hmac = g_hmac_new (G_CHECKSUM_MD5, "abc123", sizeof ("abc123"));
+#      |                                      ^~~~~~~~
+#      |                                      |
+#      |                                      char *
+glib-2.70.0/glib/glib.h:51: included_from: Included from here.
+glib-2.70.0/glib/tests/hmac.c:3: included_from: Included from here.
+glib-2.70.0/glib/ghmac.h:44:69: note: expected ‘const guchar *’ {aka ‘const unsigned char *’} but argument is of type ‘char *’
+#   44 |                                                      const guchar  *key,
+#      |                                                      ~~~~~~~~~~~~~~~^~~
+#  508|   
+#  509|     /* No MD5 in FIPS mode. */
+#  510|->   hmac = g_hmac_new (G_CHECKSUM_MD5, "abc123", sizeof ("abc123"));
+#  511|     g_assert_null (hmac);
+#  512|   
+
+Error: COMPILER_WARNING (CWE-681):
+glib-2.70.0/glib/tests/hmac.c:514:41: warning[-Wpointer-sign]: pointer targets in passing argument 2 of ‘g_hmac_new’ differ in signedness
+#  514 |   hmac = g_hmac_new (G_CHECKSUM_SHA256, "abc123", sizeof ("abc123"));
+#      |                                         ^~~~~~~~
+#      |                                         |
+#      |                                         char *
+glib-2.70.0/glib/glib.h:51: included_from: Included from here.
+glib-2.70.0/glib/tests/hmac.c:3: included_from: Included from here.
+glib-2.70.0/glib/ghmac.h:44:69: note: expected ‘const guchar *’ {aka ‘const unsigned char *’} but argument is of type ‘char *’
+#   44 |                                                      const guchar  *key,
+#      |                                                      ~~~~~~~~~~~~~~~^~~
+#  512|   
+#  513|     /* SHA-256 should be good. */
+#  514|->   hmac = g_hmac_new (G_CHECKSUM_SHA256, "abc123", sizeof ("abc123"));
+#  515|     g_assert_nonnull (hmac);
+#  516|   
+
+Error: COMPILER_WARNING (CWE-681):
+glib-2.70.0/glib/tests/hmac.c:518:24: warning[-Wpointer-sign]: pointer targets in passing argument 2 of ‘g_hmac_update’ differ in signedness
+#  518 |   g_hmac_update (hmac, "You win again, gravity!", -1);
+#      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~
+#      |                        |
+#      |                        char *
+glib-2.70.0/glib/glib.h:51: included_from: Included from here.
+glib-2.70.0/glib/tests/hmac.c:3: included_from: Included from here.
+glib-2.70.0/glib/ghmac.h:54:69: note: expected ‘const guchar *’ {aka ‘const unsigned char *’} but argument is of type ‘char *’
+#   54 |                                                      const guchar  *data,
+#      |                                                      ~~~~~~~~~~~~~~~^~~~
+#  516|   
+#  517|     /* Ensure g_hmac_update() does not crash when called with -1. */
+#  518|->   g_hmac_update (hmac, "You win again, gravity!", -1);
+#  519|   
+#  520|     /* Ensure g_hmac_copy() does not crash. */
+
+Error: COMPILER_WARNING (CWE-252):
+glib-2.70.0/glib/tests/mainloop.c: scope_hint: In function ‘test_source_unix_fd_api’
+glib-2.70.0/glib/tests/mainloop.c:1420:3: warning[-Wunused-result]: ignoring return value of ‘pipe’ declared with attribute ‘warn_unused_result’
+# 1420 |   pipe (fds_a);
+#      |   ^~~~~~~~~~~~
+# 1418|     gint fds_b[2];
+# 1419|   
+# 1420|->   pipe (fds_a);
+# 1421|     pipe (fds_b);
+# 1422|   
+
+Error: COMPILER_WARNING (CWE-252):
+glib-2.70.0/glib/tests/mainloop.c:1421:3: warning[-Wunused-result]: ignoring return value of ‘pipe’ declared with attribute ‘warn_unused_result’
+# 1421 |   pipe (fds_b);
+#      |   ^~~~~~~~~~~~
+# 1419|   
+# 1420|     pipe (fds_a);
+# 1421|->   pipe (fds_b);
+# 1422|   
+# 1423|     source_a = g_source_new (&no_funcs, sizeof (FlagSource));
+
+Error: COMPILER_WARNING (CWE-252):
+glib-2.70.0/glib/tests/unix.c: scope_hint: In function ‘test_pipe’
+glib-2.70.0/glib/tests/unix.c:43:3: warning[-Wunused-result]: ignoring return value of ‘write’ declared with attribute ‘warn_unused_result’
+#   43 |   write (pipefd[1], "hello", sizeof ("hello"));
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   41|     g_assert_no_error (error);
+#   42|   
+#   43|->   write (pipefd[1], "hello", sizeof ("hello"));
+#   44|     memset (buf, 0, sizeof (buf));
+#   45|     bytes_read = read (pipefd[0], buf, sizeof(buf) - 1);
+
+Error: COMPILER_WARNING (CWE-252):
+glib-2.70.0/tests/child-test.c: scope_hint: In function ‘main’
+glib-2.70.0/tests/child-test.c:169:3: warning[-Wunused-result]: ignoring return value of ‘system’ declared with attribute ‘warn_unused_result’
+#  169 |   system ("true");
+#      |   ^~~~~~~~~~~~~~~
+#  167|     system ("ipconfig /all");
+#  168|   #else
+#  169|->   system ("true");
+#  170|   #endif
+#  171|   
+
+Error: COMPILER_WARNING (CWE-252):
+glib-2.70.0/tests/gio-test.c: scope_hint: In function ‘main’
+glib-2.70.0/tests/gio-test.c:338:11: warning[-Wunused-result]: ignoring return value of ‘system’ declared with attribute ‘warn_unused_result’
+#  338 |           system (cmdline);
+#      |           ^~~~~~~~~~~~~~~~
+#  336|   				     pipe_to_sub[0], pipe_from_sub[1]);
+#  337|   	  
+#  338|-> 	  system (cmdline);
+#  339|             g_free (cmdline);
+#  340|   #endif
+
+Error: COMPILER_WARNING (CWE-252):
+glib-2.70.0/tests/gio-test.c:398:11: warning[-Wunused-result]: ignoring return value of ‘write’ declared with attribute ‘warn_unused_result’
+#  398 |           write (writefd, &i, sizeof (i));
+#      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  396|   	  g_debug ("gio-test: child writing %d+%d bytes to %d",
+#  397|   		   (int)(sizeof(i) + sizeof(buflen)), buflen, writefd);
+#  398|-> 	  write (writefd, &i, sizeof (i));
+#  399|   	  write (writefd, &buflen, sizeof (buflen));
+#  400|   	  write (writefd, buf, buflen);
+
+Error: COMPILER_WARNING (CWE-252):
+glib-2.70.0/tests/gio-test.c:399:11: warning[-Wunused-result]: ignoring return value of ‘write’ declared with attribute ‘warn_unused_result’
+#  399 |           write (writefd, &buflen, sizeof (buflen));
+#      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  397|   		   (int)(sizeof(i) + sizeof(buflen)), buflen, writefd);
+#  398|   	  write (writefd, &i, sizeof (i));
+#  399|-> 	  write (writefd, &buflen, sizeof (buflen));
+#  400|   	  write (writefd, buf, buflen);
+#  401|   
+
+Error: COMPILER_WARNING (CWE-252):
+glib-2.70.0/tests/gio-test.c:400:11: warning[-Wunused-result]: ignoring return value of ‘write’ declared with attribute ‘warn_unused_result’
+#  400 |           write (writefd, buf, buflen);
+#      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  398|   	  write (writefd, &i, sizeof (i));
+#  399|   	  write (writefd, &buflen, sizeof (buflen));
+#  400|-> 	  write (writefd, buf, buflen);
+#  401|   
+#  402|   #ifdef G_OS_WIN32
+
+Error: COMPILER_WARNING (CWE-704):
+glib-2.70.0/tests/slice-test.c:30:17: warning[-Wlto-type-mismatch]: type of ‘old_mem_chunk_new’ does not match original declaration
+#   30 | GMemChunk*      old_mem_chunk_new       (const gchar  *name,
+#      |                 ^
+glib-2.70.0/tests/memchunks.c:131:1: note: type mismatch in parameter 2
+#  131 | old_mem_chunk_new (const gchar  *name,
+#      | ^
+glib-2.70.0/tests/memchunks.c:131:1: note: type ‘gulong’ should match type ‘gint’
+glib-2.70.0/tests/memchunks.c:131:1: note: ‘old_mem_chunk_new’ was previously declared here
+glib-2.70.0/tests/memchunks.c:131:1: note: code may be misoptimized unless ‘-fno-strict-aliasing’ is used
+#   28|   
+#   29|   /* --- old memchunk prototypes (memchunks.c) --- */
+#   30|-> GMemChunk*      old_mem_chunk_new       (const gchar  *name,
+#   31|                                            gint          atom_size,
+#   32|                                            gulong        area_size,

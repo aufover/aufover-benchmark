@@ -1,0 +1,13 @@
+Error: COMPILER_WARNING (CWE-457):
+cockpit-254/src/common/test-jsonfds.c: scope_hint: In function 'test_unix_socket_simple'
+cockpit-254/src/common/test-jsonfds.c:649:22: warning[-Wmaybe-uninitialized]: 'n_fds' may be used uninitialized in this function
+#  649 |   for (gint i = 0; i < nfds; i++)
+#      |                    ~~^~~~~~
+cockpit-254/src/common/test-jsonfds.c:773:8: note: 'n_fds' was declared here
+#  773 |   gint n_fds;
+#      |        ^~~~~
+#  647|     gint nfds = *inout_nfds;
+#  648|   
+#  649|->   for (gint i = 0; i < nfds; i++)
+#  650|       {
+#  651|         g_assert (fds[i] != -1);

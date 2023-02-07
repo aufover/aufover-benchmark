@@ -1,0 +1,639 @@
+scan.ini: [scan]
+scan.ini: tool = csmock
+scan.ini: tool-version = csmock-3.3.4-1.fc36
+scan.ini: tool-args = '/usr/bin/csmock' '-o' '/root/aufover-benchmark/workdir-for-sync/rpm-pkgs/basesystem-11-12.fc35/valgrind/output' '-f' '/root/aufover-benchmark/workdir-for-sync/rpm-pkgs/basesystem-11-12.fc35/basesystem-11-12.fc35.src.rpm' '-r' 'fedora-35-x86_64' '-t' 'valgrind' '--valgrind-timeout=8' '--keep-going'
+scan.ini: host = dell-pe-fm120-1b.dell2.lab.eng.bos.redhat.com
+scan.ini: store-results-to = /root/aufover-benchmark/workdir-for-sync/rpm-pkgs/basesystem-11-12.fc35/valgrind/output
+scan.ini: time-created = 2022-11-23 16:40:13
+scan.ini: enabled-plugins = valgrind, gcc
+scan.ini: mock-config = fedora-35-x86_64
+scan.ini: project-name = basesystem-11-12.fc35
+>>> 2022-11-23 16:40:13	"rpm -qa | sort -V > '/root/aufover-benchmark/workdir-for-sync/rpm-pkgs/basesystem-11-12.fc35/valgrind/output/debug/rpm-list-host.txt'"
+
+>>> 2022-11-23 16:40:14	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--init"
+INFO: mock.py version 3.3 starting (python version = 3.10.8, NVR = mock-3.3-1.fc36)...
+Start(bootstrap): init plugins
+INFO: selinux enabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start: clean chroot
+Finish: clean chroot
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 3.3
+INFO: Mock Version: 3.3
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+Start: unpacking root cache
+Finish: unpacking root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 3.3
+INFO: Mock Version: 3.3
+Finish: chroot init
+Finish: run
+
+>>> 2022-11-23 16:40:22	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--installdeps" "/tmp/csmockflls1_cw/basesystem-11-12.fc35.src.rpm"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+fedora                   [===                 ] ---  B/s |   0  B     --:-- ETAfedora                   [===                 ] ---  B/s |   0  B     --:-- ETAfedora                                           49 kB/s |  22 kB     00:00    
+updates                  [   ===              ] ---  B/s |   0  B     --:-- ETAupdates                                         101 kB/s |  21 kB     00:00    
+Dependencies resolved.
+Nothing to do.
+Complete!
+
+>>> 2022-11-23 16:40:33	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--install" "valgrind" "csexec"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+fedora                   [===                 ] ---  B/s |   0  B     --:-- ETAfedora                                          100 kB/s |  22 kB     00:00    
+updates                  [===                 ] ---  B/s |   0  B     --:-- ETAupdates                                         135 kB/s |  21 kB     00:00    
+Dependencies resolved.
+================================================================================
+ Package                   Arch      Version                   Repository  Size
+================================================================================
+Installing:
+ [1mcsexec                   [m x86_64    2.2.2-1.fc35              updates    365 k
+ [1mvalgrind                 [m x86_64    1:3.19.0-3.fc35           updates    4.8 M
+Installing dependencies:
+ [1mgroff-base               [m x86_64    1.22.4-8.fc35             fedora     1.0 M
+ [1mncurses                  [m x86_64    6.2-8.20210508.fc35       fedora     400 k
+ [1mperl-Carp                [m noarch    1.52-478.fc35             fedora      29 k
+ [1mperl-Class-Struct        [m noarch    0.66-486.fc35             updates     27 k
+ [1mperl-DynaLoader          [m x86_64    1.50-486.fc35             updates     30 k
+ [1mperl-Encode              [m x86_64    4:3.15-482.fc35           updates    1.7 M
+ [1mperl-Errno               [m x86_64    1.33-486.fc35             updates     19 k
+ [1mperl-Exporter            [m noarch    5.76-479.fc35             fedora      31 k
+ [1mperl-Fcntl               [m x86_64    1.14-486.fc35             updates     25 k
+ [1mperl-File-Basename       [m noarch    2.85-486.fc35             updates     22 k
+ [1mperl-File-Path           [m noarch    2.18-478.fc35             fedora      35 k
+ [1mperl-File-Temp           [m noarch    1:0.231.100-478.fc35      fedora      59 k
+ [1mperl-File-stat           [m noarch    1.09-486.fc35             updates     22 k
+ [1mperl-Getopt-Long         [m noarch    1:2.52-478.fc35           fedora      60 k
+ [1mperl-Getopt-Std          [m noarch    1.13-486.fc35             updates     20 k
+ [1mperl-HTTP-Tiny           [m noarch    0.080-1.fc35              updates     55 k
+ [1mperl-IO                  [m x86_64    1.46-486.fc35             updates     91 k
+ [1mperl-IPC-Open3           [m noarch    1.21-486.fc35             updates     27 k
+ [1mperl-MIME-Base64         [m x86_64    3.16-478.fc35             fedora      30 k
+ [1mperl-POSIX               [m x86_64    1.97-486.fc35             updates    102 k
+ [1mperl-PathTools           [m x86_64    3.80-478.fc35             fedora      85 k
+ [1mperl-Pod-Escapes         [m noarch    1:1.07-478.fc35           fedora      20 k
+ [1mperl-Pod-Perldoc         [m noarch    3.28.01-479.fc35          fedora      84 k
+ [1mperl-Pod-Simple          [m noarch    1:3.43-2.fc35             fedora     215 k
+ [1mperl-Pod-Usage           [m noarch    4:2.01-478.fc35           fedora      40 k
+ [1mperl-Scalar-List-Utils   [m x86_64    5:1.62-463.fc35           updates     72 k
+ [1mperl-SelectSaver         [m noarch    1.02-486.fc35             updates     16 k
+ [1mperl-Socket              [m x86_64    4:2.032-2.fc35            fedora      55 k
+ [1mperl-Storable            [m x86_64    1:3.25-1.fc35             fedora      95 k
+ [1mperl-Symbol              [m noarch    1.09-486.fc35             updates     19 k
+ [1mperl-Term-ANSIColor      [m noarch    5.01-479.fc35             fedora      48 k
+ [1mperl-Term-Cap            [m noarch    1.17-478.fc35             fedora      22 k
+ [1mperl-Text-ParseWords     [m noarch    3.30-478.fc35             fedora      16 k
+ [1mperl-Text-Tabs+Wrap      [m noarch    2021.0814-1.fc35          fedora      22 k
+ [1mperl-Time-Local          [m noarch    2:1.300-478.fc35          fedora      33 k
+ [1mperl-constant            [m noarch    1.33-479.fc35             fedora      23 k
+ [1mperl-if                  [m noarch    0.60.900-486.fc35         updates     18 k
+ [1mperl-interpreter         [m x86_64    4:5.34.1-486.fc35         updates     76 k
+ [1mperl-libs                [m x86_64    4:5.34.1-486.fc35         updates    2.1 M
+ [1mperl-mro                 [m x86_64    1.25-486.fc35             updates     33 k
+ [1mperl-overload            [m noarch    1.33-486.fc35             updates     50 k
+ [1mperl-overloading         [m noarch    0.02-486.fc35             updates     17 k
+ [1mperl-parent              [m noarch    1:0.238-478.fc35          fedora      14 k
+ [1mperl-podlators           [m noarch    1:4.14-478.fc35           fedora     111 k
+ [1mperl-subs                [m noarch    1.04-486.fc35             updates     16 k
+ [1mperl-vars                [m noarch    1.05-486.fc35             updates     17 k
+
+Transaction Summary
+================================================================================
+Install  48 Packages
+
+Total size: 12 M
+Installed size: 56 M
+Downloading Packages:
+[SKIPPED] groff-base-1.22.4-8.fc35.x86_64.rpm: Already downloaded              
+[SKIPPED] ncurses-6.2-8.20210508.fc35.x86_64.rpm: Already downloaded           
+[SKIPPED] perl-Carp-1.52-478.fc35.noarch.rpm: Already downloaded               
+[SKIPPED] perl-Exporter-5.76-479.fc35.noarch.rpm: Already downloaded           
+[SKIPPED] perl-File-Path-2.18-478.fc35.noarch.rpm: Already downloaded          
+[SKIPPED] perl-File-Temp-0.231.100-478.fc35.noarch.rpm: Already downloaded     
+[SKIPPED] perl-Getopt-Long-2.52-478.fc35.noarch.rpm: Already downloaded        
+[SKIPPED] perl-MIME-Base64-3.16-478.fc35.x86_64.rpm: Already downloaded        
+[SKIPPED] perl-PathTools-3.80-478.fc35.x86_64.rpm: Already downloaded          
+[SKIPPED] perl-Pod-Escapes-1.07-478.fc35.noarch.rpm: Already downloaded        
+[SKIPPED] perl-Pod-Perldoc-3.28.01-479.fc35.noarch.rpm: Already downloaded     
+[SKIPPED] perl-Pod-Simple-3.43-2.fc35.noarch.rpm: Already downloaded           
+[SKIPPED] perl-Pod-Usage-2.01-478.fc35.noarch.rpm: Already downloaded          
+[SKIPPED] perl-Socket-2.032-2.fc35.x86_64.rpm: Already downloaded              
+[SKIPPED] perl-Storable-3.25-1.fc35.x86_64.rpm: Already downloaded             
+[SKIPPED] perl-Term-ANSIColor-5.01-479.fc35.noarch.rpm: Already downloaded     
+[SKIPPED] perl-Term-Cap-1.17-478.fc35.noarch.rpm: Already downloaded           
+[SKIPPED] perl-Text-ParseWords-3.30-478.fc35.noarch.rpm: Already downloaded    
+[SKIPPED] perl-Text-Tabs+Wrap-2021.0814-1.fc35.noarch.rpm: Already downloaded  
+[SKIPPED] perl-Time-Local-1.300-478.fc35.noarch.rpm: Already downloaded        
+[SKIPPED] perl-constant-1.33-479.fc35.noarch.rpm: Already downloaded           
+[SKIPPED] perl-parent-0.238-478.fc35.noarch.rpm: Already downloaded            
+[SKIPPED] perl-podlators-4.14-478.fc35.noarch.rpm: Already downloaded          
+[SKIPPED] csexec-2.2.2-1.fc35.x86_64.rpm: Already downloaded                   
+[SKIPPED] perl-Class-Struct-0.66-486.fc35.noarch.rpm: Already downloaded       
+[SKIPPED] perl-DynaLoader-1.50-486.fc35.x86_64.rpm: Already downloaded         
+[SKIPPED] perl-Encode-3.15-482.fc35.x86_64.rpm: Already downloaded             
+[SKIPPED] perl-Errno-1.33-486.fc35.x86_64.rpm: Already downloaded              
+[SKIPPED] perl-Fcntl-1.14-486.fc35.x86_64.rpm: Already downloaded              
+[SKIPPED] perl-File-Basename-2.85-486.fc35.noarch.rpm: Already downloaded      
+[SKIPPED] perl-File-stat-1.09-486.fc35.noarch.rpm: Already downloaded          
+[SKIPPED] perl-Getopt-Std-1.13-486.fc35.noarch.rpm: Already downloaded         
+[SKIPPED] perl-HTTP-Tiny-0.080-1.fc35.noarch.rpm: Already downloaded           
+[SKIPPED] perl-IO-1.46-486.fc35.x86_64.rpm: Already downloaded                 
+[SKIPPED] perl-IPC-Open3-1.21-486.fc35.noarch.rpm: Already downloaded          
+[SKIPPED] perl-POSIX-1.97-486.fc35.x86_64.rpm: Already downloaded              
+[SKIPPED] perl-Scalar-List-Utils-1.62-463.fc35.x86_64.rpm: Already downloaded  
+[SKIPPED] perl-SelectSaver-1.02-486.fc35.noarch.rpm: Already downloaded        
+[SKIPPED] perl-Symbol-1.09-486.fc35.noarch.rpm: Already downloaded             
+[SKIPPED] perl-if-0.60.900-486.fc35.noarch.rpm: Already downloaded             
+[SKIPPED] perl-interpreter-5.34.1-486.fc35.x86_64.rpm: Already downloaded      
+[SKIPPED] perl-libs-5.34.1-486.fc35.x86_64.rpm: Already downloaded             
+[SKIPPED] perl-mro-1.25-486.fc35.x86_64.rpm: Already downloaded                
+[SKIPPED] perl-overload-1.33-486.fc35.noarch.rpm: Already downloaded           
+[SKIPPED] perl-overloading-0.02-486.fc35.noarch.rpm: Already downloaded        
+[SKIPPED] perl-subs-1.04-486.fc35.noarch.rpm: Already downloaded               
+[SKIPPED] perl-vars-1.05-486.fc35.noarch.rpm: Already downloaded               
+[SKIPPED] valgrind-3.19.0-3.fc35.x86_64.rpm: Already downloaded                
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :  [=                                                  ] 1/1  Preparing        :  [==                                                 ] 1/1  Preparing        :  [===                                                ] 1/1  Preparing        :  [====                                               ] 1/1  Preparing        :  [=====                                              ] 1/1  Preparing        :  [======                                             ] 1/1  Preparing        :  [=======                                            ] 1/1  Preparing        :  [========                                           ] 1/1  Preparing        :  [=========                                          ] 1/1  Preparing        :  [==========                                         ] 1/1  Preparing        :  [===========                                        ] 1/1  Preparing        :  [============                                       ] 1/1  Preparing        :  [=============                                      ] 1/1  Preparing        :  [==============                                     ] 1/1  Preparing        :  [===============                                    ] 1/1  Preparing        :  [================                                   ] 1/1  Preparing        :  [=================                                  ] 1/1  Preparing        :  [==================                                 ] 1/1  Preparing        :  [===================                                ] 1/1  Preparing        :  [====================                               ] 1/1  Preparing        :  [=====================                              ] 1/1  Preparing        :  [======================                             ] 1/1  Preparing        :  [=======================                            ] 1/1  Preparing        :  [=========================                          ] 1/1  Preparing        :  [==========================                         ] 1/1  Preparing        :  [===========================                        ] 1/1  Preparing        :  [============================                       ] 1/1  Preparing        :  [=============================                      ] 1/1  Preparing        :  [==============================                     ] 1/1  Preparing        :  [===============================                    ] 1/1  Preparing        :  [================================                   ] 1/1  Preparing        :  [=================================                  ] 1/1  Preparing        :  [==================================                 ] 1/1  Preparing        :  [===================================                ] 1/1  Preparing        :  [====================================               ] 1/1  Preparing        :  [======================================             ] 1/1  Preparing        :  [=======================================            ] 1/1  Preparing        :  [========================================           ] 1/1  Preparing        :  [=========================================          ] 1/1  Preparing        :  [==========================================         ] 1/1  Preparing        :  [===========================================        ] 1/1  Preparing        :  [============================================       ] 1/1  Preparing        :  [=============================================      ] 1/1  Preparing        :  [==============================================     ] 1/1  Preparing        :  [===============================================    ] 1/1  Preparing        :  [================================================   ] 1/1  Preparing        :  [=================================================  ] 1/1  Preparing        :                                                        1/1 
+  Installing       : ncurses-6.2-8.20210508.f [                         ]  1/48  Installing       : ncurses-6.2-8.20210508.f [=                        ]  1/48  Installing       : ncurses-6.2-8.20210508.f [===                      ]  1/48  Installing       : ncurses-6.2-8.20210508.f [====                     ]  1/48  Installing       : ncurses-6.2-8.20210508.f [=====                    ]  1/48  Installing       : ncurses-6.2-8.20210508.f [======                   ]  1/48  Installing       : ncurses-6.2-8.20210508.f [=======                  ]  1/48  Installing       : ncurses-6.2-8.20210508.f [========                 ]  1/48  Installing       : ncurses-6.2-8.20210508.f [=========                ]  1/48  Installing       : ncurses-6.2-8.20210508.f [==========               ]  1/48  Installing       : ncurses-6.2-8.20210508.f [============             ]  1/48  Installing       : ncurses-6.2-8.20210508.f [=============            ]  1/48  Installing       : ncurses-6.2-8.20210508.f [===============          ]  1/48  Installing       : ncurses-6.2-8.20210508.f [================         ]  1/48  Installing       : ncurses-6.2-8.20210508.f [=================        ]  1/48  Installing       : ncurses-6.2-8.20210508.f [===================      ]  1/48  Installing       : ncurses-6.2-8.20210508.f [====================     ]  1/48  Installing       : ncurses-6.2-8.20210508.f [=====================    ]  1/48  Installing       : ncurses-6.2-8.20210508.f [======================   ]  1/48  Installing       : ncurses-6.2-8.20210508.f [=======================  ]  1/48  Installing       : ncurses-6.2-8.20210508.f [======================== ]  1/48  Installing       : ncurses-6.2-8.20210508.fc35.x86_64                    1/48 
+  Running scriptlet: groff-base-1.22.4-8.fc35.x86_64                       2/48 
+  Installing       : groff-base-1.22.4-8.fc35 [                         ]  2/48  Installing       : groff-base-1.22.4-8.fc35 [=                        ]  2/48  Installing       : groff-base-1.22.4-8.fc35 [==                       ]  2/48  Installing       : groff-base-1.22.4-8.fc35 [===                      ]  2/48  Installing       : groff-base-1.22.4-8.fc35 [====                     ]  2/48  Installing       : groff-base-1.22.4-8.fc35 [=====                    ]  2/48  Installing       : groff-base-1.22.4-8.fc35 [======                   ]  2/48  Installing       : groff-base-1.22.4-8.fc35 [=======                  ]  2/48  Installing       : groff-base-1.22.4-8.fc35 [========                 ]  2/48  Installing       : groff-base-1.22.4-8.fc35 [=========                ]  2/48  Installing       : groff-base-1.22.4-8.fc35 [==========               ]  2/48  Installing       : groff-base-1.22.4-8.fc35 [===========              ]  2/48  Installing       : groff-base-1.22.4-8.fc35 [============             ]  2/48  Installing       : groff-base-1.22.4-8.fc35 [=============            ]  2/48  Installing       : groff-base-1.22.4-8.fc35 [==============           ]  2/48  Installing       : groff-base-1.22.4-8.fc35 [===============          ]  2/48  Installing       : groff-base-1.22.4-8.fc35 [================         ]  2/48  Installing       : groff-base-1.22.4-8.fc35 [=================        ]  2/48  Installing       : groff-base-1.22.4-8.fc35 [==================       ]  2/48  Installing       : groff-base-1.22.4-8.fc35 [===================      ]  2/48  Installing       : groff-base-1.22.4-8.fc35 [====================     ]  2/48  Installing       : groff-base-1.22.4-8.fc35 [=====================    ]  2/48  Installing       : groff-base-1.22.4-8.fc35 [======================   ]  2/48  Installing       : groff-base-1.22.4-8.fc35 [=======================  ]  2/48  Installing       : groff-base-1.22.4-8.fc35 [======================== ]  2/48  Installing       : groff-base-1.22.4-8.fc35.x86_64                       2/48 
+  Running scriptlet: groff-base-1.22.4-8.fc35.x86_64                       2/48 
+  Installing       : perl-Text-Tabs+Wrap-2021 [                         ]  3/48  Installing       : perl-Text-Tabs+Wrap-2021 [=====                    ]  3/48  Installing       : perl-Text-Tabs+Wrap-2021 [======                   ]  3/48  Installing       : perl-Text-Tabs+Wrap-2021 [========                 ]  3/48  Installing       : perl-Text-Tabs+Wrap-2021 [============             ]  3/48  Installing       : perl-Text-Tabs+Wrap-2021 [================         ]  3/48  Installing       : perl-Text-Tabs+Wrap-2021 [======================== ]  3/48  Installing       : perl-Text-Tabs+Wrap-2021.0814-1.fc35.noarch           3/48 
+  Installing       : perl-Time-Local-2:1.300- [                         ]  4/48  Installing       : perl-Time-Local-2:1.300- [=                        ]  4/48  Installing       : perl-Time-Local-2:1.300- [==                       ]  4/48  Installing       : perl-Time-Local-2:1.300- [======                   ]  4/48  Installing       : perl-Time-Local-2:1.300- [==========               ]  4/48  Installing       : perl-Time-Local-2:1.300- [================         ]  4/48  Installing       : perl-Time-Local-2:1.300- [==================       ]  4/48  Installing       : perl-Time-Local-2:1.300- [======================== ]  4/48  Installing       : perl-Time-Local-2:1.300-478.fc35.noarch               4/48 
+  Installing       : perl-if-0.60.900-486.fc3 [                         ]  5/48  Installing       : perl-if-0.60.900-486.fc3 [===========              ]  5/48  Installing       : perl-if-0.60.900-486.fc3 [======================== ]  5/48  Installing       : perl-if-0.60.900-486.fc35.noarch                      5/48 
+  Installing       : perl-File-Path-2.18-478. [                         ]  6/48  Installing       : perl-File-Path-2.18-478. [====                     ]  6/48  Installing       : perl-File-Path-2.18-478. [========                 ]  6/48  Installing       : perl-File-Path-2.18-478. [=====================    ]  6/48  Installing       : perl-File-Path-2.18-478. [======================== ]  6/48  Installing       : perl-File-Path-2.18-478.fc35.noarch                   6/48 
+  Installing       : perl-Pod-Escapes-1:1.07- [                         ]  7/48  Installing       : perl-Pod-Escapes-1:1.07- [==                       ]  7/48  Installing       : perl-Pod-Escapes-1:1.07- [====                     ]  7/48  Installing       : perl-Pod-Escapes-1:1.07- [=======                  ]  7/48  Installing       : perl-Pod-Escapes-1:1.07- [========                 ]  7/48  Installing       : perl-Pod-Escapes-1:1.07- [======================== ]  7/48  Installing       : perl-Pod-Escapes-1:1.07-478.fc35.noarch               7/48 
+  Installing       : perl-Term-ANSIColor-5.01 [                         ]  8/48  Installing       : perl-Term-ANSIColor-5.01 [===                      ]  8/48  Installing       : perl-Term-ANSIColor-5.01 [====                     ]  8/48  Installing       : perl-Term-ANSIColor-5.01 [=====                    ]  8/48  Installing       : perl-Term-ANSIColor-5.01 [=======                  ]  8/48  Installing       : perl-Term-ANSIColor-5.01 [===========              ]  8/48  Installing       : perl-Term-ANSIColor-5.01 [===================      ]  8/48  Installing       : perl-Term-ANSIColor-5.01 [======================== ]  8/48  Installing       : perl-Term-ANSIColor-5.01-479.fc35.noarch              8/48 
+  Installing       : perl-Class-Struct-0.66-4 [                         ]  9/48  Installing       : perl-Class-Struct-0.66-4 [======                   ]  9/48  Installing       : perl-Class-Struct-0.66-4 [======================== ]  9/48  Installing       : perl-Class-Struct-0.66-486.fc35.noarch                9/48 
+  Installing       : perl-POSIX-1.97-486.fc35 [                         ] 10/48  Installing       : perl-POSIX-1.97-486.fc35 [==                       ] 10/48  Installing       : perl-POSIX-1.97-486.fc35 [=====                    ] 10/48  Installing       : perl-POSIX-1.97-486.fc35 [========                 ] 10/48  Installing       : perl-POSIX-1.97-486.fc35 [==========               ] 10/48  Installing       : perl-POSIX-1.97-486.fc35 [==============           ] 10/48  Installing       : perl-POSIX-1.97-486.fc35 [=================        ] 10/48  Installing       : perl-POSIX-1.97-486.fc35 [====================     ] 10/48  Installing       : perl-POSIX-1.97-486.fc35 [======================   ] 10/48  Installing       : perl-POSIX-1.97-486.fc35 [======================== ] 10/48  Installing       : perl-POSIX-1.97-486.fc35.x86_64                      10/48 
+  Installing       : perl-HTTP-Tiny-0.080-1.f [                         ] 11/48  Installing       : perl-HTTP-Tiny-0.080-1.f [===                      ] 11/48  Installing       : perl-HTTP-Tiny-0.080-1.f [=======                  ] 11/48  Installing       : perl-HTTP-Tiny-0.080-1.f [==========               ] 11/48  Installing       : perl-HTTP-Tiny-0.080-1.f [============             ] 11/48  Installing       : perl-HTTP-Tiny-0.080-1.f [=================        ] 11/48  Installing       : perl-HTTP-Tiny-0.080-1.f [======================   ] 11/48  Installing       : perl-HTTP-Tiny-0.080-1.f [======================== ] 11/48  Installing       : perl-HTTP-Tiny-0.080-1.fc35.noarch                   11/48 
+  Installing       : perl-IPC-Open3-1.21-486. [                         ] 12/48  Installing       : perl-IPC-Open3-1.21-486. [===                      ] 12/48  Installing       : perl-IPC-Open3-1.21-486. [=======                  ] 12/48  Installing       : perl-IPC-Open3-1.21-486. [===========              ] 12/48  Installing       : perl-IPC-Open3-1.21-486. [======================== ] 12/48  Installing       : perl-IPC-Open3-1.21-486.fc35.noarch                  12/48 
+  Installing       : perl-subs-1.04-486.fc35. [                         ] 13/48  Installing       : perl-subs-1.04-486.fc35. [================         ] 13/48  Installing       : perl-subs-1.04-486.fc35. [======================== ] 13/48  Installing       : perl-subs-1.04-486.fc35.noarch                       13/48 
+  Installing       : perl-File-Temp-1:0.231.1 [                         ] 14/48  Installing       : perl-File-Temp-1:0.231.1 [==                       ] 14/48  Installing       : perl-File-Temp-1:0.231.1 [=====                    ] 14/48  Installing       : perl-File-Temp-1:0.231.1 [=======                  ] 14/48  Installing       : perl-File-Temp-1:0.231.1 [============             ] 14/48  Installing       : perl-File-Temp-1:0.231.1 [=================        ] 14/48  Installing       : perl-File-Temp-1:0.231.1 [=====================    ] 14/48  Installing       : perl-File-Temp-1:0.231.1 [======================== ] 14/48  Installing       : perl-File-Temp-1:0.231.100-478.fc35.noarch           14/48 
+  Installing       : perl-Pod-Simple-1:3.43-2 [                         ] 15/48  Installing       : perl-Pod-Simple-1:3.43-2 [=                        ] 15/48  Installing       : perl-Pod-Simple-1:3.43-2 [==                       ] 15/48  Installing       : perl-Pod-Simple-1:3.43-2 [===                      ] 15/48  Installing       : perl-Pod-Simple-1:3.43-2 [====                     ] 15/48  Installing       : perl-Pod-Simple-1:3.43-2 [=====                    ] 15/48  Installing       : perl-Pod-Simple-1:3.43-2 [======                   ] 15/48  Installing       : perl-Pod-Simple-1:3.43-2 [=======                  ] 15/48  Installing       : perl-Pod-Simple-1:3.43-2 [========                 ] 15/48  Installing       : perl-Pod-Simple-1:3.43-2 [=========                ] 15/48  Installing       : perl-Pod-Simple-1:3.43-2 [===========              ] 15/48  Installing       : perl-Pod-Simple-1:3.43-2 [============             ] 15/48  Installing       : perl-Pod-Simple-1:3.43-2 [==============           ] 15/48  Installing       : perl-Pod-Simple-1:3.43-2 [===============          ] 15/48  Installing       : perl-Pod-Simple-1:3.43-2 [================         ] 15/48  Installing       : perl-Pod-Simple-1:3.43-2 [=================        ] 15/48  Installing       : perl-Pod-Simple-1:3.43-2 [==================       ] 15/48  Installing       : perl-Pod-Simple-1:3.43-2 [===================      ] 15/48  Installing       : perl-Pod-Simple-1:3.43-2 [=====================    ] 15/48  Installing       : perl-Pod-Simple-1:3.43-2 [======================   ] 15/48  Installing       : perl-Pod-Simple-1:3.43-2 [=======================  ] 15/48  Installing       : perl-Pod-Simple-1:3.43-2 [======================== ] 15/48  Installing       : perl-Pod-Simple-1:3.43-2.fc35.noarch                 15/48 
+  Installing       : perl-Term-Cap-1.17-478.f [                         ] 16/48  Installing       : perl-Term-Cap-1.17-478.f [==                       ] 16/48  Installing       : perl-Term-Cap-1.17-478.f [===                      ] 16/48  Installing       : perl-Term-Cap-1.17-478.f [=====                    ] 16/48  Installing       : perl-Term-Cap-1.17-478.f [========                 ] 16/48  Installing       : perl-Term-Cap-1.17-478.f [======================== ] 16/48  Installing       : perl-Term-Cap-1.17-478.fc35.noarch                   16/48 
+  Installing       : perl-Socket-4:2.032-2.fc [                         ] 17/48  Installing       : perl-Socket-4:2.032-2.fc [======                   ] 17/48  Installing       : perl-Socket-4:2.032-2.fc [=======                  ] 17/48  Installing       : perl-Socket-4:2.032-2.fc [=============            ] 17/48  Installing       : perl-Socket-4:2.032-2.fc [=================        ] 17/48  Installing       : perl-Socket-4:2.032-2.fc [===================      ] 17/48  Installing       : perl-Socket-4:2.032-2.fc [====================     ] 17/48  Installing       : perl-Socket-4:2.032-2.fc [======================   ] 17/48  Installing       : perl-Socket-4:2.032-2.fc [=======================  ] 17/48  Installing       : perl-Socket-4:2.032-2.fc [======================== ] 17/48  Installing       : perl-Socket-4:2.032-2.fc35.x86_64                    17/48 
+  Installing       : perl-SelectSaver-1.02-48 [                         ] 18/48  Installing       : perl-SelectSaver-1.02-48 [===============          ] 18/48  Installing       : perl-SelectSaver-1.02-48 [======================== ] 18/48  Installing       : perl-SelectSaver-1.02-486.fc35.noarch                18/48 
+  Installing       : perl-Symbol-1.09-486.fc3 [                         ] 19/48  Installing       : perl-Symbol-1.09-486.fc3 [=========                ] 19/48  Installing       : perl-Symbol-1.09-486.fc3 [======================== ] 19/48  Installing       : perl-Symbol-1.09-486.fc35.noarch                     19/48 
+  Installing       : perl-File-stat-1.09-486. [                         ] 20/48  Installing       : perl-File-stat-1.09-486. [======                   ] 20/48  Installing       : perl-File-stat-1.09-486. [======================== ] 20/48  Installing       : perl-File-stat-1.09-486.fc35.noarch                  20/48 
+  Installing       : perl-podlators-1:4.14-47 [                         ] 21/48  Installing       : perl-podlators-1:4.14-47 [=                        ] 21/48  Installing       : perl-podlators-1:4.14-47 [==                       ] 21/48  Installing       : perl-podlators-1:4.14-47 [=====                    ] 21/48  Installing       : perl-podlators-1:4.14-47 [======                   ] 21/48  Installing       : perl-podlators-1:4.14-47 [=======                  ] 21/48  Installing       : perl-podlators-1:4.14-47 [========                 ] 21/48  Installing       : perl-podlators-1:4.14-47 [=========                ] 21/48  Installing       : perl-podlators-1:4.14-47 [==========               ] 21/48  Installing       : perl-podlators-1:4.14-47 [===========              ] 21/48  Installing       : perl-podlators-1:4.14-47 [============             ] 21/48  Installing       : perl-podlators-1:4.14-47 [===============          ] 21/48  Installing       : perl-podlators-1:4.14-47 [==================       ] 21/48  Installing       : perl-podlators-1:4.14-47 [===================      ] 21/48  Installing       : perl-podlators-1:4.14-47 [====================     ] 21/48  Installing       : perl-podlators-1:4.14-47 [======================   ] 21/48  Installing       : perl-podlators-1:4.14-47 [=======================  ] 21/48  Installing       : perl-podlators-1:4.14-47 [======================== ] 21/48  Installing       : perl-podlators-1:4.14-478.fc35.noarch                21/48 
+  Installing       : perl-Pod-Perldoc-3.28.01 [                         ] 22/48  Installing       : perl-Pod-Perldoc-3.28.01 [==                       ] 22/48  Installing       : perl-Pod-Perldoc-3.28.01 [===                      ] 22/48  Installing       : perl-Pod-Perldoc-3.28.01 [====                     ] 22/48  Installing       : perl-Pod-Perldoc-3.28.01 [=====                    ] 22/48  Installing       : perl-Pod-Perldoc-3.28.01 [======                   ] 22/48  Installing       : perl-Pod-Perldoc-3.28.01 [=======                  ] 22/48  Installing       : perl-Pod-Perldoc-3.28.01 [============             ] 22/48  Installing       : perl-Pod-Perldoc-3.28.01 [================         ] 22/48  Installing       : perl-Pod-Perldoc-3.28.01 [=================        ] 22/48  Installing       : perl-Pod-Perldoc-3.28.01 [==================       ] 22/48  Installing       : perl-Pod-Perldoc-3.28.01 [====================     ] 22/48  Installing       : perl-Pod-Perldoc-3.28.01 [=====================    ] 22/48  Installing       : perl-Pod-Perldoc-3.28.01 [======================   ] 22/48  Installing       : perl-Pod-Perldoc-3.28.01 [=======================  ] 22/48  Installing       : perl-Pod-Perldoc-3.28.01 [======================== ] 22/48  Installing       : perl-Pod-Perldoc-3.28.01-479.fc35.noarch             22/48 
+  Installing       : perl-Text-ParseWords-3.3 [                         ] 23/48  Installing       : perl-Text-ParseWords-3.3 [=                        ] 23/48  Installing       : perl-Text-ParseWords-3.3 [====                     ] 23/48  Installing       : perl-Text-ParseWords-3.3 [=========                ] 23/48  Installing       : perl-Text-ParseWords-3.3 [==========               ] 23/48  Installing       : perl-Text-ParseWords-3.3 [======================== ] 23/48  Installing       : perl-Text-ParseWords-3.30-478.fc35.noarch            23/48 
+  Installing       : perl-Fcntl-1.14-486.fc35 [                         ] 24/48  Installing       : perl-Fcntl-1.14-486.fc35 [===                      ] 24/48  Installing       : perl-Fcntl-1.14-486.fc35 [======================   ] 24/48  Installing       : perl-Fcntl-1.14-486.fc35 [======================== ] 24/48  Installing       : perl-Fcntl-1.14-486.fc35.x86_64                      24/48 
+  Installing       : perl-mro-1.25-486.fc35.x [                         ] 25/48  Installing       : perl-mro-1.25-486.fc35.x [================         ] 25/48  Installing       : perl-mro-1.25-486.fc35.x [=====================    ] 25/48  Installing       : perl-mro-1.25-486.fc35.x [======================== ] 25/48  Installing       : perl-mro-1.25-486.fc35.x86_64                        25/48 
+  Installing       : perl-IO-1.46-486.fc35.x8 [                         ] 26/48  Installing       : perl-IO-1.46-486.fc35.x8 [=                        ] 26/48  Installing       : perl-IO-1.46-486.fc35.x8 [====                     ] 26/48  Installing       : perl-IO-1.46-486.fc35.x8 [=====                    ] 26/48  Installing       : perl-IO-1.46-486.fc35.x8 [======                   ] 26/48  Installing       : perl-IO-1.46-486.fc35.x8 [=======                  ] 26/48  Installing       : perl-IO-1.46-486.fc35.x8 [===========              ] 26/48  Installing       : perl-IO-1.46-486.fc35.x8 [=============            ] 26/48  Installing       : perl-IO-1.46-486.fc35.x8 [==============           ] 26/48  Installing       : perl-IO-1.46-486.fc35.x8 [==================       ] 26/48  Installing       : perl-IO-1.46-486.fc35.x8 [===================      ] 26/48  Installing       : perl-IO-1.46-486.fc35.x8 [====================     ] 26/48  Installing       : perl-IO-1.46-486.fc35.x8 [=====================    ] 26/48  Installing       : perl-IO-1.46-486.fc35.x8 [======================   ] 26/48  Installing       : perl-IO-1.46-486.fc35.x8 [=======================  ] 26/48  Installing       : perl-IO-1.46-486.fc35.x8 [======================== ] 26/48  Installing       : perl-IO-1.46-486.fc35.x86_64                         26/48 
+  Installing       : perl-overloading-0.02-48 [                         ] 27/48  Installing       : perl-overloading-0.02-48 [========                 ] 27/48  Installing       : perl-overloading-0.02-48 [=========                ] 27/48  Installing       : perl-overloading-0.02-48 [=================        ] 27/48  Installing       : perl-overloading-0.02-48 [======================== ] 27/48  Installing       : perl-overloading-0.02-486.fc35.noarch                27/48 
+  Installing       : perl-Pod-Usage-4:2.01-47 [                         ] 28/48  Installing       : perl-Pod-Usage-4:2.01-47 [=                        ] 28/48  Installing       : perl-Pod-Usage-4:2.01-47 [==                       ] 28/48  Installing       : perl-Pod-Usage-4:2.01-47 [========                 ] 28/48  Installing       : perl-Pod-Usage-4:2.01-47 [=============            ] 28/48  Installing       : perl-Pod-Usage-4:2.01-47 [==============           ] 28/48  Installing       : perl-Pod-Usage-4:2.01-47 [================         ] 28/48  Installing       : perl-Pod-Usage-4:2.01-47 [======================== ] 28/48  Installing       : perl-Pod-Usage-4:2.01-478.fc35.noarch                28/48 
+  Installing       : perl-MIME-Base64-3.16-47 [                         ] 29/48  Installing       : perl-MIME-Base64-3.16-47 [===                      ] 29/48  Installing       : perl-MIME-Base64-3.16-47 [====                     ] 29/48  Installing       : perl-MIME-Base64-3.16-47 [=====                    ] 29/48  Installing       : perl-MIME-Base64-3.16-47 [==============           ] 29/48  Installing       : perl-MIME-Base64-3.16-47 [===================      ] 29/48  Installing       : perl-MIME-Base64-3.16-47 [=====================    ] 29/48  Installing       : perl-MIME-Base64-3.16-47 [=======================  ] 29/48  Installing       : perl-MIME-Base64-3.16-47 [======================== ] 29/48  Installing       : perl-MIME-Base64-3.16-478.fc35.x86_64                29/48 
+  Installing       : perl-constant-1.33-479.f [                         ] 30/48  Installing       : perl-constant-1.33-479.f [====                     ] 30/48  Installing       : perl-constant-1.33-479.f [======                   ] 30/48  Installing       : perl-constant-1.33-479.f [=======                  ] 30/48  Installing       : perl-constant-1.33-479.f [===========              ] 30/48  Installing       : perl-constant-1.33-479.f [======================== ] 30/48  Installing       : perl-constant-1.33-479.fc35.noarch                   30/48 
+  Installing       : perl-parent-1:0.238-478. [                         ] 31/48  Installing       : perl-parent-1:0.238-478. [============             ] 31/48  Installing       : perl-parent-1:0.238-478. [=================        ] 31/48  Installing       : perl-parent-1:0.238-478. [======================== ] 31/48  Installing       : perl-parent-1:0.238-478.fc35.noarch                  31/48 
+  Installing       : perl-Errno-1.33-486.fc35 [                         ] 32/48  Installing       : perl-Errno-1.33-486.fc35 [=================        ] 32/48  Installing       : perl-Errno-1.33-486.fc35 [======================== ] 32/48  Installing       : perl-Errno-1.33-486.fc35.x86_64                      32/48 
+  Installing       : perl-File-Basename-2.85- [                         ] 33/48  Installing       : perl-File-Basename-2.85- [======                   ] 33/48  Installing       : perl-File-Basename-2.85- [======================== ] 33/48  Installing       : perl-File-Basename-2.85-486.fc35.noarch              33/48 
+  Installing       : perl-Getopt-Std-1.13-486 [                         ] 34/48  Installing       : perl-Getopt-Std-1.13-486 [======                   ] 34/48  Installing       : perl-Getopt-Std-1.13-486 [=======                  ] 34/48  Installing       : perl-Getopt-Std-1.13-486 [======================== ] 34/48  Installing       : perl-Getopt-Std-1.13-486.fc35.noarch                 34/48 
+  Installing       : perl-Scalar-List-Utils-5 [                         ] 35/48  Installing       : perl-Scalar-List-Utils-5 [====                     ] 35/48  Installing       : perl-Scalar-List-Utils-5 [======                   ] 35/48  Installing       : perl-Scalar-List-Utils-5 [=======                  ] 35/48  Installing       : perl-Scalar-List-Utils-5 [=============            ] 35/48  Installing       : perl-Scalar-List-Utils-5 [=================        ] 35/48  Installing       : perl-Scalar-List-Utils-5 [=====================    ] 35/48  Installing       : perl-Scalar-List-Utils-5 [=======================  ] 35/48  Installing       : perl-Scalar-List-Utils-5 [======================== ] 35/48  Installing       : perl-Scalar-List-Utils-5:1.62-463.fc35.x86_64        35/48 
+  Installing       : perl-Storable-1:3.25-1.f [                         ] 36/48  Installing       : perl-Storable-1:3.25-1.f [===                      ] 36/48  Installing       : perl-Storable-1:3.25-1.f [=====                    ] 36/48  Installing       : perl-Storable-1:3.25-1.f [=========                ] 36/48  Installing       : perl-Storable-1:3.25-1.f [============             ] 36/48  Installing       : perl-Storable-1:3.25-1.f [================         ] 36/48  Installing       : perl-Storable-1:3.25-1.f [=================        ] 36/48  Installing       : perl-Storable-1:3.25-1.f [==================       ] 36/48  Installing       : perl-Storable-1:3.25-1.f [=====================    ] 36/48  Installing       : perl-Storable-1:3.25-1.f [======================   ] 36/48  Installing       : perl-Storable-1:3.25-1.f [=======================  ] 36/48  Installing       : perl-Storable-1:3.25-1.f [======================== ] 36/48  Installing       : perl-Storable-1:3.25-1.fc35.x86_64                   36/48 
+  Installing       : perl-overload-1.33-486.f [                         ] 37/48  Installing       : perl-overload-1.33-486.f [======                   ] 37/48  Installing       : perl-overload-1.33-486.f [=================        ] 37/48  Installing       : perl-overload-1.33-486.f [======================== ] 37/48  Installing       : perl-overload-1.33-486.fc35.noarch                   37/48 
+  Installing       : perl-vars-1.05-486.fc35. [                         ] 38/48  Installing       : perl-vars-1.05-486.fc35. [============             ] 38/48  Installing       : perl-vars-1.05-486.fc35. [======================== ] 38/48  Installing       : perl-vars-1.05-486.fc35.noarch                       38/48 
+  Installing       : perl-Getopt-Long-1:2.52- [                         ] 39/48  Installing       : perl-Getopt-Long-1:2.52- [===                      ] 39/48  Installing       : perl-Getopt-Long-1:2.52- [====                     ] 39/48  Installing       : perl-Getopt-Long-1:2.52- [=====                    ] 39/48  Installing       : perl-Getopt-Long-1:2.52- [======                   ] 39/48  Installing       : perl-Getopt-Long-1:2.52- [=======                  ] 39/48  Installing       : perl-Getopt-Long-1:2.52- [=========                ] 39/48  Installing       : perl-Getopt-Long-1:2.52- [===============          ] 39/48  Installing       : perl-Getopt-Long-1:2.52- [=====================    ] 39/48  Installing       : perl-Getopt-Long-1:2.52- [======================== ] 39/48  Installing       : perl-Getopt-Long-1:2.52-478.fc35.noarch              39/48 
+  Installing       : perl-Carp-1.52-478.fc35. [                         ] 40/48  Installing       : perl-Carp-1.52-478.fc35. [==                       ] 40/48  Installing       : perl-Carp-1.52-478.fc35. [===                      ] 40/48  Installing       : perl-Carp-1.52-478.fc35. [=====                    ] 40/48  Installing       : perl-Carp-1.52-478.fc35. [======                   ] 40/48  Installing       : perl-Carp-1.52-478.fc35. [======================   ] 40/48  Installing       : perl-Carp-1.52-478.fc35. [======================== ] 40/48  Installing       : perl-Carp-1.52-478.fc35.noarch                       40/48 
+  Installing       : perl-Exporter-5.76-479.f [                         ] 41/48  Installing       : perl-Exporter-5.76-479.f [=                        ] 41/48  Installing       : perl-Exporter-5.76-479.f [=========                ] 41/48  Installing       : perl-Exporter-5.76-479.f [============             ] 41/48  Installing       : perl-Exporter-5.76-479.f [=============            ] 41/48  Installing       : perl-Exporter-5.76-479.f [=====================    ] 41/48  Installing       : perl-Exporter-5.76-479.f [======================== ] 41/48  Installing       : perl-Exporter-5.76-479.fc35.noarch                   41/48 
+  Installing       : perl-DynaLoader-1.50-486 [                         ] 42/48  Installing       : perl-DynaLoader-1.50-486 [==================       ] 42/48  Installing       : perl-DynaLoader-1.50-486 [======================== ] 42/48  Installing       : perl-DynaLoader-1.50-486.fc35.x86_64                 42/48 
+  Installing       : perl-PathTools-3.80-478. [                         ] 43/48  Installing       : perl-PathTools-3.80-478. [===                      ] 43/48  Installing       : perl-PathTools-3.80-478. [====                     ] 43/48  Installing       : perl-PathTools-3.80-478. [=====                    ] 43/48  Installing       : perl-PathTools-3.80-478. [========                 ] 43/48  Installing       : perl-PathTools-3.80-478. [=========                ] 43/48  Installing       : perl-PathTools-3.80-478. [===========              ] 43/48  Installing       : perl-PathTools-3.80-478. [=============            ] 43/48  Installing       : perl-PathTools-3.80-478. [===============          ] 43/48  Installing       : perl-PathTools-3.80-478. [====================     ] 43/48  Installing       : perl-PathTools-3.80-478. [=====================    ] 43/48  Installing       : perl-PathTools-3.80-478. [======================   ] 43/48  Installing       : perl-PathTools-3.80-478. [=======================  ] 43/48  Installing       : perl-PathTools-3.80-478. [======================== ] 43/48  Installing       : perl-PathTools-3.80-478.fc35.x86_64                  43/48 
+  Installing       : perl-Encode-4:3.15-482.f [                         ] 44/48  Installing       : perl-Encode-4:3.15-482.f [=                        ] 44/48  Installing       : perl-Encode-4:3.15-482.f [==                       ] 44/48  Installing       : perl-Encode-4:3.15-482.f [===                      ] 44/48  Installing       : perl-Encode-4:3.15-482.f [====                     ] 44/48  Installing       : perl-Encode-4:3.15-482.f [=====                    ] 44/48  Installing       : perl-Encode-4:3.15-482.f [======                   ] 44/48  Installing       : perl-Encode-4:3.15-482.f [=======                  ] 44/48  Installing       : perl-Encode-4:3.15-482.f [========                 ] 44/48  Installing       : perl-Encode-4:3.15-482.f [=========                ] 44/48  Installing       : perl-Encode-4:3.15-482.f [==========               ] 44/48  Installing       : perl-Encode-4:3.15-482.f [===========              ] 44/48  Installing       : perl-Encode-4:3.15-482.f [============             ] 44/48  Installing       : perl-Encode-4:3.15-482.f [=============            ] 44/48  Installing       : perl-Encode-4:3.15-482.f [==============           ] 44/48  Installing       : perl-Encode-4:3.15-482.f [===============          ] 44/48  Installing       : perl-Encode-4:3.15-482.f [================         ] 44/48  Installing       : perl-Encode-4:3.15-482.f [=================        ] 44/48  Installing       : perl-Encode-4:3.15-482.f [==================       ] 44/48  Installing       : perl-Encode-4:3.15-482.f [===================      ] 44/48  Installing       : perl-Encode-4:3.15-482.f [====================     ] 44/48  Installing       : perl-Encode-4:3.15-482.f [=====================    ] 44/48  Installing       : perl-Encode-4:3.15-482.f [======================   ] 44/48  Installing       : perl-Encode-4:3.15-482.f [=======================  ] 44/48  Installing       : perl-Encode-4:3.15-482.f [======================== ] 44/48  Installing       : perl-Encode-4:3.15-482.fc35.x86_64                   44/48 
+  Installing       : perl-libs-4:5.34.1-486.f [                         ] 45/48  Installing       : perl-libs-4:5.34.1-486.f [=                        ] 45/48  Installing       : perl-libs-4:5.34.1-486.f [==                       ] 45/48  Installing       : perl-libs-4:5.34.1-486.f [===                      ] 45/48  Installing       : perl-libs-4:5.34.1-486.f [====                     ] 45/48  Installing       : perl-libs-4:5.34.1-486.f [=====                    ] 45/48  Installing       : perl-libs-4:5.34.1-486.f [======                   ] 45/48  Installing       : perl-libs-4:5.34.1-486.f [=======                  ] 45/48  Installing       : perl-libs-4:5.34.1-486.f [========                 ] 45/48  Installing       : perl-libs-4:5.34.1-486.f [=========                ] 45/48  Installing       : perl-libs-4:5.34.1-486.f [==========               ] 45/48  Installing       : perl-libs-4:5.34.1-486.f [===========              ] 45/48  Installing       : perl-libs-4:5.34.1-486.f [============             ] 45/48  Installing       : perl-libs-4:5.34.1-486.f [=============            ] 45/48  Installing       : perl-libs-4:5.34.1-486.f [==============           ] 45/48  Installing       : perl-libs-4:5.34.1-486.f [===============          ] 45/48  Installing       : perl-libs-4:5.34.1-486.f [================         ] 45/48  Installing       : perl-libs-4:5.34.1-486.f [=================        ] 45/48  Installing       : perl-libs-4:5.34.1-486.f [==================       ] 45/48  Installing       : perl-libs-4:5.34.1-486.f [===================      ] 45/48  Installing       : perl-libs-4:5.34.1-486.f [====================     ] 45/48  Installing       : perl-libs-4:5.34.1-486.f [=====================    ] 45/48  Installing       : perl-libs-4:5.34.1-486.f [======================   ] 45/48  Installing       : perl-libs-4:5.34.1-486.f [=======================  ] 45/48  Installing       : perl-libs-4:5.34.1-486.f [======================== ] 45/48  Installing       : perl-libs-4:5.34.1-486.fc35.x86_64                   45/48 
+  Installing       : perl-interpreter-4:5.34. [                         ] 46/48  Installing       : perl-interpreter-4:5.34. [=                        ] 46/48  Installing       : perl-interpreter-4:5.34. [======                   ] 46/48  Installing       : perl-interpreter-4:5.34. [==========               ] 46/48  Installing       : perl-interpreter-4:5.34. [================         ] 46/48  Installing       : perl-interpreter-4:5.34. [=====================    ] 46/48  Installing       : perl-interpreter-4:5.34. [======================== ] 46/48  Installing       : perl-interpreter-4:5.34.1-486.fc35.x86_64            46/48 
+  Installing       : valgrind-1:3.19.0-3.fc35 [                         ] 47/48  Installing       : valgrind-1:3.19.0-3.fc35 [=                        ] 47/48  Installing       : valgrind-1:3.19.0-3.fc35 [==                       ] 47/48  Installing       : valgrind-1:3.19.0-3.fc35 [===                      ] 47/48  Installing       : valgrind-1:3.19.0-3.fc35 [====                     ] 47/48  Installing       : valgrind-1:3.19.0-3.fc35 [=====                    ] 47/48  Installing       : valgrind-1:3.19.0-3.fc35 [======                   ] 47/48  Installing       : valgrind-1:3.19.0-3.fc35 [=======                  ] 47/48  Installing       : valgrind-1:3.19.0-3.fc35 [========                 ] 47/48  Installing       : valgrind-1:3.19.0-3.fc35 [=========                ] 47/48  Installing       : valgrind-1:3.19.0-3.fc35 [==========               ] 47/48  Installing       : valgrind-1:3.19.0-3.fc35 [===========              ] 47/48  Installing       : valgrind-1:3.19.0-3.fc35 [============             ] 47/48  Installing       : valgrind-1:3.19.0-3.fc35 [=============            ] 47/48  Installing       : valgrind-1:3.19.0-3.fc35 [==============           ] 47/48  Installing       : valgrind-1:3.19.0-3.fc35 [===============          ] 47/48  Installing       : valgrind-1:3.19.0-3.fc35 [================         ] 47/48  Installing       : valgrind-1:3.19.0-3.fc35 [=================        ] 47/48  Installing       : valgrind-1:3.19.0-3.fc35 [==================       ] 47/48  Installing       : valgrind-1:3.19.0-3.fc35 [===================      ] 47/48  Installing       : valgrind-1:3.19.0-3.fc35 [====================     ] 47/48  Installing       : valgrind-1:3.19.0-3.fc35 [=====================    ] 47/48  Installing       : valgrind-1:3.19.0-3.fc35 [======================   ] 47/48  Installing       : valgrind-1:3.19.0-3.fc35 [=======================  ] 47/48  Installing       : valgrind-1:3.19.0-3.fc35 [======================== ] 47/48  Installing       : valgrind-1:3.19.0-3.fc35.x86_64                      47/48 
+  Installing       : csexec-2.2.2-1.fc35.x86_ [                         ] 48/48  Installing       : csexec-2.2.2-1.fc35.x86_ [=                        ] 48/48  Installing       : csexec-2.2.2-1.fc35.x86_ [==                       ] 48/48  Installing       : csexec-2.2.2-1.fc35.x86_ [===                      ] 48/48  Installing       : csexec-2.2.2-1.fc35.x86_ [====                     ] 48/48  Installing       : csexec-2.2.2-1.fc35.x86_ [=====                    ] 48/48  Installing       : csexec-2.2.2-1.fc35.x86_ [======                   ] 48/48  Installing       : csexec-2.2.2-1.fc35.x86_ [=======                  ] 48/48  Installing       : csexec-2.2.2-1.fc35.x86_ [========                 ] 48/48  Installing       : csexec-2.2.2-1.fc35.x86_ [=========                ] 48/48  Installing       : csexec-2.2.2-1.fc35.x86_ [==========               ] 48/48  Installing       : csexec-2.2.2-1.fc35.x86_ [===========              ] 48/48  Installing       : csexec-2.2.2-1.fc35.x86_ [============             ] 48/48  Installing       : csexec-2.2.2-1.fc35.x86_ [=============            ] 48/48  Installing       : csexec-2.2.2-1.fc35.x86_ [==============           ] 48/48  Installing       : csexec-2.2.2-1.fc35.x86_ [===============          ] 48/48  Installing       : csexec-2.2.2-1.fc35.x86_ [================         ] 48/48  Installing       : csexec-2.2.2-1.fc35.x86_ [=================        ] 48/48  Installing       : csexec-2.2.2-1.fc35.x86_ [==================       ] 48/48  Installing       : csexec-2.2.2-1.fc35.x86_ [===================      ] 48/48  Installing       : csexec-2.2.2-1.fc35.x86_ [====================     ] 48/48  Installing       : csexec-2.2.2-1.fc35.x86_ [=====================    ] 48/48  Installing       : csexec-2.2.2-1.fc35.x86_ [======================   ] 48/48  Installing       : csexec-2.2.2-1.fc35.x86_ [=======================  ] 48/48  Installing       : csexec-2.2.2-1.fc35.x86_ [======================== ] 48/48  Installing       : csexec-2.2.2-1.fc35.x86_64                           48/48 
+  Running scriptlet: csexec-2.2.2-1.fc35.x86_64                           48/48 
+  Verifying        : groff-base-1.22.4-8.fc35.x86_64                       1/48 
+  Verifying        : ncurses-6.2-8.20210508.fc35.x86_64                    2/48 
+  Verifying        : perl-Carp-1.52-478.fc35.noarch                        3/48 
+  Verifying        : perl-Exporter-5.76-479.fc35.noarch                    4/48 
+  Verifying        : perl-File-Path-2.18-478.fc35.noarch                   5/48 
+  Verifying        : perl-File-Temp-1:0.231.100-478.fc35.noarch            6/48 
+  Verifying        : perl-Getopt-Long-1:2.52-478.fc35.noarch               7/48 
+  Verifying        : perl-MIME-Base64-3.16-478.fc35.x86_64                 8/48 
+  Verifying        : perl-PathTools-3.80-478.fc35.x86_64                   9/48 
+  Verifying        : perl-Pod-Escapes-1:1.07-478.fc35.noarch              10/48 
+  Verifying        : perl-Pod-Perldoc-3.28.01-479.fc35.noarch             11/48 
+  Verifying        : perl-Pod-Simple-1:3.43-2.fc35.noarch                 12/48 
+  Verifying        : perl-Pod-Usage-4:2.01-478.fc35.noarch                13/48 
+  Verifying        : perl-Socket-4:2.032-2.fc35.x86_64                    14/48 
+  Verifying        : perl-Storable-1:3.25-1.fc35.x86_64                   15/48 
+  Verifying        : perl-Term-ANSIColor-5.01-479.fc35.noarch             16/48 
+  Verifying        : perl-Term-Cap-1.17-478.fc35.noarch                   17/48 
+  Verifying        : perl-Text-ParseWords-3.30-478.fc35.noarch            18/48 
+  Verifying        : perl-Text-Tabs+Wrap-2021.0814-1.fc35.noarch          19/48 
+  Verifying        : perl-Time-Local-2:1.300-478.fc35.noarch              20/48 
+  Verifying        : perl-constant-1.33-479.fc35.noarch                   21/48 
+  Verifying        : perl-parent-1:0.238-478.fc35.noarch                  22/48 
+  Verifying        : perl-podlators-1:4.14-478.fc35.noarch                23/48 
+  Verifying        : csexec-2.2.2-1.fc35.x86_64                           24/48 
+  Verifying        : perl-Class-Struct-0.66-486.fc35.noarch               25/48 
+  Verifying        : perl-DynaLoader-1.50-486.fc35.x86_64                 26/48 
+  Verifying        : perl-Encode-4:3.15-482.fc35.x86_64                   27/48 
+  Verifying        : perl-Errno-1.33-486.fc35.x86_64                      28/48 
+  Verifying        : perl-Fcntl-1.14-486.fc35.x86_64                      29/48 
+  Verifying        : perl-File-Basename-2.85-486.fc35.noarch              30/48 
+  Verifying        : perl-File-stat-1.09-486.fc35.noarch                  31/48 
+  Verifying        : perl-Getopt-Std-1.13-486.fc35.noarch                 32/48 
+  Verifying        : perl-HTTP-Tiny-0.080-1.fc35.noarch                   33/48 
+  Verifying        : perl-IO-1.46-486.fc35.x86_64                         34/48 
+  Verifying        : perl-IPC-Open3-1.21-486.fc35.noarch                  35/48 
+  Verifying        : perl-POSIX-1.97-486.fc35.x86_64                      36/48 
+  Verifying        : perl-Scalar-List-Utils-5:1.62-463.fc35.x86_64        37/48 
+  Verifying        : perl-SelectSaver-1.02-486.fc35.noarch                38/48 
+  Verifying        : perl-Symbol-1.09-486.fc35.noarch                     39/48 
+  Verifying        : perl-if-0.60.900-486.fc35.noarch                     40/48 
+  Verifying        : perl-interpreter-4:5.34.1-486.fc35.x86_64            41/48 
+  Verifying        : perl-libs-4:5.34.1-486.fc35.x86_64                   42/48 
+  Verifying        : perl-mro-1.25-486.fc35.x86_64                        43/48 
+  Verifying        : perl-overload-1.33-486.fc35.noarch                   44/48 
+  Verifying        : perl-overloading-0.02-486.fc35.noarch                45/48 
+  Verifying        : perl-subs-1.04-486.fc35.noarch                       46/48 
+  Verifying        : perl-vars-1.05-486.fc35.noarch                       47/48 
+  Verifying        : valgrind-1:3.19.0-3.fc35.x86_64                      48/48 
+
+Installed:
+  csexec-2.2.2-1.fc35.x86_64                                                    
+  groff-base-1.22.4-8.fc35.x86_64                                               
+  ncurses-6.2-8.20210508.fc35.x86_64                                            
+  perl-Carp-1.52-478.fc35.noarch                                                
+  perl-Class-Struct-0.66-486.fc35.noarch                                        
+  perl-DynaLoader-1.50-486.fc35.x86_64                                          
+  perl-Encode-4:3.15-482.fc35.x86_64                                            
+  perl-Errno-1.33-486.fc35.x86_64                                               
+  perl-Exporter-5.76-479.fc35.noarch                                            
+  perl-Fcntl-1.14-486.fc35.x86_64                                               
+  perl-File-Basename-2.85-486.fc35.noarch                                       
+  perl-File-Path-2.18-478.fc35.noarch                                           
+  perl-File-Temp-1:0.231.100-478.fc35.noarch                                    
+  perl-File-stat-1.09-486.fc35.noarch                                           
+  perl-Getopt-Long-1:2.52-478.fc35.noarch                                       
+  perl-Getopt-Std-1.13-486.fc35.noarch                                          
+  perl-HTTP-Tiny-0.080-1.fc35.noarch                                            
+  perl-IO-1.46-486.fc35.x86_64                                                  
+  perl-IPC-Open3-1.21-486.fc35.noarch                                           
+  perl-MIME-Base64-3.16-478.fc35.x86_64                                         
+  perl-POSIX-1.97-486.fc35.x86_64                                               
+  perl-PathTools-3.80-478.fc35.x86_64                                           
+  perl-Pod-Escapes-1:1.07-478.fc35.noarch                                       
+  perl-Pod-Perldoc-3.28.01-479.fc35.noarch                                      
+  perl-Pod-Simple-1:3.43-2.fc35.noarch                                          
+  perl-Pod-Usage-4:2.01-478.fc35.noarch                                         
+  perl-Scalar-List-Utils-5:1.62-463.fc35.x86_64                                 
+  perl-SelectSaver-1.02-486.fc35.noarch                                         
+  perl-Socket-4:2.032-2.fc35.x86_64                                             
+  perl-Storable-1:3.25-1.fc35.x86_64                                            
+  perl-Symbol-1.09-486.fc35.noarch                                              
+  perl-Term-ANSIColor-5.01-479.fc35.noarch                                      
+  perl-Term-Cap-1.17-478.fc35.noarch                                            
+  perl-Text-ParseWords-3.30-478.fc35.noarch                                     
+  perl-Text-Tabs+Wrap-2021.0814-1.fc35.noarch                                   
+  perl-Time-Local-2:1.300-478.fc35.noarch                                       
+  perl-constant-1.33-479.fc35.noarch                                            
+  perl-if-0.60.900-486.fc35.noarch                                              
+  perl-interpreter-4:5.34.1-486.fc35.x86_64                                     
+  perl-libs-4:5.34.1-486.fc35.x86_64                                            
+  perl-mro-1.25-486.fc35.x86_64                                                 
+  perl-overload-1.33-486.fc35.noarch                                            
+  perl-overloading-0.02-486.fc35.noarch                                         
+  perl-parent-1:0.238-478.fc35.noarch                                           
+  perl-podlators-1:4.14-478.fc35.noarch                                         
+  perl-subs-1.04-486.fc35.noarch                                                
+  perl-vars-1.05-486.fc35.noarch                                                
+  valgrind-1:3.19.0-3.fc35.x86_64                                               
+
+Complete!
+
+>>> 2022-11-23 16:41:00	"'/usr/bin/mock' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa' | sort -V > /root/aufover-benchmark/workdir-for-sync/rpm-pkgs/basesystem-11-12.fc35/valgrind/output/debug/rpm-list-mock.txt"
+
+>>> 2022-11-23 16:41:06	"'/usr/bin/mock' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa --provides' | sort -V > /tmp/csmockflls1_cw/rpm-list-mock-provides.txt"
+
+>>> 2022-11-23 16:41:12	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--copyin" "/tmp/csmockflls1_cw/basesystem-11-12.fc35.src.rpm" "/builddir/basesystem-11-12.fc35.src.rpm"
+
+>>> 2022-11-23 16:41:17	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "chown mockbuild -R /builddir"
+
+>>> 2022-11-23 16:41:23	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"rpm -Uvh --nodeps '/builddir/basesystem-11-12.fc35.src.rpm'\""
+Updating / installing...
+basesystem-11-12.fc35                 ########################################
+
+>>> 2022-11-23 16:41:29	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"sed -e 's|^ExclusiveArch:.*\\\$||' -i /builddir/build/SPECS/basesystem.spec\""
+
+>>> 2022-11-23 16:41:34	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"rpmbuild -bs --nodeps /builddir/build/SPECS/basesystem.spec '--define' '_unpackaged_files_terminate_build 0' '--define' 'apidocs 0' '--define' 'with_publican 0' '--without' 'docs' '--without' 'langpacks' && sh -c 'cd /builddir/build/SRPMS && eval mv -v *.src.rpm /builddir/basesystem-11-12.fc35.src.rpm || :'\""
+setting SOURCE_DATE_EPOCH=1626825600
+Wrote: /builddir/build/SRPMS/basesystem-11-12.fc35.src.rpm
+renamed 'basesystem-11-12.fc35.src.rpm' -> '/builddir/basesystem-11-12.fc35.src.rpm'
+
+>>> 2022-11-23 16:41:40	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--disable-plugin=selinux" "--copyout" "/builddir/basesystem-11-12.fc35.src.rpm" "/tmp/csmockflls1_cw/basesystem-11-12.fc35.src.rpm"
+
+>>> 2022-11-23 16:41:46	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--installdeps" "/tmp/csmockflls1_cw/basesystem-11-12.fc35.src.rpm"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+fedora                   [===                 ] ---  B/s |   0  B     --:-- ETAfedora                                          129 kB/s |  22 kB     00:00    
+updates                  [===                 ] ---  B/s |   0  B     --:-- ETAupdates                                         140 kB/s |  21 kB     00:00    
+Dependencies resolved.
+Nothing to do.
+Complete!
+
+>>> 2022-11-23 16:41:57	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--install" "valgrind" "csexec"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+fedora                   [===                 ] ---  B/s |   0  B     --:-- ETAfedora                                          125 kB/s |  22 kB     00:00    
+updates                  [===                 ] ---  B/s |   0  B     --:-- ETAupdates                                         117 kB/s |  21 kB     00:00    
+Package valgrind-1:3.19.0-3.fc35.x86_64 is already installed.
+Package csexec-2.2.2-1.fc35.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+
+>>> 2022-11-23 16:42:07	"'/usr/bin/mock' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa' | sort -V > /root/aufover-benchmark/workdir-for-sync/rpm-pkgs/basesystem-11-12.fc35/valgrind/output/debug/rpm-list-mock.txt"
+
+>>> 2022-11-23 16:42:13	"'/usr/bin/mock' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa --provides' | sort -V > /tmp/csmockflls1_cw/rpm-list-mock-provides.txt"
+
+>>> 2022-11-23 16:42:19	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--install" "csdiff"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+fedora                   [===                 ] ---  B/s |   0  B     --:-- ETAfedora                                          142 kB/s |  22 kB     00:00    
+updates                  [===                 ] ---  B/s |   0  B     --:-- ETAupdates                                         140 kB/s |  21 kB     00:00    
+Dependencies resolved.
+================================================================================
+ Package                    Arch        Version              Repository    Size
+================================================================================
+Installing:
+ [1mcsdiff                    [m x86_64      2.7.0-1.fc35         updates      894 k
+Installing dependencies:
+ [1mboost-filesystem          [m x86_64      1.76.0-5.fc35        updates       58 k
+ [1mboost-program-options     [m x86_64      1.76.0-5.fc35        updates      107 k
+ [1mboost-system              [m x86_64      1.76.0-5.fc35        updates       14 k
+
+Transaction Summary
+================================================================================
+Install  4 Packages
+
+Total size: 1.0 M
+Installed size: 4.2 M
+Downloading Packages:
+[SKIPPED] boost-filesystem-1.76.0-5.fc35.x86_64.rpm: Already downloaded        
+[SKIPPED] boost-program-options-1.76.0-5.fc35.x86_64.rpm: Already downloaded   
+[SKIPPED] boost-system-1.76.0-5.fc35.x86_64.rpm: Already downloaded            
+[SKIPPED] csdiff-2.7.0-1.fc35.x86_64.rpm: Already downloaded                   
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :  [============                                       ] 1/1  Preparing        :  [=========================                          ] 1/1  Preparing        :  [======================================             ] 1/1  Preparing        :                                                        1/1 
+  Installing       : boost-system-1.76.0-5.fc3 [                          ] 1/4  Installing       : boost-system-1.76.0-5.fc3 [=======================   ] 1/4  Installing       : boost-system-1.76.0-5.fc3 [========================= ] 1/4  Installing       : boost-system-1.76.0-5.fc35.x86_64                      1/4 
+  Installing       : boost-filesystem-1.76.0-5 [                          ] 2/4  Installing       : boost-filesystem-1.76.0-5 [======                    ] 2/4  Installing       : boost-filesystem-1.76.0-5 [=============             ] 2/4  Installing       : boost-filesystem-1.76.0-5 [====================      ] 2/4  Installing       : boost-filesystem-1.76.0-5 [========================= ] 2/4  Installing       : boost-filesystem-1.76.0-5.fc35.x86_64                  2/4 
+  Installing       : boost-program-options-1.7 [                          ] 3/4  Installing       : boost-program-options-1.7 [==                        ] 3/4  Installing       : boost-program-options-1.7 [=====                     ] 3/4  Installing       : boost-program-options-1.7 [========                  ] 3/4  Installing       : boost-program-options-1.7 [===========               ] 3/4  Installing       : boost-program-options-1.7 [==============            ] 3/4  Installing       : boost-program-options-1.7 [=================         ] 3/4  Installing       : boost-program-options-1.7 [====================      ] 3/4  Installing       : boost-program-options-1.7 [=======================   ] 3/4  Installing       : boost-program-options-1.7 [========================= ] 3/4  Installing       : boost-program-options-1.76.0-5.fc35.x86_64             3/4 
+  Installing       : csdiff-2.7.0-1.fc35.x86_6 [                          ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [=                         ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [==                        ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [===                       ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [====                      ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [=====                     ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [======                    ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [=======                   ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [========                  ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [=========                 ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [==========                ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [===========               ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [============              ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [=============             ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [==============            ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [===============           ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [================          ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [=================         ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [==================        ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [===================       ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [====================      ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [=====================     ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [======================    ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [=======================   ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [========================  ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [========================= ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_64                             4/4 
+  Running scriptlet: csdiff-2.7.0-1.fc35.x86_64                             4/4 
+  Verifying        : boost-filesystem-1.76.0-5.fc35.x86_64                  1/4 
+  Verifying        : boost-program-options-1.76.0-5.fc35.x86_64             2/4 
+  Verifying        : boost-system-1.76.0-5.fc35.x86_64                      3/4 
+  Verifying        : csdiff-2.7.0-1.fc35.x86_64                             4/4 
+
+Installed:
+  boost-filesystem-1.76.0-5.fc35.x86_64                                         
+  boost-program-options-1.76.0-5.fc35.x86_64                                    
+  boost-system-1.76.0-5.fc35.x86_64                                             
+  csdiff-2.7.0-1.fc35.x86_64                                                    
+
+Complete!
+
+>>> 2022-11-23 16:42:33	"'/usr/bin/mock' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa' | sort -V > /root/aufover-benchmark/workdir-for-sync/rpm-pkgs/basesystem-11-12.fc35/valgrind/output/debug/rpm-list-mock.txt"
+
+>>> 2022-11-23 16:42:38	"'/usr/bin/mock' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa --provides' | sort -V > /tmp/csmockflls1_cw/rpm-list-mock-provides.txt"
+
+>>> 2022-11-23 16:42:44	"tar -cP '/usr/share/csmock/scripts' '/usr/bin/cswrap' '/usr/lib64/cswrap' '/tmp/csmockflls1_cw/basesystem-11-12.fc35.src.rpm' | '/usr/bin/mock' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'tar -xC/'"
+tar: Removing leading `/' from member names
+
+scan.ini: analyzer-version-valgrind = 3.19.0
+>>> 2022-11-23 16:42:50	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"mkdir -pv '/builddir/valgrind-capture' && touch '/builddir/valgrind-capture/empty.xml'\""
+mkdir: created directory '/builddir/valgrind-capture'
+
+!!! 2022-11-23 16:42:55	error: tool "gcc" does not seem to be installed in build root
+
+!!! 2022-11-23 16:42:55	error: post-depinst hook failed
+
+>>> 2022-11-23 16:42:55	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "rpm -Uvh --nodeps '/tmp/csmockflls1_cw/basesystem-11-12.fc35.src.rpm'"
+Updating / installing...
+basesystem-11-12.fc35                 ########################################
+
+>>> 2022-11-23 16:43:01	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "chmod -R +r /builddir"
+
+>>> 2022-11-23 16:43:07	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "ln -fv '/usr/share/csmock/scripts/enable-keep-going.sh' '/usr/share/csmock/scripts/chroot-fixups'"
+'/usr/share/csmock/scripts/chroot-fixups/enable-keep-going.sh' => '/usr/share/csmock/scripts/enable-keep-going.sh'
+
+>>> 2022-11-23 16:43:12	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--shell" "for i in /usr/share/csmock/scripts/chroot-fixups/*; do test -x \$i && echo RUN: \$i >&2 && \$i; done"
+RUN: /usr/share/csmock/scripts/chroot-fixups/enable-keep-going.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/gdk-pixbuf2-triggers.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/glib2-triggers.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/kpathsea-texhash.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/openssl-public-header-files.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/qt5-core-abi.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/rpm-build-scripts.sh
++ sed -e s/fail=1/fail=0/ -i /usr/lib/rpm/redhat/brp-mangle-shebangs
+'/usr/lib/rpm/brp-strip-static-archive' -> '/bin/true'
+RUN: /usr/share/csmock/scripts/chroot-fixups/rpm-macros.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/rpm-python-extras.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/shared-mime-info-triggers.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/symbiotic-timeout.sh
+
+>>> 2022-11-23 16:43:18	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--chroot" "/bin/su mockbuild -l -c \"rpmbuild -bp --nodeps /builddir/build/SPECS/basesystem.spec '--define' '_unpackaged_files_terminate_build 0' '--define' 'apidocs 0' '--define' 'with_publican 0' '--without' 'docs' '--without' 'langpacks'\""
+INFO: mock.py version 3.3 starting (python version = 3.10.8, NVR = mock-3.3-1.fc36)...
+Start(bootstrap): init plugins
+INFO: selinux enabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 3.3
+INFO: Mock Version: 3.3
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 3.3
+INFO: Mock Version: 3.3
+Finish: chroot init
+INFO: Running in chroot: ['/bin/su mockbuild -l -c "rpmbuild -bp --nodeps /builddir/build/SPECS/basesystem.spec \'--define\' \'_unpackaged_files_terminate_build 0\' \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\'"']
+Start: chroot ['/bin/su mockbuild -l -c "rpmbuild -bp --nodeps /builddir/build/SPECS/basesystem.spec \'--define\' \'_unpackaged_files_terminate_build 0\' \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\'"']
+setting SOURCE_DATE_EPOCH=1626825600
+Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.T5gE0y
++ umask 022
++ cd /builddir/build/BUILD
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Finish: chroot ['/bin/su mockbuild -l -c "rpmbuild -bp --nodeps /builddir/build/SPECS/basesystem.spec \'--define\' \'_unpackaged_files_terminate_build 0\' \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\'"']
+
+>>> 2022-11-23 16:43:24	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "chmod -R +r /builddir/build"
+
+>>> 2022-11-23 16:43:29	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--chroot" "/bin/su mockbuild -l -c \"PATH=/usr/lib64/cswrap:\\\$PATH CSWRAP_CAP_FILE=\\\$'/builddir/cswrap-capture.err' CSWRAP_TIMEOUT=\\\$'30' CSWRAP_TIMEOUT_FOR=\\\$':' CSWRAP_ADD_CFLAGS=\\\$'-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader' CSWRAP_DEL_CFLAGS=\\\$'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register' CSWRAP_ADD_CXXFLAGS=\\\$'-Wl,--dynamic-linker,/usr/bin/csexec-loader' CSWRAP_DEL_CXXFLAGS=\\\$'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register' sh -c \\\"rpmbuild -bc --nodeps --short-circuit /builddir/build/SPECS/basesystem.spec '--define' '_unpackaged_files_terminate_build 0' '--define' 'apidocs 0' '--define' 'with_publican 0' '--without' 'docs' '--without' 'langpacks'\\\"\""
+INFO: mock.py version 3.3 starting (python version = 3.10.8, NVR = mock-3.3-1.fc36)...
+Start(bootstrap): init plugins
+INFO: selinux enabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 3.3
+INFO: Mock Version: 3.3
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 3.3
+INFO: Mock Version: 3.3
+Finish: chroot init
+INFO: Running in chroot: ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bc --nodeps --short-circuit /builddir/build/SPECS/basesystem.spec \'--define\' \'_unpackaged_files_terminate_build 0\' \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\'\\""']
+Start: chroot ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bc --nodeps --short-circuit /builddir/build/SPECS/basesystem.spec \'--define\' \'_unpackaged_files_terminate_build 0\' \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\'\\""']
+setting SOURCE_DATE_EPOCH=1626825600
+Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.ZQ8bDs
++ umask 022
++ cd /builddir/build/BUILD
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Finish: chroot ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bc --nodeps --short-circuit /builddir/build/SPECS/basesystem.spec \'--define\' \'_unpackaged_files_terminate_build 0\' \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\'\\""']
+
+>>> 2022-11-23 16:43:35	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--chroot" "/bin/su mockbuild -l -c \"PATH=/usr/lib64/cswrap:\\\$PATH CSWRAP_CAP_FILE=\\\$'/builddir/cswrap-capture.err' CSWRAP_TIMEOUT=\\\$'30' CSWRAP_TIMEOUT_FOR=\\\$':' CSWRAP_ADD_CFLAGS=\\\$'-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader' CSWRAP_DEL_CFLAGS=\\\$'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register' CSWRAP_ADD_CXXFLAGS=\\\$'-Wl,--dynamic-linker,/usr/bin/csexec-loader' CSWRAP_DEL_CXXFLAGS=\\\$'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register' CSEXEC_WRAP_CMD=\\\$'/usr/bin/timeout\\\\a--signal=KILL\\\\a8\\\\a/usr/bin/valgrind\\\\a--xml=yes\\\\a--xml-file=/builddir/valgrind-capture/pid-%p-%n.xml\\\\a--log-file=/builddir/valgrind-capture/pid-%p-%n.log\\\\a--child-silent-after-fork=yes' sh -c \\\"rpmbuild -bi --nodeps --short-circuit /builddir/build/SPECS/basesystem.spec '--define' '_unpackaged_files_terminate_build 0' '--define' 'apidocs 0' '--define' 'with_publican 0' '--without' 'docs' '--without' 'langpacks'\\\"\""
+INFO: mock.py version 3.3 starting (python version = 3.10.8, NVR = mock-3.3-1.fc36)...
+Start(bootstrap): init plugins
+INFO: selinux enabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 3.3
+INFO: Mock Version: 3.3
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 3.3
+INFO: Mock Version: 3.3
+Finish: chroot init
+INFO: Running in chroot: ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSEXEC_WRAP_CMD=\\$\'/usr/bin/timeout\\\\a--signal=KILL\\\\a8\\\\a/usr/bin/valgrind\\\\a--xml=yes\\\\a--xml-file=/builddir/valgrind-capture/pid-%p-%n.xml\\\\a--log-file=/builddir/valgrind-capture/pid-%p-%n.log\\\\a--child-silent-after-fork=yes\' sh -c \\"rpmbuild -bi --nodeps --short-circuit /builddir/build/SPECS/basesystem.spec \'--define\' \'_unpackaged_files_terminate_build 0\' \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\'\\""']
+Start: chroot ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSEXEC_WRAP_CMD=\\$\'/usr/bin/timeout\\\\a--signal=KILL\\\\a8\\\\a/usr/bin/valgrind\\\\a--xml=yes\\\\a--xml-file=/builddir/valgrind-capture/pid-%p-%n.xml\\\\a--log-file=/builddir/valgrind-capture/pid-%p-%n.log\\\\a--child-silent-after-fork=yes\' sh -c \\"rpmbuild -bi --nodeps --short-circuit /builddir/build/SPECS/basesystem.spec \'--define\' \'_unpackaged_files_terminate_build 0\' \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\'\\""']
+setting SOURCE_DATE_EPOCH=1626825600
+Executing(%install): /bin/sh -e /var/tmp/rpm-tmp.ktHi9U
++ umask 022
++ cd /builddir/build/BUILD
++ '[' /builddir/build/BUILDROOT/basesystem-11-12.fc35.x86_64 '!=' / ']'
++ rm -rf /builddir/build/BUILDROOT/basesystem-11-12.fc35.x86_64
+++ dirname /builddir/build/BUILDROOT/basesystem-11-12.fc35.x86_64
++ mkdir -p /builddir/build/BUILDROOT
++ mkdir /builddir/build/BUILDROOT/basesystem-11-12.fc35.x86_64
++ /usr/lib/rpm/check-buildroot
++ /usr/lib/rpm/redhat/brp-ldconfig
++ /usr/lib/rpm/brp-compress
++ /usr/lib/rpm/brp-strip /usr/bin/strip
++ /usr/lib/rpm/brp-strip-comment-note /usr/bin/strip /usr/bin/objdump
++ /usr/lib/rpm/redhat/brp-strip-lto /usr/bin/strip
++ /usr/lib/rpm/brp-strip-static-archive /usr/bin/strip
++ /usr/lib/rpm/check-rpaths
++ /usr/lib/rpm/redhat/brp-mangle-shebangs
++ /usr/lib/rpm/redhat/brp-python-bytecompile '' 1 0
++ /usr/lib/rpm/redhat/brp-python-hardlink
+Processing files: basesystem-11-12.fc35.noarch
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /builddir/build/BUILDROOT/basesystem-11-12.fc35.x86_64
+Finish: chroot ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSEXEC_WRAP_CMD=\\$\'/usr/bin/timeout\\\\a--signal=KILL\\\\a8\\\\a/usr/bin/valgrind\\\\a--xml=yes\\\\a--xml-file=/builddir/valgrind-capture/pid-%p-%n.xml\\\\a--log-file=/builddir/valgrind-capture/pid-%p-%n.log\\\\a--child-silent-after-fork=yes\' sh -c \\"rpmbuild -bi --nodeps --short-circuit /builddir/build/SPECS/basesystem.spec \'--define\' \'_unpackaged_files_terminate_build 0\' \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\'\\""']
+
+>>> 2022-11-23 16:43:41	"'/usr/bin/mock' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'tar -c --remove-files '/builddir/valgrind-capture' '/builddir/cswrap-capture.err'' | tar -xC '/root/aufover-benchmark/workdir-for-sync/rpm-pkgs/basesystem-11-12.fc35/valgrind/output/debug/raw-results'"
+tar: Removing leading `/' from member names
+tar: Removing leading `/' from hard link targets
+tar: /builddir/cswrap-capture.err: Cannot stat: No such file or directory
+tar: Exiting with failure status due to previous errors
+cat: /root/aufover-benchmark/workdir-for-sync/rpm-pkgs/basesystem-11-12.fc35/valgrind/output/debug/raw-results/builddir/cswrap-capture.err: No such file or directory
+
+>>> 2022-11-23 16:43:47	"find" "/root/aufover-benchmark/workdir-for-sync/rpm-pkgs/basesystem-11-12.fc35/valgrind/output/debug/raw-results/builddir/valgrind-capture" "-name" "pid-*.log" "-empty" "-delete"
+
+>>> 2022-11-23 16:43:47	"chmod" "-R" "+r" "/root/aufover-benchmark/workdir-for-sync/rpm-pkgs/basesystem-11-12.fc35/valgrind/output/debug/raw-results/builddir/valgrind-capture"
+
+>>> 2022-11-23 16:43:47	"cd '/root/aufover-benchmark/workdir-for-sync/rpm-pkgs/basesystem-11-12.fc35/valgrind/output/debug/raw-results/builddir/valgrind-capture' && csgrep --mode=json --quiet --remove-duplicates *.xml > '/root/aufover-benchmark/workdir-for-sync/rpm-pkgs/basesystem-11-12.fc35/valgrind/output/debug/uni-results/valgrind-capture.js'"
+
+scan.ini: time-finished = 2022-11-23 16:43:47
+scan.ini: exit-code = 1
+>>> 2022-11-23 16:43:47	"cslinker --quiet --cwelist '/usr/share/csmock/cwe-map.csv' --inifile '/root/aufover-benchmark/workdir-for-sync/rpm-pkgs/basesystem-11-12.fc35/valgrind/output/scan.ini' '/root/aufover-benchmark/workdir-for-sync/rpm-pkgs/basesystem-11-12.fc35/valgrind/output/debug/uni-results'/* > '/root/aufover-benchmark/workdir-for-sync/rpm-pkgs/basesystem-11-12.fc35/valgrind/output/debug/scan-results-all.js'"
+
+>>> 2022-11-23 16:43:47	"'/usr/bin/mock' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'csgrep --mode=json --embed-context 3' < '/root/aufover-benchmark/workdir-for-sync/rpm-pkgs/basesystem-11-12.fc35/valgrind/output/debug/scan-results-all.js' > '/root/aufover-benchmark/workdir-for-sync/rpm-pkgs/basesystem-11-12.fc35/valgrind/output/debug/scan-results-all.js.tmp'"
+
+>>> 2022-11-23 16:43:52	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--clean"
+
+>>> 2022-11-23 16:44:03	"cat '/root/aufover-benchmark/workdir-for-sync/rpm-pkgs/basesystem-11-12.fc35/valgrind/output/debug/scan-results-all.js' | csgrep --mode=json --path '^/builddir/build/BUILD/' --strip-path-prefix /builddir/build/BUILD/ | csgrep --mode=json --invert-match --path '^ksh-.*[0-9]+\\.c\$' | csgrep --mode=json --invert-match --path 'CMakeFiles/CMakeTmp|conftest.c' | cssort --key=path > '/root/aufover-benchmark/workdir-for-sync/rpm-pkgs/basesystem-11-12.fc35/valgrind/output/scan-results.js'"
+
+>>> 2022-11-23 16:44:03	"sed 's|/builddir/build/BUILDROOT/[^/]*/|/builddir/build/BUILD//|' '/root/aufover-benchmark/workdir-for-sync/rpm-pkgs/basesystem-11-12.fc35/valgrind/output/debug/scan-results-all.js' | csgrep --mode=json --strip-path-prefix /builddir/build/BUILD/ | csdiff --show-internal '/root/aufover-benchmark/workdir-for-sync/rpm-pkgs/basesystem-11-12.fc35/valgrind/output/scan-results.js' - | cssort > '/root/aufover-benchmark/workdir-for-sync/rpm-pkgs/basesystem-11-12.fc35/valgrind/output/debug/suppressed-results.js'"
+
+>>> 2022-11-23 16:44:03	"csgrep --mode=grep --invert-match --event \"internal warning\" --prune-events=1 '/root/aufover-benchmark/workdir-for-sync/rpm-pkgs/basesystem-11-12.fc35/valgrind/output/debug/suppressed-results.js' > '/root/aufover-benchmark/workdir-for-sync/rpm-pkgs/basesystem-11-12.fc35/valgrind/output/debug/suppressed-results.err'"
+
+>>> 2022-11-23 16:44:03	"csgrep --mode=json --invert-match --event \"internal warning\" --prune-events=1 '/root/aufover-benchmark/workdir-for-sync/rpm-pkgs/basesystem-11-12.fc35/valgrind/output/debug/suppressed-results.js' | cshtml - > '/root/aufover-benchmark/workdir-for-sync/rpm-pkgs/basesystem-11-12.fc35/valgrind/output/debug/suppressed-results.html'"
+
+>>> 2022-11-23 16:44:03	"csgrep --mode=evtstat --invert-match --event \"internal warning\" --prune-events=1 '/root/aufover-benchmark/workdir-for-sync/rpm-pkgs/basesystem-11-12.fc35/valgrind/output/debug/suppressed-results.js' | tee '/root/aufover-benchmark/workdir-for-sync/rpm-pkgs/basesystem-11-12.fc35/valgrind/output/debug/suppressed-results-summary.txt'"
+
+>>> 2022-11-23 16:44:03	"csgrep --mode=grep --invert-match --event \"internal warning\" --prune-events=1 '/root/aufover-benchmark/workdir-for-sync/rpm-pkgs/basesystem-11-12.fc35/valgrind/output/scan-results.js' > '/root/aufover-benchmark/workdir-for-sync/rpm-pkgs/basesystem-11-12.fc35/valgrind/output/scan-results.err'"
+
+>>> 2022-11-23 16:44:03	"csgrep --mode=json --invert-match --event \"internal warning\" --prune-events=1 '/root/aufover-benchmark/workdir-for-sync/rpm-pkgs/basesystem-11-12.fc35/valgrind/output/scan-results.js' | cshtml - > '/root/aufover-benchmark/workdir-for-sync/rpm-pkgs/basesystem-11-12.fc35/valgrind/output/scan-results.html'"
+
+>>> 2022-11-23 16:44:03	"csgrep --mode=evtstat --invert-match --event \"internal warning\" --prune-events=1 '/root/aufover-benchmark/workdir-for-sync/rpm-pkgs/basesystem-11-12.fc35/valgrind/output/scan-results.js' | tee '/root/aufover-benchmark/workdir-for-sync/rpm-pkgs/basesystem-11-12.fc35/valgrind/output/scan-results-summary.txt'"
+
+<<< 2022-11-23 16:44:03	csmock exit code: 1
+

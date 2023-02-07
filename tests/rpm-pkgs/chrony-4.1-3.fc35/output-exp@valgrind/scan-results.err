@@ -1,0 +1,16 @@
+Error: VALGRIND_WARNING:
+./nts_ke_server.test: note: while executing process 1808
+chrony-4.1/test/unit/../../memory.c:38: warning[Leak_PossiblyLost]: 1,792 bytes in 1 blocks are possibly lost in loss record 2 of 2
+chrony-4.1/test/unit/../../memory.c:38: note: called from UnknownInlinedFun()
+chrony-4.1/test/unit/../../memory.c:74: note: called from UnknownInlinedFun()
+chrony-4.1/test/unit/../../sched.c:278: note: called from UnknownInlinedFun()
+chrony-4.1/test/unit/../../sched.c:330: note: called from SCH_AddTimeout()
+chrony-4.1/test/unit/../../sched.c:378: note: called from SCH_AddTimeoutByDelay()
+chrony-4.1/test/unit/../../nts_ke_server.c:776: note: called from NKS_Initialise()
+chrony-4.1/test/unit/nts_ke_server.c:162: note: called from test_unit()
+chrony-4.1/test/unit/test.c:81: note: called from main()
+#   36|     void *r;
+#   37|   
+#   38|->   r = malloc(size);
+#   39|     if (!r && size)
+#   40|       LOG_FATAL("Could not allocate memory");

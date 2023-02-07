@@ -1,0 +1,39 @@
+Error: COMPILER_WARNING (CWE-457):
+gdbm-1.20/src/gdbmload.c:378:15: warning[-Wmaybe-uninitialized]: 'owner_gid' may be used uninitialized in this function
+#  378 |           if (fchown (fd, owner_uid, owner_gid))
+#      |               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gdbm-1.20/src/gdbmload.c:293:9: note: 'owner_gid' was declared here
+#  293 |   uid_t owner_gid;
+#      |         ^~~~~~~~~
+#  376|   		owner_gid = st.st_gid;
+#  377|   	    }
+#  378|-> 	  if (fchown (fd, owner_uid, owner_gid))
+#  379|   	    {
+#  380|   	      GDBM_SET_ERRNO (dbf, GDBM_ERR_FILE_OWNER, FALSE);
+
+Error: COMPILER_WARNING (CWE-457):
+gdbm-1.20/src/gdbmload.c: scope_hint: In function '_gdbm_load_file'
+gdbm-1.20/src/gdbmload.c:378:15: warning[-Wmaybe-uninitialized]: 'owner_uid' may be used uninitialized in this function
+#  378 |           if (fchown (fd, owner_uid, owner_gid))
+#      |               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gdbm-1.20/src/gdbmload.c:292:9: note: 'owner_uid' was declared here
+#  292 |   uid_t owner_uid;
+#      |         ^~~~~~~~~
+#  376|   		owner_gid = st.st_gid;
+#  377|   	    }
+#  378|-> 	  if (fchown (fd, owner_uid, owner_gid))
+#  379|   	    {
+#  380|   	      GDBM_SET_ERRNO (dbf, GDBM_ERR_FILE_OWNER, FALSE);
+
+Error: COMPILER_WARNING (CWE-457):
+gdbm-1.20/src/gdbmload.c:384:39: warning[-Wmaybe-uninitialized]: 'mode' may be used uninitialized in this function
+#  384 |       if ((meta_flags & META_MODE) && fchmod (fd, mode))
+#      |                                       ^~~~~~~~~~~~~~~~~
+gdbm-1.20/src/gdbmload.c:294:10: note: 'mode' was declared here
+#  294 |   mode_t mode;
+#      |          ^~~~
+#  382|   	    }
+#  383|   	}
+#  384|->       if ((meta_flags & META_MODE) && fchmod (fd, mode))
+#  385|   	{
+#  386|   	  GDBM_SET_ERRNO (dbf, GDBM_ERR_FILE_OWNER, FALSE);

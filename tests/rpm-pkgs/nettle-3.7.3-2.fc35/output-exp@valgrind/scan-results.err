@@ -1,0 +1,54 @@
+Error: COMPILER_WARNING (CWE-457):
+nettle-3.7.3/examples/nettle-benchmark.c: scope_hint: In function 'time_umac'
+nettle-3.7.3/examples/nettle-benchmark.c:395:3: warning[-Wmaybe-uninitialized]: 'key' may be used uninitialized
+#  395 |   umac32_set_key (&ctx32, key);
+#      |   ^
+nettle-3.7.3/umac.h:134:1: note: by argument 2 of type 'const uint8_t *' to 'nettle_umac32_set_key' declared here
+#  134 | umac32_set_key (struct umac32_ctx *ctx, const uint8_t *key);
+#      | ^
+nettle-3.7.3/examples/nettle-benchmark.c:393:11: note: 'key' declared here
+#  393 |   uint8_t key[16];
+#      |           ^
+#  393|     uint8_t key[16];
+#  394|   
+#  395|->   umac32_set_key (&ctx32, key);
+#  396|     info.ctx = &ctx32;
+#  397|     info.update = (nettle_hash_update_func *) umac32_update;
+
+Error: COMPILER_WARNING (CWE-1164):
+nettle-3.7.3/testsuite/ecdh-test.c:141:1: warning[-Wunused-function]: 'test_public_key' defined but not used
+#  141 | test_public_key (const char *label, const struct ecc_curve *ecc,
+#      | ^~~~~~~~~~~~~~~
+#  139|   
+#  140|   static void
+#  141|-> test_public_key (const char *label, const struct ecc_curve *ecc,
+#  142|                    const char *x, const char *y, int expect_success)
+#  143|   {
+
+Error: COMPILER_WARNING (CWE-563):
+nettle-3.7.3/testsuite/x86-ibt-test.c: scope_hint: In function 'segfault_handler'
+nettle-3.7.3/testsuite/x86-ibt-test.c:7:22: warning[-Wunused-parameter]: unused parameter 'signo'
+#    7 | segfault_handler(int signo)
+#      |                  ~~~~^~~~~
+#    5|   
+#    6|   static void
+#    7|-> segfault_handler(int signo)
+#    8|   {
+#    9|     exit(0);
+
+Error: COMPILER_WARNING (CWE-457):
+nettle-3.7.3/examples/nettle-benchmark.c:67: included_from: Included from here.
+nettle-3.7.3/examples/nettle-benchmark.c: scope_hint: In function 'time_umac'
+nettle-3.7.3/umac.h:42:25: warning[-Wmaybe-uninitialized]: 'key' may be used uninitialized
+#   42 | #define umac32_set_key  nettle_umac32_set_key
+nettle-3.7.3/umac.h:42:25: note: by argument 2 of type 'const uint8_t *' to 'nettle_umac32_set_key' declared here
+#   42 | #define umac32_set_key  nettle_umac32_set_key
+#      |                         ^~~~~~~~~~~~~~~~~~~~~
+nettle-3.7.3/examples/nettle-benchmark.c:393:11: note: 'key' declared here
+#  393 |   uint8_t key[16];
+#      |           ^~~
+#   40|   
+#   41|   /* Namespace mangling */
+#   42|-> #define umac32_set_key  nettle_umac32_set_key
+#   43|   #define umac64_set_key  nettle_umac64_set_key
+#   44|   #define umac96_set_key  nettle_umac96_set_key

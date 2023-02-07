@@ -1,0 +1,121 @@
+Error: COMPILER_WARNING:
+libqb-2.0.3/examples/simplelog.c: scope_hint: In function 'main'
+libqb-2.0.3/examples/simplelog.c:252:28: warning[-Wstringop-overflow=]: writing 1 byte into a region of size 0
+#  252 |                 logfile[5] = 'a';
+#      |                 ~~~~~~~~~~~^~~~~
+#  250|   	if (do_blackbox) {
+#  251|   		logfile = NULL;
+#  252|-> 		logfile[5] = 'a';
+#  253|   	} else {
+#  254|   		qb_log_fini();
+
+Error: COMPILER_WARNING (CWE-252):
+libqb-2.0.3/lib/ipc_setup.c: scope_hint: In function 'handle_new_connection'
+libqb-2.0.3/lib/ipc_setup.c:679:15: warning[-Wunused-result]: ignoring return value of 'chown' declared with attribute 'warn_unused_result'
+#  679 |         (void)chown(c->description, c->auth.uid, c->auth.gid);
+#      |               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  677|   	}
+#  678|   	/* chown can fail because we might not be root */
+#  679|-> 	(void)chown(c->description, c->auth.uid, c->auth.gid);
+#  680|   
+#  681|   	/* We can't pass just a directory spec to the clients */
+
+Error: COMPILER_WARNING (CWE-252):
+libqb-2.0.3/lib/ipc_shm.c: scope_hint: In function 'qb_ipcs_shm_connect'
+libqb-2.0.3/lib/ipc_shm.c:362:23: warning[-Wunused-result]: ignoring return value of 'chown' declared with attribute 'warn_unused_result'
+#  362 |                 (void)chown(dirname, c->auth.uid, c->auth.gid);
+#      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  360|   	if (slash) {
+#  361|   		*slash = '\0';
+#  362|-> 		(void)chown(dirname, c->auth.uid, c->auth.gid);
+#  363|   	}
+#  364|   
+
+Error: COMPILER_WARNING (CWE-252):
+libqb-2.0.3/lib/ipc_socket.c: scope_hint: In function 'qb_ipc_dgram_sock_setup'
+libqb-2.0.3/lib/ipc_socket.c:112:23: warning[-Wunused-result]: ignoring return value of 'chown' declared with attribute 'warn_unused_result'
+#  112 |                 (void)chown(local_address.sun_path, -1, gid);
+#      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  110|   	if (use_filesystem_sockets()) {
+#  111|   		(void)chmod(local_address.sun_path, 0660);
+#  112|-> 		(void)chown(local_address.sun_path, -1, gid);
+#  113|   	}
+#  114|   	if (res < 0) {
+
+Error: VALGRIND_WARNING:
+libqb-2.0.3/tests/.libs/crash_test_dummy: note: while executing process 1966
+libqb-2.0.3/lib/log.c:489: warning[Leak_PossiblyLost]: 32 bytes in 1 blocks are possibly lost in loss record 72 of 94
+libqb-2.0.3/lib/log.c:489: note: called from qb_log_callsites_register()
+libqb-2.0.3/lib/log_dcs.c:55: note: called from _log_register_callsites()
+libqb-2.0.3/lib/array.c:163: note: called from qb_array_index()
+libqb-2.0.3/lib/log_dcs.c:68: note: called from _log_dcs_new_cs()
+libqb-2.0.3/lib/log_dcs.c:137: note: called from qb_log_dcs_get()
+libqb-2.0.3/lib/log.c:339: note: called from qb_log_callsite_get2()
+libqb-2.0.3/lib/ringbuffer.c:236: note: called from qb_rb_open_2()
+libqb-2.0.3/lib/log_blackbox.c:151: note: called from qb_log_blackbox_open()
+libqb-2.0.3/lib/log.c:1025: note: called from UnknownInlinedFun()
+libqb-2.0.3/lib/log.c:1073: note: called from qb_log_ctl2()
+libqb-2.0.3/tests/crash_test_dummy.c:87: note: called from main()
+#  487|   	pthread_rwlock_unlock(&_listlock);
+#  488|   
+#  489|-> 	sect = calloc(1, sizeof(struct callsite_section));
+#  490|   	if (sect == NULL) {
+#  491|   		return -ENOMEM;
+
+Error: VALGRIND_WARNING:
+libqb-2.0.3/tests/.libs/crash_test_dummy: note: while executing process 1966
+libqb-2.0.3/lib/log.c:607: warning[Leak_PossiblyLost]: 48 bytes in 1 blocks are possibly lost in loss record 79 of 94
+libqb-2.0.3/lib/log.c:607: note: called from UnknownInlinedFun()
+libqb-2.0.3/lib/log.c:761: note: called from qb_log_filter_ctl2()
+libqb-2.0.3/tests/crash_test_dummy.c:80: note: called from main()
+#  605|   			return -EEXIST;
+#  606|   		}
+#  607|-> 		flt = calloc(1, sizeof(struct qb_log_filter));
+#  608|   		if (flt == NULL) {
+#  609|   			return -ENOMEM;
+
+Error: VALGRIND_WARNING:
+libqb-2.0.3/tests/.libs/crash_test_dummy: note: while executing process 1966
+libqb-2.0.3/lib/log.c:614: warning[Leak_PossiblyLost]: 2 bytes in 1 blocks are possibly lost in loss record 1 of 94
+/usr/lib64/libc.so.6: note: called from strdup()
+libqb-2.0.3/lib/log.c:614: note: called from UnknownInlinedFun()
+libqb-2.0.3/lib/log.c:761: note: called from qb_log_filter_ctl2()
+libqb-2.0.3/tests/crash_test_dummy.c:80: note: called from main()
+#  612|   		flt->conf = c;
+#  613|   		flt->type = type;
+#  614|-> 		flt->text = strdup(text);
+#  615|   		if (flt->text == NULL) {
+#  616|   			_log_free_filter(flt);
+
+Error: COMPILER_WARNING (CWE-252):
+libqb-2.0.3/tests/check_ipc.c: scope_hint: In function 'set_ipc_name'
+libqb-2.0.3/tests/check_ipc.c:228:17: warning[-Wunused-result]: ignoring return value of 'fgets' declared with attribute 'warn_unused_result'
+#  228 |                 fgets(process_name, sizeof(process_name), f);
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  226|   	f = fopen("ipc-test-name", "r");
+#  227|   	if (f) {
+#  228|-> 		fgets(process_name, sizeof(process_name), f);
+#  229|   		fclose(f);
+#  230|   		snprintf(ipc_name, sizeof(ipc_name), "%.44s%s", prefix, process_name);
+
+Error: VALGRIND_WARNING:
+libqb-2.0.3/tests/.libs/crash_test_dummy: note: while executing process 1966
+libqb-2.0.3/tests/crash_test_dummy.c:106: warning[InvalidWrite]: Invalid write of size 1
+libqb-2.0.3/tests/crash_test_dummy.c:106: note: Address 0x5 is not stack'd, malloc'd or (recently) free'd
+libqb-2.0.3/tests/crash_test_dummy.c:106: note: called from main()
+#  104|   	 */
+#  105|          	logfile = NULL;
+#  106|-> 	logfile[5] = 'a';
+#  107|   	return 0;
+#  108|   }
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/tests/crash_test_dummy.c: scope_hint: In function 'main'
+libqb-2.0.3/tests/crash_test_dummy.c:106:20: warning[-Wstringop-overflow=]: writing 1 byte into a region of size 0
+#  106 |         logfile[5] = 'a';
+#      |         ~~~~~~~~~~~^~~~~
+#  104|   	 */
+#  105|          	logfile = NULL;
+#  106|-> 	logfile[5] = 'a';
+#  107|   	return 0;
+#  108|   }

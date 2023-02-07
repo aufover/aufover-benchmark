@@ -1,0 +1,24 @@
+Error: VALGRIND_WARNING:
+./56-basic-iterate_syscalls: note: while executing process 1003945
+libseccomp-2.5.0/tests/../src/api.c:466: warning[Leak_DefinitelyLost]: 58,216 bytes in 5,881 blocks are definitely lost in loss record 1 of 1
+/usr/lib64/libc.so.6: note: called from strdup()
+libseccomp-2.5.0/tests/../src/api.c:466: note: called from UnknownInlinedFun()
+libseccomp-2.5.0/tests/56-basic-iterate_syscalls.c:60: note: called from UnknownInlinedFun()
+libseccomp-2.5.0/tests/56-basic-iterate_syscalls.c:85: note: called from main()
+#  464|   		return NULL;
+#  465|   
+#  466|-> 	return strdup(name);
+#  467|   }
+#  468|   
+
+Error: VALGRIND_WARNING:
+./11-basic-basic_errors: note: while executing process 343784
+libseccomp-2.5.0/tests/../src/db.c:1116: warning[Leak_DefinitelyLost]: 120 (80 direct, 40 indirect) bytes in 1 blocks are definitely lost in loss record 3 of 3
+libseccomp-2.5.0/tests/../src/db.c:1116: note: called from UnknownInlinedFun()
+libseccomp-2.5.0/tests/../src/api.c:296: note: called from seccomp_init()
+libseccomp-2.5.0/tests/11-basic-basic_errors.c:174: note: called from main()
+# 1114|   	struct db_filter_col *col;
+# 1115|   
+# 1116|-> 	col = zmalloc(sizeof(*col));
+# 1117|   	if (col == NULL)
+# 1118|   		return NULL;

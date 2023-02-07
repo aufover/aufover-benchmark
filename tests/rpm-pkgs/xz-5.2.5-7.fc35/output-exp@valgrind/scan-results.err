@@ -1,0 +1,20 @@
+Error: COMPILER_WARNING:
+xz-5.2.5/src/xz/message.c: scope_hint: In function 'progress_speed.part.0'
+xz-5.2.5/src/xz/message.c:384:42: warning[-Wformat-truncation=]: '%s' directive output may be truncated writing up to 23 bytes into a region of size between 0 and 14
+#  384 |         snprintf(buf, sizeof(buf), "%.*f %s",
+#      |                                          ^~
+/usr/include/stdio.h:888: included_from: Included from here.
+xz-5.2.5/src/xz/private.h:23: included_from: Included from here.
+xz-5.2.5/src/xz/message.c:13: included_from: Included from here.
+/usr/include/bits/stdio2.h:71:10: note: '__snprintf_chk' output between 3 and 337 bytes into a destination of size 16
+#   71 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+#      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   72 |                                    __glibc_objsize (__s), __fmt,
+#      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   73 |                                    __va_arg_pack ());
+#      |                                    ~~~~~~~~~~~~~~~~~
+#  382|   	// Use big enough buffer to hold e.g. a multibyte decimal point.
+#  383|   	static char buf[16];
+#  384|-> 	snprintf(buf, sizeof(buf), "%.*f %s",
+#  385|   			speed > 9.9 ? 0 : 1, speed, unit[unit_index]);
+#  386|   	return buf;

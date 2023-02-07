@@ -1,0 +1,1047 @@
+Error: COMPILER_WARNING:
+man-db-2.9.4/gl/lib/utimens.c: scope_hint: In function 'fdutimens'
+man-db-2.9.4/gl/lib/utimens.c:382:17: warning[-Wstringop-overflow=]: 'update_timespec' accessing 16 bytes in a region of size 8
+#  382 |       if (ts && update_timespec (&st, &ts))
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+man-db-2.9.4/gl/lib/utimens.c:382:17: note: referencing argument 2 of type 'struct timespec * *'
+man-db-2.9.4/gl/lib/utimens.c:133:1: note: in a call to function 'update_timespec'
+#  133 | update_timespec (struct stat const *statbuf, struct timespec *ts[2])
+#      | ^~~~~~~~~~~~~~~
+#  380|             && (fd < 0 ? stat (file, &st) : fstat (fd, &st)))
+#  381|           return -1;
+#  382|->       if (ts && update_timespec (&st, &ts))
+#  383|           return 0;
+#  384|       }
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/gl/lib/utimens.c: scope_hint: In function 'lutimens'
+man-db-2.9.4/gl/lib/utimens.c:595:17: warning[-Wstringop-overflow=]: 'update_timespec' accessing 16 bytes in a region of size 8
+#  595 |       if (ts && update_timespec (&st, &ts))
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+man-db-2.9.4/gl/lib/utimens.c:595:17: note: referencing argument 2 of type 'struct timespec * *'
+man-db-2.9.4/gl/lib/utimens.c:133:1: note: in a call to function 'update_timespec'
+#  133 | update_timespec (struct stat const *statbuf, struct timespec *ts[2])
+#      | ^~~~~~~~~~~~~~~
+#  593|         if (adjustment_needed != 3 && lstat (file, &st))
+#  594|           return -1;
+#  595|->       if (ts && update_timespec (&st, &ts))
+#  596|           return 0;
+#  597|       }
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/man: note: while executing process 6619 with arguments: -C /tmp/tmp.gHEGSPY1fj/manpath.config /tmp/tmp.gHEGSPY1fj/file.1
+man-db-2.9.4/lib/../gl/lib/gl_anylinked_list2.h:47: warning[Leak_DefinitelyLost]: 192 (104 direct, 88 indirect) bytes in 1 blocks are definitely lost in loss record 5 of 5
+man-db-2.9.4/lib/../gl/lib/gl_anylinked_list2.h:47: note: called from gl_linked_nx_create_empty()
+man-db-2.9.4/lib/../gl/lib/gl_list.h:580: note: called from UnknownInlinedFun()
+man-db-2.9.4/lib/../gl/lib/gl_xlist.h:78: note: called from UnknownInlinedFun()
+man-db-2.9.4/lib/glcontainers.c:61: note: called from new_string_list()
+man-db-2.9.4/src/manp.c:928: note: called from get_manpath_from_path()
+man-db-2.9.4/src/man.c:3820: note: called from local_man_loop()
+man-db-2.9.4/src/man.c:3949: note: called from man()
+man-db-2.9.4/src/man.c:4327: note: called from main()
+#   45|   {
+#   46|     struct gl_list_impl *list =
+#   47|->     (struct gl_list_impl *) malloc (sizeof (struct gl_list_impl));
+#   48|   
+#   49|     if (list == NULL)
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/mandb: note: while executing process 11269 with arguments: -C /tmp/tmp.ZsqxHsuhFQ/manpath.config -u -q /tmp/tmp.ZsqxHsuhFQ/usr/share/man
+man-db-2.9.4/lib/../gl/lib/gl_array_list.c:57: warning[Leak_DefinitelyLost]: 189 (64 direct, 125 indirect) bytes in 1 blocks are definitely lost in loss record 24 of 25
+man-db-2.9.4/lib/../gl/lib/gl_array_list.c:57: note: called from gl_array_nx_create_empty()
+man-db-2.9.4/lib/../gl/lib/gl_list.h:580: note: called from UnknownInlinedFun()
+man-db-2.9.4/lib/../gl/lib/gl_xlist.h:78: note: called from UnknownInlinedFun()
+man-db-2.9.4/lib/glcontainers.c:61: note: called from new_string_list()
+man-db-2.9.4/src/check_mandirs.c:246: note: called from test_manfile()
+man-db-2.9.4/src/check_mandirs.c:362: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/check_mandirs.c:596: note: called from testmandirs()
+man-db-2.9.4/src/check_mandirs.c:648: note: called from create_db()
+man-db-2.9.4/src/mandb.c:387: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/mandb.c:546: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/mandb.c:608: note: called from process_manpath()
+man-db-2.9.4/src/mandb.c:868: note: called from main()
+#   55|   {
+#   56|     struct gl_list_impl *list =
+#   57|->     (struct gl_list_impl *) malloc (sizeof (struct gl_list_impl));
+#   58|   
+#   59|     if (list == NULL)
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/man: note: while executing process 7922 with arguments: -C /tmp/tmp.WZvOwEE5kT/manpath.config -aw abc
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:53: warning[Leak_DefinitelyLost]: 10 bytes in 1 blocks are definitely lost in loss record 2 of 17
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:53: note: called from xmalloc()
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:124: note: called from xmemdup()
+man-db-2.9.4/src/man.c:2229: note: called from display()
+man-db-2.9.4/src/man.c:3211: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3601: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3977: note: called from man()
+man-db-2.9.4/src/man.c:4327: note: called from main()
+#   51|   xmalloc (size_t n)
+#   52|   {
+#   53|->   void *p = malloc (n);
+#   54|     if (!p && (HAVE_GNU_MALLOC || n))
+#   55|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/man: note: while executing process 6544 with arguments: -C /tmp/tmp.0wEIsnM99I/manpath.config -aw 3p open
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:53: warning[Leak_DefinitelyLost]: 100 (32 direct, 68 indirect) bytes in 2 blocks are definitely lost in loss record 13 of 16
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:53: note: called from xmalloc()
+man-db-2.9.4/src/zsoelim.l:547: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:1137: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:2260: note: called from display()
+man-db-2.9.4/src/man.c:3211: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3601: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3977: note: called from man()
+man-db-2.9.4/src/man.c:4327: note: called from main()
+#   51|   xmalloc (size_t n)
+#   52|   {
+#   53|->   void *p = malloc (n);
+#   54|     if (!p && (HAVE_GNU_MALLOC || n))
+#   55|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/man: note: while executing process 7922 with arguments: -C /tmp/tmp.WZvOwEE5kT/manpath.config -aw abc
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:53: warning[Leak_DefinitelyLost]: 110 (32 direct, 78 indirect) bytes in 2 blocks are definitely lost in loss record 14 of 17
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:53: note: called from xmalloc()
+man-db-2.9.4/src/zsoelim.l:547: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:1137: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:2260: note: called from display()
+man-db-2.9.4/src/man.c:3211: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3601: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3977: note: called from man()
+man-db-2.9.4/src/man.c:4327: note: called from main()
+#   51|   xmalloc (size_t n)
+#   52|   {
+#   53|->   void *p = malloc (n);
+#   54|     if (!p && (HAVE_GNU_MALLOC || n))
+#   55|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/man: note: while executing process 7041 with arguments: -C /tmp/tmp.HFOetnsfPs/manpath.config -aw -M /tmp/tmp.HFOetnsfPs/usr/share/man manx
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:53: warning[Leak_DefinitelyLost]: 135 (16 direct, 119 indirect) bytes in 1 blocks are definitely lost in loss record 14 of 14
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:53: note: called from xmalloc()
+man-db-2.9.4/src/manconv_client.c:93: note: called from add_manconv()
+man-db-2.9.4/src/man.c:1213: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:2260: note: called from display()
+man-db-2.9.4/src/man.c:3211: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3601: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3977: note: called from man()
+man-db-2.9.4/src/man.c:4327: note: called from main()
+#   51|   xmalloc (size_t n)
+#   52|   {
+#   53|->   void *p = malloc (n);
+#   54|     if (!p && (HAVE_GNU_MALLOC || n))
+#   55|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/mandb: note: while executing process 10217 with arguments: -C /tmp/tmp.LTwHpzRT8f/manpath.config -u -q /tmp/tmp.LTwHpzRT8f/usr/share/man
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:53: warning[Leak_DefinitelyLost]: 16 bytes in 1 blocks are definitely lost in loss record 3 of 20
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:53: note: called from xmalloc()
+man-db-2.9.4/libdb/db_xdbm.c:108: note: called from man_xdbm_firstkey()
+man-db-2.9.4/src/check_mandirs.c:667: note: called from sanity_check_db.part.0()
+man-db-2.9.4/src/straycats.c:336: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/check_mandirs.c:984: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/check_mandirs.c:951: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/mandb.c:599: note: called from process_manpath()
+man-db-2.9.4/src/mandb.c:868: note: called from main()
+#   51|   xmalloc (size_t n)
+#   52|   {
+#   53|->   void *p = malloc (n);
+#   54|     if (!p && (HAVE_GNU_MALLOC || n))
+#   55|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/mandb: note: while executing process 10003 with arguments: -C /tmp/tmp.HQumkjYRYj/manpath.config -u -q /tmp/tmp.HQumkjYRYj/usr/share/man
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:53: warning[Leak_DefinitelyLost]: 2 bytes in 1 blocks are definitely lost in loss record 1 of 16
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:53: note: called from xmalloc()
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:124: note: called from xmemdup()
+man-db-2.9.4/src/lexgrog.l:939: note: called from find_name_decompressed()
+man-db-2.9.4/src/lexgrog.l:886: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/check_mandirs.c:284: note: called from test_manfile()
+man-db-2.9.4/src/check_mandirs.c:362: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/check_mandirs.c:596: note: called from testmandirs()
+man-db-2.9.4/src/check_mandirs.c:648: note: called from create_db()
+man-db-2.9.4/src/mandb.c:387: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/mandb.c:546: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/mandb.c:608: note: called from process_manpath()
+man-db-2.9.4/src/mandb.c:868: note: called from main()
+#   51|   xmalloc (size_t n)
+#   52|   {
+#   53|->   void *p = malloc (n);
+#   54|     if (!p && (HAVE_GNU_MALLOC || n))
+#   55|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/man: note: while executing process 6544 with arguments: -C /tmp/tmp.0wEIsnM99I/manpath.config -aw 3p open
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:53: warning[Leak_DefinitelyLost]: 270 (32 direct, 238 indirect) bytes in 2 blocks are definitely lost in loss record 16 of 16
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:53: note: called from xmalloc()
+man-db-2.9.4/src/manconv_client.c:93: note: called from add_manconv()
+man-db-2.9.4/src/man.c:1213: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:2260: note: called from display()
+man-db-2.9.4/src/man.c:3211: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3601: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3977: note: called from man()
+man-db-2.9.4/src/man.c:4327: note: called from main()
+#   51|   xmalloc (size_t n)
+#   52|   {
+#   53|->   void *p = malloc (n);
+#   54|     if (!p && (HAVE_GNU_MALLOC || n))
+#   55|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/accessdb: note: while executing process 10345 with arguments: /tmp/tmp.sMkHRYU9M5/usr/share/man/index.db
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:53: warning[Leak_DefinitelyLost]: 32 bytes in 2 blocks are definitely lost in loss record 2 of 2
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:53: note: called from xmalloc()
+man-db-2.9.4/libdb/db_xdbm.c:114: note: called from man_xdbm_firstkey()
+man-db-2.9.4/src/accessdb.c:140: note: called from main()
+#   51|   xmalloc (size_t n)
+#   52|   {
+#   53|->   void *p = malloc (n);
+#   54|     if (!p && (HAVE_GNU_MALLOC || n))
+#   55|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/mandb: note: while executing process 10079 with arguments: -C /tmp/tmp.rD9kxNeX9u/manpath.config -q /tmp/tmp.rD9kxNeX9u/usr/share/man:/tmp/tmp.rD9kxNeX9u/usr/dir/man
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:53: warning[Leak_DefinitelyLost]: 4 bytes in 2 blocks are definitely lost in loss record 1 of 15
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:53: note: called from xmalloc()
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:124: note: called from xmemdup()
+man-db-2.9.4/src/lexgrog.l:939: note: called from find_name_decompressed()
+man-db-2.9.4/src/lexgrog.l:886: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/check_mandirs.c:284: note: called from test_manfile()
+man-db-2.9.4/src/check_mandirs.c:362: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/check_mandirs.c:596: note: called from testmandirs()
+man-db-2.9.4/src/check_mandirs.c:648: note: called from create_db()
+man-db-2.9.4/src/mandb.c:387: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/mandb.c:546: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/mandb.c:608: note: called from process_manpath()
+man-db-2.9.4/src/mandb.c:868: note: called from main()
+#   51|   xmalloc (size_t n)
+#   52|   {
+#   53|->   void *p = malloc (n);
+#   54|     if (!p && (HAVE_GNU_MALLOC || n))
+#   55|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/mandb: note: while executing process 10217 with arguments: -C /tmp/tmp.LTwHpzRT8f/manpath.config -u -q /tmp/tmp.LTwHpzRT8f/usr/share/man
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:53: warning[Leak_DefinitelyLost]: 43 bytes in 1 blocks are definitely lost in loss record 11 of 20
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:53: note: called from xmalloc()
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:124: note: called from xmemdup()
+man-db-2.9.4/libdb/db_xdbm.c:127: note: called from man_xdbm_firstkey()
+man-db-2.9.4/src/check_mandirs.c:991: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/check_mandirs.c:951: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/mandb.c:599: note: called from process_manpath()
+man-db-2.9.4/src/mandb.c:868: note: called from main()
+#   51|   xmalloc (size_t n)
+#   52|   {
+#   53|->   void *p = malloc (n);
+#   54|     if (!p && (HAVE_GNU_MALLOC || n))
+#   55|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/accessdb: note: while executing process 10473 with arguments: /tmp/tmp.sMkHRYU9M5/usr/share/man/index.db
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:53: warning[Leak_DefinitelyLost]: 48 bytes in 3 blocks are definitely lost in loss record 2 of 2
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:53: note: called from xmalloc()
+man-db-2.9.4/libdb/db_xdbm.c:114: note: called from man_xdbm_firstkey()
+man-db-2.9.4/src/accessdb.c:140: note: called from main()
+#   51|   xmalloc (size_t n)
+#   52|   {
+#   53|->   void *p = malloc (n);
+#   54|     if (!p && (HAVE_GNU_MALLOC || n))
+#   55|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/mandb: note: while executing process 11145 with arguments: -C /tmp/tmp.ZsqxHsuhFQ/manpath.config -u -q /tmp/tmp.ZsqxHsuhFQ/usr/share/man
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:53: warning[Leak_DefinitelyLost]: 5 bytes in 1 blocks are definitely lost in loss record 2 of 16
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:53: note: called from xmalloc()
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:124: note: called from xmemdup()
+man-db-2.9.4/src/descriptions_store.c:138: note: called from store_descriptions()
+man-db-2.9.4/src/check_mandirs.c:304: note: called from test_manfile()
+man-db-2.9.4/src/check_mandirs.c:362: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/check_mandirs.c:596: note: called from testmandirs()
+man-db-2.9.4/src/check_mandirs.c:648: note: called from create_db()
+man-db-2.9.4/src/mandb.c:387: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/mandb.c:546: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/mandb.c:608: note: called from process_manpath()
+man-db-2.9.4/src/mandb.c:868: note: called from main()
+#   51|   xmalloc (size_t n)
+#   52|   {
+#   53|->   void *p = malloc (n);
+#   54|     if (!p && (HAVE_GNU_MALLOC || n))
+#   55|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/man: note: while executing process 7041 with arguments: -C /tmp/tmp.HFOetnsfPs/manpath.config -aw -M /tmp/tmp.HFOetnsfPs/usr/share/man manx
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:53: warning[Leak_DefinitelyLost]: 50 (16 direct, 34 indirect) bytes in 1 blocks are definitely lost in loss record 10 of 14
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:53: note: called from xmalloc()
+man-db-2.9.4/src/zsoelim.l:547: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:1137: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:2260: note: called from display()
+man-db-2.9.4/src/man.c:3211: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3601: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3977: note: called from man()
+man-db-2.9.4/src/man.c:4327: note: called from main()
+#   51|   xmalloc (size_t n)
+#   52|   {
+#   53|->   void *p = malloc (n);
+#   54|     if (!p && (HAVE_GNU_MALLOC || n))
+#   55|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/man: note: while executing process 7153 with arguments: -C /tmp/tmp.HFOetnsfPs/manpath.config -aw -M /tmp/tmp.HFOetnsfPs/usr/share/prog/*/man manpathx
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:53: warning[Leak_DefinitelyLost]: 57 (16 direct, 41 indirect) bytes in 1 blocks are definitely lost in loss record 8 of 14
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:53: note: called from xmalloc()
+man-db-2.9.4/src/zsoelim.l:547: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:1137: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:2260: note: called from display()
+man-db-2.9.4/src/man.c:3211: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3601: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3977: note: called from man()
+man-db-2.9.4/src/man.c:4327: note: called from main()
+#   51|   xmalloc (size_t n)
+#   52|   {
+#   53|->   void *p = malloc (n);
+#   54|     if (!p && (HAVE_GNU_MALLOC || n))
+#   55|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/man: note: while executing process 6834 with arguments: -L xyzzy_foo.bar -C /tmp/tmp.3f6Yi43Prc/manpath.config test
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:53: warning[Leak_DefinitelyLost]: 6 bytes in 1 blocks are definitely lost in loss record 1 of 8
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:53: note: called from xmalloc()
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:124: note: called from xmemdup()
+man-db-2.9.4/src/man.c:2229: note: called from display()
+man-db-2.9.4/src/man.c:3211: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3601: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3977: note: called from man()
+man-db-2.9.4/src/man.c:4327: note: called from main()
+#   51|   xmalloc (size_t n)
+#   52|   {
+#   53|->   void *p = malloc (n);
+#   54|     if (!p && (HAVE_GNU_MALLOC || n))
+#   55|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/accessdb: note: while executing process 10596 with arguments: /tmp/tmp.sMkHRYU9M5/usr/share/man/index.db
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:53: warning[Leak_DefinitelyLost]: 64 bytes in 4 blocks are definitely lost in loss record 2 of 2
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:53: note: called from xmalloc()
+man-db-2.9.4/libdb/db_xdbm.c:114: note: called from man_xdbm_firstkey()
+man-db-2.9.4/src/accessdb.c:140: note: called from main()
+#   51|   xmalloc (size_t n)
+#   52|   {
+#   53|->   void *p = malloc (n);
+#   54|     if (!p && (HAVE_GNU_MALLOC || n))
+#   55|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/whatis: note: while executing process 11528 with arguments: -C /tmp/tmp.6kHbpNR6wj/manpath.config test
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:53: warning[Leak_DefinitelyLost]: 68 bytes in 1 blocks are definitely lost in loss record 1 of 1
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:53: note: called from xmalloc()
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:124: note: called from xmemdup()
+man-db-2.9.4/src/whatis.c:939: note: called from main()
+#   51|   xmalloc (size_t n)
+#   52|   {
+#   53|->   void *p = malloc (n);
+#   54|     if (!p && (HAVE_GNU_MALLOC || n))
+#   55|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/mandb: note: while executing process 10972 with arguments: -C /tmp/tmp.h49tr6xMjq/manpath.config -u -q /tmp/tmp.h49tr6xMjq/usr/share/man:/tmp/tmp.h49tr6xMjq/usr/X11R6/man
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:53: warning[Leak_DefinitelyLost]: 86 bytes in 2 blocks are definitely lost in loss record 20 of 22
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:53: note: called from xmalloc()
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:124: note: called from xmemdup()
+man-db-2.9.4/libdb/db_xdbm.c:127: note: called from man_xdbm_firstkey()
+man-db-2.9.4/src/check_mandirs.c:991: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/check_mandirs.c:951: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/mandb.c:599: note: called from process_manpath()
+man-db-2.9.4/src/mandb.c:868: note: called from main()
+#   51|   xmalloc (size_t n)
+#   52|   {
+#   53|->   void *p = malloc (n);
+#   54|     if (!p && (HAVE_GNU_MALLOC || n))
+#   55|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/mandb: note: while executing process 10003 with arguments: -C /tmp/tmp.HQumkjYRYj/manpath.config -u -q /tmp/tmp.HQumkjYRYj/usr/share/man
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:53: warning[Leak_DefinitelyLost]: 9 bytes in 1 blocks are definitely lost in loss record 3 of 16
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:53: note: called from xmalloc()
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:124: note: called from xmemdup()
+man-db-2.9.4/src/descriptions_store.c:138: note: called from store_descriptions()
+man-db-2.9.4/src/check_mandirs.c:304: note: called from test_manfile()
+man-db-2.9.4/src/check_mandirs.c:362: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/check_mandirs.c:596: note: called from testmandirs()
+man-db-2.9.4/src/check_mandirs.c:648: note: called from create_db()
+man-db-2.9.4/src/mandb.c:387: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/mandb.c:546: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/mandb.c:608: note: called from process_manpath()
+man-db-2.9.4/src/mandb.c:868: note: called from main()
+#   51|   xmalloc (size_t n)
+#   52|   {
+#   53|->   void *p = malloc (n);
+#   54|     if (!p && (HAVE_GNU_MALLOC || n))
+#   55|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/man: note: while executing process 6902 with arguments: -L xyzzy_foo.bar -C /tmp/tmp.3f6Yi43Prc/manpath.config xyz
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:112: warning[Leak_DefinitelyLost]: 137 (88 direct, 49 indirect) bytes in 1 blocks are definitely lost in loss record 7 of 7
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:112: note: called from xcalloc()
+man-db-2.9.4/src/man.c:3135: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3558: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3921: note: called from locate_page_in_manpath()
+man-db-2.9.4/src/man.c:3961: note: called from man()
+man-db-2.9.4/src/man.c:4327: note: called from main()
+#  110|        successful.  */
+#  111|     if (xalloc_oversized (n, s)
+#  112|->       || (! (p = calloc (n, s)) && (HAVE_GNU_CALLOC || n != 0)))
+#  113|       xalloc_die ();
+#  114|     return p;
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/man: note: while executing process 11716 with arguments: -C /tmp/tmp.sKQQsKZgMg/manpath.config test
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:112: warning[Leak_DefinitelyLost]: 139 (88 direct, 51 indirect) bytes in 1 blocks are definitely lost in loss record 7 of 7
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:112: note: called from xcalloc()
+man-db-2.9.4/src/man.c:3135: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3558: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3921: note: called from locate_page_in_manpath()
+man-db-2.9.4/src/man.c:3961: note: called from man()
+man-db-2.9.4/src/man.c:4327: note: called from main()
+#  110|        successful.  */
+#  111|     if (xalloc_oversized (n, s)
+#  112|->       || (! (p = calloc (n, s)) && (HAVE_GNU_CALLOC || n != 0)))
+#  113|       xalloc_die ();
+#  114|     return p;
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/man: note: while executing process 8367 with arguments: -C /tmp/tmp.wEwzbtQdQW/manpath.config testb
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:112: warning[Leak_DefinitelyLost]: 144 (88 direct, 56 indirect) bytes in 1 blocks are definitely lost in loss record 7 of 7
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:112: note: called from xcalloc()
+man-db-2.9.4/src/man.c:3135: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3558: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3921: note: called from locate_page_in_manpath()
+man-db-2.9.4/src/man.c:3961: note: called from man()
+man-db-2.9.4/src/man.c:4327: note: called from main()
+#  110|        successful.  */
+#  111|     if (xalloc_oversized (n, s)
+#  112|->       || (! (p = calloc (n, s)) && (HAVE_GNU_CALLOC || n != 0)))
+#  113|       xalloc_die ();
+#  114|     return p;
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/man: note: while executing process 8699 with arguments: -C /tmp/tmp.JfcoOrdfKs/manpath.config -aw chmod.2p
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:112: warning[Leak_DefinitelyLost]: 145 (88 direct, 57 indirect) bytes in 1 blocks are definitely lost in loss record 15 of 15
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:112: note: called from xcalloc()
+man-db-2.9.4/src/man.c:3135: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3558: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3921: note: called from locate_page_in_manpath()
+man-db-2.9.4/src/man.c:3968: note: called from man()
+man-db-2.9.4/src/man.c:4327: note: called from main()
+#  110|        successful.  */
+#  111|     if (xalloc_oversized (n, s)
+#  112|->       || (! (p = calloc (n, s)) && (HAVE_GNU_CALLOC || n != 0)))
+#  113|       xalloc_die ();
+#  114|     return p;
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/man: note: while executing process 8303 with arguments: -C /tmp/tmp.wEwzbtQdQW/manpath.config test-relso
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:112: warning[Leak_DefinitelyLost]: 151 (88 direct, 63 indirect) bytes in 1 blocks are definitely lost in loss record 7 of 7
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:112: note: called from xcalloc()
+man-db-2.9.4/src/man.c:3135: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3558: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3921: note: called from locate_page_in_manpath()
+man-db-2.9.4/src/man.c:3961: note: called from man()
+man-db-2.9.4/src/man.c:4327: note: called from main()
+#  110|        successful.  */
+#  111|     if (xalloc_oversized (n, s)
+#  112|->       || (! (p = calloc (n, s)) && (HAVE_GNU_CALLOC || n != 0)))
+#  113|       xalloc_die ();
+#  114|     return p;
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/man: note: while executing process 8239 with arguments: -C /tmp/tmp.wEwzbtQdQW/manpath.config test-fullso
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:112: warning[Leak_DefinitelyLost]: 153 (88 direct, 65 indirect) bytes in 1 blocks are definitely lost in loss record 7 of 7
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:112: note: called from xcalloc()
+man-db-2.9.4/src/man.c:3135: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3558: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3921: note: called from locate_page_in_manpath()
+man-db-2.9.4/src/man.c:3961: note: called from man()
+man-db-2.9.4/src/man.c:4327: note: called from main()
+#  110|        successful.  */
+#  111|     if (xalloc_oversized (n, s)
+#  112|->       || (! (p = calloc (n, s)) && (HAVE_GNU_CALLOC || n != 0)))
+#  113|       xalloc_die ();
+#  114|     return p;
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/man: note: while executing process 8434 with arguments: -C /tmp/tmp.wEwzbtQdQW/manpath.config test-fullsob
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:112: warning[Leak_DefinitelyLost]: 155 (88 direct, 67 indirect) bytes in 1 blocks are definitely lost in loss record 7 of 7
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:112: note: called from xcalloc()
+man-db-2.9.4/src/man.c:3135: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3558: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3921: note: called from locate_page_in_manpath()
+man-db-2.9.4/src/man.c:3961: note: called from man()
+man-db-2.9.4/src/man.c:4327: note: called from main()
+#  110|        successful.  */
+#  111|     if (xalloc_oversized (n, s)
+#  112|->       || (! (p = calloc (n, s)) && (HAVE_GNU_CALLOC || n != 0)))
+#  113|       xalloc_die ();
+#  114|     return p;
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/man: note: while executing process 7153 with arguments: -C /tmp/tmp.HFOetnsfPs/manpath.config -aw -M /tmp/tmp.HFOetnsfPs/usr/share/prog/*/man manpathx
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:112: warning[Leak_DefinitelyLost]: 157 (88 direct, 69 indirect) bytes in 1 blocks are definitely lost in loss record 14 of 14
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:112: note: called from xcalloc()
+man-db-2.9.4/src/man.c:3135: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3558: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3921: note: called from locate_page_in_manpath()
+man-db-2.9.4/src/man.c:3961: note: called from man()
+man-db-2.9.4/src/man.c:4327: note: called from main()
+#  110|        successful.  */
+#  111|     if (xalloc_oversized (n, s)
+#  112|->       || (! (p = calloc (n, s)) && (HAVE_GNU_CALLOC || n != 0)))
+#  113|       xalloc_die ();
+#  114|     return p;
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/man: note: while executing process 6544 with arguments: -C /tmp/tmp.0wEIsnM99I/manpath.config -aw 3p open
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:112: warning[Leak_DefinitelyLost]: 237 (176 direct, 61 indirect) bytes in 2 blocks are definitely lost in loss record 15 of 16
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:112: note: called from xcalloc()
+man-db-2.9.4/src/man.c:3135: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3558: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3921: note: called from locate_page_in_manpath()
+man-db-2.9.4/src/man.c:3956: note: called from man()
+man-db-2.9.4/src/man.c:4327: note: called from main()
+#  110|        successful.  */
+#  111|     if (xalloc_oversized (n, s)
+#  112|->       || (! (p = calloc (n, s)) && (HAVE_GNU_CALLOC || n != 0)))
+#  113|       xalloc_die ();
+#  114|     return p;
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/man: note: while executing process 7922 with arguments: -C /tmp/tmp.WZvOwEE5kT/manpath.config -aw abc
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:112: warning[Leak_DefinitelyLost]: 239 (176 direct, 63 indirect) bytes in 2 blocks are definitely lost in loss record 16 of 17
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:112: note: called from xcalloc()
+man-db-2.9.4/src/man.c:3135: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3558: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3921: note: called from locate_page_in_manpath()
+man-db-2.9.4/src/man.c:3961: note: called from man()
+man-db-2.9.4/src/man.c:4327: note: called from main()
+#  110|        successful.  */
+#  111|     if (xalloc_oversized (n, s)
+#  112|->       || (! (p = calloc (n, s)) && (HAVE_GNU_CALLOC || n != 0)))
+#  113|       xalloc_die ();
+#  114|     return p;
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/man: note: while executing process 8831 with arguments: -C /tmp/tmp.qsgDa0Ykda/manpath.config -aw md5sum
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:112: warning[Leak_DefinitelyLost]: 241 (176 direct, 65 indirect) bytes in 2 blocks are definitely lost in loss record 15 of 16
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:112: note: called from xcalloc()
+man-db-2.9.4/src/man.c:3135: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3558: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3921: note: called from locate_page_in_manpath()
+man-db-2.9.4/src/man.c:3961: note: called from man()
+man-db-2.9.4/src/man.c:4327: note: called from main()
+#  110|        successful.  */
+#  111|     if (xalloc_oversized (n, s)
+#  112|->       || (! (p = calloc (n, s)) && (HAVE_GNU_CALLOC || n != 0)))
+#  113|       xalloc_die ();
+#  114|     return p;
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/man: note: while executing process 7835 with arguments: -C /tmp/tmp.t4t4LJTJJP/manpath.config -E UTF-8 test
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:112: warning[Leak_DefinitelyLost]: 262 (176 direct, 86 indirect) bytes in 2 blocks are definitely lost in loss record 7 of 7
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:112: note: called from xcalloc()
+man-db-2.9.4/src/man.c:3135: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3558: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3921: note: called from locate_page_in_manpath()
+man-db-2.9.4/src/man.c:3961: note: called from man()
+man-db-2.9.4/src/man.c:4327: note: called from main()
+#  110|        successful.  */
+#  111|     if (xalloc_oversized (n, s)
+#  112|->       || (! (p = calloc (n, s)) && (HAVE_GNU_CALLOC || n != 0)))
+#  113|       xalloc_die ();
+#  114|     return p;
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/man: note: while executing process 6834 with arguments: -L xyzzy_foo.bar -C /tmp/tmp.3f6Yi43Prc/manpath.config test
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:112: warning[Leak_DefinitelyLost]: 284 (176 direct, 108 indirect) bytes in 2 blocks are definitely lost in loss record 8 of 8
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:112: note: called from xcalloc()
+man-db-2.9.4/src/man.c:3135: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3558: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3921: note: called from locate_page_in_manpath()
+man-db-2.9.4/src/man.c:3961: note: called from man()
+man-db-2.9.4/src/man.c:4327: note: called from main()
+#  110|        successful.  */
+#  111|     if (xalloc_oversized (n, s)
+#  112|->       || (! (p = calloc (n, s)) && (HAVE_GNU_CALLOC || n != 0)))
+#  113|       xalloc_die ();
+#  114|     return p;
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/man: note: while executing process 7041 with arguments: -C /tmp/tmp.HFOetnsfPs/manpath.config -aw -M /tmp/tmp.HFOetnsfPs/usr/share/man manx
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:112: warning[Leak_DefinitelyLost]: 93 (88 direct, 5 indirect) bytes in 1 blocks are definitely lost in loss record 13 of 14
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:112: note: called from xcalloc()
+man-db-2.9.4/src/man.c:3135: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3558: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3921: note: called from locate_page_in_manpath()
+man-db-2.9.4/src/man.c:3961: note: called from man()
+man-db-2.9.4/src/man.c:4327: note: called from main()
+#  110|        successful.  */
+#  111|     if (xalloc_oversized (n, s)
+#  112|->       || (! (p = calloc (n, s)) && (HAVE_GNU_CALLOC || n != 0)))
+#  113|       xalloc_die ();
+#  114|     return p;
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/man: note: while executing process 7211 with arguments: -C /tmp/tmp.HFOetnsfPs/manpath.config -aw -M /tmp/tmp.HFOetnsfPs/usr/share/prog/[ab]/man whatisx
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:112: warning[Leak_DefinitelyLost]: 96 (88 direct, 8 indirect) bytes in 1 blocks are definitely lost in loss record 13 of 14
+man-db-2.9.4/lib/../gl/lib/xmalloc.c:112: note: called from xcalloc()
+man-db-2.9.4/src/man.c:3135: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3558: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3921: note: called from locate_page_in_manpath()
+man-db-2.9.4/src/man.c:3961: note: called from man()
+man-db-2.9.4/src/man.c:4327: note: called from main()
+#  110|        successful.  */
+#  111|     if (xalloc_oversized (n, s)
+#  112|->       || (! (p = calloc (n, s)) && (HAVE_GNU_CALLOC || n != 0)))
+#  113|       xalloc_die ();
+#  114|     return p;
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/man: note: while executing process 6902 with arguments: -L xyzzy_foo.bar -C /tmp/tmp.3f6Yi43Prc/manpath.config xyz
+man-db-2.9.4/lib/../gl/lib/xstrndup.c:32: warning[Leak_DefinitelyLost]: 11 bytes in 1 blocks are definitely lost in loss record 2 of 7
+/usr/lib64/libc.so.6: note: called from strndup()
+man-db-2.9.4/lib/../gl/lib/xstrndup.c:32: note: called from xstrndup()
+man-db-2.9.4/src/man.c:984: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:1021: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:2259: note: called from display()
+man-db-2.9.4/src/man.c:3211: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3601: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3977: note: called from man()
+man-db-2.9.4/src/man.c:4327: note: called from main()
+#   30|   xstrndup (const char *string, size_t n)
+#   31|   {
+#   32|->   char *s = strndup (string, n);
+#   33|     if (! s)
+#   34|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/man: note: while executing process 11716 with arguments: -C /tmp/tmp.sKQQsKZgMg/manpath.config test
+man-db-2.9.4/lib/../gl/lib/xstrndup.c:32: warning[Leak_DefinitelyLost]: 12 bytes in 1 blocks are definitely lost in loss record 2 of 7
+/usr/lib64/libc.so.6: note: called from strndup()
+man-db-2.9.4/lib/../gl/lib/xstrndup.c:32: note: called from xstrndup()
+man-db-2.9.4/src/man.c:984: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:1021: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:2259: note: called from display()
+man-db-2.9.4/src/man.c:3211: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3601: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3977: note: called from man()
+man-db-2.9.4/src/man.c:4327: note: called from main()
+#   30|   xstrndup (const char *string, size_t n)
+#   31|   {
+#   32|->   char *s = strndup (string, n);
+#   33|     if (! s)
+#   34|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/man: note: while executing process 8367 with arguments: -C /tmp/tmp.wEwzbtQdQW/manpath.config testb
+man-db-2.9.4/lib/../gl/lib/xstrndup.c:32: warning[Leak_DefinitelyLost]: 13 bytes in 1 blocks are definitely lost in loss record 2 of 7
+/usr/lib64/libc.so.6: note: called from strndup()
+man-db-2.9.4/lib/../gl/lib/xstrndup.c:32: note: called from xstrndup()
+man-db-2.9.4/src/man.c:984: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:1021: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:2259: note: called from display()
+man-db-2.9.4/src/man.c:3211: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3601: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3977: note: called from man()
+man-db-2.9.4/src/man.c:4327: note: called from main()
+#   30|   xstrndup (const char *string, size_t n)
+#   31|   {
+#   32|->   char *s = strndup (string, n);
+#   33|     if (! s)
+#   34|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/man: note: while executing process 7211 with arguments: -C /tmp/tmp.HFOetnsfPs/manpath.config -aw -M /tmp/tmp.HFOetnsfPs/usr/share/prog/[ab]/man whatisx
+man-db-2.9.4/lib/../gl/lib/xstrndup.c:32: warning[Leak_DefinitelyLost]: 15 bytes in 1 blocks are definitely lost in loss record 5 of 14
+/usr/lib64/libc.so.6: note: called from strndup()
+man-db-2.9.4/lib/../gl/lib/xstrndup.c:32: note: called from xstrndup()
+man-db-2.9.4/src/man.c:984: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:1021: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:2259: note: called from display()
+man-db-2.9.4/src/man.c:3211: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3601: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3977: note: called from man()
+man-db-2.9.4/src/man.c:4327: note: called from main()
+#   30|   xstrndup (const char *string, size_t n)
+#   31|   {
+#   32|->   char *s = strndup (string, n);
+#   33|     if (! s)
+#   34|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/man: note: while executing process 7153 with arguments: -C /tmp/tmp.HFOetnsfPs/manpath.config -aw -M /tmp/tmp.HFOetnsfPs/usr/share/prog/*/man manpathx
+man-db-2.9.4/lib/../gl/lib/xstrndup.c:32: warning[Leak_DefinitelyLost]: 16 bytes in 1 blocks are definitely lost in loss record 5 of 14
+/usr/lib64/libc.so.6: note: called from strndup()
+man-db-2.9.4/lib/../gl/lib/xstrndup.c:32: note: called from xstrndup()
+man-db-2.9.4/src/man.c:984: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:1021: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:2259: note: called from display()
+man-db-2.9.4/src/man.c:3211: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3601: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3977: note: called from man()
+man-db-2.9.4/src/man.c:4327: note: called from main()
+#   30|   xstrndup (const char *string, size_t n)
+#   31|   {
+#   32|->   char *s = strndup (string, n);
+#   33|     if (! s)
+#   34|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/man: note: while executing process 7922 with arguments: -C /tmp/tmp.WZvOwEE5kT/manpath.config -aw abc
+man-db-2.9.4/lib/../gl/lib/xstrndup.c:32: warning[Leak_DefinitelyLost]: 22 bytes in 2 blocks are definitely lost in loss record 5 of 17
+/usr/lib64/libc.so.6: note: called from strndup()
+man-db-2.9.4/lib/../gl/lib/xstrndup.c:32: note: called from xstrndup()
+man-db-2.9.4/src/man.c:984: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:1021: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:2259: note: called from display()
+man-db-2.9.4/src/man.c:3211: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3601: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3977: note: called from man()
+man-db-2.9.4/src/man.c:4327: note: called from main()
+#   30|   xstrndup (const char *string, size_t n)
+#   31|   {
+#   32|->   char *s = strndup (string, n);
+#   33|     if (! s)
+#   34|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/man: note: while executing process 12442 with arguments: --warnings -E UTF-8 -l ./man1/whatis.1
+man-db-2.9.4/lib/../gl/lib/xstrndup.c:32: warning[Leak_DefinitelyLost]: 25 bytes in 1 blocks are definitely lost in loss record 6 of 12
+/usr/lib64/libc.so.6: note: called from strndup()
+man-db-2.9.4/lib/../gl/lib/xstrndup.c:32: note: called from xstrndup()
+man-db-2.9.4/src/man.c:984: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:1021: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:2259: note: called from display()
+man-db-2.9.4/src/man.c:3863: note: called from local_man_loop()
+man-db-2.9.4/src/man.c:4248: note: called from main()
+#   30|   xstrndup (const char *string, size_t n)
+#   31|   {
+#   32|->   char *s = strndup (string, n);
+#   33|     if (! s)
+#   34|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/man: note: while executing process 12202 with arguments: --warnings -E UTF-8 -l ./man1/apropos.1
+man-db-2.9.4/lib/../gl/lib/xstrndup.c:32: warning[Leak_DefinitelyLost]: 26 bytes in 1 blocks are definitely lost in loss record 6 of 12
+/usr/lib64/libc.so.6: note: called from strndup()
+man-db-2.9.4/lib/../gl/lib/xstrndup.c:32: note: called from xstrndup()
+man-db-2.9.4/src/man.c:984: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:1021: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:2259: note: called from display()
+man-db-2.9.4/src/man.c:3863: note: called from local_man_loop()
+man-db-2.9.4/src/man.c:4248: note: called from main()
+#   30|   xstrndup (const char *string, size_t n)
+#   31|   {
+#   32|->   char *s = strndup (string, n);
+#   33|     if (! s)
+#   34|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/man: note: while executing process 12682 with arguments: --warnings -E UTF-8 -l ./man8/accessdb.8
+man-db-2.9.4/lib/../gl/lib/xstrndup.c:32: warning[Leak_DefinitelyLost]: 27 bytes in 1 blocks are definitely lost in loss record 6 of 12
+/usr/lib64/libc.so.6: note: called from strndup()
+man-db-2.9.4/lib/../gl/lib/xstrndup.c:32: note: called from xstrndup()
+man-db-2.9.4/src/man.c:984: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:1021: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:2259: note: called from display()
+man-db-2.9.4/src/man.c:3863: note: called from local_man_loop()
+man-db-2.9.4/src/man.c:4248: note: called from main()
+#   30|   xstrndup (const char *string, size_t n)
+#   31|   {
+#   32|->   char *s = strndup (string, n);
+#   33|     if (! s)
+#   34|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/man: note: while executing process 8831 with arguments: -C /tmp/tmp.qsgDa0Ykda/manpath.config -aw md5sum
+man-db-2.9.4/lib/../gl/lib/xstrndup.c:32: warning[Leak_DefinitelyLost]: 28 bytes in 2 blocks are definitely lost in loss record 5 of 16
+/usr/lib64/libc.so.6: note: called from strndup()
+man-db-2.9.4/lib/../gl/lib/xstrndup.c:32: note: called from xstrndup()
+man-db-2.9.4/src/man.c:984: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:1021: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:2259: note: called from display()
+man-db-2.9.4/src/man.c:3211: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3601: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3977: note: called from man()
+man-db-2.9.4/src/man.c:4327: note: called from main()
+#   30|   xstrndup (const char *string, size_t n)
+#   31|   {
+#   32|->   char *s = strndup (string, n);
+#   33|     if (! s)
+#   34|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/man: note: while executing process 13290 with arguments: --warnings -E UTF-8 -l ./man1/man-recode.1
+man-db-2.9.4/lib/../gl/lib/xstrndup.c:32: warning[Leak_DefinitelyLost]: 29 bytes in 1 blocks are definitely lost in loss record 6 of 12
+/usr/lib64/libc.so.6: note: called from strndup()
+man-db-2.9.4/lib/../gl/lib/xstrndup.c:32: note: called from xstrndup()
+man-db-2.9.4/src/man.c:984: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:1021: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:2259: note: called from display()
+man-db-2.9.4/src/man.c:3863: note: called from local_man_loop()
+man-db-2.9.4/src/man.c:4248: note: called from main()
+#   30|   xstrndup (const char *string, size_t n)
+#   31|   {
+#   32|->   char *s = strndup (string, n);
+#   33|     if (! s)
+#   34|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/man: note: while executing process 6544 with arguments: -C /tmp/tmp.0wEIsnM99I/manpath.config -aw 3p open
+man-db-2.9.4/lib/../gl/lib/xstrndup.c:32: warning[Leak_DefinitelyLost]: 31 bytes in 2 blocks are definitely lost in loss record 5 of 16
+/usr/lib64/libc.so.6: note: called from strndup()
+man-db-2.9.4/lib/../gl/lib/xstrndup.c:32: note: called from xstrndup()
+man-db-2.9.4/src/man.c:984: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:1021: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:2259: note: called from display()
+man-db-2.9.4/src/man.c:3211: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3601: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3977: note: called from man()
+man-db-2.9.4/src/man.c:4327: note: called from main()
+#   30|   xstrndup (const char *string, size_t n)
+#   31|   {
+#   32|->   char *s = strndup (string, n);
+#   33|     if (! s)
+#   34|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/man: note: while executing process 12602 with arguments: --warnings -E UTF-8 -l ./man5/manpath.5
+man-db-2.9.4/lib/../gl/lib/xstrndup.c:32: warning[Leak_DefinitelyLost]: 57 bytes in 1 blocks are definitely lost in loss record 7 of 12
+/usr/lib64/libc.so.6: note: called from strndup()
+man-db-2.9.4/lib/../gl/lib/xstrndup.c:32: note: called from xstrndup()
+man-db-2.9.4/src/man.c:984: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:1021: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:2259: note: called from display()
+man-db-2.9.4/src/man.c:3863: note: called from local_man_loop()
+man-db-2.9.4/src/man.c:4248: note: called from main()
+#   30|   xstrndup (const char *string, size_t n)
+#   31|   {
+#   32|->   char *s = strndup (string, n);
+#   33|     if (! s)
+#   34|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/man: note: while executing process 7835 with arguments: -C /tmp/tmp.t4t4LJTJJP/manpath.config -E UTF-8 test
+man-db-2.9.4/lib/../gl/lib/xstrndup.c:32: warning[Leak_DefinitelyLost]: 68 bytes in 1 blocks are definitely lost in loss record 4 of 7
+/usr/lib64/libc.so.6: note: called from strndup()
+man-db-2.9.4/lib/../gl/lib/xstrndup.c:32: note: called from xstrndup()
+man-db-2.9.4/src/man.c:984: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:1021: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:2259: note: called from display()
+man-db-2.9.4/src/man.c:3211: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3601: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:3977: note: called from man()
+man-db-2.9.4/src/man.c:4327: note: called from main()
+#   30|   xstrndup (const char *string, size_t n)
+#   31|   {
+#   32|->   char *s = strndup (string, n);
+#   33|     if (! s)
+#   34|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/man: note: while executing process 12282 with arguments: --warnings -E UTF-8 -l ./man1/man.1
+man-db-2.9.4/lib/../gl/lib/xstrndup.c:32: warning[Leak_DefinitelyLost]: 7 bytes in 1 blocks are definitely lost in loss record 3 of 12
+/usr/lib64/libc.so.6: note: called from strndup()
+man-db-2.9.4/lib/../gl/lib/xstrndup.c:32: note: called from xstrndup()
+man-db-2.9.4/src/man.c:984: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:1021: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/man.c:2259: note: called from display()
+man-db-2.9.4/src/man.c:3863: note: called from local_man_loop()
+man-db-2.9.4/src/man.c:4248: note: called from main()
+#   30|   xstrndup (const char *string, size_t n)
+#   31|   {
+#   32|->   char *s = strndup (string, n);
+#   33|     if (! s)
+#   34|       xalloc_die ();
+
+Error: COMPILER_WARNING (CWE-1164):
+man-db-2.9.4/lib/security.c: scope_hint: At top level
+man-db-2.9.4/lib/security.c:39: warning[-Wunused-macros]: macro "_" is not used
+#   39 | #define _(String) gettext (String)
+#      | 
+#   37|   
+#   38|   #include "gettext.h"
+#   39|-> #define _(String) gettext (String)
+#   40|   
+#   41|   #include "manconfig.h"
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/lib/security.c: scope_hint: In function 'running_setuid'
+man-db-2.9.4/lib/security.c:98:25: warning[-Wsuggest-attribute=const]: function might be candidate for attribute 'const'
+#   98 | bool _GL_ATTRIBUTE_PURE running_setuid (void)
+#      |                         ^~~~~~~~~~~~~~
+#   96|   }
+#   97|   
+#   98|-> bool _GL_ATTRIBUTE_PURE running_setuid (void)
+#   99|   {
+#  100|   #ifdef MAN_OWNER
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/manconv: note: while executing process 9234 with arguments: -t UTF-8 /tmp/tmp.EoYGzW3Gms/usr/share/man/fr_FR.ISO-8859-1/man7/lang-dir.7.gz
+man-db-2.9.4/src/decompress.c:117: warning[Leak_DefinitelyLost]: 66,019 (144 direct, 65,875 indirect) bytes in 1 blocks are definitely lost in loss record 10 of 10
+/usr/lib64/libpipeline.so.1.5.3: note: called from pipeline_new()
+/usr/lib64/libpipeline.so.1.5.3: note: called from pipeline_new_commandv()
+/usr/lib64/libpipeline.so.1.5.3: note: called from pipeline_new_commands()
+man-db-2.9.4/src/decompress.c:117: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/manconv_main.c:156: note: called from main()
+#  115|   			pipecmd_pre_exec (cmd, sandbox_load, sandbox_free,
+#  116|   					  sandbox);
+#  117|-> 			p = pipeline_new_commands (cmd, (void *) 0);
+#  118|   			goto got_pipeline;
+#  119|   		}
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/manconv: note: while executing process 9172 with arguments: -t UTF-8 /tmp/tmp.EoYGzW3Gms/usr/share/man/man7/coding-tag.7
+man-db-2.9.4/src/decompress.c:133: warning[Leak_DefinitelyLost]: 65,783 (144 direct, 65,639 indirect) bytes in 1 blocks are definitely lost in loss record 7 of 7
+/usr/lib64/libpipeline.so.1.5.3: note: called from pipeline_new()
+man-db-2.9.4/src/decompress.c:133: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/manconv_main.c:156: note: called from main()
+#  131|   #endif
+#  132|   
+#  133|-> 	p = pipeline_new ();
+#  134|   
+#  135|   got_pipeline:
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/manconv: note: while executing process 9759 with arguments: -f UTF-8:ISO-8859-2 -t ISO-8859-2//IGNORE
+man-db-2.9.4/src/decompress.c:151: warning[Leak_DefinitelyLost]: 65,894 (144 direct, 65,750 indirect) bytes in 1 blocks are definitely lost in loss record 9 of 9
+/usr/lib64/libpipeline.so.1.5.3: note: called from pipeline_new()
+/usr/lib64/libpipeline.so.1.5.3: note: called from pipeline_new_commandv()
+/usr/lib64/libpipeline.so.1.5.3: note: called from pipeline_new_commands()
+man-db-2.9.4/src/decompress.c:151: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/manconv_main.c:160: note: called from main()
+#  149|   	cmd = pipecmd_new_function ("zcat", &decompress_zlib, NULL, NULL);
+#  150|   	pipecmd_pre_exec (cmd, sandbox_load, sandbox_free, sandbox);
+#  151|-> 	p = pipeline_new_commands (cmd, (void *) 0);
+#  152|   #else /* HAVE_LIBZ */
+#  153|   	p = pipeline_new ();
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/manconv: note: while executing process 9060 with arguments: -f UTF-8 -t UTF-8
+man-db-2.9.4/src/decompress.c:151: warning[Leak_DefinitelyLost]: 65,905 (144 direct, 65,761 indirect) bytes in 1 blocks are definitely lost in loss record 9 of 9
+/usr/lib64/libpipeline.so.1.5.3: note: called from pipeline_new()
+/usr/lib64/libpipeline.so.1.5.3: note: called from pipeline_new_commandv()
+/usr/lib64/libpipeline.so.1.5.3: note: called from pipeline_new_commands()
+man-db-2.9.4/src/decompress.c:151: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/manconv_main.c:160: note: called from main()
+#  149|   	cmd = pipecmd_new_function ("zcat", &decompress_zlib, NULL, NULL);
+#  150|   	pipecmd_pre_exec (cmd, sandbox_load, sandbox_free, sandbox);
+#  151|-> 	p = pipeline_new_commands (cmd, (void *) 0);
+#  152|   #else /* HAVE_LIBZ */
+#  153|   	p = pipeline_new ();
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/manconv: note: while executing process 9109 with arguments: -f UTF-8 -t UTF-8
+man-db-2.9.4/src/decompress.c:151: warning[Leak_DefinitelyLost]: 65,909 (144 direct, 65,765 indirect) bytes in 1 blocks are definitely lost in loss record 9 of 9
+/usr/lib64/libpipeline.so.1.5.3: note: called from pipeline_new()
+/usr/lib64/libpipeline.so.1.5.3: note: called from pipeline_new_commandv()
+/usr/lib64/libpipeline.so.1.5.3: note: called from pipeline_new_commands()
+man-db-2.9.4/src/decompress.c:151: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/manconv_main.c:160: note: called from main()
+#  149|   	cmd = pipecmd_new_function ("zcat", &decompress_zlib, NULL, NULL);
+#  150|   	pipecmd_pre_exec (cmd, sandbox_load, sandbox_free, sandbox);
+#  151|-> 	p = pipeline_new_commands (cmd, (void *) 0);
+#  152|   #else /* HAVE_LIBZ */
+#  153|   	p = pipeline_new ();
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/manconv: note: while executing process 8898 with arguments: -f UTF-8 -t UTF-8
+man-db-2.9.4/src/decompress.c:151: warning[Leak_DefinitelyLost]: 65,941 (144 direct, 65,797 indirect) bytes in 1 blocks are definitely lost in loss record 9 of 9
+/usr/lib64/libpipeline.so.1.5.3: note: called from pipeline_new()
+/usr/lib64/libpipeline.so.1.5.3: note: called from pipeline_new_commandv()
+/usr/lib64/libpipeline.so.1.5.3: note: called from pipeline_new_commands()
+man-db-2.9.4/src/decompress.c:151: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/manconv_main.c:160: note: called from main()
+#  149|   	cmd = pipecmd_new_function ("zcat", &decompress_zlib, NULL, NULL);
+#  150|   	pipecmd_pre_exec (cmd, sandbox_load, sandbox_free, sandbox);
+#  151|-> 	p = pipeline_new_commands (cmd, (void *) 0);
+#  152|   #else /* HAVE_LIBZ */
+#  153|   	p = pipeline_new ();
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/manconv: note: while executing process 8953 with arguments: -f UTF-8 -t UTF-8
+man-db-2.9.4/src/decompress.c:151: warning[Leak_DefinitelyLost]: 65,975 (144 direct, 65,831 indirect) bytes in 1 blocks are definitely lost in loss record 9 of 9
+/usr/lib64/libpipeline.so.1.5.3: note: called from pipeline_new()
+/usr/lib64/libpipeline.so.1.5.3: note: called from pipeline_new_commandv()
+/usr/lib64/libpipeline.so.1.5.3: note: called from pipeline_new_commands()
+man-db-2.9.4/src/decompress.c:151: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/manconv_main.c:160: note: called from main()
+#  149|   	cmd = pipecmd_new_function ("zcat", &decompress_zlib, NULL, NULL);
+#  150|   	pipecmd_pre_exec (cmd, sandbox_load, sandbox_free, sandbox);
+#  151|-> 	p = pipeline_new_commands (cmd, (void *) 0);
+#  152|   #else /* HAVE_LIBZ */
+#  153|   	p = pipeline_new ();
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/manconv: note: while executing process 9008 with arguments: -f UTF-8 -t UTF-8
+man-db-2.9.4/src/decompress.c:151: warning[Leak_DefinitelyLost]: 65,977 (144 direct, 65,833 indirect) bytes in 1 blocks are definitely lost in loss record 9 of 9
+/usr/lib64/libpipeline.so.1.5.3: note: called from pipeline_new()
+/usr/lib64/libpipeline.so.1.5.3: note: called from pipeline_new_commandv()
+/usr/lib64/libpipeline.so.1.5.3: note: called from pipeline_new_commands()
+man-db-2.9.4/src/decompress.c:151: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/manconv_main.c:160: note: called from main()
+#  149|   	cmd = pipecmd_new_function ("zcat", &decompress_zlib, NULL, NULL);
+#  150|   	pipecmd_pre_exec (cmd, sandbox_load, sandbox_free, sandbox);
+#  151|-> 	p = pipeline_new_commands (cmd, (void *) 0);
+#  152|   #else /* HAVE_LIBZ */
+#  153|   	p = pipeline_new ();
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/manconv: note: while executing process 9452 with arguments: -f UTF-8:ISO-8859-1 -t UTF-8
+man-db-2.9.4/src/decompress.c:151: warning[Leak_DefinitelyLost]: 65,984 (144 direct, 65,840 indirect) bytes in 1 blocks are definitely lost in loss record 9 of 9
+/usr/lib64/libpipeline.so.1.5.3: note: called from pipeline_new()
+/usr/lib64/libpipeline.so.1.5.3: note: called from pipeline_new_commandv()
+/usr/lib64/libpipeline.so.1.5.3: note: called from pipeline_new_commands()
+man-db-2.9.4/src/decompress.c:151: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/manconv_main.c:160: note: called from main()
+#  149|   	cmd = pipecmd_new_function ("zcat", &decompress_zlib, NULL, NULL);
+#  150|   	pipecmd_pre_exec (cmd, sandbox_load, sandbox_free, sandbox);
+#  151|-> 	p = pipeline_new_commands (cmd, (void *) 0);
+#  152|   #else /* HAVE_LIBZ */
+#  153|   	p = pipeline_new ();
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/manconv: note: while executing process 9710 with arguments: -f UTF-8:ISO-8859-1 -t UTF-8
+man-db-2.9.4/src/decompress.c:151: warning[Leak_DefinitelyLost]: 66,080 (144 direct, 65,936 indirect) bytes in 1 blocks are definitely lost in loss record 9 of 9
+/usr/lib64/libpipeline.so.1.5.3: note: called from pipeline_new()
+/usr/lib64/libpipeline.so.1.5.3: note: called from pipeline_new_commandv()
+/usr/lib64/libpipeline.so.1.5.3: note: called from pipeline_new_commands()
+man-db-2.9.4/src/decompress.c:151: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/manconv_main.c:160: note: called from main()
+#  149|   	cmd = pipecmd_new_function ("zcat", &decompress_zlib, NULL, NULL);
+#  150|   	pipecmd_pre_exec (cmd, sandbox_load, sandbox_free, sandbox);
+#  151|-> 	p = pipeline_new_commands (cmd, (void *) 0);
+#  152|   #else /* HAVE_LIBZ */
+#  153|   	p = pipeline_new ();
+
+Error: VALGRIND_WARNING:
+man-db-2.9.4/src/.libs/manconv: note: while executing process 9560 with arguments: -f UTF-8:KOI8-R -t UTF-8
+man-db-2.9.4/src/decompress.c:151: warning[Leak_DefinitelyLost]: 68,889 (144 direct, 68,745 indirect) bytes in 1 blocks are definitely lost in loss record 9 of 9
+/usr/lib64/libpipeline.so.1.5.3: note: called from pipeline_new()
+/usr/lib64/libpipeline.so.1.5.3: note: called from pipeline_new_commandv()
+/usr/lib64/libpipeline.so.1.5.3: note: called from pipeline_new_commands()
+man-db-2.9.4/src/decompress.c:151: note: called from UnknownInlinedFun()
+man-db-2.9.4/src/manconv_main.c:160: note: called from main()
+#  149|   	cmd = pipecmd_new_function ("zcat", &decompress_zlib, NULL, NULL);
+#  150|   	pipecmd_pre_exec (cmd, sandbox_load, sandbox_free, sandbox);
+#  151|-> 	p = pipeline_new_commands (cmd, (void *) 0);
+#  152|   #else /* HAVE_LIBZ */
+#  153|   	p = pipeline_new ();
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/src/manp.c:491:7: warning[-Wsuggest-attribute=malloc]: function might be candidate for attribute 'malloc'
+#  491 | char *add_nls_manpaths (const char *manpathlist, const char *locales)
+#      |       ^~~~~~~~~~~~~~~~
+#  489|   }
+#  490|   
+#  491|-> char *add_nls_manpaths (const char *manpathlist, const char *locales)
+#  492|   {
+#  493|   	char *manpath = NULL;

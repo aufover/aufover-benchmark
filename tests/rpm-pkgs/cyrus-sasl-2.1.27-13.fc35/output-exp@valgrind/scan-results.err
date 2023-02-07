@@ -1,0 +1,579 @@
+Error: COMPILER_WARNING (CWE-843):
+cyrus-sasl-2.1.27/lib/common.c:114:22: warning[-Wcast-function-type]: cast between incompatible function types from 'int (*)(void *, const char **)' to 'int (*)(void)'
+#  114 |     SASL_CB_GETPATH, (sasl_callback_ft)&_sasl_getpath, NULL
+#      |                      ^
+#  112|   /* Default getpath/getconfpath callbacks. These can be edited by sasl_set_path(). */
+#  113|   static sasl_callback_t default_getpath_cb = {
+#  114|->     SASL_CB_GETPATH, (sasl_callback_ft)&_sasl_getpath, NULL
+#  115|   };
+#  116|   static sasl_callback_t default_getconfpath_cb = {
+
+Error: COMPILER_WARNING (CWE-843):
+cyrus-sasl-2.1.27/lib/common.c:117:26: warning[-Wcast-function-type]: cast between incompatible function types from 'int (*)(void *, char **)' to 'int (*)(void)'
+#  117 |     SASL_CB_GETCONFPATH, (sasl_callback_ft)&_sasl_getconfpath, NULL
+#      |                          ^
+#  115|   };
+#  116|   static sasl_callback_t default_getconfpath_cb = {
+#  117|->     SASL_CB_GETCONFPATH, (sasl_callback_ft)&_sasl_getconfpath, NULL
+#  118|   };
+#  119|   
+
+Error: COMPILER_WARNING (CWE-843):
+cyrus-sasl-2.1.27/lib/common.c: scope_hint: In function 'sasl_set_path'
+cyrus-sasl-2.1.27/lib/common.c:230:39: warning[-Wcast-function-type]: cast between incompatible function types from 'int (*)(void *, const char **)' to 'int (*)(void)'
+#  230 |             default_getpath_cb.proc = (sasl_callback_ft)&_sasl_getpath_simple;
+#      |                                       ^
+#  228|   
+#  229|               /* Update the default getpath_t callback */
+#  230|->             default_getpath_cb.proc = (sasl_callback_ft)&_sasl_getpath_simple;
+#  231|               break;
+#  232|   
+
+Error: COMPILER_WARNING (CWE-843):
+cyrus-sasl-2.1.27/lib/common.c:244:43: warning[-Wcast-function-type]: cast between incompatible function types from 'int (*)(void *, const char **)' to 'int (*)(void)'
+#  244 |             default_getconfpath_cb.proc = (sasl_callback_ft)&_sasl_getconfpath_simple;
+#      |                                           ^
+#  242|   
+#  243|               /* Update the default getpath_t callback */
+#  244|->             default_getconfpath_cb.proc = (sasl_callback_ft)&_sasl_getconfpath_simple;
+#  245|               break;
+#  246|   
+
+Error: COMPILER_WARNING (CWE-843):
+cyrus-sasl-2.1.27/lib/common.c: scope_hint: In function '_sasl_global_getopt'
+cyrus-sasl-2.1.27/lib/common.c:1416:16: warning[-Wcast-function-type]: cast between incompatible function types from 'int (*)(void)' to 'int (*)(void *, const char *, const char *, const char **, unsigned int *)'
+# 1416 |           if (((sasl_getopt_t *)(callback->proc))(callback->context,
+#      |                ^
+# 1414|   	if (callback->id == SASL_CB_GETOPT) {
+# 1415|   	  if (!callback->proc) return SASL_FAIL;
+# 1416|-> 	  if (((sasl_getopt_t *)(callback->proc))(callback->context,
+# 1417|   						  plugin_name,
+# 1418|   						  option,
+
+Error: COMPILER_WARNING (CWE-843):
+cyrus-sasl-2.1.27/lib/common.c: scope_hint: In function '_sasl_conn_getopt'
+cyrus-sasl-2.1.27/lib/common.c:1457:16: warning[-Wcast-function-type]: cast between incompatible function types from 'int (*)(void)' to 'int (*)(void *, const char *, const char *, const char **, unsigned int *)'
+# 1457 |           && (((sasl_getopt_t *)(callback->proc))(callback->context,
+#      |                ^
+# 1455|   	 callback++)
+# 1456|         if (callback->id == SASL_CB_GETOPT
+# 1457|-> 	  && (((sasl_getopt_t *)(callback->proc))(callback->context,
+# 1458|   						  plugin_name,
+# 1459|   						  option,
+
+Error: COMPILER_WARNING (CWE-843):
+cyrus-sasl-2.1.27/lib/common.c: scope_hint: In function '_sasl_getcallback'
+cyrus-sasl-2.1.27/lib/common.c:1734:20: warning[-Wcast-function-type]: cast between incompatible function types from 'int (*)(void *, const char *, const char *, const char **, unsigned int *)' to 'int (*)(void)'
+# 1734 |           *pproc = (sasl_callback_ft)&_sasl_conn_getopt;
+#      |                    ^
+# 1732|     case SASL_CB_GETOPT:
+# 1733|         if (conn) {
+# 1734|-> 	  *pproc = (sasl_callback_ft)&_sasl_conn_getopt;
+# 1735|   	  *pcontext = conn;
+# 1736|         } else {
+
+Error: COMPILER_WARNING (CWE-843):
+cyrus-sasl-2.1.27/lib/common.c:1737:20: warning[-Wcast-function-type]: cast between incompatible function types from 'int (*)(void *, const char *, const char *, const char **, unsigned int *)' to 'int (*)(void)'
+# 1737 |           *pproc = (sasl_callback_ft)&_sasl_global_getopt;
+#      |                    ^
+# 1735|   	  *pcontext = conn;
+# 1736|         } else {
+# 1737|-> 	  *pproc = (sasl_callback_ft)&_sasl_global_getopt;
+# 1738|   	  *pcontext = NULL;
+# 1739|         }
+
+Error: COMPILER_WARNING (CWE-843):
+cyrus-sasl-2.1.27/lib/common.c:1782:14: warning[-Wcast-function-type]: cast between incompatible function types from 'int (*)(void *, int,  const char *)' to 'int (*)(void)'
+# 1782 |     *pproc = (sasl_callback_ft)&_sasl_syslog;
+#      |              ^
+# 1780|   #ifdef HAVE_SYSLOG
+# 1781|     case SASL_CB_LOG:
+# 1782|->     *pproc = (sasl_callback_ft)&_sasl_syslog;
+# 1783|       *pcontext = conn;
+# 1784|       return SASL_OK;
+
+Error: COMPILER_WARNING (CWE-843):
+cyrus-sasl-2.1.27/lib/common.c:1795:14: warning[-Wcast-function-type]: cast between incompatible function types from 'int (*)(void *, int,  const char **, size_t *)' {aka 'int (*)(void *, int,  const char **, long unsigned int *)'} to 'int (*)(void)'
+# 1795 |     *pproc = (sasl_callback_ft)&_sasl_getsimple;
+#      |              ^
+# 1793|       return SASL_OK;
+# 1794|     case SASL_CB_AUTHNAME:
+# 1795|->     *pproc = (sasl_callback_ft)&_sasl_getsimple;
+# 1796|       *pcontext = conn;
+# 1797|       return SASL_OK;
+
+Error: COMPILER_WARNING (CWE-843):
+cyrus-sasl-2.1.27/lib/common.c:1799:14: warning[-Wcast-function-type]: cast between incompatible function types from 'int (*)(void *, char *, int)' to 'int (*)(void)'
+# 1799 |     *pproc = (sasl_callback_ft)&_sasl_verifyfile;
+#      |              ^
+# 1797|       return SASL_OK;
+# 1798|     case SASL_CB_VERIFYFILE:
+# 1799|->     *pproc = (sasl_callback_ft)&_sasl_verifyfile;
+# 1800|       *pcontext = NULL;
+# 1801|       return SASL_OK;
+
+Error: COMPILER_WARNING (CWE-843):
+cyrus-sasl-2.1.27/lib/common.c:1803:14: warning[-Wcast-function-type]: cast between incompatible function types from 'int (*)(sasl_conn_t *, void *, const char *, unsigned int,  const char *, unsigned int,  const char *, unsigned int,  struct propctx *)' {aka 'int (*)(struct sasl_conn *, void *, const char *, unsigned int,  const char *, unsigned int,  const char *, unsigned int,  struct propctx *)'} to 'int (*)(void)'
+# 1803 |     *pproc = (sasl_callback_ft)&_sasl_proxy_policy;
+#      |              ^
+# 1801|       return SASL_OK;
+# 1802|     case SASL_CB_PROXY_POLICY:
+# 1803|->     *pproc = (sasl_callback_ft)&_sasl_proxy_policy;
+# 1804|       *pcontext = NULL;
+# 1805|       return SASL_OK;
+
+Error: COMPILER_WARNING (CWE-843):
+cyrus-sasl-2.1.27/lib/common.c: scope_hint: In function '_sasl_find_verifyfile_callback'
+cyrus-sasl-2.1.27/lib/common.c:2160:5: warning[-Wcast-function-type]: cast between incompatible function types from 'int (*)(void *, char *, int)' to 'int (*)(void)'
+# 2160 |     (sasl_callback_ft)&_sasl_verifyfile,
+#      |     ^
+# 2158|     static const sasl_callback_t default_verifyfile_cb = {
+# 2159|       SASL_CB_VERIFYFILE,
+# 2160|->     (sasl_callback_ft)&_sasl_verifyfile,
+# 2161|       NULL
+# 2162|     };
+
+Error: COMPILER_WARNING (CWE-843):
+cyrus-sasl-2.1.27/lib/dlopen.c: scope_hint: In function '_sasl_get_plugin'
+cyrus-sasl-2.1.27/lib/dlopen.c:369:10: warning[-Wcast-function-type]: cast between incompatible function types from 'int (*)(void)' to 'int (*)(void *, const char *, sasl_verify_type_t)'
+#  369 |     r = ((sasl_verifyfile_t *)(verifyfile_cb->proc))
+#      |          ^
+#  367|       lib_list_t *newhead;
+#  368|       
+#  369|->     r = ((sasl_verifyfile_t *)(verifyfile_cb->proc))
+#  370|   		    (verifyfile_cb->context, file, SASL_VRFY_PLUGIN);
+#  371|       if (r != SASL_OK) return r;
+
+Error: COMPILER_WARNING (CWE-843):
+cyrus-sasl-2.1.27/lib/dlopen.c: scope_hint: In function '_sasl_load_plugins'
+cyrus-sasl-2.1.27/lib/dlopen.c:469:15: warning[-Wcast-function-type]: cast between incompatible function types from 'int (*)(void)' to 'int (*)(void *, const char **)'
+#  469 |     result = ((sasl_getpath_t *)(getpath_cb->proc))(getpath_cb->context,
+#      |               ^
+#  467|   #if defined(DO_DLOPEN) && (defined(PIC) || (!defined(PIC) && defined(TRY_DLOPEN_WHEN_STATIC)))
+#  468|       /* get the path to the plugins */
+#  469|->     result = ((sasl_getpath_t *)(getpath_cb->proc))(getpath_cb->context,
+#  470|   						    &path);
+#  471|       if (result != SASL_OK) return result;
+
+Error: COMPILER_WARNING (CWE-843):
+cyrus-sasl-2.1.27/lib/server.c: scope_hint: In function 'load_config'
+cyrus-sasl-2.1.27/lib/server.c:623:15: warning[-Wcast-function-type]: cast between incompatible function types from 'int (*)(void)' to 'int (*)(void *, char **)'
+#  623 |     result = ((sasl_getconfpath_t *)(getconfpath_cb->proc))(getconfpath_cb->context,
+#      |               ^
+#  621|       /* getconfpath_cb->proc MUST be a sasl_getconfpath_t; if only C had a type
+#  622|          system */
+#  623|->     result = ((sasl_getconfpath_t *)(getconfpath_cb->proc))(getconfpath_cb->context,
+#  624|   							    (char **) &path_to_config);
+#  625|       if (result != SASL_OK) goto done;
+
+Error: COMPILER_WARNING (CWE-843):
+cyrus-sasl-2.1.27/lib/server.c:661:19: warning[-Wcast-function-type]: cast between incompatible function types from 'int (*)(void)' to 'int (*)(void *, const char *, sasl_verify_type_t)'
+#  661 |         result = ((sasl_verifyfile_t *)(verifyfile_cb->proc))(verifyfile_cb->context,
+#      |                   ^
+#  659|   
+#  660|           /* Ask the application if it's safe to use this file */
+#  661|->         result = ((sasl_verifyfile_t *)(verifyfile_cb->proc))(verifyfile_cb->context,
+#  662|   					        config_filename, SASL_VRFY_CONF);
+#  663|   
+
+Error: COMPILER_WARNING (CWE-843):
+cyrus-sasl-2.1.27/lib/server.c: scope_hint: In function 'sasl_server_init'
+cyrus-sasl-2.1.27/lib/server.c:913:16: warning[-Wcast-function-type]: cast between incompatible function types from 'int (*)(void)' to 'int (*)(void *, const char *, sasl_verify_type_t)'
+#  913 |         ret = ((sasl_verifyfile_t *)(vf->proc))(vf->context,
+#      |                ^
+#  911|   
+#  912|   	/* Ask the application if it's safe to use this file */
+#  913|-> 	ret = ((sasl_verifyfile_t *)(vf->proc))(vf->context,
+#  914|   						pluginfile,
+#  915|   						SASL_VRFY_CONF);
+
+Error: COMPILER_WARNING (CWE-704):
+cyrus-sasl-2.1.27/plugins/gssapi.c: scope_hint: In function 'gssapi_server_mech_authneg'
+cyrus-sasl-2.1.27/plugins/gssapi.c:909:35: warning[-Wdiscarded-qualifiers]: assignment discards 'const' qualifier from pointer target type
+#  909 |         cb.application_data.value = params->cbinding->data;
+#      |                                   ^
+#  907|       if (params->cbinding != NULL) {
+#  908|           cb.application_data.length = params->cbinding->len;
+#  909|->         cb.application_data.value = params->cbinding->data;
+#  910|           bindings = &cb;
+#  911|       }
+
+Error: COMPILER_WARNING (CWE-704):
+cyrus-sasl-2.1.27/plugins/gssapi.c: scope_hint: In function 'gssapi_client_mech_step'
+cyrus-sasl-2.1.27/plugins/gssapi.c:1826:39: warning[-Wdiscarded-qualifiers]: assignment discards 'const' qualifier from pointer target type
+# 1826 |             cb.application_data.value = params->cbinding->data;
+#      |                                       ^
+# 1824|           if (params->cbinding != NULL) {
+# 1825|               cb.application_data.length = params->cbinding->len;
+# 1826|->             cb.application_data.value = params->cbinding->data;
+# 1827|               bindings = &cb;
+# 1828|           }
+
+Error: COMPILER_WARNING (CWE-195):
+cyrus-sasl-2.1.27/plugins/ntlm.c: scope_hint: In function 'P16_lm'
+cyrus-sasl-2.1.27/plugins/ntlm.c:383:21: warning[-Wsign-compare]: comparison of integer expressions of different signedness: 'long unsigned int' and 'int'
+#  383 |     if (passwd->len < Plen) {
+#      |                     ^
+#  381|   
+#  382|       Plen = sizeof(P14);
+#  383|->     if (passwd->len < Plen) {
+#  384|           Plen = passwd->len;
+#  385|       }
+
+Error: COMPILER_WARNING (CWE-252):
+cyrus-sasl-2.1.27/sample/client.c: scope_hint: In function 'getrealm'
+cyrus-sasl-2.1.27/sample/client.c:100:5: warning[-Wunused-result]: ignoring return value of 'fgets' declared with attribute 'warn_unused_result'
+#  100 |     fgets(buf, sizeof buf, stdin);
+#      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   98|       printf("): ");
+#   99|   
+#  100|->     fgets(buf, sizeof buf, stdin);
+#  101|       chop(buf);
+#  102|       *result = buf;
+
+Error: COMPILER_WARNING (CWE-252):
+cyrus-sasl-2.1.27/sample/client.c: scope_hint: In function 'simple'
+cyrus-sasl-2.1.27/sample/client.c:133:5: warning[-Wunused-result]: ignoring return value of 'fgets' declared with attribute 'warn_unused_result'
+#  133 |     fgets(b, 1024, stdin);
+#      |     ^~~~~~~~~~~~~~~~~~~~~
+#  131|       }
+#  132|   
+#  133|->     fgets(b, 1024, stdin);
+#  134|       chop(b);
+#  135|       *result = b;
+
+Error: COMPILER_WARNING (CWE-843):
+cyrus-sasl-2.1.27/sample/client.c:188:23: warning[-Wcast-function-type]: cast between incompatible function types from 'int (*)(void *, int,  const char **, const char **)' to 'int (*)(void)'
+#  188 |     SASL_CB_GETREALM, (sasl_callback_ft)&getrealm, NULL
+#      |                       ^
+#  186|   static sasl_callback_t callbacks[] = {
+#  187|     {
+#  188|->     SASL_CB_GETREALM, (sasl_callback_ft)&getrealm, NULL
+#  189|     }, {
+#  190|       SASL_CB_USER, (sasl_callback_ft)&simple, NULL
+
+Error: COMPILER_WARNING (CWE-843):
+cyrus-sasl-2.1.27/sample/client.c:190:19: warning[-Wcast-function-type]: cast between incompatible function types from 'int (*)(void *, int,  const char **, unsigned int *)' to 'int (*)(void)'
+#  190 |     SASL_CB_USER, (sasl_callback_ft)&simple, NULL
+#      |                   ^
+#  188|       SASL_CB_GETREALM, (sasl_callback_ft)&getrealm, NULL
+#  189|     }, {
+#  190|->     SASL_CB_USER, (sasl_callback_ft)&simple, NULL
+#  191|     }, {
+#  192|       SASL_CB_AUTHNAME, (sasl_callback_ft)&simple, NULL
+
+Error: COMPILER_WARNING (CWE-843):
+cyrus-sasl-2.1.27/sample/client.c:192:23: warning[-Wcast-function-type]: cast between incompatible function types from 'int (*)(void *, int,  const char **, unsigned int *)' to 'int (*)(void)'
+#  192 |     SASL_CB_AUTHNAME, (sasl_callback_ft)&simple, NULL
+#      |                       ^
+#  190|       SASL_CB_USER, (sasl_callback_ft)&simple, NULL
+#  191|     }, {
+#  192|->     SASL_CB_AUTHNAME, (sasl_callback_ft)&simple, NULL
+#  193|     }, {
+#  194|       SASL_CB_PASS, (sasl_callback_ft)&getsecret, NULL
+
+Error: COMPILER_WARNING (CWE-843):
+cyrus-sasl-2.1.27/sample/client.c:194:19: warning[-Wcast-function-type]: cast between incompatible function types from 'int (*)(sasl_conn_t *, void *, int,  sasl_secret_t **)' {aka 'int (*)(struct sasl_conn *, void *, int,  struct sasl_secret **)'} to 'int (*)(void)'
+#  194 |     SASL_CB_PASS, (sasl_callback_ft)&getsecret, NULL
+#      |                   ^
+#  192|       SASL_CB_AUTHNAME, (sasl_callback_ft)&simple, NULL
+#  193|     }, {
+#  194|->     SASL_CB_PASS, (sasl_callback_ft)&getsecret, NULL
+#  195|     }, {
+#  196|       SASL_CB_LIST_END, NULL, NULL
+
+Error: COMPILER_WARNING (CWE-252):
+cyrus-sasl-2.1.27/sample/common.c: scope_hint: In function 'recv_string'
+cyrus-sasl-2.1.27/sample/common.c:100:9: warning[-Wunused-result]: ignoring return value of 'fread' declared with attribute 'warn_unused_result'
+#  100 |         fread(buf, buflen - 1, 1, f);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   98|       /* read string */
+#   99|       if (buflen <= len) {
+#  100|-> 	fread(buf, buflen - 1, 1, f);
+#  101|   	buf[buflen - 1] = '\0';
+#  102|   	/* discard oversized string */
+
+Error: COMPILER_WARNING (CWE-252):
+cyrus-sasl-2.1.27/sample/common.c:108:9: warning[-Wunused-result]: ignoring return value of 'fread' declared with attribute 'warn_unused_result'
+#  108 |         fread(buf, len, 1, f);
+#      |         ^~~~~~~~~~~~~~~~~~~~~
+#  106|   	len = buflen - 1;
+#  107|       } else {
+#  108|-> 	fread(buf, len, 1, f);
+#  109|   	buf[len] = '\0';
+#  110|       }
+
+Error: COMPILER_WARNING (CWE-252):
+cyrus-sasl-2.1.27/saslauthd/lak.c: scope_hint: In function 'lak_check_hashed'
+cyrus-sasl-2.1.27/saslauthd/lak.c:1808:9: warning[-Wunused-result]: ignoring return value of 'EVP_DigestInit' declared with attribute 'warn_unused_result'
+# 1808 |         EVP_DigestInit(mdctx, md);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~
+# 1806|   	}
+# 1807|   
+# 1808|-> 	EVP_DigestInit(mdctx, md);
+# 1809|   	EVP_DigestUpdate(mdctx, passwd, strlen(passwd));
+# 1810|   	if (hrock->salted) {
+
+Error: COMPILER_WARNING (CWE-252):
+cyrus-sasl-2.1.27/saslauthd/lak.c:1809:9: warning[-Wunused-result]: ignoring return value of 'EVP_DigestUpdate' declared with attribute 'warn_unused_result'
+# 1809 |         EVP_DigestUpdate(mdctx, passwd, strlen(passwd));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1807|   
+# 1808|   	EVP_DigestInit(mdctx, md);
+# 1809|-> 	EVP_DigestUpdate(mdctx, passwd, strlen(passwd));
+# 1810|   	if (hrock->salted) {
+# 1811|   		EVP_DigestUpdate(mdctx, &cred[EVP_MD_size(md)],
+
+Error: COMPILER_WARNING (CWE-252):
+cyrus-sasl-2.1.27/saslauthd/lak.c:1811:17: warning[-Wunused-result]: ignoring return value of 'EVP_DigestUpdate' declared with attribute 'warn_unused_result'
+# 1811 |                 EVP_DigestUpdate(mdctx, &cred[EVP_MD_size(md)],
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1812 |                                  clen - EVP_MD_size(md));
+#      |                                  ~~~~~~~~~~~~~~~~~~~~~~~
+# 1809|   	EVP_DigestUpdate(mdctx, passwd, strlen(passwd));
+# 1810|   	if (hrock->salted) {
+# 1811|-> 		EVP_DigestUpdate(mdctx, &cred[EVP_MD_size(md)],
+# 1812|   				 clen - EVP_MD_size(md));
+# 1813|   	}
+
+Error: COMPILER_WARNING (CWE-252):
+cyrus-sasl-2.1.27/saslauthd/lak.c:1814:9: warning[-Wunused-result]: ignoring return value of 'EVP_DigestFinal' declared with attribute 'warn_unused_result'
+# 1814 |         EVP_DigestFinal(mdctx, digest, NULL);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1812|   				 clen - EVP_MD_size(md));
+# 1813|   	}
+# 1814|-> 	EVP_DigestFinal(mdctx, digest, NULL);
+# 1815|   	EVP_MD_CTX_free(mdctx);
+# 1816|   
+
+Error: COMPILER_WARNING (CWE-252):
+cyrus-sasl-2.1.27/saslauthd/saslauthd-main.c: scope_hint: In function 'detach_tty'
+cyrus-sasl-2.1.27/saslauthd/saslauthd-main.c:701:13: warning[-Wunused-result]: ignoring return value of 'write' declared with attribute 'warn_unused_result'
+#  701 |             write(startup_pipe[1], &exit_result, sizeof(exit_result));
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  699|   	    
+#  700|   	    /* Tell our parent that we failed. */
+#  701|-> 	    write(startup_pipe[1], &exit_result, sizeof(exit_result));
+#  702|   	    
+#  703|   	    exit(1);
+
+Error: COMPILER_WARNING (CWE-252):
+cyrus-sasl-2.1.27/saslauthd/saslauthd-main.c:714:13: warning[-Wunused-result]: ignoring return value of 'write' declared with attribute 'warn_unused_result'
+#  714 |             write(startup_pipe[1], &exit_result, sizeof(exit_result));
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  712|   	    
+#  713|   	    /* Tell our parent that we failed. */
+#  714|-> 	    write(startup_pipe[1], &exit_result, sizeof(exit_result));
+#  715|   	    
+#  716|   	    exit(1);
+
+Error: COMPILER_WARNING (CWE-252):
+cyrus-sasl-2.1.27/saslauthd/saslauthd-main.c:742:13: warning[-Wunused-result]: ignoring return value of 'write' declared with attribute 'warn_unused_result'
+#  742 |             write(startup_pipe[1], &exit_result, sizeof(exit_result));
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  740|   	    exit_result = 1;
+#  741|   	    logger(L_ERR, L_FUNC, "could not allocate memory");
+#  742|-> 	    write(startup_pipe[1], &exit_result, sizeof(exit_result));
+#  743|   	    exit(1);
+#  744|   	}
+
+Error: COMPILER_WARNING (CWE-252):
+cyrus-sasl-2.1.27/saslauthd/saslauthd-main.c:759:13: warning[-Wunused-result]: ignoring return value of 'write' declared with attribute 'warn_unused_result'
+#  759 |             write(startup_pipe[1], &exit_result, sizeof(exit_result));
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  757|   	    
+#  758|   	    /* Tell our parent that we failed. */
+#  759|-> 	    write(startup_pipe[1], &exit_result, sizeof(exit_result));
+#  760|   	    
+#  761|   	    exit(1);
+
+Error: COMPILER_WARNING (CWE-252):
+cyrus-sasl-2.1.27/saslauthd/saslauthd-main.c:778:17: warning[-Wunused-result]: ignoring return value of 'write' declared with attribute 'warn_unused_result'
+#  778 |                 write(startup_pipe[1], &exit_result, sizeof(exit_result));
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  776|   		
+#  777|   		/* Tell our parent that we failed. */
+#  778|-> 		write(startup_pipe[1], &exit_result, sizeof(exit_result));
+#  779|   		
+#  780|   		exit(2);
+
+Error: COMPILER_WARNING (CWE-252):
+cyrus-sasl-2.1.27/saslauthd/saslauthd-main.c:795:21: warning[-Wunused-result]: ignoring return value of 'write' declared with attribute 'warn_unused_result'
+#  795 |                     write(startup_pipe[1], &exit_result, sizeof(exit_result));
+#      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  793|   		    
+#  794|   		    /* Tell our parent that we failed. */
+#  795|-> 		    write(startup_pipe[1], &exit_result, sizeof(exit_result));
+#  796|   		    
+#  797|   		    exit(1);
+
+Error: COMPILER_WARNING (CWE-252):
+cyrus-sasl-2.1.27/saslauthd/saslauthd-main.c:812:21: warning[-Wunused-result]: ignoring return value of 'write' declared with attribute 'warn_unused_result'
+#  812 |                     write(startup_pipe[1], &exit_result, sizeof(exit_result));
+#      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  810|   		    
+#  811|   		    /* Tell our parent that we failed. */
+#  812|-> 		    write(startup_pipe[1], &exit_result, sizeof(exit_result));
+#  813|   		    
+#  814|   		    exit(1);
+
+Error: COMPILER_WARNING (CWE-843):
+cyrus-sasl-2.1.27/tests/t_gssapi_cli.c: scope_hint: In function 'main'
+cyrus-sasl-2.1.27/tests/t_gssapi_cli.c:129:25: warning[-Wcast-function-type]: cast between incompatible function types from 'int (*)(void *, const char **)' to 'int (*)(void)'
+#  129 |     callbacks[0].proc = (sasl_callback_ft)&getpath;
+#      |                         ^
+#  127|       /* initialize the sasl library */
+#  128|       callbacks[0].id = SASL_CB_GETPATH;
+#  129|->     callbacks[0].proc = (sasl_callback_ft)&getpath;
+#  130|       callbacks[0].context = NULL;
+#  131|       callbacks[1].id = SASL_CB_LIST_END;
+
+Error: COMPILER_WARNING (CWE-843):
+cyrus-sasl-2.1.27/tests/t_gssapi_cli.c:162:29: warning[-Wcast-function-type]: cast between incompatible function types from 'int (*)(void *, int,  const char **, unsigned int *)' to 'int (*)(void)'
+#  162 |         callbacks[1].proc = (sasl_callback_ft)&get_user;
+#      |                             ^
+#  160|   
+#  161|           callbacks[1].id = SASL_CB_AUTHNAME;
+#  162|->         callbacks[1].proc = (sasl_callback_ft)&get_user;
+#  163|   
+#  164|           callbacks[2].id = SASL_CB_PASS;
+
+Error: COMPILER_WARNING (CWE-843):
+cyrus-sasl-2.1.27/tests/t_gssapi_cli.c:165:29: warning[-Wcast-function-type]: cast between incompatible function types from 'int (*)(sasl_conn_t *, void *, int,  sasl_secret_t **)' {aka 'int (*)(struct sasl_conn *, void *, int,  struct sasl_secret **)'} to 'int (*)(void)'
+#  165 |         callbacks[2].proc = (sasl_callback_ft)&get_pass;
+#      |                             ^
+#  163|   
+#  164|           callbacks[2].id = SASL_CB_PASS;
+#  165|->         callbacks[2].proc = (sasl_callback_ft)&get_pass;
+#  166|       }
+#  167|   
+
+Error: COMPILER_WARNING (CWE-681):
+cyrus-sasl-2.1.27/tests/t_gssapi_srv.c: scope_hint: In function 'main'
+cyrus-sasl-2.1.27/tests/t_gssapi_srv.c:101:27: warning[-Wpointer-sign]: pointer targets in passing argument 2 of 'parse_cb' differ in signedness
+#  101 |             parse_cb(&cb, cb_buf, 256, optarg);
+#      |                           ^~~~~~
+#      |                           |
+#      |                           unsigned char *
+cyrus-sasl-2.1.27/tests/t_gssapi_srv.c:5: included_from: Included from here.
+cyrus-sasl-2.1.27/tests/t_common.h:19:49: note: expected 'char *' but argument is of type 'unsigned char *'
+#   19 | void parse_cb(sasl_channel_binding_t *cb, char *buf, unsigned max, char *in);
+#      |                                           ~~~~~~^~~
+#   99|           switch (c) {
+#  100|           case 'c':
+#  101|->             parse_cb(&cb, cb_buf, 256, optarg);
+#  102|               break;
+#  103|           case 'z':
+
+Error: COMPILER_WARNING (CWE-843):
+cyrus-sasl-2.1.27/tests/t_gssapi_srv.c:121:25: warning[-Wcast-function-type]: cast between incompatible function types from 'int (*)(void *, const char **)' to 'int (*)(void)'
+#  121 |     callbacks[0].proc = (sasl_callback_ft)&getpath;
+#      |                         ^
+#  119|       /* initialize the sasl library */
+#  120|       callbacks[0].id = SASL_CB_GETPATH;
+#  121|->     callbacks[0].proc = (sasl_callback_ft)&getpath;
+#  122|       callbacks[0].context = NULL;
+#  123|       callbacks[1].id = SASL_CB_GETOPT;
+
+Error: COMPILER_WARNING (CWE-843):
+cyrus-sasl-2.1.27/tests/t_gssapi_srv.c:124:25: warning[-Wcast-function-type]: cast between incompatible function types from 'int (*)(void *, const char *, const char *, const char **, unsigned int *)' to 'int (*)(void)'
+#  124 |     callbacks[1].proc = (sasl_callback_ft)&test_getopt;
+#      |                         ^
+#  122|       callbacks[0].context = NULL;
+#  123|       callbacks[1].id = SASL_CB_GETOPT;
+#  124|->     callbacks[1].proc = (sasl_callback_ft)&test_getopt;
+#  125|       callbacks[1].context = NULL;
+#  126|       callbacks[2].id = SASL_CB_LIST_END;
+
+Error: COMPILER_WARNING (CWE-843):
+cyrus-sasl-2.1.27/utils/cyrusbdb2current.c:211:23: warning[-Wcast-function-type]: cast between incompatible function types from 'int (*)(void *, const char *, const char *, const char **, unsigned int *)' to 'int (*)(void)'
+#  211 |     { SASL_CB_GETOPT, (int (*)(void))&good_getopt, NULL },
+#      |                       ^
+#  209|   
+#  210|   static struct sasl_callback goodsasl_cb[] = {
+#  211|->     { SASL_CB_GETOPT, (int (*)(void))&good_getopt, NULL },
+#  212|       { SASL_CB_LIST_END, NULL, NULL }
+#  213|   };
+
+Error: COMPILER_WARNING (CWE-843):
+cyrus-sasl-2.1.27/utils/cyrusbdb2current.c: scope_hint: In function 'main'
+cyrus-sasl-2.1.27/utils/cyrusbdb2current.c:276:19: warning[-Wcast-function-type]: cast between incompatible function types from 'void (*)(const char *, const char *, const char *, const char *, unsigned int)' to 'void * (*)(const char *, const char *, const char *, const char *, unsigned int)'
+#  276 |     listusers(db, (listcb_t *) &listusers_cb);
+#      |                   ^
+#  274|       getchar();
+#  275|   
+#  276|->     listusers(db, (listcb_t *) &listusers_cb);
+#  277|   
+#  278|       sasl_dispose(&globalconn);
+
+Error: COMPILER_WARNING (CWE-843):
+cyrus-sasl-2.1.27/utils/dbconverter-2.c:382:23: warning[-Wcast-function-type]: cast between incompatible function types from 'int (*)(void *, const char *, const char *, const char **, unsigned int *)' to 'int (*)(void)'
+#  382 |     { SASL_CB_GETOPT, (int (*)(void))&good_getopt, NULL },
+#      |                       ^
+#  380|   
+#  381|   static struct sasl_callback goodsasl_cb[] = {
+#  382|->     { SASL_CB_GETOPT, (int (*)(void))&good_getopt, NULL },
+#  383|       { SASL_CB_LIST_END, NULL, NULL }
+#  384|   };
+
+Error: COMPILER_WARNING (CWE-843):
+cyrus-sasl-2.1.27/utils/dbconverter-2.c: scope_hint: In function 'main'
+cyrus-sasl-2.1.27/utils/dbconverter-2.c:431:19: warning[-Wcast-function-type]: cast between incompatible function types from 'void (*)(const char *, const char *, const char *, const char *, unsigned int)' to 'void * (*)(const char *, const char *, const char *, const char *, unsigned int)'
+#  431 |     listusers(db, (listcb_t *) &listusers_cb);
+#      |                   ^
+#  429|       getchar();
+#  430|   
+#  431|->     listusers(db, (listcb_t *) &listusers_cb);
+#  432|   
+#  433|       sasl_dispose(&globalconn);
+
+Error: COMPILER_WARNING (CWE-843):
+cyrus-sasl-2.1.27/utils/pluginviewer.c: scope_hint: In function 'main'
+cyrus-sasl-2.1.27/utils/pluginviewer.c:559:22: warning[-Wcast-function-type]: cast between incompatible function types from 'int (*)(void *, int,  const char *)' to 'int (*)(void)'
+#  559 |     callback->proc = (sasl_callback_ft)&sasl_my_log;
+#      |                      ^
+#  557|       /* log */
+#  558|       callback->id = SASL_CB_LOG;
+#  559|->     callback->proc = (sasl_callback_ft)&sasl_my_log;
+#  560|       callback->context = NULL;
+#  561|       ++callback;
+
+Error: COMPILER_WARNING (CWE-843):
+cyrus-sasl-2.1.27/utils/pluginviewer.c:566:26: warning[-Wcast-function-type]: cast between incompatible function types from 'int (*)(void *, const char **)' to 'int (*)(void)'
+#  566 |         callback->proc = (sasl_callback_ft)&getpath;
+#      |                          ^
+#  564|       if (searchpath) {
+#  565|           callback->id = SASL_CB_GETPATH;
+#  566|->         callback->proc = (sasl_callback_ft)&getpath;
+#  567|           callback->context = searchpath;
+#  568|           ++callback;
+
+Error: COMPILER_WARNING (CWE-843):
+cyrus-sasl-2.1.27/utils/pluginviewer.c:575:22: warning[-Wcast-function-type]: cast between incompatible function types from 'int (*)(void *, const char *, const char *, const char **, unsigned int *)' to 'int (*)(void)'
+#  575 |     callback->proc = (sasl_callback_ft)&plugview_sasl_getopt;
+#      |                      ^
+#  573|          on client side SASL plugins, which just never query this option */
+#  574|       callback->id = SASL_CB_GETOPT;
+#  575|->     callback->proc = (sasl_callback_ft)&plugview_sasl_getopt;
+#  576|       callback->context = NULL;
+#  577|       ++callback;
+
+Error: COMPILER_WARNING (CWE-843):
+cyrus-sasl-2.1.27/utils/sasldblistusers.c:91:23: warning[-Wcast-function-type]: cast between incompatible function types from 'int (*)(void *, const char *, const char *, const char **, unsigned int *)' to 'int (*)(void)'
+#   91 |     { SASL_CB_GETOPT, (sasl_callback_ft)&good_getopt, NULL },
+#      |                       ^
+#   89|   
+#   90|   static struct sasl_callback goodsasl_cb[] = {
+#   91|->     { SASL_CB_GETOPT, (sasl_callback_ft)&good_getopt, NULL },
+#   92|       { SASL_CB_LIST_END, NULL, NULL }
+#   93|   };
+
+Error: COMPILER_WARNING (CWE-843):
+cyrus-sasl-2.1.27/utils/saslpasswd.c:256:23: warning[-Wcast-function-type]: cast between incompatible function types from 'int (*)(void *, const char *, const char *, const char **, unsigned int *)' to 'int (*)(void)'
+#  256 |     { SASL_CB_GETOPT, (sasl_callback_ft)&good_getopt, NULL },
+#      |                       ^
+#  254|   
+#  255|   static struct sasl_callback goodsasl_cb[] = {
+#  256|->     { SASL_CB_GETOPT, (sasl_callback_ft)&good_getopt, NULL },
+#  257|       { SASL_CB_LIST_END, NULL, NULL }
+#  258|   };

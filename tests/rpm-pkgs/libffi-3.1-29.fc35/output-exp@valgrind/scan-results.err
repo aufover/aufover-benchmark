@@ -1,0 +1,70 @@
+Error: COMPILER_WARNING (CWE-252):
+libffi-3.1/src/closures.c: scope_hint: In function 'dlmmap_locked'
+libffi-3.1/src/closures.c:461:7: warning[-Wunused-result]: ignoring return value of 'ftruncate' declared with attribute 'warn_unused_result'
+#  461 |       ftruncate (execfd, offset);
+#      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~
+#  459|   	  goto retry_open;
+#  460|   	}
+#  461|->       ftruncate (execfd, offset);
+#  462|         return MFAIL;
+#  463|       }
+
+Error: COMPILER_WARNING (CWE-252):
+libffi-3.1/src/closures.c:473:7: warning[-Wunused-result]: ignoring return value of 'ftruncate' declared with attribute 'warn_unused_result'
+#  473 |       ftruncate (execfd, offset);
+#      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~
+#  471|       {
+#  472|         munmap (ptr, length);
+#  473|->       ftruncate (execfd, offset);
+#  474|         return start;
+#  475|       }
+
+Error: VALGRIND_WARNING:
+./unwindtest.exe: note: while executing process 20855
+libffi-3.1/x86_64-redhat-linux-gnu/../src/x86/ffi64.c:670: warning[Leak_PossiblyLost]: 132 bytes in 1 blocks are possibly lost in loss record 1 of 3
+/usr/lib64/libstdc++.so.6.0.29: note: called from __cxa_allocate_exception()
+libffi-3.1/x86_64-redhat-linux-gnu/testsuite/unwindtest.exe: note: called from closure_test_fn1(ffi_cif*, void*, void**, void*)()
+libffi-3.1/x86_64-redhat-linux-gnu/../src/x86/ffi64.c:670: note: called from ffi_closure_unix64_inner()
+libffi-3.1/x86_64-redhat-linux-gnu/../src/x86/unix64.S:229: note: called from ffi_closure_unix64()
+libffi-3.1/x86_64-redhat-linux-gnu/testsuite/unwindtest.exe: note: called from main()
+#  668|   
+#  669|     /* Invoke the closure.  */
+#  670|->   closure->fun (cif, rvalue, avalue, closure->user_data);
+#  671|   
+#  672|     /* Tell assembly how to perform return type promotions.  */
+
+Error: VALGRIND_WARNING:
+./unwindtest.exe: note: while executing process 20855
+libffi-3.1/x86_64-redhat-linux-gnu/../src/x86/ffi64.c:670: warning[UninitCondition]: Conditional jump or move depends on uninitialised value(s)
+/usr/lib64/libc.so.6: note: called from __vfprintf_internal()
+/usr/lib64/libc.so.6: note: called from printf()
+libffi-3.1/x86_64-redhat-linux-gnu/testsuite/unwindtest.exe: note: called from closure_test_fn1(ffi_cif*, void*, void**, void*)()
+libffi-3.1/x86_64-redhat-linux-gnu/../src/x86/ffi64.c:670: note: called from ffi_closure_unix64_inner()
+libffi-3.1/x86_64-redhat-linux-gnu/../src/x86/unix64.S:229: note: called from ffi_closure_unix64()
+libffi-3.1/x86_64-redhat-linux-gnu/testsuite/unwindtest.exe: note: called from main()
+#  668|   
+#  669|     /* Invoke the closure.  */
+#  670|->   closure->fun (cif, rvalue, avalue, closure->user_data);
+#  671|   
+#  672|     /* Tell assembly how to perform return type promotions.  */
+
+Error: VALGRIND_WARNING:
+./unwindtest.exe: note: while executing process 20855
+libffi-3.1/x86_64-redhat-linux-gnu/../src/x86/ffi64.c:670: warning[UninitValue]: Use of uninitialised value of size 8
+/usr/lib64/libc.so.6: note: called from _itoa_word()
+/usr/lib64/libc.so.6: note: called from __vfprintf_internal()
+/usr/lib64/libc.so.6: note: called from printf()
+libffi-3.1/x86_64-redhat-linux-gnu/testsuite/unwindtest.exe: note: called from closure_test_fn1(ffi_cif*, void*, void**, void*)()
+libffi-3.1/x86_64-redhat-linux-gnu/../src/x86/ffi64.c:670: note: called from ffi_closure_unix64_inner()
+libffi-3.1/x86_64-redhat-linux-gnu/../src/x86/unix64.S:229: note: called from ffi_closure_unix64()
+libffi-3.1/x86_64-redhat-linux-gnu/testsuite/unwindtest.exe: note: called from main()
+#  668|   
+#  669|     /* Invoke the closure.  */
+#  670|->   closure->fun (cif, rvalue, avalue, closure->user_data);
+#  671|   
+#  672|     /* Tell assembly how to perform return type promotions.  */
+
+Error: VALGRIND_WARNING:
+./unwindtest.exe: note: while executing process 20855
+libffi-3.1/x86_64-redhat-linux-gnu/testsuite/unwindtest.exe: warning[UninitCondition]: Conditional jump or move depends on uninitialised value(s)
+libffi-3.1/x86_64-redhat-linux-gnu/testsuite/unwindtest.exe: note: called from main()

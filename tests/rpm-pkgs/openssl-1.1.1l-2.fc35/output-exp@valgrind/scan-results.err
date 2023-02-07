@@ -1,0 +1,166 @@
+Error: COMPILER_WARNING:
+openssl-1.1.1l/crypto/ec/curve448/f_generic.c:21:27: warning[-Warray-parameter=]: argument 1 of type 'uint8_t[56]' {aka 'unsigned char[56]'} with mismatched bound
+#   21 | void gf_serialize(uint8_t serial[SER_BYTES], const gf x, int with_hibit)
+#      |                   ~~~~~~~~^~~~~~~~~~~~~~~~~
+openssl-1.1.1l/crypto/ec/curve448/f_generic.c:12: included_from: Included from here.
+openssl-1.1.1l/crypto/ec/curve448/field.h:65:28: note: previously declared as 'uint8_t *' {aka 'unsigned char *'}
+#   65 | void gf_serialize(uint8_t *serial, const gf x, int with_highbit);
+#      |                   ~~~~~~~~~^~~~~~
+#   19|   
+#   20|   /* Serialize to wire format. */
+#   21|-> void gf_serialize(uint8_t serial[SER_BYTES], const gf x, int with_hibit)
+#   22|   {
+#   23|       unsigned int j = 0, fill = 0;
+
+Error: COMPILER_WARNING (CWE-704):
+openssl-1.1.1l/crypto/fips/fips.c:443:33: warning[-Wlto-type-mismatch]: type of 'OPENSSL_ia32cap_P' does not match original declaration
+#  443 |             extern unsigned int OPENSSL_ia32cap_P[2];
+#      |                                 ^
+openssl-1.1.1l/crypto/cryptlib.c:19:21: note: array types have different bounds
+#   19 | extern unsigned int OPENSSL_ia32cap_P[4];
+#      |                     ^
+openssl-1.1.1l/crypto/cryptlib.c:19:21: note: 'OPENSSL_ia32cap_P' was previously declared here
+#  441|   # ifdef OPENSSL_IA32_SSE2
+#  442|           {
+#  443|->             extern unsigned int OPENSSL_ia32cap_P[2];
+#  444|               if ((OPENSSL_ia32cap_P[0] & (1 << 25 | 1 << 26)) !=
+#  445|                   (1 << 25 | 1 << 26)) {
+
+Error: COMPILER_WARNING (CWE-563):
+openssl-1.1.1l/crypto/fips/fips_drbg_selftest.c:62: included_from: Included from here.
+openssl-1.1.1l/crypto/fips/fips_drbg_selftest.c: scope_hint: In function 'FIPS_drbg_health_check'
+openssl-1.1.1l/crypto/fips/fips_locl.h:62:43: warning[-Wunused-value]: statement with no effect
+#   62 | # define fips_post_started(id, subid, ex) 1
+#      |                                           ^
+openssl-1.1.1l/crypto/fips/fips_drbg_selftest.c:762:5: note: in expansion of macro 'fips_post_started'
+#  762 |     fips_post_started(FIPS_TEST_DRBG, dctx->type, &dctx->xflags);
+#      |     ^~~~~~~~~~~~~~~~~
+#   60|                   goto err
+#   61|   
+#   62|-> # define fips_post_started(id, subid, ex) 1
+#   63|   # define fips_post_success(id, subid, ex) 1
+#   64|   # define fips_post_failed(id, subid, ex) 1
+
+Error: COMPILER_WARNING (CWE-563):
+openssl-1.1.1l/crypto/fips/fips_locl.h:63:43: warning[-Wunused-value]: statement with no effect
+#   63 | # define fips_post_success(id, subid, ex) 1
+#      |                                           ^
+openssl-1.1.1l/crypto/fips/fips_drbg_selftest.c:769:9: note: in expansion of macro 'fips_post_success'
+#  769 |         fips_post_success(FIPS_TEST_DRBG, dctx->type, &dctx->xflags);
+#      |         ^~~~~~~~~~~~~~~~~
+#   61|   
+#   62|   # define fips_post_started(id, subid, ex) 1
+#   63|-> # define fips_post_success(id, subid, ex) 1
+#   64|   # define fips_post_failed(id, subid, ex) 1
+#   65|   # define fips_post_corrupt(id, subid, ex) 1
+
+Error: COMPILER_WARNING (CWE-563):
+openssl-1.1.1l/crypto/fips/fips_locl.h:64:42: warning[-Wunused-value]: statement with no effect
+#   64 | # define fips_post_failed(id, subid, ex) 1
+#      |                                          ^
+openssl-1.1.1l/crypto/fips/fips_drbg_selftest.c:771:9: note: in expansion of macro 'fips_post_failed'
+#  771 |         fips_post_failed(FIPS_TEST_DRBG, dctx->type, &dctx->xflags);
+#      |         ^~~~~~~~~~~~~~~~
+#   62|   # define fips_post_started(id, subid, ex) 1
+#   63|   # define fips_post_success(id, subid, ex) 1
+#   64|-> # define fips_post_failed(id, subid, ex) 1
+#   65|   # define fips_post_corrupt(id, subid, ex) 1
+#   66|   # define fips_post_status() 1
+
+Error: VALGRIND_WARNING:
+crypto/fips/fips_standalone_hmac: note: while executing process 56355 with arguments: /builddir/build/BUILDROOT/openssl-1.1.1l-2.fc35.x86_64/usr/lib64/libcrypto.so.1.1.1l
+openssl-1.1.1l/crypto/mem.c:230: warning[Leak_DefinitelyLost]: 536 (32 direct, 504 indirect) bytes in 1 blocks are definitely lost in loss record 8 of 8
+openssl-1.1.1l/crypto/mem.c:230: note: called from CRYPTO_zalloc()
+openssl-1.1.1l/crypto/hmac/hmac.c:144: note: called from HMAC_CTX_new()
+openssl-1.1.1l/crypto/fips/fips_standalone_hmac.c:85: note: called from main()
+#  228|   void *CRYPTO_zalloc(size_t num, const char *file, int line)
+#  229|   {
+#  230|->     void *ret = CRYPTO_malloc(num, file, line);
+#  231|   
+#  232|       FAILTEST();
+
+Error: COMPILER_WARNING (CWE-590):
+openssl-1.1.1l/crypto/mem.c:312:5: warning[-Wfree-nonheap-object]: 'free' called on unallocated object 'recp'
+#  312 |     free(str);
+#      |     ^
+openssl-1.1.1l/crypto/mem.c: scope_hint: In function 'BN_mod_exp_recp'
+openssl-1.1.1l/crypto/bn/bn_exp.c:169:17: note: declared here
+#  169 |     BN_RECP_CTX recp;
+#      |                 ^
+#  310|       }
+#  311|   #else
+#  312|->     free(str);
+#  313|   #endif
+#  314|   }
+
+Error: COMPILER_WARNING (CWE-704):
+openssl-1.1.1l/ssl/ssl_ciph.c: scope_hint: In function 'ssl_create_cipher_list'
+openssl-1.1.1l/ssl/ssl_ciph.c:1474:19: warning[-Wdiscarded-qualifiers]: initialization discards 'const' qualifier from pointer target type
+# 1474 |         char *p = rule_str + 14;
+#      |                   ^~~~~~~~
+# 1472|   
+# 1473|       if (rule_str != NULL && strncmp(rule_str, "PROFILE=SYSTEM", 14) == 0) {
+# 1474|->         char *p = rule_str + 14;
+# 1475|       
+# 1476|           new_rules = load_system_str(p);
+
+Error: COMPILER_WARNING (CWE-1164):
+openssl-1.1.1l/test/cipherlist_test.c:197:12: warning[-Wunused-function]: 'test_default_cipherlist_implicit' defined but not used
+#  197 | static int test_default_cipherlist_implicit(void)
+#      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  195|       EXECUTE_TEST(execute_test, tear_down)
+#  196|   
+#  197|-> static int test_default_cipherlist_implicit(void)
+#  198|   {
+#  199|       SETUP_CIPHERLIST_TEST_FIXTURE();
+
+Error: COMPILER_WARNING (CWE-563):
+openssl-1.1.1l/test/ectest.c:150:15: warning[-Wunused-variable]: unused variable 'P_160'
+#  150 |     EC_GROUP *P_160 = NULL, *P_192 = NULL, *P_224 = NULL,
+#      |               ^~~~~
+#  148|       BIGNUM *p = NULL, *a = NULL, *b = NULL, *scalar3 = NULL;
+#  149|       EC_GROUP *group = NULL, *tmp = NULL;
+#  150|->     EC_GROUP *P_160 = NULL, *P_192 = NULL, *P_224 = NULL,
+#  151|                *P_256 = NULL, *P_384 = NULL, *P_521 = NULL;
+#  152|       EC_POINT *P = NULL, *Q = NULL, *R = NULL;
+
+Error: COMPILER_WARNING (CWE-563):
+openssl-1.1.1l/test/ectest.c:150:30: warning[-Wunused-variable]: unused variable 'P_192'
+#  150 |     EC_GROUP *P_160 = NULL, *P_192 = NULL, *P_224 = NULL,
+#      |                              ^~~~~
+#  148|       BIGNUM *p = NULL, *a = NULL, *b = NULL, *scalar3 = NULL;
+#  149|       EC_GROUP *group = NULL, *tmp = NULL;
+#  150|->     EC_GROUP *P_160 = NULL, *P_192 = NULL, *P_224 = NULL,
+#  151|                *P_256 = NULL, *P_384 = NULL, *P_521 = NULL;
+#  152|       EC_POINT *P = NULL, *Q = NULL, *R = NULL;
+
+Error: COMPILER_WARNING (CWE-563):
+openssl-1.1.1l/test/ectest.c:156:19: warning[-Wunused-but-set-variable]: variable 'buf' set but not used
+#  156 |     unsigned char buf[100];
+#      |                   ^~~
+#  154|       const EC_POINT *points[4];
+#  155|       const BIGNUM *scalars[4];
+#  156|->     unsigned char buf[100];
+#  157|       size_t len, r = 0;
+#  158|       int k;
+
+Error: COMPILER_WARNING (CWE-563):
+openssl-1.1.1l/test/ectest.c:157:12: warning[-Wunused-variable]: unused variable 'len'
+#  157 |     size_t len, r = 0;
+#      |            ^~~
+#  155|       const BIGNUM *scalars[4];
+#  156|       unsigned char buf[100];
+#  157|->     size_t len, r = 0;
+#  158|       int k;
+#  159|   
+
+Error: COMPILER_WARNING (CWE-563):
+openssl-1.1.1l/test/ectest.c: scope_hint: In function 'prime_field_tests'
+openssl-1.1.1l/test/ectest.c:158:9: warning[-Wunused-variable]: unused variable 'k'
+#  158 |     int k;
+#      |         ^
+#  156|       unsigned char buf[100];
+#  157|       size_t len, r = 0;
+#  158|->     int k;
+#  159|   
+#  160|       if (!TEST_ptr(ctx = BN_CTX_new())

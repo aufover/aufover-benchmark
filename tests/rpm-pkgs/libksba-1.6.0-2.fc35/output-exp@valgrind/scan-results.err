@@ -1,0 +1,22 @@
+Error: COMPILER_WARNING:
+libksba-1.6.0/src/time.c: scope_hint: In function '_ksba_current_time'
+libksba-1.6.0/src/time.c:163:52: warning[-Wformat-truncation=]: '%02d' directive output may be truncated writing between 2 and 11 bytes into a region of size between 5 and 12
+#  163 |   snprintf (timebuf, sizeof (ksba_isotime_t), "%04d%02d%02dT%02d%02d%02d",
+#      |                                                    ^~~~
+libksba-1.6.0/src/time.c:163:47: note: directive argument in the range [-2147483647, 2147483647]
+#  163 |   snprintf (timebuf, sizeof (ksba_isotime_t), "%04d%02d%02dT%02d%02d%02d",
+#      |                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/stdio.h:888: included_from: Included from here.
+libksba-1.6.0/src/time.c:32: included_from: Included from here.
+/usr/include/bits/stdio2.h:71:10: note: '__snprintf_chk' output between 16 and 68 bytes into a destination of size 16
+#   71 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+#      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   72 |                                    __glibc_objsize (__s), __fmt,
+#      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   73 |                                    __va_arg_pack ());
+#      |                                    ~~~~~~~~~~~~~~~~~
+#  161|     tp = gmtime ( &epoch );
+#  162|   #endif
+#  163|->   snprintf (timebuf, sizeof (ksba_isotime_t), "%04d%02d%02dT%02d%02d%02d",
+#  164|               1900 + tp->tm_year, tp->tm_mon+1, tp->tm_mday,
+#  165|               tp->tm_hour, tp->tm_min, tp->tm_sec);
