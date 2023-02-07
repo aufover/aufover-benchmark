@@ -1,0 +1,595 @@
+Error: COMPILER_WARNING (CWE-477):
+augeas-1.12.0/gnulib/lib/getfilecon.c:36:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#   36 | int getfilecon (char const *file, security_context_t *con);
+#      | ^~~
+#   34|   #undef lgetfilecon
+#   35|   #undef fgetfilecon
+#   36|-> int getfilecon (char const *file, security_context_t *con);
+#   37|   int lgetfilecon (char const *file, security_context_t *con);
+#   38|   int fgetfilecon (int fd, security_context_t *con);
+
+Error: COMPILER_WARNING (CWE-477):
+augeas-1.12.0/gnulib/lib/getfilecon.c:37:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#   37 | int lgetfilecon (char const *file, security_context_t *con);
+#      | ^~~
+#   35|   #undef fgetfilecon
+#   36|   int getfilecon (char const *file, security_context_t *con);
+#   37|-> int lgetfilecon (char const *file, security_context_t *con);
+#   38|   int fgetfilecon (int fd, security_context_t *con);
+#   39|   
+
+Error: COMPILER_WARNING (CWE-477):
+augeas-1.12.0/gnulib/lib/getfilecon.c:38:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#   38 | int fgetfilecon (int fd, security_context_t *con);
+#      | ^~~
+#   36|   int getfilecon (char const *file, security_context_t *con);
+#   37|   int lgetfilecon (char const *file, security_context_t *con);
+#   38|-> int fgetfilecon (int fd, security_context_t *con);
+#   39|   
+#   40|   /* getfilecon, lgetfilecon, and fgetfilecon can all misbehave, be it
+
+Error: COMPILER_WARNING (CWE-477):
+augeas-1.12.0/gnulib/lib/getfilecon.c:49:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#   49 | map_to_failure (int ret, security_context_t *con)
+#      | ^~~~~~~~~~~~~~
+#   47|   
+#   48|   static int
+#   49|-> map_to_failure (int ret, security_context_t *con)
+#   50|   {
+#   51|     if (ret == 0)
+
+Error: COMPILER_WARNING (CWE-477):
+augeas-1.12.0/gnulib/lib/getfilecon.c:69:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#   69 | rpl_getfilecon (char const *file, security_context_t *con)
+#      | ^~~~~~~~~~~~~~
+#   67|   
+#   68|   int
+#   69|-> rpl_getfilecon (char const *file, security_context_t *con)
+#   70|   {
+#   71|     int ret = getfilecon (file, con);
+
+Error: COMPILER_WARNING (CWE-477):
+augeas-1.12.0/gnulib/lib/getfilecon.c:76:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#   76 | rpl_lgetfilecon (char const *file, security_context_t *con)
+#      | ^~~~~~~~~~~~~~~
+#   74|   
+#   75|   int
+#   76|-> rpl_lgetfilecon (char const *file, security_context_t *con)
+#   77|   {
+#   78|     int ret = lgetfilecon (file, con);
+
+Error: COMPILER_WARNING (CWE-477):
+augeas-1.12.0/gnulib/lib/getfilecon.c:83:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#   83 | rpl_fgetfilecon (int fd, security_context_t *con)
+#      | ^~~~~~~~~~~~~~~
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#   81|   
+#   82|   int
+#   83|-> rpl_fgetfilecon (int fd, security_context_t *con)
+#   84|   {
+#   85|     int ret = fgetfilecon (fd, con);
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/fa.c:411:1: warning: function 'fa_free' in module 'fa' is shadowed by a definition in module 'lens'
+#  409|   }
+#  410|   
+#  411|-> void fa_free(struct fa *fa) {
+#  412|       if (fa == NULL)
+#  413|           return;
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/fa.c:1771:1: warning: function 'fa_minimize' in module 'fa' is shadowed by a definition in module 'fa'
+# 1769|   }
+# 1770|   
+# 1771|-> int fa_minimize(struct fa *fa) {
+# 1772|       int r;
+# 1773|   
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/fa.c:1845:1: warning: function 'fa_make_basic' in module 'fa' is shadowed by a definition in module 'fa'
+# 1843|   }
+# 1844|   
+# 1845|-> struct fa *fa_make_basic(unsigned int basic) {
+# 1846|       int r;
+# 1847|   
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/fa.c:1864:1: warning: function 'fa_is_basic' in module 'fa' is shadowed by a definition in module 'lens'
+# 1862|   }
+# 1863|   
+# 1864|-> int fa_is_basic(struct fa *fa, unsigned int basic) {
+# 1865|       if (basic == FA_EMPTY) {
+# 1866|           return ! fa->initial->accept && fa->initial->tused == 0;
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/fa.c:1971:1: warning: function 'fa_union' in module 'fa' is shadowed by a definition in module 'fa'
+# 1969|   }
+# 1970|   
+# 1971|-> struct fa *fa_union(struct fa *fa1, struct fa *fa2) {
+# 1972|       fa1 = fa_clone(fa1);
+# 1973|       fa2 = fa_clone(fa2);
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/fa.c:2014:1: warning: function 'fa_concat' in module 'fa' is shadowed by a definition in module 'fa'
+# 2012|   }
+# 2013|   
+# 2014|-> struct fa *fa_concat(struct fa *fa1, struct fa *fa2) {
+# 2015|       fa1 = fa_clone(fa1);
+# 2016|       fa2 = fa_clone(fa2);
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/fa.c:2130:1: warning: function 'fa_iter' in module 'fa' is shadowed by a definition in module 'lens'
+# 2128|   }
+# 2129|   
+# 2130|-> struct fa *fa_iter(struct fa *fa, int min, int max) {
+# 2131|       int r;
+# 2132|   
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/fa.c:2219:1: warning: function 'fa_intersect' in module 'fa' is shadowed by a definition in module 'lens'
+# 2217|   }
+# 2218|   
+# 2219|-> struct fa *fa_intersect(struct fa *fa1, struct fa *fa2) {
+# 2220|       int ret;
+# 2221|       struct fa *fa = NULL;
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/fa.c:2306:1: warning: function 'fa_contains' in module 'fa' is shadowed by a definition in module 'fa'
+# 2304|   }
+# 2305|   
+# 2306|-> int fa_contains(struct fa *fa1, struct fa *fa2) {
+# 2307|       int result = 0;
+# 2308|       struct state_set *worklist = NULL;  /* List of pairs of states */
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/fa.c:2433:1: warning: function 'fa_complement' in module 'fa' is shadowed by a definition in module 'fa'
+# 2431|   }
+# 2432|   
+# 2433|-> struct fa *fa_complement(struct fa *fa) {
+# 2434|       fa = fa_clone(fa);
+# 2435|       E(fa == NULL);
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/fa.c:2448:1: warning: function 'fa_minus' in module 'fa' is shadowed by a definition in module 'regexp'
+# 2446|   }
+# 2447|   
+# 2448|-> struct fa *fa_minus(struct fa *fa1, struct fa *fa2) {
+# 2449|       if (fa1 == NULL || fa2 == NULL)
+# 2450|           return NULL;
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/fa.c:2488:1: warning: function 'fa_overlap' in module 'fa' is shadowed by a definition in module 'fa'
+# 2486|   }
+# 2487|   
+# 2488|-> struct fa *fa_overlap(struct fa *fa1, struct fa *fa2) {
+# 2489|       struct fa *fa = NULL, *eps = NULL, *result = NULL;
+# 2490|       struct state_set *map = NULL;
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/fa.c:2536:1: warning: function 'fa_equals' in module 'fa' is shadowed by a definition in module 'lens'
+# 2534|   }
+# 2535|   
+# 2536|-> int fa_equals(struct fa *fa1, struct fa *fa2) {
+# 2537|       if (fa1 == NULL || fa2 == NULL)
+# 2538|           return -1;
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/fa.c:2610:1: warning: function 'fa_example' in module 'fa' is shadowed by a definition in module 'lens'
+# 2608|    * at each turn the "best" word found for that state.
+# 2609|    */
+# 2610|-> int fa_example(struct fa *fa, char **example, size_t *example_len) {
+# 2611|       struct re_str *word = NULL;
+# 2612|       struct state_set *path = NULL, *worklist = NULL;
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/fa.c:2721:1: warning: function 'fa_enumerate' in module 'fa' is shadowed by a definition in module 'lens'
+# 2719|   }
+# 2720|   
+# 2721|-> int fa_enumerate(struct fa *fa, int limit, char ***words) {
+# 2722|       struct enum_intl ei;
+# 2723|       int result = -1;
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/fa.c:2900:1: warning: function 'fa_ambig_example' in module 'fa' is shadowed by a definition in module 'lens'
+# 2898|    * AutomatonOperations in dk.brics.grammar
+# 2899|    */
+# 2900|-> int fa_ambig_example(struct fa *fa1, struct fa *fa2,
+# 2901|                        char **upv, size_t *upv_len,
+# 2902|                        char **pv, char **v) {
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/fa.c:3123:1: warning: function 'fa_compile' in module 'fa' is shadowed by a definition in module 'lens'
+# 3121|   }
+# 3122|   
+# 3123|-> int fa_compile(const char *regexp, size_t size, struct fa **fa) {
+# 3124|       struct re *re = NULL;
+# 3125|       struct re_parse parse;
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/fa.c:3148:1: warning: function 'fa_nocase' in module 'fa' is shadowed by a definition in module 'lens'
+# 3146|    * lower-case letters.
+# 3147|    */
+# 3148|-> int fa_nocase(struct fa *fa) {
+# 3149|       if (fa == NULL || fa->nocase)
+# 3150|           return 0;
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/fa.c:3189:1: warning: function 'fa_is_nocase' in module 'fa' is shadowed by a definition in module 'regexp'
+# 3187|   }
+# 3188|   
+# 3189|-> int fa_is_nocase(struct fa *fa) {
+# 3190|       return fa->nocase;
+# 3191|   }
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/fa.c:4190:1: warning: function 'fa_as_regexp' in module 'fa' is shadowed by a definition in module 'regexp'
+# 4188|    * (5) Convert that STRUCT RE to a string with RE_AS_STRING
+# 4189|    */
+# 4190|-> int fa_as_regexp(struct fa *fa, char **regexp, size_t *regexp_len) {
+# 4191|       int r;
+# 4192|       struct state *fin = NULL, *ini = NULL;
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/fa.c:4326:1: warning: function 'fa_restrict_alphabet' in module 'fa' is shadowed by a definition in module 'lens'
+# 4324|   }
+# 4325|   
+# 4326|-> int fa_restrict_alphabet(const char *regexp, size_t regexp_len,
+# 4327|                            char **newregexp, size_t *newregexp_len,
+# 4328|                            char from, char to) {
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/fa.c:4358:1: warning: function 'fa_expand_char_ranges' in module 'fa' is shadowed by a definition in module 'fa'
+# 4356|   }
+# 4357|   
+# 4358|-> int fa_expand_char_ranges(const char *regexp, size_t regexp_len,
+# 4359|                             char **newregexp, size_t *newregexp_len) {
+# 4360|       int result;
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/fa.c:4437:1: warning: function 'fa_expand_nocase' in module 'fa' is shadowed by a definition in module 'regexp'
+# 4435|   }
+# 4436|   
+# 4437|-> int fa_expand_nocase(const char *regexp, size_t regexp_len,
+# 4438|                        char **newregexp, size_t *newregexp_len) {
+# 4439|       int result, r;
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/fa.c:4491:1: warning: function 'fa_dot' in module 'fa' is shadowed by a definition in module 'fa'
+# 4489|   }
+# 4490|   
+# 4491|-> void fa_dot(FILE *out, struct fa *fa) {
+# 4492|       fprintf(out, "digraph {\n  rankdir=LR;");
+# 4493|       list_for_each(s, fa->initial) {
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/fa.c:4527:1: warning: function 'fa_json' in module 'fa' is shadowed by a definition in module 'fa'
+# 4525|   }
+# 4526|   
+# 4527|-> int fa_json(FILE *out, struct fa *fa) {
+# 4528|       hash_val_t *list_hashes = NULL;
+# 4529|       int list_size = 100;
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/fa.c:4595:1: warning: function 'fa_is_deterministic' in module 'fa' is shadowed by a definition in module 'fa'
+# 4593|   }
+# 4594|   
+# 4595|-> bool fa_is_deterministic(struct fa *fa) {
+# 4596|       return fa->deterministic;
+# 4597|   }
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/fa.c:4599:1: warning: function 'fa_state_initial' in module 'fa' is shadowed by a definition in module 'fa'
+# 4597|   }
+# 4598|   
+# 4599|-> struct state *fa_state_initial(struct fa *fa) {
+# 4600|       return fa->initial;
+# 4601|   }
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/fa.c:4603:1: warning: function 'fa_state_is_accepting' in module 'fa' is shadowed by a definition in module 'fa'
+# 4601|   }
+# 4602|   
+# 4603|-> bool fa_state_is_accepting(struct state *st) {
+# 4604|       return st->accept;
+# 4605|   }
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/fa.c:4607:1: warning: function 'fa_state_next' in module 'fa' is shadowed by a definition in module 'fa'
+# 4605|   }
+# 4606|   
+# 4607|-> struct state* fa_state_next(struct state *st) {
+# 4608|       return st->next;
+# 4609|   }
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/fa.c:4611:1: warning: function 'fa_state_num_trans' in module 'fa' is shadowed by a definition in module 'fa'
+# 4609|   }
+# 4610|   
+# 4611|-> size_t fa_state_num_trans(struct state *st) {
+# 4612|       return st->tused;
+# 4613|   }
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/fa.c:4615:1: warning: function 'fa_state_trans' in module 'fa' is shadowed by a definition in module 'fa'
+# 4613|   }
+# 4614|   
+# 4615|-> int fa_state_trans(struct state *st, size_t i,
+# 4616|                      struct state **to, unsigned char *min, unsigned char *max) {
+# 4617|       if (st->tused <= i)
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/hash.c:304:1: warning: function 'hash_create' in module 'fa' is shadowed by a definition in module 'fa'
+#  302|    */
+#  303|   
+#  304|-> hash_t *hash_create(hashcount_t maxcount, hash_comp_t compfun,
+#  305|   	hash_fun_t hashfun)
+#  306|   {
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/hash.c:343:1: warning: function 'hash_set_allocator' in module 'fa' is shadowed by a definition in module 'fa'
+#  341|    */
+#  342|   
+#  343|-> void hash_set_allocator(hash_t *hash, hnode_alloc_t al,
+#  344|   	hnode_free_t fr, void *context)
+#  345|   {
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/hash.c:358:1: warning: function 'hash_free_nodes' in module 'fa' is shadowed by a definition in module 'fa'
+#  356|    */
+#  357|   
+#  358|-> void hash_free_nodes(hash_t *hash)
+#  359|   {
+#  360|       hnode_t *node, *next;
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/hash.c:381:1: warning: function 'hash_free' in module 'hash' is shadowed by a definition in module 'hash'
+#  379|    */
+#  380|   
+#  381|-> void hash_free(hash_t *hash)
+#  382|   {
+#  383|   #ifdef KAZLIB_OBSOLESCENT_DEBUG
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/hash.c:394:1: warning: function 'hash_destroy' in module 'fa' is shadowed by a definition in module 'fa'
+#  392|    */
+#  393|   
+#  394|-> void hash_destroy(hash_t *hash)
+#  395|   {
+#  396|       assert (hash_val_t_bit != 0);
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/hash.c:415:1: warning: function 'hash_init' in module 'hash' is shadowed by a definition in module 'hash'
+#  413|    */
+#  414|   
+#  415|-> hash_t *hash_init(hash_t *hash, hashcount_t maxcount,
+#  416|   	hash_comp_t compfun, hash_fun_t hashfun, hnode_t **table,
+#  417|   	hashcount_t nchains)
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/hash.c:449:1: warning: function 'hash_scan_begin' in module 'hash' is shadowed by a definition in module 'hash'
+#  447|    */
+#  448|   
+#  449|-> void hash_scan_begin(hscan_t *scan, hash_t *hash)
+#  450|   {
+#  451|       hash_val_t nchains = hash->nchains;
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/hash.c:495:1: warning: function 'hash_scan_next' in module 'hash' is shadowed by a definition in module 'hash'
+#  493|   
+#  494|   
+#  495|-> hnode_t *hash_scan_next(hscan_t *scan)
+#  496|   {
+#  497|       hnode_t *next = scan->next;		/* 1 */
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/hash.c:534:1: warning: function 'hash_insert' in module 'hash' is shadowed by a definition in module 'hash'
+#  532|    */
+#  533|   
+#  534|-> void hash_insert(hash_t *hash, hnode_t *node, const void *key)
+#  535|   {
+#  536|       hash_val_t hkey, chain;
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/hash.c:572:1: warning: function 'hash_lookup' in module 'fa' is shadowed by a definition in module 'fa'
+#  570|    */
+#  571|   
+#  572|-> hnode_t *hash_lookup(hash_t *hash, const void *key)
+#  573|   {
+#  574|       hash_val_t hkey, chain;
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/hash.c:606:1: warning: function 'hash_delete' in module 'fa' is shadowed by a definition in module 'fa'
+#  604|    */
+#  605|   
+#  606|-> hnode_t *hash_delete(hash_t *hash, hnode_t *node)
+#  607|   {
+#  608|       hash_val_t chain;
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/hash.c:639:1: warning: function 'hash_alloc_insert' in module 'fa' is shadowed by a definition in module 'fa'
+#  637|   }
+#  638|   
+#  639|-> int hash_alloc_insert(hash_t *hash, const void *key, void *data)
+#  640|   {
+#  641|       hnode_t *node = hash->allocnode(hash->context);
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/hash.c:651:1: warning: function 'hash_delete_free' in module 'hash' is shadowed by a definition in module 'hash'
+#  649|   }
+#  650|   
+#  651|-> void hash_delete_free(hash_t *hash, hnode_t *node)
+#  652|   {
+#  653|       hash_delete(hash, node);
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/hash.c:662:1: warning: function 'hash_scan_delete' in module 'hash' is shadowed by a definition in module 'hash'
+#  660|    */
+#  661|   
+#  662|-> hnode_t *hash_scan_delete(hash_t *hash, hnode_t *node)
+#  663|   {
+#  664|       hash_val_t chain;
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/hash.c:692:1: warning: function 'hash_scan_delfree' in module 'hash' is shadowed by a definition in module 'hash'
+#  690|    */
+#  691|   
+#  692|-> void hash_scan_delfree(hash_t *hash, hnode_t *node)
+#  693|   {
+#  694|       hash_scan_delete(hash, node);
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/hash.c:707:1: warning: function 'hash_verify' in module 'hash' is shadowed by a definition in module 'hash'
+#  705|    */
+#  706|   
+#  707|-> int hash_verify(hash_t *hash)
+#  708|   {
+#  709|       hashcount_t count = 0;
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/hash.c:742:1: warning: function 'hash_isfull' in module 'hash' is shadowed by a definition in module 'hash'
+#  740|   
+#  741|   #undef hash_isfull
+#  742|-> int hash_isfull(hash_t *hash)
+#  743|   {
+#  744|       return hash->nodecount == hash->maxcount;
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/hash.c:753:1: warning: function 'hash_isempty' in module 'hash' is shadowed by a definition in module 'hash'
+#  751|   
+#  752|   #undef hash_isempty
+#  753|-> int hash_isempty(hash_t *hash)
+#  754|   {
+#  755|       return hash->nodecount == 0;
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/hash.c:773:1: warning: function 'hnode_create' in module 'hash' is shadowed by a definition in module 'hash'
+#  771|    */
+#  772|   
+#  773|-> hnode_t *hnode_create(void *data)
+#  774|   {
+#  775|       hnode_t *node = malloc(sizeof *node);
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/hash.c:787:1: warning: function 'hnode_init' in module 'hash' is shadowed by a definition in module 'hash'
+#  785|    */
+#  786|   
+#  787|-> hnode_t *hnode_init(hnode_t *hnode, void *data)
+#  788|   {
+#  789|       hnode->data = data;
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/hash.c:798:1: warning: function 'hnode_destroy' in module 'hash' is shadowed by a definition in module 'hash'
+#  796|    */
+#  797|   
+#  798|-> void hnode_destroy(hnode_t *hnode)
+#  799|   {
+#  800|       free(hnode);
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/hash.c:804:1: warning: function 'hnode_put' in module 'hash' is shadowed by a definition in module 'hash'
+#  802|   
+#  803|   #undef hnode_put
+#  804|-> void hnode_put(hnode_t *node, void *data)
+#  805|   {
+#  806|       node->data = data;
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/hash.c:810:1: warning: function 'hnode_get' in module 'hash' is shadowed by a definition in module 'hash'
+#  808|   
+#  809|   #undef hnode_get
+#  810|-> void *hnode_get(hnode_t *node)
+#  811|   {
+#  812|       return node->data;
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/hash.c:816:1: warning: function 'hnode_getkey' in module 'hash' is shadowed by a definition in module 'hash'
+#  814|   
+#  815|   #undef hnode_getkey
+#  816|-> const void *hnode_getkey(hnode_t *node)
+#  817|   {
+#  818|       return node->key;
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/hash.c:822:1: warning: function 'hash_count' in module 'hash' is shadowed by a definition in module 'hash'
+#  820|   
+#  821|   #undef hash_count
+#  822|-> hashcount_t hash_count(hash_t *hash)
+#  823|   {
+#  824|       return hash->nodecount;
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/hash.c:828:1: warning: function 'hash_size' in module 'hash' is shadowed by a definition in module 'hash'
+#  826|   
+#  827|   #undef hash_size
+#  828|-> hashcount_t hash_size(hash_t *hash)
+#  829|   {
+#  830|       return hash->nchains;
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/memory.c:59:1: warning: function 'mem_alloc_n' in module 'fa' is shadowed by a definition in module 'augeas'
+#   57|    * Returns -1 on failure to allocate, zero on success
+#   58|    */
+#   59|-> int mem_alloc_n(void *ptrptr, size_t size, size_t count)
+#   60|   {
+#   61|       if (AUGEAS_UNLIKELY(size == 0 || count == 0)) {
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/memory.c:86:1: warning: function 'mem_realloc_n' in module 'fa' is shadowed by a definition in module 'augeas'
+#   84|    * Returns -1 on failure to allocate, zero on success
+#   85|    */
+#   86|-> int mem_realloc_n(void *ptrptr, size_t size, size_t count)
+#   87|   {
+#   88|       void *tmp;
+
+Error: COMPILER_WARNING:
+augeas-1.12.0/src/ref.c:28:1: warning: function 'ref_make_ref' in module 'fa' is shadowed by a definition in module 'augeas'
+#   26|   #include <stdlib.h>
+#   27|   
+#   28|-> int ref_make_ref(void *ptrptr, size_t size, size_t ref_ofs) {
+#   29|       *(void**) ptrptr = calloc(1, size);
+#   30|       if (*(void **)ptrptr == NULL) {
+
+Error: COMPILER_WARNING (CWE-483):
+augeas-1.12.0/src/syntax.c: scope_hint: In function 'syntax_error'
+augeas-1.12.0/src/syntax.c:134:5: warning[-Wmisleading-indentation]: this 'if' clause does not guard...
+#  134 |     if (error->code != AUG_NOERROR && error->code != AUG_ESYNTAX)
+#      |     ^~
+augeas-1.12.0/src/syntax.c:26: included_from: Included from here.
+augeas-1.12.0/src/syntax.c:137:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+#  137 |         va_start(ap, format);
+#      |         ^~~~~~~~
+#  132|       va_list ap;
+#  133|   
+#  134|->     if (error->code != AUG_NOERROR && error->code != AUG_ESYNTAX)
+#  135|           return;
+#  136|   
+
+Error: COMPILER_WARNING (CWE-483):
+augeas-1.12.0/src/syntax.c: scope_hint: In function 'fatal_error'
+augeas-1.12.0/src/syntax.c:146:5: warning[-Wmisleading-indentation]: this 'if' clause does not guard...
+#  146 |     if (error->code == AUG_EINTERNAL)
+#      |     ^~
+augeas-1.12.0/src/syntax.c:26: included_from: Included from here.
+augeas-1.12.0/src/syntax.c:149:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+#  149 |         va_start(ap, format);
+#      |         ^~~~~~~~
+augeas-1.12.0/src/syntax.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#  144|       va_list ap;
+#  145|   
+#  146|->     if (error->code == AUG_EINTERNAL)
+#  147|           return;
+#  148|   
+
+Error: COMPILER_WARNING (CWE-477):
+augeas-1.12.0/src/transform.c: scope_hint: In function 'transfer_file_attrs'
+augeas-1.12.0/src/transform.c:921:5: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#  921 |     security_context_t con = NULL;
+#      |     ^~~~~~~~~~~~~~~~~~
+augeas-1.12.0/src/transform.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#  919|       int ret = 0;
+#  920|       int selinux_enabled = (is_selinux_enabled() > 0);
+#  921|->     security_context_t con = NULL;
+#  922|   
+#  923|       int from_fd;

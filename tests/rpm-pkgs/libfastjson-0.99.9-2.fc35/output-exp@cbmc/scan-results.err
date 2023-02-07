@@ -1,0 +1,22 @@
+Error: COMPILER_WARNING (CWE-682):
+libfastjson-0.99.9/tests/parse_flags.c: scope_hint: In function 'parse_flags'
+libfastjson-0.99.9/tests/parse_flags.c:24:29: warning[-Wsizeof-array-div]: expression does not compute the number of elements in this array; element type is 'struct <anonymous>', not 'struct <anonymous> *'
+#   24 | #define NELEM(x) (sizeof(x) / sizeof(&x[0]))
+#      |                             ^
+libfastjson-0.99.9/tests/parse_flags.c:34:40: note: in expansion of macro 'NELEM'
+#   34 |                 for (jj = 0; jj < (int)NELEM(format_args); jj++)
+#      |                                        ^~~~~
+libfastjson-0.99.9/tests/parse_flags.c:24:38: note: add parentheses around '&format_args[0]' to silence this warning
+#   24 | #define NELEM(x) (sizeof(x) / sizeof(&x[0]))
+#      |                                     ~^~~~~~
+libfastjson-0.99.9/tests/parse_flags.c:34:40: note: in expansion of macro 'NELEM'
+#   34 |                 for (jj = 0; jj < (int)NELEM(format_args); jj++)
+#      |                                        ^~~~~
+libfastjson-0.99.9/tests/parse_flags.c:17:3: note: array 'format_args' declared here
+#   17 | } format_args[] = {
+#      |   ^~~~~~~~~~~
+#   22|   
+#   23|   #ifndef NELEM
+#   24|-> #define NELEM(x) (sizeof(x) / sizeof(&x[0]))
+#   25|   #endif
+#   26|   

@@ -1,0 +1,56 @@
+Error: COMPILER_WARNING:
+libsolv-0.7.19/src/sha2.c:610:34: warning[-Warray-parameter=]: argument 1 of type 'sha2_byte[]' {aka 'unsigned char[]'} with mismatched bound
+#  610 | void solv_SHA256_Final(sha2_byte digest[], SHA256_CTX* context) {
+#      |                        ~~~~~~~~~~^~~~~~~~
+libsolv-0.7.19/src/sha2.c:43: included_from: Included from here.
+libsolv-0.7.19/src/sha2.h:76:24: note: previously declared as 'uint8_t[32]' {aka 'unsigned char[32]'}
+#   76 | void solv_SHA256_Final(uint8_t[SHA256_DIGEST_LENGTH], SHA256_CTX*);
+#      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  608|   }
+#  609|   
+#  610|-> void solv_SHA256_Final(sha2_byte digest[], SHA256_CTX* context) {
+#  611|   	sha2_word32	*d = (sha2_word32*)digest;
+#  612|   
+
+Error: COMPILER_WARNING:
+libsolv-0.7.19/src/sha2.c:907:34: warning[-Warray-parameter=]: argument 1 of type 'sha2_byte[]' {aka 'unsigned char[]'} with mismatched bound
+#  907 | void solv_SHA512_Final(sha2_byte digest[], SHA512_CTX* context) {
+#      |                        ~~~~~~~~~~^~~~~~~~
+libsolv-0.7.19/src/sha2.c:43: included_from: Included from here.
+libsolv-0.7.19/src/sha2.h:84:24: note: previously declared as 'uint8_t[64]' {aka 'unsigned char[64]'}
+#   84 | void solv_SHA512_Final(uint8_t[SHA512_DIGEST_LENGTH], SHA512_CTX*);
+#      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  905|   }
+#  906|   
+#  907|-> void solv_SHA512_Final(sha2_byte digest[], SHA512_CTX* context) {
+#  908|   	sha2_word64	*d = (sha2_word64*)digest;
+#  909|   
+
+Error: COMPILER_WARNING:
+libsolv-0.7.19/src/sha2.c:951:34: warning[-Warray-parameter=]: argument 1 of type 'sha2_byte[]' {aka 'unsigned char[]'} with mismatched bound
+#  951 | void solv_SHA384_Final(sha2_byte digest[], SHA384_CTX* context) {
+#      |                        ~~~~~~~~~~^~~~~~~~
+libsolv-0.7.19/src/sha2.c:43: included_from: Included from here.
+libsolv-0.7.19/src/sha2.h:80:24: note: previously declared as 'uint8_t[48]' {aka 'unsigned char[48]'}
+#   80 | void solv_SHA384_Final(uint8_t[SHA384_DIGEST_LENGTH], SHA384_CTX*);
+#      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  949|   }
+#  950|   
+#  951|-> void solv_SHA384_Final(sha2_byte digest[], SHA384_CTX* context) {
+#  952|   	sha2_word64	*d = (sha2_word64*)digest;
+#  953|   
+
+Error: COMPILER_WARNING:
+libsolv-0.7.19/src/sha2.c:996:34: warning[-Warray-parameter=]: argument 1 of type 'sha2_byte[]' {aka 'unsigned char[]'} with mismatched bound
+#  996 | void solv_SHA224_Final(sha2_byte digest[], SHA224_CTX* context) {
+#      |                        ~~~~~~~~~~^~~~~~~~
+libsolv-0.7.19/src/sha2.c:43: included_from: Included from here.
+libsolv-0.7.19/src/sha2.h:72:24: note: previously declared as 'uint8_t[28]' {aka 'unsigned char[28]'}
+#   72 | void solv_SHA224_Final(uint8_t[SHA224_DIGEST_LENGTH], SHA224_CTX*);
+#      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#  994|   }
+#  995|   
+#  996|-> void solv_SHA224_Final(sha2_byte digest[], SHA224_CTX* context) {
+#  997|   	sha2_word32	*d = (sha2_word32*)digest;
+#  998|   

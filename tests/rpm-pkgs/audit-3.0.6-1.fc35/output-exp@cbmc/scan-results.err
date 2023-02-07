@@ -1,0 +1,169 @@
+Error: COMPILER_WARNING:
+audit-3.0.6/audisp/plugins/zos-remote/zos-remote-plugin.c: scope_hint: In function 'submission_thread_main'
+audit-3.0.6/audisp/plugins/zos-remote/zos-remote-plugin.c:106:1: warning: warning: conversion from 'volatile ZOS_REMOTE *' to 'ZOS_REMOTE *': disregarding volatile
+#  104|           log_debug("Starting event submission thread");
+#  105|           
+#  106|->         rc = zos_remote_init(&zos_remote_inst, conf.server, 
+#  107|                             conf.port, conf.user,
+#  108|                             conf.password,
+
+Error: COMPILER_WARNING (CWE-704):
+audit-3.0.6/audisp/plugins/zos-remote/zos-remote-plugin.c: scope_hint: In function 'submission_thread_main'
+audit-3.0.6/audisp/plugins/zos-remote/zos-remote-plugin.c:106:30: warning[-Wdiscarded-qualifiers]: passing argument 1 of 'zos_remote_init' discards 'volatile' qualifier from pointer target type
+#  106 |         rc = zos_remote_init(&zos_remote_inst, conf.server,
+#      |                              ^~~~~~~~~~~~~~~~
+audit-3.0.6/audisp/plugins/zos-remote/zos-remote-log.h:27: included_from: Included from here.
+audit-3.0.6/audisp/plugins/zos-remote/zos-remote-plugin.c:44: included_from: Included from here.
+audit-3.0.6/audisp/plugins/zos-remote/zos-remote-ldap.h:297:21: note: expected 'ZOS_REMOTE *' {aka 'struct opaque *'} but argument is of type 'volatile ZOS_REMOTE *' {aka 'volatile struct opaque *'}
+#  297 | int zos_remote_init(ZOS_REMOTE *, const char *, int, const char *,
+#      |                     ^~~~~~~~~~~~
+#  104|           log_debug("Starting event submission thread");
+#  105|           
+#  106|->         rc = zos_remote_init(&zos_remote_inst, conf.server, 
+#  107|                             conf.port, conf.user,
+#  108|                             conf.password,
+
+Error: COMPILER_WARNING:
+audit-3.0.6/audisp/plugins/zos-remote/zos-remote-plugin.c: scope_hint: In function 'submission_thread_main'
+audit-3.0.6/audisp/plugins/zos-remote/zos-remote-plugin.c:128:1: warning: warning: conversion from 'volatile ZOS_REMOTE *' to 'ZOS_REMOTE *': disregarding volatile
+#  126|                   }
+#  127|                   debug_ber(ber);
+#  128|->                 rc = submit_request_s(&zos_remote_inst, ber);
+#  129|                   if (rc == ICTX_E_FATAL) {
+#  130|                           log_err("Error - Fatal error in event submission. Aborting");
+
+Error: COMPILER_WARNING (CWE-704):
+audit-3.0.6/audisp/plugins/zos-remote/zos-remote-plugin.c:128:39: warning[-Wdiscarded-qualifiers]: passing argument 1 of 'submit_request_s' discards 'volatile' qualifier from pointer target type
+#  128 |                 rc = submit_request_s(&zos_remote_inst, ber);
+#      |                                       ^~~~~~~~~~~~~~~~
+audit-3.0.6/audisp/plugins/zos-remote/zos-remote-log.h:27: included_from: Included from here.
+audit-3.0.6/audisp/plugins/zos-remote/zos-remote-plugin.c:44: included_from: Included from here.
+audit-3.0.6/audisp/plugins/zos-remote/zos-remote-ldap.h:309:22: note: expected 'ZOS_REMOTE *' {aka 'struct opaque *'} but argument is of type 'volatile ZOS_REMOTE *' {aka 'volatile struct opaque *'}
+#  309 | int submit_request_s(ZOS_REMOTE *, BerElement *);
+#      |                      ^~~~~~~~~~~~
+#  126|                   }
+#  127|                   debug_ber(ber);
+#  128|->                 rc = submit_request_s(&zos_remote_inst, ber);
+#  129|                   if (rc == ICTX_E_FATAL) {
+#  130|                           log_err("Error - Fatal error in event submission. Aborting");
+
+Error: COMPILER_WARNING:
+audit-3.0.6/audisp/plugins/zos-remote/zos-remote-plugin.c: scope_hint: In function 'submission_thread_main'
+audit-3.0.6/audisp/plugins/zos-remote/zos-remote-plugin.c:141:1: warning: warning: conversion from 'volatile ZOS_REMOTE *' to 'ZOS_REMOTE *': disregarding volatile
+#  139|           }
+#  140|           log_debug("Stopping event submission thread");
+#  141|->         zos_remote_destroy(&zos_remote_inst);
+#  142|           
+#  143|           return 0;
+
+Error: COMPILER_WARNING (CWE-704):
+audit-3.0.6/audisp/plugins/zos-remote/zos-remote-plugin.c:141:28: warning[-Wdiscarded-qualifiers]: passing argument 1 of 'zos_remote_destroy' discards 'volatile' qualifier from pointer target type
+#  141 |         zos_remote_destroy(&zos_remote_inst);
+#      |                            ^~~~~~~~~~~~~~~~
+audit-3.0.6/audisp/plugins/zos-remote/zos-remote-log.h:27: included_from: Included from here.
+audit-3.0.6/audisp/plugins/zos-remote/zos-remote-plugin.c:44: included_from: Included from here.
+audit-3.0.6/audisp/plugins/zos-remote/zos-remote-ldap.h:303:25: note: expected 'ZOS_REMOTE *' {aka 'struct opaque *'} but argument is of type 'volatile ZOS_REMOTE *' {aka 'volatile struct opaque *'}
+#  303 | void zos_remote_destroy(ZOS_REMOTE *);
+#      |                         ^~~~~~~~~~~~
+audit-3.0.6/audisp/plugins/zos-remote/zos-remote-plugin.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#  139|           }
+#  140|           log_debug("Stopping event submission thread");
+#  141|->         zos_remote_destroy(&zos_remote_inst);
+#  142|           
+#  143|           return 0;
+
+Error: COMPILER_WARNING (CWE-704):
+audit-3.0.6/auparse/interpret.c: scope_hint: In function 'do_interpret'
+audit-3.0.6/auparse/interpret.c:3009:22: warning[-Wdiscarded-qualifiers]: initialization discards 'const' qualifier from pointer target type
+# 3009 |         nvlist *nv = &r->nv;
+#      |                      ^
+audit-3.0.6/auparse/interpret.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+# 3007|   const char *do_interpret(const rnode *r, auparse_esc_t escape_mode)
+# 3008|   {
+# 3009|-> 	nvlist *nv = &r->nv;
+# 3010|   	int type;
+# 3011|   	idata id;
+
+Error: COMPILER_WARNING (CWE-477):
+audit-3.0.6/bindings/python/auparse_python.c: scope_hint: In function 'auparse_callback'
+audit-3.0.6/bindings/python/auparse_python.c:294:5: warning[-Wdeprecated-declarations]: 'PyEval_CallObjectWithKeywords' is deprecated
+#  294 |     result = PyEval_CallObject(cb->func, arglist);
+#      |     ^~~~~~
+/usr/include/python3.10/Python.h:130: included_from: Included from here.
+audit-3.0.6/bindings/python/auparse_python.c:2: included_from: Included from here.
+/usr/include/python3.10/ceval.h:17:43: note: declared here
+#   17 | Py_DEPRECATED(3.9) PyAPI_FUNC(PyObject *) PyEval_CallObjectWithKeywords(
+#      |                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  292|   
+#  293|       arglist = Py_BuildValue("OiO", cb->py_AuParser, cb_event_type, cb->user_data);
+#  294|->     result = PyEval_CallObject(cb->func, arglist);
+#  295|       Py_DECREF(arglist);
+#  296|       Py_XDECREF(result);
+
+Error: COMPILER_WARNING (CWE-704):
+audit-3.0.6/bindings/python/auparse_python.c: scope_hint: In function 'AuParser_init'
+audit-3.0.6/bindings/python/auparse_python.c:375:31: warning[-Wdiscarded-qualifiers]: assignment discards 'const' qualifier from pointer target type
+#  375 |                 if ((files[i] = PYSTR_ASSTRING(item)) == NULL) {
+#      |                               ^
+#  373|               for (i = 0; i < n; i++) {
+#  374|                   item = PySequence_GetItem(source, i);
+#  375|->                 if ((files[i] = PYSTR_ASSTRING(item)) == NULL) {
+#  376|                       PyErr_SetString(PyExc_ValueError, "members of source sequence must be a string when source_type is AUSOURCE_FILE_ARRAY");
+#  377|                       Py_DECREF(item);
+
+Error: COMPILER_WARNING (CWE-704):
+audit-3.0.6/bindings/python/auparse_python.c:418:33: warning[-Wdiscarded-qualifiers]: assignment discards 'const' qualifier from pointer target type
+#  418 |                 if ((buffers[i] = PYSTR_ASSTRING(item)) == NULL) {
+#      |                                 ^
+audit-3.0.6/bindings/python/auparse_python.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#  416|               for (i = 0; i < n; i++) {
+#  417|                   item = PySequence_GetItem(source, i);
+#  418|->                 if ((buffers[i] = PYSTR_ASSTRING(item)) == NULL) {
+#  419|                       PyErr_SetString(PyExc_ValueError, "members of source sequence must be a string when source_type is AUSOURCE_BUFFER_ARRAY");
+#  420|                       Py_DECREF(item);
+
+Error: COMPILER_WARNING (CWE-681):
+audit-3.0.6/lib/gen_tables.c:89:22: warning[-Woverflow]: overflow in conversion from 'long long unsigned int' to 'int' changes value from '4294967296' to '0'
+#   89 | #define _S(VAL, S) { (VAL), (S), 0, 0 },
+#      |                      ^
+audit-3.0.6/auparse/clone-flagtab.h:47:1: note: in expansion of macro '_S'
+#   47 | _S(0x100000000ULL,      "CLONE_CLEAR_SIGHAND")
+#      | ^~
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#   87|   /* The mapping to store. */
+#   88|   static struct value values[] = {
+#   89|-> #define _S(VAL, S) { (VAL), (S), 0, 0 },
+#   90|   #include TABLE_H
+#   91|   #undef _S
+
+Error: COMPILER_WARNING (CWE-477):
+audit-3.0.6/src/ausearch.c: scope_hint: In function 'process_stdin'
+audit-3.0.6/src/ausearch.c:524:13: warning[-Wdeprecated-declarations]: 'siginterrupt' is deprecated: Use sigaction with SA_RESTART instead
+#  524 |             siginterrupt(SIGALRM, 1) == -1)
+#      |             ^~~~~~~~~~~~
+/usr/include/sys/param.h:28: included_from: Included from here.
+audit-3.0.6/src/ausearch.c:37: included_from: Included from here.
+/usr/include/signal.h:324:12: note: declared here
+#  324 | extern int siginterrupt (int __sig, int __interrupt) __THROW
+#      |            ^~~~~~~~~~~~
+audit-3.0.6/src/ausearch.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#  522|   
+#  523|   	if (signal(SIGALRM, alarm_handler) == SIG_ERR ||
+#  524|-> 	    siginterrupt(SIGALRM, 1) == -1)
+#  525|   		return -1;
+#  526|   
+
+Error: COMPILER_WARNING:
+audit-3.0.6/src/libev/ev.c:2146:31: warning: 'ev_default_loop_ptr' initialized and declared 'extern'
+# 2146 |   EV_API_DECL struct ev_loop *ev_default_loop_ptr = 0; /* needs to be initialised to make it a definition despite extern */
+#      |                               ^~~~~~~~~~~~~~~~~~~
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+# 2144|   
+# 2145|     static struct ev_loop default_loop_struct;
+# 2146|->   EV_API_DECL struct ev_loop *ev_default_loop_ptr = 0; /* needs to be initialised to make it a definition despite extern */
+# 2147|   
+# 2148|   #else

@@ -1,0 +1,12 @@
+Error: COMPILER_WARNING (CWE-252):
+sudo-1.9.7p2/plugins/sudoers/log_client.c: scope_hint: In function 'tls_init'
+sudo-1.9.7p2/plugins/sudoers/log_client.c:181:9: warning[-Wunused-result]: ignoring return value of 'SSL_clear' declared with attribute 'warn_unused_result'
+#  181 |         SSL_clear(closure->ssl);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~
+sudo-1.9.7p2/plugins/sudoers/log_client.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#  179|           if (closure->ssl == NULL)
+#  180|               debug_return_bool(false);
+#  181|->         SSL_clear(closure->ssl);
+#  182|           debug_return_bool(true);
+#  183|       }

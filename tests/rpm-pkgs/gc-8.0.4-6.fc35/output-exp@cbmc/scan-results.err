@@ -1,0 +1,8 @@
+Error: COMPILER_WARNING:
+gc-8.0.4/os_dep.c: scope_hint: In function 'GC_find_limit_with_bound'
+gc-8.0.4/os_dep.c:982:1: warning: warning: conversion from 'sigjmp_buf' to 'struct __cancel_jmp_buf_tag *': incompatible pointer types
+#  980|           GC_ASSERT(I_HOLD_LOCK());
+#  981|           GC_setup_temporary_fault_handler();
+#  982|->         if (SETJMP(GC_jmp_buf) == 0) {
+#  983|               result = (ptr_t)(((word)(p))
+#  984|                                 & ~(MIN_PAGE_SIZE-1));

@@ -1,0 +1,1259 @@
+scan.ini: [scan]
+scan.ini: tool = csmock
+scan.ini: tool-version = csmock-3.3.5-1.fc36
+scan.ini: tool-args = '/usr/bin/csmock' '-o' '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmetalink-0.1.3-15.fc35/cbmc/output' '-f' '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmetalink-0.1.3-15.fc35/libmetalink-0.1.3-15.fc35.src.rpm' '-r' 'fedora-35-x86_64' '-t' 'cbmc' '--cbmc-timeout=8' '--keep-going'
+scan.ini: host = dell-pe-fm120-1c.dell2.lab.eng.bos.redhat.com
+scan.ini: store-results-to = /home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmetalink-0.1.3-15.fc35/cbmc/output
+scan.ini: time-created = 2023-01-26 09:29:41
+scan.ini: enabled-plugins = cbmc, gcc
+scan.ini: mock-config = fedora-35-x86_64
+scan.ini: project-name = libmetalink-0.1.3-15.fc35
+>>> 2023-01-26 09:29:41	"rpm -qa | sort -V > '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmetalink-0.1.3-15.fc35/cbmc/output/debug/rpm-list-host.txt'"
+
+>>> 2023-01-26 09:29:42	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--init"
+INFO: mock.py version 3.5 starting (python version = 3.10.9, NVR = mock-3.5-1.fc36)...
+Start(bootstrap): init plugins
+INFO: selinux enabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start: clean chroot
+Finish: clean chroot
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 3.5
+INFO: Mock Version: 3.5
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+Start: unpacking root cache
+Finish: unpacking root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 3.5
+INFO: Mock Version: 3.5
+Finish: chroot init
+Finish: run
+
+>>> 2023-01-26 09:29:49	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--installdeps" "/tmp/csmocklrnt3n7y/libmetalink-0.1.3-15.fc35.src.rpm"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+fedora                   [===                 ] ---  B/s |   0  B     --:-- ETAfedora                                           22 kB/s | 4.5 kB     00:00    
+updates                  [===                 ] ---  B/s |   0  B     --:-- ETAupdates                                          20 kB/s | 2.8 kB     00:00    
+Dependencies resolved.
+================================================================================
+ Package                  Architecture Version              Repository     Size
+================================================================================
+Installing:
+ [1mCUnit-devel             [m x86_64       2.1.3-24.fc35        fedora         60 k
+ [1mexpat-devel             [m x86_64       2.5.0-1.fc35         updates        52 k
+ [1mgcc                     [m x86_64       11.3.1-3.fc35        updates        31 M
+ [1mmake                    [m x86_64       1:4.3-6.fc35         fedora        533 k
+Installing dependencies:
+ [1mCUnit                   [m x86_64       2.1.3-24.fc35        fedora         52 k
+ [1mannobin-docs            [m noarch       10.79-1.fc35         updates        91 k
+ [1mannobin-plugin-gcc      [m x86_64       10.79-1.fc35         updates       882 k
+ [1mcpp                     [m x86_64       11.3.1-3.fc35        updates        10 M
+ [1mexpat                   [m x86_64       2.5.0-1.fc35         updates       115 k
+ [1mgc                      [m x86_64       8.0.4-6.fc35         fedora        103 k
+ [1mglibc-devel             [m x86_64       2.34-49.fc35         updates        45 k
+ [1mglibc-headers-x86       [m noarch       2.34-49.fc35         updates       445 k
+ [1mguile22                 [m x86_64       2.2.7-3.fc35         fedora        6.4 M
+ [1mkernel-headers          [m x86_64       6.0.5-100.fc35       updates       1.3 M
+ [1mlibmpc                  [m x86_64       1.2.1-3.fc35         fedora         62 k
+ [1mlibtool-ltdl            [m x86_64       2.4.6-50.fc35        updates        36 k
+ [1mlibxcrypt-devel         [m x86_64       4.4.33-3.fc35        updates        30 k
+
+Transaction Summary
+================================================================================
+Install  17 Packages
+
+Total size: 52 M
+Total download size: 164 k
+Installed size: 163 M
+Downloading Packages:
+fedora                   [   ===              ] ---  B/s |   0  B     --:-- ETA[SKIPPED] gc-8.0.4-6.fc35.x86_64.rpm: Already downloaded                       
+[SKIPPED] guile22-2.2.7-3.fc35.x86_64.rpm: Already downloaded                  
+[SKIPPED] libmpc-1.2.1-3.fc35.x86_64.rpm: Already downloaded                   
+[SKIPPED] make-4.3-6.fc35.x86_64.rpm: Already downloaded                       
+[SKIPPED] annobin-docs-10.79-1.fc35.noarch.rpm: Already downloaded             
+[SKIPPED] annobin-plugin-gcc-10.79-1.fc35.x86_64.rpm: Already downloaded       
+[SKIPPED] cpp-11.3.1-3.fc35.x86_64.rpm: Already downloaded                     
+[SKIPPED] expat-2.5.0-1.fc35.x86_64.rpm: Already downloaded                    
+updates                  [      ===           ]  13 kB/s | 4.5 kB     --:-- ETA[SKIPPED] gcc-11.3.1-3.fc35.x86_64.rpm: Already downloaded                     
+[SKIPPED] glibc-devel-2.34-49.fc35.x86_64.rpm: Already downloaded              
+[SKIPPED] glibc-headers-x86-2.34-49.fc35.noarch.rpm: Already downloaded        
+[SKIPPED] kernel-headers-6.0.5-100.fc35.x86_64.rpm: Already downloaded         
+[SKIPPED] libtool-ltdl-2.4.6-50.fc35.x86_64.rpm: Already downloaded            
+[SKIPPED] libxcrypt-devel-4.4.33-3.fc35.x86_64.rpm: Already downloaded         
+(15/17): CUnit-2.1.3 99% [===================-] ---  B/s |  51 MB     --:-- ETA[MIRROR] expat-devel-2.5.0-1.fc35.x86_64.rpm: Status code: 404 for https://download-cc-rdu01.fedoraproject.org/pub/fedora/linux/updates/35/Everything/x86_64/Packages/e/expat-devel-2.5.0-1.fc35.x86_64.rpm (IP: 8.43.85.72)
+(15-17/17): CUnit-2. 99% [===================-]  67 kB/s |  51 MB     00:02 ETA[MIRROR] expat-devel-2.5.0-1.fc35.x86_64.rpm: Status code: 404 for http://download-cc-rdu01.fedoraproject.org/pub/fedora/linux/updates/35/Everything/x86_64/Packages/e/expat-devel-2.5.0-1.fc35.x86_64.rpm (IP: 8.43.85.72)
+(15-17/17): CUnit-2. 99% [===================-]  69 kB/s |  51 MB     00:02 ETA(15/17): CUnit-devel-2.1.3-24.fc35.x86_64.rpm   139 kB/s |  60 kB     00:00    
+(16-17/17): CUnit-2. 99% [===================-]  81 kB/s |  52 MB     00:00 ETA[MIRROR] expat-devel-2.5.0-1.fc35.x86_64.rpm: Status code: 404 for https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/updates/35/Everything/x86_64/Packages/e/expat-devel-2.5.0-1.fc35.x86_64.rpm (IP: 18.160.0.112)
+(16-17/17): CUnit-2. 99% [===================-]  83 kB/s |  52 MB     00:00 ETA(16/17): CUnit-2.1.3-24.fc35.x86_64.rpm         110 kB/s |  52 kB     00:00    
+(17/17): expat-devel 99% [===================-]  83 kB/s |  52 MB     00:00 ETA(17/17): expat-devel 99% [===================-]  83 kB/s |  52 MB     00:00 ETA(17/17): expat-devel-2.5.0-1.fc35.x86_64.rpm     56 kB/s |  52 kB     00:00    
+--------------------------------------------------------------------------------
+Total                                           114 kB/s | 164 kB     00:01     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :  [==                                                 ] 1/1  Preparing        :  [=====                                              ] 1/1  Preparing        :  [========                                           ] 1/1  Preparing        :  [===========                                        ] 1/1  Preparing        :  [==============                                     ] 1/1  Preparing        :  [=================                                  ] 1/1  Preparing        :  [====================                               ] 1/1  Preparing        :  [=======================                            ] 1/1  Preparing        :  [==========================                         ] 1/1  Preparing        :  [=============================                      ] 1/1  Preparing        :  [================================                   ] 1/1  Preparing        :  [===================================                ] 1/1  Preparing        :  [======================================             ] 1/1  Preparing        :  [=========================================          ] 1/1  Preparing        :  [============================================       ] 1/1  Preparing        :  [===============================================    ] 1/1  Preparing        :                                                        1/1 
+  Installing       : libmpc-1.2.1-3.fc35.x86_ [                         ]  1/17  Installing       : libmpc-1.2.1-3.fc35.x86_ [=====                    ]  1/17  Installing       : libmpc-1.2.1-3.fc35.x86_ [===========              ]  1/17  Installing       : libmpc-1.2.1-3.fc35.x86_ [=================        ]  1/17  Installing       : libmpc-1.2.1-3.fc35.x86_ [=====================    ]  1/17  Installing       : libmpc-1.2.1-3.fc35.x86_ [======================   ]  1/17  Installing       : libmpc-1.2.1-3.fc35.x86_ [=======================  ]  1/17  Installing       : libmpc-1.2.1-3.fc35.x86_ [======================== ]  1/17  Installing       : libmpc-1.2.1-3.fc35.x86_64                            1/17 
+  Installing       : cpp-11.3.1-3.fc35.x86_64 [                         ]  2/17  Installing       : cpp-11.3.1-3.fc35.x86_64 [=                        ]  2/17  Installing       : cpp-11.3.1-3.fc35.x86_64 [==                       ]  2/17  Installing       : cpp-11.3.1-3.fc35.x86_64 [===                      ]  2/17  Installing       : cpp-11.3.1-3.fc35.x86_64 [====                     ]  2/17  Installing       : cpp-11.3.1-3.fc35.x86_64 [=====                    ]  2/17  Installing       : cpp-11.3.1-3.fc35.x86_64 [======                   ]  2/17  Installing       : cpp-11.3.1-3.fc35.x86_64 [=======                  ]  2/17  Installing       : cpp-11.3.1-3.fc35.x86_64 [========                 ]  2/17  Installing       : cpp-11.3.1-3.fc35.x86_64 [=========                ]  2/17  Installing       : cpp-11.3.1-3.fc35.x86_64 [==========               ]  2/17  Installing       : cpp-11.3.1-3.fc35.x86_64 [===========              ]  2/17  Installing       : cpp-11.3.1-3.fc35.x86_64 [============             ]  2/17  Installing       : cpp-11.3.1-3.fc35.x86_64 [=============            ]  2/17  Installing       : cpp-11.3.1-3.fc35.x86_64 [==============           ]  2/17  Installing       : cpp-11.3.1-3.fc35.x86_64 [===============          ]  2/17  Installing       : cpp-11.3.1-3.fc35.x86_64 [================         ]  2/17  Installing       : cpp-11.3.1-3.fc35.x86_64 [=================        ]  2/17  Installing       : cpp-11.3.1-3.fc35.x86_64 [==================       ]  2/17  Installing       : cpp-11.3.1-3.fc35.x86_64 [===================      ]  2/17  Installing       : cpp-11.3.1-3.fc35.x86_64 [====================     ]  2/17  Installing       : cpp-11.3.1-3.fc35.x86_64 [=====================    ]  2/17  Installing       : cpp-11.3.1-3.fc35.x86_64 [======================   ]  2/17  Installing       : cpp-11.3.1-3.fc35.x86_64 [=======================  ]  2/17  Installing       : cpp-11.3.1-3.fc35.x86_64 [======================== ]  2/17  Installing       : cpp-11.3.1-3.fc35.x86_64                              2/17 
+  Installing       : libtool-ltdl-2.4.6-50.fc [                         ]  3/17  Installing       : libtool-ltdl-2.4.6-50.fc [===========              ]  3/17  Installing       : libtool-ltdl-2.4.6-50.fc [===============          ]  3/17  Installing       : libtool-ltdl-2.4.6-50.fc [======================== ]  3/17  Installing       : libtool-ltdl-2.4.6-50.fc35.x86_64                     3/17 
+  Installing       : kernel-headers-6.0.5-100 [                         ]  4/17  Installing       : kernel-headers-6.0.5-100 [=                        ]  4/17  Installing       : kernel-headers-6.0.5-100 [==                       ]  4/17  Installing       : kernel-headers-6.0.5-100 [===                      ]  4/17  Installing       : kernel-headers-6.0.5-100 [====                     ]  4/17  Installing       : kernel-headers-6.0.5-100 [=====                    ]  4/17  Installing       : kernel-headers-6.0.5-100 [======                   ]  4/17  Installing       : kernel-headers-6.0.5-100 [=======                  ]  4/17  Installing       : kernel-headers-6.0.5-100 [========                 ]  4/17  Installing       : kernel-headers-6.0.5-100 [=========                ]  4/17  Installing       : kernel-headers-6.0.5-100 [==========               ]  4/17  Installing       : kernel-headers-6.0.5-100 [===========              ]  4/17  Installing       : kernel-headers-6.0.5-100 [============             ]  4/17  Installing       : kernel-headers-6.0.5-100 [=============            ]  4/17  Installing       : kernel-headers-6.0.5-100 [==============           ]  4/17  Installing       : kernel-headers-6.0.5-100 [===============          ]  4/17  Installing       : kernel-headers-6.0.5-100 [================         ]  4/17  Installing       : kernel-headers-6.0.5-100 [=================        ]  4/17  Installing       : kernel-headers-6.0.5-100 [==================       ]  4/17  Installing       : kernel-headers-6.0.5-100 [===================      ]  4/17  Installing       : kernel-headers-6.0.5-100 [====================     ]  4/17  Installing       : kernel-headers-6.0.5-100 [=====================    ]  4/17  Installing       : kernel-headers-6.0.5-100 [======================   ]  4/17  Installing       : kernel-headers-6.0.5-100 [=======================  ]  4/17  Installing       : kernel-headers-6.0.5-100 [======================== ]  4/17  Installing       : kernel-headers-6.0.5-100.fc35.x86_64                  4/17 
+  Installing       : glibc-headers-x86-2.34-4 [                         ]  5/17  Installing       : glibc-headers-x86-2.34-4 [=                        ]  5/17  Installing       : glibc-headers-x86-2.34-4 [==                       ]  5/17  Installing       : glibc-headers-x86-2.34-4 [===                      ]  5/17  Installing       : glibc-headers-x86-2.34-4 [====                     ]  5/17  Installing       : glibc-headers-x86-2.34-4 [=====                    ]  5/17  Installing       : glibc-headers-x86-2.34-4 [======                   ]  5/17  Installing       : glibc-headers-x86-2.34-4 [=======                  ]  5/17  Installing       : glibc-headers-x86-2.34-4 [========                 ]  5/17  Installing       : glibc-headers-x86-2.34-4 [=========                ]  5/17  Installing       : glibc-headers-x86-2.34-4 [==========               ]  5/17  Installing       : glibc-headers-x86-2.34-4 [===========              ]  5/17  Installing       : glibc-headers-x86-2.34-4 [============             ]  5/17  Installing       : glibc-headers-x86-2.34-4 [=============            ]  5/17  Installing       : glibc-headers-x86-2.34-4 [==============           ]  5/17  Installing       : glibc-headers-x86-2.34-4 [===============          ]  5/17  Installing       : glibc-headers-x86-2.34-4 [================         ]  5/17  Installing       : glibc-headers-x86-2.34-4 [=================        ]  5/17  Installing       : glibc-headers-x86-2.34-4 [==================       ]  5/17  Installing       : glibc-headers-x86-2.34-4 [===================      ]  5/17  Installing       : glibc-headers-x86-2.34-4 [====================     ]  5/17  Installing       : glibc-headers-x86-2.34-4 [=====================    ]  5/17  Installing       : glibc-headers-x86-2.34-4 [======================   ]  5/17  Installing       : glibc-headers-x86-2.34-4 [=======================  ]  5/17  Installing       : glibc-headers-x86-2.34-4 [======================== ]  5/17  Installing       : glibc-headers-x86-2.34-49.fc35.noarch                 5/17 
+  Installing       : libxcrypt-devel-4.4.33-3 [                         ]  6/17  Installing       : libxcrypt-devel-4.4.33-3 [========                 ]  6/17  Installing       : libxcrypt-devel-4.4.33-3 [=========                ]  6/17  Installing       : libxcrypt-devel-4.4.33-3 [=============            ]  6/17  Installing       : libxcrypt-devel-4.4.33-3 [=================        ]  6/17  Installing       : libxcrypt-devel-4.4.33-3 [====================     ]  6/17  Installing       : libxcrypt-devel-4.4.33-3 [=====================    ]  6/17  Installing       : libxcrypt-devel-4.4.33-3 [=======================  ]  6/17  Installing       : libxcrypt-devel-4.4.33-3 [======================== ]  6/17  Installing       : libxcrypt-devel-4.4.33-3.fc35.x86_64                  6/17 
+  Installing       : glibc-devel-2.34-49.fc35 [                         ]  7/17  Installing       : glibc-devel-2.34-49.fc35 [=                        ]  7/17  Installing       : glibc-devel-2.34-49.fc35 [====                     ]  7/17  Installing       : glibc-devel-2.34-49.fc35 [=======                  ]  7/17  Installing       : glibc-devel-2.34-49.fc35 [========                 ]  7/17  Installing       : glibc-devel-2.34-49.fc35 [=============            ]  7/17  Installing       : glibc-devel-2.34-49.fc35 [=================        ]  7/17  Installing       : glibc-devel-2.34-49.fc35 [==================       ]  7/17  Installing       : glibc-devel-2.34-49.fc35 [====================     ]  7/17  Installing       : glibc-devel-2.34-49.fc35 [======================   ]  7/17  Installing       : glibc-devel-2.34-49.fc35 [======================== ]  7/17  Installing       : glibc-devel-2.34-49.fc35.x86_64                       7/17 
+  Installing       : expat-2.5.0-1.fc35.x86_6 [                         ]  8/17  Installing       : expat-2.5.0-1.fc35.x86_6 [==                       ]  8/17  Installing       : expat-2.5.0-1.fc35.x86_6 [===                      ]  8/17  Installing       : expat-2.5.0-1.fc35.x86_6 [======                   ]  8/17  Installing       : expat-2.5.0-1.fc35.x86_6 [========                 ]  8/17  Installing       : expat-2.5.0-1.fc35.x86_6 [===========              ]  8/17  Installing       : expat-2.5.0-1.fc35.x86_6 [=============            ]  8/17  Installing       : expat-2.5.0-1.fc35.x86_6 [================         ]  8/17  Installing       : expat-2.5.0-1.fc35.x86_6 [===================      ]  8/17  Installing       : expat-2.5.0-1.fc35.x86_6 [=====================    ]  8/17  Installing       : expat-2.5.0-1.fc35.x86_6 [======================== ]  8/17  Installing       : expat-2.5.0-1.fc35.x86_64                             8/17 
+  Installing       : annobin-docs-10.79-1.fc3 [                         ]  9/17  Installing       : annobin-docs-10.79-1.fc3 [==                       ]  9/17  Installing       : annobin-docs-10.79-1.fc3 [===========              ]  9/17  Installing       : annobin-docs-10.79-1.fc3 [=============            ]  9/17  Installing       : annobin-docs-10.79-1.fc3 [======================   ]  9/17  Installing       : annobin-docs-10.79-1.fc3 [=======================  ]  9/17  Installing       : annobin-docs-10.79-1.fc3 [======================== ]  9/17  Installing       : annobin-docs-10.79-1.fc35.noarch                      9/17 
+  Installing       : gc-8.0.4-6.fc35.x86_64 [                           ] 10/17  Installing       : gc-8.0.4-6.fc35.x86_64 [===                        ] 10/17  Installing       : gc-8.0.4-6.fc35.x86_64 [====                       ] 10/17  Installing       : gc-8.0.4-6.fc35.x86_64 [========                   ] 10/17  Installing       : gc-8.0.4-6.fc35.x86_64 [===========                ] 10/17  Installing       : gc-8.0.4-6.fc35.x86_64 [===============            ] 10/17  Installing       : gc-8.0.4-6.fc35.x86_64 [===================        ] 10/17  Installing       : gc-8.0.4-6.fc35.x86_64 [======================     ] 10/17  Installing       : gc-8.0.4-6.fc35.x86_64 [=========================  ] 10/17  Installing       : gc-8.0.4-6.fc35.x86_64 [========================== ] 10/17  Installing       : gc-8.0.4-6.fc35.x86_64                               10/17 
+  Installing       : guile22-2.2.7-3.fc35.x86 [                         ] 11/17  Installing       : guile22-2.2.7-3.fc35.x86 [=                        ] 11/17  Installing       : guile22-2.2.7-3.fc35.x86 [==                       ] 11/17  Installing       : guile22-2.2.7-3.fc35.x86 [===                      ] 11/17  Installing       : guile22-2.2.7-3.fc35.x86 [====                     ] 11/17  Installing       : guile22-2.2.7-3.fc35.x86 [=====                    ] 11/17  Installing       : guile22-2.2.7-3.fc35.x86 [======                   ] 11/17  Installing       : guile22-2.2.7-3.fc35.x86 [=======                  ] 11/17  Installing       : guile22-2.2.7-3.fc35.x86 [========                 ] 11/17  Installing       : guile22-2.2.7-3.fc35.x86 [=========                ] 11/17  Installing       : guile22-2.2.7-3.fc35.x86 [==========               ] 11/17  Installing       : guile22-2.2.7-3.fc35.x86 [===========              ] 11/17  Installing       : guile22-2.2.7-3.fc35.x86 [============             ] 11/17  Installing       : guile22-2.2.7-3.fc35.x86 [=============            ] 11/17  Installing       : guile22-2.2.7-3.fc35.x86 [==============           ] 11/17  Installing       : guile22-2.2.7-3.fc35.x86 [===============          ] 11/17  Installing       : guile22-2.2.7-3.fc35.x86 [================         ] 11/17  Installing       : guile22-2.2.7-3.fc35.x86 [=================        ] 11/17  Installing       : guile22-2.2.7-3.fc35.x86 [==================       ] 11/17  Installing       : guile22-2.2.7-3.fc35.x86 [===================      ] 11/17  Installing       : guile22-2.2.7-3.fc35.x86 [====================     ] 11/17  Installing       : guile22-2.2.7-3.fc35.x86 [=====================    ] 11/17  Installing       : guile22-2.2.7-3.fc35.x86 [======================   ] 11/17  Installing       : guile22-2.2.7-3.fc35.x86 [=======================  ] 11/17  Installing       : guile22-2.2.7-3.fc35.x86 [======================== ] 11/17  Installing       : guile22-2.2.7-3.fc35.x86_64                          11/17 
+  Installing       : make-1:4.3-6.fc35.x86_64 [                         ] 12/17  Installing       : make-1:4.3-6.fc35.x86_64 [=                        ] 12/17  Installing       : make-1:4.3-6.fc35.x86_64 [==                       ] 12/17  Installing       : make-1:4.3-6.fc35.x86_64 [===                      ] 12/17  Installing       : make-1:4.3-6.fc35.x86_64 [====                     ] 12/17  Installing       : make-1:4.3-6.fc35.x86_64 [=====                    ] 12/17  Installing       : make-1:4.3-6.fc35.x86_64 [======                   ] 12/17  Installing       : make-1:4.3-6.fc35.x86_64 [=======                  ] 12/17  Installing       : make-1:4.3-6.fc35.x86_64 [========                 ] 12/17  Installing       : make-1:4.3-6.fc35.x86_64 [=========                ] 12/17  Installing       : make-1:4.3-6.fc35.x86_64 [==========               ] 12/17  Installing       : make-1:4.3-6.fc35.x86_64 [===========              ] 12/17  Installing       : make-1:4.3-6.fc35.x86_64 [============             ] 12/17  Installing       : make-1:4.3-6.fc35.x86_64 [=============            ] 12/17  Installing       : make-1:4.3-6.fc35.x86_64 [==============           ] 12/17  Installing       : make-1:4.3-6.fc35.x86_64 [===============          ] 12/17  Installing       : make-1:4.3-6.fc35.x86_64 [================         ] 12/17  Installing       : make-1:4.3-6.fc35.x86_64 [=================        ] 12/17  Installing       : make-1:4.3-6.fc35.x86_64 [==================       ] 12/17  Installing       : make-1:4.3-6.fc35.x86_64 [===================      ] 12/17  Installing       : make-1:4.3-6.fc35.x86_64 [====================     ] 12/17  Installing       : make-1:4.3-6.fc35.x86_64 [=====================    ] 12/17  Installing       : make-1:4.3-6.fc35.x86_64 [======================   ] 12/17  Installing       : make-1:4.3-6.fc35.x86_64 [=======================  ] 12/17  Installing       : make-1:4.3-6.fc35.x86_64 [======================== ] 12/17  Installing       : make-1:4.3-6.fc35.x86_64                             12/17 
+  Installing       : gcc-11.3.1-3.fc35.x86_64 [                         ] 13/17  Installing       : gcc-11.3.1-3.fc35.x86_64 [=                        ] 13/17  Installing       : gcc-11.3.1-3.fc35.x86_64 [==                       ] 13/17  Installing       : gcc-11.3.1-3.fc35.x86_64 [===                      ] 13/17  Installing       : gcc-11.3.1-3.fc35.x86_64 [====                     ] 13/17  Installing       : gcc-11.3.1-3.fc35.x86_64 [=====                    ] 13/17  Installing       : gcc-11.3.1-3.fc35.x86_64 [======                   ] 13/17  Installing       : gcc-11.3.1-3.fc35.x86_64 [=======                  ] 13/17  Installing       : gcc-11.3.1-3.fc35.x86_64 [========                 ] 13/17  Installing       : gcc-11.3.1-3.fc35.x86_64 [=========                ] 13/17  Installing       : gcc-11.3.1-3.fc35.x86_64 [==========               ] 13/17  Installing       : gcc-11.3.1-3.fc35.x86_64 [===========              ] 13/17  Installing       : gcc-11.3.1-3.fc35.x86_64 [============             ] 13/17  Installing       : gcc-11.3.1-3.fc35.x86_64 [=============            ] 13/17  Installing       : gcc-11.3.1-3.fc35.x86_64 [==============           ] 13/17  Installing       : gcc-11.3.1-3.fc35.x86_64 [===============          ] 13/17  Installing       : gcc-11.3.1-3.fc35.x86_64 [================         ] 13/17  Installing       : gcc-11.3.1-3.fc35.x86_64 [=================        ] 13/17  Installing       : gcc-11.3.1-3.fc35.x86_64 [==================       ] 13/17  Installing       : gcc-11.3.1-3.fc35.x86_64 [===================      ] 13/17  Installing       : gcc-11.3.1-3.fc35.x86_64 [====================     ] 13/17  Installing       : gcc-11.3.1-3.fc35.x86_64 [=====================    ] 13/17  Installing       : gcc-11.3.1-3.fc35.x86_64 [======================   ] 13/17  Installing       : gcc-11.3.1-3.fc35.x86_64 [=======================  ] 13/17  Installing       : gcc-11.3.1-3.fc35.x86_64 [======================== ] 13/17  Installing       : gcc-11.3.1-3.fc35.x86_64                             13/17 
+  Installing       : CUnit-2.1.3-24.fc35.x86_ [                         ] 14/17  Installing       : CUnit-2.1.3-24.fc35.x86_ [======                   ] 14/17  Installing       : CUnit-2.1.3-24.fc35.x86_ [============             ] 14/17  Installing       : CUnit-2.1.3-24.fc35.x86_ [=============            ] 14/17  Installing       : CUnit-2.1.3-24.fc35.x86_ [==============           ] 14/17  Installing       : CUnit-2.1.3-24.fc35.x86_ [===============          ] 14/17  Installing       : CUnit-2.1.3-24.fc35.x86_ [====================     ] 14/17  Installing       : CUnit-2.1.3-24.fc35.x86_ [=======================  ] 14/17  Installing       : CUnit-2.1.3-24.fc35.x86_ [======================== ] 14/17  Installing       : CUnit-2.1.3-24.fc35.x86_64                           14/17 
+  Installing       : CUnit-devel-2.1.3-24.fc3 [                         ] 15/17  Installing       : CUnit-devel-2.1.3-24.fc3 [=                        ] 15/17  Installing       : CUnit-devel-2.1.3-24.fc3 [==                       ] 15/17  Installing       : CUnit-devel-2.1.3-24.fc3 [===                      ] 15/17  Installing       : CUnit-devel-2.1.3-24.fc3 [=====                    ] 15/17  Installing       : CUnit-devel-2.1.3-24.fc3 [======                   ] 15/17  Installing       : CUnit-devel-2.1.3-24.fc3 [=======                  ] 15/17  Installing       : CUnit-devel-2.1.3-24.fc3 [========                 ] 15/17  Installing       : CUnit-devel-2.1.3-24.fc3 [==========               ] 15/17  Installing       : CUnit-devel-2.1.3-24.fc3 [===========              ] 15/17  Installing       : CUnit-devel-2.1.3-24.fc3 [=============            ] 15/17  Installing       : CUnit-devel-2.1.3-24.fc3 [================         ] 15/17  Installing       : CUnit-devel-2.1.3-24.fc3 [==================       ] 15/17  Installing       : CUnit-devel-2.1.3-24.fc3 [===================      ] 15/17  Installing       : CUnit-devel-2.1.3-24.fc3 [=====================    ] 15/17  Installing       : CUnit-devel-2.1.3-24.fc3 [======================   ] 15/17  Installing       : CUnit-devel-2.1.3-24.fc3 [=======================  ] 15/17  Installing       : CUnit-devel-2.1.3-24.fc3 [======================== ] 15/17  Installing       : CUnit-devel-2.1.3-24.fc35.x86_64                     15/17 
+  Installing       : annobin-plugin-gcc-10.79 [                         ] 16/17  Installing       : annobin-plugin-gcc-10.79 [=                        ] 16/17  Installing       : annobin-plugin-gcc-10.79 [==                       ] 16/17  Installing       : annobin-plugin-gcc-10.79 [===                      ] 16/17  Installing       : annobin-plugin-gcc-10.79 [====                     ] 16/17  Installing       : annobin-plugin-gcc-10.79 [=====                    ] 16/17  Installing       : annobin-plugin-gcc-10.79 [======                   ] 16/17  Installing       : annobin-plugin-gcc-10.79 [=======                  ] 16/17  Installing       : annobin-plugin-gcc-10.79 [========                 ] 16/17  Installing       : annobin-plugin-gcc-10.79 [=========                ] 16/17  Installing       : annobin-plugin-gcc-10.79 [==========               ] 16/17  Installing       : annobin-plugin-gcc-10.79 [===========              ] 16/17  Installing       : annobin-plugin-gcc-10.79 [============             ] 16/17  Installing       : annobin-plugin-gcc-10.79 [=============            ] 16/17  Installing       : annobin-plugin-gcc-10.79 [==============           ] 16/17  Installing       : annobin-plugin-gcc-10.79 [===============          ] 16/17  Installing       : annobin-plugin-gcc-10.79 [================         ] 16/17  Installing       : annobin-plugin-gcc-10.79 [=================        ] 16/17  Installing       : annobin-plugin-gcc-10.79 [==================       ] 16/17  Installing       : annobin-plugin-gcc-10.79 [===================      ] 16/17  Installing       : annobin-plugin-gcc-10.79 [====================     ] 16/17  Installing       : annobin-plugin-gcc-10.79 [=====================    ] 16/17  Installing       : annobin-plugin-gcc-10.79 [======================   ] 16/17  Installing       : annobin-plugin-gcc-10.79 [=======================  ] 16/17  Installing       : annobin-plugin-gcc-10.79 [======================== ] 16/17  Installing       : annobin-plugin-gcc-10.79-1.fc35.x86_64               16/17 
+  Installing       : expat-devel-2.5.0-1.fc35 [                         ] 17/17  Installing       : expat-devel-2.5.0-1.fc35 [====                     ] 17/17  Installing       : expat-devel-2.5.0-1.fc35 [=====                    ] 17/17  Installing       : expat-devel-2.5.0-1.fc35 [======                   ] 17/17  Installing       : expat-devel-2.5.0-1.fc35 [=======                  ] 17/17  Installing       : expat-devel-2.5.0-1.fc35 [========                 ] 17/17  Installing       : expat-devel-2.5.0-1.fc35 [==========               ] 17/17  Installing       : expat-devel-2.5.0-1.fc35 [===========              ] 17/17  Installing       : expat-devel-2.5.0-1.fc35 [===============          ] 17/17  Installing       : expat-devel-2.5.0-1.fc35 [===================      ] 17/17  Installing       : expat-devel-2.5.0-1.fc35 [=======================  ] 17/17  Installing       : expat-devel-2.5.0-1.fc35 [======================== ] 17/17  Installing       : expat-devel-2.5.0-1.fc35.x86_64                      17/17 
+  Running scriptlet: expat-devel-2.5.0-1.fc35.x86_64                      17/17 
+  Verifying        : CUnit-2.1.3-24.fc35.x86_64                            1/17 
+  Verifying        : CUnit-devel-2.1.3-24.fc35.x86_64                      2/17 
+  Verifying        : gc-8.0.4-6.fc35.x86_64                                3/17 
+  Verifying        : guile22-2.2.7-3.fc35.x86_64                           4/17 
+  Verifying        : libmpc-1.2.1-3.fc35.x86_64                            5/17 
+  Verifying        : make-1:4.3-6.fc35.x86_64                              6/17 
+  Verifying        : annobin-docs-10.79-1.fc35.noarch                      7/17 
+  Verifying        : annobin-plugin-gcc-10.79-1.fc35.x86_64                8/17 
+  Verifying        : cpp-11.3.1-3.fc35.x86_64                              9/17 
+  Verifying        : expat-2.5.0-1.fc35.x86_64                            10/17 
+  Verifying        : expat-devel-2.5.0-1.fc35.x86_64                      11/17 
+  Verifying        : gcc-11.3.1-3.fc35.x86_64                             12/17 
+  Verifying        : glibc-devel-2.34-49.fc35.x86_64                      13/17 
+  Verifying        : glibc-headers-x86-2.34-49.fc35.noarch                14/17 
+  Verifying        : kernel-headers-6.0.5-100.fc35.x86_64                 15/17 
+  Verifying        : libtool-ltdl-2.4.6-50.fc35.x86_64                    16/17 
+  Verifying        : libxcrypt-devel-4.4.33-3.fc35.x86_64                 17/17 
+
+Installed:
+  CUnit-2.1.3-24.fc35.x86_64             CUnit-devel-2.1.3-24.fc35.x86_64       
+  annobin-docs-10.79-1.fc35.noarch       annobin-plugin-gcc-10.79-1.fc35.x86_64 
+  cpp-11.3.1-3.fc35.x86_64               expat-2.5.0-1.fc35.x86_64              
+  expat-devel-2.5.0-1.fc35.x86_64        gc-8.0.4-6.fc35.x86_64                 
+  gcc-11.3.1-3.fc35.x86_64               glibc-devel-2.34-49.fc35.x86_64        
+  glibc-headers-x86-2.34-49.fc35.noarch  guile22-2.2.7-3.fc35.x86_64            
+  kernel-headers-6.0.5-100.fc35.x86_64   libmpc-1.2.1-3.fc35.x86_64             
+  libtool-ltdl-2.4.6-50.fc35.x86_64      libxcrypt-devel-4.4.33-3.fc35.x86_64   
+  make-1:4.3-6.fc35.x86_64              
+
+Complete!
+
+>>> 2023-01-26 09:30:20	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--install" "cbmc" "cbmc-utils" "csexec" "gcc"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+fedora                   [===                 ] ---  B/s |   0  B     --:-- ETAfedora                                           22 kB/s | 4.5 kB     00:00    
+updates                  [===                 ] ---  B/s |   0  B     --:-- ETAupdates                  [   ===              ] ---  B/s |   0  B     --:-- ETAupdates                                         8.7 kB/s | 2.8 kB     00:00    
+Package gcc-11.3.1-3.fc35.x86_64 is already installed.
+Dependencies resolved.
+================================================================================
+ Package                      Arch        Version            Repository    Size
+================================================================================
+Installing:
+ [1mcbmc                        [m x86_64      5.50.0-1.fc35      updates       15 M
+ [1mcbmc-utils                  [m x86_64      5.50.0-1.fc35      updates       13 k
+ [1mcsexec                      [m x86_64      2.2.2-1.fc35       updates      365 k
+Installing dependencies:
+ [1mgcc-c++                     [m x86_64      11.3.1-3.fc35      updates       12 M
+ [1mlibstdc++-devel             [m x86_64      11.3.1-3.fc35      updates      2.2 M
+ [1mminisat2-libs               [m x86_64      2.2.1-13.fc35      fedora        44 k
+ [1mmpdecimal                   [m x86_64      2.5.1-2.fc35       fedora        99 k
+ [1mpython-pip-wheel            [m noarch      21.2.3-4.fc35      updates      1.1 M
+ [1mpython-setuptools-wheel     [m noarch      57.4.0-1.fc35      fedora       505 k
+ [1mpython3                     [m x86_64      3.10.8-3.fc35      updates       26 k
+ [1mpython3-libs                [m x86_64      3.10.8-3.fc35      updates      7.5 M
+
+Transaction Summary
+================================================================================
+Install  11 Packages
+
+Total size: 39 M
+Installed size: 135 M
+Downloading Packages:
+[SKIPPED] minisat2-libs-2.2.1-13.fc35.x86_64.rpm: Already downloaded           
+[SKIPPED] mpdecimal-2.5.1-2.fc35.x86_64.rpm: Already downloaded                
+[SKIPPED] python-setuptools-wheel-57.4.0-1.fc35.noarch.rpm: Already downloaded 
+[SKIPPED] cbmc-5.50.0-1.fc35.x86_64.rpm: Already downloaded                    
+[SKIPPED] cbmc-utils-5.50.0-1.fc35.x86_64.rpm: Already downloaded              
+[SKIPPED] csexec-2.2.2-1.fc35.x86_64.rpm: Already downloaded                   
+[SKIPPED] gcc-c++-11.3.1-3.fc35.x86_64.rpm: Already downloaded                 
+[SKIPPED] libstdc++-devel-11.3.1-3.fc35.x86_64.rpm: Already downloaded         
+[SKIPPED] python-pip-wheel-21.2.3-4.fc35.noarch.rpm: Already downloaded        
+[SKIPPED] python3-3.10.8-3.fc35.x86_64.rpm: Already downloaded                 
+[SKIPPED] python3-libs-3.10.8-3.fc35.x86_64.rpm: Already downloaded            
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :  [====                                               ] 1/1  Preparing        :  [=========                                          ] 1/1  Preparing        :  [=============                                      ] 1/1  Preparing        :  [==================                                 ] 1/1  Preparing        :  [======================                             ] 1/1  Preparing        :  [===========================                        ] 1/1  Preparing        :  [================================                   ] 1/1  Preparing        :  [====================================               ] 1/1  Preparing        :  [=========================================          ] 1/1  Preparing        :  [=============================================      ] 1/1  Preparing        :                                                        1/1 
+  Installing       : python-pip-wheel-21.2.3- [                         ]  1/11  Installing       : python-pip-wheel-21.2.3- [=                        ]  1/11  Installing       : python-pip-wheel-21.2.3- [==                       ]  1/11  Installing       : python-pip-wheel-21.2.3- [===                      ]  1/11  Installing       : python-pip-wheel-21.2.3- [====                     ]  1/11  Installing       : python-pip-wheel-21.2.3- [=====                    ]  1/11  Installing       : python-pip-wheel-21.2.3- [======                   ]  1/11  Installing       : python-pip-wheel-21.2.3- [=======                  ]  1/11  Installing       : python-pip-wheel-21.2.3- [========                 ]  1/11  Installing       : python-pip-wheel-21.2.3- [=========                ]  1/11  Installing       : python-pip-wheel-21.2.3- [==========               ]  1/11  Installing       : python-pip-wheel-21.2.3- [===========              ]  1/11  Installing       : python-pip-wheel-21.2.3- [============             ]  1/11  Installing       : python-pip-wheel-21.2.3- [=============            ]  1/11  Installing       : python-pip-wheel-21.2.3- [==============           ]  1/11  Installing       : python-pip-wheel-21.2.3- [===============          ]  1/11  Installing       : python-pip-wheel-21.2.3- [================         ]  1/11  Installing       : python-pip-wheel-21.2.3- [=================        ]  1/11  Installing       : python-pip-wheel-21.2.3- [==================       ]  1/11  Installing       : python-pip-wheel-21.2.3- [===================      ]  1/11  Installing       : python-pip-wheel-21.2.3- [====================     ]  1/11  Installing       : python-pip-wheel-21.2.3- [=====================    ]  1/11  Installing       : python-pip-wheel-21.2.3- [======================   ]  1/11  Installing       : python-pip-wheel-21.2.3- [=======================  ]  1/11  Installing       : python-pip-wheel-21.2.3- [======================== ]  1/11  Installing       : python-pip-wheel-21.2.3-4.fc35.noarch                 1/11 
+  Installing       : libstdc++-devel-11.3.1-3 [                         ]  2/11  Installing       : libstdc++-devel-11.3.1-3 [=                        ]  2/11  Installing       : libstdc++-devel-11.3.1-3 [==                       ]  2/11  Installing       : libstdc++-devel-11.3.1-3 [===                      ]  2/11  Installing       : libstdc++-devel-11.3.1-3 [====                     ]  2/11  Installing       : libstdc++-devel-11.3.1-3 [=====                    ]  2/11  Installing       : libstdc++-devel-11.3.1-3 [======                   ]  2/11  Installing       : libstdc++-devel-11.3.1-3 [=======                  ]  2/11  Installing       : libstdc++-devel-11.3.1-3 [========                 ]  2/11  Installing       : libstdc++-devel-11.3.1-3 [=========                ]  2/11  Installing       : libstdc++-devel-11.3.1-3 [==========               ]  2/11  Installing       : libstdc++-devel-11.3.1-3 [===========              ]  2/11  Installing       : libstdc++-devel-11.3.1-3 [============             ]  2/11  Installing       : libstdc++-devel-11.3.1-3 [=============            ]  2/11  Installing       : libstdc++-devel-11.3.1-3 [==============           ]  2/11  Installing       : libstdc++-devel-11.3.1-3 [===============          ]  2/11  Installing       : libstdc++-devel-11.3.1-3 [================         ]  2/11  Installing       : libstdc++-devel-11.3.1-3 [=================        ]  2/11  Installing       : libstdc++-devel-11.3.1-3 [==================       ]  2/11  Installing       : libstdc++-devel-11.3.1-3 [===================      ]  2/11  Installing       : libstdc++-devel-11.3.1-3 [====================     ]  2/11  Installing       : libstdc++-devel-11.3.1-3 [=====================    ]  2/11  Installing       : libstdc++-devel-11.3.1-3 [======================   ]  2/11  Installing       : libstdc++-devel-11.3.1-3 [=======================  ]  2/11  Installing       : libstdc++-devel-11.3.1-3 [======================== ]  2/11  Installing       : libstdc++-devel-11.3.1-3.fc35.x86_64                  2/11 
+  Installing       : gcc-c++-11.3.1-3.fc35.x8 [                         ]  3/11  Installing       : gcc-c++-11.3.1-3.fc35.x8 [=                        ]  3/11  Installing       : gcc-c++-11.3.1-3.fc35.x8 [==                       ]  3/11  Installing       : gcc-c++-11.3.1-3.fc35.x8 [===                      ]  3/11  Installing       : gcc-c++-11.3.1-3.fc35.x8 [====                     ]  3/11  Installing       : gcc-c++-11.3.1-3.fc35.x8 [=====                    ]  3/11  Installing       : gcc-c++-11.3.1-3.fc35.x8 [======                   ]  3/11  Installing       : gcc-c++-11.3.1-3.fc35.x8 [=======                  ]  3/11  Installing       : gcc-c++-11.3.1-3.fc35.x8 [========                 ]  3/11  Installing       : gcc-c++-11.3.1-3.fc35.x8 [=========                ]  3/11  Installing       : gcc-c++-11.3.1-3.fc35.x8 [==========               ]  3/11  Installing       : gcc-c++-11.3.1-3.fc35.x8 [===========              ]  3/11  Installing       : gcc-c++-11.3.1-3.fc35.x8 [============             ]  3/11  Installing       : gcc-c++-11.3.1-3.fc35.x8 [=============            ]  3/11  Installing       : gcc-c++-11.3.1-3.fc35.x8 [==============           ]  3/11  Installing       : gcc-c++-11.3.1-3.fc35.x8 [===============          ]  3/11  Installing       : gcc-c++-11.3.1-3.fc35.x8 [================         ]  3/11  Installing       : gcc-c++-11.3.1-3.fc35.x8 [=================        ]  3/11  Installing       : gcc-c++-11.3.1-3.fc35.x8 [==================       ]  3/11  Installing       : gcc-c++-11.3.1-3.fc35.x8 [===================      ]  3/11  Installing       : gcc-c++-11.3.1-3.fc35.x8 [====================     ]  3/11  Installing       : gcc-c++-11.3.1-3.fc35.x8 [=====================    ]  3/11  Installing       : gcc-c++-11.3.1-3.fc35.x8 [======================   ]  3/11  Installing       : gcc-c++-11.3.1-3.fc35.x8 [=======================  ]  3/11  Installing       : gcc-c++-11.3.1-3.fc35.x8 [======================== ]  3/11  Installing       : gcc-c++-11.3.1-3.fc35.x86_64                          3/11 
+  Installing       : python-setuptools-wheel- [                         ]  4/11  Installing       : python-setuptools-wheel- [=                        ]  4/11  Installing       : python-setuptools-wheel- [==                       ]  4/11  Installing       : python-setuptools-wheel- [====                     ]  4/11  Installing       : python-setuptools-wheel- [=====                    ]  4/11  Installing       : python-setuptools-wheel- [======                   ]  4/11  Installing       : python-setuptools-wheel- [========                 ]  4/11  Installing       : python-setuptools-wheel- [=========                ]  4/11  Installing       : python-setuptools-wheel- [===========              ]  4/11  Installing       : python-setuptools-wheel- [============             ]  4/11  Installing       : python-setuptools-wheel- [=============            ]  4/11  Installing       : python-setuptools-wheel- [===============          ]  4/11  Installing       : python-setuptools-wheel- [================         ]  4/11  Installing       : python-setuptools-wheel- [=================        ]  4/11  Installing       : python-setuptools-wheel- [===================      ]  4/11  Installing       : python-setuptools-wheel- [====================     ]  4/11  Installing       : python-setuptools-wheel- [======================   ]  4/11  Installing       : python-setuptools-wheel- [=======================  ]  4/11  Installing       : python-setuptools-wheel- [======================== ]  4/11  Installing       : python-setuptools-wheel-57.4.0-1.fc35.noarch          4/11 
+  Installing       : mpdecimal-2.5.1-2.fc35.x [                         ]  5/11  Installing       : mpdecimal-2.5.1-2.fc35.x [===                      ]  5/11  Installing       : mpdecimal-2.5.1-2.fc35.x [====                     ]  5/11  Installing       : mpdecimal-2.5.1-2.fc35.x [=======                  ]  5/11  Installing       : mpdecimal-2.5.1-2.fc35.x [==========               ]  5/11  Installing       : mpdecimal-2.5.1-2.fc35.x [==============           ]  5/11  Installing       : mpdecimal-2.5.1-2.fc35.x [=================        ]  5/11  Installing       : mpdecimal-2.5.1-2.fc35.x [====================     ]  5/11  Installing       : mpdecimal-2.5.1-2.fc35.x [======================== ]  5/11  Installing       : mpdecimal-2.5.1-2.fc35.x86_64                         5/11 
+  Installing       : python3-3.10.8-3.fc35.x8 [                         ]  6/11  Installing       : python3-3.10.8-3.fc35.x8 [===========              ]  6/11  Installing       : python3-3.10.8-3.fc35.x8 [============             ]  6/11  Installing       : python3-3.10.8-3.fc35.x8 [===================      ]  6/11  Installing       : python3-3.10.8-3.fc35.x8 [======================== ]  6/11  Installing       : python3-3.10.8-3.fc35.x86_64                          6/11 
+  Installing       : python3-libs-3.10.8-3.fc [                         ]  7/11  Installing       : python3-libs-3.10.8-3.fc [=                        ]  7/11  Installing       : python3-libs-3.10.8-3.fc [==                       ]  7/11  Installing       : python3-libs-3.10.8-3.fc [===                      ]  7/11  Installing       : python3-libs-3.10.8-3.fc [====                     ]  7/11  Installing       : python3-libs-3.10.8-3.fc [=====                    ]  7/11  Installing       : python3-libs-3.10.8-3.fc [======                   ]  7/11  Installing       : python3-libs-3.10.8-3.fc [=======                  ]  7/11  Installing       : python3-libs-3.10.8-3.fc [========                 ]  7/11  Installing       : python3-libs-3.10.8-3.fc [=========                ]  7/11  Installing       : python3-libs-3.10.8-3.fc [==========               ]  7/11  Installing       : python3-libs-3.10.8-3.fc [===========              ]  7/11  Installing       : python3-libs-3.10.8-3.fc [============             ]  7/11  Installing       : python3-libs-3.10.8-3.fc [=============            ]  7/11  Installing       : python3-libs-3.10.8-3.fc [==============           ]  7/11  Installing       : python3-libs-3.10.8-3.fc [===============          ]  7/11  Installing       : python3-libs-3.10.8-3.fc [================         ]  7/11  Installing       : python3-libs-3.10.8-3.fc [=================        ]  7/11  Installing       : python3-libs-3.10.8-3.fc [==================       ]  7/11  Installing       : python3-libs-3.10.8-3.fc [===================      ]  7/11  Installing       : python3-libs-3.10.8-3.fc [====================     ]  7/11  Installing       : python3-libs-3.10.8-3.fc [=====================    ]  7/11  Installing       : python3-libs-3.10.8-3.fc [======================   ]  7/11  Installing       : python3-libs-3.10.8-3.fc [=======================  ]  7/11  Installing       : python3-libs-3.10.8-3.fc [======================== ]  7/11  Installing       : python3-libs-3.10.8-3.fc35.x86_64                     7/11 
+  Installing       : minisat2-libs-2.2.1-13.f [                         ]  8/11  Installing       : minisat2-libs-2.2.1-13.f [=========                ]  8/11  Installing       : minisat2-libs-2.2.1-13.f [===================      ]  8/11  Installing       : minisat2-libs-2.2.1-13.f [======================== ]  8/11  Installing       : minisat2-libs-2.2.1-13.fc35.x86_64                    8/11 
+  Installing       : cbmc-5.50.0-1.fc35.x86_6 [                         ]  9/11  Installing       : cbmc-5.50.0-1.fc35.x86_6 [=                        ]  9/11  Installing       : cbmc-5.50.0-1.fc35.x86_6 [==                       ]  9/11  Installing       : cbmc-5.50.0-1.fc35.x86_6 [===                      ]  9/11  Installing       : cbmc-5.50.0-1.fc35.x86_6 [====                     ]  9/11  Installing       : cbmc-5.50.0-1.fc35.x86_6 [=====                    ]  9/11  Installing       : cbmc-5.50.0-1.fc35.x86_6 [======                   ]  9/11  Installing       : cbmc-5.50.0-1.fc35.x86_6 [=======                  ]  9/11  Installing       : cbmc-5.50.0-1.fc35.x86_6 [========                 ]  9/11  Installing       : cbmc-5.50.0-1.fc35.x86_6 [=========                ]  9/11  Installing       : cbmc-5.50.0-1.fc35.x86_6 [==========               ]  9/11  Installing       : cbmc-5.50.0-1.fc35.x86_6 [===========              ]  9/11  Installing       : cbmc-5.50.0-1.fc35.x86_6 [============             ]  9/11  Installing       : cbmc-5.50.0-1.fc35.x86_6 [=============            ]  9/11  Installing       : cbmc-5.50.0-1.fc35.x86_6 [==============           ]  9/11  Installing       : cbmc-5.50.0-1.fc35.x86_6 [===============          ]  9/11  Installing       : cbmc-5.50.0-1.fc35.x86_6 [================         ]  9/11  Installing       : cbmc-5.50.0-1.fc35.x86_6 [=================        ]  9/11  Installing       : cbmc-5.50.0-1.fc35.x86_6 [==================       ]  9/11  Installing       : cbmc-5.50.0-1.fc35.x86_6 [===================      ]  9/11  Installing       : cbmc-5.50.0-1.fc35.x86_6 [====================     ]  9/11  Installing       : cbmc-5.50.0-1.fc35.x86_6 [=====================    ]  9/11  Installing       : cbmc-5.50.0-1.fc35.x86_6 [======================   ]  9/11  Installing       : cbmc-5.50.0-1.fc35.x86_6 [=======================  ]  9/11  Installing       : cbmc-5.50.0-1.fc35.x86_6 [======================== ]  9/11  Installing       : cbmc-5.50.0-1.fc35.x86_64                             9/11 
+  Installing       : cbmc-utils-5.50.0-1.fc35 [                         ] 10/11  Installing       : cbmc-utils-5.50.0-1.fc35 [==============           ] 10/11  Installing       : cbmc-utils-5.50.0-1.fc35 [====================     ] 10/11  Installing       : cbmc-utils-5.50.0-1.fc35 [======================== ] 10/11  Installing       : cbmc-utils-5.50.0-1.fc35.x86_64                      10/11 
+  Installing       : csexec-2.2.2-1.fc35.x86_ [                         ] 11/11  Installing       : csexec-2.2.2-1.fc35.x86_ [=                        ] 11/11  Installing       : csexec-2.2.2-1.fc35.x86_ [==                       ] 11/11  Installing       : csexec-2.2.2-1.fc35.x86_ [===                      ] 11/11  Installing       : csexec-2.2.2-1.fc35.x86_ [====                     ] 11/11  Installing       : csexec-2.2.2-1.fc35.x86_ [=====                    ] 11/11  Installing       : csexec-2.2.2-1.fc35.x86_ [======                   ] 11/11  Installing       : csexec-2.2.2-1.fc35.x86_ [=======                  ] 11/11  Installing       : csexec-2.2.2-1.fc35.x86_ [========                 ] 11/11  Installing       : csexec-2.2.2-1.fc35.x86_ [=========                ] 11/11  Installing       : csexec-2.2.2-1.fc35.x86_ [==========               ] 11/11  Installing       : csexec-2.2.2-1.fc35.x86_ [===========              ] 11/11  Installing       : csexec-2.2.2-1.fc35.x86_ [============             ] 11/11  Installing       : csexec-2.2.2-1.fc35.x86_ [=============            ] 11/11  Installing       : csexec-2.2.2-1.fc35.x86_ [==============           ] 11/11  Installing       : csexec-2.2.2-1.fc35.x86_ [===============          ] 11/11  Installing       : csexec-2.2.2-1.fc35.x86_ [================         ] 11/11  Installing       : csexec-2.2.2-1.fc35.x86_ [=================        ] 11/11  Installing       : csexec-2.2.2-1.fc35.x86_ [==================       ] 11/11  Installing       : csexec-2.2.2-1.fc35.x86_ [===================      ] 11/11  Installing       : csexec-2.2.2-1.fc35.x86_ [====================     ] 11/11  Installing       : csexec-2.2.2-1.fc35.x86_ [=====================    ] 11/11  Installing       : csexec-2.2.2-1.fc35.x86_ [======================   ] 11/11  Installing       : csexec-2.2.2-1.fc35.x86_ [=======================  ] 11/11  Installing       : csexec-2.2.2-1.fc35.x86_ [======================== ] 11/11  Installing       : csexec-2.2.2-1.fc35.x86_64                           11/11 
+  Running scriptlet: csexec-2.2.2-1.fc35.x86_64                           11/11 
+  Verifying        : minisat2-libs-2.2.1-13.fc35.x86_64                    1/11 
+  Verifying        : mpdecimal-2.5.1-2.fc35.x86_64                         2/11 
+  Verifying        : python-setuptools-wheel-57.4.0-1.fc35.noarch          3/11 
+  Verifying        : cbmc-5.50.0-1.fc35.x86_64                             4/11 
+  Verifying        : cbmc-utils-5.50.0-1.fc35.x86_64                       5/11 
+  Verifying        : csexec-2.2.2-1.fc35.x86_64                            6/11 
+  Verifying        : gcc-c++-11.3.1-3.fc35.x86_64                          7/11 
+  Verifying        : libstdc++-devel-11.3.1-3.fc35.x86_64                  8/11 
+  Verifying        : python-pip-wheel-21.2.3-4.fc35.noarch                 9/11 
+  Verifying        : python3-3.10.8-3.fc35.x86_64                         10/11 
+  Verifying        : python3-libs-3.10.8-3.fc35.x86_64                    11/11 
+
+Installed:
+  cbmc-5.50.0-1.fc35.x86_64                                                     
+  cbmc-utils-5.50.0-1.fc35.x86_64                                               
+  csexec-2.2.2-1.fc35.x86_64                                                    
+  gcc-c++-11.3.1-3.fc35.x86_64                                                  
+  libstdc++-devel-11.3.1-3.fc35.x86_64                                          
+  minisat2-libs-2.2.1-13.fc35.x86_64                                            
+  mpdecimal-2.5.1-2.fc35.x86_64                                                 
+  python-pip-wheel-21.2.3-4.fc35.noarch                                         
+  python-setuptools-wheel-57.4.0-1.fc35.noarch                                  
+  python3-3.10.8-3.fc35.x86_64                                                  
+  python3-libs-3.10.8-3.fc35.x86_64                                             
+
+Complete!
+
+>>> 2023-01-26 09:30:47	"'/usr/bin/mock' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa' | sort -V > /home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmetalink-0.1.3-15.fc35/cbmc/output/debug/rpm-list-mock.txt"
+
+>>> 2023-01-26 09:30:53	"'/usr/bin/mock' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa --provides' | sort -V > /tmp/csmocklrnt3n7y/rpm-list-mock-provides.txt"
+
+>>> 2023-01-26 09:30:59	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--copyin" "/tmp/csmocklrnt3n7y/libmetalink-0.1.3-15.fc35.src.rpm" "/builddir/libmetalink-0.1.3-15.fc35.src.rpm"
+
+>>> 2023-01-26 09:31:04	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "chown mockbuild -R /builddir"
+
+>>> 2023-01-26 09:31:09	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"rpm -Uvh --nodeps '/builddir/libmetalink-0.1.3-15.fc35.src.rpm'\""
+Updating / installing...
+libmetalink-0.1.3-15.fc35             ########################################
+
+>>> 2023-01-26 09:31:15	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"sed -e 's|^ExclusiveArch:.*\\\$||' -i /builddir/build/SPECS/libmetalink.spec\""
+
+>>> 2023-01-26 09:31:21	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"rpmbuild -bs --nodeps /builddir/build/SPECS/libmetalink.spec '--define' '_unpackaged_files_terminate_build 0' '--define' 'apidocs 0' '--define' 'with_publican 0' '--without' 'docs' '--without' 'langpacks' '--define' '__cc goto-gcc' '--define' '__cxx goto-gcc' '--define' '__cpp goto-gcc -E' '--define' 'optflags -O0' '--define' 'build_ldflags -O0' && sh -c 'cd /builddir/build/SRPMS && eval mv -v *.src.rpm /builddir/libmetalink-0.1.3-15.fc35.src.rpm || :'\""
+setting SOURCE_DATE_EPOCH=1626912000
+Wrote: /builddir/build/SRPMS/libmetalink-0.1.3-15.fc35.src.rpm
+renamed 'libmetalink-0.1.3-15.fc35.src.rpm' -> '/builddir/libmetalink-0.1.3-15.fc35.src.rpm'
+
+>>> 2023-01-26 09:31:26	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--disable-plugin=selinux" "--copyout" "/builddir/libmetalink-0.1.3-15.fc35.src.rpm" "/tmp/csmocklrnt3n7y/libmetalink-0.1.3-15.fc35.src.rpm"
+
+>>> 2023-01-26 09:31:32	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--installdeps" "/tmp/csmocklrnt3n7y/libmetalink-0.1.3-15.fc35.src.rpm"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+fedora                   [===                 ] ---  B/s |   0  B     --:-- ETAfedora                                           20 kB/s | 4.5 kB     00:00    
+updates                  [===                 ] ---  B/s |   0  B     --:-- ETAupdates                  [   ===              ] ---  B/s |   0  B     --:-- ETAupdates                                         8.4 kB/s | 2.8 kB     00:00    
+Package CUnit-devel-2.1.3-24.fc35.x86_64 is already installed.
+Package expat-devel-2.5.0-1.fc35.x86_64 is already installed.
+Package gcc-11.3.1-3.fc35.x86_64 is already installed.
+Package make-1:4.3-6.fc35.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+
+>>> 2023-01-26 09:31:43	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--install" "cbmc" "cbmc-utils" "csexec" "gcc"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+fedora                   [===                 ] ---  B/s |   0  B     --:-- ETAfedora                   [===                 ] ---  B/s |   0  B     --:-- ETAfedora                                           14 kB/s | 4.5 kB     00:00    
+updates                  [   ===              ] ---  B/s |   0  B     --:-- ETAupdates                                          15 kB/s | 2.8 kB     00:00    
+Package cbmc-5.50.0-1.fc35.x86_64 is already installed.
+Package cbmc-utils-5.50.0-1.fc35.x86_64 is already installed.
+Package csexec-2.2.2-1.fc35.x86_64 is already installed.
+Package gcc-11.3.1-3.fc35.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+
+>>> 2023-01-26 09:31:54	"'/usr/bin/mock' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa' | sort -V > /home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmetalink-0.1.3-15.fc35/cbmc/output/debug/rpm-list-mock.txt"
+
+>>> 2023-01-26 09:32:00	"'/usr/bin/mock' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa --provides' | sort -V > /tmp/csmocklrnt3n7y/rpm-list-mock-provides.txt"
+
+>>> 2023-01-26 09:32:06	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--install" "csdiff"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+fedora                   [===                 ] ---  B/s |   0  B     --:-- ETAfedora                                           26 kB/s | 4.5 kB     00:00    
+updates                  [===                 ] ---  B/s |   0  B     --:-- ETAupdates                                          14 kB/s | 2.8 kB     00:00    
+Dependencies resolved.
+================================================================================
+ Package                    Arch        Version              Repository    Size
+================================================================================
+Installing:
+ [1mcsdiff                    [m x86_64      2.7.0-1.fc35         updates      894 k
+Installing dependencies:
+ [1mboost-filesystem          [m x86_64      1.76.0-5.fc35        updates       58 k
+ [1mboost-program-options     [m x86_64      1.76.0-5.fc35        updates      107 k
+ [1mboost-system              [m x86_64      1.76.0-5.fc35        updates       14 k
+
+Transaction Summary
+================================================================================
+Install  4 Packages
+
+Total size: 1.0 M
+Installed size: 4.2 M
+Downloading Packages:
+[SKIPPED] boost-filesystem-1.76.0-5.fc35.x86_64.rpm: Already downloaded        
+[SKIPPED] boost-program-options-1.76.0-5.fc35.x86_64.rpm: Already downloaded   
+[SKIPPED] boost-system-1.76.0-5.fc35.x86_64.rpm: Already downloaded            
+[SKIPPED] csdiff-2.7.0-1.fc35.x86_64.rpm: Already downloaded                   
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :  [============                                       ] 1/1  Preparing        :  [=========================                          ] 1/1  Preparing        :  [======================================             ] 1/1  Preparing        :                                                        1/1 
+  Installing       : boost-system-1.76.0-5.fc3 [                          ] 1/4  Installing       : boost-system-1.76.0-5.fc3 [=======================   ] 1/4  Installing       : boost-system-1.76.0-5.fc3 [========================= ] 1/4  Installing       : boost-system-1.76.0-5.fc35.x86_64                      1/4 
+  Installing       : boost-filesystem-1.76.0-5 [                          ] 2/4  Installing       : boost-filesystem-1.76.0-5 [======                    ] 2/4  Installing       : boost-filesystem-1.76.0-5 [=============             ] 2/4  Installing       : boost-filesystem-1.76.0-5 [====================      ] 2/4  Installing       : boost-filesystem-1.76.0-5 [========================= ] 2/4  Installing       : boost-filesystem-1.76.0-5.fc35.x86_64                  2/4 
+  Installing       : boost-program-options-1.7 [                          ] 3/4  Installing       : boost-program-options-1.7 [==                        ] 3/4  Installing       : boost-program-options-1.7 [=====                     ] 3/4  Installing       : boost-program-options-1.7 [========                  ] 3/4  Installing       : boost-program-options-1.7 [===========               ] 3/4  Installing       : boost-program-options-1.7 [==============            ] 3/4  Installing       : boost-program-options-1.7 [=================         ] 3/4  Installing       : boost-program-options-1.7 [====================      ] 3/4  Installing       : boost-program-options-1.7 [=======================   ] 3/4  Installing       : boost-program-options-1.7 [========================= ] 3/4  Installing       : boost-program-options-1.76.0-5.fc35.x86_64             3/4 
+  Installing       : csdiff-2.7.0-1.fc35.x86_6 [                          ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [=                         ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [==                        ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [===                       ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [====                      ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [=====                     ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [======                    ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [=======                   ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [========                  ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [=========                 ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [==========                ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [===========               ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [============              ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [=============             ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [==============            ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [===============           ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [================          ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [=================         ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [==================        ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [===================       ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [====================      ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [=====================     ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [======================    ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [=======================   ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [========================  ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [========================= ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_64                             4/4 
+  Running scriptlet: csdiff-2.7.0-1.fc35.x86_64                             4/4 
+  Verifying        : boost-filesystem-1.76.0-5.fc35.x86_64                  1/4 
+  Verifying        : boost-program-options-1.76.0-5.fc35.x86_64             2/4 
+  Verifying        : boost-system-1.76.0-5.fc35.x86_64                      3/4 
+  Verifying        : csdiff-2.7.0-1.fc35.x86_64                             4/4 
+
+Installed:
+  boost-filesystem-1.76.0-5.fc35.x86_64                                         
+  boost-program-options-1.76.0-5.fc35.x86_64                                    
+  boost-system-1.76.0-5.fc35.x86_64                                             
+  csdiff-2.7.0-1.fc35.x86_64                                                    
+
+Complete!
+
+>>> 2023-01-26 09:32:19	"'/usr/bin/mock' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa' | sort -V > /home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmetalink-0.1.3-15.fc35/cbmc/output/debug/rpm-list-mock.txt"
+
+>>> 2023-01-26 09:32:25	"'/usr/bin/mock' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa --provides' | sort -V > /tmp/csmocklrnt3n7y/rpm-list-mock-provides.txt"
+
+>>> 2023-01-26 09:32:30	"tar -cP '/usr/share/csmock/scripts' '/usr/bin/cswrap' '/usr/lib64/cswrap' '/tmp/csmocklrnt3n7y/libmetalink-0.1.3-15.fc35.src.rpm' | '/usr/bin/mock' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'tar -xC/'"
+tar: Removing leading `/' from member names
+
+scan.ini: analyzer-version-cbmc = 5.50.0
+>>> 2023-01-26 09:32:36	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"mkdir -pv '/builddir/cbmc-capture'\""
+mkdir: created directory '/builddir/cbmc-capture'
+
+scan.ini: analyzer-version-gcc = 11.3.1
+>>> 2023-01-26 09:32:41	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "rpm -Uvh --nodeps '/tmp/csmocklrnt3n7y/libmetalink-0.1.3-15.fc35.src.rpm'"
+Updating / installing...
+libmetalink-0.1.3-15.fc35             ########################################
+
+>>> 2023-01-26 09:32:47	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "chmod -R +r /builddir"
+
+>>> 2023-01-26 09:32:52	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "ln -fv '/usr/share/csmock/scripts/enable-keep-going.sh' '/usr/share/csmock/scripts/chroot-fixups'"
+'/usr/share/csmock/scripts/chroot-fixups/enable-keep-going.sh' => '/usr/share/csmock/scripts/enable-keep-going.sh'
+
+>>> 2023-01-26 09:32:58	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--shell" "for i in /usr/share/csmock/scripts/chroot-fixups/*; do test -x \$i && echo RUN: \$i >&2 && \$i; done"
+RUN: /usr/share/csmock/scripts/chroot-fixups/enable-keep-going.sh
+renamed '/usr/bin/make' -> '/usr/bin/make.orig'
++ ls -l /usr/bin/make
+-rwxr-xr-x. 1 root root 42 Jan 26 09:33 /usr/bin/make
++ cat /usr/bin/make
+#!/bin/sh
+exec /usr/bin/make.orig -k "$@"
+RUN: /usr/share/csmock/scripts/chroot-fixups/gdk-pixbuf2-triggers.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/glib2-triggers.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/kpathsea-texhash.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/openssl-public-header-files.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/qt5-core-abi.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/rpm-build-scripts.sh
++ sed -e s/fail=1/fail=0/ -i /usr/lib/rpm/redhat/brp-mangle-shebangs
+'/usr/lib/rpm/brp-strip-static-archive' -> '/bin/true'
+RUN: /usr/share/csmock/scripts/chroot-fixups/rpm-macros.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/rpm-python-extras.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/shared-mime-info-triggers.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/symbiotic-timeout.sh
+
+>>> 2023-01-26 09:33:04	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--chroot" "/bin/su mockbuild -l -c \"rpmbuild -bp --nodeps /builddir/build/SPECS/libmetalink.spec '--define' '_unpackaged_files_terminate_build 0' '--define' 'apidocs 0' '--define' 'with_publican 0' '--without' 'docs' '--without' 'langpacks' '--define' '__cc goto-gcc' '--define' '__cxx goto-gcc' '--define' '__cpp goto-gcc -E' '--define' 'optflags -O0' '--define' 'build_ldflags -O0'\""
+INFO: mock.py version 3.5 starting (python version = 3.10.9, NVR = mock-3.5-1.fc36)...
+Start(bootstrap): init plugins
+INFO: selinux enabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 3.5
+INFO: Mock Version: 3.5
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 3.5
+INFO: Mock Version: 3.5
+Finish: chroot init
+INFO: Running in chroot: ['/bin/su mockbuild -l -c "rpmbuild -bp --nodeps /builddir/build/SPECS/libmetalink.spec \'--define\' \'_unpackaged_files_terminate_build 0\' \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc goto-gcc\' \'--define\' \'__cxx goto-gcc\' \'--define\' \'__cpp goto-gcc -E\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'"']
+Start: chroot ['/bin/su mockbuild -l -c "rpmbuild -bp --nodeps /builddir/build/SPECS/libmetalink.spec \'--define\' \'_unpackaged_files_terminate_build 0\' \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc goto-gcc\' \'--define\' \'__cxx goto-gcc\' \'--define\' \'__cpp goto-gcc -E\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'"']
+setting SOURCE_DATE_EPOCH=1626912000
+Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.Fxqq8F
++ umask 022
++ cd /builddir/build/BUILD
++ cd /builddir/build/BUILD
++ rm -rf libmetalink-0.1.3
++ /usr/bin/bzip2 -dc /builddir/build/SOURCES/libmetalink-0.1.3.tar.bz2
++ /usr/bin/tar -xof -
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd libmetalink-0.1.3
++ /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
++ /usr/bin/cat /builddir/build/SOURCES/libmetalink-0.1.3-ns_uri.patch
++ /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Finish: chroot ['/bin/su mockbuild -l -c "rpmbuild -bp --nodeps /builddir/build/SPECS/libmetalink.spec \'--define\' \'_unpackaged_files_terminate_build 0\' \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc goto-gcc\' \'--define\' \'__cxx goto-gcc\' \'--define\' \'__cpp goto-gcc -E\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'"']
+
+>>> 2023-01-26 09:33:09	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "chmod -R +r /builddir/build"
+
+>>> 2023-01-26 09:33:15	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--chroot" "/bin/su mockbuild -l -c \"PATH=/usr/lib64/cswrap:\\\$PATH CSWRAP_CAP_FILE=\\\$'/builddir/cswrap-capture.err' CSWRAP_TIMEOUT=\\\$'30' CSWRAP_TIMEOUT_FOR=\\\$':' CC=\\\$'goto-gcc' CXX=\\\$'goto-gcc' CSEXEC_WRAP_CMD=\\\$'--skip-ld-linux\\\\a/usr/bin/csexec-cbmc\\\\a-t\\\\a8\\\\a-l\\\\a/builddir/cbmc-capture\\\\a-c\\\\a--unwind 1 --json-ui --verbosity 4 --pointer-overflow-check --memory-leak-check ' CSWRAP_ADD_CFLAGS=\\\$'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader' CSWRAP_DEL_CFLAGS=\\\$'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register' CSWRAP_ADD_CXXFLAGS=\\\$'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader' CSWRAP_DEL_CXXFLAGS=\\\$'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register' sh -c \\\"rpmbuild -bc --nodeps --short-circuit /builddir/build/SPECS/libmetalink.spec '--define' '_unpackaged_files_terminate_build 0' '--define' 'apidocs 0' '--define' 'with_publican 0' '--without' 'docs' '--without' 'langpacks' '--define' '__cc goto-gcc' '--define' '__cxx goto-gcc' '--define' '__cpp goto-gcc -E' '--define' 'optflags -O0' '--define' 'build_ldflags -O0'\\\"\""
+INFO: mock.py version 3.5 starting (python version = 3.10.9, NVR = mock-3.5-1.fc36)...
+Start(bootstrap): init plugins
+INFO: selinux enabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 3.5
+INFO: Mock Version: 3.5
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 3.5
+INFO: Mock Version: 3.5
+Finish: chroot init
+INFO: Running in chroot: ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'goto-gcc\' CXX=\\$\'goto-gcc\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\a/usr/bin/csexec-cbmc\\\\a-t\\\\a8\\\\a-l\\\\a/builddir/cbmc-capture\\\\a-c\\\\a--unwind 1 --json-ui --verbosity 4 --pointer-overflow-check --memory-leak-check \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bc --nodeps --short-circuit /builddir/build/SPECS/libmetalink.spec \'--define\' \'_unpackaged_files_terminate_build 0\' \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc goto-gcc\' \'--define\' \'__cxx goto-gcc\' \'--define\' \'__cpp goto-gcc -E\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+Start: chroot ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'goto-gcc\' CXX=\\$\'goto-gcc\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\a/usr/bin/csexec-cbmc\\\\a-t\\\\a8\\\\a-l\\\\a/builddir/cbmc-capture\\\\a-c\\\\a--unwind 1 --json-ui --verbosity 4 --pointer-overflow-check --memory-leak-check \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bc --nodeps --short-circuit /builddir/build/SPECS/libmetalink.spec \'--define\' \'_unpackaged_files_terminate_build 0\' \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc goto-gcc\' \'--define\' \'__cxx goto-gcc\' \'--define\' \'__cpp goto-gcc -E\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+setting SOURCE_DATE_EPOCH=1626912000
+Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.NRoKL1
++ umask 022
++ cd /builddir/build/BUILD
++ cd libmetalink-0.1.3
++ CFLAGS=-O0
++ export CFLAGS
++ CXXFLAGS=-O0
++ export CXXFLAGS
++ FFLAGS='-O0 -I/usr/lib64/gfortran/modules'
++ export FFLAGS
++ FCFLAGS='-O0 -I/usr/lib64/gfortran/modules'
++ export FCFLAGS
++ LDFLAGS=-O0
++ export LDFLAGS
++ LT_SYS_LIBRARY_PATH=/usr/lib64:
++ export LT_SYS_LIBRARY_PATH
++ CC=goto-gcc
++ export CC
++ CXX=goto-gcc
++ export CXX
++ '[' '-flto=auto -ffat-lto-objectsx' '!=' x ']'
+++ find . -type f -name configure -print
++ for file in $(find . -type f -name configure -print)
++ /usr/bin/sed -r --in-place=.backup 's/^char \(\*f\) \(\) = /__attribute__ ((used)) char (*f) () = /g' ./configure
++ diff -u ./configure.backup ./configure
++ mv ./configure.backup ./configure
++ /usr/bin/sed -r --in-place=.backup 's/^char \(\*f\) \(\);/__attribute__ ((used)) char (*f) ();/g' ./configure
++ diff -u ./configure.backup ./configure
++ mv ./configure.backup ./configure
++ /usr/bin/sed -r --in-place=.backup 's/^char \$2 \(\);/__attribute__ ((used)) char \$2 ();/g' ./configure
++ diff -u ./configure.backup ./configure
+--- ./configure.backup	2015-06-26 21:17:42.000000000 -0400
++++ ./configure	2023-01-26 09:33:20.658214163 -0500
+@@ -1794,7 +1794,7 @@
+ #ifdef __cplusplus
+ extern "C"
+ #endif
+-char $2 ();
++__attribute__ ((used)) char $2 ();
+ /* The GNU C library defines this for functions which it implements
+     to always fail with ENOSYS.  Some functions are actually named
+     something starting with __ and the normal name is an alias.  */
++ /usr/bin/sed --in-place=.backup '1{$!N;$!N};$!N;s/int x = 1;\nint y = 0;\nint z;\nint nan;/volatile int x = 1; volatile int y = 0; volatile int z, nan;/;P;D' ./configure
++ diff -u ./configure.backup ./configure
++ mv ./configure.backup ./configure
++ /usr/bin/sed --in-place=.backup 's#^lt_cv_sys_global_symbol_to_cdecl=.*#lt_cv_sys_global_symbol_to_cdecl="sed -n -e '\''s/^T .* \\(.*\\)$/extern int \\1();/p'\'' -e '\''s/^$symcode* .* \\(.*\\)$/extern char \\1;/p'\''"#' ./configure
++ diff -u ./configure.backup ./configure
+--- ./configure.backup	2023-01-26 09:33:20.658214163 -0500
++++ ./configure	2023-01-26 09:33:20.711213450 -0500
+@@ -14143,7 +14143,7 @@
+ compiler='`$ECHO "$compiler" | $SED "$delay_single_quote_subst"`'
+ GCC='`$ECHO "$GCC" | $SED "$delay_single_quote_subst"`'
+ lt_cv_sys_global_symbol_pipe='`$ECHO "$lt_cv_sys_global_symbol_pipe" | $SED "$delay_single_quote_subst"`'
+-lt_cv_sys_global_symbol_to_cdecl='`$ECHO "$lt_cv_sys_global_symbol_to_cdecl" | $SED "$delay_single_quote_subst"`'
++lt_cv_sys_global_symbol_to_cdecl="sed -n -e 's/^T .* \(.*\)$/extern int \1();/p' -e 's/^$symcode* .* \(.*\)$/extern char \1;/p'"
+ lt_cv_sys_global_symbol_to_c_name_address='`$ECHO "$lt_cv_sys_global_symbol_to_c_name_address" | $SED "$delay_single_quote_subst"`'
+ lt_cv_sys_global_symbol_to_c_name_address_lib_prefix='`$ECHO "$lt_cv_sys_global_symbol_to_c_name_address_lib_prefix" | $SED "$delay_single_quote_subst"`'
+ nm_file_list_spec='`$ECHO "$nm_file_list_spec" | $SED "$delay_single_quote_subst"`'
++ '[' 1 = 1 ']'
++++ dirname ./configure
+++ find . -name config.guess -o -name config.sub
++ for i in $(find $(dirname ./configure) -name config.guess -o -name config.sub)
+++ basename ./config.sub
++ '[' -f /usr/lib/rpm/redhat/config.sub ']'
++ /usr/bin/rm -f ./config.sub
+++ basename ./config.sub
++ /usr/bin/cp -fv /usr/lib/rpm/redhat/config.sub ./config.sub
+'/usr/lib/rpm/redhat/config.sub' -> './config.sub'
++ for i in $(find $(dirname ./configure) -name config.guess -o -name config.sub)
+++ basename ./config.guess
++ '[' -f /usr/lib/rpm/redhat/config.guess ']'
++ /usr/bin/rm -f ./config.guess
+++ basename ./config.guess
++ /usr/bin/cp -fv /usr/lib/rpm/redhat/config.guess ./config.guess
+'/usr/lib/rpm/redhat/config.guess' -> './config.guess'
++ '[' 1 = 1 ']'
++ '[' x '!=' 'x-Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld' ']'
+++ find . -name ltmain.sh
++ for i in $(find . -name ltmain.sh)
++ /usr/bin/sed -i.backup -e 's~compiler_flags=$~compiler_flags="-Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld"~' ./ltmain.sh
++ ./configure --build=x86_64-redhat-linux-gnu --host=x86_64-redhat-linux-gnu --program-prefix= --disable-dependency-tracking --prefix=/usr --exec-prefix=/usr --bindir=/usr/bin --sbindir=/usr/sbin --sysconfdir=/etc --datadir=/usr/share --includedir=/usr/include --libdir=/usr/lib64 --libexecdir=/usr/libexec --localstatedir=/var --sharedstatedir=/var/lib --mandir=/usr/share/man --infodir=/usr/share/info --disable-static
+checking build system type... x86_64-redhat-linux-gnu
+checking host system type... x86_64-redhat-linux-gnu
+checking how to print strings... printf
+checking for x86_64-redhat-linux-gnu-gcc... goto-gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether goto-gcc accepts -g... yes
+checking for goto-gcc option to accept ISO C89... none needed
+checking whether goto-gcc understands -c and -o together... yes
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for fgrep... /usr/bin/grep -F
+checking for ld used by goto-gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking whether the shell understands some XSI constructs... yes
+checking whether the shell understands "+="... yes
+checking how to convert x86_64-redhat-linux-gnu file names to x86_64-redhat-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-redhat-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for x86_64-redhat-linux-gnu-objdump... no
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for x86_64-redhat-linux-gnu-dlltool... no
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for x86_64-redhat-linux-gnu-ar... no
+checking for ar... ar
+checking for archiver @FILE support... @
+checking for x86_64-redhat-linux-gnu-strip... no
+checking for strip... strip
+checking for x86_64-redhat-linux-gnu-ranlib... no
+checking for ranlib... ranlib
+checking for gawk... gawk
+checking command to parse /usr/bin/nm -B output from goto-gcc object... ok
+checking for sysroot... no
+checking for x86_64-redhat-linux-gnu-mt... no
+checking for mt... no
+checking if : is a manifest tool... no
+checking how to run the C preprocessor... goto-gcc -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if goto-gcc supports -fno-rtti -fno-exceptions... no
+checking for goto-gcc option to produce PIC... -fPIC -DPIC
+checking if goto-gcc PIC flag -fPIC -DPIC works... yes
+checking if goto-gcc static flag -static works... no
+checking if goto-gcc supports -c -o file.o... yes
+checking if goto-gcc supports -c -o file.o... (cached) yes
+checking whether the goto-gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... no
+checking target system type... x86_64-redhat-linux-gnu
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+checking whether make sets $(MAKE)... yes
+checking for style of include used by make... GNU
+checking whether make supports nested variables... yes
+checking dependency style of goto-gcc... none
+checking for x86_64-redhat-linux-gnu-gcc... (cached) goto-gcc
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether goto-gcc accepts -g... (cached) yes
+checking for goto-gcc option to accept ISO C89... (cached) none needed
+checking whether goto-gcc understands -c and -o together... (cached) yes
+checking for x86_64-redhat-linux-gnu-pkg-config... /usr/bin/x86_64-redhat-linux-gnu-pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for EXPAT... yes
+checking for CUNIT... yes
+checking for ANSI C header files... (cached) yes
+checking limits.h usability... yes
+checking limits.h presence... yes
+checking for limits.h... yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking time64.h usability... no
+checking time64.h presence... no
+checking for time64.h... no
+checking alloca.h usability... yes
+checking alloca.h presence... yes
+checking for alloca.h... yes
+checking for inttypes.h... (cached) yes
+checking for an ANSI C-conforming const... yes
+checking for size_t... yes
+checking for stdlib.h... (cached) yes
+checking for GNU libc compatible malloc... yes
+checking for memset... yes
+checking for strtol... yes
+checking for strtoll... yes
+checking for timegm64... no
+checking for _mkgmtime... no
+checking for mkgmtime... no
+checking for timegm... yes
+checking for strptime... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating lib/Makefile
+config.status: creating lib/libmetalink.pc
+config.status: creating lib/includes/metalink/metalinkver.h
+config.status: creating lib/includes/Makefile
+config.status: creating test/Makefile
+config.status: creating doc/Makefile
+config.status: creating doc/examples/Makefile
+config.status: creating doc/man3/Makefile
+config.status: creating m4/Makefile
+config.status: creating config.h
+config.status: executing libtool commands
+config.status: executing depfiles commands
+configure: summary of build options:
+
+    Version:        0.1.3 (0:1:3), shared 4:0:1
+    Host type:      x86_64-redhat-linux-gnu
+    Install prefix: /usr
+    C compiler:     goto-gcc
+    CFLAGS:         -O0
+    LDFLAGS:        -O0
+    LIBS:           
+    CPPFLAGS:       -DHAVE_INTTYPES_H 
+    C preprocessor: goto-gcc -E
+    Library types:  Shared=yes, Static=no
+    Libexpat:       yes  -lexpat 
+    Libxml2:          
+    CUnit:          yes  -lcunit 
+
++ /usr/bin/make -O -j4 V=1 VERBOSE=1
+/usr/bin/make.orig  all-recursive
+Making all in lib
+Making all in includes
+make.orig[3]: Nothing to be done for 'all'.
+make.orig[3]: Entering directory '/builddir/build/BUILD/libmetalink-0.1.3/lib'
+/bin/sh ../libtool  --tag=CC   --mode=compile goto-gcc -DHAVE_CONFIG_H -I. -I..  -I./includes -I./includes -DHAVE_CONFIG_H -DHAVE_INTTYPES_H   -O0 -c -o metalink_types.lo metalink_types.c
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DHAVE_CONFIG_H -DHAVE_INTTYPES_H -O0 -c metalink_types.c  -fPIC -DPIC -o .libs/metalink_types.o
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libmetalink-0.1.3/lib'
+make.orig[3]: Entering directory '/builddir/build/BUILD/libmetalink-0.1.3/lib'
+/bin/sh ../libtool  --tag=CC   --mode=compile goto-gcc -DHAVE_CONFIG_H -I. -I..  -I./includes -I./includes -DHAVE_CONFIG_H -DHAVE_INTTYPES_H   -O0 -c -o metalink_pstm.lo metalink_pstm.c
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DHAVE_CONFIG_H -DHAVE_INTTYPES_H -O0 -c metalink_pstm.c  -fPIC -DPIC -o .libs/metalink_pstm.o
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libmetalink-0.1.3/lib'
+In file included from /usr/include/time.h:25, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/includes/metalink/metalink_types.h:29, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/includes/metalink/metalink.h:33, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/metalink_pstm.h:31, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/metalink_pstm.c:26: <--[goto-gcc]
+/usr/include/features.h:194:3: warning: #warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE" [-Wcpp] <--[goto-gcc]
+  194 | # warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE"
+      |   ^~~~~~~
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+In file included from /usr/include/time.h:25, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/includes/metalink/metalink_types.h:29, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/includes/metalink/metalink.h:33, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/metalink_pstm.h:31, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/metalink_pstm.c:26: <--[goto-gcc]
+/usr/include/features.h:194:3: warning: #warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE" [-Wcpp] <--[goto-gcc]
+  194 | # warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE"
+      |   ^~~~~~~
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+make.orig[3]: Entering directory '/builddir/build/BUILD/libmetalink-0.1.3/lib'
+/bin/sh ../libtool  --tag=CC   --mode=compile goto-gcc -DHAVE_CONFIG_H -I. -I..  -I./includes -I./includes -DHAVE_CONFIG_H -DHAVE_INTTYPES_H   -O0 -c -o metalink_pstate_v3.lo metalink_pstate_v3.c
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DHAVE_CONFIG_H -DHAVE_INTTYPES_H -O0 -c metalink_pstate_v3.c  -fPIC -DPIC -o .libs/metalink_pstate_v3.o
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libmetalink-0.1.3/lib'
+In file included from /usr/include/time.h:25, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/includes/metalink/metalink_types.h:29, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/includes/metalink/metalink.h:33, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/metalink_pstate_v3.h:31, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/metalink_pstate_v3.c:26: <--[goto-gcc]
+/usr/include/features.h:194:3: warning: #warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE" [-Wcpp] <--[goto-gcc]
+  194 | # warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE"
+      |   ^~~~~~~
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+In file included from /usr/include/time.h:25, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/includes/metalink/metalink_types.h:29, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/includes/metalink/metalink.h:33, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/metalink_pstate_v3.h:31, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/metalink_pstate_v3.c:26: <--[goto-gcc]
+/usr/include/features.h:194:3: warning: #warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE" [-Wcpp] <--[goto-gcc]
+  194 | # warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE"
+      |   ^~~~~~~
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+make.orig[3]: Entering directory '/builddir/build/BUILD/libmetalink-0.1.3/lib'
+/bin/sh ../libtool  --tag=CC   --mode=compile goto-gcc -DHAVE_CONFIG_H -I. -I..  -I./includes -I./includes -DHAVE_CONFIG_H -DHAVE_INTTYPES_H   -O0 -c -o metalink_pstate.lo metalink_pstate.c
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DHAVE_CONFIG_H -DHAVE_INTTYPES_H -O0 -c metalink_pstate.c  -fPIC -DPIC -o .libs/metalink_pstate.o
+In file included from /usr/include/time.h:25, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/includes/metalink/metalink_types.h:29, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/includes/metalink/metalink.h:33, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/metalink_pstate.h:31, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/metalink_pstate.c:26: <--[goto-gcc]
+/usr/include/features.h:194:3: warning: #warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE" [-Wcpp] <--[goto-gcc]
+  194 | # warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE"
+      |   ^~~~~~~
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+In file included from /usr/include/time.h:25, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/includes/metalink/metalink_types.h:29, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/includes/metalink/metalink.h:33, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/metalink_pstate.h:31, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/metalink_pstate.c:26: <--[goto-gcc]
+/usr/include/features.h:194:3: warning: #warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE" [-Wcpp] <--[goto-gcc]
+  194 | # warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE"
+      |   ^~~~~~~
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libmetalink-0.1.3/lib'
+make.orig[3]: Entering directory '/builddir/build/BUILD/libmetalink-0.1.3/lib'
+/bin/sh ../libtool  --tag=CC   --mode=compile goto-gcc -DHAVE_CONFIG_H -I. -I..  -I./includes -I./includes -DHAVE_CONFIG_H -DHAVE_INTTYPES_H   -O0 -c -o metalink_pstate_v4.lo metalink_pstate_v4.c
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DHAVE_CONFIG_H -DHAVE_INTTYPES_H -O0 -c metalink_pstate_v4.c  -fPIC -DPIC -o .libs/metalink_pstate_v4.o
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libmetalink-0.1.3/lib'
+In file included from /usr/include/time.h:25, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/includes/metalink/metalink_types.h:29, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/includes/metalink/metalink.h:33, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/metalink_pstate_v4.h:31, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/metalink_pstate_v4.c:26: <--[goto-gcc]
+/usr/include/features.h:194:3: warning: #warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE" [-Wcpp] <--[goto-gcc]
+  194 | # warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE"
+      |   ^~~~~~~
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+In file included from /usr/include/time.h:25, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/includes/metalink/metalink_types.h:29, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/includes/metalink/metalink.h:33, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/metalink_pstate_v4.h:31, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/metalink_pstate_v4.c:26: <--[goto-gcc]
+/usr/include/features.h:194:3: warning: #warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE" [-Wcpp] <--[goto-gcc]
+  194 | # warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE"
+      |   ^~~~~~~
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+make.orig[3]: Entering directory '/builddir/build/BUILD/libmetalink-0.1.3/lib'
+/bin/sh ../libtool  --tag=CC   --mode=compile goto-gcc -DHAVE_CONFIG_H -I. -I..  -I./includes -I./includes -DHAVE_CONFIG_H -DHAVE_INTTYPES_H   -O0 -c -o metalink_pctrl.lo metalink_pctrl.c
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DHAVE_CONFIG_H -DHAVE_INTTYPES_H -O0 -c metalink_pctrl.c  -fPIC -DPIC -o .libs/metalink_pctrl.o
+In file included from /usr/include/time.h:25, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/includes/metalink/metalink_types.h:29, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/includes/metalink/metalink.h:33, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/metalink_pctrl.h:31, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/metalink_pctrl.c:26: <--[goto-gcc]
+/usr/include/features.h:194:3: warning: #warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE" [-Wcpp] <--[goto-gcc]
+  194 | # warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE"
+      |   ^~~~~~~
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+In file included from /usr/include/time.h:25, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/includes/metalink/metalink_types.h:29, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/includes/metalink/metalink.h:33, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/metalink_pctrl.h:31, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/metalink_pctrl.c:26: <--[goto-gcc]
+/usr/include/features.h:194:3: warning: #warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE" [-Wcpp] <--[goto-gcc]
+  194 | # warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE"
+      |   ^~~~~~~
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libmetalink-0.1.3/lib'
+make.orig[3]: Entering directory '/builddir/build/BUILD/libmetalink-0.1.3/lib'
+/bin/sh ../libtool  --tag=CC   --mode=compile goto-gcc -DHAVE_CONFIG_H -I. -I..  -I./includes -I./includes -DHAVE_CONFIG_H -DHAVE_INTTYPES_H   -O0 -c -o metalink_parser_common.lo metalink_parser_common.c
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DHAVE_CONFIG_H -DHAVE_INTTYPES_H -O0 -c metalink_parser_common.c  -fPIC -DPIC -o .libs/metalink_parser_common.o
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libmetalink-0.1.3/lib'
+make.orig[3]: Entering directory '/builddir/build/BUILD/libmetalink-0.1.3/lib'
+/bin/sh ../libtool  --tag=CC   --mode=compile goto-gcc -DHAVE_CONFIG_H -I. -I..  -I./includes -I./includes -DHAVE_CONFIG_H -DHAVE_INTTYPES_H   -O0 -c -o metalink_session_data.lo metalink_session_data.c
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DHAVE_CONFIG_H -DHAVE_INTTYPES_H -O0 -c metalink_session_data.c  -fPIC -DPIC -o .libs/metalink_session_data.o
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libmetalink-0.1.3/lib'
+In file included from /usr/include/time.h:25, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/includes/metalink/metalink_types.h:29, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/includes/metalink/metalink.h:33, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/metalink_parser_common.h:31, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/metalink_parser_common.c:26: <--[goto-gcc]
+/usr/include/features.h:194:3: warning: #warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE" [-Wcpp] <--[goto-gcc]
+  194 | # warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE"
+      |   ^~~~~~~
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+In file included from /usr/include/time.h:25, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/includes/metalink/metalink_types.h:29, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/includes/metalink/metalink.h:33, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/metalink_parser_common.h:31, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/metalink_parser_common.c:26: <--[goto-gcc]
+/usr/include/features.h:194:3: warning: #warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE" [-Wcpp] <--[goto-gcc]
+  194 | # warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE"
+      |   ^~~~~~~
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+In file included from /usr/include/time.h:25, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/includes/metalink/metalink_types.h:29, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/includes/metalink/metalink.h:33, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/metalink_session_data.h:31, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/metalink_session_data.c:26: <--[goto-gcc]
+/usr/include/features.h:194:3: warning: #warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE" [-Wcpp] <--[goto-gcc]
+  194 | # warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE"
+      |   ^~~~~~~
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+In file included from /usr/include/time.h:25, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/includes/metalink/metalink_types.h:29, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/includes/metalink/metalink.h:33, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/metalink_session_data.h:31, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/metalink_session_data.c:26: <--[goto-gcc]
+/usr/include/features.h:194:3: warning: #warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE" [-Wcpp] <--[goto-gcc]
+  194 | # warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE"
+      |   ^~~~~~~
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+make.orig[3]: Entering directory '/builddir/build/BUILD/libmetalink-0.1.3/lib'
+/bin/sh ../libtool  --tag=CC   --mode=compile goto-gcc -DHAVE_CONFIG_H -I. -I..  -I./includes -I./includes -DHAVE_CONFIG_H -DHAVE_INTTYPES_H   -O0 -c -o metalink_stack.lo metalink_stack.c
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DHAVE_CONFIG_H -DHAVE_INTTYPES_H -O0 -c metalink_stack.c  -fPIC -DPIC -o .libs/metalink_stack.o
+In file included from /usr/include/time.h:25, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/includes/metalink/metalink_types.h:29, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/includes/metalink/metalink.h:33, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/metalink_stack.h:31, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/metalink_stack.c:26: <--[goto-gcc]
+/usr/include/features.h:194:3: warning: #warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE" [-Wcpp] <--[goto-gcc]
+  194 | # warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE"
+      |   ^~~~~~~
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+In file included from /usr/include/time.h:25, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/includes/metalink/metalink_types.h:29, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/includes/metalink/metalink.h:33, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/metalink_stack.h:31, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/metalink_stack.c:26: <--[goto-gcc]
+/usr/include/features.h:194:3: warning: #warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE" [-Wcpp] <--[goto-gcc]
+  194 | # warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE"
+      |   ^~~~~~~
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libmetalink-0.1.3/lib'
+make.orig[3]: Entering directory '/builddir/build/BUILD/libmetalink-0.1.3/lib'
+/bin/sh ../libtool  --tag=CC   --mode=compile goto-gcc -DHAVE_CONFIG_H -I. -I..  -I./includes -I./includes -DHAVE_CONFIG_H -DHAVE_INTTYPES_H   -O0 -c -o metalink_list.lo metalink_list.c
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DHAVE_CONFIG_H -DHAVE_INTTYPES_H -O0 -c metalink_list.c  -fPIC -DPIC -o .libs/metalink_list.o
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libmetalink-0.1.3/lib'
+In file included from /usr/include/bits/libc-header-start.h:33, <--[goto-gcc]
+                 from /usr/include/stdlib.h:25, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/metalink_list.h:31, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/metalink_list.c:26: <--[goto-gcc]
+/usr/include/features.h:194:3: warning: #warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE" [-Wcpp] <--[goto-gcc]
+  194 | # warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE"
+      |   ^~~~~~~
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+In file included from /usr/include/bits/libc-header-start.h:33, <--[goto-gcc]
+                 from /usr/include/stdlib.h:25, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/metalink_list.h:31, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/metalink_list.c:26: <--[goto-gcc]
+/usr/include/features.h:194:3: warning: #warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE" [-Wcpp] <--[goto-gcc]
+  194 | # warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE"
+      |   ^~~~~~~
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+make.orig[3]: Entering directory '/builddir/build/BUILD/libmetalink-0.1.3/lib'
+/bin/sh ../libtool  --tag=CC   --mode=compile goto-gcc -DHAVE_CONFIG_H -I. -I..  -I./includes -I./includes -DHAVE_CONFIG_H -DHAVE_INTTYPES_H   -O0 -c -o metalink_string_buffer.lo metalink_string_buffer.c
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DHAVE_CONFIG_H -DHAVE_INTTYPES_H -O0 -c metalink_string_buffer.c  -fPIC -DPIC -o .libs/metalink_string_buffer.o
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libmetalink-0.1.3/lib'
+In file included from /usr/include/bits/libc-header-start.h:33, <--[goto-gcc]
+                 from /usr/include/stdlib.h:25, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/metalink_string_buffer.h:31, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/metalink_string_buffer.c:26: <--[goto-gcc]
+/usr/include/features.h:194:3: warning: #warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE" [-Wcpp] <--[goto-gcc]
+  194 | # warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE"
+      |   ^~~~~~~
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+In file included from /usr/include/bits/libc-header-start.h:33, <--[goto-gcc]
+                 from /usr/include/stdlib.h:25, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/metalink_string_buffer.h:31, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/metalink_string_buffer.c:26: <--[goto-gcc]
+/usr/include/features.h:194:3: warning: #warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE" [-Wcpp] <--[goto-gcc]
+  194 | # warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE"
+      |   ^~~~~~~
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+make.orig[3]: Entering directory '/builddir/build/BUILD/libmetalink-0.1.3/lib'
+/bin/sh ../libtool  --tag=CC   --mode=compile goto-gcc -DHAVE_CONFIG_H -I. -I..  -I./includes -I./includes -DHAVE_CONFIG_H -DHAVE_INTTYPES_H   -O0 -c -o metalink_helper.lo metalink_helper.c
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DHAVE_CONFIG_H -DHAVE_INTTYPES_H -O0 -c metalink_helper.c  -fPIC -DPIC -o .libs/metalink_helper.o
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libmetalink-0.1.3/lib'
+In file included from /usr/include/time.h:25, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/includes/metalink/metalink_types.h:29, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/includes/metalink/metalink.h:33, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/metalink_helper.h:31, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/metalink_helper.c:26: <--[goto-gcc]
+/usr/include/features.h:194:3: warning: #warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE" [-Wcpp] <--[goto-gcc]
+  194 | # warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE"
+      |   ^~~~~~~
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+In file included from /usr/include/time.h:25, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/includes/metalink/metalink_types.h:29, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/includes/metalink/metalink.h:33, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/metalink_helper.h:31, <--[goto-gcc]
+                 from /builddir/build/BUILD/libmetalink-0.1.3/lib/metalink_helper.c:26: <--[goto-gcc]
+/usr/include/features.h:194:3: warning: #warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE" [-Wcpp] <--[goto-gcc]
+  194 | # warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE"
+      |   ^~~~~~~
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+make.orig[3]: Entering directory '/builddir/build/BUILD/libmetalink-0.1.3/lib'
+/bin/sh ../libtool  --tag=CC   --mode=compile goto-gcc -DHAVE_CONFIG_H -I. -I..  -I./includes -I./includes -DHAVE_CONFIG_H -DHAVE_INTTYPES_H   -O0 -c -o libexpat_metalink_parser.lo libexpat_metalink_parser.c
+libtool: compile:  goto-gcc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DHAVE_CONFIG_H -DHAVE_INTTYPES_H -O0 -c libexpat_metalink_parser.c  -fPIC -DPIC -o .libs/libexpat_metalink_parser.o
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libmetalink-0.1.3/lib'
+make.orig[3]: Entering directory '/builddir/build/BUILD/libmetalink-0.1.3/lib'
+/bin/sh ../libtool  --tag=CC   --mode=link goto-gcc  -O0 -no-undefined -version-info 4:0:1 -lexpat  -O0 -o libmetalink.la -rpath /usr/lib64   metalink_types.lo metalink_pstm.lo metalink_pstate.lo metalink_pstate_v3.lo metalink_pstate_v4.lo metalink_pctrl.lo metalink_parser_common.lo metalink_session_data.lo metalink_stack.lo metalink_list.lo metalink_string_buffer.lo metalink_helper.lo    libexpat_metalink_parser.lo  
+libtool: link: goto-gcc -shared  -fPIC -DPIC  .libs/metalink_types.o .libs/metalink_pstm.o .libs/metalink_pstate.o .libs/metalink_pstate_v3.o .libs/metalink_pstate_v4.o .libs/metalink_pctrl.o .libs/metalink_parser_common.o .libs/metalink_session_data.o .libs/metalink_stack.o .libs/metalink_list.o .libs/metalink_string_buffer.o .libs/metalink_helper.o .libs/libexpat_metalink_parser.o   -lexpat -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -O0 -O0   -Wl,-soname -Wl,libmetalink.so.3 -o .libs/libmetalink.so.3.1.0
+libtool: link: (cd ".libs" && rm -f "libmetalink.so.3" && ln -s "libmetalink.so.3.1.0" "libmetalink.so.3")
+libtool: link: (cd ".libs" && rm -f "libmetalink.so" && ln -s "libmetalink.so.3.1.0" "libmetalink.so")
+libtool: link: ( cd ".libs" && rm -f "libmetalink.la" && ln -s "../libmetalink.la" "libmetalink.la" )
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libmetalink-0.1.3/lib'
+Making all in test
+make.orig[2]: Nothing to be done for 'all'.
+Making all in doc
+Making all in examples
+make.orig[3]: Entering directory '/builddir/build/BUILD/libmetalink-0.1.3/doc/examples'
+goto-gcc -DHAVE_CONFIG_H -I. -I../..  -I../../lib/includes -I../../lib/includes -DHAVE_INTTYPES_H   -O0 -c -o metalinkcat.o metalinkcat.c
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libmetalink-0.1.3/doc/examples'
+make.orig[3]: Entering directory '/builddir/build/BUILD/libmetalink-0.1.3/doc/examples'
+/bin/sh ../../libtool  --tag=CC   --mode=link goto-gcc  -O0  -O0 -o metalinkcat metalinkcat.o ../../lib/libmetalink.la 
+libtool: link: goto-gcc -O0 -O0 -o .libs/metalinkcat metalinkcat.o  ../../lib/.libs/libmetalink.so -Wl,-rpath -Wl,/usr/lib64
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libmetalink-0.1.3/doc/examples'
+Making all in man3
+make.orig[3]: Nothing to be done for 'all'.
+make.orig[3]: Nothing to be done for 'all-am'.
+Making all in m4
+make.orig[2]: Nothing to be done for 'all'.
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Finish: chroot ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'goto-gcc\' CXX=\\$\'goto-gcc\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\a/usr/bin/csexec-cbmc\\\\a-t\\\\a8\\\\a-l\\\\a/builddir/cbmc-capture\\\\a-c\\\\a--unwind 1 --json-ui --verbosity 4 --pointer-overflow-check --memory-leak-check \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bc --nodeps --short-circuit /builddir/build/SPECS/libmetalink.spec \'--define\' \'_unpackaged_files_terminate_build 0\' \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc goto-gcc\' \'--define\' \'__cxx goto-gcc\' \'--define\' \'__cpp goto-gcc -E\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+
+>>> 2023-01-26 09:33:40	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--chroot" "/bin/su mockbuild -l -c \"PATH=/usr/lib64/cswrap:\\\$PATH CSWRAP_CAP_FILE=\\\$'/builddir/cswrap-capture.err' CSWRAP_TIMEOUT=\\\$'30' CSWRAP_TIMEOUT_FOR=\\\$':' CC=\\\$'goto-gcc' CXX=\\\$'goto-gcc' CSEXEC_WRAP_CMD=\\\$'--skip-ld-linux\\\\a/usr/bin/csexec-cbmc\\\\a-t\\\\a8\\\\a-l\\\\a/builddir/cbmc-capture\\\\a-c\\\\a--unwind 1 --json-ui --verbosity 4 --pointer-overflow-check --memory-leak-check ' CSWRAP_ADD_CFLAGS=\\\$'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader' CSWRAP_DEL_CFLAGS=\\\$'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register' CSWRAP_ADD_CXXFLAGS=\\\$'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader' CSWRAP_DEL_CXXFLAGS=\\\$'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register' sh -c \\\"rpmbuild -bi --nodeps --short-circuit /builddir/build/SPECS/libmetalink.spec '--define' '_unpackaged_files_terminate_build 0' '--define' 'apidocs 0' '--define' 'with_publican 0' '--without' 'docs' '--without' 'langpacks' '--define' '__cc goto-gcc' '--define' '__cxx goto-gcc' '--define' '__cpp goto-gcc -E' '--define' 'optflags -O0' '--define' 'build_ldflags -O0'\\\"\""
+INFO: mock.py version 3.5 starting (python version = 3.10.9, NVR = mock-3.5-1.fc36)...
+Start(bootstrap): init plugins
+INFO: selinux enabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 3.5
+INFO: Mock Version: 3.5
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 3.5
+INFO: Mock Version: 3.5
+Finish: chroot init
+INFO: Running in chroot: ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'goto-gcc\' CXX=\\$\'goto-gcc\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\a/usr/bin/csexec-cbmc\\\\a-t\\\\a8\\\\a-l\\\\a/builddir/cbmc-capture\\\\a-c\\\\a--unwind 1 --json-ui --verbosity 4 --pointer-overflow-check --memory-leak-check \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bi --nodeps --short-circuit /builddir/build/SPECS/libmetalink.spec \'--define\' \'_unpackaged_files_terminate_build 0\' \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc goto-gcc\' \'--define\' \'__cxx goto-gcc\' \'--define\' \'__cpp goto-gcc -E\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+Start: chroot ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'goto-gcc\' CXX=\\$\'goto-gcc\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\a/usr/bin/csexec-cbmc\\\\a-t\\\\a8\\\\a-l\\\\a/builddir/cbmc-capture\\\\a-c\\\\a--unwind 1 --json-ui --verbosity 4 --pointer-overflow-check --memory-leak-check \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bi --nodeps --short-circuit /builddir/build/SPECS/libmetalink.spec \'--define\' \'_unpackaged_files_terminate_build 0\' \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc goto-gcc\' \'--define\' \'__cxx goto-gcc\' \'--define\' \'__cpp goto-gcc -E\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+setting SOURCE_DATE_EPOCH=1626912000
+Executing(%install): /bin/sh -e /var/tmp/rpm-tmp.952xJs
++ umask 022
++ cd /builddir/build/BUILD
++ '[' /builddir/build/BUILDROOT/libmetalink-0.1.3-15.fc35.x86_64 '!=' / ']'
++ rm -rf /builddir/build/BUILDROOT/libmetalink-0.1.3-15.fc35.x86_64
+++ dirname /builddir/build/BUILDROOT/libmetalink-0.1.3-15.fc35.x86_64
++ mkdir -p /builddir/build/BUILDROOT
++ mkdir /builddir/build/BUILDROOT/libmetalink-0.1.3-15.fc35.x86_64
++ cd libmetalink-0.1.3
++ rm -rf /builddir/build/BUILDROOT/libmetalink-0.1.3-15.fc35.x86_64
++ /usr/bin/make install DESTDIR=/builddir/build/BUILDROOT/libmetalink-0.1.3-15.fc35.x86_64 'INSTALL=/usr/bin/install -p'
+Making install in lib
+make.orig[1]: Entering directory '/builddir/build/BUILD/libmetalink-0.1.3/lib'
+Making install in includes
+make.orig[2]: Entering directory '/builddir/build/BUILD/libmetalink-0.1.3/lib/includes'
+make.orig[3]: Entering directory '/builddir/build/BUILD/libmetalink-0.1.3/lib/includes'
+make.orig[3]: Nothing to be done for 'install-exec-am'.
+ /usr/bin/mkdir -p '/builddir/build/BUILDROOT/libmetalink-0.1.3-15.fc35.x86_64/usr/include'
+ /usr/bin/mkdir -p '/builddir/build/BUILDROOT/libmetalink-0.1.3-15.fc35.x86_64/usr/include/metalink'
+ /usr/bin/install -p -m 644  metalink/metalink.h metalink/metalink_parser.h metalink/metalink_types.h metalink/metalink_error.h metalink/metalinkver.h '/builddir/build/BUILDROOT/libmetalink-0.1.3-15.fc35.x86_64/usr/include/metalink'
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libmetalink-0.1.3/lib/includes'
+make.orig[2]: Leaving directory '/builddir/build/BUILD/libmetalink-0.1.3/lib/includes'
+make.orig[2]: Entering directory '/builddir/build/BUILD/libmetalink-0.1.3/lib'
+make.orig[3]: Entering directory '/builddir/build/BUILD/libmetalink-0.1.3/lib'
+ /usr/bin/mkdir -p '/builddir/build/BUILDROOT/libmetalink-0.1.3-15.fc35.x86_64/usr/lib64'
+ /bin/sh ../libtool   --mode=install /usr/bin/install -p   libmetalink.la '/builddir/build/BUILDROOT/libmetalink-0.1.3-15.fc35.x86_64/usr/lib64'
+libtool: install: /usr/bin/install -p .libs/libmetalink.so.3.1.0 /builddir/build/BUILDROOT/libmetalink-0.1.3-15.fc35.x86_64/usr/lib64/libmetalink.so.3.1.0
+libtool: install: (cd /builddir/build/BUILDROOT/libmetalink-0.1.3-15.fc35.x86_64/usr/lib64 && { ln -s -f libmetalink.so.3.1.0 libmetalink.so.3 || { rm -f libmetalink.so.3 && ln -s libmetalink.so.3.1.0 libmetalink.so.3; }; })
+libtool: install: (cd /builddir/build/BUILDROOT/libmetalink-0.1.3-15.fc35.x86_64/usr/lib64 && { ln -s -f libmetalink.so.3.1.0 libmetalink.so || { rm -f libmetalink.so && ln -s libmetalink.so.3.1.0 libmetalink.so; }; })
+libtool: install: /usr/bin/install -p .libs/libmetalink.lai /builddir/build/BUILDROOT/libmetalink-0.1.3-15.fc35.x86_64/usr/lib64/libmetalink.la
+libtool: install: warning: remember to run `libtool --finish /usr/lib64'
+ /usr/bin/mkdir -p '/builddir/build/BUILDROOT/libmetalink-0.1.3-15.fc35.x86_64/usr/lib64/pkgconfig'
+ /usr/bin/install -p -m 644 libmetalink.pc '/builddir/build/BUILDROOT/libmetalink-0.1.3-15.fc35.x86_64/usr/lib64/pkgconfig'
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libmetalink-0.1.3/lib'
+make.orig[2]: Leaving directory '/builddir/build/BUILD/libmetalink-0.1.3/lib'
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libmetalink-0.1.3/lib'
+Making install in test
+make.orig[1]: Entering directory '/builddir/build/BUILD/libmetalink-0.1.3/test'
+make.orig[2]: Entering directory '/builddir/build/BUILD/libmetalink-0.1.3/test'
+make.orig[2]: Nothing to be done for 'install-exec-am'.
+make.orig[2]: Nothing to be done for 'install-data-am'.
+make.orig[2]: Leaving directory '/builddir/build/BUILD/libmetalink-0.1.3/test'
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libmetalink-0.1.3/test'
+Making install in doc
+make.orig[1]: Entering directory '/builddir/build/BUILD/libmetalink-0.1.3/doc'
+Making install in examples
+make.orig[2]: Entering directory '/builddir/build/BUILD/libmetalink-0.1.3/doc/examples'
+make.orig[3]: Entering directory '/builddir/build/BUILD/libmetalink-0.1.3/doc/examples'
+make.orig[3]: Nothing to be done for 'install-exec-am'.
+make.orig[3]: Nothing to be done for 'install-data-am'.
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libmetalink-0.1.3/doc/examples'
+make.orig[2]: Leaving directory '/builddir/build/BUILD/libmetalink-0.1.3/doc/examples'
+Making install in man3
+make.orig[2]: Entering directory '/builddir/build/BUILD/libmetalink-0.1.3/doc/man3'
+make.orig[3]: Entering directory '/builddir/build/BUILD/libmetalink-0.1.3/doc/man3'
+make.orig[3]: Nothing to be done for 'install-exec-am'.
+ /usr/bin/mkdir -p '/builddir/build/BUILDROOT/libmetalink-0.1.3-15.fc35.x86_64/usr/share/man/man3'
+ /usr/bin/install -p -m 644 metalink_checksum_t.3 metalink_chunk_checksum_t.3 metalink_delete.3 metalink_file_t.3 metalink_parse_fd.3 metalink_parse_file.3 metalink_parse_final.3 metalink_parse_fp.3 metalink_parse_memory.3 metalink_parse_update.3 metalink_parser_context_delete.3 metalink_parser_context_new.3 metalink_piece_hash_t.3 metalink_resource_t.3 metalink_t.3 '/builddir/build/BUILDROOT/libmetalink-0.1.3-15.fc35.x86_64/usr/share/man/man3'
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libmetalink-0.1.3/doc/man3'
+make.orig[2]: Leaving directory '/builddir/build/BUILD/libmetalink-0.1.3/doc/man3'
+make.orig[2]: Entering directory '/builddir/build/BUILD/libmetalink-0.1.3/doc'
+make.orig[3]: Entering directory '/builddir/build/BUILD/libmetalink-0.1.3/doc'
+make.orig[3]: Nothing to be done for 'install-exec-am'.
+make.orig[3]: Nothing to be done for 'install-data-am'.
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libmetalink-0.1.3/doc'
+make.orig[2]: Leaving directory '/builddir/build/BUILD/libmetalink-0.1.3/doc'
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libmetalink-0.1.3/doc'
+Making install in m4
+make.orig[1]: Entering directory '/builddir/build/BUILD/libmetalink-0.1.3/m4'
+make.orig[2]: Entering directory '/builddir/build/BUILD/libmetalink-0.1.3/m4'
+make.orig[2]: Nothing to be done for 'install-exec-am'.
+make.orig[2]: Nothing to be done for 'install-data-am'.
+make.orig[2]: Leaving directory '/builddir/build/BUILD/libmetalink-0.1.3/m4'
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libmetalink-0.1.3/m4'
+make.orig[1]: Entering directory '/builddir/build/BUILD/libmetalink-0.1.3'
+make.orig[2]: Entering directory '/builddir/build/BUILD/libmetalink-0.1.3'
+make.orig[2]: Nothing to be done for 'install-exec-am'.
+make.orig[2]: Nothing to be done for 'install-data-am'.
+make.orig[2]: Leaving directory '/builddir/build/BUILD/libmetalink-0.1.3'
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libmetalink-0.1.3'
++ find /builddir/build/BUILDROOT/libmetalink-0.1.3-15.fc35.x86_64 -name '*.la' -exec rm '{}' ';'
++ /usr/bin/find-debuginfo -j4 --strict-build-id -m -i --build-id-seed 0.1.3-15.fc35 --unique-debug-suffix -0.1.3-15.fc35.x86_64 --unique-debug-src-base libmetalink-0.1.3-15.fc35.x86_64 --run-dwz --dwz-low-mem-die-limit 10000000 --dwz-max-die-limit 110000000 -S debugsourcefiles.list /builddir/build/BUILD/libmetalink-0.1.3
+extracting debug info from /builddir/build/BUILDROOT/libmetalink-0.1.3-15.fc35.x86_64/usr/lib64/libmetalink.so.3.1.0
+original debug info size: 528kB, size after compression: 508kB
+/usr/bin/sepdebugcrcfix: Updated 1 CRC32s, 0 CRC32s did match.
+316 blocks
++ /usr/lib/rpm/check-buildroot
++ /usr/lib/rpm/redhat/brp-ldconfig
++ /usr/lib/rpm/brp-compress
++ /usr/lib/rpm/redhat/brp-strip-lto /usr/bin/strip
++ /usr/lib/rpm/brp-strip-static-archive /usr/bin/strip
++ /usr/lib/rpm/check-rpaths
++ /usr/lib/rpm/redhat/brp-mangle-shebangs
++ /usr/lib/rpm/redhat/brp-python-bytecompile '' 1 0
++ /usr/lib/rpm/redhat/brp-python-hardlink
+Executing(%check): /bin/sh -e /var/tmp/rpm-tmp.Fy0RK2
++ umask 022
++ cd /builddir/build/BUILD
++ cd libmetalink-0.1.3
++ make check
+Making check in lib
+make.orig[1]: Entering directory '/builddir/build/BUILD/libmetalink-0.1.3/lib'
+Making check in includes
+make.orig[2]: Entering directory '/builddir/build/BUILD/libmetalink-0.1.3/lib/includes'
+make.orig[2]: Nothing to be done for 'check'.
+make.orig[2]: Leaving directory '/builddir/build/BUILD/libmetalink-0.1.3/lib/includes'
+make.orig[2]: Entering directory '/builddir/build/BUILD/libmetalink-0.1.3/lib'
+make.orig[2]: Nothing to be done for 'check-am'.
+make.orig[2]: Leaving directory '/builddir/build/BUILD/libmetalink-0.1.3/lib'
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libmetalink-0.1.3/lib'
+Making check in test
+make.orig[1]: Entering directory '/builddir/build/BUILD/libmetalink-0.1.3/test'
+/usr/bin/make.orig  metalinktest
+make.orig[2]: Entering directory '/builddir/build/BUILD/libmetalink-0.1.3/test'
+goto-gcc -DHAVE_CONFIG_H -I. -I..   -DHAVE_INTTYPES_H  -I../lib -I../lib/includes -I../lib/includes -DLIBMETALINK_TEST_DIR=\"../test/\"  -O0 -c -o main.o main.c
+goto-gcc -DHAVE_CONFIG_H -I. -I..   -DHAVE_INTTYPES_H  -I../lib -I../lib/includes -I../lib/includes -DLIBMETALINK_TEST_DIR=\"../test/\"  -O0 -c -o metalink_list_test.o metalink_list_test.c
+goto-gcc -DHAVE_CONFIG_H -I. -I..   -DHAVE_INTTYPES_H  -I../lib -I../lib/includes -I../lib/includes -DLIBMETALINK_TEST_DIR=\"../test/\"  -O0 -c -o metalink_pctrl_test.o metalink_pctrl_test.c
+goto-gcc -DHAVE_CONFIG_H -I. -I..   -DHAVE_INTTYPES_H  -I../lib -I../lib/includes -I../lib/includes -DLIBMETALINK_TEST_DIR=\"../test/\"  -O0 -c -o metalink_parser_test.o metalink_parser_test.c
+goto-gcc -DHAVE_CONFIG_H -I. -I..   -DHAVE_INTTYPES_H  -I../lib -I../lib/includes -I../lib/includes -DLIBMETALINK_TEST_DIR=\"../test/\"  -O0 -c -o metalink_parser_test_v4.o metalink_parser_test_v4.c
+goto-gcc -DHAVE_CONFIG_H -I. -I..   -DHAVE_INTTYPES_H  -I../lib -I../lib/includes -I../lib/includes -DLIBMETALINK_TEST_DIR=\"../test/\"  -O0 -c -o metalink_helper_test.o metalink_helper_test.c
+/bin/sh ../libtool  --tag=CC   --mode=link goto-gcc -I../lib -I../lib/includes -I../lib/includes -DLIBMETALINK_TEST_DIR=\"../test/\"  -O0 -static  -lcunit  -O0 -o metalinktest main.o metalink_list_test.o metalink_pctrl_test.o metalink_parser_test.o metalink_parser_test_v4.o metalink_helper_test.o ../lib/libmetalink.la 
+libtool: link: goto-gcc -I../lib -I../lib/includes -I../lib/includes -DLIBMETALINK_TEST_DIR=\"../test/\" -O0 -O0 -o metalinktest main.o metalink_list_test.o metalink_pctrl_test.o metalink_parser_test.o metalink_parser_test_v4.o metalink_helper_test.o  -lcunit ../lib/.libs/libmetalink.so -lexpat -Wl,-rpath -Wl,/builddir/build/BUILD/libmetalink-0.1.3/lib/.libs -Wl,-rpath -Wl,/usr/lib64
+make.orig[2]: Leaving directory '/builddir/build/BUILD/libmetalink-0.1.3/test'
+/usr/bin/make.orig  check-TESTS
+make.orig[2]: Entering directory '/builddir/build/BUILD/libmetalink-0.1.3/test'
+make.orig[3]: Entering directory '/builddir/build/BUILD/libmetalink-0.1.3/test'
+PASS: metalinktest
+make.orig[4]: Entering directory '/builddir/build/BUILD/libmetalink-0.1.3/test'
+make.orig[4]: Nothing to be done for 'all'.
+make.orig[4]: Leaving directory '/builddir/build/BUILD/libmetalink-0.1.3/test'
+============================================================================
+Testsuite summary for libmetalink 0.1.3
+============================================================================
+# TOTAL: 1
+# PASS:  1
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0
+============================================================================
+make.orig[3]: Leaving directory '/builddir/build/BUILD/libmetalink-0.1.3/test'
+make.orig[2]: Leaving directory '/builddir/build/BUILD/libmetalink-0.1.3/test'
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libmetalink-0.1.3/test'
+Making check in doc
+make.orig[1]: Entering directory '/builddir/build/BUILD/libmetalink-0.1.3/doc'
+Making check in examples
+make.orig[2]: Entering directory '/builddir/build/BUILD/libmetalink-0.1.3/doc/examples'
+make.orig[2]: Nothing to be done for 'check'.
+make.orig[2]: Leaving directory '/builddir/build/BUILD/libmetalink-0.1.3/doc/examples'
+Making check in man3
+make.orig[2]: Entering directory '/builddir/build/BUILD/libmetalink-0.1.3/doc/man3'
+make.orig[2]: Nothing to be done for 'check'.
+make.orig[2]: Leaving directory '/builddir/build/BUILD/libmetalink-0.1.3/doc/man3'
+make.orig[2]: Entering directory '/builddir/build/BUILD/libmetalink-0.1.3/doc'
+make.orig[2]: Nothing to be done for 'check-am'.
+make.orig[2]: Leaving directory '/builddir/build/BUILD/libmetalink-0.1.3/doc'
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libmetalink-0.1.3/doc'
+Making check in m4
+make.orig[1]: Entering directory '/builddir/build/BUILD/libmetalink-0.1.3/m4'
+make.orig[1]: Nothing to be done for 'check'.
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libmetalink-0.1.3/m4'
+make.orig[1]: Entering directory '/builddir/build/BUILD/libmetalink-0.1.3'
+make.orig[1]: Leaving directory '/builddir/build/BUILD/libmetalink-0.1.3'
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Processing files: libmetalink-0.1.3-15.fc35.x86_64
+Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.4RISwT
++ umask 022
++ cd /builddir/build/BUILD
++ cd libmetalink-0.1.3
++ DOCDIR=/builddir/build/BUILDROOT/libmetalink-0.1.3-15.fc35.x86_64/usr/share/doc/libmetalink
++ export LC_ALL=C
++ LC_ALL=C
++ export DOCDIR
++ /usr/bin/mkdir -p /builddir/build/BUILDROOT/libmetalink-0.1.3-15.fc35.x86_64/usr/share/doc/libmetalink
++ cp -pr README /builddir/build/BUILDROOT/libmetalink-0.1.3-15.fc35.x86_64/usr/share/doc/libmetalink
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Executing(%license): /bin/sh -e /var/tmp/rpm-tmp.zaiSoY
++ umask 022
++ cd /builddir/build/BUILD
++ cd libmetalink-0.1.3
++ LICENSEDIR=/builddir/build/BUILDROOT/libmetalink-0.1.3-15.fc35.x86_64/usr/share/licenses/libmetalink
++ export LC_ALL=C
++ LC_ALL=C
++ export LICENSEDIR
++ /usr/bin/mkdir -p /builddir/build/BUILDROOT/libmetalink-0.1.3-15.fc35.x86_64/usr/share/licenses/libmetalink
++ cp -pr COPYING /builddir/build/BUILDROOT/libmetalink-0.1.3-15.fc35.x86_64/usr/share/licenses/libmetalink
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Provides: libmetalink = 0.1.3-15.fc35 libmetalink(x86-64) = 0.1.3-15.fc35 libmetalink.so.3()(64bit)
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Requires: libc.so.6()(64bit) libc.so.6(GLIBC_2.14)(64bit) libc.so.6(GLIBC_2.2.5)(64bit) libexpat.so.1()(64bit) rtld(GNU_HASH)
+Processing files: libmetalink-devel-0.1.3-15.fc35.x86_64
+Provides: libmetalink-devel = 0.1.3-15.fc35 libmetalink-devel(x86-64) = 0.1.3-15.fc35 pkgconfig(libmetalink) = 0.1.3
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Requires: /usr/bin/pkg-config libmetalink.so.3()(64bit)
+Processing files: libmetalink-debugsource-0.1.3-15.fc35.x86_64
+Provides: libmetalink-debugsource = 0.1.3-15.fc35 libmetalink-debugsource(x86-64) = 0.1.3-15.fc35
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Processing files: libmetalink-debuginfo-0.1.3-15.fc35.x86_64
+Provides: debuginfo(build-id) = 7a1821bddb704bee5a145160ae7a3164bd292e75 libmetalink-debuginfo = 0.1.3-15.fc35 libmetalink-debuginfo(x86-64) = 0.1.3-15.fc35 libmetalink.so.3.1.0-0.1.3-15.fc35.x86_64.debug()(64bit)
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Recommends: libmetalink-debugsource(x86-64) = 0.1.3-15.fc35
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /builddir/build/BUILDROOT/libmetalink-0.1.3-15.fc35.x86_64
+Finish: chroot ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'goto-gcc\' CXX=\\$\'goto-gcc\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\a/usr/bin/csexec-cbmc\\\\a-t\\\\a8\\\\a-l\\\\a/builddir/cbmc-capture\\\\a-c\\\\a--unwind 1 --json-ui --verbosity 4 --pointer-overflow-check --memory-leak-check \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bi --nodeps --short-circuit /builddir/build/SPECS/libmetalink.spec \'--define\' \'_unpackaged_files_terminate_build 0\' \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc goto-gcc\' \'--define\' \'__cxx goto-gcc\' \'--define\' \'__cpp goto-gcc -E\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+
+>>> 2023-01-26 09:33:52	"'/usr/bin/mock' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'tar -c --remove-files '/builddir/cswrap-capture.err' '/builddir/cbmc-capture'' | tar -xC '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmetalink-0.1.3-15.fc35/cbmc/output/debug/raw-results'"
+tar: Removing leading `/' from member names
+tar: Removing leading `/' from hard link targets
+
+>>> 2023-01-26 09:33:58	"chmod" "-R" "+r" "/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmetalink-0.1.3-15.fc35/cbmc/output/debug/raw-results/builddir/cbmc-capture"
+
+>>> 2023-01-26 09:33:58	"cd '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmetalink-0.1.3-15.fc35/cbmc/output/debug/raw-results/builddir/cbmc-capture' && touch empty.conv && csgrep --mode=json --remove-duplicates *.conv > '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmetalink-0.1.3-15.fc35/cbmc/output/debug/uni-results/cbmc-capture.js'"
+
+scan.ini: time-finished = 2023-01-26 09:33:58
+scan.ini: exit-code = 0
+>>> 2023-01-26 09:33:58	"cslinker --quiet --cwelist '/usr/share/csmock/cwe-map.csv' --inifile '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmetalink-0.1.3-15.fc35/cbmc/output/scan.ini' '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmetalink-0.1.3-15.fc35/cbmc/output/debug/uni-results'/* > '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmetalink-0.1.3-15.fc35/cbmc/output/debug/scan-results-all.js'"
+
+>>> 2023-01-26 09:33:58	"'/usr/bin/mock' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'csgrep --mode=json --embed-context 3' < '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmetalink-0.1.3-15.fc35/cbmc/output/debug/scan-results-all.js' > '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmetalink-0.1.3-15.fc35/cbmc/output/debug/scan-results-all.js.tmp'"
+
+>>> 2023-01-26 09:34:03	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--clean"
+
+>>> 2023-01-26 09:34:15	"cat '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmetalink-0.1.3-15.fc35/cbmc/output/debug/scan-results-all.js' | sed 's|/builddir/build/BUILDROOT/[^/]*/|/builddir/build/BUILD//|' | csgrep --mode=json --path '^/builddir/build/BUILD/' --strip-path-prefix /builddir/build/BUILD/ | csgrep --mode=json --invert-match --path '^ksh-.*[0-9]+\\.c\$' | csgrep --mode=json --invert-match --path 'CMakeFiles/CMakeTmp|conftest.c' | cssort --key=path > '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmetalink-0.1.3-15.fc35/cbmc/output/scan-results.js'"
+
+>>> 2023-01-26 09:34:15	"sed 's|/builddir/build/BUILDROOT/[^/]*/|/builddir/build/BUILD//|' '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmetalink-0.1.3-15.fc35/cbmc/output/debug/scan-results-all.js' | csgrep --mode=json --strip-path-prefix /builddir/build/BUILD/ | csdiff --show-internal '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmetalink-0.1.3-15.fc35/cbmc/output/scan-results.js' - | cssort > '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmetalink-0.1.3-15.fc35/cbmc/output/debug/suppressed-results.js'"
+
+>>> 2023-01-26 09:34:15	"csgrep --mode=grep --invert-match --event \"internal warning\" --prune-events=1 '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmetalink-0.1.3-15.fc35/cbmc/output/debug/suppressed-results.js' > '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmetalink-0.1.3-15.fc35/cbmc/output/debug/suppressed-results.err'"
+
+>>> 2023-01-26 09:34:15	"csgrep --mode=json --invert-match --event \"internal warning\" --prune-events=1 '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmetalink-0.1.3-15.fc35/cbmc/output/debug/suppressed-results.js' | cshtml - > '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmetalink-0.1.3-15.fc35/cbmc/output/debug/suppressed-results.html'"
+
+>>> 2023-01-26 09:34:15	"csgrep --mode=evtstat --invert-match --event \"internal warning\" --prune-events=1 '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmetalink-0.1.3-15.fc35/cbmc/output/debug/suppressed-results.js' | tee '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmetalink-0.1.3-15.fc35/cbmc/output/debug/suppressed-results-summary.txt'"
+
+>>> 2023-01-26 09:34:15	"csgrep --mode=grep --invert-match --event \"internal warning\" --prune-events=1 '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmetalink-0.1.3-15.fc35/cbmc/output/scan-results.js' > '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmetalink-0.1.3-15.fc35/cbmc/output/scan-results.err'"
+
+>>> 2023-01-26 09:34:15	"csgrep --mode=json --invert-match --event \"internal warning\" --prune-events=1 '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmetalink-0.1.3-15.fc35/cbmc/output/scan-results.js' | cshtml - > '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmetalink-0.1.3-15.fc35/cbmc/output/scan-results.html'"
+
+>>> 2023-01-26 09:34:15	"csgrep --mode=evtstat --invert-match --event \"internal warning\" --prune-events=1 '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmetalink-0.1.3-15.fc35/cbmc/output/scan-results.js' | tee '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/libmetalink-0.1.3-15.fc35/cbmc/output/scan-results-summary.txt'"
+
+<<< 2023-01-26 09:34:15	csmock exit code: 0
+

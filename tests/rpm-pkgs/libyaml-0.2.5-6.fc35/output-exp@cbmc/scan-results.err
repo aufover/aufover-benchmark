@@ -1,0 +1,16 @@
+Error: COMPILER_WARNING (CWE-563):
+yaml-0.2.5/src/emitter.c: scope_hint: In function 'yaml_emitter_write_plain_scalar'
+yaml-0.2.5/src/emitter.c:28:6: warning[-Wunused-value]: value computed is not used
+#   28 |      && ((emitter->line_break == YAML_CR_BREAK ?                                \
+#      |      ^~
+yaml-0.2.5/src/emitter.c:56:11: note: in expansion of macro 'PUT_BREAK'
+#   56 |          (PUT_BREAK(emitter),                                                   \
+#      |           ^~~~~~~~~
+yaml-0.2.5/src/emitter.c:1962:18: note: in expansion of macro 'WRITE_BREAK'
+# 1962 |             if (!WRITE_BREAK(emitter, string)) return 0;
+#      |                  ^~~~~~~~~~~
+#   26|   #define PUT_BREAK(emitter)                                                      \
+#   27|       (FLUSH(emitter)                                                             \
+#   28|->      && ((emitter->line_break == YAML_CR_BREAK ?                                \
+#   29|                (*(emitter->buffer.pointer++) = (yaml_char_t) '\r') :              \
+#   30|             emitter->line_break == YAML_LN_BREAK ?                                \

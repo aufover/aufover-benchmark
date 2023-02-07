@@ -1,0 +1,225 @@
+Error: COMPILER_WARNING (CWE-477):
+libuser-0.63/apps/apputil.c: scope_hint: In function 'check_access'
+libuser-0.63/apps/apputil.c:41:9: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#   41 |         security_context_t user_context;
+#      |         ^~~~~~~~~~~~~~~~~~
+#   39|   {
+#   40|   	int status;
+#   41|-> 	security_context_t user_context;
+#   42|   
+#   43|   	status = -1;
+
+Error: COMPILER_WARNING (CWE-477):
+libuser-0.63/apps/apputil.c: scope_hint: In function 'lu_authenticate_unprivileged'
+libuser-0.63/apps/apputil.c:228:33: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#  228 |                                 security_context_t user_context;
+#      |                                 ^~~~~~~~~~~~~~~~~~
+libuser-0.63/apps/apputil.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#  226|   			perm = string_to_av_perm(class, "chfn");
+#  227|   			if (check_access(user, perm) != 0) {
+#  228|-> 				security_context_t user_context;
+#  229|   
+#  230|   				if (getprevcon(&user_context) < 0)
+
+Error: COMPILER_WARNING:
+libuser-0.63/lib/user_private.h:28: included_from: Included from here.
+libuser-0.63/lib/common.c:25: included_from: Included from here.
+libuser-0.63/config.h:9: warning: "GLIB_VERSION_MIN_REQUIRED" redefined
+#    9 | #define GLIB_VERSION_MIN_REQUIRED GLIB_VERSION_2_30
+#      | 
+/usr/include/glib-2.0/glib/gtypes.h:34: included_from: Included from here.
+/usr/include/glib-2.0/glib/galloca.h:32: included_from: Included from here.
+/usr/include/glib-2.0/glib.h:30: included_from: Included from here.
+libuser-0.63/lib/config.h:23: included_from: Included from here.
+libuser-0.63/lib/common.c:19: included_from: Included from here.
+/usr/include/glib-2.0/glib/gversionmacros.h:325: note: this is the location of the previous definition
+#  325 | # define GLIB_VERSION_MIN_REQUIRED      (GLIB_VERSION_CUR_STABLE)
+#      | 
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#    7|   
+#    8|   /* Shut up warnings about deprecated GValueArray */
+#    9|-> #define GLIB_VERSION_MIN_REQUIRED GLIB_VERSION_2_30
+#   10|   
+#   11|   /* Stay away from deprecated glib functionality. */
+
+Error: COMPILER_WARNING (CWE-477):
+libuser-0.63/apps/apputil.c:33: included_from: Included from here.
+libuser-0.63/lib/user_private.h:311:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#  311 | typedef security_context_t lu_security_context_t;
+#      | ^~~~~~~
+#  309|      intentionally not compatible with libuser built !WITH_SELINUX. */
+#  310|   #ifdef WITH_SELINUX
+#  311|-> typedef security_context_t lu_security_context_t;
+#  312|   gboolean lu_util_fscreate_save(security_context_t *ctx,
+#  313|   				      struct lu_error **error);
+
+Error: COMPILER_WARNING (CWE-477):
+libuser-0.63/lib/user_private.h:312:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#  312 | gboolean lu_util_fscreate_save(security_context_t *ctx,
+#      | ^~~~~~~~
+#  310|   #ifdef WITH_SELINUX
+#  311|   typedef security_context_t lu_security_context_t;
+#  312|-> gboolean lu_util_fscreate_save(security_context_t *ctx,
+#  313|   				      struct lu_error **error);
+#  314|   void lu_util_fscreate_restore(security_context_t ctx);
+
+Error: COMPILER_WARNING (CWE-477):
+libuser-0.63/lib/user_private.h:314:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#  314 | void lu_util_fscreate_restore(security_context_t ctx);
+#      | ^~~~
+#  312|   gboolean lu_util_fscreate_save(security_context_t *ctx,
+#  313|   				      struct lu_error **error);
+#  314|-> void lu_util_fscreate_restore(security_context_t ctx);
+#  315|   gboolean lu_util_fscreate_from_fd(int fd, const char *path,
+#  316|   				  struct lu_error **error);
+
+Error: COMPILER_WARNING (CWE-477):
+libuser-0.63/lib/util.c:748:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#  748 | lu_util_fscreate_save(security_context_t *ctx, struct lu_error **error)
+#      | ^~~~~~~~~~~~~~~~~~~~~
+#  746|   /* Store current fscreate context to ctx. */
+#  747|   gboolean
+#  748|-> lu_util_fscreate_save(security_context_t *ctx, struct lu_error **error)
+#  749|   {
+#  750|   	*ctx = NULL;
+
+Error: COMPILER_WARNING (CWE-477):
+libuser-0.63/lib/util.c:762:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#  762 | lu_util_fscreate_restore(security_context_t ctx)
+#      | ^~~~~~~~~~~~~~~~~~~~~~~~
+#  760|   /* Restore fscreate context from ctx, and free it. */
+#  761|   void
+#  762|-> lu_util_fscreate_restore(security_context_t ctx)
+#  763|   {
+#  764|   	if (is_selinux_enabled() > 0) {
+
+Error: COMPILER_WARNING (CWE-477):
+libuser-0.63/lib/util.c: scope_hint: In function 'lu_util_fscreate_from_fd'
+libuser-0.63/lib/util.c:776:17: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#  776 |                 security_context_t ctx;
+#      |                 ^~~~~~~~~~~~~~~~~~
+#  774|   {
+#  775|   	if (is_selinux_enabled() > 0) {
+#  776|-> 		security_context_t ctx;
+#  777|   
+#  778|   		if (fgetfilecon(fd, &ctx) < 0) {
+
+Error: COMPILER_WARNING (CWE-477):
+libuser-0.63/lib/util.c: scope_hint: In function 'lu_util_fscreate_from_file'
+libuser-0.63/lib/util.c:802:17: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#  802 |                 security_context_t ctx;
+#      |                 ^~~~~~~~~~~~~~~~~~
+#  800|   {
+#  801|   	if (is_selinux_enabled() > 0) {
+#  802|-> 		security_context_t ctx;
+#  803|   
+#  804|   		if (getfilecon(file, &ctx) < 0) {
+
+Error: COMPILER_WARNING (CWE-477):
+libuser-0.63/lib/util.c: scope_hint: In function 'lu_util_fscreate_from_lfile'
+libuser-0.63/lib/util.c:828:17: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#  828 |                 security_context_t ctx;
+#      |                 ^~~~~~~~~~~~~~~~~~
+#  826|   {
+#  827|   	if (is_selinux_enabled() > 0) {
+#  828|-> 		security_context_t ctx;
+#  829|   
+#  830|   		if (lgetfilecon(file, &ctx) < 0) {
+
+Error: COMPILER_WARNING (CWE-477):
+libuser-0.63/lib/util.c: scope_hint: In function 'lu_util_fscreate_for_path'
+libuser-0.63/lib/util.c:855:17: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#  855 |                 security_context_t ctx;
+#      |                 ^~~~~~~~~~~~~~~~~~
+#  853|   {
+#  854|   	if (is_selinux_enabled() > 0) {
+#  855|-> 		security_context_t ctx;
+#  856|   
+#  857|   		if (matchpathcon(path, mode, &ctx) < 0) {
+
+Error: COMPILER_WARNING (CWE-477):
+libuser-0.63/lib/util.c:857:17: warning[-Wdeprecated-declarations]: 'matchpathcon' is deprecated: Use selabel_lookup instead
+#  857 |                 if (matchpathcon(path, mode, &ctx) < 0) {
+#      |                 ^~
+libuser-0.63/lib/util.c:34: included_from: Included from here.
+/usr/include/selinux/selinux.h:502:12: note: declared here
+#  502 | extern int matchpathcon(const char *path,
+#      |            ^~~~~~~~~~~~
+libuser-0.63/lib/util.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#  855|   		security_context_t ctx;
+#  856|   
+#  857|-> 		if (matchpathcon(path, mode, &ctx) < 0) {
+#  858|   			if (errno == ENOENT)
+#  859|   				ctx = NULL;
+
+Error: COMPILER_WARNING (CWE-704):
+libuser-0.63/python/admin.c:1515:9: warning[-Wint-conversion]: initialization of 'long int' from 'void *' makes integer from pointer without a cast
+# 1515 |         NULL,                   /* tp_print */
+#      |         ^~~~
+libuser-0.63/python/admin.c:1515:9: note: (near initialization for 'AdminType.tp_vectorcall_offset')
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+# 1513|   	0,			/* tp_itemsize */
+# 1514|   	libuser_admin_destroy,	/* tp_dealloc */
+# 1515|-> 	NULL,			/* tp_print */
+# 1516|   	NULL,			/* tp_getattr */
+# 1517|   	NULL,			/* tp_setattr */
+
+Error: COMPILER_WARNING (CWE-704):
+libuser-0.63/python/ent.c: scope_hint: In function 'libuser_entity_setattro'
+libuser-0.63/python/ent.c:273:14: warning[-Wdiscarded-qualifiers]: assignment discards 'const' qualifier from pointer target type
+#  273 |         name = PYSTRTYPE_ASSTRING(attr_name);
+#      |              ^
+#  271|   		return -1;
+#  272|   	}
+#  273|-> 	name = PYSTRTYPE_ASSTRING(attr_name);
+#  274|   	if (name == NULL) {
+#  275|   		DEBUG_EXIT;
+
+Error: COMPILER_WARNING (CWE-704):
+libuser-0.63/python/ent.c: scope_hint: In function 'libuser_entity_get_item'
+libuser-0.63/python/ent.c:630:14: warning[-Wdiscarded-qualifiers]: assignment discards 'const' qualifier from pointer target type
+#  630 |         attr = PYSTRTYPE_ASSTRING(item);
+#      |              ^
+#  628|   		return NULL;
+#  629|   	}
+#  630|-> 	attr = PYSTRTYPE_ASSTRING(item);
+#  631|   
+#  632|   	if (!lu_ent_has(me->ent, attr)) {
+
+Error: COMPILER_WARNING (CWE-704):
+libuser-0.63/python/ent.c: scope_hint: In function 'libuser_entity_set_item'
+libuser-0.63/python/ent.c:682:14: warning[-Wdiscarded-qualifiers]: assignment discards 'const' qualifier from pointer target type
+#  682 |         attr = PYSTRTYPE_ASSTRING(item);
+#      |              ^
+#  680|   		return -1;
+#  681|   	}
+#  682|-> 	attr = PYSTRTYPE_ASSTRING(item);
+#  683|   #ifdef DEBUG_BINDING
+#  684|   	fprintf(stderr, "%sSetting item (`%s')...\n", getindent(), attr);
+
+Error: COMPILER_WARNING (CWE-704):
+libuser-0.63/python/ent.c: scope_hint: At top level
+libuser-0.63/python/ent.c:803:9: warning[-Wint-conversion]: initialization of 'long int' from 'void *' makes integer from pointer without a cast
+#  803 |         NULL,                   /* tp_print */
+#      |         ^~~~
+libuser-0.63/python/ent.c:803:9: note: (near initialization for 'EntityType.tp_vectorcall_offset')
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#  801|   	0,			/* tp_itemsize */
+#  802|   	libuser_entity_destroy, /* tp_dealloc */
+#  803|-> 	NULL,			/* tp_print */
+#  804|   	NULL,			/* tp_getattr */
+#  805|   	NULL,			/* tp_setattr */
+
+Error: COMPILER_WARNING (CWE-704):
+libuser-0.63/python/misc.c:496:9: warning[-Wint-conversion]: initialization of 'long int' from 'void *' makes integer from pointer without a cast
+#  496 |         NULL,                   /* tp_print */
+#      |         ^~~~
+libuser-0.63/python/misc.c:496:9: note: (near initialization for 'PromptType.tp_vectorcall_offset')
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#  494|   	0,			/* tp_itemsize */
+#  495|   	libuser_prompt_destroy,	/* tp_dealloc */
+#  496|-> 	NULL,			/* tp_print */
+#  497|   	NULL,			/* tp_getattr */
+#  498|   	NULL,			/* tp_setattr */

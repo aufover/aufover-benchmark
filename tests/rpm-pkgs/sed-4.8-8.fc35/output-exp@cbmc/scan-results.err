@@ -1,0 +1,93 @@
+Error: COMPILER_WARNING (CWE-477):
+sed-4.8/lib/getfilecon.c:36:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#   36 | int getfilecon (char const *file, security_context_t *con);
+#      | ^~~
+#   34|   #undef lgetfilecon
+#   35|   #undef fgetfilecon
+#   36|-> int getfilecon (char const *file, security_context_t *con);
+#   37|   int lgetfilecon (char const *file, security_context_t *con);
+#   38|   int fgetfilecon (int fd, security_context_t *con);
+
+Error: COMPILER_WARNING (CWE-477):
+sed-4.8/lib/getfilecon.c:37:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#   37 | int lgetfilecon (char const *file, security_context_t *con);
+#      | ^~~
+#   35|   #undef fgetfilecon
+#   36|   int getfilecon (char const *file, security_context_t *con);
+#   37|-> int lgetfilecon (char const *file, security_context_t *con);
+#   38|   int fgetfilecon (int fd, security_context_t *con);
+#   39|   
+
+Error: COMPILER_WARNING (CWE-477):
+sed-4.8/lib/getfilecon.c:38:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#   38 | int fgetfilecon (int fd, security_context_t *con);
+#      | ^~~
+#   36|   int getfilecon (char const *file, security_context_t *con);
+#   37|   int lgetfilecon (char const *file, security_context_t *con);
+#   38|-> int fgetfilecon (int fd, security_context_t *con);
+#   39|   
+#   40|   /* getfilecon, lgetfilecon, and fgetfilecon can all misbehave, be it
+
+Error: COMPILER_WARNING (CWE-477):
+sed-4.8/lib/getfilecon.c:49:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#   49 | map_to_failure (int ret, security_context_t *con)
+#      | ^~~~~~~~~~~~~~
+#   47|   
+#   48|   static int
+#   49|-> map_to_failure (int ret, security_context_t *con)
+#   50|   {
+#   51|     if (ret == 0)
+
+Error: COMPILER_WARNING (CWE-477):
+sed-4.8/lib/getfilecon.c:69:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#   69 | rpl_getfilecon (char const *file, security_context_t *con)
+#      | ^~~~~~~~~~~~~~
+#   67|   
+#   68|   int
+#   69|-> rpl_getfilecon (char const *file, security_context_t *con)
+#   70|   {
+#   71|     int ret = getfilecon (file, con);
+
+Error: COMPILER_WARNING (CWE-477):
+sed-4.8/lib/getfilecon.c:76:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#   76 | rpl_lgetfilecon (char const *file, security_context_t *con)
+#      | ^~~~~~~~~~~~~~~
+#   74|   
+#   75|   int
+#   76|-> rpl_lgetfilecon (char const *file, security_context_t *con)
+#   77|   {
+#   78|     int ret = lgetfilecon (file, con);
+
+Error: COMPILER_WARNING (CWE-477):
+sed-4.8/lib/getfilecon.c:83:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#   83 | rpl_fgetfilecon (int fd, security_context_t *con)
+#      | ^~~~~~~~~~~~~~~
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#   81|   
+#   82|   int
+#   83|-> rpl_fgetfilecon (int fd, security_context_t *con)
+#   84|   {
+#   85|     int ret = fgetfilecon (fd, con);
+
+Error: COMPILER_WARNING (CWE-477):
+sed-4.8/sed/execute.c: scope_hint: In function 'open_next_file'
+sed-4.8/sed/execute.c:575:7: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#  575 |       security_context_t old_fscreatecon;
+#      |       ^~~~~~~~~~~~~~~~~~
+#  573|         int input_fd;
+#  574|         char *tmpdir, *p;
+#  575|->       security_context_t old_fscreatecon;
+#  576|         int reset_fscreatecon = 0;
+#  577|         memset (&old_fscreatecon, 0, sizeof (old_fscreatecon));
+
+Error: COMPILER_WARNING (CWE-477):
+sed-4.8/sed/execute.c:596:11: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#  596 |           security_context_t con;
+#      |           ^~~~~~~~~~~~~~~~~~
+sed-4.8/sed/execute.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#  594|         if (is_selinux_enabled () > 0)
+#  595|           {
+#  596|->           security_context_t con;
+#  597|             if (lgetfilecon (input->in_file_name, &con) != -1)
+#  598|               {

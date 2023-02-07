@@ -1,0 +1,97 @@
+Error: COMPILER_WARNING (CWE-477):
+ldb-2.4.0/common/ldb.c: scope_hint: In function ‘ldb_init’
+ldb-2.4.0/common/ldb.c:120:17: warning[-Wdeprecated-declarations]: ‘tevent_loop_allow_nesting’ is deprecated
+#  120 |                 tevent_loop_allow_nesting(ev_ctx);
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~
+ldb-2.4.0/include/ldb.h:51: included_from: Included from here.
+ldb-2.4.0/include/ldb_private.h:43: included_from: Included from here.
+ldb-2.4.0/common/ldb.c:36: included_from: Included from here.
+/usr/include/tevent.h:2304:6: note: declared here
+# 2304 | void tevent_loop_allow_nesting(struct tevent_context *ev) _DEPRECATED_;
+#      |      ^~~~~~~~~~~~~~~~~~~~~~~~~
+#  118|   		}
+#  119|   		tevent_set_debug(ev_ctx, ldb_tevent_debug, ldb);
+#  120|-> 		tevent_loop_allow_nesting(ev_ctx);
+#  121|   	}
+#  122|   
+
+Error: COMPILER_WARNING (CWE-477):
+ldb-2.4.0/common/ldb.c: scope_hint: In function ‘ldb_handle_new’
+ldb-2.4.0/common/ldb.c:751:17: warning[-Wdeprecated-declarations]: ‘tevent_loop_allow_nesting’ is deprecated
+#  751 |                 tevent_loop_allow_nesting(h->event_context);
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~
+ldb-2.4.0/include/ldb.h:51: included_from: Included from here.
+ldb-2.4.0/include/ldb_private.h:43: included_from: Included from here.
+ldb-2.4.0/common/ldb.c:36: included_from: Included from here.
+/usr/include/tevent.h:2304:6: note: declared here
+# 2304 | void tevent_loop_allow_nesting(struct tevent_context *ev) _DEPRECATED_;
+#      |      ^~~~~~~~~~~~~~~~~~~~~~~~~
+ldb-2.4.0/common/ldb.c: scope_hint: At top level
+cc1: note: unrecognized command-line option ‘-Wno-unknown-warning-option’ may have been intended to silence earlier diagnostics
+#  749|   		}
+#  750|   		tevent_set_debug(h->event_context, ldb_tevent_debug, ldb);
+#  751|-> 		tevent_loop_allow_nesting(h->event_context);
+#  752|   	}
+#  753|   
+
+Error: COMPILER_WARNING (CWE-477):
+ldb-2.4.0/tests/ldb_mod_op_test.c: scope_hint: In function ‘test_ldb_search_against_transaction’
+ldb-2.4.0/tests/ldb_mod_op_test.c:1646:9: warning[-Wdeprecated-declarations]: ‘tevent_loop_allow_nesting’ is deprecated
+# 1646 |         tevent_loop_allow_nesting(search_test_ctx->ldb_test_ctx->ev);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~
+ldb-2.4.0/tests/ldb_mod_op_test.c:25: included_from: Included from here.
+/usr/include/tevent.h:2304:6: note: declared here
+# 2304 | void tevent_loop_allow_nesting(struct tevent_context *ev) _DEPRECATED_;
+#      |      ^~~~~~~~~~~~~~~~~~~~~~~~~
+# 1644|   	struct ldb_dn *base_search_dn;
+# 1645|   
+# 1646|-> 	tevent_loop_allow_nesting(search_test_ctx->ldb_test_ctx->ev);
+# 1647|   
+# 1648|   	base_search_dn
+
+Error: COMPILER_WARNING (CWE-477):
+ldb-2.4.0/tests/ldb_mod_op_test.c: scope_hint: In function ‘test_ldb_modify_during_search’
+ldb-2.4.0/tests/ldb_mod_op_test.c:1965:9: warning[-Wdeprecated-declarations]: ‘tevent_loop_allow_nesting’ is deprecated
+# 1965 |         tevent_loop_allow_nesting(search_test_ctx->ldb_test_ctx->ev);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~
+ldb-2.4.0/tests/ldb_mod_op_test.c:25: included_from: Included from here.
+/usr/include/tevent.h:2304:6: note: declared here
+# 2304 | void tevent_loop_allow_nesting(struct tevent_context *ev) _DEPRECATED_;
+#      |      ^~~~~~~~~~~~~~~~~~~~~~~~~
+# 1963|   	}
+# 1964|   
+# 1965|-> 	tevent_loop_allow_nesting(search_test_ctx->ldb_test_ctx->ev);
+# 1966|   
+# 1967|   	ctx.basedn
+
+Error: COMPILER_WARNING (CWE-477):
+ldb-2.4.0/tests/ldb_mod_op_test.c: scope_hint: In function ‘test_ldb_modify_during_whole_search’
+ldb-2.4.0/tests/ldb_mod_op_test.c:2205:9: warning[-Wdeprecated-declarations]: ‘tevent_loop_allow_nesting’ is deprecated
+# 2205 |         tevent_loop_allow_nesting(search_test_ctx->ldb_test_ctx->ev);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~
+ldb-2.4.0/tests/ldb_mod_op_test.c:25: included_from: Included from here.
+/usr/include/tevent.h:2304:6: note: declared here
+# 2304 | void tevent_loop_allow_nesting(struct tevent_context *ev) _DEPRECATED_;
+#      |      ^~~~~~~~~~~~~~~~~~~~~~~~~
+# 2203|   	struct ldb_result *res2;
+# 2204|   
+# 2205|-> 	tevent_loop_allow_nesting(search_test_ctx->ldb_test_ctx->ev);
+# 2206|   
+# 2207|   	ctx.basedn
+
+Error: COMPILER_WARNING (CWE-477):
+ldb-2.4.0/tests/ldb_mod_op_test.c: scope_hint: In function ‘test_ldb_callback_modify_during_search’
+ldb-2.4.0/tests/ldb_mod_op_test.c:2689:9: warning[-Wdeprecated-declarations]: ‘tevent_loop_allow_nesting’ is deprecated
+# 2689 |         tevent_loop_allow_nesting(search_test_ctx->ldb_test_ctx->ev);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~
+ldb-2.4.0/tests/ldb_mod_op_test.c:25: included_from: Included from here.
+/usr/include/tevent.h:2304:6: note: declared here
+# 2304 | void tevent_loop_allow_nesting(struct tevent_context *ev) _DEPRECATED_;
+#      |      ^~~~~~~~~~~~~~~~~~~~~~~~~
+ldb-2.4.0/tests/ldb_mod_op_test.c: scope_hint: At top level
+cc1: note: unrecognized command-line option ‘-Wno-unknown-warning-option’ may have been intended to silence earlier diagnostics
+# 2687|   	}
+# 2688|   
+# 2689|-> 	tevent_loop_allow_nesting(search_test_ctx->ldb_test_ctx->ev);
+# 2690|   
+# 2691|   	ctx.basedn

@@ -1,0 +1,17 @@
+Error: COMPILER_WARNING:
+libtasn1-4.16.0/lib/element.c: scope_hint: In function '_asn1_append_sequence_set'
+libtasn1-4.16.0/lib/element.c:186:7: warning[-Wstringop-overflow=]: '_asn1_ltostr' accessing 22 bytes in a region of size 21
+#  186 |       _asn1_ltostr (n, temp + 1);
+#      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~
+libtasn1-4.16.0/lib/element.c:186:7: note: referencing argument 2 of type 'char *'
+libtasn1-4.16.0/lib/element.c:30: included_from: Included from here.
+libtasn1-4.16.0/lib/parser_aux.h:70:7: note: in a call to function '_asn1_ltostr'
+#   70 | char *_asn1_ltostr (int64_t v, char str[LTOSTR_MAX_SIZE]);
+#      |       ^~~~~~~~~~~~
+libtasn1-4.16.0/lib/element.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#  184|         n++;
+#  185|         temp[0] = '?';
+#  186|->       _asn1_ltostr (n, temp + 1);
+#  187|       }
+#  188|     _asn1_set_name (p2, temp);

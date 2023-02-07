@@ -1,19 +1,237 @@
 {
     "scan": {
-        "analyzer-version-cbmc": "5.38.0",
-        "analyzer-version-gcc": "11.2.1",
+        "analyzer-version-cbmc": "5.50.0",
+        "analyzer-version-gcc": "11.3.1",
         "enabled-plugins": "cbmc, gcc",
-        "exit-code": 1,
-        "host": "f34",
-        "known-false-positives": "/usr/share/csmock/known-false-positives.js",
+        "exit-code": 0,
+        "host": "dell-pe-fm120-1c.dell2.lab.eng.bos.redhat.com",
         "mock-config": "fedora-35-x86_64",
         "project-name": "gzip-1.10-5.fc35",
-        "store-results-to": "/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/gzip-1.10-5.fc35/cbmc/output",
-        "time-created": "2021-11-29 13:54:14",
-        "time-finished": "2021-11-29 14:35:21",
+        "store-results-to": "/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/gzip-1.10-5.fc35/cbmc/output",
+        "time-created": "2023-01-26 14:58:47",
+        "time-finished": "2023-01-26 15:22:03",
         "tool": "csmock",
-        "tool-args": "'/usr/bin/csmock' '-o' '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/gzip-1.10-5.fc35/cbmc/output' '-f' '/home/kdudka/git/aufover-benchmark/workdir-for-sync/rpm-pkgs/gzip-1.10-5.fc35/gzip-1.10-5.fc35.src.rpm' '-r' 'fedora-35-x86_64' '-t' 'cbmc' '--cbmc-timeout=8' '--keep-going'",
-        "tool-version": "csmock-3.1.0.20211126.090206.ga7412e7-1.fc34"
+        "tool-args": "'/usr/bin/csmock' '-o' '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/gzip-1.10-5.fc35/cbmc/output' '-f' '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/gzip-1.10-5.fc35/gzip-1.10-5.fc35.src.rpm' '-r' 'fedora-35-x86_64' '-t' 'cbmc' '--cbmc-timeout=8' '--keep-going'",
+        "tool-version": "csmock-3.3.5-1.fc36"
     },
-    "defects": ""
+    "defects": [
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "tool": "gcc",
+            "key_event_idx": 1,
+            "events": [
+                {
+                    "file_name": "gzip-1.10/lib/utimens.c",
+                    "line": 0,
+                    "event": "scope_hint",
+                    "message": "In function 'fdutimens'",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "gzip-1.10/lib/utimens.c",
+                    "line": 382,
+                    "column": 17,
+                    "event": "warning[-Wstringop-overflow=]",
+                    "message": "'update_timespec' accessing 16 bytes in a region of size 8",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  382 |       if (ts && update_timespec (&st, &ts))",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "gzip-1.10/lib/utimens.c",
+                    "line": 382,
+                    "column": 17,
+                    "event": "note",
+                    "message": "referencing argument 2 of type 'struct timespec **'",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "gzip-1.10/lib/utimens.c",
+                    "line": 133,
+                    "column": 1,
+                    "event": "note",
+                    "message": "in a call to function 'update_timespec'",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  133 | update_timespec (struct stat const *statbuf, struct timespec *ts[2])",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      | ^~~~~~~~~~~~~~~",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  380|             && (fd < 0 ? stat (file, &st) : fstat (fd, &st)))",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  381|           return -1;",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  382|->       if (ts && update_timespec (&st, &ts))",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  383|           return 0;",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  384|       }",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "tool": "gcc",
+            "key_event_idx": 1,
+            "events": [
+                {
+                    "file_name": "gzip-1.10/lib/utimens.c",
+                    "line": 0,
+                    "event": "scope_hint",
+                    "message": "In function 'lutimens'",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "gzip-1.10/lib/utimens.c",
+                    "line": 595,
+                    "column": 17,
+                    "event": "warning[-Wstringop-overflow=]",
+                    "message": "'update_timespec' accessing 16 bytes in a region of size 8",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  595 |       if (ts && update_timespec (&st, &ts))",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "gzip-1.10/lib/utimens.c",
+                    "line": 595,
+                    "column": 17,
+                    "event": "note",
+                    "message": "referencing argument 2 of type 'struct timespec **'",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "gzip-1.10/lib/utimens.c",
+                    "line": 133,
+                    "column": 1,
+                    "event": "note",
+                    "message": "in a call to function 'update_timespec'",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  133 | update_timespec (struct stat const *statbuf, struct timespec *ts[2])",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      | ^~~~~~~~~~~~~~~",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "gzip-1.10/lib/utimens.c",
+                    "line": 0,
+                    "event": "scope_hint",
+                    "message": "At top level",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "cc1",
+                    "line": 0,
+                    "event": "note",
+                    "message": "unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  593|         if (adjustment_needed != 3 && lstat (file, &st))",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  594|           return -1;",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  595|->       if (ts && update_timespec (&st, &ts))",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  596|           return 0;",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  597|       }",
+                    "verbosity_level": 1
+                }
+            ]
+        }
+    ]
 }
