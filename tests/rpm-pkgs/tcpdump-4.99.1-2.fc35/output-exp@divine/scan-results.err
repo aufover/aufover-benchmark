@@ -1,0 +1,229 @@
+Error: COMPILER_WARNING:
+tcpdump-4.99.1/print-esp.c:519:7: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#        init = strsep(&line, " \t");
+#             ^ ~~~~~~~~~~~~~~~~~~~~
+#  517|   	char *enckey;
+#  518|   
+#  519|-> 	init = strsep(&line, " \t");
+#  520|   	icookie = strsep(&line, " \t");
+#  521|   	rcookie = strsep(&line, " \t");
+
+Error: COMPILER_WARNING:
+tcpdump-4.99.1/print-esp.c:519:9: warning: implicit declaration of function 'strsep' is invalid in C99
+#        init = strsep(&line, " \t");
+#               ^
+#  517|   	char *enckey;
+#  518|   
+#  519|-> 	init = strsep(&line, " \t");
+#  520|   	icookie = strsep(&line, " \t");
+#  521|   	rcookie = strsep(&line, " \t");
+
+Error: COMPILER_WARNING:
+tcpdump-4.99.1/print-esp.c:520:10: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#        icookie = strsep(&line, " \t");
+#                ^ ~~~~~~~~~~~~~~~~~~~~
+#  518|   
+#  519|   	init = strsep(&line, " \t");
+#  520|-> 	icookie = strsep(&line, " \t");
+#  521|   	rcookie = strsep(&line, " \t");
+#  522|   	authkey = strsep(&line, " \t");
+
+Error: COMPILER_WARNING:
+tcpdump-4.99.1/print-esp.c:521:10: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#        rcookie = strsep(&line, " \t");
+#                ^ ~~~~~~~~~~~~~~~~~~~~
+#  519|   	init = strsep(&line, " \t");
+#  520|   	icookie = strsep(&line, " \t");
+#  521|-> 	rcookie = strsep(&line, " \t");
+#  522|   	authkey = strsep(&line, " \t");
+#  523|   	enckey  = strsep(&line, " \t");
+
+Error: COMPILER_WARNING:
+tcpdump-4.99.1/print-esp.c:522:10: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#        authkey = strsep(&line, " \t");
+#                ^ ~~~~~~~~~~~~~~~~~~~~
+#  520|   	icookie = strsep(&line, " \t");
+#  521|   	rcookie = strsep(&line, " \t");
+#  522|-> 	authkey = strsep(&line, " \t");
+#  523|   	enckey  = strsep(&line, " \t");
+#  524|   
+
+Error: COMPILER_WARNING:
+tcpdump-4.99.1/print-esp.c:523:10: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#        enckey  = strsep(&line, " \t");
+#                ^ ~~~~~~~~~~~~~~~~~~~~
+#  521|   	rcookie = strsep(&line, " \t");
+#  522|   	authkey = strsep(&line, " \t");
+#  523|-> 	enckey  = strsep(&line, " \t");
+#  524|   
+#  525|   	/* if any fields are missing */
+
+Error: COMPILER_WARNING:
+tcpdump-4.99.1/print-esp.c:580:9: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#        spikey = strsep(&line, " \t");
+#               ^ ~~~~~~~~~~~~~~~~~~~~
+#  578|   	char *decode;
+#  579|   
+#  580|-> 	spikey = strsep(&line, " \t");
+#  581|   	sa_def = 0;
+#  582|   	memset(&sa1, 0, sizeof(struct sa_list));
+
+Error: COMPILER_WARNING:
+tcpdump-4.99.1/print-esp.c:580:11: warning: implicit declaration of function 'strsep' is invalid in C99
+#        spikey = strsep(&line, " \t");
+#                 ^
+#  578|   	char *decode;
+#  579|   
+#  580|-> 	spikey = strsep(&line, " \t");
+#  581|   	sa_def = 0;
+#  582|   	memset(&sa1, 0, sizeof(struct sa_list));
+
+Error: COMPILER_WARNING:
+tcpdump-4.99.1/print-esp.c:636:10: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#                spistr = strsep(&spikey, "@");
+#                       ^ ~~~~~~~~~~~~~~~~~~~~
+#  634|   		uint32_t spino;
+#  635|   
+#  636|-> 		spistr = strsep(&spikey, "@");
+#  637|   		if (spistr == NULL) {
+#  638|   			(*ndo->ndo_warning)(ndo, "print_esp: failed to find the @ token");
+
+Error: COMPILER_WARNING:
+tcpdump-4.99.1/print-esp.c:703:13: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#                if ((line = strsep(&p, "\n,")) == NULL) {
+#                          ^ ~~~~~~~~~~~~~~~~~
+#  701|   	while (p && p[0] != '\0') {
+#  702|   		/* pick out the first line or first thing until a comma */
+#  703|-> 		if ((line = strsep(&p, "\n,")) == NULL) {
+#  704|   			line = p;
+#  705|   			p = NULL;
+
+Error: COMPILER_WARNING:
+tcpdump-4.99.1/print-esp.c:703:15: warning: implicit declaration of function 'strsep' is invalid in C99
+#                if ((line = strsep(&p, "\n,")) == NULL) {
+#                            ^
+#  701|   	while (p && p[0] != '\0') {
+#  702|   		/* pick out the first line or first thing until a comma */
+#  703|-> 		if ((line = strsep(&p, "\n,")) == NULL) {
+#  704|   			line = p;
+#  705|   			p = NULL;
+
+Error: COMPILER_WARNING:
+tcpdump-4.99.1/tcpdump.c:782:8: warning: implicit declaration of function 'chroot' is invalid in C99
+#                        if (chroot(chroot_dir) != 0 || chdir ("/") != 0)
+#                            ^
+#  780|   	if (pw) {
+#  781|   		if (chroot_dir) {
+#  782|-> 			if (chroot(chroot_dir) != 0 || chdir ("/") != 0)
+#  783|   				error("Couldn't chroot/chdir to '%.64s': %s",
+#  784|   				      chroot_dir, pcap_strerror(errno));
+
+Error: COMPILER_WARNING:
+tcpdump-4.99.1/tcpdump.c:795:7: warning: implicit declaration of function 'initgroups' is invalid in C99
+#                if (initgroups(pw->pw_name, pw->pw_gid) != 0 ||
+#                    ^
+#  793|   		}
+#  794|   #else
+#  795|-> 		if (initgroups(pw->pw_name, pw->pw_gid) != 0 ||
+#  796|   		    setgid(pw->pw_gid) != 0 || setuid(pw->pw_uid) != 0)
+#  797|   			error("Couldn't change to '%.32s' uid=%lu gid=%lu: %s",
+
+Error: COMPILER_WARNING:
+tcpdump-4.99.1/tcpdump.c:796:7: warning: implicit declaration of function 'setgid' is invalid in C99
+#                    setgid(pw->pw_gid) != 0 || setuid(pw->pw_uid) != 0)
+#                    ^
+#  794|   #else
+#  795|   		if (initgroups(pw->pw_name, pw->pw_gid) != 0 ||
+#  796|-> 		    setgid(pw->pw_gid) != 0 || setuid(pw->pw_uid) != 0)
+#  797|   			error("Couldn't change to '%.32s' uid=%lu gid=%lu: %s",
+#  798|   				username,
+
+Error: COMPILER_WARNING:
+tcpdump-4.99.1/tcpdump.c:796:34: warning: implicit declaration of function 'setuid' is invalid in C99
+#                    setgid(pw->pw_gid) != 0 || setuid(pw->pw_uid) != 0)
+#                                               ^
+#  794|   #else
+#  795|   		if (initgroups(pw->pw_name, pw->pw_gid) != 0 ||
+#  796|-> 		    setgid(pw->pw_gid) != 0 || setuid(pw->pw_uid) != 0)
+#  797|   			error("Couldn't change to '%.32s' uid=%lu gid=%lu: %s",
+#  798|   				username,
+
+Error: COMPILER_WARNING:
+tcpdump-4.99.1/tcpdump.c:1695:4: warning: implicit declaration of function 'setlinebuf' is invalid in C99
+#                        setlinebuf(stdout);
+#                        ^
+# 1693|   #else /* _WIN32 */
+# 1694|   #ifdef HAVE_SETLINEBUF
+# 1695|-> 			setlinebuf(stdout);
+# 1696|   #else
+# 1697|   			setvbuf(stdout, NULL, _IOLBF, 0);
+
+Error: COMPILER_WARNING:
+tcpdump-4.99.1/tcpdump.c:2035:7: warning: implicit declaration of function 'setgid' is invalid in C99
+#                if (setgid(getgid()) != 0 || setuid(getuid()) != 0 )
+#                    ^
+# 2033|   		 * root).
+# 2034|   		 */
+# 2035|-> 		if (setgid(getgid()) != 0 || setuid(getuid()) != 0 )
+# 2036|   			fprintf(stderr, "Warning: setgid/setuid failed !\n");
+# 2037|   #endif /* _WIN32 */
+
+Error: COMPILER_WARNING:
+tcpdump-4.99.1/tcpdump.c:2035:32: warning: implicit declaration of function 'setuid' is invalid in C99
+#                if (setgid(getgid()) != 0 || setuid(getuid()) != 0 )
+#                                             ^
+# 2033|   		 * root).
+# 2034|   		 */
+# 2035|-> 		if (setgid(getgid()) != 0 || setuid(getuid()) != 0 )
+# 2036|   			fprintf(stderr, "Warning: setgid/setuid failed !\n");
+# 2037|   #endif /* _WIN32 */
+
+Error: COMPILER_WARNING:
+tcpdump-4.99.1/tcpdump.c:2184:7: warning: implicit declaration of function 'setgid' is invalid in C99
+#                if (setgid(getgid()) != 0 || setuid(getuid()) != 0)
+#                    ^
+# 2182|   		 */
+# 2183|   #ifndef _WIN32
+# 2184|-> 		if (setgid(getgid()) != 0 || setuid(getuid()) != 0)
+# 2185|   			fprintf(stderr, "Warning: setgid/setuid failed !\n");
+# 2186|   #endif /* _WIN32 */
+
+Error: COMPILER_WARNING:
+tcpdump-4.99.1/tcpdump.c:2184:32: warning: implicit declaration of function 'setuid' is invalid in C99
+#                if (setgid(getgid()) != 0 || setuid(getuid()) != 0)
+#                                             ^
+# 2182|   		 */
+# 2183|   #ifndef _WIN32
+# 2184|-> 		if (setgid(getgid()) != 0 || setuid(getuid()) != 0)
+# 2185|   			fprintf(stderr, "Warning: setgid/setuid failed !\n");
+# 2186|   #endif /* _WIN32 */
+
+Error: COMPILER_WARNING:
+tcpdump-4.99.1/tcpdump.c:2513:3: warning: implicit declaration of function 'setitimer' is invalid in C99
+#                setitimer(ITIMER_REAL, &timer, NULL);
+#                ^
+# 2511|   		timer.it_value.tv_sec = 1;
+# 2512|   		timer.it_value.tv_usec = 1;
+# 2513|-> 		setitimer(ITIMER_REAL, &timer, NULL);
+# 2514|   #endif /* _WIN32 */
+# 2515|   	}
+
+Error: COMPILER_WARNING:
+tcpdump-4.99.1/tcpdump.c:2715:2: warning: implicit declaration of function 'setitimer' is invalid in C99
+#        setitimer(ITIMER_REAL, &timer, NULL);
+#        ^
+# 2713|   	timer.it_value.tv_sec = 0;
+# 2714|   	timer.it_value.tv_usec = 0;
+# 2715|-> 	setitimer(ITIMER_REAL, &timer, NULL);
+# 2716|   #endif /* _WIN32 */
+# 2717|   
+
+Error: COMPILER_WARNING:
+tcpdump-4.99.1/tcpdump.c:2836:6: warning: implicit declaration of function 'execlp' is invalid in C99
+#        if (execlp(zflag, zflag, filename, (char *)NULL) == -1)
+#            ^
+# 2834|   	setpriority(PRIO_PROCESS, 0, 19);
+# 2835|   #endif
+# 2836|-> 	if (execlp(zflag, zflag, filename, (char *)NULL) == -1)
+# 2837|   		fprintf(stderr,
+# 2838|   			"compress_savefile: execlp(%s, %s) failed: %s\n",

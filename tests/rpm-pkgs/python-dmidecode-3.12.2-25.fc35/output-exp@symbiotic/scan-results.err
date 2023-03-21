@@ -1,0 +1,99 @@
+Error: COMPILER_WARNING (CWE-563):
+python-dmidecode-3.12.2/src/dmidecode.c:3907:42: warning[-Wunused-but-set-variable]: variable 'str_n' set but not used
+#                xmlNode *data_n = NULL, *str_n = NULL, *val_n = NULL;
+#                                         ^
+# 3905|   
+# 3906|           for(i = 0; i < count; i++) {
+# 3907|->                 xmlNode *data_n = NULL, *str_n = NULL, *val_n = NULL;
+# 3908|   
+# 3909|                   /* Check for short entries */
+
+Error: COMPILER_WARNING:
+python-dmidecode-3.12.2/src/dmidecodemodule.c:486:25: warning[-Wincompatible-pointer-types-discards-qualifiers]: assigning to 'char *' from 'const char *' discards qualifiers
+#                section = PyUnicode_AsUTF8(args);
+#                        ^ ~~~~~~~~~~~~~~~~~~~~~~
+#  484|           char *section = NULL;
+#  485|           if (PyUnicode_Check(args)) {
+#  486|->                 section = PyUnicode_AsUTF8(args);
+#  487|           } else if (PyBytes_Check(args)) {
+#  488|                   section = PyBytes_AsString(args);
+
+Error: COMPILER_WARNING:
+python-dmidecode-3.12.2/src/dmidecodemodule.c:617:19: warning[-Wincompatible-pointer-types-discards-qualifiers]: assigning to 'char *' from 'const char *' discards qualifiers
+#                f = PyUnicode_AsUTF8(arg);
+#                  ^ ~~~~~~~~~~~~~~~~~~~~~
+#  615|           char *f = NULL;
+#  616|           if(PyUnicode_Check(arg)) {
+#  617|->                 f = PyUnicode_AsUTF8(arg);
+#  618|           } else if(PyBytes_Check(arg)) {
+#  619|                   f = PyBytes_AsString(arg);
+
+Error: COMPILER_WARNING:
+python-dmidecode-3.12.2/src/dmidecodemodule.c:665:23: warning[-Wincompatible-pointer-types-discards-qualifiers]: assigning to 'char *' from 'const char *' discards qualifiers
+#                fname = PyUnicode_AsUTF8(arg);
+#                      ^ ~~~~~~~~~~~~~~~~~~~~~
+#  663|   
+#  664|           if (PyUnicode_Check(arg)) {
+#  665|->                 fname = PyUnicode_AsUTF8(arg);
+#  666|           } else if (PyBytes_Check(arg)) {
+#  667|                   fname = PyBytes_AsString(arg);
+
+Error: COMPILER_WARNING:
+python-dmidecode-3.12.2/src/dmidecodemodule.c:740:28: warning[-Wincompatible-function-pointer-types]: incompatible function pointer types initializing 'PyCFunction' (aka 'struct _object *(*)(struct _object *, struct _object *)') with an expression of type 'PyObject *(PyObject *, PyObject *, PyObject *)' (aka 'struct _object *(struct _object *, struct _object *, struct _object *)')
+#        {(char *)"xmlapi", dmidecode_xmlapi, METH_VARARGS | METH_KEYWORDS,
+#                           ^~~~~~~~~~~~~~~~
+#  738|            (char *) "Use another python dict map definition. The default file is " PYTHON_XML_MAP},
+#  739|   
+#  740|->         {(char *)"xmlapi", dmidecode_xmlapi, METH_VARARGS | METH_KEYWORDS,
+#  741|            (char *) "Internal API for retrieving data as raw XML data"},
+#  742|   
+
+Error: COMPILER_WARNING:
+python-dmidecode-3.12.2/src/dmidecodemodule.c:846:72: warning[-Wincompatible-function-pointer-types]: incompatible function pointer types passing 'void (void *)' to parameter of type 'PyCapsule_Destructor' (aka 'void (*)(struct _object *)')
+#        PyModule_AddObject(module, "options", PyCapsule_New(opt, NULL, destruct_options));
+#                                                                       ^~~~~~~~~~~~~~~~
+/usr/include/python3.10/pycapsule.h:31:26: note: passing argument to parameter 'destructor' here
+#    PyCapsule_Destructor destructor);
+#                         ^
+#  844|           // clean up the memory for us.
+#  845|           // TODO: destructor has wrong type under py3?
+#  846|->         PyModule_AddObject(module, "options", PyCapsule_New(opt, NULL, destruct_options));
+#  847|           global_options = opt;
+#  848|   #ifdef IS_PY3K
+
+Error: COMPILER_WARNING (CWE-783):
+python-dmidecode-3.12.2/src/dmidump.c:98:49: warning[-Wlogical-not-parentheses]: logical not is only applied to the left hand side of this comparison
+#                if(!checksum(buf, buf[0x05]) || !memcmp(buf + 0x10, "_DMI_", 5) == 0 ||
+#                                                ^                               ~~
+#   96|   
+#   97|           if(mode == NON_LEGACY) {
+#   98|->                 if(!checksum(buf, buf[0x05]) || !memcmp(buf + 0x10, "_DMI_", 5) == 0 ||
+#   99|                      !checksum(buf + 0x10, 0x0F))
+#  100|                           return 0;
+
+Error: COMPILER_WARNING (CWE-681):
+python-dmidecode-3.12.2/src/dmixml.c:68:33: warning[-Wpointer-sign]: passing 'xmlChar *' (aka 'unsigned char *') to parameter of type 'const char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not
+#        xmlStrVPrintf(ret, len, xmlfmt, ap);
+#                                ^~~~~~
+/usr/include/libxml2/libxml/xmlstring.h:105:54: note: passing argument to parameter 'msg' here
+#                                         const char *msg,
+#                                                     ^
+#   66|           assert( xmlfmt != NULL );
+#   67|   
+#   68|->         xmlStrVPrintf(ret, len, xmlfmt, ap);
+#   69|           free(xmlfmt);
+#   70|   
+
+Error: COMPILER_WARNING:
+python-dmidecode-3.12.2/src/dmidecodemodule.c:48: included_from: Included from here.
+python-dmidecode-3.12.2/src/dmixml.h:78:14: warning[-Wundefined-inline]: inline function 'dmixml_GetContent' is not defined
+#inline char *dmixml_GetContent(xmlNode *node);
+#             ^
+python-dmidecode-3.12.2/src/dmidecodemodule.c:840:18: note: used here
+#        dmiver = dmixml_GetContent(opt->dmiversion_n);
+#                 ^
+#   76|   
+#   77|   xmlNode *dmixml_FindNode(xmlNode *, const char *key);
+#   78|-> inline char *dmixml_GetContent(xmlNode *node);
+#   79|   inline char *dmixml_GetNodeContent(xmlNode *node, const char *key);
+#   80|   char *dmixml_GetXPathContent(Log_t *logp, char *buf, size_t buflen, xmlXPathObject *xpo, int idx);

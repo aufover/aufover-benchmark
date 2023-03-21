@@ -1,0 +1,497 @@
+Error: SYMBIOTIC_WARNING:
+sed-4.8/gnulib-tests/fflush.c:43: error: memory error: out of bound pointer
+sed-4.8/gnulib-tests/fflush.c:43: note: call stack: function clear_ungetc_buffer_preserving_position (=140657387615904)
+sed-4.8/gnulib-tests/fflush.c:156: note: call stack: function rpl_fflush (=140657387615904)
+sed-4.8/gnulib-tests/test-accept.c:42: note: call stack: function main ()
+sed-4.8/gnulib-tests/fflush.c:43: note: Additional Info: address: 0:140657387615904
+sed-4.8/gnulib-tests/fflush.c:43: note: Additional Info: pointing to: none
+sed-4.8/gnulib-tests/test-accept.c:42:5: note: Non-deterministic values: accept: len 4 bytes, [4 times 0x0] (i32: 0)
+sed-4.8/gnulib-tests/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [0x1|3 times 0x0] (i32: 1)
+#   41|   clear_ungetc_buffer_preserving_position (FILE *fp)
+#   42|   {
+#   43|->   if (fp->_flags & _IO_IN_BACKUP)
+#   44|       /* _IO_free_backup_area is a bit complicated.  Simply call fseek.  */
+#   45|       fseeko (fp, 0, SEEK_CUR);
+
+Error: SYMBIOTIC_WARNING:
+sed-4.8/gnulib-tests/fseeko.c:52: error: memory error: out of bound pointer
+sed-4.8/gnulib-tests/fseeko.c:52: note: call stack: function rpl_fseeko (=140010577701536, =0, =1)
+sed-4.8/gnulib-tests/fseek.c:29: note: call stack: function rpl_fseek (=140010577701536, =0, =1)
+sed-4.8/gnulib-tests/test-fseek.c:41: note: call stack: function main (=2, =0)
+sed-4.8/gnulib-tests/fseeko.c:52: note: Additional Info: address: 0:140010577701552
+sed-4.8/gnulib-tests/fseeko.c:52: note: Additional Info: pointing to: none
+#   50|   #if defined _IO_EOF_SEEN || defined _IO_ftrylockfile || __GNU_LIBRARY__ == 1
+#   51|     /* GNU libc, BeOS, Haiku, Linux libc5 */
+#   52|->   if (fp->_IO_read_end == fp->_IO_read_ptr
+#   53|         && fp->_IO_write_ptr == fp->_IO_write_base
+#   54|         && fp->_IO_save_base == NULL)
+
+Error: SYMBIOTIC_WARNING:
+sed-4.8/gnulib-tests/test-accept.c:42: error: reached "unreachable" instruction
+sed-4.8/gnulib-tests/test-accept.c:42: note: call stack: function main ()
+sed-4.8/gnulib-tests/test-accept.c:42:5: note: Non-deterministic values: accept: len 4 bytes, [4 times 0x0] (i32: 0)
+sed-4.8/gnulib-tests/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   40|   
+#   41|       errno = 0;
+#   42|->     ASSERT (accept (-1, (struct sockaddr *) &addr, &addrlen) == -1);
+#   43|       ASSERT (errno == EBADF);
+#   44|     }
+
+Error: SYMBIOTIC_WARNING:
+sed-4.8/gnulib-tests/test-accept.c:43: error: reached "unreachable" instruction
+sed-4.8/gnulib-tests/test-accept.c:43: note: call stack: function main ()
+sed-4.8/gnulib-tests/test-accept.c:42:5: note: Non-deterministic values: accept: len 4 bytes, [4 times 0xff] (i32: -1)
+sed-4.8/gnulib-tests/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   41|       errno = 0;
+#   42|       ASSERT (accept (-1, (struct sockaddr *) &addr, &addrlen) == -1);
+#   43|->     ASSERT (errno == EBADF);
+#   44|     }
+#   45|     {
+
+Error: SYMBIOTIC_WARNING:
+sed-4.8/gnulib-tests/test-bind.c:46: error: reached "unreachable" instruction
+sed-4.8/gnulib-tests/test-bind.c:46: note: call stack: function main ()
+sed-4.8/gnulib-tests/test-bind.c:46:7: note: Non-deterministic values: bind: len 4 bytes, [4 times 0x0] (i32: 0)
+sed-4.8/gnulib-tests/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   44|       {
+#   45|         errno = 0;
+#   46|->       ASSERT (bind (-1, (const struct sockaddr *) &addr, sizeof (addr)) == -1);
+#   47|         ASSERT (errno == EBADF);
+#   48|       }
+
+Error: SYMBIOTIC_WARNING:
+sed-4.8/gnulib-tests/test-bind.c:47: error: reached "unreachable" instruction
+sed-4.8/gnulib-tests/test-bind.c:47: note: call stack: function main ()
+sed-4.8/gnulib-tests/test-bind.c:46:7: note: Non-deterministic values: bind: len 4 bytes, [4 times 0xff] (i32: -1)
+sed-4.8/gnulib-tests/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   45|         errno = 0;
+#   46|         ASSERT (bind (-1, (const struct sockaddr *) &addr, sizeof (addr)) == -1);
+#   47|->       ASSERT (errno == EBADF);
+#   48|       }
+#   49|       {
+
+Error: SYMBIOTIC_WARNING:
+sed-4.8/gnulib-tests/test-chdir.c:30: error: reached "unreachable" instruction
+sed-4.8/gnulib-tests/test-chdir.c:30: note: call stack: function main ()
+sed-4.8/gnulib-tests/test-chdir.c:30:3: note: Non-deterministic values: chdir: len 4 bytes, [0x1|3 times 0x0] (i32: 1)
+sed-4.8/gnulib-tests/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   28|   main (void)
+#   29|   {
+#   30|->   ASSERT (chdir ("/") == 0);
+#   31|   
+#   32|     return 0;
+
+Error: SYMBIOTIC_WARNING:
+sed-4.8/gnulib-tests/test-close.c:34: error: reached "unreachable" instruction
+sed-4.8/gnulib-tests/test-close.c:34: note: call stack: function main ()
+sed-4.8/gnulib-tests/test-close.c:34:5: note: Non-deterministic values: close: len 4 bytes, [4 times 0x0] (i32: 0)
+sed-4.8/gnulib-tests/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   32|     {
+#   33|       errno = 0;
+#   34|->     ASSERT (close (-1) == -1);
+#   35|       ASSERT (errno == EBADF);
+#   36|     }
+
+Error: SYMBIOTIC_WARNING:
+sed-4.8/gnulib-tests/test-close.c:35: error: reached "unreachable" instruction
+sed-4.8/gnulib-tests/test-close.c:35: note: call stack: function main ()
+sed-4.8/gnulib-tests/test-close.c:34:5: note: Non-deterministic values: close: len 4 bytes, [4 times 0xff] (i32: -1)
+sed-4.8/gnulib-tests/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   33|       errno = 0;
+#   34|       ASSERT (close (-1) == -1);
+#   35|->     ASSERT (errno == EBADF);
+#   36|     }
+#   37|     {
+
+Error: SYMBIOTIC_WARNING:
+sed-4.8/gnulib-tests/test-connect.c:46: error: reached "unreachable" instruction
+sed-4.8/gnulib-tests/test-connect.c:46: note: call stack: function main ()
+sed-4.8/gnulib-tests/test-connect.c:46:7: note: Non-deterministic values: connect: len 4 bytes, [4 times 0x0] (i32: 0)
+sed-4.8/gnulib-tests/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   44|       {
+#   45|         errno = 0;
+#   46|->       ASSERT (connect (-1, (const struct sockaddr *) &addr, sizeof (addr))
+#   47|                 == -1);
+#   48|         ASSERT (errno == EBADF);
+
+Error: SYMBIOTIC_WARNING:
+sed-4.8/gnulib-tests/test-connect.c:48: error: reached "unreachable" instruction
+sed-4.8/gnulib-tests/test-connect.c:48: note: call stack: function main ()
+sed-4.8/gnulib-tests/test-connect.c:46:7: note: Non-deterministic values: connect: len 4 bytes, [4 times 0xff] (i32: -1)
+sed-4.8/gnulib-tests/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   46|         ASSERT (connect (-1, (const struct sockaddr *) &addr, sizeof (addr))
+#   47|                 == -1);
+#   48|->       ASSERT (errno == EBADF);
+#   49|       }
+#   50|       {
+
+Error: SYMBIOTIC_WARNING:
+sed-4.8/gnulib-tests/test-fseeko3.c:33: error: reached "unreachable" instruction
+sed-4.8/gnulib-tests/test-fseeko3.c:33: note: call stack: function main (=2, =0)
+sed-4.8/gnulib-tests/test-fseeko3.c:32:14: note: Non-deterministic values: fopen: len 8 bytes, [8 times 0x0] (i64: 0)
+sed-4.8/gnulib-tests/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   31|     const char *filename = argv[2];
+#   32|     FILE *fp = fopen (filename, "r");
+#   33|->   ASSERT (fp != NULL);
+#   34|   
+#   35|     if (do_initial_ftell)
+
+Error: SYMBIOTIC_WARNING:
+sed-4.8/gnulib-tests/test-fstat.c:37: error: reached "unreachable" instruction
+sed-4.8/gnulib-tests/test-fstat.c:37: note: call stack: function main (=2, =0)
+sed-4.8/gnulib-tests/test-fstat.c:37:5: note: Non-deterministic values: fstat: len 4 bytes, [4 times 0x0] (i32: 0)
+sed-4.8/gnulib-tests/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   35|   
+#   36|       errno = 0;
+#   37|->     ASSERT (fstat (-1, &statbuf) == -1);
+#   38|       ASSERT (errno == EBADF);
+#   39|     }
+
+Error: SYMBIOTIC_WARNING:
+sed-4.8/gnulib-tests/test-fstat.c:38: error: reached "unreachable" instruction
+sed-4.8/gnulib-tests/test-fstat.c:38: note: call stack: function main (=2, =0)
+sed-4.8/gnulib-tests/test-fstat.c:37:5: note: Non-deterministic values: fstat: len 4 bytes, [4 times 0xff] (i32: -1)
+sed-4.8/gnulib-tests/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   36|       errno = 0;
+#   37|       ASSERT (fstat (-1, &statbuf) == -1);
+#   38|->     ASSERT (errno == EBADF);
+#   39|     }
+#   40|     {
+
+Error: SYMBIOTIC_WARNING:
+sed-4.8/gnulib-tests/test-ftruncate.c:37: error: reached "unreachable" instruction
+sed-4.8/gnulib-tests/test-ftruncate.c:37: note: call stack: function main (=2, =0)
+sed-4.8/gnulib-tests/test-ftruncate.c:37:5: note: Non-deterministic values: ftruncate: len 4 bytes, [4 times 0x0] (i32: 0)
+sed-4.8/gnulib-tests/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   35|     {
+#   36|       errno = 0;
+#   37|->     ASSERT (ftruncate (-1, 0) == -1);
+#   38|       ASSERT (errno == EBADF);
+#   39|     }
+
+Error: SYMBIOTIC_WARNING:
+sed-4.8/gnulib-tests/test-ftruncate.c:38: error: reached "unreachable" instruction
+sed-4.8/gnulib-tests/test-ftruncate.c:38: note: call stack: function main (=2, =0)
+sed-4.8/gnulib-tests/test-ftruncate.c:37:5: note: Non-deterministic values: ftruncate: len 4 bytes, [4 times 0xff] (i32: -1)
+sed-4.8/gnulib-tests/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   36|       errno = 0;
+#   37|       ASSERT (ftruncate (-1, 0) == -1);
+#   38|->     ASSERT (errno == EBADF);
+#   39|     }
+#   40|     {
+
+Error: SYMBIOTIC_WARNING:
+sed-4.8/gnulib-tests/test-getcwd-lgpl.c:44: error: memory error: out of bound pointer
+sed-4.8/gnulib-tests/test-getcwd-lgpl.c:44: note: call stack: function main (=2, =0)
+sed-4.8/gnulib-tests/test-getcwd-lgpl.c:44: note: Additional Info: address: 65280:0
+sed-4.8/gnulib-tests/test-getcwd-lgpl.c:44: note: Additional Info: pointing to: none
+sed-4.8/gnulib-tests/test-getcwd-lgpl.c:39:11: note: Non-deterministic values: chdir: len 4 bytes, [0x1|3 times 0x0] (i32: 1)
+sed-4.8/gnulib-tests/test-getcwd-lgpl.c:43:10: note: Non-deterministic values: getcwd: len 8 bytes, [0x0|0xff|6 times 0x0] (i64: 65280)
+sed-4.8/gnulib-tests/test-getcwd-lgpl.c:43:10: note: Non-deterministic values: getcwd (offset): len 8 bytes, [8 times 0x0] (i64: 0)
+#   42|   
+#   43|     pwd1 = getcwd (NULL, 0);
+#   44|->   ASSERT (pwd1 && *pwd1);
+#   45|     if (1 < argc)
+#   46|       printf ("cwd=%s\n", pwd1);
+
+Error: SYMBIOTIC_WARNING:
+sed-4.8/gnulib-tests/test-getcwd-lgpl.c:44: error: reached "unreachable" instruction
+sed-4.8/gnulib-tests/test-getcwd-lgpl.c:44: note: call stack: function main (=2, =0)
+sed-4.8/gnulib-tests/test-getcwd-lgpl.c:39:11: note: Non-deterministic values: chdir: len 4 bytes, [0x1|3 times 0x0] (i32: 1)
+sed-4.8/gnulib-tests/test-getcwd-lgpl.c:43:10: note: Non-deterministic values: getcwd: len 8 bytes, [8 times 0x0] (i64: 0)
+sed-4.8/gnulib-tests/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   42|   
+#   43|     pwd1 = getcwd (NULL, 0);
+#   44|->   ASSERT (pwd1 && *pwd1);
+#   45|     if (1 < argc)
+#   46|       printf ("cwd=%s\n", pwd1);
+
+Error: SYMBIOTIC_WARNING:
+sed-4.8/gnulib-tests/test-inet_pton.c:43: error: reached "unreachable" instruction
+sed-4.8/gnulib-tests/test-inet_pton.c:43: note: call stack: function main ()
+sed-4.8/gnulib-tests/test-inet_pton.c:42:11: note: Non-deterministic values: inet_pton: len 4 bytes, [4 times 0x0] (i32: 0)
+sed-4.8/gnulib-tests/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   41|   
+#   42|       ret = inet_pton (AF_INET, printable, &internal);
+#   43|->     ASSERT (ret == 1);
+#   44|       /* Verify that internal is filled in network byte order.  */
+#   45|       ASSERT (((unsigned char *) &internal)[0] == 0x81);
+
+Error: SYMBIOTIC_WARNING:
+sed-4.8/gnulib-tests/test-inet_pton.c:45: error: reached "unreachable" instruction
+sed-4.8/gnulib-tests/test-inet_pton.c:45: note: call stack: function main ()
+sed-4.8/gnulib-tests/test-inet_pton.c:42:11: note: Non-deterministic values: inet_pton: len 4 bytes, [0x1|3 times 0x0] (i32: 1)
+sed-4.8/gnulib-tests/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   43|       ASSERT (ret == 1);
+#   44|       /* Verify that internal is filled in network byte order.  */
+#   45|->     ASSERT (((unsigned char *) &internal)[0] == 0x81);
+#   46|       ASSERT (((unsigned char *) &internal)[1] == 0x0D);
+#   47|       ASSERT (((unsigned char *) &internal)[2] == 0x73);
+
+Error: SYMBIOTIC_WARNING:
+sed-4.8/gnulib-tests/test-ioctl.c:38: error: reached "unreachable" instruction
+sed-4.8/gnulib-tests/test-ioctl.c:38: note: call stack: function main ()
+sed-4.8/gnulib-tests/ioctl.c:42:10: note: Non-deterministic values: ioctl: len 4 bytes, [4 times 0x0] (i32: 0)
+sed-4.8/gnulib-tests/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   36|       int value;
+#   37|       errno = 0;
+#   38|->     ASSERT (ioctl (-1, FIONREAD, &value) == -1);
+#   39|       ASSERT (errno == EBADF);
+#   40|     }
+
+Error: SYMBIOTIC_WARNING:
+sed-4.8/gnulib-tests/test-ioctl.c:39: error: reached "unreachable" instruction
+sed-4.8/gnulib-tests/test-ioctl.c:39: note: call stack: function main ()
+sed-4.8/gnulib-tests/ioctl.c:42:10: note: Non-deterministic values: ioctl: len 4 bytes, [4 times 0xff] (i32: -1)
+sed-4.8/gnulib-tests/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   37|       errno = 0;
+#   38|       ASSERT (ioctl (-1, FIONREAD, &value) == -1);
+#   39|->     ASSERT (errno == EBADF);
+#   40|     }
+#   41|     {
+
+Error: SYMBIOTIC_WARNING:
+sed-4.8/gnulib-tests/test-listen.c:38: error: reached "unreachable" instruction
+sed-4.8/gnulib-tests/test-listen.c:38: note: call stack: function main ()
+sed-4.8/gnulib-tests/test-listen.c:38:5: note: Non-deterministic values: listen: len 4 bytes, [4 times 0x0] (i32: 0)
+sed-4.8/gnulib-tests/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   36|     {
+#   37|       errno = 0;
+#   38|->     ASSERT (listen (-1, 1) == -1);
+#   39|       ASSERT (errno == EBADF);
+#   40|     }
+
+Error: SYMBIOTIC_WARNING:
+sed-4.8/gnulib-tests/test-listen.c:39: error: reached "unreachable" instruction
+sed-4.8/gnulib-tests/test-listen.c:39: note: call stack: function main ()
+sed-4.8/gnulib-tests/test-listen.c:38:5: note: Non-deterministic values: listen: len 4 bytes, [4 times 0xff] (i32: -1)
+sed-4.8/gnulib-tests/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   37|       errno = 0;
+#   38|       ASSERT (listen (-1, 1) == -1);
+#   39|->     ASSERT (errno == EBADF);
+#   40|     }
+#   41|     {
+
+Error: SYMBIOTIC_WARNING:
+sed-4.8/gnulib-tests/test-memrchr.c:49: error: reached "unreachable" instruction
+sed-4.8/gnulib-tests/test-memrchr.c:49: note: call stack: function main ()
+sed-4.8/gnulib-tests/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   47|   
+#   48|     /* Basic behavior tests.  */
+#   49|->   ASSERT (MEMRCHR (input, 'a', n) == input + n - 1);
+#   50|   
+#   51|     ASSERT (MEMRCHR (input, 'a', 0) == NULL);
+
+Error: SYMBIOTIC_WARNING:
+sed-4.8/gnulib-tests/test-pipe.c:96: error: reached "unreachable" instruction
+sed-4.8/gnulib-tests/test-pipe.c:96: note: call stack: function main ()
+sed-4.8/gnulib-tests/test-pipe.c:96:3: note: Non-deterministic values: pipe: len 4 bytes, [3 times 0x0|0x80] (i32: -2147483648)
+sed-4.8/gnulib-tests/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   94|     fd[0] = -1;
+#   95|     fd[1] = -1;
+#   96|->   ASSERT (pipe (fd) >= 0);
+#   97|     ASSERT (fd[0] >= 0);
+#   98|     ASSERT (fd[1] >= 0);
+
+Error: SYMBIOTIC_WARNING:
+sed-4.8/gnulib-tests/test-pipe.c:97: error: reached "unreachable" instruction
+sed-4.8/gnulib-tests/test-pipe.c:97: note: call stack: function main ()
+sed-4.8/gnulib-tests/test-pipe.c:96:3: note: Non-deterministic values: pipe: len 4 bytes, [4 times 0x0] (i32: 0)
+sed-4.8/gnulib-tests/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   95|     fd[1] = -1;
+#   96|     ASSERT (pipe (fd) >= 0);
+#   97|->   ASSERT (fd[0] >= 0);
+#   98|     ASSERT (fd[1] >= 0);
+#   99|     ASSERT (fd[0] != fd[1]);
+
+Error: COMPILER_WARNING:
+sed-4.8/gnulib-tests/test-regex.c:237:9: warning[-Wtautological-constant-compare]: converting the result of '<<' to a boolean always evaluates to true
+#  if (! REG_STARTEND)
+#        ^
+#  235|     /* REG_STARTEND was added to glibc on 2004-01-15.
+#  236|        Reject older versions.  */
+#  237|->   if (! REG_STARTEND)
+#  238|       result |= 64;
+#  239|   
+
+Error: SYMBIOTIC_WARNING:
+sed-4.8/gnulib-tests/test-sameacls.c:46: error: abort failure
+sed-4.8/gnulib-tests/test-sameacls.c:46: note: call stack: function main (=2, =0)
+sed-4.8/gnulib-tests/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+/opt/symbiotic/lib/libc/klee/fflush.c:9:9: note: Non-deterministic values: __VERIFIER_nondet__Bool: len 1 bytes, [0x0] (i8: 0)
+#   44|     const char *file2;
+#   45|   
+#   46|->   ASSERT (argc == 3);
+#   47|   
+#   48|     file1 = argv[1];
+
+Error: SYMBIOTIC_WARNING:
+sed-4.8/gnulib-tests/test-setsockopt.c:40: error: reached "unreachable" instruction
+sed-4.8/gnulib-tests/test-setsockopt.c:40: note: call stack: function main ()
+sed-4.8/gnulib-tests/test-setsockopt.c:40:5: note: Non-deterministic values: setsockopt: len 4 bytes, [4 times 0x0] (i32: 0)
+sed-4.8/gnulib-tests/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   38|   
+#   39|       errno = 0;
+#   40|->     ASSERT (setsockopt (-1, SOL_SOCKET, SO_REUSEADDR, &value, sizeof (value))
+#   41|               == -1);
+#   42|       ASSERT (errno == EBADF);
+
+Error: SYMBIOTIC_WARNING:
+sed-4.8/gnulib-tests/test-setsockopt.c:42: error: reached "unreachable" instruction
+sed-4.8/gnulib-tests/test-setsockopt.c:42: note: call stack: function main ()
+sed-4.8/gnulib-tests/test-setsockopt.c:40:5: note: Non-deterministic values: setsockopt: len 4 bytes, [4 times 0xff] (i32: -1)
+sed-4.8/gnulib-tests/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   40|       ASSERT (setsockopt (-1, SOL_SOCKET, SO_REUSEADDR, &value, sizeof (value))
+#   41|               == -1);
+#   42|->     ASSERT (errno == EBADF);
+#   43|     }
+#   44|     {
+
+Error: SYMBIOTIC_WARNING:
+sed-4.8/gnulib-tests/test-sigprocmask.c:62: error: reached "unreachable" instruction
+sed-4.8/gnulib-tests/test-sigprocmask.c:62: note: call stack: function main (=2, =0)
+sed-4.8/gnulib-tests/test-sigprocmask.c:62:3: note: Non-deterministic values: sigprocmask: len 4 bytes, [4 times 0x0] (i32: 0)
+sed-4.8/gnulib-tests/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   60|   
+#   61|     /* Check error handling.  */
+#   62|->   ASSERT (sigprocmask (1729, &set, NULL) == -1);
+#   63|     ASSERT (errno == EINVAL);
+#   64|   
+
+Error: SYMBIOTIC_WARNING:
+sed-4.8/gnulib-tests/test-sigprocmask.c:63: error: reached "unreachable" instruction
+sed-4.8/gnulib-tests/test-sigprocmask.c:63: note: call stack: function main (=2, =0)
+sed-4.8/gnulib-tests/test-sigprocmask.c:62:3: note: Non-deterministic values: sigprocmask: len 4 bytes, [4 times 0xff] (i32: -1)
+sed-4.8/gnulib-tests/fflush.c:150:27: note: Non-deterministic values: __freading: len 4 bytes, [4 times 0x0] (i32: 0)
+#   61|     /* Check error handling.  */
+#   62|     ASSERT (sigprocmask (1729, &set, NULL) == -1);
+#   63|->   ASSERT (errno == EINVAL);
+#   64|   
+#   65|     /* Block SIGINT.  */
+
+Error: COMPILER_WARNING (CWE-477):
+sed-4.8/lib/getfilecon.c:36:35: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#int getfilecon (char const *file, security_context_t *con);
+#                                  ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   34|   #undef lgetfilecon
+#   35|   #undef fgetfilecon
+#   36|-> int getfilecon (char const *file, security_context_t *con);
+#   37|   int lgetfilecon (char const *file, security_context_t *con);
+#   38|   int fgetfilecon (int fd, security_context_t *con);
+
+Error: COMPILER_WARNING (CWE-477):
+sed-4.8/lib/getfilecon.c:37:36: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#int lgetfilecon (char const *file, security_context_t *con);
+#                                   ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   35|   #undef fgetfilecon
+#   36|   int getfilecon (char const *file, security_context_t *con);
+#   37|-> int lgetfilecon (char const *file, security_context_t *con);
+#   38|   int fgetfilecon (int fd, security_context_t *con);
+#   39|   
+
+Error: COMPILER_WARNING (CWE-477):
+sed-4.8/lib/getfilecon.c:38:26: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#int fgetfilecon (int fd, security_context_t *con);
+#                         ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   36|   int getfilecon (char const *file, security_context_t *con);
+#   37|   int lgetfilecon (char const *file, security_context_t *con);
+#   38|-> int fgetfilecon (int fd, security_context_t *con);
+#   39|   
+#   40|   /* getfilecon, lgetfilecon, and fgetfilecon can all misbehave, be it
+
+Error: COMPILER_WARNING (CWE-477):
+sed-4.8/lib/getfilecon.c:49:26: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#map_to_failure (int ret, security_context_t *con)
+#                         ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   47|   
+#   48|   static int
+#   49|-> map_to_failure (int ret, security_context_t *con)
+#   50|   {
+#   51|     if (ret == 0)
+
+Error: COMPILER_WARNING (CWE-477):
+sed-4.8/lib/getfilecon.c:69:35: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#rpl_getfilecon (char const *file, security_context_t *con)
+#                                  ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   67|   
+#   68|   int
+#   69|-> rpl_getfilecon (char const *file, security_context_t *con)
+#   70|   {
+#   71|     int ret = getfilecon (file, con);
+
+Error: COMPILER_WARNING (CWE-477):
+sed-4.8/lib/getfilecon.c:76:36: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#rpl_lgetfilecon (char const *file, security_context_t *con)
+#                                   ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   74|   
+#   75|   int
+#   76|-> rpl_lgetfilecon (char const *file, security_context_t *con)
+#   77|   {
+#   78|     int ret = lgetfilecon (file, con);
+
+Error: COMPILER_WARNING (CWE-477):
+sed-4.8/lib/getfilecon.c:83:26: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#rpl_fgetfilecon (int fd, security_context_t *con)
+#                         ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   81|   
+#   82|   int
+#   83|-> rpl_fgetfilecon (int fd, security_context_t *con)
+#   84|   {
+#   85|     int ret = fgetfilecon (fd, con);
+
+Error: COMPILER_WARNING:
+sed-4.8/lib/obstack.c:351:31: warning[-Wincompatible-function-pointer-types]: incompatible function pointer types initializing 'void (*)(void) __attribute__((noreturn))' with an expression of type 'void (void)'
+#__attribute_noreturn__ void (*obstack_alloc_failed_handler) (void)
+#                              ^
+#  349|      variable by default points to the internal function
+#  350|      'print_and_abort'.  */
+#  351|-> __attribute_noreturn__ void (*obstack_alloc_failed_handler) (void)
+#  352|     = print_and_abort;
+#  353|   # endif /* !_OBSTACK_NO_ERROR_HANDLER */
+
+Error: COMPILER_WARNING (CWE-477):
+sed-4.8/sed/execute.c:575:7: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#      security_context_t old_fscreatecon;
+#      ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#  573|         int input_fd;
+#  574|         char *tmpdir, *p;
+#  575|->       security_context_t old_fscreatecon;
+#  576|         int reset_fscreatecon = 0;
+#  577|         memset (&old_fscreatecon, 0, sizeof (old_fscreatecon));
+
+Error: COMPILER_WARNING (CWE-477):
+sed-4.8/sed/execute.c:596:11: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#          security_context_t con;
+#          ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#  594|         if (is_selinux_enabled () > 0)
+#  595|           {
+#  596|->           security_context_t con;
+#  597|             if (lgetfilecon (input->in_file_name, &con) != -1)
+#  598|               {

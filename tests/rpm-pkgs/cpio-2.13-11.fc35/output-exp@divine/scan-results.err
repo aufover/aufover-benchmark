@@ -1,0 +1,241 @@
+Error: COMPILER_WARNING:
+cpio-2.13/gnu/argmatch.c:32: included_from: Included from here.
+cpio-2.13/gnu/gettext.h:148:1: warning: unused function 'pgettext_aux'
+#pgettext_aux (const char *domain,
+#^
+#  146|   #endif
+#  147|   static const char *
+#  148|-> pgettext_aux (const char *domain,
+#  149|                 const char *msg_ctxt_id, const char *msgid,
+#  150|                 int category)
+
+Error: COMPILER_WARNING:
+cpio-2.13/gnu/gettext.h:167:1: warning: unused function 'npgettext_aux'
+#npgettext_aux (const char *domain,
+#^
+#  165|   #endif
+#  166|   static const char *
+#  167|-> npgettext_aux (const char *domain,
+#  168|                  const char *msg_ctxt_id, const char *msgid,
+#  169|                  const char *msgid_plural, unsigned long int n,
+
+Error: COMPILER_WARNING:
+cpio-2.13/gnu/gettext.h:210:1: warning: unused function 'dcpgettext_expr'
+#dcpgettext_expr (const char *domain,
+#^
+#  208|   #endif
+#  209|   static const char *
+#  210|-> dcpgettext_expr (const char *domain,
+#  211|                    const char *msgctxt, const char *msgid,
+#  212|                    int category)
+
+Error: COMPILER_WARNING:
+cpio-2.13/gnu/gettext.h:257:1: warning: unused function 'dcnpgettext_expr'
+#dcnpgettext_expr (const char *domain,
+#^
+#  255|   #endif
+#  256|   static const char *
+#  257|-> dcnpgettext_expr (const char *domain,
+#  258|                     const char *msgctxt, const char *msgid,
+#  259|                     const char *msgid_plural, unsigned long int n,
+
+Error: COMPILER_WARNING:
+cpio-2.13/gnu/hash.c:554:7: warning: use of GNU statement expression extension
+#  if (xalloc_oversized (candidate, sizeof (struct hash_entry *)))
+#      ^
+cpio-2.13/gnu/xalloc-oversized.h:59:8: note: expanded from macro 'xalloc_oversized'
+#    : ({ __xalloc_count_type __xalloc_count; \
+#       ^
+#  552|       }
+#  553|     candidate = next_prime (candidate);
+#  554|->   if (xalloc_oversized (candidate, sizeof (struct hash_entry *)))
+#  555|       return 0;
+#  556|     return candidate;
+
+Error: COMPILER_WARNING:
+cpio-2.13/gnu/obstack.c:351:31: warning: incompatible pointer types initializing 'void (*)(void) __attribute__((noreturn))' with an expression of type 'void (void)'
+#__attribute_noreturn__ void (*obstack_alloc_failed_handler) (void)
+#                              ^
+#  349|      variable by default points to the internal function
+#  350|      'print_and_abort'.  */
+#  351|-> __attribute_noreturn__ void (*obstack_alloc_failed_handler) (void)
+#  352|     = print_and_abort;
+#  353|   # endif /* !_OBSTACK_NO_ERROR_HANDLER */
+
+Error: COMPILER_WARNING:
+cpio-2.13/gnu/parse-datetime.c:3076:17: warning: absolute value function 'abs' given an argument of type 'long' but has parameter of type 'int' which may cause truncation of value
+#  if (24 * 60 < abs (n_minutes))
+#                ^
+cpio-2.13/gnu/parse-datetime.c:3076:17: note: use function 'labs' instead
+#  if (24 * 60 < abs (n_minutes))
+#                ^~~
+# 3074|        arrange to reject it by incrementing pc->zones_seen.  Thus,
+# 3075|        we allow only values in the range UTC-24:00 to UTC+24:00.  */
+# 3076|->   if (24 * 60 < abs (n_minutes))
+# 3077|       pc->zones_seen++;
+# 3078|   
+
+Error: COMPILER_WARNING:
+cpio-2.13/gnu/parse-datetime.c:3592:8: warning: implicit declaration of function 'timegm' is invalid in C99
+#  lz = timegm (ltm)/60;
+#       ^
+# 3590|     struct tm *ltm;
+# 3591|     ltm = localtime (&z);
+# 3592|->   lz = timegm (ltm)/60;
+# 3593|     return (long int)lz;
+# 3594|   }
+
+Error: COMPILER_WARNING:
+cpio-2.13/gnu/time_rz.c:302:12: warning: implicit declaration of function 'timegm' is invalid in C99
+#    return timegm (tm);
+#           ^
+#  300|   {
+#  301|     if (!tz)
+#  302|->     return timegm (tm);
+#  303|     else
+#  304|       {
+
+Error: COMPILER_WARNING:
+cpio-2.13/gnu/utimens.c:318:16: warning: implicit declaration of function 'futimesat' is invalid in C99
+#        return futimesat (AT_FDCWD, file, t);
+#               ^
+#  316|         {
+#  317|   # if HAVE_FUTIMESAT
+#  318|->         return futimesat (AT_FDCWD, file, t);
+#  319|   # endif
+#  320|         }
+
+Error: COMPILER_WARNING:
+cpio-2.13/gnu/utimens.c:339:13: warning: implicit declaration of function 'futimesat' is invalid in C99
+#        if (futimes (fd, t) == 0)
+#            ^
+cpio-2.13/gnu/utimens.c:337:27: note: expanded from macro 'futimes'
+##   define futimes(fd, t) futimesat (fd, NULL, t)
+#                          ^
+#  337|   #   define futimes(fd, t) futimesat (fd, NULL, t)
+#  338|   #  endif
+#  339|->         if (futimes (fd, t) == 0)
+#  340|             {
+#  341|   #  if __linux__ && __GLIBC__
+
+Error: COMPILER_WARNING:
+cpio-2.13/gnu/dirname.c:25: included_from: Included from here.
+cpio-2.13/gnu/xalloc.h:107:7: warning: use of GNU statement expression extension
+#  if (xalloc_oversized (n, s))
+#      ^
+cpio-2.13/gnu/xalloc-oversized.h:59:8: note: expanded from macro 'xalloc_oversized'
+#    : ({ __xalloc_count_type __xalloc_count; \
+#       ^
+#  105|   xnmalloc (size_t n, size_t s)
+#  106|   {
+#  107|->   if (xalloc_oversized (n, s))
+#  108|       xalloc_die ();
+#  109|     return xmalloc (n * s);
+
+Error: COMPILER_WARNING:
+cpio-2.13/gnu/dirname.c:25: included_from: Included from here.
+cpio-2.13/gnu/xalloc.h:120:7: warning: use of GNU statement expression extension
+#  if (xalloc_oversized (n, s))
+#      ^
+cpio-2.13/gnu/xalloc-oversized.h:59:8: note: expanded from macro 'xalloc_oversized'
+#    : ({ __xalloc_count_type __xalloc_count; \
+#       ^
+#  118|   xnrealloc (void *p, size_t n, size_t s)
+#  119|   {
+#  120|->   if (xalloc_oversized (n, s))
+#  121|       xalloc_die ();
+#  122|     return xrealloc (p, n * s);
+
+Error: COMPILER_WARNING:
+cpio-2.13/gnu/xmalloc.c:100:7: warning: use of GNU statement expression extension
+#  if (xalloc_oversized (n, s)
+#      ^
+cpio-2.13/gnu/xalloc-oversized.h:59:8: note: expanded from macro 'xalloc_oversized'
+#    : ({ __xalloc_count_type __xalloc_count; \
+#       ^
+#   98|        tests if HAVE_GNU_CALLOC, since GNU calloc never returns NULL if
+#   99|        successful.  */
+#  100|->   if (xalloc_oversized (n, s)
+#  101|         || (! (p = calloc (n, s)) && (HAVE_GNU_CALLOC || n != 0)))
+#  102|       xalloc_die ();
+
+Error: COMPILER_WARNING:
+cpio-2.13/lib/rtapelib.c:432:7: warning: implicit declaration of function 'gethostbyname' is invalid in C99
+#  if (gethostbyname (remote_host) == NULL)
+#      ^
+#  430|   
+#  431|     /* FIXME: Should somewhat validate the decoding, here.  */
+#  432|->   if (gethostbyname (remote_host) == NULL)
+#  433|       error (EXIT_ON_EXEC_ERROR, 0, _("Cannot connect to %s: resolve failed"),
+#  434|   	   remote_host);
+
+Error: COMPILER_WARNING:
+cpio-2.13/lib/rtapelib.c:432:35: warning: comparison between pointer and integer ('int' and 'void *')
+#  if (gethostbyname (remote_host) == NULL)
+#      ~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^  ~~~~
+#  430|   
+#  431|     /* FIXME: Should somewhat validate the decoding, here.  */
+#  432|->   if (gethostbyname (remote_host) == NULL)
+#  433|       error (EXIT_ON_EXEC_ERROR, 0, _("Cannot connect to %s: resolve failed"),
+#  434|   	   remote_host);
+
+Error: COMPILER_WARNING:
+cpio-2.13/lib/rtapelib.c:511:4: warning: implicit declaration of function 'execl' is invalid in C99
+#          execl (remote_shell, remote_shell_basename, remote_host,
+#          ^
+#  509|   
+#  510|   	if (remote_user)
+#  511|-> 	  execl (remote_shell, remote_shell_basename, remote_host,
+#  512|   		 "-l", remote_user, rmt_command, (char *) 0);
+#  513|   	else
+
+Error: COMPILER_WARNING:
+cpio-2.13/lib/paxexit.c:19: included_from: Included from here.
+cpio-2.13/lib/system.h:491:7: warning: implicit declaration of function 'initgroups' is invalid in C99
+#  if (initgroups (pw->pw_name, getgid ()))
+#      ^
+#  489|         FATAL_ERROR ((0, errno, "%s(%lu)", "getpwuid", (unsigned long)uid));
+#  490|       }
+#  491|->   if (initgroups (pw->pw_name, getgid ()))
+#  492|       {
+#  493|         FATAL_ERROR ((0, errno, "%s", "initgroups"));
+
+Error: COMPILER_WARNING:
+cpio-2.13/lib/system.h:495:28: warning: implicit declaration of function 'setgid' is invalid in C99
+#  if (gid != getegid () && setgid (gid) && errno != EPERM)
+#                           ^
+#  493|         FATAL_ERROR ((0, errno, "%s", "initgroups"));
+#  494|       }
+#  495|->   if (gid != getegid () && setgid (gid) && errno != EPERM)
+#  496|       {
+#  497|         FATAL_ERROR ((0, errno, "%s", "setgid"));
+
+Error: COMPILER_WARNING:
+cpio-2.13/lib/system.h:499:28: warning: implicit declaration of function 'setuid' is invalid in C99
+#  if (uid != geteuid () && setuid (uid) && errno != EPERM)
+#                           ^
+#  497|         FATAL_ERROR ((0, errno, "%s", "setgid"));
+#  498|       }
+#  499|->   if (uid != geteuid () && setuid (uid) && errno != EPERM)
+#  500|       {
+#  501|         FATAL_ERROR ((0, errno, "%s", "setuid"));
+
+Error: COMPILER_WARNING:
+cpio-2.13/src/copyin.c:665:12: warning: implicit declaration of function 'lchown' is invalid in C99
+#      if ((lchown (file_hdr->c_name, uid, gid) < 0)
+#           ^
+#  663|         uid_t uid = set_owner_flag ? set_owner : file_hdr->c_uid;
+#  664|         gid_t gid = set_group_flag ? set_group : file_hdr->c_gid;
+#  665|->       if ((lchown (file_hdr->c_name, uid, gid) < 0)
+#  666|     	  && errno != EPERM)
+#  667|   	chown_error_details (file_hdr->c_name, uid, gid);
+
+Error: COMPILER_WARNING:
+cpio-2.13/src/copypass.c:305:13: warning: implicit declaration of function 'lchown' is invalid in C99
+#              if ((lchown (output_name.ds_string, uid, gid) < 0)
+#                   ^
+#  303|                 uid_t uid = set_owner_flag ? set_owner : in_file_stat.st_uid;
+#  304|                 gid_t gid = set_group_flag ? set_group : in_file_stat.st_gid;
+#  305|-> 	      if ((lchown (output_name.ds_string, uid, gid) < 0)
+#  306|   		  && errno != EPERM)
+#  307|   	        chown_error_details (output_name.ds_string, uid, gid);

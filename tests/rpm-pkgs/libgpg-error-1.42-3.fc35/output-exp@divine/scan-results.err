@@ -1,0 +1,194 @@
+Error: DIVINE_WARNING:
+libgpg-error-1.42/src/gen-posix-lock-obj.c: scope_hint: In function 'main':
+libgpg-error-1.42/src/gen-posix-lock-obj.c:141: error: conditional jump depends on an undefined value
+libgpg-error-1.42/src/gen-posix-lock-obj.c:141: note: control error in userspace
+/opt/divine/include/dios/sys/fault.hpp:119: note: void __dios::FaultBase::handler<__dios::Context>(_VM_Fault, _VM_Frame*, void (*)())
+libgpg-error-1.42/src/gen-posix-lock-obj.c:141: note: main
+/opt/divine/include/dios/libc/sys/start.cpp:91: note: __dios_start
+#  139|     for (i=0; i < sizeof mtx; i++)
+#  140|       {
+#  141|->       if (p[i] != 0)
+#  142|           initidx = i;
+#  143|       }
+
+Error: COMPILER_WARNING:
+libgpg-error-1.42/tests/t-argparse.c:104:53: warning: missing sentinel in function call
+#    char *p = gpgrt_fnameconcat (srcdir, "etc", NULL);
+#                                                    ^
+libgpg-error-1.42/src/gpgrt.h:1991:7: note: function has been explicitly marked sentinel here
+#char *gpgrt_fnameconcat (const char *first, ...) GPGRT_ATTR_SENTINEL(0);
+#      ^
+#  102|     gpgrt_set_confdir (GPGRT_CONFDIR_USER, srcdir);
+#  103|     {
+#  104|->     char *p = gpgrt_fnameconcat (srcdir, "etc", NULL);
+#  105|       gpgrt_set_confdir (GPGRT_CONFDIR_SYS, p);
+#  106|       xfree (p);
+
+Error: COMPILER_WARNING:
+libgpg-error-1.42/tests/t-stringutils.c:190:47: warning: missing sentinel in function call
+#                           "1", "2", "3", NULL);
+#                                              ^
+libgpg-error-1.42/src/gpgrt.h:1991:7: note: function has been explicitly marked sentinel here
+#char *gpgrt_fnameconcat (const char *first, ...) GPGRT_ATTR_SENTINEL(0);
+#      ^
+#  188|                              "1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
+#  189|                              "1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
+#  190|->                            "1", "2", "3", NULL);
+#  191|     if (out)
+#  192|       fail ("fnameconcat succeeded but should not at line %d\n", __LINE__);
+
+Error: COMPILER_WARNING:
+libgpg-error-1.42/tests/t-stringutils.c:200:52: warning: missing sentinel in function call
+#                           "1", "2", "3", "4", NULL);
+#                                                   ^
+libgpg-error-1.42/src/gpgrt.h:1991:7: note: function has been explicitly marked sentinel here
+#char *gpgrt_fnameconcat (const char *first, ...) GPGRT_ATTR_SENTINEL(0);
+#      ^
+#  198|                              "1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
+#  199|                              "1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
+#  200|->                            "1", "2", "3", "4", NULL);
+#  201|     if (out)
+#  202|       fail ("fnameconcat succeeded but should not at line %d\n", __LINE__);
+
+Error: COMPILER_WARNING:
+libgpg-error-1.42/tests/t-stringutils.c:210:42: warning: missing sentinel in function call
+#                           "1", "2", NULL);
+#                                         ^
+libgpg-error-1.42/src/gpgrt.h:1991:7: note: function has been explicitly marked sentinel here
+#char *gpgrt_fnameconcat (const char *first, ...) GPGRT_ATTR_SENTINEL(0);
+#      ^
+#  208|                              "1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
+#  209|                              "1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
+#  210|->                            "1", "2", NULL);
+#  211|     if (!out || strcmp (out,
+#  212|                         "1/2/3/4/5/6/7/8/9/10/"
+
+Error: COMPILER_WARNING:
+libgpg-error-1.42/tests/t-stringutils.c:219:59: warning: missing sentinel in function call
+#  out = gpgrt_fnameconcat ("foo", "~/bar", "baz/cde", NULL);
+#                                                          ^
+libgpg-error-1.42/src/gpgrt.h:1991:7: note: function has been explicitly marked sentinel here
+#char *gpgrt_fnameconcat (const char *first, ...) GPGRT_ATTR_SENTINEL(0);
+#      ^
+#  217|     xfree (out);
+#  218|   
+#  219|->   out = gpgrt_fnameconcat ("foo", "~/bar", "baz/cde", NULL);
+#  220|     if (!out || strcmp (out, "foo/~/bar/baz/cde"))
+#  221|       fail ("fnameconcat failed at line %d (out=%s)\n", __LINE__, out);
+
+Error: COMPILER_WARNING:
+libgpg-error-1.42/tests/t-stringutils.c:224:60: warning: missing sentinel in function call
+#  out = gpgrt_fnameconcat ("foo", "~/bar", "baz/cde/", NULL);
+#                                                           ^
+libgpg-error-1.42/src/gpgrt.h:1991:7: note: function has been explicitly marked sentinel here
+#char *gpgrt_fnameconcat (const char *first, ...) GPGRT_ATTR_SENTINEL(0);
+#      ^
+#  222|     xfree (out);
+#  223|   
+#  224|->   out = gpgrt_fnameconcat ("foo", "~/bar", "baz/cde/", NULL);
+#  225|     if (!out || strcmp (out, "foo/~/bar/baz/cde/"))
+#  226|       fail ("fnameconcat failed at line %d (out=%s)\n", __LINE__, out);
+
+Error: COMPILER_WARNING:
+libgpg-error-1.42/tests/t-stringutils.c:229:61: warning: missing sentinel in function call
+#  out = gpgrt_fnameconcat ("/foo", "~/bar", "baz/cde/", NULL);
+#                                                            ^
+libgpg-error-1.42/src/gpgrt.h:1991:7: note: function has been explicitly marked sentinel here
+#char *gpgrt_fnameconcat (const char *first, ...) GPGRT_ATTR_SENTINEL(0);
+#      ^
+#  227|     xfree (out);
+#  228|   
+#  229|->   out = gpgrt_fnameconcat ("/foo", "~/bar", "baz/cde/", NULL);
+#  230|     if (!out || strcmp (out, "/foo/~/bar/baz/cde/"))
+#  231|       fail ("fnameconcat failed at line %d (out=%s)\n", __LINE__, out);
+
+Error: COMPILER_WARNING:
+libgpg-error-1.42/tests/t-stringutils.c:234:62: warning: missing sentinel in function call
+#  out = gpgrt_fnameconcat ("//foo", "~/bar", "baz/cde/", NULL);
+#                                                             ^
+libgpg-error-1.42/src/gpgrt.h:1991:7: note: function has been explicitly marked sentinel here
+#char *gpgrt_fnameconcat (const char *first, ...) GPGRT_ATTR_SENTINEL(0);
+#      ^
+#  232|     xfree (out);
+#  233|   
+#  234|->   out = gpgrt_fnameconcat ("//foo", "~/bar", "baz/cde/", NULL);
+#  235|     if (!out || strcmp (out, "//foo/~/bar/baz/cde/"))
+#  236|       fail ("fnameconcat failed at line %d (out=%s)\n", __LINE__, out);
+
+Error: COMPILER_WARNING:
+libgpg-error-1.42/tests/t-stringutils.c:239:56: warning: missing sentinel in function call
+#  out = gpgrt_fnameconcat ("", "~/bar", "baz/cde", NULL);
+#                                                       ^
+libgpg-error-1.42/src/gpgrt.h:1991:7: note: function has been explicitly marked sentinel here
+#char *gpgrt_fnameconcat (const char *first, ...) GPGRT_ATTR_SENTINEL(0);
+#      ^
+#  237|     xfree (out);
+#  238|   
+#  239|->   out = gpgrt_fnameconcat ("", "~/bar", "baz/cde", NULL);
+#  240|     if (!out || strcmp (out, "/~/bar/baz/cde"))
+#  241|       fail ("fnameconcat failed at line %d (out=%s)\n", __LINE__, out);
+
+Error: COMPILER_WARNING:
+libgpg-error-1.42/tests/t-stringutils.c:244:48: warning: missing sentinel in function call
+#  out = gpgrt_fnameconcat ("~/foo", "bar", NULL);
+#                                               ^
+libgpg-error-1.42/src/gpgrt.h:1991:7: note: function has been explicitly marked sentinel here
+#char *gpgrt_fnameconcat (const char *first, ...) GPGRT_ATTR_SENTINEL(0);
+#      ^
+#  242|     xfree (out);
+#  243|   
+#  244|->   out = gpgrt_fnameconcat ("~/foo", "bar", NULL);
+#  245|     if (!out)
+#  246|       fail ("fnameconcat failed at line %d\n", __LINE__);
+
+Error: COMPILER_WARNING:
+libgpg-error-1.42/tests/t-stringutils.c:263:44: warning: missing sentinel in function call
+#  out = gpgrt_fnameconcat ("~", "bar", NULL);
+#                                           ^
+libgpg-error-1.42/src/gpgrt.h:1991:7: note: function has been explicitly marked sentinel here
+#char *gpgrt_fnameconcat (const char *first, ...) GPGRT_ATTR_SENTINEL(0);
+#      ^
+#  261|     xfree (out);
+#  262|   
+#  263|->   out = gpgrt_fnameconcat ("~", "bar", NULL);
+#  264|     if (!out)
+#  265|       fail ("fnameconcat failed at line %d\n", __LINE__);
+
+Error: COMPILER_WARNING:
+libgpg-error-1.42/tests/t-stringutils.c:291:49: warning: missing sentinel in function call
+#  out = gpgrt_absfnameconcat ("foo", "bar", NULL);
+#                                                ^
+libgpg-error-1.42/src/gpgrt.h:1992:7: note: function has been explicitly marked sentinel here
+#char *gpgrt_absfnameconcat (const char *first, ...) GPGRT_ATTR_SENTINEL(0);
+#      ^
+#  289|     size_t cwdlen = strlen (cwd);
+#  290|   
+#  291|->   out = gpgrt_absfnameconcat ("foo", "bar", NULL);
+#  292|     if (!out)
+#  293|       fail ("fnameconcat failed at line %d\n", __LINE__);
+
+Error: COMPILER_WARNING:
+libgpg-error-1.42/tests/t-stringutils.c:302:44: warning: missing sentinel in function call
+#  out = gpgrt_absfnameconcat ("./foo", NULL);
+#                                           ^
+libgpg-error-1.42/src/gpgrt.h:1992:7: note: function has been explicitly marked sentinel here
+#char *gpgrt_absfnameconcat (const char *first, ...) GPGRT_ATTR_SENTINEL(0);
+#      ^
+#  300|     xfree (out);
+#  301|   
+#  302|->   out = gpgrt_absfnameconcat ("./foo", NULL);
+#  303|     if (!out)
+#  304|       fail ("fnameconcat failed at line %d (out=%s)\n", __LINE__, out);
+
+Error: COMPILER_WARNING:
+libgpg-error-1.42/tests/t-stringutils.c:313:40: warning: missing sentinel in function call
+#  out = gpgrt_absfnameconcat (".", NULL);
+#                                       ^
+libgpg-error-1.42/src/gpgrt.h:1992:7: note: function has been explicitly marked sentinel here
+#char *gpgrt_absfnameconcat (const char *first, ...) GPGRT_ATTR_SENTINEL(0);
+#      ^
+#  311|     xfree (out);
+#  312|   
+#  313|->   out = gpgrt_absfnameconcat (".", NULL);
+#  314|     if (!out)
+#  315|       fail ("fnameconcat failed at line %d\n", __LINE__);

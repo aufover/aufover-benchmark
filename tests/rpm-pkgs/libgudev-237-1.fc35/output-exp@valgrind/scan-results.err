@@ -1,0 +1,174 @@
+Error: VALGRIND_WARNING:
+libgudev-237/redhat-linux-build/tests/test-enumerator-filter: note: while executing process 362
+libgudev-237/redhat-linux-build/../gudev/gudevenumerator.c:170: warning[Leak_DefinitelyLost]: 1,072 (40 direct, 1,032 indirect) bytes in 1 blocks are definitely lost in loss record 785 of 795
+/usr/lib64/libgobject-2.0.so.0.7000.5: note: called from g_type_create_instance()
+/usr/lib64/libgobject-2.0.so.0.7000.5: note: called from here
+/usr/lib64/libgobject-2.0.so.0.7000.5: note: called from g_object_new_valist()
+/usr/lib64/libgobject-2.0.so.0.7000.5: note: called from g_object_new()
+libgudev-237/redhat-linux-build/../gudev/gudevenumerator.c:170: note: called from g_udev_enumerator_new()
+libgudev-237/redhat-linux-build/../tests/test-enumerator-filter.c:58: note: called from test_enumerator_filter()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from here
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from here
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_test_run_suite()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_test_run()
+libgudev-237/redhat-linux-build/../tests/test-enumerator-filter.c:71: note: called from main()
+#  168|   {
+#  169|     g_return_val_if_fail (G_UDEV_IS_CLIENT (client), NULL);
+#  170|->   return G_UDEV_ENUMERATOR (g_object_new (G_UDEV_TYPE_ENUMERATOR, "client", client, NULL));
+#  171|   }
+#  172|   
+
+Error: VALGRIND_WARNING:
+libgudev-237/redhat-linux-build/tests/test-double: note: while executing process 368
+libgudev-237/redhat-linux-build/../tests/test-double.c:23: warning[Leak_DefinitelyLost]: 5,026 (40 direct, 4,986 indirect) bytes in 1 blocks are definitely lost in loss record 762 of 763
+/usr/lib64/libgobject-2.0.so.0.7000.5: note: called from g_type_create_instance()
+/usr/lib64/libgobject-2.0.so.0.7000.5: note: called from here
+/usr/lib64/libgobject-2.0.so.0.7000.5: note: called from g_object_new_with_properties()
+/usr/lib64/libgobject-2.0.so.0.7000.5: note: called from g_object_new()
+/usr/lib64/libumockdev.so.0.3.0: note: called from umockdev_testbed_construct()
+libgudev-237/redhat-linux-build/../tests/test-double.c:23: note: called from test_double()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from here
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from here
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_test_run_suite()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_test_run()
+libgudev-237/redhat-linux-build/../tests/test-double.c:62: note: called from main()
+#   21|   {
+#   22|   	/* create test bed */
+#   23|-> 	UMockdevTestbed *testbed = umockdev_testbed_new ();
+#   24|   
+#   25|   	/* Relies on a test bed having been set up */
+
+Error: VALGRIND_WARNING:
+libgudev-237/redhat-linux-build/tests/test-double: note: while executing process 368
+libgudev-237/redhat-linux-build/../tests/test-double.c:30: warning[Leak_DefinitelyLost]: 128 bytes in 1 blocks are definitely lost in loss record 715 of 763
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_realloc()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_string_sized_new()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from here
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_build_filename()
+/usr/lib64/libumockdev.so.0.3.0: note: called from here
+/usr/lib64/libumockdev.so.0.3.0: note: called from umockdev_testbed_add_devicev()
+/usr/lib64/libumockdev.so.0.3.0: note: called from umockdev_testbed_add_device()
+libgudev-237/redhat-linux-build/../tests/test-double.c:30: note: called from test_double()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from here
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from here
+#   28|   	g_assert_cmpstr (nl_langinfo(RADIXCHAR), ==, ",");
+#   29|   
+#   30|-> 	umockdev_testbed_add_device (testbed, "platform", "dev1", NULL,
+#   31|   				     "in_accel_scale", "0.0000098", NULL,
+#   32|   				     "ID_MODEL", "KoolGadget", "SCALE", "0.0000098", NULL);
+
+Error: VALGRIND_WARNING:
+libgudev-237/redhat-linux-build/tests/test-enumerator-filter: note: while executing process 362
+libgudev-237/redhat-linux-build/../tests/test-enumerator-filter.c:27: warning[Leak_DefinitelyLost]: 5,026 (40 direct, 4,986 indirect) bytes in 1 blocks are definitely lost in loss record 794 of 795
+/usr/lib64/libgobject-2.0.so.0.7000.5: note: called from g_type_create_instance()
+/usr/lib64/libgobject-2.0.so.0.7000.5: note: called from here
+/usr/lib64/libgobject-2.0.so.0.7000.5: note: called from g_object_new_with_properties()
+/usr/lib64/libgobject-2.0.so.0.7000.5: note: called from g_object_new()
+/usr/lib64/libumockdev.so.0.3.0: note: called from umockdev_testbed_construct()
+libgudev-237/redhat-linux-build/../tests/test-enumerator-filter.c:27: note: called from test_enumerator_filter()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from here
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from here
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_test_run_suite()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_test_run()
+libgudev-237/redhat-linux-build/../tests/test-enumerator-filter.c:71: note: called from main()
+#   25|   {
+#   26|   	/* create test bed */
+#   27|-> 	UMockdevTestbed *testbed = umockdev_testbed_new ();
+#   28|   
+#   29|   	/* Relies on a test bed having been set up */
+
+Error: VALGRIND_WARNING:
+libgudev-237/redhat-linux-build/tests/test-enumerator-filter: note: while executing process 362
+libgudev-237/redhat-linux-build/../tests/test-enumerator-filter.c:33: warning[Leak_DefinitelyLost]: 128 bytes in 1 blocks are definitely lost in loss record 742 of 795
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_realloc()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_string_sized_new()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from here
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_build_filename()
+/usr/lib64/libumockdev.so.0.3.0: note: called from here
+/usr/lib64/libumockdev.so.0.3.0: note: called from umockdev_testbed_add_devicev()
+/usr/lib64/libumockdev.so.0.3.0: note: called from umockdev_testbed_add_device()
+libgudev-237/redhat-linux-build/../tests/test-enumerator-filter.c:33: note: called from test_enumerator_filter()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from here
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from here
+#   31|   
+#   32|   	/* Add 2 devices in the USB subsystem, and one in the DRM subsystem */
+#   33|-> 	umockdev_testbed_add_device (testbed, "usb", "dev1", NULL,
+#   34|   				     "idVendor", "0815", "idProduct", "AFFE", NULL,
+#   35|   				     "ID_MODEL", "KoolGadget", NULL);
+
+Error: VALGRIND_WARNING:
+libgudev-237/redhat-linux-build/tests/test-enumerator-filter: note: while executing process 362
+libgudev-237/redhat-linux-build/../tests/test-enumerator-filter.c:37: warning[Leak_DefinitelyLost]: 128 bytes in 1 blocks are definitely lost in loss record 743 of 795
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_realloc()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_string_sized_new()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from here
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_build_filename()
+/usr/lib64/libumockdev.so.0.3.0: note: called from here
+/usr/lib64/libumockdev.so.0.3.0: note: called from umockdev_testbed_add_devicev()
+/usr/lib64/libumockdev.so.0.3.0: note: called from umockdev_testbed_add_device()
+libgudev-237/redhat-linux-build/../tests/test-enumerator-filter.c:37: note: called from test_enumerator_filter()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from here
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from here
+#   35|   				     "ID_MODEL", "KoolGadget", NULL);
+#   36|   
+#   37|-> 	umockdev_testbed_add_device (testbed, "usb", "dev2", NULL,
+#   38|   				     "idVendor", "0815", "idProduct", "AFFF", NULL,
+#   39|   				     "ID_MODEL", "KoolGadget 2", NULL);
+
+Error: VALGRIND_WARNING:
+libgudev-237/redhat-linux-build/tests/test-enumerator-filter: note: while executing process 362
+libgudev-237/redhat-linux-build/../tests/test-enumerator-filter.c:41: warning[Leak_DefinitelyLost]: 128 bytes in 1 blocks are definitely lost in loss record 744 of 795
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_realloc()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_string_sized_new()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from here
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_build_filename()
+/usr/lib64/libumockdev.so.0.3.0: note: called from here
+/usr/lib64/libumockdev.so.0.3.0: note: called from umockdev_testbed_add_devicev()
+/usr/lib64/libumockdev.so.0.3.0: note: called from umockdev_testbed_add_device()
+libgudev-237/redhat-linux-build/../tests/test-enumerator-filter.c:41: note: called from test_enumerator_filter()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from here
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from here
+#   39|   				     "ID_MODEL", "KoolGadget 2", NULL);
+#   40|   
+#   41|-> 	umockdev_testbed_add_device (testbed, "drm", "dev3", NULL,
+#   42|   				     "ID_FOR_SEAT", "drm-pci-0000_00_02_0", NULL,
+#   43|   				     NULL);
+
+Error: VALGRIND_WARNING:
+libgudev-237/redhat-linux-build/tests/test-sysfsattr: note: while executing process 365
+libgudev-237/redhat-linux-build/../tests/test-sysfsattr.c:22: warning[Leak_DefinitelyLost]: 5,026 (40 direct, 4,986 indirect) bytes in 1 blocks are definitely lost in loss record 762 of 763
+/usr/lib64/libgobject-2.0.so.0.7000.5: note: called from g_type_create_instance()
+/usr/lib64/libgobject-2.0.so.0.7000.5: note: called from here
+/usr/lib64/libgobject-2.0.so.0.7000.5: note: called from g_object_new_with_properties()
+/usr/lib64/libgobject-2.0.so.0.7000.5: note: called from g_object_new()
+/usr/lib64/libumockdev.so.0.3.0: note: called from umockdev_testbed_construct()
+libgudev-237/redhat-linux-build/../tests/test-sysfsattr.c:22: note: called from test_uncached_sysfs_attr()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from here
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from here
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_test_run_suite()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_test_run()
+libgudev-237/redhat-linux-build/../tests/test-sysfsattr.c:76: note: called from main()
+#   20|   {
+#   21|   	/* create test bed */
+#   22|-> 	UMockdevTestbed *testbed = umockdev_testbed_new ();
+#   23|   
+#   24|   	/* Relies on a test bed having been set up */
+
+Error: VALGRIND_WARNING:
+libgudev-237/redhat-linux-build/tests/test-sysfsattr: note: while executing process 365
+libgudev-237/redhat-linux-build/../tests/test-sysfsattr.c:27: warning[Leak_DefinitelyLost]: 128 bytes in 1 blocks are definitely lost in loss record 715 of 763
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_realloc()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_string_sized_new()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from here
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_build_filename()
+/usr/lib64/libumockdev.so.0.3.0: note: called from here
+/usr/lib64/libumockdev.so.0.3.0: note: called from umockdev_testbed_add_devicev()
+/usr/lib64/libumockdev.so.0.3.0: note: called from umockdev_testbed_add_device()
+libgudev-237/redhat-linux-build/../tests/test-sysfsattr.c:27: note: called from test_uncached_sysfs_attr()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from here
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from here
+#   25|   	g_assert (umockdev_in_mock_environment ());
+#   26|   
+#   27|-> 	umockdev_testbed_add_device (testbed, "platform", "dev1", NULL,
+#   28|   				     "dytc_lapmode", "1", "console", "Y\n", NULL,
+#   29|   				     "ID_MODEL", "KoolGadget", NULL);

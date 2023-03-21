@@ -1,0 +1,31 @@
+Error: COMPILER_WARNING (CWE-1164):
+npth-1.6/src/npth.c:140:1: warning[-Wunused-function]: 'busy_wait_for' defined but not used
+#  140 | busy_wait_for (trylock_func_t trylock, void *lock,
+#      | ^~~~~~~~~~~~~
+#  138|   
+#  139|   static int
+#  140|-> busy_wait_for (trylock_func_t trylock, void *lock,
+#  141|   	       const struct timespec *abstime)
+#  142|   {
+
+Error: COMPILER_WARNING (CWE-563):
+npth-1.6/tests/t-mutex.c:13: included_from: Included from here.
+npth-1.6/tests/t-support.h:24:12: warning[-Wunused-variable]: 'opt_verbose' defined but not used
+#   24 | static int opt_verbose;
+#      |            ^~~~~~~~~~~
+#   22|   #endif
+#   23|   
+#   24|-> static int opt_verbose;
+#   25|   
+#   26|   
+
+Error: COMPILER_WARNING (CWE-563):
+npth-1.6/tests/t-thread.c: scope_hint: In function 'thread_twoone'
+npth-1.6/tests/t-thread.c:48:11: warning[-Wunused-variable]: unused variable 'i'
+#   48 |   int rc, i;
+#      |           ^
+#   46|   thread_twoone (void *arg)
+#   47|   {
+#   48|->   int rc, i;
+#   49|   
+#   50|     npth_setname_np (npth_self (), "thread-twoone");

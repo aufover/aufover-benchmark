@@ -1,0 +1,21 @@
+Error: COMPILER_WARNING (CWE-252):
+quota-4.06/quotastats.c: scope_hint: In function 'get_proc_num'
+quota-4.06/quotastats.c:51:9: warning[-Wunused-result]: ignoring return value of 'fscanf' declared with attribute 'warn_unused_result'
+#   51 |         fscanf(f, "%d", &ret);
+#      |         ^~~~~~~~~~~~~~~~~~~~~
+#   49|   		return -1;
+#   50|   	}
+#   51|-> 	fscanf(f, "%d", &ret);
+#   52|   	fclose(f);
+#   53|   	return ret;
+
+Error: COMPILER_WARNING (CWE-252):
+quota-4.06/xqmstats.c: scope_hint: In function 'main'
+quota-4.06/xqmstats.c:43:17: warning[-Wunused-result]: ignoring return value of 'fgets' declared with attribute 'warn_unused_result'
+#   43 |                 fgets(buffer, 256, stats);
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~
+#   41|   	}
+#   42|   	while (!feof(stats)) {
+#   43|-> 		fgets(buffer, 256, stats);
+#   44|   		if (sscanf(buffer, "qm %u %u %u %u %u %u %u %u\n",
+#   45|   			   &values[0], &values[1], &values[2], &values[3],

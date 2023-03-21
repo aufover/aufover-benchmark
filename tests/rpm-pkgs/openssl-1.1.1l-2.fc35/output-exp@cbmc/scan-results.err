@@ -1,0 +1,565 @@
+Error: COMPILER_WARNING:
+openssl-1.1.1l/crypto/ec/curve448/f_generic.c:21:27: warning[-Warray-parameter=]: argument 1 of type 'uint8_t[56]' {aka 'unsigned char[56]'} with mismatched bound
+#   21 | void gf_serialize(uint8_t serial[SER_BYTES], const gf x, int with_hibit)
+#      |                   ~~~~~~~~^~~~~~~~~~~~~~~~~
+openssl-1.1.1l/crypto/ec/curve448/f_generic.c:12: included_from: Included from here.
+openssl-1.1.1l/crypto/ec/curve448/field.h:65:28: note: previously declared as 'uint8_t *' {aka 'unsigned char *'}
+#   65 | void gf_serialize(uint8_t *serial, const gf x, int with_highbit);
+#      |                   ~~~~~~~~~^~~~~~
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#   19|   
+#   20|   /* Serialize to wire format. */
+#   21|-> void gf_serialize(uint8_t serial[SER_BYTES], const gf x, int with_hibit)
+#   22|   {
+#   23|       unsigned int j = 0, fill = 0;
+
+Error: COMPILER_WARNING:
+openssl-1.1.1l/crypto/ec/ec_local.h:338:1: warning: warning: pointer parameter types differ between declaration and definition "EC_pre_comp_free"
+#  336|   EC_PRE_COMP *EC_ec_pre_comp_dup(EC_PRE_COMP *);
+#  337|   
+#  338|-> void EC_pre_comp_free(EC_GROUP *group);
+#  339|   void EC_nistp224_pre_comp_free(NISTP224_PRE_COMP *);
+#  340|   void EC_nistp256_pre_comp_free(NISTP256_PRE_COMP *);
+
+Error: COMPILER_WARNING:
+openssl-1.1.1l/crypto/ec/ec_local.h:356:1: warning: warning: ignoring conflicting function declarations "ec_GFp_simple_group_init"
+#  354|   
+#  355|   /* method functions in ecp_smpl.c */
+#  356|-> int ec_GFp_simple_group_init(EC_GROUP *);
+#  357|   void ec_GFp_simple_group_finish(EC_GROUP *);
+#  358|   void ec_GFp_simple_group_clear_finish(EC_GROUP *);
+
+Error: COMPILER_WARNING:
+openssl-1.1.1l/crypto/ec/ec_local.h:357:1: warning: warning: ignoring conflicting function declarations "ec_GFp_simple_group_finish"
+#  355|   /* method functions in ecp_smpl.c */
+#  356|   int ec_GFp_simple_group_init(EC_GROUP *);
+#  357|-> void ec_GFp_simple_group_finish(EC_GROUP *);
+#  358|   void ec_GFp_simple_group_clear_finish(EC_GROUP *);
+#  359|   int ec_GFp_simple_group_copy(EC_GROUP *, const EC_GROUP *);
+
+Error: COMPILER_WARNING:
+openssl-1.1.1l/crypto/ec/ec_local.h:358:1: warning: warning: ignoring conflicting function declarations "ec_GFp_simple_group_clear_finish"
+#  356|   int ec_GFp_simple_group_init(EC_GROUP *);
+#  357|   void ec_GFp_simple_group_finish(EC_GROUP *);
+#  358|-> void ec_GFp_simple_group_clear_finish(EC_GROUP *);
+#  359|   int ec_GFp_simple_group_copy(EC_GROUP *, const EC_GROUP *);
+#  360|   int ec_GFp_simple_group_set_curve(EC_GROUP *, const BIGNUM *p,
+
+Error: COMPILER_WARNING:
+openssl-1.1.1l/crypto/ec/ec_local.h:360:1: warning: warning: ignoring conflicting function declarations "ec_GFp_simple_group_set_curve"
+#  358|   void ec_GFp_simple_group_clear_finish(EC_GROUP *);
+#  359|   int ec_GFp_simple_group_copy(EC_GROUP *, const EC_GROUP *);
+#  360|-> int ec_GFp_simple_group_set_curve(EC_GROUP *, const BIGNUM *p,
+#  361|                                     const BIGNUM *a, const BIGNUM *b, BN_CTX *);
+#  362|   int ec_GFp_simple_group_get_curve(const EC_GROUP *, BIGNUM *p, BIGNUM *a,
+
+Error: COMPILER_WARNING:
+openssl-1.1.1l/crypto/ec/ec_local.h:362:1: warning: warning: ignoring conflicting function declarations "ec_GFp_simple_group_get_curve"
+#  360|   int ec_GFp_simple_group_set_curve(EC_GROUP *, const BIGNUM *p,
+#  361|                                     const BIGNUM *a, const BIGNUM *b, BN_CTX *);
+#  362|-> int ec_GFp_simple_group_get_curve(const EC_GROUP *, BIGNUM *p, BIGNUM *a,
+#  363|                                     BIGNUM *b, BN_CTX *);
+#  364|   int ec_GFp_simple_group_get_degree(const EC_GROUP *);
+
+Error: COMPILER_WARNING:
+openssl-1.1.1l/crypto/ec/ec_local.h:364:1: warning: warning: ignoring conflicting function declarations "ec_GFp_simple_group_get_degree"
+#  362|   int ec_GFp_simple_group_get_curve(const EC_GROUP *, BIGNUM *p, BIGNUM *a,
+#  363|                                     BIGNUM *b, BN_CTX *);
+#  364|-> int ec_GFp_simple_group_get_degree(const EC_GROUP *);
+#  365|   int ec_GFp_simple_group_check_discriminant(const EC_GROUP *, BN_CTX *);
+#  366|   int ec_GFp_simple_point_init(EC_POINT *);
+
+Error: COMPILER_WARNING:
+openssl-1.1.1l/crypto/ec/ec_local.h:365:1: warning: warning: ignoring conflicting function declarations "ec_GFp_simple_group_check_discriminant"
+#  363|                                     BIGNUM *b, BN_CTX *);
+#  364|   int ec_GFp_simple_group_get_degree(const EC_GROUP *);
+#  365|-> int ec_GFp_simple_group_check_discriminant(const EC_GROUP *, BN_CTX *);
+#  366|   int ec_GFp_simple_point_init(EC_POINT *);
+#  367|   void ec_GFp_simple_point_finish(EC_POINT *);
+
+Error: COMPILER_WARNING:
+openssl-1.1.1l/crypto/ec/ec_local.h:366:1: warning: warning: ignoring conflicting function declarations "ec_GFp_simple_point_init"
+#  364|   int ec_GFp_simple_group_get_degree(const EC_GROUP *);
+#  365|   int ec_GFp_simple_group_check_discriminant(const EC_GROUP *, BN_CTX *);
+#  366|-> int ec_GFp_simple_point_init(EC_POINT *);
+#  367|   void ec_GFp_simple_point_finish(EC_POINT *);
+#  368|   void ec_GFp_simple_point_clear_finish(EC_POINT *);
+
+Error: COMPILER_WARNING:
+openssl-1.1.1l/crypto/ec/ec_local.h:367:1: warning: warning: ignoring conflicting function declarations "ec_GFp_simple_point_finish"
+#  365|   int ec_GFp_simple_group_check_discriminant(const EC_GROUP *, BN_CTX *);
+#  366|   int ec_GFp_simple_point_init(EC_POINT *);
+#  367|-> void ec_GFp_simple_point_finish(EC_POINT *);
+#  368|   void ec_GFp_simple_point_clear_finish(EC_POINT *);
+#  369|   int ec_GFp_simple_point_copy(EC_POINT *, const EC_POINT *);
+
+Error: COMPILER_WARNING:
+openssl-1.1.1l/crypto/ec/ec_local.h:368:1: warning: warning: ignoring conflicting function declarations "ec_GFp_simple_point_clear_finish"
+#  366|   int ec_GFp_simple_point_init(EC_POINT *);
+#  367|   void ec_GFp_simple_point_finish(EC_POINT *);
+#  368|-> void ec_GFp_simple_point_clear_finish(EC_POINT *);
+#  369|   int ec_GFp_simple_point_copy(EC_POINT *, const EC_POINT *);
+#  370|   int ec_GFp_simple_point_set_to_infinity(const EC_GROUP *, EC_POINT *);
+
+Error: COMPILER_WARNING:
+openssl-1.1.1l/crypto/ec/ec_local.h:369:1: warning: warning: ignoring conflicting function declarations "ec_GFp_simple_point_copy"
+#  367|   void ec_GFp_simple_point_finish(EC_POINT *);
+#  368|   void ec_GFp_simple_point_clear_finish(EC_POINT *);
+#  369|-> int ec_GFp_simple_point_copy(EC_POINT *, const EC_POINT *);
+#  370|   int ec_GFp_simple_point_set_to_infinity(const EC_GROUP *, EC_POINT *);
+#  371|   int ec_GFp_simple_set_Jprojective_coordinates_GFp(const EC_GROUP *,
+
+Error: COMPILER_WARNING:
+openssl-1.1.1l/crypto/ec/ec_local.h:370:1: warning: warning: ignoring conflicting function declarations "ec_GFp_simple_point_set_to_infinity"
+#  368|   void ec_GFp_simple_point_clear_finish(EC_POINT *);
+#  369|   int ec_GFp_simple_point_copy(EC_POINT *, const EC_POINT *);
+#  370|-> int ec_GFp_simple_point_set_to_infinity(const EC_GROUP *, EC_POINT *);
+#  371|   int ec_GFp_simple_set_Jprojective_coordinates_GFp(const EC_GROUP *,
+#  372|                                                     EC_POINT *, const BIGNUM *x,
+
+Error: COMPILER_WARNING:
+openssl-1.1.1l/crypto/ec/ec_local.h:371:1: warning: warning: ignoring conflicting function declarations "ec_GFp_simple_set_Jprojective_coordinates_GFp"
+#  369|   int ec_GFp_simple_point_copy(EC_POINT *, const EC_POINT *);
+#  370|   int ec_GFp_simple_point_set_to_infinity(const EC_GROUP *, EC_POINT *);
+#  371|-> int ec_GFp_simple_set_Jprojective_coordinates_GFp(const EC_GROUP *,
+#  372|                                                     EC_POINT *, const BIGNUM *x,
+#  373|                                                     const BIGNUM *y,
+
+Error: COMPILER_WARNING:
+openssl-1.1.1l/crypto/ec/ec_local.h:375:1: warning: warning: ignoring conflicting function declarations "ec_GFp_simple_get_Jprojective_coordinates_GFp"
+#  373|                                                     const BIGNUM *y,
+#  374|                                                     const BIGNUM *z, BN_CTX *);
+#  375|-> int ec_GFp_simple_get_Jprojective_coordinates_GFp(const EC_GROUP *,
+#  376|                                                     const EC_POINT *, BIGNUM *x,
+#  377|                                                     BIGNUM *y, BIGNUM *z,
+
+Error: COMPILER_WARNING:
+openssl-1.1.1l/crypto/ec/ec_local.h:379:1: warning: warning: ignoring conflicting function declarations "ec_GFp_simple_point_set_affine_coordinates"
+#  377|                                                     BIGNUM *y, BIGNUM *z,
+#  378|                                                     BN_CTX *);
+#  379|-> int ec_GFp_simple_point_set_affine_coordinates(const EC_GROUP *, EC_POINT *,
+#  380|                                                  const BIGNUM *x,
+#  381|                                                  const BIGNUM *y, BN_CTX *);
+
+Error: COMPILER_WARNING:
+openssl-1.1.1l/crypto/ec/ec_local.h:393:1: warning: warning: ignoring conflicting function declarations "ec_GFp_simple_add"
+#  391|   int ec_GFp_simple_oct2point(const EC_GROUP *, EC_POINT *,
+#  392|                               const unsigned char *buf, size_t len, BN_CTX *);
+#  393|-> int ec_GFp_simple_add(const EC_GROUP *, EC_POINT *r, const EC_POINT *a,
+#  394|                         const EC_POINT *b, BN_CTX *);
+#  395|   int ec_GFp_simple_dbl(const EC_GROUP *, EC_POINT *r, const EC_POINT *a,
+
+Error: COMPILER_WARNING:
+openssl-1.1.1l/crypto/ec/ec_local.h:395:1: warning: warning: ignoring conflicting function declarations "ec_GFp_simple_dbl"
+#  393|   int ec_GFp_simple_add(const EC_GROUP *, EC_POINT *r, const EC_POINT *a,
+#  394|                         const EC_POINT *b, BN_CTX *);
+#  395|-> int ec_GFp_simple_dbl(const EC_GROUP *, EC_POINT *r, const EC_POINT *a,
+#  396|                         BN_CTX *);
+#  397|   int ec_GFp_simple_invert(const EC_GROUP *, EC_POINT *, BN_CTX *);
+
+Error: COMPILER_WARNING:
+openssl-1.1.1l/crypto/ec/ec_local.h:397:1: warning: warning: ignoring conflicting function declarations "ec_GFp_simple_invert"
+#  395|   int ec_GFp_simple_dbl(const EC_GROUP *, EC_POINT *r, const EC_POINT *a,
+#  396|                         BN_CTX *);
+#  397|-> int ec_GFp_simple_invert(const EC_GROUP *, EC_POINT *, BN_CTX *);
+#  398|   int ec_GFp_simple_is_at_infinity(const EC_GROUP *, const EC_POINT *);
+#  399|   int ec_GFp_simple_is_on_curve(const EC_GROUP *, const EC_POINT *, BN_CTX *);
+
+Error: COMPILER_WARNING:
+openssl-1.1.1l/crypto/ec/ec_local.h:398:1: warning: warning: ignoring conflicting function declarations "ec_GFp_simple_is_at_infinity"
+#  396|                         BN_CTX *);
+#  397|   int ec_GFp_simple_invert(const EC_GROUP *, EC_POINT *, BN_CTX *);
+#  398|-> int ec_GFp_simple_is_at_infinity(const EC_GROUP *, const EC_POINT *);
+#  399|   int ec_GFp_simple_is_on_curve(const EC_GROUP *, const EC_POINT *, BN_CTX *);
+#  400|   int ec_GFp_simple_cmp(const EC_GROUP *, const EC_POINT *a, const EC_POINT *b,
+
+Error: COMPILER_WARNING:
+openssl-1.1.1l/crypto/ec/ec_local.h:399:1: warning: warning: ignoring conflicting function declarations "ec_GFp_simple_is_on_curve"
+#  397|   int ec_GFp_simple_invert(const EC_GROUP *, EC_POINT *, BN_CTX *);
+#  398|   int ec_GFp_simple_is_at_infinity(const EC_GROUP *, const EC_POINT *);
+#  399|-> int ec_GFp_simple_is_on_curve(const EC_GROUP *, const EC_POINT *, BN_CTX *);
+#  400|   int ec_GFp_simple_cmp(const EC_GROUP *, const EC_POINT *a, const EC_POINT *b,
+#  401|                         BN_CTX *);
+
+Error: COMPILER_WARNING:
+openssl-1.1.1l/crypto/ec/ec_local.h:400:1: warning: warning: ignoring conflicting function declarations "ec_GFp_simple_cmp"
+#  398|   int ec_GFp_simple_is_at_infinity(const EC_GROUP *, const EC_POINT *);
+#  399|   int ec_GFp_simple_is_on_curve(const EC_GROUP *, const EC_POINT *, BN_CTX *);
+#  400|-> int ec_GFp_simple_cmp(const EC_GROUP *, const EC_POINT *a, const EC_POINT *b,
+#  401|                         BN_CTX *);
+#  402|   int ec_GFp_simple_make_affine(const EC_GROUP *, EC_POINT *, BN_CTX *);
+
+Error: COMPILER_WARNING:
+openssl-1.1.1l/crypto/ec/ec_local.h:402:1: warning: warning: ignoring conflicting function declarations "ec_GFp_simple_make_affine"
+#  400|   int ec_GFp_simple_cmp(const EC_GROUP *, const EC_POINT *a, const EC_POINT *b,
+#  401|                         BN_CTX *);
+#  402|-> int ec_GFp_simple_make_affine(const EC_GROUP *, EC_POINT *, BN_CTX *);
+#  403|   int ec_GFp_simple_points_make_affine(const EC_GROUP *, size_t num,
+#  404|                                        EC_POINT *[], BN_CTX *);
+
+Error: COMPILER_WARNING:
+openssl-1.1.1l/crypto/ec/ec_local.h:403:1: warning: warning: ignoring conflicting function declarations "ec_GFp_simple_points_make_affine"
+#  401|                         BN_CTX *);
+#  402|   int ec_GFp_simple_make_affine(const EC_GROUP *, EC_POINT *, BN_CTX *);
+#  403|-> int ec_GFp_simple_points_make_affine(const EC_GROUP *, size_t num,
+#  404|                                        EC_POINT *[], BN_CTX *);
+#  405|   int ec_GFp_simple_field_mul(const EC_GROUP *, BIGNUM *r, const BIGNUM *a,
+
+Error: COMPILER_WARNING:
+openssl-1.1.1l/crypto/ec/ec_local.h:409:1: warning: warning: ignoring conflicting function declarations "ec_GFp_simple_field_inv"
+#  407|   int ec_GFp_simple_field_sqr(const EC_GROUP *, BIGNUM *r, const BIGNUM *a,
+#  408|                               BN_CTX *);
+#  409|-> int ec_GFp_simple_field_inv(const EC_GROUP *, BIGNUM *r, const BIGNUM *a,
+#  410|                               BN_CTX *);
+#  411|   int ec_GFp_simple_blind_coordinates(const EC_GROUP *group, EC_POINT *p,
+
+Error: COMPILER_WARNING:
+openssl-1.1.1l/crypto/ec/ec_local.h:443:1: warning: warning: pointer parameter types differ between declaration and definition "ec_GFp_nist_group_copy"
+#  441|   
+#  442|   /* method functions in ecp_nist.c */
+#  443|-> int ec_GFp_nist_group_copy(EC_GROUP *dest, const EC_GROUP *src);
+#  444|   int ec_GFp_nist_group_set_curve(EC_GROUP *, const BIGNUM *p, const BIGNUM *a,
+#  445|                                   const BIGNUM *b, BN_CTX *);
+
+Error: COMPILER_WARNING:
+openssl-1.1.1l/crypto/ec/ec_local.h:446:1: warning: warning: pointer parameter types differ between declaration and definition "ec_GFp_nist_field_mul"
+#  444|   int ec_GFp_nist_group_set_curve(EC_GROUP *, const BIGNUM *p, const BIGNUM *a,
+#  445|                                   const BIGNUM *b, BN_CTX *);
+#  446|-> int ec_GFp_nist_field_mul(const EC_GROUP *, BIGNUM *r, const BIGNUM *a,
+#  447|                             const BIGNUM *b, BN_CTX *);
+#  448|   int ec_GFp_nist_field_sqr(const EC_GROUP *, BIGNUM *r, const BIGNUM *a,
+
+Error: COMPILER_WARNING:
+openssl-1.1.1l/crypto/ec/ec_local.h:448:1: warning: warning: pointer parameter types differ between declaration and definition "ec_GFp_nist_field_sqr"
+#  446|   int ec_GFp_nist_field_mul(const EC_GROUP *, BIGNUM *r, const BIGNUM *a,
+#  447|                             const BIGNUM *b, BN_CTX *);
+#  448|-> int ec_GFp_nist_field_sqr(const EC_GROUP *, BIGNUM *r, const BIGNUM *a,
+#  449|                             BN_CTX *);
+#  450|   
+
+Error: COMPILER_WARNING:
+openssl-1.1.1l/crypto/ec/ec_local.h:591:1: warning: warning: pointer parameter types differ between declaration and definition "ec_group_simple_order_bits"
+#  589|                                        unsigned char *digit, unsigned char in);
+#  590|   #endif
+#  591|-> int ec_group_simple_order_bits(const EC_GROUP *group);
+#  592|   
+#  593|   #ifdef ECP_NISTZ256_ASM
+
+Error: COMPILER_WARNING:
+openssl-1.1.1l/crypto/ec/ec_local.h:606:1: warning: warning: pointer parameter types differ between declaration and definition "ec_key_simple_priv2oct"
+#  604|   #endif
+#  605|   
+#  606|-> size_t ec_key_simple_priv2oct(const EC_KEY *eckey,
+#  607|                                 unsigned char *buf, size_t len);
+#  608|   int ec_key_simple_oct2priv(EC_KEY *eckey, const unsigned char *buf, size_t len);
+
+Error: COMPILER_WARNING:
+openssl-1.1.1l/crypto/ec/ec_local.h:608:1: warning: warning: pointer parameter types differ between declaration and definition "ec_key_simple_oct2priv"
+#  606|   size_t ec_key_simple_priv2oct(const EC_KEY *eckey,
+#  607|                                 unsigned char *buf, size_t len);
+#  608|-> int ec_key_simple_oct2priv(EC_KEY *eckey, const unsigned char *buf, size_t len);
+#  609|   int ec_key_simple_generate_key(EC_KEY *eckey);
+#  610|   int ec_key_simple_generate_public_key(EC_KEY *eckey);
+
+Error: COMPILER_WARNING:
+openssl-1.1.1l/crypto/ec/ec_local.h:609:1: warning: warning: pointer parameter types differ between declaration and definition "ec_key_simple_generate_key"
+#  607|                                 unsigned char *buf, size_t len);
+#  608|   int ec_key_simple_oct2priv(EC_KEY *eckey, const unsigned char *buf, size_t len);
+#  609|-> int ec_key_simple_generate_key(EC_KEY *eckey);
+#  610|   int ec_key_simple_generate_public_key(EC_KEY *eckey);
+#  611|   int ec_key_simple_check_key(const EC_KEY *eckey);
+
+Error: COMPILER_WARNING:
+openssl-1.1.1l/crypto/ec/ec_local.h:610:1: warning: warning: pointer parameter types differ between declaration and definition "ec_key_simple_generate_public_key"
+#  608|   int ec_key_simple_oct2priv(EC_KEY *eckey, const unsigned char *buf, size_t len);
+#  609|   int ec_key_simple_generate_key(EC_KEY *eckey);
+#  610|-> int ec_key_simple_generate_public_key(EC_KEY *eckey);
+#  611|   int ec_key_simple_check_key(const EC_KEY *eckey);
+#  612|   
+
+Error: COMPILER_WARNING:
+openssl-1.1.1l/crypto/ec/ec_local.h:611:1: warning: warning: pointer parameter types differ between declaration and definition "ec_key_simple_check_key"
+#  609|   int ec_key_simple_generate_key(EC_KEY *eckey);
+#  610|   int ec_key_simple_generate_public_key(EC_KEY *eckey);
+#  611|-> int ec_key_simple_check_key(const EC_KEY *eckey);
+#  612|   
+#  613|   int ec_curve_nid_from_params(const EC_GROUP *group, BN_CTX *ctx);
+
+Error: COMPILER_WARNING:
+openssl-1.1.1l/crypto/ec/ec_local.h:649:1: warning: warning: pointer parameter types differ between declaration and definition "ecdh_simple_compute_key"
+#  647|   int ossl_ecdh_compute_key(unsigned char **pout, size_t *poutlen,
+#  648|                             const EC_POINT *pub_key, const EC_KEY *ecdh);
+#  649|-> int ecdh_simple_compute_key(unsigned char **pout, size_t *poutlen,
+#  650|                               const EC_POINT *pub_key, const EC_KEY *ecdh);
+#  651|   
+
+Error: COMPILER_WARNING:
+openssl-1.1.1l/crypto/ec/ec_local.h:669:1: warning: warning: pointer parameter types differ between declaration and definition "ecdsa_simple_sign_setup"
+#  667|   int ossl_ecdsa_verify_sig(const unsigned char *dgst, int dgst_len,
+#  668|                             const ECDSA_SIG *sig, EC_KEY *eckey);
+#  669|-> int ecdsa_simple_sign_setup(EC_KEY *eckey, BN_CTX *ctx_in, BIGNUM **kinvp,
+#  670|                               BIGNUM **rp);
+#  671|   ECDSA_SIG *ecdsa_simple_sign_sig(const unsigned char *dgst, int dgst_len,
+
+Error: COMPILER_WARNING:
+openssl-1.1.1l/crypto/ec/ec_local.h:671:1: warning: warning: pointer parameter types differ between declaration and definition "ecdsa_simple_sign_sig"
+#  669|   int ecdsa_simple_sign_setup(EC_KEY *eckey, BN_CTX *ctx_in, BIGNUM **kinvp,
+#  670|                               BIGNUM **rp);
+#  671|-> ECDSA_SIG *ecdsa_simple_sign_sig(const unsigned char *dgst, int dgst_len,
+#  672|                                    const BIGNUM *in_kinv, const BIGNUM *in_r,
+#  673|                                    EC_KEY *eckey);
+
+Error: COMPILER_WARNING:
+openssl-1.1.1l/crypto/ec/ec_local.h:674:1: warning: warning: pointer parameter types differ between declaration and definition "ecdsa_simple_verify_sig"
+#  672|                                    const BIGNUM *in_kinv, const BIGNUM *in_r,
+#  673|                                    EC_KEY *eckey);
+#  674|-> int ecdsa_simple_verify_sig(const unsigned char *dgst, int dgst_len,
+#  675|                               const ECDSA_SIG *sig, EC_KEY *eckey);
+#  676|   
+
+Error: COMPILER_WARNING:
+openssl-1.1.1l/crypto/ec/ecp_nistp521.c:1620:1: warning: warning: pointer parameter types differ between declaration and definition "EC_GFp_nistp521_method"
+# 1618|   };
+# 1619|   
+# 1620|-> const EC_METHOD *EC_GFp_nistp521_method(void)
+# 1621|   {
+# 1622|       static const EC_METHOD ret = {
+
+Error: COMPILER_WARNING:
+openssl-1.1.1l/crypto/ec/ecp_nistp521.c:1711:1: warning: warning: pointer parameter types differ between declaration and definition "EC_nistp521_pre_comp_dup"
+# 1709|   }
+# 1710|   
+# 1711|-> NISTP521_PRE_COMP *EC_nistp521_pre_comp_dup(NISTP521_PRE_COMP *p)
+# 1712|   {
+# 1713|       int i;
+
+Error: COMPILER_WARNING:
+openssl-1.1.1l/crypto/ec/ecp_nistp521.c:1719:1: warning: warning: pointer parameter types differ between declaration and definition "EC_nistp521_pre_comp_free"
+# 1717|   }
+# 1718|   
+# 1719|-> void EC_nistp521_pre_comp_free(NISTP521_PRE_COMP *p)
+# 1720|   {
+# 1721|       int i;
+
+Error: COMPILER_WARNING (CWE-563):
+openssl-1.1.1l/crypto/fips/fips_drbg_selftest.c:62: included_from: Included from here.
+openssl-1.1.1l/crypto/fips/fips_drbg_selftest.c: scope_hint: In function 'FIPS_drbg_health_check'
+openssl-1.1.1l/crypto/fips/fips_locl.h:62:43: warning[-Wunused-value]: statement with no effect
+#   62 | # define fips_post_started(id, subid, ex) 1
+#      |                                           ^
+openssl-1.1.1l/crypto/fips/fips_drbg_selftest.c:762:5: note: in expansion of macro 'fips_post_started'
+#  762 |     fips_post_started(FIPS_TEST_DRBG, dctx->type, &dctx->xflags);
+#      |     ^~~~~~~~~~~~~~~~~
+#   60|                   goto err
+#   61|   
+#   62|-> # define fips_post_started(id, subid, ex) 1
+#   63|   # define fips_post_success(id, subid, ex) 1
+#   64|   # define fips_post_failed(id, subid, ex) 1
+
+Error: COMPILER_WARNING (CWE-563):
+openssl-1.1.1l/crypto/fips/fips_locl.h:63:43: warning[-Wunused-value]: statement with no effect
+#   63 | # define fips_post_success(id, subid, ex) 1
+#      |                                           ^
+openssl-1.1.1l/crypto/fips/fips_drbg_selftest.c:769:9: note: in expansion of macro 'fips_post_success'
+#  769 |         fips_post_success(FIPS_TEST_DRBG, dctx->type, &dctx->xflags);
+#      |         ^~~~~~~~~~~~~~~~~
+#   61|   
+#   62|   # define fips_post_started(id, subid, ex) 1
+#   63|-> # define fips_post_success(id, subid, ex) 1
+#   64|   # define fips_post_failed(id, subid, ex) 1
+#   65|   # define fips_post_corrupt(id, subid, ex) 1
+
+Error: COMPILER_WARNING (CWE-563):
+openssl-1.1.1l/crypto/fips/fips_locl.h:64:42: warning[-Wunused-value]: statement with no effect
+#   64 | # define fips_post_failed(id, subid, ex) 1
+#      |                                          ^
+openssl-1.1.1l/crypto/fips/fips_drbg_selftest.c:771:9: note: in expansion of macro 'fips_post_failed'
+#  771 |         fips_post_failed(FIPS_TEST_DRBG, dctx->type, &dctx->xflags);
+#      |         ^~~~~~~~~~~~~~~~
+#   62|   # define fips_post_started(id, subid, ex) 1
+#   63|   # define fips_post_success(id, subid, ex) 1
+#   64|-> # define fips_post_failed(id, subid, ex) 1
+#   65|   # define fips_post_corrupt(id, subid, ex) 1
+#   66|   # define fips_post_status() 1
+
+Error: COMPILER_WARNING:
+openssl-1.1.1l/include/internal/refcount.h: scope_hint: In function 'CRYPTO_UP_REF'
+openssl-1.1.1l/include/internal/refcount.h:34:1: warning: function '__atomic_fetch_add_S32' in module '' is shadowed by a definition in module ''
+#   32|   static inline int CRYPTO_UP_REF(_Atomic int *val, int *ret, void *lock)
+#   33|   {
+#   34|->     *ret = atomic_fetch_add_explicit(val, 1, memory_order_relaxed) + 1;
+#   35|       return 1;
+#   36|   }
+
+Error: COMPILER_WARNING:
+openssl-1.1.1l/include/internal/refcount.h: scope_hint: In function 'CRYPTO_DOWN_REF'
+openssl-1.1.1l/include/internal/refcount.h:50:1: warning: function '__atomic_fetch_sub_S32' in module '' is shadowed by a definition in module ''
+#   48|   static inline int CRYPTO_DOWN_REF(_Atomic int *val, int *ret, void *lock)
+#   49|   {
+#   50|->     *ret = atomic_fetch_sub_explicit(val, 1, memory_order_relaxed) - 1;
+#   51|       if (*ret == 0)
+#   52|           atomic_thread_fence(memory_order_acquire);
+
+Error: COMPILER_WARNING:
+openssl-1.1.1l/include/openssl/ec.h:160:1: warning: warning: pointer parameter types differ between declaration and definition "EC_GROUP_get0_generator"
+#  158|    *  \return the currently used generator (possibly NULL).
+#  159|    */
+#  160|-> const EC_POINT *EC_GROUP_get0_generator(const EC_GROUP *group);
+#  161|   
+#  162|   /** Returns the montgomery data for order(Generator)
+
+Error: COMPILER_WARNING:
+openssl-1.1.1l/include/openssl/ec.h:428:1: warning: warning: pointer parameter types differ between declaration and definition "EC_POINT_new"
+#  426|    *  \return newly created EC_POINT object or NULL if an error occurred
+#  427|    */
+#  428|-> EC_POINT *EC_POINT_new(const EC_GROUP *group);
+#  429|   
+#  430|   /** Frees a EC_POINT object
+
+Error: COMPILER_WARNING:
+openssl-1.1.1l/include/openssl/ec.h:433:1: warning: warning: pointer parameter types differ between declaration and definition "EC_POINT_free"
+#  431|    *  \param  point  EC_POINT object to be freed
+#  432|    */
+#  433|-> void EC_POINT_free(EC_POINT *point);
+#  434|   
+#  435|   /** Clears and frees a EC_POINT object
+
+Error: COMPILER_WARNING:
+openssl-1.1.1l/include/openssl/ec.h:477:1: warning: warning: pointer parameter types differ between declaration and definition "EC_POINT_set_Jprojective_coordinates_GFp"
+#  475|    *  \return 1 on success and 0 if an error occurred
+#  476|    */
+#  477|-> int EC_POINT_set_Jprojective_coordinates_GFp(const EC_GROUP *group,
+#  478|                                                EC_POINT *p, const BIGNUM *x,
+#  479|                                                const BIGNUM *y, const BIGNUM *z,
+
+Error: COMPILER_WARNING:
+openssl-1.1.1l/include/openssl/ec.h:504:1: warning: warning: pointer parameter types differ between declaration and definition "EC_POINT_set_affine_coordinates"
+#  502|    *  \return 1 on success and 0 if an error occurred
+#  503|    */
+#  504|-> int EC_POINT_set_affine_coordinates(const EC_GROUP *group, EC_POINT *p,
+#  505|                                       const BIGNUM *x, const BIGNUM *y,
+#  506|                                       BN_CTX *ctx);
+
+Error: COMPILER_WARNING:
+openssl-1.1.1l/include/openssl/ec.h:706:1: warning: warning: pointer parameter types differ between declaration and definition "EC_POINT_is_at_infinity"
+#  704|    *  \return 1 if the point is the neutral element and 0 otherwise
+#  705|    */
+#  706|-> int EC_POINT_is_at_infinity(const EC_GROUP *group, const EC_POINT *p);
+#  707|   
+#  708|   /** Checks whether the point is on the curve
+
+Error: COMPILER_WARNING:
+openssl-1.1.1l/include/openssl/ec.h:724:1: warning: warning: pointer parameter types differ between declaration and definition "EC_POINT_cmp"
+#  722|    *  \return 1 if the points are not equal, 0 if they are, or -1 on error
+#  723|    */
+#  724|-> int EC_POINT_cmp(const EC_GROUP *group, const EC_POINT *a, const EC_POINT *b,
+#  725|                    BN_CTX *ctx);
+#  726|   
+
+Error: COMPILER_WARNING (CWE-704):
+openssl-1.1.1l/ssl/ssl_ciph.c: scope_hint: In function 'ssl_create_cipher_list'
+openssl-1.1.1l/ssl/ssl_ciph.c:1474:19: warning[-Wdiscarded-qualifiers]: initialization discards 'const' qualifier from pointer target type
+# 1474 |         char *p = rule_str + 14;
+#      |                   ^~~~~~~~
+openssl-1.1.1l/ssl/ssl_ciph.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+# 1472|   
+# 1473|       if (rule_str != NULL && strncmp(rule_str, "PROFILE=SYSTEM", 14) == 0) {
+# 1474|->         char *p = rule_str + 14;
+# 1475|       
+# 1476|           new_rules = load_system_str(p);
+
+Error: COMPILER_WARNING (CWE-1164):
+openssl-1.1.1l/test/cipherlist_test.c:197:12: warning[-Wunused-function]: 'test_default_cipherlist_implicit' defined but not used
+#  197 | static int test_default_cipherlist_implicit(void)
+#      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#  195|       EXECUTE_TEST(execute_test, tear_down)
+#  196|   
+#  197|-> static int test_default_cipherlist_implicit(void)
+#  198|   {
+#  199|       SETUP_CIPHERLIST_TEST_FIXTURE();
+
+Error: COMPILER_WARNING (CWE-563):
+openssl-1.1.1l/test/ectest.c:150:15: warning[-Wunused-variable]: unused variable 'P_160'
+#  150 |     EC_GROUP *P_160 = NULL, *P_192 = NULL, *P_224 = NULL,
+#      |               ^~~~~
+openssl-1.1.1l/test/ectest.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#  148|       BIGNUM *p = NULL, *a = NULL, *b = NULL, *scalar3 = NULL;
+#  149|       EC_GROUP *group = NULL, *tmp = NULL;
+#  150|->     EC_GROUP *P_160 = NULL, *P_192 = NULL, *P_224 = NULL,
+#  151|                *P_256 = NULL, *P_384 = NULL, *P_521 = NULL;
+#  152|       EC_POINT *P = NULL, *Q = NULL, *R = NULL;
+
+Error: COMPILER_WARNING (CWE-563):
+openssl-1.1.1l/test/ectest.c:150:30: warning[-Wunused-variable]: unused variable 'P_192'
+#  150 |     EC_GROUP *P_160 = NULL, *P_192 = NULL, *P_224 = NULL,
+#      |                              ^~~~~
+#  148|       BIGNUM *p = NULL, *a = NULL, *b = NULL, *scalar3 = NULL;
+#  149|       EC_GROUP *group = NULL, *tmp = NULL;
+#  150|->     EC_GROUP *P_160 = NULL, *P_192 = NULL, *P_224 = NULL,
+#  151|                *P_256 = NULL, *P_384 = NULL, *P_521 = NULL;
+#  152|       EC_POINT *P = NULL, *Q = NULL, *R = NULL;
+
+Error: COMPILER_WARNING (CWE-563):
+openssl-1.1.1l/test/ectest.c:156:19: warning[-Wunused-but-set-variable]: variable 'buf' set but not used
+#  156 |     unsigned char buf[100];
+#      |                   ^~~
+#  154|       const EC_POINT *points[4];
+#  155|       const BIGNUM *scalars[4];
+#  156|->     unsigned char buf[100];
+#  157|       size_t len, r = 0;
+#  158|       int k;
+
+Error: COMPILER_WARNING (CWE-563):
+openssl-1.1.1l/test/ectest.c:157:12: warning[-Wunused-variable]: unused variable 'len'
+#  157 |     size_t len, r = 0;
+#      |            ^~~
+#  155|       const BIGNUM *scalars[4];
+#  156|       unsigned char buf[100];
+#  157|->     size_t len, r = 0;
+#  158|       int k;
+#  159|   
+
+Error: COMPILER_WARNING (CWE-563):
+openssl-1.1.1l/test/ectest.c: scope_hint: In function 'prime_field_tests'
+openssl-1.1.1l/test/ectest.c:158:9: warning[-Wunused-variable]: unused variable 'k'
+#  158 |     int k;
+#      |         ^
+#  156|       unsigned char buf[100];
+#  157|       size_t len, r = 0;
+#  158|->     int k;
+#  159|   
+#  160|       if (!TEST_ptr(ctx = BN_CTX_new())
+
+Error: COMPILER_WARNING (CWE-457):
+openssl-1.1.1l/test/packettest.c:11: included_from: Included from here.
+openssl-1.1.1l/test/packettest.c: scope_hint: In function 'test_PACKET_buf_init'
+openssl-1.1.1l/test/packettest.c:309:20: warning[-Wmaybe-uninitialized]: 'buf1' may be used uninitialized
+#  309 |     if (!TEST_true(PACKET_buf_init(&pkt, buf1, 4))
+openssl-1.1.1l/test/testutil.h:360:66: note: in definition of macro 'TEST_true'
+#  360 | # define TEST_true(a)         test_true(__FILE__, __LINE__, #a, (a) != 0)
+#      |                                                                  ^
+openssl-1.1.1l/test/packettest.c:10: included_from: Included from here.
+openssl-1.1.1l/ssl/packet_local.h:68:31: note: by argument 2 of type 'const unsigned char *' to 'PACKET_buf_init' declared here
+#   68 | __owur static ossl_inline int PACKET_buf_init(PACKET *pkt,
+#      |                               ^~~~~~~~~~~~~~~
+openssl-1.1.1l/test/packettest.c:305:19: note: 'buf1' declared here
+#  305 |     unsigned char buf1[BUF_LEN];
+#      |                   ^~~~
+openssl-1.1.1l/test/packettest.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#  307|   
+#  308|       /* Also tests PACKET_remaining() */
+#  309|->     if (!TEST_true(PACKET_buf_init(&pkt, buf1, 4))
+#  310|               || !TEST_size_t_eq(PACKET_remaining(&pkt), 4)
+#  311|               || !TEST_true(PACKET_buf_init(&pkt, buf1, BUF_LEN))
+
+Error: COMPILER_WARNING:
+openssl-1.1.1l/test/testutil/test_cleanup.c:12:1: warning: function 'cleanup_tests' in module 'test_cleanup' is shadowed by a definition in module 'ec_internal_test'
+#   10|   #include "../testutil.h"
+#   11|   
+#   12|-> void cleanup_tests(void)
+#   13|   {
+#   14|   }

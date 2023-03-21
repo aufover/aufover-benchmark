@@ -1,0 +1,546 @@
+Error: COMPILER_WARNING:
+openssh-8.7p1/audit-linux.c: scope_hint: In function 'audit_event'
+openssh-8.7p1/audit-linux.c:242:20: warning[-Wimplicit-fallthrough=]: this statement may fall through
+#  242 |                 if (options.use_pam)
+#      |                    ^
+openssh-8.7p1/audit-linux.c:244:9: note: here
+#  244 |         case SSH_LOGIN_EXCEED_MAXTRIES:
+#      |         ^~~~
+#  240|   		break;
+#  241|   	case SSH_AUTH_FAIL_PASSWD:
+#  242|-> 		if (options.use_pam)
+#  243|   			break;
+#  244|   	case SSH_LOGIN_EXCEED_MAXTRIES:
+
+Error: COMPILER_WARNING:
+openssh-8.7p1/audit-linux.c: scope_hint: In function 'audit_unsupported_body'
+openssh-8.7p1/audit-linux.c:281:9: warning[-Wold-style-declaration]: 'static' is not at beginning of declaration
+#  281 |         const static char *name[] = { "cipher", "mac", "comp" };
+#      |         ^~~~~
+#  279|   #ifdef AUDIT_CRYPTO_SESSION
+#  280|   	char buf[AUDIT_LOG_SIZE];
+#  281|-> 	const static char *name[] = { "cipher", "mac", "comp" };
+#  282|   	char *s;
+#  283|   	int audit_fd;
+
+Error: COMPILER_WARNING:
+openssh-8.7p1/audit-linux.c: scope_hint: At top level
+openssh-8.7p1/audit-linux.c:299:1: warning[-Wold-style-declaration]: 'static' is not at beginning of declaration
+#  299 | const static char *direction[] = { "from-server", "from-client", "both" };
+#      | ^~~~~
+#  297|   }
+#  298|   
+#  299|-> const static char *direction[] = { "from-server", "from-client", "both" };
+#  300|   
+#  301|   void
+
+Error: COMPILER_WARNING (CWE-195):
+openssh-8.7p1/channels.c: scope_hint: In function 'connect_local_xsocket_path'
+openssh-8.7p1/channels.c:4683:17: warning[-Wsign-compare]: comparison of integer expressions of different signedness: 'int' and 'long unsigned int'
+# 4683 |         if (len > sizeof addr.sun_path)
+#      |                 ^
+# 4681|   	memset(&addr, 0, sizeof(addr));
+# 4682|   	addr.sun_family = AF_UNIX;
+# 4683|-> 	if (len > sizeof addr.sun_path)
+# 4684|   		len = sizeof addr.sun_path;
+# 4685|   	memcpy(addr.sun_path, pathname, len);
+
+Error: COMPILER_WARNING:
+openssh-8.7p1/includes.h:19: included_from: Included from here.
+openssh-8.7p1/pam_ssh_agent_auth-pam_ssh_agent_auth-0.10.4/userauth_pubkey_from_pam.c:36: included_from: Included from here.
+openssh-8.7p1/config.h:1949: warning: "SUPERUSER_PATH" redefined
+# 1949 | #define SUPERUSER_PATH "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin"
+#      | 
+openssh-8.7p1/pam_ssh_agent_auth-pam_ssh_agent_auth-0.10.4/userauth_pubkey_from_pam.c:35: included_from: Included from here.
+openssh-8.7p1/pam_ssh_agent_auth-pam_ssh_agent_auth-0.10.4/defines.h:337: note: this is the location of the previous definition
+#  337 | # define SUPERUSER_PATH _PATH_STDPATH
+#      | 
+# 1947|   
+# 1948|   /* Define if you want a different $PATH for the superuser */
+# 1949|-> #define SUPERUSER_PATH "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin"
+# 1950|   
+# 1951|   /* syslog_r function is safe to use in in a signal handler */
+
+Error: COMPILER_WARNING:
+openssh-8.7p1/hostfile.c: scope_hint: In function 'host_hash'
+openssh-8.7p1/hostfile.c:147:51: warning[-Wformat-truncation=]: '%s' directive output may be truncated writing up to 511 bytes into a region of size between 509 and 1020
+#  147 |         snprintf(encoded, sizeof(encoded), "%s%s%c%s", HASH_MAGIC, uu_salt,
+#      |                                                   ^~
+#  148 |             HASH_DELIM, uu_result);
+#      |                         ~~~~~~~~~                  
+/usr/include/stdio.h:888: included_from: Included from here.
+/usr/include/resolv.h:58: included_from: Included from here.
+openssh-8.7p1/openbsd-compat/getrrsetbyname.h:59: included_from: Included from here.
+openssh-8.7p1/openbsd-compat/openbsd-compat.h:44: included_from: Included from here.
+openssh-8.7p1/includes.h:174: included_from: Included from here.
+openssh-8.7p1/hostfile.c:39: included_from: Included from here.
+/usr/include/bits/stdio2.h:71:10: note: '__snprintf_chk' output between 5 and 1027 bytes into a destination of size 1024
+#   71 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+#      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   72 |                                    __glibc_objsize (__s), __fmt,
+#      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   73 |                                    __va_arg_pack ());
+#      |                                    ~~~~~~~~~~~~~~~~~
+#  145|   		fatal_f("__b64_ntop failed");
+#  146|   
+#  147|-> 	snprintf(encoded, sizeof(encoded), "%s%s%c%s", HASH_MAGIC, uu_salt,
+#  148|   	    HASH_DELIM, uu_result);
+#  149|   
+
+Error: COMPILER_WARNING:
+openssh-8.7p1/log.c: scope_hint: In function 'do_log'
+openssh-8.7p1/log.c:401:53: warning[-Wformat-truncation=]: ': ' directive output may be truncated writing 2 bytes into a region of size between 1 and 1024
+#  401 |                 snprintf(fmtbuf, sizeof(fmtbuf), "%s: %s", msgbuf, suffix);
+#      |                                                     ^~
+/usr/include/stdio.h:888: included_from: Included from here.
+/usr/include/resolv.h:58: included_from: Included from here.
+openssh-8.7p1/openbsd-compat/getrrsetbyname.h:59: included_from: Included from here.
+openssh-8.7p1/openbsd-compat/openbsd-compat.h:44: included_from: Included from here.
+openssh-8.7p1/includes.h:174: included_from: Included from here.
+openssh-8.7p1/log.c:37: included_from: Included from here.
+/usr/include/bits/stdio2.h:71:10: note: '__snprintf_chk' output 3 or more bytes (assuming 1026) into a destination of size 1024
+#   71 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+#      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   72 |                                    __glibc_objsize (__s), __fmt,
+#      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   73 |                                    __va_arg_pack ());
+#      |                                    ~~~~~~~~~~~~~~~~~
+#  399|   	}
+#  400|   	if (suffix != NULL) {
+#  401|-> 		snprintf(fmtbuf, sizeof(fmtbuf), "%s: %s", msgbuf, suffix);
+#  402|   		strlcpy(msgbuf, fmtbuf, sizeof(msgbuf));
+#  403|   	}
+
+Error: COMPILER_WARNING:
+openssh-8.7p1/misc.c: scope_hint: In function 'fmt_timeframe'
+openssh-8.7p1/misc.c:651:40: warning[-Wformat-truncation=]: '%02llu' directive output may be truncated writing between 2 and 14 bytes into a region of size 9
+#  651 |                 snprintf(buf, TF_LEN, "%02lluw%01ud%02uh", week, day, hrs);
+#      |                                        ^~~~~~
+openssh-8.7p1/misc.c:651:39: note: directive argument in the range [0, 30500568904943]
+#  651 |                 snprintf(buf, TF_LEN, "%02lluw%01ud%02uh", week, day, hrs);
+#      |                                       ^~~~~~~~~~~~~~~~~~~
+openssh-8.7p1/misc.c:651:39: note: directive argument in the range [0, 6]
+openssh-8.7p1/misc.c:651:39: note: directive argument in the range [0, 23]
+/usr/include/stdio.h:888: included_from: Included from here.
+/usr/include/resolv.h:58: included_from: Included from here.
+openssh-8.7p1/openbsd-compat/getrrsetbyname.h:59: included_from: Included from here.
+openssh-8.7p1/openbsd-compat/openbsd-compat.h:44: included_from: Included from here.
+openssh-8.7p1/includes.h:174: included_from: Included from here.
+openssh-8.7p1/misc.c:21: included_from: Included from here.
+/usr/include/bits/stdio2.h:71:10: note: '__snprintf_chk' output between 9 and 21 bytes into a destination of size 9
+#   71 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+#      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   72 |                                    __glibc_objsize (__s), __fmt,
+#      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   73 |                                    __va_arg_pack ());
+#      |                                    ~~~~~~~~~~~~~~~~~
+#  649|   
+#  650|   	if (week > 0)
+#  651|-> 		snprintf(buf, TF_LEN, "%02lluw%01ud%02uh", week, day, hrs);
+#  652|   	else if (day > 0)
+#  653|   		snprintf(buf, TF_LEN, "%01ud%02uh%02um", day, hrs, min);
+
+Error: COMPILER_WARNING (CWE-9001):
+openssh-8.7p1/ssh-keycat.c:57: included_from: Included from here.
+openssh-8.7p1/misc.h:145:5: warning[-Wattributes]: 'bounded' attribute directive ignored
+#  145 |     __attribute__((__bounded__( __minbytes__, 1, 8)));
+#      |     ^~~~~~~~~~~~~
+#  143|   /* Functions to extract or store big-endian words of various sizes */
+#  144|   u_int64_t	get_u64(const void *)
+#  145|->     __attribute__((__bounded__( __minbytes__, 1, 8)));
+#  146|   u_int32_t	get_u32(const void *)
+#  147|       __attribute__((__bounded__( __minbytes__, 1, 4)));
+
+Error: COMPILER_WARNING (CWE-9001):
+openssh-8.7p1/misc.h:147:5: warning[-Wattributes]: 'bounded' attribute directive ignored
+#  147 |     __attribute__((__bounded__( __minbytes__, 1, 4)));
+#      |     ^~~~~~~~~~~~~
+#  145|       __attribute__((__bounded__( __minbytes__, 1, 8)));
+#  146|   u_int32_t	get_u32(const void *)
+#  147|->     __attribute__((__bounded__( __minbytes__, 1, 4)));
+#  148|   u_int16_t	get_u16(const void *)
+#  149|       __attribute__((__bounded__( __minbytes__, 1, 2)));
+
+Error: COMPILER_WARNING (CWE-9001):
+openssh-8.7p1/misc.h:149:5: warning[-Wattributes]: 'bounded' attribute directive ignored
+#  149 |     __attribute__((__bounded__( __minbytes__, 1, 2)));
+#      |     ^~~~~~~~~~~~~
+#  147|       __attribute__((__bounded__( __minbytes__, 1, 4)));
+#  148|   u_int16_t	get_u16(const void *)
+#  149|->     __attribute__((__bounded__( __minbytes__, 1, 2)));
+#  150|   void		put_u64(void *, u_int64_t)
+#  151|       __attribute__((__bounded__( __minbytes__, 1, 8)));
+
+Error: COMPILER_WARNING (CWE-9001):
+openssh-8.7p1/misc.h:151:5: warning[-Wattributes]: 'bounded' attribute directive ignored
+#  151 |     __attribute__((__bounded__( __minbytes__, 1, 8)));
+#      |     ^~~~~~~~~~~~~
+#  149|       __attribute__((__bounded__( __minbytes__, 1, 2)));
+#  150|   void		put_u64(void *, u_int64_t)
+#  151|->     __attribute__((__bounded__( __minbytes__, 1, 8)));
+#  152|   void		put_u32(void *, u_int32_t)
+#  153|       __attribute__((__bounded__( __minbytes__, 1, 4)));
+
+Error: COMPILER_WARNING (CWE-9001):
+openssh-8.7p1/misc.h:153:5: warning[-Wattributes]: 'bounded' attribute directive ignored
+#  153 |     __attribute__((__bounded__( __minbytes__, 1, 4)));
+#      |     ^~~~~~~~~~~~~
+#  151|       __attribute__((__bounded__( __minbytes__, 1, 8)));
+#  152|   void		put_u32(void *, u_int32_t)
+#  153|->     __attribute__((__bounded__( __minbytes__, 1, 4)));
+#  154|   void		put_u16(void *, u_int16_t)
+#  155|       __attribute__((__bounded__( __minbytes__, 1, 2)));
+
+Error: COMPILER_WARNING (CWE-9001):
+openssh-8.7p1/misc.h:155:5: warning[-Wattributes]: 'bounded' attribute directive ignored
+#  155 |     __attribute__((__bounded__( __minbytes__, 1, 2)));
+#      |     ^~~~~~~~~~~~~
+#  153|       __attribute__((__bounded__( __minbytes__, 1, 4)));
+#  154|   void		put_u16(void *, u_int16_t)
+#  155|->     __attribute__((__bounded__( __minbytes__, 1, 2)));
+#  156|   
+#  157|   /* Little-endian store/load, used by umac.c */
+
+Error: COMPILER_WARNING (CWE-9001):
+openssh-8.7p1/misc.h:159:5: warning[-Wattributes]: 'bounded' attribute directive ignored
+#  159 |     __attribute__((__bounded__(__minbytes__, 1, 4)));
+#      |     ^~~~~~~~~~~~~
+#  157|   /* Little-endian store/load, used by umac.c */
+#  158|   u_int32_t	get_u32_le(const void *)
+#  159|->     __attribute__((__bounded__(__minbytes__, 1, 4)));
+#  160|   void		put_u32_le(void *, u_int32_t)
+#  161|       __attribute__((__bounded__(__minbytes__, 1, 4)));
+
+Error: COMPILER_WARNING (CWE-9001):
+openssh-8.7p1/misc.h:161:5: warning[-Wattributes]: 'bounded' attribute directive ignored
+#  161 |     __attribute__((__bounded__(__minbytes__, 1, 4)));
+#      |     ^~~~~~~~~~~~~
+#  159|       __attribute__((__bounded__(__minbytes__, 1, 4)));
+#  160|   void		put_u32_le(void *, u_int32_t)
+#  161|->     __attribute__((__bounded__(__minbytes__, 1, 4)));
+#  162|   
+#  163|   struct bwlimit {
+
+Error: COMPILER_WARNING (CWE-195):
+openssh-8.7p1/monitor.c: scope_hint: In function 'mm_answer_keyverify'
+openssh-8.7p1/monitor.c:1472:18: warning[-Wsign-compare]: comparison of integer expressions of different signedness: 'int' and 'u_int' {aka 'unsigned int'}
+# 1472 |         if (type != key_blobtype)
+#      |                  ^~
+# 1470|   	  !monitor_allowed_key(blob, bloblen))
+# 1471|   		fatal_f("bad key, not previously allowed");
+# 1472|-> 	if (type != key_blobtype)
+# 1473|   		fatal_f("bad key type");
+# 1474|   
+
+Error: COMPILER_WARNING:
+openssh-8.7p1/openbsd-compat/fmt_scaled.c: scope_hint: In function 'fmt_scaled'
+openssh-8.7p1/openbsd-compat/fmt_scaled.c:272:66: warning[-Wformat-truncation=]: '%1lld' directive output may be truncated writing between 1 and 17 bytes into a region of size between 0 and 5
+#  272 |                 (void)snprintf(result, FMT_SCALED_STRSIZE, "%lld.%1lld%c",
+#      |                                                                  ^~~~~
+openssh-8.7p1/openbsd-compat/fmt_scaled.c:272:60: note: directive argument in the range [-9007199254740991, 9]
+#  272 |                 (void)snprintf(result, FMT_SCALED_STRSIZE, "%lld.%1lld%c",
+#      |                                                            ^~~~~~~~~~~~~~
+/usr/include/stdio.h:888: included_from: Included from here.
+/usr/include/resolv.h:58: included_from: Included from here.
+openssh-8.7p1/openbsd-compat/getrrsetbyname.h:59: included_from: Included from here.
+openssh-8.7p1/openbsd-compat/openbsd-compat.h:44: included_from: Included from here.
+openssh-8.7p1/includes.h:174: included_from: Included from here.
+openssh-8.7p1/openbsd-compat/fmt_scaled.c:41: included_from: Included from here.
+/usr/include/bits/stdio2.h:71:10: note: '__snprintf_chk' output between 5 and 40 bytes into a destination of size 7
+#   71 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+#      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   72 |                                    __glibc_objsize (__s), __fmt,
+#      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   73 |                                    __va_arg_pack ());
+#      |                                    ~~~~~~~~~~~~~~~~~
+#  270|   			number, scale_chars[unit]);
+#  271|   	} else
+#  272|-> 		(void)snprintf(result, FMT_SCALED_STRSIZE, "%lld.%1lld%c",
+#  273|   			number, fract, scale_chars[unit]);
+#  274|   
+
+Error: COMPILER_WARNING (CWE-477):
+openssh-8.7p1/openbsd-compat/port-linux-sshd.c:68:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#   68 | sshd_selinux_send_audit_message(int success, security_context_t default_context,
+#      | ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   66|   /* Send audit message */
+#   67|   static int
+#   68|-> sshd_selinux_send_audit_message(int success, security_context_t default_context,
+#   69|   		       security_context_t selected_context)
+#   70|   {
+
+Error: COMPILER_WARNING (CWE-477):
+openssh-8.7p1/openbsd-compat/port-linux-sshd.c:69:24: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#   69 |                        security_context_t selected_context)
+#      |                        ^~~~~~~~~~~~~~~~~~
+#   67|   static int
+#   68|   sshd_selinux_send_audit_message(int success, security_context_t default_context,
+#   69|-> 		       security_context_t selected_context)
+#   70|   {
+#   71|   	int rc=0;
+
+Error: COMPILER_WARNING (CWE-477):
+openssh-8.7p1/openbsd-compat/port-linux-sshd.c:115:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#  115 | mls_range_allowed(security_context_t src, security_context_t dst)
+#      | ^~~~~~~~~~~~~~~~~
+#  113|   
+#  114|   static int
+#  115|-> mls_range_allowed(security_context_t src, security_context_t dst)
+#  116|   {
+#  117|   	struct av_decision avd;
+
+Error: COMPILER_WARNING (CWE-477):
+openssh-8.7p1/openbsd-compat/port-linux-sshd.c:142:9: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#  142 |         security_context_t *sc) {
+#      |         ^~~~~~~~~~~~~~~~~~
+#  140|   static int
+#  141|   get_user_context(const char *sename, const char *role, const char *lvl,
+#  142|-> 	security_context_t *sc) {
+#  143|   #ifdef HAVE_GET_DEFAULT_CONTEXT_WITH_LEVEL
+#  144|   	if (lvl == NULL || lvl[0] == '\0' || get_default_context_with_level(sename, lvl, NULL, sc) != 0) {
+
+Error: COMPILER_WARNING (CWE-477):
+openssh-8.7p1/openbsd-compat/port-linux-sshd.c: scope_hint: In function 'get_user_context'
+openssh-8.7p1/openbsd-compat/port-linux-sshd.c:180:17: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#  180 |                 security_context_t obtained_raw;
+#      |                 ^~~~~~~~~~~~~~~~~~
+#  178|   		/* verify that the requested range is obtained */
+#  179|   		context_t con;
+#  180|-> 		security_context_t obtained_raw;
+#  181|   		security_context_t requested_raw;
+#  182|   		con = context_new(*sc);
+
+Error: COMPILER_WARNING (CWE-477):
+openssh-8.7p1/openbsd-compat/port-linux-sshd.c:181:17: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#  181 |                 security_context_t requested_raw;
+#      |                 ^~~~~~~~~~~~~~~~~~
+#  179|   		context_t con;
+#  180|   		security_context_t obtained_raw;
+#  181|-> 		security_context_t requested_raw;
+#  182|   		con = context_new(*sc);
+#  183|   		if (!con) {
+
+Error: COMPILER_WARNING (CWE-477):
+openssh-8.7p1/openbsd-compat/port-linux-sshd.c: scope_hint: At top level
+openssh-8.7p1/openbsd-compat/port-linux-sshd.c:240:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#  240 | sshd_selinux_getctxbyname(char *pwname, security_context_t *default_sc,
+#      | ^~~~~~~~~~~~~~~~~~~~~~~~~
+#  238|   /* Return the default security context for the given username */
+#  239|   static int
+#  240|-> sshd_selinux_getctxbyname(char *pwname, security_context_t *default_sc,
+#  241|       security_context_t *user_sc, int inetd, Authctxt *the_authctxt)
+#  242|   {
+
+Error: COMPILER_WARNING (CWE-477):
+openssh-8.7p1/openbsd-compat/port-linux-sshd.c:241:5: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#  241 |     security_context_t *user_sc, int inetd, Authctxt *the_authctxt)
+#      |     ^~~~~~~~~~~~~~~~~~
+#  239|   static int
+#  240|   sshd_selinux_getctxbyname(char *pwname, security_context_t *default_sc,
+#  241|->     security_context_t *user_sc, int inetd, Authctxt *the_authctxt)
+#  242|   {
+#  243|   	char *sename, *lvl;
+
+Error: COMPILER_WARNING (CWE-477):
+openssh-8.7p1/openbsd-compat/port-linux-sshd.c: scope_hint: In function 'sshd_selinux_getctxbyname'
+openssh-8.7p1/openbsd-compat/port-linux-sshd.c:272:25: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#  272 |                         security_context_t sshdsc=NULL;
+#      |                         ^~~~~~~~~~~~~~~~~~
+#  270|   		/* If launched from xinetd, we must use current level */
+#  271|   		if (inetd) {
+#  272|-> 			security_context_t sshdsc=NULL;
+#  273|   
+#  274|   			if (getcon_raw(&sshdsc) < 0)
+
+Error: COMPILER_WARNING (CWE-477):
+openssh-8.7p1/openbsd-compat/port-linux-sshd.c:293:33: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#  293 |                                 security_context_t default_level_sc = *default_sc;
+#      |                                 ^~~~~~~~~~~~~~~~~~
+#  291|   
+#  292|   			if (r == 0 && reqlvl != NULL && reqlvl[0]) {
+#  293|-> 				security_context_t default_level_sc = *default_sc;
+#  294|   				if (role != NULL && role[0]) {
+#  295|   					if (get_user_context(sename, role, lvl, &default_level_sc) < 0)
+
+Error: COMPILER_WARNING (CWE-477):
+openssh-8.7p1/openbsd-compat/port-linux-sshd.c: scope_hint: In function 'sshd_selinux_setup_exec_context'
+openssh-8.7p1/openbsd-compat/port-linux-sshd.c:386:9: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#  386 |         security_context_t user_ctx = NULL;
+#      |         ^~~~~~~~~~~~~~~~~~
+#  384|       int(pam_setenv)(char *, const char *), void *the_authctxt, int use_pam)
+#  385|   {
+#  386|-> 	security_context_t user_ctx = NULL;
+#  387|   	int r = 0;
+#  388|   	security_context_t default_ctx = NULL;
+
+Error: COMPILER_WARNING (CWE-477):
+openssh-8.7p1/openbsd-compat/port-linux-sshd.c:388:9: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#  388 |         security_context_t default_ctx = NULL;
+#      |         ^~~~~~~~~~~~~~~~~~
+#  386|   	security_context_t user_ctx = NULL;
+#  387|   	int r = 0;
+#  388|-> 	security_context_t default_ctx = NULL;
+#  389|   	Authctxt *authctxt = (Authctxt *) the_authctxt;
+#  390|   
+
+Error: COMPILER_WARNING (CWE-477):
+openssh-8.7p1/openbsd-compat/port-linux-sshd.c: scope_hint: In function 'sshd_selinux_copy_context'
+openssh-8.7p1/openbsd-compat/port-linux-sshd.c:461:9: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#  461 |         if (getexeccon((security_context_t *)&ctx) != 0) {
+#      |         ^~
+#  459|   		return;
+#  460|   
+#  461|-> 	if (getexeccon((security_context_t *)&ctx) != 0) {
+#  462|   		logit_f("getexeccon failed with %s", strerror(errno));
+#  463|   		return;
+
+Error: COMPILER_WARNING (CWE-1164):
+openssh-8.7p1/openbsd-compat/port-linux.c:59:1: warning[-Wunused-function]: 'ssh_selinux_getctxbyname' defined but not used
+#   59 | ssh_selinux_getctxbyname(char *pwname)
+#      | ^~~~~~~~~~~~~~~~~~~~~~~~
+#   57|   /* Return the default security context for the given username */
+#   58|   static char *
+#   59|-> ssh_selinux_getctxbyname(char *pwname)
+#   60|   {
+#   61|   	char *sc = NULL, *sename = NULL, *lvl = NULL;
+
+Error: COMPILER_WARNING (CWE-477):
+openssh-8.7p1/openbsd-compat/port-linux.c: scope_hint: In function 'ssh_selinux_setfscreatecon'
+openssh-8.7p1/openbsd-compat/port-linux.c:205:9: warning[-Wdeprecated-declarations]: 'matchpathcon' is deprecated: Use selabel_lookup instead
+#  205 |         if (matchpathcon(path, 0700, &context) == 0)
+#      |         ^~
+openssh-8.7p1/openbsd-compat/port-linux.c:36: included_from: Included from here.
+/usr/include/selinux/selinux.h:502:12: note: declared here
+#  502 | extern int matchpathcon(const char *path,
+#      |            ^~~~~~~~~~~~
+#  203|   		return;
+#  204|   	}
+#  205|-> 	if (matchpathcon(path, 0700, &context) == 0)
+#  206|   		setfscreatecon(context);
+#  207|   }
+
+Error: VALGRIND_WARNING:
+/builddir/build/BUILDROOT/openssh-8.7p1-2.fc35.x86_64/usr/sbin/sshd: note: while executing process 89 with arguments: -t -f /builddir/build/BUILDROOT/openssh-8.7p1-2.fc35.x86_64/etc/ssh/sshd_config
+openssh-8.7p1/openbsd-compat/setproctitle.c:90: warning[Leak_DefinitelyLost]: 2,952 (392 direct, 2,560 indirect) bytes in 1 blocks are definitely lost in loss record 616 of 620
+openssh-8.7p1/openbsd-compat/setproctitle.c:90: note: called from compat_init_setproctitle()
+openssh-8.7p1/sshd.c:1660: note: called from main()
+#   88|   	for (i = 0; envp[i] != NULL; i++)
+#   89|   		;
+#   90|-> 	if ((environ = calloc(i + 1, sizeof(*environ))) == NULL) {
+#   91|   		environ = envp;	/* put it back */
+#   92|   		return;
+
+Error: COMPILER_WARNING:
+openssh-8.7p1/rijndael.c:762:64: warning[-Warray-parameter=]: argument 3 of type 'const u8[16]' {aka 'const unsigned char[16]'} with mismatched bound
+#  762 | rijndaelEncrypt(const u32 rk[/*4*(Nr + 1)*/], int Nr, const u8 pt[16],
+#      |                                                       ~~~~~~~~~^~~~~~
+openssh-8.7p1/rijndael.c:34: included_from: Included from here.
+openssh-8.7p1/rijndael.h:41:53: note: previously declared as 'const unsigned char[]'
+#   41 | void    rijndaelEncrypt(const unsigned int [], int, const unsigned char [],
+#      |                                                     ^~~~~~~~~~~~~~~~~~~~~~
+#  760|   
+#  761|   void
+#  762|-> rijndaelEncrypt(const u32 rk[/*4*(Nr + 1)*/], int Nr, const u8 pt[16],
+#  763|       u8 ct[16])
+#  764|   {
+
+Error: COMPILER_WARNING:
+openssh-8.7p1/rijndael.c:763:8: warning[-Warray-parameter=]: argument 4 of type 'u8[16]' {aka 'unsigned char[16]'} with mismatched bound
+#  763 |     u8 ct[16])
+#      |     ~~~^~~~~~
+openssh-8.7p1/rijndael.c:34: included_from: Included from here.
+openssh-8.7p1/rijndael.h:42:13: note: previously declared as 'unsigned char[]'
+#   42 |             unsigned char []);
+#      |             ^~~~~~~~~~~~~~~~
+#  761|   void
+#  762|   rijndaelEncrypt(const u32 rk[/*4*(Nr + 1)*/], int Nr, const u8 pt[16],
+#  763|->     u8 ct[16])
+#  764|   {
+#  765|   	u32 s0, s1, s2, s3, t0, t1, t2, t3;
+
+Error: COMPILER_WARNING:
+openssh-8.7p1/ssh-keygen.c: scope_hint: In function 'do_convert_to_ssh2'
+openssh-8.7p1/ssh-keygen.c:366:41: warning[-Wformat-truncation=]: '%s' directive output may be truncated writing up to 1024 bytes into a region of size 39
+#  366 |             "%u-bit %s, converted by %s@%s from OpenSSH",
+#      |                                         ^~
+#  367 |             sshkey_size(k), sshkey_type(k),
+#  368 |             pw->pw_name, hostname);
+#      |                          ~~~~~~~~        
+/usr/include/stdio.h:888: included_from: Included from here.
+/usr/include/resolv.h:58: included_from: Included from here.
+openssh-8.7p1/openbsd-compat/getrrsetbyname.h:59: included_from: Included from here.
+openssh-8.7p1/openbsd-compat/openbsd-compat.h:44: included_from: Included from here.
+openssh-8.7p1/includes.h:174: included_from: Included from here.
+openssh-8.7p1/ssh-keygen.c:15: included_from: Included from here.
+/usr/include/bits/stdio2.h:71:10: note: '__snprintf_chk' output 36 or more bytes (assuming 1060) into a destination of size 61
+#   71 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+#      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   72 |                                    __glibc_objsize (__s), __fmt,
+#      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   73 |                                    __va_arg_pack ());
+#      |                                    ~~~~~~~~~~~~~~~~~
+#  364|   	/* Comment + surrounds must fit into 72 chars (RFC 4716 sec 3.3) */
+#  365|   	snprintf(comment, sizeof(comment),
+#  366|-> 	    "%u-bit %s, converted by %s@%s from OpenSSH",
+#  367|   	    sshkey_size(k), sshkey_type(k),
+#  368|   	    pw->pw_name, hostname);
+
+Error: COMPILER_WARNING:
+openssh-8.7p1/ssh-keygen.c: scope_hint: In function 'do_gen_all_hostkeys'
+openssh-8.7p1/ssh-keygen.c:1132:55: warning[-Wformat-truncation=]: '%s' directive output may be truncated writing up to 1024 bytes into a region of size 1023
+# 1132 |                 snprintf(comment, sizeof comment, "%s@%s", pw->pw_name,
+#      |                                                       ^~
+# 1133 |                     hostname);
+#      |                     ~~~~~~~~                           
+/usr/include/stdio.h:888: included_from: Included from here.
+/usr/include/resolv.h:58: included_from: Included from here.
+openssh-8.7p1/openbsd-compat/getrrsetbyname.h:59: included_from: Included from here.
+openssh-8.7p1/openbsd-compat/openbsd-compat.h:44: included_from: Included from here.
+openssh-8.7p1/includes.h:174: included_from: Included from here.
+openssh-8.7p1/ssh-keygen.c:15: included_from: Included from here.
+/usr/include/bits/stdio2.h:71:10: note: '__snprintf_chk' output 2 or more bytes (assuming 1026) into a destination of size 1024
+#   71 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+#      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   72 |                                    __glibc_objsize (__s), __fmt,
+#      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   73 |                                    __va_arg_pack ());
+#      |                                    ~~~~~~~~~~~~~~~~~
+# 1130|   		if ((r = sshkey_from_private(private, &public)) != 0)
+# 1131|   			fatal_fr(r, "sshkey_from_private");
+# 1132|-> 		snprintf(comment, sizeof comment, "%s@%s", pw->pw_name,
+# 1133|   		    hostname);
+# 1134|   		if ((r = sshkey_save_private(private, prv_tmp, "",
+
+Error: COMPILER_WARNING:
+openssh-8.7p1/ssh-keygen.c: scope_hint: In function 'main'
+openssh-8.7p1/ssh-keygen.c:3754:55: warning[-Wformat-truncation=]: '%s' directive output may be truncated writing up to 1024 bytes into a region of size 1023
+# 3754 |                 snprintf(comment, sizeof comment, "%s@%s", pw->pw_name, hostname);
+#      |                                                       ^~                ~~~~~~~~
+/usr/include/stdio.h:888: included_from: Included from here.
+/usr/include/resolv.h:58: included_from: Included from here.
+openssh-8.7p1/openbsd-compat/getrrsetbyname.h:59: included_from: Included from here.
+openssh-8.7p1/openbsd-compat/openbsd-compat.h:44: included_from: Included from here.
+openssh-8.7p1/includes.h:174: included_from: Included from here.
+openssh-8.7p1/ssh-keygen.c:15: included_from: Included from here.
+/usr/include/bits/stdio2.h:71:10: note: '__snprintf_chk' output 2 or more bytes (assuming 1026) into a destination of size 1024
+#   71 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+#      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   72 |                                    __glibc_objsize (__s), __fmt,
+#      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   73 |                                    __va_arg_pack ());
+#      |                                    ~~~~~~~~~~~~~~~~~
+# 3752|   	} else {
+# 3753|   		/* Create default comment field for the passphrase. */
+# 3754|-> 		snprintf(comment, sizeof comment, "%s@%s", pw->pw_name, hostname);
+# 3755|   	}
+# 3756|   
+
+Error: COMPILER_WARNING (CWE-1164):
+openssh-8.7p1/ssh-pkcs11.c:1960:1: warning[-Wunused-function]: 'pkcs11_register_provider' defined but not used
+# 1960 | pkcs11_register_provider(char *provider_id, char *pin, struct sshkey ***keyp,
+#      | ^~~~~~~~~~~~~~~~~~~~~~~~
+# 1958|   
+# 1959|   static int
+# 1960|-> pkcs11_register_provider(char *provider_id, char *pin, struct sshkey ***keyp,
+# 1961|       char ***labelsp, struct pkcs11_provider **providerp, CK_ULONG user)
+# 1962|   {

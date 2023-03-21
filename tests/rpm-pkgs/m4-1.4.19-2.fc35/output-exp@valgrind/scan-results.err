@@ -1,0 +1,286 @@
+Error: COMPILER_WARNING (CWE-457):
+m4-1.4.19/lib/canonicalize.c:401:33: warning[-Wmaybe-uninitialized]: 'end_idx' may be used uninitialized in this function
+#  401 |                 end = extra_buf + end_idx;
+#      |                       ~~~~~~~~~~^~~~~~~~~
+m4-1.4.19/lib/canonicalize.c:388:21: note: 'end_idx' was declared here
+#  388 |               idx_t end_idx IF_LINT (= 0);
+#      |                     ^~~~~~~
+#  399|                   }
+#  400|                 if (end_in_extra_buffer)
+#  401|->                 end = extra_buf + end_idx;
+#  402|   
+#  403|                 /* Careful here, end may be a pointer into extra_buf... */
+
+Error: COMPILER_WARNING:
+m4-1.4.19/lib/canonicalize.c: scope_hint: In function 'canonicalize_filename_mode'
+m4-1.4.19/lib/canonicalize.c:484:5: warning[-Wcpp]: #warning "GCC might issue a bogus -Wreturn-local-addr warning here."
+#  484 |    #warning "GCC might issue a bogus -Wreturn-local-addr warning here."
+#      |     ^~~~~~~
+#  482|   {
+#  483|     #ifdef GCC_BOGUS_WRETURN_LOCAL_ADDR
+#  484|->    #warning "GCC might issue a bogus -Wreturn-local-addr warning here."
+#  485|      #warning "See <https://gcc.gnu.org/bugzilla/show_bug.cgi?id=93644>."
+#  486|     #endif
+
+Error: COMPILER_WARNING:
+m4-1.4.19/lib/canonicalize.c:485:5: warning[-Wcpp]: #warning "See <https://gcc.gnu.org/bugzilla/show_bug.cgi?id=93644>."
+#  485 |    #warning "See <https://gcc.gnu.org/bugzilla/show_bug.cgi?id=93644>."
+#      |     ^~~~~~~
+#  483|     #ifdef GCC_BOGUS_WRETURN_LOCAL_ADDR
+#  484|      #warning "GCC might issue a bogus -Wreturn-local-addr warning here."
+#  485|->    #warning "See <https://gcc.gnu.org/bugzilla/show_bug.cgi?id=93644>."
+#  486|     #endif
+#  487|     struct scratch_buffer rname_buffer;
+
+Error: COMPILER_WARNING (CWE-457):
+m4-1.4.19/lib/trim.c: scope_hint: In function 'trim2'
+m4-1.4.19/lib/trim.c:103:16: warning[-Wmaybe-uninitialized]: 'r' may be used uninitialized in this function
+#  103 |             *r = '\0';
+#      |             ~~~^~~~~~
+#  101|   
+#  102|             if (state == 2)
+#  103|->             *r = '\0';
+#  104|           }
+#  105|       }
+
+Error: VALGRIND_WARNING:
+./test-posix_spawn-chdir: note: while executing process 15310
+m4-1.4.19/tests/../lib/concat-filename.c:58: warning[Leak_DefinitelyLost]: 13 bytes in 1 blocks are definitely lost in loss record 1 of 1
+m4-1.4.19/tests/../lib/concat-filename.c:58: note: called from UnknownInlinedFun()
+m4-1.4.19/tests/xconcat-filename.c:36: note: called from UnknownInlinedFun()
+m4-1.4.19/tests/findprog.c:94: note: called from UnknownInlinedFun()
+m4-1.4.19/tests/findprog.c:42: note: called from UnknownInlinedFun()
+m4-1.4.19/tests/test-posix_spawn-chdir.c:173: note: called from main()
+#   56|           (directory_len > FILE_SYSTEM_PREFIX_LEN (directory)
+#   57|            && !ISSLASH (directory[directory_len - 1]));
+#   58|->       result = (char *) malloc (directory_len + need_slash
+#   59|                                   + strlen (filename)
+#   60|                                   + (suffix != NULL ? strlen (suffix) : 0)
+
+Error: VALGRIND_WARNING:
+./test-canonicalize: note: while executing process 11930
+m4-1.4.19/tests/../lib/malloc/scratch_buffer_dupfree.c:32: warning[Leak_DefinitelyLost]: 12 bytes in 1 blocks are definitely lost in loss record 2 of 10
+m4-1.4.19/tests/../lib/malloc/scratch_buffer_dupfree.c:32: note: called from UnknownInlinedFun()
+m4-1.4.19/tests/../lib/./malloc/scratch_buffer.h:147: note: called from UnknownInlinedFun()
+m4-1.4.19/tests/../lib/canonicalize.c:467: note: called from UnknownInlinedFun()
+m4-1.4.19/tests/../lib/canonicalize.c:488: note: called from canonicalize_filename_mode()
+m4-1.4.19/tests/test-canonicalize.c:72: note: called from main()
+#   30|     if (data == buffer->__space.__c)
+#   31|       {
+#   32|->       void *copy = malloc (size);
+#   33|         return copy != NULL ? memcpy (copy, data, size) : NULL;
+#   34|       }
+
+Error: VALGRIND_WARNING:
+./test-execute-script: note: while executing process 12298
+m4-1.4.19/tests/read-file.c:82: warning[Leak_DefinitelyLost]: 12 bytes in 1 blocks are definitely lost in loss record 1 of 1
+m4-1.4.19/tests/read-file.c:82: note: called from UnknownInlinedFun()
+m4-1.4.19/tests/read-file.c:202: note: called from UnknownInlinedFun()
+m4-1.4.19/tests/test-execute-script.c:87: note: called from main()
+#   80|     }
+#   81|   
+#   82|->   if (!(buf = malloc (alloc)))
+#   83|       return NULL; /* errno is ENOMEM.  */
+#   84|   
+
+Error: VALGRIND_WARNING:
+./test-execute-main: note: while executing process 13164 with arguments: ./test-execute-child 8
+m4-1.4.19/tests/read-file.c:82: warning[Leak_DefinitelyLost]: 4 bytes in 1 blocks are definitely lost in loss record 1 of 1
+m4-1.4.19/tests/read-file.c:82: note: called from UnknownInlinedFun()
+m4-1.4.19/tests/read-file.c:202: note: called from read_file.constprop.0()
+m4-1.4.19/tests/test-execute-main.c:224: note: called from main()
+#   80|     }
+#   81|   
+#   82|->   if (!(buf = malloc (alloc)))
+#   83|       return NULL; /* errno is ENOMEM.  */
+#   84|   
+
+Error: VALGRIND_WARNING:
+./test-execute-main: note: while executing process 14341 with arguments: ./test-execute-child 18
+m4-1.4.19/tests/read-file.c:82: warning[Leak_DefinitelyLost]: 7 bytes in 1 blocks are definitely lost in loss record 1 of 1
+m4-1.4.19/tests/read-file.c:82: note: called from UnknownInlinedFun()
+m4-1.4.19/tests/read-file.c:202: note: called from read_file.constprop.0()
+m4-1.4.19/tests/test-execute-main.c:395: note: called from main()
+#   80|     }
+#   81|   
+#   82|->   if (!(buf = malloc (alloc)))
+#   83|       return NULL; /* errno is ENOMEM.  */
+#   84|   
+
+Error: VALGRIND_WARNING:
+./test-execute-main: note: while executing process 13369 with arguments: ./test-execute-child 10
+m4-1.4.19/tests/read-file.c:121: warning[Leak_DefinitelyLost]: 1 bytes in 1 blocks are definitely lost in loss record 1 of 1
+m4-1.4.19/tests/read-file.c:121: note: called from UnknownInlinedFun()
+m4-1.4.19/tests/read-file.c:202: note: called from read_file.constprop.0()
+m4-1.4.19/tests/test-execute-main.c:256: note: called from main()
+#  119|                   else
+#  120|                     {
+#  121|->                     char *smaller_buf = realloc (buf, size + 1);
+#  122|                       if (smaller_buf != NULL)
+#  123|                         buf = smaller_buf;
+
+Error: VALGRIND_WARNING:
+./test-c-stack: note: while executing process 11847 with arguments: 1
+m4-1.4.19/tests/test-c-stack.c:66: warning[InvalidRead]: Invalid read of size 1
+m4-1.4.19/tests/test-c-stack.c:66: note: Address 0x0 is not stack'd, malloc'd or (recently) free'd
+m4-1.4.19/tests/test-c-stack.c:66: note: called from main()
+#   64|           {
+#   65|             exit_failure = 77;
+#   66|->           ++*argv[argc]; /* Intentionally dereference NULL.  */
+#   67|           }
+#   68|         return recurse (0);
+
+Error: VALGRIND_WARNING:
+./test-calloc-gnu: note: while executing process 11888
+m4-1.4.19/tests/test-calloc-gnu.c:62: warning[FishyValue]: Argument 'size' of function calloc has a fishy (possibly negative) value: -9223372036854775808
+
+m4-1.4.19/tests/test-calloc-gnu.c:62: note: called from main()
+#   60|       for (size_t n = 2; n != 0; n <<= 1)
+#   61|         {
+#   62|->         void *volatile p = calloc (PTRDIFF_MAX / n + 1, identity (n));
+#   63|           ASSERT (p == NULL);
+#   64|           ASSERT (errno == ENOMEM);
+
+Error: VALGRIND_WARNING:
+./test-canonicalize: note: while executing process 11930
+m4-1.4.19/tests/test-canonicalize.c:67: warning[Leak_DefinitelyLost]: 12 bytes in 1 blocks are definitely lost in loss record 1 of 10
+/usr/lib64/libc.so.6: note: called from __libc_scratch_buffer_dupfree()
+/usr/lib64/libc.so.6: note: called from realpath_stk()
+/usr/lib64/libc.so.6: note: called from realpath@@GLIBC_2.3()
+/usr/lib64/libcsexec-preload.so: note: called from canonicalize_file_name()
+m4-1.4.19/tests/test-canonicalize.c:67: note: called from main()
+#   65|        to different files (except for hard links).  */
+#   66|     {
+#   67|->     char *result0 = canonicalize_file_name ("/etc/passwd");
+#   68|       if (result0 != NULL) /* This file does not exist on native Windows.  */
+#   69|         {
+
+Error: VALGRIND_WARNING:
+./test-explicit_bzero: note: while executing process 12322
+m4-1.4.19/tests/test-explicit_bzero.c:117: warning[InvalidRead]: Invalid read of size 8
+m4-1.4.19/tests/test-explicit_bzero.c:117: note: Address 0x4a36040 is 0 bytes inside a block of size 9 free'd
+m4-1.4.19/tests/test-explicit_bzero.c:117: note: called from UnknownInlinedFun()
+m4-1.4.19/tests/test-explicit_bzero.c:173: note: called from main()
+#  115|         /* some implementation could override freed memory by canaries so
+#  116|            compare against secret */
+#  117|->       ASSERT (memcmp (heapbuf, SECRET, SECRET_SIZE) != 0);
+#  118|         printf ("test_heap: address range is still mapped after free().\n");
+#  119|       }
+
+Error: VALGRIND_WARNING:
+./test-explicit_bzero: note: while executing process 12322
+m4-1.4.19/tests/test-explicit_bzero.c:143: warning[UninitCondition]: Conditional jump or move depends on uninitialised value(s)
+m4-1.4.19/tests/test-explicit_bzero.c:143: note: called from do_secret_stuff()
+m4-1.4.19/tests/test-explicit_bzero.c:156: note: called from UnknownInlinedFun()
+m4-1.4.19/tests/test-explicit_bzero.c:174: note: called from main()
+#  141|     else /* pass == 2 */
+#  142|       {
+#  143|->       return memcmp (zero, stackbuf, SECRET_SIZE) != 0;
+#  144|       }
+#  145|   }
+
+Error: COMPILER_WARNING (CWE-457):
+m4-1.4.19/tests/test-explicit_bzero.c: scope_hint: In function 'do_secret_stuff'
+m4-1.4.19/tests/test-explicit_bzero.c:143:14: warning[-Wmaybe-uninitialized]: 'stackbuf' may be used uninitialized
+#  143 |       return memcmp (zero, stackbuf, SECRET_SIZE) != 0;
+#      |              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<built-in>: note: by argument 2 of type 'const void *' to '__builtin_memcmp_eq' declared here
+m4-1.4.19/tests/test-explicit_bzero.c:134:8: note: 'stackbuf' declared here
+#  134 |   char stackbuf[SECRET_SIZE];
+#      |        ^~~~~~~~
+#  141|     else /* pass == 2 */
+#  142|       {
+#  143|->       return memcmp (zero, stackbuf, SECRET_SIZE) != 0;
+#  144|       }
+#  145|   }
+
+Error: VALGRIND_WARNING:
+./test-malloc-gnu: note: while executing process 14451
+m4-1.4.19/tests/test-malloc-gnu.c:39: warning[FishyValue]: Argument 'size' of function malloc has a fishy (possibly negative) value: -9223372036854775808
+
+m4-1.4.19/tests/test-malloc-gnu.c:39: note: called from main()
+#   37|       {
+#   38|         size_t one = argc != 12345;
+#   39|->       p = malloc (PTRDIFF_MAX + one);
+#   40|         ASSERT (p == NULL);
+#   41|         ASSERT (errno == ENOMEM);
+
+Error: COMPILER_WARNING (CWE-457):
+m4-1.4.19/tests/test-memrchr.c:28: included_from: Included from here.
+m4-1.4.19/tests/test-memrchr.c: scope_hint: In function 'main'
+m4-1.4.19/tests/test-memrchr.c:32:26: warning[-Wmaybe-uninitialized]: 'input_59' may be used uninitialized
+#   32 | #define MEMRCHR (char *) memrchr
+#      |                          ^
+m4-1.4.19/lib/string.h:41: included_from: Included from here.
+m4-1.4.19/tests/test-memrchr.c:20: included_from: Included from here.
+/usr/include/string.h:117:14: note: in a call to 'memrchr' declared with attribute 'access (read_only, 1, 3)' here
+#  117 | extern void *memrchr (const void *__s, int __c, size_t __n)
+#      |              ^~~~~~~
+#   30|   /* Calculating void * + int is not portable, so this wrapper converts
+#   31|      to char * to make the tests easier to write.  */
+#   32|-> #define MEMRCHR (char *) memrchr
+#   33|   
+#   34|   int
+
+Error: VALGRIND_WARNING:
+./test-realloc-gnu: note: while executing process 15673
+m4-1.4.19/tests/test-realloc-gnu.c:31: warning[Leak_DefinitelyLost]: 0 bytes in 1 blocks are definitely lost in loss record 1 of 1
+m4-1.4.19/tests/test-realloc-gnu.c:31: note: called from main()
+#   29|   {
+#   30|     /* Check that realloc (NULL, 0) is not a NULL pointer.  */
+#   31|->   void *volatile p = realloc (NULL, 0);
+#   32|     ASSERT (p != NULL);
+#   33|   
+
+Error: VALGRIND_WARNING:
+./test-realloc-gnu: note: while executing process 15673
+m4-1.4.19/tests/test-realloc-gnu.c:39: warning[FishyValue]: Argument 'size' of function realloc has a fishy (possibly negative) value: -9223372036854775808
+
+m4-1.4.19/tests/test-realloc-gnu.c:39: note: called from main()
+#   37|       {
+#   38|         size_t one = argc != 12345;
+#   39|->       p = realloc (p, PTRDIFF_MAX + one);
+#   40|         ASSERT (p == NULL);
+#   41|         /* Avoid a test failure due to glibc bug
+
+Error: VALGRIND_WARNING:
+./test-reallocarray: note: while executing process 15683
+m4-1.4.19/tests/test-reallocarray.c:39: warning[FishyValue]: Argument 'size' of function malloc has a fishy (possibly negative) value: -9223372036854775808
+
+m4-1.4.19/tests/test-reallocarray.c:39: note: called from main()
+#   37|         void *volatile p = NULL;
+#   38|   
+#   39|->       p = reallocarray (p, PTRDIFF_MAX / n + 1, n);
+#   40|         ASSERT (p == NULL);
+#   41|         ASSERT (errno == ENOMEM);
+
+Error: VALGRIND_WARNING:
+./test-sigsegv-catch-stackoverflow2: note: while executing process 16306
+m4-1.4.19/tests/test-sigsegv-catch-stackoverflow2.c:186: warning[InvalidWrite]: Invalid write of size 4
+m4-1.4.19/tests/test-sigsegv-catch-stackoverflow2.c:186: note: Address 0x0 is not stack'd, malloc'd or (recently) free'd
+m4-1.4.19/tests/test-sigsegv-catch-stackoverflow2.c:186: note: called from main()
+#  184|         break;
+#  185|       case 3:
+#  186|->       *(volatile int *) 0 = 42;
+#  187|         break;
+#  188|       case 4:
+
+Error: COMPILER_WARNING (CWE-563):
+m4-1.4.19/tests/test-thread_create.c:30:20: warning[-Wunused-variable]: 'worker_thread' defined but not used
+#   30 | static gl_thread_t worker_thread;
+#      |                    ^~~~~~~~~~~~~
+#   28|   static gl_thread_t main_thread_before;
+#   29|   static gl_thread_t main_thread_after;
+#   30|-> static gl_thread_t worker_thread;
+#   31|   
+#   32|   static int dummy;
+
+Error: COMPILER_WARNING (CWE-1164):
+m4-1.4.19/tests/test-thread_create.c:36:1: warning[-Wunused-function]: 'worker_thread_func' defined but not used
+#   36 | worker_thread_func (void *arg)
+#      | ^~~~~~~~~~~~~~~~~~
+#   34|   
+#   35|   static void *
+#   36|-> worker_thread_func (void *arg)
+#   37|   {
+#   38|     work_done = 1;

@@ -1,0 +1,122 @@
+Error: COMPILER_WARNING (CWE-252):
+httpd-2.4.51/modules/ssl/ssl_engine_init.c: scope_hint: In function 'ssl_init_server_ctx'
+httpd-2.4.51/modules/ssl/ssl_engine_init.c:2056:5: warning[-Wunused-result]: ignoring return value of 'SSL_CTX_set_timeout' declared with attribute 'warn_unused_result'
+# 2056 |     SSL_CTX_set_timeout(sc->server->ssl_ctx,
+#      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2057 |                         sc->session_cache_timeout == UNSET ?
+#      |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2058 |                         SSL_SESSION_CACHE_TIMEOUT : sc->session_cache_timeout);
+#      |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+httpd-2.4.51/modules/ssl/ssl_engine_init.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+# 2054|   #endif
+# 2055|   
+# 2056|->     SSL_CTX_set_timeout(sc->server->ssl_ctx,
+# 2057|                           sc->session_cache_timeout == UNSET ?
+# 2058|                           SSL_SESSION_CACHE_TIMEOUT : sc->session_cache_timeout);
+
+Error: COMPILER_WARNING (CWE-252):
+httpd-2.4.51/modules/ssl/ssl_engine_kernel.c: scope_hint: In function 'upgrade_connection'
+httpd-2.4.51/modules/ssl/ssl_engine_kernel.c:81:5: warning[-Wunused-result]: ignoring return value of 'SSL_do_handshake' declared with attribute 'warn_unused_result'
+#   81 |     SSL_do_handshake(ssl);
+#      |     ^~~~~~~~~~~~~~~~~~~~~
+#   79|       /* Perform initial SSL handshake. */
+#   80|       SSL_set_accept_state(ssl);
+#   81|->     SSL_do_handshake(ssl);
+#   82|   
+#   83|       if (!SSL_is_init_finished(ssl)) {
+
+Error: COMPILER_WARNING (CWE-252):
+httpd-2.4.51/modules/ssl/ssl_engine_kernel.c: scope_hint: In function 'ssl_hook_Access_classic'
+httpd-2.4.51/modules/ssl/ssl_engine_kernel.c:989:13: warning[-Wunused-result]: ignoring return value of 'SSL_set_session_id_context' declared with attribute 'warn_unused_result'
+#  989 |             SSL_set_session_id_context(ssl,
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  990 |                                        (unsigned char *)&id,
+#      |                                        ~~~~~~~~~~~~~~~~~~~~~
+#  991 |                                        sizeof(id));
+#      |                                        ~~~~~~~~~~~
+#  987|                             reneg_support);
+#  988|   
+#  989|->             SSL_set_session_id_context(ssl,
+#  990|                                          (unsigned char *)&id,
+#  991|                                          sizeof(id));
+
+Error: COMPILER_WARNING (CWE-252):
+httpd-2.4.51/modules/ssl/ssl_engine_kernel.c:998:13: warning[-Wunused-result]: ignoring return value of 'SSL_do_handshake' declared with attribute 'warn_unused_result'
+#  998 |             SSL_do_handshake(ssl);
+#      |             ^~~~~~~~~~~~~~~~~~~~~
+#  996|   
+#  997|               SSL_renegotiate(ssl);
+#  998|->             SSL_do_handshake(ssl);
+#  999|   
+# 1000|               if (!SSL_is_init_finished(ssl)) {
+
+Error: COMPILER_WARNING (CWE-252):
+httpd-2.4.51/modules/ssl/ssl_engine_kernel.c:1020:13: warning[-Wunused-result]: ignoring return value of 'SSL_peek' declared with attribute 'warn_unused_result'
+# 1020 |             SSL_peek(ssl, peekbuf, 0);
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~~~
+# 1018|                * See: http://marc.info/?t=145493359200002&r=1&w=2
+# 1019|                */
+# 1020|->             SSL_peek(ssl, peekbuf, 0);
+# 1021|   
+# 1022|               sslconn->reneg_state = RENEG_REJECT;
+
+Error: COMPILER_WARNING (CWE-252):
+httpd-2.4.51/modules/ssl/ssl_engine_kernel.c: scope_hint: In function 'ssl_hook_Access_modern'
+httpd-2.4.51/modules/ssl/ssl_engine_kernel.c:1187:13: warning[-Wunused-result]: ignoring return value of 'SSL_do_handshake' declared with attribute 'warn_unused_result'
+# 1187 |             SSL_do_handshake(ssl);
+#      |             ^~~~~~~~~~~~~~~~~~~~~
+# 1185|               modssl_set_app_data2(ssl, r);
+# 1186|   
+# 1187|->             SSL_do_handshake(ssl);
+# 1188|               /* Need to trigger renegotiation handshake by reading.
+# 1189|                * Peeking 0 bytes actually works.
+
+Error: COMPILER_WARNING (CWE-252):
+httpd-2.4.51/modules/ssl/ssl_engine_kernel.c:1192:13: warning[-Wunused-result]: ignoring return value of 'SSL_peek' declared with attribute 'warn_unused_result'
+# 1192 |             SSL_peek(ssl, peekbuf, 0);
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~~~
+# 1190|                * See: http://marc.info/?t=145493359200002&r=1&w=2
+# 1191|                */
+# 1192|->             SSL_peek(ssl, peekbuf, 0);
+# 1193|   
+# 1194|               sslconn->reneg_state = old_state;
+
+Error: COMPILER_WARNING (CWE-252):
+httpd-2.4.51/modules/ssl/ssl_engine_kernel.c: scope_hint: In function 'ssl_find_vhost'
+httpd-2.4.51/modules/ssl/ssl_engine_kernel.c:2571:13: warning[-Wunused-result]: ignoring return value of 'SSL_set_session_id_context' declared with attribute 'warn_unused_result'
+# 2571 |             SSL_set_session_id_context(ssl, sid_ctx, APR_MD5_DIGESTSIZE*2);
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+httpd-2.4.51/modules/ssl/ssl_engine_kernel.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+# 2569|                                                  (unsigned char *)sc->vhost_id,
+# 2570|                                                  sc->vhost_id_len);
+# 2571|->             SSL_set_session_id_context(ssl, sid_ctx, APR_MD5_DIGESTSIZE*2);
+# 2572|           }
+# 2573|   
+
+Error: COMPILER_WARNING (CWE-252):
+httpd-2.4.51/modules/ssl/ssl_util_ssl.c: scope_hint: In function 'modssl_set_app_data2'
+httpd-2.4.51/modules/ssl/ssl_util_ssl.c:67:5: warning[-Wunused-result]: ignoring return value of 'SSL_set_ex_data' declared with attribute 'warn_unused_result'
+#   67 |     SSL_set_ex_data(ssl, app_data2_idx, (char *)arg);
+#      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+httpd-2.4.51/modules/ssl/ssl_util_ssl.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#   65|   void modssl_set_app_data2(SSL *ssl, void *arg)
+#   66|   {
+#   67|->     SSL_set_ex_data(ssl, app_data2_idx, (char *)arg);
+#   68|       return;
+#   69|   }
+
+Error: COMPILER_WARNING (CWE-477):
+httpd-2.4.51/server/core.c: scope_hint: In function 'core_post_config'
+httpd-2.4.51/server/core.c:5154:13: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+# 5154 |             security_context_t con;
+#      |             ^~~~~~~~~~~~~~~~~~
+httpd-2.4.51/server/core.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+# 5152|           
+# 5153|           if (is_enabled && !already_warned) {
+# 5154|->             security_context_t con;
+# 5155|               
+# 5156|               if (getcon(&con) == 0) {

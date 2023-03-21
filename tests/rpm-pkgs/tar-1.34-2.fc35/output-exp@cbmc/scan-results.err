@@ -1,0 +1,31 @@
+Error: COMPILER_WARNING:
+tar-1.34/gnu/utimens.c: scope_hint: In function 'fdutimens'
+tar-1.34/gnu/utimens.c:399:17: warning[-Wstringop-overflow=]: 'update_timespec' accessing 16 bytes in a region of size 8
+#  399 |       if (ts && update_timespec (&st, &ts))
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+tar-1.34/gnu/utimens.c:399:17: note: referencing argument 2 of type 'struct timespec **'
+tar-1.34/gnu/utimens.c:136:1: note: in a call to function 'update_timespec'
+#  136 | update_timespec (struct stat const *statbuf, struct timespec *ts[2])
+#      | ^~~~~~~~~~~~~~~
+#  397|             && (fd < 0 ? stat (file, &st) : fstat (fd, &st)))
+#  398|           return -1;
+#  399|->       if (ts && update_timespec (&st, &ts))
+#  400|           return 0;
+#  401|       }
+
+Error: COMPILER_WARNING:
+tar-1.34/gnu/utimens.c: scope_hint: In function 'lutimens'
+tar-1.34/gnu/utimens.c:612:17: warning[-Wstringop-overflow=]: 'update_timespec' accessing 16 bytes in a region of size 8
+#  612 |       if (ts && update_timespec (&st, &ts))
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+tar-1.34/gnu/utimens.c:612:17: note: referencing argument 2 of type 'struct timespec **'
+tar-1.34/gnu/utimens.c:136:1: note: in a call to function 'update_timespec'
+#  136 | update_timespec (struct stat const *statbuf, struct timespec *ts[2])
+#      | ^~~~~~~~~~~~~~~
+tar-1.34/gnu/utimens.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#  610|         if (adjustment_needed != 3 && lstat (file, &st))
+#  611|           return -1;
+#  612|->       if (ts && update_timespec (&st, &ts))
+#  613|           return 0;
+#  614|       }

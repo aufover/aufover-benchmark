@@ -1,0 +1,19 @@
+Error: COMPILER_WARNING (CWE-134):
+libreswan-4.5/lib/libswan/fatal.c:31:19: warning[-Wformat-nonliteral]: format string is not a string literal
+#        jam_va_list(buf, fmt, ap);
+#                         ^~~
+#   29|   	jam(buf, "FATAL ERROR: ");
+#   30|   	jam_logger_prefix(buf, logger);
+#   31|-> 	jam_va_list(buf, fmt, ap);
+#   32|   }
+#   33|   
+
+Error: COMPILER_WARNING (CWE-563):
+libreswan-4.5/programs/pluto/ikev1_xauth.c:2411:9: warning[-Wunused-but-set-variable]: variable 'xauth_resp' set but not used
+#        lset_t xauth_resp = LEMPTY;     /* ??? value never used */
+#               ^
+# 2409|   	unsigned int status = XAUTH_STATUS_FAIL;
+# 2410|   	stf_status stat;
+# 2411|-> 	lset_t xauth_resp = LEMPTY;	/* ??? value never used */
+# 2412|   
+# 2413|   	dbg("xauth_inI1");

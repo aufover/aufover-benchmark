@@ -1,0 +1,1482 @@
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/collection/collection_cmp.c:142:24: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#                substr = strcasestr(first->property, second->property);
+#                       ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  140|               /* Compare lengths first */
+#  141|               if (first->property_len >= second->property_len) {
+#  142|->                 substr = strcasestr(first->property, second->property);
+#  143|                   if (substr != NULL) {
+#  144|                       /* Check we need to validate for dot */
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/collection/collection_cmp.c:142:26: warning: implicit declaration of function 'strcasestr' is invalid in C99
+#                substr = strcasestr(first->property, second->property);
+#                         ^
+#  140|               /* Compare lengths first */
+#  141|               if (first->property_len >= second->property_len) {
+#  142|->                 substr = strcasestr(first->property, second->property);
+#  143|                   if (substr != NULL) {
+#  144|                       /* Check we need to validate for dot */
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/collection/collection_cmp.c:142:26: warning: this function declaration is not a prototype
+#  140|               /* Compare lengths first */
+#  141|               if (first->property_len >= second->property_len) {
+#  142|->                 substr = strcasestr(first->property, second->property);
+#  143|                   if (substr != NULL) {
+#  144|                       /* Check we need to validate for dot */
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/collection/collection_tools.c:318:15: warning: implicitly declaring library function 'realloc' with type 'void *(void *, unsigned long)'
+#        tmp = realloc(buf_data->buffer, buf_data->size + BLOCK_SIZE);
+#              ^
+ding-libs-0.6.1/collection/collection_tools.c:318:15: note: include the header <stdlib.h> or explicitly provide a declaration for 'realloc'
+#  316|       /* Grow buffer if needed */
+#  317|       while (buf_data->length+len >= buf_data->size) {
+#  318|->         tmp = realloc(buf_data->buffer, buf_data->size + BLOCK_SIZE);
+#  319|           if (tmp == NULL) {
+#  320|               TRACE_ERROR_NUMBER("Error. Failed to allocate memory.", ENOMEM);
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/collection/collection_tools.c:385:28: warning: implicitly declaring library function 'malloc' with type 'void *(unsigned long)'
+#        buf_data->buffer = malloc(BLOCK_SIZE);
+#                           ^
+ding-libs-0.6.1/collection/collection_tools.c:385:28: note: include the header <stdlib.h> or explicitly provide a declaration for 'malloc'
+#  383|       if (buf_data->buffer == NULL) {
+#  384|           TRACE_INFO_STRING("First time use.", "Allocating buffer.");
+#  385|->         buf_data->buffer = malloc(BLOCK_SIZE);
+#  386|           if (buf_data->buffer == NULL) {
+#  387|               TRACE_ERROR_NUMBER("Error. Failed to allocate memory.", ENOMEM);
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/collection/collection_tools.c:562:5: warning: implicit declaration of function 'free' is invalid in C99
+#    free(buf_data.buffer);
+#    ^
+#  560|           printf("%s\n", buf_data.buffer);
+#  561|   
+#  562|->     free(buf_data.buffer);
+#  563|   
+#  564|       TRACE_FLOW_NUMBER("col_print_collection returning", error);
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/collection/collection_tools.c:562:5: warning: this function declaration is not a prototype
+#  560|           printf("%s\n", buf_data.buffer);
+#  561|   
+#  562|->     free(buf_data.buffer);
+#  563|   
+#  564|       TRACE_FLOW_NUMBER("col_print_collection returning", error);
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/collection/collection_tools.c:652:13: warning: implicit declaration of function 'free' is invalid in C99
+#            free(buf_data.buffer);
+#            ^
+#  650|               buf_data.buffer[buf_data.length] = '\0';
+#  651|               printf("%s\n", buf_data.buffer);
+#  652|->             free(buf_data.buffer);
+#  653|           }
+#  654|           else {
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/collection/collection_tools.c:673:13: warning: implicit declaration of function 'free' is invalid in C99
+#            free(str_list[current]);
+#            ^
+#  671|       if (str_list != NULL) {
+#  672|           while(str_list[current]) {
+#  673|->             free(str_list[current]);
+#  674|               current++;
+#  675|           }
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/collection/collection_tools.c:676:9: warning: implicit declaration of function 'free' is invalid in C99
+#        free(str_list);
+#        ^
+#  674|               current++;
+#  675|           }
+#  676|->         free(str_list);
+#  677|       }
+#  678|   
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/collection/collection_tools.c:717:9: warning: implicit declaration of function 'free' is invalid in C99
+#        free(list);
+#        ^
+#  715|           TRACE_ERROR_NUMBER("Failed to bind.", err);
+#  716|           if (error) *error = err;
+#  717|->         free(list);
+#  718|           return NULL;
+#  719|       }
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_config.c:391:49: warning: implicit declaration of function 'gettext' is invalid in C99
+#                                                ERROR_TXT, &pe, sizeof(pe));
+#                                                ^
+ding-libs-0.6.1/ini/ini_defines.h:37:29: note: expanded from macro 'ERROR_TXT'
+##define ERROR_TXT           _("Error")
+#                            ^
+ding-libs-0.6.1/path_utils/path_utils.h:54:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^
+#  389|                   pe.error = ext_err;
+#  390|                   error = col_add_binary_property(*error_list, NULL,
+#  391|->                                                 ERROR_TXT, &pe, sizeof(pe));
+#  392|                   if (error) {
+#  393|                       TRACE_ERROR_NUMBER("Failed to add error to collection",
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_config.c:391:49: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#                                                ERROR_TXT, &pe, sizeof(pe));
+#                                                ^~~~~~~~~
+ding-libs-0.6.1/ini/ini_defines.h:37:29: note: expanded from macro 'ERROR_TXT'
+##define ERROR_TXT           _("Error")
+#                            ^~~~~~~~~~
+ding-libs-0.6.1/path_utils/path_utils.h:54:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^~~~~~~~~~~~~~~
+ding-libs-0.6.1/collection/collection.h:1193:41: note: passing argument to parameter 'property' here
+#                            const char *property,
+#                                        ^
+#  389|                   pe.error = ext_err;
+#  390|                   error = col_add_binary_property(*error_list, NULL,
+#  391|->                                                 ERROR_TXT, &pe, sizeof(pe));
+#  392|                   if (error) {
+#  393|                       TRACE_ERROR_NUMBER("Failed to add error to collection",
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_config.c:391:49: warning: this function declaration is not a prototype
+ding-libs-0.6.1/ini/ini_defines.h:37:29: note: expanded from macro 'ERROR_TXT'
+##define ERROR_TXT           _("Error")
+#                            ^
+ding-libs-0.6.1/path_utils/path_utils.h:54:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^
+#  389|                   pe.error = ext_err;
+#  390|                   error = col_add_binary_property(*error_list, NULL,
+#  391|->                                                 ERROR_TXT, &pe, sizeof(pe));
+#  392|                   if (error) {
+#  393|                       TRACE_ERROR_NUMBER("Failed to add error to collection",
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_config.c:419:49: warning: implicit declaration of function 'gettext' is invalid in C99
+#                                                WARNING_TXT, &pe, sizeof(pe));
+#                                                ^
+ding-libs-0.6.1/ini/ini_defines.h:36:29: note: expanded from macro 'WARNING_TXT'
+##define WARNING_TXT         _("Warning")
+#                            ^
+ding-libs-0.6.1/path_utils/path_utils.h:54:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^
+#  417|                   pe.error = ext_err;
+#  418|                   error = col_add_binary_property(*error_list, NULL,
+#  419|->                                                 WARNING_TXT, &pe, sizeof(pe));
+#  420|                   if (error) {
+#  421|                       TRACE_ERROR_NUMBER("Failed to add warning to collection",
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_config.c:419:49: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#                                                WARNING_TXT, &pe, sizeof(pe));
+#                                                ^~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_defines.h:36:29: note: expanded from macro 'WARNING_TXT'
+##define WARNING_TXT         _("Warning")
+#                            ^~~~~~~~~~~~
+ding-libs-0.6.1/path_utils/path_utils.h:54:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^~~~~~~~~~~~~~~
+ding-libs-0.6.1/collection/collection.h:1193:41: note: passing argument to parameter 'property' here
+#                            const char *property,
+#                                        ^
+#  417|                   pe.error = ext_err;
+#  418|                   error = col_add_binary_property(*error_list, NULL,
+#  419|->                                                 WARNING_TXT, &pe, sizeof(pe));
+#  420|                   if (error) {
+#  421|                       TRACE_ERROR_NUMBER("Failed to add warning to collection",
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_configobj.c:1039:44: warning: implicit declaration of function 'gettext' is invalid in C99
+#            snprintf(line, MAX_ERROR_LINE, LINE_FORMAT,
+#                                           ^
+ding-libs-0.6.1/ini/ini_defines.h:51:29: note: expanded from macro 'LINE_FORMAT'
+##define LINE_FORMAT         _("%s (%d) on line %d: %s")
+#                            ^
+ding-libs-0.6.1/ini/ini_configobj.c:33:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^
+# 1037|               }
+# 1038|   
+# 1039|->             snprintf(line, MAX_ERROR_LINE, LINE_FORMAT,
+# 1040|                        col_get_item_property(item, NULL),
+# 1041|                        pe->error,
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_configobj.c:1039:44: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#            snprintf(line, MAX_ERROR_LINE, LINE_FORMAT,
+#                                           ^~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_defines.h:51:29: note: expanded from macro 'LINE_FORMAT'
+##define LINE_FORMAT         _("%s (%d) on line %d: %s")
+#                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_configobj.c:33:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+/opt/divine/include/dios/include/stdio.h:611:82: note: passing argument to parameter 'format' here
+#int snprintf( char * _PDCLIB_restrict s, size_t n, const char * _PDCLIB_restrict format, ... ) _PDCLIB_nothrow;
+#                                                                                 ^
+# 1037|               }
+# 1038|   
+# 1039|->             snprintf(line, MAX_ERROR_LINE, LINE_FORMAT,
+# 1040|                        col_get_item_property(item, NULL),
+# 1041|                        pe->error,
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_configobj.c:1039:44: warning: this function declaration is not a prototype
+ding-libs-0.6.1/ini/ini_defines.h:51:29: note: expanded from macro 'LINE_FORMAT'
+##define LINE_FORMAT         _("%s (%d) on line %d: %s")
+#                            ^
+ding-libs-0.6.1/ini/ini_configobj.c:33:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^
+# 1037|               }
+# 1038|   
+# 1039|->             snprintf(line, MAX_ERROR_LINE, LINE_FORMAT,
+# 1040|                        col_get_item_property(item, NULL),
+# 1041|                        pe->error,
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_fileobj.c:377:20: warning: incompatible integer to pointer conversion assigning to 'FILE *' (aka 'struct _PDCLIB_file *') from 'int'
+#    file_ctx->file = fmemopen(simplebuffer_get_vbuf(file_ctx->file_data),
+#                   ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  375|       TRACE_INFO_NUMBER("Size", size);
+#  376|       errno = 0;
+#  377|->     file_ctx->file = fmemopen(simplebuffer_get_vbuf(file_ctx->file_data),
+#  378|                                 simplebuffer_get_len(file_ctx->file_data),
+#  379|                                 "r");
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_fileobj.c:377:22: warning: implicit declaration of function 'fmemopen' is invalid in C99
+#    file_ctx->file = fmemopen(simplebuffer_get_vbuf(file_ctx->file_data),
+#                     ^
+#  375|       TRACE_INFO_NUMBER("Size", size);
+#  376|       errno = 0;
+#  377|->     file_ctx->file = fmemopen(simplebuffer_get_vbuf(file_ctx->file_data),
+#  378|                                 simplebuffer_get_len(file_ctx->file_data),
+#  379|                                 "r");
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_fileobj.c:377:22: warning: this function declaration is not a prototype
+#  375|       TRACE_INFO_NUMBER("Size", size);
+#  376|       errno = 0;
+#  377|->     file_ctx->file = fmemopen(simplebuffer_get_vbuf(file_ctx->file_data),
+#  378|                                 simplebuffer_get_len(file_ctx->file_data),
+#  379|                                 "r");
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_fileobj.c:424:14: warning: incompatible integer to pointer conversion assigning to 'FILE *' (aka 'struct _PDCLIB_file *') from 'int'
+#        file = fmemopen(internal_data, internal_len, "r");
+#             ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  422|           TRACE_INFO_STRING("Inside file_init data:", (char *)internal_data);
+#  423|   
+#  424|->         file = fmemopen(internal_data, internal_len, "r");
+#  425|           if (!file) {
+#  426|               error = errno;
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_fileobj.c:424:16: warning: implicit declaration of function 'fmemopen' is invalid in C99
+#        file = fmemopen(internal_data, internal_len, "r");
+#               ^
+#  422|           TRACE_INFO_STRING("Inside file_init data:", (char *)internal_data);
+#  423|   
+#  424|->         file = fmemopen(internal_data, internal_len, "r");
+#  425|           if (!file) {
+#  426|               error = errno;
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_parse.c:583:36: warning: implicit declaration of function 'gettext' is invalid in C99
+#                                   ERROR_TXT);
+#                                   ^
+ding-libs-0.6.1/ini/ini_defines.h:37:29: note: expanded from macro 'ERROR_TXT'
+##define ERROR_TXT           _("Error")
+#                            ^
+ding-libs-0.6.1/ini/ini_parse.c:28:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^
+#  581|                                      po->seclinenum,
+#  582|                                      ERR_DUPSECTION,
+#  583|->                                    ERROR_TXT);
+#  584|                   if (error) {
+#  585|                       TRACE_ERROR_NUMBER("Failed to "
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_parse.c:583:36: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#                                   ERROR_TXT);
+#                                   ^~~~~~~~~
+ding-libs-0.6.1/ini/ini_defines.h:37:29: note: expanded from macro 'ERROR_TXT'
+##define ERROR_TXT           _("Error")
+#                            ^~~~~~~~~~
+ding-libs-0.6.1/ini/ini_parse.c:28:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_parse.c:99:35: note: passing argument to parameter 'err_txt' here
+#                      const char *err_txt);
+#                                  ^
+#  581|                                      po->seclinenum,
+#  582|                                      ERR_DUPSECTION,
+#  583|->                                    ERROR_TXT);
+#  584|                   if (error) {
+#  585|                       TRACE_ERROR_NUMBER("Failed to "
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_parse.c:583:36: warning: this function declaration is not a prototype
+ding-libs-0.6.1/ini/ini_defines.h:37:29: note: expanded from macro 'ERROR_TXT'
+##define ERROR_TXT           _("Error")
+#                            ^
+ding-libs-0.6.1/ini/ini_parse.c:28:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^
+#  581|                                      po->seclinenum,
+#  582|                                      ERR_DUPSECTION,
+#  583|->                                    ERROR_TXT);
+#  584|                   if (error) {
+#  585|                       TRACE_ERROR_NUMBER("Failed to "
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_parse.c:630:36: warning: implicit declaration of function 'gettext' is invalid in C99
+#                                   ERROR_TXT);
+#                                   ^
+ding-libs-0.6.1/ini/ini_defines.h:37:29: note: expanded from macro 'ERROR_TXT'
+##define ERROR_TXT           _("Error")
+#                            ^
+ding-libs-0.6.1/ini/ini_parse.c:28:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^
+#  628|                                      po->seclinenum,
+#  629|                                      ERR_DUPSECTION,
+#  630|->                                    ERROR_TXT);
+#  631|                   if (error) {
+#  632|                       TRACE_ERROR_NUMBER("Failed to "
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_parse.c:630:36: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#                                   ERROR_TXT);
+#                                   ^~~~~~~~~
+ding-libs-0.6.1/ini/ini_defines.h:37:29: note: expanded from macro 'ERROR_TXT'
+##define ERROR_TXT           _("Error")
+#                            ^~~~~~~~~~
+ding-libs-0.6.1/ini/ini_parse.c:28:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_parse.c:99:35: note: passing argument to parameter 'err_txt' here
+#                      const char *err_txt);
+#                                  ^
+#  628|                                      po->seclinenum,
+#  629|                                      ERR_DUPSECTION,
+#  630|->                                    ERROR_TXT);
+#  631|                   if (error) {
+#  632|                       TRACE_ERROR_NUMBER("Failed to "
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_parse.c:794:36: warning: implicit declaration of function 'gettext' is invalid in C99
+#                                   ERROR_TXT);
+#                                   ^
+ding-libs-0.6.1/ini/ini_defines.h:37:29: note: expanded from macro 'ERROR_TXT'
+##define ERROR_TXT           _("Error")
+#                            ^
+ding-libs-0.6.1/ini/ini_parse.c:28:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^
+#  792|                                      merging ? po->seclinenum : po->keylinenum,
+#  793|                                      merging ? ERR_DUPKEYSEC : ERR_DUPKEY,
+#  794|->                                    ERROR_TXT);
+#  795|                   if (error) {
+#  796|                       TRACE_ERROR_NUMBER("Failed to save error", error);
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_parse.c:794:36: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#                                   ERROR_TXT);
+#                                   ^~~~~~~~~
+ding-libs-0.6.1/ini/ini_defines.h:37:29: note: expanded from macro 'ERROR_TXT'
+##define ERROR_TXT           _("Error")
+#                            ^~~~~~~~~~
+ding-libs-0.6.1/ini/ini_parse.c:28:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_parse.c:99:35: note: passing argument to parameter 'err_txt' here
+#                      const char *err_txt);
+#                                  ^
+#  792|                                      merging ? po->seclinenum : po->keylinenum,
+#  793|                                      merging ? ERR_DUPKEYSEC : ERR_DUPKEY,
+#  794|->                                    ERROR_TXT);
+#  795|                   if (error) {
+#  796|                       TRACE_ERROR_NUMBER("Failed to save error", error);
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_parse.c:857:40: warning: implicit declaration of function 'gettext' is invalid in C99
+#                                       ERROR_TXT);
+#                                       ^
+ding-libs-0.6.1/ini/ini_defines.h:37:29: note: expanded from macro 'ERROR_TXT'
+##define ERROR_TXT           _("Error")
+#                            ^
+ding-libs-0.6.1/ini/ini_parse.c:28:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^
+#  855|                                          merging ? po->seclinenum : po->keylinenum,
+#  856|                                          merging ? ERR_DUPKEYSEC : ERR_DUPKEY,
+#  857|->                                        ERROR_TXT);
+#  858|                       if (error2) {
+#  859|                           TRACE_ERROR_NUMBER("Failed to save error", error2);
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_parse.c:857:40: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#                                       ERROR_TXT);
+#                                       ^~~~~~~~~
+ding-libs-0.6.1/ini/ini_defines.h:37:29: note: expanded from macro 'ERROR_TXT'
+##define ERROR_TXT           _("Error")
+#                            ^~~~~~~~~~
+ding-libs-0.6.1/ini/ini_parse.c:28:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_parse.c:99:35: note: passing argument to parameter 'err_txt' here
+#                      const char *err_txt);
+#                                  ^
+#  855|                                          merging ? po->seclinenum : po->keylinenum,
+#  856|                                          merging ? ERR_DUPKEYSEC : ERR_DUPKEY,
+#  857|->                                        ERROR_TXT);
+#  858|                       if (error2) {
+#  859|                           TRACE_ERROR_NUMBER("Failed to save error", error2);
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_parse.c:1517:47: warning: incompatible integer to pointer conversion assigning to 'const char *' from 'int'
+#    if (po->last_error & INI_WARNING) err_str = WARNING_TXT;
+#                                              ^ ~~~~~~~~~~~
+# 1515|       TRACE_FLOW_ENTRY();
+# 1516|   
+# 1517|->     if (po->last_error & INI_WARNING) err_str = WARNING_TXT;
+# 1518|       else err_str = ERROR_TXT;
+# 1519|   
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_parse.c:1517:49: warning: implicit declaration of function 'gettext' is invalid in C99
+#    if (po->last_error & INI_WARNING) err_str = WARNING_TXT;
+#                                                ^
+ding-libs-0.6.1/ini/ini_defines.h:36:29: note: expanded from macro 'WARNING_TXT'
+##define WARNING_TXT         _("Warning")
+#                            ^
+ding-libs-0.6.1/ini/ini_parse.c:28:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^
+# 1515|       TRACE_FLOW_ENTRY();
+# 1516|   
+# 1517|->     if (po->last_error & INI_WARNING) err_str = WARNING_TXT;
+# 1518|       else err_str = ERROR_TXT;
+# 1519|   
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_parse.c:1518:18: warning: incompatible integer to pointer conversion assigning to 'const char *' from 'int'
+#    else err_str = ERROR_TXT;
+#                 ^ ~~~~~~~~~
+# 1516|   
+# 1517|       if (po->last_error & INI_WARNING) err_str = WARNING_TXT;
+# 1518|->     else err_str = ERROR_TXT;
+# 1519|   
+# 1520|       error = save_error(po->el,
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:123:17: warning: incompatible integer to pointer conversion initializing 'const char *' with an expression of type 'int'
+#    const char *placeholder= _("Unknown pasing error.");
+#                ^            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  121|   static const char *parsing_error_str(int parsing_error)
+#  122|   {
+#  123|->     const char *placeholder= _("Unknown pasing error.");
+#  124|       const char *str_error[] = { _("Data is too long."),
+#  125|                                   _("No closing bracket."),
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:123:30: warning: implicit declaration of function 'gettext' is invalid in C99
+#    const char *placeholder= _("Unknown pasing error.");
+#                             ^
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^
+#  121|   static const char *parsing_error_str(int parsing_error)
+#  122|   {
+#  123|->     const char *placeholder= _("Unknown pasing error.");
+#  124|       const char *str_error[] = { _("Data is too long."),
+#  125|                                   _("No closing bracket."),
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:123:30: warning: this function declaration is not a prototype
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^
+#  121|   static const char *parsing_error_str(int parsing_error)
+#  122|   {
+#  123|->     const char *placeholder= _("Unknown pasing error.");
+#  124|       const char *str_error[] = { _("Data is too long."),
+#  125|                                   _("No closing bracket."),
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:124:33: warning: incompatible integer to pointer conversion initializing 'const char *' with an expression of type 'int'
+#    const char *str_error[] = { _("Data is too long."),
+#                                ^~~~~~~~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+#  122|   {
+#  123|       const char *placeholder= _("Unknown pasing error.");
+#  124|->     const char *str_error[] = { _("Data is too long."),
+#  125|                                   _("No closing bracket."),
+#  126|                                   _("Section name is missing."),
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:125:33: warning: incompatible integer to pointer conversion initializing 'const char *' with an expression of type 'int'
+#                                _("No closing bracket."),
+#                                ^~~~~~~~~~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+#  123|       const char *placeholder= _("Unknown pasing error.");
+#  124|       const char *str_error[] = { _("Data is too long."),
+#  125|->                                 _("No closing bracket."),
+#  126|                                   _("Section name is missing."),
+#  127|                                   _("Section name is too long."),
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:126:33: warning: incompatible integer to pointer conversion initializing 'const char *' with an expression of type 'int'
+#                                _("Section name is missing."),
+#                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+#  124|       const char *str_error[] = { _("Data is too long."),
+#  125|                                   _("No closing bracket."),
+#  126|->                                 _("Section name is missing."),
+#  127|                                   _("Section name is too long."),
+#  128|                                   _("Equal sign is missing."),
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:127:33: warning: incompatible integer to pointer conversion initializing 'const char *' with an expression of type 'int'
+#                                _("Section name is too long."),
+#                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+#  125|                                   _("No closing bracket."),
+#  126|                                   _("Section name is missing."),
+#  127|->                                 _("Section name is too long."),
+#  128|                                   _("Equal sign is missing."),
+#  129|                                   _("Property name is missing."),
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:128:33: warning: incompatible integer to pointer conversion initializing 'const char *' with an expression of type 'int'
+#                                _("Equal sign is missing."),
+#                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+#  126|                                   _("Section name is missing."),
+#  127|                                   _("Section name is too long."),
+#  128|->                                 _("Equal sign is missing."),
+#  129|                                   _("Property name is missing."),
+#  130|                                   _("Property name is too long."),
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:129:33: warning: incompatible integer to pointer conversion initializing 'const char *' with an expression of type 'int'
+#                                _("Property name is missing."),
+#                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+#  127|                                   _("Section name is too long."),
+#  128|                                   _("Equal sign is missing."),
+#  129|->                                 _("Property name is missing."),
+#  130|                                   _("Property name is too long."),
+#  131|                                   _("Failed to read line."),
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:130:33: warning: incompatible integer to pointer conversion initializing 'const char *' with an expression of type 'int'
+#                                _("Property name is too long."),
+#                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+#  128|                                   _("Equal sign is missing."),
+#  129|                                   _("Property name is missing."),
+#  130|->                                 _("Property name is too long."),
+#  131|                                   _("Failed to read line."),
+#  132|                                   _("Invalid space character at the "
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:131:33: warning: incompatible integer to pointer conversion initializing 'const char *' with an expression of type 'int'
+#                                _("Failed to read line."),
+#                                ^~~~~~~~~~~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+#  129|                                   _("Property name is missing."),
+#  130|                                   _("Property name is too long."),
+#  131|->                                 _("Failed to read line."),
+#  132|                                   _("Invalid space character at the "
+#  133|                                     "beginning of the line."),
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:132:33: warning: incompatible integer to pointer conversion initializing 'const char *' with an expression of type 'int'
+#                                _("Invalid space character at the "
+#                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+#  130|                                   _("Property name is too long."),
+#  131|                                   _("Failed to read line."),
+#  132|->                                 _("Invalid space character at the "
+#  133|                                     "beginning of the line."),
+#  134|                                   _("Duplicate key is not allowed."),
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:134:33: warning: incompatible integer to pointer conversion initializing 'const char *' with an expression of type 'int'
+#                                _("Duplicate key is not allowed."),
+#                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+#  132|                                   _("Invalid space character at the "
+#  133|                                     "beginning of the line."),
+#  134|->                                 _("Duplicate key is not allowed."),
+#  135|                                   _("Duplicate key is detected while "
+#  136|                                     "merging sections."),
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:135:33: warning: incompatible integer to pointer conversion initializing 'const char *' with an expression of type 'int'
+#                                _("Duplicate key is detected while "
+#                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+#  133|                                     "beginning of the line."),
+#  134|                                   _("Duplicate key is not allowed."),
+#  135|->                                 _("Duplicate key is detected while "
+#  136|                                     "merging sections."),
+#  137|                                   _("Duplicate section is not allowed."),
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:137:33: warning: incompatible integer to pointer conversion initializing 'const char *' with an expression of type 'int'
+#                                _("Duplicate section is not allowed."),
+#                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+#  135|                                   _("Duplicate key is detected while "
+#  136|                                     "merging sections."),
+#  137|->                                 _("Duplicate section is not allowed."),
+#  138|                                   _("Invalid character at the "
+#  139|                                     "beginning of the line."),
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:138:33: warning: incompatible integer to pointer conversion initializing 'const char *' with an expression of type 'int'
+#                                _("Invalid character at the "
+#                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+#  136|                                     "merging sections."),
+#  137|                                   _("Duplicate section is not allowed."),
+#  138|->                                 _("Invalid character at the "
+#  139|                                     "beginning of the line."),
+#  140|                                   _("Invalid tab character at the "
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:140:33: warning: incompatible integer to pointer conversion initializing 'const char *' with an expression of type 'int'
+#                                _("Invalid tab character at the "
+#                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+#  138|                                   _("Invalid character at the "
+#  139|                                     "beginning of the line."),
+#  140|->                                 _("Invalid tab character at the "
+#  141|                                     "beginning of the line."),
+#  142|                                   _("Incomplete comment at the "
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:142:33: warning: incompatible integer to pointer conversion initializing 'const char *' with an expression of type 'int'
+#                                _("Incomplete comment at the "
+#                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+#  140|                                   _("Invalid tab character at the "
+#  141|                                     "beginning of the line."),
+#  142|->                                 _("Incomplete comment at the "
+#  143|                                     "end of the file.")
+#  144|       };
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:176:17: warning: incompatible integer to pointer conversion initializing 'const char *' with an expression of type 'int'
+#    const char *placeholder= _("Unknown grammar error.");
+#                ^            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  174|   static const char *grammar_error_str(int grammar_error)
+#  175|   {
+#  176|->     const char *placeholder= _("Unknown grammar error.");
+#  177|       /* THIS IS A TEMPORARY PLACEHOLDER !!!! */
+#  178|       const char *str_error[] = { _(""),
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:176:30: warning: implicit declaration of function 'gettext' is invalid in C99
+#    const char *placeholder= _("Unknown grammar error.");
+#                             ^
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^
+#  174|   static const char *grammar_error_str(int grammar_error)
+#  175|   {
+#  176|->     const char *placeholder= _("Unknown grammar error.");
+#  177|       /* THIS IS A TEMPORARY PLACEHOLDER !!!! */
+#  178|       const char *str_error[] = { _(""),
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:178:33: warning: incompatible integer to pointer conversion initializing 'const char *' with an expression of type 'int'
+#    const char *str_error[] = { _(""),
+#                                ^~~~~
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+#  176|       const char *placeholder= _("Unknown grammar error.");
+#  177|       /* THIS IS A TEMPORARY PLACEHOLDER !!!! */
+#  178|->     const char *str_error[] = { _(""),
+#  179|                                   _(""),
+#  180|                                   _(""),
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:179:33: warning: incompatible integer to pointer conversion initializing 'const char *' with an expression of type 'int'
+#                                _(""),
+#                                ^~~~~
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+#  177|       /* THIS IS A TEMPORARY PLACEHOLDER !!!! */
+#  178|       const char *str_error[] = { _(""),
+#  179|->                                 _(""),
+#  180|                                   _(""),
+#  181|                                   _(""),
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:180:33: warning: incompatible integer to pointer conversion initializing 'const char *' with an expression of type 'int'
+#                                _(""),
+#                                ^~~~~
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+#  178|       const char *str_error[] = { _(""),
+#  179|                                   _(""),
+#  180|->                                 _(""),
+#  181|                                   _(""),
+#  182|                                   _(""),
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:181:33: warning: incompatible integer to pointer conversion initializing 'const char *' with an expression of type 'int'
+#                                _(""),
+#                                ^~~~~
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+#  179|                                   _(""),
+#  180|                                   _(""),
+#  181|->                                 _(""),
+#  182|                                   _(""),
+#  183|                                   _(""),
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:182:33: warning: incompatible integer to pointer conversion initializing 'const char *' with an expression of type 'int'
+#                                _(""),
+#                                ^~~~~
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+#  180|                                   _(""),
+#  181|                                   _(""),
+#  182|->                                 _(""),
+#  183|                                   _(""),
+#  184|                                   _("")
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:183:33: warning: incompatible integer to pointer conversion initializing 'const char *' with an expression of type 'int'
+#                                _(""),
+#                                ^~~~~
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+#  181|                                   _(""),
+#  182|                                   _(""),
+#  183|->                                 _(""),
+#  184|                                   _("")
+#  185|       };
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:184:33: warning: incompatible integer to pointer conversion initializing 'const char *' with an expression of type 'int'
+#                                _("")
+#                                ^~~~~
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+#  182|                                   _(""),
+#  183|                                   _(""),
+#  184|->                                 _("")
+#  185|       };
+#  186|   
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:217:17: warning: incompatible integer to pointer conversion initializing 'const char *' with an expression of type 'int'
+#    const char *placeholder= _("Unknown validation error.");
+#                ^            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  215|   static const char *validation_error_str(int validation_error)
+#  216|   {
+#  217|->     const char *placeholder= _("Unknown validation error.");
+#  218|       /* THIS IS A TEMPORARY PLACEHOLDER !!!! */
+#  219|       const char *str_error[] = { _(""),
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:217:30: warning: implicit declaration of function 'gettext' is invalid in C99
+#    const char *placeholder= _("Unknown validation error.");
+#                             ^
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^
+#  215|   static const char *validation_error_str(int validation_error)
+#  216|   {
+#  217|->     const char *placeholder= _("Unknown validation error.");
+#  218|       /* THIS IS A TEMPORARY PLACEHOLDER !!!! */
+#  219|       const char *str_error[] = { _(""),
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:219:33: warning: incompatible integer to pointer conversion initializing 'const char *' with an expression of type 'int'
+#    const char *str_error[] = { _(""),
+#                                ^~~~~
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+#  217|       const char *placeholder= _("Unknown validation error.");
+#  218|       /* THIS IS A TEMPORARY PLACEHOLDER !!!! */
+#  219|->     const char *str_error[] = { _(""),
+#  220|                                   _(""),
+#  221|                                   _(""),
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:220:33: warning: incompatible integer to pointer conversion initializing 'const char *' with an expression of type 'int'
+#                                _(""),
+#                                ^~~~~
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+#  218|       /* THIS IS A TEMPORARY PLACEHOLDER !!!! */
+#  219|       const char *str_error[] = { _(""),
+#  220|->                                 _(""),
+#  221|                                   _(""),
+#  222|                                   _(""),
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:221:33: warning: incompatible integer to pointer conversion initializing 'const char *' with an expression of type 'int'
+#                                _(""),
+#                                ^~~~~
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+#  219|       const char *str_error[] = { _(""),
+#  220|                                   _(""),
+#  221|->                                 _(""),
+#  222|                                   _(""),
+#  223|                                   _(""),
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:222:33: warning: incompatible integer to pointer conversion initializing 'const char *' with an expression of type 'int'
+#                                _(""),
+#                                ^~~~~
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+#  220|                                   _(""),
+#  221|                                   _(""),
+#  222|->                                 _(""),
+#  223|                                   _(""),
+#  224|                                   _(""),
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:223:33: warning: incompatible integer to pointer conversion initializing 'const char *' with an expression of type 'int'
+#                                _(""),
+#                                ^~~~~
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+#  221|                                   _(""),
+#  222|                                   _(""),
+#  223|->                                 _(""),
+#  224|                                   _(""),
+#  225|                                   _("")
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:224:33: warning: incompatible integer to pointer conversion initializing 'const char *' with an expression of type 'int'
+#                                _(""),
+#                                ^~~~~
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+#  222|                                   _(""),
+#  223|                                   _(""),
+#  224|->                                 _(""),
+#  225|                                   _("")
+#  226|       };
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:225:33: warning: incompatible integer to pointer conversion initializing 'const char *' with an expression of type 'int'
+#                                _("")
+#                                ^~~~~
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+#  223|                                   _(""),
+#  224|                                   _(""),
+#  225|->                                 _("")
+#  226|       };
+#  227|   
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:252:13: warning: incompatible integer to pointer conversion assigning to 'const char *' from 'int'
+#        val = _("Unknown error category.");
+#            ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  250|           break;
+#  251|       default:
+#  252|->         val = _("Unknown error category.");
+#  253|           break;
+#  254|       }
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:252:15: warning: implicit declaration of function 'gettext' is invalid in C99
+#        val = _("Unknown error category.");
+#              ^
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^
+#  250|           break;
+#  251|       default:
+#  252|->         val = _("Unknown error category.");
+#  253|           break;
+#  254|       }
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:345:22: warning: implicit declaration of function 'gettext' is invalid in C99
+#                     WRONG_COLLECTION,
+#                     ^
+ding-libs-0.6.1/ini/ini_defines.h:39:29: note: expanded from macro 'WRONG_COLLECTION'
+##define WRONG_COLLECTION    _("Passed in list is not a list of parse errors.\n")
+#                            ^
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^
+#  343|                        error_list,
+#  344|                        COL_CLASS_INI_PERROR,
+#  345|->                      WRONG_COLLECTION,
+#  346|                        FAILED_TO_PROCCESS,
+#  347|                        ERROR_HEADER,
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:345:22: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'char *'
+#                     WRONG_COLLECTION,
+#                     ^~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_defines.h:39:29: note: expanded from macro 'WRONG_COLLECTION'
+##define WRONG_COLLECTION    _("Passed in list is not a list of parse errors.\n")
+#                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_print.c:264:36: note: passing argument to parameter 'wrong_col_error' here
+#                             char *wrong_col_error,
+#                                   ^
+#  343|                        error_list,
+#  344|                        COL_CLASS_INI_PERROR,
+#  345|->                      WRONG_COLLECTION,
+#  346|                        FAILED_TO_PROCCESS,
+#  347|                        ERROR_HEADER,
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:346:22: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'char *'
+#                     FAILED_TO_PROCCESS,
+#                     ^~~~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_defines.h:40:29: note: expanded from macro 'FAILED_TO_PROCCESS'
+##define FAILED_TO_PROCCESS  _("Internal Error. Failed to process error list.\n")
+#                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_print.c:265:36: note: passing argument to parameter 'failed_to_process' here
+#                             char *failed_to_process,
+#                                   ^
+#  344|                        COL_CLASS_INI_PERROR,
+#  345|                        WRONG_COLLECTION,
+#  346|->                      FAILED_TO_PROCCESS,
+#  347|                        ERROR_HEADER,
+#  348|                        LINE_FORMAT,
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:347:22: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'char *'
+#                     ERROR_HEADER,
+#                     ^~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_defines.h:41:29: note: expanded from macro 'ERROR_HEADER'
+##define ERROR_HEADER        _("Parsing errors and warnings in file: %s\n")
+#                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_print.c:266:36: note: passing argument to parameter 'error_header' here
+#                             char *error_header,
+#                                   ^
+#  345|                        WRONG_COLLECTION,
+#  346|                        FAILED_TO_PROCCESS,
+#  347|->                      ERROR_HEADER,
+#  348|                        LINE_FORMAT,
+#  349|                        INI_FAMILY_PARSING);
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:348:22: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'char *'
+#                     LINE_FORMAT,
+#                     ^~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_defines.h:51:29: note: expanded from macro 'LINE_FORMAT'
+##define LINE_FORMAT         _("%s (%d) on line %d: %s")
+#                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_print.c:267:36: note: passing argument to parameter 'line_format' here
+#                             char *line_format,
+#                                   ^
+#  346|                        FAILED_TO_PROCCESS,
+#  347|                        ERROR_HEADER,
+#  348|->                      LINE_FORMAT,
+#  349|                        INI_FAMILY_PARSING);
+#  350|   }
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:377:22: warning: implicit declaration of function 'gettext' is invalid in C99
+#                     WRONG_GRAMMAR,
+#                     ^
+ding-libs-0.6.1/ini/ini_defines.h:43:29: note: expanded from macro 'WRONG_GRAMMAR'
+##define WRONG_GRAMMAR       _("Passed in list is not a list of grammar errors.\n")
+#                            ^
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^
+#  375|                        error_list,
+#  376|                        COL_CLASS_INI_GERROR,
+#  377|->                      WRONG_GRAMMAR,
+#  378|                        FAILED_TO_PROC_G,
+#  379|                        ERROR_HEADER_G,
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:377:22: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'char *'
+#                     WRONG_GRAMMAR,
+#                     ^~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_defines.h:43:29: note: expanded from macro 'WRONG_GRAMMAR'
+##define WRONG_GRAMMAR       _("Passed in list is not a list of grammar errors.\n")
+#                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_print.c:264:36: note: passing argument to parameter 'wrong_col_error' here
+#                             char *wrong_col_error,
+#                                   ^
+#  375|                        error_list,
+#  376|                        COL_CLASS_INI_GERROR,
+#  377|->                      WRONG_GRAMMAR,
+#  378|                        FAILED_TO_PROC_G,
+#  379|                        ERROR_HEADER_G,
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:378:22: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'char *'
+#                     FAILED_TO_PROC_G,
+#                     ^~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_defines.h:44:29: note: expanded from macro 'FAILED_TO_PROC_G'
+##define FAILED_TO_PROC_G    _("Internal Error. Failed to process list of grammar errors.\n")
+#                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_print.c:265:36: note: passing argument to parameter 'failed_to_process' here
+#                             char *failed_to_process,
+#                                   ^
+#  376|                        COL_CLASS_INI_GERROR,
+#  377|                        WRONG_GRAMMAR,
+#  378|->                      FAILED_TO_PROC_G,
+#  379|                        ERROR_HEADER_G,
+#  380|                        LINE_FORMAT,
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:379:22: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'char *'
+#                     ERROR_HEADER_G,
+#                     ^~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_defines.h:45:29: note: expanded from macro 'ERROR_HEADER_G'
+##define ERROR_HEADER_G      _("Logical errors and warnings in file: %s\n")
+#                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_print.c:266:36: note: passing argument to parameter 'error_header' here
+#                             char *error_header,
+#                                   ^
+#  377|                        WRONG_GRAMMAR,
+#  378|                        FAILED_TO_PROC_G,
+#  379|->                      ERROR_HEADER_G,
+#  380|                        LINE_FORMAT,
+#  381|                        INI_FAMILY_GRAMMAR);
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:380:22: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'char *'
+#                     LINE_FORMAT,
+#                     ^~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_defines.h:51:29: note: expanded from macro 'LINE_FORMAT'
+##define LINE_FORMAT         _("%s (%d) on line %d: %s")
+#                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_print.c:267:36: note: passing argument to parameter 'line_format' here
+#                             char *line_format,
+#                                   ^
+#  378|                        FAILED_TO_PROC_G,
+#  379|                        ERROR_HEADER_G,
+#  380|->                      LINE_FORMAT,
+#  381|                        INI_FAMILY_GRAMMAR);
+#  382|   }
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:408:22: warning: implicit declaration of function 'gettext' is invalid in C99
+#                     WRONG_VALIDATION,
+#                     ^
+ding-libs-0.6.1/ini/ini_defines.h:47:29: note: expanded from macro 'WRONG_VALIDATION'
+##define WRONG_VALIDATION    _("Passed in list is not a list of validation errors.\n")
+#                            ^
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^
+#  406|                        error_list,
+#  407|                        COL_CLASS_INI_VERROR,
+#  408|->                      WRONG_VALIDATION,
+#  409|                        FAILED_TO_PROC_V,
+#  410|                        ERROR_HEADER_V,
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:408:22: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'char *'
+#                     WRONG_VALIDATION,
+#                     ^~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_defines.h:47:29: note: expanded from macro 'WRONG_VALIDATION'
+##define WRONG_VALIDATION    _("Passed in list is not a list of validation errors.\n")
+#                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_print.c:264:36: note: passing argument to parameter 'wrong_col_error' here
+#                             char *wrong_col_error,
+#                                   ^
+#  406|                        error_list,
+#  407|                        COL_CLASS_INI_VERROR,
+#  408|->                      WRONG_VALIDATION,
+#  409|                        FAILED_TO_PROC_V,
+#  410|                        ERROR_HEADER_V,
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:409:22: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'char *'
+#                     FAILED_TO_PROC_V,
+#                     ^~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_defines.h:48:29: note: expanded from macro 'FAILED_TO_PROC_V'
+##define FAILED_TO_PROC_V    _("Internal Error. Failed to process list of validation errors.\n")
+#                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_print.c:265:36: note: passing argument to parameter 'failed_to_process' here
+#                             char *failed_to_process,
+#                                   ^
+#  407|                        COL_CLASS_INI_VERROR,
+#  408|                        WRONG_VALIDATION,
+#  409|->                      FAILED_TO_PROC_V,
+#  410|                        ERROR_HEADER_V,
+#  411|                        LINE_FORMAT,
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:410:22: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'char *'
+#                     ERROR_HEADER_V,
+#                     ^~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_defines.h:49:29: note: expanded from macro 'ERROR_HEADER_V'
+##define ERROR_HEADER_V      _("Validation errors and warnings in file: %s\n")
+#                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_print.c:266:36: note: passing argument to parameter 'error_header' here
+#                             char *error_header,
+#                                   ^
+#  408|                        WRONG_VALIDATION,
+#  409|                        FAILED_TO_PROC_V,
+#  410|->                      ERROR_HEADER_V,
+#  411|                        LINE_FORMAT,
+#  412|                        INI_FAMILY_VALIDATION);
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:411:22: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'char *'
+#                     LINE_FORMAT,
+#                     ^~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_defines.h:51:29: note: expanded from macro 'LINE_FORMAT'
+##define LINE_FORMAT         _("%s (%d) on line %d: %s")
+#                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_print.c:267:36: note: passing argument to parameter 'line_format' here
+#                             char *line_format,
+#                                   ^
+#  409|                        FAILED_TO_PROC_V,
+#  410|                        ERROR_HEADER_V,
+#  411|->                      LINE_FORMAT,
+#  412|                        INI_FAMILY_VALIDATION);
+#  413|   }
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:436:31: warning: format specifies type 'char *' but the argument has type 'int'
+#        fprintf(file, "%s\n", WRONG_COLLECTION);
+#                       ~~     ^~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_defines.h:39:29: note: expanded from macro 'WRONG_COLLECTION'
+##define WRONG_COLLECTION    _("Passed in list is not a list of parse errors.\n")
+#                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+#  434|       if (!col_is_of_class(error_list, COL_CLASS_INI_PESET)) {
+#  435|           TRACE_ERROR_STRING("Wrong collection class:", WRONG_COLLECTION);
+#  436|->         fprintf(file, "%s\n", WRONG_COLLECTION);
+#  437|           return;
+#  438|       }
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:436:31: warning: implicit declaration of function 'gettext' is invalid in C99
+#        fprintf(file, "%s\n", WRONG_COLLECTION);
+#                              ^
+ding-libs-0.6.1/ini/ini_defines.h:39:29: note: expanded from macro 'WRONG_COLLECTION'
+##define WRONG_COLLECTION    _("Passed in list is not a list of parse errors.\n")
+#                            ^
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^
+#  434|       if (!col_is_of_class(error_list, COL_CLASS_INI_PESET)) {
+#  435|           TRACE_ERROR_STRING("Wrong collection class:", WRONG_COLLECTION);
+#  436|->         fprintf(file, "%s\n", WRONG_COLLECTION);
+#  437|           return;
+#  438|       }
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:444:30: warning: format specifies type 'char *' but the argument has type 'int'
+#        fprintf(file,"%s\n", FAILED_TO_PROCCESS);
+#                      ~~     ^~~~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_defines.h:40:29: note: expanded from macro 'FAILED_TO_PROCCESS'
+##define FAILED_TO_PROCCESS  _("Internal Error. Failed to process error list.\n")
+#                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+#  442|       if (error) {
+#  443|           TRACE_ERROR_STRING("Error (bind):", FAILED_TO_PROCCESS);
+#  444|->         fprintf(file,"%s\n", FAILED_TO_PROCCESS);
+#  445|           return;
+#  446|       }
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:444:30: warning: implicit declaration of function 'gettext' is invalid in C99
+#        fprintf(file,"%s\n", FAILED_TO_PROCCESS);
+#                             ^
+ding-libs-0.6.1/ini/ini_defines.h:40:29: note: expanded from macro 'FAILED_TO_PROCCESS'
+##define FAILED_TO_PROCCESS  _("Internal Error. Failed to process error list.\n")
+#                            ^
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^
+#  442|       if (error) {
+#  443|           TRACE_ERROR_STRING("Error (bind):", FAILED_TO_PROCCESS);
+#  444|->         fprintf(file,"%s\n", FAILED_TO_PROCCESS);
+#  445|           return;
+#  446|       }
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:453:35: warning: format specifies type 'char *' but the argument has type 'int'
+#            fprintf(file, "%s\n", FAILED_TO_PROCCESS);
+#                           ~~     ^~~~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_defines.h:40:29: note: expanded from macro 'FAILED_TO_PROCCESS'
+##define FAILED_TO_PROCCESS  _("Internal Error. Failed to process error list.\n")
+#                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+#  451|           if (error) {
+#  452|               TRACE_ERROR_STRING("Error (iterate):", FAILED_TO_PROCCESS);
+#  453|->             fprintf(file, "%s\n", FAILED_TO_PROCCESS);
+#  454|               col_unbind_iterator(iterator);
+#  455|               return;
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:453:35: warning: implicit declaration of function 'gettext' is invalid in C99
+#            fprintf(file, "%s\n", FAILED_TO_PROCCESS);
+#                                  ^
+ding-libs-0.6.1/ini/ini_defines.h:40:29: note: expanded from macro 'FAILED_TO_PROCCESS'
+##define FAILED_TO_PROCCESS  _("Internal Error. Failed to process error list.\n")
+#                            ^
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^
+#  451|           if (error) {
+#  452|               TRACE_ERROR_STRING("Error (iterate):", FAILED_TO_PROCCESS);
+#  453|->             fprintf(file, "%s\n", FAILED_TO_PROCCESS);
+#  454|               col_unbind_iterator(iterator);
+#  455|               return;
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:467:39: warning: format specifies type 'char *' but the argument has type 'int'
+#                fprintf(file, "%s\n", FAILED_TO_PROCCESS);
+#                               ~~     ^~~~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_defines.h:40:29: note: expanded from macro 'FAILED_TO_PROCCESS'
+##define FAILED_TO_PROCCESS  _("Internal Error. Failed to process error list.\n")
+#                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+#  465|               if (error) {
+#  466|                   TRACE_ERROR_STRING("Error (extract):", FAILED_TO_PROCCESS);
+#  467|->                 fprintf(file, "%s\n", FAILED_TO_PROCCESS);
+#  468|                   col_unbind_iterator(iterator);
+#  469|                   return;
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_print.c:467:39: warning: implicit declaration of function 'gettext' is invalid in C99
+#                fprintf(file, "%s\n", FAILED_TO_PROCCESS);
+#                                      ^
+ding-libs-0.6.1/ini/ini_defines.h:40:29: note: expanded from macro 'FAILED_TO_PROCCESS'
+##define FAILED_TO_PROCCESS  _("Internal Error. Failed to process error list.\n")
+#                            ^
+ding-libs-0.6.1/ini/ini_print.c:26:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^
+#  465|               if (error) {
+#  466|                   TRACE_ERROR_STRING("Error (extract):", FAILED_TO_PROCCESS);
+#  467|->                 fprintf(file, "%s\n", FAILED_TO_PROCCESS);
+#  468|                   col_unbind_iterator(iterator);
+#  469|                   return;
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_valueobj.c:84:22: warning: cast from 'char *' to 'char **' increases required alignment from 1 to 8
+#            part = *((char **)(ptr));
+#                     ^~~~~~~~~~~~~~
+#   82|               ref_array_get(raw_lengths, i, (void *)&len);
+#   83|   
+#   84|->             part = *((char **)(ptr));
+#   85|   
+#   86|               TRACE_INFO_STRING("Value:", part);
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_valueobj.c:343:26: warning: cast from 'char *' to 'char **' increases required alignment from 1 to 8
+#                part = *((char **)ptr);
+#                         ^~~~~~~~~~~~
+#  341|               ptr = ref_array_get(vo->raw_lines, last, NULL);
+#  342|               if (ptr) {
+#  343|->                 part = *((char **)ptr);
+#  344|   
+#  345|                   TRACE_INFO_STRING("Value", part);
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_valueobj.c:1080:26: warning: cast from 'char *' to 'char **' increases required alignment from 1 to 8
+#                part = *((char **)(ptr));
+#                         ^~~~~~~~~~~~~~
+# 1078|                   ref_array_get(vo->raw_lengths, i, (void *)&len);
+# 1079|   
+# 1080|->                 part = *((char **)(ptr));
+# 1081|   
+# 1082|                   TRACE_INFO_STRING("Value:", part);
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/path_utils/path_utils.c:80:56: warning: implicit declaration of function 'gettext' is invalid in C99
+#    case SUCCESS:                               return _("Success");
+#                                                       ^
+ding-libs-0.6.1/path_utils/path_utils.h:54:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^
+#   78|   {
+#   79|       switch(error) {
+#   80|->     case SUCCESS:                               return _("Success");
+#   81|       case PATH_UTILS_ERROR_NOT_FULLY_NORMALIZED: return _("Path could not be fully normalized");
+#   82|       }
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/path_utils/path_utils.c:80:56: warning: incompatible integer to pointer conversion returning 'int' from a function with result type 'const char *'
+#    case SUCCESS:                               return _("Success");
+#                                                       ^~~~~~~~~~~~
+ding-libs-0.6.1/path_utils/path_utils.h:54:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^~~~~~~~~~~~~~~
+#   78|   {
+#   79|       switch(error) {
+#   80|->     case SUCCESS:                               return _("Success");
+#   81|       case PATH_UTILS_ERROR_NOT_FULLY_NORMALIZED: return _("Path could not be fully normalized");
+#   82|       }
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/path_utils/path_utils.c:80:56: warning: this function declaration is not a prototype
+ding-libs-0.6.1/path_utils/path_utils.h:54:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^
+#   78|   {
+#   79|       switch(error) {
+#   80|->     case SUCCESS:                               return _("Success");
+#   81|       case PATH_UTILS_ERROR_NOT_FULLY_NORMALIZED: return _("Path could not be fully normalized");
+#   82|       }
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/path_utils/path_utils.c:81:56: warning: incompatible integer to pointer conversion returning 'int' from a function with result type 'const char *'
+#    case PATH_UTILS_ERROR_NOT_FULLY_NORMALIZED: return _("Path could not be fully normalized");
+#                                                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ding-libs-0.6.1/path_utils/path_utils.h:54:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^~~~~~~~~~~~~~~
+#   79|       switch(error) {
+#   80|       case SUCCESS:                               return _("Success");
+#   81|->     case PATH_UTILS_ERROR_NOT_FULLY_NORMALIZED: return _("Path could not be fully normalized");
+#   82|       }
+#   83|       return NULL;
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/path_utils/path_utils.c:346:17: warning: cast from 'char *' to 'char **' increases required alignment from 1 to 8
+#    array_ptr = (char **)mem_block;
+#                ^~~~~~~~~~~~~~~~~~
+#  344|   
+#  345|       /* component array */
+#  346|->     array_ptr = (char **)mem_block;
+#  347|       /* components copied after end of array */
+#  348|       component_ptr = mem_block + ((n_components+1)*sizeof(char *));
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/path_utils/path_utils.c:368:12: warning: cast from 'char *' to 'char **' increases required alignment from 1 to 8
+#    return (char **)mem_block;
+#           ^~~~~~~~~~~~~~~~~~
+#  366|       *array_ptr = NULL;
+#  367|       if (count) *count = n_components;
+#  368|->     return (char **)mem_block;
+#  369|   }
+#  370|   
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/refarray/ref_array.c:568:32: warning: cast from 'unsigned char *' to 'char **' increases required alignment from 1 to 8
+#            printf("\n%s\n", *((char **)((unsigned char *)(ra->storage) + i * ra->elsize)));
+#                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  566|           }
+#  567|           if (num == 0) {
+#  568|->             printf("\n%s\n", *((char **)((unsigned char *)(ra->storage) + i * ra->elsize)));
+#  569|           }
+#  570|           else if (num > 0) {
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/refarray/ref_array.c:571:32: warning: cast from 'unsigned char *' to 'uint32_t *' (aka 'unsigned int *') increases required alignment from 1 to 4
+#            printf("\n%d\n", *((uint32_t *)((unsigned char *)(ra->storage) + i * ra->elsize)));
+#                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  569|           }
+#  570|           else if (num > 0) {
+#  571|->             printf("\n%d\n", *((uint32_t *)((unsigned char *)(ra->storage) + i * ra->elsize)));
+#  572|           }
+#  573|           else {

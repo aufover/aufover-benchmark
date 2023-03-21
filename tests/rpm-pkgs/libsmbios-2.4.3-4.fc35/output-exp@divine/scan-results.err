@@ -1,0 +1,899 @@
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/getopts.c:98:35: warning: format specifies type 'char *' but the argument has type 'int'
+#          printf("  %s%s\n", cmd, gettext(opts[count].description));
+#                      ~~          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   96|         if(cmd)
+#   97|           {
+#   98|->           printf("  %s%s\n", cmd, gettext(opts[count].description));
+#   99|             free(cmd);
+#  100|           }
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/getopts.c:98:35: warning: implicit declaration of function 'gettext' is invalid in C99
+#          printf("  %s%s\n", cmd, gettext(opts[count].description));
+#                                  ^
+#   96|         if(cmd)
+#   97|           {
+#   98|->           printf("  %s%s\n", cmd, gettext(opts[count].description));
+#   99|             free(cmd);
+#  100|           }
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-get-ut-data.c:67:5: warning: implicit declaration of function 'bindtextdomain' is invalid in C99
+#    bindtextdomain(GETTEXT_PACKAGE, LIBSMBIOS_LOCALEDIR);
+#    ^
+#   65|   
+#   66|       setlocale(LC_ALL, "");
+#   67|->     bindtextdomain(GETTEXT_PACKAGE, LIBSMBIOS_LOCALEDIR);
+#   68|       textdomain(GETTEXT_PACKAGE);
+#   69|   
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-get-ut-data.c:68:5: warning: implicit declaration of function 'textdomain' is invalid in C99
+#    textdomain(GETTEXT_PACKAGE);
+#    ^
+#   66|       setlocale(LC_ALL, "");
+#   67|       bindtextdomain(GETTEXT_PACKAGE, LIBSMBIOS_LOCALEDIR);
+#   68|->     textdomain(GETTEXT_PACKAGE);
+#   69|   
+#   70|       while ( (c=getopts(argc, argv, opts, &args)) != 0 )
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-get-ut-data.c:93:12: warning: implicit declaration of function 'gettext' is invalid in C99
+#    printf(_("Libsmbios:    %s\n"), smbios_get_library_version_string());
+#           ^
+libsmbios-2.4.3/src/bin/smbios-get-ut-data.c:39:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^
+#   91|       }
+#   92|   
+#   93|->     printf(_("Libsmbios:    %s\n"), smbios_get_library_version_string());
+#   94|   
+#   95|       // CMOS
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-get-ut-data.c:93:12: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#    printf(_("Libsmbios:    %s\n"), smbios_get_library_version_string());
+#           ^~~~~~~~~~~~~~~~~~~~~~~
+libsmbios-2.4.3/src/bin/smbios-get-ut-data.c:39:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^~~~~~~~~~~~~~~
+/opt/divine/include/dios/include/stdio.h:598:43: note: passing argument to parameter 'format' here
+#int printf( const char * _PDCLIB_restrict format, ... ) _PDCLIB_nothrow;
+#                                          ^
+#   91|       }
+#   92|   
+#   93|->     printf(_("Libsmbios:    %s\n"), smbios_get_library_version_string());
+#   94|   
+#   95|       // CMOS
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-get-ut-data.c:110:12: warning: implicit declaration of function 'gettext' is invalid in C99
+#    printf(_("Dumping CMOS index(%d) data(%d)\n"), indexPort, dataPort);
+#           ^
+libsmbios-2.4.3/src/bin/smbios-get-ut-data.c:39:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^
+#  108|       struct cmos_access_obj *dump=0;
+#  109|   
+#  110|->     printf(_("Dumping CMOS index(%d) data(%d)\n"), indexPort, dataPort);
+#  111|   
+#  112|       // ensure file exists
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-get-ut-data.c:110:12: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#    printf(_("Dumping CMOS index(%d) data(%d)\n"), indexPort, dataPort);
+#           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libsmbios-2.4.3/src/bin/smbios-get-ut-data.c:39:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^~~~~~~~~~~~~~~
+/opt/divine/include/dios/include/stdio.h:598:43: note: passing argument to parameter 'format' here
+#int printf( const char * _PDCLIB_restrict format, ... ) _PDCLIB_nothrow;
+#                                          ^
+#  108|       struct cmos_access_obj *dump=0;
+#  109|   
+#  110|->     printf(_("Dumping CMOS index(%d) data(%d)\n"), indexPort, dataPort);
+#  111|   
+#  112|       // ensure file exists
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-get-ut-data.c:116:17: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#        printf( _("error opening dump file \"%s\": %m\n"), cmosDumpFile);
+#                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libsmbios-2.4.3/src/bin/smbios-get-ut-data.c:39:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^~~~~~~~~~~~~~~
+/opt/divine/include/dios/include/stdio.h:598:43: note: passing argument to parameter 'format' here
+#int printf( const char * _PDCLIB_restrict format, ... ) _PDCLIB_nothrow;
+#                                          ^
+#  114|       if (!fd)
+#  115|       {
+#  116|->         printf( _("error opening dump file \"%s\": %m\n"), cmosDumpFile);
+#  117|           return;
+#  118|       }
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-get-ut-data.c:184:17: warning: implicit declaration of function 'gettext' is invalid in C99
+#        printf( _("error opening dump file \"%s\": %m\n"), fn);
+#                ^
+libsmbios-2.4.3/src/bin/smbios-get-ut-data.c:39:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^
+#  182|       if (!fd)
+#  183|       {
+#  184|->         printf( _("error opening dump file \"%s\": %m\n"), fn);
+#  185|           return;
+#  186|       }
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-get-ut-data.c:184:17: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#        printf( _("error opening dump file \"%s\": %m\n"), fn);
+#                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libsmbios-2.4.3/src/bin/smbios-get-ut-data.c:39:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^~~~~~~~~~~~~~~
+/opt/divine/include/dios/include/stdio.h:598:43: note: passing argument to parameter 'format' here
+#int printf( const char * _PDCLIB_restrict format, ... ) _PDCLIB_nothrow;
+#                                          ^
+#  182|       if (!fd)
+#  183|       {
+#  184|->         printf( _("error opening dump file \"%s\": %m\n"), fn);
+#  185|           return;
+#  186|       }
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-get-ut-data.c:190:17: warning: format string is not a string literal (potentially insecure)
+#        printf( _("could not allocate memory: %m\n"));
+#                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libsmbios-2.4.3/src/bin/smbios-get-ut-data.c:39:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^~~~~~~~~~~~~~~
+libsmbios-2.4.3/src/bin/smbios-get-ut-data.c:190:17: note: treat the string as an argument to avoid this
+#        printf( _("could not allocate memory: %m\n"));
+#                ^
+libsmbios-2.4.3/src/bin/smbios-get-ut-data.c:39:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^
+#  188|       if (!buf)
+#  189|       {
+#  190|->         printf( _("could not allocate memory: %m\n"));
+#  191|           goto err;
+#  192|       }
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-get-ut-data.c:190:17: warning: implicit declaration of function 'gettext' is invalid in C99
+#        printf( _("could not allocate memory: %m\n"));
+#                ^
+libsmbios-2.4.3/src/bin/smbios-get-ut-data.c:39:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^
+#  188|       if (!buf)
+#  189|       {
+#  190|->         printf( _("could not allocate memory: %m\n"));
+#  191|           goto err;
+#  192|       }
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-get-ut-data.c:190:17: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#        printf( _("could not allocate memory: %m\n"));
+#                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libsmbios-2.4.3/src/bin/smbios-get-ut-data.c:39:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^~~~~~~~~~~~~~~
+/opt/divine/include/dios/include/stdio.h:598:43: note: passing argument to parameter 'format' here
+#int printf( const char * _PDCLIB_restrict format, ... ) _PDCLIB_nothrow;
+#                                          ^
+#  188|       if (!buf)
+#  189|       {
+#  190|->         printf( _("could not allocate memory: %m\n"));
+#  191|           goto err;
+#  192|       }
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-get-ut-data.c:196:17: warning: format string is not a string literal (potentially insecure)
+#        printf( _("could not read from memory: %m\n"));
+#                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libsmbios-2.4.3/src/bin/smbios-get-ut-data.c:39:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^~~~~~~~~~~~~~~
+libsmbios-2.4.3/src/bin/smbios-get-ut-data.c:196:17: note: treat the string as an argument to avoid this
+#        printf( _("could not read from memory: %m\n"));
+#                ^
+libsmbios-2.4.3/src/bin/smbios-get-ut-data.c:39:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^
+#  194|       if (ret < 0)
+#  195|       {
+#  196|->         printf( _("could not read from memory: %m\n"));
+#  197|           goto err;
+#  198|       }
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-get-ut-data.c:196:17: warning: implicit declaration of function 'gettext' is invalid in C99
+#        printf( _("could not read from memory: %m\n"));
+#                ^
+libsmbios-2.4.3/src/bin/smbios-get-ut-data.c:39:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^
+#  194|       if (ret < 0)
+#  195|       {
+#  196|->         printf( _("could not read from memory: %m\n"));
+#  197|           goto err;
+#  198|       }
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-get-ut-data.c:196:17: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#        printf( _("could not read from memory: %m\n"));
+#                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libsmbios-2.4.3/src/bin/smbios-get-ut-data.c:39:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^~~~~~~~~~~~~~~
+/opt/divine/include/dios/include/stdio.h:598:43: note: passing argument to parameter 'format' here
+#int printf( const char * _PDCLIB_restrict format, ... ) _PDCLIB_nothrow;
+#                                          ^
+#  194|       if (ret < 0)
+#  195|       {
+#  196|->         printf( _("could not read from memory: %m\n"));
+#  197|           goto err;
+#  198|       }
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-get-ut-data.c:201:17: warning: implicit declaration of function 'gettext' is invalid in C99
+#        printf( _("could not write to \"%s\": %m\n"), fn);
+#                ^
+libsmbios-2.4.3/src/bin/smbios-get-ut-data.c:39:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^
+#  199|       int recs = fwrite(buf, len, 1, fd);
+#  200|       if (recs != 1)
+#  201|->         printf( _("could not write to \"%s\": %m\n"), fn);
+#  202|   err:
+#  203|       if (buf)
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-get-ut-data.c:201:17: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#        printf( _("could not write to \"%s\": %m\n"), fn);
+#                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libsmbios-2.4.3/src/bin/smbios-get-ut-data.c:39:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^~~~~~~~~~~~~~~
+/opt/divine/include/dios/include/stdio.h:598:43: note: passing argument to parameter 'format' here
+#int printf( const char * _PDCLIB_restrict format, ... ) _PDCLIB_nothrow;
+#                                          ^
+#  199|       int recs = fwrite(buf, len, 1, fd);
+#  200|       if (recs != 1)
+#  201|->         printf( _("could not write to \"%s\": %m\n"), fn);
+#  202|   err:
+#  203|       if (buf)
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-state-byte-ctl.c:66:5: warning: implicit declaration of function 'bindtextdomain' is invalid in C99
+#    bindtextdomain(GETTEXT_PACKAGE, LIBSMBIOS_LOCALEDIR);
+#    ^
+#   64|       
+#   65|       setlocale(LC_ALL, "");
+#   66|->     bindtextdomain(GETTEXT_PACKAGE, LIBSMBIOS_LOCALEDIR);
+#   67|       textdomain(GETTEXT_PACKAGE);
+#   68|   
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-state-byte-ctl.c:67:5: warning: implicit declaration of function 'textdomain' is invalid in C99
+#    textdomain(GETTEXT_PACKAGE);
+#    ^
+#   65|       setlocale(LC_ALL, "");
+#   66|       bindtextdomain(GETTEXT_PACKAGE, LIBSMBIOS_LOCALEDIR);
+#   67|->     textdomain(GETTEXT_PACKAGE);
+#   68|   
+#   69|       while ( (c=getopts(argc, argv, opts, &args)) != 0 )
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-state-byte-ctl.c:103:13: warning: implicit declaration of function 'gettext' is invalid in C99
+#    printf( _("State Byte: 0x%04x\n"), retval );
+#            ^
+libsmbios-2.4.3/src/bin/smbios-state-byte-ctl.c:36:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^
+#  101|           retval = sysinfo_get_nvram_state_bytes( owner ); 
+#  102|   
+#  103|->     printf( _("State Byte: 0x%04x\n"), retval );
+#  104|   
+#  105|       return retval;
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-state-byte-ctl.c:103:13: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#    printf( _("State Byte: 0x%04x\n"), retval );
+#            ^~~~~~~~~~~~~~~~~~~~~~~~~
+libsmbios-2.4.3/src/bin/smbios-state-byte-ctl.c:36:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^~~~~~~~~~~~~~~
+/opt/divine/include/dios/include/stdio.h:598:43: note: passing argument to parameter 'format' here
+#int printf( const char * _PDCLIB_restrict format, ... ) _PDCLIB_nothrow;
+#                                          ^
+#  101|           retval = sysinfo_get_nvram_state_bytes( owner ); 
+#  102|   
+#  103|->     printf( _("State Byte: 0x%04x\n"), retval );
+#  104|   
+#  105|       return retval;
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:58:20: warning: implicit declaration of function 'gettext' is invalid in C99
+#            printf(_("OEM String %d: %s\n"), i, str);
+#                   ^
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:34:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^
+#   56|               str = smbios_struct_get_string_number(s, i);
+#   57|               if(!str) break;
+#   58|->             printf(_("OEM String %d: %s\n"), i, str);
+#   59|               i++;
+#   60|           }
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:58:20: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#            printf(_("OEM String %d: %s\n"), i, str);
+#                   ^~~~~~~~~~~~~~~~~~~~~~~~
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:34:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^~~~~~~~~~~~~~~
+/opt/divine/include/dios/include/stdio.h:598:43: note: passing argument to parameter 'format' here
+#int printf( const char * _PDCLIB_restrict format, ... ) _PDCLIB_nothrow;
+#                                          ^
+#   56|               str = smbios_struct_get_string_number(s, i);
+#   57|               if(!str) break;
+#   58|->             printf(_("OEM String %d: %s\n"), i, str);
+#   59|               i++;
+#   60|           }
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:71:5: warning: implicit declaration of function 'bindtextdomain' is invalid in C99
+#    bindtextdomain(GETTEXT_PACKAGE, LIBSMBIOS_LOCALEDIR);
+#    ^
+#   69|   
+#   70|       setlocale(LC_ALL, "");
+#   71|->     bindtextdomain(GETTEXT_PACKAGE, LIBSMBIOS_LOCALEDIR);
+#   72|       textdomain(GETTEXT_PACKAGE);
+#   73|   
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:72:5: warning: implicit declaration of function 'textdomain' is invalid in C99
+#    textdomain(GETTEXT_PACKAGE);
+#    ^
+#   70|       setlocale(LC_ALL, "");
+#   71|       bindtextdomain(GETTEXT_PACKAGE, LIBSMBIOS_LOCALEDIR);
+#   72|->     textdomain(GETTEXT_PACKAGE);
+#   73|   
+#   74|       int c=0;
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:96:12: warning: implicit declaration of function 'gettext' is invalid in C99
+#    printf(_("Libsmbios:    %s\n"), smbios_get_library_version_string());
+#           ^
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:34:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^
+#   94|       }
+#   95|   
+#   96|->     printf(_("Libsmbios:    %s\n"), smbios_get_library_version_string());
+#   97|   
+#   98|       //Error handling needs to be implemented for each of these functions
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:96:12: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#    printf(_("Libsmbios:    %s\n"), smbios_get_library_version_string());
+#           ^~~~~~~~~~~~~~~~~~~~~~~
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:34:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^~~~~~~~~~~~~~~
+/opt/divine/include/dios/include/stdio.h:598:43: note: passing argument to parameter 'format' here
+#int printf( const char * _PDCLIB_restrict format, ... ) _PDCLIB_nothrow;
+#                                          ^
+#   94|       }
+#   95|   
+#   96|->     printf(_("Libsmbios:    %s\n"), smbios_get_library_version_string());
+#   97|   
+#   98|       //Error handling needs to be implemented for each of these functions
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:101:16: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#        printf(_("System ID:    0x%04X\n"), sysid);
+#               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:34:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^~~~~~~~~~~~~~~
+/opt/divine/include/dios/include/stdio.h:598:43: note: passing argument to parameter 'format' here
+#int printf( const char * _PDCLIB_restrict format, ... ) _PDCLIB_nothrow;
+#                                          ^
+#   99|       sysid     = sysinfo_get_dell_system_id();
+#  100|       if(sysid)
+#  101|->         printf(_("System ID:    0x%04X\n"), sysid);
+#  102|       else
+#  103|       {
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:104:16: warning: format string is not a string literal (potentially insecure)
+#        printf(_("Error getting the System ID:    unknown error.\n"));
+#               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:34:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^~~~~~~~~~~~~~~
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:104:16: note: treat the string as an argument to avoid this
+#        printf(_("Error getting the System ID:    unknown error.\n"));
+#               ^
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:34:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^
+#  102|       else
+#  103|       {
+#  104|->         printf(_("Error getting the System ID:    unknown error.\n"));
+#  105|       }
+#  106|   
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:104:16: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#        printf(_("Error getting the System ID:    unknown error.\n"));
+#               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:34:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^~~~~~~~~~~~~~~
+/opt/divine/include/dios/include/stdio.h:598:43: note: passing argument to parameter 'format' here
+#int printf( const char * _PDCLIB_restrict format, ... ) _PDCLIB_nothrow;
+#                                          ^
+#  102|       else
+#  103|       {
+#  104|->         printf(_("Error getting the System ID:    unknown error.\n"));
+#  105|       }
+#  106|   
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:111:20: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#            printf(_("OEM System ID:    0x%04X\n"), reseller_sysid);
+#                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:34:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^~~~~~~~~~~~~~~
+/opt/divine/include/dios/include/stdio.h:598:43: note: passing argument to parameter 'format' here
+#int printf( const char * _PDCLIB_restrict format, ... ) _PDCLIB_nothrow;
+#                                          ^
+#  109|       {
+#  110|           if(reseller_sysid)
+#  111|->             printf(_("OEM System ID:    0x%04X\n"), reseller_sysid);
+#  112|           else
+#  113|           {
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:114:20: warning: format string is not a string literal (potentially insecure)
+#            printf(_("Error getting the System ID:    unknown error.\n"));
+#                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:34:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^~~~~~~~~~~~~~~
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:114:20: note: treat the string as an argument to avoid this
+#            printf(_("Error getting the System ID:    unknown error.\n"));
+#                   ^
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:34:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^
+#  112|           else
+#  113|           {
+#  114|->             printf(_("Error getting the System ID:    unknown error.\n"));
+#  115|           }
+#  116|       }
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:114:20: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#            printf(_("Error getting the System ID:    unknown error.\n"));
+#                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:34:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^~~~~~~~~~~~~~~
+/opt/divine/include/dios/include/stdio.h:598:43: note: passing argument to parameter 'format' here
+#int printf( const char * _PDCLIB_restrict format, ... ) _PDCLIB_nothrow;
+#                                          ^
+#  112|           else
+#  113|           {
+#  114|->             printf(_("Error getting the System ID:    unknown error.\n"));
+#  115|           }
+#  116|       }
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:121:16: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#        printf(_("Service Tag:  %s\n"), str);
+#               ^~~~~~~~~~~~~~~~~~~~~~~
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:34:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^~~~~~~~~~~~~~~
+/opt/divine/include/dios/include/stdio.h:598:43: note: passing argument to parameter 'format' here
+#int printf( const char * _PDCLIB_restrict format, ... ) _PDCLIB_nothrow;
+#                                          ^
+#  119|       if(str)
+#  120|       {
+#  121|->         printf(_("Service Tag:  %s\n"), str);
+#  122|           printf(_("Express Service Code: %lld\n"), strtoll(str, NULL, 36));
+#  123|       }
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:122:16: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#        printf(_("Express Service Code: %lld\n"), strtoll(str, NULL, 36));
+#               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:34:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^~~~~~~~~~~~~~~
+/opt/divine/include/dios/include/stdio.h:598:43: note: passing argument to parameter 'format' here
+#int printf( const char * _PDCLIB_restrict format, ... ) _PDCLIB_nothrow;
+#                                          ^
+#  120|       {
+#  121|           printf(_("Service Tag:  %s\n"), str);
+#  122|->         printf(_("Express Service Code: %lld\n"), strtoll(str, NULL, 36));
+#  123|       }
+#  124|       else
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:126:16: warning: format string is not a string literal (potentially insecure)
+#        printf(_("Error getting the Service Tag:  unknown error\n"));
+#               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:34:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^~~~~~~~~~~~~~~
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:126:16: note: treat the string as an argument to avoid this
+#        printf(_("Error getting the Service Tag:  unknown error\n"));
+#               ^
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:34:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^
+#  124|       else
+#  125|       {
+#  126|->         printf(_("Error getting the Service Tag:  unknown error\n"));
+#  127|       }
+#  128|       sysinfo_string_free(str);
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:126:16: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#        printf(_("Error getting the Service Tag:  unknown error\n"));
+#               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:34:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^~~~~~~~~~~~~~~
+/opt/divine/include/dios/include/stdio.h:598:43: note: passing argument to parameter 'format' here
+#int printf( const char * _PDCLIB_restrict format, ... ) _PDCLIB_nothrow;
+#                                          ^
+#  124|       else
+#  125|       {
+#  126|->         printf(_("Error getting the Service Tag:  unknown error\n"));
+#  127|       }
+#  128|       sysinfo_string_free(str);
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:132:16: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#        printf(_("Asset Tag:  %s\n"), str);
+#               ^~~~~~~~~~~~~~~~~~~~~
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:34:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^~~~~~~~~~~~~~~
+/opt/divine/include/dios/include/stdio.h:598:43: note: passing argument to parameter 'format' here
+#int printf( const char * _PDCLIB_restrict format, ... ) _PDCLIB_nothrow;
+#                                          ^
+#  130|       str    = sysinfo_get_asset_tag();
+#  131|       if(str)
+#  132|->         printf(_("Asset Tag:  %s\n"), str);
+#  133|       else
+#  134|       {
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:135:16: warning: format string is not a string literal (potentially insecure)
+#        printf(_("Error getting the Asset Tag:  unknown error\n"));
+#               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:34:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^~~~~~~~~~~~~~~
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:135:16: note: treat the string as an argument to avoid this
+#        printf(_("Error getting the Asset Tag:  unknown error\n"));
+#               ^
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:34:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^
+#  133|       else
+#  134|       {
+#  135|->         printf(_("Error getting the Asset Tag:  unknown error\n"));
+#  136|       }
+#  137|       sysinfo_string_free(str);
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:135:16: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#        printf(_("Error getting the Asset Tag:  unknown error\n"));
+#               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:34:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^~~~~~~~~~~~~~~
+/opt/divine/include/dios/include/stdio.h:598:43: note: passing argument to parameter 'format' here
+#int printf( const char * _PDCLIB_restrict format, ... ) _PDCLIB_nothrow;
+#                                          ^
+#  133|       else
+#  134|       {
+#  135|->         printf(_("Error getting the Asset Tag:  unknown error\n"));
+#  136|       }
+#  137|       sysinfo_string_free(str);
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:141:16: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#        printf(_("Product Name: %s\n"), str);
+#               ^~~~~~~~~~~~~~~~~~~~~~~
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:34:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^~~~~~~~~~~~~~~
+/opt/divine/include/dios/include/stdio.h:598:43: note: passing argument to parameter 'format' here
+#int printf( const char * _PDCLIB_restrict format, ... ) _PDCLIB_nothrow;
+#                                          ^
+#  139|       str   = sysinfo_get_system_name();
+#  140|       if(str)
+#  141|->         printf(_("Product Name: %s\n"), str);
+#  142|       else
+#  143|       {
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:144:16: warning: format string is not a string literal (potentially insecure)
+#        printf(_("Error getting the System Name:    unknown error.\n"));
+#               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:34:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^~~~~~~~~~~~~~~
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:144:16: note: treat the string as an argument to avoid this
+#        printf(_("Error getting the System Name:    unknown error.\n"));
+#               ^
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:34:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^
+#  142|       else
+#  143|       {
+#  144|->         printf(_("Error getting the System Name:    unknown error.\n"));
+#  145|       }
+#  146|       sysinfo_string_free(str);
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:144:16: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#        printf(_("Error getting the System Name:    unknown error.\n"));
+#               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:34:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^~~~~~~~~~~~~~~
+/opt/divine/include/dios/include/stdio.h:598:43: note: passing argument to parameter 'format' here
+#int printf( const char * _PDCLIB_restrict format, ... ) _PDCLIB_nothrow;
+#                                          ^
+#  142|       else
+#  143|       {
+#  144|->         printf(_("Error getting the System Name:    unknown error.\n"));
+#  145|       }
+#  146|       sysinfo_string_free(str);
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:150:16: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#        printf(_("BIOS Version: %s\n"), str);
+#               ^~~~~~~~~~~~~~~~~~~~~~~
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:34:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^~~~~~~~~~~~~~~
+/opt/divine/include/dios/include/stdio.h:598:43: note: passing argument to parameter 'format' here
+#int printf( const char * _PDCLIB_restrict format, ... ) _PDCLIB_nothrow;
+#                                          ^
+#  148|       str   = sysinfo_get_bios_version();
+#  149|       if(str)
+#  150|->         printf(_("BIOS Version: %s\n"), str);
+#  151|       else
+#  152|       {
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:153:16: warning: format string is not a string literal (potentially insecure)
+#        printf(_("Error getting the BIOS Version:    unknown error.\n"));
+#               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:34:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^~~~~~~~~~~~~~~
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:153:16: note: treat the string as an argument to avoid this
+#        printf(_("Error getting the BIOS Version:    unknown error.\n"));
+#               ^
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:34:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^
+#  151|       else
+#  152|       {
+#  153|->         printf(_("Error getting the BIOS Version:    unknown error.\n"));
+#  154|       }
+#  155|       sysinfo_string_free(str);
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:153:16: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#        printf(_("Error getting the BIOS Version:    unknown error.\n"));
+#               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:34:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^~~~~~~~~~~~~~~
+/opt/divine/include/dios/include/stdio.h:598:43: note: passing argument to parameter 'format' here
+#int printf( const char * _PDCLIB_restrict format, ... ) _PDCLIB_nothrow;
+#                                          ^
+#  151|       else
+#  152|       {
+#  153|->         printf(_("Error getting the BIOS Version:    unknown error.\n"));
+#  154|       }
+#  155|       sysinfo_string_free(str);
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:159:16: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#        printf(_("Vendor:       %s\n"), str);
+#               ^~~~~~~~~~~~~~~~~~~~~~~
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:34:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^~~~~~~~~~~~~~~
+/opt/divine/include/dios/include/stdio.h:598:43: note: passing argument to parameter 'format' here
+#int printf( const char * _PDCLIB_restrict format, ... ) _PDCLIB_nothrow;
+#                                          ^
+#  157|       str   = sysinfo_get_vendor_name();
+#  158|       if(str)
+#  159|->         printf(_("Vendor:       %s\n"), str);
+#  160|       else
+#  161|       {
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:162:16: warning: format string is not a string literal (potentially insecure)
+#        printf(_("Error getting the Vendor:    unknown error.\n"));
+#               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:34:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^~~~~~~~~~~~~~~
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:162:16: note: treat the string as an argument to avoid this
+#        printf(_("Error getting the Vendor:    unknown error.\n"));
+#               ^
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:34:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^
+#  160|       else
+#  161|       {
+#  162|->         printf(_("Error getting the Vendor:    unknown error.\n"));
+#  163|       }
+#  164|       sysinfo_string_free(str);
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:162:16: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#        printf(_("Error getting the Vendor:    unknown error.\n"));
+#               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:34:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^~~~~~~~~~~~~~~
+/opt/divine/include/dios/include/stdio.h:598:43: note: passing argument to parameter 'format' here
+#int printf( const char * _PDCLIB_restrict format, ... ) _PDCLIB_nothrow;
+#                                          ^
+#  160|       else
+#  161|       {
+#  162|->         printf(_("Error getting the Vendor:    unknown error.\n"));
+#  163|       }
+#  164|       sysinfo_string_free(str);
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:166:12: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#    printf(_("Is Dell:      %d\n"), (sysid!=0));
+#           ^~~~~~~~~~~~~~~~~~~~~~~
+libsmbios-2.4.3/src/bin/smbios-sys-info-lite.c:34:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^~~~~~~~~~~~~~~
+/opt/divine/include/dios/include/stdio.h:598:43: note: passing argument to parameter 'format' here
+#int printf( const char * _PDCLIB_restrict format, ... ) _PDCLIB_nothrow;
+#                                          ^
+#  164|       sysinfo_string_free(str);
+#  165|   
+#  166|->     printf(_("Is Dell:      %d\n"), (sysid!=0));
+#  167|   
+#  168|       print_oem_strings();
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-upflag-ctl.c:65:5: warning: implicit declaration of function 'bindtextdomain' is invalid in C99
+#    bindtextdomain(GETTEXT_PACKAGE, LIBSMBIOS_LOCALEDIR);
+#    ^
+#   63|   
+#   64|       setlocale(LC_ALL, "");
+#   65|->     bindtextdomain(GETTEXT_PACKAGE, LIBSMBIOS_LOCALEDIR);
+#   66|       textdomain(GETTEXT_PACKAGE);
+#   67|   
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-upflag-ctl.c:66:5: warning: implicit declaration of function 'textdomain' is invalid in C99
+#    textdomain(GETTEXT_PACKAGE);
+#    ^
+#   64|       setlocale(LC_ALL, "");
+#   65|       bindtextdomain(GETTEXT_PACKAGE, LIBSMBIOS_LOCALEDIR);
+#   66|->     textdomain(GETTEXT_PACKAGE);
+#   67|   
+#   68|       int c;
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-upflag-ctl.c:102:24: warning: format string is not a string literal (potentially insecure)
+#                printf(_("UP Boot Flag SET\n"));
+#                       ^~~~~~~~~~~~~~~~~~~~~~~
+libsmbios-2.4.3/src/bin/smbios-upflag-ctl.c:38:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^~~~~~~~~~~~~~~
+libsmbios-2.4.3/src/bin/smbios-upflag-ctl.c:102:24: note: treat the string as an argument to avoid this
+#                printf(_("UP Boot Flag SET\n"));
+#                       ^
+libsmbios-2.4.3/src/bin/smbios-upflag-ctl.c:38:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^
+#  100|           {
+#  101|                   retval = 0;
+#  102|->                 printf(_("UP Boot Flag SET\n"));
+#  103|           }
+#  104|           else
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-upflag-ctl.c:102:24: warning: implicit declaration of function 'gettext' is invalid in C99
+#                printf(_("UP Boot Flag SET\n"));
+#                       ^
+libsmbios-2.4.3/src/bin/smbios-upflag-ctl.c:38:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^
+#  100|           {
+#  101|                   retval = 0;
+#  102|->                 printf(_("UP Boot Flag SET\n"));
+#  103|           }
+#  104|           else
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-upflag-ctl.c:102:24: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#                printf(_("UP Boot Flag SET\n"));
+#                       ^~~~~~~~~~~~~~~~~~~~~~~
+libsmbios-2.4.3/src/bin/smbios-upflag-ctl.c:38:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^~~~~~~~~~~~~~~
+/opt/divine/include/dios/include/stdio.h:598:43: note: passing argument to parameter 'format' here
+#int printf( const char * _PDCLIB_restrict format, ... ) _PDCLIB_nothrow;
+#                                          ^
+#  100|           {
+#  101|                   retval = 0;
+#  102|->                 printf(_("UP Boot Flag SET\n"));
+#  103|           }
+#  104|           else
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-upflag-ctl.c:107:24: warning: format string is not a string literal (potentially insecure)
+#                printf(_("UP Boot Flag NOT SET\n"));
+#                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+libsmbios-2.4.3/src/bin/smbios-upflag-ctl.c:38:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^~~~~~~~~~~~~~~
+libsmbios-2.4.3/src/bin/smbios-upflag-ctl.c:107:24: note: treat the string as an argument to avoid this
+#                printf(_("UP Boot Flag NOT SET\n"));
+#                       ^
+libsmbios-2.4.3/src/bin/smbios-upflag-ctl.c:38:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^
+#  105|           {
+#  106|                   retval = 1;
+#  107|->                 printf(_("UP Boot Flag NOT SET\n"));
+#  108|           }
+#  109|       }
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-upflag-ctl.c:107:24: warning: implicit declaration of function 'gettext' is invalid in C99
+#                printf(_("UP Boot Flag NOT SET\n"));
+#                       ^
+libsmbios-2.4.3/src/bin/smbios-upflag-ctl.c:38:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^
+#  105|           {
+#  106|                   retval = 1;
+#  107|->                 printf(_("UP Boot Flag NOT SET\n"));
+#  108|           }
+#  109|       }
+
+Error: COMPILER_WARNING:
+libsmbios-2.4.3/src/bin/smbios-upflag-ctl.c:107:24: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#                printf(_("UP Boot Flag NOT SET\n"));
+#                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+libsmbios-2.4.3/src/bin/smbios-upflag-ctl.c:38:19: note: expanded from macro '_'
+##define _(String) gettext(String)
+#                  ^~~~~~~~~~~~~~~
+/opt/divine/include/dios/include/stdio.h:598:43: note: passing argument to parameter 'format' here
+#int printf( const char * _PDCLIB_restrict format, ... ) _PDCLIB_nothrow;
+#                                          ^
+#  105|           {
+#  106|                   retval = 1;
+#  107|->                 printf(_("UP Boot Flag NOT SET\n"));
+#  108|           }
+#  109|       }

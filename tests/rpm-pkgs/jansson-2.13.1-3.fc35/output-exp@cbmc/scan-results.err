@@ -1,0 +1,8 @@
+Error: COMPILER_WARNING:
+jansson-2.13.1/src/hashtable_seed.c: scope_hint: In function 'json_object_seed'
+jansson-2.13.1/src/hashtable_seed.c:203:1: warning: warning: conversion from 'volatile char *' to 'void *': disregarding volatile
+#  201|   
+#  202|       if (hashtable_seed == 0) {
+#  203|->         if (__atomic_test_and_set(&seed_initialized, __ATOMIC_RELAXED) == 0) {
+#  204|               /* Do the seeding ourselves */
+#  205|               if (new_seed == 0)

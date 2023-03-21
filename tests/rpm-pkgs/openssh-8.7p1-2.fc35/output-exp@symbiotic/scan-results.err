@@ -1,0 +1,259 @@
+Error: COMPILER_WARNING (CWE-195):
+openssh-8.7p1/channels.c:4683:10: warning[-Wsign-compare]: comparison of integers of different signs: 'int' and 'unsigned long'
+#        if (len > sizeof addr.sun_path)
+#            ~~~ ^ ~~~~~~~~~~~~~~~~~~~~
+# 4681|   	memset(&addr, 0, sizeof(addr));
+# 4682|   	addr.sun_family = AF_UNIX;
+# 4683|-> 	if (len > sizeof addr.sun_path)
+# 4684|   		len = sizeof addr.sun_path;
+# 4685|   	memcpy(addr.sun_path, pathname, len);
+
+Error: COMPILER_WARNING:
+openssh-8.7p1/pam_ssh_agent_auth-pam_ssh_agent_auth-0.10.4/userauth_pubkey_from_pam.c:36: included_from: Included from here.
+openssh-8.7p1/includes.h:19: included_from: Included from here.
+openssh-8.7p1/config.h:1949:9: warning[-Wmacro-redefined]: 'SUPERUSER_PATH' macro redefined
+##define SUPERUSER_PATH "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin"
+#        ^
+openssh-8.7p1/pam_ssh_agent_auth-pam_ssh_agent_auth-0.10.4/defines.h:337:10: note: previous definition is here
+## define SUPERUSER_PATH _PATH_STDPATH
+#         ^
+# 1947|   
+# 1948|   /* Define if you want a different $PATH for the superuser */
+# 1949|-> #define SUPERUSER_PATH "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin"
+# 1950|   
+# 1951|   /* syslog_r function is safe to use in in a signal handler */
+
+Error: COMPILER_WARNING:
+openssh-8.7p1/gss-genr.c:170:32: warning[-Wunknown-warning-option]: unknown warning group '-Wstringop-overflow', ignored
+##pragma GCC diagnostic ignored "-Wstringop-overflow"
+#                               ^
+#  168|   			    ssh_digest_bytes(SSH_DIGEST_MD5), encoded,
+#  169|   			    ssh_digest_bytes(SSH_DIGEST_MD5) * 2);
+#  170|-> #pragma GCC diagnostic ignored "-Wstringop-overflow"
+#  171|   			cp = strncpy(s, kex, strlen(kex));
+#  172|   #pragma pop
+
+Error: COMPILER_WARNING (CWE-195):
+openssh-8.7p1/monitor.c:1472:11: warning[-Wsign-compare]: comparison of integers of different signs: 'int' and 'u_int' (aka 'unsigned int')
+#        if (type != key_blobtype)
+#            ~~~~ ^  ~~~~~~~~~~~~
+# 1470|   	  !monitor_allowed_key(blob, bloblen))
+# 1471|   		fatal_f("bad key, not previously allowed");
+# 1472|-> 	if (type != key_blobtype)
+# 1473|   		fatal_f("bad key type");
+# 1474|   
+
+Error: COMPILER_WARNING (CWE-477):
+openssh-8.7p1/openbsd-compat/port-linux-sshd.c:68:46: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#sshd_selinux_send_audit_message(int success, security_context_t default_context,
+#                                             ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   66|   /* Send audit message */
+#   67|   static int
+#   68|-> sshd_selinux_send_audit_message(int success, security_context_t default_context,
+#   69|   		       security_context_t selected_context)
+#   70|   {
+
+Error: COMPILER_WARNING (CWE-477):
+openssh-8.7p1/openbsd-compat/port-linux-sshd.c:69:10: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#                       security_context_t selected_context)
+#                       ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#   67|   static int
+#   68|   sshd_selinux_send_audit_message(int success, security_context_t default_context,
+#   69|-> 		       security_context_t selected_context)
+#   70|   {
+#   71|   	int rc=0;
+
+Error: COMPILER_WARNING (CWE-477):
+openssh-8.7p1/openbsd-compat/port-linux-sshd.c:115:19: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#mls_range_allowed(security_context_t src, security_context_t dst)
+#                  ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#  113|   
+#  114|   static int
+#  115|-> mls_range_allowed(security_context_t src, security_context_t dst)
+#  116|   {
+#  117|   	struct av_decision avd;
+
+Error: COMPILER_WARNING (CWE-477):
+openssh-8.7p1/openbsd-compat/port-linux-sshd.c:115:43: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#mls_range_allowed(security_context_t src, security_context_t dst)
+#                                          ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#  113|   
+#  114|   static int
+#  115|-> mls_range_allowed(security_context_t src, security_context_t dst)
+#  116|   {
+#  117|   	struct av_decision avd;
+
+Error: COMPILER_WARNING (CWE-477):
+openssh-8.7p1/openbsd-compat/port-linux-sshd.c:142:2: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#        security_context_t *sc) {
+#        ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#  140|   static int
+#  141|   get_user_context(const char *sename, const char *role, const char *lvl,
+#  142|-> 	security_context_t *sc) {
+#  143|   #ifdef HAVE_GET_DEFAULT_CONTEXT_WITH_LEVEL
+#  144|   	if (lvl == NULL || lvl[0] == '\0' || get_default_context_with_level(sename, lvl, NULL, sc) != 0) {
+
+Error: COMPILER_WARNING (CWE-477):
+openssh-8.7p1/openbsd-compat/port-linux-sshd.c:180:3: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#                security_context_t obtained_raw;
+#                ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#  178|   		/* verify that the requested range is obtained */
+#  179|   		context_t con;
+#  180|-> 		security_context_t obtained_raw;
+#  181|   		security_context_t requested_raw;
+#  182|   		con = context_new(*sc);
+
+Error: COMPILER_WARNING (CWE-477):
+openssh-8.7p1/openbsd-compat/port-linux-sshd.c:181:3: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#                security_context_t requested_raw;
+#                ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#  179|   		context_t con;
+#  180|   		security_context_t obtained_raw;
+#  181|-> 		security_context_t requested_raw;
+#  182|   		con = context_new(*sc);
+#  183|   		if (!con) {
+
+Error: COMPILER_WARNING (CWE-477):
+openssh-8.7p1/openbsd-compat/port-linux-sshd.c:240:41: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#sshd_selinux_getctxbyname(char *pwname, security_context_t *default_sc,
+#                                        ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#  238|   /* Return the default security context for the given username */
+#  239|   static int
+#  240|-> sshd_selinux_getctxbyname(char *pwname, security_context_t *default_sc,
+#  241|       security_context_t *user_sc, int inetd, Authctxt *the_authctxt)
+#  242|   {
+
+Error: COMPILER_WARNING (CWE-477):
+openssh-8.7p1/openbsd-compat/port-linux-sshd.c:241:5: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#    security_context_t *user_sc, int inetd, Authctxt *the_authctxt)
+#    ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#  239|   static int
+#  240|   sshd_selinux_getctxbyname(char *pwname, security_context_t *default_sc,
+#  241|->     security_context_t *user_sc, int inetd, Authctxt *the_authctxt)
+#  242|   {
+#  243|   	char *sename, *lvl;
+
+Error: COMPILER_WARNING (CWE-477):
+openssh-8.7p1/openbsd-compat/port-linux-sshd.c:272:4: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#                        security_context_t sshdsc=NULL;
+#                        ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#  270|   		/* If launched from xinetd, we must use current level */
+#  271|   		if (inetd) {
+#  272|-> 			security_context_t sshdsc=NULL;
+#  273|   
+#  274|   			if (getcon_raw(&sshdsc) < 0)
+
+Error: COMPILER_WARNING (CWE-477):
+openssh-8.7p1/openbsd-compat/port-linux-sshd.c:293:5: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#                                security_context_t default_level_sc = *default_sc;
+#                                ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#  291|   
+#  292|   			if (r == 0 && reqlvl != NULL && reqlvl[0]) {
+#  293|-> 				security_context_t default_level_sc = *default_sc;
+#  294|   				if (role != NULL && role[0]) {
+#  295|   					if (get_user_context(sename, role, lvl, &default_level_sc) < 0)
+
+Error: COMPILER_WARNING (CWE-477):
+openssh-8.7p1/openbsd-compat/port-linux-sshd.c:386:2: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#        security_context_t user_ctx = NULL;
+#        ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#  384|       int(pam_setenv)(char *, const char *), void *the_authctxt, int use_pam)
+#  385|   {
+#  386|-> 	security_context_t user_ctx = NULL;
+#  387|   	int r = 0;
+#  388|   	security_context_t default_ctx = NULL;
+
+Error: COMPILER_WARNING (CWE-477):
+openssh-8.7p1/openbsd-compat/port-linux-sshd.c:388:2: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#        security_context_t default_ctx = NULL;
+#        ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#  386|   	security_context_t user_ctx = NULL;
+#  387|   	int r = 0;
+#  388|-> 	security_context_t default_ctx = NULL;
+#  389|   	Authctxt *authctxt = (Authctxt *) the_authctxt;
+#  390|   
+
+Error: COMPILER_WARNING (CWE-477):
+openssh-8.7p1/openbsd-compat/port-linux-sshd.c:461:18: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#        if (getexeccon((security_context_t *)&ctx) != 0) {
+#                        ^
+/usr/include/selinux/selinux.h:19:17: note: 'security_context_t' has been explicitly marked deprecated here
+#__attribute__ ((deprecated))
+#                ^
+#  459|   		return;
+#  460|   
+#  461|-> 	if (getexeccon((security_context_t *)&ctx) != 0) {
+#  462|   		logit_f("getexeccon failed with %s", strerror(errno));
+#  463|   		return;
+
+Error: COMPILER_WARNING (CWE-1164):
+openssh-8.7p1/openbsd-compat/port-linux.c:59:1: warning[-Wunused-function]: unused function 'ssh_selinux_getctxbyname'
+#ssh_selinux_getctxbyname(char *pwname)
+#^
+#   57|   /* Return the default security context for the given username */
+#   58|   static char *
+#   59|-> ssh_selinux_getctxbyname(char *pwname)
+#   60|   {
+#   61|   	char *sc = NULL, *sename = NULL, *lvl = NULL;
+
+Error: COMPILER_WARNING (CWE-477):
+openssh-8.7p1/openbsd-compat/port-linux.c:205:6: warning[-Wdeprecated-declarations]: 'matchpathcon' is deprecated: Use selabel_lookup instead
+#        if (matchpathcon(path, 0700, &context) == 0)
+#            ^
+/usr/include/selinux/selinux.h:505:18: note: 'matchpathcon' has been explicitly marked deprecated here
+#        __attribute__ ((deprecated("Use selabel_lookup instead")))
+#                        ^
+#  203|   		return;
+#  204|   	}
+#  205|-> 	if (matchpathcon(path, 0700, &context) == 0)
+#  206|   		setfscreatecon(context);
+#  207|   }
+
+Error: COMPILER_WARNING (CWE-1164):
+openssh-8.7p1/ssh-pkcs11.c:1960:1: warning[-Wunused-function]: unused function 'pkcs11_register_provider'
+#pkcs11_register_provider(char *provider_id, char *pin, struct sshkey ***keyp,
+#^
+# 1958|   
+# 1959|   static int
+# 1960|-> pkcs11_register_provider(char *provider_id, char *pin, struct sshkey ***keyp,
+# 1961|       char ***labelsp, struct pkcs11_provider **providerp, CK_ULONG user)
+# 1962|   {

@@ -1,0 +1,283 @@
+Error: COMPILER_WARNING:
+icu/source/i18n/decNumber.cpp: scope_hint: In function 'uprv_decNumberLog10_69'
+icu/source/i18n/decNumber.cpp:1528:14: warning[-Wstringop-overflow=]: writing 1 byte into a region of size 0
+# 1528 |     w->lsu[1]=1; w->lsu[0]=0;           /* ..  */
+#      |     ~~~~~~~~~^~
+icu/source/i18n/decNumber.cpp:184: included_from: Included from here.
+icu/source/i18n/decNumber.h:89:19: note: at offset 1 into destination object 'lsu' of size 1
+#   89 |     decNumberUnit lsu[DECNUMUNITS];
+#      |                   ^~~
+# 1526|       uprv_decNumberZero(w);                   /* set up 10...  */
+# 1527|       #if DECDPUN==1
+# 1528|->     w->lsu[1]=1; w->lsu[0]=0;           /* ..  */
+# 1529|       #else
+# 1530|       w->lsu[0]=10;                       /* ..  */
+
+Error: COMPILER_WARNING:
+icu/source/i18n/decNumber.cpp: scope_hint: In function 'uprv_decNumberSquareRoot_69'
+icu/source/i18n/decNumber.cpp:2974:31: warning[-Wstringop-overflow=]: writing 1 byte into a region of size 0
+# 2974 |         t->lsu[0]=9; t->lsu[1]=5; t->lsu[2]=2;
+#      |                      ~~~~~~~~~^~
+icu/source/i18n/decNumber.cpp:184: included_from: Included from here.
+icu/source/i18n/decNumber.h:89:19: note: at offset 1 into destination object 'lsu' of size 1
+#   89 |     decNumberUnit lsu[DECNUMUNITS];
+#      |                   ^~~
+# 2972|           a->lsu[0]=19; a->lsu[1]=8;
+# 2973|         #else
+# 2974|->         t->lsu[0]=9; t->lsu[1]=5; t->lsu[2]=2;
+# 2975|           a->lsu[0]=9; a->lsu[1]=1; a->lsu[2]=8;
+# 2976|         #endif
+
+Error: COMPILER_WARNING:
+icu/source/i18n/decNumber.cpp:2974:44: warning[-Wstringop-overflow=]: writing 1 byte into a region of size 0
+# 2974 |         t->lsu[0]=9; t->lsu[1]=5; t->lsu[2]=2;
+#      |                                   ~~~~~~~~~^~
+icu/source/i18n/decNumber.cpp:184: included_from: Included from here.
+icu/source/i18n/decNumber.h:89:19: note: at offset 2 into destination object 'lsu' of size 1
+#   89 |     decNumberUnit lsu[DECNUMUNITS];
+#      |                   ^~~
+# 2972|           a->lsu[0]=19; a->lsu[1]=8;
+# 2973|         #else
+# 2974|->         t->lsu[0]=9; t->lsu[1]=5; t->lsu[2]=2;
+# 2975|           a->lsu[0]=9; a->lsu[1]=1; a->lsu[2]=8;
+# 2976|         #endif
+
+Error: COMPILER_WARNING (CWE-457):
+icu/source/i18n/number_skeletons.cpp: scope_hint: In function 'icu_69::number::impl::blueprint_helpers::parseFracSigOption(icu_69::StringSegment const&, icu_69::number::impl::MacroProps&, UErrorCode&)'
+icu/source/i18n/number_skeletons.cpp:1377:58: warning[-Wmaybe-uninitialized]: 'priority' may be used uninitialized in this function
+# 1377 |     macros.precision = oldPrecision.withSignificantDigits(minSig, maxSig, priority);
+#      |                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1375|   
+# 1376|       auto& oldPrecision = static_cast<const FractionPrecision&>(macros.precision);
+# 1377|->     macros.precision = oldPrecision.withSignificantDigits(minSig, maxSig, priority);
+# 1378|       return true;
+# 1379|   }
+
+Error: COMPILER_WARNING (CWE-477):
+icu/source/i18n/plurrule.cpp: scope_hint: In function 'int32_t icu_69::getSamplesFromString(const icu_69::UnicodeString&, double*, icu_69::FixedDecimal*, int32_t, UErrorCode&)'
+icu/source/i18n/plurrule.cpp:422:41: warning[-Wdeprecated-copy]: implicitly-declared 'icu_69::FixedDecimal& icu_69::FixedDecimal::operator=(const icu_69::FixedDecimal&)' is deprecated
+#  422 |                 destFd[sampleCount++] = fixed;
+#      |                                         ^~~~~
+icu/source/i18n/plurrule.cpp:30: included_from: Included from here.
+icu/source/i18n/plurrule_impl.h:304:5: note: because 'icu_69::FixedDecimal' has user-provided 'icu_69::FixedDecimal::FixedDecimal(const icu_69::FixedDecimal&)'
+#  304 |     FixedDecimal(const FixedDecimal &other);
+#      |     ^~~~~~~~~~~~
+#  420|                   }
+#  421|               } else {
+#  422|->                 destFd[sampleCount++] = fixed;
+#  423|               }
+#  424|           } else {
+
+Error: COMPILER_WARNING (CWE-477):
+icu/source/i18n/plurrule.cpp:462:45: warning[-Wdeprecated-copy]: implicitly-declared 'icu_69::FixedDecimal& icu_69::FixedDecimal::operator=(const icu_69::FixedDecimal&)' is deprecated
+#  462 |                     destFd[sampleCount++] = newSample;
+#      |                                             ^~~~~~~~~
+icu/source/i18n/plurrule.cpp:30: included_from: Included from here.
+icu/source/i18n/plurrule_impl.h:304:5: note: because 'icu_69::FixedDecimal' has user-provided 'icu_69::FixedDecimal::FixedDecimal(const icu_69::FixedDecimal&)'
+#  304 |     FixedDecimal(const FixedDecimal &other);
+#      |     ^~~~~~~~~~~~
+#  460|                       int32_t e = (int32_t) fixedLo.getPluralOperand(PluralOperand::PLURAL_OPERAND_E);
+#  461|                       FixedDecimal newSample = FixedDecimal::createWithExponent(sampleValue, v, e);
+#  462|->                     destFd[sampleCount++] = newSample;
+#  463|                   }
+#  464|                   if (sampleCount >= destCapacity) {
+
+Error: COMPILER_WARNING (CWE-457):
+icu/source/i18n/utrans.cpp:115:21: warning[-Wmaybe-uninitialized]: 'empty' may be used uninitialized
+#  115 |     (*func->replace)(rep, start, limit, text.getBuffer(), text.length());
+#      |                     ^
+icu/source/i18n/remtrans.cpp: scope_hint: In member function 'handleTransliterate'
+icu/source/i18n/utrans.cpp:115:21: note: by argument 4 of type 'const UChar *' to 'void <Tbc8> (void * *, int32_t, int32_t, const UChar *, int32_t)'
+icu/source/i18n/remtrans.cpp:63:19: note: 'empty' declared here
+#   63 |     UnicodeString empty;
+#      |                   ^
+#  113|                             int32_t limit,
+#  114|                             const UnicodeString& text) {
+#  115|->     (*func->replace)(rep, start, limit, text.getBuffer(), text.length());
+#  116|   }
+#  117|   
+
+Error: COMPILER_WARNING:
+icu/source/tools/pkgdata/pkgdata.cpp:983:64: warning[-Wformat-overflow=]: '__sprintf_chk' may write a terminating nul past the end of the destination
+#  983 |             sprintf(libFileNames[LIB_FILE_VERSION_TMP], "%s%s%s",
+#      |                                                                ^
+/usr/include/stdio.h:888: included_from: Included from here.
+icu/source/tools/toolutil/package.h:26: included_from: Included from here.
+icu/source/tools/pkgdata/pkgdata.cpp:42: included_from: Included from here.
+/usr/include/bits/stdio2.h:38:34: note: '__sprintf_chk' output 1 or more bytes (assuming 257) into a destination of size 256
+#   38 |   return __builtin___sprintf_chk (__s, __USE_FORTIFY_LEVEL - 1,
+#      |          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   39 |                                   __glibc_objsize (__s), __fmt,
+#      |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   40 |                                   __va_arg_pack ());
+#      |                                   ~~~~~~~~~~~~~~~~~
+#  981|   #else
+#  982|           if (noVersion && !reverseExt) {
+#  983|->             sprintf(libFileNames[LIB_FILE_VERSION_TMP], "%s%s%s",
+#  984|                       libFileNames[LIB_FILE],
+#  985|                       FILE_SUFFIX,
+
+Error: COMPILER_WARNING:
+icu/source/tools/pkgdata/pkgdata.cpp: scope_hint: In function 'pkg_executeOptions(UPKGOptions_*)'
+icu/source/tools/pkgdata/pkgdata.cpp:988:64: warning[-Wformat-overflow=]: '%s' directive writing up to 1 bytes into a region of size between 0 and 256
+#  988 |             sprintf(libFileNames[LIB_FILE_VERSION_TMP], "%s%s%s%s%s",
+#      |                                                                ^~
+/usr/include/stdio.h:888: included_from: Included from here.
+icu/source/tools/toolutil/package.h:26: included_from: Included from here.
+icu/source/tools/pkgdata/pkgdata.cpp:42: included_from: Included from here.
+/usr/include/bits/stdio2.h:38:34: note: '__sprintf_chk' output 1 or more bytes (assuming 258) into a destination of size 256
+#   38 |   return __builtin___sprintf_chk (__s, __USE_FORTIFY_LEVEL - 1,
+#      |          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   39 |                                   __glibc_objsize (__s), __fmt,
+#      |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   40 |                                   __va_arg_pack ());
+#      |                                   ~~~~~~~~~~~~~~~~~
+#  986|                       pkgDataFlags[SOBJ_EXT]);
+#  987|           } else {
+#  988|->             sprintf(libFileNames[LIB_FILE_VERSION_TMP], "%s%s%s%s%s",
+#  989|                       libFileNames[LIB_FILE],
+#  990|                       FILE_SUFFIX,
+
+Error: COMPILER_WARNING:
+icu/source/tools/pkgdata/pkgdata.cpp:997:66: warning[-Wformat-overflow=]: '__sprintf_chk' may write a terminating nul past the end of the destination
+#  997 |             sprintf(libFileNames[LIB_FILE_VERSION_MAJOR], "%s%s%s",
+#      |                                                                  ^
+/usr/include/stdio.h:888: included_from: Included from here.
+icu/source/tools/toolutil/package.h:26: included_from: Included from here.
+icu/source/tools/pkgdata/pkgdata.cpp:42: included_from: Included from here.
+/usr/include/bits/stdio2.h:38:34: note: '__sprintf_chk' output 1 or more bytes (assuming 257) into a destination of size 256
+#   38 |   return __builtin___sprintf_chk (__s, __USE_FORTIFY_LEVEL - 1,
+#      |          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   39 |                                   __glibc_objsize (__s), __fmt,
+#      |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   40 |                                   __va_arg_pack ());
+#      |                                   ~~~~~~~~~~~~~~~~~
+#  995|   #endif
+#  996|           if (noVersion && !reverseExt) {
+#  997|->             sprintf(libFileNames[LIB_FILE_VERSION_MAJOR], "%s%s%s",
+#  998|                       libFileNames[LIB_FILE],
+#  999|                       FILE_SUFFIX,
+
+Error: COMPILER_WARNING:
+icu/source/tools/pkgdata/pkgdata.cpp:1002:60: warning[-Wformat-overflow=]: '__sprintf_chk' may write a terminating nul past the end of the destination
+# 1002 |             sprintf(libFileNames[LIB_FILE_VERSION], "%s%s%s",
+#      |                                                            ^
+/usr/include/stdio.h:888: included_from: Included from here.
+icu/source/tools/toolutil/package.h:26: included_from: Included from here.
+icu/source/tools/pkgdata/pkgdata.cpp:42: included_from: Included from here.
+/usr/include/bits/stdio2.h:38:34: note: '__sprintf_chk' output 1 or more bytes (assuming 257) into a destination of size 256
+#   38 |   return __builtin___sprintf_chk (__s, __USE_FORTIFY_LEVEL - 1,
+#      |          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   39 |                                   __glibc_objsize (__s), __fmt,
+#      |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   40 |                                   __va_arg_pack ());
+#      |                                   ~~~~~~~~~~~~~~~~~
+# 1000|                       pkgDataFlags[SO_EXT]);
+# 1001|   
+# 1002|->             sprintf(libFileNames[LIB_FILE_VERSION], "%s%s%s",
+# 1003|                       libFileNames[LIB_FILE],
+# 1004|                       FILE_SUFFIX,
+
+Error: COMPILER_WARNING:
+icu/source/tools/pkgdata/pkgdata.cpp:1007:66: warning[-Wformat-overflow=]: '%s' directive writing up to 1 bytes into a region of size between 0 and 256
+# 1007 |             sprintf(libFileNames[LIB_FILE_VERSION_MAJOR], "%s%s%s%s%s",
+#      |                                                                  ^~
+/usr/include/stdio.h:888: included_from: Included from here.
+icu/source/tools/toolutil/package.h:26: included_from: Included from here.
+icu/source/tools/pkgdata/pkgdata.cpp:42: included_from: Included from here.
+/usr/include/bits/stdio2.h:38:34: note: '__sprintf_chk' output 1 or more bytes (assuming 258) into a destination of size 256
+#   38 |   return __builtin___sprintf_chk (__s, __USE_FORTIFY_LEVEL - 1,
+#      |          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   39 |                                   __glibc_objsize (__s), __fmt,
+#      |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   40 |                                   __va_arg_pack ());
+#      |                                   ~~~~~~~~~~~~~~~~~
+# 1005|                       pkgDataFlags[SO_EXT]);
+# 1006|           } else {
+# 1007|->             sprintf(libFileNames[LIB_FILE_VERSION_MAJOR], "%s%s%s%s%s",
+# 1008|                       libFileNames[LIB_FILE],
+# 1009|                       FILE_SUFFIX,
+
+Error: COMPILER_WARNING:
+icu/source/tools/pkgdata/pkgdata.cpp:1014:60: warning[-Wformat-overflow=]: '%s' directive writing up to 1 bytes into a region of size between 0 and 256
+# 1014 |             sprintf(libFileNames[LIB_FILE_VERSION], "%s%s%s%s%s",
+#      |                                                            ^~
+/usr/include/stdio.h:888: included_from: Included from here.
+icu/source/tools/toolutil/package.h:26: included_from: Included from here.
+icu/source/tools/pkgdata/pkgdata.cpp:42: included_from: Included from here.
+/usr/include/bits/stdio2.h:38:34: note: '__sprintf_chk' output between 1 and 258 bytes into a destination of size 256
+#   38 |   return __builtin___sprintf_chk (__s, __USE_FORTIFY_LEVEL - 1,
+#      |          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   39 |                                   __glibc_objsize (__s), __fmt,
+#      |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   40 |                                   __va_arg_pack ());
+#      |                                   ~~~~~~~~~~~~~~~~~
+# 1012|                       reverseExt ? pkgDataFlags[SO_EXT] : version_major);
+# 1013|   
+# 1014|->             sprintf(libFileNames[LIB_FILE_VERSION], "%s%s%s%s%s",
+# 1015|                       libFileNames[LIB_FILE],
+# 1016|                       FILE_SUFFIX,
+
+Error: COMPILER_WARNING:
+icu/source/tools/pkgdata/pkgdata.cpp:1032:59: warning[-Wformat-overflow=]: '__sprintf_chk' may write a terminating nul past the end of the destination
+# 1032 |             sprintf(libFileNames[LIB_FILE_VERSION], "%s.%s", libFileNames[LIB_FILE], pkgDataFlags[A_EXT]);
+#      |                                                           ^
+/usr/include/stdio.h:888: included_from: Included from here.
+icu/source/tools/toolutil/package.h:26: included_from: Included from here.
+icu/source/tools/pkgdata/pkgdata.cpp:42: included_from: Included from here.
+/usr/include/bits/stdio2.h:38:34: note: '__sprintf_chk' output 2 or more bytes (assuming 257) into a destination of size 256
+#   38 |   return __builtin___sprintf_chk (__s, __USE_FORTIFY_LEVEL - 1,
+#      |          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   39 |                                   __glibc_objsize (__s), __fmt,
+#      |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   40 |                                   __va_arg_pack ());
+#      |                                   ~~~~~~~~~~~~~~~~~
+# 1030|   
+# 1031|           if(IN_STATIC_MODE(mode)) {
+# 1032|->             sprintf(libFileNames[LIB_FILE_VERSION], "%s.%s", libFileNames[LIB_FILE], pkgDataFlags[A_EXT]);
+# 1033|               libFileNames[LIB_FILE_VERSION_MAJOR][0]=0;
+# 1034|               if(o->verbose) {
+
+Error: COMPILER_WARNING:
+icu/source/tools/pkgdata/pkgdata.cpp: scope_hint: In function 'pkg_installLibrary(char const*, char const*, signed char)'
+icu/source/tools/pkgdata/pkgdata.cpp:1138:33: warning[-Wformat-truncation=]: '%s' directive output may be truncated writing up to 255 bytes into a region of size between 247 and 502
+# 1138 |             "cd %s && %s %s %s%s%s",
+#      |                                 ^~
+#......
+# 1142 |             installDir, PKGDATA_FILE_SEP_STRING, libFileNames[LIB_FILE_VERSION]);
+#      |                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/stdio.h:888: included_from: Included from here.
+icu/source/tools/toolutil/package.h:26: included_from: Included from here.
+icu/source/tools/pkgdata/pkgdata.cpp:42: included_from: Included from here.
+/usr/include/bits/stdio2.h:71:35: note: '__snprintf_chk' output 11 or more bytes (assuming 521) into a destination of size 512
+#   71 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+#      |          ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   72 |                                    __glibc_objsize (__s), __fmt,
+#      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   73 |                                    __va_arg_pack ());
+#      |                                    ~~~~~~~~~~~~~~~~~
+# 1136|       auto ret = snprintf(cmd,
+# 1137|               SMALL_BUFFER_MAX_SIZE,
+# 1138|->             "cd %s && %s %s %s%s%s",
+# 1139|               targetDir,
+# 1140|               pkgDataFlags[INSTALL_CMD],
+
+Error: COMPILER_WARNING:
+icu/source/tools/pkgdata/pkgdata.cpp:1311:56: warning[-Wformat-overflow=]: '.' directive writing 1 byte into a region of size between 0 and 256
+# 1311 |         sprintf(libFileNames[LIB_FILE_VERSION], "%s%s%s.%s",
+#      |                                                        ^
+/usr/include/stdio.h:888: included_from: Included from here.
+icu/source/tools/toolutil/package.h:26: included_from: Included from here.
+icu/source/tools/pkgdata/pkgdata.cpp:42: included_from: Included from here.
+/usr/include/bits/stdio2.h:38:34: note: '__sprintf_chk' output 2 or more bytes (assuming 258) into a destination of size 256
+#   38 |   return __builtin___sprintf_chk (__s, __USE_FORTIFY_LEVEL - 1,
+#      |          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   39 |                                   __glibc_objsize (__s), __fmt,
+#      |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   40 |                                   __va_arg_pack ());
+#      |                                   ~~~~~~~~~~~~~~~~~
+# 1309|        */
+# 1310|       if (uprv_strcmp(pkgDataFlags[SOBJ_EXT], pkgDataFlags[SO_EXT]) != 0 && uprv_strcmp(pkgDataFlags[A_EXT], pkgDataFlags[SO_EXT]) == 0) {
+# 1311|->         sprintf(libFileNames[LIB_FILE_VERSION], "%s%s%s.%s",
+# 1312|                   libFileNames[LIB_FILE],
+# 1313|                   pkgDataFlags[LIB_EXT_ORDER][0] == '.' ? "." : "",

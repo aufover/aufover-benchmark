@@ -1,0 +1,161 @@
+Error: VALGRIND_WARNING:
+libeconf-0.4.0/redhat-linux-build/tests/../util/econftool: note: while executing process 1876 with arguments: show nonexistant.conf
+libeconf-0.4.0/lib/libeconf.c:245: warning[Leak_DefinitelyLost]: 8 bytes in 1 blocks are definitely lost in loss record 1 of 1
+libeconf-0.4.0/lib/libeconf.c:245: note: called from econf_readDirsHistory()
+libeconf-0.4.0/lib/libeconf.c:312: note: called from econf_readDirs()
+libeconf-0.4.0/util/econftool.c:219: note: called from UnknownInlinedFun()
+libeconf-0.4.0/util/econftool.c:625: note: called from main()
+#  243|     /* create space to store the econf_files for merging */
+#  244|     *size = *size+1;
+#  245|->   *key_files = calloc(*size, sizeof(econf_file*));
+#  246|     if (*key_files == NULL) {
+#  247|       econf_freeFile(key_file);
+
+Error: COMPILER_WARNING:
+libeconf-0.4.0/util/econftool.c:455:52: warning[-Wformat-truncation=]: '%s' directive output may be truncated writing up to 4095 bytes into a region of size between 0 and 4095
+#  455 |         snprintf(conf_path, sizeof(conf_path), "%s/%s", xdg_config_dir, conf_filename);
+#      |                                                    ^~                   ~~~~~~~~~~~~~
+/usr/include/stdio.h:888: included_from: Included from here.
+libeconf-0.4.0/util/econftool.c:28: included_from: Included from here.
+/usr/include/bits/stdio2.h:71:10: note: '__snprintf_chk' output between 2 and 8192 bytes into a destination of size 4096
+#   71 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+#      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   72 |                                    __glibc_objsize (__s), __fmt,
+#      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   73 |                                    __va_arg_pack ());
+#      |                                    ~~~~~~~~~~~~~~~~~
+#  453|   
+#  454|       if (!is_root || use_homedir) {
+#  455|->         snprintf(conf_path, sizeof(conf_path), "%s/%s", xdg_config_dir, conf_filename);
+#  456|       } else {
+#  457|           snprintf(conf_path, sizeof(conf_path), "/etc/%s", conf_filename);
+
+Error: COMPILER_WARNING:
+libeconf-0.4.0/util/econftool.c:457:54: warning[-Wformat-truncation=]: '%s' directive output may be truncated writing up to 4095 bytes into a region of size 4091
+#  457 |         snprintf(conf_path, sizeof(conf_path), "/etc/%s", conf_filename);
+#      |                                                      ^~   ~~~~~~~~~~~~~
+/usr/include/stdio.h:888: included_from: Included from here.
+libeconf-0.4.0/util/econftool.c:28: included_from: Included from here.
+/usr/include/bits/stdio2.h:71:10: note: '__snprintf_chk' output between 6 and 4101 bytes into a destination of size 4096
+#   71 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+#      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   72 |                                    __glibc_objsize (__s), __fmt,
+#      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   73 |                                    __va_arg_pack ());
+#      |                                    ~~~~~~~~~~~~~~~~~
+#  455|           snprintf(conf_path, sizeof(conf_path), "%s/%s", xdg_config_dir, conf_filename);
+#  456|       } else {
+#  457|->         snprintf(conf_path, sizeof(conf_path), "/etc/%s", conf_filename);
+#  458|       }
+#  459|   
+
+Error: VALGRIND_WARNING:
+libeconf-0.4.0/redhat-linux-build/tests/../util/econftool: note: while executing process 1895 with arguments: show randomstring
+libeconf-0.4.0/util/econftool.c:591: warning[InvalidRead]: Invalid read of size 1
+libeconf-0.4.0/util/econftool.c:591: note: Address 0x0 is not stack'd, malloc'd or (recently) free'd
+libeconf-0.4.0/util/econftool.c:591: note: called from main()
+#  589|           return EXIT_FAILURE;
+#  590|       }
+#  591|->     snprintf(conf_basename, strlen(argv[optind + 1]) - strlen(conf_suffix) + 1, "%s", argv[optind + 1]);
+#  592|       snprintf(conf_filename, sizeof(conf_filename), "%s" , argv[optind + 1]);
+#  593|   
+
+Error: COMPILER_WARNING:
+libeconf-0.4.0/util/econftool.c: scope_hint: In function 'main'
+libeconf-0.4.0/util/econftool.c:591:84: warning[-Wformat-truncation=]: '__snprintf_chk' output may be truncated before the last format character
+#  591 |     snprintf(conf_basename, strlen(argv[optind + 1]) - strlen(conf_suffix) + 1, "%s", argv[optind + 1]);
+#      |                                                                                    ^
+/usr/include/stdio.h:888: included_from: Included from here.
+libeconf-0.4.0/util/econftool.c:28: included_from: Included from here.
+/usr/include/bits/stdio2.h:71:10: note: '__snprintf_chk' output between 1 and 4097 bytes into a destination of size 4096
+#   71 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+#      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   72 |                                    __glibc_objsize (__s), __fmt,
+#      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   73 |                                    __va_arg_pack ());
+#      |                                    ~~~~~~~~~~~~~~~~~
+#  589|           return EXIT_FAILURE;
+#  590|       }
+#  591|->     snprintf(conf_basename, strlen(argv[optind + 1]) - strlen(conf_suffix) + 1, "%s", argv[optind + 1]);
+#  592|       snprintf(conf_filename, sizeof(conf_filename), "%s" , argv[optind + 1]);
+#  593|   
+
+Error: COMPILER_WARNING:
+libeconf-0.4.0/util/econftool.c:595:52: warning[-Wformat-truncation=]: '%s' directive output may be truncated writing up to 4095 bytes into a region of size 4091
+#  595 |         snprintf(conf_dir, sizeof(conf_dir), "/etc/%s.d", conf_filename);
+#      |                                                    ^~     ~~~~~~~~~~~~~
+/usr/include/stdio.h:888: included_from: Included from here.
+libeconf-0.4.0/util/econftool.c:28: included_from: Included from here.
+/usr/include/bits/stdio2.h:71:10: note: '__snprintf_chk' output between 8 and 4103 bytes into a destination of size 4096
+#   71 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+#      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   72 |                                    __glibc_objsize (__s), __fmt,
+#      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   73 |                                    __va_arg_pack ());
+#      |                                    ~~~~~~~~~~~~~~~~~
+#  593|   
+#  594|       if (is_dropin_file) {
+#  595|->         snprintf(conf_dir, sizeof(conf_dir), "/etc/%s.d", conf_filename);
+#  596|           change_root_dir(conf_dir);
+#  597|       }
+
+Error: COMPILER_WARNING:
+libeconf-0.4.0/util/econftool.c:598:48: warning[-Wformat-truncation=]: '%s' directive output may be truncated writing up to 4095 bytes into a region of size between 0 and 4095
+#  598 |     snprintf(conf_path, sizeof(conf_path), "%s/%s", conf_dir, conf_filename);
+#      |                                                ^~             ~~~~~~~~~~~~~
+/usr/include/stdio.h:888: included_from: Included from here.
+libeconf-0.4.0/util/econftool.c:28: included_from: Included from here.
+/usr/include/bits/stdio2.h:71:10: note: '__snprintf_chk' output between 2 and 8192 bytes into a destination of size 4096
+#   71 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+#      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   72 |                                    __glibc_objsize (__s), __fmt,
+#      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   73 |                                    __va_arg_pack ());
+#      |                                    ~~~~~~~~~~~~~~~~~
+#  596|           change_root_dir(conf_dir);
+#  597|       }
+#  598|->     snprintf(conf_path, sizeof(conf_path), "%s/%s", conf_dir, conf_filename);
+#  599|   
+#  600|       if (getenv("ECONFTOOL_ROOT") == NULL)
+
+Error: COMPILER_WARNING:
+libeconf-0.4.0/util/econftool.c:631:56: warning[-Wformat-truncation=]: '%s' directive output may be truncated writing up to 4095 bytes into a region of size between 0 and 4095
+#  631 |             snprintf(conf_path, sizeof(conf_path), "%s/%s", conf_dir,
+#      |                                                        ^~
+#  632 |                     conf_filename);
+#      |                     ~~~~~~~~~~~~~                       
+/usr/include/stdio.h:888: included_from: Included from here.
+libeconf-0.4.0/util/econftool.c:28: included_from: Included from here.
+/usr/include/bits/stdio2.h:71:10: note: '__snprintf_chk' output between 2 and 8192 bytes into a destination of size 4096
+#   71 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+#      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   72 |                                    __glibc_objsize (__s), __fmt,
+#      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   73 |                                    __va_arg_pack ());
+#      |                                    ~~~~~~~~~~~~~~~~~
+#  629|               snprintf(conf_dir, sizeof(conf_dir), "%s", xdg_config_dir);
+#  630|               change_root_dir(conf_dir);
+#  631|->             snprintf(conf_path, sizeof(conf_path), "%s/%s", conf_dir,
+#  632|                       conf_filename);
+#  633|           } else if(is_dropin_file) {
+
+Error: COMPILER_WARNING:
+libeconf-0.4.0/util/econftool.c:635:56: warning[-Wformat-truncation=]: '%s' directive output may be truncated writing up to 4095 bytes into a region of size between 0 and 4095
+#  635 |             snprintf(conf_path, sizeof(conf_path), "%s/%s", conf_dir,
+#      |                                                        ^~
+#  636 |                     conf_filename);
+#      |                     ~~~~~~~~~~~~~                       
+/usr/include/stdio.h:888: included_from: Included from here.
+libeconf-0.4.0/util/econftool.c:28: included_from: Included from here.
+/usr/include/bits/stdio2.h:71:10: note: '__snprintf_chk' output between 2 and 8192 bytes into a destination of size 4096
+#   71 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+#      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   72 |                                    __glibc_objsize (__s), __fmt,
+#      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   73 |                                    __va_arg_pack ());
+#      |                                    ~~~~~~~~~~~~~~~~~
+#  633|           } else if(is_dropin_file) {
+#  634|               snprintf(conf_filename, sizeof(conf_filename), "%s", dropin_filename);
+#  635|->             snprintf(conf_path, sizeof(conf_path), "%s/%s", conf_dir,
+#  636|                       conf_filename);
+#  637|           }

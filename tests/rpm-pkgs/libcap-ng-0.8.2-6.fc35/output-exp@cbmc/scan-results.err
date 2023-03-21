@@ -1,0 +1,15 @@
+Error: COMPILER_WARNING:
+libcap-ng-0.8.2/utils/netcap.c: scope_hint: In function 'collect_process_info'
+libcap-ng-0.8.2/utils/netcap.c:191:47: warning[-Wformat-truncation=]: '%s' directive output may be truncated writing up to 255 bytes into a region of size between 156 and 255
+#  191 |                         snprintf(ln, 256, "%s/%s", buf, ent->d_name);
+#      |                                               ^~
+libcap-ng-0.8.2/utils/netcap.c:191:25: note: 'snprintf' output between 2 and 356 bytes into a destination of size 256
+#  191 |                         snprintf(ln, 256, "%s/%s", buf, ent->d_name);
+#      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libcap-ng-0.8.2/utils/netcap.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#  189|   			if (ent->d_name[0] == '.')
+#  190|   				continue;
+#  191|-> 			snprintf(ln, 256, "%s/%s", buf, ent->d_name);
+#  192|   			if ((llen = readlink(ln, line, sizeof(line)-1)) < 0)
+#  193|   				continue;

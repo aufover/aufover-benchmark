@@ -1,0 +1,196 @@
+Error: COMPILER_WARNING (CWE-252):
+nghttp2-1.45.1/src/HttpServer.cc: scope_hint: In member function 'int nghttp2::HttpServer::run()'
+nghttp2-1.45.1/src/HttpServer.cc:2142:35: warning[-Wunused-result]: ignoring return value of 'int SSL_CTX_set_session_id_context(SSL_CTX*, const unsigned char*, unsigned int)' declared with attribute 'warn_unused_result'
+# 2142 |     SSL_CTX_set_session_id_context(ssl_ctx, sid_ctx, sizeof(sid_ctx) - 1);
+#      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2140|   
+# 2141|       const unsigned char sid_ctx[] = "nghttpd";
+# 2142|->     SSL_CTX_set_session_id_context(ssl_ctx, sid_ctx, sizeof(sid_ctx) - 1);
+# 2143|       SSL_CTX_set_session_cache_mode(ssl_ctx, SSL_SESS_CACHE_SERVER);
+# 2144|   
+
+Error: COMPILER_WARNING (CWE-252):
+nghttp2-1.45.1/src/h2load.cc: scope_hint: In member function 'int h2load::Client::make_socket(addrinfo*)'
+nghttp2-1.45.1/src/h2load.cc:560:17: warning[-Wunused-result]: ignoring return value of 'int SSL_set_fd(SSL*, int)' declared with attribute 'warn_unused_result'
+#  560 |       SSL_set_fd(ssl, fd);
+#      |       ~~~~~~~~~~^~~~~~~~~
+#  558|         }
+#  559|   
+#  560|->       SSL_set_fd(ssl, fd);
+#  561|         SSL_set_connect_state(ssl);
+#  562|       }
+
+Error: COMPILER_WARNING (CWE-252):
+nghttp2-1.45.1/src/h2load.cc: scope_hint: In function 'int h2load::main(int, char**)'
+nghttp2-1.45.1/src/h2load.cc:2873:26: warning[-Wunused-result]: ignoring return value of 'int SSL_CTX_set_alpn_protos(SSL_CTX*, const unsigned char*, unsigned int)' declared with attribute 'warn_unused_result'
+# 2873 |   SSL_CTX_set_alpn_protos(ssl_ctx, proto_list.data(), proto_list.size());
+#      |   ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2871|     }
+# 2872|   
+# 2873|->   SSL_CTX_set_alpn_protos(ssl_ctx, proto_list.data(), proto_list.size());
+# 2874|   #endif // OPENSSL_VERSION_NUMBER >= 0x10002000L
+# 2875|   
+
+Error: COMPILER_WARNING (CWE-252):
+nghttp2-1.45.1/src/nghttp.cc: scope_hint: In member function 'int nghttp2::HttpClient::initiate_connection()'
+nghttp2-1.45.1/src/nghttp.cc:679:17: warning[-Wunused-result]: ignoring return value of 'int SSL_set_fd(SSL*, int)' declared with attribute 'warn_unused_result'
+#  679 |       SSL_set_fd(ssl, fd);
+#      |       ~~~~~~~~~~^~~~~~~~~
+#  677|         }
+#  678|   
+#  679|->       SSL_set_fd(ssl, fd);
+#  680|         SSL_set_connect_state(ssl);
+#  681|   
+
+Error: COMPILER_WARNING (CWE-252):
+nghttp2-1.45.1/src/nghttp.cc: scope_hint: In function 'int nghttp2::{anonymous}::communicate(const string&, const string&, uint16_t, std::vector<std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, nghttp2_data_provider*, long int, int> >, const nghttp2_session_callbacks*)'
+nghttp2-1.45.1/src/nghttp.cc:2332:28: warning[-Wunused-result]: ignoring return value of 'int SSL_CTX_set_alpn_protos(SSL_CTX*, const unsigned char*, unsigned int)' declared with attribute 'warn_unused_result'
+# 2332 |     SSL_CTX_set_alpn_protos(ssl_ctx, proto_list.data(), proto_list.size());
+#      |     ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2330|       auto proto_list = util::get_default_alpn();
+# 2331|   
+# 2332|->     SSL_CTX_set_alpn_protos(ssl_ctx, proto_list.data(), proto_list.size());
+# 2333|   #endif // OPENSSL_VERSION_NUMBER >= 0x10002000L
+# 2334|     }
+
+Error: COMPILER_WARNING (CWE-252):
+nghttp2-1.45.1/src/shrpx.cc: scope_hint: In function 'int shrpx::{anonymous}::call_daemon()'
+nghttp2-1.45.1/src/shrpx.cc:1282:10: warning[-Wunused-result]: ignoring return value of 'int chdir(const char*)' declared with attribute 'warn_unused_result'
+# 1282 |     chdir("/");
+#      |     ~~~~~^~~~~
+# 1280|     if (sd_booted() && (getenv("NOTIFY_SOCKET") != nullptr)) {
+# 1281|       LOG(NOTICE) << "Daemonising disabled under systemd";
+# 1282|->     chdir("/");
+# 1283|       return 0;
+# 1284|     }
+
+Error: COMPILER_WARNING (CWE-252):
+nghttp2-1.45.1/src/shrpx_http2_session.cc: scope_hint: In member function 'int shrpx::Http2Session::initiate_connection()'
+nghttp2-1.45.1/src/shrpx_http2_session.cc:467:26: warning[-Wunused-result]: ignoring return value of 'int SSL_set_session(SSL*, SSL_SESSION*)' declared with attribute 'warn_unused_result'
+#  467 |           SSL_set_session(conn_.tls.ssl, tls_session);
+#      |           ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  465|           auto tls_session = tls::reuse_tls_session(addr_->tls_session_cache);
+#  466|           if (tls_session) {
+#  467|->           SSL_set_session(conn_.tls.ssl, tls_session);
+#  468|             SSL_SESSION_free(tls_session);
+#  469|           }
+
+Error: COMPILER_WARNING (CWE-563):
+nghttp2-1.45.1/src/shrpx_http2_upstream.cc: scope_hint: In member function 'void shrpx::Http2Upstream::initiate_downstream(shrpx::Downstream*)'
+nghttp2-1.45.1/src/shrpx_http2_upstream.cc:463:25: warning[-Wunused-variable]: unused variable 'dconn_ptr'
+#  463 |   DownstreamConnection *dconn_ptr;
+#      |                         ^~~~~~~~~
+#  461|     int rv;
+#  462|   
+#  463|->   DownstreamConnection *dconn_ptr;
+#  464|   
+#  465|     for (;;) {
+
+Error: COMPILER_WARNING (CWE-252):
+nghttp2-1.45.1/src/shrpx_http_downstream_connection.cc: scope_hint: In member function 'int shrpx::HttpDownstreamConnection::initiate_connection()'
+nghttp2-1.45.1/src/shrpx_http_downstream_connection.cc:421:24: warning[-Wunused-result]: ignoring return value of 'int SSL_set_session(SSL*, SSL_SESSION*)' declared with attribute 'warn_unused_result'
+#  421 |         SSL_set_session(conn_.tls.ssl, session);
+#      |         ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+#  419|         auto session = tls::reuse_tls_session(addr_->tls_session_cache);
+#  420|         if (session) {
+#  421|->         SSL_set_session(conn_.tls.ssl, session);
+#  422|           SSL_SESSION_free(session);
+#  423|         }
+
+Error: COMPILER_WARNING (CWE-563):
+nghttp2-1.45.1/src/shrpx_https_upstream.cc: scope_hint: In function 'int shrpx::{anonymous}::htp_hdrs_completecb(llhttp_t*)'
+nghttp2-1.45.1/src/shrpx_https_upstream.cc:460:25: warning[-Wunused-variable]: unused variable 'dconn_ptr'
+#  460 |   DownstreamConnection *dconn_ptr;
+#      |                         ^~~~~~~~~
+#  458|     }
+#  459|   
+#  460|->   DownstreamConnection *dconn_ptr;
+#  461|   
+#  462|     for (;;) {
+
+Error: COMPILER_WARNING (CWE-252):
+nghttp2-1.45.1/src/shrpx_live_check.cc: scope_hint: In member function 'int shrpx::LiveCheck::initiate_connection()'
+nghttp2-1.45.1/src/shrpx_live_check.cc:308:22: warning[-Wunused-result]: ignoring return value of 'int SSL_set_session(SSL*, SSL_SESSION*)' declared with attribute 'warn_unused_result'
+#  308 |       SSL_set_session(conn_.tls.ssl, session);
+#      |       ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+#  306|       auto session = tls::reuse_tls_session(addr_->tls_session_cache);
+#  307|       if (session) {
+#  308|->       SSL_set_session(conn_.tls.ssl, session);
+#  309|         SSL_SESSION_free(session);
+#  310|       }
+
+Error: COMPILER_WARNING (CWE-252):
+nghttp2-1.45.1/src/shrpx_memcached_connection.cc: scope_hint: In member function 'int shrpx::MemcachedConnection::initiate_connection()'
+nghttp2-1.45.1/src/shrpx_memcached_connection.cc:191:22: warning[-Wunused-result]: ignoring return value of 'int SSL_set_session(SSL*, SSL_SESSION*)' declared with attribute 'warn_unused_result'
+#  191 |       SSL_set_session(conn_.tls.ssl, session);
+#      |       ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+#  189|       auto session = tls::reuse_tls_session(tls_session_cache_);
+#  190|       if (session) {
+#  191|->       SSL_set_session(conn_.tls.ssl, session);
+#  192|         SSL_SESSION_free(session);
+#  193|       }
+
+Error: COMPILER_WARNING (CWE-252):
+nghttp2-1.45.1/src/shrpx_tls.cc: scope_hint: In function 'int shrpx::tls::{anonymous}::tls_session_new_cb(SSL*, SSL_SESSION*)'
+nghttp2-1.45.1/src/shrpx_tls.cc:415:18: warning[-Wunused-result]: ignoring return value of 'int i2d_SSL_SESSION(SSL_SESSION*, unsigned char**)' declared with attribute 'warn_unused_result'
+#  415 |   i2d_SSL_SESSION(session, &buf);
+#      |   ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+#  413|     req->value.resize(sessionlen);
+#  414|     auto buf = &req->value[0];
+#  415|->   i2d_SSL_SESSION(session, &buf);
+#  416|     req->expiry = 12_h;
+#  417|     req->cb = [](MemcachedRequest *req, MemcachedResult res) {
+
+Error: COMPILER_WARNING (CWE-252):
+nghttp2-1.45.1/src/shrpx_tls.cc: scope_hint: In function 'SSL_CTX* shrpx::tls::create_ssl_context(const char*, const char*, const std::vector<unsigned char>&)'
+nghttp2-1.45.1/src/shrpx_tls.cc:950:33: warning[-Wunused-result]: ignoring return value of 'int SSL_CTX_set_session_id_context(SSL_CTX*, const unsigned char*, unsigned int)' declared with attribute 'warn_unused_result'
+#  950 |   SSL_CTX_set_session_id_context(ssl_ctx, sid_ctx, sizeof(sid_ctx) - 1);
+#      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  948|   
+#  949|     const unsigned char sid_ctx[] = "shrpx";
+#  950|->   SSL_CTX_set_session_id_context(ssl_ctx, sid_ctx, sizeof(sid_ctx) - 1);
+#  951|     SSL_CTX_set_session_cache_mode(ssl_ctx, SSL_SESS_CACHE_SERVER);
+#  952|   
+
+Error: COMPILER_WARNING (CWE-252):
+nghttp2-1.45.1/src/shrpx_tls.cc:958:22: warning[-Wunused-result]: ignoring return value of 'long int SSL_CTX_set_timeout(SSL_CTX*, long int)' declared with attribute 'warn_unused_result'
+#  958 |   SSL_CTX_set_timeout(ssl_ctx, tlsconf.session_timeout.count());
+#      |   ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  956|     }
+#  957|   
+#  958|->   SSL_CTX_set_timeout(ssl_ctx, tlsconf.session_timeout.count());
+#  959|   
+#  960|     if (SSL_CTX_set_cipher_list(ssl_ctx, tlsconf.ciphers.c_str()) == 0) {
+
+Error: COMPILER_WARNING (CWE-252):
+nghttp2-1.45.1/src/shrpx_tls.cc: scope_hint: In function 'void shrpx::tls::setup_downstream_http2_alpn(SSL*)'
+nghttp2-1.45.1/src/shrpx_tls.cc:2392:22: warning[-Wunused-result]: ignoring return value of 'int SSL_set_alpn_protos(SSL*, const unsigned char*, unsigned int)' declared with attribute 'warn_unused_result'
+# 2392 |   SSL_set_alpn_protos(ssl, alpn.data(), alpn.size());
+#      |   ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2390|     // ALPN advertisement
+# 2391|     auto alpn = util::get_default_alpn();
+# 2392|->   SSL_set_alpn_protos(ssl, alpn.data(), alpn.size());
+# 2393|   #endif // OPENSSL_VERSION_NUMBER >= 0x10002000L
+# 2394|   }
+
+Error: COMPILER_WARNING (CWE-252):
+nghttp2-1.45.1/src/shrpx_tls.cc: scope_hint: In function 'void shrpx::tls::setup_downstream_http1_alpn(SSL*)'
+nghttp2-1.45.1/src/shrpx_tls.cc:2399:22: warning[-Wunused-result]: ignoring return value of 'int SSL_set_alpn_protos(SSL*, const unsigned char*, unsigned int)' declared with attribute 'warn_unused_result'
+# 2399 |   SSL_set_alpn_protos(ssl, NGHTTP2_H1_1_ALPN.byte(), NGHTTP2_H1_1_ALPN.size());
+#      |   ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2397|   #if OPENSSL_VERSION_NUMBER >= 0x10002000L
+# 2398|     // ALPN advertisement
+# 2399|->   SSL_set_alpn_protos(ssl, NGHTTP2_H1_1_ALPN.byte(), NGHTTP2_H1_1_ALPN.size());
+# 2400|   #endif // OPENSSL_VERSION_NUMBER >= 0x10002000L
+# 2401|   }
+
+Error: COMPILER_WARNING (CWE-252):
+nghttp2-1.45.1/src/shrpx_tls.cc: scope_hint: In function 'std::vector<unsigned char> shrpx::tls::{anonymous}::serialize_ssl_session(SSL_SESSION*)'
+nghttp2-1.45.1/src/shrpx_tls.cc:2416:18: warning[-Wunused-result]: ignoring return value of 'int i2d_SSL_SESSION(SSL_SESSION*, unsigned char**)' declared with attribute 'warn_unused_result'
+# 2416 |   i2d_SSL_SESSION(session, &p);
+#      |   ~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+# 2414|     auto buf = std::vector<uint8_t>(len);
+# 2415|     auto p = buf.data();
+# 2416|->   i2d_SSL_SESSION(session, &p);
+# 2417|   
+# 2418|     return buf;

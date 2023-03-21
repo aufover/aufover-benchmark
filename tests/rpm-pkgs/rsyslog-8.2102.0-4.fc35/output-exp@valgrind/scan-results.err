@@ -1,0 +1,10 @@
+Error: COMPILER_WARNING (CWE-563):
+rsyslog-8.2102.0/runtime/nsd_ptcp.c: scope_hint: In function 'SetTlsVerifyDepth'
+rsyslog-8.2102.0/runtime/nsd_ptcp.c:191:21: warning[-Wunused-variable]: unused variable 'pThis'
+#  191 |         nsd_ptcp_t *pThis = (nsd_ptcp_t*) pNsd;
+#      |                     ^~~~~
+#  189|   SetTlsVerifyDepth(nsd_t __attribute__((unused)) *pNsd, int verifyDepth)
+#  190|   {
+#  191|-> 	nsd_ptcp_t *pThis = (nsd_ptcp_t*) pNsd;
+#  192|   	DEFiRet;
+#  193|   	ISOBJ_TYPE_assert((pThis), nsd_ptcp);

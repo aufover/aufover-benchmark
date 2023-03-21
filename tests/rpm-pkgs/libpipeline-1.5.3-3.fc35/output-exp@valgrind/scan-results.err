@@ -1,0 +1,82 @@
+Error: COMPILER_WARNING (CWE-685):
+libpipeline-1.5.3/tests/common.h:3: included_from: Included from here.
+libpipeline-1.5.3/tests/common.c:32: included_from: Included from here.
+libpipeline-1.5.3/tests/common.c: scope_hint: In function 'temp_dir_setup'
+libpipeline-1.5.3/tests/common.c:40:23: warning[-Wformat-extra-args]: too many arguments for format
+#   40 |                 fail ("mkdtemp failed: %s", strerror (errno));
+#      |                       ^~~~~~~~~~~~~~~~~~~~
+#   38|   	temp_dir = xstrdup ("libpipeline.XXXXXX");
+#   39|   	if (mkdtemp (temp_dir) == NULL)
+#   40|-> 		fail ("mkdtemp failed: %s", strerror (errno));
+#   41|   }
+#   42|   
+
+Error: COMPILER_WARNING (CWE-685):
+libpipeline-1.5.3/tests/common.h:3: included_from: Included from here.
+libpipeline-1.5.3/tests/exec.c:35: included_from: Included from here.
+libpipeline-1.5.3/tests/exec.c: scope_hint: In function 'test_exec_process_fn'
+libpipeline-1.5.3/tests/exec.c:62:31: warning[-Wformat-extra-args]: too many arguments for format
+#   62 |                         fail ("fork failed: %s", strerror (errno));
+#      |                               ^~~~~~~~~~~~~~~~~
+#   60|   		pid = fork ();
+#   61|   		if (pid < 0) {
+#   62|-> 			fail ("fork failed: %s", strerror (errno));
+#   63|   			return;
+#   64|   		}
+
+Error: COMPILER_WARNING (CWE-685):
+libpipeline-1.5.3/tests/exec.c:71:31: warning[-Wformat-extra-args]: too many arguments for format
+#   71 |                         fail ("waitpid failed: %s", strerror (errno));
+#      |                               ^~~~~~~~~~~~~~~~~~~~
+#   69|   			if (errno == EINTR)
+#   70|   				continue;
+#   71|-> 			fail ("waitpid failed: %s", strerror (errno));
+#   72|   			return;
+#   73|   		}
+
+Error: COMPILER_WARNING (CWE-685):
+libpipeline-1.5.3/tests/exec.c: scope_hint: In function 'test_exec_function_fn'
+libpipeline-1.5.3/tests/exec.c:105:31: warning[-Wformat-extra-args]: too many arguments for format
+#  105 |                         fail ("fork failed: %s", strerror (errno));
+#      |                               ^~~~~~~~~~~~~~~~~
+#  103|   		pid = fork ();
+#  104|   		if (pid < 0) {
+#  105|-> 			fail ("fork failed: %s", strerror (errno));
+#  106|   			return;
+#  107|   		}
+
+Error: COMPILER_WARNING (CWE-685):
+libpipeline-1.5.3/tests/exec.c:114:31: warning[-Wformat-extra-args]: too many arguments for format
+#  114 |                         fail ("waitpid failed: %s", strerror (errno));
+#      |                               ^~~~~~~~~~~~~~~~~~~~
+#  112|   			if (errno == EINTR)
+#  113|   				continue;
+#  114|-> 			fail ("waitpid failed: %s", strerror (errno));
+#  115|   			return;
+#  116|   		}
+
+Error: COMPILER_WARNING (CWE-685):
+libpipeline-1.5.3/tests/common.h:3: included_from: Included from here.
+libpipeline-1.5.3/tests/read.c:34: included_from: Included from here.
+libpipeline-1.5.3/tests/read.c: scope_hint: In function 'test_read_long_line_fn'
+libpipeline-1.5.3/tests/read.c:59:23: warning[-Wformat-extra-args]: too many arguments for format
+#   59 |                 fail ("fopen failed: %s", strerror (errno));
+#      |                       ^~~~~~~~~~~~~~~~~~
+#   57|   	FILE *tfd = fopen (testfile, "w");
+#   58|   	if (!tfd) {
+#   59|-> 		fail ("fopen failed: %s", strerror (errno));
+#   60|   		return;
+#   61|   	}
+
+Error: COMPILER_WARNING (CWE-685):
+libpipeline-1.5.3/tests/common.h:3: included_from: Included from here.
+libpipeline-1.5.3/tests/redirect.c:35: included_from: Included from here.
+libpipeline-1.5.3/tests/redirect.c: scope_hint: In function 'test_redirect_files_fn'
+libpipeline-1.5.3/tests/redirect.c:48:23: warning[-Wformat-extra-args]: too many arguments for format
+#   48 |                 fail ("mkstemp failed: %s", strerror (errno));
+#      |                       ^~~~~~~~~~~~~~~~~~~~
+#   46|   	fd = mkstemp (template);
+#   47|   	if (fd < 0) {
+#   48|-> 		fail ("mkstemp failed: %s", strerror (errno));
+#   49|   		return;
+#   50|   	}

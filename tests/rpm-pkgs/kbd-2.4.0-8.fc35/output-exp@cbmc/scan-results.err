@@ -1,0 +1,167 @@
+Error: COMPILER_WARNING (CWE-681):
+kbd-2.4.0/src/libkeymap/parser.c: scope_hint: In function 'yytnamerr'
+kbd-2.4.0/src/libkeymap/parser.c:1057:34: warning[-Wsign-conversion]: conversion to 'long unsigned int' from 'long int' may change the sign of the result
+# 1057 |   return yystpcpy (yyres, yystr) - yyres;
+#      |          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+# 1055|       return yystrlen (yystr);
+# 1056|   
+# 1057|->   return yystpcpy (yyres, yystr) - yyres;
+# 1058|   }
+# 1059|   # endif
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/src/libkeymap/parser.c: scope_hint: In function 'yyparse'
+kbd-2.4.0/src/libkeymap/parser.c:1305:12: warning[-Wconversion]: conversion from 'int' to 'yytype_int16' {aka 'short int'} may change value
+# 1305 |   *yyssp = yystate;
+#      |            ^~~~~~~
+# 1303|   
+# 1304|    yysetstate:
+# 1305|->   *yyssp = yystate;
+# 1306|   
+# 1307|     if (yyss + yystacksize - 1 <= yyssp)
+
+Error: COMPILER_WARNING (CWE-681):
+kbd-2.4.0/src/libkeymap/parser.c:1310:25: warning[-Wsign-conversion]: conversion to 'long unsigned int' from 'long int' may change the sign of the result
+# 1310 |       YYSIZE_T yysize = yyssp - yyss + 1;
+#      |                         ^~~~~
+kbd-2.4.0/src/libkeymap/parser.y: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+# 1308|       {
+# 1309|         /* Get the current used size of the three stacks, in elements.  */
+# 1310|->       YYSIZE_T yysize = yyssp - yyss + 1;
+# 1311|   
+# 1312|   #ifdef yyoverflow
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/src/libkfont/loadunimap.c: scope_hint: In function 'parseline'
+kbd-2.4.0/src/libkfont/loadunimap.c:220:66: warning[-Wconversion]: conversion from 'int' to 'short unsigned int' may change value
+#  220 |                         if ((ret = add_unipair(ctx, i, un0 - fp0 + i, list, listsz, listct)) < 0)
+#      |                                                        ~~~~~~~~~~^~~
+kbd-2.4.0/src/libkfont/loadunimap.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#  218|   
+#  219|   		for (i = fp0; i <= fp1; i++) {
+#  220|-> 			if ((ret = add_unipair(ctx, i, un0 - fp0 + i, list, listsz, listct)) < 0)
+#  221|   				return ret;
+#  222|   		}
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/src/libkfont/mapscrn.c: scope_hint: In function 'kfont_load_consolemap'
+kbd-2.4.0/src/libkfont/mapscrn.c:163:27: warning[-Wconversion]: conversion from 'unsigned int' to 'unsigned char' may change value
+#  163 |                 buf[i]  = i;
+#      |                           ^
+#  161|   	/* default: trivial straight-to-font */
+#  162|   	for (i = 0; i < E_TABSZ; i++) {
+#  163|-> 		buf[i]  = i;
+#  164|   		ubuf[i] = (0xf000 + i);
+#  165|   	}
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/src/libkfont/mapscrn.c:164:27: warning[-Wconversion]: conversion from 'unsigned int' to 'short unsigned int' may change value
+#  164 |                 ubuf[i] = (0xf000 + i);
+#      |                           ^
+kbd-2.4.0/src/libkfont/mapscrn.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#  162|   	for (i = 0; i < E_TABSZ; i++) {
+#  163|   		buf[i]  = i;
+#  164|-> 		ubuf[i] = (0xf000 + i);
+#  165|   	}
+#  166|   
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/src/libkfont/psffontop.c: scope_hint: In function 'writepsffontheader'
+kbd-2.4.0/src/libkfont/psffontop.c:460:30: warning[-Wconversion]: conversion from 'unsigned int' to 'unsigned char' may change value
+#  460 |                 h.charsize = charsize;
+#      |                              ^~~~~~~~
+kbd-2.4.0/src/libkfont/psffontop.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#  458|   		else if (flags & WPSFH_HASTAB)
+#  459|   			h.mode |= PSF1_MODEHASTAB;
+#  460|-> 		h.charsize = charsize;
+#  461|   		ret = fwrite(&h, sizeof(h), 1, ofil);
+#  462|   	}
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/src/libkfont/setfont.c: scope_hint: In function 'do_loadtable'
+kbd-2.4.0/src/libkfont/setfont.c:220:50: warning[-Wconversion]: conversion from 'unicode' {aka 'int'} to 'short unsigned int' may change value
+#  220 |                                 up[ct].unicode = us->uc;
+#      |                                                  ^~
+#  218|   			us = ul->seq;
+#  219|   			if (us && !us->next) {
+#  220|-> 				up[ct].unicode = us->uc;
+#  221|   				up[ct].fontpos = i;
+#  222|   				ct++;
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/src/libkfont/setfont.c:221:50: warning[-Wconversion]: conversion from 'unsigned int' to 'short unsigned int' may change value
+#  221 |                                 up[ct].fontpos = i;
+#      |                                                  ^
+#  219|   			if (us && !us->next) {
+#  220|   				up[ct].unicode = us->uc;
+#  221|-> 				up[ct].fontpos = i;
+#  222|   				ct++;
+#  223|   				if (ctx->verbose > 1)
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/src/libkfont/setfont.c:250:23: warning[-Wconversion]: conversion from 'unsigned int' to 'short unsigned int' may change value
+#  250 |         ud.entry_ct = ct;
+#      |                       ^~
+kbd-2.4.0/src/libkfont/setfont.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#  248|   		KFONT_INFO(ctx, _("Loading Unicode mapping table..."));
+#  249|   
+#  250|-> 	ud.entry_ct = ct;
+#  251|   	ud.entries  = up;
+#  252|   
+
+Error: COMPILER_WARNING (CWE-681):
+kbd-2.4.0/tests/helpers/libkeymap-showmaps.c: scope_hint: In function 'main'
+kbd-2.4.0/tests/helpers/libkeymap-showmaps.c:36:41: warning[-Wsign-conversion]: conversion to 'int' from 'unsigned int' may change the sign of the result
+#   36 |                 if (!lk_map_exists(ctx, i))
+#      |                                         ^
+kbd-2.4.0/tests/helpers/libkeymap-showmaps.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#   34|   
+#   35|   	for (i = 0; i < ctx->keymap->total; i++) {
+#   36|-> 		if (!lk_map_exists(ctx, i))
+#   37|   			continue;
+#   38|   		printf("keymap %03d\n", i);
+
+Error: COMPILER_WARNING (CWE-681):
+kbd-2.4.0/tests/libkeymap/libkeymap-test07.c: scope_hint: In function 'main'
+kbd-2.4.0/tests/libkeymap/libkeymap-test07.c:43:41: warning[-Wsign-conversion]: conversion to 'int' from 'unsigned int' may change the sign of the result
+#   43 |                 int c = lk_get_key(ctx, i, 17);
+#      |                                         ^
+kbd-2.4.0/tests/libkeymap/libkeymap-test07.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#   41|   
+#   42|   	while (i < MAX_NR_KEYMAPS) {
+#   43|-> 		int c = lk_get_key(ctx, i, 17);
+#   44|   		if (KVAL(c) != 'x')
+#   45|   			kbd_error(EXIT_FAILURE, 0, "Unable to get keycode");
+
+Error: COMPILER_WARNING (CWE-681):
+kbd-2.4.0/tests/libkeymap/libkeymap-test08.c: scope_hint: In function 'main'
+kbd-2.4.0/tests/libkeymap/libkeymap-test08.c:44:41: warning[-Wsign-conversion]: conversion to 'int' from 'unsigned int' may change the sign of the result
+#   44 |                 int c = lk_get_key(ctx, i, 17);
+#      |                                         ^
+kbd-2.4.0/tests/libkeymap/libkeymap-test08.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#   42|   
+#   43|   	for (i = 0; i < 26; i++) {
+#   44|-> 		int c = lk_get_key(ctx, i, 17);
+#   45|   		if (KVAL(c) != str[i])
+#   46|   			kbd_error(EXIT_FAILURE, 0, "Unable to get keycode");
+
+Error: COMPILER_WARNING (CWE-192):
+kbd-2.4.0/tests/libkeymap/libkeymap-test16.c: scope_hint: In function 'main'
+kbd-2.4.0/tests/libkeymap/libkeymap-test16.c:18:34: warning[-Wenum-conversion]: implicit conversion from 'enum <anonymous>' to 'lk_flags'
+#   18 |         lk_set_parser_flags(ctx, LK_KEYWORD_ALTISMETA);
+#      |                                  ^~~~~~~~~~~~~~~~~~~~
+kbd-2.4.0/tests/libkeymap/libkeymap-test16.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#   16|   	ctx = lk_init();
+#   17|   	lk_set_log_fn(ctx, NULL, NULL);
+#   18|-> 	lk_set_parser_flags(ctx, LK_KEYWORD_ALTISMETA);
+#   19|   
+#   20|   	if (lk_add_key(ctx, 0, 0, 16) != 0)

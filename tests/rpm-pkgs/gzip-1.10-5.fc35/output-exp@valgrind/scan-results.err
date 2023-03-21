@@ -1,9 +1,29 @@
-Error: COMPILER_WARNING (CWE-758):
-gzip-1.10/lib/savedir.c:179:20: warning[-Wstringop-overflow=]: writing 1 byte into a region of size 0
-#  179 |   name_space[used] = '\0';
-#      |                    ^
-#  177|       name_space = xrealloc (name_space, used + 1);
-#  178|   
-#  179|->   name_space[used] = '\0';
-#  180|     return name_space;
-#  181|   }
+Error: COMPILER_WARNING:
+gzip-1.10/lib/utimens.c: scope_hint: In function 'fdutimens'
+gzip-1.10/lib/utimens.c:382:17: warning[-Wstringop-overflow=]: 'update_timespec' accessing 16 bytes in a region of size 8
+#  382 |       if (ts && update_timespec (&st, &ts))
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+gzip-1.10/lib/utimens.c:382:17: note: referencing argument 2 of type 'struct timespec * *'
+gzip-1.10/lib/utimens.c:133:1: note: in a call to function 'update_timespec'
+#  133 | update_timespec (struct stat const *statbuf, struct timespec *ts[2])
+#      | ^~~~~~~~~~~~~~~
+#  380|             && (fd < 0 ? stat (file, &st) : fstat (fd, &st)))
+#  381|           return -1;
+#  382|->       if (ts && update_timespec (&st, &ts))
+#  383|           return 0;
+#  384|       }
+
+Error: COMPILER_WARNING:
+gzip-1.10/lib/utimens.c: scope_hint: In function 'lutimens'
+gzip-1.10/lib/utimens.c:595:17: warning[-Wstringop-overflow=]: 'update_timespec' accessing 16 bytes in a region of size 8
+#  595 |       if (ts && update_timespec (&st, &ts))
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+gzip-1.10/lib/utimens.c:595:17: note: referencing argument 2 of type 'struct timespec * *'
+gzip-1.10/lib/utimens.c:133:1: note: in a call to function 'update_timespec'
+#  133 | update_timespec (struct stat const *statbuf, struct timespec *ts[2])
+#      | ^~~~~~~~~~~~~~~
+#  593|         if (adjustment_needed != 3 && lstat (file, &st))
+#  594|           return -1;
+#  595|->       if (ts && update_timespec (&st, &ts))
+#  596|           return 0;
+#  597|       }

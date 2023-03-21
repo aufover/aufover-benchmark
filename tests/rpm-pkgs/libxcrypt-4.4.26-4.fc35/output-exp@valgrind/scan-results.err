@@ -1,0 +1,97 @@
+Error: VALGRIND_WARNING:
+./test/explicit-bzero: note: while executing process 1826
+libxcrypt-4.4.26/test/explicit-bzero.c:211: warning[InvalidRead]: Invalid read of size 1
+libxcrypt-4.4.26/test/explicit-bzero.c:211: note: Address 0x4a3bd2b is 15,659 bytes inside a block of size 16,384 alloc'd
+/usr/lib64/libc.so.6: note: called from memmem()
+libxcrypt-4.4.26/test/explicit-bzero.c:211: note: called from UnknownInlinedFun()
+libxcrypt-4.4.26/test/explicit-bzero.c:230: note: called from check_test_buffer()
+libxcrypt-4.4.26/test/explicit-bzero.c:288: note: called from UnknownInlinedFun()
+libxcrypt-4.4.26/test/explicit-bzero.c:329: note: called from main()
+#  209|   {
+#  210|     VALGRIND_MAKE_MEM_DEFINED (buf, bufsiz);
+#  211|->   unsigned char *first = memmem (buf, bufsiz, test_pattern, PATTERN_SIZE);
+#  212|     if (!first)
+#  213|       return 0;
+
+Error: VALGRIND_WARNING:
+./test/explicit-bzero: note: while executing process 1826
+libxcrypt-4.4.26/test/explicit-bzero.c:211: warning[InvalidRead]: Invalid read of size 8
+libxcrypt-4.4.26/test/explicit-bzero.c:211: note: Address 0x4a3bdb0 is 15,792 bytes inside a block of size 16,384 alloc'd
+/usr/lib64/libc.so.6: note: called from memmem()
+libxcrypt-4.4.26/test/explicit-bzero.c:211: note: called from UnknownInlinedFun()
+libxcrypt-4.4.26/test/explicit-bzero.c:230: note: called from check_test_buffer()
+libxcrypt-4.4.26/test/explicit-bzero.c:288: note: called from UnknownInlinedFun()
+libxcrypt-4.4.26/test/explicit-bzero.c:329: note: called from main()
+#  209|   {
+#  210|     VALGRIND_MAKE_MEM_DEFINED (buf, bufsiz);
+#  211|->   unsigned char *first = memmem (buf, bufsiz, test_pattern, PATTERN_SIZE);
+#  212|     if (!first)
+#  213|       return 0;
+
+Error: VALGRIND_WARNING:
+./test/explicit-bzero: note: while executing process 1826
+libxcrypt-4.4.26/test/explicit-bzero.c:211: warning[UninitValue]: Use of uninitialised value of size 8
+/usr/lib64/libc.so.6: note: called from memmem()
+libxcrypt-4.4.26/test/explicit-bzero.c:211: note: called from UnknownInlinedFun()
+libxcrypt-4.4.26/test/explicit-bzero.c:230: note: called from check_test_buffer()
+libxcrypt-4.4.26/test/explicit-bzero.c:285: note: called from UnknownInlinedFun()
+libxcrypt-4.4.26/test/explicit-bzero.c:329: note: called from main()
+#  209|   {
+#  210|     VALGRIND_MAKE_MEM_DEFINED (buf, bufsiz);
+#  211|->   unsigned char *first = memmem (buf, bufsiz, test_pattern, PATTERN_SIZE);
+#  212|     if (!first)
+#  213|       return 0;
+
+Error: VALGRIND_WARNING:
+./test/explicit-bzero: note: while executing process 1826
+libxcrypt-4.4.26/test/explicit-bzero.c:220: warning[InvalidRead]: Invalid read of size 8
+libxcrypt-4.4.26/test/explicit-bzero.c:220: note: Address 0x4a3bdb8 is 15,800 bytes inside a block of size 16,384 alloc'd
+libxcrypt-4.4.26/test/explicit-bzero.c:220: note: called from UnknownInlinedFun()
+libxcrypt-4.4.26/test/explicit-bzero.c:230: note: called from check_test_buffer()
+libxcrypt-4.4.26/test/explicit-bzero.c:288: note: called from UnknownInlinedFun()
+libxcrypt-4.4.26/test/explicit-bzero.c:329: note: called from main()
+#  218|         if (p + PATTERN_SIZE - buf > (ptrdiff_t)bufsiz)
+#  219|           break;
+#  220|->       if (memcmp (p, test_pattern, PATTERN_SIZE) == 0)
+#  221|           cnt++;
+#  222|       }
+
+Error: VALGRIND_WARNING:
+./test/explicit-bzero: note: while executing process 1826
+libxcrypt-4.4.26/test/explicit-bzero.c:244: warning[UninitCondition]: Conditional jump or move depends on uninitialised value(s)
+libxcrypt-4.4.26/test/explicit-bzero.c:244: note: called from check_test_buffer()
+libxcrypt-4.4.26/test/explicit-bzero.c:288: note: called from UnknownInlinedFun()
+libxcrypt-4.4.26/test/explicit-bzero.c:329: note: called from main()
+#  242|   
+#  243|       case EXPECT_SOME:
+#  244|->       if (cnt > 0)
+#  245|           printf ("PASS: %s/%s: expected some got %u\n", label, stage, cnt);
+#  246|         else
+
+Error: VALGRIND_WARNING:
+./test/explicit-bzero: note: while executing process 1826
+libxcrypt-4.4.26/test/explicit-bzero.c:288: warning[UninitCondition]: Conditional jump or move depends on uninitialised value(s)
+/usr/lib64/libc.so.6: note: called from _itoa_word()
+/usr/lib64/libc.so.6: note: called from __vfprintf_internal()
+/usr/lib64/libc.so.6: note: called from __printf_chk()
+libxcrypt-4.4.26/test/explicit-bzero.c:288: note: called from UnknownInlinedFun()
+libxcrypt-4.4.26/test/explicit-bzero.c:329: note: called from main()
+#  286|         if (swapcontext (&uc_main, &uc_co))
+#  287|           abort ();
+#  288|->       check_test_buffer (cur_subtest->expected, cur_subtest->label, "test");
+#  289|         cur_subtest++;
+#  290|       }
+
+Error: VALGRIND_WARNING:
+./test/explicit-bzero: note: while executing process 1826
+libxcrypt-4.4.26/test/explicit-bzero.c:288: warning[UninitValue]: Use of uninitialised value of size 8
+/usr/lib64/libc.so.6: note: called from _itoa_word()
+/usr/lib64/libc.so.6: note: called from __vfprintf_internal()
+/usr/lib64/libc.so.6: note: called from __printf_chk()
+libxcrypt-4.4.26/test/explicit-bzero.c:288: note: called from UnknownInlinedFun()
+libxcrypt-4.4.26/test/explicit-bzero.c:329: note: called from main()
+#  286|         if (swapcontext (&uc_main, &uc_co))
+#  287|           abort ();
+#  288|->       check_test_buffer (cur_subtest->expected, cur_subtest->label, "test");
+#  289|         cur_subtest++;
+#  290|       }

@@ -1,0 +1,118 @@
+Error: COMPILER_WARNING:
+bash-5.1/builtins/mkbuiltins.c:580:20: warning: using the result of an assignment as a condition without parentheses
+#  for (i = 0; line = defs->lines->array[i]; i++)
+#              ~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/builtins/mkbuiltins.c:580:20: note: place parentheses around the assignment to silence this warning
+#  for (i = 0; line = defs->lines->array[i]; i++)
+#                   ^
+bash-5.1/builtins/mkbuiltins.c:580:20: note: use '==' to turn this assignment into an equality comparison
+#  for (i = 0; line = defs->lines->array[i]; i++)
+#                   ^
+#  578|   
+#  579|     /* Process each line in the array. */
+#  580|->   for (i = 0; line = defs->lines->array[i]; i++)
+#  581|       {
+#  582|         defs->line_number = i;
+
+Error: COMPILER_WARNING:
+bash-5.1/builtins/mkbuiltins.c:696:27: warning: using the result of an assignment as a condition without parentheses
+#      for (i = 0; builtin = (BUILTIN_DESC *)defs->builtins->array[i]; i++)
+#                  ~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/builtins/mkbuiltins.c:696:27: note: place parentheses around the assignment to silence this warning
+#      for (i = 0; builtin = (BUILTIN_DESC *)defs->builtins->array[i]; i++)
+#                          ^
+bash-5.1/builtins/mkbuiltins.c:696:27: note: use '==' to turn this assignment into an equality comparison
+#      for (i = 0; builtin = (BUILTIN_DESC *)defs->builtins->array[i]; i++)
+#                          ^
+#  694|     if (defs->builtins)
+#  695|       {
+#  696|->       for (i = 0; builtin = (BUILTIN_DESC *)defs->builtins->array[i]; i++)
+#  697|   	{
+#  698|   	  free_builtin (builtin);
+
+Error: COMPILER_WARNING:
+bash-5.1/findcmd.c:137:46: warning: implicit declaration of function 'eaccess' is invalid in C99
+#  if (exec_name_should_ignore (name) == 0 && eaccess (name, X_OK) == 0)
+#                                             ^
+#  135|        user and group IDs, not the real ones.  We could use sh_eaccess,
+#  136|        but we don't want any special treatment for /dev/fd. */
+#  137|->   if (exec_name_should_ignore (name) == 0 && eaccess (name, X_OK) == 0)
+#  138|       r |= FS_EXECABLE;
+#  139|     if (eaccess (name, R_OK) == 0)
+
+Error: COMPILER_WARNING:
+bash-5.1/findcmd.c:269:11: warning: using the result of an assignment as a condition without parentheses
+#  if (var = find_variable_tempenv ("PATH"))     /* XXX could be array? */
+#      ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bash-5.1/findcmd.c:269:11: note: place parentheses around the assignment to silence this warning
+#  if (var = find_variable_tempenv ("PATH"))     /* XXX could be array? */
+#          ^
+bash-5.1/findcmd.c:269:11: note: use '==' to turn this assignment into an equality comparison
+#  if (var = find_variable_tempenv ("PATH"))     /* XXX could be array? */
+#          ^
+#  267|     /* Search for the value of PATH in both the temporary environments and
+#  268|        in the regular list of variables. */
+#  269|->   if (var = find_variable_tempenv ("PATH"))	/* XXX could be array? */
+#  270|       path_list = value_cell (var);
+#  271|     else
+
+Error: COMPILER_WARNING:
+bash-5.1/support/man2html.c:2151:12: warning: '&&' within '||'
+#        while (*c && *c != '\n' || lvl > 0) {
+#               ~~~^~~~~~~~~~~~~ ~~
+bash-5.1/support/man2html.c:2151:12: note: place parentheses around the '&&' expression to silence this warning
+#        while (*c && *c != '\n' || lvl > 0) {
+#                  ^
+# 2149|   	int     lvl = 0;
+# 2150|   
+# 2151|-> 	while (*c && *c != '\n' || lvl > 0) {
+# 2152|   		if (*c == '\\') {
+# 2153|   			c++;
+
+Error: COMPILER_WARNING:
+bash-5.1/support/man2html.c:3693:44: warning: using the result of an assignment as a condition without parentheses
+#                                for (i = 0; owndef->st[deflen + 2 + i] = owndef->st[i]; i++);
+#                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+bash-5.1/support/man2html.c:3693:44: note: place parentheses around the assignment to silence this warning
+#                                for (i = 0; owndef->st[deflen + 2 + i] = owndef->st[i]; i++);
+#                                                                       ^
+bash-5.1/support/man2html.c:3693:44: note: use '==' to turn this assignment into an equality comparison
+#                                for (i = 0; owndef->st[deflen + 2 + i] = owndef->st[i]; i++);
+#                                                                       ^
+# 3691|   					wordlist[i] = NULL;
+# 3692|   				deflen = strlen(owndef->st);
+# 3693|-> 				for (i = 0; owndef->st[deflen + 2 + i] = owndef->st[i]; i++);
+# 3694|   				oldargument = argument;
+# 3695|   				argument = wordlist;
+
+Error: COMPILER_WARNING:
+bash-5.1/unwind_prot.c:271:14: warning: using the result of an assignment as a condition without parentheses
+#  while (elt = unwind_protect_list)
+#         ~~~~^~~~~~~~~~~~~~~~~~~~~
+bash-5.1/unwind_prot.c:271:14: note: place parentheses around the assignment to silence this warning
+#  while (elt = unwind_protect_list)
+#             ^
+bash-5.1/unwind_prot.c:271:14: note: use '==' to turn this assignment into an equality comparison
+#  while (elt = unwind_protect_list)
+#             ^
+#  269|   
+#  270|     found = 0;
+#  271|->   while (elt = unwind_protect_list)
+#  272|       {
+#  273|         unwind_protect_list = unwind_protect_list->head.next;
+
+Error: COMPILER_WARNING:
+bash-5.1/unwind_prot.c:306:14: warning: using the result of an assignment as a condition without parentheses
+#  while (elt = unwind_protect_list)
+#         ~~~~^~~~~~~~~~~~~~~~~~~~~
+bash-5.1/unwind_prot.c:306:14: note: place parentheses around the assignment to silence this warning
+#  while (elt = unwind_protect_list)
+#             ^
+bash-5.1/unwind_prot.c:306:14: note: use '==' to turn this assignment into an equality comparison
+#  while (elt = unwind_protect_list)
+#             ^
+#  304|   
+#  305|     found = 0;
+#  306|->   while (elt = unwind_protect_list)
+#  307|       {
+#  308|         unwind_protect_list = elt->head.next;

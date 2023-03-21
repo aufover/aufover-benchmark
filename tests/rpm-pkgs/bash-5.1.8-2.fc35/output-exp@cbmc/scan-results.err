@@ -1,0 +1,12 @@
+Error: COMPILER_WARNING (CWE-704):
+bash-5.1/lib/sh/random.c: scope_hint: In function 'genseed'
+bash-5.1/lib/sh/random.c:93:8: warning[-Wpointer-to-int-cast]: cast from pointer to integer of different size
+#   93 |   iv = (u_bits32_t)seedrand;            /* let the compiler truncate */
+#      |        ^
+bash-5.1/lib/sh/random.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#   91|   
+#   92|     gettimeofday (&tv, NULL);
+#   93|->   iv = (u_bits32_t)seedrand;		/* let the compiler truncate */
+#   94|     iv = tv.tv_sec ^ tv.tv_usec ^ getpid () ^ getppid () ^ current_user.uid ^ iv;
+#   95|     return (iv);

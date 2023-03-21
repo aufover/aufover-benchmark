@@ -1,0 +1,30 @@
+Error: COMPILER_WARNING (CWE-477):
+rsync-3.2.3/main.c: scope_hint: In function 'show_malloc_stats'
+rsync-3.2.3/main.c:472:9: warning[-Wdeprecated-declarations]: 'mallinfo' is deprecated
+#  472 |         mi = mallinfo();
+#      |         ^~
+rsync-3.2.3/rsync.h:346: included_from: Included from here.
+rsync-3.2.3/main.c:23: included_from: Included from here.
+/usr/include/malloc.h:113:24: note: declared here
+#  113 | extern struct mallinfo mallinfo (void) __THROW __MALLOC_DEPRECATED;
+#      |                        ^~~~~~~~
+rsync-3.2.3/main.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#  470|   	struct mallinfo mi;
+#  471|   
+#  472|-> 	mi = mallinfo();
+#  473|   
+#  474|   	rprintf(FCLIENT, "\n");
+
+Error: COMPILER_WARNING (CWE-563):
+rsync-3.2.3/rounding.c: scope_hint: In function 'main'
+rsync-3.2.3/rounding.c:35:20: warning[-Wunused-but-set-variable]: variable 'test_array' set but not used
+#   35 |         static int test_array[1 - 2 * (ACTUAL_SIZE != EXPECTED_SIZE)];
+#      |                    ^~~~~~~~~~
+rsync-3.2.3/rounding.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#   33|    int main(UNUSED(int argc), UNUSED(char *argv[]))
+#   34|   {
+#   35|-> 	static int test_array[1 - 2 * (ACTUAL_SIZE != EXPECTED_SIZE)];
+#   36|   	test_array[0] = 0;
+#   37|   	return 0;

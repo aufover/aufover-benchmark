@@ -1,0 +1,66 @@
+Error: COMPILER_WARNING:
+grep-3.6/gnulib-tests/test-regex.c:315:9: warning[-Wtautological-constant-compare]: converting the result of '<<' to a boolean always evaluates to true
+grep-3.6/lib/regex.h:340:25: note: expanded from macro 'REG_STARTEND'
+340:25: note: expanded from macro 'REG_STARTEND'
+##define REG_STARTEND (1 << 2)
+#                        ^
+#  313|     /* REG_STARTEND was added to glibc on 2004-01-15.
+#  314|        Reject older versions.  */
+#  315|->   if (! REG_STARTEND)
+#  316|       report_error ("REG_STARTEND is zero");
+#  317|   
+
+Error: COMPILER_WARNING:
+grep-3.6/lib/hash.c:501:11: warning[-Wimplicit-const-int-float-conversion]: implicit conversion from 'unsigned long' to 'float' changes value from 18446744073709551615 to 18446744073709551616
+#      if (SIZE_MAX <= new_candidate)
+#          ^~~~~~~~ ~~
+/usr/include/stdint.h:227:22: note: expanded from macro 'SIZE_MAX'
+##  define SIZE_MAX              (18446744073709551615UL)
+#                                 ^~~~~~~~~~~~~~~~~~~~~~
+#  499|       {
+#  500|         float new_candidate = candidate / tuning->growth_threshold;
+#  501|->       if (SIZE_MAX <= new_candidate)
+#  502|           return 0;
+#  503|         candidate = new_candidate;
+
+Error: COMPILER_WARNING:
+grep-3.6/lib/hash.c:964:15: warning[-Wimplicit-const-int-float-conversion]: implicit conversion from 'unsigned long' to 'float' changes value from 18446744073709551615 to 18446744073709551616
+#          if (SIZE_MAX <= candidate)
+#              ^~~~~~~~ ~~
+/usr/include/stdint.h:227:22: note: expanded from macro 'SIZE_MAX'
+##  define SIZE_MAX              (18446744073709551615UL)
+#                                 ^~~~~~~~~~~~~~~~~~~~~~
+#  962|                   * tuning->growth_threshold));
+#  963|   
+#  964|->           if (SIZE_MAX <= candidate)
+#  965|               return -1;
+#  966|   
+
+Error: SYMBIOTIC_WARNING:
+grep-3.6/lib/xstrtol.c:127: error: memory error: out of bound pointer
+grep-3.6/lib/xstrtol.c:127: note: call stack: function xstrtoimax (=0, =0, =0, =0, =0)
+grep-3.6/gnulib-tests/test-xstrtol.c:51: note: call stack: function main (=2, =0)
+grep-3.6/lib/xstrtol.c:127: note: Additional Info: address: 0:12370169555311111083
+grep-3.6/lib/xstrtol.c:127: note: Additional Info: pointing to: none
+grep-3.6/lib/xstrtol.c:100:9: note: Non-deterministic values: strtoimax: len 8 bytes, [8 times 0x0] (i64: 0)
+#  125|       }
+#  126|   
+#  127|->   if (**p != '\0')
+#  128|       {
+#  129|         int base = 1024;
+
+Error: COMPILER_WARNING:
+grep-3.6/src/dfasearch.c:157:44: warning[-Wbitwise-conditional-parentheses]: operator '?:' has lower precedence than '|'; '|' will be evaluated first
+#  pat->fastmap = syntax_only | match_icase ? NULL : xmalloc (UCHAR_MAX + 1);
+#                 ~~~~~~~~~~~~~~~~~~~~~~~~~ ^
+grep-3.6/src/dfasearch.c:157:44: note: place parentheses around the '|' expression to silence this warning
+#  pat->fastmap = syntax_only | match_icase ? NULL : xmalloc (UCHAR_MAX + 1);
+#                                           ^
+grep-3.6/src/dfasearch.c:157:44: note: place parentheses around the '?:' expression to evaluate it first
+#  pat->fastmap = syntax_only | match_icase ? NULL : xmalloc (UCHAR_MAX + 1);
+#                                           ^
+#  155|   
+#  156|     /* Do not use a fastmap with -i, to work around glibc Bug#20381.  */
+#  157|->   pat->fastmap = syntax_only | match_icase ? NULL : xmalloc (UCHAR_MAX + 1);
+#  158|   
+#  159|     pat->translate = NULL;

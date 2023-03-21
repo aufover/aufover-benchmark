@@ -1,0 +1,437 @@
+Error: COMPILER_WARNING:
+volume_key-0.3.12/lib/crypto.c:192:9: warning: 'g_memdup' is deprecated: Use 'g_memdup2' instead
+#  res = g_memdup (dest_item.data, dest_item.len);
+#        ^
+/usr/include/glib-2.0/glib/gstrfuncs.h:256:1: note: 'g_memdup' has been explicitly marked deprecated here
+#GLIB_DEPRECATED_IN_2_68_FOR (g_memdup2)
+#^
+/usr/include/glib-2.0/glib/gversionmacros.h:1057:49: note: expanded from macro 'GLIB_DEPRECATED_IN_2_68_FOR'
+## define GLIB_DEPRECATED_IN_2_68_FOR(f)         GLIB_DEPRECATED_FOR(f)
+#                                                ^
+/usr/include/glib-2.0/glib/gmacros.h:1144:32: note: expanded from macro 'GLIB_DEPRECATED_FOR'
+##define GLIB_DEPRECATED_FOR(f) G_DEPRECATED_FOR(f) _GLIB_EXTERN
+#                               ^
+/usr/include/glib-2.0/glib/gmacros.h:1112:44: note: expanded from macro 'G_DEPRECATED_FOR'
+##define G_DEPRECATED_FOR(f) __attribute__((__deprecated__("Use '" #f "' instead")))
+#                                           ^
+#  190|   
+#  191|     *res_size = dest_item.len;
+#  192|->   res = g_memdup (dest_item.data, dest_item.len);
+#  193|     PORT_FreeArena (res_arena, PR_FALSE);
+#  194|     NSS_CMSMessage_Destroy (cmsg);
+
+Error: COMPILER_WARNING:
+volume_key-0.3.12/lib/crypto.c:237:9: warning: 'g_memdup' is deprecated: Use 'g_memdup2' instead
+#  res = g_memdup (dest->data, dest->len);
+#        ^
+/usr/include/glib-2.0/glib/gstrfuncs.h:256:1: note: 'g_memdup' has been explicitly marked deprecated here
+#GLIB_DEPRECATED_IN_2_68_FOR (g_memdup2)
+#^
+/usr/include/glib-2.0/glib/gversionmacros.h:1057:49: note: expanded from macro 'GLIB_DEPRECATED_IN_2_68_FOR'
+## define GLIB_DEPRECATED_IN_2_68_FOR(f)         GLIB_DEPRECATED_FOR(f)
+#                                                ^
+/usr/include/glib-2.0/glib/gmacros.h:1144:32: note: expanded from macro 'GLIB_DEPRECATED_FOR'
+##define GLIB_DEPRECATED_FOR(f) G_DEPRECATED_FOR(f) _GLIB_EXTERN
+#                               ^
+/usr/include/glib-2.0/glib/gmacros.h:1112:44: note: expanded from macro 'G_DEPRECATED_FOR'
+##define G_DEPRECATED_FOR(f) __attribute__((__deprecated__("Use '" #f "' instead")))
+#                                           ^
+#  235|         goto err_cmsg;
+#  236|       }
+#  237|->   res = g_memdup (dest->data, dest->len);
+#  238|     *res_size = dest->len;
+#  239|   
+
+Error: COMPILER_WARNING:
+volume_key-0.3.12/lib/crypto.c:343:21: warning: 'g_memdup' is deprecated: Use 'g_memdup2' instead
+#  *wrapped_secret = g_memdup (wrapped_secret_item.data,
+#                    ^
+/usr/include/glib-2.0/glib/gstrfuncs.h:256:1: note: 'g_memdup' has been explicitly marked deprecated here
+#GLIB_DEPRECATED_IN_2_68_FOR (g_memdup2)
+#^
+/usr/include/glib-2.0/glib/gversionmacros.h:1057:49: note: expanded from macro 'GLIB_DEPRECATED_IN_2_68_FOR'
+## define GLIB_DEPRECATED_IN_2_68_FOR(f)         GLIB_DEPRECATED_FOR(f)
+#                                                ^
+/usr/include/glib-2.0/glib/gmacros.h:1144:32: note: expanded from macro 'GLIB_DEPRECATED_FOR'
+##define GLIB_DEPRECATED_FOR(f) G_DEPRECATED_FOR(f) _GLIB_EXTERN
+#                               ^
+/usr/include/glib-2.0/glib/gmacros.h:1112:44: note: expanded from macro 'G_DEPRECATED_FOR'
+##define G_DEPRECATED_FOR(f) __attribute__((__deprecated__("Use '" #f "' instead")))
+#                                           ^
+#  341|     PK11_FreeSymKey (secret_key);
+#  342|   
+#  343|->   *wrapped_secret = g_memdup (wrapped_secret_item.data,
+#  344|   			      wrapped_secret_item.len);
+#  345|     *wrapped_secret_size = wrapped_secret_item.len;
+
+Error: COMPILER_WARNING:
+volume_key-0.3.12/lib/crypto.c:347:13: warning: 'g_memdup' is deprecated: Use 'g_memdup2' instead
+#  *issuer = g_memdup (isn->derIssuer.data, isn->derIssuer.len);
+#            ^
+/usr/include/glib-2.0/glib/gstrfuncs.h:256:1: note: 'g_memdup' has been explicitly marked deprecated here
+#GLIB_DEPRECATED_IN_2_68_FOR (g_memdup2)
+#^
+/usr/include/glib-2.0/glib/gversionmacros.h:1057:49: note: expanded from macro 'GLIB_DEPRECATED_IN_2_68_FOR'
+## define GLIB_DEPRECATED_IN_2_68_FOR(f)         GLIB_DEPRECATED_FOR(f)
+#                                                ^
+/usr/include/glib-2.0/glib/gmacros.h:1144:32: note: expanded from macro 'GLIB_DEPRECATED_FOR'
+##define GLIB_DEPRECATED_FOR(f) G_DEPRECATED_FOR(f) _GLIB_EXTERN
+#                               ^
+/usr/include/glib-2.0/glib/gmacros.h:1112:44: note: expanded from macro 'G_DEPRECATED_FOR'
+##define G_DEPRECATED_FOR(f) __attribute__((__deprecated__("Use '" #f "' instead")))
+#                                           ^
+#  345|     *wrapped_secret_size = wrapped_secret_item.len;
+#  346|     SECITEM_FreeItem (&wrapped_secret_item, PR_FALSE);
+#  347|->   *issuer = g_memdup (isn->derIssuer.data, isn->derIssuer.len);
+#  348|     *issuer_size = isn->derIssuer.len;
+#  349|     *sn = g_memdup (isn->serialNumber.data, isn->serialNumber.len);
+
+Error: COMPILER_WARNING:
+volume_key-0.3.12/lib/crypto.c:349:9: warning: 'g_memdup' is deprecated: Use 'g_memdup2' instead
+#  *sn = g_memdup (isn->serialNumber.data, isn->serialNumber.len);
+#        ^
+/usr/include/glib-2.0/glib/gstrfuncs.h:256:1: note: 'g_memdup' has been explicitly marked deprecated here
+#GLIB_DEPRECATED_IN_2_68_FOR (g_memdup2)
+#^
+/usr/include/glib-2.0/glib/gversionmacros.h:1057:49: note: expanded from macro 'GLIB_DEPRECATED_IN_2_68_FOR'
+## define GLIB_DEPRECATED_IN_2_68_FOR(f)         GLIB_DEPRECATED_FOR(f)
+#                                                ^
+/usr/include/glib-2.0/glib/gmacros.h:1144:32: note: expanded from macro 'GLIB_DEPRECATED_FOR'
+##define GLIB_DEPRECATED_FOR(f) G_DEPRECATED_FOR(f) _GLIB_EXTERN
+#                               ^
+/usr/include/glib-2.0/glib/gmacros.h:1112:44: note: expanded from macro 'G_DEPRECATED_FOR'
+##define G_DEPRECATED_FOR(f) __attribute__((__deprecated__("Use '" #f "' instead")))
+#                                           ^
+#  347|     *issuer = g_memdup (isn->derIssuer.data, isn->derIssuer.len);
+#  348|     *issuer_size = isn->derIssuer.len;
+#  349|->   *sn = g_memdup (isn->serialNumber.data, isn->serialNumber.len);
+#  350|     *sn_size = isn->serialNumber.len;
+#  351|     PORT_FreeArena (isn_arena, PR_FALSE);
+
+Error: COMPILER_WARNING:
+volume_key-0.3.12/lib/crypto.c:432:9: warning: 'g_memdup' is deprecated: Use 'g_memdup2' instead
+#  ret = g_memdup (clear_secret_item->data, clear_secret_item->len);
+#        ^
+/usr/include/glib-2.0/glib/gstrfuncs.h:256:1: note: 'g_memdup' has been explicitly marked deprecated here
+#GLIB_DEPRECATED_IN_2_68_FOR (g_memdup2)
+#^
+/usr/include/glib-2.0/glib/gversionmacros.h:1057:49: note: expanded from macro 'GLIB_DEPRECATED_IN_2_68_FOR'
+## define GLIB_DEPRECATED_IN_2_68_FOR(f)         GLIB_DEPRECATED_FOR(f)
+#                                                ^
+/usr/include/glib-2.0/glib/gmacros.h:1144:32: note: expanded from macro 'GLIB_DEPRECATED_FOR'
+##define GLIB_DEPRECATED_FOR(f) G_DEPRECATED_FOR(f) _GLIB_EXTERN
+#                               ^
+/usr/include/glib-2.0/glib/gmacros.h:1112:44: note: expanded from macro 'G_DEPRECATED_FOR'
+##define G_DEPRECATED_FOR(f) __attribute__((__deprecated__("Use '" #f "' instead")))
+#                                           ^
+#  430|       }
+#  431|     clear_secret_item = PK11_GetKeyData (secret_key);
+#  432|->   ret = g_memdup (clear_secret_item->data, clear_secret_item->len);
+#  433|     *clear_secret_size = clear_secret_item->len;
+#  434|     PK11_FreeSymKey (secret_key);
+
+Error: COMPILER_WARNING:
+volume_key-0.3.12/lib/crypto.c:506:9: warning: 'g_memdup' is deprecated: Use 'g_memdup2' instead
+#  *iv = g_memdup (iv_data, iv_data_size);
+#        ^
+/usr/include/glib-2.0/glib/gstrfuncs.h:256:1: note: 'g_memdup' has been explicitly marked deprecated here
+#GLIB_DEPRECATED_IN_2_68_FOR (g_memdup2)
+#^
+/usr/include/glib-2.0/glib/gversionmacros.h:1057:49: note: expanded from macro 'GLIB_DEPRECATED_IN_2_68_FOR'
+## define GLIB_DEPRECATED_IN_2_68_FOR(f)         GLIB_DEPRECATED_FOR(f)
+#                                                ^
+/usr/include/glib-2.0/glib/gmacros.h:1144:32: note: expanded from macro 'GLIB_DEPRECATED_FOR'
+##define GLIB_DEPRECATED_FOR(f) G_DEPRECATED_FOR(f) _GLIB_EXTERN
+#                               ^
+/usr/include/glib-2.0/glib/gmacros.h:1112:44: note: expanded from macro 'G_DEPRECATED_FOR'
+##define G_DEPRECATED_FOR(f) __attribute__((__deprecated__("Use '" #f "' instead")))
+#                                           ^
+#  504|   
+#  505|     iv_data = PK11_IVFromParam (mechanism, wrapping_param, &iv_data_size);
+#  506|->   *iv = g_memdup (iv_data, iv_data_size);
+#  507|     *iv_size = iv_data_size;
+#  508|     SECITEM_FreeItem (wrapping_param, PR_TRUE);
+
+Error: COMPILER_WARNING:
+volume_key-0.3.12/lib/crypto.c:510:21: warning: 'g_memdup' is deprecated: Use 'g_memdup2' instead
+#  *wrapped_secret = g_memdup (wrapped_secret_item.data,
+#                    ^
+/usr/include/glib-2.0/glib/gstrfuncs.h:256:1: note: 'g_memdup' has been explicitly marked deprecated here
+#GLIB_DEPRECATED_IN_2_68_FOR (g_memdup2)
+#^
+/usr/include/glib-2.0/glib/gversionmacros.h:1057:49: note: expanded from macro 'GLIB_DEPRECATED_IN_2_68_FOR'
+## define GLIB_DEPRECATED_IN_2_68_FOR(f)         GLIB_DEPRECATED_FOR(f)
+#                                                ^
+/usr/include/glib-2.0/glib/gmacros.h:1144:32: note: expanded from macro 'GLIB_DEPRECATED_FOR'
+##define GLIB_DEPRECATED_FOR(f) G_DEPRECATED_FOR(f) _GLIB_EXTERN
+#                               ^
+/usr/include/glib-2.0/glib/gmacros.h:1112:44: note: expanded from macro 'G_DEPRECATED_FOR'
+##define G_DEPRECATED_FOR(f) __attribute__((__deprecated__("Use '" #f "' instead")))
+#                                           ^
+#  508|     SECITEM_FreeItem (wrapping_param, PR_TRUE);
+#  509|   
+#  510|->   *wrapped_secret = g_memdup (wrapped_secret_item.data,
+#  511|   			      wrapped_secret_item.len);
+#  512|     *wrapped_secret_size = wrapped_secret_item.len;
+
+Error: COMPILER_WARNING:
+volume_key-0.3.12/lib/crypto.c:565:9: warning: 'g_memdup' is deprecated: Use 'g_memdup2' instead
+#  ret = g_memdup (clear_secret_item->data, clear_secret_item->len);
+#        ^
+/usr/include/glib-2.0/glib/gstrfuncs.h:256:1: note: 'g_memdup' has been explicitly marked deprecated here
+#GLIB_DEPRECATED_IN_2_68_FOR (g_memdup2)
+#^
+/usr/include/glib-2.0/glib/gversionmacros.h:1057:49: note: expanded from macro 'GLIB_DEPRECATED_IN_2_68_FOR'
+## define GLIB_DEPRECATED_IN_2_68_FOR(f)         GLIB_DEPRECATED_FOR(f)
+#                                                ^
+/usr/include/glib-2.0/glib/gmacros.h:1144:32: note: expanded from macro 'GLIB_DEPRECATED_FOR'
+##define GLIB_DEPRECATED_FOR(f) G_DEPRECATED_FOR(f) _GLIB_EXTERN
+#                               ^
+/usr/include/glib-2.0/glib/gmacros.h:1112:44: note: expanded from macro 'G_DEPRECATED_FOR'
+##define G_DEPRECATED_FOR(f) __attribute__((__deprecated__("Use '" #f "' instead")))
+#                                           ^
+#  563|       }
+#  564|     clear_secret_item = PK11_GetKeyData (secret_key);
+#  565|->   ret = g_memdup (clear_secret_item->data, clear_secret_item->len);
+#  566|     *clear_secret_size = clear_secret_item->len;
+#  567|     PK11_FreeSymKey (secret_key);
+
+Error: COMPILER_WARNING:
+volume_key-0.3.12/lib/crypto.c:721:9: warning: 'g_memdup' is deprecated: Use 'g_memdup2' instead
+#  res = g_memdup (gpgme_res, *res_size);
+#        ^
+/usr/include/glib-2.0/glib/gstrfuncs.h:256:1: note: 'g_memdup' has been explicitly marked deprecated here
+#GLIB_DEPRECATED_IN_2_68_FOR (g_memdup2)
+#^
+/usr/include/glib-2.0/glib/gversionmacros.h:1057:49: note: expanded from macro 'GLIB_DEPRECATED_IN_2_68_FOR'
+## define GLIB_DEPRECATED_IN_2_68_FOR(f)         GLIB_DEPRECATED_FOR(f)
+#                                                ^
+/usr/include/glib-2.0/glib/gmacros.h:1144:32: note: expanded from macro 'GLIB_DEPRECATED_FOR'
+##define GLIB_DEPRECATED_FOR(f) G_DEPRECATED_FOR(f) _GLIB_EXTERN
+#                               ^
+/usr/include/glib-2.0/glib/gmacros.h:1112:44: note: expanded from macro 'G_DEPRECATED_FOR'
+##define G_DEPRECATED_FOR(f) __attribute__((__deprecated__("Use '" #f "' instead")))
+#                                           ^
+#  719|         goto err_ctx;
+#  720|       }
+#  721|->   res = g_memdup (gpgme_res, *res_size);
+#  722|     gpgme_free (gpgme_res);
+#  723|   
+
+Error: COMPILER_WARNING:
+volume_key-0.3.12/lib/crypto.c:777:9: warning: 'g_memdup' is deprecated: Use 'g_memdup2' instead
+#  res = g_memdup (gpgme_res, *res_size);
+#        ^
+/usr/include/glib-2.0/glib/gstrfuncs.h:256:1: note: 'g_memdup' has been explicitly marked deprecated here
+#GLIB_DEPRECATED_IN_2_68_FOR (g_memdup2)
+#^
+/usr/include/glib-2.0/glib/gversionmacros.h:1057:49: note: expanded from macro 'GLIB_DEPRECATED_IN_2_68_FOR'
+## define GLIB_DEPRECATED_IN_2_68_FOR(f)         GLIB_DEPRECATED_FOR(f)
+#                                                ^
+/usr/include/glib-2.0/glib/gmacros.h:1144:32: note: expanded from macro 'GLIB_DEPRECATED_FOR'
+##define GLIB_DEPRECATED_FOR(f) G_DEPRECATED_FOR(f) _GLIB_EXTERN
+#                               ^
+/usr/include/glib-2.0/glib/gmacros.h:1112:44: note: expanded from macro 'G_DEPRECATED_FOR'
+##define G_DEPRECATED_FOR(f) __attribute__((__deprecated__("Use '" #f "' instead")))
+#                                           ^
+#  775|         goto err_ctx;
+#  776|       }
+#  777|->   res = g_memdup (gpgme_res, *res_size);
+#  778|     gpgme_free (gpgme_res);
+#  779|   
+
+Error: COMPILER_WARNING:
+volume_key-0.3.12/lib/kmip.c:101:25: warning: 'g_memdup' is deprecated: Use 'g_memdup2' instead
+#  value->v.bytes.data = g_memdup (bytes, len);
+#                        ^
+/usr/include/glib-2.0/glib/gstrfuncs.h:256:1: note: 'g_memdup' has been explicitly marked deprecated here
+#GLIB_DEPRECATED_IN_2_68_FOR (g_memdup2)
+#^
+/usr/include/glib-2.0/glib/gversionmacros.h:1057:49: note: expanded from macro 'GLIB_DEPRECATED_IN_2_68_FOR'
+## define GLIB_DEPRECATED_IN_2_68_FOR(f)         GLIB_DEPRECATED_FOR(f)
+#                                                ^
+/usr/include/glib-2.0/glib/gmacros.h:1144:32: note: expanded from macro 'GLIB_DEPRECATED_FOR'
+##define GLIB_DEPRECATED_FOR(f) G_DEPRECATED_FOR(f) _GLIB_EXTERN
+#                               ^
+/usr/include/glib-2.0/glib/gmacros.h:1112:44: note: expanded from macro 'G_DEPRECATED_FOR'
+##define G_DEPRECATED_FOR(f) __attribute__((__deprecated__("Use '" #f "' instead")))
+#                                           ^
+#   99|     kmip_key_value_free_v (value);
+#  100|     value->type = KMIP_KEY_VALUE_BYTES;
+#  101|->   value->v.bytes.data = g_memdup (bytes, len);
+#  102|     value->v.bytes.len = len;
+#  103|   }
+
+Error: COMPILER_WARNING:
+volume_key-0.3.12/lib/kmip.c:113:24: warning: 'g_memdup' is deprecated: Use 'g_memdup2' instead
+#  value->v.key->data = g_memdup (key, len);
+#                       ^
+/usr/include/glib-2.0/glib/gstrfuncs.h:256:1: note: 'g_memdup' has been explicitly marked deprecated here
+#GLIB_DEPRECATED_IN_2_68_FOR (g_memdup2)
+#^
+/usr/include/glib-2.0/glib/gversionmacros.h:1057:49: note: expanded from macro 'GLIB_DEPRECATED_IN_2_68_FOR'
+## define GLIB_DEPRECATED_IN_2_68_FOR(f)         GLIB_DEPRECATED_FOR(f)
+#                                                ^
+/usr/include/glib-2.0/glib/gmacros.h:1144:32: note: expanded from macro 'GLIB_DEPRECATED_FOR'
+##define GLIB_DEPRECATED_FOR(f) G_DEPRECATED_FOR(f) _GLIB_EXTERN
+#                               ^
+/usr/include/glib-2.0/glib/gmacros.h:1112:44: note: expanded from macro 'G_DEPRECATED_FOR'
+##define G_DEPRECATED_FOR(f) __attribute__((__deprecated__("Use '" #f "' instead")))
+#                                           ^
+#  111|     value->type = KMIP_KEY_VALUE_SYMMETRIC_KEY;
+#  112|     value->v.key = g_new (struct kmip_symmetric_key, 1);
+#  113|->   value->v.key->data = g_memdup (key, len);
+#  114|     value->v.key->len = len;
+#  115|   }
+
+Error: COMPILER_WARNING:
+volume_key-0.3.12/lib/kmip.c:923:12: warning: 'g_memdup' is deprecated: Use 'g_memdup2' instead
+#  *bytes = g_memdup (kmip->data, s);
+#           ^
+/usr/include/glib-2.0/glib/gstrfuncs.h:256:1: note: 'g_memdup' has been explicitly marked deprecated here
+#GLIB_DEPRECATED_IN_2_68_FOR (g_memdup2)
+#^
+/usr/include/glib-2.0/glib/gversionmacros.h:1057:49: note: expanded from macro 'GLIB_DEPRECATED_IN_2_68_FOR'
+## define GLIB_DEPRECATED_IN_2_68_FOR(f)         GLIB_DEPRECATED_FOR(f)
+#                                                ^
+/usr/include/glib-2.0/glib/gmacros.h:1144:32: note: expanded from macro 'GLIB_DEPRECATED_FOR'
+##define GLIB_DEPRECATED_FOR(f) G_DEPRECATED_FOR(f) _GLIB_EXTERN
+#                               ^
+/usr/include/glib-2.0/glib/gmacros.h:1112:44: note: expanded from macro 'G_DEPRECATED_FOR'
+##define G_DEPRECATED_FOR(f) __attribute__((__deprecated__("Use '" #f "' instead")))
+#                                           ^
+#  921|         return -1;
+#  922|       }
+#  923|->   *bytes = g_memdup (kmip->data, s);
+#  924|     *size = s;
+#  925|     kmip->data += s;
+
+Error: COMPILER_WARNING:
+volume_key-0.3.12/lib/kmip.c:1887:29: warning: 'g_memdup' is deprecated: Use 'g_memdup2' instead
+#  key_block->wrapping->iv = g_memdup (iv, iv_len);
+#                            ^
+/usr/include/glib-2.0/glib/gstrfuncs.h:256:1: note: 'g_memdup' has been explicitly marked deprecated here
+#GLIB_DEPRECATED_IN_2_68_FOR (g_memdup2)
+#^
+/usr/include/glib-2.0/glib/gversionmacros.h:1057:49: note: expanded from macro 'GLIB_DEPRECATED_IN_2_68_FOR'
+## define GLIB_DEPRECATED_IN_2_68_FOR(f)         GLIB_DEPRECATED_FOR(f)
+#                                                ^
+/usr/include/glib-2.0/glib/gmacros.h:1144:32: note: expanded from macro 'GLIB_DEPRECATED_FOR'
+##define GLIB_DEPRECATED_FOR(f) G_DEPRECATED_FOR(f) _GLIB_EXTERN
+#                               ^
+/usr/include/glib-2.0/glib/gmacros.h:1112:44: note: expanded from macro 'G_DEPRECATED_FOR'
+##define G_DEPRECATED_FOR(f) __attribute__((__deprecated__("Use '" #f "' instead")))
+#                                           ^
+# 1885|     key_block->wrapping->method = KMIP_WRAPPING_LIBVK_ENCRYPT_KEY_ONLY;
+# 1886|     key_block->wrapping->encryption_key = encryption_key;
+# 1887|->   key_block->wrapping->iv = g_memdup (iv, iv_len);
+# 1888|     key_block->wrapping->iv_len = iv_len;
+# 1889|   
+
+Error: COMPILER_WARNING:
+volume_key-0.3.12/lib/kmip.c:2150:6: warning: implicit declaration of function 'ctime_r' is invalid in C99
+#        if (ctime_r (&t, buf) == NULL)
+#            ^
+# 2148|   	    return consumed;
+# 2149|   	  }
+# 2150|-> 	if (ctime_r (&t, buf) == NULL)
+# 2151|   	  {
+# 2152|   	    fprintf (file, "ERROR: ctime_r failed\n");
+
+Error: COMPILER_WARNING:
+volume_key-0.3.12/lib/libvolume_key.c:32:3: warning: implicit declaration of function 'bindtextdomain' is invalid in C99
+#  bindtextdomain (PACKAGE_NAME, LOCALEDIR);
+#  ^
+#   30|   libvk_init (void)
+#   31|   {
+#   32|->   bindtextdomain (PACKAGE_NAME, LOCALEDIR);
+#   33|   }
+#   34|   
+
+Error: COMPILER_WARNING:
+volume_key-0.3.12/lib/volume.c:86:28: warning: 'g_memdup' is deprecated: Use 'g_memdup2' instead
+#  key_value->v.key->data = g_memdup (key, key_bytes);
+#                           ^
+/usr/include/glib-2.0/glib/gstrfuncs.h:256:1: note: 'g_memdup' has been explicitly marked deprecated here
+#GLIB_DEPRECATED_IN_2_68_FOR (g_memdup2)
+#^
+/usr/include/glib-2.0/glib/gversionmacros.h:1057:49: note: expanded from macro 'GLIB_DEPRECATED_IN_2_68_FOR'
+## define GLIB_DEPRECATED_IN_2_68_FOR(f)         GLIB_DEPRECATED_FOR(f)
+#                                                ^
+/usr/include/glib-2.0/glib/gmacros.h:1144:32: note: expanded from macro 'GLIB_DEPRECATED_FOR'
+##define GLIB_DEPRECATED_FOR(f) G_DEPRECATED_FOR(f) _GLIB_EXTERN
+#                               ^
+/usr/include/glib-2.0/glib/gmacros.h:1112:44: note: expanded from macro 'G_DEPRECATED_FOR'
+##define G_DEPRECATED_FOR(f) __attribute__((__deprecated__("Use '" #f "' instead")))
+#                                           ^
+#   84|     key_value->type = KMIP_KEY_VALUE_SYMMETRIC_KEY;
+#   85|     key_value->v.key = g_new (struct kmip_symmetric_key, 1);
+#   86|->   key_value->v.key->data = g_memdup (key, key_bytes);
+#   87|     key_value->v.key->len = key_bytes;
+#   88|     key_value->attributes = g_ptr_array_new ();
+
+Error: COMPILER_WARNING:
+volume_key-0.3.12/lib/volume.c:132:29: warning: 'g_memdup' is deprecated: Use 'g_memdup2' instead
+#  key_value->v.bytes.data = g_memdup (passphrase, size);
+#                            ^
+/usr/include/glib-2.0/glib/gstrfuncs.h:256:1: note: 'g_memdup' has been explicitly marked deprecated here
+#GLIB_DEPRECATED_IN_2_68_FOR (g_memdup2)
+#^
+/usr/include/glib-2.0/glib/gversionmacros.h:1057:49: note: expanded from macro 'GLIB_DEPRECATED_IN_2_68_FOR'
+## define GLIB_DEPRECATED_IN_2_68_FOR(f)         GLIB_DEPRECATED_FOR(f)
+#                                                ^
+/usr/include/glib-2.0/glib/gmacros.h:1144:32: note: expanded from macro 'GLIB_DEPRECATED_FOR'
+##define GLIB_DEPRECATED_FOR(f) G_DEPRECATED_FOR(f) _GLIB_EXTERN
+#                               ^
+/usr/include/glib-2.0/glib/gmacros.h:1112:44: note: expanded from macro 'G_DEPRECATED_FOR'
+##define G_DEPRECATED_FOR(f) __attribute__((__deprecated__("Use '" #f "' instead")))
+#                                           ^
+#  130|     key_value = g_new (struct kmip_key_value, 1);
+#  131|     key_value->type = KMIP_KEY_VALUE_BYTES;
+#  132|->   key_value->v.bytes.data = g_memdup (passphrase, size);
+#  133|     key_value->v.bytes.len = size;
+#  134|     key_value->attributes = g_ptr_array_new ();
+
+Error: COMPILER_WARNING:
+volume_key-0.3.12/lib/volume_luks.c:157:15: warning: 'g_memdup' is deprecated: Use 'g_memdup2' instead
+#  luks->key = g_memdup (key, luks->key_bytes);
+#              ^
+/usr/include/glib-2.0/glib/gstrfuncs.h:256:1: note: 'g_memdup' has been explicitly marked deprecated here
+#GLIB_DEPRECATED_IN_2_68_FOR (g_memdup2)
+#^
+/usr/include/glib-2.0/glib/gversionmacros.h:1057:49: note: expanded from macro 'GLIB_DEPRECATED_IN_2_68_FOR'
+## define GLIB_DEPRECATED_IN_2_68_FOR(f)         GLIB_DEPRECATED_FOR(f)
+#                                                ^
+/usr/include/glib-2.0/glib/gmacros.h:1144:32: note: expanded from macro 'GLIB_DEPRECATED_FOR'
+##define GLIB_DEPRECATED_FOR(f) G_DEPRECATED_FOR(f) _GLIB_EXTERN
+#                               ^
+/usr/include/glib-2.0/glib/gmacros.h:1112:44: note: expanded from macro 'G_DEPRECATED_FOR'
+##define G_DEPRECATED_FOR(f) __attribute__((__deprecated__("Use '" #f "' instead")))
+#                                           ^
+#  155|         g_free (luks->key);
+#  156|       }
+#  157|->   luks->key = g_memdup (key, luks->key_bytes);
+#  158|   }
+#  159|   
+
+Error: COMPILER_WARNING:
+volume_key-0.3.12/lib/volume_luks.c:794:23: warning: 'g_memdup' is deprecated: Use 'g_memdup2' instead
+#          vol->v.luks->key = g_memdup (key_value->v.key->data,
+#                             ^
+/usr/include/glib-2.0/glib/gstrfuncs.h:256:1: note: 'g_memdup' has been explicitly marked deprecated here
+#GLIB_DEPRECATED_IN_2_68_FOR (g_memdup2)
+#^
+/usr/include/glib-2.0/glib/gversionmacros.h:1057:49: note: expanded from macro 'GLIB_DEPRECATED_IN_2_68_FOR'
+## define GLIB_DEPRECATED_IN_2_68_FOR(f)         GLIB_DEPRECATED_FOR(f)
+#                                                ^
+/usr/include/glib-2.0/glib/gmacros.h:1144:32: note: expanded from macro 'GLIB_DEPRECATED_FOR'
+##define GLIB_DEPRECATED_FOR(f) G_DEPRECATED_FOR(f) _GLIB_EXTERN
+#                               ^
+/usr/include/glib-2.0/glib/gmacros.h:1112:44: note: expanded from macro 'G_DEPRECATED_FOR'
+##define G_DEPRECATED_FOR(f) __attribute__((__deprecated__("Use '" #f "' instead")))
+#                                           ^
+#  792|   	      goto err;
+#  793|   	    }
+#  794|-> 	  vol->v.luks->key = g_memdup (key_value->v.key->data,
+#  795|   				       key_value->v.key->len);
+#  796|   	}

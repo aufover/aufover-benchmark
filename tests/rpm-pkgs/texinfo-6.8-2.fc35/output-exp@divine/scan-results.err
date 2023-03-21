@@ -1,0 +1,620 @@
+Error: COMPILER_WARNING:
+texinfo-6.8/gnulib/lib/nl_langinfo.c:342:10: warning: implicit declaration of function 'nl_langinfo' is invalid in C99
+#  return nl_langinfo_with_lock (item);
+#         ^
+texinfo-6.8/gnulib/lib/nl_langinfo.c:272:33: note: expanded from macro 'nl_langinfo_with_lock'
+##  define nl_langinfo_with_lock nl_langinfo
+#                                ^
+#  340|         break;
+#  341|       }
+#  342|->   return nl_langinfo_with_lock (item);
+#  343|   }
+#  344|   
+
+Error: COMPILER_WARNING:
+texinfo-6.8/gnulib/lib/nl_langinfo.c:342:10: warning: incompatible integer to pointer conversion returning 'int' from a function with result type 'char *'
+#  return nl_langinfo_with_lock (item);
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+texinfo-6.8/gnulib/lib/nl_langinfo.c:272:33: note: expanded from macro 'nl_langinfo_with_lock'
+##  define nl_langinfo_with_lock nl_langinfo
+#                                ^
+#  340|         break;
+#  341|       }
+#  342|->   return nl_langinfo_with_lock (item);
+#  343|   }
+#  344|   
+
+Error: COMPILER_WARNING:
+texinfo-6.8/info/filesys.c:102:28: warning: '&&' within '||'
+#      || partial[0] == '.' && IS_SLASH(partial[1]))
+#      ~~ ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+texinfo-6.8/info/filesys.c:102:28: note: place parentheses around the '&&' expression to silence this warning
+#      || partial[0] == '.' && IS_SLASH(partial[1]))
+#         ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+#  100|     /* If path is absolute already, see if it needs an extension. */
+#  101|     if (IS_ABSOLUTE (partial)
+#  102|->       || partial[0] == '.' && IS_SLASH(partial[1]))
+#  103|       {
+#  104|         fullpath = info_add_extension (0, partial, finfo);
+
+Error: COMPILER_WARNING:
+texinfo-6.8/info/filesys.c:416:10: warning: incompatible integer to pointer conversion assigning to 'FILE *' (aka 'struct _PDCLIB_file *') from 'int'
+#  stream = popen (command, FOPEN_RBIN);
+#         ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  414|       }
+#  415|   
+#  416|->   stream = popen (command, FOPEN_RBIN);
+#  417|     free (command);
+#  418|   
+
+Error: COMPILER_WARNING:
+texinfo-6.8/info/filesys.c:416:12: warning: implicit declaration of function 'popen' is invalid in C99
+#  stream = popen (command, FOPEN_RBIN);
+#           ^
+#  414|       }
+#  415|   
+#  416|->   stream = popen (command, FOPEN_RBIN);
+#  417|     free (command);
+#  418|   
+
+Error: COMPILER_WARNING:
+texinfo-6.8/info/filesys.c:445:11: warning: implicit declaration of function 'pclose' is invalid in C99
+#      if (pclose (stream) == -1)
+#          ^
+#  443|   
+#  444|         free (chunk);
+#  445|->       if (pclose (stream) == -1)
+#  446|   	{
+#  447|   	  if (contents)
+
+Error: COMPILER_WARNING:
+texinfo-6.8/info/indices.c:148:15: warning: implicit declaration of function 'strcasestr' is invalid in C99
+#          if (strcasestr (tag->nodename, "Index")
+#              ^
+#  146|         for (i = 0; (tag = file_buffer->tags[i]); i++)
+#  147|           {
+#  148|->           if (strcasestr (tag->nodename, "Index")
+#  149|                 && tag->cache.nodelen != 0) /* Not an anchor. */
+#  150|               {
+
+Error: COMPILER_WARNING:
+texinfo-6.8/info/infodoc.c:799:38: warning: passing 'const char *' to parameter of type 'char *' discards qualifiers
+#  command_name = read_function_name (_("Where is command: "), window);
+#                                     ^~~~~~~~~~~~~~~~~~~~~~~
+texinfo-6.8/system.h:49:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+texinfo-6.8/gnulib/lib/gettext.h:68:25: note: expanded from macro 'gettext'
+## define gettext(Msgid) ((const char *) (Msgid))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~
+texinfo-6.8/info/session.h:127:33: note: passing argument to parameter 'prompt' here
+#char *read_function_name (char *prompt, WINDOW *window);
+#                                ^
+#  797|     char *command_name;
+#  798|   
+#  799|->   command_name = read_function_name (_("Where is command: "), window);
+#  800|   
+#  801|     if (!command_name)
+
+Error: COMPILER_WARNING:
+texinfo-6.8/info/infokey.c:380:7: warning: result of comparison of constant 271 with expression of type 'char' is always true
+#                    To_seq (oval);
+#                    ^~~~~~~~~~~~~
+texinfo-6.8/info/infokey.c:223:30: note: expanded from macro 'To_seq'
+#                      seq[slen++] = meta ? KEYMAP_META(c) : (c); \
+#                                           ^~~~~~~~~~~~~~
+texinfo-6.8/info/infomap.h:105:29: note: expanded from macro 'KEYMAP_META'
+##define KEYMAP_META(k) ((k) < KEYMAP_META_BASE ? (k) + KEYMAP_META_BASE : (k))
+#                        ~~~ ^ ~~~~~~~~~~~~~~~~
+#  378|   		{
+#  379|   		  if (oval)
+#  380|-> 		    To_seq (oval);
+#  381|   		  else
+#  382|   		    {
+
+Error: COMPILER_WARNING:
+texinfo-6.8/info/infopath.c:201:18: warning: using the result of an assignment as a condition without parentheses
+#  while (dirname = extract_colon_unit (path, &idx))
+#         ~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+texinfo-6.8/info/infopath.c:201:18: note: place parentheses around the assignment to silence this warning
+#  while (dirname = extract_colon_unit (path, &idx))
+#                 ^
+texinfo-6.8/info/infopath.c:201:18: note: use '==' to turn this assignment into an equality comparison
+#  while (dirname = extract_colon_unit (path, &idx))
+#                 ^
+#  199|     char *dirname;
+#  200|   
+#  201|->   while (dirname = extract_colon_unit (path, &idx))
+#  202|       {
+#  203|         if (!strcmp ("PATH", dirname))
+
+Error: COMPILER_WARNING:
+texinfo-6.8/info/m-x.c:68:30: warning: passing 'const char *' to parameter of type 'char *' discards qualifiers
+#  line = read_function_name (_("Describe command: "), window);
+#                             ^~~~~~~~~~~~~~~~~~~~~~~
+texinfo-6.8/system.h:49:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+texinfo-6.8/gnulib/lib/gettext.h:68:25: note: expanded from macro 'gettext'
+## define gettext(Msgid) ((const char *) (Msgid))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~
+texinfo-6.8/info/m-x.c:36:27: note: passing argument to parameter 'prompt' here
+#read_function_name (char *prompt, WINDOW *window)
+#                          ^
+#   66|     char *line;
+#   67|   
+#   68|->   line = read_function_name (_("Describe command: "), window);
+#   69|   
+#   70|     if (!line)
+
+Error: COMPILER_WARNING:
+texinfo-6.8/info/man.c:332:7: warning: implicit declaration of function 'execv' is invalid in C99
+#      execv (formatter_args[0], formatter_args);
+#      ^
+#  330|         dup2 (pipes[1], fileno (stdout));
+#  331|   
+#  332|->       execv (formatter_args[0], formatter_args);
+#  333|   
+#  334|         /* If we get here, we couldn't exec, so close out the pipe and
+
+Error: COMPILER_WARNING:
+texinfo-6.8/info/nodes.c:565:39: warning: '&&' within '||'
+#                || filename[0] == '.' && IS_SLASH(filename[1]);
+#                ~~ ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+texinfo-6.8/info/nodes.c:565:39: note: place parentheses around the '&&' expression to silence this warning
+#                || filename[0] == '.' && IS_SLASH(filename[1]);
+#                   ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+#  563|     /* If full path to the file has been given, we must find it exactly. */
+#  564|     is_fullpath = IS_ABSOLUTE (filename)
+#  565|->                 || filename[0] == '.' && IS_SLASH(filename[1]);
+#  566|   
+#  567|     if (info_loaded_files)
+
+Error: COMPILER_WARNING:
+texinfo-6.8/info/nodes.c:630:39: warning: '&&' within '||'
+#                || filename[0] == '.' && IS_SLASH(filename[1]);
+#                ~~ ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+texinfo-6.8/info/nodes.c:630:39: note: place parentheses around the '&&' expression to silence this warning
+#                || filename[0] == '.' && IS_SLASH(filename[1]);
+#                   ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+#  628|        That is to say, search along INFOPATH and expand tildes, etc. */
+#  629|     is_fullpath = IS_ABSOLUTE (filename)
+#  630|->                 || filename[0] == '.' && IS_SLASH(filename[1]);
+#  631|     if (!is_fullpath)
+#  632|       fullpath = info_find_fullpath (filename, 0);
+
+Error: COMPILER_WARNING:
+texinfo-6.8/info/session.c:2214:13: warning: using the result of an assignment as a condition without parentheses
+#  if (entry = select_menu_digit (window, key))
+#      ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+texinfo-6.8/info/session.c:2214:13: note: place parentheses around the assignment to silence this warning
+#  if (entry = select_menu_digit (window, key))
+#            ^
+texinfo-6.8/info/session.c:2214:13: note: use '==' to turn this assignment into an equality comparison
+#  if (entry = select_menu_digit (window, key))
+#            ^
+# 2212|   has_menu:
+# 2213|   
+# 2214|->   if (entry = select_menu_digit (window, key))
+# 2215|       info_select_reference (window, entry);
+# 2216|     else if (key == '0')
+
+Error: COMPILER_WARNING:
+texinfo-6.8/info/session.c:2311:43: warning: '&&' within '||'
+#      if (refs[which]->start >= this_line && refs[which]->start < next_line
+#          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+texinfo-6.8/info/session.c:2311:43: note: place parentheses around the '&&' expression to silence this warning
+#      if (refs[which]->start >= this_line && refs[which]->start < next_line
+#                                          ^
+# 2309|   
+# 2310|         /* Reference is eligible if any part of it is in the line. */
+# 2311|->       if (refs[which]->start >= this_line && refs[which]->start < next_line
+# 2312|             || refs[which]->start < this_line && refs[which]->end > this_line)
+# 2313|           {
+
+Error: COMPILER_WARNING:
+texinfo-6.8/info/session.c:2312:45: warning: '&&' within '||'
+#          || refs[which]->start < this_line && refs[which]->end > this_line)
+#          ~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+texinfo-6.8/info/session.c:2312:45: note: place parentheses around the '&&' expression to silence this warning
+#          || refs[which]->start < this_line && refs[which]->end > this_line)
+#                                            ^
+# 2310|         /* Reference is eligible if any part of it is in the line. */
+# 2311|         if (refs[which]->start >= this_line && refs[which]->start < next_line
+# 2312|->           || refs[which]->start < this_line && refs[which]->end > this_line)
+# 2313|           {
+# 2314|             closest = which;
+
+Error: COMPILER_WARNING:
+texinfo-6.8/info/session.c:2411:30: warning: absolute value function 'abs' given an argument of type 'long' but has parameter of type 'int' which may cause truncation of value
+#                  int dist = abs (window->point - ref->end);
+#                             ^
+texinfo-6.8/info/session.c:2411:30: note: use function 'labs' instead
+#                  int dist = abs (window->point - ref->end);
+#                             ^~~
+# 2409|                     /* ref->end is more accurate estimate of position
+# 2410|                        for menus than ref->start.  Go figure.  */
+# 2411|->                   int dist = abs (window->point - ref->end);
+# 2412|   
+# 2413|                     if (dist < min_dist)
+
+Error: COMPILER_WARNING:
+texinfo-6.8/info/session.c:3095:23: warning: using the result of an assignment as a condition without parentheses
+#            if (entry = select_menu_digit (window, '1'))
+#                ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+texinfo-6.8/info/session.c:3095:23: note: place parentheses around the assignment to silence this warning
+#            if (entry = select_menu_digit (window, '1'))
+#                      ^
+texinfo-6.8/info/session.c:3095:23: note: use '==' to turn this assignment into an equality comparison
+#            if (entry = select_menu_digit (window, '1'))
+#                      ^
+# 3093|               REFERENCE *entry;
+# 3094|   
+# 3095|->             if (entry = select_menu_digit (window, '1'))
+# 3096|                 {
+# 3097|                   info_select_reference (window, entry);
+
+Error: COMPILER_WARNING:
+texinfo-6.8/info/session.c:3865:20: warning: incompatible integer to pointer conversion assigning to 'FILE *' (aka 'struct _PDCLIB_file *') from 'int'
+#      printer_pipe = popen (print_command, "w");
+#                   ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3863|     else
+# 3864|       {
+# 3865|->       printer_pipe = popen (print_command, "w");
+# 3866|         piping = 1;
+# 3867|       }
+
+Error: COMPILER_WARNING:
+texinfo-6.8/info/session.c:3865:22: warning: implicit declaration of function 'popen' is invalid in C99
+#      printer_pipe = popen (print_command, "w");
+#                     ^
+# 3863|     else
+# 3864|       {
+# 3865|->       printer_pipe = popen (print_command, "w");
+# 3866|         piping = 1;
+# 3867|       }
+
+Error: COMPILER_WARNING:
+texinfo-6.8/info/session.c:3880:5: warning: implicit declaration of function 'pclose' is invalid in C99
+#    pclose (printer_pipe);
+#    ^
+# 3878|     write_node_to_stream (window->node, printer_pipe);
+# 3879|     if (piping)
+# 3880|->     pclose (printer_pipe);
+# 3881|     else
+# 3882|       fclose (printer_pipe);
+
+Error: COMPILER_WARNING:
+texinfo-6.8/info/session.c:5127:40: warning: '&&' within '||'
+#          if (func == &isearch_forward && dir > 0
+#              ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
+texinfo-6.8/info/session.c:5127:40: note: place parentheses around the '&&' expression to silence this warning
+#          if (func == &isearch_forward && dir > 0
+#                                       ^
+# 5125|                insert the last search string that was accepted through
+# 5126|                incremental searching. */
+# 5127|->           if (func == &isearch_forward && dir > 0
+# 5128|                 || func == &isearch_backward && dir < 0)
+# 5129|               {
+
+Error: COMPILER_WARNING:
+texinfo-6.8/info/session.c:5128:44: warning: '&&' within '||'
+#              || func == &isearch_backward && dir < 0)
+#              ~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
+texinfo-6.8/info/session.c:5128:44: note: place parentheses around the '&&' expression to silence this warning
+#              || func == &isearch_backward && dir < 0)
+#                                           ^
+# 5126|                incremental searching. */
+# 5127|             if (func == &isearch_forward && dir > 0
+# 5128|->               || func == &isearch_backward && dir < 0)
+# 5129|               {
+# 5130|                 /* If the user has typed no characters, then insert the
+
+Error: COMPILER_WARNING:
+texinfo-6.8/info/session.c:5539:22: warning: '&&' within '||'
+#      && (key >= 040 && key < 0200
+#          ~~~~~~~~~~~^~~~~~~~~~~~~
+texinfo-6.8/info/session.c:5539:22: note: place parentheses around the '&&' expression to silence this warning
+#      && (key >= 040 && key < 0200
+#                     ^
+# 5537|   
+# 5538|     if (insert
+# 5539|->       && (key >= 040 && key < 0200
+# 5540|             || ISO_Latin_p && key >= 0200 && key < 0400))
+# 5541|       {
+
+Error: COMPILER_WARNING:
+texinfo-6.8/info/session.c:5540:41: warning: '&&' within '||'
+#          || ISO_Latin_p && key >= 0200 && key < 0400))
+#          ~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+texinfo-6.8/info/session.c:5540:41: note: place parentheses around the '&&' expression to silence this warning
+#          || ISO_Latin_p && key >= 0200 && key < 0400))
+#                                        ^
+# 5538|     if (insert
+# 5539|         && (key >= 040 && key < 0200
+# 5540|->           || ISO_Latin_p && key >= 0200 && key < 0400))
+# 5541|       {
+# 5542|         ea_insert (the_echo_area, 1, key);
+
+Error: COMPILER_WARNING:
+texinfo-6.8/info/signals.c:39:3: warning: implicit declaration of function 'sigmask' is invalid in C99
+#  sigaddset (set, SIGTSTP);
+#  ^
+texinfo-6.8/info/signals.h:58:41: note: expanded from macro 'sigaddset'
+##  define sigaddset(set, sig) *(set) |= sigmask (sig)
+#                                        ^
+#   37|   {
+#   38|   # if defined (SIGTSTP)
+#   39|->   sigaddset (set, SIGTSTP);
+#   40|     sigaddset (set, SIGTTOU);
+#   41|     sigaddset (set, SIGTTIN);
+
+Error: COMPILER_WARNING:
+texinfo-6.8/info/signals.c:239:2: warning: implicit declaration of function 'sigmask' is invalid in C99
+#        UNBLOCK_SIGNAL (sig);
+#        ^
+texinfo-6.8/info/signals.h:88:5: note: expanded from macro 'UNBLOCK_SIGNAL'
+#    sigaddset (&nvar, sig); \
+#    ^
+texinfo-6.8/info/signals.h:58:41: note: expanded from macro 'sigaddset'
+##  define sigaddset(set, sig) *(set) |= sigmask (sig)
+#                                        ^
+#  237|           terminal_unprep_terminal ();
+#  238|   	restore_termsig (sig, old_signal_handler);
+#  239|-> 	UNBLOCK_SIGNAL (sig);
+#  240|   	kill (getpid (), sig);
+#  241|   
+
+Error: COMPILER_WARNING:
+texinfo-6.8/info/signals.c:239:2: warning: incompatible pointer types passing 'int *' to parameter of type 'const sigset_t *' (aka 'const unsigned long *')
+#        UNBLOCK_SIGNAL (sig);
+#        ^~~~~~~~~~~~~~~~~~~~
+texinfo-6.8/info/signals.h:89:31: note: expanded from macro 'UNBLOCK_SIGNAL'
+#    sigprocmask (SIG_UNBLOCK, &nvar, &ovar); \
+#                              ^~~~~
+/opt/divine/include/dios/include/signal.h:169:43: note: passing argument to parameter 'set' here
+#int sigprocmask( int how, const sigset_t *set, sigset_t *oldset );
+#                                          ^
+#  237|           terminal_unprep_terminal ();
+#  238|   	restore_termsig (sig, old_signal_handler);
+#  239|-> 	UNBLOCK_SIGNAL (sig);
+#  240|   	kill (getpid (), sig);
+#  241|   
+
+Error: COMPILER_WARNING:
+texinfo-6.8/info/signals.c:239:2: warning: incompatible pointer types passing 'int *' to parameter of type 'sigset_t *' (aka 'unsigned long *')
+#        UNBLOCK_SIGNAL (sig);
+#        ^~~~~~~~~~~~~~~~~~~~
+texinfo-6.8/info/signals.h:89:38: note: expanded from macro 'UNBLOCK_SIGNAL'
+#    sigprocmask (SIG_UNBLOCK, &nvar, &ovar); \
+#                                     ^~~~~
+/opt/divine/include/dios/include/signal.h:169:58: note: passing argument to parameter 'oldset' here
+#int sigprocmask( int how, const sigset_t *set, sigset_t *oldset );
+#                                                         ^
+#  237|           terminal_unprep_terminal ();
+#  238|   	restore_termsig (sig, old_signal_handler);
+#  239|-> 	UNBLOCK_SIGNAL (sig);
+#  240|   	kill (getpid (), sig);
+#  241|   
+
+Error: COMPILER_WARNING:
+texinfo-6.8/info/signals.c:293:2: warning: implicit declaration of function 'sigmask' is invalid in C99
+#        UNBLOCK_SIGNAL (sig);
+#        ^
+texinfo-6.8/info/signals.h:88:5: note: expanded from macro 'UNBLOCK_SIGNAL'
+#    sigaddset (&nvar, sig); \
+#    ^
+texinfo-6.8/info/signals.h:58:41: note: expanded from macro 'sigaddset'
+##  define sigaddset(set, sig) *(set) |= sigmask (sig)
+#                                        ^
+#  291|           sigwinch_block_count--;
+#  292|           /* Don't unblock the signal until after we've finished. */
+#  293|-> 	UNBLOCK_SIGNAL (sig);
+#  294|         }
+#  295|         break;
+
+Error: COMPILER_WARNING:
+texinfo-6.8/info/signals.c:293:2: warning: incompatible pointer types passing 'int *' to parameter of type 'const sigset_t *' (aka 'const unsigned long *')
+#        UNBLOCK_SIGNAL (sig);
+#        ^~~~~~~~~~~~~~~~~~~~
+texinfo-6.8/info/signals.h:89:31: note: expanded from macro 'UNBLOCK_SIGNAL'
+#    sigprocmask (SIG_UNBLOCK, &nvar, &ovar); \
+#                              ^~~~~
+/opt/divine/include/dios/include/signal.h:169:43: note: passing argument to parameter 'set' here
+#int sigprocmask( int how, const sigset_t *set, sigset_t *oldset );
+#                                          ^
+#  291|           sigwinch_block_count--;
+#  292|           /* Don't unblock the signal until after we've finished. */
+#  293|-> 	UNBLOCK_SIGNAL (sig);
+#  294|         }
+#  295|         break;
+
+Error: COMPILER_WARNING:
+texinfo-6.8/info/signals.c:293:2: warning: incompatible pointer types passing 'int *' to parameter of type 'sigset_t *' (aka 'unsigned long *')
+#        UNBLOCK_SIGNAL (sig);
+#        ^~~~~~~~~~~~~~~~~~~~
+texinfo-6.8/info/signals.h:89:38: note: expanded from macro 'UNBLOCK_SIGNAL'
+#    sigprocmask (SIG_UNBLOCK, &nvar, &ovar); \
+#                                     ^~~~~
+/opt/divine/include/dios/include/signal.h:169:58: note: passing argument to parameter 'oldset' here
+#int sigprocmask( int how, const sigset_t *set, sigset_t *oldset );
+#                                                         ^
+#  291|           sigwinch_block_count--;
+#  292|           /* Don't unblock the signal until after we've finished. */
+#  293|-> 	UNBLOCK_SIGNAL (sig);
+#  294|         }
+#  295|         break;
+
+Error: COMPILER_WARNING:
+texinfo-6.8/info/terminal.c:648:33: warning: '&&' within '||'
+#  else if (!(new & COLOUR_MASK) && (old & COLOUR_MASK)
+#           ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+texinfo-6.8/info/terminal.c:648:33: note: place parentheses around the '&&' expression to silence this warning
+#  else if (!(new & COLOUR_MASK) && (old & COLOUR_MASK)
+#                                ^
+#  646|         old = 0;
+#  647|       }
+#  648|->   else if (!(new & COLOUR_MASK) && (old & COLOUR_MASK)
+#  649|              || !(new & BGCOLOUR_MASK) && (old & BGCOLOUR_MASK))
+#  650|       {
+
+Error: COMPILER_WARNING:
+texinfo-6.8/info/terminal.c:649:38: warning: '&&' within '||'
+#           || !(new & BGCOLOUR_MASK) && (old & BGCOLOUR_MASK))
+#           ~~ ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+texinfo-6.8/info/terminal.c:649:38: note: place parentheses around the '&&' expression to silence this warning
+#           || !(new & BGCOLOUR_MASK) && (old & BGCOLOUR_MASK))
+#                                     ^
+#  647|       }
+#  648|     else if (!(new & COLOUR_MASK) && (old & COLOUR_MASK)
+#  649|->            || !(new & BGCOLOUR_MASK) && (old & BGCOLOUR_MASK))
+#  650|       {
+#  651|         terminal_default_colour ();
+
+Error: COMPILER_WARNING:
+texinfo-6.8/info/variables.c:227:29: warning: passing 'const char *' to parameter of type 'char *' discards qualifiers
+#  var = read_variable_name (_("Describe variable: "), window);
+#                            ^~~~~~~~~~~~~~~~~~~~~~~~
+texinfo-6.8/system.h:49:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+texinfo-6.8/gnulib/lib/gettext.h:68:25: note: expanded from macro 'gettext'
+## define gettext(Msgid) ((const char *) (Msgid))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~
+texinfo-6.8/info/variables.c:27:50: note: passing argument to parameter 'prompt' here
+#static VARIABLE_ALIST *read_variable_name (char *prompt, WINDOW *window);
+#                                                 ^
+#  225|   
+#  226|     /* Get the variable's name. */
+#  227|->   var = read_variable_name (_("Describe variable: "), window);
+#  228|     if (!var)
+#  229|       return;
+
+Error: COMPILER_WARNING:
+texinfo-6.8/info/variables.c:254:29: warning: passing 'const char *' to parameter of type 'char *' discards qualifiers
+#  var = read_variable_name (_("Set variable: "), window);
+#                            ^~~~~~~~~~~~~~~~~~~
+texinfo-6.8/system.h:49:19: note: expanded from macro '_'
+##define _(String) gettext (String)
+#                  ^~~~~~~~~~~~~~~~
+texinfo-6.8/gnulib/lib/gettext.h:68:25: note: expanded from macro 'gettext'
+## define gettext(Msgid) ((const char *) (Msgid))
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~
+texinfo-6.8/info/variables.c:27:50: note: passing argument to parameter 'prompt' here
+#static VARIABLE_ALIST *read_variable_name (char *prompt, WINDOW *window);
+#                                                 ^
+#  252|   
+#  253|     /* Get the variable's name and value. */
+#  254|->   var = read_variable_name (_("Set variable: "), window);
+#  255|   
+#  256|     if (!var)
+
+Error: COMPILER_WARNING:
+texinfo-6.8/install-info/install-info.c:864:9: warning: incompatible integer to pointer conversion assigning to 'FILE *' (aka 'struct _PDCLIB_file *') from 'int'
+#      f = popen (command, "r");
+#        ^ ~~~~~~~~~~~~~~~~~~~~
+#  862|         if (!f)
+#  863|           return 0;
+#  864|->       f = popen (command, "r");
+#  865|         if (!f)
+#  866|           {
+
+Error: COMPILER_WARNING:
+texinfo-6.8/install-info/install-info.c:864:11: warning: implicit declaration of function 'popen' is invalid in C99
+#      f = popen (command, "r");
+#          ^
+#  862|         if (!f)
+#  863|           return 0;
+#  864|->       f = popen (command, "r");
+#  865|         if (!f)
+#  866|           {
+
+Error: COMPILER_WARNING:
+texinfo-6.8/install-info/install-info.c:936:5: warning: implicit declaration of function 'pclose' is invalid in C99
+#    pclose (f);
+#    ^
+#  934|        inside pclose.  */
+#  935|     if (compression_program)
+#  936|->     pclose (f);
+#  937|     else
+#  938|       fclose (f);
+
+Error: COMPILER_WARNING:
+texinfo-6.8/install-info/install-info.c:966:14: warning: incompatible integer to pointer conversion assigning to 'FILE *' (aka 'struct _PDCLIB_file *') from 'int'
+#      output = popen (command, "w");
+#             ^ ~~~~~~~~~~~~~~~~~~~~
+#  964|       {
+#  965|         char *command = concat (compression_program, ">", dirfile_tmp);
+#  966|->       output = popen (command, "w");
+#  967|       }
+#  968|     else
+
+Error: COMPILER_WARNING:
+texinfo-6.8/install-info/install-info.c:966:16: warning: implicit declaration of function 'popen' is invalid in C99
+#      output = popen (command, "w");
+#               ^
+#  964|       {
+#  965|         char *command = concat (compression_program, ">", dirfile_tmp);
+#  966|->       output = popen (command, "w");
+#  967|       }
+#  968|     else
+
+Error: COMPILER_WARNING:
+texinfo-6.8/install-info/install-info.c:1081:5: warning: implicit declaration of function 'pclose' is invalid in C99
+#    pclose (output);
+#    ^
+# 1079|        so we must call pclose.  */
+# 1080|     if (compression_program)
+# 1081|->     pclose (output);
+# 1082|     else
+# 1083|       fclose (output);
+
+Error: COMPILER_WARNING:
+texinfo-6.8/install-info/install-info.c:1877:19: warning: implicit declaration of function 'argz_add' is invalid in C99
+#            err = argz_add (&argz, &argz_len, opt);
+#                  ^
+# 1875|               err = 1;
+# 1876|             if (!err)
+# 1877|->             err = argz_add (&argz, &argz_len, opt);
+# 1878|             free (opt); opt = NULL;
+# 1879|   
+
+Error: COMPILER_WARNING:
+texinfo-6.8/install-info/install-info.c:1891:15: warning: implicit declaration of function 'argz_add' is invalid in C99
+#        err = argz_add (&argz, &argz_len, argv[i]); 
+#              ^
+# 1889|           }
+# 1890|         else
+# 1891|->         err = argz_add (&argz, &argz_len, argv[i]); 
+# 1892|         if (err)
+# 1893|           return -1;
+
+Error: COMPILER_WARNING:
+texinfo-6.8/install-info/install-info.c:1898:19: warning: implicit declaration of function 'argz_count' is invalid in C99
+#      *new_argc = argz_count (argz, argz_len);
+#                  ^
+# 1896|     if (munge)
+# 1897|       {
+# 1898|->       *new_argc = argz_count (argz, argz_len);
+# 1899|         *new_argv = xmalloc ((*new_argc + 1) * sizeof (char *));
+# 1900|   
+
+Error: COMPILER_WARNING:
+texinfo-6.8/install-info/install-info.c:1902:19: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#      while ((opt = argz_next (argz, argz_len, opt)))
+#                  ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1900|   
+# 1901|         opt = NULL; i = 0;
+# 1902|->       while ((opt = argz_next (argz, argz_len, opt)))
+# 1903|           {
+# 1904|             (*new_argv)[i] = xstrdup (opt);
+
+Error: COMPILER_WARNING:
+texinfo-6.8/install-info/install-info.c:1902:21: warning: implicit declaration of function 'argz_next' is invalid in C99
+#      while ((opt = argz_next (argz, argz_len, opt)))
+#                    ^
+# 1900|   
+# 1901|         opt = NULL; i = 0;
+# 1902|->       while ((opt = argz_next (argz, argz_len, opt)))
+# 1903|           {
+# 1904|             (*new_argv)[i] = xstrdup (opt);

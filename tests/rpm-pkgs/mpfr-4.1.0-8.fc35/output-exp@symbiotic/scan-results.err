@@ -1,0 +1,55 @@
+Error: COMPILER_WARNING:
+mpfr-4.1.0/src/vasprintf.c:1926:3: warning[-Wtautological-constant-out-of-range-compare]: result of comparison of constant 9223372036854775807 with expression of type 'int' is always false
+#  INCR_TOTAL (np->ip_trailing_digits);
+#  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+mpfr-4.1.0/src/vasprintf.c:1916:28: note: expanded from macro 'INCR_TOTAL'
+#    if (MPFR_UNLIKELY ((v) > MPFR_INTMAX_MAX))          \
+#        ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+mpfr-4.1.0/src/mpfr-impl.h:1485:48: note: expanded from macro 'MPFR_UNLIKELY'
+## define MPFR_UNLIKELY(x) (__builtin_expect(!!(x), 0))
+#                                               ^
+# 1924|     INCR_TOTAL (np->prefix_size);
+# 1925|     INCR_TOTAL (np->ip_size);
+# 1926|->   INCR_TOTAL (np->ip_trailing_digits);
+# 1927|     MPFR_ASSERTD (np->ip_size + np->ip_trailing_digits >= 1);
+# 1928|     if (np->thousands_sep)
+
+Error: COMPILER_WARNING:
+mpfr-4.1.0/tests/tset.c:364: included_from: Included from here.
+mpfr-4.1.0/tests/tgeneric.c:208:40: warning[-Wimplicit-const-int-float-conversion]: implicit conversion from 'mp_limb_t' (aka 'unsigned long') to 'double' changes value from 18446744073709551615 to 18446744073709551616
+#                (double) randlimb () / MPFR_LIMB_MAX;
+#                                     ~ ^~~~~~~~~~~~~
+mpfr-4.1.0/src/mpfr-impl.h:1277:28: note: expanded from macro 'MPFR_LIMB_MAX'
+##define MPFR_LIMB_MAX     ((mp_limb_t) -1)
+#                           ^~~~~~~~~~~~~~
+#  206|                    take a smaller precision. */
+#  207|                 xprec *= (prec < 16 ? 256.0 : 1.0) *
+#  208|->                 (double) randlimb () / MPFR_LIMB_MAX;
+#  209|                 if (xprec < MPFR_PREC_MIN)
+#  210|                   xprec = MPFR_PREC_MIN;
+
+Error: COMPILER_WARNING:
+mpfr-4.1.0/tests/tsprintf.c:1624:27: warning[-Wstring-plus-int]: adding 'int' to a string does not append to the string
+#        strcat (buf, ",0" + (j % 3 != 0));
+#                     ~~~~~^~~~~~~~~~~~~~
+mpfr-4.1.0/tests/tsprintf.c:1624:27: note: use array indexing to silence this warning
+#        strcat (buf, ",0" + (j % 3 != 0));
+#                          ^
+# 1622|         strcpy (buf, "(4) 10^i=1");
+# 1623|         for (j = i; j > 0; j--)
+# 1624|->         strcat (buf, ",0" + (j % 3 != 0));
+# 1625|         strcat (buf, " ");
+# 1626|         mpfr_set_str (x, v + sizeof (v) - 3 - i, 10, MPFR_RNDN);
+
+Error: COMPILER_WARNING:
+mpfr-4.1.0/tests/tsprintf.c:1644:27: warning[-Wstring-plus-int]: adding 'int' to a string does not append to the string
+#        strcat (buf, ",0" + (j % 3 != 0));
+#                     ~~~~~^~~~~~~~~~~~~~
+mpfr-4.1.0/tests/tsprintf.c:1644:27: note: use array indexing to silence this warning
+#        strcat (buf, ",0" + (j % 3 != 0));
+#                          ^
+# 1642|         strcpy (buf, "(5) 10^i=1");
+# 1643|         for (j = i; j > 0; j--)
+# 1644|->         strcat (buf, ",0" + (j % 3 != 0));
+# 1645|         strcat (buf, " ");
+# 1646|   

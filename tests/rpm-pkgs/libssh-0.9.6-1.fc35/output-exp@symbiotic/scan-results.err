@@ -1,0 +1,159 @@
+Error: COMPILER_WARNING (CWE-252):
+libssh-0.9.6/src/libcrypto.c:131:5: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#    EVP_DigestUpdate(c, data, len);
+#    ^~~~~~~~~~~~~~~~ ~~~~~~~~~~~~
+#  129|   void sha1_update(SHACTX c, const void *data, unsigned long len)
+#  130|   {
+#  131|->     EVP_DigestUpdate(c, data, len);
+#  132|   }
+#  133|   
+
+Error: COMPILER_WARNING (CWE-252):
+libssh-0.9.6/src/libcrypto.c:138:5: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#    EVP_DigestFinal(c, md, &mdlen);
+#    ^~~~~~~~~~~~~~~ ~~~~~~~~~~~~~
+#  136|       unsigned int mdlen = 0;
+#  137|   
+#  138|->     EVP_DigestFinal(c, md, &mdlen);
+#  139|       EVP_MD_CTX_destroy(c);
+#  140|   }
+
+Error: COMPILER_WARNING (CWE-252):
+libssh-0.9.6/src/libcrypto.c:173:5: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#    EVP_DigestInit(md, evp_md);
+#    ^~~~~~~~~~~~~~ ~~~~~~~~~~
+#  171|       EVP_MD_CTX *md = EVP_MD_CTX_new();
+#  172|   
+#  173|->     EVP_DigestInit(md, evp_md);
+#  174|       EVP_DigestUpdate(md, digest, len);
+#  175|       EVP_DigestFinal(md, hash, hlen);
+
+Error: COMPILER_WARNING (CWE-252):
+libssh-0.9.6/src/libcrypto.c:174:5: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#    EVP_DigestUpdate(md, digest, len);
+#    ^~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~
+#  172|   
+#  173|       EVP_DigestInit(md, evp_md);
+#  174|->     EVP_DigestUpdate(md, digest, len);
+#  175|       EVP_DigestFinal(md, hash, hlen);
+#  176|       EVP_MD_CTX_free(md);
+
+Error: COMPILER_WARNING (CWE-252):
+libssh-0.9.6/src/libcrypto.c:175:5: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#    EVP_DigestFinal(md, hash, hlen);
+#    ^~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~
+#  173|       EVP_DigestInit(md, evp_md);
+#  174|       EVP_DigestUpdate(md, digest, len);
+#  175|->     EVP_DigestFinal(md, hash, hlen);
+#  176|       EVP_MD_CTX_free(md);
+#  177|   }
+
+Error: COMPILER_WARNING (CWE-252):
+libssh-0.9.6/src/libcrypto.c:188:5: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#    EVP_DigestInit(ctx, evp_md);
+#    ^~~~~~~~~~~~~~ ~~~~~~~~~~~
+#  186|       }
+#  187|   
+#  188|->     EVP_DigestInit(ctx, evp_md);
+#  189|   
+#  190|       return ctx;
+
+Error: COMPILER_WARNING (CWE-252):
+libssh-0.9.6/src/libcrypto.c:195:5: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#    EVP_DigestUpdate(ctx, data, len);
+#    ^~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~
+#  193|   void evp_update(EVPCTX ctx, const void *data, unsigned long len)
+#  194|   {
+#  195|->     EVP_DigestUpdate(ctx, data, len);
+#  196|   }
+#  197|   
+
+Error: COMPILER_WARNING (CWE-252):
+libssh-0.9.6/src/libcrypto.c:200:5: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#    EVP_DigestFinal(ctx, md, mdlen);
+#    ^~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~
+#  198|   void evp_final(EVPCTX ctx, unsigned char *md, unsigned int *mdlen)
+#  199|   {
+#  200|->     EVP_DigestFinal(ctx, md, mdlen);
+#  201|       EVP_MD_CTX_free(ctx);
+#  202|   }
+
+Error: COMPILER_WARNING (CWE-252):
+libssh-0.9.6/src/libcrypto.c:223:5: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#    EVP_DigestUpdate(c, data, len);
+#    ^~~~~~~~~~~~~~~~ ~~~~~~~~~~~~
+#  221|   void sha256_update(SHA256CTX c, const void *data, unsigned long len)
+#  222|   {
+#  223|->     EVP_DigestUpdate(c, data, len);
+#  224|   }
+#  225|   
+
+Error: COMPILER_WARNING (CWE-252):
+libssh-0.9.6/src/libcrypto.c:230:5: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#    EVP_DigestFinal(c, md, &mdlen);
+#    ^~~~~~~~~~~~~~~ ~~~~~~~~~~~~~
+#  228|       unsigned int mdlen = 0;
+#  229|   
+#  230|->     EVP_DigestFinal(c, md, &mdlen);
+#  231|       EVP_MD_CTX_destroy(c);
+#  232|   }
+
+Error: COMPILER_WARNING (CWE-252):
+libssh-0.9.6/src/libcrypto.c:261:5: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#    EVP_DigestUpdate(c, data, len);
+#    ^~~~~~~~~~~~~~~~ ~~~~~~~~~~~~
+#  259|   void sha384_update(SHA384CTX c, const void *data, unsigned long len)
+#  260|   {
+#  261|->     EVP_DigestUpdate(c, data, len);
+#  262|   }
+#  263|   
+
+Error: COMPILER_WARNING (CWE-252):
+libssh-0.9.6/src/libcrypto.c:268:5: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#    EVP_DigestFinal(c, md, &mdlen);
+#    ^~~~~~~~~~~~~~~ ~~~~~~~~~~~~~
+#  266|       unsigned int mdlen = 0;
+#  267|   
+#  268|->     EVP_DigestFinal(c, md, &mdlen);
+#  269|       EVP_MD_CTX_destroy(c);
+#  270|   }
+
+Error: COMPILER_WARNING (CWE-252):
+libssh-0.9.6/src/libcrypto.c:299:5: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#    EVP_DigestUpdate(c, data, len);
+#    ^~~~~~~~~~~~~~~~ ~~~~~~~~~~~~
+#  297|   void sha512_update(SHA512CTX c, const void *data, unsigned long len)
+#  298|   {
+#  299|->     EVP_DigestUpdate(c, data, len);
+#  300|   }
+#  301|   
+
+Error: COMPILER_WARNING (CWE-252):
+libssh-0.9.6/src/libcrypto.c:306:5: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#    EVP_DigestFinal(c, md, &mdlen);
+#    ^~~~~~~~~~~~~~~ ~~~~~~~~~~~~~
+#  304|       unsigned int mdlen = 0;
+#  305|   
+#  306|->     EVP_DigestFinal(c, md, &mdlen);
+#  307|       EVP_MD_CTX_destroy(c);
+#  308|   }
+
+Error: COMPILER_WARNING (CWE-252):
+libssh-0.9.6/src/libcrypto.c:337:5: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#    EVP_DigestUpdate(c, data, len);
+#    ^~~~~~~~~~~~~~~~ ~~~~~~~~~~~~
+#  335|   void md5_update(MD5CTX c, const void *data, unsigned long len)
+#  336|   {
+#  337|->     EVP_DigestUpdate(c, data, len);
+#  338|   }
+#  339|   
+
+Error: COMPILER_WARNING (CWE-252):
+libssh-0.9.6/src/libcrypto.c:344:5: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#    EVP_DigestFinal(c, md, &mdlen);
+#    ^~~~~~~~~~~~~~~ ~~~~~~~~~~~~~
+#  342|       unsigned int mdlen = 0;
+#  343|   
+#  344|->     EVP_DigestFinal(c, md, &mdlen);
+#  345|       EVP_MD_CTX_destroy(c);
+#  346|   }

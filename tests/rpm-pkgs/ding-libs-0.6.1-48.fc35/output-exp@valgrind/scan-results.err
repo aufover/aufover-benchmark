@@ -1,0 +1,2747 @@
+Error: COMPILER_WARNING (CWE-252):
+ding-libs-0.6.1/ini/ini_augment_ut.c: scope_hint: In function 'basic_test'
+ding-libs-0.6.1/ini/ini_augment_ut.c:240:11: warning[-Wunused-result]: ignoring return value of 'system' declared with attribute 'warn_unused_result'
+#  240 |     (void)system(command);
+#      |           ^~~~~~~~~~~~~~~
+#  238|        * we need to clean. */
+#  239|       snprintf(command, PATH_MAX * 3, "rm %s/*~ > /dev/null 2>&1", indir);
+#  240|->     (void)system(command);
+#  241|   
+#  242|       /* Make the file path independent */
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_augment_ut_check.c:27: included_from: Included from here.
+ding-libs-0.6.1/ini/ini_augment_ut_check.c: scope_hint: In function 'test_ini_augment_merge_sections_fn'
+ding-libs-0.6.1/ini/ini_augment_ut_check.c:101:27: warning[-Wformat-extra-args]: too many arguments for format
+#  101 |     fail_unless(ret == 0, "Failed to write %s: ret %d.\n", base_path, ret);
+#      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   99|   
+#  100|       ret = write_to_file(base_path, config_base);
+#  101|->     fail_unless(ret == 0, "Failed to write %s: ret %d.\n", base_path, ret);
+#  102|   
+#  103|       write_to_file(augment_path, config_augment);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_augment_ut_check.c:104:27: warning[-Wformat-extra-args]: too many arguments for format
+#  104 |     fail_unless(ret == 0, "Failed to write %s: ret %d.\n", augment_path, ret);
+#      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  102|   
+#  103|       write_to_file(augment_path, config_augment);
+#  104|->     fail_unless(ret == 0, "Failed to write %s: ret %d.\n", augment_path, ret);
+#  105|   
+#  106|       for (iter = 0; iter < 3; iter++) {
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_augment_ut_check.c:135:33: warning[-Wformat-extra-args]: too many arguments for format
+#  135 |         fail_unless(ret == EOK, "Failed to create collection. Error %d\n",
+#      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  133|           /* Create config collection */
+#  134|           ret = ini_config_create(&in_cfg);
+#  135|->         fail_unless(ret == EOK, "Failed to create collection. Error %d\n",
+#  136|                       ret);
+#  137|   
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_augment_ut_check.c:140:33: warning[-Wformat-extra-args]: too many arguments for format
+#  140 |         fail_unless(ret == EOK, "Failed to open file. Error %d\n", ret);
+#      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  138|           /* Open base.conf */
+#  139|           ret = ini_config_file_open(base_path, 0, &file_ctx);
+#  140|->         fail_unless(ret == EOK, "Failed to open file. Error %d\n", ret);
+#  141|   
+#  142|           /* Seed in_cfg with base.conf */
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_augment_ut_check.c:144:33: warning[-Wformat-extra-args]: too many arguments for format
+#  144 |         fail_unless(ret == EOK, "Failed to parse file context. Error %d\n",
+#      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  142|           /* Seed in_cfg with base.conf */
+#  143|           ret = ini_config_parse(file_ctx, 1, 0, 0, in_cfg);
+#  144|->         fail_unless(ret == EOK, "Failed to parse file context. Error %d\n",
+#  145|                       ret);
+#  146|   
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_augment_ut_check.c:162:21: warning[-Wformat-extra-args]: too many arguments for format
+#  162 |                     "Failed to augment context. Error %d\n", ret);
+#      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  160|           /* We always expect EEXIST due to DETECT being set. */
+#  161|           fail_unless(ret == EEXIST,
+#  162|->                     "Failed to augment context. Error %d\n", ret);
+#  163|   
+#  164|           if (result_cfg) {
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_augment_ut_check.c:172:33: warning[-Wformat-extra-args]: too many arguments for format
+#  172 |         fail_unless(ret == EOK, "Failed to get section list. Error %d\n", ret);
+#      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  170|           /* Get a list of sections from the resulting cfg. */
+#  171|           sections = ini_get_section_list(in_cfg, &sections_count, &ret);
+#  172|->         fail_unless(ret == EOK, "Failed to get section list. Error %d\n", ret);
+#  173|   
+#  174|           /* Validate that the tested section exists. */
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_augment_ut_check.c:176:27: warning[-Wformat-extra-args]: too many arguments for format
+#  176 |         fail_if(ret == 0, "Failed to find expected section.\n");
+#      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  174|           /* Validate that the tested section exists. */
+#  175|           ret = exists_array(test_section, sections, sections_count);
+#  176|->         fail_if(ret == 0, "Failed to find expected section.\n");
+#  177|   
+#  178|           /* Get a list of attributes from the resulting cfg. */
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_augment_ut_check.c:182:33: warning[-Wformat-extra-args]: too many arguments for format
+#  182 |         fail_unless(ret == EOK, "Failed to get attribute list. Error %d\n",
+#      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  180|                                               &attributes_count,
+#  181|                                               &ret);
+#  182|->         fail_unless(ret == EOK, "Failed to get attribute list. Error %d\n",
+#  183|                       ret);
+#  184|   
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_augment_ut_check.c:188:21: warning[-Wformat-extra-args]: too many arguments for format
+#  188 |                     "Expected %d attributes, but received %d.\n",
+#      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  186|            * distinguishes MERGE from PRESERVE/OVERWRITE. */
+#  187|           fail_unless(expected_attributes_count == attributes_count,
+#  188|->                     "Expected %d attributes, but received %d.\n",
+#  189|                       expected_attributes_count, attributes_count);
+#  190|   
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_augment_ut_check.c:194:27: warning[-Wformat-extra-args]: too many arguments for format
+#  194 |         fail_if(ret == 0, "Failed to find expected attribute.\n");
+#      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  192|            * PRESERVE from OVERWRITE. */
+#  193|           ret = exists_array(test_attribute, attributes, attributes_count);
+#  194|->         fail_if(ret == 0, "Failed to find expected attribute.\n");
+#  195|   
+#  196|           ret = ini_get_config_valueobj(test_section, test_attribute, in_cfg,
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_augment_ut_check.c:198:33: warning[-Wformat-extra-args]: too many arguments for format
+#  198 |         fail_unless(ret == EOK, "Failed to load value object. Error %d\n",
+#      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  196|           ret = ini_get_config_valueobj(test_section, test_attribute, in_cfg,
+#  197|                                           0, &val);
+#  198|->         fail_unless(ret == EOK, "Failed to load value object. Error %d\n",
+#  199|                       ret);
+#  200|   
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_augment_ut_check.c:202:33: warning[-Wformat-extra-args]: too many arguments for format
+#  202 |         fail_unless(ret == EOK, "Failed to get config value. Error %d\n", ret);
+#      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  200|   
+#  201|           val_str = ini_get_string_config_value(val, &ret);
+#  202|->         fail_unless(ret == EOK, "Failed to get config value. Error %d\n", ret);
+#  203|   
+#  204|           /* Validate the value of the test attribute. */
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_augment_ut_check.c:207:31: warning[-Wformat-extra-args]: too many arguments for format
+#  207 |         fail_unless(ret == 0, "Attribute %s didn't have expected value of "
+#      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  205|           ret = strcmp(val_str, test_attribute_value);
+#  206|   
+#  207|->         fail_unless(ret == 0, "Attribute %s didn't have expected value of "
+#  208|                       "(%s): saw %s\n", test_attribute, test_attribute_value,
+#  209|                       val_str);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_augment_ut_check.c: scope_hint: In function 'test_ini_augment_empty_dir_fn'
+ding-libs-0.6.1/ini/ini_augment_ut_check.c:252:40: warning[-Wformat-extra-args]: too many arguments for format
+#  252 |     fail_if(ret > PATH_MAX || ret < 0, "snprintf failed\n");
+#      |                                        ^~~~~~~~~~~~~~~~~~~
+#  250|   
+#  251|       ret = snprintf(empty_dir_path, PATH_MAX, "%s/tmp_empty_dir", builddir);
+#  252|->     fail_if(ret > PATH_MAX || ret < 0, "snprintf failed\n");
+#  253|   
+#  254|       ret = ini_config_file_from_mem(base_cfg, strlen(base_cfg),
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_augment_ut_check.c:256:29: warning[-Wformat-extra-args]: too many arguments for format
+#  256 |     fail_unless(ret == EOK, "Failed to load config. Error %d.\n", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  254|       ret = ini_config_file_from_mem(base_cfg, strlen(base_cfg),
+#  255|                                      &file_ctx);
+#  256|->     fail_unless(ret == EOK, "Failed to load config. Error %d.\n", ret);
+#  257|   
+#  258|       ret = ini_config_create(&ini_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_augment_ut_check.c:259:29: warning[-Wformat-extra-args]: too many arguments for format
+#  259 |     fail_unless(ret == EOK, "Failed to create config. Error %d.\n", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  257|   
+#  258|       ret = ini_config_create(&ini_cfg);
+#  259|->     fail_unless(ret == EOK, "Failed to create config. Error %d.\n", ret);
+#  260|       ret = ini_config_parse(file_ctx, INI_STOP_ON_ERROR, INI_MV1S_ALLOW, 0,
+#  261|                              ini_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_augment_ut_check.c:262:29: warning[-Wformat-extra-args]: too many arguments for format
+#  262 |     fail_unless(ret == EOK, "Failed to parse configuration. Error %d.\n", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  260|       ret = ini_config_parse(file_ctx, INI_STOP_ON_ERROR, INI_MV1S_ALLOW, 0,
+#  261|                              ini_cfg);
+#  262|->     fail_unless(ret == EOK, "Failed to parse configuration. Error %d.\n", ret);
+#  263|   
+#  264|       /* Create an empty directory */
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_augment_ut_check.c:269:17: warning[-Wformat-extra-args]: too many arguments for format
+#  269 |                 "Failed to create empty directory. Error %d.\n", errno);
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  267|           ret = errno;
+#  268|           fail_if(ret != EEXIST,
+#  269|->                 "Failed to create empty directory. Error %d.\n", errno);
+#  270|       }
+#  271|   
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_augment_ut_check.c:309:27: warning[-Wformat-extra-args]: too many arguments for format
+#  309 |     fail_unless(val == 1, "Expected attribute value not found.\n");
+#      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  307|   
+#  308|       val = ini_get_int32_config_value(vo, 1, 100, NULL);
+#  309|->     fail_unless(val == 1, "Expected attribute value not found.\n");
+#  310|   
+#  311|       ini_free_attribute_list(attrs_list);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:28: included_from: Included from here.
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c: scope_hint: In function 'dump_configuration'
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:54:17: warning[-Wformat-extra-args]: too many arguments for format
+#   54 |                 "Failed to allocate buffer. Error %d.\n", ret);
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   52|       ret = simplebuffer_alloc(&sbobj);
+#   53|       fail_unless(ret == EOK,
+#   54|->                 "Failed to allocate buffer. Error %d.\n", ret);
+#   55|   
+#   56|       ret = ini_config_serialize(in_cfg, sbobj);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:58:17: warning[-Wformat-extra-args]: too many arguments for format
+#   58 |                 "Failed to serialize. Error %d.\n", ret);
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   56|       ret = ini_config_serialize(in_cfg, sbobj);
+#   57|       fail_unless(ret == EOK,
+#   58|->                 "Failed to serialize. Error %d.\n", ret);
+#   59|   
+#   60|       buff = simplebuffer_get_vbuf(sbobj);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:64:13: warning[-Wformat-extra-args]: too many arguments for format
+#   64 |             "Failed to write to file. Error: %d %s\n", ret, strerror(ret));
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   62|       ret = fwrite(buff, 1, len, file);
+#   63|       fail_if(ret == -1,
+#   64|->             "Failed to write to file. Error: %d %s\n", ret, strerror(ret));
+#   65|   
+#   66|       simplebuffer_free(sbobj);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c: scope_hint: In function 'call_diff'
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:92:32: warning[-Wformat-extra-args]: too many arguments for format
+#   92 |     fail_if(expected_fd == -1, "mkstemp failed: %s\n", strerror(errno));
+#      |                                ^~~~~~~~~~~~~~~~~~~~~~
+#   90|   
+#   91|       expected_fd = mkstemp(expected_fn);
+#   92|->     fail_if(expected_fd == -1, "mkstemp failed: %s\n", strerror(errno));
+#   93|   
+#   94|       ret = write(expected_fd, expected_cfg, expected_cfg_len);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:96:13: warning[-Wformat-extra-args]: too many arguments for format
+#   96 |             "Failed write to %s. Error %s\n",
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   94|       ret = write(expected_fd, expected_cfg, expected_cfg_len);
+#   95|       fail_if(ret == -1,
+#   96|->             "Failed write to %s. Error %s\n",
+#   97|               expected_fn, strerror(errno));
+#   98|   
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:102:27: warning[-Wformat-extra-args]: too many arguments for format
+#  102 |     fail_if(res_fd == -1, "mkstemp failed: %s\n", strerror(errno));
+#      |                           ^~~~~~~~~~~~~~~~~~~~~~
+#  100|   
+#  101|       res_fd = mkstemp(res_fn);
+#  102|->     fail_if(res_fd == -1, "mkstemp failed: %s\n", strerror(errno));
+#  103|   
+#  104|       ret = write(res_fd, res_cfg, res_cfg_len);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:106:13: warning[-Wformat-extra-args]: too many arguments for format
+#  106 |             "Failed write to %s. Error %s\n",
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  104|       ret = write(res_fd, res_cfg, res_cfg_len);
+#  105|       fail_if(ret == -1,
+#  106|->             "Failed write to %s. Error %s\n",
+#  107|               expected_fn, strerror(errno));
+#  108|       close(res_fd);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:113:13: warning[-Wformat-extra-args]: too many arguments for format
+#  113 |             "Failed to execute command:%s. Erorr %s\n",
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  111|       ret = system(command);
+#  112|       fail_if(ret == -1,
+#  113|->             "Failed to execute command:%s. Erorr %s\n",
+#  114|               command, strerror(errno));
+#  115|   
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c: scope_hint: In function '_assert_configuration_equal'
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:138:13: warning[-Wformat-extra-args]: too many arguments for format
+#  138 |             "\n\t[%s:%d] open_memstream failed.", file, line);
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  136|       f_memstream = open_memstream(&res_buffer, &res_buffer_size);
+#  137|       fail_if(f_memstream == NULL,
+#  138|->             "\n\t[%s:%d] open_memstream failed.", file, line);
+#  139|   
+#  140|       dump_configuration(res_cfg, f_memstream);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:28: included_from: Included from here.
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:144:17: warning[-Wformat-extra-args]: too many arguments for format
+#  144 |                 "\n\t[%s:%d] Size of expected config %zu and result config %d "
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  142|   
+#  143|       fail_unless(expected_cfg_len == res_buffer_size,
+#  144|->                 "\n\t[%s:%d] Size of expected config %zu and result config %d "
+#  145|                   "does not match. Res:%d\n",
+#  146|                   file, line, expected_cfg_len, res_buffer_size,
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:144:17: warning[-Wformat=]: format '%d' expects argument of type 'int', but argument 8 has type 'size_t' {aka 'long unsigned int'}
+#  144 |                 "\n\t[%s:%d] Size of expected config %zu and result config %d "
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  145 |                 "does not match. Res:%d\n",
+#  146 |                 file, line, expected_cfg_len, res_buffer_size,
+#      |                                               ~~~~~~~~~~~~~~~
+#      |                                               |
+#      |                                               size_t {aka long unsigned int}
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:144:77: note: format string is defined here
+#  144 |                 "\n\t[%s:%d] Size of expected config %zu and result config %d "
+#      |                                                                            ~^
+#      |                                                                             |
+#      |                                                                             int
+#      |                                                                            %ld
+#  142|   
+#  143|       fail_unless(expected_cfg_len == res_buffer_size,
+#  144|->                 "\n\t[%s:%d] Size of expected config %zu and result config %d "
+#  145|                   "does not match. Res:%d\n",
+#  146|                   file, line, expected_cfg_len, res_buffer_size,
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:152:17: warning[-Wformat-extra-args]: too many arguments for format
+#  152 |                 "\n\t[%s:%d] Configurations are not identical. Res:%d\n",
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  150|       ret = memcmp(res_buffer, expected_cfg, expected_cfg_len);
+#  151|       fail_unless(ret == EOK,
+#  152|->                 "\n\t[%s:%d] Configurations are not identical. Res:%d\n",
+#  153|                   file, line,
+#  154|                   call_diff(function, expected_cfg, expected_cfg_len,
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c: scope_hint: In function 'get_ini_config_from_str'
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:168:29: warning[-Wformat-extra-args]: too many arguments for format
+#  168 |     fail_unless(ret == EOK, "Failed to create config. Error %d.\n", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  166|   
+#  167|       ret = ini_config_create(&in_cfg);
+#  168|->     fail_unless(ret == EOK, "Failed to create config. Error %d.\n", ret);
+#  169|   
+#  170|       ret = ini_config_file_from_mem(input_data, input_data_len, &file_ctx);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:171:29: warning[-Wformat-extra-args]: too many arguments for format
+#  171 |     fail_unless(ret == EOK, "Failed to load config. Error %d.\n", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  169|   
+#  170|       ret = ini_config_file_from_mem(input_data, input_data_len, &file_ctx);
+#  171|->     fail_unless(ret == EOK, "Failed to load config. Error %d.\n", ret);
+#  172|   
+#  173|       ret = ini_config_parse(file_ctx, INI_STOP_ON_NONE, INI_MV1S_ALLOW, 0,
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:175:29: warning[-Wformat-extra-args]: too many arguments for format
+#  175 |     fail_unless(ret == EOK, "Failed to parse config. Error %d.\n", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  173|       ret = ini_config_parse(file_ctx, INI_STOP_ON_NONE, INI_MV1S_ALLOW, 0,
+#  174|                              in_cfg);
+#  175|->     fail_unless(ret == EOK, "Failed to parse config. Error %d.\n", ret);
+#  176|   
+#  177|       ini_config_file_destroy(file_ctx);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c: scope_hint: In function 'test_delete_value_wrong_arguments_fn'
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:197:32: warning[-Wformat-extra-args]: too many arguments for format
+#  197 |     fail_unless(ret == EINVAL, "delete value should fail. Error: %d", ret);
+#      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  195|       /* missing ini_config */
+#  196|       ret = ini_config_delete_value(NULL, "one", COL_DSP_NDUP, "key1", 0);
+#  197|->     fail_unless(ret == EINVAL, "delete value should fail. Error: %d", ret);
+#  198|       assert_configuration_equal(exp_data, sizeof(exp_data), in_cfg);
+#  199|   
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:202:32: warning[-Wformat-extra-args]: too many arguments for format
+#  202 |     fail_unless(ret == EINVAL, "delete value should fail. Error: %d", ret);
+#      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  200|       /* missing section */
+#  201|       ret = ini_config_delete_value(in_cfg, NULL, COL_DSP_NDUP, "key1", 0);
+#  202|->     fail_unless(ret == EINVAL, "delete value should fail. Error: %d", ret);
+#  203|       assert_configuration_equal(exp_data, sizeof(exp_data), in_cfg);
+#  204|   
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:207:32: warning[-Wformat-extra-args]: too many arguments for format
+#  207 |     fail_unless(ret == EINVAL, "delete value should fail. Error: %d", ret);
+#      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  205|       /* missing key */
+#  206|       ret = ini_config_delete_value(in_cfg, "one", COL_DSP_NDUP, NULL, 0);
+#  207|->     fail_unless(ret == EINVAL, "delete value should fail. Error: %d", ret);
+#  208|       assert_configuration_equal(exp_data, sizeof(exp_data), in_cfg);
+#  209|   
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:212:32: warning[-Wformat-extra-args]: too many arguments for format
+#  212 |     fail_unless(ret == EINVAL, "delete value should fail. Error: %d", ret);
+#      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  210|       /* value index is too low */
+#  211|       ret = ini_config_delete_value(in_cfg, "one", COL_DSP_NDUP, "key1", -1);
+#  212|->     fail_unless(ret == EINVAL, "delete value should fail. Error: %d", ret);
+#  213|       assert_configuration_equal(exp_data, sizeof(exp_data), in_cfg);
+#  214|   
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:217:32: warning[-Wformat-extra-args]: too many arguments for format
+#  217 |     fail_unless(ret == ENOENT, "delete value should fail. Error: %d", ret);
+#      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  215|       /* value index is too high */
+#  216|       ret = ini_config_delete_value(in_cfg, "one", COL_DSP_NDUP, "key1", 1);
+#  217|->     fail_unless(ret == ENOENT, "delete value should fail. Error: %d", ret);
+#  218|       assert_configuration_equal(exp_data, sizeof(exp_data), in_cfg);
+#  219|   
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c: scope_hint: In function 'test_delete_value_fn'
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:248:29: warning[-Wformat-extra-args]: too many arguments for format
+#  248 |     fail_unless(ret == EOK, "delete value should fail. Error: %d", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  246|   
+#  247|       ret = ini_config_delete_value(in_cfg, "one", COL_DSP_NDUP, "key1", 3);
+#  248|->     fail_unless(ret == EOK, "delete value should fail. Error: %d", ret);
+#  249|       assert_configuration_equal(delete_first, sizeof(delete_first), in_cfg);
+#  250|   
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c: scope_hint: In function 'test_update_comments_wrong_arguments_fn'
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:278:32: warning[-Wformat-extra-args]: too many arguments for format
+#  278 |     fail_unless(ret == EINVAL, "update commants should fail. Error: %d", ret);
+#      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  276|       /* missing ini_config */
+#  277|       ret = ini_config_update_comment(NULL, "one", "key1", comment, 1, 3);
+#  278|->     fail_unless(ret == EINVAL, "update commants should fail. Error: %d", ret);
+#  279|       assert_configuration_equal(input_data, sizeof(input_data), in_cfg);
+#  280|   
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:283:32: warning[-Wformat-extra-args]: too many arguments for format
+#  283 |     fail_unless(ret == EINVAL, "update commants should fail. Error: %d", ret);
+#      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  281|       /* missing section */
+#  282|       ret = ini_config_update_comment(in_cfg, NULL, "key1", comment, 1, 3);
+#  283|->     fail_unless(ret == EINVAL, "update commants should fail. Error: %d", ret);
+#  284|       assert_configuration_equal(input_data, sizeof(input_data), in_cfg);
+#  285|   
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:288:32: warning[-Wformat-extra-args]: too many arguments for format
+#  288 |     fail_unless(ret == EINVAL, "update commants should fail. Error: %d", ret);
+#      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  286|       /* missing key */
+#  287|       ret = ini_config_update_comment(in_cfg, "one", NULL, comment, 1, 3);
+#  288|->     fail_unless(ret == EINVAL, "update commants should fail. Error: %d", ret);
+#  289|       assert_configuration_equal(input_data, sizeof(input_data), in_cfg);
+#  290|   
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:293:32: warning[-Wformat-extra-args]: too many arguments for format
+#  293 |     fail_unless(ret == ENOENT, "update commants should fail. Error: %d", ret);
+#      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  291|       /* wrong section */
+#  292|       ret = ini_config_update_comment(in_cfg, "noexist", "key1", comment, 1, 3);
+#  293|->     fail_unless(ret == ENOENT, "update commants should fail. Error: %d", ret);
+#  294|       assert_configuration_equal(input_data, sizeof(input_data), in_cfg);
+#  295|   
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:298:32: warning[-Wformat-extra-args]: too many arguments for format
+#  298 |     fail_unless(ret == ENOENT, "update commants should fail. Error: %d", ret);
+#      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  296|       /* wrong key */
+#  297|       ret = ini_config_update_comment(in_cfg, "one", "noexist", comment, 1, 3);
+#  298|->     fail_unless(ret == ENOENT, "update commants should fail. Error: %d", ret);
+#  299|       assert_configuration_equal(input_data, sizeof(input_data), in_cfg);
+#  300|   
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:303:32: warning[-Wformat-extra-args]: too many arguments for format
+#  303 |     fail_unless(ret == EINVAL, "update commants should fail. Error: %d", ret);
+#      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  301|       /* value index is too low */
+#  302|       ret = ini_config_update_comment(in_cfg, "one", "key1", comment, 1, -1);
+#  303|->     fail_unless(ret == EINVAL, "update commants should fail. Error: %d", ret);
+#  304|       assert_configuration_equal(input_data, sizeof(input_data), in_cfg);
+#  305|   
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:308:32: warning[-Wformat-extra-args]: too many arguments for format
+#  308 |     fail_unless(ret == ENOENT, "update commants should fail. Error: %d", ret);
+#      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  306|       /* value index is too high */
+#  307|       ret = ini_config_update_comment(in_cfg, "one", "key1", comment, 1, 5);
+#  308|->     fail_unless(ret == ENOENT, "update commants should fail. Error: %d", ret);
+#  309|       assert_configuration_equal(input_data, sizeof(input_data), in_cfg);
+#  310|   
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c: scope_hint: In function 'test_update_comments_fn'
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:400:29: warning[-Wformat-extra-args]: too many arguments for format
+#  400 |     fail_unless(ret == EOK, "update commants should fail. Error: %d", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  398|       /* add comments with size */
+#  399|       ret = ini_config_update_comment(in_cfg, "one", "key1", comments, 1, 0);
+#  400|->     fail_unless(ret == EOK, "update commants should fail. Error: %d", ret);
+#  401|       assert_configuration_equal(exp_data_1comment, sizeof(exp_data_1comment),
+#  402|                                  in_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:411:29: warning[-Wformat-extra-args]: too many arguments for format
+#  411 |     fail_unless(ret == EOK, "update commants should fail. Error: %d", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  409|       /* add comments with size */
+#  410|       ret = ini_config_update_comment(in_cfg, "one", "key1", comments, 2, 0);
+#  411|->     fail_unless(ret == EOK, "update commants should fail. Error: %d", ret);
+#  412|       assert_configuration_equal(exp_data_2comments, sizeof(exp_data_2comments),
+#  413|                                  in_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:421:29: warning[-Wformat-extra-args]: too many arguments for format
+#  421 |     fail_unless(ret == EOK, "update commants should fail. Error: %d", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  419|       /* add comments (NULL terminated array), size is 0 */
+#  420|       ret = ini_config_update_comment(in_cfg, "one", "key1", comments, 0, 0);
+#  421|->     fail_unless(ret == EOK, "update commants should fail. Error: %d", ret);
+#  422|       assert_configuration_equal(exp_data_2comments, sizeof(exp_data_2comments),
+#  423|                                  in_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:431:29: warning[-Wformat-extra-args]: too many arguments for format
+#  431 |     fail_unless(ret == EOK, "update commants should fail. Error: %d", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  429|       /* add comments (NULL terminated array), size is 0 */
+#  430|       ret = ini_config_update_comment(in_cfg, "one", "key1", comments, 1, 2);
+#  431|->     fail_unless(ret == EOK, "update commants should fail. Error: %d", ret);
+#  432|       assert_configuration_equal(exp_data_1comment_after2,
+#  433|                                  sizeof(exp_data_1comment_after2),
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:442:29: warning[-Wformat-extra-args]: too many arguments for format
+#  442 |     fail_unless(ret == EOK, "update commants should fail. Error: %d", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  440|       /* replace comment */
+#  441|       ret = ini_config_update_comment(in_cfg, "one", "key1", comments, 0, 4);
+#  442|->     fail_unless(ret == EOK, "update commants should fail. Error: %d", ret);
+#  443|       assert_configuration_equal(exp_replaced, sizeof(exp_replaced),
+#  444|                                  in_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:453:29: warning[-Wformat-extra-args]: too many arguments for format
+#  453 |     fail_unless(ret == EOK, "update commants should fail. Error: %d", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  451|       ret = ini_config_update_comment(in_cfg, "one", "key1",
+#  452|                                       empty_comment, 0, 4);
+#  453|->     fail_unless(ret == EOK, "update commants should fail. Error: %d", ret);
+#  454|       assert_configuration_equal(exp_removed_comment,
+#  455|                                  sizeof(exp_removed_comment),
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:465:29: warning[-Wformat-extra-args]: too many arguments for format
+#  465 |     fail_unless(ret == EOK, "update commants should fail. Error: %d", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  463|       ret = ini_config_update_comment(in_cfg, "one", "key1",
+#  464|                                       NULL, 0, 4);
+#  465|->     fail_unless(ret == EOK, "update commants should fail. Error: %d", ret);
+#  466|       assert_configuration_equal(exp_removed_comment,
+#  467|                                  sizeof(exp_removed_comment),
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c: scope_hint: In function 'test_add_str_wrong_arguments_fn'
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:493:32: warning[-Wformat-extra-args]: too many arguments for format
+#  493 |     fail_unless(ret == EINVAL, "Add str should fail. Error: %d", ret);
+#      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  491|                                      comments, 2, WRAP_SIZE, COL_DSP_END, "key1",
+#  492|                                      0, INI_VA_NOCHECK);
+#  493|->     fail_unless(ret == EINVAL, "Add str should fail. Error: %d", ret);
+#  494|       assert_configuration_equal(input_data, sizeof(input_data), in_cfg);
+#  495|   
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:500:32: warning[-Wformat-extra-args]: too many arguments for format
+#  500 |     fail_unless(ret == EINVAL, "Add str should fail. Error: %d", ret);
+#      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  498|                                      comments, 2, WRAP_SIZE, COL_DSP_END, "key1",
+#  499|                                      0, INI_VA_NOCHECK);
+#  500|->     fail_unless(ret == EINVAL, "Add str should fail. Error: %d", ret);
+#  501|       assert_configuration_equal(input_data, sizeof(input_data), in_cfg);
+#  502|   
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:507:32: warning[-Wformat-extra-args]: too many arguments for format
+#  507 |     fail_unless(ret == EINVAL, "Add str should fail. Error: %d", ret);
+#      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  505|                                      comments, 2, WRAP_SIZE, COL_DSP_END, "key1",
+#  506|                                      0, INI_VA_NOCHECK);
+#  507|->     fail_unless(ret == EINVAL, "Add str should fail. Error: %d", ret);
+#  508|       assert_configuration_equal(input_data, sizeof(input_data), in_cfg);
+#  509|   
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:514:32: warning[-Wformat-extra-args]: too many arguments for format
+#  514 |     fail_unless(ret == EINVAL, "Add str should fail. Error: %d", ret);
+#      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  512|                                      comments, 2, WRAP_SIZE, COL_DSP_END, "key1",
+#  513|                                      0, INI_VA_NOCHECK);
+#  514|->     fail_unless(ret == EINVAL, "Add str should fail. Error: %d", ret);
+#  515|       assert_configuration_equal(input_data, sizeof(input_data), in_cfg);
+#  516|   
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:521:32: warning[-Wformat-extra-args]: too many arguments for format
+#  521 |     fail_unless(ret == EINVAL, "Add str should fail. Error: %d", ret);
+#      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  519|                                      comments, 2, WRAP_SIZE, COL_DSP_END, "key1",
+#  520|                                      -1, INI_VA_NOCHECK);
+#  521|->     fail_unless(ret == EINVAL, "Add str should fail. Error: %d", ret);
+#  522|       assert_configuration_equal(input_data, sizeof(input_data), in_cfg);
+#  523|   
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:528:32: warning[-Wformat-extra-args]: too many arguments for format
+#  528 |     fail_unless(ret == ENOSYS, "Add str should fail. Error: %d", ret);
+#      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  526|                                      comments, 2, WRAP_SIZE, COL_DSP_END, "key1",
+#  527|                                      0, 0xff);
+#  528|->     fail_unless(ret == ENOSYS, "Add str should fail. Error: %d", ret);
+#  529|       assert_configuration_equal(input_data, sizeof(input_data), in_cfg);
+#  530|   
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:535:32: warning[-Wformat-extra-args]: too many arguments for format
+#  535 |     fail_unless(ret == ENOENT, "Add str should fail. Error: %d", ret);
+#      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  533|                                      comments, 2, WRAP_SIZE, COL_DSP_NDUP,
+#  534|                                      "key1", 0, INI_VA_NOCHECK);
+#  535|->     fail_unless(ret == ENOENT, "Add str should fail. Error: %d", ret);
+#  536|       assert_configuration_equal(input_data, sizeof(input_data), in_cfg);
+#  537|   
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c: scope_hint: In function 'test_add_str_simple_fn'
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:616:29: warning[-Wformat-extra-args]: too many arguments for format
+#  616 |     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  614|                                      NULL, 0, WRAP_SIZE, COL_DSP_END, NULL,
+#  615|                                      0, INI_VA_NOCHECK);
+#  616|->     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#  617|       assert_configuration_equal(add_new_value_to_end,
+#  618|                                  sizeof(add_new_value_to_end), in_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:628:29: warning[-Wformat-extra-args]: too many arguments for format
+#  628 |     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  626|                                      comments, 2, WRAP_SIZE, COL_DSP_END, NULL,
+#  627|                                      0, INI_VA_NOCHECK);
+#  628|->     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#  629|       assert_configuration_equal(add_new_value_to_end_with_comment,
+#  630|                                  sizeof(add_new_value_to_end_with_comment),
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:642:29: warning[-Wformat-extra-args]: too many arguments for format
+#  642 |     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  640|                                      NULL, 0, WRAP_SIZE, COL_DSP_FRONT, NULL,
+#  641|                                      0, INI_VA_NOCHECK);
+#  642|->     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#  643|       assert_configuration_equal(add_new_value_to_front,
+#  644|                                  sizeof(add_new_value_to_front), in_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:654:29: warning[-Wformat-extra-args]: too many arguments for format
+#  654 |     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  652|                                      comments, 2, WRAP_SIZE, COL_DSP_FRONT, NULL,
+#  653|                                      0, INI_VA_NOCHECK);
+#  654|->     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#  655|       assert_configuration_equal(add_new_value_to_front_with_comment,
+#  656|                                  sizeof(add_new_value_to_front_with_comment),
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:667:29: warning[-Wformat-extra-args]: too many arguments for format
+#  667 |     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  665|                                      NULL, 0, WRAP_SIZE, COL_DSP_AFTER, "key1",
+#  666|                                      0, INI_VA_NOCHECK);
+#  667|->     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#  668|       assert_configuration_equal(add_new_value_after_key1,
+#  669|                                  sizeof(add_new_value_after_key1),
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:680:29: warning[-Wformat-extra-args]: too many arguments for format
+#  680 |     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  678|                                      NULL, 0, WRAP_SIZE, COL_DSP_AFTER, "key1",
+#  679|                                      1, INI_VA_NOCHECK);
+#  680|->     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#  681|       assert_configuration_equal(add_new_value_after_key1,
+#  682|                                  sizeof(add_new_value_after_key1),
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:693:29: warning[-Wformat-extra-args]: too many arguments for format
+#  693 |     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  691|                                      NULL, 0, WRAP_SIZE, COL_DSP_AFTER, "key1",
+#  692|                                      1000, INI_VA_NOCHECK);
+#  693|->     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#  694|       assert_configuration_equal(add_new_value_after_key1,
+#  695|                                  sizeof(add_new_value_after_key1),
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:706:29: warning[-Wformat-extra-args]: too many arguments for format
+#  706 |     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  704|                                      NULL, 0, WRAP_SIZE, COL_DSP_BEFORE, "key2",
+#  705|                                      0, INI_VA_NOCHECK);
+#  706|->     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#  707|       assert_configuration_equal(add_new_value_before_key2,
+#  708|                                  sizeof(add_new_value_before_key2),
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c: scope_hint: In function 'test_add_str_duplicate_fn'
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:780:32: warning[-Wformat-extra-args]: too many arguments for format
+#  780 |     fail_unless(ret == ENOENT, "Add duplicate key must fail. Error: %d", ret);
+#      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  778|                                      NULL, 0, WRAP_SIZE, COL_DSP_FIRSTDUP,
+#  779|                                      NULL, 0, INI_VA_NOCHECK);
+#  780|->     fail_unless(ret == ENOENT, "Add duplicate key must fail. Error: %d", ret);
+#  781|       assert_configuration_equal(input_data, sizeof(input_data), in_cfg);
+#  782|   
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:787:32: warning[-Wformat-extra-args]: too many arguments for format
+#  787 |     fail_unless(ret == ENOENT, "Add duplicate key must fail. Error: %d", ret);
+#      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  785|                                      NULL, 0, WRAP_SIZE, COL_DSP_LASTDUP,
+#  786|                                      NULL, 0, INI_VA_NOCHECK);
+#  787|->     fail_unless(ret == ENOENT, "Add duplicate key must fail. Error: %d", ret);
+#  788|       assert_configuration_equal(input_data, sizeof(input_data), in_cfg);
+#  789|   
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:794:29: warning[-Wformat-extra-args]: too many arguments for format
+#  794 |     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  792|                                      NULL, 0, WRAP_SIZE, COL_DSP_FIRSTDUP,
+#  793|                                      NULL, 0, INI_VA_NOCHECK);
+#  794|->     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#  795|       assert_configuration_equal(add_first_duplicate,
+#  796|                                  sizeof(add_first_duplicate), in_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:806:29: warning[-Wformat-extra-args]: too many arguments for format
+#  806 |     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  804|                                      NULL, 0, WRAP_SIZE, COL_DSP_FIRSTDUP,
+#  805|                                      "key2", 0, INI_VA_NOCHECK);
+#  806|->     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#  807|       assert_configuration_equal(add_first_duplicate,
+#  808|                                  sizeof(add_first_duplicate), in_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:818:29: warning[-Wformat-extra-args]: too many arguments for format
+#  818 |     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  816|                                      NULL, 0, WRAP_SIZE, COL_DSP_FIRSTDUP,
+#  817|                                      "key0", 1, INI_VA_NOCHECK);
+#  818|->     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#  819|       assert_configuration_equal(add_first_duplicate,
+#  820|                                  sizeof(add_first_duplicate), in_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:830:29: warning[-Wformat-extra-args]: too many arguments for format
+#  830 |     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  828|                                      NULL, 0, WRAP_SIZE, COL_DSP_FIRSTDUP,
+#  829|                                      NULL, 0, INI_VA_NOCHECK);
+#  830|->     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#  831|       assert_configuration_equal(add_first_duplicate_for_multi,
+#  832|                                  sizeof(add_first_duplicate_for_multi), in_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:842:29: warning[-Wformat-extra-args]: too many arguments for format
+#  842 |     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  840|                                      NULL, 0, WRAP_SIZE, COL_DSP_LASTDUP,
+#  841|                                      NULL, 0, INI_VA_NOCHECK);
+#  842|->     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#  843|       assert_configuration_equal(add_last_duplicate,
+#  844|                                  sizeof(add_last_duplicate), in_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:854:29: warning[-Wformat-extra-args]: too many arguments for format
+#  854 |     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  852|                                      NULL, 0, WRAP_SIZE, COL_DSP_NDUP,
+#  853|                                      NULL, 0, INI_VA_NOCHECK);
+#  854|->     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#  855|       assert_configuration_equal(add_first_duplicate_for_multi,
+#  856|                                  sizeof(add_first_duplicate_for_multi), in_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:866:29: warning[-Wformat-extra-args]: too many arguments for format
+#  866 |     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  864|                                      NULL, 0, WRAP_SIZE, COL_DSP_NDUP,
+#  865|                                      "key0", 0, INI_VA_NOCHECK);
+#  866|->     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#  867|       assert_configuration_equal(add_first_duplicate_for_multi,
+#  868|                                  sizeof(add_first_duplicate_for_multi), in_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:878:29: warning[-Wformat-extra-args]: too many arguments for format
+#  878 |     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  876|                                      NULL, 0, WRAP_SIZE, COL_DSP_NDUP,
+#  877|                                      NULL, 100, INI_VA_NOCHECK);
+#  878|->     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#  879|       assert_configuration_equal(add_last_duplicate,
+#  880|                                  sizeof(add_last_duplicate), in_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:890:29: warning[-Wformat-extra-args]: too many arguments for format
+#  890 |     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  888|                                      comments, 0, WRAP_SIZE, COL_DSP_NDUP,
+#  889|                                      NULL, 1, INI_VA_NOCHECK);
+#  890|->     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#  891|       assert_configuration_equal(add_duplicate_with_index1,
+#  892|                                  sizeof(add_duplicate_with_index1), in_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c: scope_hint: In function 'test_add_str_update_specific_value_fn'
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:947:32: warning[-Wformat-extra-args]: too many arguments for format
+#  947 |     fail_unless(ret == ENOENT, "Failed to add str. Error: %d", ret);
+#      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  945|                                      comments, 2, WRAP_SIZE, COL_DSP_NDUP, NULL,
+#  946|                                      0, INI_VA_MOD);
+#  947|->     fail_unless(ret == ENOENT, "Failed to add str. Error: %d", ret);
+#  948|       assert_configuration_equal(input_data, sizeof(input_data), in_cfg);
+#  949|       ini_config_destroy(in_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:960:32: warning[-Wformat-extra-args]: too many arguments for format
+#  960 |     fail_unless(ret == ENOENT, "Failed to add str. Error: %d", ret);
+#      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  958|                                      NULL, 0, WRAP_SIZE, COL_DSP_BEFORE, "key2",
+#  959|                                      0, INI_VA_MOD);
+#  960|->     fail_unless(ret == ENOENT, "Failed to add str. Error: %d", ret);
+#  961|       assert_configuration_equal(input_data,
+#  962|                                  sizeof(input_data), in_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:972:32: warning[-Wformat-extra-args]: too many arguments for format
+#  972 |     fail_unless(ret == ENOENT, "Failed to add str. Error: %d", ret);
+#      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  970|                                      comments, 2, WRAP_SIZE, COL_DSP_NDUP, NULL,
+#  971|                                      0, INI_VA_MOD_E);
+#  972|->     fail_unless(ret == ENOENT, "Failed to add str. Error: %d", ret);
+#  973|       assert_configuration_equal(input_data, sizeof(input_data), in_cfg);
+#  974|       ini_config_destroy(in_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:983:29: warning[-Wformat-extra-args]: too many arguments for format
+#  983 |     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  981|                                      comments, 2, WRAP_SIZE, COL_DSP_NDUP, NULL,
+#  982|                                      0, INI_VA_MOD);
+#  983|->     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#  984|       assert_configuration_equal(modify_existing_value,
+#  985|                                  sizeof(modify_existing_value), in_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:995:29: warning[-Wformat-extra-args]: too many arguments for format
+#  995 |     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  993|                                      comments, 2, WRAP_SIZE, COL_DSP_NDUP, NULL,
+#  994|                                      0, INI_VA_MOD_E);
+#  995|->     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#  996|       assert_configuration_equal(modify_existing_value,
+#  997|                                  sizeof(modify_existing_value), in_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:1007:29: warning[-Wformat-extra-args]: too many arguments for format
+# 1007 |     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1005|                                      NULL, 0, WRAP_SIZE, COL_DSP_NDUP, NULL,
+# 1006|                                      3, INI_VA_MOD);
+# 1007|->     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+# 1008|       assert_configuration_equal(modify_existing_value_index,
+# 1009|                                  sizeof(modify_existing_value_index), in_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:1019:29: warning[-Wformat-extra-args]: too many arguments for format
+# 1019 |     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1017|                                      NULL, 0, WRAP_SIZE, COL_DSP_NDUP, NULL,
+# 1018|                                      3, INI_VA_MOD_E);
+# 1019|->     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+# 1020|       assert_configuration_equal(modify_existing_value_index,
+# 1021|                                  sizeof(modify_existing_value_index), in_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:1031:29: warning[-Wformat-extra-args]: too many arguments for format
+# 1031 |     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1029|                                      NULL, 0, WRAP_SIZE, COL_DSP_NDUP, NULL,
+# 1030|                                      1000, INI_VA_MOD);
+# 1031|->     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+# 1032|       assert_configuration_equal(modify_existing_value_index,
+# 1033|                                  sizeof(modify_existing_value_index), in_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:1043:32: warning[-Wformat-extra-args]: too many arguments for format
+# 1043 |     fail_unless(ret == ENOENT, "Failed to add str. Error: %d", ret);
+#      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1041|                                      NULL, 0, WRAP_SIZE, COL_DSP_NDUP, NULL,
+# 1042|                                      1000, INI_VA_MOD_E);
+# 1043|->     fail_unless(ret == ENOENT, "Failed to add str. Error: %d", ret);
+# 1044|       assert_configuration_equal(input_data,
+# 1045|                                  sizeof(input_data), in_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c: scope_hint: In function 'test_add_str_update_MODADD_fn'
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:1112:32: warning[-Wformat-extra-args]: too many arguments for format
+# 1112 |     fail_unless(ret == ENOENT, "Failed to add str. Error: %d", ret);
+#      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1110|                                      comments, 2, WRAP_SIZE, COL_DSP_NDUP, NULL,
+# 1111|                                      0, INI_VA_MODADD);
+# 1112|->     fail_unless(ret == ENOENT, "Failed to add str. Error: %d", ret);
+# 1113|       assert_configuration_equal(input_data, sizeof(input_data), in_cfg);
+# 1114|       ini_config_destroy(in_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:1123:29: warning[-Wformat-extra-args]: too many arguments for format
+# 1123 |     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1121|                                      NULL, 0, WRAP_SIZE, COL_DSP_BEFORE, "key2",
+# 1122|                                      0, INI_VA_MODADD);
+# 1123|->     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+# 1124|       assert_configuration_equal(modify_add_non_existing_value,
+# 1125|                                  sizeof(modify_add_non_existing_value), in_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:1135:32: warning[-Wformat-extra-args]: too many arguments for format
+# 1135 |     fail_unless(ret == ENOENT, "Failed to add str. Error: %d", ret);
+#      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1133|                                      comments, 2, WRAP_SIZE, COL_DSP_NDUP, NULL,
+# 1134|                                      0, INI_VA_MODADD_E);
+# 1135|->     fail_unless(ret == ENOENT, "Failed to add str. Error: %d", ret);
+# 1136|       assert_configuration_equal(input_data, sizeof(input_data), in_cfg);
+# 1137|       ini_config_destroy(in_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:1146:29: warning[-Wformat-extra-args]: too many arguments for format
+# 1146 |     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1144|                                      comments, 2, WRAP_SIZE, COL_DSP_NDUP, NULL,
+# 1145|                                      0, INI_VA_MODADD);
+# 1146|->     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+# 1147|       assert_configuration_equal(modify_existing_value,
+# 1148|                                  sizeof(modify_existing_value), in_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:1158:29: warning[-Wformat-extra-args]: too many arguments for format
+# 1158 |     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1156|                                      comments, 2, WRAP_SIZE, COL_DSP_NDUP, NULL,
+# 1157|                                      0, INI_VA_MODADD_E);
+# 1158|->     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+# 1159|       assert_configuration_equal(modify_existing_value,
+# 1160|                                  sizeof(modify_existing_value), in_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:1170:29: warning[-Wformat-extra-args]: too many arguments for format
+# 1170 |     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1168|                                      NULL, 0, WRAP_SIZE, COL_DSP_NDUP, NULL,
+# 1169|                                      3, INI_VA_MODADD);
+# 1170|->     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+# 1171|       assert_configuration_equal(modify_existing_value_index,
+# 1172|                                  sizeof(modify_existing_value_index), in_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:1182:29: warning[-Wformat-extra-args]: too many arguments for format
+# 1182 |     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1180|                                      NULL, 0, WRAP_SIZE, COL_DSP_NDUP, NULL,
+# 1181|                                      3, INI_VA_MODADD_E);
+# 1182|->     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+# 1183|       assert_configuration_equal(modify_existing_value_index,
+# 1184|                                  sizeof(modify_existing_value_index), in_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:1194:29: warning[-Wformat-extra-args]: too many arguments for format
+# 1194 |     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1192|                                      NULL, 0, WRAP_SIZE, COL_DSP_NDUP, NULL,
+# 1193|                                      1000, INI_VA_MODADD);
+# 1194|->     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+# 1195|       assert_configuration_equal(modify_existing_value_index,
+# 1196|                                  sizeof(modify_existing_value_index), in_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:1206:32: warning[-Wformat-extra-args]: too many arguments for format
+# 1206 |     fail_unless(ret == ENOENT, "Failed to add str. Error: %d", ret);
+#      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1204|                                      NULL, 0, WRAP_SIZE, COL_DSP_NDUP, NULL,
+# 1205|                                      1000, INI_VA_MODADD_E);
+# 1206|->     fail_unless(ret == ENOENT, "Failed to add str. Error: %d", ret);
+# 1207|       assert_configuration_equal(input_data,
+# 1208|                                  sizeof(input_data), in_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c: scope_hint: In function 'test_add_str_simple_clean_fn'
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:1288:29: warning[-Wformat-extra-args]: too many arguments for format
+# 1288 |     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1286|                                      NULL, 0, WRAP_SIZE, COL_DSP_END, NULL,
+# 1287|                                      0, INI_VA_CLEAN);
+# 1288|->     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+# 1289|       assert_configuration_equal(add_new_value_to_end,
+# 1290|                                  sizeof(add_new_value_to_end), in_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:1300:29: warning[-Wformat-extra-args]: too many arguments for format
+# 1300 |     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1298|                                      comments, 2, WRAP_SIZE, COL_DSP_END, NULL,
+# 1299|                                      0, INI_VA_CLEAN);
+# 1300|->     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+# 1301|       assert_configuration_equal(add_new_value_to_end_with_comment,
+# 1302|                                  sizeof(add_new_value_to_end_with_comment),
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:1314:29: warning[-Wformat-extra-args]: too many arguments for format
+# 1314 |     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1312|                                      NULL, 0, WRAP_SIZE, COL_DSP_FRONT, NULL,
+# 1313|                                      0, INI_VA_CLEAN);
+# 1314|->     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+# 1315|       assert_configuration_equal(add_new_value_to_front,
+# 1316|                                  sizeof(add_new_value_to_front), in_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:1326:29: warning[-Wformat-extra-args]: too many arguments for format
+# 1326 |     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1324|                                      comments, 2, WRAP_SIZE, COL_DSP_FRONT, NULL,
+# 1325|                                      0, INI_VA_CLEAN);
+# 1326|->     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+# 1327|       assert_configuration_equal(add_new_value_to_front_with_comment,
+# 1328|                                  sizeof(add_new_value_to_front_with_comment),
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:1339:29: warning[-Wformat-extra-args]: too many arguments for format
+# 1339 |     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1337|                                      NULL, 0, WRAP_SIZE, COL_DSP_AFTER, "key1",
+# 1338|                                      0, INI_VA_CLEAN);
+# 1339|->     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+# 1340|       assert_configuration_equal(add_new_value_after_key1,
+# 1341|                                  sizeof(add_new_value_after_key1),
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:1352:29: warning[-Wformat-extra-args]: too many arguments for format
+# 1352 |     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1350|                                      NULL, 0, WRAP_SIZE, COL_DSP_AFTER, "key1",
+# 1351|                                      1, INI_VA_CLEAN);
+# 1352|->     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+# 1353|       assert_configuration_equal(add_new_value_after_key1,
+# 1354|                                  sizeof(add_new_value_after_key1),
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:1365:29: warning[-Wformat-extra-args]: too many arguments for format
+# 1365 |     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1363|                                      NULL, 0, WRAP_SIZE, COL_DSP_AFTER, "key1",
+# 1364|                                      1000, INI_VA_CLEAN);
+# 1365|->     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+# 1366|       assert_configuration_equal(add_new_value_after_key1,
+# 1367|                                  sizeof(add_new_value_after_key1),
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:1378:29: warning[-Wformat-extra-args]: too many arguments for format
+# 1378 |     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1376|                                      NULL, 0, WRAP_SIZE, COL_DSP_BEFORE, "key2",
+# 1377|                                      0, INI_VA_CLEAN);
+# 1378|->     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+# 1379|       assert_configuration_equal(add_new_value_before_key2,
+# 1380|                                  sizeof(add_new_value_before_key2),
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c: scope_hint: In function 'test_add_str_duplicate_error_fn'
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:1417:32: warning[-Wformat-extra-args]: too many arguments for format
+# 1417 |     fail_unless(ret == EEXIST, "Failed to add str. Error: %d", ret);
+#      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1415|                                      NULL, 0, WRAP_SIZE, COL_DSP_FIRSTDUP,
+# 1416|                                      NULL, 0, INI_VA_DUPERROR);
+# 1417|->     fail_unless(ret == EEXIST, "Failed to add str. Error: %d", ret);
+# 1418|       assert_configuration_equal(input_data, sizeof(input_data), in_cfg);
+# 1419|       ini_config_destroy(in_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:1430:32: warning[-Wformat-extra-args]: too many arguments for format
+# 1430 |     fail_unless(ret == EEXIST, "Failed to add str. Error: %d", ret);
+#      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1428|                                      NULL, 0, WRAP_SIZE, COL_DSP_FIRSTDUP,
+# 1429|                                      NULL, 0, INI_VA_DUPERROR);
+# 1430|->     fail_unless(ret == EEXIST, "Failed to add str. Error: %d", ret);
+# 1431|       assert_configuration_equal(input_data, sizeof(input_data), in_cfg);
+# 1432|       ini_config_destroy(in_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:1443:32: warning[-Wformat-extra-args]: too many arguments for format
+# 1443 |     fail_unless(ret == EEXIST, "Failed to add str. Error: %d", ret);
+#      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1441|                                      NULL, 0, WRAP_SIZE, COL_DSP_FIRSTDUP,
+# 1442|                                      NULL, 0, INI_VA_DUPERROR);
+# 1443|->     fail_unless(ret == EEXIST, "Failed to add str. Error: %d", ret);
+# 1444|       assert_configuration_equal(input_data, sizeof(input_data), in_cfg);
+# 1445|       ini_config_destroy(in_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:1456:32: warning[-Wformat-extra-args]: too many arguments for format
+# 1456 |     fail_unless(ret == EEXIST, "Failed to add str. Error: %d", ret);
+#      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1454|                                      NULL, 0, WRAP_SIZE, COL_DSP_LASTDUP,
+# 1455|                                      NULL, 0, INI_VA_DUPERROR);
+# 1456|->     fail_unless(ret == EEXIST, "Failed to add str. Error: %d", ret);
+# 1457|       assert_configuration_equal(input_data, sizeof(input_data), in_cfg);
+# 1458|       ini_config_destroy(in_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:1469:32: warning[-Wformat-extra-args]: too many arguments for format
+# 1469 |     fail_unless(ret == EEXIST, "Failed to add str. Error: %d", ret);
+#      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1467|                                      NULL, 0, WRAP_SIZE, COL_DSP_NDUP,
+# 1468|                                      NULL, 0, INI_VA_DUPERROR);
+# 1469|->     fail_unless(ret == EEXIST, "Failed to add str. Error: %d", ret);
+# 1470|       assert_configuration_equal(input_data, sizeof(input_data), in_cfg);
+# 1471|       ini_config_destroy(in_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:1483:32: warning[-Wformat-extra-args]: too many arguments for format
+# 1483 |     fail_unless(ret == EEXIST, "Failed to add str. Error: %d", ret);
+#      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1481|                                      NULL, 0, WRAP_SIZE, COL_DSP_NDUP,
+# 1482|                                      "key1", 1, INI_VA_DUPERROR);
+# 1483|->     fail_unless(ret == EEXIST, "Failed to add str. Error: %d", ret);
+# 1484|       assert_configuration_equal(input_data, sizeof(input_data), in_cfg);
+# 1485|       ini_config_destroy(in_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:1497:32: warning[-Wformat-extra-args]: too many arguments for format
+# 1497 |     fail_unless(ret == EEXIST, "Failed to add str. Error: %d", ret);
+#      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1495|                                      NULL, 0, WRAP_SIZE, COL_DSP_NDUP,
+# 1496|                                      NULL, 100, INI_VA_DUPERROR);
+# 1497|->     fail_unless(ret == EEXIST, "Failed to add str. Error: %d", ret);
+# 1498|       assert_configuration_equal(input_data, sizeof(input_data), in_cfg);
+# 1499|       ini_config_destroy(in_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:1508:29: warning[-Wformat-extra-args]: too many arguments for format
+# 1508 |     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1506|                                      NULL, 0, WRAP_SIZE, COL_DSP_BEFORE, "key2",
+# 1507|                                      0, INI_VA_DUPERROR);
+# 1508|->     fail_unless(ret == EOK, "Failed to add str. Error: %d", ret);
+# 1509|       assert_configuration_equal(add_non_existing_value,
+# 1510|                                  sizeof(add_non_existing_value), in_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c: scope_hint: In function 'test_add_str_duplicate_clean_fn'
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:1560:32: warning[-Wformat-extra-args]: too many arguments for format
+# 1560 |     fail_unless(ret == ENOENT, "Failed to add str. Error: %d", ret);
+#      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1558|                                      NULL, 0, WRAP_SIZE, COL_DSP_FIRSTDUP,
+# 1559|                                      NULL, 0, INI_VA_CLEAN);
+# 1560|->     fail_unless(ret == ENOENT, "Failed to add str. Error: %d", ret);
+# 1561|       assert_configuration_equal(only_removed_key, sizeof(only_removed_key),
+# 1562|                                  in_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:1574:32: warning[-Wformat-extra-args]: too many arguments for format
+# 1574 |     fail_unless(ret == ENOENT, "Failed to add str. Error: %d", ret);
+#      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1572|                                      NULL, 0, WRAP_SIZE, COL_DSP_FIRSTDUP,
+# 1573|                                      NULL, 0, INI_VA_CLEAN);
+# 1574|->     fail_unless(ret == ENOENT, "Failed to add str. Error: %d", ret);
+# 1575|       assert_configuration_equal(only_removed_all_duplicates,
+# 1576|                                  sizeof(only_removed_all_duplicates), in_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:1588:32: warning[-Wformat-extra-args]: too many arguments for format
+# 1588 |     fail_unless(ret == ENOENT, "Failed to add str. Error: %d", ret);
+#      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1586|                                      NULL, 0, WRAP_SIZE, COL_DSP_FIRSTDUP,
+# 1587|                                      NULL, 0, INI_VA_CLEAN);
+# 1588|->     fail_unless(ret == ENOENT, "Failed to add str. Error: %d", ret);
+# 1589|       assert_configuration_equal(only_removed_key_with_comment,
+# 1590|                                  sizeof(only_removed_key_with_comment), in_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:1602:32: warning[-Wformat-extra-args]: too many arguments for format
+# 1602 |     fail_unless(ret == ENOENT, "Failed to add str. Error: %d", ret);
+#      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1600|                                      NULL, 0, WRAP_SIZE, COL_DSP_LASTDUP,
+# 1601|                                      NULL, 0, INI_VA_CLEAN);
+# 1602|->     fail_unless(ret == ENOENT, "Failed to add str. Error: %d", ret);
+# 1603|       assert_configuration_equal(only_removed_all_duplicates,
+# 1604|                                  sizeof(only_removed_all_duplicates), in_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:1616:32: warning[-Wformat-extra-args]: too many arguments for format
+# 1616 |     fail_unless(ret == ENOENT, "Failed to add str. Error: %d", ret);
+#      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1614|                                      NULL, 0, WRAP_SIZE, COL_DSP_NDUP,
+# 1615|                                      NULL, 0, INI_VA_CLEAN);
+# 1616|->     fail_unless(ret == ENOENT, "Failed to add str. Error: %d", ret);
+# 1617|       assert_configuration_equal(only_removed_all_duplicates,
+# 1618|                                  sizeof(only_removed_all_duplicates), in_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:1631:32: warning[-Wformat-extra-args]: too many arguments for format
+# 1631 |     fail_unless(ret == ENOENT, "Failed to add str. Error: %d", ret);
+#      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1629|                                      NULL, 0, WRAP_SIZE, COL_DSP_NDUP,
+# 1630|                                      "key1", 1, INI_VA_CLEAN);
+# 1631|->     fail_unless(ret == ENOENT, "Failed to add str. Error: %d", ret);
+# 1632|       assert_configuration_equal(only_removed_all_duplicates,
+# 1633|                                  sizeof(only_removed_all_duplicates), in_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:1646:32: warning[-Wformat-extra-args]: too many arguments for format
+# 1646 |     fail_unless(ret == ENOENT, "Failed to add str. Error: %d", ret);
+#      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1644|                                      NULL, 0, WRAP_SIZE, COL_DSP_NDUP,
+# 1645|                                      NULL, 100, INI_VA_CLEAN);
+# 1646|->     fail_unless(ret == ENOENT, "Failed to add str. Error: %d", ret);
+# 1647|       assert_configuration_equal(only_removed_all_duplicates,
+# 1648|                                  sizeof(only_removed_all_duplicates), in_cfg);
+
+Error: COMPILER_WARNING (CWE-252):
+ding-libs-0.6.1/ini/ini_parse_ut.c: scope_hint: In function 'test_one_file'
+ding-libs-0.6.1/ini/ini_parse_ut.c:112:9: warning[-Wunused-result]: ignoring return value of 'fread' declared with attribute 'warn_unused_result'
+#  112 |         fread(stream_data, stream_len, 1, file);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  110|           /* Read file into memory */
+#  111|           errno = 0;
+#  112|->         fread(stream_data, stream_len, 1, file);
+#  113|           error = ferror(file);
+#  114|           if (error) {
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_parse_ut_check.c:27: included_from: Included from here.
+ding-libs-0.6.1/ini/ini_parse_ut_check.c: scope_hint: In function 'test_ini_parse_non_kvp_fn'
+ding-libs-0.6.1/ini/ini_parse_ut_check.c:59:29: warning[-Wformat-extra-args]: too many arguments for format
+#   59 |     fail_unless(ret == EOK, "Failed to load config. Error %d.\n", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   57|       ret = ini_config_file_from_mem(non_kvp_cfg, strlen(non_kvp_cfg),
+#   58|                                      &file_ctx);
+#   59|->     fail_unless(ret == EOK, "Failed to load config. Error %d.\n", ret);
+#   60|   
+#   61|       /* First try without the INI_PARSE_IGNORE_NON_KVP. This should fail
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_parse_ut_check.c:64:29: warning[-Wformat-extra-args]: too many arguments for format
+#   64 |     fail_unless(ret == EOK, "Failed to create config. Error %d.\n", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   62|        * with error. */
+#   63|       ret = ini_config_create(&ini_cfg);
+#   64|->     fail_unless(ret == EOK, "Failed to create config. Error %d.\n", ret);
+#   65|       ret = ini_config_parse(file_ctx, INI_STOP_ON_ERROR, INI_MV1S_ALLOW, 0,
+#   66|                              ini_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_parse_ut_check.c:67:23: warning[-Wformat-extra-args]: too many arguments for format
+#   67 |     fail_if(ret != 5, "Expected error was not found.\n");
+#      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   65|       ret = ini_config_parse(file_ctx, INI_STOP_ON_ERROR, INI_MV1S_ALLOW, 0,
+#   66|                              ini_cfg);
+#   67|->     fail_if(ret != 5, "Expected error was not found.\n");
+#   68|   
+#   69|       ini_config_destroy(ini_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_parse_ut_check.c:76:29: warning[-Wformat-extra-args]: too many arguments for format
+#   76 |     fail_unless(ret == EOK, "Failed to load config. Error %d.\n", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   74|       ret = ini_config_file_from_mem(non_kvp_cfg, strlen(non_kvp_cfg),
+#   75|                                      &file_ctx);
+#   76|->     fail_unless(ret == EOK, "Failed to load config. Error %d.\n", ret);
+#   77|       ret = ini_config_create(&ini_cfg);
+#   78|       fail_unless(ret == EOK, "Failed to create config. Error %d.\n", ret);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_parse_ut_check.c:78:29: warning[-Wformat-extra-args]: too many arguments for format
+#   78 |     fail_unless(ret == EOK, "Failed to create config. Error %d.\n", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   76|       fail_unless(ret == EOK, "Failed to load config. Error %d.\n", ret);
+#   77|       ret = ini_config_create(&ini_cfg);
+#   78|->     fail_unless(ret == EOK, "Failed to create config. Error %d.\n", ret);
+#   79|       ret = ini_config_parse(file_ctx, INI_STOP_ON_ERROR, INI_MV1S_ALLOW,
+#   80|                              INI_PARSE_IGNORE_NON_KVP,
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_parse_ut_check.c:82:29: warning[-Wformat-extra-args]: too many arguments for format
+#   82 |     fail_unless(ret == EOK, "ini_config_parse returned %d\n", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   80|                              INI_PARSE_IGNORE_NON_KVP,
+#   81|                              ini_cfg);
+#   82|->     fail_unless(ret == EOK, "ini_config_parse returned %d\n", ret);
+#   83|   
+#   84|       /* Now check if the surrounding configuration is OK */
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_parse_ut_check.c:88:29: warning[-Wformat-extra-args]: too many arguments for format
+#   88 |     fail_unless(ret == EOK, "ini_get_config_valueobj returned %d\n: %s", ret,
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   86|       ret = ini_get_config_valueobj("section_before", "one", ini_cfg,
+#   87|                                     INI_GET_FIRST_VALUE, &vo);
+#   88|->     fail_unless(ret == EOK, "ini_get_config_valueobj returned %d\n: %s", ret,
+#   89|                   strerror(ret));
+#   90|   
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_parse_ut_check.c:92:29: warning[-Wformat-extra-args]: too many arguments for format
+#   92 |     fail_unless(ret == EOK, "ini_get_int_config_value returned %d\n: %s", ret,
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   90|   
+#   91|       value = ini_get_int_config_value(vo, 1, -1, &ret);
+#   92|->     fail_unless(ret == EOK, "ini_get_int_config_value returned %d\n: %s", ret,
+#   93|                   strerror(ret));
+#   94|   
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_parse_ut_check.c:96:25: warning[-Wformat-extra-args]: too many arguments for format
+#   96 |     fail_if(value != 1, "Expected value 1 got %d\n", value);
+#      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   94|   
+#   95|       fail_unless(ret == EOK);
+#   96|->     fail_if(value != 1, "Expected value 1 got %d\n", value);
+#   97|   
+#   98|       /* section_non_kvp */
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_parse_ut_check.c:105:25: warning[-Wformat-extra-args]: too many arguments for format
+#  105 |     fail_if(value != 2, "Expected value 2 got %d\n", value);
+#      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  103|       value = ini_get_int_config_value(vo, 1, -1, &ret);
+#  104|       fail_unless(ret == EOK);
+#  105|->     fail_if(value != 2, "Expected value 2 got %d\n", value);
+#  106|   
+#  107|       ret = ini_get_config_valueobj("section_non_kvp", "three", ini_cfg,
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_parse_ut_check.c:113:25: warning[-Wformat-extra-args]: too many arguments for format
+#  113 |     fail_if(value != 3, "Expected value 3 got %d\n", value);
+#      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  111|       value = ini_get_int_config_value(vo, 1, -1, &ret);
+#  112|       fail_unless(ret == EOK);
+#  113|->     fail_if(value != 3, "Expected value 3 got %d\n", value);
+#  114|   
+#  115|       /* section_after */
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_parse_ut_check.c:122:25: warning[-Wformat-extra-args]: too many arguments for format
+#  122 |     fail_if(value != 4, "Expected value 4 got %d\n", value);
+#      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  120|       value = ini_get_int_config_value(vo, 1, -1, &ret);
+#  121|       fail_unless(ret == EOK);
+#  122|->     fail_if(value != 4, "Expected value 4 got %d\n", value);
+#  123|   
+#  124|       ini_config_destroy(ini_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_parse_ut_check.c: scope_hint: In function 'test_ini_parse_section_key_conflict_fn'
+ding-libs-0.6.1/ini/ini_parse_ut_check.c:186:33: warning[-Wformat-extra-args]: too many arguments for format
+#  186 |         fail_unless(ret == EOK, "Failed to create config. Error %d.\n", ret);
+#      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  184|       for (iter = 0; file_contents[iter] != NULL; iter++) {
+#  185|           ret = ini_config_create(&ini_config);
+#  186|->         fail_unless(ret == EOK, "Failed to create config. Error %d.\n", ret);
+#  187|   
+#  188|           ret = ini_config_file_from_mem(file_contents[iter],
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_parse_ut_check.c:191:33: warning[-Wformat-extra-args]: too many arguments for format
+#  191 |         fail_unless(ret == EOK, "Failed to load file. Error %d.\n", ret);
+#      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  189|                                          strlen(file_contents[iter]),
+#  190|                                          &file_ctx);
+#  191|->         fail_unless(ret == EOK, "Failed to load file. Error %d.\n", ret);
+#  192|   
+#  193|           ret = ini_config_parse(file_ctx, 1, 0, 0, ini_config);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_parse_ut_check.c:194:33: warning[-Wformat-extra-args]: too many arguments for format
+#  194 |         fail_unless(ret == EOK, "Failed to parse file. Error %d.\n", ret);
+#      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  192|   
+#  193|           ret = ini_config_parse(file_ctx, 1, 0, 0, ini_config);
+#  194|->         fail_unless(ret == EOK, "Failed to parse file. Error %d.\n", ret);
+#  195|   
+#  196|           sections = ini_get_section_list(ini_config, &sections_count,
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_parse_ut_check.c:199:21: warning[-Wformat-extra-args]: too many arguments for format
+#  199 |                     "Failed to get sections. Error %d.\n",
+#      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  197|                                           &sections_error);
+#  198|           fail_unless(sections_error == EOK,
+#  199|->                     "Failed to get sections. Error %d.\n",
+#  200|                       sections_error);
+#  201|   
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_parse_ut_check.c:208:25: warning[-Wformat-extra-args]: too many arguments for format
+#  208 |                         "Failed to get attributes. Error %d.\n",
+#      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  206|                                                   &attributes_error);
+#  207|               fail_unless(attributes_error == EOK,
+#  208|->                         "Failed to get attributes. Error %d.\n",
+#  209|                           attributes_error);
+#  210|   
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_parse_ut_check.c:215:29: warning[-Wformat-extra-args]: too many arguments for format
+#  215 |                             "Failed to get attribute. Error %d.\n",
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  213|                                                 ini_config, 0, &val);
+#  214|                   fail_unless(ret == EOK,
+#  215|->                             "Failed to get attribute. Error %d.\n",
+#  216|                               ret);
+#  217|   
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_parse_ut_check.c:220:29: warning[-Wformat-extra-args]: too many arguments for format
+#  220 |                             "Failed to get attribute as string. Error %d.\n",
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  218|                   val_str = ini_get_string_config_value(val, &ret);
+#  219|                   fail_unless(ret == EOK,
+#  220|->                             "Failed to get attribute as string. Error %d.\n",
+#  221|                               ret);
+#  222|                   fail_unless(val_str != NULL,
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_parse_ut_check.c:223:29: warning[-Wformat-extra-args]: too many arguments for format
+#  223 |                             "Failed to get attribute as string: was NULL.\n");
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  221|                               ret);
+#  222|                   fail_unless(val_str != NULL,
+#  223|->                             "Failed to get attribute as string: was NULL.\n");
+#  224|   
+#  225|                   free(val_str);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_parse_ut_check.c: scope_hint: In function 'test_ini_long_value_fn'
+ding-libs-0.6.1/ini/ini_parse_ut_check.c:260:29: warning[-Wformat-extra-args]: too many arguments for format
+#  260 |     fail_unless(ret == EOK, "Failed to load config. Error %d.\n", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  258|       ret = ini_config_file_from_mem(big_val_cfg, strlen(big_val_cfg),
+#  259|                                      &file_ctx);
+#  260|->     fail_unless(ret == EOK, "Failed to load config. Error %d.\n", ret);
+#  261|   
+#  262|       ret = ini_config_create(&ini_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_parse_ut_check.c:263:29: warning[-Wformat-extra-args]: too many arguments for format
+#  263 |     fail_unless(ret == EOK, "Failed to create config. Error %d.\n", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  261|   
+#  262|       ret = ini_config_create(&ini_cfg);
+#  263|->     fail_unless(ret == EOK, "Failed to create config. Error %d.\n", ret);
+#  264|       ret = ini_config_parse(file_ctx, INI_STOP_ON_ERROR, INI_MV1S_ALLOW, 0,
+#  265|                              ini_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_parse_ut_check.c:266:23: warning[-Wformat-extra-args]: too many arguments for format
+#  266 |     fail_if(ret != 0, "Failed to parse config. Error %d.\n", ret);
+#      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  264|       ret = ini_config_parse(file_ctx, INI_STOP_ON_ERROR, INI_MV1S_ALLOW, 0,
+#  265|                              ini_cfg);
+#  266|->     fail_if(ret != 0, "Failed to parse config. Error %d.\n", ret);
+#  267|   
+#  268|       ret = ini_get_config_valueobj("section", "key", ini_cfg,
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_parse_ut_check.c:270:29: warning[-Wformat-extra-args]: too many arguments for format
+#  270 |     fail_unless(ret == EOK, "ini_get_config_valueobj returned %d\n: %s", ret,
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  268|       ret = ini_get_config_valueobj("section", "key", ini_cfg,
+#  269|                                     INI_GET_FIRST_VALUE, &vo);
+#  270|->     fail_unless(ret == EOK, "ini_get_config_valueobj returned %d\n: %s", ret,
+#  271|                   strerror(ret));
+#  272|   
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_parse_ut_check.c:274:29: warning[-Wformat-extra-args]: too many arguments for format
+#  274 |     fail_unless(ret == EOK, "ini_get_int_config_value returned %d\n: %s", ret,
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  272|   
+#  273|       value_got = ini_get_string_config_value(vo, &ret);
+#  274|->     fail_unless(ret == EOK, "ini_get_int_config_value returned %d\n: %s", ret,
+#  275|                   strerror(ret));
+#  276|   
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_parse_ut_check.c:277:48: warning[-Wformat-extra-args]: too many arguments for format
+#  277 |     fail_unless(strcmp(value, value_got) == 0, "Expected and found values differ!\n");
+#      |                                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  275|                   strerror(ret));
+#  276|   
+#  277|->     fail_unless(strcmp(value, value_got) == 0, "Expected and found values differ!\n");
+#  278|       free(value_got);
+#  279|       ini_config_destroy(ini_cfg);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:28: included_from: Included from here.
+ding-libs-0.6.1/ini/ini_validators_ut_check.c: scope_hint: In function 'create_rules_from_str'
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:52:27: warning[-Wformat-extra-args]: too many arguments for format
+#   52 |     fail_if(file == NULL, "fopen() failed: %s", strerror(errno));
+#      |                           ^~~~~~~~~~~~~~~~~~~~
+#   50|        * ini_rules_read_from_file, so we create the file here */
+#   51|       file = fopen(TEST_RULES_FILE, "w");
+#   52|->     fail_if(file == NULL, "fopen() failed: %s", strerror(errno));
+#   53|       written = fwrite(rules, 1, strlen(rules), file);
+#   54|       fail_unless(written == strlen(rules));
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:58:27: warning[-Wformat-extra-args]: too many arguments for format
+#   58 |     fail_unless(ret == 0, "chmod() failed: %s", strerror(errno));
+#      |                           ^~~~~~~~~~~~~~~~~~~~
+#   56|       /* allow reading */
+#   57|       ret = chmod(TEST_RULES_FILE, 0664);
+#   58|->     fail_unless(ret == 0, "chmod() failed: %s", strerror(errno));
+#   59|   
+#   60|       fclose(file);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:63:27: warning[-Wformat-extra-args]: too many arguments for format
+#   63 |     fail_unless(ret == 0, "read_rules_from_file() failed: %s", strerror(ret));
+#      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   61|   
+#   62|       ret = ini_rules_read_from_file(TEST_RULES_FILE, _rules_obj);
+#   63|->     fail_unless(ret == 0, "read_rules_from_file() failed: %s", strerror(ret));
+#   64|   }
+#   65|   
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c: scope_hint: In function 'get_ini_config_from_str'
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:74:29: warning[-Wformat-extra-args]: too many arguments for format
+#   74 |     fail_unless(ret == EOK, "Failed to create config. Error %d.\n", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   72|   
+#   73|       ret = ini_config_create(&in_cfg);
+#   74|->     fail_unless(ret == EOK, "Failed to create config. Error %d.\n", ret);
+#   75|   
+#   76|       ret = ini_config_file_from_mem(input_data, input_data_len, &file_ctx);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:77:29: warning[-Wformat-extra-args]: too many arguments for format
+#   77 |     fail_unless(ret == EOK, "Failed to load config. Error %d.\n", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   75|   
+#   76|       ret = ini_config_file_from_mem(input_data, input_data_len, &file_ctx);
+#   77|->     fail_unless(ret == EOK, "Failed to load config. Error %d.\n", ret);
+#   78|   
+#   79|       ret = ini_config_parse(file_ctx, INI_STOP_ON_NONE, INI_MV1S_ALLOW, 0,
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:81:29: warning[-Wformat-extra-args]: too many arguments for format
+#   81 |     fail_unless(ret == EOK, "Failed to parse config. Error %d.\n", ret);
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   79|       ret = ini_config_parse(file_ctx, INI_STOP_ON_NONE, INI_MV1S_ALLOW, 0,
+#   80|                              in_cfg);
+#   81|->     fail_unless(ret == EOK, "Failed to parse config. Error %d.\n", ret);
+#   82|   
+#   83|       ini_config_file_destroy(file_ctx);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c: scope_hint: In function 'test_ini_errobj_fn'
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:98:17: warning[-Wformat-extra-args]: too many arguments for format
+#   98 |                 "ini_errobj_create(NULL) failed with wrong error [%s]",
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   96|       ret = ini_errobj_create(NULL);
+#   97|       fail_unless(ret == EINVAL,
+#   98|->                 "ini_errobj_create(NULL) failed with wrong error [%s]",
+#   99|                   strerror(ret));
+#  100|   
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:102:27: warning[-Wformat-extra-args]: too many arguments for format
+#  102 |     fail_unless(ret == 0, "ini_errobj_create() failed: %s", strerror(ret));
+#      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  100|   
+#  101|       ret = ini_errobj_create(&errobj);
+#  102|->     fail_unless(ret == 0, "ini_errobj_create() failed: %s", strerror(ret));
+#  103|   
+#  104|       /* We just created the errobj, it should be empty */
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:110:23: warning[-Wformat-extra-args]: too many arguments for format
+#  110 |     fail_if(ret != 0, "ini_errobj_add_msg() failed: %s", strerror(ret));
+#      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  108|        * check if the errobj has correct content. */
+#  109|       ret = ini_errobj_add_msg(errobj, TEST_MSG1);
+#  110|->     fail_if(ret != 0, "ini_errobj_add_msg() failed: %s", strerror(ret));
+#  111|       fail_if(ini_errobj_no_more_msgs(errobj));
+#  112|       ret = strcmp(TEST_MSG1, ini_errobj_get_msg(errobj));
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:113:23: warning[-Wformat-extra-args]: too many arguments for format
+#  113 |     fail_if(ret != 0, "TEST_MSG1 was not found.");
+#      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~
+#  111|       fail_if(ini_errobj_no_more_msgs(errobj));
+#  112|       ret = strcmp(TEST_MSG1, ini_errobj_get_msg(errobj));
+#  113|->     fail_if(ret != 0, "TEST_MSG1 was not found.");
+#  114|       ini_errobj_next(errobj);
+#  115|       fail_unless(ini_errobj_no_more_msgs(errobj));
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:118:23: warning[-Wformat-extra-args]: too many arguments for format
+#  118 |     fail_if(ret != 0, "ini_errobj_add_msg() failed: %s", strerror(ret));
+#      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  116|   
+#  117|       ret = ini_errobj_add_msg(errobj, TEST_MSG2);
+#  118|->     fail_if(ret != 0, "ini_errobj_add_msg() failed: %s", strerror(ret));
+#  119|       ini_errobj_reset(errobj); /* strart from first message */
+#  120|       fail_if(ini_errobj_no_more_msgs(errobj));
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:122:23: warning[-Wformat-extra-args]: too many arguments for format
+#  122 |     fail_if(ret != 0, "TEST_MSG1 was not found.");
+#      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~
+#  120|       fail_if(ini_errobj_no_more_msgs(errobj));
+#  121|       ret = strcmp(TEST_MSG1, ini_errobj_get_msg(errobj));
+#  122|->     fail_if(ret != 0, "TEST_MSG1 was not found.");
+#  123|       ini_errobj_next(errobj);
+#  124|       fail_if(ini_errobj_no_more_msgs(errobj));
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:126:23: warning[-Wformat-extra-args]: too many arguments for format
+#  126 |     fail_if(ret != 0, "TEST_MSG2 was not found.");
+#      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~
+#  124|       fail_if(ini_errobj_no_more_msgs(errobj));
+#  125|       ret = strcmp(TEST_MSG2, ini_errobj_get_msg(errobj));
+#  126|->     fail_if(ret != 0, "TEST_MSG2 was not found.");
+#  127|       ini_errobj_next(errobj);
+#  128|       fail_unless(ini_errobj_no_more_msgs(errobj));
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:131:23: warning[-Wformat-extra-args]: too many arguments for format
+#  131 |     fail_if(ret != 0, "ini_errobj_add_msg() failed: %s", strerror(ret));
+#      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  129|   
+#  130|       ret = ini_errobj_add_msg(errobj, TEST_MSG3);
+#  131|->     fail_if(ret != 0, "ini_errobj_add_msg() failed: %s", strerror(ret));
+#  132|       ini_errobj_reset(errobj); /* strart from first message */
+#  133|       fail_if(ini_errobj_no_more_msgs(errobj));
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:135:23: warning[-Wformat-extra-args]: too many arguments for format
+#  135 |     fail_if(ret != 0, "TEST_MSG1 was not found.");
+#      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~
+#  133|       fail_if(ini_errobj_no_more_msgs(errobj));
+#  134|       ret = strcmp(TEST_MSG1, ini_errobj_get_msg(errobj));
+#  135|->     fail_if(ret != 0, "TEST_MSG1 was not found.");
+#  136|       ini_errobj_next(errobj);
+#  137|       fail_if(ini_errobj_no_more_msgs(errobj));
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:139:23: warning[-Wformat-extra-args]: too many arguments for format
+#  139 |     fail_if(ret != 0, "TEST_MSG2 was not found.");
+#      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~
+#  137|       fail_if(ini_errobj_no_more_msgs(errobj));
+#  138|       ret = strcmp(TEST_MSG2, ini_errobj_get_msg(errobj));
+#  139|->     fail_if(ret != 0, "TEST_MSG2 was not found.");
+#  140|       ini_errobj_next(errobj);
+#  141|       fail_if(ini_errobj_no_more_msgs(errobj));
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:143:23: warning[-Wformat-extra-args]: too many arguments for format
+#  143 |     fail_if(ret != 0, "TEST_MSG3 was not found.");
+#      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~
+#  141|       fail_if(ini_errobj_no_more_msgs(errobj));
+#  142|       ret = strcmp(TEST_MSG3, ini_errobj_get_msg(errobj));
+#  143|->     fail_if(ret != 0, "TEST_MSG3 was not found.");
+#  144|       ini_errobj_next(errobj);
+#  145|       fail_unless(ini_errobj_no_more_msgs(errobj));
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c: scope_hint: In function 'test_ini_noerror_fn'
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:170:27: warning[-Wformat-extra-args]: too many arguments for format
+#  170 |     fail_unless(ret == 0, "ini_errobj_create() failed: %s", strerror(ret));
+#      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  168|   
+#  169|       ret = ini_errobj_create(&errobj);
+#  170|->     fail_unless(ret == 0, "ini_errobj_create() failed: %s", strerror(ret));
+#  171|   
+#  172|       ret = ini_rules_check(rules_obj, cfg_obj, NULL, errobj);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:173:27: warning[-Wformat-extra-args]: too many arguments for format
+#  173 |     fail_unless(ret == 0, "ini_rules_check() failed: %s", strerror(ret));
+#      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  171|   
+#  172|       ret = ini_rules_check(rules_obj, cfg_obj, NULL, errobj);
+#  173|->     fail_unless(ret == 0, "ini_rules_check() failed: %s", strerror(ret));
+#  174|       fail_unless(ini_errobj_no_more_msgs(errobj));
+#  175|   
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c: scope_hint: In function 'test_ini_error_fn'
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:206:27: warning[-Wformat-extra-args]: too many arguments for format
+#  206 |     fail_unless(ret == 0, "ini_errobj_create() failed: %s", strerror(ret));
+#      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  204|   
+#  205|       ret = ini_errobj_create(&errobj);
+#  206|->     fail_unless(ret == 0, "ini_errobj_create() failed: %s", strerror(ret));
+#  207|   
+#  208|       ret = ini_rules_check(rules_obj, cfg_obj, NULL, errobj);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:209:27: warning[-Wformat-extra-args]: too many arguments for format
+#  209 |     fail_unless(ret == 0, "ini_rules_check() failed: %s", strerror(ret));
+#      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  207|   
+#  208|       ret = ini_rules_check(rules_obj, cfg_obj, NULL, errobj);
+#  209|->     fail_unless(ret == 0, "ini_rules_check() failed: %s", strerror(ret));
+#  210|   
+#  211|       /* Should generate exactly one error */
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:215:27: warning[-Wformat-extra-args]: too many arguments for format
+#  215 |     fail_unless(ret == 0, "Got msg: [%s]", errmsg);
+#      |                           ^~~~~~~~~~~~~~~
+#  213|       errmsg = ini_errobj_get_msg(errobj);
+#  214|       ret = strcmp(errmsg, "[rule/generate_error]: Error");
+#  215|->     fail_unless(ret == 0, "Got msg: [%s]", errmsg);
+#  216|       ini_errobj_next(errobj);
+#  217|       fail_unless(ini_errobj_no_more_msgs(errobj));
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:226:27: warning[-Wformat-extra-args]: too many arguments for format
+#  226 |     fail_unless(ret == 0, "ini_errobj_create() failed: %s", strerror(ret));
+#      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  224|   
+#  225|       ret = ini_errobj_create(&errobj);
+#  226|->     fail_unless(ret == 0, "ini_errobj_create() failed: %s", strerror(ret));
+#  227|   
+#  228|       ret = ini_rules_check(rules_obj, cfg_obj, NULL, errobj);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:229:27: warning[-Wformat-extra-args]: too many arguments for format
+#  229 |     fail_unless(ret == 0, "ini_rules_check() failed: %s", strerror(ret));
+#      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  227|   
+#  228|       ret = ini_rules_check(rules_obj, cfg_obj, NULL, errobj);
+#  229|->     fail_unless(ret == 0, "ini_rules_check() failed: %s", strerror(ret));
+#  230|   
+#  231|       /* Should generate exactly one error */
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:235:27: warning[-Wformat-extra-args]: too many arguments for format
+#  235 |     fail_unless(ret == 0, "Got msg: [%s]", errmsg);
+#      |                           ^~~~~~~~~~~~~~~
+#  233|       errmsg = ini_errobj_get_msg(errobj);
+#  234|       ret = strcmp(errmsg, "Rule 'rule/generate_error' has no validator.");
+#  235|->     fail_unless(ret == 0, "Got msg: [%s]", errmsg);
+#  236|       ini_errobj_next(errobj);
+#  237|       fail_unless(ini_errobj_no_more_msgs(errobj));
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c: scope_hint: In function 'test_unknown_validator_fn'
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:264:27: warning[-Wformat-extra-args]: too many arguments for format
+#  264 |     fail_unless(ret == 0, "ini_errobj_create() failed: %s", strerror(ret));
+#      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  262|   
+#  263|       ret = ini_errobj_create(&errobj);
+#  264|->     fail_unless(ret == 0, "ini_errobj_create() failed: %s", strerror(ret));
+#  265|   
+#  266|       ret = ini_rules_check(rules_obj, cfg_obj, NULL, errobj);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:267:27: warning[-Wformat-extra-args]: too many arguments for format
+#  267 |     fail_unless(ret == 0, "ini_rules_check() failed: %s", strerror(ret));
+#      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  265|   
+#  266|       ret = ini_rules_check(rules_obj, cfg_obj, NULL, errobj);
+#  267|->     fail_unless(ret == 0, "ini_rules_check() failed: %s", strerror(ret));
+#  268|   
+#  269|       /* Should generate exactly one error */
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c: scope_hint: In function 'test_custom_noerror_fn'
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:326:27: warning[-Wformat-extra-args]: too many arguments for format
+#  326 |     fail_unless(ret == 0, "ini_errobj_create() failed: %s", strerror(ret));
+#      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  324|   
+#  325|       ret = ini_errobj_create(&errobj);
+#  326|->     fail_unless(ret == 0, "ini_errobj_create() failed: %s", strerror(ret));
+#  327|   
+#  328|       /* Pass the custom validator to ini_rules_check() */
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:330:27: warning[-Wformat-extra-args]: too many arguments for format
+#  330 |     fail_unless(ret == 0, "ini_rules_check() failed: %s", strerror(ret));
+#      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  328|       /* Pass the custom validator to ini_rules_check() */
+#  329|       ret = ini_rules_check(rules_obj, cfg_obj, noerror, errobj);
+#  330|->     fail_unless(ret == 0, "ini_rules_check() failed: %s", strerror(ret));
+#  331|   
+#  332|       /* Should generate no errors */
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:338:27: warning[-Wformat-extra-args]: too many arguments for format
+#  338 |     fail_unless(ret == 0, "ini_rules_check() failed: %s", strerror(ret));
+#      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  336|       /* It should be skipped */
+#  337|       ret = ini_rules_check(rules_obj, cfg_obj, missing_name, errobj);
+#  338|->     fail_unless(ret == 0, "ini_rules_check() failed: %s", strerror(ret));
+#  339|   
+#  340|       /* Should generate no errors */
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:341:50: warning[-Wformat-extra-args]: too many arguments for format
+#  341 |     fail_unless(ini_errobj_no_more_msgs(errobj), "%s", ini_errobj_get_msg(errobj));
+#      |                                                  ^~~~
+#  339|   
+#  340|       /* Should generate no errors */
+#  341|->     fail_unless(ini_errobj_no_more_msgs(errobj), "%s", ini_errobj_get_msg(errobj));
+#  342|   
+#  343|       ini_errobj_destroy(&errobj);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c: scope_hint: In function 'test_custom_error_fn'
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:377:27: warning[-Wformat-extra-args]: too many arguments for format
+#  377 |     fail_unless(ret == 0, "ini_errobj_create() failed: %s", strerror(ret));
+#      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  375|   
+#  376|       ret = ini_errobj_create(&errobj);
+#  377|->     fail_unless(ret == 0, "ini_errobj_create() failed: %s", strerror(ret));
+#  378|   
+#  379|       /* Pass the custom validator to ini_rules_check() */
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:381:27: warning[-Wformat-extra-args]: too many arguments for format
+#  381 |     fail_unless(ret == 0, "ini_rules_check() failed: %s", strerror(ret));
+#      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  379|       /* Pass the custom validator to ini_rules_check() */
+#  380|       ret = ini_rules_check(rules_obj, cfg_obj, error, errobj);
+#  381|->     fail_unless(ret == 0, "ini_rules_check() failed: %s", strerror(ret));
+#  382|   
+#  383|       /* Should generate one error */
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:387:27: warning[-Wformat-extra-args]: too many arguments for format
+#  387 |     fail_unless(ret == 0, "Got msg: [%s]", errmsg);
+#      |                           ^~~~~~~~~~~~~~~
+#  385|       errmsg = ini_errobj_get_msg(errobj);
+#  386|       ret = strcmp(errmsg, "[rule/custom_error]: Error");
+#  387|->     fail_unless(ret == 0, "Got msg: [%s]", errmsg);
+#  388|       ini_errobj_next(errobj);
+#  389|       fail_unless(ini_errobj_no_more_msgs(errobj));
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:394:27: warning[-Wformat-extra-args]: too many arguments for format
+#  394 |     fail_unless(ret == 0, "ini_errobj_create() failed: %s", strerror(ret));
+#      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  392|   
+#  393|       ret = ini_errobj_create(&errobj);
+#  394|->     fail_unless(ret == 0, "ini_errobj_create() failed: %s", strerror(ret));
+#  395|   
+#  396|       /* Pass the custom validator to ini_rules_check() */
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:405:27: warning[-Wformat-extra-args]: too many arguments for format
+#  405 |     fail_unless(ret == 0, "Got msg: [%s]", errmsg);
+#      |                           ^~~~~~~~~~~~~~~
+#  403|                    "Rule 'rule/custom_error' uses unknown validator "
+#  404|                    "'custom_error'.");
+#  405|->     fail_unless(ret == 0, "Got msg: [%s]", errmsg);
+#  406|       ini_errobj_next(errobj);
+#  407|       fail_unless(ini_errobj_no_more_msgs(errobj));
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c: scope_hint: In function 'test_ini_allowed_options_ok_fn'
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:444:27: warning[-Wformat-extra-args]: too many arguments for format
+#  444 |     fail_unless(ret == 0, "ini_errobj_create() failed: %s", strerror(ret));
+#      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  442|   
+#  443|       ret = ini_errobj_create(&errobj);
+#  444|->     fail_unless(ret == 0, "ini_errobj_create() failed: %s", strerror(ret));
+#  445|   
+#  446|       ret = ini_rules_check(rules_obj, cfg_obj, NULL, errobj);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:447:27: warning[-Wformat-extra-args]: too many arguments for format
+#  447 |     fail_unless(ret == 0, "ini_rules_check() failed: %s", strerror(ret));
+#      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  445|   
+#  446|       ret = ini_rules_check(rules_obj, cfg_obj, NULL, errobj);
+#  447|->     fail_unless(ret == 0, "ini_rules_check() failed: %s", strerror(ret));
+#  448|   
+#  449|       /* Should generate no errors */
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c: scope_hint: In function 'test_ini_allowed_options_no_section_fn'
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:493:27: warning[-Wformat-extra-args]: too many arguments for format
+#  493 |     fail_unless(ret == 0, "ini_errobj_create() failed: %s", strerror(ret));
+#      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  491|   
+#  492|       ret = ini_errobj_create(&errobj);
+#  493|->     fail_unless(ret == 0, "ini_errobj_create() failed: %s", strerror(ret));
+#  494|   
+#  495|       ret = ini_rules_check(rules_obj, cfg_obj, NULL, errobj);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:496:27: warning[-Wformat-extra-args]: too many arguments for format
+#  496 |     fail_unless(ret == 0, "ini_rules_check() failed: %s", strerror(ret));
+#      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  494|   
+#  495|       ret = ini_rules_check(rules_obj, cfg_obj, NULL, errobj);
+#  496|->     fail_unless(ret == 0, "ini_rules_check() failed: %s", strerror(ret));
+#  497|   
+#  498|       /* Should generate 2 errors (one from rules_check and one
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:28: included_from: Included from here.
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:503:31: warning[-Wformat-extra-args]: too many arguments for format
+#  503 |     fail_unless(num_err == 2, "Expected 2 errors, got %d", num_err);
+#      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  501|   
+#  502|       num_err = ini_errobj_count(errobj);
+#  503|->     fail_unless(num_err == 2, "Expected 2 errors, got %d", num_err);
+#  504|   
+#  505|       errmsg = ini_errobj_get_msg(errobj);
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:503:31: warning[-Wformat=]: format '%d' expects argument of type 'int', but argument 5 has type 'size_t' {aka 'long unsigned int'}
+#  503 |     fail_unless(num_err == 2, "Expected 2 errors, got %d", num_err);
+#      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~
+#      |                                                            |
+#      |                                                            size_t {aka long unsigned int}
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:503:56: note: format string is defined here
+#  503 |     fail_unless(num_err == 2, "Expected 2 errors, got %d", num_err);
+#      |                                                       ~^
+#      |                                                        |
+#      |                                                        int
+#      |                                                       %ld
+#  501|   
+#  502|       num_err = ini_errobj_count(errobj);
+#  503|->     fail_unless(num_err == 2, "Expected 2 errors, got %d", num_err);
+#  504|   
+#  505|       errmsg = ini_errobj_get_msg(errobj);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:508:27: warning[-Wformat-extra-args]: too many arguments for format
+#  508 |     fail_unless(ret == 0, "Got msg: [%s]", errmsg);
+#      |                           ^~~~~~~~~~~~~~~
+#  506|       ret = strcmp(errmsg,
+#  507|                    "Rule 'rule/options_for_foo' returned error code '22'");
+#  508|->     fail_unless(ret == 0, "Got msg: [%s]", errmsg);
+#  509|       ini_errobj_next(errobj);
+#  510|   
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:515:27: warning[-Wformat-extra-args]: too many arguments for format
+#  515 |     fail_unless(ret == 0, "Got msg: [%s]", errmsg);
+#      |                           ^~~~~~~~~~~~~~~
+#  513|                    "[rule/options_for_foo]: Validator misses 'section_re' "
+#  514|                    "parameter");
+#  515|->     fail_unless(ret == 0, "Got msg: [%s]", errmsg);
+#  516|       ini_errobj_next(errobj);
+#  517|       fail_unless(ini_errobj_no_more_msgs(errobj));
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:527:27: warning[-Wformat-extra-args]: too many arguments for format
+#  527 |     fail_unless(ret == 0, "ini_errobj_create() failed: %s", strerror(ret));
+#      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  525|   
+#  526|       ret = ini_errobj_create(&errobj);
+#  527|->     fail_unless(ret == 0, "ini_errobj_create() failed: %s", strerror(ret));
+#  528|   
+#  529|       ret = ini_rules_check(rules_obj, cfg_obj, NULL, errobj);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:530:27: warning[-Wformat-extra-args]: too many arguments for format
+#  530 |     fail_unless(ret == 0, "ini_rules_check() failed: %s", strerror(ret));
+#      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  528|   
+#  529|       ret = ini_rules_check(rules_obj, cfg_obj, NULL, errobj);
+#  530|->     fail_unless(ret == 0, "ini_rules_check() failed: %s", strerror(ret));
+#  531|   
+#  532|       /* Should generate 2 errors (one from rules_check and one
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:28: included_from: Included from here.
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:537:31: warning[-Wformat-extra-args]: too many arguments for format
+#  537 |     fail_unless(num_err == 2, "Expected 2 errors, got %d", num_err);
+#      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  535|   
+#  536|       num_err = ini_errobj_count(errobj);
+#  537|->     fail_unless(num_err == 2, "Expected 2 errors, got %d", num_err);
+#  538|   
+#  539|       errmsg = ini_errobj_get_msg(errobj);
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:537:31: warning[-Wformat=]: format '%d' expects argument of type 'int', but argument 5 has type 'size_t' {aka 'long unsigned int'}
+#  537 |     fail_unless(num_err == 2, "Expected 2 errors, got %d", num_err);
+#      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~
+#      |                                                            |
+#      |                                                            size_t {aka long unsigned int}
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:537:56: note: format string is defined here
+#  537 |     fail_unless(num_err == 2, "Expected 2 errors, got %d", num_err);
+#      |                                                       ~^
+#      |                                                        |
+#      |                                                        int
+#      |                                                       %ld
+#  535|   
+#  536|       num_err = ini_errobj_count(errobj);
+#  537|->     fail_unless(num_err == 2, "Expected 2 errors, got %d", num_err);
+#  538|   
+#  539|       errmsg = ini_errobj_get_msg(errobj);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:542:27: warning[-Wformat-extra-args]: too many arguments for format
+#  542 |     fail_unless(ret == 0, "Got msg: [%s]", errmsg);
+#      |                           ^~~~~~~~~~~~~~~
+#  540|       ret = strcmp(errmsg,
+#  541|                    "Rule 'rule/options_for_foo' returned error code '22'");
+#  542|->     fail_unless(ret == 0, "Got msg: [%s]", errmsg);
+#  543|       ini_errobj_next(errobj);
+#  544|   
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:549:27: warning[-Wformat-extra-args]: too many arguments for format
+#  549 |     fail_unless(ret == 0, "Got msg: [%s]", errmsg);
+#      |                           ^~~~~~~~~~~~~~~
+#  547|                    "[rule/options_for_foo]: Validator misses 'section_re' "
+#  548|                    "parameter");
+#  549|->     fail_unless(ret == 0, "Got msg: [%s]", errmsg);
+#  550|       ini_errobj_next(errobj);
+#  551|       fail_unless(ini_errobj_no_more_msgs(errobj));
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c: scope_hint: In function 'test_ini_allowed_options_wrong_regex_fn'
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:587:27: warning[-Wformat-extra-args]: too many arguments for format
+#  587 |     fail_unless(ret == 0, "ini_errobj_create() failed: %s", strerror(ret));
+#      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  585|   
+#  586|       ret = ini_errobj_create(&errobj);
+#  587|->     fail_unless(ret == 0, "ini_errobj_create() failed: %s", strerror(ret));
+#  588|   
+#  589|       ret = ini_rules_check(rules_obj, cfg_obj, NULL, errobj);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:590:27: warning[-Wformat-extra-args]: too many arguments for format
+#  590 |     fail_unless(ret == 0, "ini_rules_check() failed: %s", strerror(ret));
+#      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  588|   
+#  589|       ret = ini_rules_check(rules_obj, cfg_obj, NULL, errobj);
+#  590|->     fail_unless(ret == 0, "ini_rules_check() failed: %s", strerror(ret));
+#  591|   
+#  592|       /* Should generate 2 errors (one from rules_check and one
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:28: included_from: Included from here.
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:597:31: warning[-Wformat-extra-args]: too many arguments for format
+#  597 |     fail_unless(num_err == 2, "Expected 2 errors, got %d", num_err);
+#      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  595|   
+#  596|       num_err = ini_errobj_count(errobj);
+#  597|->     fail_unless(num_err == 2, "Expected 2 errors, got %d", num_err);
+#  598|   
+#  599|       errmsg = ini_errobj_get_msg(errobj);
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:597:31: warning[-Wformat=]: format '%d' expects argument of type 'int', but argument 5 has type 'size_t' {aka 'long unsigned int'}
+#  597 |     fail_unless(num_err == 2, "Expected 2 errors, got %d", num_err);
+#      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~
+#      |                                                            |
+#      |                                                            size_t {aka long unsigned int}
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:597:56: note: format string is defined here
+#  597 |     fail_unless(num_err == 2, "Expected 2 errors, got %d", num_err);
+#      |                                                       ~^
+#      |                                                        |
+#      |                                                        int
+#      |                                                       %ld
+#  595|   
+#  596|       num_err = ini_errobj_count(errobj);
+#  597|->     fail_unless(num_err == 2, "Expected 2 errors, got %d", num_err);
+#  598|   
+#  599|       errmsg = ini_errobj_get_msg(errobj);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:602:27: warning[-Wformat-extra-args]: too many arguments for format
+#  602 |     fail_unless(ret == 0, "Got msg: [%s]", errmsg);
+#      |                           ^~~~~~~~~~~~~~~
+#  600|       ret = strcmp(errmsg,
+#  601|                    "Rule 'rule/options_for_foo' returned error code '22'");
+#  602|->     fail_unless(ret == 0, "Got msg: [%s]", errmsg);
+#  603|       ini_errobj_next(errobj);
+#  604|   
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:625:27: warning[-Wformat-extra-args]: too many arguments for format
+#  625 |     fail_unless(ret == 0, "Got msg: [%s]", errmsg);
+#      |                           ^~~~~~~~~~~~~~~
+#  623|   		     "Error: 'Unmatched [, [^, [:, [., or [='");
+#  624|       }
+#  625|->     fail_unless(ret == 0, "Got msg: [%s]", errmsg);
+#  626|       ini_errobj_next(errobj);
+#  627|   
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c: scope_hint: In function 'test_ini_allowed_options_typos_fn'
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:664:27: warning[-Wformat-extra-args]: too many arguments for format
+#  664 |     fail_unless(ret == 0, "ini_errobj_create() failed: %s", strerror(ret));
+#      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  662|   
+#  663|       ret = ini_errobj_create(&errobj);
+#  664|->     fail_unless(ret == 0, "ini_errobj_create() failed: %s", strerror(ret));
+#  665|   
+#  666|       ret = ini_rules_check(rules_obj, cfg_obj, NULL, errobj);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:667:27: warning[-Wformat-extra-args]: too many arguments for format
+#  667 |     fail_unless(ret == 0, "ini_rules_check() failed: %s", strerror(ret));
+#      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  665|   
+#  666|       ret = ini_rules_check(rules_obj, cfg_obj, NULL, errobj);
+#  667|->     fail_unless(ret == 0, "ini_rules_check() failed: %s", strerror(ret));
+#  668|   
+#  669|       /* Should generate 4 errors */
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:28: included_from: Included from here.
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:673:31: warning[-Wformat-extra-args]: too many arguments for format
+#  673 |     fail_unless(num_err == 4, "Expected 4 errors, got %d", num_err);
+#      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  671|   
+#  672|       num_err = ini_errobj_count(errobj);
+#  673|->     fail_unless(num_err == 4, "Expected 4 errors, got %d", num_err);
+#  674|   
+#  675|       ini_errobj_destroy(&errobj);
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:673:31: warning[-Wformat=]: format '%d' expects argument of type 'int', but argument 5 has type 'size_t' {aka 'long unsigned int'}
+#  673 |     fail_unless(num_err == 4, "Expected 4 errors, got %d", num_err);
+#      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~
+#      |                                                            |
+#      |                                                            size_t {aka long unsigned int}
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:673:56: note: format string is defined here
+#  673 |     fail_unless(num_err == 4, "Expected 4 errors, got %d", num_err);
+#      |                                                       ~^
+#      |                                                        |
+#      |                                                        int
+#      |                                                       %ld
+#  671|   
+#  672|       num_err = ini_errobj_count(errobj);
+#  673|->     fail_unless(num_err == 4, "Expected 4 errors, got %d", num_err);
+#  674|   
+#  675|       ini_errobj_destroy(&errobj);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c: scope_hint: In function 'test_ini_allowed_sections_str_ok_fn'
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:707:27: warning[-Wformat-extra-args]: too many arguments for format
+#  707 |     fail_unless(ret == 0, "ini_errobj_create() failed: %s", strerror(ret));
+#      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  705|   
+#  706|       ret = ini_errobj_create(&errobj);
+#  707|->     fail_unless(ret == 0, "ini_errobj_create() failed: %s", strerror(ret));
+#  708|   
+#  709|       ret = ini_rules_check(rules_obj, cfg_obj, NULL, errobj);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:710:27: warning[-Wformat-extra-args]: too many arguments for format
+#  710 |     fail_unless(ret == 0, "ini_rules_check() failed: %s", strerror(ret));
+#      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  708|   
+#  709|       ret = ini_rules_check(rules_obj, cfg_obj, NULL, errobj);
+#  710|->     fail_unless(ret == 0, "ini_rules_check() failed: %s", strerror(ret));
+#  711|   
+#  712|       /* Should generate 0 errors */
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:714:17: warning[-Wformat-extra-args]: too many arguments for format
+#  714 |                 "Unexpected errors found: [%s]", ini_errobj_get_msg(errobj));
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  712|       /* Should generate 0 errors */
+#  713|       fail_unless(ini_errobj_no_more_msgs(errobj),
+#  714|->                 "Unexpected errors found: [%s]", ini_errobj_get_msg(errobj));
+#  715|   
+#  716|       ini_errobj_destroy(&errobj);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c: scope_hint: In function 'test_ini_allowed_sections_str_typos_fn'
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:749:27: warning[-Wformat-extra-args]: too many arguments for format
+#  749 |     fail_unless(ret == 0, "ini_errobj_create() failed: %s", strerror(ret));
+#      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  747|   
+#  748|       ret = ini_errobj_create(&errobj);
+#  749|->     fail_unless(ret == 0, "ini_errobj_create() failed: %s", strerror(ret));
+#  750|   
+#  751|       ret = ini_rules_check(rules_obj, cfg_obj, NULL, errobj);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:752:27: warning[-Wformat-extra-args]: too many arguments for format
+#  752 |     fail_unless(ret == 0, "ini_rules_check() failed: %s", strerror(ret));
+#      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  750|   
+#  751|       ret = ini_rules_check(rules_obj, cfg_obj, NULL, errobj);
+#  752|->     fail_unless(ret == 0, "ini_rules_check() failed: %s", strerror(ret));
+#  753|   
+#  754|       /* Should generate 2 errors */
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:756:13: warning[-Wformat-extra-args]: too many arguments for format
+#  756 |             "Expected 2 errors but none found");
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  754|       /* Should generate 2 errors */
+#  755|       fail_if(ini_errobj_no_more_msgs(errobj),
+#  756|->             "Expected 2 errors but none found");
+#  757|       num_err = ini_errobj_count(errobj);
+#  758|       fail_unless(num_err == 2, "Expected 2 errors, got %d", num_err);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:758:31: warning[-Wformat-extra-args]: too many arguments for format
+#  758 |     fail_unless(num_err == 2, "Expected 2 errors, got %d", num_err);
+#      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  756|               "Expected 2 errors but none found");
+#  757|       num_err = ini_errobj_count(errobj);
+#  758|->     fail_unless(num_err == 2, "Expected 2 errors, got %d", num_err);
+#  759|   
+#  760|       ini_errobj_destroy(&errobj);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c: scope_hint: In function 'test_ini_allowed_sections_str_insensitive_fn'
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:803:21: warning[-Wformat-extra-args]: too many arguments for format
+#  803 |                     "ini_errobj_create() failed for case_insensitive = %s: %s",
+#      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  801|           ret = ini_errobj_create(&errobj);
+#  802|           fail_unless(ret == 0,
+#  803|->                     "ini_errobj_create() failed for case_insensitive = %s: %s",
+#  804|                       case_insensitive_values[i], strerror(ret));
+#  805|   
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:808:21: warning[-Wformat-extra-args]: too many arguments for format
+#  808 |                     "ini_rules_check() failed for case_insensitive = %s: %s",
+#      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  806|           ret = ini_rules_check(rules_obj, cfg_obj, NULL, errobj);
+#  807|           fail_unless(ret == 0,
+#  808|->                     "ini_rules_check() failed for case_insensitive = %s: %s",
+#  809|                       case_insensitive_values[i], strerror(ret));
+#  810|   
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:813:21: warning[-Wformat-extra-args]: too many arguments for format
+#  813 |                     "Unexpected errors found for case_insensitive = %s: [%s]",
+#      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  811|           /* Should generate 0 errors */
+#  812|           fail_unless(ini_errobj_no_more_msgs(errobj),
+#  813|->                     "Unexpected errors found for case_insensitive = %s: [%s]",
+#  814|                       case_insensitive_values[i], ini_errobj_get_msg(errobj));
+#  815|   
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c: scope_hint: In function 'test_ini_allowed_sections_re_ok_fn'
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:848:27: warning[-Wformat-extra-args]: too many arguments for format
+#  848 |     fail_unless(ret == 0, "ini_errobj_create() failed: %s", strerror(ret));
+#      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  846|   
+#  847|       ret = ini_errobj_create(&errobj);
+#  848|->     fail_unless(ret == 0, "ini_errobj_create() failed: %s", strerror(ret));
+#  849|   
+#  850|       ret = ini_rules_check(rules_obj, cfg_obj, NULL, errobj);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:851:27: warning[-Wformat-extra-args]: too many arguments for format
+#  851 |     fail_unless(ret == 0, "ini_rules_check() failed: %s", strerror(ret));
+#      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  849|   
+#  850|       ret = ini_rules_check(rules_obj, cfg_obj, NULL, errobj);
+#  851|->     fail_unless(ret == 0, "ini_rules_check() failed: %s", strerror(ret));
+#  852|   
+#  853|       /* Should generate 0 errors */
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:854:50: warning[-Wformat-extra-args]: too many arguments for format
+#  854 |     fail_unless(ini_errobj_no_more_msgs(errobj), "Unexpected errors found");
+#      |                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+#  852|   
+#  853|       /* Should generate 0 errors */
+#  854|->     fail_unless(ini_errobj_no_more_msgs(errobj), "Unexpected errors found");
+#  855|   
+#  856|       ini_errobj_destroy(&errobj);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c: scope_hint: In function 'test_ini_allowed_sections_re_typos_fn'
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:888:27: warning[-Wformat-extra-args]: too many arguments for format
+#  888 |     fail_unless(ret == 0, "ini_errobj_create() failed: %s", strerror(ret));
+#      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  886|   
+#  887|       ret = ini_errobj_create(&errobj);
+#  888|->     fail_unless(ret == 0, "ini_errobj_create() failed: %s", strerror(ret));
+#  889|   
+#  890|       ret = ini_rules_check(rules_obj, cfg_obj, NULL, errobj);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:891:27: warning[-Wformat-extra-args]: too many arguments for format
+#  891 |     fail_unless(ret == 0, "ini_rules_check() failed: %s", strerror(ret));
+#      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  889|   
+#  890|       ret = ini_rules_check(rules_obj, cfg_obj, NULL, errobj);
+#  891|->     fail_unless(ret == 0, "ini_rules_check() failed: %s", strerror(ret));
+#  892|   
+#  893|       /* Should generate 2 errors */
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:895:13: warning[-Wformat-extra-args]: too many arguments for format
+#  895 |             "Expected 2 errors but none found");
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  893|       /* Should generate 2 errors */
+#  894|       fail_if(ini_errobj_no_more_msgs(errobj),
+#  895|->             "Expected 2 errors but none found");
+#  896|       num_err = ini_errobj_count(errobj);
+#  897|       fail_unless(num_err == 2, "Expected 2 errors, got %d", num_err);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:897:31: warning[-Wformat-extra-args]: too many arguments for format
+#  897 |     fail_unless(num_err == 2, "Expected 2 errors, got %d", num_err);
+#      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  895|               "Expected 2 errors but none found");
+#  896|       num_err = ini_errobj_count(errobj);
+#  897|->     fail_unless(num_err == 2, "Expected 2 errors, got %d", num_err);
+#  898|   
+#  899|       ini_errobj_destroy(&errobj);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c: scope_hint: In function 'test_ini_allowed_sections_re_insensitive_fn'
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:932:27: warning[-Wformat-extra-args]: too many arguments for format
+#  932 |     fail_unless(ret == 0, "ini_errobj_create() failed: %s", strerror(ret));
+#      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  930|   
+#  931|       ret = ini_errobj_create(&errobj);
+#  932|->     fail_unless(ret == 0, "ini_errobj_create() failed: %s", strerror(ret));
+#  933|   
+#  934|       ret = ini_rules_check(rules_obj, cfg_obj, NULL, errobj);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:935:27: warning[-Wformat-extra-args]: too many arguments for format
+#  935 |     fail_unless(ret == 0, "ini_rules_check() failed: %s", strerror(ret));
+#      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  933|   
+#  934|       ret = ini_rules_check(rules_obj, cfg_obj, NULL, errobj);
+#  935|->     fail_unless(ret == 0, "ini_rules_check() failed: %s", strerror(ret));
+#  936|   
+#  937|       /* Should generate 0 errors */
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:938:50: warning[-Wformat-extra-args]: too many arguments for format
+#  938 |     fail_unless(ini_errobj_no_more_msgs(errobj), "Unexpected errors found");
+#      |                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+#  936|   
+#  937|       /* Should generate 0 errors */
+#  938|->     fail_unless(ini_errobj_no_more_msgs(errobj), "Unexpected errors found");
+#  939|   
+#  940|       ini_errobj_destroy(&errobj);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c: scope_hint: In function 'test_ini_allowed_sections_missing_section_fn'
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:972:27: warning[-Wformat-extra-args]: too many arguments for format
+#  972 |     fail_unless(ret == 0, "ini_errobj_create() failed: %s", strerror(ret));
+#      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  970|   
+#  971|       ret = ini_errobj_create(&errobj);
+#  972|->     fail_unless(ret == 0, "ini_errobj_create() failed: %s", strerror(ret));
+#  973|   
+#  974|       ret = ini_rules_check(rules_obj, cfg_obj, NULL, errobj);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:975:27: warning[-Wformat-extra-args]: too many arguments for format
+#  975 |     fail_unless(ret == 0, "ini_rules_check() failed: %s", strerror(ret));
+#      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  973|   
+#  974|       ret = ini_rules_check(rules_obj, cfg_obj, NULL, errobj);
+#  975|->     fail_unless(ret == 0, "ini_rules_check() failed: %s", strerror(ret));
+#  976|   
+#  977|       /* Should generate 1 errors */
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:979:13: warning[-Wformat-extra-args]: too many arguments for format
+#  979 |             "Expected 1 errors but none found");
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  977|       /* Should generate 1 errors */
+#  978|       fail_if(ini_errobj_no_more_msgs(errobj),
+#  979|->             "Expected 1 errors but none found");
+#  980|       num_err = ini_errobj_count(errobj);
+#  981|       fail_unless(num_err == 1, "Expected 1 errors, got %d", num_err);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:981:31: warning[-Wformat-extra-args]: too many arguments for format
+#  981 |     fail_unless(num_err == 1, "Expected 1 errors, got %d", num_err);
+#      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  979|               "Expected 1 errors but none found");
+#  980|       num_err = ini_errobj_count(errobj);
+#  981|->     fail_unless(num_err == 1, "Expected 1 errors, got %d", num_err);
+#  982|   
+#  983|       errmsg = ini_errobj_get_msg(errobj);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:987:27: warning[-Wformat-extra-args]: too many arguments for format
+#  987 |     fail_unless(ret == 0, "Got msg: [%s]", errmsg);
+#      |                           ^~~~~~~~~~~~~~~
+#  985|                    "[rule/section_list]: No allowed sections specified. "
+#  986|                    "Use 'section = default' to allow only default section");
+#  987|->     fail_unless(ret == 0, "Got msg: [%s]", errmsg);
+#  988|       ini_errobj_next(errobj);
+#  989|   
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c: scope_hint: In function 'test_ini_allowed_sections_wrong_regex_fn'
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:1025:27: warning[-Wformat-extra-args]: too many arguments for format
+# 1025 |     fail_unless(ret == 0, "ini_errobj_create() failed: %s", strerror(ret));
+#      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1023|   
+# 1024|       ret = ini_errobj_create(&errobj);
+# 1025|->     fail_unless(ret == 0, "ini_errobj_create() failed: %s", strerror(ret));
+# 1026|   
+# 1027|       ret = ini_rules_check(rules_obj, cfg_obj, NULL, errobj);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:1028:27: warning[-Wformat-extra-args]: too many arguments for format
+# 1028 |     fail_unless(ret == 0, "ini_rules_check() failed: %s", strerror(ret));
+#      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1026|   
+# 1027|       ret = ini_rules_check(rules_obj, cfg_obj, NULL, errobj);
+# 1028|->     fail_unless(ret == 0, "ini_rules_check() failed: %s", strerror(ret));
+# 1029|   
+# 1030|       /* Should generate 2 errors */
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:1032:13: warning[-Wformat-extra-args]: too many arguments for format
+# 1032 |             "Expected 2 errors but none found");
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1030|       /* Should generate 2 errors */
+# 1031|       fail_if(ini_errobj_no_more_msgs(errobj),
+# 1032|->             "Expected 2 errors but none found");
+# 1033|       num_err = ini_errobj_count(errobj);
+# 1034|       fail_unless(num_err == 2, "Expected 2 errors, got %d", num_err);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:1034:31: warning[-Wformat-extra-args]: too many arguments for format
+# 1034 |     fail_unless(num_err == 2, "Expected 2 errors, got %d", num_err);
+#      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1032|               "Expected 2 errors but none found");
+# 1033|       num_err = ini_errobj_count(errobj);
+# 1034|->     fail_unless(num_err == 2, "Expected 2 errors, got %d", num_err);
+# 1035|   
+# 1036|       errmsg = ini_errobj_get_msg(errobj);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:1039:27: warning[-Wformat-extra-args]: too many arguments for format
+# 1039 |     fail_unless(ret == 0, "Got msg: [%s]", errmsg);
+#      |                           ^~~~~~~~~~~~~~~
+# 1037|       ret = strcmp(errmsg,
+# 1038|                    "Rule 'rule/section_list' returned error code '22'");
+# 1039|->     fail_unless(ret == 0, "Got msg: [%s]", errmsg);
+# 1040|       ini_errobj_next(errobj);
+# 1041|   
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:1051:27: warning[-Wformat-extra-args]: too many arguments for format
+# 1051 |     fail_unless(ret == 0, "Got msg: [%s]", errmsg);
+#      |                           ^~~~~~~~~~~~~~~
+# 1049|                        "[^foo\\(*$]:[parentheses not balanced]");
+# 1050|       }
+# 1051|->     fail_unless(ret == 0, "Got msg: [%s]", errmsg);
+# 1052|       ini_errobj_next(errobj);
+# 1053|   
+
+Error: COMPILER_WARNING (CWE-252):
+ding-libs-0.6.1/ini/ini_valueobj_ut.c: scope_hint: In function 'vo_show_test'
+ding-libs-0.6.1/ini/ini_valueobj_ut.c:625:11: warning[-Wunused-result]: ignoring return value of 'system' declared with attribute 'warn_unused_result'
+#  625 |     VOOUT(system("cat test.ini"));
+#      |           ^~~~~~~~~~~~~~~~~~~~~~
+ding-libs-0.6.1/ini/ini_valueobj_ut.c:39:22: note: in definition of macro 'VOOUT'
+#   39 |         if (verbose) foo; \
+#      |                      ^~~
+#  623|   static int vo_show_test(void)
+#  624|   {
+#  625|->     VOOUT(system("cat test.ini"));
+#  626|       return EOK;
+#  627|   }
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/path_utils/path_utils_ut.c:25: included_from: Included from here.
+ding-libs-0.6.1/path_utils/path_utils_ut.c: scope_hint: In function 'test_dirname_fn'
+ding-libs-0.6.1/path_utils/path_utils_ut.c:35:17: warning[-Wformat-extra-args]: too many arguments for format
+#   35 |                 "The strings '%s' and '%s' are different, expected same", \
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ding-libs-0.6.1/path_utils/path_utils_ut.c:53:5: note: in expansion of macro 'fail_unless_str_equal'
+#   53 |     fail_unless_str_equal(p, "/foo");
+#      |     ^~~~~~~~~~~~~~~~~~~~~
+#   33|   #define fail_unless_str_equal(a, b) do { \
+#   34|       fail_unless(strcmp(a, b) == 0, \
+#   35|->                 "The strings '%s' and '%s' are different, expected same", \
+#   36|                   a, b); \
+#   37|   } while(0);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/path_utils/path_utils_ut.c:74:44: warning[-Wformat-extra-args]: too many arguments for format
+#   74 |     fail_if(getcwd(cwd, PATH_MAX) == NULL, "getcwd failed");
+#      |                                            ^~~~~~~~~~~~~~~
+#   72|   
+#   73|       /* if pathname does not contain a slash, dirname returns cwd */
+#   74|->     fail_if(getcwd(cwd, PATH_MAX) == NULL, "getcwd failed");
+#   75|   
+#   76|       fail_unless(get_dirname(p, PATH_MAX, "foo") == SUCCESS);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/path_utils/path_utils_ut.c:118:44: warning[-Wformat-extra-args]: too many arguments for format
+#  118 |     fail_if(getcwd(cwd, PATH_MAX) == NULL, "getcwd failed");
+#      |                                            ^~~~~~~~~~~~~~~
+#  116|       fail_unless_str_equal(p, "/");
+#  117|   
+#  118|->     fail_if(getcwd(cwd, PATH_MAX) == NULL, "getcwd failed");
+#  119|   
+#  120|       fail_unless(get_basename(p, PATH_MAX, ".") == SUCCESS);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/path_utils/path_utils_ut.c:178:44: warning[-Wformat-extra-args]: too many arguments for format
+#  178 |     fail_if(getcwd(cwd, PATH_MAX) == NULL, "getcwd failed");
+#      |                                            ^~~~~~~~~~~~~~~
+#  176|       fail_unless_str_equal(base, "/");
+#  177|   
+#  178|->     fail_if(getcwd(cwd, PATH_MAX) == NULL, "getcwd failed");
+#  179|   
+#  180|       ret = get_directory_and_base_name(dir, PATH_MAX, base, PATH_MAX, "foo");
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/path_utils/path_utils_ut.c:281:31: warning[-Wformat-extra-args]: too many arguments for format
+#  281 |     fail_unless(p2[8] == 'Z', "Got [%d]", p2[8]);
+#      |                               ^~~~~~~~~~
+#  279|       fail_unless(path_concat(p2, 8, "/foo", "bar") == ENOBUFS);
+#  280|       /* Make sure we don't write past the end of the buffer */
+#  281|->     fail_unless(p2[8] == 'Z', "Got [%d]", p2[8]);
+#  282|       /* On ENOBUFS, path should be empty */
+#  283|       fail_unless_str_equal(p2, "");
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/path_utils/path_utils_ut.c:299:44: warning[-Wformat-extra-args]: too many arguments for format
+#  299 |     fail_if(getcwd(cwd, PATH_MAX) == NULL, "getcwd failed");
+#      |                                            ^~~~~~~~~~~~~~~
+#  297|       fail_unless_str_equal(p, "/foo");
+#  298|   
+#  299|->     fail_if(getcwd(cwd, PATH_MAX) == NULL, "getcwd failed");
+#  300|   
+#  301|       fail_unless(make_path_absolute(p, PATH_MAX, "foo") == SUCCESS);
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/path_utils/path_utils_ut.c: scope_hint: In function 'test_make_path_absolute_fn'
+ding-libs-0.6.1/path_utils/path_utils_ut.c:302:31: warning[-Wformat-truncation=]: '/foo' directive output may be truncated writing 4 bytes into a region of size between 1 and 4096
+#  302 |     snprintf(p2, PATH_MAX, "%s/foo", cwd);
+#      |                               ^~~~
+/usr/include/stdio.h:888: included_from: Included from here.
+ding-libs-0.6.1/path_utils/path_utils_ut.c:27: included_from: Included from here.
+/usr/include/bits/stdio2.h:71:10: note: '__snprintf_chk' output between 5 and 4100 bytes into a destination of size 4096
+#   71 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+#      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   72 |                                    __glibc_objsize (__s), __fmt,
+#      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   73 |                                    __va_arg_pack ());
+#      |                                    ~~~~~~~~~~~~~~~~~
+#  300|   
+#  301|       fail_unless(make_path_absolute(p, PATH_MAX, "foo") == SUCCESS);
+#  302|->     snprintf(p2, PATH_MAX, "%s/foo", cwd);
+#  303|       fail_unless_str_equal(p, p2);
+#  304|   
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/path_utils/path_utils_ut.c: scope_hint: In function 'test_make_path_absolute_neg_fn'
+ding-libs-0.6.1/path_utils/path_utils_ut.c:328:44: warning[-Wformat-extra-args]: too many arguments for format
+#  328 |     fail_if(getcwd(cwd, PATH_MAX) == NULL, "getcwd failed");
+#      |                                            ^~~~~~~~~~~~~~~
+#  326|   
+#  327|       /* off-by-one */
+#  328|->     fail_if(getcwd(cwd, PATH_MAX) == NULL, "getcwd failed");
+#  329|       small_len = strlen(cwd) + strlen("foo") + 1;
+#  330|       small2 = malloc(small_len);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/path_utils/path_utils_ut.c: scope_hint: In function 'test_make_normalized_absolute_path_fn'
+ding-libs-0.6.1/path_utils/path_utils_ut.c:351:44: warning[-Wformat-extra-args]: too many arguments for format
+#  351 |     fail_if(getcwd(cwd, PATH_MAX) == NULL, "getcwd failed");
+#      |                                            ^~~~~~~~~~~~~~~
+#  349|       char cwd[PATH_MAX];
+#  350|   
+#  351|->     fail_if(getcwd(cwd, PATH_MAX) == NULL, "getcwd failed");
+#  352|   
+#  353|       fail_unless(make_normalized_absolute_path(p, PATH_MAX, "foo/baz/../bar") == SUCCESS);
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/path_utils/path_utils_ut.c: scope_hint: In function 'test_make_normalized_absolute_path_fn'
+ding-libs-0.6.1/path_utils/path_utils_ut.c:354:31: warning[-Wformat-truncation=]: '/foo/bar' directive output may be truncated writing 8 bytes into a region of size between 1 and 4096
+#  354 |     snprintf(p2, PATH_MAX, "%s/foo/bar", cwd);
+#      |                               ^~~~~~~~
+/usr/include/stdio.h:888: included_from: Included from here.
+ding-libs-0.6.1/path_utils/path_utils_ut.c:27: included_from: Included from here.
+/usr/include/bits/stdio2.h:71:10: note: '__snprintf_chk' output between 9 and 4104 bytes into a destination of size 4096
+#   71 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+#      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   72 |                                    __glibc_objsize (__s), __fmt,
+#      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   73 |                                    __va_arg_pack ());
+#      |                                    ~~~~~~~~~~~~~~~~~
+#  352|   
+#  353|       fail_unless(make_normalized_absolute_path(p, PATH_MAX, "foo/baz/../bar") == SUCCESS);
+#  354|->     snprintf(p2, PATH_MAX, "%s/foo/bar", cwd);
+#  355|       fail_unless_str_equal(p, p2);
+#  356|   
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/path_utils/path_utils_ut.c:567:44: warning[-Wformat-extra-args]: too many arguments for format
+#  567 |     fail_if(getcwd(cwd, PATH_MAX) == NULL, "getcwd failed");
+#      |                                            ^~~~~~~~~~~~~~~
+#  565|   
+#  566|       /* if pathname does not contain a slash, the parent is cwd */
+#  567|->     fail_if(getcwd(cwd, PATH_MAX) == NULL, "getcwd failed");
+#  568|   
+#  569|       fail_unless(find_existing_directory_ancestor(p, PATH_MAX, "foo/bar") == SUCCESS);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/path_utils/path_utils_ut.c: scope_hint: In function 'setup_directory_list'
+ding-libs-0.6.1/path_utils/path_utils_ut.c:589:28: warning[-Wformat-extra-args]: too many arguments for format
+#  589 |     fail_unless(s != NULL, "strdup failed\n");
+#      |                            ^~~~~~~~~~~~~~~~~
+#  587|   
+#  588|       s = strdup(DIR_TEMPLATE);
+#  589|->     fail_unless(s != NULL, "strdup failed\n");
+#  590|       if (!s) return;
+#  591|       dlist_dir = mkdtemp(s);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/path_utils/path_utils_ut.c:592:36: warning[-Wformat-extra-args]: too many arguments for format
+#  592 |     fail_unless(dlist_dir != NULL, "mkstemp failed [%d][%s]", errno, strerror(errno));
+#      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~~
+#  590|       if (!s) return;
+#  591|       dlist_dir = mkdtemp(s);
+#  592|->     fail_unless(dlist_dir != NULL, "mkstemp failed [%d][%s]", errno, strerror(errno));
+#  593|   
+#  594|       ret = asprintf(&dlist_subdir, "%s/%s", dlist_dir, SUBDIR);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/path_utils/path_utils_ut.c:595:27: warning[-Wformat-extra-args]: too many arguments for format
+#  595 |     fail_unless(ret != 1, "strdup failed\n");
+#      |                           ^~~~~~~~~~~~~~~~~
+#  593|   
+#  594|       ret = asprintf(&dlist_subdir, "%s/%s", dlist_dir, SUBDIR);
+#  595|->     fail_unless(ret != 1, "strdup failed\n");
+#  596|       ret = mkdir(dlist_subdir, 0700);
+#  597|       fail_unless(ret != -1, "mkdir %s failed [%d][%s]", dlist_subdir, errno, strerror(errno));
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/path_utils/path_utils_ut.c:597:28: warning[-Wformat-extra-args]: too many arguments for format
+#  597 |     fail_unless(ret != -1, "mkdir %s failed [%d][%s]", dlist_subdir, errno, strerror(errno));
+#      |                            ^~~~~~~~~~~~~~~~~~~~~~~~~~
+#  595|       fail_unless(ret != 1, "strdup failed\n");
+#  596|       ret = mkdir(dlist_subdir, 0700);
+#  597|->     fail_unless(ret != -1, "mkdir %s failed [%d][%s]", dlist_subdir, errno, strerror(errno));
+#  598|   
+#  599|       ret = asprintf(&dlist_subsubdir, "%s/%s", dlist_subdir, SUBSUBDIR);
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/path_utils/path_utils_ut.c:600:27: warning[-Wformat-extra-args]: too many arguments for format
+#  600 |     fail_unless(ret != 1, "strdup failed\n");
+#      |                           ^~~~~~~~~~~~~~~~~
+#  598|   
+#  599|       ret = asprintf(&dlist_subsubdir, "%s/%s", dlist_subdir, SUBSUBDIR);
+#  600|->     fail_unless(ret != 1, "strdup failed\n");
+#  601|       ret = mkdir(dlist_subsubdir, 0700);
+#  602|       fail_unless(ret != -1, "mkdir %s failed [%d][%s]", dlist_subsubdir, errno, strerror(errno));
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/path_utils/path_utils_ut.c:602:28: warning[-Wformat-extra-args]: too many arguments for format
+#  602 |     fail_unless(ret != -1, "mkdir %s failed [%d][%s]", dlist_subsubdir, errno, strerror(errno));
+#      |                            ^~~~~~~~~~~~~~~~~~~~~~~~~~
+#  600|       fail_unless(ret != 1, "strdup failed\n");
+#  601|       ret = mkdir(dlist_subsubdir, 0700);
+#  602|->     fail_unless(ret != -1, "mkdir %s failed [%d][%s]", dlist_subsubdir, errno, strerror(errno));
+#  603|   }
+#  604|   
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/path_utils/path_utils_ut.c: scope_hint: In function 'teardown_directory_list'
+ding-libs-0.6.1/path_utils/path_utils_ut.c:611:32: warning[-Wformat-extra-args]: too many arguments for format
+#  611 |         fail_unless(ret != -1, "unlink %s failed [%d][%s]", dlist_subsubdir, errno, strerror(errno));
+#      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  609|       if (dlist_subsubdir) {
+#  610|           ret = rmdir(dlist_subsubdir);
+#  611|->         fail_unless(ret != -1, "unlink %s failed [%d][%s]", dlist_subsubdir, errno, strerror(errno));
+#  612|           free(dlist_subsubdir);
+#  613|           dlist_subsubdir = NULL;
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/path_utils/path_utils_ut.c:618:32: warning[-Wformat-extra-args]: too many arguments for format
+#  618 |         fail_unless(ret != -1, "unlink %s failed [%d][%s]", dlist_subdir, errno, strerror(errno));
+#      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  616|       if (dlist_subdir) {
+#  617|           ret = rmdir(dlist_subdir);
+#  618|->         fail_unless(ret != -1, "unlink %s failed [%d][%s]", dlist_subdir, errno, strerror(errno));
+#  619|           free(dlist_subdir);
+#  620|           dlist_subdir = NULL;
+
+Error: COMPILER_WARNING (CWE-685):
+ding-libs-0.6.1/path_utils/path_utils_ut.c:625:32: warning[-Wformat-extra-args]: too many arguments for format
+#  625 |         fail_unless(ret != -1, "unlink %s failed [%d][%s]", dlist_dir, errno, strerror(errno));
+#      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  623|       if (dlist_dir) {
+#  624|           ret = rmdir(dlist_dir);
+#  625|->         fail_unless(ret != -1, "unlink %s failed [%d][%s]", dlist_dir, errno, strerror(errno));
+#  626|           free(dlist_dir);
+#  627|           dlist_dir = NULL;

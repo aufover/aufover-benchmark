@@ -1,0 +1,104 @@
+Error: COMPILER_WARNING (CWE-563):
+icu/source/common/locid.cpp:300:17: warning[-Wunused-but-set-variable]: variable 'size' set but not used
+#        int32_t size = 0;
+#                ^
+#  298|       {
+#  299|           UErrorCode status = U_ZERO_ERROR;
+#  300|->         int32_t size = 0;
+#  301|           int32_t lsize = 0;
+#  302|           int32_t csize = 0;
+
+Error: COMPILER_WARNING:
+icu/source/test/intltest/localebuildertest.cpp:429:9: warning[-Wstring-concatenation]: suspicious concatenation of string literals in an array initialization; did you mean to separate the elements with a comma?
+#        "{",
+#        ^
+icu/source/test/intltest/localebuildertest.cpp:428:9: note: place parentheses around the string literal to silence warning
+#        "9"
+#        ^
+#  427|           "0",
+#  428|           "9"
+#  429|->         "{",
+#  430|           ".",
+#  431|           "[",
+
+Error: COMPILER_WARNING:
+icu/source/test/intltest/localebuildertest.cpp:524:9: warning[-Wstring-concatenation]: suspicious concatenation of string literals in an array initialization; did you mean to separate the elements with a comma?
+#        "{",
+#        ^
+icu/source/test/intltest/localebuildertest.cpp:523:9: note: place parentheses around the string literal to silence warning
+#        "9"
+#        ^
+#  522|           "0",
+#  523|           "9"
+#  524|->         "{",
+#  525|           ".",
+#  526|           "[",
+
+Error: COMPILER_WARNING:
+icu/source/test/intltest/localebuildertest.cpp:623:9: warning[-Wstring-concatenation]: suspicious concatenation of string literals in an array initialization; did you mean to separate the elements with a comma?
+#        "{",
+#        ^
+icu/source/test/intltest/localebuildertest.cpp:622:9: note: place parentheses around the string literal to silence warning
+#        "9"
+#        ^
+#  621|           "0",
+#  622|           "9"
+#  623|->         "{",
+#  624|           ".",
+#  625|           "[",
+
+Error: COMPILER_WARNING:
+icu/source/test/intltest/localebuildertest.cpp:767:9: warning[-Wstring-concatenation]: suspicious concatenation of string literals in an array initialization; did you mean to separate the elements with a comma?
+#        "{",
+#        ^
+icu/source/test/intltest/localebuildertest.cpp:766:9: note: place parentheses around the string literal to silence warning
+#        "9"
+#        ^
+#  765|           "0",
+#  766|           "9"
+#  767|->         "{",
+#  768|           ".",
+#  769|           "[",
+
+Error: COMPILER_WARNING (CWE-563):
+icu/source/test/intltest/locnmtst.cpp:428:13: warning[-Wunused-but-set-variable]: variable 'displayNameLength' set but not used
+#    int32_t displayNameLength = uldn_regionDisplayName(ldn, "019", displayName, 200, &err);
+#            ^
+#  426|       ULocaleDisplayNames* ldn = uldn_open("es_MX", ULDN_STANDARD_NAMES, &err);
+#  427|       UChar displayName[200];
+#  428|->     int32_t displayNameLength = uldn_regionDisplayName(ldn, "019", displayName, 200, &err);
+#  429|       test_assert(U_SUCCESS(err));
+#  430|       test_assert_equal(UnicodeString(u"América"), UnicodeString(displayName));
+
+Error: COMPILER_WARNING:
+icu/source/test/intltest/plurults.cpp:1310:13: warning[-Wstring-concatenation]: suspicious concatenation of string literals in an array initialization; did you mean to separate the elements with a comma?
+#            "a: n % 37 ! in 3..4"
+#            ^
+icu/source/test/intltest/plurults.cpp:1309:13: note: place parentheses around the string literal to silence warning
+#            "a: n ! in 3..4"       // '!' not exact equivalent of 'not'
+#            ^
+# 1308|               "a: n = not 3",        // '=' not exact equivalent of 'is'
+# 1309|               "a: n ! in 3..4"       // '!' not exact equivalent of 'not'
+# 1310|->             "a: n % 37 ! in 3..4"
+# 1311|   
+# 1312|               };
+
+Error: COMPILER_WARNING (CWE-563):
+icu/source/test/intltest/rbbitst.cpp:4045:22: warning[-Wunused-but-set-variable]: variable 'expectedCount' set but not used
+#    int              expectedCount = 0;
+#                     ^
+# 4043|       int32_t          numCharClasses;
+# 4044|       UVector          *chClasses;
+# 4045|->     int              expectedCount = 0;
+# 4046|       char             expectedBreaks[TESTSTRINGLEN*2 + 1];
+# 4047|       char             forwardBreaks[TESTSTRINGLEN*2 + 1];
+
+Error: COMPILER_WARNING (CWE-563):
+icu/source/tools/genrb/wrtxml.cpp:927:15: warning[-Wunused-but-set-variable]: variable 'i' set but not used
+#    uint32_t  i         = 0;
+#              ^
+#  925|   table_write_xml(TableResource *res, const char* id, const char* language, UBool isTopLevel, UErrorCode *status) {
+#  926|   
+#  927|->     uint32_t  i         = 0;
+#  928|   
+#  929|       struct SResource *current = NULL;

@@ -1,0 +1,12 @@
+Error: SYMBIOTIC_WARNING:
+polkit-pkla-compat-0.1/src/pkla-admin-identities.c:117: error: memory error: out of bound pointer
+polkit-pkla-compat-0.1/src/pkla-admin-identities.c:117: note: call stack: function main (=2, =0)
+polkit-pkla-compat-0.1/src/pkla-admin-identities.c:117: note: Additional Info: address: 0:8
+polkit-pkla-compat-0.1/src/pkla-admin-identities.c:117: note: Additional Info: pointing to: none
+polkit-pkla-compat-0.1/src/pkla-admin-identities.c:107:17: note: Non-deterministic values: g_option_context_new: len 8 bytes, [8 times 0x0] (i64: 0)
+polkit-pkla-compat-0.1/src/pkla-admin-identities.c:113:8: note: Non-deterministic values: g_option_context_parse: len 4 bytes, [4 times 0x0] (i32: 0)
+#  115|         fprintf (stderr, _("%s: %s\n"
+#  116|   			 "Run `%s --help' for more information.\n"),
+#  117|-> 	       g_get_prgname (), error->message, g_get_prgname ());
+#  118|         g_error_free (error);
+#  119|         g_option_context_free (opt_context);

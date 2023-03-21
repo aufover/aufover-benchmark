@@ -1,0 +1,108 @@
+Error: COMPILER_WARNING:
+cpio-2.13/gnu/argp-pin.c:27: warning[-Wpedantic]: ISO C forbids an empty translation unit
+#   25|   char *program_invocation_name = 0;
+#   26|   #endif
+
+Error: COMPILER_WARNING:
+cpio-2.13/gnu/utimens.c: scope_hint: In function 'fdutimens'
+cpio-2.13/gnu/utimens.c:296:17: warning[-Wstringop-overflow=]: 'update_timespec' accessing 16 bytes in a region of size 8
+#  296 |       if (ts && update_timespec (&st, &ts))
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+cpio-2.13/gnu/utimens.c:296:17: note: referencing argument 2 of type 'struct timespec * *'
+cpio-2.13/gnu/utimens.c:131:1: note: in a call to function 'update_timespec'
+#  131 | update_timespec (struct stat const *statbuf, struct timespec *ts[2])
+#      | ^~~~~~~~~~~~~~~
+#  294|             && (fd < 0 ? stat (file, &st) : fstat (fd, &st)))
+#  295|           return -1;
+#  296|->       if (ts && update_timespec (&st, &ts))
+#  297|           return 0;
+#  298|       }
+
+Error: COMPILER_WARNING:
+cpio-2.13/gnu/utimens.c: scope_hint: In function 'lutimens'
+cpio-2.13/gnu/utimens.c:507:17: warning[-Wstringop-overflow=]: 'update_timespec' accessing 16 bytes in a region of size 8
+#  507 |       if (ts && update_timespec (&st, &ts))
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+cpio-2.13/gnu/utimens.c:507:17: note: referencing argument 2 of type 'struct timespec * *'
+cpio-2.13/gnu/utimens.c:131:1: note: in a call to function 'update_timespec'
+#  131 | update_timespec (struct stat const *statbuf, struct timespec *ts[2])
+#      | ^~~~~~~~~~~~~~~
+#  505|         if (adjustment_needed != 3 && lstat (file, &st))
+#  506|           return -1;
+#  507|->       if (ts && update_timespec (&st, &ts))
+#  508|           return 0;
+#  509|       }
+
+Error: COMPILER_WARNING (CWE-681):
+cpio-2.13/lib/rtapelib.c: scope_hint: In function 'rmt_ioctl__'
+cpio-2.13/lib/rtapelib.c:703:5: warning[-Woverflow]: overflow in conversion from 'long unsigned int' to 'int' changes value from '2150657282' to '-2144310014'
+#  703 |     case MTIOCGET:
+#      |     ^~~~
+#  701|   
+#  702|   #ifdef MTIOCGET
+#  703|->     case MTIOCGET:
+#  704|         {
+#  705|   	ssize_t status;
+
+Error: VALGRIND_WARNING:
+cpio-2.13/src/cpio: note: while executing process 1217 with arguments: --format=bin --quiet -o
+cpio-2.13/src/../gnu/xmalloc.c:41: warning[Leak_DefinitelyLost]: 128 bytes in 1 blocks are definitely lost in loss record 1 of 3
+cpio-2.13/src/../gnu/xmalloc.c:41: note: called from UnknownInlinedFun()
+cpio-2.13/src/dstring.c:39: note: called from UnknownInlinedFun()
+cpio-2.13/src/copyout.c:608: note: called from process_copy_out()
+cpio-2.13/src/main.c:781: note: called from main()
+#   39|   xmalloc (size_t n)
+#   40|   {
+#   41|->   void *p = malloc (n);
+#   42|     if (!p && n != 0)
+#   43|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+cpio-2.13/src/cpio: note: while executing process 1905 with arguments: -pmaud --quiet newdir
+cpio-2.13/src/../gnu/xmalloc.c:61: warning[Leak_DefinitelyLost]: 16 bytes in 1 blocks are definitely lost in loss record 1 of 4
+cpio-2.13/src/../gnu/xmalloc.c:61: note: called from UnknownInlinedFun()
+cpio-2.13/src/dstring.c:50: note: called from UnknownInlinedFun()
+cpio-2.13/src/dstring.c:45: note: called from UnknownInlinedFun()
+cpio-2.13/src/copypass.c:119: note: called from process_copy_pass()
+cpio-2.13/src/main.c:781: note: called from main()
+#   59|       }
+#   60|   
+#   61|->   p = realloc (p, n);
+#   62|     if (!p && n)
+#   63|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+cpio-2.13/src/cpio: note: while executing process 1682 with arguments: -pdvm en/to/tre
+cpio-2.13/src/../gnu/xmalloc.c:61: warning[Leak_DefinitelyLost]: 19 bytes in 1 blocks are definitely lost in loss record 1 of 4
+cpio-2.13/src/../gnu/xmalloc.c:61: note: called from UnknownInlinedFun()
+cpio-2.13/src/dstring.c:50: note: called from UnknownInlinedFun()
+cpio-2.13/src/dstring.c:45: note: called from UnknownInlinedFun()
+cpio-2.13/src/copypass.c:119: note: called from process_copy_pass()
+cpio-2.13/src/main.c:781: note: called from main()
+#   59|       }
+#   60|   
+#   61|->   p = realloc (p, n);
+#   62|     if (!p && n)
+#   63|       xalloc_die ();
+
+Error: COMPILER_WARNING (CWE-252):
+cpio-2.13/src/util.c: scope_hint: In function 'prepare_append'
+cpio-2.13/src/util.c:655:7: warning[-Wunused-result]: ignoring return value of 'read' declared with attribute 'warn_unused_result'
+#  655 |       read (out_file_des, tmp_buf, useful_bytes_in_block);
+#      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  653|       {
+#  654|         tmp_buf = (char *) xmalloc (useful_bytes_in_block);
+#  655|->       read (out_file_des, tmp_buf, useful_bytes_in_block);
+#  656|         if (lseek (out_file_des, start_of_block, SEEK_SET) < 0)
+#  657|   	error (PAXEXIT_FAILURE, errno, _("cannot seek on output"));
+
+Error: COMPILER_WARNING (CWE-563):
+cpio-2.13/tests/genfile.c: scope_hint: In function 'generate_sparse_file'
+cpio-2.13/tests/genfile.c:560:7: warning[-Wunused-variable]: unused variable 'i'
+#  560 |   int i;
+#      |       ^
+#  558|   generate_sparse_file (int argc, char **argv)
+#  559|   {
+#  560|->   int i;
+#  561|     int fd;
+#  562|     int flags = O_CREAT | O_RDWR | O_BINARY;

@@ -1,0 +1,189 @@
+Error: COMPILER_WARNING (CWE-681):
+kbd-2.4.0/src/dumpkeys.c:149:13: warning[-Wsign-conversion]: implicit conversion changes signedness: 'int' to 'lk_table_shape'
+#                                table = atoi(optarg);
+#                                      ~ ^~~~~~~~~~~~
+#  147|   				break;
+#  148|   			case 'S':
+#  149|-> 				table = atoi(optarg);
+#  150|   				break;
+#  151|   			case 't':
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/src/libkeymap/array.c:98:8: warning[-Wcast-align]: cast from 'char *' to 'void **' increases required alignment from 1 to 8
+#        ptr = (void **) a->array;
+#              ^~~~~~~~~~~~~~~~~~
+#   96|   		return NULL;
+#   97|   	}
+#   98|-> 	ptr = (void **) a->array;
+#   99|   	return *(ptr + i);
+#  100|   }
+
+Error: COMPILER_WARNING (CWE-681):
+kbd-2.4.0/src/libkeymap/common.c:113:10: warning[-Wsign-conversion]: implicit conversion changes signedness: 'int' to 'lk_flags'
+#                return -1;
+#                ~~~~~~ ^~
+#  111|   {
+#  112|   	if (!ctx)
+#  113|-> 		return -1;
+#  114|   
+#  115|   	return ctx->flags;
+
+Error: COMPILER_WARNING (CWE-681):
+kbd-2.4.0/src/libkeymap/parser.c:1057:34: warning[-Wsign-conversion]: implicit conversion changes signedness: 'long' to 'unsigned long'
+#  return yystpcpy (yyres, yystr) - yyres;
+#  ~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+# 1055|       return yystrlen (yystr);
+# 1056|   
+# 1057|->   return yystpcpy (yyres, yystr) - yyres;
+# 1058|   }
+# 1059|   # endif
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/src/libkeymap/parser.c:1305:12: warning[-Wimplicit-int-conversion]: implicit conversion loses integer precision: 'int' to 'yytype_int16' (aka 'short')
+#  *yyssp = yystate;
+#         ~ ^~~~~~~
+# 1303|   
+# 1304|    yysetstate:
+# 1305|->   *yyssp = yystate;
+# 1306|   
+# 1307|     if (yyss + yystacksize - 1 <= yyssp)
+
+Error: COMPILER_WARNING (CWE-681):
+kbd-2.4.0/src/libkeymap/parser.c:1310:38: warning[-Wsign-conversion]: implicit conversion changes signedness: 'long' to 'unsigned long'
+#      YYSIZE_T yysize = yyssp - yyss + 1;
+#               ~~~~~~   ~~~~~~~~~~~~~^~~
+# 1308|       {
+# 1309|         /* Get the current used size of the three stacks, in elements.  */
+# 1310|->       YYSIZE_T yysize = yyssp - yyss + 1;
+# 1311|   
+# 1312|   #ifdef yyoverflow
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/src/libkfont/mapscrn.c:163:13: warning[-Wimplicit-int-conversion]: implicit conversion loses integer precision: 'unsigned int' to 'unsigned char'
+#                buf[i]  = i;
+#                        ~ ^
+#  161|   	/* default: trivial straight-to-font */
+#  162|   	for (i = 0; i < E_TABSZ; i++) {
+#  163|-> 		buf[i]  = i;
+#  164|   		ubuf[i] = (0xf000 + i);
+#  165|   	}
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/src/libkfont/mapscrn.c:164:21: warning[-Wimplicit-int-conversion]: implicit conversion loses integer precision: 'unsigned int' to 'unsigned short'
+#                ubuf[i] = (0xf000 + i);
+#                        ~  ~~~~~~~^~~
+#  162|   	for (i = 0; i < E_TABSZ; i++) {
+#  163|   		buf[i]  = i;
+#  164|-> 		ubuf[i] = (0xf000 + i);
+#  165|   	}
+#  166|   
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/src/libkfont/psffontop.c:460:16: warning[-Wimplicit-int-conversion]: implicit conversion loses integer precision: 'unsigned int' to 'unsigned char'
+#                h.charsize = charsize;
+#                           ~ ^~~~~~~~
+#  458|   		else if (flags & WPSFH_HASTAB)
+#  459|   			h.mode |= PSF1_MODEHASTAB;
+#  460|-> 		h.charsize = charsize;
+#  461|   		ret = fwrite(&h, sizeof(h), 1, ofil);
+#  462|   	}
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/src/libkfont/setfont.c:220:26: warning[-Wimplicit-int-conversion]: implicit conversion loses integer precision: 'unicode' (aka 'int') to 'unsigned short'
+#                                up[ct].unicode = us->uc;
+#                                               ~ ~~~~^~
+#  218|   			us = ul->seq;
+#  219|   			if (us && !us->next) {
+#  220|-> 				up[ct].unicode = us->uc;
+#  221|   				up[ct].fontpos = i;
+#  222|   				ct++;
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/src/libkfont/setfont.c:221:22: warning[-Wimplicit-int-conversion]: implicit conversion loses integer precision: 'unsigned int' to 'unsigned short'
+#                                up[ct].fontpos = i;
+#                                               ~ ^
+#  219|   			if (us && !us->next) {
+#  220|   				up[ct].unicode = us->uc;
+#  221|-> 				up[ct].fontpos = i;
+#  222|   				ct++;
+#  223|   				if (ctx->verbose > 1)
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/src/libkfont/setfont.c:250:16: warning[-Wimplicit-int-conversion]: implicit conversion loses integer precision: 'unsigned int' to 'unsigned short'
+#        ud.entry_ct = ct;
+#                    ~ ^~
+#  248|   		KFONT_INFO(ctx, _("Loading Unicode mapping table..."));
+#  249|   
+#  250|-> 	ud.entry_ct = ct;
+#  251|   	ud.entries  = up;
+#  252|   
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/src/resizecons.c:375:1: warning[-Wmissing-noreturn]: function 'usage' could be declared with attribute 'noreturn'
+#{
+#^
+#  373|   static void __attribute__((noreturn))
+#  374|   usage()
+#  375|-> {
+#  376|   	fprintf(stderr,
+#  377|   	        _("resizecons:\n"
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/src/setleds.c:154:1: warning[-Wmissing-noreturn]: function 'sungetleds' could be declared with attribute 'noreturn'
+#{
+#^
+#  152|   static void
+#  153|   sungetleds(arg_state unsigned char *cur_leds)
+#  154|-> {
+#  155|   #ifdef KIOCGLED
+#  156|   	if (ioctl(sunkbdfd, KIOCGLED, cur_leds)) {
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/src/setleds.c:173:1: warning[-Wmissing-noreturn]: function 'sunsetleds' could be declared with attribute 'noreturn'
+#{
+#^
+#  171|   static void
+#  172|   sunsetleds(arg_state unsigned char *cur_leds)
+#  173|-> {
+#  174|   #ifdef KIOCSLED
+#  175|   	if (ioctl(sunkbdfd, KIOCSLED, cur_leds)) {
+
+Error: COMPILER_WARNING (CWE-681):
+kbd-2.4.0/tests/helpers/libkeymap-showmaps.c:36:27: warning[-Wsign-conversion]: implicit conversion changes signedness: 'unsigned int' to 'int'
+#                if (!lk_map_exists(ctx, i))
+#                     ~~~~~~~~~~~~~      ^
+#   34|   
+#   35|   	for (i = 0; i < ctx->keymap->total; i++) {
+#   36|-> 		if (!lk_map_exists(ctx, i))
+#   37|   			continue;
+#   38|   		printf("keymap %03d\n", i);
+
+Error: COMPILER_WARNING (CWE-681):
+kbd-2.4.0/tests/libkeymap/libkeymap-test07.c:43:27: warning[-Wsign-conversion]: implicit conversion changes signedness: 'unsigned int' to 'int'
+#                int c = lk_get_key(ctx, i, 17);
+#                        ~~~~~~~~~~      ^
+#   41|   
+#   42|   	while (i < MAX_NR_KEYMAPS) {
+#   43|-> 		int c = lk_get_key(ctx, i, 17);
+#   44|   		if (KVAL(c) != 'x')
+#   45|   			kbd_error(EXIT_FAILURE, 0, "Unable to get keycode");
+
+Error: COMPILER_WARNING (CWE-681):
+kbd-2.4.0/tests/libkeymap/libkeymap-test08.c:44:27: warning[-Wsign-conversion]: implicit conversion changes signedness: 'unsigned int' to 'int'
+#                int c = lk_get_key(ctx, i, 17);
+#                        ~~~~~~~~~~      ^
+#   42|   
+#   43|   	for (i = 0; i < 26; i++) {
+#   44|-> 		int c = lk_get_key(ctx, i, 17);
+#   45|   		if (KVAL(c) != str[i])
+#   46|   			kbd_error(EXIT_FAILURE, 0, "Unable to get keycode");
+
+Error: COMPILER_WARNING (CWE-192):
+kbd-2.4.0/tests/libkeymap/libkeymap-test16.c:18:27: warning[-Wenum-conversion]: implicit conversion from enumeration type 'lk_keywords' to different enumeration type 'lk_flags'
+#        lk_set_parser_flags(ctx, LK_KEYWORD_ALTISMETA);
+#        ~~~~~~~~~~~~~~~~~~~      ^~~~~~~~~~~~~~~~~~~~
+#   16|   	ctx = lk_init();
+#   17|   	lk_set_log_fn(ctx, NULL, NULL);
+#   18|-> 	lk_set_parser_flags(ctx, LK_KEYWORD_ALTISMETA);
+#   19|   
+#   20|   	if (lk_add_key(ctx, 0, 0, 16) != 0)

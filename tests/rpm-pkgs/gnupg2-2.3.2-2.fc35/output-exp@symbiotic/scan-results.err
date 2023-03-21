@@ -1,0 +1,52 @@
+Error: SYMBIOTIC_WARNING:
+gnupg-2.3.2/common/percent.c:83: error: memory error: out of bound pointer
+gnupg-2.3.2/common/percent.c:83: note: call stack: function percent_plus_escape (=0)
+gnupg-2.3.2/common/t-percent.c:75: note: call stack: function test_percent_plus_escape ()
+gnupg-2.3.2/common/t-percent.c:317: note: call stack: function main (=2, =0)
+gnupg-2.3.2/common/percent.c:83: note: Additional Info: address: 255:0
+gnupg-2.3.2/common/percent.c:83: note: Additional Info: pointing to: none
+gnupg-2.3.2/common/percent.c:66:16: note: Non-deterministic values: gcry_malloc: len 8 bytes, [0xff|7 times 0x0] (i64: 255)
+gnupg-2.3.2/common/percent.c:66:16: note: Non-deterministic values: gcry_malloc (offset): len 8 bytes, [8 times 0x0] (i64: 0)
+#   81|           *p++ = *s;
+#   82|       }
+#   83|->   *p = 0;
+#   84|   
+#   85|     return buffer;
+
+Error: SYMBIOTIC_WARNING:
+gnupg-2.3.2/common/zb32.c:109: error: memory error: out of bound pointer
+gnupg-2.3.2/common/zb32.c:109: note: call stack: function zb32_encode (=0, =1)
+gnupg-2.3.2/common/t-zb32.c:93: note: call stack: function test_zb32enc ()
+gnupg-2.3.2/common/t-zb32.c:302: note: call stack: function main (=2, =0)
+gnupg-2.3.2/common/zb32.c:109: note: Additional Info: address: 1095216660480:0
+gnupg-2.3.2/common/zb32.c:109: note: Additional Info: pointing to: none
+gnupg-2.3.2/common/zb32.c:63:16: note: Non-deterministic values: gcry_malloc: len 8 bytes, [4 times 0x0|0xff|3 times 0x0] (i64: 1095216660480)
+gnupg-2.3.2/common/zb32.c:63:16: note: Non-deterministic values: gcry_malloc (offset): len 8 bytes, [8 times 0x0] (i64: 0)
+#  107|         break;
+#  108|       case 1:
+#  109|->       *d++ = zb32asc[((s[0]      ) >> 3)               ];
+#  110|         *d++ = zb32asc[((s[0] &   7) << 2)               ];
+#  111|         break;
+
+Error: COMPILER_WARNING (CWE-457):
+gnupg-2.3.2/scd/app-p15.c:722:21: warning[-Wuninitialized]: variable 'sw' is uninitialized when used here
+#            *r_sw = sw;
+#                    ^~
+gnupg-2.3.2/scd/app-p15.c:709:9: note: initialize the variable 'sw' to silence this warning
+#  int sw;
+#        ^
+#  720|                        efid_desc, efid, gpg_strerror (err));
+#  721|             if (r_sw)
+#  722|->             *r_sw = sw;
+#  723|             return err;
+#  724|           }
+
+Error: COMPILER_WARNING (CWE-563):
+gnupg-2.3.2/scd/app-sc-hsm.c:474:17: warning[-Wunused-but-set-variable]: variable 'ul' set but not used
+#  unsigned long ul;
+#                ^
+#  472|     prkdf_object_t prkdf = NULL;
+#  473|     cdf_object_t cdf = NULL;
+#  474|->   unsigned long ul;
+#  475|     const unsigned char *objid;
+#  476|     size_t objidlen;

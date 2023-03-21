@@ -1,0 +1,76 @@
+Error: COMPILER_WARNING:
+texinfo-6.8/info/infokey.c:380:7: warning[-Wtautological-constant-out-of-range-compare]: result of comparison of constant 271 with expression of type 'char' is always true
+#                    To_seq (oval);
+#                    ^~~~~~~~~~~~~
+texinfo-6.8/info/infokey.c:223:30: note: expanded from macro 'To_seq'
+#                      seq[slen++] = meta ? KEYMAP_META(c) : (c); \
+#                                           ^~~~~~~~~~~~~~
+texinfo-6.8/info/infomap.h:105:29: note: expanded from macro 'KEYMAP_META'
+##define KEYMAP_META(k) ((k) < KEYMAP_META_BASE ? (k) + KEYMAP_META_BASE : (k))
+#                        ~~~ ^ ~~~~~~~~~~~~~~~~
+#  378|   		{
+#  379|   		  if (oval)
+#  380|-> 		    To_seq (oval);
+#  381|   		  else
+#  382|   		    {
+
+Error: COMPILER_WARNING (CWE-569):
+texinfo-6.8/info/infopath.c:201:18: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  while (dirname = extract_colon_unit (path, &idx))
+#         ~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+texinfo-6.8/info/infopath.c:201:18: note: place parentheses around the assignment to silence this warning
+#  while (dirname = extract_colon_unit (path, &idx))
+#                 ^
+texinfo-6.8/info/infopath.c:201:18: note: use '==' to turn this assignment into an equality comparison
+#  while (dirname = extract_colon_unit (path, &idx))
+#                 ^
+#  199|     char *dirname;
+#  200|   
+#  201|->   while (dirname = extract_colon_unit (path, &idx))
+#  202|       {
+#  203|         if (!strcmp ("PATH", dirname))
+
+Error: COMPILER_WARNING (CWE-569):
+texinfo-6.8/info/session.c:2214:13: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#  if (entry = select_menu_digit (window, key))
+#      ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+texinfo-6.8/info/session.c:2214:13: note: place parentheses around the assignment to silence this warning
+#  if (entry = select_menu_digit (window, key))
+#            ^
+texinfo-6.8/info/session.c:2214:13: note: use '==' to turn this assignment into an equality comparison
+#  if (entry = select_menu_digit (window, key))
+#            ^
+# 2212|   has_menu:
+# 2213|   
+# 2214|->   if (entry = select_menu_digit (window, key))
+# 2215|       info_select_reference (window, entry);
+# 2216|     else if (key == '0')
+
+Error: COMPILER_WARNING (CWE-197):
+texinfo-6.8/info/session.c:2411:30: warning[-Wabsolute-value]: absolute value function 'abs' given an argument of type 'long' but has parameter of type 'int' which may cause truncation of value
+#                  int dist = abs (window->point - ref->end);
+#                             ^
+texinfo-6.8/info/session.c:2411:30: note: use function 'labs' instead
+#                  int dist = abs (window->point - ref->end);
+#                             ^~~
+# 2409|                     /* ref->end is more accurate estimate of position
+# 2410|                        for menus than ref->start.  Go figure.  */
+# 2411|->                   int dist = abs (window->point - ref->end);
+# 2412|   
+# 2413|                     if (dist < min_dist)
+
+Error: COMPILER_WARNING (CWE-569):
+texinfo-6.8/info/session.c:3095:23: warning[-Wparentheses]: using the result of an assignment as a condition without parentheses
+#            if (entry = select_menu_digit (window, '1'))
+#                ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+texinfo-6.8/info/session.c:3095:23: note: place parentheses around the assignment to silence this warning
+#            if (entry = select_menu_digit (window, '1'))
+#                      ^
+texinfo-6.8/info/session.c:3095:23: note: use '==' to turn this assignment into an equality comparison
+#            if (entry = select_menu_digit (window, '1'))
+#                      ^
+# 3093|               REFERENCE *entry;
+# 3094|   
+# 3095|->             if (entry = select_menu_digit (window, '1'))
+# 3096|                 {
+# 3097|                   info_select_reference (window, entry);

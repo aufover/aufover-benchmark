@@ -1,0 +1,271 @@
+Error: COMPILER_WARNING (CWE-477):
+libxml2-2.9.12/python/libxml.c: scope_hint: In function 'xmlPythonFileCloseRaw'
+libxml2-2.9.12/python/libxml.c:260:5: warning[-Wdeprecated-declarations]: 'PyEval_CallMethod' is deprecated
+#  260 |     ret = PyEval_CallMethod(file, (char *) "close", (char *) "()");
+#      |     ^~~
+/usr/include/python3.10/Python.h:130: included_from: Included from here.
+libxml2-2.9.12/python/libxml.c:15: included_from: Included from here.
+/usr/include/python3.10/ceval.h:28:43: note: declared here
+#   28 | Py_DEPRECATED(3.9) PyAPI_FUNC(PyObject *) PyEval_CallMethod(
+#      |                                           ^~~~~~~~~~~~~~~~~
+#  258|       file = (PyObject *) context;
+#  259|       if (file == NULL) return(-1);
+#  260|->     ret = PyEval_CallMethod(file, (char *) "close", (char *) "()");
+#  261|       if (ret != NULL) {
+#  262|   	Py_DECREF(ret);
+
+Error: COMPILER_WARNING (CWE-477):
+libxml2-2.9.12/python/libxml.c: scope_hint: In function 'xmlPythonFileReadRaw'
+libxml2-2.9.12/python/libxml.c:290:5: warning[-Wdeprecated-declarations]: 'PyEval_CallMethod' is deprecated
+#  290 |     ret = PyEval_CallMethod(file, (char *) "read", (char *) "(i)", len);
+#      |     ^~~
+/usr/include/python3.10/Python.h:130: included_from: Included from here.
+libxml2-2.9.12/python/libxml.c:15: included_from: Included from here.
+/usr/include/python3.10/ceval.h:28:43: note: declared here
+#   28 | Py_DEPRECATED(3.9) PyAPI_FUNC(PyObject *) PyEval_CallMethod(
+#      |                                           ^~~~~~~~~~~~~~~~~
+#  288|       file = (PyObject *) context;
+#  289|       if (file == NULL) return(-1);
+#  290|->     ret = PyEval_CallMethod(file, (char *) "read", (char *) "(i)", len);
+#  291|       if (ret == NULL) {
+#  292|   	printf("xmlPythonFileReadRaw: result is NULL\n");
+
+Error: COMPILER_WARNING (CWE-477):
+libxml2-2.9.12/python/libxml.c: scope_hint: In function 'xmlPythonFileRead'
+libxml2-2.9.12/python/libxml.c:355:5: warning[-Wdeprecated-declarations]: 'PyEval_CallMethod' is deprecated
+#  355 |     ret = PyEval_CallMethod(file, (char *) "io_read", (char *) "(i)", len);
+#      |     ^~~
+/usr/include/python3.10/Python.h:130: included_from: Included from here.
+libxml2-2.9.12/python/libxml.c:15: included_from: Included from here.
+/usr/include/python3.10/ceval.h:28:43: note: declared here
+#   28 | Py_DEPRECATED(3.9) PyAPI_FUNC(PyObject *) PyEval_CallMethod(
+#      |                                           ^~~~~~~~~~~~~~~~~
+#  353|       file = (PyObject *) context;
+#  354|       if (file == NULL) return(-1);
+#  355|->     ret = PyEval_CallMethod(file, (char *) "io_read", (char *) "(i)", len);
+#  356|       if (ret == NULL) {
+#  357|   	printf("xmlPythonFileRead: result is NULL\n");
+
+Error: COMPILER_WARNING (CWE-477):
+libxml2-2.9.12/python/libxml.c: scope_hint: In function 'xmlPythonFileWrite'
+libxml2-2.9.12/python/libxml.c:423:9: warning[-Wdeprecated-declarations]: 'PyEval_CallMethod' is deprecated
+#  423 |         ret = PyEval_CallMethod(file, (char *) "io_write", (char *) "(O)",
+#      |         ^~~
+/usr/include/python3.10/Python.h:130: included_from: Included from here.
+libxml2-2.9.12/python/libxml.c:15: included_from: Included from here.
+/usr/include/python3.10/ceval.h:28:43: note: declared here
+#   28 | Py_DEPRECATED(3.9) PyAPI_FUNC(PyObject *) PyEval_CallMethod(
+#      |                                           ^~~~~~~~~~~~~~~~~
+#  421|       if (string == NULL) return(-1);
+#  422|       if (PyObject_HasAttrString(file, (char *) "io_write")) {
+#  423|->         ret = PyEval_CallMethod(file, (char *) "io_write", (char *) "(O)",
+#  424|   	                        string);
+#  425|       } else if (PyObject_HasAttrString(file, (char *) "write")) {
+
+Error: COMPILER_WARNING (CWE-477):
+libxml2-2.9.12/python/libxml.c:426:9: warning[-Wdeprecated-declarations]: 'PyEval_CallMethod' is deprecated
+#  426 |         ret = PyEval_CallMethod(file, (char *) "write", (char *) "(O)",
+#      |         ^~~
+/usr/include/python3.10/Python.h:130: included_from: Included from here.
+libxml2-2.9.12/python/libxml.c:15: included_from: Included from here.
+/usr/include/python3.10/ceval.h:28:43: note: declared here
+#   28 | Py_DEPRECATED(3.9) PyAPI_FUNC(PyObject *) PyEval_CallMethod(
+#      |                                           ^~~~~~~~~~~~~~~~~
+#  424|   	                        string);
+#  425|       } else if (PyObject_HasAttrString(file, (char *) "write")) {
+#  426|->         ret = PyEval_CallMethod(file, (char *) "write", (char *) "(O)",
+#  427|   	                        string);
+#  428|       }
+
+Error: COMPILER_WARNING (CWE-477):
+libxml2-2.9.12/python/libxml.c: scope_hint: In function 'xmlPythonFileClose'
+libxml2-2.9.12/python/libxml.c:462:9: warning[-Wdeprecated-declarations]: 'PyEval_CallMethod' is deprecated
+#  462 |         ret = PyEval_CallMethod(file, (char *) "io_close", (char *) "()");
+#      |         ^~~
+/usr/include/python3.10/Python.h:130: included_from: Included from here.
+libxml2-2.9.12/python/libxml.c:15: included_from: Included from here.
+/usr/include/python3.10/ceval.h:28:43: note: declared here
+#   28 | Py_DEPRECATED(3.9) PyAPI_FUNC(PyObject *) PyEval_CallMethod(
+#      |                                           ^~~~~~~~~~~~~~~~~
+#  460|       if (file == NULL) return(-1);
+#  461|       if (PyObject_HasAttrString(file, (char *) "io_close")) {
+#  462|->         ret = PyEval_CallMethod(file, (char *) "io_close", (char *) "()");
+#  463|       } else if (PyObject_HasAttrString(file, (char *) "flush")) {
+#  464|           ret = PyEval_CallMethod(file, (char *) "flush", (char *) "()");
+
+Error: COMPILER_WARNING (CWE-477):
+libxml2-2.9.12/python/libxml.c:464:9: warning[-Wdeprecated-declarations]: 'PyEval_CallMethod' is deprecated
+#  464 |         ret = PyEval_CallMethod(file, (char *) "flush", (char *) "()");
+#      |         ^~~
+/usr/include/python3.10/Python.h:130: included_from: Included from here.
+libxml2-2.9.12/python/libxml.c:15: included_from: Included from here.
+/usr/include/python3.10/ceval.h:28:43: note: declared here
+#   28 | Py_DEPRECATED(3.9) PyAPI_FUNC(PyObject *) PyEval_CallMethod(
+#      |                                           ^~~~~~~~~~~~~~~~~
+#  462|           ret = PyEval_CallMethod(file, (char *) "io_close", (char *) "()");
+#  463|       } else if (PyObject_HasAttrString(file, (char *) "flush")) {
+#  464|->         ret = PyEval_CallMethod(file, (char *) "flush", (char *) "()");
+#  465|       }
+#  466|       if (ret != NULL) {
+
+Error: COMPILER_WARNING (CWE-477):
+libxml2-2.9.12/python/libxml.c: scope_hint: In function 'libxml_xmlErrorFuncHandler'
+libxml2-2.9.12/python/libxml.c:1652:9: warning[-Wdeprecated-declarations]: 'PyEval_CallObjectWithKeywords' is deprecated
+# 1652 |         result = PyEval_CallObject(libxml_xmlPythonErrorFuncHandler, list);
+#      |         ^~~~~~
+/usr/include/python3.10/Python.h:130: included_from: Included from here.
+libxml2-2.9.12/python/libxml.c:15: included_from: Included from here.
+/usr/include/python3.10/ceval.h:17:43: note: declared here
+#   17 | Py_DEPRECATED(3.9) PyAPI_FUNC(PyObject *) PyEval_CallObjectWithKeywords(
+#      |                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1650|           message = libxml_charPtrConstWrap(ptr);
+# 1651|           PyTuple_SetItem(list, 1, message);
+# 1652|->         result = PyEval_CallObject(libxml_xmlPythonErrorFuncHandler, list);
+# 1653|           /* Forget any errors caused in the error handler. */
+# 1654|           PyErr_Clear();
+
+Error: COMPILER_WARNING (CWE-477):
+libxml2-2.9.12/python/libxml.c: scope_hint: In function 'libxml_xmlParserCtxtGenericErrorFuncHandler'
+libxml2-2.9.12/python/libxml.c:1742:5: warning[-Wdeprecated-declarations]: 'PyEval_CallObjectWithKeywords' is deprecated
+# 1742 |     result = PyEval_CallObject(pyCtxt->f, list);
+#      |     ^~~~~~
+/usr/include/python3.10/Python.h:130: included_from: Included from here.
+libxml2-2.9.12/python/libxml.c:15: included_from: Included from here.
+/usr/include/python3.10/ceval.h:17:43: note: declared here
+#   17 | Py_DEPRECATED(3.9) PyAPI_FUNC(PyObject *) PyEval_CallObjectWithKeywords(
+#      |                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1740|       PyTuple_SetItem(list, 3, Py_None);
+# 1741|       Py_INCREF(Py_None);
+# 1742|->     result = PyEval_CallObject(pyCtxt->f, list);
+# 1743|       if (result == NULL) 
+# 1744|       {
+
+Error: COMPILER_WARNING (CWE-477):
+libxml2-2.9.12/python/libxml.c: scope_hint: In function 'libxml_xmlValidCtxtGenericErrorFuncHandler'
+libxml2-2.9.12/python/libxml.c:1927:5: warning[-Wdeprecated-declarations]: 'PyEval_CallObjectWithKeywords' is deprecated
+# 1927 |     result = PyEval_CallObject(pyCtxt->error, list);
+#      |     ^~~~~~
+/usr/include/python3.10/Python.h:130: included_from: Included from here.
+libxml2-2.9.12/python/libxml.c:15: included_from: Included from here.
+/usr/include/python3.10/ceval.h:17:43: note: declared here
+#   17 | Py_DEPRECATED(3.9) PyAPI_FUNC(PyObject *) PyEval_CallObjectWithKeywords(
+#      |                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1925|       PyTuple_SetItem(list, 1, pyCtxt->arg);
+# 1926|       Py_XINCREF(pyCtxt->arg);
+# 1927|->     result = PyEval_CallObject(pyCtxt->error, list);
+# 1928|       if (result == NULL) 
+# 1929|       {
+
+Error: COMPILER_WARNING (CWE-477):
+libxml2-2.9.12/python/libxml.c: scope_hint: In function 'libxml_xmlValidCtxtGenericWarningFuncHandler'
+libxml2-2.9.12/python/libxml.c:1954:5: warning[-Wdeprecated-declarations]: 'PyEval_CallObjectWithKeywords' is deprecated
+# 1954 |     result = PyEval_CallObject(pyCtxt->warn, list);
+#      |     ^~~~~~
+/usr/include/python3.10/Python.h:130: included_from: Included from here.
+libxml2-2.9.12/python/libxml.c:15: included_from: Included from here.
+/usr/include/python3.10/ceval.h:17:43: note: declared here
+#   17 | Py_DEPRECATED(3.9) PyAPI_FUNC(PyObject *) PyEval_CallObjectWithKeywords(
+#      |                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1952|       PyTuple_SetItem(list, 1, pyCtxt->arg);
+# 1953|       Py_XINCREF(pyCtxt->arg);
+# 1954|->     result = PyEval_CallObject(pyCtxt->warn, list);
+# 1955|       if (result == NULL) 
+# 1956|       {
+
+Error: COMPILER_WARNING (CWE-477):
+libxml2-2.9.12/python/libxml.c: scope_hint: In function 'libxml_xmlTextReaderErrorCallback'
+libxml2-2.9.12/python/libxml.c:2088:5: warning[-Wdeprecated-declarations]: 'PyEval_CallObjectWithKeywords' is deprecated
+# 2088 |     result = PyEval_CallObject(pyCtxt->f, list);
+#      |     ^~~~~~
+/usr/include/python3.10/Python.h:130: included_from: Included from here.
+libxml2-2.9.12/python/libxml.c:15: included_from: Included from here.
+/usr/include/python3.10/ceval.h:17:43: note: declared here
+#   17 | Py_DEPRECATED(3.9) PyAPI_FUNC(PyObject *) PyEval_CallObjectWithKeywords(
+#      |                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2086|       PyTuple_SetItem(list, 2, libxml_intWrap(severity));
+# 2087|       PyTuple_SetItem(list, 3, libxml_xmlTextReaderLocatorPtrWrap(locator));
+# 2088|->     result = PyEval_CallObject(pyCtxt->f, list);
+# 2089|       if (result == NULL)
+# 2090|       {
+
+Error: COMPILER_WARNING (CWE-477):
+libxml2-2.9.12/python/libxml.c: scope_hint: In function 'libxml_xmlXPathFuncCallback'
+libxml2-2.9.12/python/libxml.c:2283:5: warning[-Wdeprecated-declarations]: 'PyEval_CallObjectWithKeywords' is deprecated
+# 2283 |     result = PyEval_CallObject(current_function, list);
+#      |     ^~~~~~
+/usr/include/python3.10/Python.h:130: included_from: Included from here.
+libxml2-2.9.12/python/libxml.c:15: included_from: Included from here.
+/usr/include/python3.10/ceval.h:17:43: note: declared here
+#   17 | Py_DEPRECATED(3.9) PyAPI_FUNC(PyObject *) PyEval_CallObjectWithKeywords(
+#      |                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2281|           PyTuple_SetItem(list, i + 1, cur);
+# 2282|       }
+# 2283|->     result = PyEval_CallObject(current_function, list);
+# 2284|       Py_DECREF(list);
+# 2285|   
+
+Error: COMPILER_WARNING (CWE-477):
+libxml2-2.9.12/python/libxml.c: scope_hint: In function 'libxml_xmlRelaxNGValidityGenericErrorFuncHandler'
+libxml2-2.9.12/python/libxml.c:3185:5: warning[-Wdeprecated-declarations]: 'PyEval_CallObjectWithKeywords' is deprecated
+# 3185 |     result = PyEval_CallObject(pyCtxt->error, list);
+#      |     ^~~~~~
+/usr/include/python3.10/Python.h:130: included_from: Included from here.
+libxml2-2.9.12/python/libxml.c:15: included_from: Included from here.
+/usr/include/python3.10/ceval.h:17:43: note: declared here
+#   17 | Py_DEPRECATED(3.9) PyAPI_FUNC(PyObject *) PyEval_CallObjectWithKeywords(
+#      |                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3183|       PyTuple_SetItem(list, 1, pyCtxt->arg);
+# 3184|       Py_XINCREF(pyCtxt->arg);
+# 3185|->     result = PyEval_CallObject(pyCtxt->error, list);
+# 3186|       if (result == NULL) 
+# 3187|       {
+
+Error: COMPILER_WARNING (CWE-477):
+libxml2-2.9.12/python/libxml.c: scope_hint: In function 'libxml_xmlRelaxNGValidityGenericWarningFuncHandler'
+libxml2-2.9.12/python/libxml.c:3212:5: warning[-Wdeprecated-declarations]: 'PyEval_CallObjectWithKeywords' is deprecated
+# 3212 |     result = PyEval_CallObject(pyCtxt->warn, list);
+#      |     ^~~~~~
+/usr/include/python3.10/Python.h:130: included_from: Included from here.
+libxml2-2.9.12/python/libxml.c:15: included_from: Included from here.
+/usr/include/python3.10/ceval.h:17:43: note: declared here
+#   17 | Py_DEPRECATED(3.9) PyAPI_FUNC(PyObject *) PyEval_CallObjectWithKeywords(
+#      |                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3210|       PyTuple_SetItem(list, 1, pyCtxt->arg);
+# 3211|       Py_XINCREF(pyCtxt->arg);
+# 3212|->     result = PyEval_CallObject(pyCtxt->warn, list);
+# 3213|       if (result == NULL) 
+# 3214|       {
+
+Error: COMPILER_WARNING (CWE-477):
+libxml2-2.9.12/python/libxml.c: scope_hint: In function 'libxml_xmlSchemaValidityGenericErrorFuncHandler'
+libxml2-2.9.12/python/libxml.c:3349:9: warning[-Wdeprecated-declarations]: 'PyEval_CallObjectWithKeywords' is deprecated
+# 3349 |         result = PyEval_CallObject(pyCtxt->error, list);
+#      |         ^~~~~~
+/usr/include/python3.10/Python.h:130: included_from: Included from here.
+libxml2-2.9.12/python/libxml.c:15: included_from: Included from here.
+/usr/include/python3.10/ceval.h:17:43: note: declared here
+#   17 | Py_DEPRECATED(3.9) PyAPI_FUNC(PyObject *) PyEval_CallObjectWithKeywords(
+#      |                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3347|   	PyTuple_SetItem(list, 1, pyCtxt->arg);
+# 3348|   	Py_XINCREF(pyCtxt->arg);
+# 3349|-> 	result = PyEval_CallObject(pyCtxt->error, list);
+# 3350|   	if (result == NULL) 
+# 3351|   	{
+
+Error: COMPILER_WARNING (CWE-477):
+libxml2-2.9.12/python/libxml.c: scope_hint: In function 'libxml_xmlSchemaValidityGenericWarningFuncHandler'
+libxml2-2.9.12/python/libxml.c:3376:9: warning[-Wdeprecated-declarations]: 'PyEval_CallObjectWithKeywords' is deprecated
+# 3376 |         result = PyEval_CallObject(pyCtxt->warn, list);
+#      |         ^~~~~~
+/usr/include/python3.10/Python.h:130: included_from: Included from here.
+libxml2-2.9.12/python/libxml.c:15: included_from: Included from here.
+/usr/include/python3.10/ceval.h:17:43: note: declared here
+#   17 | Py_DEPRECATED(3.9) PyAPI_FUNC(PyObject *) PyEval_CallObjectWithKeywords(
+#      |                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libxml2-2.9.12/python/libxml.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+# 3374|   	PyTuple_SetItem(list, 1, pyCtxt->arg);
+# 3375|   	Py_XINCREF(pyCtxt->arg);
+# 3376|-> 	result = PyEval_CallObject(pyCtxt->warn, list);
+# 3377|   	if (result == NULL)
+# 3378|   	{

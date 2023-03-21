@@ -1,0 +1,75 @@
+Error: COMPILER_WARNING:
+wget-1.21.1/fuzz/wget_css_fuzzer.c:90:1: warning[-Winvalid-noreturn]: function declared 'noreturn' should not return
+#}
+#^
+#   88|   		libc_exit(status);
+#   89|   	}
+#   90|-> }
+#   91|   #endif
+#   92|   
+
+Error: COMPILER_WARNING:
+wget-1.21.1/fuzz/wget_ftpls_fuzzer.c:82:1: warning[-Winvalid-noreturn]: function declared 'noreturn' should not return
+#}
+#^
+#   80|   		libc_exit(status);
+#   81|   	}
+#   82|-> }
+#   83|   #endif
+#   84|   
+
+Error: COMPILER_WARNING:
+wget-1.21.1/fuzz/wget_netrc_fuzzer.c:81:1: warning[-Winvalid-noreturn]: function declared 'noreturn' should not return
+#}
+#^
+#   79|   		libc_exit(status);
+#   80|   	}
+#   81|-> }
+#   82|   #endif
+#   83|   
+
+Error: COMPILER_WARNING:
+wget-1.21.1/fuzz/wget_options_fuzzer.c:83:1: warning[-Winvalid-noreturn]: function declared 'noreturn' should not return
+#}
+#^
+#   81|   		libc_exit(status);
+#   82|   	}
+#   83|-> }
+#   84|   #endif
+#   85|   
+
+Error: COMPILER_WARNING:
+wget-1.21.1/fuzz/wget_read_hunk_fuzzer.c:140:3: warning[-Wincompatible-function-pointer-types]: incompatible function pointer types initializing 'int (*)(int, char *, int, void *, double)' with an expression of type 'int (int, char *, int, void *)'
+#  my_read, my_write, my_poll,
+#  ^~~~~~~
+#  138|   static struct transport_implementation my_transport =
+#  139|   {
+#  140|->   my_read, my_write, my_poll,
+#  141|     my_peek, my_errstr, my_close
+#  142|   };
+
+Error: COMPILER_WARNING:
+wget-1.21.1/fuzz/wget_read_hunk_fuzzer.c:141:3: warning[-Wincompatible-function-pointer-types]: incompatible function pointer types initializing 'int (*)(int, char *, int, void *, double)' with an expression of type 'int (int, char *, int, void *)'
+#  my_peek, my_errstr, my_close
+#  ^~~~~~~
+#  139|   {
+#  140|     my_read, my_write, my_poll,
+#  141|->   my_peek, my_errstr, my_close
+#  142|   };
+#  143|   
+
+Error: COMPILER_WARNING:
+wget-1.21.1/src/init.c:1375:48: warning[-Wimplicit-const-int-float-conversion]: implicit conversion from 'long' to 'double' changes value from 9223372036854775807 to 9223372036854775808
+#      || byte_value < LONG_MIN || byte_value > LONG_MAX)
+#                                             ~ ^~~~~~~~
+/usr/lib64/clang/13.0.1/include/limits.h:47:19: note: expanded from macro 'LONG_MAX'
+##define LONG_MAX  __LONG_MAX__
+#                  ^~~~~~~~~~~~
+<built-in>:39:22: note: expanded from here
+##define __LONG_MAX__ 9223372036854775807L
+#                     ^~~~~~~~~~~~~~~~~~~~
+# 1373|   
+# 1374|     if (!parse_bytes_helper (val, &byte_value)
+# 1375|->       || byte_value < LONG_MIN || byte_value > LONG_MAX)
+# 1376|       {
+# 1377|         fprintf (stderr, _("%s: %s: Invalid byte value %s\n"),

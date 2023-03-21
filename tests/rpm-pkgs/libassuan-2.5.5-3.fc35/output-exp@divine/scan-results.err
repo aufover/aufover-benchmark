@@ -1,4 +1,74 @@
-Error: COMPILER_WARNING (CWE-758):
+Error: COMPILER_WARNING:
+libassuan-2.5.5/src/assuan-buffer.c:107:9: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#      p = memrchr (p, '\n', n);
+#        ^ ~~~~~~~~~~~~~~~~~~~~
+#  105|         *r_nread += n;
+#  106|   
+#  107|->       p = memrchr (p, '\n', n);
+#  108|         if (p)
+#  109|           break; /* at least one full line available - that's enough for now */
+
+Error: COMPILER_WARNING:
+libassuan-2.5.5/src/assuan-buffer.c:107:11: warning: implicit declaration of function 'memrchr' is invalid in C99
+#      p = memrchr (p, '\n', n);
+#          ^
+#  105|         *r_nread += n;
+#  106|   
+#  107|->       p = memrchr (p, '\n', n);
+#  108|         if (p)
+#  109|           break; /* at least one full line available - that's enough for now */
+
+Error: COMPILER_WARNING:
+libassuan-2.5.5/src/assuan-buffer.c:107:11: warning: this function declaration is not a prototype
+#  105|         *r_nread += n;
+#  106|   
+#  107|->       p = memrchr (p, '\n', n);
+#  108|         if (p)
+#  109|           break; /* at least one full line available - that's enough for now */
+
+Error: COMPILER_WARNING:
+libassuan-2.5.5/src/assuan-buffer.c:199:33: warning: implicit declaration of function 'memrchr' is invalid in C99
+#          ctx->inbound.attic.pending = memrchr (endp + 1, '\n', len) ? 1 : 0;
+#                                       ^
+#  197|   	  int len = nread - n;
+#  198|   	  memcpy (ctx->inbound.attic.line, endp + 1, len);
+#  199|-> 	  ctx->inbound.attic.pending = memrchr (endp + 1, '\n', len) ? 1 : 0;
+#  200|   	  ctx->inbound.attic.linelen = len;
+#  201|   	}
+
+Error: COMPILER_WARNING:
+libassuan-2.5.5/src/assuan-handler.c:986:27: warning: incompatible pointer types passing 'int (void *)' to parameter of type 'gpgrt_cookie_close_function_t *' (aka 'int (**)(void *)')
+#  ctx->outbound.data.fp = funopen (ctx, 0, fun2_cookie_write,
+#                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libassuan-2.5.5/src/assuan-defs.h:368:65: note: expanded from macro 'funopen'
+##define funopen(a,r,w,s,c) _assuan_funopen ((a), (r), (w), (s), (c))
+#                                                                ^~~
+libassuan-2.5.5/src/assuan-defs.h:367:48: note: passing argument to parameter 'closefn' here
+#                      cookie_close_function_t *closefn);
+#                                               ^
+#  984|   				   0, _assuan_cookie_write_flush);
+#  985|   #else
+#  986|->   ctx->outbound.data.fp = funopen (ctx, 0, fun2_cookie_write,
+#  987|   				   0, _assuan_cookie_write_flush);
+#  988|   #endif
+
+Error: COMPILER_WARNING:
+libassuan-2.5.5/src/assuan-handler.c:986:27: warning: incompatible pointer types passing 'ssize_t (void *, const char *, size_t)' (aka 'long (void *, const char *, unsigned long)') to parameter of type 'gpgrt_cookie_write_function_t *' (aka 'long (**)(void *, const void *, unsigned long)')
+#  ctx->outbound.data.fp = funopen (ctx, 0, fun2_cookie_write,
+#                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libassuan-2.5.5/src/assuan-defs.h:368:55: note: expanded from macro 'funopen'
+##define funopen(a,r,w,s,c) _assuan_funopen ((a), (r), (w), (s), (c))
+#                                                      ^~~
+libassuan-2.5.5/src/assuan-defs.h:365:48: note: passing argument to parameter 'writefn' here
+#                      cookie_write_function_t *writefn,
+#                                               ^
+#  984|   				   0, _assuan_cookie_write_flush);
+#  985|   #else
+#  986|->   ctx->outbound.data.fp = funopen (ctx, 0, fun2_cookie_write,
+#  987|   				   0, _assuan_cookie_write_flush);
+#  988|   #endif
+
+Error: COMPILER_WARNING:
 libassuan-2.5.5/src/assuan-pipe-connect.c:84:18: warning: taking address of packed member '' of class or structure 'sigaction' may result in an unaligned pointer value
 #          sigemptyset (&act.sa_mask);
 #                        ^~~~~~~~~~~
@@ -8,7 +78,7 @@ libassuan-2.5.5/src/assuan-pipe-connect.c:84:18: warning: taking address of pack
 #   85|   	  act.sa_flags = 0;
 #   86|   	  sigaction (SIGPIPE, &act, NULL);
 
-Error: COMPILER_WARNING (CWE-758):
+Error: COMPILER_WARNING:
 libassuan-2.5.5/src/assuan-pipe-connect.c:143:5: warning: implicit declaration of function 'setenv' is invalid in C99
 #    setenv ("_assuan_pipe_connect_pid", mypidstr, 1);
 #    ^
@@ -18,7 +88,7 @@ libassuan-2.5.5/src/assuan-pipe-connect.c:143:5: warning: implicit declaration o
 #  144|   
 #  145|       /* Make sure that we never pass a connection fd variable when
 
-Error: COMPILER_WARNING (CWE-758):
+Error: COMPILER_WARNING:
 libassuan-2.5.5/src/assuan-pipe-connect.c:143:5: warning: this function declaration is not a prototype
 #  141|          forked before the assuan server has been initialized. */
 #  142|       sprintf (mypidstr, "%lu", (unsigned long) atp->parent_pid);
@@ -26,7 +96,7 @@ libassuan-2.5.5/src/assuan-pipe-connect.c:143:5: warning: this function declarat
 #  144|   
 #  145|       /* Make sure that we never pass a connection fd variable when
 
-Error: COMPILER_WARNING (CWE-758):
+Error: COMPILER_WARNING:
 libassuan-2.5.5/src/assuan-pipe-connect.c:147:5: warning: implicit declaration of function 'unsetenv' is invalid in C99
 #    unsetenv ("_assuan_connection_fd");
 #    ^
@@ -36,7 +106,7 @@ libassuan-2.5.5/src/assuan-pipe-connect.c:147:5: warning: implicit declaration o
 #  148|     }
 #  149|   #endif
 
-Error: COMPILER_WARNING (CWE-758):
+Error: COMPILER_WARNING:
 libassuan-2.5.5/src/assuan-pipe-connect.c:147:5: warning: this function declaration is not a prototype
 #  145|       /* Make sure that we never pass a connection fd variable when
 #  146|          using a simple pipe.  */
@@ -44,7 +114,7 @@ libassuan-2.5.5/src/assuan-pipe-connect.c:147:5: warning: this function declarat
 #  148|     }
 #  149|   #endif
 
-Error: COMPILER_WARNING (CWE-758):
+Error: COMPILER_WARNING:
 libassuan-2.5.5/src/assuan-pipe-connect.c:259:5: warning: implicit declaration of function 'setenv' is invalid in C99
 #    setenv ("_assuan_pipe_connect_pid", mypidstr, 1);
 #    ^
@@ -54,7 +124,7 @@ libassuan-2.5.5/src/assuan-pipe-connect.c:259:5: warning: implicit declaration o
 #  260|   
 #  261|       /* Now set the environment variable used to convey the
 
-Error: COMPILER_WARNING (CWE-758):
+Error: COMPILER_WARNING:
 libassuan-2.5.5/src/assuan-socket.c:719:3: warning: implicit declaration of function 'FD_ZERO' is invalid in C99
 #  FD_ZERO (&fds);
 #  ^
@@ -64,7 +134,7 @@ libassuan-2.5.5/src/assuan-socket.c:719:3: warning: implicit declaration of func
 #  720|     FD_SET (HANDLE2SOCKET (sock), &fds);
 #  721|   
 
-Error: COMPILER_WARNING (CWE-758):
+Error: COMPILER_WARNING:
 libassuan-2.5.5/src/assuan-socket.c:719:3: warning: this function declaration is not a prototype
 #  717|     addru.addr = addr;
 #  718|   
@@ -72,7 +142,7 @@ libassuan-2.5.5/src/assuan-socket.c:719:3: warning: this function declaration is
 #  720|     FD_SET (HANDLE2SOCKET (sock), &fds);
 #  721|   
 
-Error: COMPILER_WARNING (CWE-758):
+Error: COMPILER_WARNING:
 libassuan-2.5.5/src/assuan-socket.c:720:3: warning: implicit declaration of function 'FD_SET' is invalid in C99
 #  FD_SET (HANDLE2SOCKET (sock), &fds);
 #  ^
@@ -82,7 +152,7 @@ libassuan-2.5.5/src/assuan-socket.c:720:3: warning: implicit declaration of func
 #  721|   
 #  722|     /* memset (&proxyaddr_in6, 0, sizeof proxyaddr_in6); */
 
-Error: COMPILER_WARNING (CWE-758):
+Error: COMPILER_WARNING:
 libassuan-2.5.5/src/assuan-socket.c:720:3: warning: this function declaration is not a prototype
 #  718|   
 #  719|     FD_ZERO (&fds);
@@ -90,7 +160,7 @@ libassuan-2.5.5/src/assuan-socket.c:720:3: warning: this function declaration is
 #  721|   
 #  722|     /* memset (&proxyaddr_in6, 0, sizeof proxyaddr_in6); */
 
-Error: COMPILER_WARNING (CWE-758):
+Error: COMPILER_WARNING:
 libassuan-2.5.5/src/assuan-socket.c:788:9: warning: implicit declaration of function 'select' is invalid in C99
 #  ret = select (HANDLE2SOCKET (sock)+1, &fds, NULL, NULL, &tv);
 #        ^
@@ -100,7 +170,7 @@ libassuan-2.5.5/src/assuan-socket.c:788:9: warning: implicit declaration of func
 #  789|     if (!ret)
 #  790|       {
 
-Error: COMPILER_WARNING (CWE-758):
+Error: COMPILER_WARNING:
 libassuan-2.5.5/src/assuan-socket.c:788:9: warning: this function declaration is not a prototype
 #  786|        succeeding calls, this select should soon return successfully.
 #  787|      */
@@ -108,7 +178,25 @@ libassuan-2.5.5/src/assuan-socket.c:788:9: warning: this function declaration is
 #  789|     if (!ret)
 #  790|       {
 
-Error: COMPILER_WARNING (CWE-758):
+Error: COMPILER_WARNING:
+libassuan-2.5.5/src/funopen.c:57:10: warning: implicit declaration of function 'fopencookie' is invalid in C99
+#  return fopencookie (cookie,
+#         ^
+#   55|     io.close = closefn;
+#   56|   
+#   57|->   return fopencookie (cookie,
+#   58|   		      readfn ? ( writefn ? "rw" : "r" )
+#   59|   		      : ( writefn ? "w" : ""), io);
+
+Error: COMPILER_WARNING:
+libassuan-2.5.5/src/funopen.c:57:10: warning: this function declaration is not a prototype
+#   55|     io.close = closefn;
+#   56|   
+#   57|->   return fopencookie (cookie,
+#   58|   		      readfn ? ( writefn ? "rw" : "r" )
+#   59|   		      : ( writefn ? "w" : ""), io);
+
+Error: COMPILER_WARNING:
 libassuan-2.5.5/src/system-posix.c:133:11: warning: implicit declaration of function 'recvmsg' is invalid in C99
 #    ret = recvmsg (fd, msg, flags);
 #          ^
@@ -118,7 +206,7 @@ libassuan-2.5.5/src/system-posix.c:133:11: warning: implicit declaration of func
 #  134|     while (ret == -1 && errno == EINTR);
 #  135|   
 
-Error: COMPILER_WARNING (CWE-758):
+Error: COMPILER_WARNING:
 libassuan-2.5.5/src/system-posix.c:133:11: warning: this function declaration is not a prototype
 #  131|   
 #  132|     do
@@ -126,7 +214,7 @@ libassuan-2.5.5/src/system-posix.c:133:11: warning: this function declaration is
 #  134|     while (ret == -1 && errno == EINTR);
 #  135|   
 
-Error: COMPILER_WARNING (CWE-758):
+Error: COMPILER_WARNING:
 libassuan-2.5.5/src/system-posix.c:148:11: warning: implicit declaration of function 'sendmsg' is invalid in C99
 #    ret = sendmsg (fd, msg, flags);
 #          ^
@@ -136,7 +224,7 @@ libassuan-2.5.5/src/system-posix.c:148:11: warning: implicit declaration of func
 #  149|     while (ret == -1 && errno == EINTR);
 #  150|   
 
-Error: COMPILER_WARNING (CWE-758):
+Error: COMPILER_WARNING:
 libassuan-2.5.5/src/system-posix.c:148:11: warning: this function declaration is not a prototype
 #  146|   
 #  147|     do
@@ -144,7 +232,7 @@ libassuan-2.5.5/src/system-posix.c:148:11: warning: this function declaration is
 #  149|     while (ret == -1 && errno == EINTR);
 #  150|   
 
-Error: COMPILER_WARNING (CWE-758):
+Error: COMPILER_WARNING:
 libassuan-2.5.5/src/system-posix.c:373:7: warning: implicit declaration of function 'execv' is invalid in C99
 #      execv (name, (char *const *) argv);
 #      ^
@@ -154,7 +242,7 @@ libassuan-2.5.5/src/system-posix.c:373:7: warning: implicit declaration of funct
 #  374|   
 #  375|         /* oops - use the pipe to tell the parent about it */
 
-Error: COMPILER_WARNING (CWE-758):
+Error: COMPILER_WARNING:
 libassuan-2.5.5/src/system-posix.c:373:7: warning: this function declaration is not a prototype
 #  371|   	}
 #  372|   
@@ -162,7 +250,7 @@ libassuan-2.5.5/src/system-posix.c:373:7: warning: this function declaration is 
 #  374|   
 #  375|         /* oops - use the pipe to tell the parent about it */
 
-Error: COMPILER_WARNING (CWE-758):
+Error: COMPILER_WARNING:
 libassuan-2.5.5/tests/pipeconnect.c:371:64: warning: missing sentinel in function call
 #                              server? ".server":".client", NULL));
 #                                                               ^
@@ -175,7 +263,7 @@ libassuan-2.5.5/tests/common.h:274:1: note: function has been explicitly marked 
 #  372|     assuan_set_assuan_log_prefix (log_get_prefix ());
 #  373|   
 
-Error: COMPILER_WARNING (CWE-758):
+Error: COMPILER_WARNING:
 libassuan-2.5.5/tests/socks5.c:190:57: warning: missing sentinel in function call
 #        cred = xstrconcat (user?user:"", ":", pass, NULL);
 #                                                        ^
@@ -188,7 +276,7 @@ libassuan-2.5.5/tests/common.h:274:1: note: function has been explicitly marked 
 #  191|         else
 #  192|           cred = NULL;
 
-Error: COMPILER_WARNING (CWE-758):
+Error: COMPILER_WARNING:
 libassuan-2.5.5/tests/socks5.c:214:57: warning: missing sentinel in function call
 #        cred = xstrconcat (user?user:"", ":", pass, NULL);
 #                                                        ^

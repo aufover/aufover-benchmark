@@ -1,0 +1,20 @@
+Error: COMPILER_WARNING (CWE-1164):
+librepo-1.14.2/librepo/python/globalstate-py.h:60:1: warning[-Wunused-function]: 'gil_logger_hack_begin' defined but not used
+#   60 | gil_logger_hack_begin(PyThreadState **state)
+#      | ^~~~~~~~~~~~~~~~~~~~~
+#   58|   
+#   59|   static int
+#   60|-> gil_logger_hack_begin(PyThreadState **state)
+#   61|   {
+#   62|       int ret = GIL_HACK_DO_NOT_CLEAR;
+
+Error: COMPILER_WARNING (CWE-1164):
+librepo-1.14.2/librepo/python/librepomodule.c:35: included_from: Included from here.
+librepo-1.14.2/librepo/python/globalstate-py.h:84:1: warning[-Wunused-function]: 'gil_logger_hack_end' defined but not used
+#   84 | gil_logger_hack_end(int hack_begin_rc)
+#      | ^~~~~~~~~~~~~~~~~~~
+#   82|   
+#   83|   static gboolean
+#   84|-> gil_logger_hack_end(int hack_begin_rc)
+#   85|   {
+#   86|       int ret;

@@ -1,0 +1,127 @@
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/evutil.c:213:21: warning[-Warray-parameter=]: argument 4 of type 'int[2]' with mismatched bound
+#  213 |     evutil_socket_t fd[2])
+libevent-2.1.12-stable/evutil.c:85: included_from: Included from here.
+libevent-2.1.12-stable/include/event2/util.h:310:25: note: previously declared as 'int[]'
+#  310 | #define evutil_socket_t int
+libevent-2.1.12-stable/util-internal.h:306:47: note: in expansion of macro 'evutil_socket_t'
+#  306 | int evutil_ersatz_socketpair_(int, int , int, evutil_socket_t[]);
+#      |                                               ^~~~~~~~~~~~~~~
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#  211|   int
+#  212|   evutil_ersatz_socketpair_(int family, int type, int protocol,
+#  213|->     evutil_socket_t fd[2])
+#  214|   {
+#  215|   	/* This code is originally from Tor.  Used with permission. */
+
+Error: COMPILER_WARNING (CWE-252):
+libevent-2.1.12-stable/test/regress_http.c: scope_hint: In function 'https_bev'
+libevent-2.1.12-stable/test/regress_http.c:125:9: warning[-Wunused-result]: ignoring return value of 'SSL_use_certificate' declared with attribute 'warn_unused_result'
+#  125 |         SSL_use_certificate(ssl, ssl_getcert(ssl_getkey()));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  123|   	SSL *ssl = SSL_new(get_ssl_ctx());
+#  124|   
+#  125|-> 	SSL_use_certificate(ssl, ssl_getcert(ssl_getkey()));
+#  126|   	SSL_use_PrivateKey(ssl, ssl_getkey());
+#  127|   
+
+Error: COMPILER_WARNING (CWE-252):
+libevent-2.1.12-stable/test/regress_http.c:126:9: warning[-Wunused-result]: ignoring return value of 'SSL_use_PrivateKey' declared with attribute 'warn_unused_result'
+#  126 |         SSL_use_PrivateKey(ssl, ssl_getkey());
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libevent-2.1.12-stable/test/regress_http.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#  124|   
+#  125|   	SSL_use_certificate(ssl, ssl_getcert(ssl_getkey()));
+#  126|-> 	SSL_use_PrivateKey(ssl, ssl_getkey());
+#  127|   
+#  128|   	return bufferevent_openssl_socket_new(
+
+Error: COMPILER_WARNING (CWE-252):
+libevent-2.1.12-stable/test/regress_ssl.c: scope_hint: In function 'regress_bufferevent_openssl'
+libevent-2.1.12-stable/test/regress_ssl.c:484:9: warning[-Wunused-result]: ignoring return value of 'SSL_use_certificate' declared with attribute 'warn_unused_result'
+#  484 |         SSL_use_certificate(ssl2, the_cert);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  482|   	ssl2 = SSL_new(get_ssl_ctx());
+#  483|   
+#  484|-> 	SSL_use_certificate(ssl2, the_cert);
+#  485|   	SSL_use_PrivateKey(ssl2, the_key);
+#  486|   
+
+Error: COMPILER_WARNING (CWE-252):
+libevent-2.1.12-stable/test/regress_ssl.c:485:9: warning[-Wunused-result]: ignoring return value of 'SSL_use_PrivateKey' declared with attribute 'warn_unused_result'
+#  485 |         SSL_use_PrivateKey(ssl2, the_key);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  483|   
+#  484|   	SSL_use_certificate(ssl2, the_cert);
+#  485|-> 	SSL_use_PrivateKey(ssl2, the_key);
+#  486|   
+#  487|   	if (!(type & REGRESS_OPENSSL_OPEN))
+
+Error: COMPILER_WARNING (CWE-252):
+libevent-2.1.12-stable/test/regress_ssl.c: scope_hint: In function 'acceptcb'
+libevent-2.1.12-stable/test/regress_ssl.c:588:9: warning[-Wunused-result]: ignoring return value of 'SSL_use_certificate' declared with attribute 'warn_unused_result'
+#  588 |         SSL_use_certificate(ssl, the_cert);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  586|   	type = (enum regress_openssl_type)data->setup_data;
+#  587|   
+#  588|-> 	SSL_use_certificate(ssl, the_cert);
+#  589|   	SSL_use_PrivateKey(ssl, the_key);
+#  590|   
+
+Error: COMPILER_WARNING (CWE-252):
+libevent-2.1.12-stable/test/regress_ssl.c:589:9: warning[-Wunused-result]: ignoring return value of 'SSL_use_PrivateKey' declared with attribute 'warn_unused_result'
+#  589 |         SSL_use_PrivateKey(ssl, the_key);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  587|   
+#  588|   	SSL_use_certificate(ssl, the_cert);
+#  589|-> 	SSL_use_PrivateKey(ssl, the_key);
+#  590|   
+#  591|   	bev = bufferevent_openssl_socket_new(
+
+Error: COMPILER_WARNING (CWE-252):
+libevent-2.1.12-stable/test/regress_ssl.c: scope_hint: In function 'wm_acceptcb'
+libevent-2.1.12-stable/test/regress_ssl.c:864:9: warning[-Wunused-result]: ignoring return value of 'SSL_use_certificate' declared with attribute 'warn_unused_result'
+#  864 |         SSL_use_certificate(ssl, the_cert);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  862|   	SSL *ssl = SSL_new(get_ssl_ctx());
+#  863|   
+#  864|-> 	SSL_use_certificate(ssl, the_cert);
+#  865|   	SSL_use_PrivateKey(ssl, the_key);
+#  866|   
+
+Error: COMPILER_WARNING (CWE-252):
+libevent-2.1.12-stable/test/regress_ssl.c:865:9: warning[-Wunused-result]: ignoring return value of 'SSL_use_PrivateKey' declared with attribute 'warn_unused_result'
+#  865 |         SSL_use_PrivateKey(ssl, the_key);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libevent-2.1.12-stable/test/regress_ssl.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#  863|   
+#  864|   	SSL_use_certificate(ssl, the_cert);
+#  865|-> 	SSL_use_PrivateKey(ssl, the_key);
+#  866|   
+#  867|   	bev = bufferevent_openssl_socket_new(
+
+Error: COMPILER_WARNING (CWE-704):
+libevent-2.1.12-stable/test/regress.h:35: included_from: Included from here.
+libevent-2.1.12-stable/test/regress_buffer.c:64: included_from: Included from here.
+libevent-2.1.12-stable/test/regress_buffer.c: scope_hint: In function 'test_evbuffer_pullup_with_empty'
+libevent-2.1.12-stable/test/tinytest_macros.h:116:22: warning[-Wbad-function-cast]: cast from function call of type 'unsigned char *' to non-matching type 'long int'
+#  116 |         type val1_ = (type)(a);                                         \
+#      |                      ^
+libevent-2.1.12-stable/test/tinytest_macros.h:144:9: note: in expansion of macro 'tt_assert_test_fmt_type'
+#  144 |         tt_assert_test_fmt_type(a,b,str_test,type,test,type,fmt,        \
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~
+libevent-2.1.12-stable/test/tinytest_macros.h:158:9: note: in expansion of macro 'tt_assert_test_type'
+#  158 |         tt_assert_test_type(a,b,#a" "#op" "#b,long,(val1_ op val2_), \
+#      |         ^~~~~~~~~~~~~~~~~~~
+libevent-2.1.12-stable/test/regress_buffer.c:444:9: note: in expansion of macro 'tt_int_op'
+#  444 |         tt_int_op(evbuffer_pullup(buf, -1), ==, NULL);
+#      |         ^~~~~~~~~
+libevent-2.1.12-stable/test/regress_buffer.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#  114|       setup_block,cleanup_block,die_on_fail)				\
+#  115|   	TT_STMT_BEGIN							\
+#  116|-> 	type val1_ = (type)(a);						\
+#  117|   	type val2_ = (type)(b);						\
+#  118|   	int tt_status_ = (test);					\

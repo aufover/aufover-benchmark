@@ -1,0 +1,162 @@
+Error: COMPILER_WARNING:
+/usr/include/stdlib.h: scope_hint: In function 'exit'
+wget-1.21.1/fuzz/wget_css_fuzzer.c:90:1: warning: 'noreturn' function does return
+#   90 | }
+#      | ^
+#   88|   		libc_exit(status);
+#   89|   	}
+#   90|-> }
+#   91|   #endif
+#   92|   
+
+Error: COMPILER_WARNING:
+/usr/include/stdlib.h: scope_hint: In function 'exit'
+wget-1.21.1/fuzz/wget_ftpls_fuzzer.c:82:1: warning: 'noreturn' function does return
+#   82 | }
+#      | ^
+#   80|   		libc_exit(status);
+#   81|   	}
+#   82|-> }
+#   83|   #endif
+#   84|   
+
+Error: COMPILER_WARNING:
+/usr/include/stdlib.h: scope_hint: In function 'exit'
+wget-1.21.1/fuzz/wget_netrc_fuzzer.c:81:1: warning: 'noreturn' function does return
+#   81 | }
+#      | ^
+#   79|   		libc_exit(status);
+#   80|   	}
+#   81|-> }
+#   82|   #endif
+#   83|   
+
+Error: COMPILER_WARNING (CWE-563):
+wget-1.21.1/fuzz/wget_netrc_fuzzer.c: scope_hint: In function 'LLVMFuzzerTestOneInput'
+wget-1.21.1/fuzz/wget_netrc_fuzzer.c:88:26: warning[-Wunused-variable]: unused variable 'fi'
+#   88 |         struct fileinfo *fi;
+#      |                          ^~
+#   86|   #ifdef HAVE_FMEMOPEN
+#   87|   	FILE *fp;
+#   88|-> 	struct fileinfo *fi;
+#   89|   	const char *user = NULL, *pw = NULL;
+#   90|   
+
+Error: COMPILER_WARNING (CWE-563):
+wget-1.21.1/fuzz/wget_ntlm_fuzzer.c: scope_hint: In function 'LLVMFuzzerTestOneInput'
+wget-1.21.1/fuzz/wget_ntlm_fuzzer.c:84:15: warning[-Wunused-variable]: unused variable 'val'
+#   84 |         char *val;
+#      |               ^~~
+#   82|   	struct ntlmdata *ntlm = calloc(1, sizeof(struct ntlmdata));
+#   83|   	char *data0 = malloc(size + 4 + 1);
+#   84|-> 	char *val;
+#   85|   	bool ready;
+#   86|   
+
+Error: COMPILER_WARNING:
+wget-1.21.1/fuzz/wget_options_fuzzer.c: scope_hint: In function 'exit'
+wget-1.21.1/fuzz/wget_options_fuzzer.c:83:1: warning: 'noreturn' function does return
+#   83 | }
+#      | ^
+#   81|   		libc_exit(status);
+#   82|   	}
+#   83|-> }
+#   84|   #endif
+#   85|   
+
+Error: COMPILER_WARNING (CWE-843):
+wget-1.21.1/fuzz/wget_read_hunk_fuzzer.c:140:3: warning[-Wincompatible-pointer-types]: initialization of 'int (*)(int,  char *, int,  void *, double)' from incompatible pointer type 'int (*)(int,  char *, int,  void *)'
+#  140 |   my_read, my_write, my_poll,
+#      |   ^~~~~~~
+wget-1.21.1/fuzz/wget_read_hunk_fuzzer.c:140:3: note: (near initialization for 'my_transport.reader')
+#  138|   static struct transport_implementation my_transport =
+#  139|   {
+#  140|->   my_read, my_write, my_poll,
+#  141|     my_peek, my_errstr, my_close
+#  142|   };
+
+Error: COMPILER_WARNING (CWE-843):
+wget-1.21.1/fuzz/wget_read_hunk_fuzzer.c:141:3: warning[-Wincompatible-pointer-types]: initialization of 'int (*)(int,  char *, int,  void *, double)' from incompatible pointer type 'int (*)(int,  char *, int,  void *)'
+#  141 |   my_peek, my_errstr, my_close
+#      |   ^~~~~~~
+wget-1.21.1/fuzz/wget_read_hunk_fuzzer.c:141:3: note: (near initialization for 'my_transport.peeker')
+#  139|   {
+#  140|     my_read, my_write, my_poll,
+#  141|->   my_peek, my_errstr, my_close
+#  142|   };
+#  143|   
+
+Error: COMPILER_WARNING (CWE-457):
+wget-1.21.1/lib/canonicalize.c:401:33: warning[-Wmaybe-uninitialized]: 'end_idx' may be used uninitialized in this function
+#  401 |                 end = extra_buf + end_idx;
+#      |                       ~~~~~~~~~~^~~~~~~~~
+wget-1.21.1/lib/canonicalize.c:388:21: note: 'end_idx' was declared here
+#  388 |               idx_t end_idx IF_LINT (= 0);
+#      |                     ^~~~~~~
+#  399|                   }
+#  400|                 if (end_in_extra_buffer)
+#  401|->                 end = extra_buf + end_idx;
+#  402|   
+#  403|                 /* Careful here, end may be a pointer into extra_buf... */
+
+Error: COMPILER_WARNING:
+wget-1.21.1/lib/canonicalize.c: scope_hint: In function 'canonicalize_filename_mode'
+wget-1.21.1/lib/canonicalize.c:484:5: warning[-Wcpp]: #warning "GCC might issue a bogus -Wreturn-local-addr warning here."
+#  484 |    #warning "GCC might issue a bogus -Wreturn-local-addr warning here."
+#      |     ^~~~~~~
+#  482|   {
+#  483|     #ifdef GCC_BOGUS_WRETURN_LOCAL_ADDR
+#  484|->    #warning "GCC might issue a bogus -Wreturn-local-addr warning here."
+#  485|      #warning "See <https://gcc.gnu.org/bugzilla/show_bug.cgi?id=93644>."
+#  486|     #endif
+
+Error: COMPILER_WARNING:
+wget-1.21.1/lib/canonicalize.c:485:5: warning[-Wcpp]: #warning "See <https://gcc.gnu.org/bugzilla/show_bug.cgi?id=93644>."
+#  485 |    #warning "See <https://gcc.gnu.org/bugzilla/show_bug.cgi?id=93644>."
+#      |     ^~~~~~~
+#  483|     #ifdef GCC_BOGUS_WRETURN_LOCAL_ADDR
+#  484|      #warning "GCC might issue a bogus -Wreturn-local-addr warning here."
+#  485|->    #warning "See <https://gcc.gnu.org/bugzilla/show_bug.cgi?id=93644>."
+#  486|     #endif
+#  487|     struct scratch_buffer rname_buffer;
+
+Error: COMPILER_WARNING:
+wget-1.21.1/lib/utimens.c: scope_hint: In function 'fdutimens'
+wget-1.21.1/lib/utimens.c:399:17: warning[-Wstringop-overflow=]: 'update_timespec' accessing 16 bytes in a region of size 8
+#  399 |       if (ts && update_timespec (&st, &ts))
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+wget-1.21.1/lib/utimens.c:399:17: note: referencing argument 2 of type 'struct timespec * *'
+wget-1.21.1/lib/utimens.c:136:1: note: in a call to function 'update_timespec'
+#  136 | update_timespec (struct stat const *statbuf, struct timespec *ts[2])
+#      | ^~~~~~~~~~~~~~~
+#  397|             && (fd < 0 ? stat (file, &st) : fstat (fd, &st)))
+#  398|           return -1;
+#  399|->       if (ts && update_timespec (&st, &ts))
+#  400|           return 0;
+#  401|       }
+
+Error: COMPILER_WARNING:
+wget-1.21.1/lib/utimens.c: scope_hint: In function 'lutimens'
+wget-1.21.1/lib/utimens.c:612:17: warning[-Wstringop-overflow=]: 'update_timespec' accessing 16 bytes in a region of size 8
+#  612 |       if (ts && update_timespec (&st, &ts))
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+wget-1.21.1/lib/utimens.c:612:17: note: referencing argument 2 of type 'struct timespec * *'
+wget-1.21.1/lib/utimens.c:136:1: note: in a call to function 'update_timespec'
+#  136 | update_timespec (struct stat const *statbuf, struct timespec *ts[2])
+#      | ^~~~~~~~~~~~~~~
+#  610|         if (adjustment_needed != 3 && lstat (file, &st))
+#  611|           return -1;
+#  612|->       if (ts && update_timespec (&st, &ts))
+#  613|           return 0;
+#  614|       }
+
+Error: COMPILER_WARNING (CWE-252):
+wget-1.21.1/src/hsts.c: scope_hint: In function 'hsts_store_save'
+wget-1.21.1/src/hsts.c:578:11: warning[-Wunused-result]: ignoring return value of 'ftruncate' declared with attribute 'warn_unused_result'
+#  578 |           ftruncate (fd, 0);
+#      |           ^~~~~~~~~~~~~~~~~
+#  576|                and dump everything. */
+#  577|             fseek (fp, 0, SEEK_SET);
+#  578|->           ftruncate (fd, 0);
+#  579|   
+#  580|             /* now dump to the file */

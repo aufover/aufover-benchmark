@@ -1,0 +1,76 @@
+Error: COMPILER_WARNING:
+cpio-2.13/gnu/argp-pin.c:27: warning[-Wpedantic]: ISO C forbids an empty translation unit
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#   25|   char *program_invocation_name = 0;
+#   26|   #endif
+
+Error: COMPILER_WARNING:
+cpio-2.13/gnu/utimens.c: scope_hint: In function 'fdutimens'
+cpio-2.13/gnu/utimens.c:296:17: warning[-Wstringop-overflow=]: 'update_timespec' accessing 16 bytes in a region of size 8
+#  296 |       if (ts && update_timespec (&st, &ts))
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+cpio-2.13/gnu/utimens.c:296:17: note: referencing argument 2 of type 'struct timespec **'
+cpio-2.13/gnu/utimens.c:131:1: note: in a call to function 'update_timespec'
+#  131 | update_timespec (struct stat const *statbuf, struct timespec *ts[2])
+#      | ^~~~~~~~~~~~~~~
+#  294|             && (fd < 0 ? stat (file, &st) : fstat (fd, &st)))
+#  295|           return -1;
+#  296|->       if (ts && update_timespec (&st, &ts))
+#  297|           return 0;
+#  298|       }
+
+Error: COMPILER_WARNING:
+cpio-2.13/gnu/utimens.c: scope_hint: In function 'lutimens'
+cpio-2.13/gnu/utimens.c:507:17: warning[-Wstringop-overflow=]: 'update_timespec' accessing 16 bytes in a region of size 8
+#  507 |       if (ts && update_timespec (&st, &ts))
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+cpio-2.13/gnu/utimens.c:507:17: note: referencing argument 2 of type 'struct timespec **'
+cpio-2.13/gnu/utimens.c:131:1: note: in a call to function 'update_timespec'
+#  131 | update_timespec (struct stat const *statbuf, struct timespec *ts[2])
+#      | ^~~~~~~~~~~~~~~
+cpio-2.13/gnu/utimens.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#  505|         if (adjustment_needed != 3 && lstat (file, &st))
+#  506|           return -1;
+#  507|->       if (ts && update_timespec (&st, &ts))
+#  508|           return 0;
+#  509|       }
+
+Error: COMPILER_WARNING (CWE-681):
+cpio-2.13/lib/rtapelib.c: scope_hint: In function 'rmt_ioctl__'
+cpio-2.13/lib/rtapelib.c:703:5: warning[-Woverflow]: overflow in conversion from 'long unsigned int' to 'int' changes value from '2150657282' to '-2144310014'
+#  703 |     case MTIOCGET:
+#      |     ^~~~
+cpio-2.13/lib/rtapelib.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#  701|   
+#  702|   #ifdef MTIOCGET
+#  703|->     case MTIOCGET:
+#  704|         {
+#  705|   	ssize_t status;
+
+Error: COMPILER_WARNING:
+cpio-2.13/src/tar.c: scope_hint: In function 'write_out_tar_header'
+cpio-2.13/src/tar.c:215:7: warning[-Wstringop-truncation]: 'strncpy' output truncated before terminating nul copying 2 bytes from a string of the same length
+#  215 |       strncpy (tar_hdr->version, TVERSION, TVERSLEN);
+#      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cpio-2.13/src/tar.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#  213|   
+#  214|         strncpy (tar_hdr->magic, TMAGIC, TMAGLEN);
+#  215|->       strncpy (tar_hdr->version, TVERSION, TVERSLEN);
+#  216|   
+#  217|         name = getuser (file_hdr->c_uid);
+
+Error: COMPILER_WARNING (CWE-563):
+cpio-2.13/tests/genfile.c: scope_hint: In function 'generate_sparse_file'
+cpio-2.13/tests/genfile.c:560:7: warning[-Wunused-variable]: unused variable 'i'
+#  560 |   int i;
+#      |       ^
+cpio-2.13/tests/genfile.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#  558|   generate_sparse_file (int argc, char **argv)
+#  559|   {
+#  560|->   int i;
+#  561|     int fd;
+#  562|     int flags = O_CREAT | O_RDWR | O_BINARY;

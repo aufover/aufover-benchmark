@@ -1,0 +1,1063 @@
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/blake2b-amd64-avx2.S:204:1: warning: type specifier missing, defaults to 'int'
+#_gcry_blake2b_transform_amd64_avx2:
+#^
+#  202|   ELF(.type _gcry_blake2b_transform_amd64_avx2,@function;)
+#  203|   
+#  204|-> _gcry_blake2b_transform_amd64_avx2:
+#  205|           /* input:
+#  206|            *	%rdi: state
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/blake2b-amd64-avx2.S:212:9: warning: type specifier missing, defaults to 'int'
+#        vzeroupper;
+#        ^
+#  210|           CFI_STARTPROC();
+#  211|   
+#  212|->         vzeroupper;
+#  213|   
+#  214|           addq $128, (STATE_T + 0)(RSTATE);
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/blake2b-amd64-avx2.S:223:9: warning: type specifier missing, defaults to 'int'
+#        vmovdqu (STATE_H + 0 * 8)(RSTATE), ROW1;
+#        ^
+#  221|           vmovdqa .Liv+(4 * 8) rRIP, ROW4;
+#  222|   
+#  223|->         vmovdqu (STATE_H + 0 * 8)(RSTATE), ROW1;
+#  224|           vmovdqu (STATE_H + 4 * 8)(RSTATE), ROW2;
+#  225|   
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/blake2s-amd64-avx.S:188:1: warning: type specifier missing, defaults to 'int'
+#_gcry_blake2s_transform_amd64_avx:
+#^
+#  186|   ELF(.type _gcry_blake2s_transform_amd64_avx,@function;)
+#  187|   
+#  188|-> _gcry_blake2s_transform_amd64_avx:
+#  189|           /* input:
+#  190|            *	%rdi: state
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/blake2s-amd64-avx.S:196:9: warning: type specifier missing, defaults to 'int'
+#        vzeroupper;
+#        ^
+#  194|           CFI_STARTPROC();
+#  195|   
+#  196|->         vzeroupper;
+#  197|   
+#  198|           addq $64, (STATE_T + 0)(RSTATE);
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/blake2s-amd64-avx.S:206:9: warning: type specifier missing, defaults to 'int'
+#        vmovdqu (STATE_H + 0 * 4)(RSTATE), ROW1;
+#        ^
+#  204|           vmovdqa .Liv+(4 * 4) rRIP, ROW4;
+#  205|   
+#  206|->         vmovdqu (STATE_H + 0 * 4)(RSTATE), ROW1;
+#  207|           vmovdqu (STATE_H + 4 * 4)(RSTATE), ROW2;
+#  208|   
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/blowfish-amd64.S:129:1: warning: type specifier missing, defaults to 'int'
+#__blowfish_enc_blk1:
+#^
+#  127|   ELF(.type   __blowfish_enc_blk1,@function;)
+#  128|   
+#  129|-> __blowfish_enc_blk1:
+#  130|   	/* input:
+#  131|   	 *	%rdi: ctx, CTX
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/blowfish-amd64.S:140:2: warning: type specifier missing, defaults to 'int'
+#        load_roundkey_enc(0);
+#        ^
+libgcrypt-1.9.4/cipher/blowfish-amd64.S:91:7: note: expanded from macro 'load_roundkey_enc'
+#        movq p+4*(n)(CTX),      RX3;
+#             ^
+libgcrypt-1.9.4/cipher/blowfish-amd64.S:36:13: note: expanded from macro 'p'
+##define p       ((s3) + 256 * 4)
+#                  ^
+libgcrypt-1.9.4/cipher/blowfish-amd64.S:35:14: note: expanded from macro 's3'
+##define s3      ((s2) + 256 * 4)
+#                  ^
+libgcrypt-1.9.4/cipher/blowfish-amd64.S:34:14: note: expanded from macro 's2'
+##define s2      ((s1) + 256 * 4)
+#                  ^
+libgcrypt-1.9.4/cipher/blowfish-amd64.S:33:14: note: expanded from macro 's1'
+##define s1      ((s0) + 256 * 4)
+#                  ^
+libgcrypt-1.9.4/cipher/blowfish-amd64.S:32:12: note: expanded from macro 's0'
+##define s0      0
+#                ^
+#  138|   	CFI_REGISTER(%rbp, %r11);
+#  139|   
+#  140|-> 	load_roundkey_enc(0);
+#  141|   	round_enc(2);
+#  142|   	round_enc(4);
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/blowfish-amd64.S:141:2: warning: type specifier missing, defaults to 'int'
+#        round_enc(2);
+#        ^
+libgcrypt-1.9.4/cipher/blowfish-amd64.S:98:2: note: expanded from macro 'round_enc'
+#        load_roundkey_enc(n); \
+#        ^
+libgcrypt-1.9.4/cipher/blowfish-amd64.S:91:7: note: expanded from macro 'load_roundkey_enc'
+#        movq p+4*(n)(CTX),      RX3;
+#             ^
+libgcrypt-1.9.4/cipher/blowfish-amd64.S:36:13: note: expanded from macro 'p'
+##define p       ((s3) + 256 * 4)
+#                  ^
+libgcrypt-1.9.4/cipher/blowfish-amd64.S:34:14: note: expanded from macro 's2'
+##define s2      ((s1) + 256 * 4)
+#                  ^
+libgcrypt-1.9.4/cipher/blowfish-amd64.S:33:14: note: expanded from macro 's1'
+##define s1      ((s0) + 256 * 4)
+#                  ^
+libgcrypt-1.9.4/cipher/blowfish-amd64.S:32:12: note: expanded from macro 's0'
+##define s0      0
+#                ^
+#  139|   
+#  140|   	load_roundkey_enc(0);
+#  141|-> 	round_enc(2);
+#  142|   	round_enc(4);
+#  143|   	round_enc(6);
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/camellia-aesni-avx-amd64.S:770:1: warning: type specifier missing, defaults to 'int'
+#__camellia_enc_blk16:
+#^
+#  768|   ELF(.type   __camellia_enc_blk16,@function;)
+#  769|   
+#  770|-> __camellia_enc_blk16:
+#  771|   	/* input:
+#  772|   	 *	%rdi: ctx, CTX
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/camellia-aesni-avx-amd64.S:784:2: warning: type specifier missing, defaults to 'int'
+#        leaq (-8 * 8)(CTX, %r8, 8), %r8;
+#        ^
+#  782|   	leaq 8 * 16(%rax), %rcx;
+#  783|   
+#  784|-> 	leaq (-8 * 8)(CTX, %r8, 8), %r8;
+#  785|   
+#  786|   	inpack16_post(%xmm0, %xmm1, %xmm2, %xmm3, %xmm4, %xmm5, %xmm6, %xmm7,
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/camellia-aesni-avx2-amd64.h:763:1: warning: type specifier missing, defaults to 'int'
+#__camellia_enc_blk32:
+#^
+#  761|   ELF(.type   __camellia_enc_blk32,@function;)
+#  762|   
+#  763|-> __camellia_enc_blk32:
+#  764|   	/* input:
+#  765|   	 *	%rdi: ctx, CTX
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/camellia-aesni-avx2-amd64.h:777:2: warning: type specifier missing, defaults to 'int'
+#        leaq (-8 * 8)(CTX, %r8, 8), %r8;
+#        ^
+#  775|   	leaq 8 * 32(%rax), %rcx;
+#  776|   
+#  777|-> 	leaq (-8 * 8)(CTX, %r8, 8), %r8;
+#  778|   
+#  779|   	inpack32_post(%ymm0, %ymm1, %ymm2, %ymm3, %ymm4, %ymm5, %ymm6, %ymm7,
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/cast5-amd64.S:180:1: warning: type specifier missing, defaults to 'int'
+#_gcry_cast5_amd64_encrypt_block:
+#^
+#  178|   ELF(.type   _gcry_cast5_amd64_encrypt_block,@function;)
+#  179|   
+#  180|-> _gcry_cast5_amd64_encrypt_block:
+#  181|   	/* input:
+#  182|   	 *	%rdi: ctx, CTX
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/chacha20-amd64-avx2.S:175:1: warning: type specifier missing, defaults to 'int'
+#_gcry_chacha20_amd64_avx2_blocks8:
+#^
+#  173|   ELF(.type _gcry_chacha20_amd64_avx2_blocks8,@function;)
+#  174|   
+#  175|-> _gcry_chacha20_amd64_avx2_blocks8:
+#  176|   	/* input:
+#  177|   	 *	%rdi: input
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/chacha20-amd64-avx2.S:184:2: warning: type specifier missing, defaults to 'int'
+#        vzeroupper;
+#        ^
+#  182|   	CFI_STARTPROC();
+#  183|   
+#  184|-> 	vzeroupper;
+#  185|   
+#  186|   	pushq %rbp;
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/chacha20-amd64-ssse3.S:171:1: warning: type specifier missing, defaults to 'int'
+#_gcry_chacha20_amd64_ssse3_blocks4:
+#^
+#  169|   ELF(.type _gcry_chacha20_amd64_ssse3_blocks4,@function;)
+#  170|   
+#  171|-> _gcry_chacha20_amd64_ssse3_blocks4:
+#  172|   	/* input:
+#  173|   	 *	%rdi: input
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/des-amd64.S:187:1: warning: type specifier missing, defaults to 'int'
+#_gcry_3des_amd64_crypt_block:
+#^
+#  185|   ELF(.type  _gcry_3des_amd64_crypt_block,@function;)
+#  186|   
+#  187|-> _gcry_3des_amd64_crypt_block:
+#  188|   	/* input:
+#  189|   	 *	%rdi: round keys, CTX
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/dsa.c:1017:39: warning: missing sentinel in function call
+#                                  NULL);
+#                                      ^
+libgcrypt-1.9.4/src/gcrypt-int.h:329:16: note: function has been explicitly marked sentinel here
+#gpg_err_code_t _gcry_sexp_extract_param (gcry_sexp_t sexp,
+#               ^
+# 1015|     rc = _gcry_sexp_extract_param (keyparms, NULL, "pqgyx",
+# 1016|                                     &sk.p, &sk.q, &sk.g, &sk.y, &sk.x,
+# 1017|->                                   NULL);
+# 1018|     if (rc)
+# 1019|       goto leave;
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/dsa.c:1058:73: warning: missing sentinel in function call
+#                                 &sk.p, &sk.q, &sk.g, &sk.y, &sk.x, NULL);
+#                                                                        ^
+libgcrypt-1.9.4/src/gcrypt-int.h:329:16: note: function has been explicitly marked sentinel here
+#gpg_err_code_t _gcry_sexp_extract_param (gcry_sexp_t sexp,
+#               ^
+# 1056|     /* Extract the key.  */
+# 1057|     rc = _gcry_sexp_extract_param (keyparms, NULL, "pqgyx",
+# 1058|->                                  &sk.p, &sk.q, &sk.g, &sk.y, &sk.x, NULL);
+# 1059|     if (rc)
+# 1060|       goto leave;
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/dsa.c:1124:70: warning: missing sentinel in function call
+#  rc = _gcry_sexp_extract_param (l1, NULL, "rs", &sig_r, &sig_s, NULL);
+#                                                                     ^
+libgcrypt-1.9.4/src/gcrypt-int.h:329:16: note: function has been explicitly marked sentinel here
+#gpg_err_code_t _gcry_sexp_extract_param (gcry_sexp_t sexp,
+#               ^
+# 1122|     if (rc)
+# 1123|       goto leave;
+# 1124|->   rc = _gcry_sexp_extract_param (l1, NULL, "rs", &sig_r, &sig_s, NULL);
+# 1125|     if (rc)
+# 1126|       goto leave;
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/dsa.c:1135:66: warning: missing sentinel in function call
+#                                 &pk.p, &pk.q, &pk.g, &pk.y, NULL);
+#                                                                 ^
+libgcrypt-1.9.4/src/gcrypt-int.h:329:16: note: function has been explicitly marked sentinel here
+#gpg_err_code_t _gcry_sexp_extract_param (gcry_sexp_t sexp,
+#               ^
+# 1133|     /* Extract the key.  */
+# 1134|     rc = _gcry_sexp_extract_param (s_keyparms, NULL, "pqgy",
+# 1135|->                                  &pk.p, &pk.q, &pk.g, &pk.y, NULL);
+# 1136|     if (rc)
+# 1137|       goto leave;
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/ecc-curves.c:713:70: warning: missing sentinel in function call
+#                                         &E.p, &E.a, &E.b, &E.n, NULL));
+#                                                                     ^
+libgcrypt-1.9.4/src/gcrypt-int.h:329:16: note: function has been explicitly marked sentinel here
+#gpg_err_code_t _gcry_sexp_extract_param (gcry_sexp_t sexp,
+#               ^
+#  711|      */
+#  712|     rc = gpg_err_code (sexp_extract_param (keyparms, NULL, "pabn",
+#  713|->                                          &E.p, &E.a, &E.b, &E.n, NULL));
+#  714|     if (rc == GPG_ERR_NO_OBJ)
+#  715|       {
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/ecc-sm2.c:243:62: warning: missing sentinel in function call
+#                           &data_c1, &data_c3, &data_c2, NULL);
+#                                                             ^
+libgcrypt-1.9.4/src/gcrypt-int.h:329:16: note: function has been explicitly marked sentinel here
+#gpg_err_code_t _gcry_sexp_extract_param (gcry_sexp_t sexp,
+#               ^
+#  241|      */
+#  242|     rc = sexp_extract_param (data_list, NULL, "/a/b/c",
+#  243|->                            &data_c1, &data_c3, &data_c2, NULL);
+#  244|     if (rc)
+#  245|       goto leave;
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/ecc.c:841:48: warning: missing sentinel in function call
+#                           &sig_r, &sig_s, NULL);
+#                                               ^
+libgcrypt-1.9.4/src/gcrypt-int.h:329:16: note: function has been explicitly marked sentinel here
+#gpg_err_code_t _gcry_sexp_extract_param (gcry_sexp_t sexp,
+#               ^
+#  839|       goto leave;
+#  840|     rc = sexp_extract_param (l1, NULL, (sigflags & PUBKEY_FLAG_EDDSA)? "/rs":"rs",
+#  841|->                            &sig_r, &sig_s, NULL);
+#  842|     if (rc)
+#  843|       goto leave;
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/ecc.c:1134:61: warning: missing sentinel in function call
+#      rc = sexp_extract_param (l1, NULL, "/e", &data_e, NULL);
+#                                                            ^
+libgcrypt-1.9.4/src/gcrypt-int.h:329:16: note: function has been explicitly marked sentinel here
+#gpg_err_code_t _gcry_sexp_extract_param (gcry_sexp_t sexp,
+#               ^
+# 1132|     else
+# 1133|       {
+# 1134|->       rc = sexp_extract_param (l1, NULL, "/e", &data_e, NULL);
+# 1135|         if (rc)
+# 1136|           goto leave;
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/ecc.c:1354:34: warning: missing sentinel in function call
+#                             NULL);
+#                                 ^
+libgcrypt-1.9.4/src/gcrypt-int.h:329:16: note: function has been explicitly marked sentinel here
+#gpg_err_code_t _gcry_sexp_extract_param (gcry_sexp_t sexp,
+#               ^
+# 1352|                                &values[0], &values[1], &values[2],
+# 1353|                                &values[3], &values[4], &values[5],
+# 1354|->                              NULL);
+# 1355|     else
+# 1356|       rc = sexp_extract_param (keyparms, NULL, "/q", &values[5], NULL);
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/ecc.c:1356:68: warning: missing sentinel in function call
+#    rc = sexp_extract_param (keyparms, NULL, "/q", &values[5], NULL);
+#                                                                   ^
+libgcrypt-1.9.4/src/gcrypt-int.h:329:16: note: function has been explicitly marked sentinel here
+#gpg_err_code_t _gcry_sexp_extract_param (gcry_sexp_t sexp,
+#               ^
+# 1354|                                NULL);
+# 1355|     else
+# 1356|->     rc = sexp_extract_param (keyparms, NULL, "/q", &values[5], NULL);
+# 1357|     if (rc)
+# 1358|       goto leave;
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/elgamal.c:797:32: warning: missing sentinel in function call
+#                           NULL);
+#                               ^
+libgcrypt-1.9.4/src/gcrypt-int.h:329:16: note: function has been explicitly marked sentinel here
+#gpg_err_code_t _gcry_sexp_extract_param (gcry_sexp_t sexp,
+#               ^
+#  795|     rc = sexp_extract_param (keyparms, NULL, "pgyx",
+#  796|                              &sk.p, &sk.g, &sk.y, &sk.x,
+#  797|->                            NULL);
+#  798|     if (rc)
+#  799|       goto leave;
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/elgamal.c:842:53: warning: missing sentinel in function call
+#                           &pk.p, &pk.g, &pk.y, NULL);
+#                                                    ^
+libgcrypt-1.9.4/src/gcrypt-int.h:329:16: note: function has been explicitly marked sentinel here
+#gpg_err_code_t _gcry_sexp_extract_param (gcry_sexp_t sexp,
+#               ^
+#  840|     /* Extract the key.  */
+#  841|     rc = sexp_extract_param (keyparms, NULL, "pgy",
+#  842|->                            &pk.p, &pk.g, &pk.y, NULL);
+#  843|     if (rc)
+#  844|       goto leave;
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/elgamal.c:892:66: warning: missing sentinel in function call
+#  rc = sexp_extract_param (l1, NULL, "ab", &data_a, &data_b, NULL);
+#                                                                 ^
+libgcrypt-1.9.4/src/gcrypt-int.h:329:16: note: function has been explicitly marked sentinel here
+#gpg_err_code_t _gcry_sexp_extract_param (gcry_sexp_t sexp,
+#               ^
+#  890|     if (rc)
+#  891|       goto leave;
+#  892|->   rc = sexp_extract_param (l1, NULL, "ab", &data_a, &data_b, NULL);
+#  893|     if (rc)
+#  894|       goto leave;
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/elgamal.c:909:32: warning: missing sentinel in function call
+#                           NULL);
+#                               ^
+libgcrypt-1.9.4/src/gcrypt-int.h:329:16: note: function has been explicitly marked sentinel here
+#gpg_err_code_t _gcry_sexp_extract_param (gcry_sexp_t sexp,
+#               ^
+#  907|     rc = sexp_extract_param (keyparms, NULL, "pgyx",
+#  908|                              &sk.p, &sk.g, &sk.y, &sk.x,
+#  909|->                            NULL);
+#  910|     if (rc)
+#  911|       goto leave;
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/elgamal.c:1000:60: warning: missing sentinel in function call
+#                           &sk.p, &sk.g, &sk.y, &sk.x, NULL);
+#                                                           ^
+libgcrypt-1.9.4/src/gcrypt-int.h:329:16: note: function has been explicitly marked sentinel here
+#gpg_err_code_t _gcry_sexp_extract_param (gcry_sexp_t sexp,
+#               ^
+#  998|     /* Extract the key.  */
+#  999|     rc = sexp_extract_param (keyparms, NULL, "pgyx",
+# 1000|->                            &sk.p, &sk.g, &sk.y, &sk.x, NULL);
+# 1001|     if (rc)
+# 1002|       goto leave;
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/elgamal.c:1067:64: warning: missing sentinel in function call
+#  rc = sexp_extract_param (l1, NULL, "rs", &sig_r, &sig_s, NULL);
+#                                                               ^
+libgcrypt-1.9.4/src/gcrypt-int.h:329:16: note: function has been explicitly marked sentinel here
+#gpg_err_code_t _gcry_sexp_extract_param (gcry_sexp_t sexp,
+#               ^
+# 1065|     if (rc)
+# 1066|       goto leave;
+# 1067|->   rc = sexp_extract_param (l1, NULL, "rs", &sig_r, &sig_s, NULL);
+# 1068|     if (rc)
+# 1069|       goto leave;
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/elgamal.c:1078:59: warning: missing sentinel in function call
+#                                 &pk.p, &pk.g, &pk.y, NULL);
+#                                                          ^
+libgcrypt-1.9.4/src/gcrypt-int.h:329:16: note: function has been explicitly marked sentinel here
+#gpg_err_code_t _gcry_sexp_extract_param (gcry_sexp_t sexp,
+#               ^
+# 1076|     /* Extract the key.  */
+# 1077|     rc = sexp_extract_param (s_keyparms, NULL, "pgy",
+# 1078|->                                  &pk.p, &pk.g, &pk.y, NULL);
+# 1079|     if (rc)
+# 1080|       goto leave;
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/rijndael-amd64.S:207:1: warning: type specifier missing, defaults to 'int'
+#_gcry_aes_amd64_encrypt_block:
+#^
+#  205|   ELF(.type   _gcry_aes_amd64_encrypt_block,@function;)
+#  206|   
+#  207|-> _gcry_aes_amd64_encrypt_block:
+#  208|   	/* input:
+#  209|   	 *	%rdi: keysched, CTX
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/rijndael-vaes-avx2-amd64.S:101:2: warning: type specifier missing, defaults to 'int'
+#        vmovdqu (%rsi), %xmm15;
+#        ^
+#   99|   
+#  100|   	/* Load IV. */
+#  101|-> 	vmovdqu (%rsi), %xmm15;
+#  102|   
+#  103|   	/* Process 16 blocks per loop. */
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/rijndael-vaes-avx2-amd64.S:112:2: warning: type specifier missing, defaults to 'int'
+#        vbroadcasti128 (0 * 16)(%rdi), %ymm8;
+#        ^
+#  110|   
+#  111|   	/* Load input and xor first key. Update IV. */
+#  112|-> 	vbroadcasti128 (0 * 16)(%rdi), %ymm8;
+#  113|   	vmovdqu (0 * 16)(%rcx), %ymm0;
+#  114|   	vmovdqu (2 * 16)(%rcx), %ymm1;
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/rsa.c:1257:32: warning: missing sentinel in function call
+#                           NULL);
+#                               ^
+libgcrypt-1.9.4/src/gcrypt-int.h:329:16: note: function has been explicitly marked sentinel here
+#gpg_err_code_t _gcry_sexp_extract_param (gcry_sexp_t sexp,
+#               ^
+# 1255|     rc = sexp_extract_param (keyparms, NULL, "nedpqu",
+# 1256|                              &sk.n, &sk.e, &sk.d, &sk.p, &sk.q, &sk.u,
+# 1257|->                            NULL);
+# 1258|     if (rc)
+# 1259|       goto leave;
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/rsa.c:1302:68: warning: missing sentinel in function call
+#  rc = sexp_extract_param (keyparms, NULL, "ne", &pk.n, &pk.e, NULL);
+#                                                                   ^
+libgcrypt-1.9.4/src/gcrypt-int.h:329:16: note: function has been explicitly marked sentinel here
+#gpg_err_code_t _gcry_sexp_extract_param (gcry_sexp_t sexp,
+#               ^
+# 1300|   
+# 1301|     /* Extract the key.  */
+# 1302|->   rc = sexp_extract_param (keyparms, NULL, "ne", &pk.n, &pk.e, NULL);
+# 1303|     if (rc)
+# 1304|       goto leave;
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/rsa.c:1365:54: warning: missing sentinel in function call
+#  rc = sexp_extract_param (l1, NULL, "a", &data, NULL);
+#                                                     ^
+libgcrypt-1.9.4/src/gcrypt-int.h:329:16: note: function has been explicitly marked sentinel here
+#gpg_err_code_t _gcry_sexp_extract_param (gcry_sexp_t sexp,
+#               ^
+# 1363|     if (rc)
+# 1364|       goto leave;
+# 1365|->   rc = sexp_extract_param (l1, NULL, "a", &data, NULL);
+# 1366|     if (rc)
+# 1367|       goto leave;
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/rsa.c:1379:32: warning: missing sentinel in function call
+#                           NULL);
+#                               ^
+libgcrypt-1.9.4/src/gcrypt-int.h:329:16: note: function has been explicitly marked sentinel here
+#gpg_err_code_t _gcry_sexp_extract_param (gcry_sexp_t sexp,
+#               ^
+# 1377|     rc = sexp_extract_param (keyparms, NULL, "nedp?q?u?",
+# 1378|                              &sk.n, &sk.e, &sk.d, &sk.p, &sk.q, &sk.u,
+# 1379|->                            NULL);
+# 1380|     if (rc)
+# 1381|       goto leave;
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/rsa.c:1492:32: warning: missing sentinel in function call
+#                           NULL);
+#                               ^
+libgcrypt-1.9.4/src/gcrypt-int.h:329:16: note: function has been explicitly marked sentinel here
+#gpg_err_code_t _gcry_sexp_extract_param (gcry_sexp_t sexp,
+#               ^
+# 1490|     rc = sexp_extract_param (keyparms, NULL, "nedp?q?u?",
+# 1491|                              &sk.n, &sk.e, &sk.d, &sk.p, &sk.q, &sk.u,
+# 1492|->                            NULL);
+# 1493|     if (rc)
+# 1494|       goto leave;
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/rsa.c:1595:53: warning: missing sentinel in function call
+#  rc = sexp_extract_param (l1, NULL, "s", &sig, NULL);
+#                                                    ^
+libgcrypt-1.9.4/src/gcrypt-int.h:329:16: note: function has been explicitly marked sentinel here
+#gpg_err_code_t _gcry_sexp_extract_param (gcry_sexp_t sexp,
+#               ^
+# 1593|     if (rc)
+# 1594|       goto leave;
+# 1595|->   rc = sexp_extract_param (l1, NULL, "s", &sig, NULL);
+# 1596|     if (rc)
+# 1597|       goto leave;
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/rsa.c:1602:68: warning: missing sentinel in function call
+#  rc = sexp_extract_param (keyparms, NULL, "ne", &pk.n, &pk.e, NULL);
+#                                                                   ^
+libgcrypt-1.9.4/src/gcrypt-int.h:329:16: note: function has been explicitly marked sentinel here
+#gpg_err_code_t _gcry_sexp_extract_param (gcry_sexp_t sexp,
+#               ^
+# 1600|   
+# 1601|     /* Extract the key.  */
+# 1602|->   rc = sexp_extract_param (keyparms, NULL, "ne", &pk.n, &pk.e, NULL);
+# 1603|     if (rc)
+# 1604|       goto leave;
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/rsa.c:1763:73: warning: missing sentinel in function call
+#  err = _gcry_sexp_extract_param(sig, "sig-val!rsa", "s", &sig_mpi, NULL);
+#                                                                        ^
+libgcrypt-1.9.4/src/gcrypt-int.h:329:16: note: function has been explicitly marked sentinel here
+#gpg_err_code_t _gcry_sexp_extract_param (gcry_sexp_t sexp,
+#               ^
+# 1761|       }
+# 1762|   
+# 1763|->   err = _gcry_sexp_extract_param(sig, "sig-val!rsa", "s", &sig_mpi, NULL);
+# 1764|     if (err)
+# 1765|       {
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/salsa20-amd64.S:38:1: warning: type specifier missing, defaults to 'int'
+#_gcry_salsa20_amd64_keysetup:
+#^
+#   36|   .globl _gcry_salsa20_amd64_keysetup
+#   37|   ELF(.type  _gcry_salsa20_amd64_keysetup,@function;)
+#   38|-> _gcry_salsa20_amd64_keysetup:
+#   39|   	CFI_STARTPROC();
+#   40|   	movl   0(%rsi),%r8d
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/salsa20-amd64.S:92:1: warning: type specifier missing, defaults to 'int'
+#_gcry_salsa20_amd64_ivsetup:
+#^
+#   90|   .globl _gcry_salsa20_amd64_ivsetup
+#   91|   ELF(.type  _gcry_salsa20_amd64_ivsetup,@function;)
+#   92|-> _gcry_salsa20_amd64_ivsetup:
+#   93|   	CFI_STARTPROC();
+#   94|   	movl   0(%rsi),%r8d
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/salsa20-amd64.S:108:1: warning: type specifier missing, defaults to 'int'
+#_gcry_salsa20_amd64_encrypt_blocks:
+#^
+#  106|   .globl _gcry_salsa20_amd64_encrypt_blocks
+#  107|   ELF(.type  _gcry_salsa20_amd64_encrypt_blocks,@function;)
+#  108|-> _gcry_salsa20_amd64_encrypt_blocks:
+#  109|   	/*
+#  110|   	 * Modifications to original implementation:
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/serpent-avx2-amd64.S:406:1: warning: type specifier missing, defaults to 'int'
+#__serpent_enc_blk16:
+#^
+#  404|   .align 8
+#  405|   ELF(.type   __serpent_enc_blk16,@function;)
+#  406|-> __serpent_enc_blk16:
+#  407|   	/* input:
+#  408|   	 *	%rdi: ctx, CTX
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/serpent-sse2-amd64.S:428:1: warning: type specifier missing, defaults to 'int'
+#__serpent_enc_blk8:
+#^
+#  426|   .align 8
+#  427|   ELF(.type   __serpent_enc_blk8,@function;)
+#  428|-> __serpent_enc_blk8:
+#  429|   	/* input:
+#  430|   	 *	%rdi: ctx, CTX
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/sha1-avx-amd64.S:221:3: warning: type specifier missing, defaults to 'int'
+#  vzeroupper;
+#  ^
+#  219|     jz .Lret;
+#  220|   
+#  221|->   vzeroupper;
+#  222|   
+#  223|     movq %rdx, RNBLKS;
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/sha1-avx-bmi2-amd64.S:220:3: warning: type specifier missing, defaults to 'int'
+#  vzeroupper;
+#  ^
+#  218|     jz .Lret;
+#  219|   
+#  220|->   vzeroupper;
+#  221|   
+#  222|     movq %rdx, RNBLKS;
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/sha1-avx2-bmi2-amd64.S:222:3: warning: type specifier missing, defaults to 'int'
+#  vzeroupper;
+#  ^
+#  220|     CFI_STARTPROC();
+#  221|   
+#  222|->   vzeroupper;
+#  223|   
+#  224|     movq %rdx, RNBLKS;
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/sm4-aesni-avx-amd64.S:158:1: warning: type specifier missing, defaults to 'int'
+#_gcry_sm4_aesni_avx_expand_key:
+#^
+#  156|   .globl _gcry_sm4_aesni_avx_expand_key
+#  157|   ELF(.type   _gcry_sm4_aesni_avx_expand_key,@function;)
+#  158|-> _gcry_sm4_aesni_avx_expand_key:
+#  159|   	/* input:
+#  160|   	 *	%rdi: 128-bit key
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/sm4-aesni-avx2-amd64.S:170:1: warning: type specifier missing, defaults to 'int'
+#__sm4_crypt_blk16:
+#^
+#  168|   .align 8
+#  169|   ELF(.type   __sm4_crypt_blk16,@function;)
+#  170|-> __sm4_crypt_blk16:
+#  171|   	/* input:
+#  172|   	 *	%rdi: ctx, CTX
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/twofish-amd64.S:168:1: warning: type specifier missing, defaults to 'int'
+#_gcry_twofish_amd64_encrypt_block:
+#^
+#  166|   ELF(.type   _gcry_twofish_amd64_encrypt_block,@function;)
+#  167|   
+#  168|-> _gcry_twofish_amd64_encrypt_block:
+#  169|   	/* input:
+#  170|   	 *	%rdi: context, CTX
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/twofish-avx2-amd64.S:407:1: warning: type specifier missing, defaults to 'int'
+#__twofish_enc_blk16:
+#^
+#  405|   .align 8
+#  406|   ELF(.type __twofish_enc_blk16,@function;)
+#  407|-> __twofish_enc_blk16:
+#  408|   	/* input:
+#  409|   	 *	%rdi: ctx, CTX
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/twofish-avx2-amd64.S:417:2: warning: type specifier missing, defaults to 'int'
+#        init_round_constants();
+#        ^
+libgcrypt-1.9.4/cipher/twofish-avx2-amd64.S:98:7: note: expanded from macro 'init_round_constants'
+#        leaq k(CTX), RK; \
+#             ^
+libgcrypt-1.9.4/cipher/twofish-avx2-amd64.S:37:13: note: expanded from macro 'k'
+##define k       ((w) + 4 * 8)
+#                  ^
+libgcrypt-1.9.4/cipher/twofish-avx2-amd64.S:36:13: note: expanded from macro 'w'
+##define w       ((s3) + 4 * 256)
+#                  ^
+libgcrypt-1.9.4/cipher/twofish-avx2-amd64.S:34:14: note: expanded from macro 's2'
+##define s2      ((s1) + 4 * 256)
+#                  ^
+libgcrypt-1.9.4/cipher/twofish-avx2-amd64.S:33:14: note: expanded from macro 's1'
+##define s1      ((s0) + 4 * 256)
+#                  ^
+libgcrypt-1.9.4/cipher/twofish-avx2-amd64.S:32:12: note: expanded from macro 's0'
+##define s0      0
+#                ^
+#  415|   	 */
+#  416|   	CFI_STARTPROC();
+#  417|-> 	init_round_constants();
+#  418|   
+#  419|   	transpose4x4_16(RA, RB, RC, RD);
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/whirlpool-sse2-amd64.S:159:1: warning: type specifier missing, defaults to 'int'
+#_gcry_whirlpool_transform_amd64:
+#^
+#  157|   ELF(.type  _gcry_whirlpool_transform_amd64,@function;)
+#  158|   
+#  159|-> _gcry_whirlpool_transform_amd64:
+#  160|   	/* input:
+#  161|   	 *	%rdi: state
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/mpi/amd64/mpih-add1.S:47:2: warning: type specifier missing, defaults to 'int'
+#        leaq    (%rsi,%rcx,8), %rsi
+#        ^
+#   45|   C_SYMBOL_NAME(_gcry_mpih_add_n:)
+#   46|   	FUNC_ENTRY()
+#   47|-> 	leaq	(%rsi,%rcx,8), %rsi
+#   48|   	leaq	(%rdi,%rcx,8), %rdi
+#   49|   	leaq	(%rdx,%rcx,8), %rdx
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/mpi/amd64/mpih-rshift.S:47:2: warning: type specifier missing, defaults to 'int'
+#        movq    (%rsi), %xmm4
+#        ^
+#   45|   	FUNC_ENTRY()
+#   46|   	/* Note: %xmm6 and %xmm7 not used for WIN64 ABI compatibility. */
+#   47|-> 	movq	(%rsi), %xmm4
+#   48|   	movd	%ecx, %xmm1
+#   49|   	movl	$64, %eax
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/mpi/amd64/mpih-sub1.S:46:2: warning: type specifier missing, defaults to 'int'
+#        leaq    (%rsi,%rcx,8), %rsi
+#        ^
+#   44|   C_SYMBOL_NAME(_gcry_mpih_sub_n:)
+#   45|   	FUNC_ENTRY()
+#   46|-> 	leaq	(%rsi,%rcx,8), %rsi
+#   47|   	leaq	(%rdi,%rcx,8), %rdi
+#   48|   	leaq	(%rdx,%rcx,8), %rdx
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/random/rndjent.c:86: included_from: Included from here.
+libgcrypt-1.9.4/random/jitterentropy-base.c:121:18: warning: incompatible pointer types passing 'uint64_t *' (aka 'unsigned long long *') to parameter of type 'u64 *' (aka 'unsigned long *')
+#        jent_get_nstime(&time);
+#                        ^~~~~
+libgcrypt-1.9.4/random/jitterentropy-base-user.h:67:22: note: passing argument to parameter 'out' here
+#jent_get_nstime(u64 *out)
+#                     ^
+#  119|   	unsigned int mask = (1<<bits) - 1;
+#  120|   
+#  121|-> 	jent_get_nstime(&time);
+#  122|   	/*
+#  123|   	 * Mix the current state of the random number into the shuffle
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/random/rndjent.c:86: included_from: Included from here.
+libgcrypt-1.9.4/random/jitterentropy-base.c:349:18: warning: incompatible pointer types passing 'uint64_t *' (aka 'unsigned long long *') to parameter of type 'u64 *' (aka 'unsigned long *')
+#        jent_get_nstime(&time);
+#                        ^~~~~
+libgcrypt-1.9.4/random/jitterentropy-base-user.h:67:22: note: passing argument to parameter 'out' here
+#jent_get_nstime(u64 *out)
+#                     ^
+#  347|   	 * invocation to measure the timing variations
+#  348|   	 */
+#  349|-> 	jent_get_nstime(&time);
+#  350|   	current_delta = time - ec->prev_time;
+#  351|   	ec->prev_time = time;
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/random/rndjent.c:86: included_from: Included from here.
+libgcrypt-1.9.4/random/jitterentropy-base.c:681:19: warning: incompatible pointer types passing 'uint64_t *' (aka 'unsigned long long *') to parameter of type 'u64 *' (aka 'unsigned long *')
+#                jent_get_nstime(&time);
+#                                ^~~~~
+libgcrypt-1.9.4/random/jitterentropy-base-user.h:67:22: note: passing argument to parameter 'out' here
+#jent_get_nstime(u64 *out)
+#                     ^
+#  679|   
+#  680|   		/* Invoke core entropy collection logic */
+#  681|-> 		jent_get_nstime(&time);
+#  682|   		ec.prev_time = time;
+#  683|   		jent_lfsr_time(&ec, time, 0);
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/random/rndjent.c:86: included_from: Included from here.
+libgcrypt-1.9.4/random/jitterentropy-base.c:684:19: warning: incompatible pointer types passing 'uint64_t *' (aka 'unsigned long long *') to parameter of type 'u64 *' (aka 'unsigned long *')
+#                jent_get_nstime(&time2);
+#                                ^~~~~~
+libgcrypt-1.9.4/random/jitterentropy-base-user.h:67:22: note: passing argument to parameter 'out' here
+#jent_get_nstime(u64 *out)
+#                     ^
+#  682|   		ec.prev_time = time;
+#  683|   		jent_lfsr_time(&ec, time, 0);
+#  684|-> 		jent_get_nstime(&time2);
+#  685|   
+#  686|   		/* test whether timer works */
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/random/rndlinux.c:294:21: warning: implicit declaration of function 'getentropy' is invalid in C99
+#              ret = getentropy (buffer, nbytes);
+#                    ^
+#  292|                   nbytes = 256;
+#  293|                 _gcry_pre_syscall ();
+#  294|->               ret = getentropy (buffer, nbytes);
+#  295|                 _gcry_post_syscall ();
+#  296|               }
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/random/rndlinux.c:332:12: warning: implicit declaration of function 'poll' is invalid in C99
+#      rc = poll(&pfd, 1, delay);
+#           ^
+#  330|   
+#  331|         _gcry_pre_syscall ();
+#  332|->       rc = poll(&pfd, 1, delay);
+#  333|         _gcry_post_syscall ();
+#  334|         if (!rc)
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/src/misc.c:520:3: warning: implicit declaration of function 'explicit_bzero' is invalid in C99
+#  explicit_bzero (ptr, len);
+#  ^
+#  518|      */
+#  519|   #ifdef HAVE_EXPLICIT_BZERO
+#  520|->   explicit_bzero (ptr, len);
+#  521|   #elif defined(HAVE_EXPLICIT_MEMSET)
+#  522|     explicit_memset (ptr, 0, len);
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/src/misc.c:538:7: warning: implicit declaration of function 'explicit_bzero' is invalid in C99
+#      explicit_bzero (ptr, len);
+#      ^
+#  536|     if (set == 0)
+#  537|       {
+#  538|->       explicit_bzero (ptr, len);
+#  539|         return;
+#  540|       }
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/src/secmem.c:369:15: warning: implicit declaration of function 'setuid' is invalid in C99
+#          if (setuid (uid) || getuid () != geteuid () || !setuid (0))
+#              ^
+#  367|             /* Check that we really dropped the privs.
+#  368|              * Note: setuid(0) should always fail */
+#  369|->           if (setuid (uid) || getuid () != geteuid () || !setuid (0))
+#  370|               log_fatal ("failed to reset uid: %s\n", strerror (errno));
+#  371|           }
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/src/secmem.c:581:8: warning: implicit declaration of function 'setuid' is invalid in C99
+#          if (setuid (uid) || getuid () != geteuid () || !setuid (0))
+#              ^
+#  579|         if (uid != geteuid ())
+#  580|   	{
+#  581|-> 	  if (setuid (uid) || getuid () != geteuid () || !setuid (0))
+#  582|   	    log_fatal ("failed to drop setuid\n");
+#  583|   	}
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/tests/fipsdrv.c:860:8: warning: unsequenced modification and access to 'p'
+#     *p++ = tolower(*p);
+#       ^             ~
+#  858|     p = buf;
+#  859|     while (*p)
+#  860|->      *p++ = tolower(*p);
+#  861|     p = buf;
+#  862|     if (no_lz && p[0] == '0' && p[1] == '0' && p[2])
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/tests/fipsdrv.c:2004:42: warning: adding 'int' to a string does not append to the string
+#      l2 = gcry_sexp_find_token (l1, "xy"+idx, 1);
+#                                     ~~~~^~~~
+libgcrypt-1.9.4/tests/fipsdrv.c:2004:42: note: use array indexing to silence this warning
+#      l2 = gcry_sexp_find_token (l1, "xy"+idx, 1);
+#                                         ^
+# 2002|     for (idx=0; "xy"[idx]; idx++) 
+# 2003|       {
+# 2004|->       l2 = gcry_sexp_find_token (l1, "xy"+idx, 1);
+# 2005|         if (!l2)
+# 2006|           die ("no %c parameter in returned public key\n", "xy"[idx]);
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/tests/t-sexp.c:848:46: warning: missing sentinel in function call
+#                                         NULL);
+#                                             ^
+libgcrypt-1.9.4/src/gcrypt.h:523:13: note: function has been explicitly marked sentinel here
+#gpg_error_t gcry_sexp_extract_param (gcry_sexp_t sexp,
+#            ^
+#  846|           case 0:
+#  847|             err = gcry_sexp_extract_param (sxp, tests[idx].path, tests[idx].list,
+#  848|->                                          NULL);
+#  849|             break;
+#  850|           case 1:
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/tests/t-sexp.c:852:54: warning: missing sentinel in function call
+#                                         mpis+0, NULL);
+#                                                     ^
+libgcrypt-1.9.4/src/gcrypt.h:523:13: note: function has been explicitly marked sentinel here
+#gpg_error_t gcry_sexp_extract_param (gcry_sexp_t sexp,
+#            ^
+#  850|           case 1:
+#  851|             err = gcry_sexp_extract_param (sxp, tests[idx].path, tests[idx].list,
+#  852|->                                          mpis+0, NULL);
+#  853|             break;
+#  854|           case 2:
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/tests/t-sexp.c:856:62: warning: missing sentinel in function call
+#                                         mpis+0, mpis+1, NULL);
+#                                                             ^
+libgcrypt-1.9.4/src/gcrypt.h:523:13: note: function has been explicitly marked sentinel here
+#gpg_error_t gcry_sexp_extract_param (gcry_sexp_t sexp,
+#            ^
+#  854|           case 2:
+#  855|             err = gcry_sexp_extract_param (sxp, tests[idx].path, tests[idx].list,
+#  856|->                                          mpis+0, mpis+1, NULL);
+#  857|             break;
+#  858|           case 3:
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/tests/t-sexp.c:860:70: warning: missing sentinel in function call
+#                                         mpis+0, mpis+1, mpis+2, NULL);
+#                                                                     ^
+libgcrypt-1.9.4/src/gcrypt.h:523:13: note: function has been explicitly marked sentinel here
+#gpg_error_t gcry_sexp_extract_param (gcry_sexp_t sexp,
+#            ^
+#  858|           case 3:
+#  859|             err = gcry_sexp_extract_param (sxp, tests[idx].path, tests[idx].list,
+#  860|->                                          mpis+0, mpis+1, mpis+2, NULL);
+#  861|             break;
+#  862|           case 4:
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/tests/t-sexp.c:864:78: warning: missing sentinel in function call
+#                                         mpis+0, mpis+1, mpis+2, mpis+3, NULL);
+#                                                                             ^
+libgcrypt-1.9.4/src/gcrypt.h:523:13: note: function has been explicitly marked sentinel here
+#gpg_error_t gcry_sexp_extract_param (gcry_sexp_t sexp,
+#            ^
+#  862|           case 4:
+#  863|             err = gcry_sexp_extract_param (sxp, tests[idx].path, tests[idx].list,
+#  864|->                                          mpis+0, mpis+1, mpis+2, mpis+3, NULL);
+#  865|             break;
+#  866|           case 5:
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/tests/t-sexp.c:869:46: warning: missing sentinel in function call
+#                                         NULL);
+#                                             ^
+libgcrypt-1.9.4/src/gcrypt.h:523:13: note: function has been explicitly marked sentinel here
+#gpg_error_t gcry_sexp_extract_param (gcry_sexp_t sexp,
+#            ^
+#  867|             err = gcry_sexp_extract_param (sxp, tests[idx].path, tests[idx].list,
+#  868|                                            mpis+0, mpis+1, mpis+2, mpis+3, mpis+4,
+#  869|->                                          NULL);
+#  870|             break;
+#  871|           case 6:
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/tests/t-sexp.c:874:54: warning: missing sentinel in function call
+#                                         mpis+5, NULL);
+#                                                     ^
+libgcrypt-1.9.4/src/gcrypt.h:523:13: note: function has been explicitly marked sentinel here
+#gpg_error_t gcry_sexp_extract_param (gcry_sexp_t sexp,
+#            ^
+#  872|             err = gcry_sexp_extract_param (sxp, tests[idx].path, tests[idx].list,
+#  873|                                            mpis+0, mpis+1, mpis+2, mpis+3, mpis+4,
+#  874|->                                          mpis+5, NULL);
+#  875|             break;
+#  876|           case 7:
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/tests/t-sexp.c:879:62: warning: missing sentinel in function call
+#                                         mpis+5, mpis+6, NULL);
+#                                                             ^
+libgcrypt-1.9.4/src/gcrypt.h:523:13: note: function has been explicitly marked sentinel here
+#gpg_error_t gcry_sexp_extract_param (gcry_sexp_t sexp,
+#            ^
+#  877|             err = gcry_sexp_extract_param (sxp, tests[idx].path, tests[idx].list,
+#  878|                                            mpis+0, mpis+1, mpis+2, mpis+3, mpis+4,
+#  879|->                                          mpis+5, mpis+6, NULL);
+#  880|             break;
+#  881|           default:
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/tests/t-sexp.c:962:71: warning: missing sentinel in function call
+#                                 ioarray+0, ioarray+1, ioarray+2, NULL);
+#                                                                      ^
+libgcrypt-1.9.4/src/gcrypt.h:523:13: note: function has been explicitly marked sentinel here
+#gpg_error_t gcry_sexp_extract_param (gcry_sexp_t sexp,
+#            ^
+#  960|     assert (ioarray[2].off < sizeof iobuffer);
+#  961|     err = gcry_sexp_extract_param (sxp, "key-data!private-key", "&pab",
+#  962|->                                  ioarray+0, ioarray+1, ioarray+2, NULL);
+#  963|     if (err)
+#  964|       fail ("gcry_sexp_extract_param with desc failed: %s", gpg_strerror (err));
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/tests/t-sexp.c:1034:57: warning: missing sentinel in function call
+#                                 ioarray+0, mpis+0, NULL);
+#                                                        ^
+libgcrypt-1.9.4/src/gcrypt.h:523:13: note: function has been explicitly marked sentinel here
+#gpg_error_t gcry_sexp_extract_param (gcry_sexp_t sexp,
+#            ^
+# 1032|     err = gcry_sexp_extract_param (sxp, "key-data!private-key",
+# 1033|                                    "&'curve'+p",
+# 1034|->                                  ioarray+0, mpis+0, NULL);
+# 1035|     if (err)
+# 1036|       fail ("gcry_sexp_extract_param long name failed: %s", gpg_strerror (err));
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/tests/t-sexp.c:1103:38: warning: missing sentinel in function call
+#                                 NULL);
+#                                     ^
+libgcrypt-1.9.4/src/gcrypt.h:523:13: note: function has been explicitly marked sentinel here
+#gpg_error_t gcry_sexp_extract_param (gcry_sexp_t sexp,
+#            ^
+# 1101|                                    &aulong, &along1, &along2,
+# 1102|                                    &asize,
+# 1103|->                                  NULL);
+# 1104|     if (err)
+# 1105|       fail ("gcry_sexp_extract_param new modes failed: %s", gpg_strerror (err));
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/tests/t-sexp.c:1158:38: warning: missing sentinel in function call
+#                                 NULL);
+#                                     ^
+libgcrypt-1.9.4/src/gcrypt.h:523:13: note: function has been explicitly marked sentinel here
+#gpg_error_t gcry_sexp_extract_param (gcry_sexp_t sexp,
+#            ^
+# 1156|                                    "%#s'flaglist''noflags'",
+# 1157|                                    &string1, &string2,
+# 1158|->                                  NULL);
+# 1159|     if (err)
+# 1160|       fail ("gcry_sexp_extract_param flag list failed: %s", gpg_strerror (err));
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/tests/testdrv.c:563:7: warning: implicit declaration of function 'execv' is invalid in C99
+#      execv (pgmname, arg_list);
+#      ^
+#  561|   
+#  562|         /* Exec the program.  */
+#  563|->       execv (pgmname, arg_list);
+#  564|         info ("exec '%s' failed: %s\n", pgmname, strerror (errno));
+#  565|         _exit (127);

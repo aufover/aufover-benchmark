@@ -1,0 +1,225 @@
+Error: COMPILER_WARNING:
+file-5.40/src/apprentice.c:3123:35: warning: comparison of integers of different signs: '__uint64_t' (aka 'unsigned long') and 'off_t' (aka 'long')
+#        if (st.st_size < 8 || st.st_size > maxoff_t()) {
+#                              ~~~~~~~~~~ ^ ~~~~~~~~~~
+# 3121|   		goto error;
+# 3122|   	}
+# 3123|-> 	if (st.st_size < 8 || st.st_size > maxoff_t()) {
+# 3124|   		file_error(ms, 0, "file `%s' is too %s", dbname,
+# 3125|   		    st.st_size < 8 ? "small" : "large");
+
+Error: COMPILER_WARNING:
+file-5.40/src/cdf_time.c:171:8: warning: incompatible integer to pointer conversion initializing 'char *' with an expression of type 'int'
+#        char *ptr = ctime_r(sec, buf);
+#              ^     ~~~~~~~~~~~~~~~~~
+#  169|   cdf_ctime(const time_t *sec, char *buf)
+#  170|   {
+#  171|-> 	char *ptr = ctime_r(sec, buf);
+#  172|   	if (ptr != NULL)
+#  173|   		return buf;
+
+Error: COMPILER_WARNING:
+file-5.40/src/cdf_time.c:171:14: warning: implicit declaration of function 'ctime_r' is invalid in C99
+#        char *ptr = ctime_r(sec, buf);
+#                    ^
+#  169|   cdf_ctime(const time_t *sec, char *buf)
+#  170|   {
+#  171|-> 	char *ptr = ctime_r(sec, buf);
+#  172|   	if (ptr != NULL)
+#  173|   		return buf;
+
+Error: COMPILER_WARNING:
+file-5.40/src/cdf_time.c:171:14: warning: this function declaration is not a prototype
+#  169|   cdf_ctime(const time_t *sec, char *buf)
+#  170|   {
+#  171|-> 	char *ptr = ctime_r(sec, buf);
+#  172|   	if (ptr != NULL)
+#  173|   		return buf;
+
+Error: COMPILER_WARNING:
+file-5.40/src/compress.c:873:8: warning: implicitly declaring library function 'vfork' with type 'int (void)'
+#        pid = vfork();
+#              ^
+file-5.40/src/compress.c:873:8: note: include the header <unistd.h> or explicitly provide a declaration for 'vfork'
+#  871|   	 * may be _much_ faster (10-100 times) than fork.
+#  872|   	 */
+#  873|-> 	pid = vfork();
+#  874|   	if (pid == -1) {
+#  875|   		return makeerror(newch, n, "Cannot vfork, %s",
+
+Error: COMPILER_WARNING:
+file-5.40/src/compress.c:909:9: warning: implicit declaration of function 'execvp' is invalid in C99
+#                (void)execvp(compr[method].argv[0],
+#                      ^
+#  907|   		file_clear_closexec(STDERR_FILENO);
+#  908|   
+#  909|-> 		(void)execvp(compr[method].argv[0],
+#  910|   		    RCAST(char *const *, RCAST(intptr_t, compr[method].argv)));
+#  911|   		dprintf(STDERR_FILENO, "exec `%s' failed, %s",
+
+Error: COMPILER_WARNING:
+file-5.40/src/compress.c:909:9: warning: this function declaration is not a prototype
+#  907|   		file_clear_closexec(STDERR_FILENO);
+#  908|   
+#  909|-> 		(void)execvp(compr[method].argv[0],
+#  910|   		    RCAST(char *const *, RCAST(intptr_t, compr[method].argv)));
+#  911|   		dprintf(STDERR_FILENO, "exec `%s' failed, %s",
+
+Error: COMPILER_WARNING:
+file-5.40/src/compress.c:911:3: warning: implicit declaration of function 'dprintf' is invalid in C99
+#                dprintf(STDERR_FILENO, "exec `%s' failed, %s",
+#                ^
+#  909|   		(void)execvp(compr[method].argv[0],
+#  910|   		    RCAST(char *const *, RCAST(intptr_t, compr[method].argv)));
+#  911|-> 		dprintf(STDERR_FILENO, "exec `%s' failed, %s",
+#  912|   		    compr[method].argv[0], strerror(errno));
+#  913|   		_exit(1); /* _exit(), not exit(), because of vfork */
+
+Error: COMPILER_WARNING:
+file-5.40/src/compress.c:911:3: warning: this function declaration is not a prototype
+#  909|   		(void)execvp(compr[method].argv[0],
+#  910|   		    RCAST(char *const *, RCAST(intptr_t, compr[method].argv)));
+#  911|-> 		dprintf(STDERR_FILENO, "exec `%s' failed, %s",
+#  912|   		    compr[method].argv[0], strerror(errno));
+#  913|   		_exit(1); /* _exit(), not exit(), because of vfork */
+
+Error: COMPILER_WARNING:
+file-5.40/src/file.c:591:12: warning: implicit declaration of function 'wcwidth' is invalid in C99
+#                        int w = wcwidth(nextchar);
+#                                ^
+#  589|   			width++;
+#  590|   		} else {
+#  591|-> 			int w = wcwidth(nextchar);
+#  592|   			if (w > 0)
+#  593|   				width += w;
+
+Error: COMPILER_WARNING:
+file-5.40/src/file.c:591:12: warning: this function declaration is not a prototype
+#  589|   			width++;
+#  590|   		} else {
+#  591|-> 			int w = wcwidth(nextchar);
+#  592|   			if (w > 0)
+#  593|   				width += w;
+
+Error: COMPILER_WARNING:
+file-5.40/src/funcs.c:816:9: warning: implicit declaration of function 'pipe2' is invalid in C99
+#        return pipe2(fds, O_CLOEXEC);
+#               ^
+#  814|   {
+#  815|   #ifdef HAVE_PIPE2
+#  816|-> 	return pipe2(fds, O_CLOEXEC);
+#  817|   #else
+#  818|   	if (pipe(fds) == -1)
+
+Error: COMPILER_WARNING:
+file-5.40/src/funcs.c:816:9: warning: this function declaration is not a prototype
+#  814|   {
+#  815|   #ifdef HAVE_PIPE2
+#  816|-> 	return pipe2(fds, O_CLOEXEC);
+#  817|   #else
+#  818|   	if (pipe(fds) == -1)
+
+Error: COMPILER_WARNING:
+file-5.40/src/print.c:260:6: warning: incompatible integer to pointer conversion assigning to 'struct tm *' from 'int'
+#                tm = localtime_r(&t, &tmz);
+#                   ^ ~~~~~~~~~~~~~~~~~~~~~
+#  258|   
+#  259|   	if (flags & FILE_T_LOCAL) {
+#  260|-> 		tm = localtime_r(&t, &tmz);
+#  261|   	} else {
+#  262|   		tm = gmtime_r(&t, &tmz);
+
+Error: COMPILER_WARNING:
+file-5.40/src/print.c:260:8: warning: implicit declaration of function 'localtime_r' is invalid in C99
+#                tm = localtime_r(&t, &tmz);
+#                     ^
+#  258|   
+#  259|   	if (flags & FILE_T_LOCAL) {
+#  260|-> 		tm = localtime_r(&t, &tmz);
+#  261|   	} else {
+#  262|   		tm = gmtime_r(&t, &tmz);
+
+Error: COMPILER_WARNING:
+file-5.40/src/print.c:260:8: warning: this function declaration is not a prototype
+#  258|   
+#  259|   	if (flags & FILE_T_LOCAL) {
+#  260|-> 		tm = localtime_r(&t, &tmz);
+#  261|   	} else {
+#  262|   		tm = gmtime_r(&t, &tmz);
+
+Error: COMPILER_WARNING:
+file-5.40/src/print.c:262:6: warning: incompatible integer to pointer conversion assigning to 'struct tm *' from 'int'
+#                tm = gmtime_r(&t, &tmz);
+#                   ^ ~~~~~~~~~~~~~~~~~~
+#  260|   		tm = localtime_r(&t, &tmz);
+#  261|   	} else {
+#  262|-> 		tm = gmtime_r(&t, &tmz);
+#  263|   	}
+#  264|   	if (tm == NULL)
+
+Error: COMPILER_WARNING:
+file-5.40/src/print.c:262:8: warning: implicit declaration of function 'gmtime_r' is invalid in C99
+#                tm = gmtime_r(&t, &tmz);
+#                     ^
+#  260|   		tm = localtime_r(&t, &tmz);
+#  261|   	} else {
+#  262|-> 		tm = gmtime_r(&t, &tmz);
+#  263|   	}
+#  264|   	if (tm == NULL)
+
+Error: COMPILER_WARNING:
+file-5.40/src/print.c:262:8: warning: this function declaration is not a prototype
+#  260|   		tm = localtime_r(&t, &tmz);
+#  261|   	} else {
+#  262|-> 		tm = gmtime_r(&t, &tmz);
+#  263|   	}
+#  264|   	if (tm == NULL)
+
+Error: COMPILER_WARNING:
+file-5.40/src/readcdf.c:130:7: warning: implicit declaration of function 'strcasestr' is invalid in C99
+#                if (strcasestr(vbuf, nv[i].pattern) != NULL) {
+#                    ^
+#  128|   #endif
+#  129|   	for (i = 0; nv[i].pattern != NULL; i++)
+#  130|-> 		if (strcasestr(vbuf, nv[i].pattern) != NULL) {
+#  131|   			rv = nv[i].mime;
+#  132|   			break;
+
+Error: COMPILER_WARNING:
+file-5.40/src/readcdf.c:130:7: warning: this function declaration is not a prototype
+#  128|   #endif
+#  129|   	for (i = 0; nv[i].pattern != NULL; i++)
+#  130|-> 		if (strcasestr(vbuf, nv[i].pattern) != NULL) {
+#  131|   			rv = nv[i].mime;
+#  132|   			break;
+
+Error: COMPILER_WARNING:
+file-5.40/src/softmagic.c:2153:12: warning: cast to 'const char *' from smaller integer type 'int'
+#                        found = CAST(const char *, memmem(ms->search.s, idx,
+#                                ^
+file-5.40/src/file.h:407:21: note: expanded from macro 'CAST'
+##define CAST(T, b)      ((T)(b))
+#                         ^
+# 2151|   			if (m->str_range == 0 || ms->search.s_len < idx)
+# 2152|   				idx = ms->search.s_len;
+# 2153|-> 			found = CAST(const char *, memmem(ms->search.s, idx,
+# 2154|   			    m->value.s, slen));
+# 2155|   			if (!found)
+
+Error: COMPILER_WARNING:
+file-5.40/src/softmagic.c:2153:31: warning: implicit declaration of function 'memmem' is invalid in C99
+#                        found = CAST(const char *, memmem(ms->search.s, idx,
+#                                                   ^
+# 2151|   			if (m->str_range == 0 || ms->search.s_len < idx)
+# 2152|   				idx = ms->search.s_len;
+# 2153|-> 			found = CAST(const char *, memmem(ms->search.s, idx,
+# 2154|   			    m->value.s, slen));
+# 2155|   			if (!found)
+
+Error: COMPILER_WARNING:
+file-5.40/src/softmagic.c:2153:31: warning: this function declaration is not a prototype
+# 2151|   			if (m->str_range == 0 || ms->search.s_len < idx)
+# 2152|   				idx = ms->search.s_len;
+# 2153|-> 			found = CAST(const char *, memmem(ms->search.s, idx,
+# 2154|   			    m->value.s, slen));
+# 2155|   			if (!found)

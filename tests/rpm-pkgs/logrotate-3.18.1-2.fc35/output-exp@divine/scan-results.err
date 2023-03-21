@@ -1,0 +1,439 @@
+Error: COMPILER_WARNING:
+logrotate-3.18.1/config.c:1071:9: warning: implicit declaration of function 'madvise' is invalid in C99
+#    r = madvise(buf, length, MADV_SEQUENTIAL | MADV_WILLNEED);
+#        ^
+# 1069|       r = madvise(buf, length, MADV_SEQUENTIAL | MADV_WILLNEED | MADV_DONTFORK);
+# 1070|   #else /* MADV_DONTFORK */
+# 1071|->     r = madvise(buf, length, MADV_SEQUENTIAL | MADV_WILLNEED);
+# 1072|   #endif /* MADV_DONTFORK */
+# 1073|       if (r < 0) {
+
+Error: COMPILER_WARNING:
+logrotate-3.18.1/config.c:1071:9: warning: this function declaration is not a prototype
+# 1069|       r = madvise(buf, length, MADV_SEQUENTIAL | MADV_WILLNEED | MADV_DONTFORK);
+# 1070|   #else /* MADV_DONTFORK */
+# 1071|->     r = madvise(buf, length, MADV_SEQUENTIAL | MADV_WILLNEED);
+# 1072|   #endif /* MADV_DONTFORK */
+# 1073|       if (r < 0) {
+
+Error: COMPILER_WARNING:
+logrotate-3.18.1/config.c:1543:41: warning: incompatible integer to pointer conversion initializing 'const char *' with an expression of type 'int'
+#                            const char *env_home = secure_getenv("HOME");
+#                                        ^          ~~~~~~~~~~~~~~~~~~~~~
+# 1541|                                * like stat() do not support the glob ~
+# 1542|                                */
+# 1543|->                             const char *env_home = secure_getenv("HOME");
+# 1544|                               char *new_key = NULL;
+# 1545|   
+
+Error: COMPILER_WARNING:
+logrotate-3.18.1/config.c:1543:52: warning: implicit declaration of function 'secure_getenv' is invalid in C99
+#                            const char *env_home = secure_getenv("HOME");
+#                                                   ^
+# 1541|                                * like stat() do not support the glob ~
+# 1542|                                */
+# 1543|->                             const char *env_home = secure_getenv("HOME");
+# 1544|                               char *new_key = NULL;
+# 1545|   
+
+Error: COMPILER_WARNING:
+logrotate-3.18.1/config.c:1543:52: warning: this function declaration is not a prototype
+# 1541|                                * like stat() do not support the glob ~
+# 1542|                                */
+# 1543|->                             const char *env_home = secure_getenv("HOME");
+# 1544|                               char *new_key = NULL;
+# 1545|   
+
+Error: COMPILER_WARNING:
+logrotate-3.18.1/config.c:1785:30: warning: implicit declaration of function 'glob' is invalid in C99
+#                        rc = glob(argv[argNum], GLOB_NOCHECK
+#                             ^
+# 1783|                           }
+# 1784|   
+# 1785|->                         rc = glob(argv[argNum], GLOB_NOCHECK
+# 1786|   #ifdef GLOB_TILDE
+# 1787|                                   | GLOB_TILDE
+
+Error: COMPILER_WARNING:
+logrotate-3.18.1/config.c:1785:30: warning: this function declaration is not a prototype
+# 1783|                           }
+# 1784|   
+# 1785|->                         rc = glob(argv[argNum], GLOB_NOCHECK
+# 1786|   #ifdef GLOB_TILDE
+# 1787|                                   | GLOB_TILDE
+
+Error: COMPILER_WARNING:
+logrotate-3.18.1/config.c:1852:25: warning: implicit declaration of function 'globfree' is invalid in C99
+#                        globfree(&globResult);
+#                        ^
+# 1850|                           }
+# 1851|   duperror:
+# 1852|->                         globfree(&globResult);
+# 1853|                       }
+# 1854|   
+
+Error: COMPILER_WARNING:
+logrotate-3.18.1/config.c:1852:25: warning: this function declaration is not a prototype
+# 1850|                           }
+# 1851|   duperror:
+# 1852|->                         globfree(&globResult);
+# 1853|                       }
+# 1854|   
+
+Error: COMPILER_WARNING:
+logrotate-3.18.1/logrotate.c:124:5: warning: implicit declaration of function 'strptime' is invalid in C99
+#    strptime(r1 + _compData.prefix_len, _compData.dformat, &time_tmp);
+#    ^
+#  122|   
+#  123|       memset(&time_tmp, 0, sizeof(struct tm));
+#  124|->     strptime(r1 + _compData.prefix_len, _compData.dformat, &time_tmp);
+#  125|       t1 = mktime(&time_tmp);
+#  126|   
+
+Error: COMPILER_WARNING:
+logrotate-3.18.1/logrotate.c:124:5: warning: this function declaration is not a prototype
+#  122|   
+#  123|       memset(&time_tmp, 0, sizeof(struct tm));
+#  124|->     strptime(r1 + _compData.prefix_len, _compData.dformat, &time_tmp);
+#  125|       t1 = mktime(&time_tmp);
+#  126|   
+
+Error: COMPILER_WARNING:
+logrotate-3.18.1/logrotate.c:158:9: warning: implicit declaration of function 'setegid' is invalid in C99
+#    if (setegid(group) || seteuid(user)) {
+#        ^
+#  156|       message(MESS_DEBUG, "switching euid from %u to %u and egid from %u to %u (pid %d)\n",
+#  157|               (unsigned) save_euid, (unsigned) user, (unsigned) save_egid, (unsigned) group, getpid());
+#  158|->     if (setegid(group) || seteuid(user)) {
+#  159|           message(MESS_ERROR, "error switching euid from %u to %u and egid from %u to %u (pid %d): %s\n",
+#  160|                   (unsigned) save_euid, (unsigned) user, (unsigned) save_egid, (unsigned) group, getpid(),
+
+Error: COMPILER_WARNING:
+logrotate-3.18.1/logrotate.c:158:9: warning: this function declaration is not a prototype
+#  156|       message(MESS_DEBUG, "switching euid from %u to %u and egid from %u to %u (pid %d)\n",
+#  157|               (unsigned) save_euid, (unsigned) user, (unsigned) save_egid, (unsigned) group, getpid());
+#  158|->     if (setegid(group) || seteuid(user)) {
+#  159|           message(MESS_ERROR, "error switching euid from %u to %u and egid from %u to %u (pid %d): %s\n",
+#  160|                   (unsigned) save_euid, (unsigned) user, (unsigned) save_egid, (unsigned) group, getpid(),
+
+Error: COMPILER_WARNING:
+logrotate-3.18.1/logrotate.c:158:27: warning: implicit declaration of function 'seteuid' is invalid in C99
+#    if (setegid(group) || seteuid(user)) {
+#                          ^
+#  156|       message(MESS_DEBUG, "switching euid from %u to %u and egid from %u to %u (pid %d)\n",
+#  157|               (unsigned) save_euid, (unsigned) user, (unsigned) save_egid, (unsigned) group, getpid());
+#  158|->     if (setegid(group) || seteuid(user)) {
+#  159|           message(MESS_ERROR, "error switching euid from %u to %u and egid from %u to %u (pid %d): %s\n",
+#  160|                   (unsigned) save_euid, (unsigned) user, (unsigned) save_egid, (unsigned) group, getpid(),
+
+Error: COMPILER_WARNING:
+logrotate-3.18.1/logrotate.c:158:27: warning: this function declaration is not a prototype
+#  156|       message(MESS_DEBUG, "switching euid from %u to %u and egid from %u to %u (pid %d)\n",
+#  157|               (unsigned) save_euid, (unsigned) user, (unsigned) save_egid, (unsigned) group, getpid());
+#  158|->     if (setegid(group) || seteuid(user)) {
+#  159|           message(MESS_ERROR, "error switching euid from %u to %u and egid from %u to %u (pid %d): %s\n",
+#  160|                   (unsigned) save_euid, (unsigned) user, (unsigned) save_egid, (unsigned) group, getpid(),
+
+Error: COMPILER_WARNING:
+logrotate-3.18.1/logrotate.c:192:9: warning: implicit declaration of function 'setgid' is invalid in C99
+#    if (setgid(getgid()) || setuid(getuid())) {
+#        ^
+#  190|   
+#  191|       /* switch to full root first */
+#  192|->     if (setgid(getgid()) || setuid(getuid())) {
+#  193|           message(MESS_ERROR, "error getting rid of euid != uid (pid %d): %s\n",
+#  194|                   getpid(), strerror(errno));
+
+Error: COMPILER_WARNING:
+logrotate-3.18.1/logrotate.c:192:9: warning: this function declaration is not a prototype
+#  190|   
+#  191|       /* switch to full root first */
+#  192|->     if (setgid(getgid()) || setuid(getuid())) {
+#  193|           message(MESS_ERROR, "error getting rid of euid != uid (pid %d): %s\n",
+#  194|                   getpid(), strerror(errno));
+
+Error: COMPILER_WARNING:
+logrotate-3.18.1/logrotate.c:192:29: warning: implicit declaration of function 'setuid' is invalid in C99
+#    if (setgid(getgid()) || setuid(getuid())) {
+#                            ^
+#  190|   
+#  191|       /* switch to full root first */
+#  192|->     if (setgid(getgid()) || setuid(getuid())) {
+#  193|           message(MESS_ERROR, "error getting rid of euid != uid (pid %d): %s\n",
+#  194|                   getpid(), strerror(errno));
+
+Error: COMPILER_WARNING:
+logrotate-3.18.1/logrotate.c:192:29: warning: this function declaration is not a prototype
+#  190|   
+#  191|       /* switch to full root first */
+#  192|->     if (setgid(getgid()) || setuid(getuid())) {
+#  193|           message(MESS_ERROR, "error getting rid of euid != uid (pid %d): %s\n",
+#  194|                   getpid(), strerror(errno));
+
+Error: COMPILER_WARNING:
+logrotate-3.18.1/logrotate.c:418:5: warning: implicit declaration of function 'localtime_r' is invalid in C99
+#    localtime_r(&nowSecs, &now);
+#    ^
+#  416|       message(MESS_DEBUG, "Creating new state\n");
+#  417|   
+#  418|->     localtime_r(&nowSecs, &now);
+#  419|   
+#  420|       new = malloc(sizeof(*new));
+
+Error: COMPILER_WARNING:
+logrotate-3.18.1/logrotate.c:418:5: warning: this function declaration is not a prototype
+#  416|       message(MESS_DEBUG, "Creating new state\n");
+#  417|   
+#  418|->     localtime_r(&nowSecs, &now);
+#  419|   
+#  420|       new = malloc(sizeof(*new));
+
+Error: COMPILER_WARNING:
+logrotate-3.18.1/logrotate.c:497:9: warning: implicit declaration of function 'execl' is invalid in C99
+#        execl("/bin/sh", "sh", "-c", (char *) script, "logrotate_script", (char *) logfn, (char *) logrotfn, (char *) NULL);
+#        ^
+#  495|               }
+#  496|           }
+#  497|->         execl("/bin/sh", "sh", "-c", (char *) script, "logrotate_script", (char *) logfn, (char *) logrotfn, (char *) NULL);
+#  498|           message(MESS_ERROR, "cannot execute sub-shell: %s\n", strerror(errno));
+#  499|           exit(1);
+
+Error: COMPILER_WARNING:
+logrotate-3.18.1/logrotate.c:497:9: warning: this function declaration is not a prototype
+#  495|               }
+#  496|           }
+#  497|->         execl("/bin/sh", "sh", "-c", (char *) script, "logrotate_script", (char *) logfn, (char *) logrotfn, (char *) NULL);
+#  498|           message(MESS_ERROR, "cannot execute sub-shell: %s\n", strerror(errno));
+#  499|           exit(1);
+
+Error: COMPILER_WARNING:
+logrotate-3.18.1/logrotate.c:541:9: warning: implicit declaration of function 'localtime_r' is invalid in C99
+#        localtime_r(&nowSecs, &now);
+#        ^
+#  539|   
+#  540|           /* the destination file already exists, while it should not */
+#  541|->         localtime_r(&nowSecs, &now);
+#  542|           fileName_size = strlen(fileName);
+#  543|           buf_size = fileName_size + sizeof("-YYYYMMDDHH.backup");
+
+Error: COMPILER_WARNING:
+logrotate-3.18.1/logrotate.c:690:9: warning: implicit declaration of function 'execvp' is invalid in C99
+#        execvp(fullCommand[0], (void *) fullCommand);
+#        ^
+#  688|           }
+#  689|   
+#  690|->         execvp(fullCommand[0], (void *) fullCommand);
+#  691|           message(MESS_ERROR, "cannot execute shred command: %s\n", strerror(errno));
+#  692|           exit(1);
+
+Error: COMPILER_WARNING:
+logrotate-3.18.1/logrotate.c:690:9: warning: this function declaration is not a prototype
+#  688|           }
+#  689|   
+#  690|->         execvp(fullCommand[0], (void *) fullCommand);
+#  691|           message(MESS_ERROR, "cannot execute shred command: %s\n", strerror(errno));
+#  692|           exit(1);
+
+Error: COMPILER_WARNING:
+logrotate-3.18.1/logrotate.c:879:9: warning: implicit declaration of function 'execvp' is invalid in C99
+#        execvp(fullCommand[0], (void *) fullCommand);
+#        ^
+#  877|           sprintf(envInFilename, "LOGROTATE_COMPRESSED_FILENAME=%s", name);
+#  878|           putenv(envInFilename);
+#  879|->         execvp(fullCommand[0], (void *) fullCommand);
+#  880|           message(MESS_ERROR, "cannot execute compress command: %s\n", strerror(errno));
+#  881|           exit(1);
+
+Error: COMPILER_WARNING:
+logrotate-3.18.1/logrotate.c:969:13: warning: implicit declaration of function 'execlp' is invalid in C99
+#            execlp(uncompressCommand, uncompressCommand, (char *) NULL);
+#            ^
+#  967|               }
+#  968|   
+#  969|->             execlp(uncompressCommand, uncompressCommand, (char *) NULL);
+#  970|               message(MESS_ERROR, "cannot execute uncompress command: %s\n", strerror(errno));
+#  971|               exit(1);
+
+Error: COMPILER_WARNING:
+logrotate-3.18.1/logrotate.c:969:13: warning: this function declaration is not a prototype
+#  967|               }
+#  968|   
+#  969|->             execlp(uncompressCommand, uncompressCommand, (char *) NULL);
+#  970|               message(MESS_ERROR, "cannot execute uncompress command: %s\n", strerror(errno));
+#  971|               exit(1);
+
+Error: COMPILER_WARNING:
+logrotate-3.18.1/logrotate.c:998:9: warning: implicit declaration of function 'execvp' is invalid in C99
+#        execvp(mailArgv[0], mailArgv);
+#        ^
+#  996|           }
+#  997|   
+#  998|->         execvp(mailArgv[0], mailArgv);
+#  999|           message(MESS_ERROR, "cannot execute mail command: %s\n", strerror(errno));
+# 1000|           exit(1);
+
+Error: COMPILER_WARNING:
+logrotate-3.18.1/logrotate.c:1283:5: warning: implicit declaration of function 'localtime_r' is invalid in C99
+#    localtime_r(&nowSecs, &now);
+#    ^
+# 1281|       message(MESS_DEBUG, "considering log %s\n", log->files[logNum]);
+# 1282|   
+# 1283|->     localtime_r(&nowSecs, &now);
+# 1284|   
+# 1285|       /* Check if parent directory of this log has safe permissions */
+
+Error: COMPILER_WARNING:
+logrotate-3.18.1/logrotate.c:1358:41: warning: comparison of integers of different signs: '__uint64_t' (aka 'unsigned long') and 'const off_t' (aka 'const long')
+#    else if (log->maxsize && sb.st_size > log->maxsize) {
+#                             ~~~~~~~~~~ ^ ~~~~~~~~~~~~
+# 1356|           state->doRotate = 1;
+# 1357|       }
+# 1358|->     else if (log->maxsize && sb.st_size > log->maxsize) {
+# 1359|           state->doRotate = 1;
+# 1360|       }
+
+Error: COMPILER_WARNING:
+logrotate-3.18.1/logrotate.c:1362:39: warning: comparison of integers of different signs: '__uint64_t' (aka 'unsigned long') and 'const off_t' (aka 'const long')
+#        state->doRotate = (sb.st_size >= log->threshold);
+#                           ~~~~~~~~~~ ^  ~~~~~~~~~~~~~~
+# 1360|       }
+# 1361|       else if (log->criterium == ROT_SIZE) {
+# 1362|->         state->doRotate = (sb.st_size >= log->threshold);
+# 1363|           if (!state->doRotate) {
+# 1364|               message(MESS_DEBUG, "  log does not need rotating "
+
+Error: COMPILER_WARNING:
+logrotate-3.18.1/logrotate.c:1450:40: warning: comparison of integers of different signs: '__uint64_t' (aka 'unsigned long') and 'const off_t' (aka 'const long')
+#        if (log->minsize && sb.st_size < log->minsize) {
+#                            ~~~~~~~~~~ ^ ~~~~~~~~~~~~
+# 1448|                   break;
+# 1449|           }
+# 1450|->         if (log->minsize && sb.st_size < log->minsize) {
+# 1451|               state->doRotate = 0;
+# 1452|               message(MESS_DEBUG, "  log does not need rotating "
+
+Error: COMPILER_WARNING:
+logrotate-3.18.1/logrotate.c:1498:15: warning: implicit declaration of function 'glob' is invalid in C99
+#    glob_rc = glob(pattern, 0, globerr, &globResult);
+#              ^
+# 1496|           return -1;
+# 1497|   
+# 1498|->     glob_rc = glob(pattern, 0, globerr, &globResult);
+# 1499|       free(pattern);
+# 1500|       switch (glob_rc) {
+
+Error: COMPILER_WARNING:
+logrotate-3.18.1/logrotate.c:1498:15: warning: this function declaration is not a prototype
+# 1496|           return -1;
+# 1497|   
+# 1498|->     glob_rc = glob(pattern, 0, globerr, &globResult);
+# 1499|       free(pattern);
+# 1500|       switch (glob_rc) {
+
+Error: COMPILER_WARNING:
+logrotate-3.18.1/logrotate.c:1540:5: warning: implicit declaration of function 'globfree' is invalid in C99
+#    globfree(&globResult);
+#    ^
+# 1538|       }
+# 1539|   
+# 1540|->     globfree(&globResult);
+# 1541|       return last;
+# 1542|   }
+
+Error: COMPILER_WARNING:
+logrotate-3.18.1/logrotate.c:1540:5: warning: this function declaration is not a prototype
+# 1538|       }
+# 1539|   
+# 1540|->     globfree(&globResult);
+# 1541|       return last;
+# 1542|   }
+
+Error: COMPILER_WARNING:
+logrotate-3.18.1/logrotate.c:1581:5: warning: implicit declaration of function 'localtime_r' is invalid in C99
+#    localtime_r(&nowSecs, &now);
+#    ^
+# 1579|       }
+# 1580|   
+# 1581|->     localtime_r(&nowSecs, &now);
+# 1582|       state->lastRotated = now;
+# 1583|   
+
+Error: COMPILER_WARNING:
+logrotate-3.18.1/logrotate.c:1782:18: warning: implicit declaration of function 'glob' is invalid in C99
+#            rc = glob(glob_pattern, 0, globerr, &globResult);
+#                 ^
+# 1780|                   return 1;
+# 1781|               }
+# 1782|->             rc = glob(glob_pattern, 0, globerr, &globResult);
+# 1783|               if (!rc && globResult.gl_pathc > 0) {
+# 1784|                   size_t glob_count;
+
+Error: COMPILER_WARNING:
+logrotate-3.18.1/logrotate.c:1803:13: warning: implicit declaration of function 'globfree' is invalid in C99
+#            globfree(&globResult);
+#            ^
+# 1801|                           "glob finding logs to compress failed\n");
+# 1802|               }
+# 1803|->             globfree(&globResult);
+# 1804|               free(glob_pattern);
+# 1805|           } else {
+
+Error: COMPILER_WARNING:
+logrotate-3.18.1/logrotate.c:1833:14: warning: implicit declaration of function 'glob' is invalid in C99
+#        rc = glob(glob_pattern, 0, globerr, &globResult);
+#             ^
+# 1831|               return 1;
+# 1832|           }
+# 1833|->         rc = glob(glob_pattern, 0, globerr, &globResult);
+# 1834|           if (!rc) {
+# 1835|               /* search for files to drop, if we find one remember it,
+
+Error: COMPILER_WARNING:
+logrotate-3.18.1/logrotate.c:1872:21: warning: implicit declaration of function 'globfree' is invalid in C99
+#                    globfree(&globResult);
+#                    ^
+# 1870|                   if (rotNames->disposeName == NULL) {
+# 1871|                       message_OOM();
+# 1872|->                     globfree(&globResult);
+# 1873|                       free(glob_pattern);
+# 1874|                       return 1;
+
+Error: COMPILER_WARNING:
+logrotate-3.18.1/logrotate.c:1891:13: warning: implicit declaration of function 'globfree' is invalid in C99
+#            globfree(&globResult);
+#            ^
+# 1889|               message_OOM();
+# 1890|               rotNames->firstRotated = NULL;
+# 1891|->             globfree(&globResult);
+# 1892|               free(glob_pattern);
+# 1893|               return 1;
+
+Error: COMPILER_WARNING:
+logrotate-3.18.1/logrotate.c:1895:9: warning: implicit declaration of function 'globfree' is invalid in C99
+#        globfree(&globResult);
+#        ^
+# 1893|               return 1;
+# 1894|           }
+# 1895|->         globfree(&globResult);
+# 1896|           free(glob_pattern);
+# 1897|       } else {
+
+Error: COMPILER_WARNING:
+logrotate-3.18.1/logrotate.c:2518:5: warning: implicit declaration of function 'localtime_r' is invalid in C99
+#    localtime_r(&nowSecs, &now);
+#    ^
+# 2516|       char *prevCtx;
+# 2517|   
+# 2518|->     localtime_r(&nowSecs, &now);
+# 2519|   
+# 2520|       tmpFilename = malloc(strlen(stateFilename) + 5 );
+
+Error: COMPILER_WARNING:
+logrotate-3.18.1/logrotate.c:2905:9: warning: implicit declaration of function 'localtime_r' is invalid in C99
+#        localtime_r(&lr_time, &st->lastRotated);
+#        ^
+# 2903|           /* fill in the rest of the st->lastRotated fields */
+# 2904|           lr_time = mktime(&st->lastRotated);
+# 2905|->         localtime_r(&lr_time, &st->lastRotated);
+# 2906|   
+# 2907|           free(argv);

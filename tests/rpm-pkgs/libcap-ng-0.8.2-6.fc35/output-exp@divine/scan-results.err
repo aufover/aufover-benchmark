@@ -1,0 +1,279 @@
+Error: COMPILER_WARNING:
+libcap-ng-0.8.2/src/cap-ng.c:195:9: warning: implicit declaration of function 'prctl' is invalid in C99
+#        return prctl(PR_CAPBSET_READ, cap) >= 0;
+#               ^
+#  193|   {
+#  194|   	// prctl returns 0 or 1 for valid caps, -1 otherwise
+#  195|-> 	return prctl(PR_CAPBSET_READ, cap) >= 0;
+#  196|   }
+#  197|   
+
+Error: COMPILER_WARNING:
+libcap-ng-0.8.2/src/cap-ng.c:229:1: warning: unused label 'fail'
+#fail:
+#^~~~~
+#  227|   					last_cap = val;
+#  228|   			}
+#  229|-> fail:
+#  230|   			close(fd);
+#  231|   		}
+
+Error: COMPILER_WARNING:
+libcap-ng-0.8.2/src/cap-ng.c:412:8: warning: implicit declaration of function 'prctl' is invalid in C99
+#                rc = prctl(PR_CAPBSET_READ, i, 0, 0, 0);
+#                     ^
+#  410|   	unsigned int i = 0;
+#  411|   	do {
+#  412|-> 		rc = prctl(PR_CAPBSET_READ, i, 0, 0, 0);
+#  413|   		if (rc < 0)
+#  414|   			return -1;
+
+Error: COMPILER_WARNING:
+libcap-ng-0.8.2/src/cap-ng.c:457:8: warning: implicit declaration of function 'prctl' is invalid in C99
+#                rc = prctl(PR_CAP_AMBIENT, PR_CAP_AMBIENT_IS_SET, i, 0, 0);
+#                     ^
+#  455|   	unsigned int i = 0;
+#  456|   	do {
+#  457|-> 		rc = prctl(PR_CAP_AMBIENT, PR_CAP_AMBIENT_IS_SET, i, 0, 0);
+#  458|   		if (rc < 0)
+#  459|   			return -1;
+
+Error: COMPILER_WARNING:
+libcap-ng-0.8.2/src/cap-ng.c:510:10: warning: implicit declaration of function 'FIXUP' is invalid in C99
+#        magic = FIXUP(filedata->magic_etc);
+#                ^
+#  508|   		return -1;	// Should never get here but just in case
+#  509|   
+#  510|-> 	magic = FIXUP(filedata->magic_etc);
+#  511|   	switch (magic & VFS_CAP_REVISION_MASK)
+#  512|   	{
+
+Error: COMPILER_WARNING:
+libcap-ng-0.8.2/src/cap-ng.c:574:7: warning: implicit declaration of function 'fgetxattr' is invalid in C99
+#        rc = fgetxattr(fd, XATTR_NAME_CAPS, &filedata, sizeof(filedata));
+#             ^
+#  572|   		return -1;
+#  573|   
+#  574|-> 	rc = fgetxattr(fd, XATTR_NAME_CAPS, &filedata, sizeof(filedata));
+#  575|   	if (rc <= 0)
+#  576|   		return -1;
+
+Error: COMPILER_WARNING:
+libcap-ng-0.8.2/src/cap-ng.c:765:13: warning: implicit declaration of function 'prctl' is invalid in C99
+#                                    if (prctl(PR_CAPBSET_DROP, i, 0, 0, 0) <0) {
+#                                        ^
+#  763|   				if (capng_have_capability(CAPNG_BOUNDING_SET,
+#  764|   								 i) == 0) {
+#  765|-> 				    if (prctl(PR_CAPBSET_DROP, i, 0, 0, 0) <0) {
+#  766|   //					rc = -2;
+#  767|   					log_problem(2);
+
+Error: COMPILER_WARNING:
+libcap-ng-0.8.2/src/cap-ng.c:812:8: warning: implicit declaration of function 'prctl' is invalid in C99
+#                        if (prctl(PR_CAP_AMBIENT,
+#                            ^
+#  810|   		if (capng_have_capabilities(CAPNG_SELECT_AMBIENT) ==
+#  811|   								CAPNG_NONE) {
+#  812|-> 			if (prctl(PR_CAP_AMBIENT,
+#  813|   				   PR_CAP_AMBIENT_CLEAR_ALL, 0, 0, 0) < 0) {
+#  814|   				rc = -6;
+
+Error: COMPILER_WARNING:
+libcap-ng-0.8.2/src/cap-ng.c:821:8: warning: implicit declaration of function 'prctl' is invalid in C99
+#                        if (prctl(PR_CAP_AMBIENT,
+#                            ^
+#  819|   
+#  820|   			// Clear them all
+#  821|-> 			if (prctl(PR_CAP_AMBIENT,
+#  822|   				   PR_CAP_AMBIENT_CLEAR_ALL, 0, 0, 0) < 0) {
+#  823|   				rc = -7;
+
+Error: COMPILER_WARNING:
+libcap-ng-0.8.2/src/cap-ng.c:851:33: warning: implicit declaration of function 'FIXUP' is invalid in C99
+#                filedata->data[0].permitted = FIXUP(m.data.v1.permitted);
+#                                              ^
+#  849|   	// Now stuff the data structures
+#  850|   	if (m.vfs_cap_ver == 1) {
+#  851|-> 		filedata->data[0].permitted = FIXUP(m.data.v1.permitted);
+#  852|   		filedata->data[0].inheritable = FIXUP(m.data.v1.inheritable);
+#  853|   		filedata->magic_etc = FIXUP(VFS_CAP_REVISION_1);
+
+Error: COMPILER_WARNING:
+libcap-ng-0.8.2/src/cap-ng.c:862:33: warning: implicit declaration of function 'FIXUP' is invalid in C99
+#                filedata->data[0].permitted = FIXUP(m.data.v3[0].permitted);
+#                                              ^
+#  860|   		else
+#  861|   			eff = 0;
+#  862|-> 		filedata->data[0].permitted = FIXUP(m.data.v3[0].permitted);
+#  863|   		filedata->data[0].inheritable = FIXUP(m.data.v3[0].inheritable);
+#  864|   		filedata->data[1].permitted = FIXUP(m.data.v3[1].permitted);
+
+Error: COMPILER_WARNING:
+libcap-ng-0.8.2/src/cap-ng.c:874:22: warning: implicit declaration of function 'FIXUP' is invalid in C99
+#                filedata->rootid = FIXUP(m.rootid);
+#                                   ^
+#  872|   		if (m.rootid!= 0)
+#  873|   			return -1;
+#  874|-> 		filedata->rootid = FIXUP(m.rootid);
+#  875|   		*size = XATTR_CAPS_SZ_3;
+#  876|   	}
+
+Error: COMPILER_WARNING:
+libcap-ng-0.8.2/src/cap-ng.c:907:8: warning: implicit declaration of function 'fremovexattr' is invalid in C99
+#                rc = fremovexattr(fd, XATTR_NAME_CAPS);
+#                     ^
+#  905|   	}
+#  906|   	if (capng_have_capabilities(CAPNG_SELECT_CAPS) == CAPNG_NONE)
+#  907|-> 		rc = fremovexattr(fd, XATTR_NAME_CAPS);
+#  908|   	else {
+#  909|   		if (save_data(&filedata, &size)) {
+
+Error: COMPILER_WARNING:
+libcap-ng-0.8.2/src/cap-ng.c:914:8: warning: implicit declaration of function 'fsetxattr' is invalid in C99
+#                rc = fsetxattr(fd, XATTR_NAME_CAPS, &filedata, size, 0);
+#                     ^
+#  912|   			return -2;
+#  913|   		}
+#  914|-> 		rc = fsetxattr(fd, XATTR_NAME_CAPS, &filedata, size, 0);
+#  915|   	}
+#  916|   
+
+Error: COMPILER_WARNING:
+libcap-ng-0.8.2/src/cap-ng.c:958:6: warning: implicit declaration of function 'prctl' is invalid in C99
+#        if (prctl(PR_SET_KEEPCAPS, 1, 0, 0, 0))
+#            ^
+#  956|   
+#  957|   	// Tell system we want to keep caps across uid change
+#  958|-> 	if (prctl(PR_SET_KEEPCAPS, 1, 0, 0, 0))
+#  959|   		return -2;
+#  960|   
+
+Error: COMPILER_WARNING:
+libcap-ng-0.8.2/src/cap-ng.c:980:8: warning: implicit declaration of function 'setresgid' is invalid in C99
+#                rc = setresgid(gid, gid, gid);
+#                     ^
+#  978|   	// Change gid
+#  979|   	if (gid != -1) {
+#  980|-> 		rc = setresgid(gid, gid, gid);
+#  981|   		if (rc)
+#  982|   			return -4;
+
+Error: COMPILER_WARNING:
+libcap-ng-0.8.2/src/cap-ng.c:991:8: warning: implicit declaration of function 'initgroups' is invalid in C99
+#                        if (initgroups(pw->pw_name, gid))
+#                            ^
+#  989|   			return -10;
+#  990|   		if (gid != -1) {
+#  991|-> 			if (initgroups(pw->pw_name, gid))
+#  992|   				return -5;
+#  993|   		} else if (initgroups(pw->pw_name, pw->pw_gid))
+
+Error: COMPILER_WARNING:
+libcap-ng-0.8.2/src/cap-ng.c:993:14: warning: implicit declaration of function 'initgroups' is invalid in C99
+#                } else if (initgroups(pw->pw_name, pw->pw_gid))
+#                           ^
+#  991|   			if (initgroups(pw->pw_name, gid))
+#  992|   				return -5;
+#  993|-> 		} else if (initgroups(pw->pw_name, pw->pw_gid))
+#  994|   			return -5;
+#  995|   	}
+
+Error: COMPILER_WARNING:
+libcap-ng-0.8.2/src/cap-ng.c:999:7: warning: implicit declaration of function 'setgroups' is invalid in C99
+#                if (setgroups(0, NULL))
+#                    ^
+#  997|   	// See if we need to unload supplemental groups
+#  998|   	if ((flag & CAPNG_DROP_SUPP_GRP) && gid != -1) {
+#  999|-> 		if (setgroups(0, NULL))
+# 1000|   			return -5;
+# 1001|   	}
+
+Error: COMPILER_WARNING:
+libcap-ng-0.8.2/src/cap-ng.c:1005:8: warning: implicit declaration of function 'setresuid' is invalid in C99
+#                rc = setresuid(uid, uid, uid);
+#                     ^
+# 1003|   	// Change uid
+# 1004|   	if (uid != -1) {
+# 1005|-> 		rc = setresuid(uid, uid, uid);
+# 1006|   		if (rc)
+# 1007|   			return -6;
+
+Error: COMPILER_WARNING:
+libcap-ng-0.8.2/src/cap-ng.c:1039:11: warning: implicit declaration of function 'prctl' is invalid in C99
+#        int rc = prctl(PR_SET_SECUREBITS,
+#                 ^
+# 1037|   	// If either fail, return -1 since something is not right
+# 1038|   #ifdef PR_SET_SECUREBITS
+# 1039|-> 	int rc = prctl(PR_SET_SECUREBITS,
+# 1040|   			1 << SECURE_NOROOT |
+# 1041|   			1 << SECURE_NOROOT_LOCKED |
+
+Error: COMPILER_WARNING:
+libcap-ng-0.8.2/utils/captest.c:68:2: warning: implicit declaration of function 'getresuid' is invalid in C99
+#        getresuid(&uid, &euid, &suid);
+#        ^
+#   66|   
+#   67|   	// Check user credentials
+#   68|-> 	getresuid(&uid, &euid, &suid);
+#   69|   	getresgid(&gid, &egid, &sgid);
+#   70|   	if (no_child) {
+
+Error: COMPILER_WARNING:
+libcap-ng-0.8.2/utils/captest.c:69:2: warning: implicit declaration of function 'getresgid' is invalid in C99
+#        getresgid(&gid, &egid, &sgid);
+#        ^
+#   67|   	// Check user credentials
+#   68|   	getresuid(&uid, &euid, &suid);
+#   69|-> 	getresgid(&gid, &egid, &sgid);
+#   70|   	if (no_child) {
+#   71|   		if ((uid != euid && uid != 0) ||
+
+Error: COMPILER_WARNING:
+libcap-ng-0.8.2/utils/captest.c:75:4: warning: implicit declaration of function 'setuid' is invalid in C99
+#                        setuid(0);
+#                        ^
+#   73|   						 CAP_SETUID)) {
+#   74|   			printf("Attempting to regain root...");
+#   75|-> 			setuid(0);
+#   76|   			getresuid(&uid, &euid, &suid);
+#   77|   			if (uid == 0) {
+
+Error: COMPILER_WARNING:
+libcap-ng-0.8.2/utils/captest.c:79:5: warning: implicit declaration of function 'setgid' is invalid in C99
+#                                setgid(0);
+#                                ^
+#   77|   			if (uid == 0) {
+#   78|   				printf("SUCCESS - PRIVILEGE ESCALATION POSSIBLE\n");
+#   79|-> 				setgid(0);
+#   80|   				getresgid(&gid, &egid, &sgid);
+#   81|   				escalated = 1;
+
+Error: COMPILER_WARNING:
+libcap-ng-0.8.2/utils/captest.c:152:7: warning: implicit declaration of function 'prctl' is invalid in C99
+#        rc = prctl(PR_GET_SECUREBITS, 1 << SECURE_NOROOT);
+#             ^
+#  150|   		printf("Child ");
+#  151|   	printf("securebits flags: ");
+#  152|-> 	rc = prctl(PR_GET_SECUREBITS, 1 << SECURE_NOROOT);
+#  153|   	if (rc & (1 << SECURE_NOROOT)) {
+#  154|   		printf("NOROOT");
+
+Error: COMPILER_WARNING:
+libcap-ng-0.8.2/utils/filecap.c:112:14: warning: unused parameter 'argc'
+#int main(int argc, char *argv[])
+#             ^
+#  110|   //  filecap /path/file capability1 capability2 capability 3 ...
+#  111|   //
+#  112|-> int main(int argc, char *argv[])
+#  113|   {
+#  114|   #if CAP_LAST_CAP < 31 || !defined (VFS_CAP_U32) || \
+
+Error: COMPILER_WARNING:
+libcap-ng-0.8.2/utils/filecap.c:112:26: warning: unused parameter 'argv'
+#int main(int argc, char *argv[])
+#                         ^
+#  110|   //  filecap /path/file capability1 capability2 capability 3 ...
+#  111|   //
+#  112|-> int main(int argc, char *argv[])
+#  113|   {
+#  114|   #if CAP_LAST_CAP < 31 || !defined (VFS_CAP_U32) || \

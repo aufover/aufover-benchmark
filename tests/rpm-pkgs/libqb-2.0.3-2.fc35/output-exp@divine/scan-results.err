@@ -1,0 +1,1816 @@
+Error: COMPILER_WARNING:
+libqb-2.0.3/doxygen2man/cstring.c:31:30: warning: cast from 'char *' to 'struct cstring_header *' increases required alignment from 1 to 8
+#                struct cstring_header *h = (struct cstring_header *)cstring;
+#                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   29|   	char *cstring = malloc(INITIAL_SIZE);
+#   30|   	if (cstring) {
+#   31|-> 		struct cstring_header *h = (struct cstring_header *)cstring;
+#   32|   		h->checker = CHECKER_WORD;
+#   33|   		h->allocated = INITIAL_SIZE;
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/doxygen2man/cstring.c:44:29: warning: cast from 'char *' to 'struct cstring_header *' increases required alignment from 1 to 8
+#        struct cstring_header *h = (struct cstring_header *)(char *)cstring;
+#                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   42|   char *cstring_to_chars(cstring_t cstring)
+#   43|   {
+#   44|-> 	struct cstring_header *h = (struct cstring_header *)(char *)cstring;
+#   45|   
+#   46|   	if (!h) {
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/doxygen2man/cstring.c:56:29: warning: cast from 'char *' to 'struct cstring_header *' increases required alignment from 1 to 8
+#        struct cstring_header *h = (struct cstring_header *)(char *)cstring;
+#                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   54|   cstring_t cstring_append_chars(cstring_t cstring, const char *newstring)
+#   55|   {
+#   56|-> 	struct cstring_header *h = (struct cstring_header *)(char *)cstring;
+#   57|   	size_t newlen;
+#   58|   
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/doxygen2man/cstring.c:77:7: warning: cast from 'char *' to 'struct cstring_header *' increases required alignment from 1 to 8
+#                h = (struct cstring_header *)(char *)cstring;
+#                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   75|   
+#   76|   		cstring = tmp;
+#   77|-> 		h = (struct cstring_header *)(char *)cstring;
+#   78|   		h->allocated = new_allocsize;
+#   79|   	}
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/doxygen2man/cstring.c:88:29: warning: cast from 'char *' to 'struct cstring_header *' increases required alignment from 1 to 8
+#        struct cstring_header *h = (struct cstring_header *)(char *)newstring;
+#                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   86|   {
+#   87|   	/* Just check the newstring - cstring_append_chars() will check the target */
+#   88|-> 	struct cstring_header *h = (struct cstring_header *)(char *)newstring;
+#   89|   
+#   90|   	if (!h) {
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/doxygen2man/cstring.c:109:29: warning: cast from 'char *' to 'struct cstring_header *' increases required alignment from 1 to 8
+#        struct cstring_header *h = (struct cstring_header *)(char *)cstring;
+#                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  107|   void cstring_free(cstring_t cstring)
+#  108|   {
+#  109|-> 	struct cstring_header *h = (struct cstring_header *)(char *)cstring;
+#  110|   
+#  111|   	if (!h) {
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/doxygen2man/doxygen2man.c:155:8: warning: cast from 'char *' to 'struct param_info *' increases required alignment from 1 to 8
+#                pi = qb_list_entry(iter, struct param_info, list);
+#                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  153|   
+#  154|   	qb_list_for_each(iter, list) {
+#  155|-> 		pi = qb_list_entry(iter, struct param_info, list);
+#  156|   		if (strcmp(pi->paramname, name) == 0) {
+#  157|   			return pi;
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/doxygen2man/doxygen2man.c:572:8: warning: cast from 'char *' to 'struct param_info *' increases required alignment from 1 to 8
+#                pi = qb_list_entry(iter, struct param_info, list);
+#                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  570|   
+#  571|   	qb_list_for_each(iter, &si->params_list) {
+#  572|-> 		pi = qb_list_entry(iter, struct param_info, list);
+#  573|   		if (strlen(pi->paramtype) > max_param_length) {
+#  574|   			max_param_length = strlen(pi->paramtype);
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/doxygen2man/doxygen2man.c:587:8: warning: cast from 'char *' to 'struct param_info *' increases required alignment from 1 to 8
+#                pi = qb_list_entry(iter, struct param_info, list);
+#                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  585|   
+#  586|   	qb_list_for_each(iter, &si->params_list) {
+#  587|-> 		pi = qb_list_entry(iter, struct param_info, list);
+#  588|   		print_param(manfile, pi, max_param_length, 0,";");
+#  589|   	}
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/doxygen2man/doxygen2man.c:739:8: warning: cast from 'char *' to 'struct param_info *' increases required alignment from 1 to 8
+#                pi = qb_list_entry(iter, struct param_info, list);
+#                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  737|   
+#  738|   	qb_list_for_each(iter, param_map) {
+#  739|-> 		pi = qb_list_entry(iter, struct param_info, list);
+#  740|   
+#  741|   		/* It's mainly macros that break this,
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/doxygen2man/doxygen2man.c:780:9: warning: cast from 'char *' to 'struct param_info *' increases required alignment from 1 to 8
+#                        pi = qb_list_entry(iter, struct param_info, list);
+#                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  778|   
+#  779|   		qb_list_for_each(iter, param_map) {
+#  780|-> 			pi = qb_list_entry(iter, struct param_info, list);
+#  781|   
+#  782|   			if (pi->paramtype[0] != '\0') { //CC
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/doxygen2man/doxygen2man.c:795:9: warning: cast from 'char *' to 'struct param_info *' increases required alignment from 1 to 8
+#                        pi = qb_list_entry(iter, struct param_info, list);
+#                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  793|   
+#  794|   		qb_list_for_each(iter, &params_list) {
+#  795|-> 			pi = qb_list_entry(iter, struct param_info, list);
+#  796|   			fprintf(manfile, "\\fB%-*s \\fP\\fI%s\\fP\n", (int)max_param_name_len, pi->paramname,
+#  797|   				pi->paramdesc);
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/doxygen2man/doxygen2man.c:848:8: warning: cast from 'char *' to 'struct param_info *' increases required alignment from 1 to 8
+#                pi = qb_list_entry(iter, struct param_info, list);
+#                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  846|   
+#  847|   	qb_list_for_each(iter, &retval_list) {
+#  848|-> 		pi = qb_list_entry(iter, struct param_info, list);
+#  849|   
+#  850|   		fprintf(manfile, "\\fB%-*s \\fP%s\n", 10, pi->paramname,
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/doxygen2man/doxygen2man.c:892:8: warning: cast from 'char *' to 'struct param_info *' increases required alignment from 1 to 8
+#                pi = qb_list_entry(iter, struct param_info, list);
+#                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  890|   	/* Free the params & retval info */
+#  891|   	qb_list_for_each_safe(iter, tmp, &params_list) {
+#  892|-> 		pi = qb_list_entry(iter, struct param_info, list);
+#  893|   		qb_list_del(&pi->list);
+#  894|   		free_paraminfo(pi);
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/doxygen2man/doxygen2man.c:898:8: warning: cast from 'char *' to 'struct param_info *' increases required alignment from 1 to 8
+#                pi = qb_list_entry(iter, struct param_info, list);
+#                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  896|   
+#  897|   	qb_list_for_each_safe(iter, tmp, &retval_list) {
+#  898|-> 		pi = qb_list_entry(iter, struct param_info, list);
+#  899|   		qb_list_del(&pi->list);
+#  900|   		free_paraminfo(pi);
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/examples/tcpclient.c:56:2: warning: implicitly declaring library function 'bzero' with type 'void (void *, unsigned long)'
+#        bzero(&(server_addr.sin_zero), 8);
+#        ^
+libqb-2.0.3/examples/tcpclient.c:56:2: note: include the header <strings.h> or explicitly provide a declaration for 'bzero'
+#   54|   	memcpy(&server_addr.sin_addr, host->h_addr_list[0],
+#   55|   	       sizeof(server_addr.sin_addr));
+#   56|-> 	bzero(&(server_addr.sin_zero), 8);
+#   57|   
+#   58|   	if (connect(sock, (struct sockaddr *)&server_addr,
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/examples/tcpserver.c:130:2: warning: implicitly declaring library function 'bzero' with type 'void (void *, unsigned long)'
+#        bzero(&(server_addr.sin_zero), 8);
+#        ^
+libqb-2.0.3/examples/tcpserver.c:130:2: note: include the header <strings.h> or explicitly provide a declaration for 'bzero'
+#  128|   	server_addr.sin_port = htons(5000);
+#  129|   	server_addr.sin_addr.s_addr = INADDR_ANY;
+#  130|-> 	bzero(&(server_addr.sin_zero), 8);
+#  131|   
+#  132|   	printf("TCPServer binding to port 5000\n");
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/loop_timerlist.c:30: included_from: Included from here.
+libqb-2.0.3/include/tlist.h:70:21: warning: cast from 'char *' to 'struct timerlist_timer *' increases required alignment from 1 to 8
+#                timer_from_list = qb_list_entry(timer_list,
+#                                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   68|   	qb_list_for_each(timer_list, &timerlist->timer_head) {
+#   69|   
+#   70|-> 		timer_from_list = qb_list_entry(timer_list,
+#   71|   						struct timerlist_timer, list);
+#   72|   
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/loop_timerlist.c:30: included_from: Included from here.
+libqb-2.0.3/include/tlist.h:171:20: warning: cast from 'char *' to 'struct timerlist_timer *' increases required alignment from 1 to 8
+#        timer_from_list = qb_list_first_entry(&timerlist->timer_head,
+#                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:207:2: note: expanded from macro 'qb_list_first_entry'
+#        qb_list_entry((ptr)->next, type, member)
+#        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  169|   	}
+#  170|   
+#  171|-> 	timer_from_list = qb_list_first_entry(&timerlist->timer_head,
+#  172|   					struct timerlist_timer, list);
+#  173|   
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/loop_timerlist.c:30: included_from: Included from here.
+libqb-2.0.3/include/tlist.h:210:21: warning: cast from 'char *' to 'struct timerlist_timer *' increases required alignment from 1 to 8
+#                timer_from_list = qb_list_entry(pos,
+#                                  ^~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  208|   	qb_list_for_each_safe(pos, next, &timerlist->timer_head) {
+#  209|   
+#  210|-> 		timer_from_list = qb_list_entry(pos,
+#  211|   						struct timerlist_timer, list);
+#  212|   
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/hashtable.c:100:15: warning: cast from 'char *' to 'struct hash_node *' increases required alignment from 1 to 8
+#                hash_node = qb_list_entry(list, struct hash_node, list);
+#                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   98|   	qb_list_for_each(list, &t->hash_buckets[hash_entry].list_head) {
+#   99|   
+#  100|-> 		hash_node = qb_list_entry(list, struct hash_node, list);
+#  101|   		if (strcmp(hash_node->key, key) == 0) {
+#  102|   			return hash_node;
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/hashtable.c:132:8: warning: cast from 'char *' to 'struct qb_map_notifier *' increases required alignment from 1 to 8
+#                tn = qb_list_entry(pos, struct qb_map_notifier, list);
+#                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  130|   
+#  131|   	qb_list_for_each_safe(pos, next, &hash_node->notifier_head) {
+#  132|-> 		tn = qb_list_entry(pos, struct qb_map_notifier, list);
+#  133|   		qb_list_del(&tn->list);
+#  134|   		free(tn);
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/hashtable.c:164:15: warning: cast from 'char *' to 'struct hash_node *' increases required alignment from 1 to 8
+#                hash_node = qb_list_entry(list, struct hash_node, list);
+#                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  162|   	                      &hash_table->hash_buckets[hash_entry].list_head) {
+#  163|   
+#  164|-> 		hash_node = qb_list_entry(list, struct hash_node, list);
+#  165|   		if (strcmp(hash_node->key, key) == 0) {
+#  166|   			hashtable_node_deref(map, hash_node);
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/hashtable.c:198:14: warning: cast from 'char *' to 'struct hash_node *' increases required alignment from 1 to 8
+#                node_try = qb_list_entry(list, struct hash_node, list);
+#                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  196|   	qb_list_for_each(list, &hash_table->hash_buckets[hash_entry].list_head) {
+#  197|   
+#  198|-> 		node_try = qb_list_entry(list, struct hash_node, list);
+#  199|   		if (strcmp(node_try->key, key) == 0) {
+#  200|   			hash_node = node_try;
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/hashtable.c:246:8: warning: cast from 'char *' to 'struct qb_map_notifier *' increases required alignment from 1 to 8
+#                tn = qb_list_entry(list, struct qb_map_notifier, list);
+#                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  244|   
+#  245|   	qb_list_for_each(list, &n->notifier_head) {
+#  246|-> 		tn = qb_list_entry(list, struct qb_map_notifier, list);
+#  247|   
+#  248|   		if (tn->events & event) {
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/hashtable.c:254:8: warning: cast from 'char *' to 'struct qb_map_notifier *' increases required alignment from 1 to 8
+#                tn = qb_list_entry(list, struct qb_map_notifier, list);
+#                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  252|   	}
+#  253|   	qb_list_for_each(list, &t->notifier_head) {
+#  254|-> 		tn = qb_list_entry(list, struct qb_map_notifier, list);
+#  255|   
+#  256|   		if (tn->events & event) {
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/hashtable.c:296:7: warning: cast from 'char *' to 'struct qb_map_notifier *' increases required alignment from 1 to 8
+#                f = qb_list_entry(list, struct qb_map_notifier, list);
+#                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  294|   
+#  295|   	qb_list_for_each(list, head) {
+#  296|-> 		f = qb_list_entry(list, struct qb_map_notifier, list);
+#  297|   
+#  298|   		if (events & QB_MAP_NOTIFY_FREE &&
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/hashtable.c:353:7: warning: cast from 'char *' to 'struct qb_map_notifier *' increases required alignment from 1 to 8
+#                f = qb_list_entry(list, struct qb_map_notifier, list);
+#                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  351|   
+#  352|   	qb_list_for_each_safe(list, next, head) {
+#  353|-> 		f = qb_list_entry(list, struct qb_map_notifier, list);
+#  354|   
+#  355|   		if (f->events == events && f->callback == fn) {
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/hashtable.c:415:15: warning: cast from 'char *' to 'struct hash_node *' increases required alignment from 1 to 8
+#                hash_node = qb_list_first_entry(ln, struct hash_node, list);
+#                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:207:2: note: expanded from macro 'qb_list_first_entry'
+#        qb_list_entry((ptr)->next, type, member)
+#        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  413|   			ln = &hash_table->hash_buckets[b].list_head;
+#  414|   		}
+#  415|-> 		hash_node = qb_list_first_entry(ln, struct hash_node, list);
+#  416|   		qb_list_for_each_entry_from(hash_node,
+#  417|   		                &hash_table->hash_buckets[b].list_head, list) {
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/hashtable.c:416:3: warning: cast from 'char *' to 'typeof (*hash_node) *' (aka 'struct hash_node *') increases required alignment from 1 to 8
+#                qb_list_for_each_entry_from(hash_node,
+#                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:291:13: note: expanded from macro 'qb_list_for_each_entry_from'
+#             pos = qb_list_entry(pos->member.next, typeof(*pos), member))
+#                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  414|   		}
+#  415|   		hash_node = qb_list_first_entry(ln, struct hash_node, list);
+#  416|-> 		qb_list_for_each_entry_from(hash_node,
+#  417|   		                &hash_table->hash_buckets[b].list_head, list) {
+#  418|   			if (hash_node->refcount > 0) {
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/hashtable.c:458:8: warning: cast from 'char *' to 'struct qb_map_notifier *' increases required alignment from 1 to 8
+#                tn = qb_list_entry(pos, struct qb_map_notifier, list);
+#                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  456|   
+#  457|   	qb_list_for_each_safe(pos, next, &hash_table->notifier_head) {
+#  458|-> 		tn = qb_list_entry(pos, struct qb_map_notifier, list);
+#  459|   		qb_list_del(&tn->list);
+#  460|   		free(tn);
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/hashtable.c:476:15: warning: cast from 'char *' to 'struct hash_node *' increases required alignment from 1 to 8
+#                hash_node = qb_list_entry(pos, struct hash_node, list);
+#                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  474|   	qb_list_for_each_safe(pos, next,
+#  475|   			      &hash_table->hash_buckets[hash_entry].list_head) {
+#  476|-> 		hash_node = qb_list_entry(pos, struct hash_node, list);
+#  477|   		hashtable_node_deref(map, hash_node);
+#  478|   		hash_table->count--;
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/hdb.c:109:11: warning: implicit declaration of function 'random' is invalid in C99
+#                check = random();
+#                        ^
+#  107|   	 */
+#  108|   	for (i = 0; i < 200; i++) {
+#  109|-> 		check = random();
+#  110|   
+#  111|   		if (check > 0) {
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/hdb.c:109:11: warning: this function declaration is not a prototype
+#  107|   	 */
+#  108|   	for (i = 0; i < 200; i++) {
+#  109|-> 		check = random();
+#  110|   
+#  111|   		if (check > 0) {
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/ipc_setup.c:118:11: warning: implicit declaration of function 'recvmsg' is invalid in C99
+#        result = recvmsg(data->sock, &data->msg_recv, MSG_NOSIGNAL | MSG_WAITALL);
+#                 ^
+#  116|   	data->msg_recv.msg_iov->iov_len = data->len - data->processed;
+#  117|   
+#  118|-> 	result = recvmsg(data->sock, &data->msg_recv, MSG_NOSIGNAL | MSG_WAITALL);
+#  119|   	if (result == -1 && errno == EAGAIN) {
+#  120|   		qb_sigpipe_ctl(QB_SIGPIPE_DEFAULT);
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/ipc_setup.c:118:11: warning: this function declaration is not a prototype
+#  116|   	data->msg_recv.msg_iov->iov_len = data->len - data->processed;
+#  117|   
+#  118|-> 	result = recvmsg(data->sock, &data->msg_recv, MSG_NOSIGNAL | MSG_WAITALL);
+#  119|   	if (result == -1 && errno == EAGAIN) {
+#  120|   		qb_sigpipe_ctl(QB_SIGPIPE_DEFAULT);
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/ipc_setup.c:183:16: warning: implicit declaration of function 'poll' is invalid in C99
+#        poll_events = poll(ufds, numfds, ms_timeout);
+#                      ^
+#  181|   		ufds[1].revents = 0;
+#  182|   	}
+#  183|-> 	poll_events = poll(ufds, numfds, ms_timeout);
+#  184|   	if ((poll_events == -1 && errno == EINTR) || poll_events == 0) {
+#  185|   		return -EAGAIN;
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/ipc_setup.c:183:16: warning: this function declaration is not a prototype
+#  181|   		ufds[1].revents = 0;
+#  182|   	}
+#  183|-> 	poll_events = poll(ufds, numfds, ms_timeout);
+#  184|   	if ((poll_events == -1 && errno == EINTR) || poll_events == 0) {
+#  185|   		return -EAGAIN;
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/ipc_setup.c:314:2: warning: implicit declaration of function 'shutdown' is invalid in C99
+#        shutdown(sock, SHUT_RDWR);
+#        ^
+#  312|   qb_ipcc_us_sock_close(int32_t sock)
+#  313|   {
+#  314|-> 	shutdown(sock, SHUT_RDWR);
+#  315|   	close(sock);
+#  316|   }
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/ipc_setup.c:314:2: warning: this function declaration is not a prototype
+#  312|   qb_ipcc_us_sock_close(int32_t sock)
+#  313|   {
+#  314|-> 	shutdown(sock, SHUT_RDWR);
+#  315|   	close(sock);
+#  316|   }
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/ipc_setup.c:597:2: warning: implicit declaration of function 'shutdown' is invalid in C99
+#        shutdown(s->server_sock, SHUT_RDWR);
+#        ^
+#  595|   	qb_util_log(LOG_INFO, "withdrawing server sockets");
+#  596|   	(void)s->poll_fns.dispatch_del(s->server_sock);
+#  597|-> 	shutdown(s->server_sock, SHUT_RDWR);
+#  598|   
+#  599|   	if (use_filesystem_sockets()) {
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/ipc_shm.c:270:15: warning: taking address of packed member '' of class or structure 'sigaction' may result in an unaligned pointer value
+#        sigemptyset(&sa.sa_mask);
+#                     ^~~~~~~~~~
+#  268|   	memset(&sa, 0, sizeof(sa));
+#  269|   	sa.sa_handler = catch_sigbus;
+#  270|-> 	sigemptyset(&sa.sa_mask);
+#  271|   	sa.sa_flags = 0;
+#  272|   	sigaction(SIGBUS, &sa, &old_sa);
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/ipcs.c:196:7: warning: cast from 'char *' to 'struct qb_ipcs_connection *' increases required alignment from 1 to 8
+#                c = qb_list_entry(pos, struct qb_ipcs_connection, list);
+#                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  194|   	qb_list_for_each_safe(pos, n, &s->connections) {
+#  195|   
+#  196|-> 		c = qb_list_entry(pos, struct qb_ipcs_connection, list);
+#  197|   		qb_ipcs_connection_ref(c);
+#  198|   
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/ipcs.c:243:7: warning: cast from 'char *' to 'struct qb_ipcs_connection *' increases required alignment from 1 to 8
+#                c = qb_list_entry(pos, struct qb_ipcs_connection, list);
+#                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  241|   	}
+#  242|   	qb_list_for_each_safe(pos, n, &s->connections) {
+#  243|-> 		c = qb_list_entry(pos, struct qb_ipcs_connection, list);
+#  244|   		if (c == NULL) {
+#  245|   			continue;
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/ipcs.c:484:6: warning: cast from 'char *' to 'struct qb_ipcs_connection *' increases required alignment from 1 to 8
+#        c = qb_list_first_entry(&s->connections, struct qb_ipcs_connection,
+#            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:207:2: note: expanded from macro 'qb_list_first_entry'
+#        qb_list_entry((ptr)->next, type, member)
+#        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  482|   	}
+#  483|   
+#  484|-> 	c = qb_list_first_entry(&s->connections, struct qb_ipcs_connection,
+#  485|   				list);
+#  486|   	qb_ipcs_connection_ref(c);
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/ipcs.c:502:6: warning: cast from 'char *' to 'struct qb_ipcs_connection *' increases required alignment from 1 to 8
+#        c = qb_list_first_entry(&current->list, struct qb_ipcs_connection,
+#            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:207:2: note: expanded from macro 'qb_list_first_entry'
+#        qb_list_entry((ptr)->next, type, member)
+#        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  500|   	}
+#  501|   
+#  502|-> 	c = qb_list_first_entry(&current->list, struct qb_ipcs_connection,
+#  503|   				list);
+#  504|   	qb_ipcs_connection_ref(c);
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/log.c:354:11: warning: cast from 'char *' to 'struct qb_log_filter *' increases required alignment from 1 to 8
+#                                flt = qb_list_entry(f_item, struct qb_log_filter, list);
+#                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  352|   			}
+#  353|   			qb_list_for_each(f_item, &t->filter_head) {
+#  354|-> 				flt = qb_list_entry(f_item, struct qb_log_filter, list);
+#  355|   				_log_filter_apply_to_cs(cs, t->pos, flt->conf, flt->type,
+#  356|   							flt->text, flt->regex, flt->high_priority,
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/log.c:362:11: warning: cast from 'char *' to 'struct qb_log_filter *' increases required alignment from 1 to 8
+#                                flt = qb_list_entry(f_item, struct qb_log_filter, list);
+#                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  360|   		if (tags == 0) {
+#  361|   			qb_list_for_each(f_item, &tags_head) {
+#  362|-> 				flt = qb_list_entry(f_item, struct qb_log_filter, list);
+#  363|   				_log_filter_apply_to_cs(cs, flt->new_value, flt->conf, flt->type,
+#  364|   							flt->text, flt->regex, flt->high_priority,
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/log.c:481:2: warning: cast from 'char *' to 'typeof (*sect) *' (aka 'struct callsite_section *') increases required alignment from 1 to 8
+#        qb_list_for_each_entry(sect, &callsite_sections, list) {
+#        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:242:13: note: expanded from macro 'qb_list_for_each_entry'
+#        for (pos = qb_list_entry((head)->next, typeof(*pos), member);   \
+#                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  479|   
+#  480|   	pthread_rwlock_rdlock(&_listlock);
+#  481|-> 	qb_list_for_each_entry(sect, &callsite_sections, list) {
+#  482|   		if (sect->start == _start || sect->stop == _stop) {
+#  483|   			pthread_rwlock_unlock(&_listlock);
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/log.c:508:3: warning: cast from 'char *' to 'typeof (*flt) *' (aka 'struct qb_log_filter *') increases required alignment from 1 to 8
+#                qb_list_for_each_entry(flt, &t->filter_head, list) {
+#                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:242:13: note: expanded from macro 'qb_list_for_each_entry'
+#        for (pos = qb_list_entry((head)->next, typeof(*pos), member);   \
+#                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  506|   			continue;
+#  507|   		}
+#  508|-> 		qb_list_for_each_entry(flt, &t->filter_head, list) {
+#  509|   			_log_filter_apply(sect, t->pos, flt->conf,
+#  510|   					  flt->type, flt->text, flt->regex,
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/log.c:514:2: warning: cast from 'char *' to 'typeof (*flt) *' (aka 'struct qb_log_filter *') increases required alignment from 1 to 8
+#        qb_list_for_each_entry(flt, &tags_head, list) {
+#        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:242:13: note: expanded from macro 'qb_list_for_each_entry'
+#        for (pos = qb_list_entry((head)->next, typeof(*pos), member);   \
+#                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  512|   		}
+#  513|   	}
+#  514|-> 	qb_list_for_each_entry(flt, &tags_head, list) {
+#  515|   		_log_filter_apply(sect, flt->new_value, flt->conf,
+#  516|   				  flt->type, flt->text, flt->regex,
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/log.c:542:2: warning: cast from 'char *' to 'typeof (*sect) *' (aka 'struct callsite_section *') increases required alignment from 1 to 8
+#        qb_list_for_each_entry(sect, &callsite_sections, list) {
+#        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:242:13: note: expanded from macro 'qb_list_for_each_entry'
+#        for (pos = qb_list_entry((head)->next, typeof(*pos), member);   \
+#                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  540|   	printf("Callsite Database [%d]\n", l);
+#  541|   	printf("---------------------\n");
+#  542|-> 	qb_list_for_each_entry(sect, &callsite_sections, list) {
+#  543|   		qb_log_callsites_dump_sect(sect);
+#  544|   	}
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/log.c:558:2: warning: cast from 'char *' to 'typeof (*flt) *' (aka 'struct qb_log_filter *') increases required alignment from 1 to 8
+#        qb_list_for_each_entry(flt, list_head, list) {
+#        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:242:13: note: expanded from macro 'qb_list_for_each_entry'
+#        for (pos = qb_list_entry((head)->next, typeof(*pos), member);   \
+#                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  556|   	struct qb_log_filter *flt;
+#  557|   
+#  558|-> 	qb_list_for_each_entry(flt, list_head, list) {
+#  559|   		if (flt->type == type &&
+#  560|   		    flt->high_priority == high_priority &&
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/log.c:645:10: warning: cast from 'char *' to 'struct qb_log_filter *' increases required alignment from 1 to 8
+#                        flt = qb_list_entry(iter, struct qb_log_filter, list);
+#                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  643|   	} else if (c == QB_LOG_FILTER_REMOVE || c == QB_LOG_TAG_CLEAR) {
+#  644|   		qb_list_for_each_safe(iter, next, list_head) {
+#  645|-> 			flt = qb_list_entry(iter, struct qb_log_filter, list);
+#  646|   			if (flt->type == type &&
+#  647|   			    flt->low_priority <= low_priority &&
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/log.c:659:10: warning: cast from 'char *' to 'struct qb_log_filter *' increases required alignment from 1 to 8
+#                        flt = qb_list_entry(iter, struct qb_log_filter, list);
+#                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  657|   	} else if (c == QB_LOG_FILTER_CLEAR_ALL || c == QB_LOG_TAG_CLEAR_ALL) {
+#  658|   		qb_list_for_each_safe(iter, next, list_head) {
+#  659|-> 			flt = qb_list_entry(iter, struct qb_log_filter, list);
+#  660|   			qb_list_del(iter);
+#  661|   			_log_free_filter(flt);
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/log.c:770:2: warning: cast from 'char *' to 'typeof (*sect) *' (aka 'struct callsite_section *') increases required alignment from 1 to 8
+#        qb_list_for_each_entry(sect, &callsite_sections, list) {
+#        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:242:13: note: expanded from macro 'qb_list_for_each_entry'
+#        for (pos = qb_list_entry((head)->next, typeof(*pos), member);   \
+#                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  768|   		regex = new_flt->regex;
+#  769|   	}
+#  770|-> 	qb_list_for_each_entry(sect, &callsite_sections, list) {
+#  771|   		_log_filter_apply(sect, t, c, type, text, regex, high_priority, low_priority);
+#  772|   	}
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/log.c:791:2: warning: cast from 'char *' to 'typeof (*sect) *' (aka 'struct callsite_section *') increases required alignment from 1 to 8
+#        qb_list_for_each_entry(sect, &callsite_sections, list) {
+#        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:242:13: note: expanded from macro 'qb_list_for_each_entry'
+#        for (pos = qb_list_entry((head)->next, typeof(*pos), member);   \
+#                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  789|   	}
+#  790|   
+#  791|-> 	qb_list_for_each_entry(sect, &callsite_sections, list) {
+#  792|   		for (cs = sect->start; cs < sect->stop; cs++) {
+#  793|   			if (cs->lineno > 0) {
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/log.c:886:10: warning: cast from 'char *' to 'struct qb_log_filter *' increases required alignment from 1 to 8
+#                        flt = qb_list_entry(iter2, struct qb_log_filter, list);
+#                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  884|   		_log_target_disable(t);
+#  885|   		qb_list_for_each_safe(iter2, next2, &t->filter_head) {
+#  886|-> 			flt = qb_list_entry(iter2, struct qb_log_filter, list);
+#  887|   			qb_list_del(iter2);
+#  888|   			_log_free_filter(flt);
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/log.c:894:7: warning: cast from 'char *' to 'struct callsite_section *' increases required alignment from 1 to 8
+#                s = qb_list_entry(iter, struct callsite_section, list);
+#                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  892|   	qb_log_dcs_fini();
+#  893|   	qb_list_for_each_safe(iter, next, &callsite_sections) {
+#  894|-> 		s = qb_list_entry(iter, struct callsite_section, list);
+#  895|   		qb_list_del(iter);
+#  896|   		free(s);
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/log.c:899:9: warning: cast from 'char *' to 'struct qb_log_filter *' increases required alignment from 1 to 8
+#                flt = qb_list_entry(iter, struct qb_log_filter, list);
+#                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  897|   	}
+#  898|   	qb_list_for_each_safe(iter, next, &tags_head) {
+#  899|-> 		flt = qb_list_entry(iter, struct qb_log_filter, list);
+#  900|   		qb_list_del(iter);
+#  901|   		_log_free_filter(flt);
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/log_blackbox.c:345:44: warning: sizeof on pointer operation will return size of 'char *' instead of 'char [64]'
+#                        snprintf(time_buf+slen, sizeof(time_buf - slen), ".%03llu", timestamp.tv_nsec/QB_TIME_NS_IN_MSEC);
+#                                                       ~~~~~~~~ ^
+#  343|   					    sizeof(time_buf), "%b %d %T",
+#  344|   					    tm);
+#  345|-> 			snprintf(time_buf+slen, sizeof(time_buf - slen), ".%03llu", timestamp.tv_nsec/QB_TIME_NS_IN_MSEC);
+#  346|   		} else {
+#  347|   			snprintf(time_buf, sizeof(time_buf), "%ld",
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/log_format.c:398:11: warning: implicit declaration of function 'localtime_r' is invalid in C99
+#                                (void)localtime_r(&time_sec, &tm_res);
+#                                      ^
+#  396|   			case 't':
+#  397|   				time_sec = the_ts->tv_sec;
+#  398|-> 				(void)localtime_r(&time_sec, &tm_res);
+#  399|   				snprintf(tmp_buf, TIME_STRING_SIZE,
+#  400|   					 "%s %02d %02d:%02d:%02d",
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/log_format.c:398:11: warning: this function declaration is not a prototype
+#  396|   			case 't':
+#  397|   				time_sec = the_ts->tv_sec;
+#  398|-> 				(void)localtime_r(&time_sec, &tm_res);
+#  399|   				snprintf(tmp_buf, TIME_STRING_SIZE,
+#  400|   					 "%s %02d %02d:%02d:%02d",
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/log_thread.c:66:2: warning: implicit declaration of function 'sem_post' is invalid in C99
+#        sem_post(&logt_thread_start);
+#        ^
+#   64|   
+#   65|   	/* Signal qb_log_thread_start that the initialization may continue */
+#   66|-> 	sem_post(&logt_thread_start);
+#   67|   	for (;;) {
+#   68|   retry_sem_wait:
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/log_thread.c:66:2: warning: this function declaration is not a prototype
+#   64|   
+#   65|   	/* Signal qb_log_thread_start that the initialization may continue */
+#   66|-> 	sem_post(&logt_thread_start);
+#   67|   	for (;;) {
+#   68|   retry_sem_wait:
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/log_thread.c:69:9: warning: implicit declaration of function 'sem_wait' is invalid in C99
+#                res = sem_wait(&logt_print_finished);
+#                      ^
+#   67|   	for (;;) {
+#   68|   retry_sem_wait:
+#   69|-> 		res = sem_wait(&logt_print_finished);
+#   70|   		if (res == -1 && errno == EINTR) {
+#   71|   			goto retry_sem_wait;
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/log_thread.c:69:9: warning: this function declaration is not a prototype
+#   67|   	for (;;) {
+#   68|   retry_sem_wait:
+#   69|-> 		res = sem_wait(&logt_print_finished);
+#   70|   		if (res == -1 && errno == EINTR) {
+#   71|   			goto retry_sem_wait;
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/log_thread.c:81:10: warning: implicit declaration of function 'sem_getvalue' is invalid in C99
+#                        (void)sem_getvalue(&logt_print_finished, &value);
+#                              ^
+#   79|   			int value = -1;
+#   80|   
+#   81|-> 			(void)sem_getvalue(&logt_print_finished, &value);
+#   82|   			if (value == 0) {
+#   83|   				(void)qb_thread_unlock(logt_wthread_lock);
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/log_thread.c:81:10: warning: this function declaration is not a prototype
+#   79|   			int value = -1;
+#   80|   
+#   81|-> 			(void)sem_getvalue(&logt_print_finished, &value);
+#   82|   			if (value == 0) {
+#   83|   				(void)qb_thread_unlock(logt_wthread_lock);
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/log_thread.c:89:7: warning: cast from 'char *' to 'struct qb_log_record *' increases required alignment from 1 to 8
+#                    qb_list_first_entry(&logt_print_finished_records,
+#                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:207:2: note: expanded from macro 'qb_list_first_entry'
+#        qb_list_entry((ptr)->next, type, member)
+#        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   87|   
+#   88|   		rec =
+#   89|-> 		    qb_list_first_entry(&logt_print_finished_records,
+#   90|   				  struct qb_log_record, list);
+#   91|   		qb_list_del(&rec->list);
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/log_thread.c:153:2: warning: implicit declaration of function 'sem_init' is invalid in C99
+#        sem_init(&logt_thread_start, 0, 0);
+#        ^
+#  151|   
+#  152|   	wthread_active = QB_TRUE;
+#  153|-> 	sem_init(&logt_thread_start, 0, 0);
+#  154|   	sem_init(&logt_print_finished, 0, 0);
+#  155|   	errno = 0;
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/log_thread.c:153:2: warning: this function declaration is not a prototype
+#  151|   
+#  152|   	wthread_active = QB_TRUE;
+#  153|-> 	sem_init(&logt_thread_start, 0, 0);
+#  154|   	sem_init(&logt_print_finished, 0, 0);
+#  155|   	errno = 0;
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/log_thread.c:167:2: warning: implicit declaration of function 'sem_wait' is invalid in C99
+#        sem_wait(&logt_thread_start);
+#        ^
+#  165|   		return -res;
+#  166|   	}
+#  167|-> 	sem_wait(&logt_thread_start);
+#  168|   
+#  169|   	if (logt_sched_param_queued) {
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/log_thread.c:186:2: warning: implicit declaration of function 'sem_post' is invalid in C99
+#        sem_post(&logt_print_finished);
+#        ^
+#  184|   cleanup_pthread:
+#  185|   	wthread_should_exit = QB_TRUE;
+#  186|-> 	sem_post(&logt_print_finished);
+#  187|   	pthread_join(logt_thread_id, NULL);
+#  188|   
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/log_thread.c:194:2: warning: implicit declaration of function 'sem_destroy' is invalid in C99
+#        sem_destroy(&logt_print_finished);
+#        ^
+#  192|   	(void)qb_thread_lock_destroy(wthread_lock);
+#  193|   
+#  194|-> 	sem_destroy(&logt_print_finished);
+#  195|   	sem_destroy(&logt_thread_start);
+#  196|   
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/log_thread.c:194:2: warning: this function declaration is not a prototype
+#  192|   	(void)qb_thread_lock_destroy(wthread_lock);
+#  193|   
+#  194|-> 	sem_destroy(&logt_print_finished);
+#  195|   	sem_destroy(&logt_thread_start);
+#  196|   
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/log_thread.c:258:2: warning: implicit declaration of function 'sem_post' is invalid in C99
+#        sem_post(&logt_print_finished);
+#        ^
+#  256|   	(void)qb_thread_unlock(logt_wthread_lock);
+#  257|   
+#  258|-> 	sem_post(&logt_print_finished);
+#  259|   	return;
+#  260|   
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/log_thread.c:277:10: warning: implicit declaration of function 'sem_getvalue' is invalid in C99
+#                        res = sem_getvalue(&logt_print_finished, &value);
+#                              ^
+#  275|   	if (wthread_active == QB_FALSE) {
+#  276|   		for (;;) {
+#  277|-> 			res = sem_getvalue(&logt_print_finished, &value);
+#  278|   			if (res != 0 || value == 0) {
+#  279|   				break;
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/log_thread.c:281:4: warning: implicit declaration of function 'sem_wait' is invalid in C99
+#                        sem_wait(&logt_print_finished);
+#                        ^
+#  279|   				break;
+#  280|   			}
+#  281|-> 			sem_wait(&logt_print_finished);
+#  282|   
+#  283|   			(void)qb_thread_lock(logt_wthread_lock);
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/log_thread.c:285:10: warning: cast from 'char *' to 'struct qb_log_record *' increases required alignment from 1 to 8
+#                        rec = qb_list_first_entry(&logt_print_finished_records,
+#                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:207:2: note: expanded from macro 'qb_list_first_entry'
+#        qb_list_entry((ptr)->next, type, member)
+#        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  283|   			(void)qb_thread_lock(logt_wthread_lock);
+#  284|   
+#  285|-> 			rec = qb_list_first_entry(&logt_print_finished_records,
+#  286|   					    struct qb_log_record, list);
+#  287|   			qb_list_del(&rec->list);
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/log_thread.c:302:3: warning: implicit declaration of function 'sem_post' is invalid in C99
+#                sem_post(&logt_print_finished);
+#                ^
+#  300|   		wthread_should_exit = QB_TRUE;
+#  301|   		(void)qb_thread_unlock(logt_wthread_lock);
+#  302|-> 		sem_post(&logt_print_finished);
+#  303|   		pthread_join(logt_thread_id, NULL);
+#  304|   	}
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/log_thread.c:306:2: warning: implicit declaration of function 'sem_destroy' is invalid in C99
+#        sem_destroy(&logt_print_finished);
+#        ^
+#  304|   	}
+#  305|   	(void)qb_thread_lock_destroy(logt_wthread_lock);
+#  306|-> 	sem_destroy(&logt_print_finished);
+#  307|   	sem_destroy(&logt_thread_start);
+#  308|   }
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/loop.c:40:9: warning: cast from 'char *' to 'struct qb_loop_item *' increases required alignment from 1 to 8
+#                job = qb_list_first_entry(&level->job_head, struct qb_loop_item, list);
+#                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:207:2: note: expanded from macro 'qb_list_first_entry'
+#        qb_list_entry((ptr)->next, type, member)
+#        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   38|   
+#   39|   	if (!qb_list_empty(&level->job_head)) {
+#   40|-> 		job = qb_list_first_entry(&level->job_head, struct qb_loop_item, list);
+#   41|   		qb_list_del(&job->list);
+#   42|   		qb_list_init(&job->list);
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/loop_job.c:37:28: warning: cast from 'char *' to 'struct qb_loop_job *' increases required alignment from 1 to 8
+#        struct qb_loop_job *job = qb_list_entry(item, struct qb_loop_job, item);
+#                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   35|   job_dispatch(struct qb_loop_item *item, enum qb_loop_priority p)
+#   36|   {
+#   37|-> 	struct qb_loop_job *job = qb_list_entry(item, struct qb_loop_job, item);
+#   38|   
+#   39|   	job->dispatch_fn(job->item.user_data);
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/loop_job.c:142:2: warning: cast from 'char *' to 'typeof (*item) *' (aka 'struct qb_loop_item *') increases required alignment from 1 to 8
+#        qb_list_for_each_entry(item, &l->level[p].wait_head, list) {
+#        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:242:13: note: expanded from macro 'qb_list_for_each_entry'
+#        for (pos = qb_list_entry((head)->next, typeof(*pos), member);   \
+#                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  140|   	}
+#  141|   
+#  142|-> 	qb_list_for_each_entry(item, &l->level[p].wait_head, list) {
+#  143|   		job = (struct qb_loop_job *)item;
+#  144|   		if (job->dispatch_fn == dispatch_fn &&
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/loop_job.c:153:2: warning: cast from 'char *' to 'typeof (*item) *' (aka 'struct qb_loop_item *') increases required alignment from 1 to 8
+#        qb_list_for_each_entry(item, &l->level[p].job_head, list) {
+#        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:242:13: note: expanded from macro 'qb_list_for_each_entry'
+#        for (pos = qb_list_entry((head)->next, typeof(*pos), member);   \
+#                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  151|   	}
+#  152|   
+#  153|-> 	qb_list_for_each_entry(item, &l->level[p].job_head, list) {
+#  154|   
+#  155|   		if (item->type != QB_LOOP_JOB) {
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/loop_poll.c:69:15: warning: implicit declaration of function 'random' is invalid in C99
+#                pe->check = random();
+#                            ^
+#   67|   
+#   68|   	for (i = 0; i < 200; i++) {
+#   69|-> 		pe->check = random();
+#   70|   
+#   71|   		if (pe->check != 0 && pe->check != UINT32_MAX) {
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/loop_poll.c:69:15: warning: this function declaration is not a prototype
+#   67|   
+#   68|   	for (i = 0; i < 200; i++) {
+#   69|-> 		pe->check = random();
+#   70|   
+#   71|   		if (pe->check != 0 && pe->check != UINT32_MAX) {
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/loop_poll.c:568:10: warning: cast from 'char *' to 'struct qb_loop_item *' increases required alignment from 1 to 8
+#                item = qb_list_entry(list, struct qb_loop_item, list);
+#                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  566|   
+#  567|   	qb_list_for_each_safe(list, n, &s->sig_head) {
+#  568|-> 		item = qb_list_entry(list, struct qb_loop_item, list);
+#  569|   		qb_list_del(&item->list);
+#  570|   		free(item);
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/loop_poll.c:597:10: warning: cast from 'char *' to 'struct qb_loop_item *' increases required alignment from 1 to 8
+#                item = qb_list_entry(list, struct qb_loop_item, list);
+#                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  595|   
+#  596|   	qb_list_for_each(list, &s->sig_head) {
+#  597|-> 		item = qb_list_entry(list, struct qb_loop_item, list);
+#  598|   		sig = (struct qb_loop_sig *)item;
+#  599|   		if (sig->signal == the_signal) {
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/loop_poll.c:631:15: warning: taking address of packed member '' of class or structure 'sigaction' may result in an unaligned pointer value
+#        sigemptyset(&sa.sa_mask);
+#                     ^~~~~~~~~~
+#  629|   	sa.sa_sigaction = _handle_real_signal_;
+#  630|   	sigemptyset(&s->signal_superset);
+#  631|-> 	sigemptyset(&sa.sa_mask);
+#  632|   
+#  633|   	/* re-set to default */
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/loop_poll.c:636:3: warning: cast from 'char *' to 'typeof (*item) *' (aka 'struct qb_loop_item *') increases required alignment from 1 to 8
+#                qb_list_for_each_entry(item, &s->sig_head, list) {
+#                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:242:13: note: expanded from macro 'qb_list_for_each_entry'
+#        for (pos = qb_list_entry((head)->next, typeof(*pos), member);   \
+#                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  634|   	for (i = 0; i < QB_MAX_NUM_SIGNALS; i++) {
+#  635|   		needed = QB_FALSE;
+#  636|-> 		qb_list_for_each_entry(item, &s->sig_head, list) {
+#  637|   			sig = (struct qb_loop_sig *)item;
+#  638|   			if (i == sig->signal) {
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/loop_poll.c:751:2: warning: cast from 'char *' to 'typeof (*item) *' (aka 'struct qb_loop_item *') increases required alignment from 1 to 8
+#        qb_list_for_each_entry(item, &l->level[sig->p].wait_head, list) {
+#        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:242:13: note: expanded from macro 'qb_list_for_each_entry'
+#        for (pos = qb_list_entry((head)->next, typeof(*pos), member);   \
+#                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  749|   	s = (struct qb_signal_source *)l->signal_source;
+#  750|   
+#  751|-> 	qb_list_for_each_entry(item, &l->level[sig->p].wait_head, list) {
+#  752|   		if (item->type != QB_LOOP_SIG) {
+#  753|   			continue;
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/loop_poll.c:764:2: warning: cast from 'char *' to 'typeof (*item) *' (aka 'struct qb_loop_item *') increases required alignment from 1 to 8
+#        qb_list_for_each_entry(item, &l->level[sig->p].job_head, list) {
+#        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:242:13: note: expanded from macro 'qb_list_for_each_entry'
+#        for (pos = qb_list_entry((head)->next, typeof(*pos), member);   \
+#                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  762|   	}
+#  763|   
+#  764|-> 	qb_list_for_each_entry(item, &l->level[sig->p].job_head, list) {
+#  765|   		if (item->type != QB_LOOP_SIG) {
+#  766|   			continue;
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/loop_poll_epoll.c:87:6: warning: implicit declaration of function 'epoll_ctl' is invalid in C99
+#        if (epoll_ctl(s->epollfd, EPOLL_CTL_ADD, fd, &ev) == -1) {
+#            ^
+#   85|   	ev.events = _poll_to_epoll_event_(events);
+#   86|   	ev.data.u64 = (((uint64_t) (pe->check)) << 32) | pe->install_pos;
+#   87|-> 	if (epoll_ctl(s->epollfd, EPOLL_CTL_ADD, fd, &ev) == -1) {
+#   88|   		res = -errno;
+#   89|   		qb_util_perror(LOG_ERR, "epoll_ctl(add)");
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/loop_poll_epoll.c:87:6: warning: this function declaration is not a prototype
+#   85|   	ev.events = _poll_to_epoll_event_(events);
+#   86|   	ev.data.u64 = (((uint64_t) (pe->check)) << 32) | pe->install_pos;
+#   87|-> 	if (epoll_ctl(s->epollfd, EPOLL_CTL_ADD, fd, &ev) == -1) {
+#   88|   		res = -errno;
+#   89|   		qb_util_perror(LOG_ERR, "epoll_ctl(add)");
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/loop_poll_epoll.c:103:6: warning: implicit declaration of function 'epoll_ctl' is invalid in C99
+#        if (epoll_ctl(s->epollfd, EPOLL_CTL_MOD, fd, &ev) == -1) {
+#            ^
+#  101|   	ev.events = _poll_to_epoll_event_(events);
+#  102|   	ev.data.u64 = (((uint64_t) (pe->check)) << 32) | pe->install_pos;
+#  103|-> 	if (epoll_ctl(s->epollfd, EPOLL_CTL_MOD, fd, &ev) == -1) {
+#  104|   		res = -errno;
+#  105|   		qb_util_perror(LOG_DEBUG, "epoll_ctl(mod)");
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/loop_poll_epoll.c:115:6: warning: implicit declaration of function 'epoll_ctl' is invalid in C99
+#        if (epoll_ctl(s->epollfd, EPOLL_CTL_DEL, fd, NULL) == -1) {
+#            ^
+#  113|   	int32_t res = 0;
+#  114|   
+#  115|-> 	if (epoll_ctl(s->epollfd, EPOLL_CTL_DEL, fd, NULL) == -1) {
+#  116|   		res = -errno;
+#  117|   		qb_util_perror(LOG_DEBUG, "epoll_ctl(del)");
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/loop_timerlist.c:220:14: warning: implicit declaration of function 'random' is invalid in C99
+#                t->check = random();
+#                           ^
+#  218|   	 */
+#  219|   	for (i = 0; i < 200; i++) {
+#  220|-> 		t->check = random();
+#  221|   
+#  222|   		if (t->check > 0) {
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/loop_timerlist.c:220:14: warning: this function declaration is not a prototype
+#  218|   	 */
+#  219|   	for (i = 0; i < 200; i++) {
+#  220|-> 		t->check = random();
+#  221|   
+#  222|   		if (t->check > 0) {
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/ringbuffer_helper.c:38:9: warning: implicit declaration of function 'sem_timedwait' is invalid in C99
+#                res = rpl_sem_timedwait(&rb->shared_hdr->posix_sem, &ts_timeout);
+#                      ^
+libqb-2.0.3/lib/rpl_sem.h:31:27: note: expanded from macro 'rpl_sem_timedwait'
+##define rpl_sem_timedwait sem_timedwait
+#                          ^
+#   36|   sem_wait_again:
+#   37|   	if (ms_timeout > 0) {
+#   38|-> 		res = rpl_sem_timedwait(&rb->shared_hdr->posix_sem, &ts_timeout);
+#   39|   	} else if (ms_timeout == 0) {
+#   40|   		res = rpl_sem_trywait(&rb->shared_hdr->posix_sem);
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/ringbuffer_helper.c:38:9: warning: this function declaration is not a prototype
+libqb-2.0.3/lib/rpl_sem.h:31:27: note: expanded from macro 'rpl_sem_timedwait'
+##define rpl_sem_timedwait sem_timedwait
+#                          ^
+#   36|   sem_wait_again:
+#   37|   	if (ms_timeout > 0) {
+#   38|-> 		res = rpl_sem_timedwait(&rb->shared_hdr->posix_sem, &ts_timeout);
+#   39|   	} else if (ms_timeout == 0) {
+#   40|   		res = rpl_sem_trywait(&rb->shared_hdr->posix_sem);
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/ringbuffer_helper.c:40:9: warning: implicit declaration of function 'sem_trywait' is invalid in C99
+#                res = rpl_sem_trywait(&rb->shared_hdr->posix_sem);
+#                      ^
+libqb-2.0.3/lib/rpl_sem.h:35:25: note: expanded from macro 'rpl_sem_trywait'
+##define rpl_sem_trywait sem_trywait
+#                        ^
+#   38|   		res = rpl_sem_timedwait(&rb->shared_hdr->posix_sem, &ts_timeout);
+#   39|   	} else if (ms_timeout == 0) {
+#   40|-> 		res = rpl_sem_trywait(&rb->shared_hdr->posix_sem);
+#   41|   	} else {
+#   42|   		res = rpl_sem_wait(&rb->shared_hdr->posix_sem);
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/ringbuffer_helper.c:40:9: warning: this function declaration is not a prototype
+libqb-2.0.3/lib/rpl_sem.h:35:25: note: expanded from macro 'rpl_sem_trywait'
+##define rpl_sem_trywait sem_trywait
+#                        ^
+#   38|   		res = rpl_sem_timedwait(&rb->shared_hdr->posix_sem, &ts_timeout);
+#   39|   	} else if (ms_timeout == 0) {
+#   40|-> 		res = rpl_sem_trywait(&rb->shared_hdr->posix_sem);
+#   41|   	} else {
+#   42|   		res = rpl_sem_wait(&rb->shared_hdr->posix_sem);
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/ringbuffer_helper.c:42:9: warning: implicit declaration of function 'sem_wait' is invalid in C99
+#                res = rpl_sem_wait(&rb->shared_hdr->posix_sem);
+#                      ^
+libqb-2.0.3/lib/rpl_sem.h:30:22: note: expanded from macro 'rpl_sem_wait'
+##define rpl_sem_wait sem_wait
+#                     ^
+#   40|   		res = rpl_sem_trywait(&rb->shared_hdr->posix_sem);
+#   41|   	} else {
+#   42|-> 		res = rpl_sem_wait(&rb->shared_hdr->posix_sem);
+#   43|   	}
+#   44|   	if (res == -1) {
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/ringbuffer_helper.c:42:9: warning: this function declaration is not a prototype
+libqb-2.0.3/lib/rpl_sem.h:30:22: note: expanded from macro 'rpl_sem_wait'
+##define rpl_sem_wait sem_wait
+#                     ^
+#   40|   		res = rpl_sem_trywait(&rb->shared_hdr->posix_sem);
+#   41|   	} else {
+#   42|-> 		res = rpl_sem_wait(&rb->shared_hdr->posix_sem);
+#   43|   	}
+#   44|   	if (res == -1) {
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/ringbuffer_helper.c:68:6: warning: implicit declaration of function 'sem_post' is invalid in C99
+#        if (rpl_sem_post(&rb->shared_hdr->posix_sem) < 0) {
+#            ^
+libqb-2.0.3/lib/rpl_sem.h:32:22: note: expanded from macro 'rpl_sem_post'
+##define rpl_sem_post sem_post
+#                     ^
+#   66|   {
+#   67|   	struct qb_ringbuffer_s *rb = (struct qb_ringbuffer_s *)instance;
+#   68|-> 	if (rpl_sem_post(&rb->shared_hdr->posix_sem) < 0) {
+#   69|   		return -errno;
+#   70|   	} else {
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/ringbuffer_helper.c:68:6: warning: this function declaration is not a prototype
+libqb-2.0.3/lib/rpl_sem.h:32:22: note: expanded from macro 'rpl_sem_post'
+##define rpl_sem_post sem_post
+#                     ^
+#   66|   {
+#   67|   	struct qb_ringbuffer_s *rb = (struct qb_ringbuffer_s *)instance;
+#   68|-> 	if (rpl_sem_post(&rb->shared_hdr->posix_sem) < 0) {
+#   69|   		return -errno;
+#   70|   	} else {
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/ringbuffer_helper.c:80:6: warning: implicit declaration of function 'sem_getvalue' is invalid in C99
+#        if (rpl_sem_getvalue(&rb->shared_hdr->posix_sem, &val) < 0) {
+#            ^
+libqb-2.0.3/lib/rpl_sem.h:33:26: note: expanded from macro 'rpl_sem_getvalue'
+##define rpl_sem_getvalue sem_getvalue
+#                         ^
+#   78|   	struct qb_ringbuffer_s *rb = (struct qb_ringbuffer_s *)instance;
+#   79|   	int val;
+#   80|-> 	if (rpl_sem_getvalue(&rb->shared_hdr->posix_sem, &val) < 0) {
+#   81|   		return -errno;
+#   82|   	} else {
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/ringbuffer_helper.c:80:6: warning: this function declaration is not a prototype
+libqb-2.0.3/lib/rpl_sem.h:33:26: note: expanded from macro 'rpl_sem_getvalue'
+##define rpl_sem_getvalue sem_getvalue
+#                         ^
+#   78|   	struct qb_ringbuffer_s *rb = (struct qb_ringbuffer_s *)instance;
+#   79|   	int val;
+#   80|-> 	if (rpl_sem_getvalue(&rb->shared_hdr->posix_sem, &val) < 0) {
+#   81|   		return -errno;
+#   82|   	} else {
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/ringbuffer_helper.c:92:6: warning: implicit declaration of function 'sem_destroy' is invalid in C99
+#        if (rpl_sem_destroy(&rb->shared_hdr->posix_sem) == -1) {
+#            ^
+libqb-2.0.3/lib/rpl_sem.h:34:25: note: expanded from macro 'rpl_sem_destroy'
+##define rpl_sem_destroy sem_destroy
+#                        ^
+#   90|   	struct qb_ringbuffer_s *rb = (struct qb_ringbuffer_s *)instance;
+#   91|   	qb_enter();
+#   92|-> 	if (rpl_sem_destroy(&rb->shared_hdr->posix_sem) == -1) {
+#   93|   		return -errno;
+#   94|   	} else {
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/ringbuffer_helper.c:92:6: warning: this function declaration is not a prototype
+libqb-2.0.3/lib/rpl_sem.h:34:25: note: expanded from macro 'rpl_sem_destroy'
+##define rpl_sem_destroy sem_destroy
+#                        ^
+#   90|   	struct qb_ringbuffer_s *rb = (struct qb_ringbuffer_s *)instance;
+#   91|   	qb_enter();
+#   92|-> 	if (rpl_sem_destroy(&rb->shared_hdr->posix_sem) == -1) {
+#   93|   		return -errno;
+#   94|   	} else {
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/ringbuffer_helper.c:110:6: warning: implicit declaration of function 'sem_init' is invalid in C99
+#        if (rpl_sem_init(&rb->shared_hdr->posix_sem, pshared, 0) == -1) {
+#            ^
+libqb-2.0.3/lib/rpl_sem.h:29:22: note: expanded from macro 'rpl_sem_init'
+##define rpl_sem_init sem_init
+#                     ^
+#  108|   		pshared = QB_TRUE;
+#  109|   	}
+#  110|-> 	if (rpl_sem_init(&rb->shared_hdr->posix_sem, pshared, 0) == -1) {
+#  111|   		return -errno;
+#  112|   	} else {
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/ringbuffer_helper.c:110:6: warning: this function declaration is not a prototype
+libqb-2.0.3/lib/rpl_sem.h:29:22: note: expanded from macro 'rpl_sem_init'
+##define rpl_sem_init sem_init
+#                     ^
+#  108|   		pshared = QB_TRUE;
+#  109|   	}
+#  110|-> 	if (rpl_sem_init(&rb->shared_hdr->posix_sem, pshared, 0) == -1) {
+#  111|   		return -errno;
+#  112|   	} else {
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/ringbuffer_helper.c:154:6: warning: implicit declaration of function 'semtimedop' is invalid in C99
+#        if (semtimedop(rb->sem_id, sops, 1, ts_pt) == -1)
+#            ^
+#  152|   semop_again:
+#  153|   #ifdef HAVE_SEMTIMEDOP
+#  154|-> 	if (semtimedop(rb->sem_id, sops, 1, ts_pt) == -1)
+#  155|   #else
+#  156|   	if (semop(rb->sem_id, sops, 1) == -1)
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/ringbuffer_helper.c:154:6: warning: this function declaration is not a prototype
+#  152|   semop_again:
+#  153|   #ifdef HAVE_SEMTIMEDOP
+#  154|-> 	if (semtimedop(rb->sem_id, sops, 1, ts_pt) == -1)
+#  155|   #else
+#  156|   	if (semop(rb->sem_id, sops, 1) == -1)
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/ringbuffer_helper.c:188:6: warning: implicit declaration of function 'semop' is invalid in C99
+#        if (semop(rb->sem_id, sops, 1) == -1) {
+#            ^
+#  186|   
+#  187|   semop_again:
+#  188|-> 	if (semop(rb->sem_id, sops, 1) == -1) {
+#  189|   		if (errno == EINTR) {
+#  190|   			goto semop_again;
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/ringbuffer_helper.c:188:6: warning: this function declaration is not a prototype
+#  186|   
+#  187|   semop_again:
+#  188|-> 	if (semop(rb->sem_id, sops, 1) == -1) {
+#  189|   		if (errno == EINTR) {
+#  190|   			goto semop_again;
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/ringbuffer_helper.c:205:16: warning: implicit declaration of function 'semctl' is invalid in C99
+#        ssize_t res = semctl(rb->sem_id, 0, GETVAL, 0);
+#                      ^
+#  203|   {
+#  204|   	struct qb_ringbuffer_s *rb = (struct qb_ringbuffer_s *)instance;
+#  205|-> 	ssize_t res = semctl(rb->sem_id, 0, GETVAL, 0);
+#  206|   	if (res == -1) {
+#  207|   		return -errno;
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/ringbuffer_helper.c:205:16: warning: this function declaration is not a prototype
+#  203|   {
+#  204|   	struct qb_ringbuffer_s *rb = (struct qb_ringbuffer_s *)instance;
+#  205|-> 	ssize_t res = semctl(rb->sem_id, 0, GETVAL, 0);
+#  206|   	if (res == -1) {
+#  207|   		return -errno;
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/ringbuffer_helper.c:216:6: warning: implicit declaration of function 'semctl' is invalid in C99
+#        if (semctl(rb->sem_id, 0, IPC_RMID, 0) == -1) {
+#            ^
+#  214|   {
+#  215|   	struct qb_ringbuffer_s *rb = (struct qb_ringbuffer_s *)instance;
+#  216|-> 	if (semctl(rb->sem_id, 0, IPC_RMID, 0) == -1) {
+#  217|   		return -errno;
+#  218|   	} else {
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/ringbuffer_helper.c:231:12: warning: implicit declaration of function 'ftok' is invalid in C99
+#        sem_key = ftok(rb->shared_hdr->hdr_path, (rb->shared_hdr->word_size + 1));
+#                  ^
+#  229|   	key_t sem_key;
+#  230|   
+#  231|-> 	sem_key = ftok(rb->shared_hdr->hdr_path, (rb->shared_hdr->word_size + 1));
+#  232|   
+#  233|   	if (sem_key == -1) {
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/ringbuffer_helper.c:231:12: warning: this function declaration is not a prototype
+#  229|   	key_t sem_key;
+#  230|   
+#  231|-> 	sem_key = ftok(rb->shared_hdr->hdr_path, (rb->shared_hdr->word_size + 1));
+#  232|   
+#  233|   	if (sem_key == -1) {
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/skiplist.c:84:21: warning: implicit declaration of function 'random' is invalid in C99
+#        while ((uint16_t) (random()) < P_CEIL)
+#                           ^
+#   82|   	int8_t level = SKIPLIST_LEVEL_MIN;
+#   83|   
+#   84|-> 	while ((uint16_t) (random()) < P_CEIL)
+#   85|   		level++;
+#   86|   
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/skiplist.c:84:21: warning: this function declaration is not a prototype
+#   82|   	int8_t level = SKIPLIST_LEVEL_MIN;
+#   83|   
+#   84|-> 	while ((uint16_t) (random()) < P_CEIL)
+#   85|   		level++;
+#   86|   
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/skiplist.c:206:8: warning: cast from 'char *' to 'struct qb_map_notifier *' increases required alignment from 1 to 8
+#                tn = qb_list_entry(list, struct qb_map_notifier, list);
+#                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  204|   	 */
+#  205|   	qb_list_for_each(list, &n->notifier_head) {
+#  206|-> 		tn = qb_list_entry(list, struct qb_map_notifier, list);
+#  207|   
+#  208|   		if (tn->events & event) {
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/skiplist.c:216:8: warning: cast from 'char *' to 'struct qb_map_notifier *' increases required alignment from 1 to 8
+#                tn = qb_list_entry(list, struct qb_map_notifier, list);
+#                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  214|   	 */
+#  215|   	qb_list_for_each(list, &l->header->notifier_head) {
+#  216|-> 		tn = qb_list_entry(list, struct qb_map_notifier, list);
+#  217|   
+#  218|   		if (tn->events & event) {
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/skiplist.c:244:8: warning: cast from 'char *' to 'struct qb_map_notifier *' increases required alignment from 1 to 8
+#                tn = qb_list_entry(pos, struct qb_map_notifier, list);
+#                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  242|   
+#  243|   	qb_list_for_each_safe(pos, next, &node->notifier_head) {
+#  244|-> 		tn = qb_list_entry(pos, struct qb_map_notifier, list);
+#  245|   		qb_list_del(&tn->list);
+#  246|   		free(tn);
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/skiplist.c:285:8: warning: cast from 'char *' to 'struct qb_map_notifier *' increases required alignment from 1 to 8
+#                        f = qb_list_entry(list, struct qb_map_notifier, list);
+#                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  283|   	if (n) {
+#  284|   		qb_list_for_each(list, &n->notifier_head) {
+#  285|-> 			f = qb_list_entry(list, struct qb_map_notifier, list);
+#  286|   
+#  287|   			if (events & QB_MAP_NOTIFY_FREE &&
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/skiplist.c:342:7: warning: cast from 'char *' to 'struct qb_map_notifier *' increases required alignment from 1 to 8
+#                f = qb_list_entry(list, struct qb_map_notifier, list);
+#                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  340|   	}
+#  341|   	qb_list_for_each_safe(list, next, head) {
+#  342|-> 		f = qb_list_entry(list, struct qb_map_notifier, list);
+#  343|   
+#  344|   		if (f->events == events && f->callback == fn) {
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/trie.c:600:9: warning: cast from 'char *' to 'struct qb_map_notifier *' increases required alignment from 1 to 8
+#                        tn = qb_list_entry(list, struct qb_map_notifier, list);
+#                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  598|   		head = c->notifier_head;
+#  599|   		qb_list_for_each_safe(list, next, head) {
+#  600|-> 			tn = qb_list_entry(list, struct qb_map_notifier, list);
+#  601|   			trie_notify_ref(tn);
+#  602|   
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/trie.c:642:8: warning: cast from 'char *' to 'struct qb_map_notifier *' increases required alignment from 1 to 8
+#                        f = qb_list_entry(list, struct qb_map_notifier, list);
+#                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  640|   	if (n) {
+#  641|   		qb_list_for_each(list, n->notifier_head) {
+#  642|-> 			f = qb_list_entry(list, struct qb_map_notifier, list);
+#  643|   
+#  644|   			if (events & QB_MAP_NOTIFY_FREE &&
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/trie.c:704:31: warning: cast from 'char *' to 'struct qb_map_notifier *' increases required alignment from 1 to 8
+#                struct qb_map_notifier *f = qb_list_entry(list, struct qb_map_notifier, list);
+#                                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  702|   	}
+#  703|   	qb_list_for_each_safe(list, next, n->notifier_head) {
+#  704|-> 		struct qb_map_notifier *f = qb_list_entry(list, struct qb_map_notifier, list);
+#  705|   
+#  706|   		if (f->events == events && f->callback == fn) {
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/unix.c:124:13: warning: implicit declaration of function 'posix_fallocate' is invalid in C99
+#        if ((res = posix_fallocate(fd, 0, bytes)) != 0) {
+#                   ^
+#  122|   #endif
+#  123|   #ifdef HAVE_POSIX_FALLOCATE
+#  124|-> 	if ((res = posix_fallocate(fd, 0, bytes)) != 0) {
+#  125|   		errno = res;
+#  126|   		res = -1 * res;
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/lib/unix.c:124:13: warning: this function declaration is not a prototype
+#  122|   #endif
+#  123|   #ifdef HAVE_POSIX_FALLOCATE
+#  124|-> 	if ((res = posix_fallocate(fd, 0, bytes)) != 0) {
+#  125|   		errno = res;
+#  126|   		res = -1 * res;
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/tests/check_ipc.c:868:3: warning: implicit declaration of function 'sigsuspend' is invalid in C99
+#                sigsuspend(&purpose_clear_mask);
+#                ^
+#  866|   	do {
+#  867|   		/* XXX assume never fails with EFAULT */
+#  868|-> 		sigsuspend(&purpose_clear_mask);
+#  869|   	} while (usr1_bit != 1);
+#  870|   	usr1_bit = 0;
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/tests/check_ipc.c:868:3: warning: this function declaration is not a prototype
+#  866|   	do {
+#  867|   		/* XXX assume never fails with EFAULT */
+#  868|-> 		sigsuspend(&purpose_clear_mask);
+#  869|   	} while (usr1_bit != 1);
+#  870|   	usr1_bit = 0;
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/tests/check_ipc.c:1030:4: warning: implicit declaration of function 'poll' is invalid in C99
+#                        poll(NULL, 0, 400);
+#                        ^
+# 1028|   			j = waitpid(pid, NULL, WNOHANG);
+# 1029|   			ck_assert_int_eq(j, 0);
+# 1030|-> 			poll(NULL, 0, 400);
+# 1031|   			c++;
+# 1032|   		}
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/tests/check_ipc.c:1030:4: warning: this function declaration is not a prototype
+# 1028|   			j = waitpid(pid, NULL, WNOHANG);
+# 1029|   			ck_assert_int_eq(j, 0);
+# 1030|-> 			poll(NULL, 0, 400);
+# 1031|   			c++;
+# 1032|   		}
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/tests/check_ipc.c:1078:4: warning: implicit declaration of function 'poll' is invalid in C99
+#                        poll(NULL, 0, 400);
+#                        ^
+# 1076|   			j = waitpid(pid, NULL, WNOHANG);
+# 1077|   			ck_assert_int_eq(j, 0);
+# 1078|-> 			poll(NULL, 0, 400);
+# 1079|   			c++;
+# 1080|   		}
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/tests/check_ipc.c:1128:4: warning: implicit declaration of function 'poll' is invalid in C99
+#                        poll(NULL, 0, 400);
+#                        ^
+# 1126|   			j = waitpid(pid, NULL, WNOHANG);
+# 1127|   			ck_assert_int_eq(j, 0);
+# 1128|-> 			poll(NULL, 0, 400);
+# 1129|   			c++;
+# 1130|   		}
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/tests/check_ipc.c:1171:4: warning: implicit declaration of function 'poll' is invalid in C99
+#                        poll(NULL, 0, 400);
+#                        ^
+# 1169|   			j = waitpid(pid, NULL, WNOHANG);
+# 1170|   			ck_assert_int_eq(j, 0);
+# 1171|-> 			poll(NULL, 0, 400);
+# 1172|   			c++;
+# 1173|   		}
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/tests/check_ipc.c:1358:4: warning: implicit declaration of function 'poll' is invalid in C99
+#                        poll(NULL, 0, 400);
+#                        ^
+# 1356|   			j = waitpid(server_pid, NULL, WNOHANG);
+# 1357|   			ck_assert_int_eq(j, 0);
+# 1358|-> 			poll(NULL, 0, 400);
+# 1359|   			c++;
+# 1360|   		}
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/tests/check_ipc.c:1555:4: warning: implicit declaration of function 'poll' is invalid in C99
+#                        poll(NULL, 0, 400);
+#                        ^
+# 1553|   			j = waitpid(pid, NULL, WNOHANG);
+# 1554|   			ck_assert_int_eq(j, 0);
+# 1555|-> 			poll(NULL, 0, 400);
+# 1556|   			c++;
+# 1557|   		}
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/tests/check_ipc.c:1620:4: warning: implicit declaration of function 'poll' is invalid in C99
+#                        poll(NULL, 0, 400);
+#                        ^
+# 1618|   			j = waitpid(pid, NULL, WNOHANG);
+# 1619|   			ck_assert_int_eq(j, 0);
+# 1620|-> 			poll(NULL, 0, 400);
+# 1621|   			c++;
+# 1622|   		}
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/tests/check_ipc.c:1807:4: warning: implicit declaration of function 'poll' is invalid in C99
+#                        poll(NULL, 0, 400);
+#                        ^
+# 1805|   			j = waitpid(pid, NULL, WNOHANG);
+# 1806|   			ck_assert_int_eq(j, 0);
+# 1807|-> 			poll(NULL, 0, 400);
+# 1808|   			c++;
+# 1809|   		}
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/tests/check_ipc.c:1861:4: warning: implicit declaration of function 'poll' is invalid in C99
+#                        poll(NULL, 0, 400);
+#                        ^
+# 1859|   			j = waitpid(pid, NULL, WNOHANG);
+# 1860|   			ck_assert_int_eq(j, 0);
+# 1861|-> 			poll(NULL, 0, 400);
+# 1862|   			c++;
+# 1863|   		}
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/tests/check_ipc.c:1918:4: warning: implicit declaration of function 'poll' is invalid in C99
+#                        poll(NULL, 0, 400);
+#                        ^
+# 1916|   			j = waitpid(pid, NULL, WNOHANG);
+# 1917|   			ck_assert_int_eq(j, 0);
+# 1918|-> 			poll(NULL, 0, 400);
+# 1919|   			c++;
+# 1920|   		}
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/tests/check_ipc.c:2007:4: warning: implicit declaration of function 'poll' is invalid in C99
+#                        poll(NULL, 0, 400);
+#                        ^
+# 2005|   			j = waitpid(pid, NULL, WNOHANG);
+# 2006|   			ck_assert_int_eq(j, 0);
+# 2007|-> 			poll(NULL, 0, 400);
+# 2008|   			c++;
+# 2009|   		}
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/tests/check_ipc.c:2196:10: warning: implicit declaration of function 'poll' is invalid in C99
+#                        (void)poll(NULL, 0, 400);
+#                              ^
+# 2194|   			j = waitpid(pid, NULL, WNOHANG);
+# 2195|   			ck_assert_int_eq(j, 0);
+# 2196|-> 			(void)poll(NULL, 0, 400);
+# 2197|   			c++;
+# 2198|   		}
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/tests/check_list.c:59:2: warning: cast from 'char *' to 'typeof (*iter) *' (aka 'enlistable_num_t *') increases required alignment from 1 to 8
+#        qb_list_for_each_entry(iter, &mylist, list) {
+#        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:242:13: note: expanded from macro 'qb_list_for_each_entry'
+#        for (pos = qb_list_entry((head)->next, typeof(*pos), member);   \
+#                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   57|   	/* ... increasing when iterating forward */
+#   58|   	iter_i = 0;
+#   59|-> 	qb_list_for_each_entry(iter, &mylist, list) {
+#   60|   		ck_assert_int_eq(iter->i, iter_i);
+#   61|   		iter_i++;
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/tests/check_list.c:65:2: warning: cast from 'char *' to 'typeof (*iter) *' (aka 'enlistable_num_t *') increases required alignment from 1 to 8
+#        qb_list_for_each_entry_reverse(iter, &mylist, list) {
+#        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:253:13: note: expanded from macro 'qb_list_for_each_entry_reverse'
+#        for (pos = qb_list_entry((head)->prev, typeof(*pos), member);   \
+#                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   63|   
+#   64|   	/* ... and decreasing when iterating backward */
+#   65|-> 	qb_list_for_each_entry_reverse(iter, &mylist, list) {
+#   66|   		ck_assert_int_gt(iter_i, 0);
+#   67|   		ck_assert_int_eq(iter->i, iter_i-1);
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/tests/check_list.c:74:19: warning: cast from 'char *' to 'enlistable_num_t *' increases required alignment from 1 to 8
+#        ck_assert_int_eq(qb_list_first_entry(&mylist, enlistable_num_t, list)->i,
+#        ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libqb-2.0.3/include/qb/qblist.h:207:2: note: expanded from macro 'qb_list_first_entry'
+#        qb_list_entry((ptr)->next, type, member)
+#        ^
+libqb-2.0.3/include/qb/qblist.h:198:3: note: expanded from macro 'qb_list_entry'
+#        ((type *)((char*)ptr - offsetof(type, member))); })
+#         ^
+/usr/include/check.h:582:47: note: expanded from macro 'ck_assert_int_eq'
+##define ck_assert_int_eq(X, Y) _ck_assert_int(X, ==, Y)
+#                               ~~~~~~~~~~~~~~~^~~~~~~~~
+/usr/include/check.h:565:21: note: expanded from macro '_ck_assert_int'
+#  intmax_t _ck_x = (X); \
+#                    ^
+#   72|   	/* also check qb_list_replace and qb_list_first_entry */
+#   73|   	qb_list_replace(mylist.next, &replacement.list);
+#   74|-> 	ck_assert_int_eq(qb_list_first_entry(&mylist, enlistable_num_t, list)->i,
+#   75|   	                  replacement.i);
+#   76|   }
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/tests/check_map.c:520:11: warning: implicit declaration of function 'random' is invalid in C99
+#        int kk = random() % 30;
+#                 ^
+#  518|   traverse_and_remove_func(const char *key, void *value, void *data)
+#  519|   {
+#  520|-> 	int kk = random() % 30;
+#  521|   	qb_map_t *m = (qb_map_t *)data;
+#  522|   	qb_map_rm(m, chars[kk]);
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/tests/check_map.c:520:11: warning: this function declaration is not a prototype
+#  518|   traverse_and_remove_func(const char *key, void *value, void *data)
+#  519|   {
+#  520|-> 	int kk = random() % 30;
+#  521|   	qb_map_t *m = (qb_map_t *)data;
+#  522|   	qb_map_rm(m, chars[kk]);
+
+Error: COMPILER_WARNING:
+libqb-2.0.3/tests/print_ver.c:42:1: warning: "2.0.3" parsed as: "2" "." "0" "." "3" ""
+#_Pragma(MSG);
+#^
+<scratch space>:22:2: note: expanded from here
+# message ("\"2.0.3\" parsed as: \"2\" \".\" \"0\" \".\" \"3\" \"\"")
+# ^
+#   40|   #define MSG QB_PP_STRINGIFY( \
+#   41|   	message (QB_PP_STRINGIFY(VERSION parsed as: QB_VER_STR)))
+#   42|-> _Pragma(MSG);

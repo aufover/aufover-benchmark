@@ -1,0 +1,61 @@
+Error: COMPILER_WARNING (CWE-252):
+make-4.3/src/makeint.h:31: included_from: Included from here.
+make-4.3/src/read.c:17: included_from: Included from here.
+make-4.3/src/read.c: scope_hint: In function 'eval_makefile'
+make-4.3/lib/alloca.h:46:18: warning[-Wunused-result]: ignoring return value of '__builtin_alloca' declared with attribute 'warn_unused_result'
+#   46 | #  define alloca __builtin_alloca
+make-4.3/src/read.c:443:3: note: in expansion of macro 'alloca'
+#  443 |   alloca (0);
+#      |   ^~~~~~
+#   44|   #   include_next <alloca.h>
+#   45|   #  endif
+#   46|-> #  define alloca __builtin_alloca
+#   47|   # elif defined _AIX
+#   48|   #  define alloca __alloca
+
+Error: COMPILER_WARNING (CWE-704):
+make-4.3/lib/error.h:52:13: warning[-Wlto-type-mismatch]: type of 'error' does not match original declaration
+#   52 | extern void error (int __status, int __errnum, const char *__format, ...)
+#      |             ^
+make-4.3/src/output.c:590:1: note: type mismatch in parameter 1
+#  590 | error (const floc *flocp, size_t len, const char *fmt, ...)
+#      | ^
+make-4.3/src/output.c:590:1: note: 'error' was previously declared here
+make-4.3/src/output.c:590:1: note: code may be misoptimized unless '-fno-strict-aliasing' is used
+#   50|      If STATUS is nonzero, terminate the program with 'exit (STATUS)'.  */
+#   51|   
+#   52|-> extern void error (int __status, int __errnum, const char *__format, ...)
+#   53|        _GL_ATTRIBUTE_FORMAT ((_GL_ATTRIBUTE_SPEC_PRINTF, 3, 4));
+#   54|   
+
+Error: COMPILER_WARNING:
+make-4.3/src/main.c: scope_hint: In function 'main'
+make-4.3/src/main.c:1938:13: warning[-Wstringop-overflow=]: writing 1 byte into a region of size 0
+# 1938 |       p[-1] = '\0';
+#      |       ~~~~~~^~~~~~
+make-4.3/src/main.c:1935:15: note: destination object of size [0, 9223372036854775807] allocated by 'quote_for_env'
+# 1935 |           p = quote_for_env (p, eval_strings->list[i]);
+#      |               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+make-4.3/src/makeint.h:31: included_from: Included from here.
+make-4.3/src/main.c:17: included_from: Included from here.
+make-4.3/lib/alloca.h:46:18: note: at offset -1 into destination object of size [0, 9223372036854775807] allocated by 'alloca'
+#   46 | #  define alloca __builtin_alloca
+# 1936|             *(p++) = ' ';
+# 1937|           }
+# 1938|->       p[-1] = '\0';
+# 1939|   
+# 1940|         define_variable_cname ("-*-eval-flags-*-", value, o_automatic, 0);
+
+Error: COMPILER_WARNING:
+make-4.3/src/read.c: scope_hint: In function 'eval'
+make-4.3/src/read.c:1193:28: warning[-Wstringop-overflow=]: writing 1 byte into a region of size 0
+# 1193 |                 *(--semip) = ';';
+#      |                 ~~~~~~~~~~~^~~~~
+make-4.3/src/read.c:1012:19: note: destination object of size [0, 9223372036854775807] allocated by 'find_map_unquote'
+# 1012 |         cmdleft = find_map_unquote (line, MAP_SEMI|MAP_COMMENT|MAP_VARIABLE);
+#      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1191|                 {
+# 1192|                   size_t l = p2 - variable_buffer;
+# 1193|->                 *(--semip) = ';';
+# 1194|                   collapse_continuations (semip);
+# 1195|                   variable_buffer_output (p2 + strlen (p2),

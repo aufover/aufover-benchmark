@@ -1,0 +1,172 @@
+Error: COMPILER_WARNING (CWE-1164):
+ding-libs-0.6.1/collection/collection_tools.c:205:27: warning[-Wunused-function]: unused function 'col_get_type'
+#static inline const char *col_get_type(int type)
+#                          ^
+#  203|   
+#  204|   /* Return a static string based on type of the element */
+#  205|-> static inline const char *col_get_type(int type)
+#  206|   {
+#  207|       switch (type) {
+
+Error: SYMBIOTIC_WARNING:
+ding-libs-0.6.1/dhash/examples/dhash_example.c:97: error: memory error: out of bound pointer
+ding-libs-0.6.1/dhash/examples/dhash_example.c:97: note: call stack: function main (=2, =0)
+ding-libs-0.6.1/dhash/examples/dhash_example.c:97: note: Additional Info: address: 0:12370169555311111091
+ding-libs-0.6.1/dhash/examples/dhash_example.c:97: note: Additional Info: pointing to: none
+ding-libs-0.6.1/dhash/examples/dhash_example.c:72:13: note: Non-deterministic values: hash_create: len 4 bytes, [4 times 0x0] (i32: 0)
+/opt/symbiotic/lib/posix/strdup.c:11:6: note: Non-deterministic values: __VERIFIER_nondet__Bool: len 1 bytes, [0x1] (i8: 1)
+ding-libs-0.6.1/dhash/examples/dhash_example.c:84:18: note: Non-deterministic values: hash_enter: len 4 bytes, [4 times 0x0] (i32: 0)
+ding-libs-0.6.1/dhash/examples/dhash_example.c:91:18: note: Non-deterministic values: hash_keys: len 4 bytes, [4 times 0x0] (i32: 0)
+#   95|   
+#   96|       for (i = 0; i < count; i++)
+#   97|->         printf("key: %s\n", keys[i].str);
+#   98|       free(keys);
+#   99|   
+
+Error: SYMBIOTIC_WARNING:
+ding-libs-0.6.1/dhash/examples/dhash_example.c:145: error: memory error: memory leak detected
+ding-libs-0.6.1/dhash/examples/dhash_example.c:145: note: call stack: function main (=2, =0)
+ding-libs-0.6.1/dhash/examples/dhash_example.c:145: note: Additional Info: address: 91:0
+ding-libs-0.6.1/dhash/examples/dhash_example.c:145: note: Additional Info: pointing to: object at Segment: [91] of size 8
+ding-libs-0.6.1/dhash/examples/dhash_example.c:145: note: Additional Info: MO80[8] allocated at strdup():  %19 = call align 16 i8* @malloc(i64 %18), !dbg !84
+ding-libs-0.6.1/dhash/examples/dhash_example.c:72:13: note: Non-deterministic values: hash_create: len 4 bytes, [4 times 0x0] (i32: 0)
+/opt/symbiotic/lib/posix/strdup.c:11:6: note: Non-deterministic values: __VERIFIER_nondet__Bool: len 1 bytes, [0x0] (i8: 0)
+ding-libs-0.6.1/dhash/examples/dhash_example.c:84:18: note: Non-deterministic values: hash_enter: len 4 bytes, [0x1|3 times 0x0] (i32: 1)
+#  143|   
+#  144|       return 0;
+#  145|-> }
+
+Error: COMPILER_WARNING (CWE-686):
+ding-libs-0.6.1/ini/ini_configmod_ut_check.c:146:47: warning[-Wformat]: format specifies type 'int' but the argument has type 'size_t' (aka 'unsigned long')
+#                file, line, expected_cfg_len, res_buffer_size,
+#                                              ^~~~~~~~~~~~~~~
+/usr/include/check.h:472:77: note: expanded from macro 'fail_unless'
+#    _ck_assert_failed(__FILE__, __LINE__, "Assertion '"#expr"' failed" , ## __VA_ARGS__, NULL)
+#                                                                            ^~~~~~~~~~~
+#  144|                   "\n\t[%s:%d] Size of expected config %zu and result config %d "
+#  145|                   "does not match. Res:%d\n",
+#  146|->                 file, line, expected_cfg_len, res_buffer_size,
+#  147|                   call_diff(function, expected_cfg, expected_cfg_len,
+#  148|                             res_buffer, res_buffer_size));
+
+Error: COMPILER_WARNING (CWE-686):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:503:60: warning[-Wformat]: format specifies type 'int' but the argument has type 'size_t' (aka 'unsigned long')
+#    fail_unless(num_err == 2, "Expected 2 errors, got %d", num_err);
+#                                                      ~~   ^~~~~~~
+/usr/include/check.h:472:77: note: expanded from macro 'fail_unless'
+#    _ck_assert_failed(__FILE__, __LINE__, "Assertion '"#expr"' failed" , ## __VA_ARGS__, NULL)
+#                                                                            ^~~~~~~~~~~
+#  501|   
+#  502|       num_err = ini_errobj_count(errobj);
+#  503|->     fail_unless(num_err == 2, "Expected 2 errors, got %d", num_err);
+#  504|   
+#  505|       errmsg = ini_errobj_get_msg(errobj);
+
+Error: COMPILER_WARNING (CWE-686):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:537:60: warning[-Wformat]: format specifies type 'int' but the argument has type 'size_t' (aka 'unsigned long')
+#    fail_unless(num_err == 2, "Expected 2 errors, got %d", num_err);
+#                                                      ~~   ^~~~~~~
+/usr/include/check.h:472:77: note: expanded from macro 'fail_unless'
+#    _ck_assert_failed(__FILE__, __LINE__, "Assertion '"#expr"' failed" , ## __VA_ARGS__, NULL)
+#                                                                            ^~~~~~~~~~~
+#  535|   
+#  536|       num_err = ini_errobj_count(errobj);
+#  537|->     fail_unless(num_err == 2, "Expected 2 errors, got %d", num_err);
+#  538|   
+#  539|       errmsg = ini_errobj_get_msg(errobj);
+
+Error: COMPILER_WARNING (CWE-686):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:597:60: warning[-Wformat]: format specifies type 'int' but the argument has type 'size_t' (aka 'unsigned long')
+#    fail_unless(num_err == 2, "Expected 2 errors, got %d", num_err);
+#                                                      ~~   ^~~~~~~
+/usr/include/check.h:472:77: note: expanded from macro 'fail_unless'
+#    _ck_assert_failed(__FILE__, __LINE__, "Assertion '"#expr"' failed" , ## __VA_ARGS__, NULL)
+#                                                                            ^~~~~~~~~~~
+#  595|   
+#  596|       num_err = ini_errobj_count(errobj);
+#  597|->     fail_unless(num_err == 2, "Expected 2 errors, got %d", num_err);
+#  598|   
+#  599|       errmsg = ini_errobj_get_msg(errobj);
+
+Error: COMPILER_WARNING (CWE-686):
+ding-libs-0.6.1/ini/ini_validators_ut_check.c:673:60: warning[-Wformat]: format specifies type 'int' but the argument has type 'size_t' (aka 'unsigned long')
+#    fail_unless(num_err == 4, "Expected 4 errors, got %d", num_err);
+#                                                      ~~   ^~~~~~~
+/usr/include/check.h:472:77: note: expanded from macro 'fail_unless'
+#    _ck_assert_failed(__FILE__, __LINE__, "Assertion '"#expr"' failed" , ## __VA_ARGS__, NULL)
+#                                                                            ^~~~~~~~~~~
+#  671|   
+#  672|       num_err = ini_errobj_count(errobj);
+#  673|->     fail_unless(num_err == 4, "Expected 4 errors, got %d", num_err);
+#  674|   
+#  675|       ini_errobj_destroy(&errobj);
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_valueobj.c:84:22: warning[-Wcast-align]: cast from 'char *' to 'char **' increases required alignment from 1 to 8
+#            part = *((char **)(ptr));
+#                     ^~~~~~~~~~~~~~
+#   82|               ref_array_get(raw_lengths, i, (void *)&len);
+#   83|   
+#   84|->             part = *((char **)(ptr));
+#   85|   
+#   86|               TRACE_INFO_STRING("Value:", part);
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_valueobj.c:343:26: warning[-Wcast-align]: cast from 'char *' to 'char **' increases required alignment from 1 to 8
+#                part = *((char **)ptr);
+#                         ^~~~~~~~~~~~
+#  341|               ptr = ref_array_get(vo->raw_lines, last, NULL);
+#  342|               if (ptr) {
+#  343|->                 part = *((char **)ptr);
+#  344|   
+#  345|                   TRACE_INFO_STRING("Value", part);
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/ini/ini_valueobj.c:1080:26: warning[-Wcast-align]: cast from 'char *' to 'char **' increases required alignment from 1 to 8
+#                part = *((char **)(ptr));
+#                         ^~~~~~~~~~~~~~
+# 1078|                   ref_array_get(vo->raw_lengths, i, (void *)&len);
+# 1079|   
+# 1080|->                 part = *((char **)(ptr));
+# 1081|   
+# 1082|                   TRACE_INFO_STRING("Value:", part);
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/path_utils/path_utils.c:346:17: warning[-Wcast-align]: cast from 'char *' to 'char **' increases required alignment from 1 to 8
+#    array_ptr = (char **)mem_block;
+#                ^~~~~~~~~~~~~~~~~~
+#  344|   
+#  345|       /* component array */
+#  346|->     array_ptr = (char **)mem_block;
+#  347|       /* components copied after end of array */
+#  348|       component_ptr = mem_block + ((n_components+1)*sizeof(char *));
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/path_utils/path_utils.c:368:12: warning[-Wcast-align]: cast from 'char *' to 'char **' increases required alignment from 1 to 8
+#    return (char **)mem_block;
+#           ^~~~~~~~~~~~~~~~~~
+#  366|       *array_ptr = NULL;
+#  367|       if (count) *count = n_components;
+#  368|->     return (char **)mem_block;
+#  369|   }
+#  370|   
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/refarray/ref_array.c:568:32: warning[-Wcast-align]: cast from 'unsigned char *' to 'char **' increases required alignment from 1 to 8
+#            printf("\n%s\n", *((char **)((unsigned char *)(ra->storage) + i * ra->elsize)));
+#                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  566|           }
+#  567|           if (num == 0) {
+#  568|->             printf("\n%s\n", *((char **)((unsigned char *)(ra->storage) + i * ra->elsize)));
+#  569|           }
+#  570|           else if (num > 0) {
+
+Error: COMPILER_WARNING:
+ding-libs-0.6.1/refarray/ref_array.c:571:32: warning[-Wcast-align]: cast from 'unsigned char *' to 'uint32_t *' (aka 'unsigned int *') increases required alignment from 1 to 4
+#            printf("\n%d\n", *((uint32_t *)((unsigned char *)(ra->storage) + i * ra->elsize)));
+#                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  569|           }
+#  570|           else if (num > 0) {
+#  571|->             printf("\n%d\n", *((uint32_t *)((unsigned char *)(ra->storage) + i * ra->elsize)));
+#  572|           }
+#  573|           else {

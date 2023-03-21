@@ -1,0 +1,472 @@
+Error: COMPILER_WARNING:
+polkit-pkla-compat-0.1/src/pkla-admin-identities.c:115:24: warning: implicit declaration of function 'gettext' is invalid in C99
+#      fprintf (stderr, _("%s: %s\n"
+#                       ^
+/usr/include/glib-2.0/glib/gi18n.h:26:20: note: expanded from macro '_'
+##define  _(String) gettext (String)
+#                   ^
+#  113|     if (!g_option_context_parse (opt_context, &argc, &argv, &error))
+#  114|       {
+#  115|->       fprintf (stderr, _("%s: %s\n"
+#  116|   			 "Run `%s --help' for more information.\n"),
+#  117|   	       g_get_prgname (), error->message, g_get_prgname ());
+
+Error: COMPILER_WARNING:
+polkit-pkla-compat-0.1/src/pkla-admin-identities.c:115:24: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#      fprintf (stderr, _("%s: %s\n"
+#                       ^~~~~~~~~~~~
+/usr/include/glib-2.0/glib/gi18n.h:26:20: note: expanded from macro '_'
+##define  _(String) gettext (String)
+#                   ^~~~~~~~~~~~~~~~
+/opt/divine/include/dios/include/stdio.h:442:76: note: passing argument to parameter 'format' here
+#int fprintf( FILE * _PDCLIB_restrict stream, const char * _PDCLIB_restrict format, ... ) _PDCLIB_nothrow;
+#                                                                           ^
+#  113|     if (!g_option_context_parse (opt_context, &argc, &argv, &error))
+#  114|       {
+#  115|->       fprintf (stderr, _("%s: %s\n"
+#  116|   			 "Run `%s --help' for more information.\n"),
+#  117|   	       g_get_prgname (), error->message, g_get_prgname ());
+
+Error: COMPILER_WARNING:
+polkit-pkla-compat-0.1/src/pkla-admin-identities.c:125:24: warning: implicit declaration of function 'gettext' is invalid in C99
+#      fprintf (stderr, _("%s: unexpected argument\n"
+#                       ^
+/usr/include/glib-2.0/glib/gi18n.h:26:20: note: expanded from macro '_'
+##define  _(String) gettext (String)
+#                   ^
+#  123|     if (argc != 1)
+#  124|       {
+#  125|->       fprintf (stderr, _("%s: unexpected argument\n"
+#  126|   			 "Run `%s --help' for more information.\n"),
+#  127|   	       g_get_prgname (), g_get_prgname ());
+
+Error: COMPILER_WARNING:
+polkit-pkla-compat-0.1/src/pkla-admin-identities.c:125:24: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#      fprintf (stderr, _("%s: unexpected argument\n"
+#                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib/gi18n.h:26:20: note: expanded from macro '_'
+##define  _(String) gettext (String)
+#                   ^~~~~~~~~~~~~~~~
+/opt/divine/include/dios/include/stdio.h:442:76: note: passing argument to parameter 'format' here
+#int fprintf( FILE * _PDCLIB_restrict stream, const char * _PDCLIB_restrict format, ... ) _PDCLIB_nothrow;
+#                                                                           ^
+#  123|     if (argc != 1)
+#  124|       {
+#  125|->       fprintf (stderr, _("%s: unexpected argument\n"
+#  126|   			 "Run `%s --help' for more information.\n"),
+#  127|   	       g_get_prgname (), g_get_prgname ());
+
+Error: COMPILER_WARNING:
+polkit-pkla-compat-0.1/src/pkla-check-authorization.c:319:7: warning: implicit declaration of function 'getgrouplist' is invalid in C99
+#  if (getgrouplist (passwd->pw_name,
+#      ^
+#  317|     /* TODO: should resize etc etc etc */
+#  318|   
+#  319|->   if (getgrouplist (passwd->pw_name,
+#  320|                       passwd->pw_gid,
+#  321|                       groups,
+
+Error: COMPILER_WARNING:
+polkit-pkla-compat-0.1/src/pkla-check-authorization.c:346:9: warning: format string is not a string literal (potentially insecure)
+#               _("Invalid boolean value"));
+#               ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib/gi18n.h:26:20: note: expanded from macro '_'
+##define  _(String) gettext (String)
+#                   ^~~~~~~~~~~~~~~~
+polkit-pkla-compat-0.1/src/pkla-check-authorization.c:346:9: note: treat the string as an argument to avoid this
+#               _("Invalid boolean value"));
+#               ^
+/usr/include/glib-2.0/glib/gi18n.h:26:20: note: expanded from macro '_'
+##define  _(String) gettext (String)
+#                   ^
+#  344|       return FALSE;
+#  345|     g_set_error (error, G_OPTION_ERROR, G_OPTION_ERROR_BAD_VALUE,
+#  346|-> 	       _("Invalid boolean value"));
+#  347|     return FALSE;
+#  348|   }
+
+Error: COMPILER_WARNING:
+polkit-pkla-compat-0.1/src/pkla-check-authorization.c:346:9: warning: implicit declaration of function 'gettext' is invalid in C99
+#               _("Invalid boolean value"));
+#               ^
+/usr/include/glib-2.0/glib/gi18n.h:26:20: note: expanded from macro '_'
+##define  _(String) gettext (String)
+#                   ^
+#  344|       return FALSE;
+#  345|     g_set_error (error, G_OPTION_ERROR, G_OPTION_ERROR_BAD_VALUE,
+#  346|-> 	       _("Invalid boolean value"));
+#  347|     return FALSE;
+#  348|   }
+
+Error: COMPILER_WARNING:
+polkit-pkla-compat-0.1/src/pkla-check-authorization.c:346:9: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const gchar *' (aka 'const char *')
+#               _("Invalid boolean value"));
+#               ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib/gi18n.h:26:20: note: expanded from macro '_'
+##define  _(String) gettext (String)
+#                   ^~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib/gerror.h:222:48: note: passing argument to parameter 'format' here
+#                                const gchar   *format,
+#                                               ^
+#  344|       return FALSE;
+#  345|     g_set_error (error, G_OPTION_ERROR, G_OPTION_ERROR_BAD_VALUE,
+#  346|-> 	       _("Invalid boolean value"));
+#  347|     return FALSE;
+#  348|   }
+
+Error: COMPILER_WARNING:
+polkit-pkla-compat-0.1/src/pkla-check-authorization.c:383:24: warning: implicit declaration of function 'gettext' is invalid in C99
+#      fprintf (stderr, _("%s: %s\n"
+#                       ^
+/usr/include/glib-2.0/glib/gi18n.h:26:20: note: expanded from macro '_'
+##define  _(String) gettext (String)
+#                   ^
+#  381|     if (!g_option_context_parse (opt_context, &argc, &argv, &error))
+#  382|       {
+#  383|->       fprintf (stderr, _("%s: %s\n"
+#  384|   			 "Run `%s --help' for more information.\n"),
+#  385|   	       g_get_prgname (), error->message, g_get_prgname ());
+
+Error: COMPILER_WARNING:
+polkit-pkla-compat-0.1/src/pkla-check-authorization.c:383:24: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#      fprintf (stderr, _("%s: %s\n"
+#                       ^~~~~~~~~~~~
+/usr/include/glib-2.0/glib/gi18n.h:26:20: note: expanded from macro '_'
+##define  _(String) gettext (String)
+#                   ^~~~~~~~~~~~~~~~
+/opt/divine/include/dios/include/stdio.h:442:76: note: passing argument to parameter 'format' here
+#int fprintf( FILE * _PDCLIB_restrict stream, const char * _PDCLIB_restrict format, ... ) _PDCLIB_nothrow;
+#                                                                           ^
+#  381|     if (!g_option_context_parse (opt_context, &argc, &argv, &error))
+#  382|       {
+#  383|->       fprintf (stderr, _("%s: %s\n"
+#  384|   			 "Run `%s --help' for more information.\n"),
+#  385|   	       g_get_prgname (), error->message, g_get_prgname ());
+
+Error: COMPILER_WARNING:
+polkit-pkla-compat-0.1/src/pkla-check-authorization.c:393:24: warning: implicit declaration of function 'gettext' is invalid in C99
+#      fprintf (stderr, _("%s: unexpected number of arguments\n"
+#                       ^
+/usr/include/glib-2.0/glib/gi18n.h:26:20: note: expanded from macro '_'
+##define  _(String) gettext (String)
+#                   ^
+#  391|     if (argc != 5)
+#  392|       {
+#  393|->       fprintf (stderr, _("%s: unexpected number of arguments\n"
+#  394|   			 "Run `%s --help' for more information.\n"),
+#  395|   	       g_get_prgname (), g_get_prgname ());
+
+Error: COMPILER_WARNING:
+polkit-pkla-compat-0.1/src/pkla-check-authorization.c:393:24: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#      fprintf (stderr, _("%s: unexpected number of arguments\n"
+#                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib/gi18n.h:26:20: note: expanded from macro '_'
+##define  _(String) gettext (String)
+#                   ^~~~~~~~~~~~~~~~
+/opt/divine/include/dios/include/stdio.h:442:76: note: passing argument to parameter 'format' here
+#int fprintf( FILE * _PDCLIB_restrict stream, const char * _PDCLIB_restrict format, ... ) _PDCLIB_nothrow;
+#                                                                           ^
+#  391|     if (argc != 5)
+#  392|       {
+#  393|->       fprintf (stderr, _("%s: unexpected number of arguments\n"
+#  394|   			 "Run `%s --help' for more information.\n"),
+#  395|   	       g_get_prgname (), g_get_prgname ());
+
+Error: COMPILER_WARNING:
+polkit-pkla-compat-0.1/src/pkla-check-authorization.c:414:24: warning: implicit declaration of function 'gettext' is invalid in C99
+#      fprintf (stderr, _("%s: Invalid user `%s': %s\n"), g_get_prgname(),
+#                       ^
+/usr/include/glib-2.0/glib/gi18n.h:26:20: note: expanded from macro '_'
+##define  _(String) gettext (String)
+#                   ^
+#  412|     if (user_for_subject == NULL)
+#  413|       {
+#  414|->       fprintf (stderr, _("%s: Invalid user `%s': %s\n"), g_get_prgname(),
+#  415|   	       argv[1], error->message);
+#  416|         g_error_free (error);
+
+Error: COMPILER_WARNING:
+polkit-pkla-compat-0.1/src/pkla-check-authorization.c:414:24: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#      fprintf (stderr, _("%s: Invalid user `%s': %s\n"), g_get_prgname(),
+#                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib/gi18n.h:26:20: note: expanded from macro '_'
+##define  _(String) gettext (String)
+#                   ^~~~~~~~~~~~~~~~
+/opt/divine/include/dios/include/stdio.h:442:76: note: passing argument to parameter 'format' here
+#int fprintf( FILE * _PDCLIB_restrict stream, const char * _PDCLIB_restrict format, ... ) _PDCLIB_nothrow;
+#                                                                           ^
+#  412|     if (user_for_subject == NULL)
+#  413|       {
+#  414|->       fprintf (stderr, _("%s: Invalid user `%s': %s\n"), g_get_prgname(),
+#  415|   	       argv[1], error->message);
+#  416|         g_error_free (error);
+
+Error: COMPILER_WARNING:
+polkit-pkla-compat-0.1/src/pkla-check-authorization.c:422:24: warning: implicit declaration of function 'gettext' is invalid in C99
+#      fprintf (stderr, _("%s: Invalid boolean `%s': %s\n"), g_get_prgname(),
+#                       ^
+/usr/include/glib-2.0/glib/gi18n.h:26:20: note: expanded from macro '_'
+##define  _(String) gettext (String)
+#                   ^
+#  420|     if (error != NULL)
+#  421|       {
+#  422|->       fprintf (stderr, _("%s: Invalid boolean `%s': %s\n"), g_get_prgname(),
+#  423|   	       argv[2], error->message);
+#  424|         g_error_free (error);
+
+Error: COMPILER_WARNING:
+polkit-pkla-compat-0.1/src/pkla-check-authorization.c:422:24: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#      fprintf (stderr, _("%s: Invalid boolean `%s': %s\n"), g_get_prgname(),
+#                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib/gi18n.h:26:20: note: expanded from macro '_'
+##define  _(String) gettext (String)
+#                   ^~~~~~~~~~~~~~~~
+/opt/divine/include/dios/include/stdio.h:442:76: note: passing argument to parameter 'format' here
+#int fprintf( FILE * _PDCLIB_restrict stream, const char * _PDCLIB_restrict format, ... ) _PDCLIB_nothrow;
+#                                                                           ^
+#  420|     if (error != NULL)
+#  421|       {
+#  422|->       fprintf (stderr, _("%s: Invalid boolean `%s': %s\n"), g_get_prgname(),
+#  423|   	       argv[2], error->message);
+#  424|         g_error_free (error);
+
+Error: COMPILER_WARNING:
+polkit-pkla-compat-0.1/src/pkla-check-authorization.c:430:24: warning: implicit declaration of function 'gettext' is invalid in C99
+#      fprintf (stderr, _("%s: Invalid boolean `%s': %s\n"), g_get_prgname(),
+#                       ^
+/usr/include/glib-2.0/glib/gi18n.h:26:20: note: expanded from macro '_'
+##define  _(String) gettext (String)
+#                   ^
+#  428|     if (error != NULL)
+#  429|       {
+#  430|->       fprintf (stderr, _("%s: Invalid boolean `%s': %s\n"), g_get_prgname(),
+#  431|   	       argv[3], error->message);
+#  432|         g_error_free (error);
+
+Error: COMPILER_WARNING:
+polkit-pkla-compat-0.1/src/pkla-check-authorization.c:430:24: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *'
+#      fprintf (stderr, _("%s: Invalid boolean `%s': %s\n"), g_get_prgname(),
+#                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib/gi18n.h:26:20: note: expanded from macro '_'
+##define  _(String) gettext (String)
+#                   ^~~~~~~~~~~~~~~~
+/opt/divine/include/dios/include/stdio.h:442:76: note: passing argument to parameter 'format' here
+#int fprintf( FILE * _PDCLIB_restrict stream, const char * _PDCLIB_restrict format, ... ) _PDCLIB_nothrow;
+#                                                                           ^
+#  428|     if (error != NULL)
+#  429|       {
+#  430|->       fprintf (stderr, _("%s: Invalid boolean `%s': %s\n"), g_get_prgname(),
+#  431|   	       argv[3], error->message);
+#  432|         g_error_free (error);
+
+Error: COMPILER_WARNING:
+polkit-pkla-compat-0.1/src/polkitbackendlocalauthorizationstore.c:790:9: warning: implicit declaration of function 'innetgr' is invalid in C99
+#                  if (innetgr ((const gchar *) ll->data, NULL, user_name, NULL))
+#                      ^
+#  788|   	      for (ll = authorization->netgroup_identities; ll != NULL; ll = ll->next)
+#  789|   		{
+#  790|-> 		  if (innetgr ((const gchar *) ll->data, NULL, user_name, NULL))
+#  791|   		    break;
+#  792|   		}
+
+Error: COMPILER_WARNING:
+polkit-pkla-compat-0.1/test/mocklibc/src/grp.c:32:5: warning: implicit declaration of function 'endgrent' is invalid in C99
+#    endgrent();
+#    ^
+#   30|   void setgrent(void) {
+#   31|     if (global_stream)
+#   32|->     endgrent();
+#   33|   
+#   34|     const char *path = getenv(GROUP_CONFIG_KEY);
+
+Error: COMPILER_WARNING:
+polkit-pkla-compat-0.1/test/mocklibc/src/grp.c:48:10: warning: implicit declaration of function 'fgetgrent' is invalid in C99
+#  return fgetgrent(global_stream);
+#         ^
+#   46|       return NULL;
+#   47|   
+#   48|->   return fgetgrent(global_stream);
+#   49|   }
+#   50|   
+
+Error: COMPILER_WARNING:
+polkit-pkla-compat-0.1/test/mocklibc/src/grp.c:48:10: warning: incompatible integer to pointer conversion returning 'int' from a function with result type 'struct group *'
+#  return fgetgrent(global_stream);
+#         ^~~~~~~~~~~~~~~~~~~~~~~~
+#   46|       return NULL;
+#   47|   
+#   48|->   return fgetgrent(global_stream);
+#   49|   }
+#   50|   
+
+Error: COMPILER_WARNING:
+polkit-pkla-compat-0.1/test/mocklibc/src/grp.c:69:17: warning: incompatible integer to pointer conversion assigning to 'struct group *' from 'int'
+#  while ((entry = fgetgrent(stream))) {
+#                ^ ~~~~~~~~~~~~~~~~~
+#   67|   
+#   68|     struct group *entry;
+#   69|->   while ((entry = fgetgrent(stream))) {
+#   70|       if (strcmp(entry->gr_name, name) == 0) {
+#   71|         fclose(stream);
+
+Error: COMPILER_WARNING:
+polkit-pkla-compat-0.1/test/mocklibc/src/grp.c:69:19: warning: implicit declaration of function 'fgetgrent' is invalid in C99
+#  while ((entry = fgetgrent(stream))) {
+#                  ^
+#   67|   
+#   68|     struct group *entry;
+#   69|->   while ((entry = fgetgrent(stream))) {
+#   70|       if (strcmp(entry->gr_name, name) == 0) {
+#   71|         fclose(stream);
+
+Error: COMPILER_WARNING:
+polkit-pkla-compat-0.1/test/mocklibc/src/grp.c:90:17: warning: incompatible integer to pointer conversion assigning to 'struct group *' from 'int'
+#  while ((entry = fgetgrent(stream))) {
+#                ^ ~~~~~~~~~~~~~~~~~
+#   88|   
+#   89|     struct group *entry;
+#   90|->   while ((entry = fgetgrent(stream))) {
+#   91|       if (entry->gr_gid == gid) {
+#   92|         fclose(stream);
+
+Error: COMPILER_WARNING:
+polkit-pkla-compat-0.1/test/mocklibc/src/grp.c:90:19: warning: implicit declaration of function 'fgetgrent' is invalid in C99
+#  while ((entry = fgetgrent(stream))) {
+#                  ^
+#   88|   
+#   89|     struct group *entry;
+#   90|->   while ((entry = fgetgrent(stream))) {
+#   91|       if (entry->gr_gid == gid) {
+#   92|         fclose(stream);
+
+Error: COMPILER_WARNING:
+polkit-pkla-compat-0.1/test/mocklibc/src/grp.c:119:17: warning: incompatible integer to pointer conversion assigning to 'struct group *' from 'int'
+#  while ((entry = fgetgrent(stream))) {
+#                ^ ~~~~~~~~~~~~~~~~~
+#  117|     // Loop through all groups
+#  118|     struct group *entry;
+#  119|->   while ((entry = fgetgrent(stream))) {
+#  120|       // Loop through all users in group
+#  121|       char **cur_user;
+
+Error: COMPILER_WARNING:
+polkit-pkla-compat-0.1/test/mocklibc/src/grp.c:119:19: warning: implicit declaration of function 'fgetgrent' is invalid in C99
+#  while ((entry = fgetgrent(stream))) {
+#                  ^
+#  117|     // Loop through all groups
+#  118|     struct group *entry;
+#  119|->   while ((entry = fgetgrent(stream))) {
+#  120|       // Loop through all users in group
+#  121|       char **cur_user;
+
+Error: COMPILER_WARNING:
+polkit-pkla-compat-0.1/test/mocklibc/src/pwd.c:48:10: warning: implicit declaration of function 'fgetpwent' is invalid in C99
+#  return fgetpwent(global_stream);
+#         ^
+#   46|       return NULL;
+#   47|   
+#   48|->   return fgetpwent(global_stream);
+#   49|   }
+#   50|   
+
+Error: COMPILER_WARNING:
+polkit-pkla-compat-0.1/test/mocklibc/src/pwd.c:48:10: warning: incompatible integer to pointer conversion returning 'int' from a function with result type 'struct passwd *'
+#  return fgetpwent(global_stream);
+#         ^~~~~~~~~~~~~~~~~~~~~~~~
+#   46|       return NULL;
+#   47|   
+#   48|->   return fgetpwent(global_stream);
+#   49|   }
+#   50|   
+
+Error: COMPILER_WARNING:
+polkit-pkla-compat-0.1/test/mocklibc/src/pwd.c:69:17: warning: incompatible integer to pointer conversion assigning to 'struct passwd *' from 'int'
+#  while ((entry = fgetpwent(stream))) {
+#                ^ ~~~~~~~~~~~~~~~~~
+#   67|   
+#   68|     struct passwd *entry;
+#   69|->   while ((entry = fgetpwent(stream))) {
+#   70|       if (strcmp(entry->pw_name, name) == 0) {
+#   71|         fclose(stream);
+
+Error: COMPILER_WARNING:
+polkit-pkla-compat-0.1/test/mocklibc/src/pwd.c:69:19: warning: implicit declaration of function 'fgetpwent' is invalid in C99
+#  while ((entry = fgetpwent(stream))) {
+#                  ^
+#   67|   
+#   68|     struct passwd *entry;
+#   69|->   while ((entry = fgetpwent(stream))) {
+#   70|       if (strcmp(entry->pw_name, name) == 0) {
+#   71|         fclose(stream);
+
+Error: COMPILER_WARNING:
+polkit-pkla-compat-0.1/test/mocklibc/src/pwd.c:90:17: warning: incompatible integer to pointer conversion assigning to 'struct passwd *' from 'int'
+#  while ((entry = fgetpwent(stream))) {
+#                ^ ~~~~~~~~~~~~~~~~~
+#   88|   
+#   89|     struct passwd *entry;
+#   90|->   while ((entry = fgetpwent(stream))) {
+#   91|       if (entry->pw_uid == uid) {
+#   92|         fclose(stream);
+
+Error: COMPILER_WARNING:
+polkit-pkla-compat-0.1/test/mocklibc/src/pwd.c:90:19: warning: implicit declaration of function 'fgetpwent' is invalid in C99
+#  while ((entry = fgetpwent(stream))) {
+#                  ^
+#   88|   
+#   89|     struct passwd *entry;
+#   90|->   while ((entry = fgetpwent(stream))) {
+#   91|       if (entry->pw_uid == uid) {
+#   92|         fclose(stream);
+
+Error: COMPILER_WARNING:
+polkit-pkla-compat-0.1/test/polkitbackendlocalauthoritytest.c:60:69: warning: missing sentinel in function call
+#  gchar *auth_paths = g_strconcat (auth_path1, ";", auth_path2, NULL);
+#                                                                    ^
+/usr/include/glib-2.0/glib/gstrfuncs.h:231:22: note: function has been explicitly marked sentinel here
+#gchar*                g_strconcat      (const gchar *string1,
+#                      ^
+#   58|     gchar *auth_path1 = polkit_test_get_data_path (TEST_AUTH_PATH1);
+#   59|     gchar *auth_path2 = polkit_test_get_data_path (TEST_AUTH_PATH2);
+#   60|->   gchar *auth_paths = g_strconcat (auth_path1, ";", auth_path2, NULL);
+#   61|     g_assert (auth_path1 != NULL);
+#   62|     g_assert (auth_path2 != NULL);
+
+Error: COMPILER_WARNING:
+polkit-pkla-compat-0.1/test/polkitbackendlocalauthoritytest.c:263:34: warning: missing sentinel in function call
+#  g_test_init (&argc, &argv, NULL);
+#                                 ^
+/usr/include/glib-2.0/glib/gtestutils.h:254:9: note: function has been explicitly marked sentinel here
+#void    g_test_init                     (int            *argc,
+#        ^
+#  261|   {
+#  262|     g_type_init ();
+#  263|->   g_test_init (&argc, &argv, NULL);
+#  264|     polkit_test_redirect_logs ();
+#  265|   
+
+Error: COMPILER_WARNING:
+polkit-pkla-compat-0.1/test/polkitbackendlocalauthorizationstoretest.c:136:34: warning: missing sentinel in function call
+#  g_test_init (&argc, &argv, NULL);
+#                                 ^
+/usr/include/glib-2.0/glib/gtestutils.h:254:9: note: function has been explicitly marked sentinel here
+#void    g_test_init                     (int            *argc,
+#        ^
+#  134|   {
+#  135|     g_type_init ();
+#  136|->   g_test_init (&argc, &argv, NULL);
+#  137|     polkit_test_redirect_logs ();
+#  138|     g_test_add_func ("/PolkitBackendLocalAuthorizationStore/new", test_new);
+
+Error: COMPILER_WARNING:
+polkit-pkla-compat-0.1/test/polkittesthelper.c:66:46: warning: missing sentinel in function call
+#  return g_strconcat(root, "/", relpath, NULL);
+#                                             ^
+/usr/include/glib-2.0/glib/gstrfuncs.h:231:22: note: function has been explicitly marked sentinel here
+#gchar*                g_strconcat      (const gchar *string1,
+#                      ^
+#   64|       return NULL;
+#   65|   
+#   66|->   return g_strconcat(root, "/", relpath, NULL);
+#   67|   }
+#   68|   

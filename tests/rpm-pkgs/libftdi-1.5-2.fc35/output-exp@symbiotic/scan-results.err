@@ -1,0 +1,101 @@
+Error: COMPILER_WARNING:
+libftdi1-1.5/examples/async.c:149:9: warning[-Wsometimes-uninitialized]: variable 'retval' is used uninitialized whenever 'if' condition is true
+#    if (do_read) {
+#        ^~~~~~~
+libftdi1-1.5/examples/async.c:178:12: note: uninitialized use occurs here
+#    return retval;
+#           ^~~~~~
+libftdi1-1.5/examples/async.c:149:5: note: remove the 'if' if its condition is always false
+#    if (do_read) {
+#    ^~~~~~~~~~~~~~
+libftdi1-1.5/examples/async.c:33:21: note: initialize the variable 'retval' to silence this warning
+#    int i, f, retval;
+#                    ^
+#  147|           }
+#  148|       }
+#  149|->     if (do_read) {
+#  150|           int transfer = ftdi_transfer_data_done(tc_read);
+#  151|           if (transfer != DATA_TO_READ) {
+
+Error: COMPILER_WARNING:
+libftdi1-1.5/examples/async.c:158:16: warning[-Wsometimes-uninitialized]: variable 'retval' is used uninitialized whenever 'while' loop exits because its condition is false
+#        while (i--) {
+#               ^~~
+libftdi1-1.5/examples/async.c:178:12: note: uninitialized use occurs here
+#    return retval;
+#           ^~~~~~
+libftdi1-1.5/examples/async.c:158:16: note: remove the condition if it is always true
+#        while (i--) {
+#               ^~~
+#  156|           ftdi->usb_read_timeout = 1;
+#  157|           int i = 1000; /* Fail if read did not succeed in 1 second.*/
+#  158|->         while (i--) {
+#  159|               int res = ftdi_read_data(ftdi, data + index, 3 - index);
+#  160|               if (res < 0) {
+
+Error: COMPILER_WARNING:
+libftdi1-1.5/examples/async.c:165:17: warning[-Wsometimes-uninitialized]: variable 'retval' is used uninitialized whenever 'if' condition is true
+#            if (res == 3) {
+#                ^~~~~~~~
+libftdi1-1.5/examples/async.c:178:12: note: uninitialized use occurs here
+#    return retval;
+#           ^~~~~~
+libftdi1-1.5/examples/async.c:165:13: note: remove the 'if' if its condition is always false
+#            if (res == 3) {
+#            ^~~~~~~~~~~~~~~
+#  163|                   index += res;
+#  164|               }
+#  165|->             if (res == 3) {
+#  166|                   break;
+#  167|               }
+
+Error: COMPILER_WARNING (CWE-477):
+libftdi1-1.5/redhat-linux-build/python/CMakeFiles/_ftdi1.dir/ftdi1PYTHON_wrap.c:6905:17: warning[-Wdeprecated-declarations]: 'ftdi_usb_purge_rx_buffer' is deprecated
+#  result = (int)ftdi_usb_purge_rx_buffer(arg1);
+#                ^
+libftdi1-1.5/src/ftdi.h:564:9: note: 'ftdi_usb_purge_rx_buffer' has been explicitly marked deprecated here
+#    int DEPRECATED(ftdi_usb_purge_rx_buffer(struct ftdi_context *ftdi));
+#        ^
+libftdi1-1.5/src/ftdi.h:247:42: note: expanded from macro 'DEPRECATED'
+##define DEPRECATED(func) __attribute__ ((deprecated)) func
+#                                         ^
+# 6903|     }
+# 6904|     arg1 = (struct ftdi_context *)(argp1);
+# 6905|->   result = (int)ftdi_usb_purge_rx_buffer(arg1);
+# 6906|     resultobj = SWIG_From_int((int)(result));
+# 6907|     return resultobj;
+
+Error: COMPILER_WARNING (CWE-477):
+libftdi1-1.5/redhat-linux-build/python/CMakeFiles/_ftdi1.dir/ftdi1PYTHON_wrap.c:6928:17: warning[-Wdeprecated-declarations]: 'ftdi_usb_purge_tx_buffer' is deprecated
+#  result = (int)ftdi_usb_purge_rx_buffer(arg1);
+#                ^
+libftdi1-1.5/src/ftdi.h:565:9: note: 'ftdi_usb_purge_tx_buffer' has been explicitly marked deprecated here
+#    int DEPRECATED(ftdi_usb_purge_rx_buffer(struct ftdi_context *ftdi));
+#        ^
+42: note: expanded from macro 'DEPRECATED'
+libftdi1-1.5/src/ftdi.h:247:42: note: expanded from macro 'DEPRECATED'
+##define DEPRECATED(func) __attribute__ ((deprecated)) func
+#                                         ^
+##define DEPRECATED(func) __attribute__ ((deprecated)) func
+#                                         ^
+# 6926|     }
+# 6927|     arg1 = (struct ftdi_context *)(argp1);
+# 6928|->   result = (int)ftdi_usb_purge_tx_buffer(arg1);
+# 6929|     resultobj = SWIG_From_int((int)(result));
+# 6930|     return resultobj;
+
+Error: COMPILER_WARNING (CWE-477):
+libftdi1-1.5/redhat-linux-build/python/CMakeFiles/_ftdi1.dir/ftdi1PYTHON_wrap.c:6951:17: warning[-Wdeprecated-declarations]: 'ftdi_usb_purge_buffers' is deprecated
+#  result = (int)ftdi_usb_purge_buffers(arg1);
+#                ^
+libftdi1-1.5/src/ftdi.h:566:9: note: 'ftdi_usb_purge_buffers' has been explicitly marked deprecated here
+#    int DEPRECATED(ftdi_usb_purge_buffers(struct ftdi_context *ftdi));
+#        ^
+libftdi1-1.5/src/ftdi.h:247:42: note: expanded from macro 'DEPRECATED'
+##define DEPRECATED(func) __attribute__ ((deprecated)) func
+#                                         ^
+# 6949|     }
+# 6950|     arg1 = (struct ftdi_context *)(argp1);
+# 6951|->   result = (int)ftdi_usb_purge_buffers(arg1);
+# 6952|     resultobj = SWIG_From_int((int)(result));
+# 6953|     return resultobj;

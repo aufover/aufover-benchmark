@@ -1,0 +1,407 @@
+Error: COMPILER_WARNING (CWE-477):
+libuser-0.63/apps/apputil.c: scope_hint: In function 'check_access'
+libuser-0.63/apps/apputil.c:41:9: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#   41 |         security_context_t user_context;
+#      |         ^~~~~~~~~~~~~~~~~~
+#   39|   {
+#   40|   	int status;
+#   41|-> 	security_context_t user_context;
+#   42|   
+#   43|   	status = -1;
+
+Error: COMPILER_WARNING (CWE-477):
+libuser-0.63/apps/apputil.c: scope_hint: In function 'lu_authenticate_unprivileged'
+libuser-0.63/apps/apputil.c:228:33: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#  228 |                                 security_context_t user_context;
+#      |                                 ^~~~~~~~~~~~~~~~~~
+#  226|   			perm = string_to_av_perm(class, "chfn");
+#  227|   			if (check_access(user, perm) != 0) {
+#  228|-> 				security_context_t user_context;
+#  229|   
+#  230|   				if (getprevcon(&user_context) < 0)
+
+Error: VALGRIND_WARNING:
+libuser-0.63/apps/.libs/lgroupadd: note: while executing process 2988 with arguments: -g 2147483758 group1_1
+libuser-0.63/apps/lgroupadd.c:63: warning[Leak_DefinitelyLost]: 11 bytes in 1 blocks are definitely lost in loss record 8 of 247
+/usr/lib64/libpopt.so.0.0.1: note: called from poptGetNextOpt()
+libuser-0.63/apps/lgroupadd.c:63: note: called from main()
+#   61|   	popt = poptGetContext("lgroupadd", argc, argv, options, 0);
+#   62|   	poptSetOtherOptionHelp(popt, _("[OPTION...] group"));
+#   63|-> 	c = poptGetNextOpt(popt);
+#   64|   	if (c != -1) {
+#   65|   		fprintf(stderr, _("Error parsing arguments: %s.\n"),
+
+Error: VALGRIND_WARNING:
+libuser-0.63/apps/.libs/lgroupmod: note: while executing process 4735 with arguments: -g 2147483989 group3_4
+libuser-0.63/apps/lgroupmod.c:83: warning[Leak_DefinitelyLost]: 11 bytes in 1 blocks are definitely lost in loss record 8 of 247
+/usr/lib64/libpopt.so.0.0.1: note: called from poptGetNextOpt()
+libuser-0.63/apps/lgroupmod.c:83: note: called from main()
+#   81|   	popt = poptGetContext("lgroupmod", argc, argv, options, 0);
+#   82|   	poptSetOtherOptionHelp(popt, _("[OPTION...] group"));
+#   83|-> 	c = poptGetNextOpt(popt);
+#   84|   	if (c != -1) {
+#   85|   		fprintf(stderr, _("Error parsing arguments: %s.\n"),
+
+Error: VALGRIND_WARNING:
+libuser-0.63/apps/.libs/lgroupmod: note: while executing process 3936 with arguments: -p !!02yd6IWnPes66 group3_3
+libuser-0.63/apps/lgroupmod.c:83: warning[Leak_DefinitelyLost]: 16 bytes in 1 blocks are definitely lost in loss record 98 of 239
+/usr/lib64/libpopt.so.0.0.1: note: called from poptGetNextOpt()
+libuser-0.63/apps/lgroupmod.c:83: note: called from main()
+#   81|   	popt = poptGetContext("lgroupmod", argc, argv, options, 0);
+#   82|   	poptSetOtherOptionHelp(popt, _("[OPTION...] group"));
+#   83|-> 	c = poptGetNextOpt(popt);
+#   84|   	if (c != -1) {
+#   85|   		fprintf(stderr, _("Error parsing arguments: %s.\n"),
+
+Error: VALGRIND_WARNING:
+libuser-0.63/apps/.libs/lgroupmod: note: while executing process 3636 with arguments: -a user3_1,user3_1notexist -m user3_3,user3_2notexist -L group3_2
+libuser-0.63/apps/lgroupmod.c:83: warning[Leak_DefinitelyLost]: 48 bytes in 2 blocks are definitely lost in loss record 126 of 239
+/usr/lib64/libpopt.so.0.0.1: note: called from poptGetNextOpt()
+libuser-0.63/apps/lgroupmod.c:83: note: called from main()
+#   81|   	popt = poptGetContext("lgroupmod", argc, argv, options, 0);
+#   82|   	poptSetOtherOptionHelp(popt, _("[OPTION...] group"));
+#   83|-> 	c = poptGetNextOpt(popt);
+#   84|   	if (c != -1) {
+#   85|   		fprintf(stderr, _("Error parsing arguments: %s.\n"),
+
+Error: VALGRIND_WARNING:
+libuser-0.63/apps/.libs/lgroupmod: note: while executing process 3528 with arguments: -A user3_1,user3_2 -g 2147483959 -L -M user3_3,user3_4 -n group3_2 -p 01vokOibos3pg group3_1
+libuser-0.63/apps/lgroupmod.c:83: warning[Leak_DefinitelyLost]: 66 bytes in 5 blocks are definitely lost in loss record 135 of 247
+/usr/lib64/libpopt.so.0.0.1: note: called from poptGetNextOpt()
+libuser-0.63/apps/lgroupmod.c:83: note: called from main()
+#   81|   	popt = poptGetContext("lgroupmod", argc, argv, options, 0);
+#   82|   	poptSetOtherOptionHelp(popt, _("[OPTION...] group"));
+#   83|-> 	c = poptGetNextOpt(popt);
+#   84|   	if (c != -1) {
+#   85|   		fprintf(stderr, _("Error parsing arguments: %s.\n"),
+
+Error: VALGRIND_WARNING:
+libuser-0.63/apps/.libs/lgroupmod: note: while executing process 4648 with arguments: -M user3_6 group3_4
+libuser-0.63/apps/lgroupmod.c:83: warning[Leak_DefinitelyLost]: 8 bytes in 1 blocks are definitely lost in loss record 8 of 239
+/usr/lib64/libpopt.so.0.0.1: note: called from poptGetNextOpt()
+libuser-0.63/apps/lgroupmod.c:83: note: called from main()
+#   81|   	popt = poptGetContext("lgroupmod", argc, argv, options, 0);
+#   82|   	poptSetOtherOptionHelp(popt, _("[OPTION...] group"));
+#   83|-> 	c = poptGetNextOpt(popt);
+#   84|   	if (c != -1) {
+#   85|   		fprintf(stderr, _("Error parsing arguments: %s.\n"),
+
+Error: VALGRIND_WARNING:
+libuser-0.63/apps/.libs/luseradd: note: while executing process 4907 with arguments: -M -u 2147484058 user4_1
+libuser-0.63/apps/luseradd.c:101: warning[Leak_DefinitelyLost]: 11 bytes in 1 blocks are definitely lost in loss record 8 of 247
+/usr/lib64/libpopt.so.0.0.1: note: called from poptGetNextOpt()
+libuser-0.63/apps/luseradd.c:101: note: called from main()
+#   99|   	popt = poptGetContext("luseradd", argc, argv, options, 0);
+#  100|   	poptSetOtherOptionHelp(popt, _("[OPTION...] user"));
+#  101|-> 	c = poptGetNextOpt(popt);
+#  102|   	if (c != -1) {
+#  103|   		fprintf(stderr, _("Error parsing arguments: %s.\n"),
+
+Error: VALGRIND_WARNING:
+libuser-0.63/apps/.libs/luseradd: note: while executing process 4290 with arguments: -M -g group3_4 -u 2147483998 user3_5
+libuser-0.63/apps/luseradd.c:101: warning[Leak_DefinitelyLost]: 20 bytes in 2 blocks are definitely lost in loss record 98 of 247
+/usr/lib64/libpopt.so.0.0.1: note: called from poptGetNextOpt()
+libuser-0.63/apps/luseradd.c:101: note: called from main()
+#   99|   	popt = poptGetContext("luseradd", argc, argv, options, 0);
+#  100|   	poptSetOtherOptionHelp(popt, _("[OPTION...] user"));
+#  101|-> 	c = poptGetNextOpt(popt);
+#  102|   	if (c != -1) {
+#  103|   		fprintf(stderr, _("Error parsing arguments: %s.\n"),
+
+Error: VALGRIND_WARNING:
+libuser-0.63/apps/.libs/luseradd: note: while executing process 8673 with arguments: -g 2147484588 -u 2147484588 -M user9_4
+libuser-0.63/apps/luseradd.c:101: warning[Leak_DefinitelyLost]: 22 bytes in 2 blocks are definitely lost in loss record 98 of 247
+/usr/lib64/libpopt.so.0.0.1: note: called from poptGetNextOpt()
+libuser-0.63/apps/luseradd.c:101: note: called from main()
+#   99|   	popt = poptGetContext("luseradd", argc, argv, options, 0);
+#  100|   	poptSetOtherOptionHelp(popt, _("[OPTION...] user"));
+#  101|-> 	c = poptGetNextOpt(popt);
+#  102|   	if (c != -1) {
+#  103|   		fprintf(stderr, _("Error parsing arguments: %s.\n"),
+
+Error: VALGRIND_WARNING:
+libuser-0.63/apps/.libs/luseradd: note: while executing process 6869 with arguments: -c GECOS7_1 -d HomeDir7_1 -g group7_1 -M -p 03dgZm5nZvqOc -s Shell7_1 -u 2147484358 user7_1
+libuser-0.63/apps/luseradd.c:101: warning[Leak_DefinitelyLost]: 63 bytes in 6 blocks are definitely lost in loss record 131 of 247
+/usr/lib64/libpopt.so.0.0.1: note: called from poptGetNextOpt()
+libuser-0.63/apps/luseradd.c:101: note: called from main()
+#   99|   	popt = poptGetContext("luseradd", argc, argv, options, 0);
+#  100|   	poptSetOtherOptionHelp(popt, _("[OPTION...] user"));
+#  101|-> 	c = poptGetNextOpt(popt);
+#  102|   	if (c != -1) {
+#  103|   		fprintf(stderr, _("Error parsing arguments: %s.\n"),
+
+Error: VALGRIND_WARNING:
+libuser-0.63/apps/.libs/luseradd: note: while executing process 7212 with arguments: -g group8_1 -M user8_1
+libuser-0.63/apps/luseradd.c:101: warning[Leak_DefinitelyLost]: 9 bytes in 1 blocks are definitely lost in loss record 8 of 247
+/usr/lib64/libpopt.so.0.0.1: note: called from poptGetNextOpt()
+libuser-0.63/apps/luseradd.c:101: note: called from main()
+#   99|   	popt = poptGetContext("luseradd", argc, argv, options, 0);
+#  100|   	poptSetOtherOptionHelp(popt, _("[OPTION...] user"));
+#  101|-> 	c = poptGetNextOpt(popt);
+#  102|   	if (c != -1) {
+#  103|   		fprintf(stderr, _("Error parsing arguments: %s.\n"),
+
+Error: VALGRIND_WARNING:
+libuser-0.63/apps/.libs/lusermod: note: while executing process 9087 with arguments: -g 2147484609 user9_6
+libuser-0.63/apps/lusermod.c:102: warning[Leak_DefinitelyLost]: 11 bytes in 1 blocks are definitely lost in loss record 8 of 239
+/usr/lib64/libpopt.so.0.0.1: note: called from poptGetNextOpt()
+libuser-0.63/apps/lusermod.c:102: note: called from main()
+#  100|   	popt = poptGetContext("lusermod", argc, argv, options, 0);
+#  101|   	poptSetOtherOptionHelp(popt, _("[OPTION...] user"));
+#  102|-> 	c = poptGetNextOpt(popt);
+#  103|   	if (c != -1) {
+#  104|   		fprintf(stderr, _("Error parsing arguments: %s.\n"),
+
+Error: VALGRIND_WARNING:
+libuser-0.63/apps/.libs/lusermod: note: while executing process 8357 with arguments: -p !!05FdoegP8UniQ user9_3
+libuser-0.63/apps/lusermod.c:102: warning[Leak_DefinitelyLost]: 16 bytes in 1 blocks are definitely lost in loss record 98 of 239
+/usr/lib64/libpopt.so.0.0.1: note: called from poptGetNextOpt()
+libuser-0.63/apps/lusermod.c:102: note: called from main()
+#  100|   	popt = poptGetContext("lusermod", argc, argv, options, 0);
+#  101|   	poptSetOtherOptionHelp(popt, _("[OPTION...] user"));
+#  102|-> 	c = poptGetNextOpt(popt);
+#  103|   	if (c != -1) {
+#  104|   		fprintf(stderr, _("Error parsing arguments: %s.\n"),
+
+Error: VALGRIND_WARNING:
+libuser-0.63/apps/.libs/lusermod: note: while executing process 8029 with arguments: -c GECOS9_1 -d HomeDir9_1 -g 2147484568 -l user9_2 -p 04aqostCGmvZM -s Shell9_1 -u 2147484559 user9_1
+libuser-0.63/apps/lusermod.c:102: warning[Leak_DefinitelyLost]: 73 bytes in 7 blocks are definitely lost in loss record 135 of 247
+/usr/lib64/libpopt.so.0.0.1: note: called from poptGetNextOpt()
+libuser-0.63/apps/lusermod.c:102: note: called from main()
+#  100|   	popt = poptGetContext("lusermod", argc, argv, options, 0);
+#  101|   	poptSetOtherOptionHelp(popt, _("[OPTION...] user"));
+#  102|-> 	c = poptGetNextOpt(popt);
+#  103|   	if (c != -1) {
+#  104|   		fprintf(stderr, _("Error parsing arguments: %s.\n"),
+
+Error: VALGRIND_WARNING:
+libuser-0.63/apps/.libs/lusermod: note: while executing process 8830 with arguments: -l user9_5 user9_4
+libuser-0.63/apps/lusermod.c:102: warning[Leak_DefinitelyLost]: 8 bytes in 1 blocks are definitely lost in loss record 8 of 247
+/usr/lib64/libpopt.so.0.0.1: note: called from poptGetNextOpt()
+libuser-0.63/apps/lusermod.c:102: note: called from main()
+#  100|   	popt = poptGetContext("lusermod", argc, argv, options, 0);
+#  101|   	poptSetOtherOptionHelp(popt, _("[OPTION...] user"));
+#  102|-> 	c = poptGetNextOpt(popt);
+#  103|   	if (c != -1) {
+#  104|   		fprintf(stderr, _("Error parsing arguments: %s.\n"),
+
+Error: COMPILER_WARNING:
+libuser-0.63/lib/user_private.h:28: included_from: Included from here.
+libuser-0.63/lib/common.c:25: included_from: Included from here.
+libuser-0.63/config.h:9: warning: "GLIB_VERSION_MIN_REQUIRED" redefined
+#    9 | #define GLIB_VERSION_MIN_REQUIRED GLIB_VERSION_2_30
+#      | 
+/usr/include/glib-2.0/glib/gtypes.h:34: included_from: Included from here.
+/usr/include/glib-2.0/glib/galloca.h:32: included_from: Included from here.
+/usr/include/glib-2.0/glib.h:30: included_from: Included from here.
+libuser-0.63/lib/config.h:23: included_from: Included from here.
+libuser-0.63/lib/common.c:19: included_from: Included from here.
+/usr/include/glib-2.0/glib/gversionmacros.h:325: note: this is the location of the previous definition
+#  325 | # define GLIB_VERSION_MIN_REQUIRED      (GLIB_VERSION_CUR_STABLE)
+#      | 
+#    7|   
+#    8|   /* Shut up warnings about deprecated GValueArray */
+#    9|-> #define GLIB_VERSION_MIN_REQUIRED GLIB_VERSION_2_30
+#   10|   
+#   11|   /* Stay away from deprecated glib functionality. */
+
+Error: VALGRIND_WARNING:
+libuser-0.63/apps/.libs/luserdel: note: while executing process 7456 with arguments: user8_2
+libuser-0.63/lib/common.c:166: warning[InvalidRead]: Invalid read of size 1
+libuser-0.63/lib/common.c:166: note: Address 0x4df8990 is 0 bytes inside a block of size 8 free'd
+libuser-0.63/lib/common.c:166: note: called from lu_audit_logger_with_group()
+libuser-0.63/apps/luserdel.c:140: note: called from main()
+#  164|   	if (audit_fd < 0)
+#  165|   		return;
+#  166|-> 	len = strnlen(grp, sizeof(enc_group)/2);
+#  167|   	if (audit_value_needs_encoding(grp, len)) {
+#  168|   		snprintf(buf, sizeof(buf), "%s grp=%s", op,
+
+Error: VALGRIND_WARNING:
+libuser-0.63/apps/.libs/luserdel: note: while executing process 7456 with arguments: user8_2
+libuser-0.63/lib/common.c:167: warning[InvalidRead]: Invalid read of size 1
+libuser-0.63/lib/common.c:167: note: Address 0x4df8990 is 0 bytes inside a block of size 8 free'd
+/usr/lib64/libaudit.so.1.0.0: note: called from audit_value_needs_encoding()
+libuser-0.63/lib/common.c:167: note: called from lu_audit_logger_with_group()
+libuser-0.63/apps/luserdel.c:140: note: called from main()
+#  165|   		return;
+#  166|   	len = strnlen(grp, sizeof(enc_group)/2);
+#  167|-> 	if (audit_value_needs_encoding(grp, len)) {
+#  168|   		snprintf(buf, sizeof(buf), "%s grp=%s", op,
+#  169|   			audit_encode_value(enc_group, grp, len));
+
+Error: COMPILER_WARNING (CWE-477):
+libuser-0.63/apps/apputil.c:33: included_from: Included from here.
+libuser-0.63/lib/user_private.h:311:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#  311 | typedef security_context_t lu_security_context_t;
+#      | ^~~~~~~
+#  309|      intentionally not compatible with libuser built !WITH_SELINUX. */
+#  310|   #ifdef WITH_SELINUX
+#  311|-> typedef security_context_t lu_security_context_t;
+#  312|   gboolean lu_util_fscreate_save(security_context_t *ctx,
+#  313|   				      struct lu_error **error);
+
+Error: COMPILER_WARNING (CWE-477):
+libuser-0.63/lib/user_private.h:312:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#  312 | gboolean lu_util_fscreate_save(security_context_t *ctx,
+#      | ^~~~~~~~
+#  310|   #ifdef WITH_SELINUX
+#  311|   typedef security_context_t lu_security_context_t;
+#  312|-> gboolean lu_util_fscreate_save(security_context_t *ctx,
+#  313|   				      struct lu_error **error);
+#  314|   void lu_util_fscreate_restore(security_context_t ctx);
+
+Error: COMPILER_WARNING (CWE-477):
+libuser-0.63/lib/user_private.h:314:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#  314 | void lu_util_fscreate_restore(security_context_t ctx);
+#      | ^~~~
+#  312|   gboolean lu_util_fscreate_save(security_context_t *ctx,
+#  313|   				      struct lu_error **error);
+#  314|-> void lu_util_fscreate_restore(security_context_t ctx);
+#  315|   gboolean lu_util_fscreate_from_fd(int fd, const char *path,
+#  316|   				  struct lu_error **error);
+
+Error: COMPILER_WARNING (CWE-477):
+libuser-0.63/lib/util.c:748:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#  748 | lu_util_fscreate_save(security_context_t *ctx, struct lu_error **error)
+#      | ^~~~~~~~~~~~~~~~~~~~~
+#  746|   /* Store current fscreate context to ctx. */
+#  747|   gboolean
+#  748|-> lu_util_fscreate_save(security_context_t *ctx, struct lu_error **error)
+#  749|   {
+#  750|   	*ctx = NULL;
+
+Error: COMPILER_WARNING (CWE-477):
+libuser-0.63/lib/util.c:762:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#  762 | lu_util_fscreate_restore(security_context_t ctx)
+#      | ^~~~~~~~~~~~~~~~~~~~~~~~
+#  760|   /* Restore fscreate context from ctx, and free it. */
+#  761|   void
+#  762|-> lu_util_fscreate_restore(security_context_t ctx)
+#  763|   {
+#  764|   	if (is_selinux_enabled() > 0) {
+
+Error: COMPILER_WARNING (CWE-477):
+libuser-0.63/lib/util.c: scope_hint: In function 'lu_util_fscreate_from_fd'
+libuser-0.63/lib/util.c:776:17: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#  776 |                 security_context_t ctx;
+#      |                 ^~~~~~~~~~~~~~~~~~
+#  774|   {
+#  775|   	if (is_selinux_enabled() > 0) {
+#  776|-> 		security_context_t ctx;
+#  777|   
+#  778|   		if (fgetfilecon(fd, &ctx) < 0) {
+
+Error: COMPILER_WARNING (CWE-477):
+libuser-0.63/lib/util.c: scope_hint: In function 'lu_util_fscreate_from_file'
+libuser-0.63/lib/util.c:802:17: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#  802 |                 security_context_t ctx;
+#      |                 ^~~~~~~~~~~~~~~~~~
+#  800|   {
+#  801|   	if (is_selinux_enabled() > 0) {
+#  802|-> 		security_context_t ctx;
+#  803|   
+#  804|   		if (getfilecon(file, &ctx) < 0) {
+
+Error: COMPILER_WARNING (CWE-477):
+libuser-0.63/lib/util.c: scope_hint: In function 'lu_util_fscreate_from_lfile'
+libuser-0.63/lib/util.c:828:17: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#  828 |                 security_context_t ctx;
+#      |                 ^~~~~~~~~~~~~~~~~~
+#  826|   {
+#  827|   	if (is_selinux_enabled() > 0) {
+#  828|-> 		security_context_t ctx;
+#  829|   
+#  830|   		if (lgetfilecon(file, &ctx) < 0) {
+
+Error: COMPILER_WARNING (CWE-477):
+libuser-0.63/lib/util.c: scope_hint: In function 'lu_util_fscreate_for_path'
+libuser-0.63/lib/util.c:855:17: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#  855 |                 security_context_t ctx;
+#      |                 ^~~~~~~~~~~~~~~~~~
+#  853|   {
+#  854|   	if (is_selinux_enabled() > 0) {
+#  855|-> 		security_context_t ctx;
+#  856|   
+#  857|   		if (matchpathcon(path, mode, &ctx) < 0) {
+
+Error: COMPILER_WARNING (CWE-477):
+libuser-0.63/lib/util.c:857:17: warning[-Wdeprecated-declarations]: 'matchpathcon' is deprecated: Use selabel_lookup instead
+#  857 |                 if (matchpathcon(path, mode, &ctx) < 0) {
+#      |                 ^~
+libuser-0.63/lib/util.c:34: included_from: Included from here.
+/usr/include/selinux/selinux.h:502:12: note: declared here
+#  502 | extern int matchpathcon(const char *path,
+#      |            ^~~~~~~~~~~~
+#  855|   		security_context_t ctx;
+#  856|   
+#  857|-> 		if (matchpathcon(path, mode, &ctx) < 0) {
+#  858|   			if (errno == ENOENT)
+#  859|   				ctx = NULL;
+
+Error: COMPILER_WARNING (CWE-704):
+libuser-0.63/python/admin.c:1515:9: warning[-Wint-conversion]: initialization of 'long int' from 'void *' makes integer from pointer without a cast
+# 1515 |         NULL,                   /* tp_print */
+#      |         ^~~~
+libuser-0.63/python/admin.c:1515:9: note: (near initialization for 'AdminType.tp_vectorcall_offset')
+# 1513|   	0,			/* tp_itemsize */
+# 1514|   	libuser_admin_destroy,	/* tp_dealloc */
+# 1515|-> 	NULL,			/* tp_print */
+# 1516|   	NULL,			/* tp_getattr */
+# 1517|   	NULL,			/* tp_setattr */
+
+Error: COMPILER_WARNING (CWE-704):
+libuser-0.63/python/ent.c: scope_hint: In function 'libuser_entity_setattro'
+libuser-0.63/python/ent.c:273:14: warning[-Wdiscarded-qualifiers]: assignment discards 'const' qualifier from pointer target type
+#  273 |         name = PYSTRTYPE_ASSTRING(attr_name);
+#      |              ^
+#  271|   		return -1;
+#  272|   	}
+#  273|-> 	name = PYSTRTYPE_ASSTRING(attr_name);
+#  274|   	if (name == NULL) {
+#  275|   		DEBUG_EXIT;
+
+Error: COMPILER_WARNING (CWE-704):
+libuser-0.63/python/ent.c: scope_hint: In function 'libuser_entity_get_item'
+libuser-0.63/python/ent.c:630:14: warning[-Wdiscarded-qualifiers]: assignment discards 'const' qualifier from pointer target type
+#  630 |         attr = PYSTRTYPE_ASSTRING(item);
+#      |              ^
+#  628|   		return NULL;
+#  629|   	}
+#  630|-> 	attr = PYSTRTYPE_ASSTRING(item);
+#  631|   
+#  632|   	if (!lu_ent_has(me->ent, attr)) {
+
+Error: COMPILER_WARNING (CWE-704):
+libuser-0.63/python/ent.c: scope_hint: In function 'libuser_entity_set_item'
+libuser-0.63/python/ent.c:682:14: warning[-Wdiscarded-qualifiers]: assignment discards 'const' qualifier from pointer target type
+#  682 |         attr = PYSTRTYPE_ASSTRING(item);
+#      |              ^
+#  680|   		return -1;
+#  681|   	}
+#  682|-> 	attr = PYSTRTYPE_ASSTRING(item);
+#  683|   #ifdef DEBUG_BINDING
+#  684|   	fprintf(stderr, "%sSetting item (`%s')...\n", getindent(), attr);
+
+Error: COMPILER_WARNING (CWE-704):
+libuser-0.63/python/ent.c: scope_hint: At top level
+libuser-0.63/python/ent.c:803:9: warning[-Wint-conversion]: initialization of 'long int' from 'void *' makes integer from pointer without a cast
+#  803 |         NULL,                   /* tp_print */
+#      |         ^~~~
+libuser-0.63/python/ent.c:803:9: note: (near initialization for 'EntityType.tp_vectorcall_offset')
+#  801|   	0,			/* tp_itemsize */
+#  802|   	libuser_entity_destroy, /* tp_dealloc */
+#  803|-> 	NULL,			/* tp_print */
+#  804|   	NULL,			/* tp_getattr */
+#  805|   	NULL,			/* tp_setattr */
+
+Error: COMPILER_WARNING (CWE-704):
+libuser-0.63/python/misc.c:496:9: warning[-Wint-conversion]: initialization of 'long int' from 'void *' makes integer from pointer without a cast
+#  496 |         NULL,                   /* tp_print */
+#      |         ^~~~
+libuser-0.63/python/misc.c:496:9: note: (near initialization for 'PromptType.tp_vectorcall_offset')
+#  494|   	0,			/* tp_itemsize */
+#  495|   	libuser_prompt_destroy,	/* tp_dealloc */
+#  496|-> 	NULL,			/* tp_print */
+#  497|   	NULL,			/* tp_getattr */
+#  498|   	NULL,			/* tp_setattr */

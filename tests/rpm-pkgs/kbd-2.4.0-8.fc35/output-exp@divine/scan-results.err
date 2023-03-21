@@ -1,0 +1,505 @@
+Error: COMPILER_WARNING:
+kbd-2.4.0/src/vlock/vt.c:83:16: warning: taking address of packed member '' of class or structure 'sigaction' may result in an unaligned pointer value
+#        sigemptyset(&(sa.sa_mask));
+#                      ^~~~~~~~~~
+#   81|   
+#   82|   	memset(&sa, 0, sizeof sa);
+#   83|-> 	sigemptyset(&(sa.sa_mask));
+#   84|   	sa.sa_flags = SA_RESTART;
+#   85|   
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/tests/helpers/libkeymap-showmaps.c:36:27: warning: implicit conversion changes signedness: 'unsigned int' to 'int'
+#                if (!lk_map_exists(ctx, i))
+#                     ~~~~~~~~~~~~~      ^
+#   34|   
+#   35|   	for (i = 0; i < ctx->keymap->total; i++) {
+#   36|-> 		if (!lk_map_exists(ctx, i))
+#   37|   			continue;
+#   38|   		printf("keymap %03d\n", i);
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/tests/libkeymap/libkeymap-test07.c:43:27: warning: implicit conversion changes signedness: 'unsigned int' to 'int'
+#                int c = lk_get_key(ctx, i, 17);
+#                        ~~~~~~~~~~      ^
+#   41|   
+#   42|   	while (i < MAX_NR_KEYMAPS) {
+#   43|-> 		int c = lk_get_key(ctx, i, 17);
+#   44|   		if (KVAL(c) != 'x')
+#   45|   			kbd_error(EXIT_FAILURE, 0, "Unable to get keycode");
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/tests/libkeymap/libkeymap-test08.c:44:27: warning: implicit conversion changes signedness: 'unsigned int' to 'int'
+#                int c = lk_get_key(ctx, i, 17);
+#                        ~~~~~~~~~~      ^
+#   42|   
+#   43|   	for (i = 0; i < 26; i++) {
+#   44|-> 		int c = lk_get_key(ctx, i, 17);
+#   45|   		if (KVAL(c) != str[i])
+#   46|   			kbd_error(EXIT_FAILURE, 0, "Unable to get keycode");
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/tests/libkeymap/libkeymap-test09.c:20:2: warning: implicit declaration of function 'setenv' is invalid in C99
+#        setenv("LOADKEYS_INCLUDE_PATH", DATADIR "/data/libkeymap", 1);
+#        ^
+#   18|   	struct lk_ctx *ctx;
+#   19|   
+#   20|-> 	setenv("LOADKEYS_INCLUDE_PATH", DATADIR "/data/libkeymap", 1);
+#   21|   
+#   22|   	kbdfile_ctx = kbdfile_context_new();
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/tests/libkeymap/libkeymap-test09.c:20:2: warning: this function declaration is not a prototype
+#   18|   	struct lk_ctx *ctx;
+#   19|   
+#   20|-> 	setenv("LOADKEYS_INCLUDE_PATH", DATADIR "/data/libkeymap", 1);
+#   21|   
+#   22|   	kbdfile_ctx = kbdfile_context_new();
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/tests/libkeymap/libkeymap-test16.c:18:27: warning: implicit conversion from enumeration type 'lk_keywords' to different enumeration type 'lk_flags'
+#        lk_set_parser_flags(ctx, LK_KEYWORD_ALTISMETA);
+#        ~~~~~~~~~~~~~~~~~~~      ^~~~~~~~~~~~~~~~~~~~
+#   16|   	ctx = lk_init();
+#   17|   	lk_set_log_fn(ctx, NULL, NULL);
+#   18|-> 	lk_set_parser_flags(ctx, LK_KEYWORD_ALTISMETA);
+#   19|   
+#   20|   	if (lk_add_key(ctx, 0, 0, 16) != 0)
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/tests/libtswrap/ioctl.c:132:2: warning: implicit declaration of function 'dprintf' is invalid in C99
+#        dprintf(outfd, "%s", prefix);
+#        ^
+#  130|   print_chars(const char *prefix, const unsigned char *s, size_t len, size_t split)
+#  131|   {
+#  132|-> 	dprintf(outfd, "%s", prefix);
+#  133|   
+#  134|   	for (size_t i = 0; i < len; i++) {
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/tests/libtswrap/ioctl.c:132:2: warning: this function declaration is not a prototype
+#  130|   print_chars(const char *prefix, const unsigned char *s, size_t len, size_t split)
+#  131|   {
+#  132|-> 	dprintf(outfd, "%s", prefix);
+#  133|   
+#  134|   	for (size_t i = 0; i < len; i++) {
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/tests/libtswrap/ioctl.c:153:2: warning: implicit declaration of function 'dprintf' is invalid in C99
+#        dprintf(outfd, "\tstruct unimapinit *arg {\n");
+#        ^
+#  151|   print_unimapinit(struct unimapinit *ui)
+#  152|   {
+#  153|-> 	dprintf(outfd, "\tstruct unimapinit *arg {\n");
+#  154|   	dprintf(outfd, "\t\tunsigned short advised_hashsize = %u\n", ui->advised_hashsize);
+#  155|   	dprintf(outfd, "\t\tunsigned short advised_hashstep = %u\n", ui->advised_hashstep);
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/tests/libtswrap/ioctl.c:165:2: warning: implicit declaration of function 'dprintf' is invalid in C99
+#        dprintf(outfd, "\tstruct unimapdesc *arg {\n");
+#        ^
+#  163|   	size_t i = 0;
+#  164|   
+#  165|-> 	dprintf(outfd, "\tstruct unimapdesc *arg {\n");
+#  166|   	dprintf(outfd, "\t\tunsigned short entry_ct = %u\n", ud->entry_ct);
+#  167|   
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/tests/libtswrap/ioctl.c:189:2: warning: implicit declaration of function 'dprintf' is invalid in C99
+#        dprintf(outfd, "\tstruct consolefontdesc * {\n");
+#        ^
+#  187|   	size_t size = (width + 7) / 8 * 32 * cfd->charcount;
+#  188|   
+#  189|-> 	dprintf(outfd, "\tstruct consolefontdesc * {\n");
+#  190|   	dprintf(outfd, "\t\tunsigned short charcount = %u\n", cfd->charcount);
+#  191|   	dprintf(outfd, "\t\tunsigned short charheight = %u\n", cfd->charheight);
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/tests/libtswrap/ioctl.c:227:2: warning: implicit declaration of function 'dprintf' is invalid in C99
+#        dprintf(outfd, "\tstruct console_font_op *arg {\n");
+#        ^
+#  225|   	}
+#  226|   
+#  227|-> 	dprintf(outfd, "\tstruct console_font_op *arg {\n");
+#  228|   	dprintf(outfd, "\t\tunsigned int op = %s\n", translate_ntoa(kd_font_op, op->op, buf, sizeof(buf)));
+#  229|   	dprintf(outfd, "\t\tunsigned int flags = %u\n", op->flags);
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/tests/libtswrap/ioctl.c:243:2: warning: implicit declaration of function 'dprintf' is invalid in C99
+#        dprintf(outfd, "\tstruct kbentry *arg {\n");
+#        ^
+#  241|   print_kbentry(struct kbentry * ke)
+#  242|   {
+#  243|-> 	dprintf(outfd, "\tstruct kbentry *arg {\n");
+#  244|   	dprintf(outfd, "\t\tunsigned char kb_table = %u\n", ke->kb_table);
+#  245|   	dprintf(outfd, "\t\tunsigned char kb_index = %u\n", ke->kb_index);
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/tests/libtswrap/ioctl.c:255:2: warning: implicit declaration of function 'dprintf' is invalid in C99
+#        dprintf(outfd, "\tstruct kbsentry *arg {\n");
+#        ^
+#  253|   	size_t sz = strlen((char *) ks->kb_string);
+#  254|   
+#  255|-> 	dprintf(outfd, "\tstruct kbsentry *arg {\n");
+#  256|   	dprintf(outfd, "\t\tunsigned char kb_func = %u\n", ks->kb_func);
+#  257|   	dprintf(outfd, "\t\tunsigned char kb_string[%ld] = {\n", sz);
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/tests/libtswrap/ioctl.c:268:2: warning: implicit declaration of function 'dprintf' is invalid in C99
+#        dprintf(outfd, "\tstruct kbdiacrs *arg {\n");
+#        ^
+#  266|   {
+#  267|   	size_t i;
+#  268|-> 	dprintf(outfd, "\tstruct kbdiacrs *arg {\n");
+#  269|   	dprintf(outfd, "\t\tunsigned int kb_cnt = %u\n", kd->kb_cnt);
+#  270|   	dprintf(outfd, "\t\tstruct kbdiacr kbdiacr[256] = {\n");
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/tests/libtswrap/ioctl.c:286:2: warning: implicit declaration of function 'dprintf' is invalid in C99
+#        dprintf(outfd, "\tstruct kbdiacrsuc *arg {\n");
+#        ^
+#  284|   {
+#  285|   	size_t i;
+#  286|-> 	dprintf(outfd, "\tstruct kbdiacrsuc *arg {\n");
+#  287|   	dprintf(outfd, "\t\tunsigned int kb_cnt = %u\n", kd->kb_cnt);
+#  288|   	dprintf(outfd, "\t\tstruct kbdiacruc kbdiacruc[256] = {\n");
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/tests/libtswrap/ioctl.c:333:4: warning: implicit declaration of function 'dprintf' is invalid in C99
+#                        dprintf(outfd, "ioctl(%d, %s, char *arg) = %d;\n", fd,
+#                        ^
+#  331|   	switch (request) {
+#  332|   		case PIO_FONT:
+#  333|-> 			dprintf(outfd, "ioctl(%d, %s, char *arg) = %d;\n", fd,
+#  334|   				translate_ntoa(kd_request, request, buf0, sizeof(buf0)),
+#  335|   				rc);
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/tests/libtswrap/ioctl.c:334:32: warning: implicit conversion changes signedness: 'ioctl_request_t' (aka 'int') to 'unsigned long'
+#                                translate_ntoa(kd_request, request, buf0, sizeof(buf0)),
+#                                ~~~~~~~~~~~~~~             ^~~~~~~
+#  332|   		case PIO_FONT:
+#  333|   			dprintf(outfd, "ioctl(%d, %s, char *arg) = %d;\n", fd,
+#  334|-> 				translate_ntoa(kd_request, request, buf0, sizeof(buf0)),
+#  335|   				rc);
+#  336|   			dprintf(outfd, "char *arg = {\n");
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/tests/libtswrap/ioctl.c:337:22: warning: cast to 'unsigned char *' from smaller integer type 'ioctl_request_t' (aka 'int')
+#                        print_chars("\t", (unsigned char *) arg, (8 + 7) / 8 * 32 * 256, 8);
+#                                          ^
+#  335|   				rc);
+#  336|   			dprintf(outfd, "char *arg = {\n");
+#  337|-> 			print_chars("\t", (unsigned char *) arg, (8 + 7) / 8 * 32 * 256, 8);
+#  338|   			dprintf(outfd, "};\n");
+#  339|   			break;
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/tests/libtswrap/ioctl.c:342:32: warning: implicit conversion changes signedness: 'ioctl_request_t' (aka 'int') to 'unsigned long'
+#                                translate_ntoa(kd_request, request, buf0, sizeof(buf0)),
+#                                ~~~~~~~~~~~~~~             ^~~~~~~
+#  340|   		case PIO_FONTX:
+#  341|   			dprintf(outfd, "ioctl(%d, %s, struct consolefontdesc *arg) = %d;\n", fd,
+#  342|-> 				translate_ntoa(kd_request, request, buf0, sizeof(buf0)),
+#  343|   				rc);
+#  344|   			print_consolefontdesc((struct consolefontdesc *) arg);
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/tests/libtswrap/ioctl.c:344:26: warning: cast to 'struct consolefontdesc *' from smaller integer type 'ioctl_request_t' (aka 'int')
+#                        print_consolefontdesc((struct consolefontdesc *) arg);
+#                                              ^
+#  342|   				translate_ntoa(kd_request, request, buf0, sizeof(buf0)),
+#  343|   				rc);
+#  344|-> 			print_consolefontdesc((struct consolefontdesc *) arg);
+#  345|   			break;
+#  346|   		case PIO_CMAP:
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/tests/libtswrap/ioctl.c:348:32: warning: implicit conversion changes signedness: 'ioctl_request_t' (aka 'int') to 'unsigned long'
+#                                translate_ntoa(kd_request, request, buf0, sizeof(buf0)),
+#                                ~~~~~~~~~~~~~~             ^~~~~~~
+#  346|   		case PIO_CMAP:
+#  347|   			dprintf(outfd, "ioctl(%d, %s, unsigned char arg[48]) = %d;\n", fd,
+#  348|-> 				translate_ntoa(kd_request, request, buf0, sizeof(buf0)),
+#  349|   				rc);
+#  350|   			dprintf(outfd, "unsigned char arg[48] = {\n");
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/tests/libtswrap/ioctl.c:351:22: warning: cast to 'unsigned char *' from smaller integer type 'ioctl_request_t' (aka 'int')
+#                        print_chars("\t", (unsigned char *) arg, 48, 16);
+#                                          ^
+#  349|   				rc);
+#  350|   			dprintf(outfd, "unsigned char arg[48] = {\n");
+#  351|-> 			print_chars("\t", (unsigned char *) arg, 48, 16);
+#  352|   			dprintf(outfd, "\n");
+#  353|   			dprintf(outfd, "};\n");
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/tests/libtswrap/ioctl.c:356:17: warning: cast to 'char *' from smaller integer type 'ioctl_request_t' (aka 'int')
+#                        arg_char = *((char *) arg);
+#                                     ^
+#  354|   			break;
+#  355|   		case KDGKBTYPE:
+#  356|-> 			arg_char = *((char *) arg);
+#  357|   			dprintf(outfd, "ioctl(%d, %s, 0x%04x) = %d;\n", fd,
+#  358|   				translate_ntoa(kd_request, request, buf0, sizeof(buf0)),
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/tests/libtswrap/ioctl.c:358:32: warning: implicit conversion changes signedness: 'ioctl_request_t' (aka 'int') to 'unsigned long'
+#                                translate_ntoa(kd_request, request, buf0, sizeof(buf0)),
+#                                ~~~~~~~~~~~~~~             ^~~~~~~
+#  356|   			arg_char = *((char *) arg);
+#  357|   			dprintf(outfd, "ioctl(%d, %s, 0x%04x) = %d;\n", fd,
+#  358|-> 				translate_ntoa(kd_request, request, buf0, sizeof(buf0)),
+#  359|   				(int) arg_char,
+#  360|   				rc);
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/tests/libtswrap/ioctl.c:371:9: warning: cast to 'char *' from smaller integer type 'ioctl_request_t' (aka 'int')
+#                                ? *((char *) arg)
+#                                    ^
+#  369|   		case KDSKBLED:
+#  370|   			arg_char = (request != KDSKBLED)
+#  371|-> 				? *((char *) arg)
+#  372|   				: (char) arg;
+#  373|   			dprintf(outfd, "ioctl(%d, %s, 0x%04x) = %d;\n", fd,
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/tests/libtswrap/ioctl.c:374:32: warning: implicit conversion changes signedness: 'ioctl_request_t' (aka 'int') to 'unsigned long'
+#                                translate_ntoa(kd_request, request, buf0, sizeof(buf0)),
+#                                ~~~~~~~~~~~~~~             ^~~~~~~
+#  372|   				: (char) arg;
+#  373|   			dprintf(outfd, "ioctl(%d, %s, 0x%04x) = %d;\n", fd,
+#  374|-> 				translate_ntoa(kd_request, request, buf0, sizeof(buf0)),
+#  375|   				(int) arg_char,
+#  376|   				rc);
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/tests/libtswrap/ioctl.c:388:14: warning: cast to 'unsigned int *' from smaller integer type 'ioctl_request_t' (aka 'int')
+#                        arg_i = *((unsigned int *) arg);
+#                                  ^
+#  386|   		case KDGETMODE:
+#  387|   		case KDSETMODE:
+#  388|-> 			arg_i = *((unsigned int *) arg);
+#  389|   			dprintf(outfd, "ioctl(%d, %s, %s) = %d;\n", fd,
+#  390|   				translate_ntoa(kd_request, request, buf0, sizeof(buf0)),
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/tests/libtswrap/ioctl.c:390:32: warning: implicit conversion changes signedness: 'ioctl_request_t' (aka 'int') to 'unsigned long'
+#                                translate_ntoa(kd_request, request, buf0, sizeof(buf0)),
+#                                ~~~~~~~~~~~~~~             ^~~~~~~
+#  388|   			arg_i = *((unsigned int *) arg);
+#  389|   			dprintf(outfd, "ioctl(%d, %s, %s) = %d;\n", fd,
+#  390|-> 				translate_ntoa(kd_request, request, buf0, sizeof(buf0)),
+#  391|   				translate_ntoa(kd_mode, arg_i, buf1, sizeof(buf1)),
+#  392|   				rc);
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/tests/libtswrap/ioctl.c:397:32: warning: implicit conversion changes signedness: 'ioctl_request_t' (aka 'int') to 'unsigned long'
+#                                translate_ntoa(kd_request, request, buf0, sizeof(buf0)),
+#                                ~~~~~~~~~~~~~~             ^~~~~~~
+#  395|   		case PIO_UNIMAP:
+#  396|   			dprintf(outfd, "ioctl(%d, %s, struct unimapdesc *arg) = %d;\n", fd,
+#  397|-> 				translate_ntoa(kd_request, request, buf0, sizeof(buf0)),
+#  398|   				rc);
+#  399|   			print_unimapdesc((struct unimapdesc *) arg);
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/tests/libtswrap/ioctl.c:399:21: warning: cast to 'struct unimapdesc *' from smaller integer type 'ioctl_request_t' (aka 'int')
+#                        print_unimapdesc((struct unimapdesc *) arg);
+#                                         ^
+#  397|   				translate_ntoa(kd_request, request, buf0, sizeof(buf0)),
+#  398|   				rc);
+#  399|-> 			print_unimapdesc((struct unimapdesc *) arg);
+#  400|   			break;
+#  401|   		case PIO_UNIMAPCLR:
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/tests/libtswrap/ioctl.c:403:32: warning: implicit conversion changes signedness: 'ioctl_request_t' (aka 'int') to 'unsigned long'
+#                                translate_ntoa(kd_request, request, buf0, sizeof(buf0)),
+#                                ~~~~~~~~~~~~~~             ^~~~~~~
+#  401|   		case PIO_UNIMAPCLR:
+#  402|   			dprintf(outfd, "ioctl(%d, %s, struct unimapinit *arg) = %d;\n", fd,
+#  403|-> 				translate_ntoa(kd_request, request, buf0, sizeof(buf0)),
+#  404|   				rc);
+#  405|   			print_unimapinit((struct unimapinit *) arg);
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/tests/libtswrap/ioctl.c:405:21: warning: cast to 'struct unimapinit *' from smaller integer type 'ioctl_request_t' (aka 'int')
+#                        print_unimapinit((struct unimapinit *) arg);
+#                                         ^
+#  403|   				translate_ntoa(kd_request, request, buf0, sizeof(buf0)),
+#  404|   				rc);
+#  405|-> 			print_unimapinit((struct unimapinit *) arg);
+#  406|   			break;
+#  407|   		case KDFONTOP:
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/tests/libtswrap/ioctl.c:409:32: warning: implicit conversion changes signedness: 'ioctl_request_t' (aka 'int') to 'unsigned long'
+#                                translate_ntoa(kd_request, request, buf0, sizeof(buf0)),
+#                                ~~~~~~~~~~~~~~             ^~~~~~~
+#  407|   		case KDFONTOP:
+#  408|   			dprintf(outfd, "ioctl(%d, %s, struct console_font_op *arg) = %d;\n", fd,
+#  409|-> 				translate_ntoa(kd_request, request, buf0, sizeof(buf0)),
+#  410|   				rc);
+#  411|   			print_console_font_op((struct console_font_op *) arg);
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/tests/libtswrap/ioctl.c:411:26: warning: cast to 'struct console_font_op *' from smaller integer type 'ioctl_request_t' (aka 'int')
+#                        print_console_font_op((struct console_font_op *) arg);
+#                                              ^
+#  409|   				translate_ntoa(kd_request, request, buf0, sizeof(buf0)),
+#  410|   				rc);
+#  411|-> 			print_console_font_op((struct console_font_op *) arg);
+#  412|   			break;
+#  413|   		case KDGKBMODE:
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/tests/libtswrap/ioctl.c:416:9: warning: cast to 'unsigned int *' from smaller integer type 'ioctl_request_t' (aka 'int')
+#                                ? *((unsigned int *) arg)
+#                                    ^
+#  414|   		case KDSKBMODE:
+#  415|   			arg_i = (request != KDSKBMODE)
+#  416|-> 				? *((unsigned int *) arg)
+#  417|   				: (unsigned int) arg;
+#  418|   			dprintf(outfd, "ioctl(%d, %s, %s) = %d;\n", fd,
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/tests/libtswrap/ioctl.c:419:32: warning: implicit conversion changes signedness: 'ioctl_request_t' (aka 'int') to 'unsigned long'
+#                                translate_ntoa(kd_request, request, buf0, sizeof(buf0)),
+#                                ~~~~~~~~~~~~~~             ^~~~~~~
+#  417|   				: (unsigned int) arg;
+#  418|   			dprintf(outfd, "ioctl(%d, %s, %s) = %d;\n", fd,
+#  419|-> 				translate_ntoa(kd_request, request, buf0, sizeof(buf0)),
+#  420|   				translate_ntoa(kb_mode, arg_i, buf1, sizeof(buf1)),
+#  421|   				rc);
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/tests/libtswrap/ioctl.c:424:14: warning: cast to 'unsigned int *' from smaller integer type 'ioctl_request_t' (aka 'int')
+#                        arg_i = *((unsigned int *) arg);
+#                                  ^
+#  422|   			break;
+#  423|   		case KDGKBMETA:
+#  424|-> 			arg_i = *((unsigned int *) arg);
+#  425|   			dprintf(outfd, "ioctl(%d, %s, %s) = %d;\n", fd,
+#  426|   				translate_ntoa(kd_request, request, buf0, sizeof(buf0)),
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/tests/libtswrap/ioctl.c:426:32: warning: implicit conversion changes signedness: 'ioctl_request_t' (aka 'int') to 'unsigned long'
+#                                translate_ntoa(kd_request, request, buf0, sizeof(buf0)),
+#                                ~~~~~~~~~~~~~~             ^~~~~~~
+#  424|   			arg_i = *((unsigned int *) arg);
+#  425|   			dprintf(outfd, "ioctl(%d, %s, %s) = %d;\n", fd,
+#  426|-> 				translate_ntoa(kd_request, request, buf0, sizeof(buf0)),
+#  427|   				translate_ntoa(kb_meta, arg_i, buf1, sizeof(buf1)),
+#  428|   				rc);
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/tests/libtswrap/ioctl.c:432:32: warning: implicit conversion changes signedness: 'ioctl_request_t' (aka 'int') to 'unsigned long'
+#                                translate_ntoa(kd_request, request, buf0, sizeof(buf0)),
+#                                ~~~~~~~~~~~~~~             ^~~~~~~
+#  430|   		case KDSKBMETA:
+#  431|   			dprintf(outfd, "ioctl(%d, %s, %s) = %d;\n", fd,
+#  432|-> 				translate_ntoa(kd_request, request, buf0, sizeof(buf0)),
+#  433|   				translate_ntoa(kb_meta, arg, buf1, sizeof(buf1)),
+#  434|   				rc);
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/tests/libtswrap/ioctl.c:433:29: warning: implicit conversion changes signedness: 'ioctl_request_t' (aka 'int') to 'unsigned long'
+#                                translate_ntoa(kb_meta, arg, buf1, sizeof(buf1)),
+#                                ~~~~~~~~~~~~~~          ^~~
+#  431|   			dprintf(outfd, "ioctl(%d, %s, %s) = %d;\n", fd,
+#  432|   				translate_ntoa(kd_request, request, buf0, sizeof(buf0)),
+#  433|-> 				translate_ntoa(kb_meta, arg, buf1, sizeof(buf1)),
+#  434|   				rc);
+#  435|   			break;
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/tests/libtswrap/ioctl.c:439:32: warning: implicit conversion changes signedness: 'ioctl_request_t' (aka 'int') to 'unsigned long'
+#                                translate_ntoa(kd_request, request, buf0, sizeof(buf0)),
+#                                ~~~~~~~~~~~~~~             ^~~~~~~
+#  437|   		case KDSKBENT:
+#  438|   			dprintf(outfd, "ioctl(%d, %s, struct kbentry *arg) = %d;\n", fd,
+#  439|-> 				translate_ntoa(kd_request, request, buf0, sizeof(buf0)),
+#  440|   				rc);
+#  441|   			print_kbentry((struct kbentry *) arg);
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/tests/libtswrap/ioctl.c:441:18: warning: cast to 'struct kbentry *' from smaller integer type 'ioctl_request_t' (aka 'int')
+#                        print_kbentry((struct kbentry *) arg);
+#                                      ^
+#  439|   				translate_ntoa(kd_request, request, buf0, sizeof(buf0)),
+#  440|   				rc);
+#  441|-> 			print_kbentry((struct kbentry *) arg);
+#  442|   			break;
+#  443|   		case KDGKBSENT:
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/tests/libtswrap/ioctl.c:446:32: warning: implicit conversion changes signedness: 'ioctl_request_t' (aka 'int') to 'unsigned long'
+#                                translate_ntoa(kd_request, request, buf0, sizeof(buf0)),
+#                                ~~~~~~~~~~~~~~             ^~~~~~~
+#  444|   		case KDSKBSENT:
+#  445|   			dprintf(outfd, "ioctl(%d, %s, struct kbsentry *arg) = %d;\n", fd,
+#  446|-> 				translate_ntoa(kd_request, request, buf0, sizeof(buf0)),
+#  447|   				rc);
+#  448|   			print_kbsentry((struct kbsentry *) arg);
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/tests/libtswrap/ioctl.c:448:19: warning: cast to 'struct kbsentry *' from smaller integer type 'ioctl_request_t' (aka 'int')
+#                        print_kbsentry((struct kbsentry *) arg);
+#                                       ^
+#  446|   				translate_ntoa(kd_request, request, buf0, sizeof(buf0)),
+#  447|   				rc);
+#  448|-> 			print_kbsentry((struct kbsentry *) arg);
+#  449|   			break;
+#  450|   		case KDGKBDIACR:
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/tests/libtswrap/ioctl.c:453:32: warning: implicit conversion changes signedness: 'ioctl_request_t' (aka 'int') to 'unsigned long'
+#                                translate_ntoa(kd_request, request, buf0, sizeof(buf0)),
+#                                ~~~~~~~~~~~~~~             ^~~~~~~
+#  451|   		case KDSKBDIACR:
+#  452|   			dprintf(outfd, "ioctl(%d, %s, struct kbdiacrs *arg) = %d;\n", fd,
+#  453|-> 				translate_ntoa(kd_request, request, buf0, sizeof(buf0)),
+#  454|   				rc);
+#  455|   			print_kbdiacrs((struct kbdiacrs *) arg);
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/tests/libtswrap/ioctl.c:455:19: warning: cast to 'struct kbdiacrs *' from smaller integer type 'ioctl_request_t' (aka 'int')
+#                        print_kbdiacrs((struct kbdiacrs *) arg);
+#                                       ^
+#  453|   				translate_ntoa(kd_request, request, buf0, sizeof(buf0)),
+#  454|   				rc);
+#  455|-> 			print_kbdiacrs((struct kbdiacrs *) arg);
+#  456|   			break;
+#  457|   		case KDGKBDIACRUC:
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/tests/libtswrap/ioctl.c:460:32: warning: implicit conversion changes signedness: 'ioctl_request_t' (aka 'int') to 'unsigned long'
+#                                translate_ntoa(kd_request, request, buf0, sizeof(buf0)),
+#                                ~~~~~~~~~~~~~~             ^~~~~~~
+#  458|   		case KDSKBDIACRUC:
+#  459|   			dprintf(outfd, "ioctl(%d, %s, struct kbdiacrsuc *arg) = %d;\n", fd,
+#  460|-> 				translate_ntoa(kd_request, request, buf0, sizeof(buf0)),
+#  461|   				rc);
+#  462|   			print_kbdiacrsuc((struct kbdiacrsuc *) arg);
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/tests/libtswrap/ioctl.c:462:21: warning: cast to 'struct kbdiacrsuc *' from smaller integer type 'ioctl_request_t' (aka 'int')
+#                        print_kbdiacrsuc((struct kbdiacrsuc *) arg);
+#                                         ^
+#  460|   				translate_ntoa(kd_request, request, buf0, sizeof(buf0)),
+#  461|   				rc);
+#  462|-> 			print_kbdiacrsuc((struct kbdiacrsuc *) arg);
+#  463|   			break;
+#  464|   		default:
+
+Error: COMPILER_WARNING:
+kbd-2.4.0/tests/libtswrap/ioctl.c:466:32: warning: implicit conversion changes signedness: 'ioctl_request_t' (aka 'int') to 'unsigned long'
+#                                translate_ntoa(kd_request, request, buf0, sizeof(buf0)),
+#                                ~~~~~~~~~~~~~~             ^~~~~~~
+#  464|   		default:
+#  465|   			dprintf(outfd, "ioctl(%d, %s, ...) = %d;\n", fd,
+#  466|-> 				translate_ntoa(kd_request, request, buf0, sizeof(buf0)),
+#  467|   				rc);
+#  468|   			break;

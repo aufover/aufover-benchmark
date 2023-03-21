@@ -1,0 +1,31 @@
+Error: COMPILER_WARNING:
+gzip-1.10/lib/utimens.c: scope_hint: In function 'fdutimens'
+gzip-1.10/lib/utimens.c:382:17: warning[-Wstringop-overflow=]: 'update_timespec' accessing 16 bytes in a region of size 8
+#  382 |       if (ts && update_timespec (&st, &ts))
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+gzip-1.10/lib/utimens.c:382:17: note: referencing argument 2 of type 'struct timespec **'
+gzip-1.10/lib/utimens.c:133:1: note: in a call to function 'update_timespec'
+#  133 | update_timespec (struct stat const *statbuf, struct timespec *ts[2])
+#      | ^~~~~~~~~~~~~~~
+#  380|             && (fd < 0 ? stat (file, &st) : fstat (fd, &st)))
+#  381|           return -1;
+#  382|->       if (ts && update_timespec (&st, &ts))
+#  383|           return 0;
+#  384|       }
+
+Error: COMPILER_WARNING:
+gzip-1.10/lib/utimens.c: scope_hint: In function 'lutimens'
+gzip-1.10/lib/utimens.c:595:17: warning[-Wstringop-overflow=]: 'update_timespec' accessing 16 bytes in a region of size 8
+#  595 |       if (ts && update_timespec (&st, &ts))
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+gzip-1.10/lib/utimens.c:595:17: note: referencing argument 2 of type 'struct timespec **'
+gzip-1.10/lib/utimens.c:133:1: note: in a call to function 'update_timespec'
+#  133 | update_timespec (struct stat const *statbuf, struct timespec *ts[2])
+#      | ^~~~~~~~~~~~~~~
+gzip-1.10/lib/utimens.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#  593|         if (adjustment_needed != 3 && lstat (file, &st))
+#  594|           return -1;
+#  595|->       if (ts && update_timespec (&st, &ts))
+#  596|           return 0;
+#  597|       }

@@ -1,0 +1,19 @@
+Error: COMPILER_WARNING:
+lua-5.4.3/lua-5.3.5/src/lopcodes.c:20:27: warning: 'luaP_opnames' initialized and declared 'extern'
+#   20 | LUA_API const char *const luaP_opnames[NUM_OPCODES+1] = {
+#      |                           ^~~~~~~~~~~~
+#   18|   /* ORDER OP */
+#   19|   
+#   20|-> LUA_API const char *const luaP_opnames[NUM_OPCODES+1] = {
+#   21|     "MOVE",
+#   22|     "LOADK",
+
+Error: COMPILER_WARNING:
+lua-5.4.3/lua-5.3.5/src/lopcodes.c:74:23: warning: 'luaP_opmodes' initialized and declared 'extern'
+#   74 | LUA_API const lu_byte luaP_opmodes[NUM_OPCODES] = {
+#      |                       ^~~~~~~~~~~~
+#   72|   #define opmode(t,a,b,c,m) (((t)<<7) | ((a)<<6) | ((b)<<4) | ((c)<<2) | (m))
+#   73|   
+#   74|-> LUA_API const lu_byte luaP_opmodes[NUM_OPCODES] = {
+#   75|   /*       T  A    B       C     mode		   opcode	*/
+#   76|     opmode(0, 1, OpArgR, OpArgN, iABC)		/* OP_MOVE */

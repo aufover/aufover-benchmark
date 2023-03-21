@@ -1,0 +1,1090 @@
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/evutil_rand.c:134: included_from: Included from here.
+libevent-2.1.12-stable/arc4random.c:188:12: warning: implicit declaration of function 'getrandom' is invalid in C99
+#                if (0 == getrandom(&buf[len], n, 0))
+#                         ^
+#  186|   		n = sizeof(buf) - len;
+#  187|   
+#  188|-> 		if (0 == getrandom(&buf[len], n, 0))
+#  189|   			return -1;
+#  190|   	}
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/arc4random.c:188:12: warning: this function declaration is not a prototype
+#  186|   		n = sizeof(buf) - len;
+#  187|   
+#  188|-> 		if (0 == getrandom(&buf[len], n, 0))
+#  189|   			return -1;
+#  190|   	}
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/epoll.c:148:9: warning: implicit declaration of function 'epoll_create1' is invalid in C99
+#        epfd = epoll_create1(EPOLL_CLOEXEC);
+#               ^
+#  146|   #ifdef EVENT__HAVE_EPOLL_CREATE1
+#  147|   	/* First, try the shiny new epoll_create1 interface, if we have it. */
+#  148|-> 	epfd = epoll_create1(EPOLL_CLOEXEC);
+#  149|   #endif
+#  150|   	if (epfd == -1) {
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/epoll.c:148:9: warning: this function declaration is not a prototype
+#  146|   #ifdef EVENT__HAVE_EPOLL_CREATE1
+#  147|   	/* First, try the shiny new epoll_create1 interface, if we have it. */
+#  148|-> 	epfd = epoll_create1(EPOLL_CLOEXEC);
+#  149|   #endif
+#  150|   	if (epfd == -1) {
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/epoll.c:153:15: warning: implicit declaration of function 'epoll_create' is invalid in C99
+#                if ((epfd = epoll_create(32000)) == -1) {
+#                            ^
+#  151|   		/* Initialize the kernel queue using the old interface.  (The
+#  152|   		size field is ignored   since 2.6.8.) */
+#  153|-> 		if ((epfd = epoll_create(32000)) == -1) {
+#  154|   			if (errno != ENOSYS)
+#  155|   				event_warn("epoll_create");
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/epoll.c:153:15: warning: this function declaration is not a prototype
+#  151|   		/* Initialize the kernel queue using the old interface.  (The
+#  152|   		size field is ignored   since 2.6.8.) */
+#  153|-> 		if ((epfd = epoll_create(32000)) == -1) {
+#  154|   			if (errno != ENOSYS)
+#  155|   				event_warn("epoll_create");
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/epoll.c:290:6: warning: implicit declaration of function 'epoll_ctl' is invalid in C99
+#        if (epoll_ctl(epollop->epfd, op, ch->fd, &epev) == 0) {
+#            ^
+#  288|   	epev.data.fd = ch->fd;
+#  289|   	epev.events = events;
+#  290|-> 	if (epoll_ctl(epollop->epfd, op, ch->fd, &epev) == 0) {
+#  291|   		event_debug((PRINT_CHANGES(op, epev.events, ch, "okay")));
+#  292|   		return 0;
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/epoll.c:290:6: warning: this function declaration is not a prototype
+#  288|   	epev.data.fd = ch->fd;
+#  289|   	epev.events = events;
+#  290|-> 	if (epoll_ctl(epollop->epfd, op, ch->fd, &epev) == 0) {
+#  291|   		event_debug((PRINT_CHANGES(op, epev.events, ch, "okay")));
+#  292|   		return 0;
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/evdns.c:3587:14: warning: incompatible integer to pointer conversion initializing 'char *const' with an expression of type 'int'
+#        char *const first_token = strtok_r(start, delims, &strtok_state);
+#                    ^             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3585|   
+# 3586|   
+# 3587|-> 	char *const first_token = strtok_r(start, delims, &strtok_state);
+# 3588|   	ASSERT_LOCKED(base);
+# 3589|   	if (!first_token) return;
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/evdns.c:3587:28: warning: implicit declaration of function 'strtok_r' is invalid in C99
+#        char *const first_token = strtok_r(start, delims, &strtok_state);
+#                                  ^
+# 3585|   
+# 3586|   
+# 3587|-> 	char *const first_token = strtok_r(start, delims, &strtok_state);
+# 3588|   	ASSERT_LOCKED(base);
+# 3589|   	if (!first_token) return;
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/evdns.c:3587:28: warning: this function declaration is not a prototype
+# 3585|   
+# 3586|   
+# 3587|-> 	char *const first_token = strtok_r(start, delims, &strtok_state);
+# 3588|   	ASSERT_LOCKED(base);
+# 3589|   	if (!first_token) return;
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/evdns.c:3592:21: warning: incompatible integer to pointer conversion initializing 'const char *const' with an expression of type 'int'
+#                const char *const nameserver = NEXT_TOKEN;
+#                                  ^            ~~~~~~~~~~
+# 3590|   
+# 3591|   	if (!strcmp(first_token, "nameserver") && (flags & DNS_OPTION_NAMESERVERS)) {
+# 3592|-> 		const char *const nameserver = NEXT_TOKEN;
+# 3593|   
+# 3594|   		if (nameserver)
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/evdns.c:3597:21: warning: incompatible integer to pointer conversion initializing 'const char *const' with an expression of type 'int'
+#                const char *const domain = NEXT_TOKEN;
+#                                  ^        ~~~~~~~~~~
+# 3595|   			evdns_base_nameserver_ip_add(base, nameserver);
+# 3596|   	} else if (!strcmp(first_token, "domain") && (flags & DNS_OPTION_SEARCH)) {
+# 3597|-> 		const char *const domain = NEXT_TOKEN;
+# 3598|   		if (domain) {
+# 3599|   			search_postfix_clear(base);
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/evdns.c:3606:18: warning: incompatible integer to pointer conversion assigning to 'const char *' from 'int'
+#                while ((domain = NEXT_TOKEN)) {
+#                               ^ ~~~~~~~~~~
+# 3604|   		search_postfix_clear(base);
+# 3605|   
+# 3606|-> 		while ((domain = NEXT_TOKEN)) {
+# 3607|   			search_postfix_add(base, domain);
+# 3608|   		}
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/evdns.c:3612:18: warning: incompatible integer to pointer conversion assigning to 'const char *' from 'int'
+#                while ((option = NEXT_TOKEN)) {
+#                               ^ ~~~~~~~~~~
+# 3610|   	} else if (!strcmp(first_token, "options")) {
+# 3611|   		const char *option;
+# 3612|-> 		while ((option = NEXT_TOKEN)) {
+# 3613|   			const char *val = strchr(option, ':');
+# 3614|   			evdns_base_set_option_impl(base, option, val ? val+1 : "", flags);
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/evdns.c:4197:14: warning: incompatible integer to pointer conversion initializing 'char *const' with an expression of type 'int'
+#        char *const addr = strtok_r(line, delims, &strtok_state);
+#                    ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 4195|   	char *strtok_state;
+# 4196|   	static const char *const delims = " \t";
+# 4197|-> 	char *const addr = strtok_r(line, delims, &strtok_state);
+# 4198|   	char *hostname, *hash;
+# 4199|   	struct sockaddr_storage ss;
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/evdns.c:4197:21: warning: implicit declaration of function 'strtok_r' is invalid in C99
+#        char *const addr = strtok_r(line, delims, &strtok_state);
+#                           ^
+# 4195|   	char *strtok_state;
+# 4196|   	static const char *const delims = " \t";
+# 4197|-> 	char *const addr = strtok_r(line, delims, &strtok_state);
+# 4198|   	char *hostname, *hash;
+# 4199|   	struct sockaddr_storage ss;
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/evdns.c:4217:19: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#        while ((hostname = NEXT_TOKEN)) {
+#                         ^ ~~~~~~~~~~
+# 4215|   		return -1;
+# 4216|   
+# 4217|-> 	while ((hostname = NEXT_TOKEN)) {
+# 4218|   		struct hosts_entry *he;
+# 4219|   		size_t namelen;
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/evutil.c:683:6: warning: implicit declaration of function 'getifaddrs' is invalid in C99
+#        if (getifaddrs(&ifa) < 0) {
+#            ^
+#  681|   	struct ifaddrs *ifa = NULL;
+#  682|   	const struct ifaddrs *i;
+#  683|-> 	if (getifaddrs(&ifa) < 0) {
+#  684|   		event_warn("Unable to call getifaddrs()");
+#  685|   		return -1;
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/evutil.c:683:6: warning: this function declaration is not a prototype
+#  681|   	struct ifaddrs *ifa = NULL;
+#  682|   	const struct ifaddrs *i;
+#  683|-> 	if (getifaddrs(&ifa) < 0) {
+#  684|   		event_warn("Unable to call getifaddrs()");
+#  685|   		return -1;
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/evutil.c:688:16: warning: variable 'i' used in loop condition not modified in loop body
+#        for (i = ifa; i; i = i->ifa_next) {
+#                      ^
+#  686|   	}
+#  687|   
+#  688|-> 	for (i = ifa; i; i = i->ifa_next) {
+#  689|   		if (!i->ifa_addr)
+#  690|   			continue;
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/evutil.c:694:2: warning: implicit declaration of function 'freeifaddrs' is invalid in C99
+#        freeifaddrs(ifa);
+#        ^
+#  692|   	}
+#  693|   
+#  694|-> 	freeifaddrs(ifa);
+#  695|   	return 0;
+#  696|   #elif defined(_WIN32)
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/evutil.c:694:2: warning: this function declaration is not a prototype
+#  692|   	}
+#  693|   
+#  694|-> 	freeifaddrs(ifa);
+#  695|   	return 0;
+#  696|   #elif defined(_WIN32)
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/evutil.c:2010:13: warning: implicit declaration of function 'if_nametoindex' is invalid in C99
+#        if_index = if_nametoindex(cp + 1);
+#                   ^
+# 2008|   		return evutil_inet_pton(af, src, dst);
+# 2009|   
+# 2010|-> 	if_index = if_nametoindex(cp + 1);
+# 2011|   	if (if_index == 0) {
+# 2012|   		/* Could be numeric */
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/evutil.c:2010:13: warning: this function declaration is not a prototype
+# 2008|   		return evutil_inet_pton(af, src, dst);
+# 2009|   
+# 2010|-> 	if_index = if_nametoindex(cp + 1);
+# 2011|   	if (if_index == 0) {
+# 2012|   		/* Could be numeric */
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/evutil.c:2684:6: warning: implicit declaration of function 'pipe2' is invalid in C99
+#        if (pipe2(fd, O_NONBLOCK|O_CLOEXEC) == 0)
+#            ^
+# 2682|   
+# 2683|   #if defined(EVENT__HAVE_PIPE2)
+# 2684|-> 	if (pipe2(fd, O_NONBLOCK|O_CLOEXEC) == 0)
+# 2685|   		return 0;
+# 2686|   #endif
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/evutil.c:2684:6: warning: this function declaration is not a prototype
+# 2682|   
+# 2683|   #if defined(EVENT__HAVE_PIPE2)
+# 2684|-> 	if (pipe2(fd, O_NONBLOCK|O_CLOEXEC) == 0)
+# 2685|   		return 0;
+# 2686|   #endif
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/evutil_time.c:200:3: warning: implicit declaration of function 'gmtime_r' is invalid in C99
+#                gmtime_r(&t, &sys);
+#                ^
+#  198|   	if (tm == NULL) {
+#  199|   #if !defined(_WIN32)
+#  200|-> 		gmtime_r(&t, &sys);
+#  201|   		tm = &sys;
+#  202|   		/** detect _gmtime64()/_gmtime64_s() */
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/evutil_time.c:200:3: warning: this function declaration is not a prototype
+#  198|   	if (tm == NULL) {
+#  199|   #if !defined(_WIN32)
+#  200|-> 		gmtime_r(&t, &sys);
+#  201|   		tm = &sys;
+#  202|   		/** detect _gmtime64()/_gmtime64_s() */
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/http.c:1264:3: warning: implicit declaration of function 'shutdown' is invalid in C99
+#                shutdown(evcon->fd, EVUTIL_SHUT_WR);
+#                ^
+# 1262|   
+# 1263|   	if (evcon->fd != -1) {
+# 1264|-> 		shutdown(evcon->fd, EVUTIL_SHUT_WR);
+# 1265|   		if (need_close)
+# 1266|   			evutil_closesocket(evcon->fd);
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/http.c:1264:3: warning: this function declaration is not a prototype
+# 1262|   
+# 1263|   	if (evcon->fd != -1) {
+# 1264|-> 		shutdown(evcon->fd, EVUTIL_SHUT_WR);
+# 1265|   		if (need_close)
+# 1266|   			evutil_closesocket(evcon->fd);
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/http.c:1358:3: warning: implicit declaration of function 'shutdown' is invalid in C99
+#                shutdown(evcon->fd, EVUTIL_SHUT_WR);
+#                ^
+# 1356|   			(*evcon->closecb)(evcon, evcon->closecb_arg);
+# 1357|   
+# 1358|-> 		shutdown(evcon->fd, EVUTIL_SHUT_WR);
+# 1359|   		evutil_closesocket(evcon->fd);
+# 1360|   		evcon->fd = -1;
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/http.c:1688:11: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#        protocol = strsep(&line, " ");
+#                 ^ ~~~~~~~~~~~~~~~~~~
+# 1686|   	const char *readable = "";
+# 1687|   
+# 1688|-> 	protocol = strsep(&line, " ");
+# 1689|   	if (line == NULL)
+# 1690|   		return (-1);
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/http.c:1688:13: warning: implicit declaration of function 'strsep' is invalid in C99
+#        protocol = strsep(&line, " ");
+#                   ^
+# 1686|   	const char *readable = "";
+# 1687|   
+# 1688|-> 	protocol = strsep(&line, " ");
+# 1689|   	if (line == NULL)
+# 1690|   		return (-1);
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/http.c:1688:13: warning: this function declaration is not a prototype
+# 1686|   	const char *readable = "";
+# 1687|   
+# 1688|-> 	protocol = strsep(&line, " ");
+# 1689|   	if (line == NULL)
+# 1690|   		return (-1);
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/http.c:1691:9: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#        number = strsep(&line, " ");
+#               ^ ~~~~~~~~~~~~~~~~~~
+# 1689|   	if (line == NULL)
+# 1690|   		return (-1);
+# 1691|-> 	number = strsep(&line, " ");
+# 1692|   	if (line != NULL)
+# 1693|   		readable = line;
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/http.c:1738:9: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#        method = strsep(&line, " ");
+#               ^ ~~~~~~~~~~~~~~~~~~
+# 1736|   
+# 1737|   	/* Parse the request line */
+# 1738|-> 	method = strsep(&line, " ");
+# 1739|   	if (!line)
+# 1740|   		return -1;
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/http.c:1738:11: warning: implicit declaration of function 'strsep' is invalid in C99
+#        method = strsep(&line, " ");
+#                 ^
+# 1736|   
+# 1737|   	/* Parse the request line */
+# 1738|-> 	method = strsep(&line, " ");
+# 1739|   	if (!line)
+# 1740|   		return -1;
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/http.c:2132:8: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#                skey = strsep(&svalue, ":");
+#                     ^ ~~~~~~~~~~~~~~~~~~~~
+# 2130|   		/* Processing of header lines */
+# 2131|   		svalue = line;
+# 2132|-> 		skey = strsep(&svalue, ":");
+# 2133|   		if (svalue == NULL)
+# 2134|   			goto error;
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/http.c:2132:10: warning: implicit declaration of function 'strsep' is invalid in C99
+#                skey = strsep(&svalue, ":");
+#                       ^
+# 2130|   		/* Processing of header lines */
+# 2131|   		svalue = line;
+# 2132|-> 		skey = strsep(&svalue, ":");
+# 2133|   		if (svalue == NULL)
+# 2134|   			goto error;
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/http.c:3290:12: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#                argument = strsep(&p, "&");
+#                         ^ ~~~~~~~~~~~~~~~
+# 3288|   		char *key, *value, *decoded_value;
+# 3289|   		int err;
+# 3290|-> 		argument = strsep(&p, "&");
+# 3291|   
+# 3292|   		value = argument;
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/http.c:3290:14: warning: implicit declaration of function 'strsep' is invalid in C99
+#                argument = strsep(&p, "&");
+#                           ^
+# 3288|   		char *key, *value, *decoded_value;
+# 3289|   		int err;
+# 3290|-> 		argument = strsep(&p, "&");
+# 3291|   
+# 3292|   		value = argument;
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/http.c:3293:7: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#                key = strsep(&value, "=");
+#                    ^ ~~~~~~~~~~~~~~~~~~~
+# 3291|   
+# 3292|   		value = argument;
+# 3293|-> 		key = strsep(&value, "=");
+# 3294|   		if (value == NULL || *key == '\0') {
+# 3295|   			goto error;
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/poll.c:182:8: warning: implicit declaration of function 'poll' is invalid in C99
+#        res = poll(event_set, nfds, msec);
+#              ^
+#  180|   	EVBASE_RELEASE_LOCK(base, th_base_lock);
+#  181|   
+#  182|-> 	res = poll(event_set, nfds, msec);
+#  183|   
+#  184|   	EVBASE_ACQUIRE_LOCK(base, th_base_lock);
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/poll.c:182:8: warning: this function declaration is not a prototype
+#  180|   	EVBASE_RELEASE_LOCK(base, th_base_lock);
+#  181|   
+#  182|-> 	res = poll(event_set, nfds, msec);
+#  183|   
+#  184|   	EVBASE_ACQUIRE_LOCK(base, th_base_lock);
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/sample/hello-world.c:58:17: warning: implicit declaration of function '__htobe16' is invalid in C99
+#        sin.sin_port = htons(PORT);
+#                       ^
+/opt/divine/include/dios/include/netinet/in.h:48:18: note: expanded from macro 'htons'
+##define htons(x)        __htobe16(x)
+#                        ^
+#   56|   
+#   57|   	sin.sin_family = AF_INET;
+#   58|-> 	sin.sin_port = htons(PORT);
+#   59|   
+#   60|   	listener = evconnlistener_new_bind(base, listener_cb, (void *)base,
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/sample/hello-world.c:58:17: warning: this function declaration is not a prototype
+/opt/divine/include/dios/include/netinet/in.h:48:18: note: expanded from macro 'htons'
+##define htons(x)        __htobe16(x)
+#                        ^
+#   56|   
+#   57|   	sin.sin_family = AF_INET;
+#   58|-> 	sin.sin_port = htons(PORT);
+#   59|   
+#   60|   	listener = evconnlistener_new_bind(base, listener_cb, (void *)base,
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/sample/http-server.c:413:14: warning: implicit declaration of function '__htobe16' is invalid in C99
+#                got_port = ntohs(((struct sockaddr_in*)&ss)->sin_port);
+#                           ^
+/opt/divine/include/dios/include/netinet/in.h:50:18: note: expanded from macro 'ntohs'
+##define ntohs(x)        __htobe16(x)
+#                        ^
+#  411|   
+#  412|   	if (ss.ss_family == AF_INET) {
+#  413|-> 		got_port = ntohs(((struct sockaddr_in*)&ss)->sin_port);
+#  414|   		inaddr = &((struct sockaddr_in*)&ss)->sin_addr;
+#  415|   	} else if (ss.ss_family == AF_INET6) {
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/sample/http-server.c:413:14: warning: this function declaration is not a prototype
+/opt/divine/include/dios/include/netinet/in.h:50:18: note: expanded from macro 'ntohs'
+##define ntohs(x)        __htobe16(x)
+#                        ^
+#  411|   
+#  412|   	if (ss.ss_family == AF_INET) {
+#  413|-> 		got_port = ntohs(((struct sockaddr_in*)&ss)->sin_port);
+#  414|   		inaddr = &((struct sockaddr_in*)&ss)->sin_addr;
+#  415|   	} else if (ss.ss_family == AF_INET6) {
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/sample/http-server.c:416:14: warning: implicit declaration of function '__htobe16' is invalid in C99
+#                got_port = ntohs(((struct sockaddr_in6*)&ss)->sin6_port);
+#                           ^
+/opt/divine/include/dios/include/netinet/in.h:50:18: note: expanded from macro 'ntohs'
+##define ntohs(x)        __htobe16(x)
+#                        ^
+#  414|   		inaddr = &((struct sockaddr_in*)&ss)->sin_addr;
+#  415|   	} else if (ss.ss_family == AF_INET6) {
+#  416|-> 		got_port = ntohs(((struct sockaddr_in6*)&ss)->sin6_port);
+#  417|   		inaddr = &((struct sockaddr_in6*)&ss)->sin6_addr;
+#  418|   	}
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/sample/le-proxy.c:251:19: warning: implicit declaration of function '__htobe16' is invalid in C99
+#                sin->sin_port = htons(p);
+#                                ^
+/opt/divine/include/dios/include/netinet/in.h:48:18: note: expanded from macro 'htons'
+##define htons(x)        __htobe16(x)
+#                        ^
+#  249|   		if (p < 1 || p > 65535)
+#  250|   			syntax();
+#  251|-> 		sin->sin_port = htons(p);
+#  252|   		sin->sin_addr.s_addr = htonl(0x7f000001);
+#  253|   		sin->sin_family = AF_INET;
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/sample/le-proxy.c:251:19: warning: this function declaration is not a prototype
+/opt/divine/include/dios/include/netinet/in.h:48:18: note: expanded from macro 'htons'
+##define htons(x)        __htobe16(x)
+#                        ^
+#  249|   		if (p < 1 || p > 65535)
+#  250|   			syntax();
+#  251|-> 		sin->sin_port = htons(p);
+#  252|   		sin->sin_addr.s_addr = htonl(0x7f000001);
+#  253|   		sin->sin_family = AF_INET;
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/sample/le-proxy.c:252:26: warning: implicit declaration of function '__htobe32' is invalid in C99
+#                sin->sin_addr.s_addr = htonl(0x7f000001);
+#                                       ^
+/opt/divine/include/dios/include/netinet/in.h:49:18: note: expanded from macro 'htonl'
+##define htonl(x)        __htobe32(x)
+#                        ^
+#  250|   			syntax();
+#  251|   		sin->sin_port = htons(p);
+#  252|-> 		sin->sin_addr.s_addr = htonl(0x7f000001);
+#  253|   		sin->sin_family = AF_INET;
+#  254|   		socklen = sizeof(struct sockaddr_in);
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/sample/le-proxy.c:252:26: warning: this function declaration is not a prototype
+/opt/divine/include/dios/include/netinet/in.h:49:18: note: expanded from macro 'htonl'
+##define htonl(x)        __htobe32(x)
+#                        ^
+#  250|   			syntax();
+#  251|   		sin->sin_port = htons(p);
+#  252|-> 		sin->sin_addr.s_addr = htonl(0x7f000001);
+#  253|   		sin->sin_family = AF_INET;
+#  254|   		socklen = sizeof(struct sockaddr_in);
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/signal.c:258:14: warning: taking address of packed member '' of class or structure 'sigaction' may result in an unaligned pointer value
+#        sigfillset(&sa.sa_mask);
+#                    ^~~~~~~~~~
+#  256|   	sa.sa_handler = handler;
+#  257|   	sa.sa_flags |= SA_RESTART;
+#  258|-> 	sigfillset(&sa.sa_mask);
+#  259|   
+#  260|   	if (sigaction(evsignal, &sa, sig->sh_old[evsignal]) == -1) {
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/bench_httpclient.c:144:24: warning: implicit declaration of function '__htobe32' is invalid in C99
+#        sin.sin_addr.s_addr = htonl(0x7f000001);
+#                              ^
+/opt/divine/include/dios/include/netinet/in.h:49:18: note: expanded from macro 'htonl'
+##define htonl(x)        __htobe32(x)
+#                        ^
+#  142|   
+#  143|   	sin.sin_family = AF_INET;
+#  144|-> 	sin.sin_addr.s_addr = htonl(0x7f000001);
+#  145|   	sin.sin_port = htons(8080);
+#  146|   	if ((sock = socket(AF_INET, SOCK_STREAM, 0)) < 0)
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/bench_httpclient.c:144:24: warning: this function declaration is not a prototype
+/opt/divine/include/dios/include/netinet/in.h:49:18: note: expanded from macro 'htonl'
+##define htonl(x)        __htobe32(x)
+#                        ^
+#  142|   
+#  143|   	sin.sin_family = AF_INET;
+#  144|-> 	sin.sin_addr.s_addr = htonl(0x7f000001);
+#  145|   	sin.sin_port = htons(8080);
+#  146|   	if ((sock = socket(AF_INET, SOCK_STREAM, 0)) < 0)
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/bench_httpclient.c:145:17: warning: implicit declaration of function '__htobe16' is invalid in C99
+#        sin.sin_port = htons(8080);
+#                       ^
+/opt/divine/include/dios/include/netinet/in.h:48:18: note: expanded from macro 'htons'
+##define htons(x)        __htobe16(x)
+#                        ^
+#  143|   	sin.sin_family = AF_INET;
+#  144|   	sin.sin_addr.s_addr = htonl(0x7f000001);
+#  145|-> 	sin.sin_port = htons(8080);
+#  146|   	if ((sock = socket(AF_INET, SOCK_STREAM, 0)) < 0)
+#  147|   		return -1;
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/bench_httpclient.c:145:17: warning: this function declaration is not a prototype
+/opt/divine/include/dios/include/netinet/in.h:48:18: note: expanded from macro 'htons'
+##define htons(x)        __htobe16(x)
+#                        ^
+#  143|   	sin.sin_family = AF_INET;
+#  144|   	sin.sin_addr.s_addr = htonl(0x7f000001);
+#  145|-> 	sin.sin_port = htons(8080);
+#  146|   	if ((sock = socket(AF_INET, SOCK_STREAM, 0)) < 0)
+#  147|   		return -1;
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/regress.c:197:3: warning: implicit declaration of function 'shutdown' is invalid in C99
+#                shutdown(fd, EVUTIL_SHUT_WR);
+#                ^
+#  195|   
+#  196|   	if (woff >= (int)sizeof(wbuf)) {
+#  197|-> 		shutdown(fd, EVUTIL_SHUT_WR);
+#  198|   		if (usepersist)
+#  199|   			event_del(ev);
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/regress.c:197:3: warning: this function declaration is not a prototype
+#  195|   
+#  196|   	if (woff >= (int)sizeof(wbuf)) {
+#  197|-> 		shutdown(fd, EVUTIL_SHUT_WR);
+#  198|   		if (usepersist)
+#  199|   			event_del(ev);
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/regress.c:277:3: warning: implicit declaration of function 'shutdown' is invalid in C99
+#                shutdown(fd, EVUTIL_SHUT_WR);
+#                ^
+#  275|   		fprintf(stderr, "%s: write\n", __func__);
+#  276|   	if (len <= 0) {
+#  277|-> 		shutdown(fd, EVUTIL_SHUT_WR);
+#  278|   		return;
+#  279|   	}
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/regress.c:307:2: warning: implicit declaration of function 'shutdown' is invalid in C99
+#        shutdown(pair[0], EVUTIL_SHUT_WR);
+#        ^
+#  305|   	}
+#  306|   
+#  307|-> 	shutdown(pair[0], EVUTIL_SHUT_WR);
+#  308|   
+#  309|   	event_set(&ev, pair[1], EV_READ, simple_read_cb, &ev);
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/regress.c:352:2: warning: implicit declaration of function 'shutdown' is invalid in C99
+#        shutdown(pair[0], EVUTIL_SHUT_WR);
+#        ^
+#  350|   	}
+#  351|   
+#  352|-> 	shutdown(pair[0], EVUTIL_SHUT_WR);
+#  353|   
+#  354|   	event_set(&one, pair[1], EV_READ, simpleread_multiple_cb, NULL);
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/regress.c:502:14: warning: implicit declaration of function 'shutdown' is invalid in C99
+#                tt_assert(!shutdown(pair[1], EVUTIL_SHUT_WR));
+#                           ^
+#  500|   		pair[1] = -1;
+#  501|   	} else if (strstr(flags, "shutdown")) {
+#  502|-> 		tt_assert(!shutdown(pair[1], EVUTIL_SHUT_WR));
+#  503|   	} else {
+#  504|   		tt_abort_msg("unknown flags");
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/regress.c:1009:2: warning: implicit declaration of function 'shutdown' is invalid in C99
+#        shutdown(pair[0], EVUTIL_SHUT_WR);
+#        ^
+# 1007|   	}
+# 1008|   
+# 1009|-> 	shutdown(pair[0], EVUTIL_SHUT_WR);
+# 1010|   
+# 1011|   	evsignal_set(&usr_ev, SIGUSR1, fork_signal_cb, &usr_ev);
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/regress.c:1152:6: warning: implicit declaration of function 'setitimer' is invalid in C99
+#        if (setitimer(ITIMER_REAL, &itv, NULL) == -1)
+#            ^
+# 1150|   	itv.it_value.tv_sec = 0;
+# 1151|   	itv.it_value.tv_usec = 100000;
+# 1152|-> 	if (setitimer(ITIMER_REAL, &itv, NULL) == -1)
+# 1153|   		goto skip_simplesignal;
+# 1154|   
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/regress.c:1152:6: warning: this function declaration is not a prototype
+# 1150|   	itv.it_value.tv_sec = 0;
+# 1151|   	itv.it_value.tv_usec = 100000;
+# 1152|-> 	if (setitimer(ITIMER_REAL, &itv, NULL) == -1)
+# 1153|   		goto skip_simplesignal;
+# 1154|   
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/regress.c:1194:6: warning: implicit declaration of function 'setitimer' is invalid in C99
+#        if (setitimer(ITIMER_REAL, &itv, NULL) == -1)
+#            ^
+# 1192|   	itv.it_value.tv_sec = 0;
+# 1193|   	itv.it_value.tv_usec = 100000;
+# 1194|-> 	if (setitimer(ITIMER_REAL, &itv, NULL) == -1)
+# 1195|   		goto skip_simplesignal;
+# 1196|   
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/regress.c:1364:15: warning: taking address of packed member '' of class or structure 'sigaction' may result in an unaligned pointer value
+#        sigemptyset(&sa.sa_mask);
+#                     ^~~~~~~~~~
+# 1362|   	sa.sa_handler = signal_cb_sa;
+# 1363|   	sa.sa_flags = 0x0;
+# 1364|-> 	sigemptyset(&sa.sa_mask);
+# 1365|   	if (sigaction(SIGUSR1, &sa, NULL) == -1)
+# 1366|   		goto out;
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/regress.c:2009:6: warning: implicit declaration of function 'shutdown' is invalid in C99
+#        if (shutdown(data->pair[0], EVUTIL_SHUT_WR))
+#            ^
+# 2007|   				 len, towrite));
+# 2008|   
+# 2009|-> 	if (shutdown(data->pair[0], EVUTIL_SHUT_WR))
+# 2010|   		tt_abort_perror("initial write shutdown");
+# 2011|   
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/regress.c:2701:2: warning: implicit declaration of function 'setenv' is invalid in C99
+#        setenv("EVENT_NOWAFFLES", "1", 1);
+#        ^
+# 2699|   
+# 2700|   	/* See if unsetenv works before we rely on it. */
+# 2701|-> 	setenv("EVENT_NOWAFFLES", "1", 1);
+# 2702|   	unsetenv("EVENT_NOWAFFLES");
+# 2703|   	if (getenv("EVENT_NOWAFFLES") != NULL) {
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/regress.c:2701:2: warning: this function declaration is not a prototype
+# 2699|   
+# 2700|   	/* See if unsetenv works before we rely on it. */
+# 2701|-> 	setenv("EVENT_NOWAFFLES", "1", 1);
+# 2702|   	unsetenv("EVENT_NOWAFFLES");
+# 2703|   	if (getenv("EVENT_NOWAFFLES") != NULL) {
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/regress.c:2702:2: warning: implicit declaration of function 'unsetenv' is invalid in C99
+#        unsetenv("EVENT_NOWAFFLES");
+#        ^
+# 2700|   	/* See if unsetenv works before we rely on it. */
+# 2701|   	setenv("EVENT_NOWAFFLES", "1", 1);
+# 2702|-> 	unsetenv("EVENT_NOWAFFLES");
+# 2703|   	if (getenv("EVENT_NOWAFFLES") != NULL) {
+# 2704|   #ifndef EVENT__HAVE_UNSETENV
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/regress.c:2702:2: warning: this function declaration is not a prototype
+# 2700|   	/* See if unsetenv works before we rely on it. */
+# 2701|   	setenv("EVENT_NOWAFFLES", "1", 1);
+# 2702|-> 	unsetenv("EVENT_NOWAFFLES");
+# 2703|   	if (getenv("EVENT_NOWAFFLES") != NULL) {
+# 2704|   #ifndef EVENT__HAVE_UNSETENV
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/regress.c:2826:2: warning: implicit declaration of function 'shutdown' is invalid in C99
+#        shutdown(data->pair[1], EVUTIL_SHUT_WR);
+#        ^
+# 2824|   	}
+# 2825|   
+# 2826|-> 	shutdown(data->pair[1], EVUTIL_SHUT_WR);
+# 2827|   
+# 2828|   	event_base_dispatch(data->base);
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/regress_et.c:98:12: warning: implicit declaration of function 'shutdown' is invalid in C99
+#        tt_int_op(shutdown(pair[0], EVUTIL_SHUT_WR), ==, 0);
+#                  ^
+#   96|   
+#   97|   	tt_int_op(send(pair[0], test, (int)strlen(test)+1, 0), >, 0);
+#   98|-> 	tt_int_op(shutdown(pair[0], EVUTIL_SHUT_WR), ==, 0);
+#   99|   
+#  100|   	supports_et = base_supports_et(base);
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/regress_et.c:98:12: warning: this function declaration is not a prototype
+#   96|   
+#   97|   	tt_int_op(send(pair[0], test, (int)strlen(test)+1, 0), >, 0);
+#   98|-> 	tt_int_op(shutdown(pair[0], EVUTIL_SHUT_WR), ==, 0);
+#   99|   
+#  100|   	supports_et = base_supports_et(base);
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/regress_http.c:125:2: warning: ignoring return value of function declared with 'warn_unused_result' attribute
+#        SSL_use_certificate(ssl, ssl_getcert(ssl_getkey()));
+#        ^~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  123|   	SSL *ssl = SSL_new(get_ssl_ctx());
+#  124|   
+#  125|-> 	SSL_use_certificate(ssl, ssl_getcert(ssl_getkey()));
+#  126|   	SSL_use_PrivateKey(ssl, ssl_getkey());
+#  127|   
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/regress_http.c:126:2: warning: ignoring return value of function declared with 'warn_unused_result' attribute
+#        SSL_use_PrivateKey(ssl, ssl_getkey());
+#        ^~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~
+#  124|   
+#  125|   	SSL_use_certificate(ssl, ssl_getcert(ssl_getkey()));
+#  126|-> 	SSL_use_PrivateKey(ssl, ssl_getkey());
+#  127|   
+#  128|   	return bufferevent_openssl_socket_new(
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/regress_http.c:673:2: warning: implicit declaration of function 'shutdown' is invalid in C99
+#        shutdown(bufferevent_getfd(bev), EVUTIL_SHUT_WR);
+#        ^
+#  671|   	}
+#  672|   
+#  673|-> 	shutdown(bufferevent_getfd(bev), EVUTIL_SHUT_WR);
+#  674|   }
+#  675|   
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/regress_http.c:673:2: warning: this function declaration is not a prototype
+#  671|   	}
+#  672|   
+#  673|-> 	shutdown(bufferevent_getfd(bev), EVUTIL_SHUT_WR);
+#  674|   }
+#  675|   
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/regress_http.c:716:2: warning: implicit declaration of function 'shutdown' is invalid in C99
+#        shutdown(fd, EVUTIL_SHUT_WR);
+#        ^
+#  714|   	bufferevent_write(bev, http_request, strlen(http_request));
+#  715|   
+#  716|-> 	shutdown(fd, EVUTIL_SHUT_WR);
+#  717|   	timerclear(&tv);
+#  718|   	tv.tv_usec = 10000;
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/regress_http.c:717:2: warning: implicit declaration of function 'timerclear' is invalid in C99
+#        timerclear(&tv);
+#        ^
+#  715|   
+#  716|   	shutdown(fd, EVUTIL_SHUT_WR);
+#  717|-> 	timerclear(&tv);
+#  718|   	tv.tv_usec = 10000;
+#  719|   	event_base_once(data->base, -1, EV_TIMEOUT, http_badreq_successcb, bev, &tv);
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/regress_http.c:717:2: warning: this function declaration is not a prototype
+#  715|   
+#  716|   	shutdown(fd, EVUTIL_SHUT_WR);
+#  717|-> 	timerclear(&tv);
+#  718|   	tv.tv_usec = 10000;
+#  719|   	event_base_once(data->base, -1, EV_TIMEOUT, http_badreq_successcb, bev, &tv);
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/regress_http.c:3093:3: warning: implicit declaration of function 'shutdown' is invalid in C99
+#                shutdown(fd, EVUTIL_SHUT_WR);
+#                ^
+# 3091|   		evutil_socket_t fd = *(evutil_socket_t *)arg;
+# 3092|   		/* terminate the write side to simulate EOF */
+# 3093|-> 		shutdown(fd, EVUTIL_SHUT_WR);
+# 3094|   	}
+# 3095|   	if (evbuffer_get_length(bufferevent_get_output(bev)) == 0) {
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/regress_listener.c:93:24: warning: implicit declaration of function '__htobe32' is invalid in C99
+#        sin.sin_addr.s_addr = htonl(0x7f000001); /* 127.0.0.1 */
+#                              ^
+/opt/divine/include/dios/include/netinet/in.h:49:18: note: expanded from macro 'htonl'
+##define htonl(x)        __htobe32(x)
+#                        ^
+#   91|   	memset(&sin, 0, sizeof(sin));
+#   92|   	sin.sin_family = AF_INET;
+#   93|-> 	sin.sin_addr.s_addr = htonl(0x7f000001); /* 127.0.0.1 */
+#   94|   	sin.sin_port = 0; /* "You pick!" */
+#   95|   
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/regress_listener.c:93:24: warning: this function declaration is not a prototype
+/opt/divine/include/dios/include/netinet/in.h:49:18: note: expanded from macro 'htonl'
+##define htonl(x)        __htobe32(x)
+#                        ^
+#   91|   	memset(&sin, 0, sizeof(sin));
+#   92|   	sin.sin_family = AF_INET;
+#   93|-> 	sin.sin_addr.s_addr = htonl(0x7f000001); /* 127.0.0.1 */
+#   94|   	sin.sin_port = 0; /* "You pick!" */
+#   95|   
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/regress_listener.c:216:24: warning: implicit declaration of function '__htobe32' is invalid in C99
+#        sin.sin_addr.s_addr = htonl(0x7f000001); /* 127.0.0.1 */
+#                              ^
+/opt/divine/include/dios/include/netinet/in.h:49:18: note: expanded from macro 'htonl'
+##define htonl(x)        __htobe32(x)
+#                        ^
+#  214|   	memset(&sin, 0, sizeof(sin));
+#  215|   	sin.sin_family = AF_INET;
+#  216|-> 	sin.sin_addr.s_addr = htonl(0x7f000001); /* 127.0.0.1 */
+#  217|   	sin.sin_port = 0; /* "You pick!" */
+#  218|   
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/regress_listener.c:249:24: warning: implicit declaration of function '__htobe32' is invalid in C99
+#        sin.sin_addr.s_addr = htonl(0x7f000001); /* 127.0.0.1 */
+#                              ^
+/opt/divine/include/dios/include/netinet/in.h:49:18: note: expanded from macro 'htonl'
+##define htonl(x)        __htobe32(x)
+#                        ^
+#  247|   	memset(&sin, 0, sizeof(sin));
+#  248|   	sin.sin_family = AF_INET;
+#  249|-> 	sin.sin_addr.s_addr = htonl(0x7f000001); /* 127.0.0.1 */
+#  250|   	sin.sin_port = 0; /* "You pick!" */
+#  251|   
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/regress_ssl.c:484:2: warning: ignoring return value of function declared with 'warn_unused_result' attribute
+#        SSL_use_certificate(ssl2, the_cert);
+#        ^~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~
+#  482|   	ssl2 = SSL_new(get_ssl_ctx());
+#  483|   
+#  484|-> 	SSL_use_certificate(ssl2, the_cert);
+#  485|   	SSL_use_PrivateKey(ssl2, the_key);
+#  486|   
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/regress_ssl.c:485:2: warning: ignoring return value of function declared with 'warn_unused_result' attribute
+#        SSL_use_PrivateKey(ssl2, the_key);
+#        ^~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~
+#  483|   
+#  484|   	SSL_use_certificate(ssl2, the_cert);
+#  485|-> 	SSL_use_PrivateKey(ssl2, the_key);
+#  486|   
+#  487|   	if (!(type & REGRESS_OPENSSL_OPEN))
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/regress_ssl.c:588:2: warning: ignoring return value of function declared with 'warn_unused_result' attribute
+#        SSL_use_certificate(ssl, the_cert);
+#        ^~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~
+#  586|   	type = (enum regress_openssl_type)data->setup_data;
+#  587|   
+#  588|-> 	SSL_use_certificate(ssl, the_cert);
+#  589|   	SSL_use_PrivateKey(ssl, the_key);
+#  590|   
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/regress_ssl.c:589:2: warning: ignoring return value of function declared with 'warn_unused_result' attribute
+#        SSL_use_PrivateKey(ssl, the_key);
+#        ^~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~
+#  587|   
+#  588|   	SSL_use_certificate(ssl, the_cert);
+#  589|-> 	SSL_use_PrivateKey(ssl, the_key);
+#  590|   
+#  591|   	bev = bufferevent_openssl_socket_new(
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/regress_ssl.c:746:24: warning: implicit declaration of function '__htobe32' is invalid in C99
+#        sin.sin_addr.s_addr = htonl(0x7f000001);
+#                              ^
+/opt/divine/include/dios/include/netinet/in.h:49:18: note: expanded from macro 'htonl'
+##define htonl(x)        __htobe32(x)
+#                        ^
+#  744|   	memset(&sin, 0, sizeof(sin));
+#  745|   	sin.sin_family = AF_INET;
+#  746|-> 	sin.sin_addr.s_addr = htonl(0x7f000001);
+#  747|   
+#  748|   	memset(&ss, 0, sizeof(ss));
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/regress_ssl.c:746:24: warning: this function declaration is not a prototype
+/opt/divine/include/dios/include/netinet/in.h:49:18: note: expanded from macro 'htonl'
+##define htonl(x)        __htobe32(x)
+#                        ^
+#  744|   	memset(&sin, 0, sizeof(sin));
+#  745|   	sin.sin_family = AF_INET;
+#  746|-> 	sin.sin_addr.s_addr = htonl(0x7f000001);
+#  747|   
+#  748|   	memset(&ss, 0, sizeof(ss));
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/regress_ssl.c:864:2: warning: ignoring return value of function declared with 'warn_unused_result' attribute
+#        SSL_use_certificate(ssl, the_cert);
+#        ^~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~
+#  862|   	SSL *ssl = SSL_new(get_ssl_ctx());
+#  863|   
+#  864|-> 	SSL_use_certificate(ssl, the_cert);
+#  865|   	SSL_use_PrivateKey(ssl, the_key);
+#  866|   
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/regress_ssl.c:865:2: warning: ignoring return value of function declared with 'warn_unused_result' attribute
+#        SSL_use_PrivateKey(ssl, the_key);
+#        ^~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~
+#  863|   
+#  864|   	SSL_use_certificate(ssl, the_cert);
+#  865|-> 	SSL_use_PrivateKey(ssl, the_key);
+#  866|   
+#  867|   	bev = bufferevent_openssl_socket_new(
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/regress_ssl.c:903:24: warning: implicit declaration of function '__htobe32' is invalid in C99
+#        sin.sin_addr.s_addr = htonl(0x7f000001);
+#                              ^
+/opt/divine/include/dios/include/netinet/in.h:49:18: note: expanded from macro 'htonl'
+##define htonl(x)        __htobe32(x)
+#                        ^
+#  901|   	memset(&sin, 0, sizeof(sin));
+#  902|   	sin.sin_family = AF_INET;
+#  903|-> 	sin.sin_addr.s_addr = htonl(0x7f000001);
+#  904|   
+#  905|   	memset(&ss, 0, sizeof(ss));
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/regress_util.c:1500:2: warning: implicit declaration of function 'gmtime_r' is invalid in C99
+#        gmtime_r(&t, cur_p);
+#        ^
+# 1498|   	*cur_p = *tmp;
+# 1499|   #else
+# 1500|-> 	gmtime_r(&t, cur_p);
+# 1501|   #endif
+# 1502|   }
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/regress_util.c:1500:2: warning: this function declaration is not a prototype
+# 1498|   	*cur_p = *tmp;
+# 1499|   #else
+# 1500|-> 	gmtime_r(&t, cur_p);
+# 1501|   #endif
+# 1502|   }
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/test-closed.c:99:2: warning: implicit declaration of function 'shutdown' is invalid in C99
+#        shutdown(pair[0], EVUTIL_SHUT_WR);
+#        ^
+#   97|   	if (send(pair[0], test, (int)strlen(test)+1, 0) < 0)
+#   98|   		return (1);
+#   99|-> 	shutdown(pair[0], EVUTIL_SHUT_WR);
+#  100|   
+#  101|   	/* Dispatch */
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/test-closed.c:99:2: warning: this function declaration is not a prototype
+#   97|   	if (send(pair[0], test, (int)strlen(test)+1, 0) < 0)
+#   98|   		return (1);
+#   99|-> 	shutdown(pair[0], EVUTIL_SHUT_WR);
+#  100|   
+#  101|   	/* Dispatch */
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/test-eof.c:103:2: warning: implicit declaration of function 'shutdown' is invalid in C99
+#        shutdown(pair[0], EVUTIL_SHUT_WR);
+#        ^
+#  101|   	if (send(pair[0], test, (int)strlen(test)+1, 0) < 0)
+#  102|   		return (1);
+#  103|-> 	shutdown(pair[0], EVUTIL_SHUT_WR);
+#  104|   
+#  105|   	/* Initialize the event library */
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/test-eof.c:103:2: warning: this function declaration is not a prototype
+#  101|   	if (send(pair[0], test, (int)strlen(test)+1, 0) < 0)
+#  102|   		return (1);
+#  103|-> 	shutdown(pair[0], EVUTIL_SHUT_WR);
+#  104|   
+#  105|   	/* Initialize the event library */
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/test-fdleak.c:244:26: warning: implicit declaration of function '__htobe32' is invalid in C99
+#        saddr.sin_addr.s_addr = htonl(0x7f000001);
+#                                ^
+/opt/divine/include/dios/include/netinet/in.h:49:18: note: expanded from macro 'htonl'
+##define htonl(x)        __htobe32(x)
+#                        ^
+#  242|   	memset(&saddr, 0, sizeof(saddr));
+#  243|   	saddr.sin_family = AF_INET;
+#  244|-> 	saddr.sin_addr.s_addr = htonl(0x7f000001);
+#  245|   	saddr.sin_port = 0; /* Tell the implementation to pick a port. */
+#  246|   
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/test-fdleak.c:244:26: warning: this function declaration is not a prototype
+/opt/divine/include/dios/include/netinet/in.h:49:18: note: expanded from macro 'htonl'
+##define htonl(x)        __htobe32(x)
+#                        ^
+#  242|   	memset(&saddr, 0, sizeof(saddr));
+#  243|   	saddr.sin_family = AF_INET;
+#  244|-> 	saddr.sin_addr.s_addr = htonl(0x7f000001);
+#  245|   	saddr.sin_port = 0; /* Tell the implementation to pick a port. */
+#  246|   
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/test-ratelim.c:679:3: warning: implicit declaration of function 'srandom' is invalid in C99
+#                srandom(tv.tv_usec);
+#                ^
+#  677|   		srand(tv.tv_usec);
+#  678|   #else
+#  679|-> 		srandom(tv.tv_usec);
+#  680|   #endif
+#  681|   	}
+
+Error: COMPILER_WARNING:
+libevent-2.1.12-stable/test/test-ratelim.c:679:3: warning: this function declaration is not a prototype
+#  677|   		srand(tv.tv_usec);
+#  678|   #else
+#  679|-> 		srandom(tv.tv_usec);
+#  680|   #endif
+#  681|   	}

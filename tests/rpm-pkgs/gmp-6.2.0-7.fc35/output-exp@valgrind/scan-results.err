@@ -1,0 +1,452 @@
+Error: COMPILER_WARNING (CWE-1164):
+gmp-6.2.0/cxx/ismpf.cc: scope_hint: In function 'std::istream& operator>>(std::istream&, mpf_ptr)'
+gmp-6.2.0/cxx/ismpf.cc:139:5: warning[-Wunused-label]: label 'fail' defined but not used
+#  139 |     fail:
+#      |     ^~~~
+#  137|     else
+#  138|       {
+#  139|->     fail:
+#  140|         i.setstate(ios::failbit); // read failed
+#  141|       }
+
+Error: COMPILER_WARNING (CWE-563):
+gmp-6.2.0/cxx/osdoprnti.cc: scope_hint: In function 'std::ostream& __gmp_doprnt_integer_ostream(std::ostream&, doprnt_params_t*, char*)'
+gmp-6.2.0/cxx/osdoprnti.cc:54:9: warning[-Wunused-but-set-variable]: variable 'ret' set but not used
+#   54 |   int   ret;
+#      |         ^~~
+#   52|     struct gmp_asprintf_t   d;
+#   53|     char  *result;
+#   54|->   int   ret;
+#   55|   
+#   56|     /* don't show leading zeros the way printf does */
+
+Error: COMPILER_WARNING (CWE-563):
+gmp-6.2.0/cxx/osmpf.cc: scope_hint: In function 'std::ostream& operator<<(std::ostream&, mpf_srcptr)'
+gmp-6.2.0/cxx/osmpf.cc:51:9: warning[-Wunused-but-set-variable]: variable 'ret' set but not used
+#   51 |   int   ret;
+#      |         ^~~
+#   49|     struct gmp_asprintf_t   d;
+#   50|     char  *result;
+#   51|->   int   ret;
+#   52|   
+#   53|     __gmp_doprnt_params_from_ios (&param, o);
+
+Error: COMPILER_WARNING (CWE-563):
+gmp-6.2.0/extract-dbl.c: scope_hint: In function '__gmp_extract_double'
+gmp-6.2.0/extract-dbl.c:53:21: warning[-Wunused-variable]: unused variable 'manh'
+#   53 |   unsigned long int manh, manl;
+#      |                     ^~~~
+#   51|   #else
+#   52|   #define BITS_PER_PART GMP_LIMB_BITS
+#   53|->   unsigned long int manh, manl;
+#   54|   #endif
+#   55|   
+
+Error: COMPILER_WARNING (CWE-563):
+gmp-6.2.0/mpn/generic/toom_interpolate_5pts.c:38: included_from: Included from here.
+gmp-6.2.0/mpn/generic/toom_interpolate_5pts.c: scope_hint: In function '__gmpn_toom_interpolate_5pts'
+gmp-6.2.0/gmp-impl.h:1662:6: warning[-Wunused-value]: value computed is not used
+# 1662 |   (3 & mpn_bdiv_dbm1 (dst, src, size, __GMP_CAST (mp_limb_t, GMP_NUMB_MASK / 3)))
+#      |      ^
+gmp-6.2.0/gmp-impl.h:2459:33: note: in definition of macro 'ASSERT_NOCARRY'
+# 2459 | #define ASSERT_NOCARRY(expr)   (expr)
+#      |                                 ^~~~
+gmp-6.2.0/mpn/generic/toom_interpolate_5pts.c:70:19: note: in expansion of macro 'mpn_divexact_by3'
+#   70 |   ASSERT_NOCARRY (mpn_divexact_by3 (v2, v2, kk1));    /* v2 <- v2 / 3 */
+#      |                   ^~~~~~~~~~~~~~~~
+# 1660|   #undef mpn_divexact_by3
+# 1661|   #define mpn_divexact_by3(dst,src,size) \
+# 1662|->   (3 & mpn_bdiv_dbm1 (dst, src, size, __GMP_CAST (mp_limb_t, GMP_NUMB_MASK / 3)))
+# 1663|   /* override mpn_divexact_by3c defined in gmp.h */
+# 1664|   /*
+
+Error: COMPILER_WARNING (CWE-563):
+gmp-6.2.0/gmp-impl.h:1698:7: warning[-Wunused-value]: value computed is not used
+# 1698 |   (15 & 1 * mpn_bdiv_dbm1 (dst, src, size, __GMP_CAST (mp_limb_t, GMP_NUMB_MASK / 15)))
+#      |   ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gmp-6.2.0/mpn/generic/toom_interpolate_7pts.c:212:3: note: in expansion of macro 'mpn_divexact_by15'
+#  212 |   mpn_divexact_by15 (w1, w1, m);
+#      |   ^~~~~~~~~~~~~~~~~
+# 1696|   #if GMP_NUMB_BITS % 4 == 0
+# 1697|   #define mpn_divexact_by15(dst,src,size) \
+# 1698|->   (15 & 1 * mpn_bdiv_dbm1 (dst, src, size, __GMP_CAST (mp_limb_t, GMP_NUMB_MASK / 15)))
+# 1699|   #endif
+# 1700|   
+
+Error: COMPILER_WARNING (CWE-457):
+gmp-6.2.0/mpn/generic/mod_1_3.c:41: included_from: Included from here.
+gmp-6.2.0/mpn/generic/mod_1_3.c: scope_hint: In function '__gmpn_mod_1s_3p'
+gmp-6.2.0/longlong.h:1046:3: warning[-Wmaybe-uninitialized]: 'rl' may be used uninitialized in this function
+# 1046 |   __asm__ ("addq %5,%q1\n\tadcq %3,%q0"                                 \
+#      |   ^~~~~~~
+gmp-6.2.0/mpn/generic/mod_1_3.c:89:17: note: 'rl' was declared here
+#   89 |   mp_limb_t rh, rl, bi, ph, pl, ch, cl, r;
+#      |                 ^~
+# 1044|   #if defined (__amd64__) && W_TYPE_SIZE == 64
+# 1045|   #define add_ssaaaa(sh, sl, ah, al, bh, bl) \
+# 1046|->   __asm__ ("addq %5,%q1\n\tadcq %3,%q0"					\
+# 1047|   	   : "=r" (sh), "=&r" (sl)					\
+# 1048|   	   : "0"  ((UDItype)(ah)), "rme" ((UDItype)(bh)),		\
+
+Error: COMPILER_WARNING (CWE-457):
+gmp-6.2.0/mpn/generic/mod_1_3.c:41: included_from: Included from here.
+gmp-6.2.0/longlong.h:1064:3: warning[-Wmaybe-uninitialized]: 'rh' may be used uninitialized in this function
+# 1064 |   __asm__ ("mulq\t%3"                                                   \
+#      |   ^~~~~~~
+gmp-6.2.0/mpn/generic/mod_1_3.c:89:13: note: 'rh' was declared here
+#   89 |   mp_limb_t rh, rl, bi, ph, pl, ch, cl, r;
+#      |             ^~
+# 1062|   #else
+# 1063|   #define umul_ppmm(w1, w0, u, v) \
+# 1064|->   __asm__ ("mulq\t%3"							\
+# 1065|   	   : "=a" (w0), "=d" (w1)					\
+# 1066|   	   : "%0" ((UDItype)(u)), "rm" ((UDItype)(v)))
+
+Error: COMPILER_WARNING:
+gmp-6.2.0/mpf/reldiff.c:39:20: warning[-Warray-parameter=]: argument 1 of type '__mpf_struct[1]' with mismatched bound
+#   39 | mpf_reldiff (mpf_t rdiff, mpf_srcptr x, mpf_srcptr y)
+#      |              ~~~~~~^~~~~
+gmp-6.2.0/gmp-impl.h:145: included_from: Included from here.
+gmp-6.2.0/mpf/reldiff.c:31: included_from: Included from here.
+gmp-6.2.0/gmp.h:1396:34: note: previously declared as 'mpf_ptr' {aka '__mpf_struct *'}
+# 1396 | __GMP_DECLSPEC void mpf_reldiff (mpf_ptr, mpf_srcptr, mpf_srcptr);
+#      |                                  ^~~~~~~
+#   37|   
+#   38|   void
+#   39|-> mpf_reldiff (mpf_t rdiff, mpf_srcptr x, mpf_srcptr y)
+#   40|   {
+#   41|     if (UNLIKELY (SIZ(x) == 0))
+
+Error: COMPILER_WARNING:
+gmp-6.2.0/mpf/set_q.c:54:18: warning[-Warray-parameter=]: argument 1 of type '__mpf_struct[1]' with mismatched bound
+#   54 | mpf_set_q (mpf_t r, mpq_srcptr q)
+#      |            ~~~~~~^
+gmp-6.2.0/gmp-impl.h:145: included_from: Included from here.
+gmp-6.2.0/mpf/set_q.c:31: included_from: Included from here.
+gmp-6.2.0/gmp.h:1414:32: note: previously declared as 'mpf_ptr' {aka '__mpf_struct *'}
+# 1414 | __GMP_DECLSPEC void mpf_set_q (mpf_ptr, mpq_srcptr);
+#      |                                ^~~~~~~
+#   52|   
+#   53|   void
+#   54|-> mpf_set_q (mpf_t r, mpq_srcptr q)
+#   55|   {
+#   56|     mp_srcptr np, dp;
+
+Error: COMPILER_WARNING (CWE-1164):
+gmp-6.2.0/mpn/generic/dcpi1_bdiv_q.c:42:1: warning[-Wunused-function]: 'mpn_dcpi1_bdiv_q_n_itch' defined but not used
+#   42 | mpn_dcpi1_bdiv_q_n_itch (mp_size_t n)
+#      | ^~~~~~~~~~~~~~~~~~~~~~~
+#   40|   
+#   41|   static mp_size_t
+#   42|-> mpn_dcpi1_bdiv_q_n_itch (mp_size_t n)
+#   43|   {
+#   44|     /* NOTE: Depends on mullo_n and mpn_dcpi1_bdiv_qr_n interface */
+
+Error: COMPILER_WARNING (CWE-563):
+gmp-6.2.0/mpn/generic/invertappr.c: scope_hint: In function '__gmpn_ni_invertappr'
+gmp-6.2.0/mpn/generic/invertappr.c:230:21: warning[-Wunused-but-set-variable]: variable 'chk' set but not used
+#  230 |           mp_limb_t chk;
+#      |                     ^~~
+#  228|         if (cy++) {
+#  229|   	if (mpn_cmp (xp, dp - n, n) > 0) {
+#  230|-> 	  mp_limb_t chk;
+#  231|   	  chk = mpn_sublsh1_n (xp, xp, dp - n, n);
+#  232|   	  ASSERT (chk == xp[n]);
+
+Error: COMPILER_WARNING (CWE-563):
+gmp-6.2.0/mpn/generic/matrix22_mul1_inverse_vector.c:44:13: warning[-Wunused-but-set-variable]: variable 'h0' set but not used
+#   44 |   mp_limb_t h0, h1;
+#      |             ^~
+#   42|   				  mp_ptr rp, mp_srcptr ap, mp_ptr bp, mp_size_t n)
+#   43|   {
+#   44|->   mp_limb_t h0, h1;
+#   45|   
+#   46|     /* Compute (r;b) <-- (u11 a - u01 b; -u10 a + u00 b) as
+
+Error: COMPILER_WARNING (CWE-563):
+gmp-6.2.0/mpn/generic/matrix22_mul1_inverse_vector.c: scope_hint: In function '__gmpn_matrix22_mul1_inverse_vector'
+gmp-6.2.0/mpn/generic/matrix22_mul1_inverse_vector.c:44:17: warning[-Wunused-but-set-variable]: variable 'h1' set but not used
+#   44 |   mp_limb_t h0, h1;
+#      |                 ^~
+#   42|   				  mp_ptr rp, mp_srcptr ap, mp_ptr bp, mp_size_t n)
+#   43|   {
+#   44|->   mp_limb_t h0, h1;
+#   45|   
+#   46|     /* Compute (r;b) <-- (u11 a - u01 b; -u10 a + u00 b) as
+
+Error: COMPILER_WARNING (CWE-457):
+gmp-6.2.0/mpn/generic/mu_divappr_q.c: scope_hint: In function '__gmpn_mu_divappr_q'
+gmp-6.2.0/mpn/generic/mu_divappr_q.c:291:6: warning[-Wmaybe-uninitialized]: 'cy' may be used uninitialized in this function
+#  291 |   cy += mpn_add_1 (qp, qp, qn, 3);
+#      |      ^~
+gmp-6.2.0/mpn/generic/mu_divappr_q.c:172:13: note: 'cy' was declared here
+#  172 |   mp_limb_t cy, cx, qh;
+#      |             ^~
+#  289|        quotient; add 3 with saturating arithmetic.  */
+#  290|     qn = nn - dn;
+#  291|->   cy += mpn_add_1 (qp, qp, qn, 3);
+#  292|     if (cy != 0)
+#  293|       {
+
+Error: COMPILER_WARNING (CWE-457):
+gmp-6.2.0/mpn/generic/remove.c: scope_hint: In function '__gmpn_remove'
+gmp-6.2.0/mpn/generic/remove.c:141:12: warning[-Wmaybe-uninitialized]: 'np' may be used uninitialized in this function
+#  141 |         np += pn;
+#      |         ~~~^~~~~
+#  139|   	np = TMP_ALLOC_LIMBS (qn + LOG);	/* powers of V */
+#  140|         else
+#  141|-> 	np += pn;
+#  142|   
+#  143|         mpn_sqr (np, pp, pn);
+
+Error: COMPILER_WARNING (CWE-457):
+gmp-6.2.0/mpn/generic/rootrem.c:410:20: warning[-Wmaybe-uninitialized]: 'save2' may be used uninitialized in this function
+#  410 |         rp[bn + 1] = save2; /* the low b bits go in rp[0..bn] only, since
+#      |         ~~~~~~~~~~~^~~~~~~
+#  408|         rp[bn] |= save;
+#  409|         if (nl - 1 > bn)
+#  410|-> 	rp[bn + 1] = save2; /* the low b bits go in rp[0..bn] only, since
+#  411|   			       they start by bit 0 in rp[0], so they use
+#  412|   			       at most ceil(b/GMP_NUMB_BITS) limbs */
+
+Error: COMPILER_WARNING (CWE-457):
+gmp-6.2.0/mpn/generic/rootrem.c: scope_hint: In function 'mpn_rootrem_internal'
+gmp-6.2.0/mpn/generic/rootrem.c:514:10: warning[-Wmaybe-uninitialized]: 'rn' may be used uninitialized in this function
+#  514 |   return rn;
+#      |          ^~
+#  512|   
+#  513|     TMP_FREE;
+#  514|->   return rn;
+#  515|   }
+
+Error: COMPILER_WARNING (CWE-563):
+gmp-6.2.0/mpn/generic/sec_div.c: scope_hint: In function '__gmpn_sec_div_r'
+gmp-6.2.0/mpn/generic/sec_div.c:86:17: warning[-Wunused-variable]: unused variable 'qh'
+#   86 |       mp_limb_t qh, cy;
+#      |                 ^~
+#   84|     if (cnt != 0)
+#   85|       {
+#   86|->       mp_limb_t qh, cy;
+#   87|         mp_ptr np2, dp2;
+#   88|         dp2 = tp;					/* dn limbs */
+
+Error: COMPILER_WARNING (CWE-1164):
+gmp-6.2.0/mpn/generic/strongfibo.c:43:1: warning[-Wunused-function]: 'abs_sub_n' defined but not used
+#   43 | abs_sub_n (mp_ptr rp, mp_srcptr ap, mp_srcptr bp, mp_size_t n)
+#      | ^~~~~~~~~
+#   41|      returns the sign of {ap,n}-{bp,n}. */
+#   42|   static int
+#   43|-> abs_sub_n (mp_ptr rp, mp_srcptr ap, mp_srcptr bp, mp_size_t n)
+#   44|   {
+#   45|     mp_limb_t  x, y;
+
+Error: COMPILER_WARNING (CWE-563):
+gmp-6.2.0/mpn/generic/toom_interpolate_12pts.c: scope_hint: In function '__gmpn_toom_interpolate_12pts'
+gmp-6.2.0/mpn/generic/toom_interpolate_12pts.c:133:8: warning[-Wunused-value]: value computed is not used
+#  133 |   (255 & 1 * mpn_bdiv_dbm1 (dst, src, size, __GMP_CAST (mp_limb_t, GMP_NUMB_MASK / 255)))
+#      |   ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gmp-6.2.0/mpn/generic/toom_interpolate_12pts.c:264:3: note: in expansion of macro 'mpn_divexact_by255'
+#  264 |   mpn_divexact_by255(r5, r5, n3p1);
+#      |   ^~~~~~~~~~~~~~~~~~
+#  131|   #if GMP_NUMB_BITS % 8 == 0
+#  132|   #define mpn_divexact_by255(dst,src,size) \
+#  133|->   (255 & 1 * mpn_bdiv_dbm1 (dst, src, size, __GMP_CAST (mp_limb_t, GMP_NUMB_MASK / 255)))
+#  134|   #else
+#  135|   #if HAVE_NATIVE_mpn_pi1_bdiv_q_1
+
+Error: COMPILER_WARNING:
+gmp-6.2.0/mpn/fat_addmul_2.c:10: included_from: Included from here.
+gmp-6.2.0/mpn/x86_64/fat/addmul_2.c:34:69: warning[-Warray-parameter=]: argument 4 of type 'const mp_limb_t[2]' {aka 'const long unsigned int[2]'} with mismatched bound
+#   34 | mpn_addmul_2 (mp_ptr rp, mp_srcptr up, mp_size_t n, const mp_limb_t vp[2])
+#      |                                                     ~~~~~~~~~~~~~~~~^~~~~
+gmp-6.2.0/mpn/x86_64/fat/addmul_2.c:31: included_from: Included from here.
+gmp-6.2.0/mpn/fat_addmul_2.c:10: included_from: Included from here.
+gmp-6.2.0/gmp-impl.h:75:64: note: previously declared as 'mp_srcptr' {aka 'const long unsigned int *'}
+#   75 |   __GMP_DECLSPEC mp_limb_t name (mp_ptr, mp_srcptr, mp_size_t, mp_srcptr)
+#      |                                                                ^~~~~~~~~
+gmp-6.2.0/fat.h:420:1: note: in expansion of macro 'DECL_addmul_2'
+#  420 | DECL_addmul_2 (__gmpn_addmul_2_fat);
+#      | ^~~~~~~~~~~~~
+#   32|   
+#   33|   mp_limb_t
+#   34|-> mpn_addmul_2 (mp_ptr rp, mp_srcptr up, mp_size_t n, const mp_limb_t vp[2])
+#   35|   {
+#   36|     rp[n] = mpn_addmul_1 (rp,     up, n, vp[0]);
+
+Error: COMPILER_WARNING:
+gmp-6.2.0/mpq/canonicalize.c:35:25: warning[-Warray-parameter=]: argument 1 of type '__mpq_struct[1]' with mismatched bound
+#   35 | mpq_canonicalize (mpq_t op)
+#      |                   ~~~~~~^~
+gmp-6.2.0/gmp-impl.h:145: included_from: Included from here.
+gmp-6.2.0/mpq/canonicalize.c:32: included_from: Included from here.
+gmp-6.2.0/gmp.h:1144:39: note: previously declared as 'mpq_ptr' {aka '__mpq_struct *'}
+# 1144 | __GMP_DECLSPEC void mpq_canonicalize (mpq_ptr);
+#      |                                       ^~~~~~~
+#   33|   
+#   34|   void
+#   35|-> mpq_canonicalize (mpq_t op)
+#   36|   {
+#   37|     mpz_t gcd;
+
+Error: COMPILER_WARNING:
+gmp-6.2.0/mpq/clear.c:35:18: warning[-Warray-parameter=]: argument 1 of type '__mpq_struct[1]' with mismatched bound
+#   35 | mpq_clear (mpq_t x)
+#      |            ~~~~~~^
+gmp-6.2.0/gmp-impl.h:145: included_from: Included from here.
+gmp-6.2.0/mpq/clear.c:32: included_from: Included from here.
+gmp-6.2.0/gmp.h:1147:32: note: previously declared as 'mpq_ptr' {aka '__mpq_struct *'}
+# 1147 | __GMP_DECLSPEC void mpq_clear (mpq_ptr);
+#      |                                ^~~~~~~
+#   33|   
+#   34|   void
+#   35|-> mpq_clear (mpq_t x)
+#   36|   {
+#   37|     if (ALLOC (NUM(x)))
+
+Error: COMPILER_WARNING:
+gmp-6.2.0/mpq/init.c:35:17: warning[-Warray-parameter=]: argument 1 of type '__mpq_struct[1]' with mismatched bound
+#   35 | mpq_init (mpq_t x)
+#      |           ~~~~~~^
+gmp-6.2.0/gmp-impl.h:145: included_from: Included from here.
+gmp-6.2.0/mpq/init.c:32: included_from: Included from here.
+gmp-6.2.0/gmp.h:1186:31: note: previously declared as 'mpq_ptr' {aka '__mpq_struct *'}
+# 1186 | __GMP_DECLSPEC void mpq_init (mpq_ptr);
+#      |                               ^~~~~~~
+#   33|   
+#   34|   void
+#   35|-> mpq_init (mpq_t x)
+#   36|   {
+#   37|     static const mp_limb_t dummy_limb=0xc1a0;
+
+Error: COMPILER_WARNING:
+gmp-6.2.0/mpq/set_si.c:35:19: warning[-Warray-parameter=]: argument 1 of type '__mpq_struct[1]' with mismatched bound
+#   35 | mpq_set_si (mpq_t dest, signed long int num, unsigned long int den)
+#      |             ~~~~~~^~~~
+gmp-6.2.0/gmp-impl.h:145: included_from: Included from here.
+gmp-6.2.0/mpq/set_si.c:32: included_from: Included from here.
+gmp-6.2.0/gmp.h:1231:33: note: previously declared as 'mpq_ptr' {aka '__mpq_struct *'}
+# 1231 | __GMP_DECLSPEC void mpq_set_si (mpq_ptr, signed long int, unsigned long int);
+#      |                                 ^~~~~~~
+#   33|   
+#   34|   void
+#   35|-> mpq_set_si (mpq_t dest, signed long int num, unsigned long int den)
+#   36|   {
+#   37|     if (GMP_NUMB_BITS < BITS_PER_ULONG)
+
+Error: COMPILER_WARNING:
+gmp-6.2.0/mpq/set_ui.c:35:19: warning[-Warray-parameter=]: argument 1 of type '__mpq_struct[1]' with mismatched bound
+#   35 | mpq_set_ui (mpq_t dest, unsigned long int num, unsigned long int den)
+#      |             ~~~~~~^~~~
+gmp-6.2.0/gmp-impl.h:145: included_from: Included from here.
+gmp-6.2.0/mpq/set_ui.c:32: included_from: Included from here.
+gmp-6.2.0/gmp.h:1237:33: note: previously declared as 'mpq_ptr' {aka '__mpq_struct *'}
+# 1237 | __GMP_DECLSPEC void mpq_set_ui (mpq_ptr, unsigned long int, unsigned long int);
+#      |                                 ^~~~~~~
+#   33|   
+#   34|   void
+#   35|-> mpq_set_ui (mpq_t dest, unsigned long int num, unsigned long int den)
+#   36|   {
+#   37|     if (GMP_NUMB_BITS < BITS_PER_ULONG)
+
+Error: COMPILER_WARNING (CWE-691):
+gmp-6.2.0/mpz/mul.c: scope_hint: In function '__gmpz_mul'
+gmp-6.2.0/mpz/mul.c:106:10: warning[-Wdangling-else]: suggest explicit braces to avoid ambiguous 'else'
+#  106 |       if (ALLOC (w) != 0)
+#      |          ^
+#  104|     if (ALLOC (w) < wsize)
+#  105|       {
+#  106|->       if (ALLOC (w) != 0)
+#  107|   	if (wp == up || wp == vp)
+#  108|   	  {
+
+Error: COMPILER_WARNING (CWE-457):
+gmp-6.2.0/primesieve.c: scope_hint: In function 'first_block_primesieve'
+gmp-6.2.0/primesieve.c:248:13: warning[-Wmaybe-uninitialized]: 'i' may be used uninitialized in this function
+#  248 |   mp_limb_t i;
+#      |             ^
+#  246|   {
+#  247|     mp_size_t bits, limbs;
+#  248|->   mp_limb_t i;
+#  249|   
+#  250|     ASSERT (n > 4);
+
+Error: COMPILER_WARNING:
+gmp-6.2.0/rand/randbui.c:38:36: warning[-Warray-parameter=]: argument 1 of type 'gmp_randstate_ptr' {aka '__gmp_randstate_struct *'} declared as a pointer
+#   38 | gmp_urandomb_ui (gmp_randstate_ptr rstate, unsigned long bits)
+#      |                  ~~~~~~~~~~~~~~~~~~^~~~~~
+gmp-6.2.0/gmp-impl.h:145: included_from: Included from here.
+gmp-6.2.0/rand/randbui.c:31: included_from: Included from here.
+gmp-6.2.0/gmp.h:527:47: note: previously declared as an array '__gmp_randstate_struct[1]'
+#  527 | __GMP_DECLSPEC unsigned long gmp_urandomb_ui (gmp_randstate_t, unsigned long);
+#      |                                               ^~~~~~~~~~~~~~~
+#   36|   
+#   37|   unsigned long
+#   38|-> gmp_urandomb_ui (gmp_randstate_ptr rstate, unsigned long bits)
+#   39|   {
+#   40|     mp_limb_t  a[LIMBS_PER_ULONG];
+
+Error: COMPILER_WARNING:
+gmp-6.2.0/rand/randiset.c:35:37: warning[-Warray-parameter=]: argument 1 of type 'gmp_randstate_ptr' {aka '__gmp_randstate_struct *'} declared as a pointer
+#   35 | gmp_randinit_set (gmp_randstate_ptr dst, gmp_randstate_srcptr src)
+#      |                   ~~~~~~~~~~~~~~~~~~^~~
+gmp-6.2.0/gmp-impl.h:145: included_from: Included from here.
+gmp-6.2.0/rand/randiset.c:31: included_from: Included from here.
+gmp-6.2.0/gmp.h:515:39: note: previously declared as an array '__gmp_randstate_struct[1]'
+#  515 | __GMP_DECLSPEC void gmp_randinit_set (gmp_randstate_t, const __gmp_randstate_struct *);
+#      |                                       ^~~~~~~~~~~~~~~
+#   33|   
+#   34|   void
+#   35|-> gmp_randinit_set (gmp_randstate_ptr dst, gmp_randstate_srcptr src)
+#   36|   {
+#   37|     (*((gmp_randfnptr_t *) RNG_FNPTR (src))->randiset_fn) (dst, src);
+
+Error: COMPILER_WARNING (CWE-563):
+gmp-6.2.0/rand/randlc2x.c: scope_hint: In function 'lc'
+gmp-6.2.0/rand/randlc2x.c:79:7: warning[-Wunused-but-set-variable]: variable 'cy' set but not used
+#   79 |   int cy;
+#      |       ^~
+#   77|     unsigned long int m2exp;
+#   78|     unsigned long int bits;
+#   79|->   int cy;
+#   80|     mp_size_t xn;
+#   81|     gmp_rand_lc_struct *p;
+
+Error: COMPILER_WARNING:
+gmp-6.2.0/rand/randmt.c:396:45: warning[-Warray-parameter=]: argument 1 of type 'gmp_randstate_ptr' {aka '__gmp_randstate_struct *'} declared as a pointer
+#  396 | __gmp_randinit_mt_noseed (gmp_randstate_ptr dst)
+#      |                           ~~~~~~~~~~~~~~~~~~^~~
+gmp-6.2.0/rand/randmt.c:37: included_from: Included from here.
+gmp-6.2.0/gmp-impl.h:1316:47: note: previously declared as an array '__gmp_randstate_struct[1]'
+# 1316 | __GMP_DECLSPEC void __gmp_randinit_mt_noseed (gmp_randstate_t);
+#      |                                               ^~~~~~~~~~~~~~~
+#  394|   
+#  395|   void
+#  396|-> __gmp_randinit_mt_noseed (gmp_randstate_ptr dst)
+#  397|   {
+#  398|     const mp_size_t sz = ((sizeof (gmp_rand_mt_struct) - 1) / GMP_LIMB_BYTES) + 1;
+
+Error: COMPILER_WARNING:
+gmp-6.2.0/rand/randmui.c:46:36: warning[-Warray-parameter=]: argument 1 of type 'gmp_randstate_ptr' {aka '__gmp_randstate_struct *'} declared as a pointer
+#   46 | gmp_urandomm_ui (gmp_randstate_ptr rstate, unsigned long n)
+#      |                  ~~~~~~~~~~~~~~~~~~^~~~~~
+gmp-6.2.0/gmp-impl.h:145: included_from: Included from here.
+gmp-6.2.0/rand/randmui.c:31: included_from: Included from here.
+gmp-6.2.0/gmp.h:530:47: note: previously declared as an array '__gmp_randstate_struct[1]'
+#  530 | __GMP_DECLSPEC unsigned long gmp_urandomm_ui (gmp_randstate_t, unsigned long);
+#      |                                               ^~~~~~~~~~~~~~~
+#   44|   
+#   45|   unsigned long
+#   46|-> gmp_urandomm_ui (gmp_randstate_ptr rstate, unsigned long n)
+#   47|   {
+#   48|     mp_limb_t      a[LIMBS_PER_ULONG];
+
+Error: COMPILER_WARNING (CWE-563):
+gmp-6.2.0/scanf/doscan.c: scope_hint: In function '__gmp_doscan'
+gmp-6.2.0/scanf/doscan.c:474:33: warning[-Wunused-but-set-variable]: variable 'end_fmt' set but not used
+#  474 |   const char  *fmt, *this_fmt, *end_fmt;
+#      |                                 ^~~~~~~
+#  472|     va_list     ap;
+#  473|     char	      *alloc_fmt;
+#  474|->   const char  *fmt, *this_fmt, *end_fmt;
+#  475|     size_t      orig_fmt_len, alloc_fmt_size, len;
+#  476|     int	      new_fields, new_chars;

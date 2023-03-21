@@ -1,0 +1,474 @@
+Error: COMPILER_WARNING (CWE-477):
+volume_key-0.3.12/lib/crypto.c: scope_hint: In function 'encrypt_asymmetric'
+volume_key-0.3.12/lib/crypto.c:192:3: warning[-Wdeprecated-declarations]: 'g_memdup' is deprecated: Use 'g_memdup2' instead
+#  192 |   res = g_memdup (dest_item.data, dest_item.len);
+#      |   ^~~
+/usr/include/glib-2.0/glib.h:82: included_from: Included from here.
+volume_key-0.3.12/lib/crypto.c:27: included_from: Included from here.
+/usr/include/glib-2.0/glib/gstrfuncs.h:257:23: note: declared here
+#  257 | gpointer              g_memdup         (gconstpointer mem,
+#      |                       ^~~~~~~~
+#  190|   
+#  191|     *res_size = dest_item.len;
+#  192|->   res = g_memdup (dest_item.data, dest_item.len);
+#  193|     PORT_FreeArena (res_arena, PR_FALSE);
+#  194|     NSS_CMSMessage_Destroy (cmsg);
+
+Error: COMPILER_WARNING (CWE-477):
+volume_key-0.3.12/lib/crypto.c: scope_hint: In function 'decrypt_asymmetric'
+volume_key-0.3.12/lib/crypto.c:237:3: warning[-Wdeprecated-declarations]: 'g_memdup' is deprecated: Use 'g_memdup2' instead
+#  237 |   res = g_memdup (dest->data, dest->len);
+#      |   ^~~
+/usr/include/glib-2.0/glib.h:82: included_from: Included from here.
+volume_key-0.3.12/lib/crypto.c:27: included_from: Included from here.
+/usr/include/glib-2.0/glib/gstrfuncs.h:257:23: note: declared here
+#  257 | gpointer              g_memdup         (gconstpointer mem,
+#      |                       ^~~~~~~~
+#  235|         goto err_cmsg;
+#  236|       }
+#  237|->   res = g_memdup (dest->data, dest->len);
+#  238|     *res_size = dest->len;
+#  239|   
+
+Error: COMPILER_WARNING (CWE-477):
+volume_key-0.3.12/lib/crypto.c: scope_hint: In function 'wrap_asymmetric'
+volume_key-0.3.12/lib/crypto.c:343:3: warning[-Wdeprecated-declarations]: 'g_memdup' is deprecated: Use 'g_memdup2' instead
+#  343 |   *wrapped_secret = g_memdup (wrapped_secret_item.data,
+#      |   ^
+/usr/include/glib-2.0/glib.h:82: included_from: Included from here.
+volume_key-0.3.12/lib/crypto.c:27: included_from: Included from here.
+/usr/include/glib-2.0/glib/gstrfuncs.h:257:23: note: declared here
+#  257 | gpointer              g_memdup         (gconstpointer mem,
+#      |                       ^~~~~~~~
+#  341|     PK11_FreeSymKey (secret_key);
+#  342|   
+#  343|->   *wrapped_secret = g_memdup (wrapped_secret_item.data,
+#  344|   			      wrapped_secret_item.len);
+#  345|     *wrapped_secret_size = wrapped_secret_item.len;
+
+Error: COMPILER_WARNING (CWE-477):
+volume_key-0.3.12/lib/crypto.c:347:3: warning[-Wdeprecated-declarations]: 'g_memdup' is deprecated: Use 'g_memdup2' instead
+#  347 |   *issuer = g_memdup (isn->derIssuer.data, isn->derIssuer.len);
+#      |   ^
+/usr/include/glib-2.0/glib.h:82: included_from: Included from here.
+volume_key-0.3.12/lib/crypto.c:27: included_from: Included from here.
+/usr/include/glib-2.0/glib/gstrfuncs.h:257:23: note: declared here
+#  257 | gpointer              g_memdup         (gconstpointer mem,
+#      |                       ^~~~~~~~
+#  345|     *wrapped_secret_size = wrapped_secret_item.len;
+#  346|     SECITEM_FreeItem (&wrapped_secret_item, PR_FALSE);
+#  347|->   *issuer = g_memdup (isn->derIssuer.data, isn->derIssuer.len);
+#  348|     *issuer_size = isn->derIssuer.len;
+#  349|     *sn = g_memdup (isn->serialNumber.data, isn->serialNumber.len);
+
+Error: COMPILER_WARNING (CWE-477):
+volume_key-0.3.12/lib/crypto.c:349:3: warning[-Wdeprecated-declarations]: 'g_memdup' is deprecated: Use 'g_memdup2' instead
+#  349 |   *sn = g_memdup (isn->serialNumber.data, isn->serialNumber.len);
+#      |   ^
+/usr/include/glib-2.0/glib.h:82: included_from: Included from here.
+volume_key-0.3.12/lib/crypto.c:27: included_from: Included from here.
+/usr/include/glib-2.0/glib/gstrfuncs.h:257:23: note: declared here
+#  257 | gpointer              g_memdup         (gconstpointer mem,
+#      |                       ^~~~~~~~
+#  347|     *issuer = g_memdup (isn->derIssuer.data, isn->derIssuer.len);
+#  348|     *issuer_size = isn->derIssuer.len;
+#  349|->   *sn = g_memdup (isn->serialNumber.data, isn->serialNumber.len);
+#  350|     *sn_size = isn->serialNumber.len;
+#  351|     PORT_FreeArena (isn_arena, PR_FALSE);
+
+Error: COMPILER_WARNING (CWE-477):
+volume_key-0.3.12/lib/crypto.c: scope_hint: In function 'unwrap_asymmetric'
+volume_key-0.3.12/lib/crypto.c:432:3: warning[-Wdeprecated-declarations]: 'g_memdup' is deprecated: Use 'g_memdup2' instead
+#  432 |   ret = g_memdup (clear_secret_item->data, clear_secret_item->len);
+#      |   ^~~
+/usr/include/glib-2.0/glib.h:82: included_from: Included from here.
+volume_key-0.3.12/lib/crypto.c:27: included_from: Included from here.
+/usr/include/glib-2.0/glib/gstrfuncs.h:257:23: note: declared here
+#  257 | gpointer              g_memdup         (gconstpointer mem,
+#      |                       ^~~~~~~~
+#  430|       }
+#  431|     clear_secret_item = PK11_GetKeyData (secret_key);
+#  432|->   ret = g_memdup (clear_secret_item->data, clear_secret_item->len);
+#  433|     *clear_secret_size = clear_secret_item->len;
+#  434|     PK11_FreeSymKey (secret_key);
+
+Error: COMPILER_WARNING (CWE-477):
+volume_key-0.3.12/lib/crypto.c: scope_hint: In function 'wrap_symmetric'
+volume_key-0.3.12/lib/crypto.c:506:3: warning[-Wdeprecated-declarations]: 'g_memdup' is deprecated: Use 'g_memdup2' instead
+#  506 |   *iv = g_memdup (iv_data, iv_data_size);
+#      |   ^
+/usr/include/glib-2.0/glib.h:82: included_from: Included from here.
+volume_key-0.3.12/lib/crypto.c:27: included_from: Included from here.
+/usr/include/glib-2.0/glib/gstrfuncs.h:257:23: note: declared here
+#  257 | gpointer              g_memdup         (gconstpointer mem,
+#      |                       ^~~~~~~~
+#  504|   
+#  505|     iv_data = PK11_IVFromParam (mechanism, wrapping_param, &iv_data_size);
+#  506|->   *iv = g_memdup (iv_data, iv_data_size);
+#  507|     *iv_size = iv_data_size;
+#  508|     SECITEM_FreeItem (wrapping_param, PR_TRUE);
+
+Error: COMPILER_WARNING (CWE-477):
+volume_key-0.3.12/lib/crypto.c:510:3: warning[-Wdeprecated-declarations]: 'g_memdup' is deprecated: Use 'g_memdup2' instead
+#  510 |   *wrapped_secret = g_memdup (wrapped_secret_item.data,
+#      |   ^
+/usr/include/glib-2.0/glib.h:82: included_from: Included from here.
+volume_key-0.3.12/lib/crypto.c:27: included_from: Included from here.
+/usr/include/glib-2.0/glib/gstrfuncs.h:257:23: note: declared here
+#  257 | gpointer              g_memdup         (gconstpointer mem,
+#      |                       ^~~~~~~~
+#  508|     SECITEM_FreeItem (wrapping_param, PR_TRUE);
+#  509|   
+#  510|->   *wrapped_secret = g_memdup (wrapped_secret_item.data,
+#  511|   			      wrapped_secret_item.len);
+#  512|     *wrapped_secret_size = wrapped_secret_item.len;
+
+Error: COMPILER_WARNING (CWE-477):
+volume_key-0.3.12/lib/crypto.c: scope_hint: In function 'unwrap_symmetric'
+volume_key-0.3.12/lib/crypto.c:565:3: warning[-Wdeprecated-declarations]: 'g_memdup' is deprecated: Use 'g_memdup2' instead
+#  565 |   ret = g_memdup (clear_secret_item->data, clear_secret_item->len);
+#      |   ^~~
+/usr/include/glib-2.0/glib.h:82: included_from: Included from here.
+volume_key-0.3.12/lib/crypto.c:27: included_from: Included from here.
+/usr/include/glib-2.0/glib/gstrfuncs.h:257:23: note: declared here
+#  257 | gpointer              g_memdup         (gconstpointer mem,
+#      |                       ^~~~~~~~
+#  563|       }
+#  564|     clear_secret_item = PK11_GetKeyData (secret_key);
+#  565|->   ret = g_memdup (clear_secret_item->data, clear_secret_item->len);
+#  566|     *clear_secret_size = clear_secret_item->len;
+#  567|     PK11_FreeSymKey (secret_key);
+
+Error: COMPILER_WARNING (CWE-477):
+volume_key-0.3.12/lib/crypto.c: scope_hint: In function 'encrypt_with_passphrase'
+volume_key-0.3.12/lib/crypto.c:721:3: warning[-Wdeprecated-declarations]: 'g_memdup' is deprecated: Use 'g_memdup2' instead
+#  721 |   res = g_memdup (gpgme_res, *res_size);
+#      |   ^~~
+/usr/include/glib-2.0/glib.h:82: included_from: Included from here.
+volume_key-0.3.12/lib/crypto.c:27: included_from: Included from here.
+/usr/include/glib-2.0/glib/gstrfuncs.h:257:23: note: declared here
+#  257 | gpointer              g_memdup         (gconstpointer mem,
+#      |                       ^~~~~~~~
+#  719|         goto err_ctx;
+#  720|       }
+#  721|->   res = g_memdup (gpgme_res, *res_size);
+#  722|     gpgme_free (gpgme_res);
+#  723|   
+
+Error: COMPILER_WARNING (CWE-477):
+volume_key-0.3.12/lib/crypto.c: scope_hint: In function 'decrypt_with_passphrase'
+volume_key-0.3.12/lib/crypto.c:777:3: warning[-Wdeprecated-declarations]: 'g_memdup' is deprecated: Use 'g_memdup2' instead
+#  777 |   res = g_memdup (gpgme_res, *res_size);
+#      |   ^~~
+/usr/include/glib-2.0/glib.h:82: included_from: Included from here.
+volume_key-0.3.12/lib/crypto.c:27: included_from: Included from here.
+/usr/include/glib-2.0/glib/gstrfuncs.h:257:23: note: declared here
+#  257 | gpointer              g_memdup         (gconstpointer mem,
+#      |                       ^~~~~~~~
+volume_key-0.3.12/lib/crypto.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#  775|         goto err_ctx;
+#  776|       }
+#  777|->   res = g_memdup (gpgme_res, *res_size);
+#  778|     gpgme_free (gpgme_res);
+#  779|   
+
+Error: COMPILER_WARNING (CWE-477):
+volume_key-0.3.12/lib/kmip.c: scope_hint: In function 'kmip_key_value_set_bytes'
+volume_key-0.3.12/lib/kmip.c:101:3: warning[-Wdeprecated-declarations]: 'g_memdup' is deprecated: Use 'g_memdup2' instead
+#  101 |   value->v.bytes.data = g_memdup (bytes, len);
+#      |   ^~~~~
+/usr/include/glib-2.0/glib.h:82: included_from: Included from here.
+volume_key-0.3.12/lib/kmip.c:25: included_from: Included from here.
+/usr/include/glib-2.0/glib/gstrfuncs.h:257:23: note: declared here
+#  257 | gpointer              g_memdup         (gconstpointer mem,
+#      |                       ^~~~~~~~
+#   99|     kmip_key_value_free_v (value);
+#  100|     value->type = KMIP_KEY_VALUE_BYTES;
+#  101|->   value->v.bytes.data = g_memdup (bytes, len);
+#  102|     value->v.bytes.len = len;
+#  103|   }
+
+Error: COMPILER_WARNING (CWE-477):
+volume_key-0.3.12/lib/kmip.c: scope_hint: In function 'kmip_key_value_set_symmetric_key'
+volume_key-0.3.12/lib/kmip.c:113:3: warning[-Wdeprecated-declarations]: 'g_memdup' is deprecated: Use 'g_memdup2' instead
+#  113 |   value->v.key->data = g_memdup (key, len);
+#      |   ^~~~~
+/usr/include/glib-2.0/glib.h:82: included_from: Included from here.
+volume_key-0.3.12/lib/kmip.c:25: included_from: Included from here.
+/usr/include/glib-2.0/glib/gstrfuncs.h:257:23: note: declared here
+#  257 | gpointer              g_memdup         (gconstpointer mem,
+#      |                       ^~~~~~~~
+#  111|     value->type = KMIP_KEY_VALUE_SYMMETRIC_KEY;
+#  112|     value->v.key = g_new (struct kmip_symmetric_key, 1);
+#  113|->   value->v.key->data = g_memdup (key, len);
+#  114|     value->v.key->len = len;
+#  115|   }
+
+Error: COMPILER_WARNING (CWE-477):
+volume_key-0.3.12/lib/kmip.c: scope_hint: In function 'get_bytes'
+volume_key-0.3.12/lib/kmip.c:923:3: warning[-Wdeprecated-declarations]: 'g_memdup' is deprecated: Use 'g_memdup2' instead
+#  923 |   *bytes = g_memdup (kmip->data, s);
+#      |   ^
+/usr/include/glib-2.0/glib.h:82: included_from: Included from here.
+volume_key-0.3.12/lib/kmip.c:25: included_from: Included from here.
+/usr/include/glib-2.0/glib/gstrfuncs.h:257:23: note: declared here
+#  257 | gpointer              g_memdup         (gconstpointer mem,
+#      |                       ^~~~~~~~
+#  921|         return -1;
+#  922|       }
+#  923|->   *bytes = g_memdup (kmip->data, s);
+#  924|     *size = s;
+#  925|     kmip->data += s;
+
+Error: COMPILER_WARNING (CWE-477):
+volume_key-0.3.12/lib/kmip.c: scope_hint: In function 'kmip_libvk_packet_wrap_secret_symmetric'
+volume_key-0.3.12/lib/kmip.c:1887:3: warning[-Wdeprecated-declarations]: 'g_memdup' is deprecated: Use 'g_memdup2' instead
+# 1887 |   key_block->wrapping->iv = g_memdup (iv, iv_len);
+#      |   ^~~~~~~~~
+/usr/include/glib-2.0/glib.h:82: included_from: Included from here.
+volume_key-0.3.12/lib/kmip.c:25: included_from: Included from here.
+/usr/include/glib-2.0/glib/gstrfuncs.h:257:23: note: declared here
+#  257 | gpointer              g_memdup         (gconstpointer mem,
+#      |                       ^~~~~~~~
+volume_key-0.3.12/lib/kmip.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+# 1885|     key_block->wrapping->method = KMIP_WRAPPING_LIBVK_ENCRYPT_KEY_ONLY;
+# 1886|     key_block->wrapping->encryption_key = encryption_key;
+# 1887|->   key_block->wrapping->iv = g_memdup (iv, iv_len);
+# 1888|     key_block->wrapping->iv_len = iv_len;
+# 1889|   
+
+Error: COMPILER_WARNING (CWE-477):
+volume_key-0.3.12/lib/volume.c: scope_hint: In function 'volume_create_data_encryption_key_packet'
+volume_key-0.3.12/lib/volume.c:86:3: warning[-Wdeprecated-declarations]: 'g_memdup' is deprecated: Use 'g_memdup2' instead
+#   86 |   key_value->v.key->data = g_memdup (key, key_bytes);
+#      |   ^~~~~~~~~
+/usr/include/glib-2.0/glib.h:82: included_from: Included from here.
+volume_key-0.3.12/lib/volume.c:25: included_from: Included from here.
+/usr/include/glib-2.0/glib/gstrfuncs.h:257:23: note: declared here
+#  257 | gpointer              g_memdup         (gconstpointer mem,
+#      |                       ^~~~~~~~
+#   84|     key_value->type = KMIP_KEY_VALUE_SYMMETRIC_KEY;
+#   85|     key_value->v.key = g_new (struct kmip_symmetric_key, 1);
+#   86|->   key_value->v.key->data = g_memdup (key, key_bytes);
+#   87|     key_value->v.key->len = key_bytes;
+#   88|     key_value->attributes = g_ptr_array_new ();
+
+Error: COMPILER_WARNING (CWE-477):
+volume_key-0.3.12/lib/volume.c: scope_hint: In function 'volume_create_passphrase_packet'
+volume_key-0.3.12/lib/volume.c:132:3: warning[-Wdeprecated-declarations]: 'g_memdup' is deprecated: Use 'g_memdup2' instead
+#  132 |   key_value->v.bytes.data = g_memdup (passphrase, size);
+#      |   ^~~~~~~~~
+/usr/include/glib-2.0/glib.h:82: included_from: Included from here.
+volume_key-0.3.12/lib/volume.c:25: included_from: Included from here.
+/usr/include/glib-2.0/glib/gstrfuncs.h:257:23: note: declared here
+#  257 | gpointer              g_memdup         (gconstpointer mem,
+#      |                       ^~~~~~~~
+volume_key-0.3.12/lib/volume.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#  130|     key_value = g_new (struct kmip_key_value, 1);
+#  131|     key_value->type = KMIP_KEY_VALUE_BYTES;
+#  132|->   key_value->v.bytes.data = g_memdup (passphrase, size);
+#  133|     key_value->v.bytes.len = size;
+#  134|     key_value->attributes = g_ptr_array_new ();
+
+Error: COMPILER_WARNING (CWE-477):
+volume_key-0.3.12/lib/volume_luks.c: scope_hint: In function 'luks_replace_key'
+volume_key-0.3.12/lib/volume_luks.c:157:3: warning[-Wdeprecated-declarations]: 'g_memdup' is deprecated: Use 'g_memdup2' instead
+#  157 |   luks->key = g_memdup (key, luks->key_bytes);
+#      |   ^~~~
+/usr/include/glib-2.0/glib.h:82: included_from: Included from here.
+volume_key-0.3.12/lib/volume_luks.c:24: included_from: Included from here.
+/usr/include/glib-2.0/glib/gstrfuncs.h:257:23: note: declared here
+#  257 | gpointer              g_memdup         (gconstpointer mem,
+#      |                       ^~~~~~~~
+#  155|         g_free (luks->key);
+#  156|       }
+#  157|->   luks->key = g_memdup (key, luks->key_bytes);
+#  158|   }
+#  159|   
+
+Error: COMPILER_WARNING (CWE-477):
+volume_key-0.3.12/lib/volume_luks.c: scope_hint: In function 'luks_parse_escrow_packet'
+volume_key-0.3.12/lib/volume_luks.c:794:11: warning[-Wdeprecated-declarations]: 'g_memdup' is deprecated: Use 'g_memdup2' instead
+#  794 |           vol->v.luks->key = g_memdup (key_value->v.key->data,
+#      |           ^~~
+/usr/include/glib-2.0/glib.h:82: included_from: Included from here.
+volume_key-0.3.12/lib/volume_luks.c:24: included_from: Included from here.
+/usr/include/glib-2.0/glib/gstrfuncs.h:257:23: note: declared here
+#  257 | gpointer              g_memdup         (gconstpointer mem,
+#      |                       ^~~~~~~~
+volume_key-0.3.12/lib/volume_luks.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#  792|   	      goto err;
+#  793|   	    }
+#  794|-> 	  vol->v.luks->key = g_memdup (key_value->v.key->data,
+#  795|   				       key_value->v.key->len);
+#  796|   	}
+
+Error: COMPILER_WARNING (CWE-843):
+volume_key-0.3.12/python/python3/volume_key_wrap.c:1819:23: warning[-Wcast-function-type]: cast between incompatible function types from 'PyObject * (*)(PyObject *)' {aka 'struct _object * (*)(struct _object *)'} to 'PyObject * (*)(PyObject *, PyObject *)' {aka 'struct _object * (*)(struct _object *, struct _object *)'}
+# 1819 |   {(char *)"disown",  (PyCFunction)SwigPyObject_disown,  METH_NOARGS,  (char *)"releases ownership of the pointer"},
+#      |                       ^
+# 1817|   static PyMethodDef
+# 1818|   swigobject_methods[] = {
+# 1819|->   {(char *)"disown",  (PyCFunction)SwigPyObject_disown,  METH_NOARGS,  (char *)"releases ownership of the pointer"},
+# 1820|     {(char *)"acquire", (PyCFunction)SwigPyObject_acquire, METH_NOARGS,  (char *)"acquires ownership of the pointer"},
+# 1821|     {(char *)"own",     (PyCFunction)SwigPyObject_own,     METH_VARARGS, (char *)"returns/sets ownership of the pointer"},
+
+Error: COMPILER_WARNING (CWE-843):
+volume_key-0.3.12/python/python3/volume_key_wrap.c:1820:23: warning[-Wcast-function-type]: cast between incompatible function types from 'PyObject * (*)(PyObject *)' {aka 'struct _object * (*)(struct _object *)'} to 'PyObject * (*)(PyObject *, PyObject *)' {aka 'struct _object * (*)(struct _object *, struct _object *)'}
+# 1820 |   {(char *)"acquire", (PyCFunction)SwigPyObject_acquire, METH_NOARGS,  (char *)"acquires ownership of the pointer"},
+#      |                       ^
+# 1818|   swigobject_methods[] = {
+# 1819|     {(char *)"disown",  (PyCFunction)SwigPyObject_disown,  METH_NOARGS,  (char *)"releases ownership of the pointer"},
+# 1820|->   {(char *)"acquire", (PyCFunction)SwigPyObject_acquire, METH_NOARGS,  (char *)"acquires ownership of the pointer"},
+# 1821|     {(char *)"own",     (PyCFunction)SwigPyObject_own,     METH_VARARGS, (char *)"returns/sets ownership of the pointer"},
+# 1822|     {(char *)"append",  (PyCFunction)SwigPyObject_append,  METH_O,       (char *)"appends another 'this' object"},
+
+Error: COMPILER_WARNING (CWE-843):
+volume_key-0.3.12/python/python3/volume_key_wrap.c:1823:23: warning[-Wcast-function-type]: cast between incompatible function types from 'PyObject * (*)(PyObject *)' {aka 'struct _object * (*)(struct _object *)'} to 'PyObject * (*)(PyObject *, PyObject *)' {aka 'struct _object * (*)(struct _object *, struct _object *)'}
+# 1823 |   {(char *)"next",    (PyCFunction)SwigPyObject_next,    METH_NOARGS,  (char *)"returns the next 'this' object"},
+#      |                       ^
+# 1821|     {(char *)"own",     (PyCFunction)SwigPyObject_own,     METH_VARARGS, (char *)"returns/sets ownership of the pointer"},
+# 1822|     {(char *)"append",  (PyCFunction)SwigPyObject_append,  METH_O,       (char *)"appends another 'this' object"},
+# 1823|->   {(char *)"next",    (PyCFunction)SwigPyObject_next,    METH_NOARGS,  (char *)"returns the next 'this' object"},
+# 1824|     {(char *)"__repr__",(PyCFunction)SwigPyObject_repr,    METH_NOARGS,  (char *)"returns object representation"},
+# 1825|     {0, 0, 0, 0}  
+
+Error: COMPILER_WARNING (CWE-843):
+volume_key-0.3.12/python/python3/volume_key_wrap.c:1824:23: warning[-Wcast-function-type]: cast between incompatible function types from 'PyObject * (*)(SwigPyObject *)' {aka 'struct _object * (*)(SwigPyObject *)'} to 'PyObject * (*)(PyObject *, PyObject *)' {aka 'struct _object * (*)(struct _object *, struct _object *)'}
+# 1824 |   {(char *)"__repr__",(PyCFunction)SwigPyObject_repr,    METH_NOARGS,  (char *)"returns object representation"},
+#      |                       ^
+# 1822|     {(char *)"append",  (PyCFunction)SwigPyObject_append,  METH_O,       (char *)"appends another 'this' object"},
+# 1823|     {(char *)"next",    (PyCFunction)SwigPyObject_next,    METH_NOARGS,  (char *)"returns the next 'this' object"},
+# 1824|->   {(char *)"__repr__",(PyCFunction)SwigPyObject_repr,    METH_NOARGS,  (char *)"returns object representation"},
+# 1825|     {0, 0, 0, 0}  
+# 1826|   };
+
+Error: COMPILER_WARNING (CWE-909):
+volume_key-0.3.12/python/python3/volume_key_wrap.c: scope_hint: In function 'SwigPyObject_TypeOnce'
+volume_key-0.3.12/python/python3/volume_key_wrap.c:1982:5: warning[-Wmissing-field-initializers]: missing initializer for field 'tp_vectorcall' of 'PyTypeObject' {aka 'const struct _typeobject'}
+# 1982 |     };
+#      |     ^
+/usr/include/python3.10/object.h:716: included_from: Included from here.
+/usr/include/python3.10/Python.h:74: included_from: Included from here.
+volume_key-0.3.12/python/python3/volume_key_wrap.c:149: included_from: Included from here.
+/usr/include/python3.10/cpython/object.h:272:20: note: 'tp_vectorcall' declared here
+#  272 |     vectorcallfunc tp_vectorcall;
+#      |                    ^~~~~~~~~~~~~
+# 1980|         0                                     /* tp_next */
+# 1981|   #endif
+# 1982|->     };
+# 1983|       swigpyobject_type = tmp;
+# 1984|       type_init = 1;
+
+Error: COMPILER_WARNING (CWE-909):
+volume_key-0.3.12/python/python3/volume_key_wrap.c: scope_hint: In function 'SwigPyPacked_TypeOnce'
+volume_key-0.3.12/python/python3/volume_key_wrap.c:2169:5: warning[-Wmissing-field-initializers]: missing initializer for field 'tp_vectorcall' of 'PyTypeObject' {aka 'const struct _typeobject'}
+# 2169 |     };
+#      |     ^
+/usr/include/python3.10/object.h:716: included_from: Included from here.
+/usr/include/python3.10/Python.h:74: included_from: Included from here.
+volume_key-0.3.12/python/python3/volume_key_wrap.c:149: included_from: Included from here.
+/usr/include/python3.10/cpython/object.h:272:20: note: 'tp_vectorcall' declared here
+#  272 |     vectorcallfunc tp_vectorcall;
+#      |                    ^~~~~~~~~~~~~
+# 2167|         0                                     /* tp_next */
+# 2168|   #endif
+# 2169|->     };
+# 2170|       swigpypacked_type = tmp;
+# 2171|       type_init = 1;
+
+Error: COMPILER_WARNING (CWE-694):
+volume_key-0.3.12/python/python3/volume_key_wrap.c: scope_hint: In function 'SWIG_Python_NewShadowInstance'
+volume_key-0.3.12/python/python3/volume_key_wrap.c:2483:65: warning[-Wshadow]: declaration of 'swig_this' shadows a global declaration
+# 2483 | SWIG_Python_NewShadowInstance(SwigPyClientData *data, PyObject *swig_this)
+#      |                                                       ~~~~~~~~~~^~~~~~~~~
+volume_key-0.3.12/python/python3/volume_key_wrap.c:2224:18: note: shadowed declaration is here
+# 2224 | static PyObject *swig_this = NULL;
+#      |                  ^~~~~~~~~
+# 2481|   
+# 2482|   SWIGRUNTIME PyObject* 
+# 2483|-> SWIG_Python_NewShadowInstance(SwigPyClientData *data, PyObject *swig_this)
+# 2484|   {
+# 2485|   #if (PY_VERSION_HEX >= 0x02020000)
+
+Error: COMPILER_WARNING (CWE-694):
+volume_key-0.3.12/python/python3/volume_key_wrap.c: scope_hint: In function 'SWIG_Python_SetSwigThis'
+volume_key-0.3.12/python/python3/volume_key_wrap.c:2558:51: warning[-Wshadow]: declaration of 'swig_this' shadows a global declaration
+# 2558 | SWIG_Python_SetSwigThis(PyObject *inst, PyObject *swig_this)
+#      |                                         ~~~~~~~~~~^~~~~~~~~
+volume_key-0.3.12/python/python3/volume_key_wrap.c:2224:18: note: shadowed declaration is here
+# 2224 | static PyObject *swig_this = NULL;
+#      |                  ^~~~~~~~~
+# 2556|   
+# 2557|   SWIGRUNTIME void
+# 2558|-> SWIG_Python_SetSwigThis(PyObject *inst, PyObject *swig_this)
+# 2559|   {
+# 2560|    PyObject *dict;
+
+Error: COMPILER_WARNING (CWE-704):
+volume_key-0.3.12/python/python3/volume_key_wrap.c: scope_hint: In function 'PyString_AsStringAndSize'
+volume_key-0.3.12/python/python3/volume_key_wrap.c:2998:11: warning[-Wdiscarded-qualifiers]: assignment discards 'const' qualifier from pointer target type
+# 2998 |   *buffer = b;
+#      |           ^
+# 2996|     if (b == NULL)
+# 2997|       return -1;
+# 2998|->   *buffer = b;
+# 2999|     return 0;
+# 3000|   }
+
+Error: COMPILER_WARNING (CWE-909):
+volume_key-0.3.12/python/python3/volume_key_wrap.c: scope_hint: In function 'swig_varlink_type'
+volume_key-0.3.12/python/python3/volume_key_wrap.c:5893:7: warning[-Wmissing-field-initializers]: missing initializer for field 'tp_vectorcall' of 'PyTypeObject' {aka 'const struct _typeobject'}
+# 5893 |       };
+#      |       ^
+/usr/include/python3.10/object.h:716: included_from: Included from here.
+/usr/include/python3.10/Python.h:74: included_from: Included from here.
+volume_key-0.3.12/python/python3/volume_key_wrap.c:149: included_from: Included from here.
+/usr/include/python3.10/cpython/object.h:272:20: note: 'tp_vectorcall' declared here
+#  272 |     vectorcallfunc tp_vectorcall;
+#      |                    ^~~~~~~~~~~~~
+volume_key-0.3.12/python/python3/volume_key_wrap.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+# 5891|           0                                   /* tp_next */
+# 5892|   #endif
+# 5893|->       };
+# 5894|         varlink_type = tmp;
+# 5895|         type_init = 1;
+
+Error: COMPILER_WARNING (CWE-477):
+volume_key-0.3.12/src/volume_key.c: scope_hint: In function 'read_batch_string'
+volume_key-0.3.12/src/volume_key.c:390:3: warning[-Wdeprecated-declarations]: 'g_memdup' is deprecated: Use 'g_memdup2' instead
+#  390 |   res = g_memdup (buf, len);
+#      |   ^~~
+/usr/include/glib-2.0/glib.h:82: included_from: Included from here.
+volume_key-0.3.12/src/volume_key.c:30: included_from: Included from here.
+/usr/include/glib-2.0/glib/gstrfuncs.h:257:23: note: declared here
+#  257 | gpointer              g_memdup         (gconstpointer mem,
+#      |                       ^~~~~~~~
+#  388|         return NULL;
+#  389|       }
+#  390|->   res = g_memdup (buf, len);
+#  391|     free (buf);
+#  392|     return res;
+
+Error: COMPILER_WARNING (CWE-477):
+volume_key-0.3.12/src/volume_key.c: scope_hint: In function 'generic_ui_cb'
+volume_key-0.3.12/src/volume_key.c:529:7: warning[-Wdeprecated-declarations]: 'g_memdup' is deprecated: Use 'g_memdup2' instead
+#  529 |       res = g_memdup (buf, len + 1);
+#      |       ^~~
+/usr/include/glib-2.0/glib.h:82: included_from: Included from here.
+volume_key-0.3.12/src/volume_key.c:30: included_from: Included from here.
+/usr/include/glib-2.0/glib/gstrfuncs.h:257:23: note: declared here
+#  257 | gpointer              g_memdup         (gconstpointer mem,
+#      |                       ^~~~~~~~
+volume_key-0.3.12/src/volume_key.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#  527|   	  return NULL;
+#  528|   	}
+#  529|->       res = g_memdup (buf, len + 1);
+#  530|         free (buf);
+#  531|         return res;

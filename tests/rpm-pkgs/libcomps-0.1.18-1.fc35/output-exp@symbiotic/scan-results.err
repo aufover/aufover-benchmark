@@ -1,0 +1,774 @@
+Error: COMPILER_WARNING:
+libcomps-0.1.18/libcomps/src/comps_log_codes.c:6:20: warning[-Wvarargs]: passing an object that undergoes default argument promotion to 'va_start' has undefined behavior
+#    va_start(list, out);
+#                   ^
+libcomps-0.1.18/libcomps/src/comps_log_codes.c:3:55: note: parameter of type 'char' is declared here
+#inline void __expand(char *str, const char *fmt, char out, ...) {
+#                                                      ^
+#    4|       va_list list;
+#    5|       (void) str;
+#    6|->     va_start(list, out);
+#    7|       if (out)
+#    8|           vprintf(fmt, list);
+
+Error: COMPILER_WARNING:
+libcomps-0.1.18/libcomps/src/python/src/pycomps_sequence.c:58:9: warning[-Wstatic-in-inline]: static function 'PyType_HasFeature' is used in an inline function with external linkage
+#    if (PyUnicode_Check(id)) {
+#        ^
+/usr/include/python3.10/unicodeobject.h:115:18: note: expanded from macro 'PyUnicode_Check'
+#                 PyType_FastSubclass(Py_TYPE(op), Py_TPFLAGS_UNICODE_SUBCLASS)
+#                 ^
+/usr/include/python3.10/object.h:734:41: note: expanded from macro 'PyType_FastSubclass'
+##define PyType_FastSubclass(type, flag) PyType_HasFeature(type, flag)
+#                                        ^
+libcomps-0.1.18/libcomps/src/python/src/pycomps_sequence.h:34:1: note: use 'static' to give inline function 'list_getitem_byid' internal linkage
+#PyObject* list_getitem_byid(PyObject *self, PyObject *id);
+#^
+/usr/include/python3.10/object.h:722:1: note: 'PyType_HasFeature' declared here
+#PyType_HasFeature(PyTypeObject *type, unsigned long feature)
+#^
+#   56|       COMPS_Object *tmpstr;
+#   57|   
+#   58|->     if (PyUnicode_Check(id)) {
+#   59|           if (__pycomps_stringable_to_char(id, &strid)) {
+#   60|               printf("stringable to char fail\n");
+
+Error: COMPILER_WARNING:
+libcomps-0.1.18/libcomps/src/python/src/pycomps_sequence.c:63:16: warning[-Wstatic-in-inline]: static function 'PyType_HasFeature' is used in an inline function with external linkage
+#    } else if (PyBytes_Check(id)){
+#               ^
+/usr/include/python3.10/bytesobject.h:31:18: note: expanded from macro 'PyBytes_Check'
+#                 PyType_FastSubclass(Py_TYPE(op), Py_TPFLAGS_BYTES_SUBCLASS)
+#                 ^
+/usr/include/python3.10/object.h:734:41: note: expanded from macro 'PyType_FastSubclass'
+##define PyType_FastSubclass(type, flag) PyType_HasFeature(type, flag)
+#                                        ^
+libcomps-0.1.18/libcomps/src/python/src/pycomps_sequence.h:34:1: note: use 'static' to give inline function 'list_getitem_byid' internal linkage
+#PyObject* list_getitem_byid(PyObject *self, PyObject *id);
+#^
+/usr/include/python3.10/object.h:722:1: note: 'PyType_HasFeature' declared here
+#PyType_HasFeature(PyTypeObject *type, unsigned long feature)
+#^
+#   61|               return NULL;
+#   62|           }
+#   63|->     } else if (PyBytes_Check(id)){
+#   64|           strid = PyBytes_AsString(id);
+#   65|       }
+
+Error: COMPILER_WARNING:
+libcomps-0.1.18/libcomps/src/python/src/pycomps_sequence.c:85:9: warning: static function 'PyType_HasFeature' is used in an inline function with external linkage [-Wstatic-in-inline]#define PyType_FastSubclass(type, flag) PyType_HasFeature(type, flag)
+#
+#                                        ^
+#    if (PyUnicode_Check(id)) {
+#        ^
+/usr/include/python3.10/unicodeobject.h:115:18: note: expanded from macro 'PyUnicode_Check'
+#                 PyType_FastSubclass(Py_TYPE(op), Py_TPFLAGS_UNICODE_SUBCLASS)
+#                 ^
+/usr/include/python3.10/object.h:734:41: note: expanded from macro 'PyType_FastSubclass'
+libcomps-0.1.18/libcomps/src/python/src/pycomps_sequence.h:34:1: note: use 'static' to give inline function 'list_getitem_byid' internal linkage
+##define PyType_FastSubclass(type, flag) PyType_HasFeature(type, flag)
+#                                        ^
+#PyObject* list_getitem_byid(PyObject *self, PyObject *id);
+#^
+/usr/include/python3.10/object.h:722:1: note: 'PyType_HasFeature' declared here
+#PyType_HasFeature(PyTypeObject *type, unsigned long feature)
+#^
+libcomps-0.1.18/libcomps/src/python/src/pycomps_sequence.h:34:1: note: use 'static' to give inline function 'list_getitem_byid' internal linkage
+#PyObject* list_getitem_byid(PyObject *self, PyObject *id);
+#^
+/usr/include/python3.10/object.h:722:1: note: 'PyType_HasFeature' declared here
+#PyType_HasFeature(PyTypeObject *type, unsigned long feature)
+#^
+#   83|           PyErr_Format(PyExc_KeyError, "Object with id '%s' is not in list", strid);
+#   84|       }
+#   85|->     if (PyUnicode_Check(id)) {
+#   86|           free(strid);
+#   87|       }
+
+Error: COMPILER_WARNING:
+libcomps-0.1.18/libcomps/src/python/src/pycomps_sequence.c:85:9: warning[-Wstatic-in-inline]: static function 'PyType_HasFeature' is used in an inline function with external linkage
+#    if (PyUnicode_Check(id)) {
+#        ^
+/usr/include/python3.10/unicodeobject.h:115:18: note: expanded from macro 'PyUnicode_Check'
+#                 PyType_FastSubclass(Py_TYPE(op), Py_TPFLAGS_UNICODE_SUBCLASS)
+#                 ^
+/usr/include/python3.10/object.h:734:41: note: expanded from macro 'PyType_FastSubclass'
+##define PyType_FastSubclass(type, flag) PyType_HasFeature(type, flag)
+#                                        ^
+libcomps-0.1.18/libcomps/src/python/src/pycomps_sequence.h:34:1: note: use 'static' to give inline function 'list_getitem_byid' internal linkage
+#PyObject* list_getitem_byid(PyObject *self, PyObject *id);
+#^
+/usr/include/python3.10/object.h:722:1: note: 'PyType_HasFeature' declared here
+#PyType_HasFeature(PyTypeObject *type, unsigned long feature)
+#^
+#   83|           PyErr_Format(PyExc_KeyError, "Object with id '%s' is not in list", strid);
+#   84|       }
+#   85|->     if (PyUnicode_Check(id)) {
+#   86|           free(strid);
+#   87|       }
+
+Error: COMPILER_WARNING:
+libcomps-0.1.18/libcomps/src/python/src/pycomps_utils.c:67:9: warning[-Wstatic-in-inline]: static function '_Py_NewRef' is used in an inline function with external linkage
+#        Py_RETURN_NONE;
+#        ^
+/usr/include/python3.10/object.h:613:31: note: expanded from macro 'Py_RETURN_NONE'
+##define Py_RETURN_NONE return Py_NewRef(Py_None)
+#                              ^
+/usr/include/python3.10/object.h:595:24: note: expanded from macro 'Py_NewRef'
+##define Py_NewRef(obj) _Py_NewRef(_PyObject_CAST(obj))
+#                       ^
+libcomps-0.1.18/libcomps/src/python/src/pycomps_utils.h:123:1: note: use 'static' to give inline function '__pycomps_str_getter' internal linkage
+#PyObject* __pycomps_str_getter(char * prop);
+#^
+/usr/include/python3.10/object.h:580:25: note: '_Py_NewRef' declared here
+#static inline PyObject* _Py_NewRef(PyObject *obj)
+#                        ^
+#   65|   inline PyObject* __pycomps_str_getter(char * prop){
+#   66|       if (prop == NULL) {
+#   67|->         Py_RETURN_NONE;
+#   68|       }
+#   69|       return PyUnicode_FromString(prop);
+
+Error: COMPILER_WARNING:
+libcomps-0.1.18/libcomps/src/python/src/pycomps_utils.c:90:9: warning[-Wstatic-in-inline]: static function '_Py_INCREF' is used in an inline function with external linkage
+#        Py_INCREF(tmp);
+#        ^
+/usr/include/python3.10/object.h:475:23: note: expanded from macro 'Py_INCREF'
+##define Py_INCREF(op) _Py_INCREF(_PyObject_CAST(op))
+#                      ^
+libcomps-0.1.18/libcomps/src/python/src/pycomps_utils.h:127:1: note: use 'static' to give inline function '__pycomps_arg_to_unicode' internal linkage
+#PyObject* __pycomps_arg_to_unicode(PyObject *o);
+#^
+/usr/include/python3.10/object.h:461:20: note: '_Py_INCREF' declared here
+#static inline void _Py_INCREF(PyObject *op)
+#                   ^
+#   88|       if (o == Py_None) {
+#   89|           tmp = Py_None;
+#   90|->         Py_INCREF(tmp);
+#   91|       } else
+#   92|           tmp = PyUnicode_FromObject(o);
+
+Error: COMPILER_WARNING:
+libcomps-0.1.18/libcomps/src/python/src/pycomps_utils.c:127:9: warning[-Wstatic-in-inline]: static function '_Py_XDECREF' is used in an inline function with external linkage
+#        Py_XDECREF(o);
+#        ^
+/usr/include/python3.10/object.h:571:24: note: expanded from macro 'Py_XDECREF'
+##define Py_XDECREF(op) _Py_XDECREF(_PyObject_CAST(op))
+#                       ^
+libcomps-0.1.18/libcomps/src/python/src/pycomps_utils.h:131:1: note: use 'static' to give inline function '__pycomps_PyUnicode_AsString' internal linkage
+#signed char __pycomps_PyUnicode_AsString(PyObject *val, char **ret);
+#^
+/usr/include/python3.10/object.h:564:20: note: '_Py_XDECREF' declared here
+#static inline void _Py_XDECREF(PyObject *op)
+#                   ^
+#  125|           *ret = malloc(sizeof(char) * (strlen(tmp)+1));
+#  126|           memcpy(*ret, tmp, sizeof(char) * (strlen(tmp)+1));
+#  127|->         Py_XDECREF(o);
+#  128|       }
+#  129|       if (*ret == NULL) {
+
+Error: COMPILER_WARNING:
+libcomps-0.1.18/libcomps/src/python/src/pycomps_utils.c:146:5: warning[-Wstatic-in-inline]: static function '_Py_XDECREF' is used in an inline function with external linkage
+#    Py_XDECREF(tmpo);
+#    ^
+/usr/include/python3.10/object.h:571:24: note: expanded from macro 'Py_XDECREF'
+##define Py_XDECREF(op) _Py_XDECREF(_PyObject_CAST(op))
+#                       ^
+libcomps-0.1.18/libcomps/src/python/src/pycomps_utils.h:130:1: note: use 'static' to give inline function '__pycomps_stringable_to_char' internal linkage
+#signed char __pycomps_stringable_to_char(PyObject *value, char ** ret);
+#^
+/usr/include/python3.10/object.h:564:20: note: '_Py_XDECREF' declared here
+#static inline void _Py_XDECREF(PyObject *op)
+#                   ^
+#  144|       }
+#  145|       retval = __pycomps_PyUnicode_AsString(tmpo, ret);
+#  146|->     Py_XDECREF(tmpo);
+#  147|       return retval;
+#  148|   }
+
+Error: COMPILER_WARNING:
+libcomps-0.1.18/libcomps/src/python/src/pycomps_utils.c:164:5: warning[-Wstatic-in-inline]: static function '_Py_XDECREF' is used in an inline function with external linkage
+#    Py_XDECREF(tmpo);
+#    ^
+/usr/include/python3.10/object.h:571:24: note: expanded from macro 'Py_XDECREF'
+##define Py_XDECREF(op) _Py_XDECREF(_PyObject_CAST(op))
+#                       ^
+libcomps-0.1.18/libcomps/src/python/src/pycomps_utils.h:129:1: note: use 'static' to give inline function '__pycomps_arg_to_char' internal linkage
+#signed char __pycomps_arg_to_char(PyObject *value, char ** ret);
+#^
+/usr/include/python3.10/object.h:564:20: note: '_Py_XDECREF' declared here
+#static inline void _Py_XDECREF(PyObject *op)
+#                   ^
+#  162|       }
+#  163|       retval = __pycomps_PyUnicode_AsString(tmpo, ret);
+#  164|->     Py_XDECREF(tmpo);
+#  165|       return retval;
+#  166|   }
+
+Error: COMPILER_WARNING:
+libcomps-0.1.18/libcomps/src/python/src/pycomps_utils.c/builddir/build/BUILD/libcomps-0.1.18/libcomps/src/python/src/pycomps_utils.c:164:5: warning[-Wstatic-in-inline]: static function '_Py_XDECREF' is used in an inline function with external linkage
+#    Py_XDECREF(tmpo);
+#    ^
+/usr/include/python3.10/object.h:571:24: note: expanded from macro 'Py_XDECREF'
+##define Py_XDECREF(op) _Py_XDECREF(_PyObject_CAST(op))
+#                       ^
+#    Py_XDECREF(tmpo);
+#    ^
+/usr/include/python3.10/object.h:564:20: note: '_Py_XDECREF' declared here
+##define Py_XDECREF(op) _Py_XDECREF(_PyObject_CAST(op))
+#                       ^
+#static inline void _Py_XDECREF(PyObject *op)
+#                   ^
+libcomps-0.1.18/libcomps/src/python/src/pycomps_utils.h:129:1: note: use 'static' to give inline function '__pycomps_arg_to_char' internal linkage
+#signed char __pycomps_arg_to_char(PyObject *value, char ** ret);
+#^
+/usr/include/python3.10/object.h:564:20: note: '_Py_XDECREF' declared here
+#static inline void _Py_XDECREF(PyObject *op)
+#                   ^
+
+Error: COMPILER_WARNING (CWE-686):
+libcomps-0.1.18/libcomps/tests/check_comps.c:102:58: warning[-Wformat]: format specifies type 'int' but the argument has type 'size_t' (aka 'unsigned long')
+#                               "packages. But have %d.", tmplist->len);
+#                                                   ~~    ^~~~~~~~~~~~
+/usr/include/check.h:486:78: note: expanded from macro 'fail_if'
+#     _ck_assert_failed(__FILE__, __LINE__, "Failure '"#expr"' occurred" , ## __VA_ARGS__, NULL) \
+#                                                                             ^~~~~~~~~~~
+#  100|       tmplist = comps_docgroup_get_packages(g, NULL, COMPS_PACKAGE_OPTIONAL);
+#  101|       fail_if(tmplist->len != 4, "Group with id 'g1' should have 4 optional "
+#  102|->                                "packages. But have %d.", tmplist->len);
+#  103|       COMPS_OBJECT_DESTROY(tmplist);
+#  104|       tmplist = comps_docgroup_get_packages(g, NULL, COMPS_PACKAGE_MANDATORY);
+
+Error: COMPILER_WARNING (CWE-686):
+libcomps-0.1.18/libcomps/tests/check_comps.c:106:58: warning[-Wformat]: format specifies type 'int' but the argument has type 'size_t' (aka 'unsigned long')
+#                               "packages. But have %d.", tmplist->len);
+#                                                   ~~    ^~~~~~~~~~~~
+/usr/include/check.h:486:78: note: expanded from macro 'fail_if'
+#     _ck_assert_failed(__FILE__, __LINE__, "Failure '"#expr"' occurred" , ## __VA_ARGS__, NULL) \
+#                                                                             ^~~~~~~~~~~
+#  104|       tmplist = comps_docgroup_get_packages(g, NULL, COMPS_PACKAGE_MANDATORY);
+#  105|       fail_if(tmplist->len != 4, "Group with id 'g1' should have 4 optional "
+#  106|->                                "packages. But have %d.", tmplist->len);
+#  107|       COMPS_OBJECT_DESTROY(tmplist);
+#  108|       COMPS_OBJECT_DESTROY(doc);
+
+Error: COMPILER_WARNING (CWE-686):
+libcomps-0.1.18/libcomps/tests/check_comps.c:280:25: warning[-Wformat]: format specifies type 'int' but the argument has type 'size_t' (aka 'unsigned long')
+#            " have %d", g->packages->len);
+#                   ~~   ^~~~~~~~~~~~~~~~
+/usr/include/check.h:486:78: note: expanded from macro 'fail_if'
+#     _ck_assert_failed(__FILE__, __LINE__, "Failure '"#expr"' occurred" , ## __VA_ARGS__, NULL) \
+#                                                                             ^~~~~~~~~~~
+#  278|       g = comps_docgroup_union(g1, g2);
+#  279|       fail_if(g->packages->len != 14, "Union of (g1 v g2) should have 14 packages"
+#  280|->             " have %d", g->packages->len);
+#  281|       COMPS_OBJECT_DESTROY(g);
+#  282|       g = comps_docgroup_intersect(g1, g2);
+
+Error: COMPILER_WARNING (CWE-686):
+libcomps-0.1.18/libcomps/tests/check_comps.c:284:34: warning[-Wformat]: format specifies type 'int' but the argument has type 'size_t' (aka 'unsigned long')
+#            "packages, have %d", g->packages->len);
+#                            ~~   ^~~~~~~~~~~~~~~~
+/usr/include/check.h:486:78: note: expanded from macro 'fail_if'
+#     _ck_assert_failed(__FILE__, __LINE__, "Failure '"#expr"' occurred" , ## __VA_ARGS__, NULL) \
+#                                                                             ^~~~~~~~~~~
+#  282|       g = comps_docgroup_intersect(g1, g2);
+#  283|       fail_if(g->packages->len != 2, "Intersect of (g1 ^ g2) should have 2"
+#  284|->             "packages, have %d", g->packages->len);
+#  285|       COMPS_OBJECT_DESTROY(g);
+#  286|       g1 = (COMPS_DocGroup*)list->first->next->comps_obj;
+
+Error: COMPILER_WARNING (CWE-686):
+libcomps-0.1.18/libcomps/tests/check_comps.c:290:25: warning[-Wformat]: format specifies type 'int' but the argument has type 'size_t' (aka 'unsigned long')
+#            " have %d", g->packages->len);
+#                   ~~   ^~~~~~~~~~~~~~~~
+/usr/include/check.h:486:78: note: expanded from macro 'fail_if'
+#     _ck_assert_failed(__FILE__, __LINE__, "Failure '"#expr"' occurred" , ## __VA_ARGS__, NULL) \
+#                                                                             ^~~~~~~~~~~
+#  288|       g = comps_docgroup_union(g1, g2);
+#  289|       fail_if(g->packages->len != 16, "Union of (g2 v g3) should have 16 packages"
+#  290|->             " have %d", g->packages->len);
+#  291|       COMPS_OBJECT_DESTROY(g);
+#  292|       g = comps_docgroup_intersect(g1, g2);
+
+Error: COMPILER_WARNING (CWE-686):
+libcomps-0.1.18/libcomps/tests/check_comps.c:294:34: warning[-Wformat]: format specifies type 'int' but the argument has type 'size_t' (aka 'unsigned long')
+#            "packages, have %d", g->packages->len);
+#                            ~~   ^~~~~~~~~~~~~~~~
+/usr/include/check.h:486:78: note: expanded from macro 'fail_if'
+#     _ck_assert_failed(__FILE__, __LINE__, "Failure '"#expr"' occurred" , ## __VA_ARGS__, NULL) \
+#                                                                             ^~~~~~~~~~~
+#  292|       g = comps_docgroup_intersect(g1, g2);
+#  293|       fail_if(g->packages->len != 0, "Intersect of (g2 ^ g3) should have 0"
+#  294|->             "packages, have %d", g->packages->len);
+#  295|       COMPS_OBJECT_DESTROY(g);
+#  296|       COMPS_OBJECT_DESTROY(list);
+
+Error: COMPILER_WARNING (CWE-686):
+libcomps-0.1.18/libcomps/tests/check_comps.c:304:35: warning[-Wformat]: format specifies type 'int' but the argument has type 'size_t' (aka 'unsigned long')
+#            "group ids, have %d", c->group_ids->len);
+#                             ~~   ^~~~~~~~~~~~~~~~~
+/usr/include/check.h:486:78: note: expanded from macro 'fail_if'
+#     _ck_assert_failed(__FILE__, __LINE__, "Failure '"#expr"' occurred" , ## __VA_ARGS__, NULL) \
+#                                                                             ^~~~~~~~~~~
+#  302|       //print_category(c);
+#  303|       fail_if(c->group_ids->len != 4, "Union of (c1 v c2) should have 4 "
+#  304|->             "group ids, have %d", c->group_ids->len);
+#  305|       COMPS_OBJECT_DESTROY(c);
+#  306|   
+
+Error: COMPILER_WARNING (CWE-686):
+libcomps-0.1.18/libcomps/tests/check_comps.c:309:35: warning[-Wformat]: format specifies type 'int' but the argument has type 'size_t' (aka 'unsigned long')
+#            "group ids, have %d", c->group_ids->len);
+#                             ~~   ^~~~~~~~~~~~~~~~~
+/usr/include/check.h:486:78: note: expanded from macro 'fail_if'
+#     _ck_assert_failed(__FILE__, __LINE__, "Failure '"#expr"' occurred" , ## __VA_ARGS__, NULL) \
+#                                                                             ^~~~~~~~~~~
+#  307|       c = comps_doccategory_intersect(c1, c2);
+#  308|       fail_if(c->group_ids->len != 2, "Intersect of (c1 ^ c2) should have 2"
+#  309|->             "group ids, have %d", c->group_ids->len);
+#  310|       COMPS_OBJECT_DESTROY(c);
+#  311|   
+
+Error: COMPILER_WARNING (CWE-686):
+libcomps-0.1.18/libcomps/tests/check_comps.c:316:35: warning[-Wformat]: format specifies type 'int' but the argument has type 'size_t' (aka 'unsigned long')
+#            "group ids, have %d", c->group_ids->len);
+#                             ~~   ^~~~~~~~~~~~~~~~~
+/usr/include/check.h:486:78: note: expanded from macro 'fail_if'
+#  314|       c = comps_doccategory_union(c1, c2);
+#  315|       fail_if(c->group_ids->len != 4, "Union of (c2 v c3) should have 4 "
+#  316|->             "group ids, have %d", c->group_ids->len);
+#  317|       COMPS_OBJECT_DESTROY(c);
+#  318|       c = comps_doccategory_intersect(c1, c2);
+
+Error: COMPILER_WARNING (CWE-686):
+libcomps-0.1.18/libcomps/tests/check_comps.c:320:35: warning[-Wformat]: format specifies type 'int' but the argument has type 'size_t' (aka 'unsigned long')
+#            "group ids, have %d", c->group_ids->len);
+#                             ~~   ^~~~~~~~~~~~~~~~~
+/usr/include/check.h:486:78: note: expanded from macro 'fail_if'
+#     _ck_assert_failed(__FILE__, __LINE__, "Failure '"#expr"' occurred" , ## __VA_ARGS__, NULL) \
+#                                                                             ^~~~~~~~~~~
+#  318|       c = comps_doccategory_intersect(c1, c2);
+#  319|       fail_if(c->group_ids->len != 2, "Intersect of (c2 ^ c3) should have 2"
+#  320|->             "group ids, have %d", c->group_ids->len);
+#  321|       COMPS_OBJECT_DESTROY(c);
+#  322|       COMPS_OBJECT_DESTROY(list);
+
+Error: COMPILER_WARNING (CWE-686):
+libcomps-0.1.18/libcomps/tests/check_comps.c:329:34: warning[-Wformat]: format specifies type 'int' but the argument has type 'size_t' (aka 'unsigned long')
+#            "groud ids have %d", e->group_list->len);
+#                            ~~   ^~~~~~~~~~~~~~~~~~
+/usr/include/check.h:486:78: note: expanded from macro 'fail_if'
+#     _ck_assert_failed(__FILE__, __LINE__, "Failure '"#expr"' occurred" , ## __VA_ARGS__, NULL) \
+#                                                                             ^~~~~~~~~~~
+#  327|       e = comps_docenv_union(e1, e2);
+#  328|       fail_if(e->group_list->len != 4, "Union of (e1 v e2) should have 4 "
+#  329|->             "groud ids have %d", e->group_list->len);
+#  330|       fail_if(e->option_list->len != 7, "Union of (e1 v e2) should have 7 "
+#  331|               "option ids have %d", e->option_list->len);
+
+Error: COMPILER_WARNING (CWE-686):
+libcomps-0.1.18/libcomps/tests/check_comps.c:331:35: warning[-Wformat]: format specifies type 'int' but the argument has type 'size_t' (aka 'unsigned long')
+#            "option ids have %d", e->option_list->len);
+#                             ~~   ^~~~~~~~~~~~~~~~~~~
+/usr/include/check.h:486:78: note: expanded from macro 'fail_if'
+#     _ck_assert_failed(__FILE__, __LINE__, "Failure '"#expr"' occurred" , ## __VA_ARGS__, NULL) \
+#                                                                             ^~~~~~~~~~~
+#  329|               "groud ids have %d", e->group_list->len);
+#  330|       fail_if(e->option_list->len != 7, "Union of (e1 v e2) should have 7 "
+#  331|->             "option ids have %d", e->option_list->len);
+#  332|       COMPS_OBJECT_DESTROY(e);
+#  333|       e = comps_docenv_intersect(e1, e2);
+
+Error: COMPILER_WARNING (CWE-686):
+libcomps-0.1.18/libcomps/tests/check_comps.c:335:34: warning[-Wformat]: format specifies type 'int' but the argument has type 'size_t' (aka 'unsigned long')
+#            "group ids have %d", e->group_list->len);
+#                            ~~   ^~~~~~~~~~~~~~~~~~
+/usr/include/check.h:486:78: note: expanded from macro 'fail_if'
+#     _ck_assert_failed(__FILE__, __LINE__, "Failure '"#expr"' occurred" , ## __VA_ARGS__, NULL) \
+#                                                                             ^~~~~~~~~~~
+#  333|       e = comps_docenv_intersect(e1, e2);
+#  334|       fail_if(e->group_list->len != 2, "Intersect of (e1 ^ e2) should have 2"
+#  335|->             "group ids have %d", e->group_list->len);
+#  336|       fail_if(e->option_list->len != 1, "Union of (e1 v e2) should have 1 "
+#  337|               "option ids have %d", e->option_list->len);
+
+Error: COMPILER_WARNING (CWE-686):
+libcomps-0.1.18/libcomps/tests/check_comps.c:337:35: warning[-Wformat]: format specifies type 'int' but the argument has type 'size_t' (aka 'unsigned long')
+#            "option ids have %d", e->option_list->len);
+#                             ~~   ^~~~~~~~~~~~~~~~~~~
+/usr/include/check.h:486:78: note: expanded from macro 'fail_if'
+#     _ck_assert_failed(__FILE__, __LINE__, "Failure '"#expr"' occurred" , ## __VA_ARGS__, NULL) \
+#                                                                             ^~~~~~~~~~~
+#  335|               "group ids have %d", e->group_list->len);
+#  336|       fail_if(e->option_list->len != 1, "Union of (e1 v e2) should have 1 "
+#  337|->             "option ids have %d", e->option_list->len);
+#  338|       COMPS_OBJECT_DESTROY(e);
+#  339|   
+
+Error: COMPILER_WARNING (CWE-686):
+libcomps-0.1.18/libcomps/tests/check_comps.c:344:34: warning[-Wformat]: format specifies type 'int' but the argument has type 'size_t' (aka 'unsigned long')
+#            "groud ids have %d", e->group_list->len);
+#                            ~~   ^~~~~~~~~~~~~~~~~~
+/usr/include/check.h:486:78: note: expanded from macro 'fail_if'
+#     _ck_assert_failed(__FILE__, __LINE__, "Failure '"#expr"' occurred" , ## __VA_ARGS__, NULL) \
+#                                                                             ^~~~~~~~~~~
+#  342|       e = comps_docenv_union(e1, e2);
+#  343|       fail_if(e->group_list->len != 4, "Union of (e2 v e3) should have 4 "
+#  344|->             "groud ids have %d", e->group_list->len);
+#  345|       fail_if(e->option_list->len != 6, "Union of (e2 v e3) should have 7 "
+#  346|               "option ids have %d", e->option_list->len);
+
+Error: COMPILER_WARNING (CWE-686):
+libcomps-0.1.18/libcomps/tests/check_comps.c:346:35: warning[-Wformat]: format specifies type 'int' but the argument has type 'size_t' (aka 'unsigned long')
+#            "option ids have %d", e->option_list->len);
+#                             ~~   ^~~~~~~~~~~~~~~~~~~
+/usr/include/check.h:486:78: note: expanded from macro 'fail_if'
+#     _ck_assert_failed(__FILE__, __LINE__, "Failure '"#expr"' occurred" , ## __VA_ARGS__, NULL) \
+#                                                                             ^~~~~~~~~~~
+#  344|               "groud ids have %d", e->group_list->len);
+#  345|       fail_if(e->option_list->len != 6, "Union of (e2 v e3) should have 7 "
+#  346|->             "option ids have %d", e->option_list->len);
+#  347|       COMPS_OBJECT_DESTROY(e);
+#  348|       e = comps_docenv_intersect(e1, e2);
+
+Error: COMPILER_WARNING (CWE-686):
+libcomps-0.1.18/libcomps/tests/check_comps.c:350:34: warning[-Wformat]: format specifies type 'int' but the argument has type 'size_t' (aka 'unsigned long')
+#            "groupids  have %d", e->group_list->len);
+#                            ~~   ^~~~~~~~~~~~~~~~~~
+/usr/include/check.h:486:78: note: expanded from macro 'fail_if'
+#     _ck_assert_failed(__FILE__, __LINE__, "Failure '"#expr"' occurred" , ## __VA_ARGS__, NULL) \
+#                                                                             ^~~~~~~~~~~
+#  348|       e = comps_docenv_intersect(e1, e2);
+#  349|       fail_if(e->group_list->len != 2, "Intersect of (e2 ^ e3) should have 2 "
+#  350|->             "groupids  have %d", e->group_list->len);
+#  351|       fail_if(e->option_list->len != 2, "Intersect of (e2 v e3) should have 2 "
+#  352|               "option ids have %d", e->option_list->len);
+
+Error: COMPILER_WARNING (CWE-686):
+libcomps-0.1.18/libcomps/tests/check_comps.c:352:35: warning[-Wformat]: format specifies type 'int' but the argument has type 'size_t' (aka 'unsigned long')
+#            "option ids have %d", e->option_list->len);
+#                             ~~   ^~~~~~~~~~~~~~~~~~~
+/usr/include/check.h:486:78: note: expanded from macro 'fail_if'
+#     _ck_assert_failed(__FILE__, __LINE__, "Failure '"#expr"' occurred" , ## __VA_ARGS__, NULL) \
+#                                                                             ^~~~~~~~~~~
+#  350|               "groupids  have %d", e->group_list->len);
+#  351|       fail_if(e->option_list->len != 2, "Intersect of (e2 v e3) should have 2 "
+#  352|->             "option ids have %d", e->option_list->len);
+#  353|       COMPS_OBJECT_DESTROY(e);
+#  354|       COMPS_OBJECT_DESTROY(list);
+
+Error: COMPILER_WARNING (CWE-686):
+libcomps-0.1.18/libcomps/tests/check_comps.c:359:32: warning[-Wformat]: format specifies type 'int' but the argument has type 'size_t' (aka 'unsigned long')
+#            "groups  have %d", list->len);
+#                          ~~   ^~~~~~~~~
+/usr/include/check.h:486:78: note: expanded from macro 'fail_if'
+#     _ck_assert_failed(__FILE__, __LINE__, "Failure '"#expr"' occurred" , ## __VA_ARGS__, NULL) \
+#                                                                             ^~~~~~~~~~~
+#  357|       list = comps_doc_groups(tmpdoc);
+#  358|       fail_if(list->len != 6, "Union of (doc ^ doc2) should have 6 "
+#  359|->             "groups  have %d", list->len);
+#  360|       COMPS_OBJECT_DESTROY(list);
+#  361|       list = comps_doc_categories(tmpdoc);
+
+Error: COMPILER_WARNING (CWE-686):
+libcomps-0.1.18/libcomps/tests/check_comps.c:363:50: warning[-Wformat]: format specifies type 'int' but the argument has type 'size_t' (aka 'unsigned long')
+#            "should have 4 categories  have %d", list->len);
+#                                            ~~   ^~~~~~~~~
+/usr/include/check.h:486:78: note: expanded from macro 'fail_if'
+#     _ck_assert_failed(__FILE__, __LINE__, "Failure '"#expr"' occurred" , ## __VA_ARGS__, NULL) \
+#                                                                             ^~~~~~~~~~~
+#  361|       list = comps_doc_categories(tmpdoc);
+#  362|       fail_if(list->len != 4, "Union of (doc ^ doc2) "
+#  363|->             "should have 4 categories  have %d", list->len);
+#  364|       COMPS_OBJECT_DESTROY(list);
+#  365|       list = comps_doc_environments(tmpdoc);
+
+Error: COMPILER_WARNING (CWE-686):
+libcomps-0.1.18/libcomps/tests/check_comps.c:367:52: warning[-Wformat]: format specifies type 'int' but the argument has type 'size_t' (aka 'unsigned long')
+#            "should have 4 environments  have %d", list->len);
+#                                              ~~   ^~~~~~~~~
+/usr/include/check.h:486:78: note: expanded from macro 'fail_if'
+#     _ck_assert_failed(__FILE__, __LINE__, "Failure '"#expr"' occurred" , ## __VA_ARGS__, NULL) \
+#                                                                             ^~~~~~~~~~~
+#  365|       list = comps_doc_environments(tmpdoc);
+#  366|       fail_if(list->len != 4, "Union of (doc ^ doc2) "
+#  367|->             "should have 4 environments  have %d", list->len);
+#  368|       COMPS_OBJECT_DESTROY(list);
+#  369|       COMPS_OBJECT_DESTROY(tmpdoc);
+
+Error: COMPILER_WARNING (CWE-686):
+libcomps-0.1.18/libcomps/tests/check_comps.c:373:46: warning[-Wformat]: format specifies type 'int' but the argument has type 'size_t' (aka 'unsigned long')
+#            "should have 2 groups  have %d", list->len);
+#                                        ~~   ^~~~~~~~~
+/usr/include/check.h:486:78: note: expanded from macro 'fail_if'
+#     _ck_assert_failed(__FILE__, __LINE__, "Failure '"#expr"' occurred" , ## __VA_ARGS__, NULL) \
+#                                                                             ^~~~~~~~~~~
+#  371|       list = comps_doc_groups(tmpdoc);
+#  372|       fail_if(list->len != 2, "Intersect of (doc ^ doc2) "
+#  373|->             "should have 2 groups  have %d", list->len);
+#  374|       COMPS_OBJECT_DESTROY(list);
+#  375|       list = comps_doc_categories(tmpdoc);
+
+Error: COMPILER_WARNING (CWE-686):
+libcomps-0.1.18/libcomps/tests/check_comps.c:377:51: warning[-Wformat]: format specifies type 'int' but the argument has type 'size_t' (aka 'unsigned long')
+#            " should have 2 categories  have %d", list->len);
+#                                             ~~   ^~~~~~~~~
+/usr/include/check.h:486:78: note: expanded from macro 'fail_if'
+#     _ck_assert_failed(__FILE__, __LINE__, "Failure '"#expr"' occurred" , ## __VA_ARGS__, NULL) \
+#                                                                             ^~~~~~~~~~~
+#  375|       list = comps_doc_categories(tmpdoc);
+#  376|       fail_if(list->len != 2, "Intersect of (doc ^ doc2)"
+#  377|->             " should have 2 categories  have %d", list->len);
+#  378|       COMPS_OBJECT_DESTROY(list);
+#  379|       list = comps_doc_environments(tmpdoc);
+
+Error: COMPILER_WARNING (CWE-686):
+libcomps-0.1.18/libcomps/tests/check_comps.c:381:65: warning[-Wformat]: format specifies type 'int' but the argument has type 'size_t' (aka 'unsigned long')
+#            "(doc ^ doc2) should have 2 environments  have %d", list->len);
+#                                                           ~~   ^~~~~~~~~
+/usr/include/check.h:486:78: note: expanded from macro 'fail_if'
+#     _ck_assert_failed(__FILE__, __LINE__, "Failure '"#expr"' occurred" , ## __VA_ARGS__, NULL) \
+#                                                                             ^~~~~~~~~~~
+#  379|       list = comps_doc_environments(tmpdoc);
+#  380|       fail_if(list->len != 2, "Intersect of "
+#  381|->             "(doc ^ doc2) should have 2 environments  have %d", list->len);
+#  382|       COMPS_OBJECT_DESTROY(list);
+#  383|       COMPS_OBJECT_DESTROY(tmpdoc);
+
+Error: COMPILER_WARNING (CWE-686):
+libcomps-0.1.18/libcomps/tests/check_parse.c:90:24: warning[-Wformat]: format specifies type 'int' but the argument has type 'size_t' (aka 'unsigned long')
+#            "Have %d", tmplist->len);
+#                  ~~   ^~~~~~~~~~~~
+/usr/include/check.h:541:78: note: expanded from macro 'ck_assert_msg'
+#     _ck_assert_failed(__FILE__, __LINE__, "Assertion '"#expr"' failed" , ## __VA_ARGS__)
+#                                                                             ^~~~~~~~~~~
+#   88|       tmplist = comps_doc_groups(parsed->comps_doc);
+#   89|       ck_assert_msg(tmplist->len == 3, "Should have 3 groups parsed."
+#   90|->             "Have %d", tmplist->len);
+#   91|       COMPS_OBJECT_DESTROY(tmplist);
+#   92|       tmplist = comps_doc_categories(parsed->comps_doc);
+
+Error: COMPILER_WARNING (CWE-686):
+libcomps-0.1.18/libcomps/tests/check_parse.c:94:32: warning[-Wformat]: format specifies type 'int' but the argument has type 'size_t' (aka 'unsigned long')
+#            "parsed. Have %d", tmplist->len);
+#                          ~~   ^~~~~~~~~~~~
+/usr/include/check.h:541:78: note: expanded from macro 'ck_assert_msg'
+#     _ck_assert_failed(__FILE__, __LINE__, "Assertion '"#expr"' failed" , ## __VA_ARGS__)
+#                                                                             ^~~~~~~~~~~
+#   92|       tmplist = comps_doc_categories(parsed->comps_doc);
+#   93|       ck_assert_msg(tmplist->len == 2, "Should have 2 categories"
+#   94|->             "parsed. Have %d", tmplist->len);
+#   95|       COMPS_OBJECT_DESTROY(tmplist);
+#   96|       tmplist = comps_doc_environments(parsed->comps_doc);
+
+Error: COMPILER_WARNING (CWE-686):
+libcomps-0.1.18/libcomps/tests/check_parse.c:98:58: warning[-Wformat]: format specifies type 'int' but the argument has type 'size_t' (aka 'unsigned long')
+#            "Should have 1 environment parsed. Have %d", tmplist->len);
+#                                                    ~~   ^~~~~~~~~~~~
+/usr/include/check.h:486:78: note: expanded from macro 'fail_if'
+#     _ck_assert_failed(__FILE__, __LINE__, "Failure '"#expr"' occurred" , ## __VA_ARGS__, NULL) \
+#                                                                             ^~~~~~~~~~~
+#   96|       tmplist = comps_doc_environments(parsed->comps_doc);
+#   97|       fail_if(tmplist->len != 1,
+#   98|->             "Should have 1 environment parsed. Have %d", tmplist->len);
+#   99|       COMPS_OBJECT_DESTROY(tmplist);
+#  100|   
+
+Error: COMPILER_WARNING (CWE-195):
+libcomps-0.1.18/libcomps/tests/check_parse.c:133:38: warning[-Wsign-compare]: comparison of integers of different signs: 'const int' and 'size_t' (aka 'unsigned long')
+#        fail_if(group_packages[i][0] != tmplist->len, "Group #%d should have"
+#                ~~~~~~~~~~~~~~~~~~~~ ^  ~~~~~~~~~~~~
+/usr/include/check.h:485:4: note: expanded from macro 'fail_if'
+#  (expr) ? \
+#   ^~~~
+#  131|           tmplist = comps_docgroup_get_packages((COMPS_DocGroup*)tmpobj2, NULL,
+#  132|                                                COMPS_PACKAGE_DEFAULT);
+#  133|->         fail_if(group_packages[i][0] != tmplist->len, "Group #%d should have"
+#  134|                   " %d default packages, Have %d", i, group_packages[i][0],
+#  135|                   tmplist->len);
+
+Error: COMPILER_WARNING (CWE-686):
+libcomps-0.1.18/libcomps/tests/check_parse.c:135:17: warning[-Wformat]: format specifies type 'int' but the argument has type 'size_t' (aka 'unsigned long')
+#                tmplist->len);
+#                ^~~~~~~~~~~~
+/usr/include/check.h:486:78: note: expanded from macro 'fail_if'
+#     _ck_assert_failed(__FILE__, __LINE__, "Failure '"#expr"' occurred" , ## __VA_ARGS__, NULL) \
+#                                                                             ^~~~~~~~~~~
+#  133|           fail_if(group_packages[i][0] != tmplist->len, "Group #%d should have"
+#  134|                   " %d default packages, Have %d", i, group_packages[i][0],
+#  135|->                 tmplist->len);
+#  136|           COMPS_OBJECT_DESTROY(tmplist);
+#  137|           tmplist = comps_docgroup_get_packages((COMPS_DocGroup*)tmpobj2, NULL,
+
+Error: COMPILER_WARNING (CWE-195):
+libcomps-0.1.18/libcomps/tests/check_parse.c:139:38: warning[-Wsign-compare]: comparison of integers of different signs: 'const int' and 'size_t' (aka 'unsigned long')
+#        fail_if(group_packages[i][1] != tmplist->len, "Group #%d should have"
+#                ~~~~~~~~~~~~~~~~~~~~ ^  ~~~~~~~~~~~~
+/usr/include/check.h:485:4: note: expanded from macro 'fail_if'
+#  (expr) ? \
+#   ^~~~
+#  137|           tmplist = comps_docgroup_get_packages((COMPS_DocGroup*)tmpobj2, NULL,
+#  138|                                                COMPS_PACKAGE_OPTIONAL);
+#  139|->         fail_if(group_packages[i][1] != tmplist->len, "Group #%d should have"
+#  140|                   " %d optional packages, Have %d", i, group_packages[i][1],
+#  141|                   tmplist->len);
+
+Error: COMPILER_WARNING (CWE-686):
+libcomps-0.1.18/libcomps/tests/check_parse.c:141:17: warning[-Wformat]: format specifies type 'int' but the argument has type 'size_t' (aka 'unsigned long')
+#                tmplist->len);
+#                ^~~~~~~~~~~~
+/usr/include/check.h:486:78: note: expanded from macro 'fail_if'
+#     _ck_assert_failed(__FILE__, __LINE__, "Failure '"#expr"' occurred" , ## __VA_ARGS__, NULL) \
+#                                                                             ^~~~~~~~~~~
+#  139|           fail_if(group_packages[i][1] != tmplist->len, "Group #%d should have"
+#  140|                   " %d optional packages, Have %d", i, group_packages[i][1],
+#  141|->                 tmplist->len);
+#  142|           COMPS_OBJECT_DESTROY(tmplist);
+#  143|       }
+
+Error: COMPILER_WARNING (CWE-686):
+libcomps-0.1.18/libcomps/tests/check_parse.c:151:25: warning[-Wformat]: format specifies type 'char *' but the argument has type 'int'
+#                        i, cats_ids[i], tmpstr);
+#                        ^
+/usr/include/check.h:486:78: note: expanded from macro 'fail_if'
+#     _ck_assert_failed(__FILE__, __LINE__, "Failure '"#expr"' occurred" , ## __VA_ARGS__, NULL) \
+#                                                                             ^~~~~~~~~~~
+#  149|           fail_if(strcmp(tmpstr, cats_ids[i]) != 0,
+#  150|                          "%s. category should have id:%s not %s",
+#  151|->                         i, cats_ids[i], tmpstr);
+#  152|           free(tmpstr);
+#  153|           COMPS_OBJECT_DESTROY(tmpobj);
+
+Error: COMPILER_WARNING (CWE-686):
+libcomps-0.1.18/libcomps/tests/check_parse.c:159:25: warning[-Wformat]: format specifies type 'char *' but the argument has type 'int'
+#                        i, cats_names[i], tmpstr);
+#                        ^
+/usr/include/check.h:486:78: note: expanded from macro 'fail_if'
+#     _ck_assert_failed(__FILE__, __LINE__, "Failure '"#expr"' occurred" , ## __VA_ARGS__, NULL) \
+#                                                                             ^~~~~~~~~~~
+#  157|           fail_if(strcmp(tmpstr, cats_names[i]) != 0,
+#  158|                          "%s. category should have name:%s not %s",
+#  159|->                         i, cats_names[i], tmpstr);
+#  160|           free(tmpstr);
+#  161|           COMPS_OBJECT_DESTROY(tmpobj);
+
+Error: COMPILER_WARNING (CWE-195):
+libcomps-0.1.18/libcomps/tests/check_parse.c:163:63: warning[-Wsign-compare]: comparison of integers of different signs: 'size_t' (aka 'unsigned long') and 'const int'
+#        fail_if(((COMPS_DocCategory*)tmpobj2)->group_ids->len != cats_gids[i],
+#                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^  ~~~~~~~~~~~~
+/usr/include/check.h:485:4: note: expanded from macro 'fail_if'
+#  (expr) ? \
+#   ^~~~
+#  161|           COMPS_OBJECT_DESTROY(tmpobj);
+#  162|   
+#  163|->         fail_if(((COMPS_DocCategory*)tmpobj2)->group_ids->len != cats_gids[i],
+#  164|                   "Category #%d should have %d groupids, have %d", i,
+#  165|                   cats_gids[i], ((COMPS_DocCategory*)tmpobj2)->group_ids->len);
+
+Error: COMPILER_WARNING (CWE-686):
+libcomps-0.1.18/libcomps/tests/check_parse.c:165:31: warning[-Wformat]: format specifies type 'int' but the argument has type 'size_t' (aka 'unsigned long')
+#  163|           fail_if(((COMPS_DocCategory*)tmpobj2)->group_ids->len != cats_gids[i],
+#  164|                   "Category #%d should have %d groupids, have %d", i,
+#  165|->                 cats_gids[i], ((COMPS_DocCategory*)tmpobj2)->group_ids->len);
+#  166|           COMPS_OBJECT_DESTROY(tmpobj2);
+#  167|           COMPS_OBJECT_DESTROY(tmplist);
+
+Error: COMPILER_WARNING (CWE-686):
+libcomps-0.1.18/libcomps/tests/check_parse.c:344:5: warning[-Wformat]: format specifies type 'int' but the argument has type 'void *'
+#    fail_if(tmpobj, "%d. category should have NULL id\n");
+#    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/check.h:486:91: note: expanded from macro 'fail_if'
+#     _ck_assert_failed(__FILE__, __LINE__, "Failure '"#expr"' occurred" , ## __VA_ARGS__, NULL) \
+#                                                                             ~~~~~~~~~~~  ^~~~
+/usr/lib64/clang/13.0.1/include/stddef.h:89:16: note: expanded from macro 'NULL'
+##  define NULL ((void*)0)
+#               ^~~~~~~~~~
+#  342|   
+#  343|       tmpobj = comps_docgroup_get_id((COMPS_DocGroup*)it->comps_obj);
+#  344|->     fail_if(tmpobj, "%d. category should have NULL id\n");
+#  345|       COMPS_OBJECT_DESTROY(tmpobj);
+#  346|       tmpobj = comps_docgroup_get_name((COMPS_DocGroup*)it->comps_obj);
+
+Error: COMPILER_WARNING (CWE-686):
+libcomps-0.1.18/libcomps/tests/check_parse.c:347:5: warning[-Wformat]: format specifies type 'int' but the argument has type 'void *'
+#    fail_if(tmpobj, "%d. category should have NULL name\n");
+#    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/check.h:486:91: note: expanded from macro 'fail_if'
+#     _ck_assert_failed(__FILE__, __LINE__, "Failure '"#expr"' occurred" , ## __VA_ARGS__, NULL) \
+#                                                                             ~~~~~~~~~~~  ^~~~
+/usr/lib64/clang/13.0.1/include/stddef.h:89:16: note: expanded from macro 'NULL'
+##  define NULL ((void*)0)
+#               ^~~~~~~~~~
+#  345|       COMPS_OBJECT_DESTROY(tmpobj);
+#  346|       tmpobj = comps_docgroup_get_name((COMPS_DocGroup*)it->comps_obj);
+#  347|->     fail_if(tmpobj, "%d. category should have NULL name\n");
+#  348|       COMPS_OBJECT_DESTROY(tmpobj);
+#  349|       tmpobj = comps_docgroup_get_desc((COMPS_DocGroup*)it->comps_obj);
+
+Error: COMPILER_WARNING (CWE-686):
+libcomps-0.1.18/libcomps/tests/check_parse.c:350:5: warning[-Wformat]: format specifies type 'int' but the argument has type 'void *'
+#    fail_if(tmpobj, "%d. category should have NULL description\n");
+#    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/check.h:486:91: note: expanded from macro 'fail_if'
+#     _ck_assert_failed(__FILE__, __LINE__, "Failure '"#expr"' occurred" , ## __VA_ARGS__, NULL) \
+#                                                                             ~~~~~~~~~~~  ^~~~
+/usr/lib64/clang/13.0.1/include/stddef.h:89:16: note: expanded from macro 'NULL'
+##  define NULL ((void*)0)
+#               ^~~~~~~~~~
+#  348|       COMPS_OBJECT_DESTROY(tmpobj);
+#  349|       tmpobj = comps_docgroup_get_desc((COMPS_DocGroup*)it->comps_obj);
+#  350|->     fail_if(tmpobj, "%d. category should have NULL description\n");
+#  351|       COMPS_OBJECT_DESTROY(tmpobj);
+#  352|       comps_parse_parsed_destroy(parsed);
+
+Error: COMPILER_WARNING (CWE-843):
+libcomps-0.1.18/libcomps/tests/check_parse.c:588:11: warning[-Wincompatible-pointer-types]: incompatible pointer types assigning to 'COMPS_DocGroup *' from 'COMPS_DocCategory *'
+#        g = (COMPS_DocCategory*)it->comps_obj;
+#          ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  586|       ck_assert(list->len == 2);
+#  587|       for (it = list->first, x=0; it != NULL; it = it->next, x++) {
+#  588|->         g = (COMPS_DocCategory*)it->comps_obj;
+#  589|           str = (COMPS_Str*)comps_doccategory_get_id(g);
+#  590|           ck_assert_msg(strcmp(str->val, cats[0][x]) == 0, "%s != %s",
+
+Error: COMPILER_WARNING (CWE-843):
+libcomps-0.1.18/libcomps/tests/check_parse.c:589:52: warning[-Wincompatible-pointer-types]: incompatible pointer types passing 'COMPS_DocGroup *' to parameter of type 'COMPS_DocCategory *'
+#        str = (COMPS_Str*)comps_doccategory_get_id(g);
+#                                                   ^
+libcomps-0.1.18/libcomps/src/comps_doccategory.h:110:24: note: passing argument to parameter 'category' here
+#HEAD_COMPS_PROP_GETTER(category, COMPS_DocCategory, id) /*comps_utils.h macro*/
+#                       ^
+24: note: passing argument to parameter 'category' here
+#HEAD_COMPS_PROP_GETTER(env, COMPS_DocEnv, id) /*comps_utils.h macro*/
+#                       ^
+#HEAD_COMPS_PROP_GETTER(category, COMPS_DocCategory, id) /*comps_utils.h macro*/
+#                       ^
+#  587|       for (it = list->first, x=0; it != NULL; it = it->next, x++) {
+#  588|           g = (COMPS_DocCategory*)it->comps_obj;
+#  589|->         str = (COMPS_Str*)comps_doccategory_get_id(g);
+#  590|           ck_assert_msg(strcmp(str->val, cats[0][x]) == 0, "%s != %s",
+#  591|                         str->val, cats[0][x]);
+
+Error: COMPILER_WARNING (CWE-843):
+libcomps-0.1.18/libcomps/tests/check_parse.c:608:11: warning[-Wincompatible-pointer-types]: incompatible pointer types assigning to 'COMPS_DocGroup *' from 'COMPS_DocEnv *'
+#        g = (COMPS_DocEnv*)it->comps_obj;
+#          ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  606|       ck_assert(list->len == 2);
+#  607|       for (it = list->first, x=0; it != NULL; it = it->next, x++) {
+#  608|->         g = (COMPS_DocEnv*)it->comps_obj;
+#  609|           str = (COMPS_Str*)comps_docenv_get_id(g);
+#  610|           ck_assert_msg(strcmp(str->val, envs[0][x]) == 0, "%s != %s",
+
+Error: COMPILER_WARNING (CWE-843):
+libcomps-0.1.18/libcomps/tests/check_parse.c:609:47: warning[-Wincompatible-pointer-types]: incompatible pointer types passing 'COMPS_DocGroup *' to parameter of type 'COMPS_DocEnv *'
+#        str = (COMPS_Str*)comps_docenv_get_id(g);
+#                                              ^
+libcomps-0.1.18/libcomps/src/comps_docenv.h:92:24: note: passing argument to parameter 'env' here
+#HEAD_COMPS_PROP_GETTER(env, COMPS_DocEnv, id) /*comps_utils.h macro*/
+#                       ^
+#  607|       for (it = list->first, x=0; it != NULL; it = it->next, x++) {
+#  608|           g = (COMPS_DocEnv*)it->comps_obj;
+#  609|->         str = (COMPS_Str*)comps_docenv_get_id(g);
+#  610|           ck_assert_msg(strcmp(str->val, envs[0][x]) == 0, "%s != %s",
+#  611|                         str->val, envs[0][x]);

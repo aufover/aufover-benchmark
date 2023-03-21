@@ -1,0 +1,77 @@
+Error: VALGRIND_WARNING:
+polkit-pkla-compat-0.1/test/polkitbackendlocalauthorizationstoretest: note: while executing process 694
+polkit-pkla-compat-0.1/test/polkitbackendlocalauthorizationstoretest.c:79: warning[Leak_DefinitelyLost]: 32 bytes in 1 blocks are definitely lost in loss record 639 of 1,039
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_malloc()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_slice_alloc()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_slice_alloc0()
+/usr/lib64/libgobject-2.0.so.0.7000.5: note: called from g_type_create_instance()
+/usr/lib64/libgobject-2.0.so.0.7000.5: note: called from here
+/usr/lib64/libgobject-2.0.so.0.7000.5: note: called from g_object_new_with_properties()
+/usr/lib64/libgobject-2.0.so.0.7000.5: note: called from g_object_new()
+/usr/lib64/libpolkit-gobject-1.so.0.0.0: note: called from polkit_details_new()
+polkit-pkla-compat-0.1/test/polkitbackendlocalauthorizationstoretest.c:79: note: called from test_lookup()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from here
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from here
+#   77|   
+#   78|     // We don't care about details
+#   79|->   details = polkit_details_new ();
+#   80|   
+#   81|     // Create an identity to query with
+
+Error: VALGRIND_WARNING:
+polkit-pkla-compat-0.1/test/polkitbackendlocalauthorizationstoretest: note: while executing process 694
+polkit-pkla-compat-0.1/test/polkitbackendlocalauthorizationstoretest.c:82: warning[Leak_DefinitelyLost]: 32 bytes in 1 blocks are definitely lost in loss record 640 of 1,039
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_malloc()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_slice_alloc()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_slice_alloc0()
+/usr/lib64/libgobject-2.0.so.0.7000.5: note: called from g_type_create_instance()
+/usr/lib64/libgobject-2.0.so.0.7000.5: note: called from here
+/usr/lib64/libgobject-2.0.so.0.7000.5: note: called from g_object_new_valist()
+/usr/lib64/libgobject-2.0.so.0.7000.5: note: called from g_object_new()
+/usr/lib64/libpolkit-gobject-1.so.0.0.0: note: called from polkit_unix_group_new()
+/usr/lib64/libpolkit-gobject-1.so.0.0.0: note: called from polkit_identity_from_string()
+polkit-pkla-compat-0.1/test/polkitbackendlocalauthorizationstoretest.c:82: note: called from test_lookup()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from here
+#   80|   
+#   81|     // Create an identity to query with
+#   82|->   identity = polkit_identity_from_string ("unix-group:users", &error);
+#   83|     g_assert (identity);
+#   84|     g_assert_no_error (error);
+
+Error: VALGRIND_WARNING:
+polkit-pkla-compat-0.1/test/polkitbackendlocalauthorizationstoretest: note: while executing process 694
+polkit-pkla-compat-0.1/test/polkitbackendlocalauthorizationstoretest.c:101: warning[Leak_DefinitelyLost]: 45 (40 direct, 5 indirect) bytes in 1 blocks are definitely lost in loss record 679 of 1,039
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_malloc()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_slice_alloc()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_slice_alloc0()
+/usr/lib64/libgobject-2.0.so.0.7000.5: note: called from g_type_create_instance()
+/usr/lib64/libgobject-2.0.so.0.7000.5: note: called from here
+/usr/lib64/libgobject-2.0.so.0.7000.5: note: called from g_object_new_valist()
+/usr/lib64/libgobject-2.0.so.0.7000.5: note: called from g_object_new()
+/usr/lib64/libpolkit-gobject-1.so.0.0.0: note: called from polkit_unix_user_new()
+/usr/lib64/libpolkit-gobject-1.so.0.0.0: note: called from polkit_identity_from_string()
+polkit-pkla-compat-0.1/test/polkitbackendlocalauthorizationstoretest.c:101: note: called from test_lookup()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from here
+#   99|   
+#  100|     // Create another identity to query with
+#  101|->   identity = polkit_identity_from_string ("unix-user:root", &error);
+#  102|     g_assert (identity);
+#  103|     g_assert_no_error (error);
+
+Error: VALGRIND_WARNING:
+polkit-pkla-compat-0.1/test/polkitbackendlocalauthorizationstoretest: note: while executing process 694
+polkit-pkla-compat-0.1/test/polkittesthelper.c:66: warning[Leak_DefinitelyLost]: 91 bytes in 1 blocks are definitely lost in loss record 871 of 1,039
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_malloc()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_strconcat()
+polkit-pkla-compat-0.1/test/polkittesthelper.c:66: note: called from UnknownInlinedFun()
+polkit-pkla-compat-0.1/test/polkitbackendlocalauthorizationstoretest.c:68: note: called from test_lookup()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from here
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from here
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_test_run_suite()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_test_run()
+polkit-pkla-compat-0.1/test/polkitbackendlocalauthorizationstoretest.c:140: note: called from main()
+#   64|       return NULL;
+#   65|   
+#   66|->   return g_strconcat(root, "/", relpath, NULL);
+#   67|   }
+#   68|   

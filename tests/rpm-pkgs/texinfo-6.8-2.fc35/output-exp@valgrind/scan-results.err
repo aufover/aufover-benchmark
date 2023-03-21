@@ -1,0 +1,739 @@
+Error: COMPILER_WARNING (CWE-704):
+texinfo-6.8/gnulib/lib/error.h:33:13: warning[-Wlto-type-mismatch]: type of 'error' does not match original declaration
+#   33 | extern void error (int __status, int __errnum, const char *__format, ...)
+#      |             ^
+texinfo-6.8/install-info/install-info.c:218:1: note: type mismatch in parameter 1
+#  218 | error (const char *fmt, ...)
+#      | ^
+texinfo-6.8/install-info/install-info.c:218:1: note: 'error' was previously declared here
+texinfo-6.8/install-info/install-info.c:218:1: note: code may be misoptimized unless '-fno-strict-aliasing' is used
+#   31|      If STATUS is nonzero, terminate the program with 'exit (STATUS)'.  */
+#   32|   
+#   33|-> extern void error (int __status, int __errnum, const char *__format, ...)
+#   34|   #if GNULIB_VFPRINTF_POSIX
+#   35|        _GL_ATTRIBUTE_FORMAT ((_GL_ATTRIBUTE_SPEC_PRINTF_STANDARD, 3, 4))
+
+Error: COMPILER_WARNING (CWE-457):
+texinfo-6.8/gnulib/lib/mbchar.h:265:58: warning[-Wmaybe-uninitialized]: 'MEM[(const struct mbchar_t *)&iter + 24B].bytes' may be used uninitialized
+#  265 |       memcpy (&new_mbc->buf[0], &old_mbc->buf[0], old_mbc->bytes);
+#      |                                                   ~~~~~~~^~~~~~~
+texinfo-6.8/info/display.c: scope_hint: In function 'display_update_node_text'
+texinfo-6.8/info/display.c:491:18: note: 'iter' declared here
+#  491 |   mbi_iterator_t iter;  /* Used to iterate through part of node displayed.  */
+#      |                  ^~~~
+#  263|     if (old_mbc->ptr == &old_mbc->buf[0])
+#  264|       {
+#  265|->       memcpy (&new_mbc->buf[0], &old_mbc->buf[0], old_mbc->bytes);
+#  266|         new_mbc->ptr = &new_mbc->buf[0];
+#  267|       }
+
+Error: COMPILER_WARNING (CWE-457):
+texinfo-6.8/gnulib/lib/mbchar.h:271:35: warning[-Wmaybe-uninitialized]: 'MEM[(const struct mbchar_t *)&iter + 24B].wc_valid' may be used uninitialized
+#  271 |   if ((new_mbc->wc_valid = old_mbc->wc_valid))
+#      |                            ~~~~~~~^~~~~~~~~~
+texinfo-6.8/info/display.c: scope_hint: In function 'display_update_node_text'
+texinfo-6.8/info/display.c:491:18: note: 'iter' declared here
+#  491 |   mbi_iterator_t iter;  /* Used to iterate through part of node displayed.  */
+#      |                  ^~~~
+#  269|       new_mbc->ptr = old_mbc->ptr;
+#  270|     new_mbc->bytes = old_mbc->bytes;
+#  271|->   if ((new_mbc->wc_valid = old_mbc->wc_valid))
+#  272|       new_mbc->wc = old_mbc->wc;
+#  273|   }
+
+Error: VALGRIND_WARNING:
+texinfo-6.8/info/ginfo: note: while executing process 2412 with arguments: --init-file ./t/Infokey-config -v hide-note-references=On file-in-subdir
+texinfo-6.8/info/../gnulib/lib/xmalloc.c:53: warning[Leak_PossiblyLost]: 596 bytes in 1 blocks are possibly lost in loss record 70 of 87
+texinfo-6.8/info/../gnulib/lib/xmalloc.c:53: note: called from UnknownInlinedFun()
+texinfo-6.8/info/dir.c:213: note: called from insert_text_into_node()
+texinfo-6.8/info/dir.c:201: note: called from UnknownInlinedFun()
+texinfo-6.8/info/dir.c:106: note: called from build_dir_node()
+texinfo-6.8/info/dir.c:229: note: called from lookup_dir_entry()
+texinfo-6.8/info/info.c:242: note: called from UnknownInlinedFun()
+texinfo-6.8/info/info.c:970: note: called from main()
+#   51|   xmalloc (size_t n)
+#   52|   {
+#   53|->   void *p = malloc (n);
+#   54|     if (!p && (HAVE_GNU_MALLOC || n))
+#   55|       xalloc_die ();
+
+Error: COMPILER_WARNING (CWE-252):
+texinfo-6.8/info/dir.c: scope_hint: In function 'dir_entry_of_infodir'
+texinfo-6.8/info/dir.c:257:7: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+#  257 |       asprintf (&tmp, "./%s", dir_fullpath);
+#      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  255|       {
+#  256|         char *tmp;
+#  257|->       asprintf (&tmp, "./%s", dir_fullpath);
+#  258|         free (dir_fullpath);
+#  259|         dir_fullpath = tmp;
+
+Error: COMPILER_WARNING (CWE-569):
+texinfo-6.8/info/filesys.c: scope_hint: In function 'info_find_fullpath'
+texinfo-6.8/info/filesys.c:102:28: warning[-Wparentheses]: suggest parentheses around '&&' within '||'
+#  102 |       || partial[0] == '.' && IS_SLASH(partial[1]))
+#  100|     /* If path is absolute already, see if it needs an extension. */
+#  101|     if (IS_ABSOLUTE (partial)
+#  102|->       || partial[0] == '.' && IS_SLASH(partial[1]))
+#  103|       {
+#  104|         fullpath = info_add_extension (0, partial, finfo);
+
+Error: COMPILER_WARNING (CWE-252):
+texinfo-6.8/info/filesys.c: scope_hint: In function 'info_file_find_next_in_path'
+texinfo-6.8/info/filesys.c:167:15: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+#  167 |               asprintf (&s, "%s%s", "./", with_extension);
+#      |               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  165|                 /* Prefix "./" to it. */
+#  166|                 char *s;
+#  167|->               asprintf (&s, "%s%s", "./", with_extension);
+#  168|                 free (with_extension);
+#  169|                 return s;
+
+Error: COMPILER_WARNING (CWE-252):
+texinfo-6.8/info/footnotes.c: scope_hint: In function 'make_footnotes_node'
+texinfo-6.8/info/footnotes.c:122:5: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+#  122 |     asprintf (&header,
+#      |     ^~~~~~~~~~~~~~~~~~
+#  123 |               "*** Footnotes appearing in the node '%s' ***\n",
+#      |               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  124 |               node->nodename);
+#      |               ~~~~~~~~~~~~~~~
+#  120|       long text_start = fn_start;
+#  121|   
+#  122|->     asprintf (&header,
+#  123|                 "*** Footnotes appearing in the node '%s' ***\n",
+#  124|                 node->nodename);
+
+Error: COMPILER_WARNING (CWE-252):
+texinfo-6.8/info/indices.c: scope_hint: In function 'info_index_apropos'
+texinfo-6.8/info/indices.c:654:5: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+#  654 |     asprintf (&prompt, "%s [%s]: ", _("Index apropos"), index_search);
+#      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  652|   
+#  653|     if (index_search)
+#  654|->     asprintf (&prompt, "%s [%s]: ", _("Index apropos"), index_search);
+#  655|     else
+#  656|       asprintf (&prompt, "%s: ", _("Index apropos"));
+
+Error: COMPILER_WARNING (CWE-252):
+texinfo-6.8/info/indices.c:656:5: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+#  656 |     asprintf (&prompt, "%s: ", _("Index apropos"));
+#      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  654|       asprintf (&prompt, "%s [%s]: ", _("Index apropos"), index_search);
+#  655|     else
+#  656|->     asprintf (&prompt, "%s: ", _("Index apropos"));
+#  657|     line = info_read_in_echo_area (prompt);
+#  658|     free (prompt);
+
+Error: COMPILER_WARNING (CWE-252):
+texinfo-6.8/info/indices.c: scope_hint: In function 'create_virtual_index'
+texinfo-6.8/info/indices.c:852:3: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+#  852 |   asprintf (&node->nodename, "Index for '%s'", index_search);
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  850|   
+#  851|     node = info_create_node ();
+#  852|->   asprintf (&node->nodename, "Index for '%s'", index_search);
+#  853|     node->fullpath = file_buffer->filename;
+#  854|     node->contents = text_buffer_base (&text);
+
+Error: COMPILER_WARNING (CWE-252):
+texinfo-6.8/info/indices.c: scope_hint: In function 'info_virtual_index'
+texinfo-6.8/info/indices.c:889:5: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+#  889 |     asprintf (&prompt, "%s [%s]: ", _("Index topic"), index_search);
+#      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  887|     /* Default to last search if there is one. */
+#  888|     if (index_search)
+#  889|->     asprintf (&prompt, "%s [%s]: ", _("Index topic"), index_search);
+#  890|     else
+#  891|       asprintf (&prompt, "%s: ", _("Index topic"));
+
+Error: COMPILER_WARNING (CWE-252):
+texinfo-6.8/info/indices.c:891:5: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+#  891 |     asprintf (&prompt, "%s: ", _("Index topic"));
+#      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  889|       asprintf (&prompt, "%s [%s]: ", _("Index topic"), index_search);
+#  890|     else
+#  891|->     asprintf (&prompt, "%s: ", _("Index topic"));
+#  892|     line = info_read_maybe_completing (prompt, index_index);
+#  893|     free (prompt);
+
+Error: COMPILER_WARNING (CWE-457):
+texinfo-6.8/info/info-utils.c: scope_hint: In function 'scan_node_contents'
+texinfo-6.8/info/info-utils.c:1468:31: warning[-Wmaybe-uninitialized]: 'line_len' may be used uninitialized in this function
+# 1468 |                 skip_input (1 + line_len);
+#      |                             ~~^~~~~~~~~~
+texinfo-6.8/info/info-utils.c:1427:11: note: 'line_len' was declared here
+# 1427 |       int line_len;
+#      |           ^~~~~~~~
+# 1466|                 skip_input (strspn (inptr, " "));
+# 1467|                 if (line_len <= strspn (inptr + 1, " "))
+# 1468|->                 skip_input (1 + line_len);
+# 1469|               }
+# 1470|             else
+
+Error: COMPILER_WARNING (CWE-252):
+texinfo-6.8/info/info.c: scope_hint: In function 'get_initial_file'
+texinfo-6.8/info/info.c:185:11: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+#  185 |           asprintf (&s, "%s%s", "./", user_filename);
+#      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  183|                in INFOPATH.  */
+#  184|             char *s;
+#  185|->           asprintf (&s, "%s%s", "./", user_filename);
+#  186|             free (user_filename);
+#  187|             user_filename = s;
+
+Error: COMPILER_WARNING (CWE-252):
+texinfo-6.8/info/info.c:277:9: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+#  277 |         asprintf (error, _("No menu item '%s' in node '%s'"),
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  278 |             (*argv)[0], "(dir)Top");
+#      |             ~~~~~~~~~~~~~~~~~~~~~~~
+#  275|           }
+#  276|         else
+#  277|->         asprintf (error, _("No menu item '%s' in node '%s'"),
+#  278|               (*argv)[0], "(dir)Top");
+#  279|       }
+
+Error: COMPILER_WARNING (CWE-252):
+texinfo-6.8/info/info.c: scope_hint: In function 'add_initial_nodes'
+texinfo-6.8/info/info.c:415:19: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+#  415 |                   asprintf (error, _("Cannot find node '%s'"),
+#      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  416 |                             user_nodenames[i]);
+#      |                             ~~~~~~~~~~~~~~~~~~
+#  413|                   {
+#  414|                     free (*error);
+#  415|->                   asprintf (error, _("Cannot find node '%s'"),
+#  416|                               user_nodenames[i]);
+#  417|                     continue;
+
+Error: COMPILER_WARNING (CWE-569):
+texinfo-6.8/info/infopath.c: scope_hint: In function 'infopath_add'
+texinfo-6.8/info/infopath.c:201:10: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+#  201 |   while (dirname = extract_colon_unit (path, &idx))
+#      |          ^~~~~~~
+#  199|     char *dirname;
+#  200|   
+#  201|->   while (dirname = extract_colon_unit (path, &idx))
+#  202|       {
+#  203|         if (!strcmp ("PATH", dirname))
+
+Error: COMPILER_WARNING (CWE-252):
+texinfo-6.8/info/m-x.c: scope_hint: In function 'info_execute_command'
+texinfo-6.8/info/m-x.c:102:5: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+#  102 |     asprintf (&prompt, "%d %s ", count, keys);
+#      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  100|   
+#  101|     if (info_explicit_arg || count != 1)
+#  102|->     asprintf (&prompt, "%d %s ", count, keys);
+#  103|     else
+#  104|       asprintf (&prompt, "%s ", keys);
+
+Error: COMPILER_WARNING (CWE-252):
+texinfo-6.8/info/m-x.c:104:5: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+#  104 |     asprintf (&prompt, "%s ", keys);
+#      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  102|       asprintf (&prompt, "%d %s ", count, keys);
+#  103|     else
+#  104|->     asprintf (&prompt, "%s ", keys);
+#  105|   
+#  106|     /* Ask the completer to read a reference for us. */
+
+Error: COMPILER_WARNING (CWE-252):
+texinfo-6.8/info/man.c: scope_hint: In function 'get_manpage_from_formatter'
+texinfo-6.8/info/man.c:309:3: warning[-Wunused-result]: ignoring return value of 'pipe' declared with attribute 'warn_unused_result'
+#  309 |   pipe (pipes);
+#      |   ^~~~~~~~~~~~
+#  307|        writer end is pipes[1]. */
+#  308|   #if PIPE_USE_FORK
+#  309|->   pipe (pipes);
+#  310|   
+#  311|     child = fork ();
+
+Error: COMPILER_WARNING (CWE-252):
+texinfo-6.8/info/man.c:328:7: warning[-Wunused-result]: ignoring return value of 'freopen' declared with attribute 'warn_unused_result'
+#  328 |       freopen (NULL_DEVICE, "w", stderr);
+#      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  326|            of the pipe be stdout, and execute the man page formatter. */
+#  327|         close (pipes[0]);
+#  328|->       freopen (NULL_DEVICE, "w", stderr);
+#  329|         freopen (NULL_DEVICE, "r", stdin);
+#  330|         dup2 (pipes[1], fileno (stdout));
+
+Error: COMPILER_WARNING (CWE-252):
+texinfo-6.8/info/man.c:329:7: warning[-Wunused-result]: ignoring return value of 'freopen' declared with attribute 'warn_unused_result'
+#  329 |       freopen (NULL_DEVICE, "r", stdin);
+#      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  327|         close (pipes[0]);
+#  328|         freopen (NULL_DEVICE, "w", stderr);
+#  329|->       freopen (NULL_DEVICE, "r", stdin);
+#  330|         dup2 (pipes[1], fileno (stdout));
+#  331|   
+
+Error: COMPILER_WARNING (CWE-569):
+texinfo-6.8/info/nodes.c: scope_hint: In function 'check_loaded_file'
+texinfo-6.8/info/nodes.c:565:39: warning[-Wparentheses]: suggest parentheses around '&&' within '||'
+#  565 |                 || filename[0] == '.' && IS_SLASH(filename[1]);
+#  563|     /* If full path to the file has been given, we must find it exactly. */
+#  564|     is_fullpath = IS_ABSOLUTE (filename)
+#  565|->                 || filename[0] == '.' && IS_SLASH(filename[1]);
+#  566|   
+#  567|     if (info_loaded_files)
+
+Error: COMPILER_WARNING (CWE-569):
+texinfo-6.8/info/nodes.c: scope_hint: In function 'info_find_file'
+texinfo-6.8/info/nodes.c:630:39: warning[-Wparentheses]: suggest parentheses around '&&' within '||'
+#  630 |                 || filename[0] == '.' && IS_SLASH(filename[1]);
+#  628|        That is to say, search along INFOPATH and expand tildes, etc. */
+#  629|     is_fullpath = IS_ABSOLUTE (filename)
+#  630|->                 || filename[0] == '.' && IS_SLASH(filename[1]);
+#  631|     if (!is_fullpath)
+#  632|       fullpath = info_find_fullpath (filename, 0);
+
+Error: COMPILER_WARNING (CWE-457):
+texinfo-6.8/info/nodes.c: scope_hint: In function 'info_node_of_tag_ext'
+texinfo-6.8/info/nodes.c:1308:37: warning[-Wmaybe-uninitialized]: 'anchor_tag' may be used uninitialized in this function
+# 1308 |       node->display_pos = anchor_tag->nodestart_adjusted
+#      |                           ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+# 1306|         /* Start displaying the node at the anchor position.  */
+# 1307|   
+# 1308|->       node->display_pos = anchor_tag->nodestart_adjusted
+# 1309|           - (tag->nodestart_adjusted
+# 1310|              + skip_node_separator (subfile->contents
+
+Error: VALGRIND_WARNING:
+texinfo-6.8/info/pseudotty: note: while executing process 2111 with arguments: t/malformed-split.sh.pipeout
+texinfo-6.8/info/pseudotty.c:114: warning[SyscallParam]: Syscall param ioctl(TIOCSWINSZ) points to uninitialised byte(s)
+texinfo-6.8/info/pseudotty.c:114: note: Address 0x1ffeffef5c is on thread 1's stack
+/usr/lib64/libc.so.6: note: called from ioctl()
+texinfo-6.8/info/pseudotty.c:114: note: called from main()
+#  112|   
+#  113|       error (0, 0, "attempting to set window size");
+#  114|->     if (ioctl (master, TIOCSWINSZ, &ws) == 0)
+#  115|         error (0, 0, "...succeeded");
+#  116|       else
+
+Error: COMPILER_WARNING (CWE-457):
+texinfo-6.8/info/session.c: scope_hint: In function 'looking_at_newline.isra.0'
+texinfo-6.8/info/session.c:1124:24: warning[-Wmaybe-uninitialized]: 'iter.cur.wc_valid' may be used uninitialized
+# 1124 |   return mbi_cur (iter).wc_valid && mbi_cur (iter).wc == '\n';
+texinfo-6.8/info/session.c:1120:18: note: 'iter' declared here
+# 1120 |   mbi_iterator_t iter;
+#      |                  ^~~~
+# 1122|   	    win->node->nodelen - point);
+# 1123|     mbi_avail (iter);
+# 1124|->   return mbi_cur (iter).wc_valid && mbi_cur (iter).wc == '\n';
+# 1125|   }
+# 1126|   
+
+Error: COMPILER_WARNING (CWE-457):
+texinfo-6.8/info/session.c: scope_hint: In function 'looking_at_alnum.isra.0'
+texinfo-6.8/info/session.c:1136:24: warning[-Wmaybe-uninitialized]: 'iter.cur.wc_valid' may be used uninitialized
+# 1136 |   return mbi_cur (iter).wc_valid && iswalnum (mbi_cur (iter).wc);
+texinfo-6.8/info/session.c:1131:18: note: 'iter' declared here
+# 1131 |   mbi_iterator_t iter;
+#      |                  ^~~~
+# 1134|     mbi_avail (iter);
+# 1135|   
+# 1136|->   return mbi_cur (iter).wc_valid && iswalnum (mbi_cur (iter).wc);
+# 1137|   }
+# 1138|   
+
+Error: COMPILER_WARNING (CWE-569):
+texinfo-6.8/info/session.c: scope_hint: In function 'menu_digit'
+texinfo-6.8/info/session.c:2214:7: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+# 2214 |   if (entry = select_menu_digit (window, key))
+#      |       ^~~~~
+# 2212|   has_menu:
+# 2213|   
+# 2214|->   if (entry = select_menu_digit (window, key))
+# 2215|       info_select_reference (window, entry);
+# 2216|     else if (key == '0')
+
+Error: COMPILER_WARNING (CWE-569):
+texinfo-6.8/info/session.c: scope_hint: In function 'info_menu_or_ref_item'
+texinfo-6.8/info/session.c:2311:43: warning[-Wparentheses]: suggest parentheses around '&&' within '||'
+# 2311 |       if (refs[which]->start >= this_line && refs[which]->start < next_line
+#      |           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2309|   
+# 2310|         /* Reference is eligible if any part of it is in the line. */
+# 2311|->       if (refs[which]->start >= this_line && refs[which]->start < next_line
+# 2312|             || refs[which]->start < this_line && refs[which]->end > this_line)
+# 2313|           {
+
+Error: COMPILER_WARNING (CWE-252):
+texinfo-6.8/info/session.c: scope_hint: In function 'info_follow_menus'
+texinfo-6.8/info/session.c:2767:15: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+# 2767 |               asprintf (error, _("No menu in node '%s'"),
+#      |               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2768 |                         node_printed_rep (initial_node));
+#      |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2765|               {
+# 2766|                 free (*error);
+# 2767|->               asprintf (error, _("No menu in node '%s'"),
+# 2768|                           node_printed_rep (initial_node));
+# 2769|               }
+
+Error: COMPILER_WARNING (CWE-252):
+texinfo-6.8/info/session.c:2789:15: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+# 2789 |               asprintf (error, _("No menu item '%s' in node '%s'"),
+#      |               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2790 |                         arg, node_printed_rep (initial_node));
+#      |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2787|               {
+# 2788|                 free (*error);
+# 2789|->               asprintf (error, _("No menu item '%s' in node '%s'"),
+# 2790|                           arg, node_printed_rep (initial_node));
+# 2791|               }
+
+Error: COMPILER_WARNING (CWE-252):
+texinfo-6.8/info/session.c:2813:15: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+# 2813 |               asprintf (error,
+#      |               ^~~~~~~~~~~~~~~~
+# 2814 |                         _("Unable to find node referenced by '%s' in '%s'"),
+#      |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2815 |                         entry->label,
+#      |                         ~~~~~~~~~~~~~
+# 2816 |                         node_printed_rep (initial_node));
+#      |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2811|               {
+# 2812|                 free (*error);
+# 2813|->               asprintf (error,
+# 2814|                           _("Unable to find node referenced by '%s' in '%s'"),
+# 2815|                           entry->label,
+
+Error: COMPILER_WARNING (CWE-457):
+texinfo-6.8/info/session.c: scope_hint: In function 'info_handle_pointer'
+texinfo-6.8/info/session.c:2939:3: warning[-Wmaybe-uninitialized]: 'description' may be used uninitialized in this function
+# 2939 |   info_parse_node (description);
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2937|       }
+# 2938|   
+# 2939|->   info_parse_node (description);
+# 2940|     node = info_get_node_with_defaults (info_parsed_filename,
+# 2941|                                         info_parsed_nodename,
+
+Error: COMPILER_WARNING (CWE-569):
+texinfo-6.8/info/session.c: scope_hint: In function 'forward_move_node_structure'
+texinfo-6.8/info/session.c:3095:17: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
+# 3095 |             if (entry = select_menu_digit (window, '1'))
+#      |                 ^~~~~
+# 3093|               REFERENCE *entry;
+# 3094|   
+# 3095|->             if (entry = select_menu_digit (window, '1'))
+# 3096|                 {
+# 3097|                   info_select_reference (window, entry);
+
+Error: COMPILER_WARNING (CWE-252):
+texinfo-6.8/info/session.c: scope_hint: In function 'find_invocation_node_by_nodename'
+texinfo-6.8/info/session.c:3394:3: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+# 3394 |   asprintf (&try1, "Invoking %s", program);
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3392|       return 0;
+# 3393|   
+# 3394|->   asprintf (&try1, "Invoking %s", program);
+# 3395|     asprintf (&try2, "%s invocation", program);
+# 3396|     for (; *n; n++)
+
+Error: COMPILER_WARNING (CWE-252):
+texinfo-6.8/info/session.c:3395:3: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+# 3395 |   asprintf (&try2, "%s invocation", program);
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3393|   
+# 3394|     asprintf (&try1, "Invoking %s", program);
+# 3395|->   asprintf (&try2, "%s invocation", program);
+# 3396|     for (; *n; n++)
+# 3397|       {
+
+Error: COMPILER_WARNING (CWE-252):
+texinfo-6.8/info/session.c: scope_hint: In function 'ask_for_search_string'
+texinfo-6.8/info/session.c:4204:5: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+# 4204 |     asprintf (&prompt, _("%s%s%s [%s]: "),
+#      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 4205 |              use_regex ? _("Regexp search") : _("Search"),
+#      |              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 4206 |              case_sensitive ? _(" case-sensitively") : "",
+#      |              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 4207 |              direction < 0 ? _(" backward") : "",
+#      |              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 4208 |              search_string);
+#      |              ~~~~~~~~~~~~~~
+# 4202|   
+# 4203|     if (search_string)
+# 4204|->     asprintf (&prompt, _("%s%s%s [%s]: "),
+# 4205|                use_regex ? _("Regexp search") : _("Search"),
+# 4206|                case_sensitive ? _(" case-sensitively") : "",
+
+Error: COMPILER_WARNING (CWE-252):
+texinfo-6.8/info/session.c:4210:5: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+# 4210 |     asprintf (&prompt, _("%s%s%s: "),
+#      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 4211 |              use_regex ? _("Regexp search") : _("Search"),
+#      |              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 4212 |              case_sensitive ? _(" case-sensitively") : "",
+#      |              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 4213 |              direction < 0 ? _(" backward") : "");
+#      |              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 4208|                search_string);
+# 4209|     else
+# 4210|->     asprintf (&prompt, _("%s%s%s: "),
+# 4211|                use_regex ? _("Regexp search") : _("Search"),
+# 4212|                case_sensitive ? _(" case-sensitively") : "",
+
+Error: COMPILER_WARNING (CWE-252):
+texinfo-6.8/info/session.c: scope_hint: In function 'info_tree_search'
+texinfo-6.8/info/session.c:4600:3: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+# 4600 |   asprintf (&prompt, _("Search under %s: "),
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 4601 |             window->node->nodename);
+#      |             ~~~~~~~~~~~~~~~~~~~~~~~
+# 4598|     /* TODO: Display manual name */
+# 4599|     /* TRANSLATORS: %s is the title of a node. */
+# 4600|->   asprintf (&prompt, _("Search under %s: "),
+# 4601|               window->node->nodename);
+# 4602|     line = info_read_in_echo_area (prompt); free (prompt);
+
+Error: COMPILER_WARNING (CWE-569):
+texinfo-6.8/info/session.c: scope_hint: In function 'incremental_search'
+texinfo-6.8/info/session.c:5127:40: warning[-Wparentheses]: suggest parentheses around '&&' within '||'
+# 5127 |           if (func == &isearch_forward && dir > 0
+#      |               ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
+# 5125|                insert the last search string that was accepted through
+# 5126|                incremental searching. */
+# 5127|->           if (func == &isearch_forward && dir > 0
+# 5128|                 || func == &isearch_backward && dir < 0)
+# 5129|               {
+
+Error: COMPILER_WARNING (CWE-569):
+texinfo-6.8/info/session.c: scope_hint: In function 'read_key_sequence'
+texinfo-6.8/info/session.c:5539:22: warning[-Wparentheses]: suggest parentheses around '&&' within '||'
+# 5539 |       && (key >= 040 && key < 0200
+#      |           ~~~~~~~~~~~^~~~~~~~~~~~~
+# 5537|   
+# 5538|     if (insert
+# 5539|->       && (key >= 040 && key < 0200
+# 5540|             || ISO_Latin_p && key >= 0200 && key < 0400))
+# 5541|       {
+
+Error: COMPILER_WARNING (CWE-569):
+texinfo-6.8/info/terminal.c: scope_hint: In function 'terminal_switch_rendition'
+texinfo-6.8/info/terminal.c:648:33: warning[-Wparentheses]: suggest parentheses around '&&' within '||'
+#  648 |   else if (!(new & COLOUR_MASK) && (old & COLOUR_MASK)
+#      |            ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+#  646|         old = 0;
+#  647|       }
+#  648|->   else if (!(new & COLOUR_MASK) && (old & COLOUR_MASK)
+#  649|              || !(new & BGCOLOUR_MASK) && (old & BGCOLOUR_MASK))
+#  650|       {
+
+Error: COMPILER_WARNING (CWE-665):
+texinfo-6.8/info/terminal.c: scope_hint: In function 'initialize_byte_map'
+texinfo-6.8/info/terminal.c:810:14: warning[-Wmissing-braces]: missing braces around initializer
+#  810 |   } keys[] = {
+#      |              ^
+#  808|         int key_id;
+#  809|         char **byte_seq;
+#  810|->   } keys[] = {
+#  811|         KEY_RIGHT_ARROW, &term_kr,
+#  812|         KEY_LEFT_ARROW, &term_kl,
+
+Error: COMPILER_WARNING (CWE-665):
+texinfo-6.8/info/terminal.c:829:15: warning[-Wmissing-braces]: missing braces around initializer
+#  829 |   } keys2[] = {
+#      |               ^
+#  827|         int key_id;
+#  828|         char *byte_seq;
+#  829|->   } keys2[] = {
+#  830|         KEY_RIGHT_ARROW, "\033[C",
+#  831|         KEY_RIGHT_ARROW, "\033OC",
+
+Error: COMPILER_WARNING (CWE-252):
+texinfo-6.8/info/variables.c: scope_hint: In function 'describe_variable'
+texinfo-6.8/info/variables.c:232:5: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+#  232 |     asprintf (&description, "%s (%s): %s.",
+#      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  233 |              var->name,
+#      |              ~~~~~~~~~~
+#  234 |              var->value == &highlight_searches
+#      |              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  235 |              ? on_off_choices[match_rendition.mask != 0]
+#      |              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  236 |              : var->choices == (char **) &rendition_choices
+#      |              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  237 |              ? rendition_to_string (var->value)
+#      |              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  238 |              : var->choices[*(int *)var->value], _(var->doc));
+#      |              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  230|   
+#  231|     if (var->choices)
+#  232|->     asprintf (&description, "%s (%s): %s.",
+#  233|                var->name,
+#  234|                var->value == &highlight_searches
+
+Error: COMPILER_WARNING (CWE-252):
+texinfo-6.8/info/variables.c:240:5: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+#  240 |     asprintf (&description, "%s (%d): %s.",
+#      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  241 |              var->name, *(int *)var->value, _(var->doc));
+#      |              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  238|                : var->choices[*(int *)var->value], _(var->doc));
+#  239|     else
+#  240|->     asprintf (&description, "%s (%d): %s.",
+#  241|                var->name, *(int *)var->value, _(var->doc));
+#  242|   
+
+Error: COMPILER_WARNING (CWE-665):
+texinfo-6.8/info/variables.c: scope_hint: In function 'set_variable_to_value'
+texinfo-6.8/info/variables.c:462:24: warning[-Wmissing-braces]: missing braces around initializer
+#  462 |           } styles[] = {
+#      |                        ^
+#  460|                 unsigned long value;
+#  461|                 char *name;
+#  462|->           } styles[] = {
+#  463|                 COLOUR_MASK, COLOUR_BLACK,   "black",
+#  464|                 COLOUR_MASK, COLOUR_RED,     "red",
+
+Error: VALGRIND_WARNING:
+../../install-info/ginstall-info: note: while executing process 6539 with arguments: --name=* Gnu: (gnu). --description=A wildebeest native to the African savannah. --no-indent ../../install-info/tests/ii-0040-input-info-file ii40-psgpSzmm
+texinfo-6.8/install-info/../gnulib/lib/xmalloc.c:53: warning[Leak_DefinitelyLost]: 15 bytes in 1 blocks are definitely lost in loss record 5 of 17
+texinfo-6.8/install-info/../gnulib/lib/xmalloc.c:53: note: called from xmalloc()
+texinfo-6.8/install-info/install-info.c:2111: note: called from main()
+#   51|   xmalloc (size_t n)
+#   52|   {
+#   53|->   void *p = malloc (n);
+#   54|     if (!p && (HAVE_GNU_MALLOC || n))
+#   55|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+../../install-info/ginstall-info: note: while executing process 6816 with arguments: ii54 input.info.gz ii54-QxXY2lsU
+texinfo-6.8/install-info/../gnulib/lib/xmalloc.c:53: warning[Leak_DefinitelyLost]: 19 bytes in 1 blocks are definitely lost in loss record 5 of 14
+texinfo-6.8/install-info/../gnulib/lib/xmalloc.c:53: note: called from UnknownInlinedFun()
+texinfo-6.8/install-info/../gnulib/lib/xmalloc.c:124: note: called from UnknownInlinedFun()
+texinfo-6.8/install-info/../gnulib/lib/xmalloc.c:132: note: called from xstrdup()
+texinfo-6.8/install-info/install-info.c:415: note: called from strip_info_suffix()
+texinfo-6.8/install-info/install-info.c:2359: note: called from main()
+#   51|   xmalloc (size_t n)
+#   52|   {
+#   53|->   void *p = malloc (n);
+#   54|     if (!p && (HAVE_GNU_MALLOC || n))
+#   55|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+../../install-info/ginstall-info: note: while executing process 6336 with arguments: --name=* Wildebeest: (gnu). --description=Wildebeest native to the African savannah. ../../install-info/tests/ii-0031-input-info-file ii31-z2k2gBqb
+texinfo-6.8/install-info/../gnulib/lib/xmalloc.c:53: warning[Leak_DefinitelyLost]: 22 bytes in 1 blocks are definitely lost in loss record 5 of 18
+texinfo-6.8/install-info/../gnulib/lib/xmalloc.c:53: note: called from xmalloc()
+texinfo-6.8/install-info/install-info.c:2111: note: called from main()
+#   51|   xmalloc (size_t n)
+#   52|   {
+#   53|->   void *p = malloc (n);
+#   54|     if (!p && (HAVE_GNU_MALLOC || n))
+#   55|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+../../install-info/ginstall-info: note: while executing process 5694 with arguments: ../../install-info/tests/ii-0001-input-info-file ii01-ZEF4VHOY
+texinfo-6.8/install-info/../gnulib/lib/xmalloc.c:53: warning[Leak_DefinitelyLost]: 24 bytes in 1 blocks are definitely lost in loss record 7 of 15
+texinfo-6.8/install-info/../gnulib/lib/xmalloc.c:53: note: called from UnknownInlinedFun()
+texinfo-6.8/install-info/../gnulib/lib/xmalloc.c:124: note: called from UnknownInlinedFun()
+texinfo-6.8/install-info/../gnulib/lib/xmalloc.c:132: note: called from xstrdup()
+texinfo-6.8/install-info/install-info.c:415: note: called from strip_info_suffix()
+texinfo-6.8/install-info/install-info.c:2359: note: called from main()
+#   51|   xmalloc (size_t n)
+#   52|   {
+#   53|->   void *p = malloc (n);
+#   54|     if (!p && (HAVE_GNU_MALLOC || n))
+#   55|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+../../install-info/ginstall-info: note: while executing process 5694 with arguments: ../../install-info/tests/ii-0001-input-info-file ii01-ZEF4VHOY
+texinfo-6.8/install-info/../gnulib/lib/xmalloc.c:53: warning[Leak_DefinitelyLost]: 28,672 (20,480 direct, 8,192 indirect) bytes in 1 blocks are definitely lost in loss record 15 of 15
+texinfo-6.8/install-info/../gnulib/lib/xmalloc.c:53: note: called from xmalloc()
+texinfo-6.8/install-info/install-info.c:2735: note: called from findlines()
+texinfo-6.8/install-info/install-info.c:2375: note: called from main()
+#   51|   xmalloc (size_t n)
+#   52|   {
+#   53|->   void *p = malloc (n);
+#   54|     if (!p && (HAVE_GNU_MALLOC || n))
+#   55|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+../../install-info/ginstall-info: note: while executing process 6816 with arguments: ii54 input.info.gz ii54-QxXY2lsU
+texinfo-6.8/install-info/../gnulib/lib/xmalloc.c:53: warning[Leak_DefinitelyLost]: 8 bytes in 1 blocks are definitely lost in loss record 4 of 14
+texinfo-6.8/install-info/../gnulib/lib/xmalloc.c:53: note: called from UnknownInlinedFun()
+texinfo-6.8/install-info/install-info.c:257: note: called from concat()
+texinfo-6.8/install-info/install-info.c:857: note: called from UnknownInlinedFun()
+texinfo-6.8/install-info/install-info.c:909: note: called from readfile()
+texinfo-6.8/install-info/install-info.c:2371: note: called from main()
+#   51|   xmalloc (size_t n)
+#   52|   {
+#   53|->   void *p = malloc (n);
+#   54|     if (!p && (HAVE_GNU_MALLOC || n))
+#   55|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+../../install-info/ginstall-info: note: while executing process 5695 with arguments: ../../install-info/tests/ii-0002-input-info-file ii02-aiBIt0rt
+texinfo-6.8/install-info/../gnulib/lib/xmalloc.c:53: warning[Leak_PossiblyLost]: 16 bytes in 1 blocks are possibly lost in loss record 4 of 15
+texinfo-6.8/install-info/../gnulib/lib/xmalloc.c:53: note: called from UnknownInlinedFun()
+texinfo-6.8/install-info/install-info.c:2828: note: called from UnknownInlinedFun()
+texinfo-6.8/install-info/install-info.c:2633: note: called from main()
+#   51|   xmalloc (size_t n)
+#   52|   {
+#   53|->   void *p = malloc (n);
+#   54|     if (!p && (HAVE_GNU_MALLOC || n))
+#   55|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+../../install-info/ginstall-info: note: while executing process 5694 with arguments: ../../install-info/tests/ii-0001-input-info-file ii01-ZEF4VHOY
+texinfo-6.8/install-info/../gnulib/lib/xmalloc.c:53: warning[Leak_PossiblyLost]: 20,480 bytes in 1 blocks are possibly lost in loss record 14 of 15
+texinfo-6.8/install-info/../gnulib/lib/xmalloc.c:53: note: called from xmalloc()
+texinfo-6.8/install-info/install-info.c:2735: note: called from findlines()
+texinfo-6.8/install-info/install-info.c:2319: note: called from main()
+#   51|   xmalloc (size_t n)
+#   52|   {
+#   53|->   void *p = malloc (n);
+#   54|     if (!p && (HAVE_GNU_MALLOC || n))
+#   55|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+../../install-info/ginstall-info: note: while executing process 5694 with arguments: ../../install-info/tests/ii-0001-input-info-file ii01-ZEF4VHOY
+texinfo-6.8/install-info/../gnulib/lib/xmalloc.c:53: warning[Leak_PossiblyLost]: 8,192 bytes in 1 blocks are possibly lost in loss record 12 of 15
+texinfo-6.8/install-info/../gnulib/lib/xmalloc.c:53: note: called from xmalloc()
+texinfo-6.8/install-info/install-info.c:906: note: called from readfile()
+texinfo-6.8/install-info/install-info.c:2301: note: called from main()
+#   51|   xmalloc (size_t n)
+#   52|   {
+#   53|->   void *p = malloc (n);
+#   54|     if (!p && (HAVE_GNU_MALLOC || n))
+#   55|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+../../install-info/ginstall-info: note: while executing process 6586 with arguments: ../../install-info/tests/ii-0042-input-info-file ii42-xWs9Yqrl
+texinfo-6.8/install-info/../gnulib/lib/xmalloc.c:72: warning[Leak_PossiblyLost]: 16 bytes in 1 blocks are possibly lost in loss record 3 of 15
+texinfo-6.8/install-info/../gnulib/lib/xmalloc.c:72: note: called from xrealloc()
+texinfo-6.8/install-info/install-info.c:2698: note: called from main()
+#   70|       }
+#   71|   
+#   72|->   void *r = realloc (p, n);
+#   73|     if (!r && (n || (HAVE_GNU_REALLOC && !p)))
+#   74|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+../../install-info/ginstall-info: note: while executing process 5775 with arguments: ../../install-info/tests/ii-0005-input-info-file ii05-BNHAr5p9
+texinfo-6.8/install-info/../gnulib/lib/xmalloc.c:72: warning[Leak_PossiblyLost]: 8 bytes in 1 blocks are possibly lost in loss record 3 of 16
+texinfo-6.8/install-info/../gnulib/lib/xmalloc.c:72: note: called from xrealloc()
+texinfo-6.8/install-info/install-info.c:2698: note: called from main()
+#   70|       }
+#   71|   
+#   72|->   void *r = realloc (p, n);
+#   73|     if (!r && (n || (HAVE_GNU_REALLOC && !p)))
+#   74|       xalloc_die ();
+
+Error: COMPILER_WARNING (CWE-252):
+texinfo-6.8/install-info/install-info.c: scope_hint: In function 'output_dirfile'
+texinfo-6.8/install-info/install-info.c:959:3: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+#  959 |   asprintf (&dirfile_tmp, "%s.tmp", dirfile);
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  957|     char *dirfile_tmp = NULL;
+#  958|   
+#  959|->   asprintf (&dirfile_tmp, "%s.tmp", dirfile);
+#  960|     if (!dirfile_tmp)
+#  961|       xalloc_die ();

@@ -1,0 +1,382 @@
+Error: COMPILER_WARNING:
+libxml2-2.9.12/dict.c:187:5: warning: implicit declaration of function 'rand_r' is invalid in C99
+#    rand_r(& rand_seed);
+#    ^
+#  185|   #ifdef HAVE_RAND_R
+#  186|       rand_seed = time(NULL);
+#  187|->     rand_r(& rand_seed);
+#  188|   #else
+#  189|       srand(time(NULL));
+
+Error: COMPILER_WARNING:
+libxml2-2.9.12/dict.c:187:5: warning: this function declaration is not a prototype
+#  185|   #ifdef HAVE_RAND_R
+#  186|       rand_seed = time(NULL);
+#  187|->     rand_r(& rand_seed);
+#  188|   #else
+#  189|       srand(time(NULL));
+
+Error: COMPILER_WARNING:
+libxml2-2.9.12/dict.c:206:11: warning: implicit declaration of function 'rand_r' is invalid in C99
+#    ret = rand_r(& rand_seed);
+#          ^
+#  204|       xmlRMutexLock(xmlDictMutex);
+#  205|   #ifdef HAVE_RAND_R
+#  206|->     ret = rand_r(& rand_seed);
+#  207|   #else
+#  208|       ret = rand();
+
+Error: COMPILER_WARNING:
+libxml2-2.9.12/encoding.c:505:26: warning: cast from 'const unsigned char *' to 'unsigned short *' increases required alignment from 1 to 2
+#    unsigned short* in = (unsigned short*) inb;
+#                         ^~~~~~~~~~~~~~~~~~~~~
+#  503|       const unsigned char* processed = inb;
+#  504|       unsigned char* outend;
+#  505|->     unsigned short* in = (unsigned short*) inb;
+#  506|       unsigned short* inend;
+#  507|       unsigned int c, d, inlen;
+
+Error: COMPILER_WARNING:
+libxml2-2.9.12/encoding.c:592:27: warning: cast from 'unsigned char *' to 'unsigned short *' increases required alignment from 1 to 2
+#    unsigned short* out = (unsigned short*) outb;
+#                          ^~~~~~~~~~~~~~~~~~~~~~
+#  590|               const unsigned char* in, int *inlen)
+#  591|   {
+#  592|->     unsigned short* out = (unsigned short*) outb;
+#  593|       const unsigned char* processed = in;
+#  594|       const unsigned char *const instart = in;
+
+Error: COMPILER_WARNING:
+libxml2-2.9.12/encoding.c:748:26: warning: cast from 'const unsigned char *' to 'unsigned short *' increases required alignment from 1 to 2
+#    unsigned short* in = (unsigned short*) inb;
+#                         ^~~~~~~~~~~~~~~~~~~~~
+#  746|       const unsigned char* processed = inb;
+#  747|       unsigned char* outend = out + *outlen;
+#  748|->     unsigned short* in = (unsigned short*) inb;
+#  749|       unsigned short* inend;
+#  750|       unsigned int c, d, inlen;
+
+Error: COMPILER_WARNING:
+libxml2-2.9.12/encoding.c:834:27: warning: cast from 'unsigned char *' to 'unsigned short *' increases required alignment from 1 to 2
+#    unsigned short* out = (unsigned short*) outb;
+#                          ^~~~~~~~~~~~~~~~~~~~~~
+#  832|               const unsigned char* in, int *inlen)
+#  833|   {
+#  834|->     unsigned short* out = (unsigned short*) outb;
+#  835|       const unsigned char* processed = in;
+#  836|       const unsigned char *const instart = in;
+
+Error: COMPILER_WARNING:
+libxml2-2.9.12/python/libxml.c:260:11: warning: 'PyEval_CallMethod' is deprecated
+#    ret = PyEval_CallMethod(file, (char *) "close", (char *) "()");
+#          ^
+/usr/include/python3.10/ceval.h:28:1: note: 'PyEval_CallMethod' has been explicitly marked deprecated here
+#Py_DEPRECATED(3.9) PyAPI_FUNC(PyObject *) PyEval_CallMethod(
+#^
+/usr/include/python3.10/pyport.h:513:54: note: expanded from macro 'Py_DEPRECATED'
+##define Py_DEPRECATED(VERSION_UNUSED) __attribute__((__deprecated__))
+#                                                     ^
+#  258|       file = (PyObject *) context;
+#  259|       if (file == NULL) return(-1);
+#  260|->     ret = PyEval_CallMethod(file, (char *) "close", (char *) "()");
+#  261|       if (ret != NULL) {
+#  262|   	Py_DECREF(ret);
+
+Error: COMPILER_WARNING:
+libxml2-2.9.12/python/libxml.c:290:11: warning: 'PyEval_CallMethod' is deprecated
+#    ret = PyEval_CallMethod(file, (char *) "read", (char *) "(i)", len);
+#          ^
+/usr/include/python3.10/ceval.h:28:1: note: 'PyEval_CallMethod' has been explicitly marked deprecated here
+#Py_DEPRECATED(3.9) PyAPI_FUNC(PyObject *) PyEval_CallMethod(
+#^
+/usr/include/python3.10/pyport.h:513:54: note: expanded from macro 'Py_DEPRECATED'
+##define Py_DEPRECATED(VERSION_UNUSED) __attribute__((__deprecated__))
+#                                                     ^
+#  288|       file = (PyObject *) context;
+#  289|       if (file == NULL) return(-1);
+#  290|->     ret = PyEval_CallMethod(file, (char *) "read", (char *) "(i)", len);
+#  291|       if (ret == NULL) {
+#  292|   	printf("xmlPythonFileReadRaw: result is NULL\n");
+
+Error: COMPILER_WARNING:
+libxml2-2.9.12/python/libxml.c:355:11: warning: 'PyEval_CallMethod' is deprecated
+#    ret = PyEval_CallMethod(file, (char *) "io_read", (char *) "(i)", len);
+#          ^
+/usr/include/python3.10/ceval.h:28:1: note: 'PyEval_CallMethod' has been explicitly marked deprecated here
+#Py_DEPRECATED(3.9) PyAPI_FUNC(PyObject *) PyEval_CallMethod(
+#^
+/usr/include/python3.10/pyport.h:513:54: note: expanded from macro 'Py_DEPRECATED'
+##define Py_DEPRECATED(VERSION_UNUSED) __attribute__((__deprecated__))
+#                                                     ^
+#  353|       file = (PyObject *) context;
+#  354|       if (file == NULL) return(-1);
+#  355|->     ret = PyEval_CallMethod(file, (char *) "io_read", (char *) "(i)", len);
+#  356|       if (ret == NULL) {
+#  357|   	printf("xmlPythonFileRead: result is NULL\n");
+
+Error: COMPILER_WARNING:
+libxml2-2.9.12/python/libxml.c:423:15: warning: 'PyEval_CallMethod' is deprecated
+#        ret = PyEval_CallMethod(file, (char *) "io_write", (char *) "(O)",
+#              ^
+/usr/include/python3.10/ceval.h:28:1: note: 'PyEval_CallMethod' has been explicitly marked deprecated here
+#Py_DEPRECATED(3.9) PyAPI_FUNC(PyObject *) PyEval_CallMethod(
+#^
+/usr/include/python3.10/pyport.h:513:54: note: expanded from macro 'Py_DEPRECATED'
+##define Py_DEPRECATED(VERSION_UNUSED) __attribute__((__deprecated__))
+#                                                     ^
+#  421|       if (string == NULL) return(-1);
+#  422|       if (PyObject_HasAttrString(file, (char *) "io_write")) {
+#  423|->         ret = PyEval_CallMethod(file, (char *) "io_write", (char *) "(O)",
+#  424|   	                        string);
+#  425|       } else if (PyObject_HasAttrString(file, (char *) "write")) {
+
+Error: COMPILER_WARNING:
+libxml2-2.9.12/python/libxml.c:426:15: warning: 'PyEval_CallMethod' is deprecated
+#        ret = PyEval_CallMethod(file, (char *) "write", (char *) "(O)",
+#              ^
+/usr/include/python3.10/ceval.h:28:1: note: 'PyEval_CallMethod' has been explicitly marked deprecated here
+#Py_DEPRECATED(3.9) PyAPI_FUNC(PyObject *) PyEval_CallMethod(
+#^
+/usr/include/python3.10/pyport.h:513:54: note: expanded from macro 'Py_DEPRECATED'
+##define Py_DEPRECATED(VERSION_UNUSED) __attribute__((__deprecated__))
+#                                                     ^
+#  424|   	                        string);
+#  425|       } else if (PyObject_HasAttrString(file, (char *) "write")) {
+#  426|->         ret = PyEval_CallMethod(file, (char *) "write", (char *) "(O)",
+#  427|   	                        string);
+#  428|       }
+
+Error: COMPILER_WARNING:
+libxml2-2.9.12/python/libxml.c:462:15: warning: 'PyEval_CallMethod' is deprecated
+#        ret = PyEval_CallMethod(file, (char *) "io_close", (char *) "()");
+#              ^
+/usr/include/python3.10/ceval.h:28:1: note: 'PyEval_CallMethod' has been explicitly marked deprecated here
+#Py_DEPRECATED(3.9) PyAPI_FUNC(PyObject *) PyEval_CallMethod(
+#^
+/usr/include/python3.10/pyport.h:513:54: note: expanded from macro 'Py_DEPRECATED'
+##define Py_DEPRECATED(VERSION_UNUSED) __attribute__((__deprecated__))
+#                                                     ^
+#  460|       if (file == NULL) return(-1);
+#  461|       if (PyObject_HasAttrString(file, (char *) "io_close")) {
+#  462|->         ret = PyEval_CallMethod(file, (char *) "io_close", (char *) "()");
+#  463|       } else if (PyObject_HasAttrString(file, (char *) "flush")) {
+#  464|           ret = PyEval_CallMethod(file, (char *) "flush", (char *) "()");
+
+Error: COMPILER_WARNING:
+libxml2-2.9.12/python/libxml.c:464:15: warning: 'PyEval_CallMethod' is deprecated
+#        ret = PyEval_CallMethod(file, (char *) "flush", (char *) "()");
+#              ^
+/usr/include/python3.10/ceval.h:28:1: note: 'PyEval_CallMethod' has been explicitly marked deprecated here
+#Py_DEPRECATED(3.9) PyAPI_FUNC(PyObject *) PyEval_CallMethod(
+#^
+/usr/include/python3.10/pyport.h:513:54: note: expanded from macro 'Py_DEPRECATED'
+##define Py_DEPRECATED(VERSION_UNUSED) __attribute__((__deprecated__))
+#                                                     ^
+#  462|           ret = PyEval_CallMethod(file, (char *) "io_close", (char *) "()");
+#  463|       } else if (PyObject_HasAttrString(file, (char *) "flush")) {
+#  464|->         ret = PyEval_CallMethod(file, (char *) "flush", (char *) "()");
+#  465|       }
+#  466|       if (ret != NULL) {
+
+Error: COMPILER_WARNING:
+libxml2-2.9.12/python/libxml.c:1650:43: warning: passing 'unsigned char *' to parameter of type 'const char *' converts between pointers to integer types with different sign
+#        message = libxml_charPtrConstWrap(ptr);
+#                                          ^~~
+libxml2-2.9.12/python/libxml_wrap.h:240:48: note: passing argument to parameter 'str' here
+#PyObject * libxml_charPtrConstWrap(const char *str);
+#                                               ^
+# 1648|           PyTuple_SetItem(list, 0, libxml_xmlPythonErrorFuncCtxt);
+# 1649|           Py_XINCREF(libxml_xmlPythonErrorFuncCtxt);
+# 1650|->         message = libxml_charPtrConstWrap(ptr);
+# 1651|           PyTuple_SetItem(list, 1, message);
+# 1652|           result = PyEval_CallObject(libxml_xmlPythonErrorFuncHandler, list);
+
+Error: COMPILER_WARNING:
+libxml2-2.9.12/python/libxml.c:1652:18: warning: 'PyEval_CallObjectWithKeywords' is deprecated
+#        result = PyEval_CallObject(libxml_xmlPythonErrorFuncHandler, list);
+#                 ^
+/usr/include/python3.10/ceval.h:24:5: note: expanded from macro 'PyEval_CallObject'
+#    PyEval_CallObjectWithKeywords(callable, arg, (PyObject *)NULL)
+#    ^
+/usr/include/python3.10/ceval.h:17:1: note: 'PyEval_CallObjectWithKeywords' has been explicitly marked deprecated here
+#Py_DEPRECATED(3.9) PyAPI_FUNC(PyObject *) PyEval_CallObjectWithKeywords(
+#^
+/usr/include/python3.10/pyport.h:513:54: note: expanded from macro 'Py_DEPRECATED'
+##define Py_DEPRECATED(VERSION_UNUSED) __attribute__((__deprecated__))
+#                                                     ^
+# 1650|           message = libxml_charPtrConstWrap(ptr);
+# 1651|           PyTuple_SetItem(list, 1, message);
+# 1652|->         result = PyEval_CallObject(libxml_xmlPythonErrorFuncHandler, list);
+# 1653|           /* Forget any errors caused in the error handler. */
+# 1654|           PyErr_Clear();
+
+Error: COMPILER_WARNING:
+libxml2-2.9.12/python/libxml.c:1742:14: warning: 'PyEval_CallObjectWithKeywords' is deprecated
+#    result = PyEval_CallObject(pyCtxt->f, list);
+#             ^
+/usr/include/python3.10/ceval.h:24:5: note: expanded from macro 'PyEval_CallObject'
+#    PyEval_CallObjectWithKeywords(callable, arg, (PyObject *)NULL)
+#    ^
+/usr/include/python3.10/ceval.h:17:1: note: 'PyEval_CallObjectWithKeywords' has been explicitly marked deprecated here
+#Py_DEPRECATED(3.9) PyAPI_FUNC(PyObject *) PyEval_CallObjectWithKeywords(
+#^
+/usr/include/python3.10/pyport.h:513:54: note: expanded from macro 'Py_DEPRECATED'
+##define Py_DEPRECATED(VERSION_UNUSED) __attribute__((__deprecated__))
+#                                                     ^
+# 1740|       PyTuple_SetItem(list, 3, Py_None);
+# 1741|       Py_INCREF(Py_None);
+# 1742|->     result = PyEval_CallObject(pyCtxt->f, list);
+# 1743|       if (result == NULL) 
+# 1744|       {
+
+Error: COMPILER_WARNING:
+libxml2-2.9.12/python/libxml.c:1927:14: warning: 'PyEval_CallObjectWithKeywords' is deprecated
+#    result = PyEval_CallObject(pyCtxt->error, list);
+#             ^
+/usr/include/python3.10/ceval.h:24:5: note: expanded from macro 'PyEval_CallObject'
+#    PyEval_CallObjectWithKeywords(callable, arg, (PyObject *)NULL)
+#    ^
+/usr/include/python3.10/ceval.h:17:1: note: 'PyEval_CallObjectWithKeywords' has been explicitly marked deprecated here
+#Py_DEPRECATED(3.9) PyAPI_FUNC(PyObject *) PyEval_CallObjectWithKeywords(
+#^
+/usr/include/python3.10/pyport.h:513:54: note: expanded from macro 'Py_DEPRECATED'
+##define Py_DEPRECATED(VERSION_UNUSED) __attribute__((__deprecated__))
+#                                                     ^
+# 1925|       PyTuple_SetItem(list, 1, pyCtxt->arg);
+# 1926|       Py_XINCREF(pyCtxt->arg);
+# 1927|->     result = PyEval_CallObject(pyCtxt->error, list);
+# 1928|       if (result == NULL) 
+# 1929|       {
+
+Error: COMPILER_WARNING:
+libxml2-2.9.12/python/libxml.c:1954:14: warning: 'PyEval_CallObjectWithKeywords' is deprecated
+#    result = PyEval_CallObject(pyCtxt->warn, list);
+#             ^
+/usr/include/python3.10/ceval.h:24:5: note: expanded from macro 'PyEval_CallObject'
+#    PyEval_CallObjectWithKeywords(callable, arg, (PyObject *)NULL)
+#    ^
+/usr/include/python3.10/ceval.h:17:1: note: 'PyEval_CallObjectWithKeywords' has been explicitly marked deprecated here
+#Py_DEPRECATED(3.9) PyAPI_FUNC(PyObject *) PyEval_CallObjectWithKeywords(
+#^
+/usr/include/python3.10/pyport.h:513:54: note: expanded from macro 'Py_DEPRECATED'
+##define Py_DEPRECATED(VERSION_UNUSED) __attribute__((__deprecated__))
+#                                                     ^
+# 1952|       PyTuple_SetItem(list, 1, pyCtxt->arg);
+# 1953|       Py_XINCREF(pyCtxt->arg);
+# 1954|->     result = PyEval_CallObject(pyCtxt->warn, list);
+# 1955|       if (result == NULL) 
+# 1956|       {
+
+Error: COMPILER_WARNING:
+libxml2-2.9.12/python/libxml.c:2088:14: warning: 'PyEval_CallObjectWithKeywords' is deprecated
+#    result = PyEval_CallObject(pyCtxt->f, list);
+#             ^
+/usr/include/python3.10/ceval.h:24:5: note: expanded from macro 'PyEval_CallObject'
+#    PyEval_CallObjectWithKeywords(callable, arg, (PyObject *)NULL)
+#    ^
+/usr/include/python3.10/ceval.h:17:1: note: 'PyEval_CallObjectWithKeywords' has been explicitly marked deprecated here
+#Py_DEPRECATED(3.9) PyAPI_FUNC(PyObject *) PyEval_CallObjectWithKeywords(
+#^
+/usr/include/python3.10/pyport.h:513:54: note: expanded from macro 'Py_DEPRECATED'
+##define Py_DEPRECATED(VERSION_UNUSED) __attribute__((__deprecated__))
+#                                                     ^
+# 2086|       PyTuple_SetItem(list, 2, libxml_intWrap(severity));
+# 2087|       PyTuple_SetItem(list, 3, libxml_xmlTextReaderLocatorPtrWrap(locator));
+# 2088|->     result = PyEval_CallObject(pyCtxt->f, list);
+# 2089|       if (result == NULL)
+# 2090|       {
+
+Error: COMPILER_WARNING:
+libxml2-2.9.12/python/libxml.c:2283:14: warning: 'PyEval_CallObjectWithKeywords' is deprecated
+#    result = PyEval_CallObject(current_function, list);
+#             ^
+/usr/include/python3.10/ceval.h:24:5: note: expanded from macro 'PyEval_CallObject'
+#    PyEval_CallObjectWithKeywords(callable, arg, (PyObject *)NULL)
+#    ^
+/usr/include/python3.10/ceval.h:17:1: note: 'PyEval_CallObjectWithKeywords' has been explicitly marked deprecated here
+#Py_DEPRECATED(3.9) PyAPI_FUNC(PyObject *) PyEval_CallObjectWithKeywords(
+#^
+/usr/include/python3.10/pyport.h:513:54: note: expanded from macro 'Py_DEPRECATED'
+##define Py_DEPRECATED(VERSION_UNUSED) __attribute__((__deprecated__))
+#                                                     ^
+# 2281|           PyTuple_SetItem(list, i + 1, cur);
+# 2282|       }
+# 2283|->     result = PyEval_CallObject(current_function, list);
+# 2284|       Py_DECREF(list);
+# 2285|   
+
+Error: COMPILER_WARNING:
+libxml2-2.9.12/python/libxml.c:3185:14: warning: 'PyEval_CallObjectWithKeywords' is deprecated
+#    result = PyEval_CallObject(pyCtxt->error, list);
+#             ^
+/usr/include/python3.10/ceval.h:24:5: note: expanded from macro 'PyEval_CallObject'
+#    PyEval_CallObjectWithKeywords(callable, arg, (PyObject *)NULL)
+#    ^
+/usr/include/python3.10/ceval.h:17:1: note: 'PyEval_CallObjectWithKeywords' has been explicitly marked deprecated here
+#Py_DEPRECATED(3.9) PyAPI_FUNC(PyObject *) PyEval_CallObjectWithKeywords(
+#^
+/usr/include/python3.10/pyport.h:513:54: note: expanded from macro 'Py_DEPRECATED'
+##define Py_DEPRECATED(VERSION_UNUSED) __attribute__((__deprecated__))
+#                                                     ^
+# 3183|       PyTuple_SetItem(list, 1, pyCtxt->arg);
+# 3184|       Py_XINCREF(pyCtxt->arg);
+# 3185|->     result = PyEval_CallObject(pyCtxt->error, list);
+# 3186|       if (result == NULL) 
+# 3187|       {
+
+Error: COMPILER_WARNING:
+libxml2-2.9.12/python/libxml.c:3212:14: warning: 'PyEval_CallObjectWithKeywords' is deprecated
+#    result = PyEval_CallObject(pyCtxt->warn, list);
+#             ^
+/usr/include/python3.10/ceval.h:24:5: note: expanded from macro 'PyEval_CallObject'
+#    PyEval_CallObjectWithKeywords(callable, arg, (PyObject *)NULL)
+#    ^
+/usr/include/python3.10/ceval.h:17:1: note: 'PyEval_CallObjectWithKeywords' has been explicitly marked deprecated here
+#Py_DEPRECATED(3.9) PyAPI_FUNC(PyObject *) PyEval_CallObjectWithKeywords(
+#^
+/usr/include/python3.10/pyport.h:513:54: note: expanded from macro 'Py_DEPRECATED'
+##define Py_DEPRECATED(VERSION_UNUSED) __attribute__((__deprecated__))
+#                                                     ^
+# 3210|       PyTuple_SetItem(list, 1, pyCtxt->arg);
+# 3211|       Py_XINCREF(pyCtxt->arg);
+# 3212|->     result = PyEval_CallObject(pyCtxt->warn, list);
+# 3213|       if (result == NULL) 
+# 3214|       {
+
+Error: COMPILER_WARNING:
+libxml2-2.9.12/python/libxml.c:3349:11: warning: 'PyEval_CallObjectWithKeywords' is deprecated
+#        result = PyEval_CallObject(pyCtxt->error, list);
+#                 ^
+/usr/include/python3.10/ceval.h:24:5: note: expanded from macro 'PyEval_CallObject'
+#    PyEval_CallObjectWithKeywords(callable, arg, (PyObject *)NULL)
+#    ^
+/usr/include/python3.10/ceval.h:17:1: note: 'PyEval_CallObjectWithKeywords' has been explicitly marked deprecated here
+#Py_DEPRECATED(3.9) PyAPI_FUNC(PyObject *) PyEval_CallObjectWithKeywords(
+#^
+/usr/include/python3.10/pyport.h:513:54: note: expanded from macro 'Py_DEPRECATED'
+##define Py_DEPRECATED(VERSION_UNUSED) __attribute__((__deprecated__))
+#                                                     ^
+# 3347|   	PyTuple_SetItem(list, 1, pyCtxt->arg);
+# 3348|   	Py_XINCREF(pyCtxt->arg);
+# 3349|-> 	result = PyEval_CallObject(pyCtxt->error, list);
+# 3350|   	if (result == NULL) 
+# 3351|   	{
+
+Error: COMPILER_WARNING:
+libxml2-2.9.12/python/libxml.c:3376:11: warning: 'PyEval_CallObjectWithKeywords' is deprecated
+#        result = PyEval_CallObject(pyCtxt->warn, list);
+#                 ^
+/usr/include/python3.10/ceval.h:24:5: note: expanded from macro 'PyEval_CallObject'
+#    PyEval_CallObjectWithKeywords(callable, arg, (PyObject *)NULL)
+#    ^
+/usr/include/python3.10/ceval.h:17:1: note: 'PyEval_CallObjectWithKeywords' has been explicitly marked deprecated here
+#Py_DEPRECATED(3.9) PyAPI_FUNC(PyObject *) PyEval_CallObjectWithKeywords(
+#^
+/usr/include/python3.10/pyport.h:513:54: note: expanded from macro 'Py_DEPRECATED'
+##define Py_DEPRECATED(VERSION_UNUSED) __attribute__((__deprecated__))
+#                                                     ^
+# 3374|   	PyTuple_SetItem(list, 1, pyCtxt->arg);
+# 3375|   	Py_XINCREF(pyCtxt->arg);
+# 3376|-> 	result = PyEval_CallObject(pyCtxt->warn, list);
+# 3377|   	if (result == NULL)
+# 3378|   	{

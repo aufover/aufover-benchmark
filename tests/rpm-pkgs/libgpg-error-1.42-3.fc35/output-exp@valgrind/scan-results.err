@@ -1,0 +1,15 @@
+Error: VALGRIND_WARNING:
+./t-argparse: note: while executing process 3074
+libgpg-error-1.42/src/init.c:256: warning[Leak_DefinitelyLost]: 40 bytes in 2 blocks are definitely lost in loss record 8 of 14
+libgpg-error-1.42/src/init.c:256: note: called from UnknownInlinedFun()
+libgpg-error-1.42/src/init.c:244: note: called from UnknownInlinedFun()
+libgpg-error-1.42/src/init.c:348: note: called from _gpgrt_strdup()
+libgpg-error-1.42/src/argparse.c:1708: note: called from UnknownInlinedFun()
+libgpg-error-1.42/src/argparse.c:1578: note: called from UnknownInlinedFun()
+libgpg-error-1.42/src/visibility.c:1163: note: called from gpgrt_argparser()
+libgpg-error-1.42/tests/t-argparse.c:109: note: called from main()
+#  254|   
+#  255|     if (!a)
+#  256|->     return malloc (n);
+#  257|   
+#  258|     return realloc (a, n);

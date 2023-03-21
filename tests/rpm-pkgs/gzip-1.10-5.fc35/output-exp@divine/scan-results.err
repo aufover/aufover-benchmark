@@ -1,26 +1,4 @@
-Error: DIVINE_WARNING:
-gzip-1.10/gzip.c: scope_hint: In function 'remove_output_file':
-gzip-1.10/gzip.c:2120: note: 
-gzip-1.10/gzip.c:2120: note: gzip: stdin: unexpected end of file
-gzip-1.10/gzip.c:2120: error: libc stubs
-gzip-1.10/gzip.c:2120: note: not implemented in userspace
-/opt/divine/include/dios/sys/fault.hpp:119: note: void __dios::FaultBase::handler<__dios::Context>(_VM_Fault, _VM_Frame*, void (*)())
-/opt/divine/include/dios/arch/divm/fault.c:12: note: __dios_fault
-/opt/divine/include/dios/libc/_PDCLIB/stubs.cpp:90: note: sigprocmask
-gzip-1.10/gzip.c:2120: note: remove_output_file
-gzip-1.10/gzip.c:2140: note: abort_gzip
-gzip-1.10/util.c:444: note: read_error
-gzip-1.10/util.c:182: note: fill_inbuf
-gzip-1.10/gzip.c:1507: note: get_method
-gzip-1.10/gzip.c:779: note: treat_stdin
-gzip-1.10/gzip.c:660: note: main
-# 2118|   
-# 2119|     if (!signals_already_blocked)
-# 2120|->     sigprocmask (SIG_BLOCK, &caught_signals, &oldset);
-# 2121|     fd = remove_ofname_fd;
-# 2122|     if (0 <= fd)
-
-Error: COMPILER_WARNING (CWE-758):
+Error: COMPILER_WARNING:
 gzip-1.10/lib/strerror_r.c:204:9: warning: incompatible pointer to integer conversion assigning to 'int' from 'char *'
 #    ret = strerror_r (errnum, buf, buflen);
 #        ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -30,7 +8,7 @@ gzip-1.10/lib/strerror_r.c:204:9: warning: incompatible pointer to integer conve
 #  205|   
 #  206|       /* Some old implementations may return (-1, EINVAL) instead of EINVAL.
 
-Error: COMPILER_WARNING (CWE-758):
+Error: COMPILER_WARNING:
 gzip-1.10/lib/strerror_r.c:241:60: warning: comparison between pointer and integer ('char *' and 'int')
 #        if (strerror_r (errnum, stackbuf, sizeof stackbuf) == ERANGE)
 #            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^  ~~~~~~
@@ -39,3 +17,26 @@ gzip-1.10/lib/strerror_r.c:241:60: warning: comparison between pointer and integ
 #  241|->         if (strerror_r (errnum, stackbuf, sizeof stackbuf) == ERANGE)
 #  242|             abort ();
 #  243|           safe_copy (buf, buflen, stackbuf);
+
+Error: COMPILER_WARNING:
+gzip-1.10/lib/utimens.c:404:16: warning: implicit declaration of function 'futimesat' is invalid in C99
+#        return futimesat (AT_FDCWD, file, t);
+#               ^
+#  402|         {
+#  403|   # if HAVE_FUTIMESAT
+#  404|->         return futimesat (AT_FDCWD, file, t);
+#  405|   # endif
+#  406|         }
+
+Error: COMPILER_WARNING:
+gzip-1.10/lib/utimens.c:425:13: warning: implicit declaration of function 'futimesat' is invalid in C99
+#        if (futimes (fd, t) == 0)
+#            ^
+gzip-1.10/lib/utimens.c:423:27: note: expanded from macro 'futimes'
+##   define futimes(fd, t) futimesat (fd, NULL, t)
+#                          ^
+#  423|   #   define futimes(fd, t) futimesat (fd, NULL, t)
+#  424|   #  endif
+#  425|->         if (futimes (fd, t) == 0)
+#  426|             {
+#  427|   #  if __linux__ && __GLIBC__

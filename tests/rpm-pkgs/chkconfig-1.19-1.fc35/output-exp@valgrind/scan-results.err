@@ -1,0 +1,1119 @@
+Error: COMPILER_WARNING (CWE-457):
+chkconfig-1.19/alternatives.c: scope_hint: In function 'main'
+chkconfig-1.19/alternatives.c:129:16: warning[-Wmaybe-uninitialized]: 'slaveTitle' may be used uninitialized in this function
+#  129 |         return strcmp(a, b) ? 0 : 1;
+#      |                ^~~~~~~~~~~~
+chkconfig-1.19/alternatives.c:1245:28: note: 'slaveTitle' was declared here
+# 1245 |     char *title, *target, *slaveTitle;
+#      |                            ^~~~~~~~~~
+#  127|   int streq(const char *a, const char *b) {
+#  128|       if (a && b)
+#  129|->         return strcmp(a, b) ? 0 : 1;
+#  130|   
+#  131|       if (!a && !b)
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 1464 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --display TEST
+chkconfig-1.19/alternatives.c:173: warning[Leak_DefinitelyLost]: 5 bytes in 1 blocks are definitely lost in loss record 5 of 19
+/usr/lib64/libc.so.6: note: called from strdup()
+chkconfig-1.19/alternatives.c:173: note: called from setupSingleArg()
+chkconfig-1.19/alternatives.c:1325: note: called from main()
+#  171|       if (!*nextArg || **nextArg == '/')
+#  172|           usage(2);
+#  173|->     *title = strdup(*nextArg);
+#  174|       *nextArgPtr = nextArg + 1;
+#  175|   }
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 1672 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --set TEST /tmp/tmp.oQUYmyRpBm/link_a/main
+chkconfig-1.19/alternatives.c:189: warning[Leak_DefinitelyLost]: 5 bytes in 1 blocks are definitely lost in loss record 5 of 20
+/usr/lib64/libc.so.6: note: called from strdup()
+chkconfig-1.19/alternatives.c:189: note: called from setupDoubleArg()
+chkconfig-1.19/alternatives.c:1321: note: called from main()
+#  187|       if (!*nextArg || **nextArg == '/')
+#  188|           usage(2);
+#  189|->     *title = strdup(*nextArg);
+#  190|       nextArg++;
+#  191|   
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 1672 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --set TEST /tmp/tmp.oQUYmyRpBm/link_a/main
+chkconfig-1.19/alternatives.c:194: warning[Leak_DefinitelyLost]: 32 bytes in 1 blocks are definitely lost in loss record 16 of 20
+/usr/lib64/libc.so.6: note: called from strdup()
+chkconfig-1.19/alternatives.c:194: note: called from setupDoubleArg()
+chkconfig-1.19/alternatives.c:1321: note: called from main()
+#  192|       if (!*nextArg)
+#  193|           usage(2);
+#  194|->     *target = strdup(normalize_path(*nextArg));
+#  195|       *nextArgPtr = nextArg + 1;
+#  196|   }
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 7554 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --remove-slave TEST /tmp/tmp.oQUYmyRpBm/link_a/main STEST
+chkconfig-1.19/alternatives.c:210: warning[Leak_DefinitelyLost]: 5 bytes in 1 blocks are definitely lost in loss record 6 of 22
+/usr/lib64/libc.so.6: note: called from strdup()
+chkconfig-1.19/alternatives.c:210: note: called from UnknownInlinedFun()
+chkconfig-1.19/alternatives.c:1281: note: called from main()
+#  208|       if (!*nextArg || **nextArg == '/')
+#  209|           usage(2);
+#  210|->     *title = strdup(*nextArg);
+#  211|       nextArg++;
+#  212|   
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 7554 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --remove-slave TEST /tmp/tmp.oQUYmyRpBm/link_a/main STEST
+chkconfig-1.19/alternatives.c:215: warning[Leak_DefinitelyLost]: 32 bytes in 1 blocks are definitely lost in loss record 17 of 22
+/usr/lib64/libc.so.6: note: called from strdup()
+chkconfig-1.19/alternatives.c:215: note: called from UnknownInlinedFun()
+chkconfig-1.19/alternatives.c:1281: note: called from main()
+#  213|       if (!*nextArg)
+#  214|           usage(2);
+#  215|->     *target = strdup(normalize_path(*nextArg));
+#  216|       nextArg++;
+#  217|   
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 7554 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --remove-slave TEST /tmp/tmp.oQUYmyRpBm/link_a/main STEST
+chkconfig-1.19/alternatives.c:220: warning[Leak_DefinitelyLost]: 6 bytes in 1 blocks are definitely lost in loss record 9 of 22
+/usr/lib64/libc.so.6: note: called from strdup()
+chkconfig-1.19/alternatives.c:220: note: called from UnknownInlinedFun()
+chkconfig-1.19/alternatives.c:1281: note: called from main()
+#  218|       if (!*nextArg)
+#  219|           usage(2);
+#  220|->     *slaveTitle = strdup(*nextArg);
+#  221|       *nextArgPtr = nextArg + 1;
+#  222|   }
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 6040 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --add-slave TEST /tmp/tmp.oQUYmyRpBm/link_a/main /tmp/tmp.oQUYmyRpBm/slave_link STEST /tmp/tmp.oQUYmyRpBm/link_a/slave_a
+chkconfig-1.19/alternatives.c:229: warning[Leak_DefinitelyLost]: 31 bytes in 1 blocks are definitely lost in loss record 16 of 24
+/usr/lib64/libc.so.6: note: called from strdup()
+chkconfig-1.19/alternatives.c:229: note: called from setupLinkSet()
+chkconfig-1.19/alternatives.c:1279: note: called from main()
+#  227|       if (!*nextArg || **nextArg != '/')
+#  228|           usage(2);
+#  229|->     set->facility = strdup(normalize_path(*nextArg));
+#  230|       nextArg++;
+#  231|   
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 6040 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --add-slave TEST /tmp/tmp.oQUYmyRpBm/link_a/main /tmp/tmp.oQUYmyRpBm/slave_link STEST /tmp/tmp.oQUYmyRpBm/link_a/slave_a
+chkconfig-1.19/alternatives.c:234: warning[Leak_DefinitelyLost]: 6 bytes in 1 blocks are definitely lost in loss record 8 of 24
+/usr/lib64/libc.so.6: note: called from strdup()
+chkconfig-1.19/alternatives.c:234: note: called from setupLinkSet()
+chkconfig-1.19/alternatives.c:1279: note: called from main()
+#  232|       if (!*nextArg || **nextArg == '/')
+#  233|           usage(2);
+#  234|->     set->title = strdup(*nextArg);
+#  235|       nextArg++;
+#  236|   
+
+Error: COMPILER_WARNING (CWE-704):
+chkconfig-1.19/alternatives.c: scope_hint: In function 'readConfig'
+chkconfig-1.19/alternatives.c:289:10: warning[-Wdiscarded-qualifiers]: assignment discards 'const' qualifier from pointer target type
+#  289 |     path = normalize_path(path);
+#      |          ^
+#  287|       sprintf(path, "%s/%s", stateDir, title);
+#  288|   
+#  289|->     path = normalize_path(path);
+#  290|   
+#  291|       if (FL_VERBOSE(flags))
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 7598 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --display TEST
+chkconfig-1.19/alternatives.c:333: warning[Leak_DefinitelyLost]: 51 (16 direct, 35 indirect) bytes in 1 blocks are definitely lost in loss record 12 of 13
+chkconfig-1.19/alternatives.c:333: note: called from readConfig()
+chkconfig-1.19/alternatives.c:968: note: called from UnknownInlinedFun()
+chkconfig-1.19/alternatives.c:1398: note: called from main()
+#  331|       }
+#  332|   
+#  333|->     groups = realloc(groups, sizeof(*groups));
+#  334|       groups[0].title = strdup(title);
+#  335|       groups[0].facility = line;
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 7598 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --display TEST
+chkconfig-1.19/alternatives.c:338: warning[Leak_DefinitelyLost]: 1 bytes in 1 blocks are definitely lost in loss record 1 of 13
+/usr/lib64/libc.so.6: note: called from strdup()
+chkconfig-1.19/alternatives.c:338: note: called from readConfig()
+chkconfig-1.19/alternatives.c:968: note: called from UnknownInlinedFun()
+chkconfig-1.19/alternatives.c:1398: note: called from main()
+#  336|       numGroups = 1;
+#  337|   
+#  338|->     line = parseLine(&buf);
+#  339|       while (line && *line) {
+#  340|           if (*line == '/') {
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 1464 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --display TEST
+chkconfig-1.19/alternatives.c:345: warning[Leak_DefinitelyLost]: 104 (32 direct, 72 indirect) bytes in 1 blocks are definitely lost in loss record 18 of 19
+chkconfig-1.19/alternatives.c:345: note: called from readConfig()
+chkconfig-1.19/alternatives.c:968: note: called from UnknownInlinedFun()
+chkconfig-1.19/alternatives.c:1398: note: called from main()
+#  343|           }
+#  344|   
+#  345|->         groups = realloc(groups, sizeof(*groups) * (numGroups + 1));
+#  346|           groups[numGroups].title = line;
+#  347|   
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 1464 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --display TEST
+chkconfig-1.19/alternatives.c:356: warning[Leak_DefinitelyLost]: 1 bytes in 1 blocks are definitely lost in loss record 1 of 19
+/usr/lib64/libc.so.6: note: called from strdup()
+chkconfig-1.19/alternatives.c:356: note: called from readConfig()
+chkconfig-1.19/alternatives.c:968: note: called from UnknownInlinedFun()
+chkconfig-1.19/alternatives.c:1398: note: called from main()
+#  354|           groups[numGroups++].facility = line;
+#  355|   
+#  356|->         line = parseLine(&buf);
+#  357|       }
+#  358|   
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 2817 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --remove TEST /tmp/tmp.oQUYmyRpBm/link_a/main
+chkconfig-1.19/alternatives.c:364: warning[Leak_DefinitelyLost]: 32 bytes in 1 blocks are definitely lost in loss record 18 of 24
+/usr/lib64/libc.so.6: note: called from strdup()
+chkconfig-1.19/alternatives.c:364: note: called from readConfig()
+chkconfig-1.19/alternatives.c:1117: note: called from removeService()
+chkconfig-1.19/alternatives.c:1406: note: called from main()
+#  362|       }
+#  363|   
+#  364|->     line = parseLine(&buf);
+#  365|       while (line && *line) {
+#  366|           set->alts = realloc(set->alts, (set->numAlts + 1) * sizeof(*set->alts));
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 7554 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --remove-slave TEST /tmp/tmp.oQUYmyRpBm/link_a/main STEST
+chkconfig-1.19/alternatives.c:366: warning[Leak_DefinitelyLost]: 131 (64 direct, 67 indirect) bytes in 1 blocks are definitely lost in loss record 22 of 22
+chkconfig-1.19/alternatives.c:366: note: called from readConfig()
+chkconfig-1.19/alternatives.c:838: note: called from UnknownInlinedFun()
+chkconfig-1.19/alternatives.c:1396: note: called from main()
+#  364|       line = parseLine(&buf);
+#  365|       while (line && *line) {
+#  366|->         set->alts = realloc(set->alts, (set->numAlts + 1) * sizeof(*set->alts));
+#  367|   
+#  368|           if (*line != '/') {
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 1464 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --display TEST
+chkconfig-1.19/alternatives.c:366: warning[Leak_DefinitelyLost]: 225 (64 direct, 161 indirect) bytes in 1 blocks are definitely lost in loss record 19 of 19
+chkconfig-1.19/alternatives.c:366: note: called from readConfig()
+chkconfig-1.19/alternatives.c:968: note: called from UnknownInlinedFun()
+chkconfig-1.19/alternatives.c:1398: note: called from main()
+#  364|       line = parseLine(&buf);
+#  365|       while (line && *line) {
+#  366|->         set->alts = realloc(set->alts, (set->numAlts + 1) * sizeof(*set->alts));
+#  367|   
+#  368|           if (*line != '/') {
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 3072 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --install /tmp/tmp.oQUYmyRpBm/main_link TEST /tmp/tmp.oQUYmyRpBm/link_a/main 10 --slave /tmp/tmp.oQUYmyRpBm/slave_link STEST /tmp/tmp.oQUYmyRpBm/link_a/slave_b
+chkconfig-1.19/alternatives.c:366: warning[Leak_DefinitelyLost]: 227 (64 direct, 163 indirect) bytes in 1 blocks are definitely lost in loss record 26 of 26
+chkconfig-1.19/alternatives.c:366: note: called from readConfig()
+chkconfig-1.19/alternatives.c:914: note: called from UnknownInlinedFun()
+chkconfig-1.19/alternatives.c:1392: note: called from main()
+#  364|       line = parseLine(&buf);
+#  365|       while (line && *line) {
+#  366|->         set->alts = realloc(set->alts, (set->numAlts + 1) * sizeof(*set->alts));
+#  367|   
+#  368|           if (*line != '/') {
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 4951 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --set TEST /tmp/tmp.oQUYmyRpBm/link_a/main
+chkconfig-1.19/alternatives.c:366: warning[Leak_DefinitelyLost]: 234 (64 direct, 170 indirect) bytes in 1 blocks are definitely lost in loss record 21 of 21
+chkconfig-1.19/alternatives.c:366: note: called from readConfig()
+chkconfig-1.19/alternatives.c:1071: note: called from UnknownInlinedFun()
+chkconfig-1.19/alternatives.c:1404: note: called from main()
+#  364|       line = parseLine(&buf);
+#  365|       while (line && *line) {
+#  366|->         set->alts = realloc(set->alts, (set->numAlts + 1) * sizeof(*set->alts));
+#  367|   
+#  368|           if (*line != '/') {
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 2817 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --remove TEST /tmp/tmp.oQUYmyRpBm/link_a/main
+chkconfig-1.19/alternatives.c:366: warning[Leak_DefinitelyLost]: 289 (128 direct, 161 indirect) bytes in 1 blocks are definitely lost in loss record 24 of 24
+chkconfig-1.19/alternatives.c:366: note: called from readConfig()
+chkconfig-1.19/alternatives.c:1117: note: called from removeService()
+chkconfig-1.19/alternatives.c:1406: note: called from main()
+#  364|       line = parseLine(&buf);
+#  365|       while (line && *line) {
+#  366|->         set->alts = realloc(set->alts, (set->numAlts + 1) * sizeof(*set->alts));
+#  367|   
+#  368|           if (*line != '/') {
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 5032 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --remove TEST /tmp/tmp.oQUYmyRpBm/link_a/main
+chkconfig-1.19/alternatives.c:366: warning[Leak_DefinitelyLost]: 298 (128 direct, 170 indirect) bytes in 1 blocks are definitely lost in loss record 26 of 26
+chkconfig-1.19/alternatives.c:366: note: called from readConfig()
+chkconfig-1.19/alternatives.c:1117: note: called from removeService()
+chkconfig-1.19/alternatives.c:1406: note: called from main()
+#  364|       line = parseLine(&buf);
+#  365|       while (line && *line) {
+#  366|->         set->alts = realloc(set->alts, (set->numAlts + 1) * sizeof(*set->alts));
+#  367|   
+#  368|           if (*line != '/') {
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 1971 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --display TEST
+chkconfig-1.19/alternatives.c:366: warning[Leak_DefinitelyLost]: 450 (128 direct, 322 indirect) bytes in 1 blocks are definitely lost in loss record 20 of 20
+chkconfig-1.19/alternatives.c:366: note: called from readConfig()
+chkconfig-1.19/alternatives.c:968: note: called from UnknownInlinedFun()
+chkconfig-1.19/alternatives.c:1398: note: called from main()
+#  364|       line = parseLine(&buf);
+#  365|       while (line && *line) {
+#  366|->         set->alts = realloc(set->alts, (set->numAlts + 1) * sizeof(*set->alts));
+#  367|   
+#  368|           if (*line != '/') {
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 7302 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --display TEST
+chkconfig-1.19/alternatives.c:366: warning[Leak_DefinitelyLost]: 452 (128 direct, 324 indirect) bytes in 1 blocks are definitely lost in loss record 20 of 20
+chkconfig-1.19/alternatives.c:366: note: called from readConfig()
+chkconfig-1.19/alternatives.c:968: note: called from UnknownInlinedFun()
+chkconfig-1.19/alternatives.c:1398: note: called from main()
+#  364|       line = parseLine(&buf);
+#  365|       while (line && *line) {
+#  366|->         set->alts = realloc(set->alts, (set->numAlts + 1) * sizeof(*set->alts));
+#  367|   
+#  368|           if (*line != '/') {
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 5827 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --display TEST
+chkconfig-1.19/alternatives.c:366: warning[Leak_DefinitelyLost]: 459 (128 direct, 331 indirect) bytes in 1 blocks are definitely lost in loss record 21 of 21
+chkconfig-1.19/alternatives.c:366: note: called from readConfig()
+chkconfig-1.19/alternatives.c:968: note: called from UnknownInlinedFun()
+chkconfig-1.19/alternatives.c:1398: note: called from main()
+#  364|       line = parseLine(&buf);
+#  365|       while (line && *line) {
+#  366|->         set->alts = realloc(set->alts, (set->numAlts + 1) * sizeof(*set->alts));
+#  367|   
+#  368|           if (*line != '/') {
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 3664 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --display TEST
+chkconfig-1.19/alternatives.c:366: warning[Leak_DefinitelyLost]: 468 (128 direct, 340 indirect) bytes in 1 blocks are definitely lost in loss record 21 of 21
+chkconfig-1.19/alternatives.c:366: note: called from readConfig()
+chkconfig-1.19/alternatives.c:968: note: called from UnknownInlinedFun()
+chkconfig-1.19/alternatives.c:1398: note: called from main()
+#  364|       line = parseLine(&buf);
+#  365|       while (line && *line) {
+#  366|->         set->alts = realloc(set->alts, (set->numAlts + 1) * sizeof(*set->alts));
+#  367|   
+#  368|           if (*line != '/') {
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 7258 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --remove TEST /tmp/tmp.oQUYmyRpBm/link_b/main
+chkconfig-1.19/alternatives.c:366: warning[Leak_DefinitelyLost]: 516 (192 direct, 324 indirect) bytes in 1 blocks are definitely lost in loss record 25 of 25
+chkconfig-1.19/alternatives.c:366: note: called from readConfig()
+chkconfig-1.19/alternatives.c:1117: note: called from removeService()
+chkconfig-1.19/alternatives.c:1406: note: called from main()
+#  364|       line = parseLine(&buf);
+#  365|       while (line && *line) {
+#  366|->         set->alts = realloc(set->alts, (set->numAlts + 1) * sizeof(*set->alts));
+#  367|   
+#  368|           if (*line != '/') {
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 5783 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --remove TEST /tmp/tmp.oQUYmyRpBm/link_a/main
+chkconfig-1.19/alternatives.c:366: warning[Leak_DefinitelyLost]: 523 (192 direct, 331 indirect) bytes in 1 blocks are definitely lost in loss record 25 of 25
+chkconfig-1.19/alternatives.c:366: note: called from readConfig()
+chkconfig-1.19/alternatives.c:1117: note: called from removeService()
+chkconfig-1.19/alternatives.c:1406: note: called from main()
+#  364|       line = parseLine(&buf);
+#  365|       while (line && *line) {
+#  366|->         set->alts = realloc(set->alts, (set->numAlts + 1) * sizeof(*set->alts));
+#  367|   
+#  368|           if (*line != '/') {
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 5406 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --remove TEST /tmp/tmp.oQUYmyRpBm/link_a/main
+chkconfig-1.19/alternatives.c:366: warning[Leak_DefinitelyLost]: 532 (192 direct, 340 indirect) bytes in 1 blocks are definitely lost in loss record 26 of 26
+chkconfig-1.19/alternatives.c:366: note: called from readConfig()
+chkconfig-1.19/alternatives.c:1117: note: called from removeService()
+chkconfig-1.19/alternatives.c:1406: note: called from main()
+#  364|       line = parseLine(&buf);
+#  365|       while (line && *line) {
+#  366|->         set->alts = realloc(set->alts, (set->numAlts + 1) * sizeof(*set->alts));
+#  367|   
+#  368|           if (*line != '/') {
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 6376 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --add-slave TEST /tmp/tmp.oQUYmyRpBm/link_a/main /tmp/tmp.oQUYmyRpBm/slave_link STEST /tmp/tmp.oQUYmyRpBm/link_a/slave_a
+chkconfig-1.19/alternatives.c:366: warning[Leak_DefinitelyLost]: 677 (192 direct, 485 indirect) bytes in 1 blocks are definitely lost in loss record 25 of 25
+chkconfig-1.19/alternatives.c:366: note: called from readConfig()
+chkconfig-1.19/alternatives.c:874: note: called from UnknownInlinedFun()
+chkconfig-1.19/alternatives.c:1394: note: called from main()
+#  364|       line = parseLine(&buf);
+#  365|       while (line && *line) {
+#  366|->         set->alts = realloc(set->alts, (set->numAlts + 1) * sizeof(*set->alts));
+#  367|   
+#  368|           if (*line != '/') {
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 6416 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --add-slave TEST /tmp/tmp.oQUYmyRpBm/link_b/main /tmp/tmp.oQUYmyRpBm/slave_link STEST /tmp/tmp.oQUYmyRpBm/link_b/slave_b
+chkconfig-1.19/alternatives.c:366: warning[Leak_DefinitelyLost]: 679 (192 direct, 487 indirect) bytes in 1 blocks are definitely lost in loss record 25 of 25
+chkconfig-1.19/alternatives.c:366: note: called from readConfig()
+chkconfig-1.19/alternatives.c:874: note: called from UnknownInlinedFun()
+chkconfig-1.19/alternatives.c:1394: note: called from main()
+#  364|       line = parseLine(&buf);
+#  365|       while (line && *line) {
+#  366|->         set->alts = realloc(set->alts, (set->numAlts + 1) * sizeof(*set->alts));
+#  367|   
+#  368|           if (*line != '/') {
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 4737 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --display TEST
+chkconfig-1.19/alternatives.c:366: warning[Leak_DefinitelyLost]: 702 (192 direct, 510 indirect) bytes in 1 blocks are definitely lost in loss record 21 of 21
+chkconfig-1.19/alternatives.c:366: note: called from readConfig()
+chkconfig-1.19/alternatives.c:968: note: called from UnknownInlinedFun()
+chkconfig-1.19/alternatives.c:1398: note: called from main()
+#  364|       line = parseLine(&buf);
+#  365|       while (line && *line) {
+#  366|->         set->alts = realloc(set->alts, (set->numAlts + 1) * sizeof(*set->alts));
+#  367|   
+#  368|           if (*line != '/') {
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 2817 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --remove TEST /tmp/tmp.oQUYmyRpBm/link_a/main
+chkconfig-1.19/alternatives.c:374: warning[Leak_DefinitelyLost]: 30 bytes in 1 blocks are definitely lost in loss record 14 of 24
+/usr/lib64/libc.so.6: note: called from strdup()
+chkconfig-1.19/alternatives.c:374: note: called from readConfig()
+chkconfig-1.19/alternatives.c:1117: note: called from removeService()
+chkconfig-1.19/alternatives.c:1406: note: called from main()
+#  372|           }
+#  373|   
+#  374|->         set->alts[set->numAlts].master.facility = strdup(normalize_path(groups[0].facility));
+#  375|           set->alts[set->numAlts].master.title = strdup(groups[0].title);
+#  376|           set->alts[set->numAlts].master.target = line;
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 2817 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --remove TEST /tmp/tmp.oQUYmyRpBm/link_a/main
+chkconfig-1.19/alternatives.c:375: warning[Leak_DefinitelyLost]: 5 bytes in 1 blocks are definitely lost in loss record 5 of 24
+/usr/lib64/libc.so.6: note: called from strdup()
+chkconfig-1.19/alternatives.c:375: note: called from readConfig()
+chkconfig-1.19/alternatives.c:1117: note: called from removeService()
+chkconfig-1.19/alternatives.c:1406: note: called from main()
+#  373|   
+#  374|           set->alts[set->numAlts].master.facility = strdup(normalize_path(groups[0].facility));
+#  375|->         set->alts[set->numAlts].master.title = strdup(groups[0].title);
+#  376|           set->alts[set->numAlts].master.target = line;
+#  377|           set->alts[set->numAlts].numSlaves = numGroups - 1;
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 2817 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --remove TEST /tmp/tmp.oQUYmyRpBm/link_a/main
+chkconfig-1.19/alternatives.c:379: warning[Leak_DefinitelyLost]: 94 (24 direct, 70 indirect) bytes in 1 blocks are definitely lost in loss record 22 of 24
+chkconfig-1.19/alternatives.c:379: note: called from readConfig()
+chkconfig-1.19/alternatives.c:1117: note: called from removeService()
+chkconfig-1.19/alternatives.c:1406: note: called from main()
+#  377|           set->alts[set->numAlts].numSlaves = numGroups - 1;
+#  378|           if (numGroups > 1)
+#  379|->             set->alts[set->numAlts].slaves = malloc(
+#  380|                   (numGroups - 1) * sizeof(*set->alts[set->numAlts].slaves));
+#  381|           else
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 3072 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --install /tmp/tmp.oQUYmyRpBm/main_link TEST /tmp/tmp.oQUYmyRpBm/link_a/main 10 --slave /tmp/tmp.oQUYmyRpBm/slave_link STEST /tmp/tmp.oQUYmyRpBm/link_a/slave_b
+chkconfig-1.19/alternatives.c:379: warning[Leak_DefinitelyLost]: 96 (24 direct, 72 indirect) bytes in 1 blocks are definitely lost in loss record 24 of 26
+chkconfig-1.19/alternatives.c:379: note: called from readConfig()
+chkconfig-1.19/alternatives.c:914: note: called from UnknownInlinedFun()
+chkconfig-1.19/alternatives.c:1392: note: called from main()
+#  377|           set->alts[set->numAlts].numSlaves = numGroups - 1;
+#  378|           if (numGroups > 1)
+#  379|->             set->alts[set->numAlts].slaves = malloc(
+#  380|                   (numGroups - 1) * sizeof(*set->alts[set->numAlts].slaves));
+#  381|           else
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 3620 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --install /tmp/tmp.oQUYmyRpBm/main_link TEST /tmp/tmp.oQUYmyRpBm/link_b/main 20 --slave /tmp/tmp.oQUYmyRpBm/slave_link STEST /tmp/tmp.oQUYmyRpBm/link_b/slave --family family_a
+chkconfig-1.19/alternatives.c:384: warning[Leak_DefinitelyLost]: 13 bytes in 1 blocks are definitely lost in loss record 10 of 27
+/usr/lib64/libc.so.6: note: called from strdup()
+chkconfig-1.19/alternatives.c:384: note: called from readConfig()
+chkconfig-1.19/alternatives.c:914: note: called from UnknownInlinedFun()
+chkconfig-1.19/alternatives.c:1392: note: called from main()
+#  382|               set->alts[set->numAlts].slaves = NULL;
+#  383|   
+#  384|->         line = parseLine(&buf);
+#  385|           set->alts[set->numAlts].priority = -1;
+#  386|           set->alts[set->numAlts].initscript = NULL;
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 5827 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --display TEST
+chkconfig-1.19/alternatives.c:384: warning[Leak_DefinitelyLost]: 16 bytes in 2 blocks are definitely lost in loss record 8 of 21
+/usr/lib64/libc.so.6: note: called from strdup()
+chkconfig-1.19/alternatives.c:384: note: called from readConfig()
+chkconfig-1.19/alternatives.c:968: note: called from UnknownInlinedFun()
+chkconfig-1.19/alternatives.c:1398: note: called from main()
+#  382|               set->alts[set->numAlts].slaves = NULL;
+#  383|   
+#  384|->         line = parseLine(&buf);
+#  385|           set->alts[set->numAlts].priority = -1;
+#  386|           set->alts[set->numAlts].initscript = NULL;
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 5783 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --remove TEST /tmp/tmp.oQUYmyRpBm/link_a/main
+chkconfig-1.19/alternatives.c:384: warning[Leak_DefinitelyLost]: 19 bytes in 3 blocks are definitely lost in loss record 9 of 25
+/usr/lib64/libc.so.6: note: called from strdup()
+chkconfig-1.19/alternatives.c:384: note: called from readConfig()
+chkconfig-1.19/alternatives.c:1117: note: called from removeService()
+chkconfig-1.19/alternatives.c:1406: note: called from main()
+#  382|               set->alts[set->numAlts].slaves = NULL;
+#  383|   
+#  384|->         line = parseLine(&buf);
+#  385|           set->alts[set->numAlts].priority = -1;
+#  386|           set->alts[set->numAlts].initscript = NULL;
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 3664 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --display TEST
+chkconfig-1.19/alternatives.c:384: warning[Leak_DefinitelyLost]: 26 bytes in 2 blocks are definitely lost in loss record 10 of 21
+/usr/lib64/libc.so.6: note: called from strdup()
+chkconfig-1.19/alternatives.c:384: note: called from readConfig()
+chkconfig-1.19/alternatives.c:968: note: called from UnknownInlinedFun()
+chkconfig-1.19/alternatives.c:1398: note: called from main()
+#  382|               set->alts[set->numAlts].slaves = NULL;
+#  383|   
+#  384|->         line = parseLine(&buf);
+#  385|           set->alts[set->numAlts].priority = -1;
+#  386|           set->alts[set->numAlts].initscript = NULL;
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 1464 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --display TEST
+chkconfig-1.19/alternatives.c:384: warning[Leak_DefinitelyLost]: 3 bytes in 1 blocks are definitely lost in loss record 2 of 19
+/usr/lib64/libc.so.6: note: called from strdup()
+chkconfig-1.19/alternatives.c:384: note: called from readConfig()
+chkconfig-1.19/alternatives.c:968: note: called from UnknownInlinedFun()
+chkconfig-1.19/alternatives.c:1398: note: called from main()
+#  382|               set->alts[set->numAlts].slaves = NULL;
+#  383|   
+#  384|->         line = parseLine(&buf);
+#  385|           set->alts[set->numAlts].priority = -1;
+#  386|           set->alts[set->numAlts].initscript = NULL;
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 4737 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --display TEST
+chkconfig-1.19/alternatives.c:384: warning[Leak_DefinitelyLost]: 39 bytes in 3 blocks are definitely lost in loss record 14 of 21
+/usr/lib64/libc.so.6: note: called from strdup()
+chkconfig-1.19/alternatives.c:384: note: called from readConfig()
+chkconfig-1.19/alternatives.c:968: note: called from UnknownInlinedFun()
+chkconfig-1.19/alternatives.c:1398: note: called from main()
+#  382|               set->alts[set->numAlts].slaves = NULL;
+#  383|   
+#  384|->         line = parseLine(&buf);
+#  385|           set->alts[set->numAlts].priority = -1;
+#  386|           set->alts[set->numAlts].initscript = NULL;
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 7302 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --display TEST
+chkconfig-1.19/alternatives.c:384: warning[Leak_DefinitelyLost]: 5 bytes in 2 blocks are definitely lost in loss record 4 of 20
+/usr/lib64/libc.so.6: note: called from strdup()
+chkconfig-1.19/alternatives.c:384: note: called from readConfig()
+chkconfig-1.19/alternatives.c:968: note: called from UnknownInlinedFun()
+chkconfig-1.19/alternatives.c:1398: note: called from main()
+#  382|               set->alts[set->numAlts].slaves = NULL;
+#  383|   
+#  384|->         line = parseLine(&buf);
+#  385|           set->alts[set->numAlts].priority = -1;
+#  386|           set->alts[set->numAlts].initscript = NULL;
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 1971 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --display TEST
+chkconfig-1.19/alternatives.c:384: warning[Leak_DefinitelyLost]: 6 bytes in 2 blocks are definitely lost in loss record 5 of 20
+/usr/lib64/libc.so.6: note: called from strdup()
+chkconfig-1.19/alternatives.c:384: note: called from readConfig()
+chkconfig-1.19/alternatives.c:968: note: called from UnknownInlinedFun()
+chkconfig-1.19/alternatives.c:1398: note: called from main()
+#  382|               set->alts[set->numAlts].slaves = NULL;
+#  383|   
+#  384|->         line = parseLine(&buf);
+#  385|           set->alts[set->numAlts].priority = -1;
+#  386|           set->alts[set->numAlts].initscript = NULL;
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 6376 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --add-slave TEST /tmp/tmp.oQUYmyRpBm/link_a/main /tmp/tmp.oQUYmyRpBm/slave_link STEST /tmp/tmp.oQUYmyRpBm/link_a/slave_a
+chkconfig-1.19/alternatives.c:384: warning[Leak_DefinitelyLost]: 8 bytes in 3 blocks are definitely lost in loss record 6 of 25
+/usr/lib64/libc.so.6: note: called from strdup()
+chkconfig-1.19/alternatives.c:384: note: called from readConfig()
+chkconfig-1.19/alternatives.c:874: note: called from UnknownInlinedFun()
+chkconfig-1.19/alternatives.c:1394: note: called from main()
+#  382|               set->alts[set->numAlts].slaves = NULL;
+#  383|   
+#  384|->         line = parseLine(&buf);
+#  385|           set->alts[set->numAlts].priority = -1;
+#  386|           set->alts[set->numAlts].initscript = NULL;
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 5032 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --remove TEST /tmp/tmp.oQUYmyRpBm/link_a/main
+chkconfig-1.19/alternatives.c:400: warning[Leak_DefinitelyLost]: 9 bytes in 1 blocks are definitely lost in loss record 8 of 26
+/usr/lib64/libc.so.6: note: called from strdup()
+chkconfig-1.19/alternatives.c:400: note: called from readConfig()
+chkconfig-1.19/alternatives.c:1117: note: called from removeService()
+chkconfig-1.19/alternatives.c:1406: note: called from main()
+#  398|               }
+#  399|               *end = '\0';
+#  400|->             set->alts[set->numAlts].family = strdup(line);
+#  401|               line = end + 1;
+#  402|           }
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 7554 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --remove-slave TEST /tmp/tmp.oQUYmyRpBm/link_a/main STEST
+chkconfig-1.19/alternatives.c:423: warning[Leak_DefinitelyLost]: 35 bytes in 1 blocks are definitely lost in loss record 19 of 22
+/usr/lib64/libc.so.6: note: called from strdup()
+chkconfig-1.19/alternatives.c:423: note: called from readConfig()
+chkconfig-1.19/alternatives.c:838: note: called from UnknownInlinedFun()
+chkconfig-1.19/alternatives.c:1396: note: called from main()
+#  421|   
+#  422|           for (i = 1; i < numGroups; i++) {
+#  423|->             line = parseLine(&buf);
+#  424|               if (line && strlen(line) && *line != '/') {
+#  425|                   fprintf(stderr, _("slave path expected in %s\n"), path);
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 7258 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --remove TEST /tmp/tmp.oQUYmyRpBm/link_b/main
+chkconfig-1.19/alternatives.c:440: warning[Leak_DefinitelyLost]: 32 bytes in 1 blocks are definitely lost in loss record 17 of 25
+/usr/lib64/libc.so.6: note: called from strdup()
+chkconfig-1.19/alternatives.c:440: note: called from readConfig()
+chkconfig-1.19/alternatives.c:1117: note: called from removeService()
+chkconfig-1.19/alternatives.c:1406: note: called from main()
+#  438|           set->numAlts++;
+#  439|   
+#  440|->         line = parseLine(&buf);
+#  441|       }
+#  442|   
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 1464 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --display TEST
+chkconfig-1.19/alternatives.c:480: warning[Leak_DefinitelyLost]: 32 bytes in 1 blocks are definitely lost in loss record 16 of 19
+/usr/lib64/libc.so.6: note: called from strdup()
+chkconfig-1.19/alternatives.c:480: note: called from readConfig()
+chkconfig-1.19/alternatives.c:968: note: called from UnknownInlinedFun()
+chkconfig-1.19/alternatives.c:1398: note: called from main()
+#  478|       }
+#  479|   
+#  480|->     set->currentLink = strdup(normalize_path(linkBuf));
+#  481|   
+#  482|       return 0;
+
+Error: COMPILER_WARNING (CWE-252):
+chkconfig-1.19/alternatives.c: scope_hint: In function 'makeLinks'
+chkconfig-1.19/alternatives.c:544:13: warning[-Wunused-result]: ignoring return value of 'readlink' declared with attribute 'warn_unused_result'
+#  544 |             readlink(l->facility, buf, sizeof(buf));
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  542|           } else {
+#  543|               memset(buf, 0, sizeof(buf));
+#  544|->             readlink(l->facility, buf, sizeof(buf));
+#  545|   
+#  546|               if(!streq(sl, buf)) {
+
+Error: COMPILER_WARNING (CWE-252):
+chkconfig-1.19/alternatives.c:566:9: warning[-Wunused-result]: ignoring return value of 'readlink' declared with attribute 'warn_unused_result'
+#  566 |         readlink(sl, buf, sizeof(buf));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  564|       } else {
+#  565|           memset(buf, 0, sizeof(buf));
+#  566|->         readlink(sl, buf, sizeof(buf));
+#  567|   
+#  568|           if(!streq(l->target, buf)) {
+
+Error: COMPILER_WARNING (CWE-252):
+chkconfig-1.19/alternatives.c: scope_hint: In function 'writeState'
+chkconfig-1.19/alternatives.c:668:17: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+#  668 |                 asprintf(&path, "/bin/systemctl -q is-enabled %s.service || "
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  669 |                                 "/bin/systemctl -q preset %s.service",
+#      |                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  670 |                          alt->initscript, alt->initscript);
+#      |                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  666|           if (alt->initscript) {
+#  667|               if (isSystemd(alt->initscript)) {
+#  668|->                 asprintf(&path, "/bin/systemctl -q is-enabled %s.service || "
+#  669|                                   "/bin/systemctl -q preset %s.service",
+#  670|                            alt->initscript, alt->initscript);
+
+Error: COMPILER_WARNING (CWE-252):
+chkconfig-1.19/alternatives.c:673:17: warning[-Wunused-result]: ignoring return value of 'system' declared with attribute 'warn_unused_result'
+#  673 |                 system(path);
+#      |                 ^~~~~~~~~~~~
+#  671|                   if (FL_VERBOSE(flags))
+#  672|                       printf(_("running %s\n"), path);
+#  673|->                 system(path);
+#  674|                   free(path);
+#  675|               } else {
+
+Error: COMPILER_WARNING (CWE-252):
+chkconfig-1.19/alternatives.c:676:17: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+#  676 |                 asprintf(&path, "/sbin/chkconfig --add %s", alt->initscript);
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  674|                   free(path);
+#  675|               } else {
+#  676|->                 asprintf(&path, "/sbin/chkconfig --add %s", alt->initscript);
+#  677|                   if (FL_VERBOSE(flags))
+#  678|                       printf(_("running %s\n"), path);
+
+Error: COMPILER_WARNING (CWE-252):
+chkconfig-1.19/alternatives.c:679:17: warning[-Wunused-result]: ignoring return value of 'system' declared with attribute 'warn_unused_result'
+#  679 |                 system(path);
+#      |                 ^~~~~~~~~~~~
+#  677|                   if (FL_VERBOSE(flags))
+#  678|                       printf(_("running %s\n"), path);
+#  679|->                 system(path);
+#  680|                   free(path);
+#  681|               }
+
+Error: COMPILER_WARNING (CWE-252):
+chkconfig-1.19/alternatives.c:687:21: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+#  687 |                     asprintf(&path, "/bin/systemctl -q disable %s.service",
+#      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  688 |                              tmpalt->initscript);
+#      |                              ~~~~~~~~~~~~~~~~~~~
+#  685|               if (tmpalt != alt && tmpalt->initscript) {
+#  686|                   if (isSystemd(tmpalt->initscript)) {
+#  687|->                     asprintf(&path, "/bin/systemctl -q disable %s.service",
+#  688|                                tmpalt->initscript);
+#  689|                       if (FL_VERBOSE(flags))
+
+Error: COMPILER_WARNING (CWE-252):
+chkconfig-1.19/alternatives.c:691:21: warning[-Wunused-result]: ignoring return value of 'system' declared with attribute 'warn_unused_result'
+#  691 |                     system(path);
+#      |                     ^~~~~~~~~~~~
+#  689|                       if (FL_VERBOSE(flags))
+#  690|                           printf(_("running %s\n"), path);
+#  691|->                     system(path);
+#  692|                       free(path);
+#  693|                   } else {
+
+Error: COMPILER_WARNING (CWE-252):
+chkconfig-1.19/alternatives.c:694:21: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+#  694 |                     asprintf(&path, "/sbin/chkconfig --del %s",
+#      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  695 |                              tmpalt->initscript);
+#      |                              ~~~~~~~~~~~~~~~~~~~
+#  692|                       free(path);
+#  693|                   } else {
+#  694|->                     asprintf(&path, "/sbin/chkconfig --del %s",
+#  695|                                tmpalt->initscript);
+#  696|                       if (FL_VERBOSE(flags))
+
+Error: COMPILER_WARNING (CWE-252):
+chkconfig-1.19/alternatives.c:698:21: warning[-Wunused-result]: ignoring return value of 'system' declared with attribute 'warn_unused_result'
+#  698 |                     system(path);
+#      |                     ^~~~~~~~~~~~
+#  696|                       if (FL_VERBOSE(flags))
+#  697|                           printf(_("running %s\n"), path);
+#  698|->                     system(path);
+#  699|                       free(path);
+#  700|                   }
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 3072 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --install /tmp/tmp.oQUYmyRpBm/main_link TEST /tmp/tmp.oQUYmyRpBm/link_a/main 10 --slave /tmp/tmp.oQUYmyRpBm/slave_link STEST /tmp/tmp.oQUYmyRpBm/link_a/slave_b
+chkconfig-1.19/alternatives.c:717: warning[Leak_DefinitelyLost]: 24 bytes in 1 blocks are definitely lost in loss record 12 of 26
+chkconfig-1.19/alternatives.c:717: note: called from UnknownInlinedFun()
+chkconfig-1.19/alternatives.c:926: note: called from UnknownInlinedFun()
+chkconfig-1.19/alternatives.c:1392: note: called from main()
+#  715|                                struct alternative *template) {
+#  716|       template->numSlaves = source.numSlaves;
+#  717|->     template->slaves = malloc(source.numSlaves * sizeof(struct linkSet));
+#  718|       memcpy(template->slaves, source.slaves,
+#  719|              source.numSlaves * sizeof(struct linkSet));
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 6040 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --add-slave TEST /tmp/tmp.oQUYmyRpBm/link_a/main /tmp/tmp.oQUYmyRpBm/slave_link STEST /tmp/tmp.oQUYmyRpBm/link_a/slave_a
+chkconfig-1.19/alternatives.c:717: warning[Leak_DefinitelyLost]: 57 (24 direct, 33 indirect) bytes in 1 blocks are definitely lost in loss record 22 of 24
+chkconfig-1.19/alternatives.c:717: note: called from UnknownInlinedFun()
+chkconfig-1.19/alternatives.c:886: note: called from UnknownInlinedFun()
+chkconfig-1.19/alternatives.c:1394: note: called from main()
+#  715|                                struct alternative *template) {
+#  716|       template->numSlaves = source.numSlaves;
+#  717|->     template->slaves = malloc(source.numSlaves * sizeof(struct linkSet));
+#  718|       memcpy(template->slaves, source.slaves,
+#  719|              source.numSlaves * sizeof(struct linkSet));
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 7554 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --remove-slave TEST /tmp/tmp.oQUYmyRpBm/link_a/main STEST
+chkconfig-1.19/alternatives.c:717: warning[Leak_DefinitelyLost]: 61 (24 direct, 37 indirect) bytes in 1 blocks are definitely lost in loss record 20 of 22
+chkconfig-1.19/alternatives.c:717: note: called from UnknownInlinedFun()
+chkconfig-1.19/alternatives.c:852: note: called from UnknownInlinedFun()
+chkconfig-1.19/alternatives.c:1396: note: called from main()
+#  715|                                struct alternative *template) {
+#  716|       template->numSlaves = source.numSlaves;
+#  717|->     template->slaves = malloc(source.numSlaves * sizeof(struct linkSet));
+#  718|       memcpy(template->slaves, source.slaves,
+#  719|              source.numSlaves * sizeof(struct linkSet));
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 1927 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --install /tmp/tmp.oQUYmyRpBm/main_link TEST /tmp/tmp.oQUYmyRpBm/link_b/main 20 --slave /tmp/tmp.oQUYmyRpBm/slave_link STEST /tmp/tmp.oQUYmyRpBm/link_b/slave
+chkconfig-1.19/alternatives.c:717: warning[Leak_DefinitelyLost]: 94 (24 direct, 70 indirect) bytes in 1 blocks are definitely lost in loss record 23 of 25
+chkconfig-1.19/alternatives.c:717: note: called from UnknownInlinedFun()
+chkconfig-1.19/alternatives.c:926: note: called from UnknownInlinedFun()
+chkconfig-1.19/alternatives.c:1392: note: called from main()
+#  715|                                struct alternative *template) {
+#  716|       template->numSlaves = source.numSlaves;
+#  717|->     template->slaves = malloc(source.numSlaves * sizeof(struct linkSet));
+#  718|       memcpy(template->slaves, source.slaves,
+#  719|              source.numSlaves * sizeof(struct linkSet));
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 1927 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --install /tmp/tmp.oQUYmyRpBm/main_link TEST /tmp/tmp.oQUYmyRpBm/link_b/main 20 --slave /tmp/tmp.oQUYmyRpBm/slave_link STEST /tmp/tmp.oQUYmyRpBm/link_b/slave
+chkconfig-1.19/alternatives.c:938: warning[Leak_DefinitelyLost]: 380 (128 direct, 252 indirect) bytes in 1 blocks are definitely lost in loss record 25 of 25
+chkconfig-1.19/alternatives.c:938: note: called from UnknownInlinedFun()
+chkconfig-1.19/alternatives.c:1392: note: called from main()
+#  936|               removeUnusedSlavesFromTemplate(set, &template, altDir, flags);
+#  937|           } else {
+#  938|->             set.alts = realloc(set.alts, sizeof(*set.alts) * (set.numAlts + 1));
+#  939|               set.alts[set.numAlts] = newAlt;
+#  940|               if (set.alts[set.best].priority < newAlt.priority)
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 3620 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --install /tmp/tmp.oQUYmyRpBm/main_link TEST /tmp/tmp.oQUYmyRpBm/link_b/main 20 --slave /tmp/tmp.oQUYmyRpBm/slave_link STEST /tmp/tmp.oQUYmyRpBm/link_b/slave --family family_a
+chkconfig-1.19/alternatives.c:938: warning[Leak_DefinitelyLost]: 398 (128 direct, 270 indirect) bytes in 1 blocks are definitely lost in loss record 27 of 27
+chkconfig-1.19/alternatives.c:938: note: called from UnknownInlinedFun()
+chkconfig-1.19/alternatives.c:1392: note: called from main()
+#  936|               removeUnusedSlavesFromTemplate(set, &template, altDir, flags);
+#  937|           } else {
+#  938|->             set.alts = realloc(set.alts, sizeof(*set.alts) * (set.numAlts + 1));
+#  939|               set.alts[set.numAlts] = newAlt;
+#  940|               if (set.alts[set.best].priority < newAlt.priority)
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 6336 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --install /tmp/tmp.oQUYmyRpBm/main_link TEST /tmp/tmp.oQUYmyRpBm/link_c/main 5 --slave /tmp/tmp.oQUYmyRpBm/slave_link STEST /tmp/tmp.oQUYmyRpBm/link_c/slave
+chkconfig-1.19/alternatives.c:938: warning[Leak_DefinitelyLost]: 605 (192 direct, 413 indirect) bytes in 1 blocks are definitely lost in loss record 26 of 26
+chkconfig-1.19/alternatives.c:938: note: called from UnknownInlinedFun()
+chkconfig-1.19/alternatives.c:1392: note: called from main()
+#  936|               removeUnusedSlavesFromTemplate(set, &template, altDir, flags);
+#  937|           } else {
+#  938|->             set.alts = realloc(set.alts, sizeof(*set.alts) * (set.numAlts + 1));
+#  939|               set.alts[set.numAlts] = newAlt;
+#  940|               if (set.alts[set.best].priority < newAlt.priority)
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 5743 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --install /tmp/tmp.oQUYmyRpBm/main_link TEST /tmp/tmp.oQUYmyRpBm/link_c/main 30 --slave /tmp/tmp.oQUYmyRpBm/slave_link STEST /tmp/tmp.oQUYmyRpBm/link_c/slave --family family_a
+chkconfig-1.19/alternatives.c:938: warning[Leak_DefinitelyLost]: 614 (192 direct, 422 indirect) bytes in 1 blocks are definitely lost in loss record 27 of 27
+chkconfig-1.19/alternatives.c:938: note: called from UnknownInlinedFun()
+chkconfig-1.19/alternatives.c:1392: note: called from main()
+#  936|               removeUnusedSlavesFromTemplate(set, &template, altDir, flags);
+#  937|           } else {
+#  938|->             set.alts = realloc(set.alts, sizeof(*set.alts) * (set.numAlts + 1));
+#  939|               set.alts[set.numAlts] = newAlt;
+#  940|               if (set.alts[set.best].priority < newAlt.priority)
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 4693 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --install /tmp/tmp.oQUYmyRpBm/main_link TEST /tmp/tmp.oQUYmyRpBm/link_c/main 30 --slave /tmp/tmp.oQUYmyRpBm/slave_link STEST /tmp/tmp.oQUYmyRpBm/link_c/slave --family family_b
+chkconfig-1.19/alternatives.c:938: warning[Leak_DefinitelyLost]: 632 (192 direct, 440 indirect) bytes in 1 blocks are definitely lost in loss record 28 of 28
+chkconfig-1.19/alternatives.c:938: note: called from UnknownInlinedFun()
+chkconfig-1.19/alternatives.c:1392: note: called from main()
+#  936|               removeUnusedSlavesFromTemplate(set, &template, altDir, flags);
+#  937|           } else {
+#  938|->             set.alts = realloc(set.alts, sizeof(*set.alts) * (set.numAlts + 1));
+#  939|               set.alts[set.numAlts] = newAlt;
+#  940|               if (set.alts[set.best].priority < newAlt.priority)
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 1420 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --install /tmp/tmp.oQUYmyRpBm/main_link TEST /tmp/tmp.oQUYmyRpBm/link_a/main 10 --slave /tmp/tmp.oQUYmyRpBm/slave_link STEST /tmp/tmp.oQUYmyRpBm/link_a/slave
+chkconfig-1.19/alternatives.c:948: warning[Leak_DefinitelyLost]: 225 (64 direct, 161 indirect) bytes in 1 blocks are definitely lost in loss record 10 of 10
+chkconfig-1.19/alternatives.c:948: note: called from UnknownInlinedFun()
+chkconfig-1.19/alternatives.c:1392: note: called from main()
+#  946|               return 2;
+#  947|       } else {
+#  948|->         set.alts = realloc(set.alts, sizeof(*set.alts) * (set.numAlts + 1));
+#  949|           set.alts[set.numAlts] = newAlt;
+#  950|           if (set.alts[set.best].priority < newAlt.priority)
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 3031 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --install /tmp/tmp.oQUYmyRpBm/main_link TEST /tmp/tmp.oQUYmyRpBm/link_a/main 10 --slave /tmp/tmp.oQUYmyRpBm/slave_link STEST /tmp/tmp.oQUYmyRpBm/link_a/slave_a
+chkconfig-1.19/alternatives.c:948: warning[Leak_DefinitelyLost]: 227 (64 direct, 163 indirect) bytes in 1 blocks are definitely lost in loss record 10 of 10
+chkconfig-1.19/alternatives.c:948: note: called from UnknownInlinedFun()
+chkconfig-1.19/alternatives.c:1392: note: called from main()
+#  946|               return 2;
+#  947|       } else {
+#  948|->         set.alts = realloc(set.alts, sizeof(*set.alts) * (set.numAlts + 1));
+#  949|           set.alts[set.numAlts] = newAlt;
+#  950|           if (set.alts[set.best].priority < newAlt.priority)
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 3579 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --install /tmp/tmp.oQUYmyRpBm/main_link TEST /tmp/tmp.oQUYmyRpBm/link_a/main 10 --slave /tmp/tmp.oQUYmyRpBm/slave_link STEST /tmp/tmp.oQUYmyRpBm/link_a/slave --family family_a
+chkconfig-1.19/alternatives.c:948: warning[Leak_DefinitelyLost]: 234 (64 direct, 170 indirect) bytes in 1 blocks are definitely lost in loss record 11 of 11
+chkconfig-1.19/alternatives.c:948: note: called from UnknownInlinedFun()
+chkconfig-1.19/alternatives.c:1392: note: called from main()
+#  946|               return 2;
+#  947|       } else {
+#  948|->         set.alts = realloc(set.alts, sizeof(*set.alts) * (set.numAlts + 1));
+#  949|           set.alts[set.numAlts] = newAlt;
+#  950|           if (set.alts[set.best].priority < newAlt.priority)
+
+Error: COMPILER_WARNING (CWE-252):
+chkconfig-1.19/alternatives.c: scope_hint: In function 'configService'
+chkconfig-1.19/alternatives.c:1034:17: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+# 1034 |                 asprintf(&nicer, "%s (%s)", set.alts[i].family,
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1035 |                          set.alts[i].master.target);
+#      |                          ~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1032|           for (i = 0; i < set.numAlts; i++) {
+# 1033|               if (set.alts[i].family)
+# 1034|->                 asprintf(&nicer, "%s (%s)", set.alts[i].family,
+# 1035|                            set.alts[i].master.target);
+# 1036|               printf("%c%c %-4d        %s\n", i == set.best ? '*' : ' ',
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 1420 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --install /tmp/tmp.oQUYmyRpBm/main_link TEST /tmp/tmp.oQUYmyRpBm/link_a/main 10 --slave /tmp/tmp.oQUYmyRpBm/slave_link STEST /tmp/tmp.oQUYmyRpBm/link_a/slave
+chkconfig-1.19/alternatives.c:1355: warning[Leak_DefinitelyLost]: 20 bytes in 1 blocks are definitely lost in loss record 3 of 10
+/usr/lib64/libc.so.6: note: called from strdup()
+chkconfig-1.19/alternatives.c:1355: note: called from main()
+# 1353|               if (!*nextArg)
+# 1354|                   usage(2);
+# 1355|->             altDir = strdup(normalize_path(*nextArg));
+# 1356|               nextArg++;
+# 1357|           } else if (!strcmp(*nextArg, "--admindir")) {
+
+Error: VALGRIND_WARNING:
+./alternatives: note: while executing process 1420 with arguments: --altdir /tmp/tmp.tN5nKh06yO --admindir /tmp/tmp.gzBT3WXOOS --install /tmp/tmp.oQUYmyRpBm/main_link TEST /tmp/tmp.oQUYmyRpBm/link_a/main 10 --slave /tmp/tmp.oQUYmyRpBm/slave_link STEST /tmp/tmp.oQUYmyRpBm/link_a/slave
+chkconfig-1.19/alternatives.c:1361: warning[Leak_DefinitelyLost]: 20 bytes in 1 blocks are definitely lost in loss record 4 of 10
+/usr/lib64/libc.so.6: note: called from strdup()
+chkconfig-1.19/alternatives.c:1361: note: called from main()
+# 1359|               if (!*nextArg)
+# 1360|                   usage(2);
+# 1361|->             stateDir = strdup(normalize_path(*nextArg));
+# 1362|               nextArg++;
+# 1363|           } else if (!strcmp(*nextArg, "--list")) {
+
+Error: COMPILER_WARNING (CWE-252):
+chkconfig-1.19/chkconfig.c: scope_hint: In function 'reloadSystemd'
+chkconfig-1.19/chkconfig.c:106:9: warning[-Wunused-result]: ignoring return value of 'system' declared with attribute 'warn_unused_result'
+#  106 |         system("systemctl daemon-reload > /dev/null 2>&1");
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  104|   static void reloadSystemd(void) {
+#  105|       if (systemdActive())
+#  106|->         system("systemctl daemon-reload > /dev/null 2>&1");
+#  107|   }
+#  108|   
+
+Error: COMPILER_WARNING (CWE-252):
+chkconfig-1.19/chkconfig.c: scope_hint: In function 'setService'
+chkconfig-1.19/chkconfig.c:658:9: warning[-Wunused-result]: ignoring return value of 'system' declared with attribute 'warn_unused_result'
+#  658 |         system("/sbin/service xinetd reload >/dev/null 2>&1");
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  656|               return 1;
+#  657|           }
+#  658|->         system("/sbin/service xinetd reload >/dev/null 2>&1");
+#  659|       }
+#  660|   
+
+Error: COMPILER_WARNING (CWE-252):
+chkconfig-1.19/chkconfig.c: scope_hint: In function 'forwardSystemd'
+chkconfig-1.19/chkconfig.c:677:13: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+#  677 |             asprintf(&p, "%s.service", name);
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  675|   
+#  676|           if (!socket)
+#  677|->             asprintf(&p, "%s.service", name);
+#  678|           else
+#  679|               asprintf(&p, "%s.socket", name);
+
+Error: COMPILER_WARNING (CWE-252):
+chkconfig-1.19/chkconfig.c:679:13: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+#  679 |             asprintf(&p, "%s.socket", name);
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  677|               asprintf(&p, "%s.service", name);
+#  678|           else
+#  679|->             asprintf(&p, "%s.socket", name);
+#  680|   
+#  681|           fprintf(stderr, _("Note: Forwarding request to 'systemctl %s %s'.\n"),
+
+Error: COMPILER_WARNING (CWE-477):
+chkconfig-1.19/leveldb.c: scope_hint: In function 'selinux_restore'
+chkconfig-1.19/leveldb.c:47:5: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#   47 |     security_context_t newcon = NULL;
+#      |     ^~~~~~~~~~~~~~~~~~
+#   45|       struct selabel_handle *hnd = NULL;
+#   46|       struct stat buf;
+#   47|->     security_context_t newcon = NULL;
+#   48|       int r = -1;
+#   49|   
+
+Error: COMPILER_WARNING (CWE-252):
+chkconfig-1.19/leveldb.c: scope_hint: In function 'readXinetdServiceInfo'
+chkconfig-1.19/leveldb.c:226:5: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+#  226 |     asprintf(&filename, XINETDDIR "/%s", name);
+#      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  224|       char *eng_desc = NULL, *start;
+#  225|   
+#  226|->     asprintf(&filename, XINETDDIR "/%s", name);
+#  227|   
+#  228|       if ((fd = open(filename, O_RDONLY)) < 0)
+
+Error: COMPILER_WARNING (CWE-252):
+chkconfig-1.19/leveldb.c: scope_hint: In function 'readServiceInfo'
+chkconfig-1.19/leveldb.c:367:5: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+#  367 |     asprintf(&filename, RUNLEVELS "/init.d/%s", name);
+#      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  365|           goto try_xinetd;
+#  366|   
+#  367|->     asprintf(&filename, RUNLEVELS "/init.d/%s", name);
+#  368|   
+#  369|       if ((fd = open(filename, O_RDONLY)) < 0)
+
+Error: COMPILER_WARNING (CWE-252):
+chkconfig-1.19/leveldb.c:377:5: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+#  377 |     asprintf(&filename, RUNLEVELS "/chkconfig.d/%s", name);
+#      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  375|           return parseret;
+#  376|   
+#  377|->     asprintf(&filename, RUNLEVELS "/chkconfig.d/%s", name);
+#  378|       if ((fd = open(filename, O_RDONLY)) >= 0) {
+#  379|           parseret = parseServiceInfo(fd, name, &serv_overrides, honorHide, 1);
+
+Error: COMPILER_WARNING (CWE-252):
+chkconfig-1.19/leveldb.c: scope_hint: In function 'readServiceDifferences'
+chkconfig-1.19/leveldb.c:428:5: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+#  428 |     asprintf(&filename, RUNLEVELS "/init.d/%s", name);
+#      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  426|           goto try_xinetd;
+#  427|   
+#  428|->     asprintf(&filename, RUNLEVELS "/init.d/%s", name);
+#  429|   
+#  430|       if ((fd = open(filename, O_RDONLY)) < 0) {
+
+Error: COMPILER_WARNING (CWE-252):
+chkconfig-1.19/leveldb.c:440:5: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+#  440 |     asprintf(&filename, RUNLEVELS "/chkconfig.d/%s", name);
+#      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  438|       }
+#  439|   
+#  440|->     asprintf(&filename, RUNLEVELS "/chkconfig.d/%s", name);
+#  441|       if ((fd = open(filename, O_RDONLY)) >= 0) {
+#  442|           parseret = parseServiceInfo(fd, name, &serv_overrides, honorHide, 1);
+
+Error: COMPILER_WARNING (CWE-252):
+chkconfig-1.19/leveldb.c: scope_hint: In function 'setXinetdService'
+chkconfig-1.19/leveldb.c:887:13: warning[-Wunused-result]: ignoring return value of 'write' declared with attribute 'warn_unused_result'
+#  887 |             write(newfd, tmp, strlen(tmp));
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  885|               buf++;
+#  886|           if (strncmp(buf, "disable", 7) && strlen(buf)) {
+#  887|->             write(newfd, tmp, strlen(tmp));
+#  888|               write(newfd, "\n", 1);
+#  889|               if (buf[0] == '{') {
+
+Error: COMPILER_WARNING (CWE-252):
+chkconfig-1.19/leveldb.c:888:13: warning[-Wunused-result]: ignoring return value of 'write' declared with attribute 'warn_unused_result'
+#  888 |             write(newfd, "\n", 1);
+#      |             ^~~~~~~~~~~~~~~~~~~~~
+#  886|           if (strncmp(buf, "disable", 7) && strlen(buf)) {
+#  887|               write(newfd, tmp, strlen(tmp));
+#  888|->             write(newfd, "\n", 1);
+#  889|               if (buf[0] == '{') {
+#  890|                   snprintf(tmpstr, 50, "\tdisable\t= %s", on ? "no" : "yes");
+
+Error: COMPILER_WARNING (CWE-252):
+chkconfig-1.19/leveldb.c:891:17: warning[-Wunused-result]: ignoring return value of 'write' declared with attribute 'warn_unused_result'
+#  891 |                 write(newfd, tmpstr, strlen(tmpstr));
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  889|               if (buf[0] == '{') {
+#  890|                   snprintf(tmpstr, 50, "\tdisable\t= %s", on ? "no" : "yes");
+#  891|->                 write(newfd, tmpstr, strlen(tmpstr));
+#  892|                   write(newfd, "\n", 1);
+#  893|               }
+
+Error: COMPILER_WARNING (CWE-252):
+chkconfig-1.19/leveldb.c:892:17: warning[-Wunused-result]: ignoring return value of 'write' declared with attribute 'warn_unused_result'
+#  892 |                 write(newfd, "\n", 1);
+#      |                 ^~~~~~~~~~~~~~~~~~~~~
+#  890|                   snprintf(tmpstr, 50, "\tdisable\t= %s", on ? "no" : "yes");
+#  891|                   write(newfd, tmpstr, strlen(tmpstr));
+#  892|->                 write(newfd, "\n", 1);
+#  893|               }
+#  894|           }
+
+Error: COMPILER_WARNING (CWE-252):
+chkconfig-1.19/leveldb.c: scope_hint: In function 'isOverriddenBySystemd'
+chkconfig-1.19/leveldb.c:966:5: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+#  966 |     asprintf(&p, SYSTEMD_SERVICE_PATH "/%s.service", service);
+#      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  964|       int rc = 0;
+#  965|   
+#  966|->     asprintf(&p, SYSTEMD_SERVICE_PATH "/%s.service", service);
+#  967|   
+#  968|       if (access(p, F_OK) >= 0) {
+
+Error: COMPILER_WARNING (CWE-252):
+chkconfig-1.19/leveldb.c:973:5: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+#  973 |     asprintf(&p, SYSTEMD_LOCAL_SERVICE_PATH "/%s.service", service);
+#      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  971|       }
+#  972|       free(p);
+#  973|->     asprintf(&p, SYSTEMD_LOCAL_SERVICE_PATH "/%s.service", service);
+#  974|       if (access(p, F_OK) >= 0) {
+#  975|           rc = 1;
+
+Error: COMPILER_WARNING (CWE-252):
+chkconfig-1.19/leveldb.c: scope_hint: In function 'isSocketActivatedBySystemd'
+chkconfig-1.19/leveldb.c:987:5: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+#  987 |     asprintf(&p, SYSTEMD_SERVICE_PATH "/%s@.service", service);
+#      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  985|       int rc = 0;
+#  986|   
+#  987|->     asprintf(&p, SYSTEMD_SERVICE_PATH "/%s@.service", service);
+#  988|       asprintf(&s, SYSTEMD_SERVICE_PATH "/%s.socket", service);
+#  989|   
+
+Error: COMPILER_WARNING (CWE-252):
+chkconfig-1.19/leveldb.c:988:5: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+#  988 |     asprintf(&s, SYSTEMD_SERVICE_PATH "/%s.socket", service);
+#      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  986|   
+#  987|       asprintf(&p, SYSTEMD_SERVICE_PATH "/%s@.service", service);
+#  988|->     asprintf(&s, SYSTEMD_SERVICE_PATH "/%s.socket", service);
+#  989|   
+#  990|       if (access(p, F_OK) >= 0 && access(s, F_OK) >= 0) {
+
+Error: COMPILER_WARNING (CWE-252):
+chkconfig-1.19/leveldb.c:997:5: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+#  997 |     asprintf(&p, SYSTEMD_LOCAL_SERVICE_PATH "/%s@.service", service);
+#      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  995|       free(s);
+#  996|   
+#  997|->     asprintf(&p, SYSTEMD_LOCAL_SERVICE_PATH "/%s@.service", service);
+#  998|       asprintf(&s, SYSTEMD_LOCAL_SERVICE_PATH "/%s.socket", service);
+#  999|       if (access(p, F_OK) >= 0 && access(s, F_OK) >= 0) {
+
+Error: COMPILER_WARNING (CWE-252):
+chkconfig-1.19/leveldb.c:998:5: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+#  998 |     asprintf(&s, SYSTEMD_LOCAL_SERVICE_PATH "/%s.socket", service);
+#      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  996|   
+#  997|       asprintf(&p, SYSTEMD_LOCAL_SERVICE_PATH "/%s@.service", service);
+#  998|->     asprintf(&s, SYSTEMD_LOCAL_SERVICE_PATH "/%s.socket", service);
+#  999|       if (access(p, F_OK) >= 0 && access(s, F_OK) >= 0) {
+# 1000|           rc = 1;
+
+Error: COMPILER_WARNING (CWE-252):
+chkconfig-1.19/leveldb.c: scope_hint: In function 'serviceNameToUnit'
+chkconfig-1.19/leveldb.c:1164:9: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+# 1164 |         asprintf(&ret, "%s.service", service);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1162|           ret = strdup("time-sync.target");
+# 1163|       } else {
+# 1164|->         asprintf(&ret, "%s.service", service);
+# 1165|       }
+# 1166|   
+
+Error: COMPILER_WARNING (CWE-252):
+chkconfig-1.19/ntsysv.c: scope_hint: In function 'servicesWindow'
+chkconfig-1.19/ntsysv.c:166:13: warning[-Wunused-result]: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result'
+#  166 |             asprintf(&cmd, "/usr/bin/systemctl %s %s >/dev/null 2>&1",
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  167 |                      en ? "enable" : "disable", services[i].name);
+#      |                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  164|               else
+#  165|                   continue;
+#  166|->             asprintf(&cmd, "/usr/bin/systemctl %s %s >/dev/null 2>&1",
+#  167|                        en ? "enable" : "disable", services[i].name);
+#  168|               if (cmd == NULL)
+
+Error: COMPILER_WARNING (CWE-252):
+chkconfig-1.19/ntsysv.c:170:13: warning[-Wunused-result]: ignoring return value of 'system' declared with attribute 'warn_unused_result'
+#  170 |             system(cmd);
+#      |             ^~~~~~~~~~~
+#  168|               if (cmd == NULL)
+#  169|                   return 1;
+#  170|->             system(cmd);
+#  171|               free(cmd);
+#  172|           } else {

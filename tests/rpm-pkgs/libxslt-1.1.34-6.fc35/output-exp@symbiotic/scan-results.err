@@ -1,0 +1,15 @@
+Error: COMPILER_WARNING:
+libxslt-1.1.34/libexslt/date.c:3117:40: warning[-Wimplicit-const-int-float-conversion]: implicit conversion from 'long' to 'double' changes value from 9223372036854775807 to 9223372036854775808
+#    if ((days <= LONG_MIN) || (days >= LONG_MAX))
+#                                    ~~ ^~~~~~~~
+/usr/lib64/clang/13.0.1/include/limits.h:47:19: note: expanded from macro 'LONG_MAX'
+##define LONG_MAX  __LONG_MAX__
+#                  ^~~~~~~~~~~~
+<built-in>:39:22: note: expanded from here
+##define __LONG_MAX__ 9223372036854775807L
+#                     ^~~~~~~~~~~~~~~~~~~~
+# 3115|   
+# 3116|       days = floor(secs / SECS_PER_DAY);
+# 3117|->     if ((days <= LONG_MIN) || (days >= LONG_MAX))
+# 3118|           return NULL;
+# 3119|   

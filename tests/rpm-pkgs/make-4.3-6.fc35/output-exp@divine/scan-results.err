@@ -1,0 +1,242 @@
+Error: COMPILER_WARNING:
+make-4.3/lib/findprog-in.c:137:25: warning: implicit declaration of function 'eaccess' is invalid in C99
+#                    if (eaccess (progpathname, X_OK) == 0)
+#                        ^
+#  135|                          is not installed setuid or setgid, so that it is ok to
+#  136|                          call access() despite its design flaw.  */
+#  137|->                     if (eaccess (progpathname, X_OK) == 0)
+#  138|                         {
+#  139|                           /* Found!  */
+
+Error: COMPILER_WARNING:
+make-4.3/lib/findprog-in.c:211:21: warning: implicit declaration of function 'eaccess' is invalid in C99
+#                if (eaccess (progpathname, X_OK) == 0)
+#                    ^
+#  209|                      is not installed setuid or setgid, so that it is ok to
+#  210|                      call access() despite its design flaw.  */
+#  211|->                 if (eaccess (progpathname, X_OK) == 0)
+#  212|                     {
+#  213|                       /* Found!  */
+
+Error: COMPILER_WARNING:
+make-4.3/src/dir.c:1339:16: warning: incompatible pointer types assigning to 'int (*)(const char *restrict, void *restrict)' from 'int (const char *, struct stat *)'
+#  gl->gl_lstat = local_lstat;
+#               ^ ~~~~~~~~~~~
+# 1337|     gl->gl_readdir = read_dirstream;
+# 1338|     gl->gl_closedir = free;
+# 1339|->   gl->gl_lstat = local_lstat;
+# 1340|     gl->gl_stat = local_stat;
+# 1341|   }
+
+Error: COMPILER_WARNING:
+make-4.3/src/dir.c:1340:15: warning: incompatible pointer types assigning to 'int (*)(const char *restrict, void *restrict)' from 'int (const char *, struct stat *)'
+#  gl->gl_stat = local_stat;
+#              ^ ~~~~~~~~~~
+# 1338|     gl->gl_closedir = free;
+# 1339|     gl->gl_lstat = local_lstat;
+# 1340|->   gl->gl_stat = local_stat;
+# 1341|   }
+# 1342|   
+
+Error: COMPILER_WARNING:
+make-4.3/src/function.c:2175:11: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#          ENULLLOOP (rp, realpath (in, out));
+#          ^              ~~~~~~~~~~~~~~~~~~
+make-4.3/src/makeint.h:807:49: note: expanded from macro 'ENULLLOOP'
+##define ENULLLOOP(_v,_c)   do { errno = 0; (_v) = _c; } \
+#                                                ^ ~~
+# 2173|   
+# 2174|   #ifdef HAVE_REALPATH
+# 2175|->           ENULLLOOP (rp, realpath (in, out));
+# 2176|   # if defined _AIX
+# 2177|             /* AIX realpath() doesn't remove trailing slashes correctly.  */
+
+Error: COMPILER_WARNING:
+make-4.3/src/function.c:2175:26: warning: implicit declaration of function 'realpath' is invalid in C99
+#          ENULLLOOP (rp, realpath (in, out));
+#                         ^
+# 2173|   
+# 2174|   #ifdef HAVE_REALPATH
+# 2175|->           ENULLLOOP (rp, realpath (in, out));
+# 2176|   # if defined _AIX
+# 2177|             /* AIX realpath() doesn't remove trailing slashes correctly.  */
+
+Error: COMPILER_WARNING:
+make-4.3/src/getopt.c:685:6: warning: add explicit braces to avoid dangling else
+#                   else
+#                   ^
+#  683|   		     _("%s: option '--%s' doesn't allow an argument\n"),
+#  684|   		     argv[0], pfound->name);
+#  685|-> 		   else
+#  686|   		    /* +option or -option */
+#  687|   		    fprintf (stderr,
+
+Error: COMPILER_WARNING:
+make-4.3/src/implicit.c:270:17: warning: incompatible integer to pointer conversion assigning to 'const char *' from 'int'
+#      lastslash = memrchr (filename, '/', namelen - 1);
+#                ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  268|            but not counting any slash at the end.  (foo/bar/ counts as
+#  269|            bar/ in directory foo/, not empty in directory foo/bar/.)  */
+#  270|->       lastslash = memrchr (filename, '/', namelen - 1);
+#  271|   #ifdef VMS
+#  272|         if (lastslash == NULL)
+
+Error: COMPILER_WARNING:
+make-4.3/src/implicit.c:270:19: warning: implicit declaration of function 'memrchr' is invalid in C99
+#      lastslash = memrchr (filename, '/', namelen - 1);
+#                  ^
+#  268|            but not counting any slash at the end.  (foo/bar/ counts as
+#  269|            bar/ in directory foo/, not empty in directory foo/bar/.)  */
+#  270|->       lastslash = memrchr (filename, '/', namelen - 1);
+#  271|   #ifdef VMS
+#  272|         if (lastslash == NULL)
+
+Error: COMPILER_WARNING:
+make-4.3/src/job.c:576:19: warning: incompatible integer to pointer conversion initializing 'const char *' with an expression of type 'int'
+#      const char *s = strsignal (exit_sig);
+#                  ^   ~~~~~~~~~~~~~~~~~~~~
+#  574|     else
+#  575|       {
+#  576|->       const char *s = strsignal (exit_sig);
+#  577|         error (NILF, l + strlen (s) + strlen (dump),
+#  578|                "%s[%s: %s] %s%s%s", pre, nm, f->name, s, dump, post);
+
+Error: COMPILER_WARNING:
+make-4.3/src/job.c:576:23: warning: implicit declaration of function 'strsignal' is invalid in C99
+#      const char *s = strsignal (exit_sig);
+#                      ^
+#  574|     else
+#  575|       {
+#  576|->       const char *s = strsignal (exit_sig);
+#  577|         error (NILF, l + strlen (s) + strlen (dump),
+#  578|                "%s[%s: %s] %s%s%s", pre, nm, f->name, s, dump, post);
+
+Error: COMPILER_WARNING:
+make-4.3/src/job.c:2326:12: warning: implicit declaration of function 'posix_spawnattr_init' is invalid in C99
+#  if ((r = posix_spawnattr_init (&attr)) != 0)
+#           ^
+# 2324|   #else /* USE_POSIX_SPAWN */
+# 2325|   
+# 2326|->   if ((r = posix_spawnattr_init (&attr)) != 0)
+# 2327|       goto done;
+# 2328|   
+
+Error: COMPILER_WARNING:
+make-4.3/src/job.c:2329:12: warning: implicit declaration of function 'posix_spawn_file_actions_init' is invalid in C99
+#  if ((r = posix_spawn_file_actions_init (&fa)) != 0)
+#           ^
+# 2327|       goto done;
+# 2328|   
+# 2329|->   if ((r = posix_spawn_file_actions_init (&fa)) != 0)
+# 2330|       {
+# 2331|         posix_spawnattr_destroy (&attr);
+
+Error: COMPILER_WARNING:
+make-4.3/src/job.c:2331:7: warning: implicit declaration of function 'posix_spawnattr_destroy' is invalid in C99
+#      posix_spawnattr_destroy (&attr);
+#      ^
+# 2329|     if ((r = posix_spawn_file_actions_init (&fa)) != 0)
+# 2330|       {
+# 2331|->       posix_spawnattr_destroy (&attr);
+# 2332|         goto done;
+# 2333|       }
+
+Error: COMPILER_WARNING:
+make-4.3/src/job.c:2340:9: warning: implicit declaration of function 'posix_spawnattr_setsigmask' is invalid in C99
+#    r = posix_spawnattr_setsigmask (&attr, &mask);
+#        ^
+# 2338|       sigset_t mask;
+# 2339|       sigemptyset (&mask);
+# 2340|->     r = posix_spawnattr_setsigmask (&attr, &mask);
+# 2341|       if (r != 0)
+# 2342|         goto cleanup;
+
+Error: COMPILER_WARNING:
+make-4.3/src/job.c:2355:14: warning: implicit declaration of function 'posix_spawn_file_actions_adddup2' is invalid in C99
+#    if ((r = posix_spawn_file_actions_adddup2 (&fa, fdin, FD_STDIN)) != 0)
+#             ^
+# 2353|        They are all marked close-on-exec already.  */
+# 2354|     if (fdin >= 0 && fdin != FD_STDIN)
+# 2355|->     if ((r = posix_spawn_file_actions_adddup2 (&fa, fdin, FD_STDIN)) != 0)
+# 2356|         goto cleanup;
+# 2357|     if (fdout != FD_STDOUT)
+
+Error: COMPILER_WARNING:
+make-4.3/src/job.c:2368:12: warning: implicit declaration of function 'posix_spawnattr_setflags' is invalid in C99
+#  if ((r = posix_spawnattr_setflags (&attr, flags)) != 0)
+#           ^
+# 2366|   
+# 2367|     /* Apply the spawn flags.  */
+# 2368|->   if ((r = posix_spawnattr_setflags (&attr, flags)) != 0)
+# 2369|       goto cleanup;
+# 2370|   
+
+Error: COMPILER_WARNING:
+make-4.3/src/job.c:2394:15: warning: implicit declaration of function 'posix_spawn' is invalid in C99
+#  while ((r = posix_spawn (&pid, cmd, &fa, &attr, argv,
+#              ^
+# 2392|   
+# 2393|     /* Start the program.  */
+# 2394|->   while ((r = posix_spawn (&pid, cmd, &fa, &attr, argv,
+# 2395|                              child->environment)) == EINTR)
+# 2396|       ;
+
+Error: COMPILER_WARNING:
+make-4.3/src/job.c:2433:3: warning: implicit declaration of function 'posix_spawn_file_actions_destroy' is invalid in C99
+#  posix_spawn_file_actions_destroy (&fa);
+#  ^
+# 2431|   
+# 2432|    cleanup:
+# 2433|->   posix_spawn_file_actions_destroy (&fa);
+# 2434|     posix_spawnattr_destroy (&attr);
+# 2435|   
+
+Error: COMPILER_WARNING:
+make-4.3/src/job.c:2434:3: warning: implicit declaration of function 'posix_spawnattr_destroy' is invalid in C99
+#  posix_spawnattr_destroy (&attr);
+#  ^
+# 2432|    cleanup:
+# 2433|     posix_spawn_file_actions_destroy (&fa);
+# 2434|->   posix_spawnattr_destroy (&attr);
+# 2435|   
+# 2436|    done:
+
+Error: COMPILER_WARNING:
+make-4.3/src/main.c:598:17: warning: taking address of packed member '' of class or structure 'sigaction' may result in an unaligned pointer value
+#  sigemptyset (&act.sa_mask);
+#                ^~~~~~~~~~~
+#  596|     act.sa_handler = func;
+#  597|     act.sa_flags = SA_RESTART;
+#  598|->   sigemptyset (&act.sa_mask);
+#  599|     sigaddset (&act.sa_mask, sig);
+#  600|     if (sigaction (sig, &act, &oact) != 0)
+
+Error: COMPILER_WARNING:
+make-4.3/src/main.c:599:15: warning: taking address of packed member '' of class or structure 'sigaction' may result in an unaligned pointer value
+#  sigaddset (&act.sa_mask, sig);
+#              ^~~~~~~~~~~
+#  597|     act.sa_flags = SA_RESTART;
+#  598|     sigemptyset (&act.sa_mask);
+#  599|->   sigaddset (&act.sa_mask, sig);
+#  600|     if (sigaction (sig, &act, &oact) != 0)
+#  601|       return SIG_ERR;
+
+Error: COMPILER_WARNING:
+make-4.3/src/read.c:3394:17: warning: implicit declaration of function 'glob' is invalid in C99
+#        switch (glob (name, GLOB_ALTDIRFUNC, NULL, &gl))
+#                ^
+# 3392|           }
+# 3393|         else
+# 3394|->         switch (glob (name, GLOB_ALTDIRFUNC, NULL, &gl))
+# 3395|             {
+# 3396|             case GLOB_NOSPACE:
+
+Error: COMPILER_WARNING:
+make-4.3/src/read.c:3460:9: warning: implicit declaration of function 'globfree' is invalid in C99
+#        globfree (&gl);
+#        ^
+# 3458|   
+# 3459|         if (globme)
+# 3460|->         globfree (&gl);
+# 3461|   
+# 3462|   #ifndef NO_ARCHIVES

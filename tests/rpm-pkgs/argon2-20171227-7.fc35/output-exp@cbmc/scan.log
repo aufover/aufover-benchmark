@@ -1,0 +1,699 @@
+scan.ini: [scan]
+scan.ini: tool = csmock
+scan.ini: tool-version = csmock-3.3.5-1.fc36
+scan.ini: tool-args = '/usr/bin/csmock' '-o' '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/argon2-20171227-7.fc35/cbmc/output' '-f' '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/argon2-20171227-7.fc35/argon2-20171227-7.fc35.src.rpm' '-r' 'fedora-35-x86_64' '-t' 'cbmc' '--cbmc-timeout=8' '--keep-going'
+scan.ini: host = dell-pe-fm120-1c.dell2.lab.eng.bos.redhat.com
+scan.ini: store-results-to = /home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/argon2-20171227-7.fc35/cbmc/output
+scan.ini: time-created = 2023-01-26 10:58:55
+scan.ini: enabled-plugins = cbmc, gcc
+scan.ini: mock-config = fedora-35-x86_64
+scan.ini: project-name = argon2-20171227-7.fc35
+>>> 2023-01-26 10:58:55	"rpm -qa | sort -V > '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/argon2-20171227-7.fc35/cbmc/output/debug/rpm-list-host.txt'"
+
+>>> 2023-01-26 10:58:56	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--init"
+INFO: mock.py version 3.5 starting (python version = 3.10.9, NVR = mock-3.5-1.fc36)...
+Start(bootstrap): init plugins
+INFO: selinux enabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start: clean chroot
+Finish: clean chroot
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 3.5
+INFO: Mock Version: 3.5
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+Start: unpacking root cache
+Finish: unpacking root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 3.5
+INFO: Mock Version: 3.5
+Finish: chroot init
+Finish: run
+
+>>> 2023-01-26 10:59:03	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--installdeps" "/tmp/csmock1qi2ltmh/argon2-20171227-7.fc35.src.rpm"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+fedora                   [===                 ] ---  B/s |   0  B     --:-- ETAfedora                                           34 kB/s | 4.5 kB     00:00    
+updates                  [===                 ] ---  B/s |   0  B     --:-- ETAupdates                                          18 kB/s | 2.8 kB     00:00    
+Dependencies resolved.
+================================================================================
+ Package                  Architecture Version              Repository     Size
+================================================================================
+Installing:
+ [1mgcc                     [m x86_64       11.3.1-3.fc35        updates        31 M
+ [1mmake                    [m x86_64       1:4.3-6.fc35         fedora        533 k
+Installing dependencies:
+ [1mannobin-docs            [m noarch       10.79-1.fc35         updates        91 k
+ [1mannobin-plugin-gcc      [m x86_64       10.79-1.fc35         updates       882 k
+ [1mcpp                     [m x86_64       11.3.1-3.fc35        updates        10 M
+ [1mgc                      [m x86_64       8.0.4-6.fc35         fedora        103 k
+ [1mglibc-devel             [m x86_64       2.34-49.fc35         updates        45 k
+ [1mglibc-headers-x86       [m noarch       2.34-49.fc35         updates       445 k
+ [1mguile22                 [m x86_64       2.2.7-3.fc35         fedora        6.4 M
+ [1mkernel-headers          [m x86_64       6.0.5-100.fc35       updates       1.3 M
+ [1mlibmpc                  [m x86_64       1.2.1-3.fc35         fedora         62 k
+ [1mlibtool-ltdl            [m x86_64       2.4.6-50.fc35        updates        36 k
+ [1mlibxcrypt-devel         [m x86_64       4.4.33-3.fc35        updates        30 k
+
+Transaction Summary
+================================================================================
+Install  13 Packages
+
+Total size: 51 M
+Installed size: 162 M
+Downloading Packages:
+[SKIPPED] gc-8.0.4-6.fc35.x86_64.rpm: Already downloaded                       
+[SKIPPED] guile22-2.2.7-3.fc35.x86_64.rpm: Already downloaded                  
+[SKIPPED] libmpc-1.2.1-3.fc35.x86_64.rpm: Already downloaded                   
+[SKIPPED] make-4.3-6.fc35.x86_64.rpm: Already downloaded                       
+[SKIPPED] annobin-docs-10.79-1.fc35.noarch.rpm: Already downloaded             
+[SKIPPED] annobin-plugin-gcc-10.79-1.fc35.x86_64.rpm: Already downloaded       
+[SKIPPED] cpp-11.3.1-3.fc35.x86_64.rpm: Already downloaded                     
+[SKIPPED] gcc-11.3.1-3.fc35.x86_64.rpm: Already downloaded                     
+[SKIPPED] glibc-devel-2.34-49.fc35.x86_64.rpm: Already downloaded              
+[SKIPPED] glibc-headers-x86-2.34-49.fc35.noarch.rpm: Already downloaded        
+[SKIPPED] kernel-headers-6.0.5-100.fc35.x86_64.rpm: Already downloaded         
+[SKIPPED] libtool-ltdl-2.4.6-50.fc35.x86_64.rpm: Already downloaded            
+[SKIPPED] libxcrypt-devel-4.4.33-3.fc35.x86_64.rpm: Already downloaded         
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :  [===                                                ] 1/1  Preparing        :  [=======                                            ] 1/1  Preparing        :  [===========                                        ] 1/1  Preparing        :  [===============                                    ] 1/1  Preparing        :  [===================                                ] 1/1  Preparing        :  [=======================                            ] 1/1  Preparing        :  [===========================                        ] 1/1  Preparing        :  [===============================                    ] 1/1  Preparing        :  [===================================                ] 1/1  Preparing        :  [======================================             ] 1/1  Preparing        :  [==========================================         ] 1/1  Preparing        :  [==============================================     ] 1/1  Preparing        :                                                        1/1 
+  Installing       : libmpc-1.2.1-3.fc35.x86_ [                         ]  1/13  Installing       : libmpc-1.2.1-3.fc35.x86_ [=====                    ]  1/13  Installing       : libmpc-1.2.1-3.fc35.x86_ [===========              ]  1/13  Installing       : libmpc-1.2.1-3.fc35.x86_ [=================        ]  1/13  Installing       : libmpc-1.2.1-3.fc35.x86_ [=====================    ]  1/13  Installing       : libmpc-1.2.1-3.fc35.x86_ [======================   ]  1/13  Installing       : libmpc-1.2.1-3.fc35.x86_ [=======================  ]  1/13  Installing       : libmpc-1.2.1-3.fc35.x86_ [======================== ]  1/13  Installing       : libmpc-1.2.1-3.fc35.x86_64                            1/13 
+  Installing       : cpp-11.3.1-3.fc35.x86_64 [                         ]  2/13  Installing       : cpp-11.3.1-3.fc35.x86_64 [=                        ]  2/13  Installing       : cpp-11.3.1-3.fc35.x86_64 [==                       ]  2/13  Installing       : cpp-11.3.1-3.fc35.x86_64 [===                      ]  2/13  Installing       : cpp-11.3.1-3.fc35.x86_64 [====                     ]  2/13  Installing       : cpp-11.3.1-3.fc35.x86_64 [=====                    ]  2/13  Installing       : cpp-11.3.1-3.fc35.x86_64 [======                   ]  2/13  Installing       : cpp-11.3.1-3.fc35.x86_64 [=======                  ]  2/13  Installing       : cpp-11.3.1-3.fc35.x86_64 [========                 ]  2/13  Installing       : cpp-11.3.1-3.fc35.x86_64 [=========                ]  2/13  Installing       : cpp-11.3.1-3.fc35.x86_64 [==========               ]  2/13  Installing       : cpp-11.3.1-3.fc35.x86_64 [===========              ]  2/13  Installing       : cpp-11.3.1-3.fc35.x86_64 [============             ]  2/13  Installing       : cpp-11.3.1-3.fc35.x86_64 [=============            ]  2/13  Installing       : cpp-11.3.1-3.fc35.x86_64 [==============           ]  2/13  Installing       : cpp-11.3.1-3.fc35.x86_64 [===============          ]  2/13  Installing       : cpp-11.3.1-3.fc35.x86_64 [================         ]  2/13  Installing       : cpp-11.3.1-3.fc35.x86_64 [=================        ]  2/13  Installing       : cpp-11.3.1-3.fc35.x86_64 [==================       ]  2/13  Installing       : cpp-11.3.1-3.fc35.x86_64 [===================      ]  2/13  Installing       : cpp-11.3.1-3.fc35.x86_64 [====================     ]  2/13  Installing       : cpp-11.3.1-3.fc35.x86_64 [=====================    ]  2/13  Installing       : cpp-11.3.1-3.fc35.x86_64 [======================   ]  2/13  Installing       : cpp-11.3.1-3.fc35.x86_64 [=======================  ]  2/13  Installing       : cpp-11.3.1-3.fc35.x86_64 [======================== ]  2/13  Installing       : cpp-11.3.1-3.fc35.x86_64                              2/13 
+  Installing       : libtool-ltdl-2.4.6-50.fc [                         ]  3/13  Installing       : libtool-ltdl-2.4.6-50.fc [===========              ]  3/13  Installing       : libtool-ltdl-2.4.6-50.fc [===============          ]  3/13  Installing       : libtool-ltdl-2.4.6-50.fc [======================== ]  3/13  Installing       : libtool-ltdl-2.4.6-50.fc35.x86_64                     3/13 
+  Installing       : kernel-headers-6.0.5-100 [                         ]  4/13  Installing       : kernel-headers-6.0.5-100 [=                        ]  4/13  Installing       : kernel-headers-6.0.5-100 [==                       ]  4/13  Installing       : kernel-headers-6.0.5-100 [===                      ]  4/13  Installing       : kernel-headers-6.0.5-100 [====                     ]  4/13  Installing       : kernel-headers-6.0.5-100 [=====                    ]  4/13  Installing       : kernel-headers-6.0.5-100 [======                   ]  4/13  Installing       : kernel-headers-6.0.5-100 [=======                  ]  4/13  Installing       : kernel-headers-6.0.5-100 [========                 ]  4/13  Installing       : kernel-headers-6.0.5-100 [=========                ]  4/13  Installing       : kernel-headers-6.0.5-100 [==========               ]  4/13  Installing       : kernel-headers-6.0.5-100 [===========              ]  4/13  Installing       : kernel-headers-6.0.5-100 [============             ]  4/13  Installing       : kernel-headers-6.0.5-100 [=============            ]  4/13  Installing       : kernel-headers-6.0.5-100 [==============           ]  4/13  Installing       : kernel-headers-6.0.5-100 [===============          ]  4/13  Installing       : kernel-headers-6.0.5-100 [================         ]  4/13  Installing       : kernel-headers-6.0.5-100 [=================        ]  4/13  Installing       : kernel-headers-6.0.5-100 [==================       ]  4/13  Installing       : kernel-headers-6.0.5-100 [===================      ]  4/13  Installing       : kernel-headers-6.0.5-100 [====================     ]  4/13  Installing       : kernel-headers-6.0.5-100 [=====================    ]  4/13  Installing       : kernel-headers-6.0.5-100 [======================   ]  4/13  Installing       : kernel-headers-6.0.5-100 [=======================  ]  4/13  Installing       : kernel-headers-6.0.5-100 [======================== ]  4/13  Installing       : kernel-headers-6.0.5-100.fc35.x86_64                  4/13 
+  Installing       : glibc-headers-x86-2.34-4 [                         ]  5/13  Installing       : glibc-headers-x86-2.34-4 [=                        ]  5/13  Installing       : glibc-headers-x86-2.34-4 [==                       ]  5/13  Installing       : glibc-headers-x86-2.34-4 [===                      ]  5/13  Installing       : glibc-headers-x86-2.34-4 [====                     ]  5/13  Installing       : glibc-headers-x86-2.34-4 [=====                    ]  5/13  Installing       : glibc-headers-x86-2.34-4 [======                   ]  5/13  Installing       : glibc-headers-x86-2.34-4 [=======                  ]  5/13  Installing       : glibc-headers-x86-2.34-4 [========                 ]  5/13  Installing       : glibc-headers-x86-2.34-4 [=========                ]  5/13  Installing       : glibc-headers-x86-2.34-4 [==========               ]  5/13  Installing       : glibc-headers-x86-2.34-4 [===========              ]  5/13  Installing       : glibc-headers-x86-2.34-4 [============             ]  5/13  Installing       : glibc-headers-x86-2.34-4 [=============            ]  5/13  Installing       : glibc-headers-x86-2.34-4 [==============           ]  5/13  Installing       : glibc-headers-x86-2.34-4 [===============          ]  5/13  Installing       : glibc-headers-x86-2.34-4 [================         ]  5/13  Installing       : glibc-headers-x86-2.34-4 [=================        ]  5/13  Installing       : glibc-headers-x86-2.34-4 [==================       ]  5/13  Installing       : glibc-headers-x86-2.34-4 [===================      ]  5/13  Installing       : glibc-headers-x86-2.34-4 [====================     ]  5/13  Installing       : glibc-headers-x86-2.34-4 [=====================    ]  5/13  Installing       : glibc-headers-x86-2.34-4 [======================   ]  5/13  Installing       : glibc-headers-x86-2.34-4 [=======================  ]  5/13  Installing       : glibc-headers-x86-2.34-4 [======================== ]  5/13  Installing       : glibc-headers-x86-2.34-49.fc35.noarch                 5/13 
+  Installing       : libxcrypt-devel-4.4.33-3 [                         ]  6/13  Installing       : libxcrypt-devel-4.4.33-3 [========                 ]  6/13  Installing       : libxcrypt-devel-4.4.33-3 [=========                ]  6/13  Installing       : libxcrypt-devel-4.4.33-3 [=============            ]  6/13  Installing       : libxcrypt-devel-4.4.33-3 [=================        ]  6/13  Installing       : libxcrypt-devel-4.4.33-3 [====================     ]  6/13  Installing       : libxcrypt-devel-4.4.33-3 [=====================    ]  6/13  Installing       : libxcrypt-devel-4.4.33-3 [=======================  ]  6/13  Installing       : libxcrypt-devel-4.4.33-3 [======================== ]  6/13  Installing       : libxcrypt-devel-4.4.33-3.fc35.x86_64                  6/13 
+  Installing       : glibc-devel-2.34-49.fc35 [                         ]  7/13  Installing       : glibc-devel-2.34-49.fc35 [=                        ]  7/13  Installing       : glibc-devel-2.34-49.fc35 [====                     ]  7/13  Installing       : glibc-devel-2.34-49.fc35 [=======                  ]  7/13  Installing       : glibc-devel-2.34-49.fc35 [========                 ]  7/13  Installing       : glibc-devel-2.34-49.fc35 [=============            ]  7/13  Installing       : glibc-devel-2.34-49.fc35 [=================        ]  7/13  Installing       : glibc-devel-2.34-49.fc35 [==================       ]  7/13  Installing       : glibc-devel-2.34-49.fc35 [====================     ]  7/13  Installing       : glibc-devel-2.34-49.fc35 [======================   ]  7/13  Installing       : glibc-devel-2.34-49.fc35 [======================== ]  7/13  Installing       : glibc-devel-2.34-49.fc35.x86_64                       7/13 
+  Installing       : annobin-docs-10.79-1.fc3 [                         ]  8/13  Installing       : annobin-docs-10.79-1.fc3 [==                       ]  8/13  Installing       : annobin-docs-10.79-1.fc3 [===========              ]  8/13  Installing       : annobin-docs-10.79-1.fc3 [=============            ]  8/13  Installing       : annobin-docs-10.79-1.fc3 [======================   ]  8/13  Installing       : annobin-docs-10.79-1.fc3 [=======================  ]  8/13  Installing       : annobin-docs-10.79-1.fc3 [======================== ]  8/13  Installing       : annobin-docs-10.79-1.fc35.noarch                      8/13 
+  Installing       : gc-8.0.4-6.fc35.x86_64 [                           ]  9/13  Installing       : gc-8.0.4-6.fc35.x86_64 [===                        ]  9/13  Installing       : gc-8.0.4-6.fc35.x86_64 [====                       ]  9/13  Installing       : gc-8.0.4-6.fc35.x86_64 [========                   ]  9/13  Installing       : gc-8.0.4-6.fc35.x86_64 [===========                ]  9/13  Installing       : gc-8.0.4-6.fc35.x86_64 [===============            ]  9/13  Installing       : gc-8.0.4-6.fc35.x86_64 [===================        ]  9/13  Installing       : gc-8.0.4-6.fc35.x86_64 [======================     ]  9/13  Installing       : gc-8.0.4-6.fc35.x86_64 [=========================  ]  9/13  Installing       : gc-8.0.4-6.fc35.x86_64 [========================== ]  9/13  Installing       : gc-8.0.4-6.fc35.x86_64                                9/13 
+  Installing       : guile22-2.2.7-3.fc35.x86 [                         ] 10/13  Installing       : guile22-2.2.7-3.fc35.x86 [=                        ] 10/13  Installing       : guile22-2.2.7-3.fc35.x86 [==                       ] 10/13  Installing       : guile22-2.2.7-3.fc35.x86 [===                      ] 10/13  Installing       : guile22-2.2.7-3.fc35.x86 [====                     ] 10/13  Installing       : guile22-2.2.7-3.fc35.x86 [=====                    ] 10/13  Installing       : guile22-2.2.7-3.fc35.x86 [======                   ] 10/13  Installing       : guile22-2.2.7-3.fc35.x86 [=======                  ] 10/13  Installing       : guile22-2.2.7-3.fc35.x86 [========                 ] 10/13  Installing       : guile22-2.2.7-3.fc35.x86 [=========                ] 10/13  Installing       : guile22-2.2.7-3.fc35.x86 [==========               ] 10/13  Installing       : guile22-2.2.7-3.fc35.x86 [===========              ] 10/13  Installing       : guile22-2.2.7-3.fc35.x86 [============             ] 10/13  Installing       : guile22-2.2.7-3.fc35.x86 [=============            ] 10/13  Installing       : guile22-2.2.7-3.fc35.x86 [==============           ] 10/13  Installing       : guile22-2.2.7-3.fc35.x86 [===============          ] 10/13  Installing       : guile22-2.2.7-3.fc35.x86 [================         ] 10/13  Installing       : guile22-2.2.7-3.fc35.x86 [=================        ] 10/13  Installing       : guile22-2.2.7-3.fc35.x86 [==================       ] 10/13  Installing       : guile22-2.2.7-3.fc35.x86 [===================      ] 10/13  Installing       : guile22-2.2.7-3.fc35.x86 [====================     ] 10/13  Installing       : guile22-2.2.7-3.fc35.x86 [=====================    ] 10/13  Installing       : guile22-2.2.7-3.fc35.x86 [======================   ] 10/13  Installing       : guile22-2.2.7-3.fc35.x86 [=======================  ] 10/13  Installing       : guile22-2.2.7-3.fc35.x86 [======================== ] 10/13  Installing       : guile22-2.2.7-3.fc35.x86_64                          10/13 
+  Installing       : make-1:4.3-6.fc35.x86_64 [                         ] 11/13  Installing       : make-1:4.3-6.fc35.x86_64 [=                        ] 11/13  Installing       : make-1:4.3-6.fc35.x86_64 [==                       ] 11/13  Installing       : make-1:4.3-6.fc35.x86_64 [===                      ] 11/13  Installing       : make-1:4.3-6.fc35.x86_64 [====                     ] 11/13  Installing       : make-1:4.3-6.fc35.x86_64 [=====                    ] 11/13  Installing       : make-1:4.3-6.fc35.x86_64 [======                   ] 11/13  Installing       : make-1:4.3-6.fc35.x86_64 [=======                  ] 11/13  Installing       : make-1:4.3-6.fc35.x86_64 [========                 ] 11/13  Installing       : make-1:4.3-6.fc35.x86_64 [=========                ] 11/13  Installing       : make-1:4.3-6.fc35.x86_64 [==========               ] 11/13  Installing       : make-1:4.3-6.fc35.x86_64 [===========              ] 11/13  Installing       : make-1:4.3-6.fc35.x86_64 [============             ] 11/13  Installing       : make-1:4.3-6.fc35.x86_64 [=============            ] 11/13  Installing       : make-1:4.3-6.fc35.x86_64 [==============           ] 11/13  Installing       : make-1:4.3-6.fc35.x86_64 [===============          ] 11/13  Installing       : make-1:4.3-6.fc35.x86_64 [================         ] 11/13  Installing       : make-1:4.3-6.fc35.x86_64 [=================        ] 11/13  Installing       : make-1:4.3-6.fc35.x86_64 [==================       ] 11/13  Installing       : make-1:4.3-6.fc35.x86_64 [===================      ] 11/13  Installing       : make-1:4.3-6.fc35.x86_64 [====================     ] 11/13  Installing       : make-1:4.3-6.fc35.x86_64 [=====================    ] 11/13  Installing       : make-1:4.3-6.fc35.x86_64 [======================   ] 11/13  Installing       : make-1:4.3-6.fc35.x86_64 [=======================  ] 11/13  Installing       : make-1:4.3-6.fc35.x86_64 [======================== ] 11/13  Installing       : make-1:4.3-6.fc35.x86_64                             11/13 
+  Installing       : gcc-11.3.1-3.fc35.x86_64 [                         ] 12/13  Installing       : gcc-11.3.1-3.fc35.x86_64 [=                        ] 12/13  Installing       : gcc-11.3.1-3.fc35.x86_64 [==                       ] 12/13  Installing       : gcc-11.3.1-3.fc35.x86_64 [===                      ] 12/13  Installing       : gcc-11.3.1-3.fc35.x86_64 [====                     ] 12/13  Installing       : gcc-11.3.1-3.fc35.x86_64 [=====                    ] 12/13  Installing       : gcc-11.3.1-3.fc35.x86_64 [======                   ] 12/13  Installing       : gcc-11.3.1-3.fc35.x86_64 [=======                  ] 12/13  Installing       : gcc-11.3.1-3.fc35.x86_64 [========                 ] 12/13  Installing       : gcc-11.3.1-3.fc35.x86_64 [=========                ] 12/13  Installing       : gcc-11.3.1-3.fc35.x86_64 [==========               ] 12/13  Installing       : gcc-11.3.1-3.fc35.x86_64 [===========              ] 12/13  Installing       : gcc-11.3.1-3.fc35.x86_64 [============             ] 12/13  Installing       : gcc-11.3.1-3.fc35.x86_64 [=============            ] 12/13  Installing       : gcc-11.3.1-3.fc35.x86_64 [==============           ] 12/13  Installing       : gcc-11.3.1-3.fc35.x86_64 [===============          ] 12/13  Installing       : gcc-11.3.1-3.fc35.x86_64 [================         ] 12/13  Installing       : gcc-11.3.1-3.fc35.x86_64 [=================        ] 12/13  Installing       : gcc-11.3.1-3.fc35.x86_64 [==================       ] 12/13  Installing       : gcc-11.3.1-3.fc35.x86_64 [===================      ] 12/13  Installing       : gcc-11.3.1-3.fc35.x86_64 [====================     ] 12/13  Installing       : gcc-11.3.1-3.fc35.x86_64 [=====================    ] 12/13  Installing       : gcc-11.3.1-3.fc35.x86_64 [======================   ] 12/13  Installing       : gcc-11.3.1-3.fc35.x86_64 [=======================  ] 12/13  Installing       : gcc-11.3.1-3.fc35.x86_64 [======================== ] 12/13  Installing       : gcc-11.3.1-3.fc35.x86_64                             12/13 
+  Installing       : annobin-plugin-gcc-10.79 [                         ] 13/13  Installing       : annobin-plugin-gcc-10.79 [=                        ] 13/13  Installing       : annobin-plugin-gcc-10.79 [==                       ] 13/13  Installing       : annobin-plugin-gcc-10.79 [===                      ] 13/13  Installing       : annobin-plugin-gcc-10.79 [====                     ] 13/13  Installing       : annobin-plugin-gcc-10.79 [=====                    ] 13/13  Installing       : annobin-plugin-gcc-10.79 [======                   ] 13/13  Installing       : annobin-plugin-gcc-10.79 [=======                  ] 13/13  Installing       : annobin-plugin-gcc-10.79 [========                 ] 13/13  Installing       : annobin-plugin-gcc-10.79 [=========                ] 13/13  Installing       : annobin-plugin-gcc-10.79 [==========               ] 13/13  Installing       : annobin-plugin-gcc-10.79 [===========              ] 13/13  Installing       : annobin-plugin-gcc-10.79 [============             ] 13/13  Installing       : annobin-plugin-gcc-10.79 [=============            ] 13/13  Installing       : annobin-plugin-gcc-10.79 [==============           ] 13/13  Installing       : annobin-plugin-gcc-10.79 [===============          ] 13/13  Installing       : annobin-plugin-gcc-10.79 [================         ] 13/13  Installing       : annobin-plugin-gcc-10.79 [=================        ] 13/13  Installing       : annobin-plugin-gcc-10.79 [==================       ] 13/13  Installing       : annobin-plugin-gcc-10.79 [===================      ] 13/13  Installing       : annobin-plugin-gcc-10.79 [====================     ] 13/13  Installing       : annobin-plugin-gcc-10.79 [=====================    ] 13/13  Installing       : annobin-plugin-gcc-10.79 [======================   ] 13/13  Installing       : annobin-plugin-gcc-10.79 [=======================  ] 13/13  Installing       : annobin-plugin-gcc-10.79 [======================== ] 13/13  Installing       : annobin-plugin-gcc-10.79-1.fc35.x86_64               13/13 
+  Running scriptlet: annobin-plugin-gcc-10.79-1.fc35.x86_64               13/13 
+  Verifying        : gc-8.0.4-6.fc35.x86_64                                1/13 
+  Verifying        : guile22-2.2.7-3.fc35.x86_64                           2/13 
+  Verifying        : libmpc-1.2.1-3.fc35.x86_64                            3/13 
+  Verifying        : make-1:4.3-6.fc35.x86_64                              4/13 
+  Verifying        : annobin-docs-10.79-1.fc35.noarch                      5/13 
+  Verifying        : annobin-plugin-gcc-10.79-1.fc35.x86_64                6/13 
+  Verifying        : cpp-11.3.1-3.fc35.x86_64                              7/13 
+  Verifying        : gcc-11.3.1-3.fc35.x86_64                              8/13 
+  Verifying        : glibc-devel-2.34-49.fc35.x86_64                       9/13 
+  Verifying        : glibc-headers-x86-2.34-49.fc35.noarch                10/13 
+  Verifying        : kernel-headers-6.0.5-100.fc35.x86_64                 11/13 
+  Verifying        : libtool-ltdl-2.4.6-50.fc35.x86_64                    12/13 
+  Verifying        : libxcrypt-devel-4.4.33-3.fc35.x86_64                 13/13 
+
+Installed:
+  annobin-docs-10.79-1.fc35.noarch       annobin-plugin-gcc-10.79-1.fc35.x86_64 
+  cpp-11.3.1-3.fc35.x86_64               gc-8.0.4-6.fc35.x86_64                 
+  gcc-11.3.1-3.fc35.x86_64               glibc-devel-2.34-49.fc35.x86_64        
+  glibc-headers-x86-2.34-49.fc35.noarch  guile22-2.2.7-3.fc35.x86_64            
+  kernel-headers-6.0.5-100.fc35.x86_64   libmpc-1.2.1-3.fc35.x86_64             
+  libtool-ltdl-2.4.6-50.fc35.x86_64      libxcrypt-devel-4.4.33-3.fc35.x86_64   
+  make-1:4.3-6.fc35.x86_64              
+
+Complete!
+
+>>> 2023-01-26 10:59:32	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--install" "cbmc" "cbmc-utils" "csexec" "gcc"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+fedora                   [===                 ] ---  B/s |   0  B     --:-- ETAfedora                                           32 kB/s | 4.5 kB     00:00    
+updates                  [===                 ] ---  B/s |   0  B     --:-- ETAupdates                                          16 kB/s | 2.8 kB     00:00    
+Package gcc-11.3.1-3.fc35.x86_64 is already installed.
+Dependencies resolved.
+================================================================================
+ Package                      Arch        Version            Repository    Size
+================================================================================
+Installing:
+ [1mcbmc                        [m x86_64      5.50.0-1.fc35      updates       15 M
+ [1mcbmc-utils                  [m x86_64      5.50.0-1.fc35      updates       13 k
+ [1mcsexec                      [m x86_64      2.2.2-1.fc35       updates      365 k
+Installing dependencies:
+ [1mexpat                       [m x86_64      2.5.0-1.fc35       updates      115 k
+ [1mgcc-c++                     [m x86_64      11.3.1-3.fc35      updates       12 M
+ [1mlibstdc++-devel             [m x86_64      11.3.1-3.fc35      updates      2.2 M
+ [1mminisat2-libs               [m x86_64      2.2.1-13.fc35      fedora        44 k
+ [1mmpdecimal                   [m x86_64      2.5.1-2.fc35       fedora        99 k
+ [1mpython-pip-wheel            [m noarch      21.2.3-4.fc35      updates      1.1 M
+ [1mpython-setuptools-wheel     [m noarch      57.4.0-1.fc35      fedora       505 k
+ [1mpython3                     [m x86_64      3.10.8-3.fc35      updates       26 k
+ [1mpython3-libs                [m x86_64      3.10.8-3.fc35      updates      7.5 M
+
+Transaction Summary
+================================================================================
+Install  12 Packages
+
+Total size: 39 M
+Installed size: 135 M
+Downloading Packages:
+[SKIPPED] minisat2-libs-2.2.1-13.fc35.x86_64.rpm: Already downloaded           
+[SKIPPED] mpdecimal-2.5.1-2.fc35.x86_64.rpm: Already downloaded                
+[SKIPPED] python-setuptools-wheel-57.4.0-1.fc35.noarch.rpm: Already downloaded 
+[SKIPPED] cbmc-5.50.0-1.fc35.x86_64.rpm: Already downloaded                    
+[SKIPPED] cbmc-utils-5.50.0-1.fc35.x86_64.rpm: Already downloaded              
+[SKIPPED] csexec-2.2.2-1.fc35.x86_64.rpm: Already downloaded                   
+[SKIPPED] expat-2.5.0-1.fc35.x86_64.rpm: Already downloaded                    
+[SKIPPED] gcc-c++-11.3.1-3.fc35.x86_64.rpm: Already downloaded                 
+[SKIPPED] libstdc++-devel-11.3.1-3.fc35.x86_64.rpm: Already downloaded         
+[SKIPPED] python-pip-wheel-21.2.3-4.fc35.noarch.rpm: Already downloaded        
+[SKIPPED] python3-3.10.8-3.fc35.x86_64.rpm: Already downloaded                 
+[SKIPPED] python3-libs-3.10.8-3.fc35.x86_64.rpm: Already downloaded            
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :  [====                                               ] 1/1  Preparing        :  [========                                           ] 1/1  Preparing        :  [============                                       ] 1/1  Preparing        :  [================                                   ] 1/1  Preparing        :  [====================                               ] 1/1  Preparing        :  [=========================                          ] 1/1  Preparing        :  [=============================                      ] 1/1  Preparing        :  [=================================                  ] 1/1  Preparing        :  [======================================             ] 1/1  Preparing        :  [==========================================         ] 1/1  Preparing        :  [==============================================     ] 1/1  Preparing        :                                                        1/1 
+  Installing       : python-pip-wheel-21.2.3- [                         ]  1/12  Installing       : python-pip-wheel-21.2.3- [=                        ]  1/12  Installing       : python-pip-wheel-21.2.3- [==                       ]  1/12  Installing       : python-pip-wheel-21.2.3- [===                      ]  1/12  Installing       : python-pip-wheel-21.2.3- [====                     ]  1/12  Installing       : python-pip-wheel-21.2.3- [=====                    ]  1/12  Installing       : python-pip-wheel-21.2.3- [======                   ]  1/12  Installing       : python-pip-wheel-21.2.3- [=======                  ]  1/12  Installing       : python-pip-wheel-21.2.3- [========                 ]  1/12  Installing       : python-pip-wheel-21.2.3- [=========                ]  1/12  Installing       : python-pip-wheel-21.2.3- [==========               ]  1/12  Installing       : python-pip-wheel-21.2.3- [===========              ]  1/12  Installing       : python-pip-wheel-21.2.3- [============             ]  1/12  Installing       : python-pip-wheel-21.2.3- [=============            ]  1/12  Installing       : python-pip-wheel-21.2.3- [==============           ]  1/12  Installing       : python-pip-wheel-21.2.3- [===============          ]  1/12  Installing       : python-pip-wheel-21.2.3- [================         ]  1/12  Installing       : python-pip-wheel-21.2.3- [=================        ]  1/12  Installing       : python-pip-wheel-21.2.3- [==================       ]  1/12  Installing       : python-pip-wheel-21.2.3- [===================      ]  1/12  Installing       : python-pip-wheel-21.2.3- [====================     ]  1/12  Installing       : python-pip-wheel-21.2.3- [=====================    ]  1/12  Installing       : python-pip-wheel-21.2.3- [======================   ]  1/12  Installing       : python-pip-wheel-21.2.3- [=======================  ]  1/12  Installing       : python-pip-wheel-21.2.3- [======================== ]  1/12  Installing       : python-pip-wheel-21.2.3-4.fc35.noarch                 1/12 
+  Installing       : libstdc++-devel-11.3.1-3 [                         ]  2/12  Installing       : libstdc++-devel-11.3.1-3 [=                        ]  2/12  Installing       : libstdc++-devel-11.3.1-3 [==                       ]  2/12  Installing       : libstdc++-devel-11.3.1-3 [===                      ]  2/12  Installing       : libstdc++-devel-11.3.1-3 [====                     ]  2/12  Installing       : libstdc++-devel-11.3.1-3 [=====                    ]  2/12  Installing       : libstdc++-devel-11.3.1-3 [======                   ]  2/12  Installing       : libstdc++-devel-11.3.1-3 [=======                  ]  2/12  Installing       : libstdc++-devel-11.3.1-3 [========                 ]  2/12  Installing       : libstdc++-devel-11.3.1-3 [=========                ]  2/12  Installing       : libstdc++-devel-11.3.1-3 [==========               ]  2/12  Installing       : libstdc++-devel-11.3.1-3 [===========              ]  2/12  Installing       : libstdc++-devel-11.3.1-3 [============             ]  2/12  Installing       : libstdc++-devel-11.3.1-3 [=============            ]  2/12  Installing       : libstdc++-devel-11.3.1-3 [==============           ]  2/12  Installing       : libstdc++-devel-11.3.1-3 [===============          ]  2/12  Installing       : libstdc++-devel-11.3.1-3 [================         ]  2/12  Installing       : libstdc++-devel-11.3.1-3 [=================        ]  2/12  Installing       : libstdc++-devel-11.3.1-3 [==================       ]  2/12  Installing       : libstdc++-devel-11.3.1-3 [===================      ]  2/12  Installing       : libstdc++-devel-11.3.1-3 [====================     ]  2/12  Installing       : libstdc++-devel-11.3.1-3 [=====================    ]  2/12  Installing       : libstdc++-devel-11.3.1-3 [======================   ]  2/12  Installing       : libstdc++-devel-11.3.1-3 [=======================  ]  2/12  Installing       : libstdc++-devel-11.3.1-3 [======================== ]  2/12  Installing       : libstdc++-devel-11.3.1-3.fc35.x86_64                  2/12 
+  Installing       : gcc-c++-11.3.1-3.fc35.x8 [                         ]  3/12  Installing       : gcc-c++-11.3.1-3.fc35.x8 [=                        ]  3/12  Installing       : gcc-c++-11.3.1-3.fc35.x8 [==                       ]  3/12  Installing       : gcc-c++-11.3.1-3.fc35.x8 [===                      ]  3/12  Installing       : gcc-c++-11.3.1-3.fc35.x8 [====                     ]  3/12  Installing       : gcc-c++-11.3.1-3.fc35.x8 [=====                    ]  3/12  Installing       : gcc-c++-11.3.1-3.fc35.x8 [======                   ]  3/12  Installing       : gcc-c++-11.3.1-3.fc35.x8 [=======                  ]  3/12  Installing       : gcc-c++-11.3.1-3.fc35.x8 [========                 ]  3/12  Installing       : gcc-c++-11.3.1-3.fc35.x8 [=========                ]  3/12  Installing       : gcc-c++-11.3.1-3.fc35.x8 [==========               ]  3/12  Installing       : gcc-c++-11.3.1-3.fc35.x8 [===========              ]  3/12  Installing       : gcc-c++-11.3.1-3.fc35.x8 [============             ]  3/12  Installing       : gcc-c++-11.3.1-3.fc35.x8 [=============            ]  3/12  Installing       : gcc-c++-11.3.1-3.fc35.x8 [==============           ]  3/12  Installing       : gcc-c++-11.3.1-3.fc35.x8 [===============          ]  3/12  Installing       : gcc-c++-11.3.1-3.fc35.x8 [================         ]  3/12  Installing       : gcc-c++-11.3.1-3.fc35.x8 [=================        ]  3/12  Installing       : gcc-c++-11.3.1-3.fc35.x8 [==================       ]  3/12  Installing       : gcc-c++-11.3.1-3.fc35.x8 [===================      ]  3/12  Installing       : gcc-c++-11.3.1-3.fc35.x8 [====================     ]  3/12  Installing       : gcc-c++-11.3.1-3.fc35.x8 [=====================    ]  3/12  Installing       : gcc-c++-11.3.1-3.fc35.x8 [======================   ]  3/12  Installing       : gcc-c++-11.3.1-3.fc35.x8 [=======================  ]  3/12  Installing       : gcc-c++-11.3.1-3.fc35.x8 [======================== ]  3/12  Installing       : gcc-c++-11.3.1-3.fc35.x86_64                          3/12 
+  Installing       : expat-2.5.0-1.fc35.x86_6 [                         ]  4/12  Installing       : expat-2.5.0-1.fc35.x86_6 [==                       ]  4/12  Installing       : expat-2.5.0-1.fc35.x86_6 [===                      ]  4/12  Installing       : expat-2.5.0-1.fc35.x86_6 [======                   ]  4/12  Installing       : expat-2.5.0-1.fc35.x86_6 [========                 ]  4/12  Installing       : expat-2.5.0-1.fc35.x86_6 [===========              ]  4/12  Installing       : expat-2.5.0-1.fc35.x86_6 [=============            ]  4/12  Installing       : expat-2.5.0-1.fc35.x86_6 [================         ]  4/12  Installing       : expat-2.5.0-1.fc35.x86_6 [===================      ]  4/12  Installing       : expat-2.5.0-1.fc35.x86_6 [=====================    ]  4/12  Installing       : expat-2.5.0-1.fc35.x86_6 [======================== ]  4/12  Installing       : expat-2.5.0-1.fc35.x86_64                             4/12 
+  Installing       : python-setuptools-wheel- [                         ]  5/12  Installing       : python-setuptools-wheel- [=                        ]  5/12  Installing       : python-setuptools-wheel- [==                       ]  5/12  Installing       : python-setuptools-wheel- [====                     ]  5/12  Installing       : python-setuptools-wheel- [=====                    ]  5/12  Installing       : python-setuptools-wheel- [======                   ]  5/12  Installing       : python-setuptools-wheel- [========                 ]  5/12  Installing       : python-setuptools-wheel- [=========                ]  5/12  Installing       : python-setuptools-wheel- [===========              ]  5/12  Installing       : python-setuptools-wheel- [============             ]  5/12  Installing       : python-setuptools-wheel- [=============            ]  5/12  Installing       : python-setuptools-wheel- [===============          ]  5/12  Installing       : python-setuptools-wheel- [================         ]  5/12  Installing       : python-setuptools-wheel- [=================        ]  5/12  Installing       : python-setuptools-wheel- [===================      ]  5/12  Installing       : python-setuptools-wheel- [====================     ]  5/12  Installing       : python-setuptools-wheel- [======================   ]  5/12  Installing       : python-setuptools-wheel- [=======================  ]  5/12  Installing       : python-setuptools-wheel- [======================== ]  5/12  Installing       : python-setuptools-wheel-57.4.0-1.fc35.noarch          5/12 
+  Installing       : mpdecimal-2.5.1-2.fc35.x [                         ]  6/12  Installing       : mpdecimal-2.5.1-2.fc35.x [===                      ]  6/12  Installing       : mpdecimal-2.5.1-2.fc35.x [====                     ]  6/12  Installing       : mpdecimal-2.5.1-2.fc35.x [=======                  ]  6/12  Installing       : mpdecimal-2.5.1-2.fc35.x [==========               ]  6/12  Installing       : mpdecimal-2.5.1-2.fc35.x [==============           ]  6/12  Installing       : mpdecimal-2.5.1-2.fc35.x [=================        ]  6/12  Installing       : mpdecimal-2.5.1-2.fc35.x [====================     ]  6/12  Installing       : mpdecimal-2.5.1-2.fc35.x [======================== ]  6/12  Installing       : mpdecimal-2.5.1-2.fc35.x86_64                         6/12 
+  Installing       : python3-3.10.8-3.fc35.x8 [                         ]  7/12  Installing       : python3-3.10.8-3.fc35.x8 [===========              ]  7/12  Installing       : python3-3.10.8-3.fc35.x8 [============             ]  7/12  Installing       : python3-3.10.8-3.fc35.x8 [===================      ]  7/12  Installing       : python3-3.10.8-3.fc35.x8 [======================== ]  7/12  Installing       : python3-3.10.8-3.fc35.x86_64                          7/12 
+  Installing       : python3-libs-3.10.8-3.fc [                         ]  8/12  Installing       : python3-libs-3.10.8-3.fc [=                        ]  8/12  Installing       : python3-libs-3.10.8-3.fc [==                       ]  8/12  Installing       : python3-libs-3.10.8-3.fc [===                      ]  8/12  Installing       : python3-libs-3.10.8-3.fc [====                     ]  8/12  Installing       : python3-libs-3.10.8-3.fc [=====                    ]  8/12  Installing       : python3-libs-3.10.8-3.fc [======                   ]  8/12  Installing       : python3-libs-3.10.8-3.fc [=======                  ]  8/12  Installing       : python3-libs-3.10.8-3.fc [========                 ]  8/12  Installing       : python3-libs-3.10.8-3.fc [=========                ]  8/12  Installing       : python3-libs-3.10.8-3.fc [==========               ]  8/12  Installing       : python3-libs-3.10.8-3.fc [===========              ]  8/12  Installing       : python3-libs-3.10.8-3.fc [============             ]  8/12  Installing       : python3-libs-3.10.8-3.fc [=============            ]  8/12  Installing       : python3-libs-3.10.8-3.fc [==============           ]  8/12  Installing       : python3-libs-3.10.8-3.fc [===============          ]  8/12  Installing       : python3-libs-3.10.8-3.fc [================         ]  8/12  Installing       : python3-libs-3.10.8-3.fc [=================        ]  8/12  Installing       : python3-libs-3.10.8-3.fc [==================       ]  8/12  Installing       : python3-libs-3.10.8-3.fc [===================      ]  8/12  Installing       : python3-libs-3.10.8-3.fc [====================     ]  8/12  Installing       : python3-libs-3.10.8-3.fc [=====================    ]  8/12  Installing       : python3-libs-3.10.8-3.fc [======================   ]  8/12  Installing       : python3-libs-3.10.8-3.fc [=======================  ]  8/12  Installing       : python3-libs-3.10.8-3.fc [======================== ]  8/12  Installing       : python3-libs-3.10.8-3.fc35.x86_64                     8/12 
+  Installing       : minisat2-libs-2.2.1-13.f [                         ]  9/12  Installing       : minisat2-libs-2.2.1-13.f [=========                ]  9/12  Installing       : minisat2-libs-2.2.1-13.f [===================      ]  9/12  Installing       : minisat2-libs-2.2.1-13.f [======================== ]  9/12  Installing       : minisat2-libs-2.2.1-13.fc35.x86_64                    9/12 
+  Installing       : cbmc-5.50.0-1.fc35.x86_6 [                         ] 10/12  Installing       : cbmc-5.50.0-1.fc35.x86_6 [=                        ] 10/12  Installing       : cbmc-5.50.0-1.fc35.x86_6 [==                       ] 10/12  Installing       : cbmc-5.50.0-1.fc35.x86_6 [===                      ] 10/12  Installing       : cbmc-5.50.0-1.fc35.x86_6 [====                     ] 10/12  Installing       : cbmc-5.50.0-1.fc35.x86_6 [=====                    ] 10/12  Installing       : cbmc-5.50.0-1.fc35.x86_6 [======                   ] 10/12  Installing       : cbmc-5.50.0-1.fc35.x86_6 [=======                  ] 10/12  Installing       : cbmc-5.50.0-1.fc35.x86_6 [========                 ] 10/12  Installing       : cbmc-5.50.0-1.fc35.x86_6 [=========                ] 10/12  Installing       : cbmc-5.50.0-1.fc35.x86_6 [==========               ] 10/12  Installing       : cbmc-5.50.0-1.fc35.x86_6 [===========              ] 10/12  Installing       : cbmc-5.50.0-1.fc35.x86_6 [============             ] 10/12  Installing       : cbmc-5.50.0-1.fc35.x86_6 [=============            ] 10/12  Installing       : cbmc-5.50.0-1.fc35.x86_6 [==============           ] 10/12  Installing       : cbmc-5.50.0-1.fc35.x86_6 [===============          ] 10/12  Installing       : cbmc-5.50.0-1.fc35.x86_6 [================         ] 10/12  Installing       : cbmc-5.50.0-1.fc35.x86_6 [=================        ] 10/12  Installing       : cbmc-5.50.0-1.fc35.x86_6 [==================       ] 10/12  Installing       : cbmc-5.50.0-1.fc35.x86_6 [===================      ] 10/12  Installing       : cbmc-5.50.0-1.fc35.x86_6 [====================     ] 10/12  Installing       : cbmc-5.50.0-1.fc35.x86_6 [=====================    ] 10/12  Installing       : cbmc-5.50.0-1.fc35.x86_6 [======================   ] 10/12  Installing       : cbmc-5.50.0-1.fc35.x86_6 [=======================  ] 10/12  Installing       : cbmc-5.50.0-1.fc35.x86_6 [======================== ] 10/12  Installing       : cbmc-5.50.0-1.fc35.x86_64                            10/12 
+  Installing       : cbmc-utils-5.50.0-1.fc35 [                         ] 11/12  Installing       : cbmc-utils-5.50.0-1.fc35 [==============           ] 11/12  Installing       : cbmc-utils-5.50.0-1.fc35 [====================     ] 11/12  Installing       : cbmc-utils-5.50.0-1.fc35 [======================== ] 11/12  Installing       : cbmc-utils-5.50.0-1.fc35.x86_64                      11/12 
+  Installing       : csexec-2.2.2-1.fc35.x86_ [                         ] 12/12  Installing       : csexec-2.2.2-1.fc35.x86_ [=                        ] 12/12  Installing       : csexec-2.2.2-1.fc35.x86_ [==                       ] 12/12  Installing       : csexec-2.2.2-1.fc35.x86_ [===                      ] 12/12  Installing       : csexec-2.2.2-1.fc35.x86_ [====                     ] 12/12  Installing       : csexec-2.2.2-1.fc35.x86_ [=====                    ] 12/12  Installing       : csexec-2.2.2-1.fc35.x86_ [======                   ] 12/12  Installing       : csexec-2.2.2-1.fc35.x86_ [=======                  ] 12/12  Installing       : csexec-2.2.2-1.fc35.x86_ [========                 ] 12/12  Installing       : csexec-2.2.2-1.fc35.x86_ [=========                ] 12/12  Installing       : csexec-2.2.2-1.fc35.x86_ [==========               ] 12/12  Installing       : csexec-2.2.2-1.fc35.x86_ [===========              ] 12/12  Installing       : csexec-2.2.2-1.fc35.x86_ [============             ] 12/12  Installing       : csexec-2.2.2-1.fc35.x86_ [=============            ] 12/12  Installing       : csexec-2.2.2-1.fc35.x86_ [==============           ] 12/12  Installing       : csexec-2.2.2-1.fc35.x86_ [===============          ] 12/12  Installing       : csexec-2.2.2-1.fc35.x86_ [================         ] 12/12  Installing       : csexec-2.2.2-1.fc35.x86_ [=================        ] 12/12  Installing       : csexec-2.2.2-1.fc35.x86_ [==================       ] 12/12  Installing       : csexec-2.2.2-1.fc35.x86_ [===================      ] 12/12  Installing       : csexec-2.2.2-1.fc35.x86_ [====================     ] 12/12  Installing       : csexec-2.2.2-1.fc35.x86_ [=====================    ] 12/12  Installing       : csexec-2.2.2-1.fc35.x86_ [======================   ] 12/12  Installing       : csexec-2.2.2-1.fc35.x86_ [=======================  ] 12/12  Installing       : csexec-2.2.2-1.fc35.x86_ [======================== ] 12/12  Installing       : csexec-2.2.2-1.fc35.x86_64                           12/12 
+  Running scriptlet: csexec-2.2.2-1.fc35.x86_64                           12/12 
+  Verifying        : minisat2-libs-2.2.1-13.fc35.x86_64                    1/12 
+  Verifying        : mpdecimal-2.5.1-2.fc35.x86_64                         2/12 
+  Verifying        : python-setuptools-wheel-57.4.0-1.fc35.noarch          3/12 
+  Verifying        : cbmc-5.50.0-1.fc35.x86_64                             4/12 
+  Verifying        : cbmc-utils-5.50.0-1.fc35.x86_64                       5/12 
+  Verifying        : csexec-2.2.2-1.fc35.x86_64                            6/12 
+  Verifying        : expat-2.5.0-1.fc35.x86_64                             7/12 
+  Verifying        : gcc-c++-11.3.1-3.fc35.x86_64                          8/12 
+  Verifying        : libstdc++-devel-11.3.1-3.fc35.x86_64                  9/12 
+  Verifying        : python-pip-wheel-21.2.3-4.fc35.noarch                10/12 
+  Verifying        : python3-3.10.8-3.fc35.x86_64                         11/12 
+  Verifying        : python3-libs-3.10.8-3.fc35.x86_64                    12/12 
+
+Installed:
+  cbmc-5.50.0-1.fc35.x86_64                                                     
+  cbmc-utils-5.50.0-1.fc35.x86_64                                               
+  csexec-2.2.2-1.fc35.x86_64                                                    
+  expat-2.5.0-1.fc35.x86_64                                                     
+  gcc-c++-11.3.1-3.fc35.x86_64                                                  
+  libstdc++-devel-11.3.1-3.fc35.x86_64                                          
+  minisat2-libs-2.2.1-13.fc35.x86_64                                            
+  mpdecimal-2.5.1-2.fc35.x86_64                                                 
+  python-pip-wheel-21.2.3-4.fc35.noarch                                         
+  python-setuptools-wheel-57.4.0-1.fc35.noarch                                  
+  python3-3.10.8-3.fc35.x86_64                                                  
+  python3-libs-3.10.8-3.fc35.x86_64                                             
+
+Complete!
+
+>>> 2023-01-26 11:00:00	"'/usr/bin/mock' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa' | sort -V > /home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/argon2-20171227-7.fc35/cbmc/output/debug/rpm-list-mock.txt"
+
+>>> 2023-01-26 11:00:06	"'/usr/bin/mock' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa --provides' | sort -V > /tmp/csmock1qi2ltmh/rpm-list-mock-provides.txt"
+
+>>> 2023-01-26 11:00:12	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--copyin" "/tmp/csmock1qi2ltmh/argon2-20171227-7.fc35.src.rpm" "/builddir/argon2-20171227-7.fc35.src.rpm"
+
+>>> 2023-01-26 11:00:17	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "chown mockbuild -R /builddir"
+
+>>> 2023-01-26 11:00:22	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"rpm -Uvh --nodeps '/builddir/argon2-20171227-7.fc35.src.rpm'\""
+Updating / installing...
+argon2-20171227-7.fc35                ########################################
+
+>>> 2023-01-26 11:00:28	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"sed -e 's|^ExclusiveArch:.*\\\$||' -i /builddir/build/SPECS/argon2.spec\""
+
+>>> 2023-01-26 11:00:34	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"rpmbuild -bs --nodeps /builddir/build/SPECS/argon2.spec '--define' '_unpackaged_files_terminate_build 0' '--define' 'apidocs 0' '--define' 'with_publican 0' '--without' 'docs' '--without' 'langpacks' '--define' '__cc goto-gcc' '--define' '__cxx goto-gcc' '--define' '__cpp goto-gcc -E' '--define' 'optflags -O0' '--define' 'build_ldflags -O0' && sh -c 'cd /builddir/build/SRPMS && eval mv -v *.src.rpm /builddir/argon2-20171227-7.fc35.src.rpm || :'\""
+setting SOURCE_DATE_EPOCH=1626825600
+Wrote: /builddir/build/SRPMS/argon2-20171227-7.fc35.src.rpm
+renamed 'argon2-20171227-7.fc35.src.rpm' -> '/builddir/argon2-20171227-7.fc35.src.rpm'
+
+>>> 2023-01-26 11:00:39	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--disable-plugin=selinux" "--copyout" "/builddir/argon2-20171227-7.fc35.src.rpm" "/tmp/csmock1qi2ltmh/argon2-20171227-7.fc35.src.rpm"
+
+>>> 2023-01-26 11:00:45	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--installdeps" "/tmp/csmock1qi2ltmh/argon2-20171227-7.fc35.src.rpm"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+fedora                   [===                 ] ---  B/s |   0  B     --:-- ETAfedora                                           27 kB/s | 4.5 kB     00:00    
+updates                  [===                 ] ---  B/s |   0  B     --:-- ETAupdates                                          21 kB/s | 2.8 kB     00:00    
+Package gcc-11.3.1-3.fc35.x86_64 is already installed.
+Package make-1:4.3-6.fc35.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+
+>>> 2023-01-26 11:00:56	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--install" "cbmc" "cbmc-utils" "csexec" "gcc"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+fedora                   [===                 ] ---  B/s |   0  B     --:-- ETAfedora                                           20 kB/s | 4.5 kB     00:00    
+updates                  [===                 ] ---  B/s |   0  B     --:-- ETAupdates                  [   ===              ] ---  B/s |   0  B     --:-- ETAupdates                                         8.4 kB/s | 2.8 kB     00:00    
+Package cbmc-5.50.0-1.fc35.x86_64 is already installed.
+Package cbmc-utils-5.50.0-1.fc35.x86_64 is already installed.
+Package csexec-2.2.2-1.fc35.x86_64 is already installed.
+Package gcc-11.3.1-3.fc35.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+
+>>> 2023-01-26 11:01:07	"'/usr/bin/mock' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa' | sort -V > /home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/argon2-20171227-7.fc35/cbmc/output/debug/rpm-list-mock.txt"
+
+>>> 2023-01-26 11:01:13	"'/usr/bin/mock' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa --provides' | sort -V > /tmp/csmock1qi2ltmh/rpm-list-mock-provides.txt"
+
+>>> 2023-01-26 11:01:19	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--install" "csdiff"
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+fedora                   [===                 ] ---  B/s |   0  B     --:-- ETAfedora                                           21 kB/s | 4.5 kB     00:00    
+updates                  [===                 ] ---  B/s |   0  B     --:-- ETAupdates                  [   ===              ] ---  B/s |   0  B     --:-- ETAupdates                  [      ===           ] ---  B/s |   0  B     --:-- ETAupdates                  [         ===        ] ---  B/s |   0  B     --:-- ETAupdates                  [            ===     ] ---  B/s |   0  B     --:-- ETAupdates                                         635  B/s | 2.8 kB     00:04    
+Dependencies resolved.
+================================================================================
+ Package                    Arch        Version              Repository    Size
+================================================================================
+Installing:
+ [1mcsdiff                    [m x86_64      2.7.0-1.fc35         updates      894 k
+Installing dependencies:
+ [1mboost-filesystem          [m x86_64      1.76.0-5.fc35        updates       58 k
+ [1mboost-program-options     [m x86_64      1.76.0-5.fc35        updates      107 k
+ [1mboost-system              [m x86_64      1.76.0-5.fc35        updates       14 k
+
+Transaction Summary
+================================================================================
+Install  4 Packages
+
+Total size: 1.0 M
+Installed size: 4.2 M
+Downloading Packages:
+[SKIPPED] boost-filesystem-1.76.0-5.fc35.x86_64.rpm: Already downloaded        
+[SKIPPED] boost-program-options-1.76.0-5.fc35.x86_64.rpm: Already downloaded   
+[SKIPPED] boost-system-1.76.0-5.fc35.x86_64.rpm: Already downloaded            
+[SKIPPED] csdiff-2.7.0-1.fc35.x86_64.rpm: Already downloaded                   
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :  [============                                       ] 1/1  Preparing        :  [=========================                          ] 1/1  Preparing        :  [======================================             ] 1/1  Preparing        :                                                        1/1 
+  Installing       : boost-system-1.76.0-5.fc3 [                          ] 1/4  Installing       : boost-system-1.76.0-5.fc3 [=======================   ] 1/4  Installing       : boost-system-1.76.0-5.fc3 [========================= ] 1/4  Installing       : boost-system-1.76.0-5.fc35.x86_64                      1/4 
+  Installing       : boost-filesystem-1.76.0-5 [                          ] 2/4  Installing       : boost-filesystem-1.76.0-5 [======                    ] 2/4  Installing       : boost-filesystem-1.76.0-5 [=============             ] 2/4  Installing       : boost-filesystem-1.76.0-5 [====================      ] 2/4  Installing       : boost-filesystem-1.76.0-5 [========================= ] 2/4  Installing       : boost-filesystem-1.76.0-5.fc35.x86_64                  2/4 
+  Installing       : boost-program-options-1.7 [                          ] 3/4  Installing       : boost-program-options-1.7 [==                        ] 3/4  Installing       : boost-program-options-1.7 [=====                     ] 3/4  Installing       : boost-program-options-1.7 [========                  ] 3/4  Installing       : boost-program-options-1.7 [===========               ] 3/4  Installing       : boost-program-options-1.7 [==============            ] 3/4  Installing       : boost-program-options-1.7 [=================         ] 3/4  Installing       : boost-program-options-1.7 [====================      ] 3/4  Installing       : boost-program-options-1.7 [=======================   ] 3/4  Installing       : boost-program-options-1.7 [========================= ] 3/4  Installing       : boost-program-options-1.76.0-5.fc35.x86_64             3/4 
+  Installing       : csdiff-2.7.0-1.fc35.x86_6 [                          ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [=                         ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [==                        ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [===                       ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [====                      ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [=====                     ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [======                    ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [=======                   ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [========                  ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [=========                 ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [==========                ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [===========               ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [============              ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [=============             ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [==============            ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [===============           ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [================          ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [=================         ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [==================        ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [===================       ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [====================      ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [=====================     ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [======================    ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [=======================   ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [========================  ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_6 [========================= ] 4/4  Installing       : csdiff-2.7.0-1.fc35.x86_64                             4/4 
+  Running scriptlet: csdiff-2.7.0-1.fc35.x86_64                             4/4 
+  Verifying        : boost-filesystem-1.76.0-5.fc35.x86_64                  1/4 
+  Verifying        : boost-program-options-1.76.0-5.fc35.x86_64             2/4 
+  Verifying        : boost-system-1.76.0-5.fc35.x86_64                      3/4 
+  Verifying        : csdiff-2.7.0-1.fc35.x86_64                             4/4 
+
+Installed:
+  boost-filesystem-1.76.0-5.fc35.x86_64                                         
+  boost-program-options-1.76.0-5.fc35.x86_64                                    
+  boost-system-1.76.0-5.fc35.x86_64                                             
+  csdiff-2.7.0-1.fc35.x86_64                                                    
+
+Complete!
+
+>>> 2023-01-26 11:01:36	"'/usr/bin/mock' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa' | sort -V > /home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/argon2-20171227-7.fc35/cbmc/output/debug/rpm-list-mock.txt"
+
+>>> 2023-01-26 11:01:42	"'/usr/bin/mock' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'rpm -qa --provides' | sort -V > /tmp/csmock1qi2ltmh/rpm-list-mock-provides.txt"
+
+>>> 2023-01-26 11:01:48	"tar -cP '/usr/share/csmock/scripts' '/usr/bin/cswrap' '/usr/lib64/cswrap' '/tmp/csmock1qi2ltmh/argon2-20171227-7.fc35.src.rpm' | '/usr/bin/mock' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'tar -xC/'"
+tar: Removing leading `/' from member names
+
+scan.ini: analyzer-version-cbmc = 5.50.0
+>>> 2023-01-26 11:01:53	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "/bin/su mockbuild -l -c \"mkdir -pv '/builddir/cbmc-capture'\""
+mkdir: created directory '/builddir/cbmc-capture'
+
+scan.ini: analyzer-version-gcc = 11.3.1
+>>> 2023-01-26 11:01:59	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "rpm -Uvh --nodeps '/tmp/csmock1qi2ltmh/argon2-20171227-7.fc35.src.rpm'"
+Updating / installing...
+argon2-20171227-7.fc35                ########################################
+
+>>> 2023-01-26 11:02:04	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "chmod -R +r /builddir"
+
+>>> 2023-01-26 11:02:10	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "ln -fv '/usr/share/csmock/scripts/enable-keep-going.sh' '/usr/share/csmock/scripts/chroot-fixups'"
+'/usr/share/csmock/scripts/chroot-fixups/enable-keep-going.sh' => '/usr/share/csmock/scripts/enable-keep-going.sh'
+
+>>> 2023-01-26 11:02:15	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--shell" "for i in /usr/share/csmock/scripts/chroot-fixups/*; do test -x \$i && echo RUN: \$i >&2 && \$i; done"
+RUN: /usr/share/csmock/scripts/chroot-fixups/enable-keep-going.sh
+renamed '/usr/bin/make' -> '/usr/bin/make.orig'
++ ls -l /usr/bin/make
+-rwxr-xr-x. 1 root root 42 Jan 26 11:02 /usr/bin/make
++ cat /usr/bin/make
+#!/bin/sh
+exec /usr/bin/make.orig -k "$@"
+RUN: /usr/share/csmock/scripts/chroot-fixups/gdk-pixbuf2-triggers.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/glib2-triggers.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/kpathsea-texhash.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/openssl-public-header-files.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/qt5-core-abi.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/rpm-build-scripts.sh
++ sed -e s/fail=1/fail=0/ -i /usr/lib/rpm/redhat/brp-mangle-shebangs
+'/usr/lib/rpm/brp-strip-static-archive' -> '/bin/true'
+RUN: /usr/share/csmock/scripts/chroot-fixups/rpm-macros.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/rpm-python-extras.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/shared-mime-info-triggers.sh
+RUN: /usr/share/csmock/scripts/chroot-fixups/symbiotic-timeout.sh
+
+>>> 2023-01-26 11:02:21	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--chroot" "/bin/su mockbuild -l -c \"rpmbuild -bp --nodeps /builddir/build/SPECS/argon2.spec '--define' '_unpackaged_files_terminate_build 0' '--define' 'apidocs 0' '--define' 'with_publican 0' '--without' 'docs' '--without' 'langpacks' '--define' '__cc goto-gcc' '--define' '__cxx goto-gcc' '--define' '__cpp goto-gcc -E' '--define' 'optflags -O0' '--define' 'build_ldflags -O0'\""
+INFO: mock.py version 3.5 starting (python version = 3.10.9, NVR = mock-3.5-1.fc36)...
+Start(bootstrap): init plugins
+INFO: selinux enabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 3.5
+INFO: Mock Version: 3.5
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 3.5
+INFO: Mock Version: 3.5
+Finish: chroot init
+INFO: Running in chroot: ['/bin/su mockbuild -l -c "rpmbuild -bp --nodeps /builddir/build/SPECS/argon2.spec \'--define\' \'_unpackaged_files_terminate_build 0\' \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc goto-gcc\' \'--define\' \'__cxx goto-gcc\' \'--define\' \'__cpp goto-gcc -E\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'"']
+Start: chroot ['/bin/su mockbuild -l -c "rpmbuild -bp --nodeps /builddir/build/SPECS/argon2.spec \'--define\' \'_unpackaged_files_terminate_build 0\' \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc goto-gcc\' \'--define\' \'__cxx goto-gcc\' \'--define\' \'__cpp goto-gcc -E\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'"']
+setting SOURCE_DATE_EPOCH=1626825600
+Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.8fQJ1o
++ umask 022
++ cd /builddir/build/BUILD
++ cd /builddir/build/BUILD
++ rm -rf phc-winner-argon2-670229c849b9fe882583688b74eb7dfdc846f9f6
++ /usr/bin/gzip -dc /builddir/build/SOURCES/phc-winner-argon2-20171227-670229c.tar.gz
++ /usr/bin/tar -xof -
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd phc-winner-argon2-670229c849b9fe882583688b74eb7dfdc846f9f6
++ /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
++ echo 'Patch #0 (argon2-Use-explicit_bzero-on-recent-glibc-versions.patch):'
+Patch #0 (argon2-Use-explicit_bzero-on-recent-glibc-versions.patch):
++ /usr/bin/patch --no-backup-if-mismatch -f -p1 --fuzz=0
+patching file src/core.c
+Patch #1 (argon2-Wait-for-already-running-threads-if-a-thread-creatio.patch):
++ echo 'Patch #1 (argon2-Wait-for-already-running-threads-if-a-thread-creatio.patch):'
++ /usr/bin/patch --no-backup-if-mismatch -f -p1 --fuzz=0
+patching file src/core.c
++ grep -q 'ABI_VERSION = 1' Makefile
++ sed -e 's:lib/@HOST_MULTIARCH@:lib64:;s/@UPSTREAM_VER@/20171227/' -i libargon2.pc
++ sed -e '/^CFLAGS/s:^CFLAGS:LDFLAGS=-O0\nCFLAGS:' -e 's:-O3 -Wall:-O0:' -e '/^LIBRARY_REL/s:lib:lib64:' -e 's:-march=\$(OPTTARGET) :${CFLAGS} :' -e 's:CFLAGS += -march=\$(OPTTARGET)::' -i Makefile
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Finish: chroot ['/bin/su mockbuild -l -c "rpmbuild -bp --nodeps /builddir/build/SPECS/argon2.spec \'--define\' \'_unpackaged_files_terminate_build 0\' \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc goto-gcc\' \'--define\' \'__cxx goto-gcc\' \'--define\' \'__cpp goto-gcc -E\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'"']
+
+>>> 2023-01-26 11:02:27	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--chroot" "chmod -R +r /builddir/build"
+
+>>> 2023-01-26 11:02:32	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--chroot" "/bin/su mockbuild -l -c \"PATH=/usr/lib64/cswrap:\\\$PATH CSWRAP_CAP_FILE=\\\$'/builddir/cswrap-capture.err' CSWRAP_TIMEOUT=\\\$'30' CSWRAP_TIMEOUT_FOR=\\\$':' CC=\\\$'goto-gcc' CXX=\\\$'goto-gcc' CSEXEC_WRAP_CMD=\\\$'--skip-ld-linux\\\\a/usr/bin/csexec-cbmc\\\\a-t\\\\a8\\\\a-l\\\\a/builddir/cbmc-capture\\\\a-c\\\\a--unwind 1 --json-ui --verbosity 4 --pointer-overflow-check --memory-leak-check ' CSWRAP_ADD_CFLAGS=\\\$'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader' CSWRAP_DEL_CFLAGS=\\\$'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register' CSWRAP_ADD_CXXFLAGS=\\\$'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader' CSWRAP_DEL_CXXFLAGS=\\\$'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register' sh -c \\\"rpmbuild -bc --nodeps --short-circuit /builddir/build/SPECS/argon2.spec '--define' '_unpackaged_files_terminate_build 0' '--define' 'apidocs 0' '--define' 'with_publican 0' '--without' 'docs' '--without' 'langpacks' '--define' '__cc goto-gcc' '--define' '__cxx goto-gcc' '--define' '__cpp goto-gcc -E' '--define' 'optflags -O0' '--define' 'build_ldflags -O0'\\\"\""
+INFO: mock.py version 3.5 starting (python version = 3.10.9, NVR = mock-3.5-1.fc36)...
+Start(bootstrap): init plugins
+INFO: selinux enabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 3.5
+INFO: Mock Version: 3.5
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 3.5
+INFO: Mock Version: 3.5
+Finish: chroot init
+INFO: Running in chroot: ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'goto-gcc\' CXX=\\$\'goto-gcc\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\a/usr/bin/csexec-cbmc\\\\a-t\\\\a8\\\\a-l\\\\a/builddir/cbmc-capture\\\\a-c\\\\a--unwind 1 --json-ui --verbosity 4 --pointer-overflow-check --memory-leak-check \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bc --nodeps --short-circuit /builddir/build/SPECS/argon2.spec \'--define\' \'_unpackaged_files_terminate_build 0\' \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc goto-gcc\' \'--define\' \'__cxx goto-gcc\' \'--define\' \'__cpp goto-gcc -E\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+Start: chroot ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'goto-gcc\' CXX=\\$\'goto-gcc\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\a/usr/bin/csexec-cbmc\\\\a-t\\\\a8\\\\a-l\\\\a/builddir/cbmc-capture\\\\a-c\\\\a--unwind 1 --json-ui --verbosity 4 --pointer-overflow-check --memory-leak-check \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bc --nodeps --short-circuit /builddir/build/SPECS/argon2.spec \'--define\' \'_unpackaged_files_terminate_build 0\' \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc goto-gcc\' \'--define\' \'__cxx goto-gcc\' \'--define\' \'__cpp goto-gcc -E\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+setting SOURCE_DATE_EPOCH=1626825600
+Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.7n6uzA
++ umask 022
++ cd /builddir/build/BUILD
++ cd phc-winner-argon2-670229c849b9fe882583688b74eb7dfdc846f9f6
++ make -j1
+Building with optimizations for native
+goto-gcc -std=c89 -O0 -g -Iinclude -Isrc -pthread -O0 src/argon2.c src/core.c src/blake2/blake2b.c src/thread.c src/encoding.c src/opt.c src/run.c -o argon2
+goto-gcc -std=c89 -O0 -g -Iinclude -Isrc -pthread -shared -fPIC -fvisibility=hidden -DA2_VISCTL=1 -O0 -Wl,-soname,libargon2.so.1 src/argon2.c src/core.c src/blake2/blake2b.c src/thread.c src/encoding.c src/opt.c -o libargon2.so.1
+goto-gcc -std=c89 -O0 -g -Iinclude -Isrc -pthread   -c -o src/argon2.o src/argon2.c
+goto-gcc -std=c89 -O0 -g -Iinclude -Isrc -pthread   -c -o src/core.o src/core.c
+goto-gcc -std=c89 -O0 -g -Iinclude -Isrc -pthread   -c -o src/blake2/blake2b.o src/blake2/blake2b.c
+goto-gcc -std=c89 -O0 -g -Iinclude -Isrc -pthread   -c -o src/thread.o src/thread.c
+goto-gcc -std=c89 -O0 -g -Iinclude -Isrc -pthread   -c -o src/encoding.o src/encoding.c
+goto-gcc -std=c89 -O0 -g -Iinclude -Isrc -pthread   -c -o src/opt.o src/opt.c
+ar rcs libargon2.a src/argon2.o src/core.o src/blake2/blake2b.o src/thread.o src/encoding.o src/opt.o
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Finish: chroot ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'goto-gcc\' CXX=\\$\'goto-gcc\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\a/usr/bin/csexec-cbmc\\\\a-t\\\\a8\\\\a-l\\\\a/builddir/cbmc-capture\\\\a-c\\\\a--unwind 1 --json-ui --verbosity 4 --pointer-overflow-check --memory-leak-check \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bc --nodeps --short-circuit /builddir/build/SPECS/argon2.spec \'--define\' \'_unpackaged_files_terminate_build 0\' \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc goto-gcc\' \'--define\' \'__cxx goto-gcc\' \'--define\' \'__cpp goto-gcc -E\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+
+>>> 2023-01-26 11:02:55	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--chroot" "/bin/su mockbuild -l -c \"PATH=/usr/lib64/cswrap:\\\$PATH CSWRAP_CAP_FILE=\\\$'/builddir/cswrap-capture.err' CSWRAP_TIMEOUT=\\\$'30' CSWRAP_TIMEOUT_FOR=\\\$':' CC=\\\$'goto-gcc' CXX=\\\$'goto-gcc' CSEXEC_WRAP_CMD=\\\$'--skip-ld-linux\\\\a/usr/bin/csexec-cbmc\\\\a-t\\\\a8\\\\a-l\\\\a/builddir/cbmc-capture\\\\a-c\\\\a--unwind 1 --json-ui --verbosity 4 --pointer-overflow-check --memory-leak-check ' CSWRAP_ADD_CFLAGS=\\\$'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader' CSWRAP_DEL_CFLAGS=\\\$'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register' CSWRAP_ADD_CXXFLAGS=\\\$'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader' CSWRAP_DEL_CXXFLAGS=\\\$'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register' sh -c \\\"rpmbuild -bi --nodeps --short-circuit /builddir/build/SPECS/argon2.spec '--define' '_unpackaged_files_terminate_build 0' '--define' 'apidocs 0' '--define' 'with_publican 0' '--without' 'docs' '--without' 'langpacks' '--define' '__cc goto-gcc' '--define' '__cxx goto-gcc' '--define' '__cpp goto-gcc -E' '--define' 'optflags -O0' '--define' 'build_ldflags -O0'\\\"\""
+INFO: mock.py version 3.5 starting (python version = 3.10.9, NVR = mock-3.5-1.fc36)...
+Start(bootstrap): init plugins
+INFO: selinux enabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 3.5
+INFO: Mock Version: 3.5
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+Mock Version: 3.5
+INFO: Mock Version: 3.5
+Finish: chroot init
+INFO: Running in chroot: ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'goto-gcc\' CXX=\\$\'goto-gcc\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\a/usr/bin/csexec-cbmc\\\\a-t\\\\a8\\\\a-l\\\\a/builddir/cbmc-capture\\\\a-c\\\\a--unwind 1 --json-ui --verbosity 4 --pointer-overflow-check --memory-leak-check \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bi --nodeps --short-circuit /builddir/build/SPECS/argon2.spec \'--define\' \'_unpackaged_files_terminate_build 0\' \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc goto-gcc\' \'--define\' \'__cxx goto-gcc\' \'--define\' \'__cpp goto-gcc -E\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+Start: chroot ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'goto-gcc\' CXX=\\$\'goto-gcc\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\a/usr/bin/csexec-cbmc\\\\a-t\\\\a8\\\\a-l\\\\a/builddir/cbmc-capture\\\\a-c\\\\a--unwind 1 --json-ui --verbosity 4 --pointer-overflow-check --memory-leak-check \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bi --nodeps --short-circuit /builddir/build/SPECS/argon2.spec \'--define\' \'_unpackaged_files_terminate_build 0\' \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc goto-gcc\' \'--define\' \'__cxx goto-gcc\' \'--define\' \'__cpp goto-gcc -E\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+setting SOURCE_DATE_EPOCH=1626825600
+Executing(%install): /bin/sh -e /var/tmp/rpm-tmp.oXEnP1
++ umask 022
++ cd /builddir/build/BUILD
++ '[' /builddir/build/BUILDROOT/argon2-20171227-7.fc35.x86_64 '!=' / ']'
++ rm -rf /builddir/build/BUILDROOT/argon2-20171227-7.fc35.x86_64
+++ dirname /builddir/build/BUILDROOT/argon2-20171227-7.fc35.x86_64
++ mkdir -p /builddir/build/BUILDROOT
++ mkdir /builddir/build/BUILDROOT/argon2-20171227-7.fc35.x86_64
++ cd phc-winner-argon2-670229c849b9fe882583688b74eb7dfdc846f9f6
++ make install DESTDIR=/builddir/build/BUILDROOT/argon2-20171227-7.fc35.x86_64
+Building with optimizations for native
+install -d /builddir/build/BUILDROOT/argon2-20171227-7.fc35.x86_64/usr/include
+install -m 0644 include/argon2.h /builddir/build/BUILDROOT/argon2-20171227-7.fc35.x86_64/usr/include
+install -d /builddir/build/BUILDROOT/argon2-20171227-7.fc35.x86_64/usr/lib64
+install libargon2.so.1 libargon2.a /builddir/build/BUILDROOT/argon2-20171227-7.fc35.x86_64/usr/lib64
+cd /builddir/build/BUILDROOT/argon2-20171227-7.fc35.x86_64/usr/lib64 && ln -s libargon2.so.1 libargon2.so
+install -d /builddir/build/BUILDROOT/argon2-20171227-7.fc35.x86_64/usr/bin
+install argon2 /builddir/build/BUILDROOT/argon2-20171227-7.fc35.x86_64/usr/bin
++ rm /builddir/build/BUILDROOT/argon2-20171227-7.fc35.x86_64/usr/lib64/libargon2.a
++ install -Dpm 644 libargon2.pc /builddir/build/BUILDROOT/argon2-20171227-7.fc35.x86_64/usr/lib64/pkgconfig/libargon2.pc
++ chmod -x /builddir/build/BUILDROOT/argon2-20171227-7.fc35.x86_64/usr/include/argon2.h
++ /usr/bin/find-debuginfo -j4 --strict-build-id -m -i --build-id-seed 20171227-7.fc35 --unique-debug-suffix -20171227-7.fc35.x86_64 --unique-debug-src-base argon2-20171227-7.fc35.x86_64 --run-dwz --dwz-low-mem-die-limit 10000000 --dwz-max-die-limit 110000000 -S debugsourcefiles.list /builddir/build/BUILD/phc-winner-argon2-670229c849b9fe882583688b74eb7dfdc846f9f6
+extracting debug info from /builddir/build/BUILDROOT/argon2-20171227-7.fc35.x86_64/usr/bin/argon2
+extracting debug info from /builddir/build/BUILDROOT/argon2-20171227-7.fc35.x86_64/usr/lib64/libargon2.so.1
+original debug info size: 772kB, size after compression: 760kB
+/usr/bin/sepdebugcrcfix: Updated 2 CRC32s, 0 CRC32s did match.
+280 blocks
++ /usr/lib/rpm/check-buildroot
++ /usr/lib/rpm/redhat/brp-ldconfig
++ /usr/lib/rpm/brp-compress
++ /usr/lib/rpm/redhat/brp-strip-lto /usr/bin/strip
++ /usr/lib/rpm/brp-strip-static-archive /usr/bin/strip
++ /usr/lib/rpm/check-rpaths
++ /usr/lib/rpm/redhat/brp-mangle-shebangs
++ /usr/lib/rpm/redhat/brp-python-bytecompile '' 1 0
++ /usr/lib/rpm/redhat/brp-python-hardlink
+Executing(%check): /bin/sh -e /var/tmp/rpm-tmp.HlQbT0
++ umask 022
++ cd /builddir/build/BUILD
++ cd phc-winner-argon2-670229c849b9fe882583688b74eb7dfdc846f9f6
++ make test
+Building with optimizations for native
+goto-gcc -std=c89 -O0 -g -Iinclude -Isrc -pthread  -Wextra -Wno-type-limits src/argon2.c src/core.c src/blake2/blake2b.c src/thread.c src/encoding.c src/opt.c src/test.c -o testcase
+Default build
+argon2i v=16: OK
+argon2d v=16: OK
+argon2id v=16: OK
+argon2i v=19: OK
+argon2d v=19: OK
+argon2id v=19: OK
+Force OPTTEST=1
+argon2i v=16: OK
+argon2d v=16: OK
+argon2id v=16: OK
+argon2i v=19: OK
+argon2d v=19: OK
+argon2id v=19: OK
+./testcase
+Test Argon2i version number: 10
+Hash test: $v=16 t=2, m=16, p=1, pass=password, salt=somesalt: PASS
+Hash test: $v=16 t=2, m=18, p=1, pass=password, salt=somesalt: PASS
+Hash test: $v=16 t=2, m=8, p=1, pass=password, salt=somesalt: PASS
+Hash test: $v=16 t=2, m=8, p=2, pass=password, salt=somesalt: PASS
+Hash test: $v=16 t=1, m=16, p=1, pass=password, salt=somesalt: PASS
+Hash test: $v=16 t=4, m=16, p=1, pass=password, salt=somesalt: PASS
+Hash test: $v=16 t=2, m=16, p=1, pass=differentpassword, salt=somesalt: PASS
+Hash test: $v=16 t=2, m=16, p=1, pass=password, salt=diffsalt: PASS
+Recognise an invalid encoding: PASS
+Recognise an invalid encoding: PASS
+Recognise an invalid salt in encoding: PASS
+Verify with mismatched password: PASS
+Decode an error message: PASS
+
+Test Argon2i version number: 13
+Hash test: $v=19 t=2, m=16, p=1, pass=password, salt=somesalt: PASS
+Hash test: $v=19 t=2, m=18, p=1, pass=password, salt=somesalt: PASS
+Hash test: $v=19 t=2, m=8, p=1, pass=password, salt=somesalt: PASS
+Hash test: $v=19 t=2, m=8, p=2, pass=password, salt=somesalt: PASS
+Hash test: $v=19 t=1, m=16, p=1, pass=password, salt=somesalt: PASS
+Hash test: $v=19 t=4, m=16, p=1, pass=password, salt=somesalt: PASS
+Hash test: $v=19 t=2, m=16, p=1, pass=differentpassword, salt=somesalt: PASS
+Hash test: $v=19 t=2, m=16, p=1, pass=password, salt=diffsalt: PASS
+Recognise an invalid encoding: PASS
+Recognise an invalid encoding: PASS
+Recognise an invalid salt in encoding: PASS
+Verify with mismatched password: PASS
+Decode an error message: PASS
+
+Common error state tests
+Fail on invalid memory: PASS
+Fail on invalid null pointer: PASS
+Fail on salt too short: PASS
+Processing files: argon2-20171227-7.fc35.x86_64
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Provides: argon2 = 20171227-7.fc35 argon2(x86-64) = 20171227-7.fc35
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Requires: libc.so.6()(64bit) libc.so.6(GLIBC_2.14)(64bit) libc.so.6(GLIBC_2.2.5)(64bit) libc.so.6(GLIBC_2.25)(64bit) libc.so.6(GLIBC_2.34)(64bit) rtld(GNU_HASH)
+Processing files: libargon2-20171227-7.fc35.x86_64
+Executing(%license): /bin/sh -e /var/tmp/rpm-tmp.MScEs7
++ umask 022
++ cd /builddir/build/BUILD
++ cd phc-winner-argon2-670229c849b9fe882583688b74eb7dfdc846f9f6
++ LICENSEDIR=/builddir/build/BUILDROOT/argon2-20171227-7.fc35.x86_64/usr/share/licenses/libargon2
++ export LC_ALL=C
++ LC_ALL=C
++ export LICENSEDIR
++ /usr/bin/mkdir -p /builddir/build/BUILDROOT/argon2-20171227-7.fc35.x86_64/usr/share/licenses/libargon2
++ cp -pr LICENSE /builddir/build/BUILDROOT/argon2-20171227-7.fc35.x86_64/usr/share/licenses/libargon2
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Provides: libargon2 = 20171227-7.fc35 libargon2(x86-64) = 20171227-7.fc35 libargon2.so.1()(64bit)
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Requires: libc.so.6()(64bit) libc.so.6(GLIBC_2.14)(64bit) libc.so.6(GLIBC_2.2.5)(64bit) libc.so.6(GLIBC_2.25)(64bit) libc.so.6(GLIBC_2.34)(64bit) rtld(GNU_HASH)
+Processing files: libargon2-devel-20171227-7.fc35.x86_64
+Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.4J0Fw1
++ umask 022
++ cd /builddir/build/BUILD
++ cd phc-winner-argon2-670229c849b9fe882583688b74eb7dfdc846f9f6
++ DOCDIR=/builddir/build/BUILDROOT/argon2-20171227-7.fc35.x86_64/usr/share/doc/libargon2-devel
++ export LC_ALL=C
++ LC_ALL=C
++ export DOCDIR
++ /usr/bin/mkdir -p /builddir/build/BUILDROOT/argon2-20171227-7.fc35.x86_64/usr/share/doc/libargon2-devel
++ cp -pr CHANGELOG.md README.md /builddir/build/BUILDROOT/argon2-20171227-7.fc35.x86_64/usr/share/doc/libargon2-devel
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Provides: libargon2-devel = 20171227-7.fc35 libargon2-devel(x86-64) = 20171227-7.fc35 pkgconfig(libargon2) = 20171227
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Requires: /usr/bin/pkg-config libargon2.so.1()(64bit)
+Processing files: argon2-debugsource-20171227-7.fc35.x86_64
+Provides: argon2-debugsource = 20171227-7.fc35 argon2-debugsource(x86-64) = 20171227-7.fc35
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Processing files: argon2-debuginfo-20171227-7.fc35.x86_64
+Provides: argon2-debuginfo = 20171227-7.fc35 argon2-debuginfo(x86-64) = 20171227-7.fc35 debuginfo(build-id) = 6665817c8004dada16dcbc8aed11edb2fe722bc5
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Recommends: argon2-debugsource(x86-64) = 20171227-7.fc35
+Processing files: libargon2-debuginfo-20171227-7.fc35.x86_64
+Provides: debuginfo(build-id) = bc2ab2e98d4870bb10d0d78f1d2493690d8a5109 libargon2-debuginfo = 20171227-7.fc35 libargon2-debuginfo(x86-64) = 20171227-7.fc35 libargon2.so.1-20171227-7.fc35.x86_64.debug()(64bit)
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Recommends: argon2-debugsource(x86-64) = 20171227-7.fc35
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /builddir/build/BUILDROOT/argon2-20171227-7.fc35.x86_64
+Finish: chroot ['/bin/su mockbuild -l -c "PATH=/usr/lib64/cswrap:\\$PATH CSWRAP_CAP_FILE=\\$\'/builddir/cswrap-capture.err\' CSWRAP_TIMEOUT=\\$\'30\' CSWRAP_TIMEOUT_FOR=\\$\':\' CC=\\$\'goto-gcc\' CXX=\\$\'goto-gcc\' CSEXEC_WRAP_CMD=\\$\'--skip-ld-linux\\\\a/usr/bin/csexec-cbmc\\\\a-t\\\\a8\\\\a-l\\\\a/builddir/cbmc-capture\\\\a-c\\\\a--unwind 1 --json-ui --verbosity 4 --pointer-overflow-check --memory-leak-check \' CSWRAP_ADD_CFLAGS=\\$\'-Wno-unknown-pragmas:-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wno-unknown-pragmas:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' CSWRAP_ADD_CXXFLAGS=\\$\'-Wno-unknown-warning-option:-O0:-g:-Wl,--dynamic-linker,/usr/bin/csexec-loader:-Wl,--dynamic-linker,/usr/bin/csexec-loader\' CSWRAP_DEL_CXXFLAGS=\\$\'-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register:-O1:-O2:-O3:-Os:-Ofast:-Og:-Werror*:-fdiagnostics-color*:-no-canonical-prefixes:-Wno-error=deprecated-register\' sh -c \\"rpmbuild -bi --nodeps --short-circuit /builddir/build/SPECS/argon2.spec \'--define\' \'_unpackaged_files_terminate_build 0\' \'--define\' \'apidocs 0\' \'--define\' \'with_publican 0\' \'--without\' \'docs\' \'--without\' \'langpacks\' \'--define\' \'__cc goto-gcc\' \'--define\' \'__cxx goto-gcc\' \'--define\' \'__cpp goto-gcc -E\' \'--define\' \'optflags -O0\' \'--define\' \'build_ldflags -O0\'\\""']
+
+>>> 2023-01-26 11:06:20	"'/usr/bin/mock' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'tar -c --remove-files '/builddir/cswrap-capture.err' '/builddir/cbmc-capture'' | tar -xC '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/argon2-20171227-7.fc35/cbmc/output/debug/raw-results'"
+tar: Removing leading `/' from member names
+tar: /builddir/cswrap-capture.err: Cannot stat: No such file or directory
+tar: Removing leading `/' from hard link targets
+tar: Exiting with failure status due to previous errors
+cat: /home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/argon2-20171227-7.fc35/cbmc/output/debug/raw-results/builddir/cswrap-capture.err: No such file or directory
+
+>>> 2023-01-26 11:06:25	"chmod" "-R" "+r" "/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/argon2-20171227-7.fc35/cbmc/output/debug/raw-results/builddir/cbmc-capture"
+
+>>> 2023-01-26 11:06:25	"cd '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/argon2-20171227-7.fc35/cbmc/output/debug/raw-results/builddir/cbmc-capture' && touch empty.conv && csgrep --mode=json --remove-duplicates *.conv > '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/argon2-20171227-7.fc35/cbmc/output/debug/uni-results/cbmc-capture.js'"
+
+scan.ini: time-finished = 2023-01-26 11:06:25
+scan.ini: exit-code = 0
+>>> 2023-01-26 11:06:25	"cslinker --quiet --cwelist '/usr/share/csmock/cwe-map.csv' --inifile '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/argon2-20171227-7.fc35/cbmc/output/scan.ini' '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/argon2-20171227-7.fc35/cbmc/output/debug/uni-results'/* > '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/argon2-20171227-7.fc35/cbmc/output/debug/scan-results-all.js'"
+
+>>> 2023-01-26 11:06:25	"'/usr/bin/mock' '-r' 'fedora-35-x86_64' '--plugin-option=tmpfs:keep_mounted=True' '--config-opts=print_main_output=True' '--quiet' '--shell' 'csgrep --mode=json --embed-context 3' < '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/argon2-20171227-7.fc35/cbmc/output/debug/scan-results-all.js' > '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/argon2-20171227-7.fc35/cbmc/output/debug/scan-results-all.js.tmp'"
+
+>>> 2023-01-26 11:06:31	"/usr/bin/mock" "-r" "fedora-35-x86_64" "--plugin-option=tmpfs:keep_mounted=True" "--config-opts=print_main_output=True" "--quiet" "--clean"
+
+>>> 2023-01-26 11:06:43	"cat '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/argon2-20171227-7.fc35/cbmc/output/debug/scan-results-all.js' | sed 's|/builddir/build/BUILDROOT/[^/]*/|/builddir/build/BUILD//|' | csgrep --mode=json --path '^/builddir/build/BUILD/' --strip-path-prefix /builddir/build/BUILD/ | csgrep --mode=json --invert-match --path '^ksh-.*[0-9]+\\.c\$' | csgrep --mode=json --invert-match --path 'CMakeFiles/CMakeTmp|conftest.c' | cssort --key=path > '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/argon2-20171227-7.fc35/cbmc/output/scan-results.js'"
+
+>>> 2023-01-26 11:06:43	"sed 's|/builddir/build/BUILDROOT/[^/]*/|/builddir/build/BUILD//|' '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/argon2-20171227-7.fc35/cbmc/output/debug/scan-results-all.js' | csgrep --mode=json --strip-path-prefix /builddir/build/BUILD/ | csdiff --show-internal '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/argon2-20171227-7.fc35/cbmc/output/scan-results.js' - | cssort > '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/argon2-20171227-7.fc35/cbmc/output/debug/suppressed-results.js'"
+
+>>> 2023-01-26 11:06:43	"csgrep --mode=grep --invert-match --event \"internal warning\" --prune-events=1 '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/argon2-20171227-7.fc35/cbmc/output/debug/suppressed-results.js' > '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/argon2-20171227-7.fc35/cbmc/output/debug/suppressed-results.err'"
+
+>>> 2023-01-26 11:06:43	"csgrep --mode=json --invert-match --event \"internal warning\" --prune-events=1 '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/argon2-20171227-7.fc35/cbmc/output/debug/suppressed-results.js' | cshtml - > '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/argon2-20171227-7.fc35/cbmc/output/debug/suppressed-results.html'"
+
+>>> 2023-01-26 11:06:43	"csgrep --mode=evtstat --invert-match --event \"internal warning\" --prune-events=1 '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/argon2-20171227-7.fc35/cbmc/output/debug/suppressed-results.js' | tee '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/argon2-20171227-7.fc35/cbmc/output/debug/suppressed-results-summary.txt'"
+
+>>> 2023-01-26 11:06:43	"csgrep --mode=grep --invert-match --event \"internal warning\" --prune-events=1 '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/argon2-20171227-7.fc35/cbmc/output/scan-results.js' > '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/argon2-20171227-7.fc35/cbmc/output/scan-results.err'"
+
+>>> 2023-01-26 11:06:43	"csgrep --mode=json --invert-match --event \"internal warning\" --prune-events=1 '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/argon2-20171227-7.fc35/cbmc/output/scan-results.js' | cshtml - > '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/argon2-20171227-7.fc35/cbmc/output/scan-results.html'"
+
+>>> 2023-01-26 11:06:43	"csgrep --mode=evtstat --invert-match --event \"internal warning\" --prune-events=1 '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/argon2-20171227-7.fc35/cbmc/output/scan-results.js' | tee '/home/mockbuilder/aufover-benchmark/workdir-for-sync/rpm-pkgs/argon2-20171227-7.fc35/cbmc/output/scan-results-summary.txt'"
+
+<<< 2023-01-26 11:06:43	csmock exit code: 0
+

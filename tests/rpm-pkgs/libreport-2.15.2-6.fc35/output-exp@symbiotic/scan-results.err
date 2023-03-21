@@ -1,0 +1,99 @@
+Error: COMPILER_WARNING (CWE-192):
+libreport-2.15.2/src/gtk-helpers/problem_details_widget.c:128:52: warning[-Wenum-conversion]: implicit conversion from enumeration type 'GtkWrapMode' to different enumeration type 'PangoWrapMode'
+#    gtk_label_set_line_wrap_mode(GTK_LABEL(value), GTK_WRAP_WORD);
+#    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~                   ^~~~~~~~~~~~~
+#  126|       gtk_label_set_selectable(GTK_LABEL(value), TRUE);
+#  127|       gtk_label_set_line_wrap(GTK_LABEL(value), TRUE);
+#  128|->     gtk_label_set_line_wrap_mode(GTK_LABEL(value), GTK_WRAP_WORD);
+#  129|       gtk_widget_set_halign(value, GTK_ALIGN_START);
+#  130|       gtk_widget_set_hexpand(value, TRUE);
+
+Error: COMPILER_WARNING (CWE-192):
+libreport-2.15.2/src/gtk-helpers/problem_details_widget.c:157:56: warning[-Wenum-conversion]: implicit conversion from enumeration type 'GtkWrapMode' to different enumeration type 'PangoWrapMode'
+#        gtk_label_set_line_wrap_mode(GTK_LABEL(value), GTK_WRAP_WORD);
+#        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~                   ^~~~~~~~~~~~~
+#  155|       {
+#  156|           gtk_label_set_line_wrap(GTK_LABEL(value), TRUE);
+#  157|->         gtk_label_set_line_wrap_mode(GTK_LABEL(value), GTK_WRAP_WORD);
+#  158|           gtk_widget_set_margin_bottom(value, 12);
+#  159|       }
+
+Error: COMPILER_WARNING (CWE-192):
+libreport-2.15.2/src/gtk-helpers/secrets.c:185:51: warning[-Wenum-conversion]: implicit conversion from enumeration type 'GDBusProxyFlags' to different enumeration type 'GDBusCallFlags'
+#                                                  G_DBUS_PROXY_FLAGS_NONE,
+#                                                  ^~~~~~~~~~~~~~~~~~~~~~~
+#  183|                                                     method,
+#  184|                                                     args,
+#  185|->                                                   G_DBUS_PROXY_FLAGS_NONE,
+#  186|                                                     SECRETS_CALL_DEFAULT_TIMEOUT,
+#  187|                                                     /* GCancellable */ NULL,
+
+Error: COMPILER_WARNING (CWE-192):
+libreport-2.15.2/src/gtk-helpers/secrets.c:830:32: warning[-Wenum-conversion]: implicit conversion from enumeration type 'GDBusProxyFlags' to different enumeration type 'GDBusCallFlags'
+#                               G_DBUS_PROXY_FLAGS_NONE, SECRETS_CALL_DEFAULT_TIMEOUT,
+#                               ^~~~~~~~~~~~~~~~~~~~~~~
+#  828|       GVariant *const resp =
+#  829|           g_dbus_proxy_call_sync(g_service_object->proxy, "ReadAlias", g_variant_new("(s)", alias),
+#  830|->                                G_DBUS_PROXY_FLAGS_NONE, SECRETS_CALL_DEFAULT_TIMEOUT,
+#  831|                                  NULL, &error);
+#  832|   
+
+Error: COMPILER_WARNING (CWE-192):
+libreport-2.15.2/src/gtk-helpers/secrets.c:1091:39: warning[-Wenum-conversion]: implicit conversion from enumeration type 'GDBusProxyFlags' to different enumeration type 'GDBusCallFlags'
+#                                      G_DBUS_PROXY_FLAGS_NONE, SECRETS_CALL_DEFAULT_TIMEOUT,
+#                                      ^~~~~~~~~~~~~~~~~~~~~~~
+# 1089|                                                               g_variant_ref(secret),
+# 1090|                                                               options[choice]),
+# 1091|->                                       G_DBUS_PROXY_FLAGS_NONE, SECRETS_CALL_DEFAULT_TIMEOUT,
+# 1092|                                         NULL, &error);
+# 1093|   
+
+Error: COMPILER_WARNING (CWE-192):
+libreport-2.15.2/src/gtk-helpers/secrets.c:1275:55: warning[-Wenum-conversion]: implicit conversion from enumeration type 'GDBusProxyFlags' to different enumeration type 'GDBusCallFlags'
+#                                                      G_DBUS_PROXY_FLAGS_NONE,
+#                                                      ^~~~~~~~~~~~~~~~~~~~~~~
+# 1273|                                                         g_variant_new("(o)",
+# 1274|                                                           g_dbus_proxy_get_object_path(session)),
+# 1275|->                                                       G_DBUS_PROXY_FLAGS_NONE,
+# 1276|                                                         SECRETS_CALL_DEFAULT_TIMEOUT,
+# 1277|                                                         /* GCancellable */ NULL,
+
+Error: COMPILER_WARNING (CWE-563):
+libreport-2.15.2/src/lib/run_event.c:418:34: warning[-Wunused-but-set-variable]: variable 'free_me' set but not used
+#                g_autofree char *free_me = NULL;
+#                                 ^
+#  416|                   g_autofree char *var_name = g_strndup(cond_str, eq_sign - cond_str - (regex|inverted));
+#  417|                   char *real_val = NULL;
+#  418|->                 g_autofree char *free_me = NULL;
+#  419|                   if (pd == NULL)
+#  420|                       free_me = real_val = dd_load_text_ext(dd, var_name, DD_FAIL_QUIETLY_ENOENT);
+
+Error: COMPILER_WARNING (CWE-563):
+libreport-2.15.2/src/lib/run_event.c:660:34: warning[-Wunused-variable]: unused variable 'logged'
+#                g_autofree char *logged = state->logging_callback(g_strdup(msg), state->logging_param);
+#                                 ^
+#  658|               else if (state->logging_callback)
+#  659|               {
+#  660|->                 g_autofree char *logged = state->logging_callback(g_strdup(msg), state->logging_param);
+#  661|               }
+#  662|   
+
+Error: COMPILER_WARNING (CWE-563):
+libreport-2.15.2/src/lib/ureport.c:127:27: warning[-Wunused-variable]: unused variable 'settings'
+#    g_autoptr(GHashTable) settings = NULL;
+#                          ^
+#  125|           return;
+#  126|   
+#  127|->     g_autoptr(GHashTable) settings = NULL;
+#  128|   
+#  129|       g_autofree const char *username = NULL;
+
+Error: COMPILER_WARNING (CWE-563):
+libreport-2.15.2/src/plugins/reporter-ureport.c:68:22: warning[-Wunused-but-set-variable]: variable 'attach_value_from_rt_data' set but not used
+#    g_autofree char *attach_value_from_rt_data = NULL;
+#                     ^
+#   66|       char *attach_value = NULL;
+#   67|       char *attach_value_from_rt = NULL;
+#   68|->     g_autofree char *attach_value_from_rt_data = NULL;
+#   69|       char *report_result_type = NULL;
+#   70|       char *attach_type = NULL;

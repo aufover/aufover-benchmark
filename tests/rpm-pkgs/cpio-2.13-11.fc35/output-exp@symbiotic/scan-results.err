@@ -1,0 +1,170 @@
+Error: COMPILER_WARNING:
+cpio-2.13/gnu/argp-pin.c:26:7: warning[-Wempty-translation-unit]: ISO C requires a translation unit to contain at least one declaration
+##endif
+#      ^
+#   24|   #ifndef HAVE_PROGRAM_INVOCATION_NAME
+#   25|   char *program_invocation_name = 0;
+#   26|-> #endif
+
+Error: COMPILER_WARNING (CWE-1164):
+cpio-2.13/gnu/argmatch.c:32: included_from: Included from here.
+cpio-2.13/gnu/gettext.h:148:1: warning[-Wunused-function]: unused function 'pgettext_aux'
+#pgettext_aux (const char *domain,
+#^
+#  146|   #endif
+#  147|   static const char *
+#  148|-> pgettext_aux (const char *domain,
+#  149|                 const char *msg_ctxt_id, const char *msgid,
+#  150|                 int category)
+
+Error: COMPILER_WARNING (CWE-1164):
+cpio-2.13/gnu/gettext.h:167:1: warning[-Wunused-function]: unused function 'npgettext_aux'
+#npgettext_aux (const char *domain,
+#^
+#  165|   #endif
+#  166|   static const char *
+#  167|-> npgettext_aux (const char *domain,
+#  168|                  const char *msg_ctxt_id, const char *msgid,
+#  169|                  const char *msgid_plural, unsigned long int n,
+
+Error: COMPILER_WARNING (CWE-1164):
+cpio-2.13/gnu/gettext.h:210:1: warning[-Wunused-function]: unused function 'dcpgettext_expr'
+#dcpgettext_expr (const char *domain,
+#^
+#  208|   #endif
+#  209|   static const char *
+#  210|-> dcpgettext_expr (const char *domain,
+#  211|                    const char *msgctxt, const char *msgid,
+#  212|                    int category)
+
+Error: COMPILER_WARNING (CWE-1164):
+cpio-2.13/gnu/gettext.h:257:1: warning[-Wunused-function]: unused function 'dcnpgettext_expr'
+#dcnpgettext_expr (const char *domain,
+#^
+#  255|   #endif
+#  256|   static const char *
+#  257|-> dcnpgettext_expr (const char *domain,
+#  258|                     const char *msgctxt, const char *msgid,
+#  259|                     const char *msgid_plural, unsigned long int n,
+
+Error: COMPILER_WARNING:
+cpio-2.13/gnu/hash.c:549:11: warning[-Wimplicit-const-int-float-conversion]: implicit conversion from 'unsigned long' to 'float' changes value from 18446744073709551615 to 18446744073709551616
+#      if (SIZE_MAX <= new_candidate)
+#          ^~~~~~~~ ~~
+/usr/include/stdint.h:227:22: note: expanded from macro 'SIZE_MAX'
+##  define SIZE_MAX              (18446744073709551615UL)
+#                                 ^~~~~~~~~~~~~~~~~~~~~~
+#  547|       {
+#  548|         float new_candidate = candidate / tuning->growth_threshold;
+#  549|->       if (SIZE_MAX <= new_candidate)
+#  550|           return 0;
+#  551|         candidate = new_candidate;
+
+Error: COMPILER_WARNING:
+cpio-2.13/gnu/hash.c:554:7: warning[-Wgnu-statement-expression]: use of GNU statement expression extension
+#  if (xalloc_oversized (candidate, sizeof (struct hash_entry *)))
+#      ^
+cpio-2.13/gnu/xalloc-oversized.h:59:8: note: expanded from macro 'xalloc_oversized'
+#    : ({ __xalloc_count_type __xalloc_count; \
+#       ^
+#  552|       }
+#  553|     candidate = next_prime (candidate);
+#  554|->   if (xalloc_oversized (candidate, sizeof (struct hash_entry *)))
+#  555|       return 0;
+#  556|     return candidate;
+
+Error: COMPILER_WARNING:
+cpio-2.13/gnu/hash.c:1079:15: warning[-Wimplicit-const-int-float-conversion]: implicit conversion from 'unsigned long' to 'float' changes value from 18446744073709551615 to 18446744073709551616
+#          if (SIZE_MAX <= candidate)
+#              ^~~~~~~~ ~~
+/usr/include/stdint.h:227:22: note: expanded from macro 'SIZE_MAX'
+##  define SIZE_MAX              (18446744073709551615UL)
+#                                 ^~~~~~~~~~~~~~~~~~~~~~
+# 1077|                   * tuning->growth_threshold));
+# 1078|   
+# 1079|->           if (SIZE_MAX <= candidate)
+# 1080|               return -1;
+# 1081|   
+
+Error: COMPILER_WARNING (CWE-197):
+cpio-2.13/gnu/parse-datetime.y:1157:17: warning[-Wabsolute-value]: absolute value function 'abs' given an argument of type 'long' but has parameter of type 'int' which may cause truncation of value
+#  if (24 * 60 < abs (n_minutes))
+#                ^
+cpio-2.13/gnu/parse-datetime.y:1157:17: note: use function 'labs' instead
+#  if (24 * 60 < abs (n_minutes))
+#                ^~~
+# 1155|        arrange to reject it by incrementing pc->zones_seen.  Thus,
+# 1156|        we allow only values in the range UTC-24:00 to UTC+24:00.  */
+# 1157|->   if (24 * 60 < abs (n_minutes))
+# 1158|       pc->zones_seen++;
+# 1159|   
+
+Error: COMPILER_WARNING:
+cpio-2.13/gnu/basename.c:24: included_from: Included from here.
+cpio-2.13/gnu/xalloc.h:107:7: warning[-Wgnu-statement-expression]: use of GNU statement expression extension
+#  if (xalloc_oversized (n, s))
+#      ^
+cpio-2.13/gnu/xalloc-oversized.h:59:8: note: expanded from macro 'xalloc_oversized'
+#    : ({ __xalloc_count_type __xalloc_count; \
+#       ^
+#  105|   xnmalloc (size_t n, size_t s)
+#  106|   {
+#  107|->   if (xalloc_oversized (n, s))
+#  108|       xalloc_die ();
+#  109|     return xmalloc (n * s);
+
+Error: COMPILER_WARNING:
+cpio-2.13/gnu/basename.c:24: included_from: Included from here.
+cpio-2.13/gnu/xalloc.h:120:7: warning[-Wgnu-statement-expression]: use of GNU statement expression extension
+#  if (xalloc_oversized (n, s))
+#      ^
+cpio-2.13/gnu/xalloc-oversized.h:59:8: note: expanded from macro 'xalloc_oversized'
+#    : ({ __xalloc_count_type __xalloc_count; \
+#       ^
+#  118|   xnrealloc (void *p, size_t n, size_t s)
+#  119|   {
+#  120|->   if (xalloc_oversized (n, s))
+#  121|       xalloc_die ();
+#  122|     return xrealloc (p, n * s);
+
+Error: COMPILER_WARNING:
+cpio-2.13/gnu/xmalloc.c:100:7: warning[-Wgnu-statement-expression]: use of GNU statement expression extension
+#  if (xalloc_oversized (n, s)
+#      ^
+cpio-2.13/gnu/xalloc-oversized.h:59:8: note: expanded from macro 'xalloc_oversized'
+#    : ({ __xalloc_count_type __xalloc_count; \
+#       ^
+#   98|        tests if HAVE_GNU_CALLOC, since GNU calloc never returns NULL if
+#   99|        successful.  */
+#  100|->   if (xalloc_oversized (n, s)
+#  101|         || (! (p = calloc (n, s)) && (HAVE_GNU_CALLOC || n != 0)))
+#  102|       xalloc_die ();
+
+Error: COMPILER_WARNING (CWE-1023):
+cpio-2.13/lib/rtapelib.c:703:10: warning[-Wswitch]: overflow converting case value to switch condition type (2150657282 to 18446744071565241602)
+#    case MTIOCGET:
+#         ^
+/usr/include/sys/mtio.h:198:18: note: expanded from macro 'MTIOCGET'
+##define MTIOCGET        _IOR('m', 2, struct mtget)      /* Get tape status.  */
+#                        ^
+/usr/include/asm-generic/ioctl.h:84:28: note: expanded from macro '_IOR'
+##define _IOR(type,nr,size)      _IOC(_IOC_READ,(type),(nr),(_IOC_TYPECHECK(size)))
+#                                ^
+/usr/include/asm-generic/ioctl.h:70:2: note: expanded from macro '_IOC'
+#        (((dir)  << _IOC_DIRSHIFT) | \
+#        ^
+#  701|   
+#  702|   #ifdef MTIOCGET
+#  703|->     case MTIOCGET:
+#  704|         {
+#  705|   	ssize_t status;
+
+Error: COMPILER_WARNING (CWE-563):
+cpio-2.13/tests/genfile.c:560:7: warning[-Wunused-variable]: unused variable 'i'
+#  int i;
+#      ^
+#  558|   generate_sparse_file (int argc, char **argv)
+#  559|   {
+#  560|->   int i;
+#  561|     int fd;
+#  562|     int flags = O_CREAT | O_RDWR | O_BINARY;

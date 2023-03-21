@@ -1,0 +1,47 @@
+Error: COMPILER_WARNING (CWE-457):
+authselect-1.2.4/src/lib/util/template.c:403:19: warning[-Wmaybe-uninitialized]: 'if_true' may be used uninitialized in this function
+#  403 |         *_if_true = if_true;
+#      |         ~~~~~~~~~~^~~~~~~~~
+#  401|   
+#  402|       if (_if_true != NULL) {
+#  403|->         *_if_true = if_true;
+#  404|       } else {
+#  405|           free(if_true);
+
+Error: COMPILER_WARNING (CWE-457):
+authselect-1.2.4/src/lib/util/template.c:409:20: warning[-Wmaybe-uninitialized]: 'if_false' may be used uninitialized in this function
+#  409 |         *_if_false = if_false;
+#      |         ~~~~~~~~~~~^~~~~~~~~~
+#  407|   
+#  408|       if (_if_false != NULL) {
+#  409|->         *_if_false = if_false;
+#  410|       } else {
+#  411|           free(if_false);
+
+Error: COMPILER_WARNING (CWE-457):
+authselect-1.2.4/src/lib/util/template.c: scope_hint: In function 'template_process_matches'
+authselect-1.2.4/src/lib/util/template.c:415:17: warning[-Wmaybe-uninitialized]: 'value' may be used uninitialized in this function
+#  415 |         *_value = value;
+#      |         ~~~~~~~~^~~~~~~
+#  413|   
+#  414|       if (_value != NULL) {
+#  415|->         *_value = value;
+#  416|       } else {
+#  417|           free(value);
+
+Error: VALGRIND_WARNING:
+./test_util_template: note: while executing process 4891
+authselect-1.2.4/src/tests/../lib/util/string_array.c:81: warning[Leak_DefinitelyLost]: 127 (64 direct, 63 indirect) bytes in 1 blocks are definitely lost in loss record 2 of 2
+authselect-1.2.4/src/tests/../lib/util/string_array.c:81: note: called from UnknownInlinedFun()
+authselect-1.2.4/src/tests/../lib/util/string_array.c:156: note: called from string_array_add_value_safe()
+authselect-1.2.4/src/tests/../lib/util/template.c:602: note: called from UnknownInlinedFun()
+authselect-1.2.4/src/tests/../lib/util/template.c:657: note: called from UnknownInlinedFun()
+authselect-1.2.4/src/tests/test_util_template.c:239: note: called from test_template_list_features()
+/usr/lib64/libcmocka.so.0.7.0: note: called from here
+/usr/lib64/libcmocka.so.0.7.0: note: called from _cmocka_run_group_tests()
+authselect-1.2.4/src/tests/test_util_template.c:370: note: called from main()
+#   79|       }
+#   80|   
+#   81|->     reallocated = realloc_array(array, char *, num_items + 1);
+#   82|       if (reallocated == NULL) {
+#   83|           string_array_free(array);

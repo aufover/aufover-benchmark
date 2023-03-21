@@ -1,0 +1,674 @@
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-fcntl-deadlock.c: scope_hint: In function ‘expect_char’
+tdb-1.4.4/test/run-fcntl-deadlock.c:100:9: warning[-Wunused-result]: ignoring return value of ‘read’ declared with attribute ‘warn_unused_result’
+#  100 |         read(pipe_r, buf, 1);
+#      |         ^~~~~~~~~~~~~~~~~~~~
+#   98|   static void expect_char(char c)
+#   99|   {
+#  100|-> 	read(pipe_r, buf, 1);
+#  101|   	if (*buf != c) {
+#  102|   		fail("We were expecting %c, but got %c", c, buf[0]);
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-fcntl-deadlock.c: scope_hint: In function ‘send_char’
+tdb-1.4.4/test/run-fcntl-deadlock.c:108:9: warning[-Wunused-result]: ignoring return value of ‘write’ declared with attribute ‘warn_unused_result’
+#  108 |         write(pipe_w, &c, 1);
+#      |         ^~~~~~~~~~~~~~~~~~~~
+#  106|   static void send_char(char c)
+#  107|   {
+#  108|-> 	write(pipe_w, &c, 1);
+#  109|   }
+#  110|   
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-fcntl-deadlock.c: scope_hint: In function ‘main’
+tdb-1.4.4/test/run-fcntl-deadlock.c:122:9: warning[-Wunused-result]: ignoring return value of ‘pipe’ declared with attribute ‘warn_unused_result’
+#  122 |         pipe(pipes_1_2);
+#      |         ^~~~~~~~~~~~~~~
+#  120|   	int ret;
+#  121|   
+#  122|-> 	pipe(pipes_1_2);
+#  123|   	pipe(pipes_2_1);
+#  124|   	fd = open(filename, O_RDWR | O_CREAT, 0755);
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-fcntl-deadlock.c:123:9: warning[-Wunused-result]: ignoring return value of ‘pipe’ declared with attribute ‘warn_unused_result’
+#  123 |         pipe(pipes_2_1);
+#      |         ^~~~~~~~~~~~~~~
+#  121|   
+#  122|   	pipe(pipes_1_2);
+#  123|-> 	pipe(pipes_2_1);
+#  124|   	fd = open(filename, O_RDWR | O_CREAT, 0755);
+#  125|   
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex-allrecord-block.c: scope_hint: In function ‘do_child’
+tdb-1.4.4/test/run-mutex-allrecord-block.c:45:9: warning[-Wunused-result]: ignoring return value of ‘write’ declared with attribute ‘warn_unused_result’
+#   45 |         write(to, &c, sizeof(c));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~
+#   43|   	ok(ret == 0, "tdb_allrecord_lock should succeed");
+#   44|   
+#   45|-> 	write(to, &c, sizeof(c));
+#   46|   
+#   47|   	read(from, &c, sizeof(c));
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex-allrecord-block.c:47:9: warning[-Wunused-result]: ignoring return value of ‘read’ declared with attribute ‘warn_unused_result’
+#   47 |         read(from, &c, sizeof(c));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~
+#   45|   	write(to, &c, sizeof(c));
+#   46|   
+#   47|-> 	read(from, &c, sizeof(c));
+#   48|   
+#   49|   	ret = tdb_allrecord_unlock(tdb, F_WRLCK, false);
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex-allrecord-block.c: scope_hint: In function ‘main’
+tdb-1.4.4/test/run-mutex-allrecord-block.c:81:9: warning[-Wunused-result]: ignoring return value of ‘pipe’ declared with attribute ‘warn_unused_result’
+#   81 |         pipe(fromchild);
+#      |         ^~~~~~~~~~~~~~~
+#   79|   	data.dptr = discard_const_p(uint8_t, "world");
+#   80|   
+#   81|-> 	pipe(fromchild);
+#   82|   	pipe(tochild);
+#   83|   
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex-allrecord-block.c:82:9: warning[-Wunused-result]: ignoring return value of ‘pipe’ declared with attribute ‘warn_unused_result’
+#   82 |         pipe(tochild);
+#      |         ^~~~~~~~~~~~~
+#   80|   
+#   81|   	pipe(fromchild);
+#   82|-> 	pipe(tochild);
+#   83|   
+#   84|   	tdb_flags = TDB_INCOMPATIBLE_HASH|
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex-allrecord-block.c:97:9: warning[-Wunused-result]: ignoring return value of ‘read’ declared with attribute ‘warn_unused_result’
+#   97 |         read(fromchild[0], &c, sizeof(c));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   95|   	close(tochild[0]);
+#   96|   
+#   97|-> 	read(fromchild[0], &c, sizeof(c));
+#   98|   
+#   99|   	tdb = tdb_open_ex("mutex-allrecord-block.tdb", 0,
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex-allrecord-block.c:107:9: warning[-Wunused-result]: ignoring return value of ‘write’ declared with attribute ‘warn_unused_result’
+#  107 |         write(tochild[1], &c, sizeof(c));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  105|   	ok(ret == -1, "tdb_chainlock_nonblock should not succeed");
+#  106|   
+#  107|-> 	write(tochild[1], &c, sizeof(c));
+#  108|   
+#  109|   	ret = tdb_chainlock(tdb, key);
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex-allrecord-trylock.c: scope_hint: In function ‘do_child’
+tdb-1.4.4/test/run-mutex-allrecord-trylock.c:45:9: warning[-Wunused-result]: ignoring return value of ‘write’ declared with attribute ‘warn_unused_result’
+#   45 |         write(to, &c, sizeof(c));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~
+#   43|   	ok(ret == 0, "tdb_chainlock should succeed");
+#   44|   
+#   45|-> 	write(to, &c, sizeof(c));
+#   46|   
+#   47|   	read(from, &c, sizeof(c));
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex-allrecord-trylock.c:47:9: warning[-Wunused-result]: ignoring return value of ‘read’ declared with attribute ‘warn_unused_result’
+#   47 |         read(from, &c, sizeof(c));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~
+#   45|   	write(to, &c, sizeof(c));
+#   46|   
+#   47|-> 	read(from, &c, sizeof(c));
+#   48|   
+#   49|   	ret = tdb_chainunlock(tdb, key);
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex-allrecord-trylock.c: scope_hint: In function ‘main’
+tdb-1.4.4/test/run-mutex-allrecord-trylock.c:81:9: warning[-Wunused-result]: ignoring return value of ‘pipe’ declared with attribute ‘warn_unused_result’
+#   81 |         pipe(fromchild);
+#      |         ^~~~~~~~~~~~~~~
+#   79|   	data.dptr = discard_const_p(uint8_t, "world");
+#   80|   
+#   81|-> 	pipe(fromchild);
+#   82|   	pipe(tochild);
+#   83|   
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex-allrecord-trylock.c:82:9: warning[-Wunused-result]: ignoring return value of ‘pipe’ declared with attribute ‘warn_unused_result’
+#   82 |         pipe(tochild);
+#      |         ^~~~~~~~~~~~~
+#   80|   
+#   81|   	pipe(fromchild);
+#   82|-> 	pipe(tochild);
+#   83|   
+#   84|   	tdb_flags = TDB_INCOMPATIBLE_HASH|
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex-allrecord-trylock.c:97:9: warning[-Wunused-result]: ignoring return value of ‘read’ declared with attribute ‘warn_unused_result’
+#   97 |         read(fromchild[0], &c, sizeof(c));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   95|   	close(tochild[0]);
+#   96|   
+#   97|-> 	read(fromchild[0], &c, sizeof(c));
+#   98|   
+#   99|   	tdb = tdb_open_ex("mutex-allrecord-trylock.tdb", 0, tdb_flags,
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex-allrecord-trylock.c:106:9: warning[-Wunused-result]: ignoring return value of ‘write’ declared with attribute ‘warn_unused_result’
+#  106 |         write(tochild[1], &c, sizeof(c));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  104|   	ok(ret == -1, "tdb_allrecord_lock (nowait) should not succeed");
+#  105|   
+#  106|-> 	write(tochild[1], &c, sizeof(c));
+#  107|   
+#  108|   	wait_ret = wait(&status);
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex-openflags2.c: scope_hint: In function ‘do_child’
+tdb-1.4.4/test/run-mutex-openflags2.c:44:9: warning[-Wunused-result]: ignoring return value of ‘read’ declared with attribute ‘warn_unused_result’
+#   44 |         read(fd, &c, 1);
+#      |         ^~~~~~~~~~~~~~~
+#   42|   	char c;
+#   43|   
+#   44|-> 	read(fd, &c, 1);
+#   45|   
+#   46|   	tdb = tdb_open_ex("mutex-openflags2.tdb", 0,
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex-openflags2.c: scope_hint: In function ‘main’
+tdb-1.4.4/test/run-mutex-openflags2.c:138:9: warning[-Wunused-result]: ignoring return value of ‘write’ declared with attribute ‘warn_unused_result’
+#  138 |         write(pipefd[1], &c, 1);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~
+#  136|   	ok((tdb != NULL), "tdb_open_ex with mutexes should succeed");
+#  137|   
+#  138|-> 	write(pipefd[1], &c, 1);
+#  139|   
+#  140|   	wait_ret = wait(&status);
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex-transaction1.c: scope_hint: In function ‘do_child’
+tdb-1.4.4/test/run-mutex-transaction1.c:48:9: warning[-Wunused-result]: ignoring return value of ‘write’ declared with attribute ‘warn_unused_result’
+#   48 |         write(to, &c, sizeof(c));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~
+#   46|   	ok(ret == 0, "tdb_store(tdb, key, data, TDB_INSERT) should succeed");
+#   47|   
+#   48|-> 	write(to, &c, sizeof(c));
+#   49|   	read(from, &c, sizeof(c));
+#   50|   
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex-transaction1.c:49:9: warning[-Wunused-result]: ignoring return value of ‘read’ declared with attribute ‘warn_unused_result’
+#   49 |         read(from, &c, sizeof(c));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~
+#   47|   
+#   48|   	write(to, &c, sizeof(c));
+#   49|-> 	read(from, &c, sizeof(c));
+#   50|   
+#   51|   	ret = tdb_transaction_cancel(tdb);
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex-transaction1.c:54:9: warning[-Wunused-result]: ignoring return value of ‘write’ declared with attribute ‘warn_unused_result’
+#   54 |         write(to, &c, sizeof(c));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~
+#   52|   	ok(ret == 0, "tdb_transaction_cancel should succeed");
+#   53|   
+#   54|-> 	write(to, &c, sizeof(c));
+#   55|   	read(from, &c, sizeof(c));
+#   56|   
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex-transaction1.c:55:9: warning[-Wunused-result]: ignoring return value of ‘read’ declared with attribute ‘warn_unused_result’
+#   55 |         read(from, &c, sizeof(c));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~
+#   53|   
+#   54|   	write(to, &c, sizeof(c));
+#   55|-> 	read(from, &c, sizeof(c));
+#   56|   
+#   57|   	ret = tdb_transaction_start(tdb);
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex-transaction1.c:63:9: warning[-Wunused-result]: ignoring return value of ‘write’ declared with attribute ‘warn_unused_result’
+#   63 |         write(to, &c, sizeof(c));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~
+#   61|   	ok(ret == 0, "tdb_store(tdb, key, data, TDB_INSERT) should succeed");
+#   62|   
+#   63|-> 	write(to, &c, sizeof(c));
+#   64|   	read(from, &c, sizeof(c));
+#   65|   
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex-transaction1.c:64:9: warning[-Wunused-result]: ignoring return value of ‘read’ declared with attribute ‘warn_unused_result’
+#   64 |         read(from, &c, sizeof(c));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~
+#   62|   
+#   63|   	write(to, &c, sizeof(c));
+#   64|-> 	read(from, &c, sizeof(c));
+#   65|   
+#   66|   	ret = tdb_transaction_commit(tdb);
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex-transaction1.c:69:9: warning[-Wunused-result]: ignoring return value of ‘write’ declared with attribute ‘warn_unused_result’
+#   69 |         write(to, &c, sizeof(c));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~
+#   67|   	ok(ret == 0, "tdb_transaction_commit should succeed");
+#   68|   
+#   69|-> 	write(to, &c, sizeof(c));
+#   70|   	read(from, &c, sizeof(c));
+#   71|   
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex-transaction1.c:70:9: warning[-Wunused-result]: ignoring return value of ‘read’ declared with attribute ‘warn_unused_result’
+#   70 |         read(from, &c, sizeof(c));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~
+#   68|   
+#   69|   	write(to, &c, sizeof(c));
+#   70|-> 	read(from, &c, sizeof(c));
+#   71|   
+#   72|   	ret = tdb_transaction_start(tdb);
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex-transaction1.c:78:9: warning[-Wunused-result]: ignoring return value of ‘write’ declared with attribute ‘warn_unused_result’
+#   78 |         write(to, &c, sizeof(c));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~
+#   76|   	ok(ret == 0, "tdb_store(tdb, key, data, TDB_REPLACE) should succeed");
+#   77|   
+#   78|-> 	write(to, &c, sizeof(c));
+#   79|   	read(from, &c, sizeof(c));
+#   80|   
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex-transaction1.c:79:9: warning[-Wunused-result]: ignoring return value of ‘read’ declared with attribute ‘warn_unused_result’
+#   79 |         read(from, &c, sizeof(c));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~
+#   77|   
+#   78|   	write(to, &c, sizeof(c));
+#   79|-> 	read(from, &c, sizeof(c));
+#   80|   
+#   81|   	ret = tdb_transaction_commit(tdb);
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex-transaction1.c:84:9: warning[-Wunused-result]: ignoring return value of ‘write’ declared with attribute ‘warn_unused_result’
+#   84 |         write(to, &c, sizeof(c));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~
+#   82|   	ok(ret == 0, "tdb_transaction_commit should succeed");
+#   83|   
+#   84|-> 	write(to, &c, sizeof(c));
+#   85|   	read(from, &c, sizeof(c));
+#   86|   
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex-transaction1.c:85:9: warning[-Wunused-result]: ignoring return value of ‘read’ declared with attribute ‘warn_unused_result’
+#   85 |         read(from, &c, sizeof(c));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~
+#   83|   
+#   84|   	write(to, &c, sizeof(c));
+#   85|-> 	read(from, &c, sizeof(c));
+#   86|   
+#   87|   	return 0;
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex-transaction1.c: scope_hint: In function ‘main’
+tdb-1.4.4/test/run-mutex-transaction1.c:117:9: warning[-Wunused-result]: ignoring return value of ‘pipe’ declared with attribute ‘warn_unused_result’
+#  117 |         pipe(fromchild);
+#      |         ^~~~~~~~~~~~~~~
+#  115|   	data.dptr = discard_const_p(uint8_t, "world");
+#  116|   
+#  117|-> 	pipe(fromchild);
+#  118|   	pipe(tochild);
+#  119|   
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex-transaction1.c:118:9: warning[-Wunused-result]: ignoring return value of ‘pipe’ declared with attribute ‘warn_unused_result’
+#  118 |         pipe(tochild);
+#      |         ^~~~~~~~~~~~~
+#  116|   
+#  117|   	pipe(fromchild);
+#  118|-> 	pipe(tochild);
+#  119|   
+#  120|   	tdb_flags = TDB_INCOMPATIBLE_HASH|
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex-transaction1.c:133:9: warning[-Wunused-result]: ignoring return value of ‘read’ declared with attribute ‘warn_unused_result’
+#  133 |         read(fromchild[0], &c, sizeof(c));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  131|   	close(tochild[0]);
+#  132|   
+#  133|-> 	read(fromchild[0], &c, sizeof(c));
+#  134|   
+#  135|   	tdb = tdb_open_ex("mutex-transaction1.tdb", 0,
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex-transaction1.c:158:9: warning[-Wunused-result]: ignoring return value of ‘write’ declared with attribute ‘warn_unused_result’
+#  158 |         write(tochild[1], &c, sizeof(c));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  156|   	ok(val.dsize == 0, "tdb_fetch(tdb, key) should return an empty value");
+#  157|   
+#  158|-> 	write(tochild[1], &c, sizeof(c));
+#  159|   
+#  160|   	/*
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex-transaction1.c:166:9: warning[-Wunused-result]: ignoring return value of ‘read’ declared with attribute ‘warn_unused_result’
+#  166 |         read(fromchild[0], &c, sizeof(c));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  164|   	ok(ret == 0, "tdb_transaction_start should succeed");
+#  165|   
+#  166|-> 	read(fromchild[0], &c, sizeof(c));
+#  167|   	write(tochild[1], &c, sizeof(c));
+#  168|   
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex-transaction1.c:167:9: warning[-Wunused-result]: ignoring return value of ‘write’ declared with attribute ‘warn_unused_result’
+#  167 |         write(tochild[1], &c, sizeof(c));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  165|   
+#  166|   	read(fromchild[0], &c, sizeof(c));
+#  167|-> 	write(tochild[1], &c, sizeof(c));
+#  168|   
+#  169|   	ret = tdb_transaction_cancel(tdb);
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex-transaction1.c:175:9: warning[-Wunused-result]: ignoring return value of ‘read’ declared with attribute ‘warn_unused_result’
+#  175 |         read(fromchild[0], &c, sizeof(c));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  173|   	 * When we canceled the child can start and store...
+#  174|   	 */
+#  175|-> 	read(fromchild[0], &c, sizeof(c));
+#  176|   
+#  177|   	/*
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex-transaction1.c:186:9: warning[-Wunused-result]: ignoring return value of ‘write’ declared with attribute ‘warn_unused_result’
+#  186 |         write(tochild[1], &c, sizeof(c));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  184|   	ok(val.dsize == 0, "tdb_fetch(tdb, key) should return an empty value");
+#  185|   
+#  186|-> 	write(tochild[1], &c, sizeof(c));
+#  187|   	read(fromchild[0], &c, sizeof(c));
+#  188|   
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex-transaction1.c:187:9: warning[-Wunused-result]: ignoring return value of ‘read’ declared with attribute ‘warn_unused_result’
+#  187 |         read(fromchild[0], &c, sizeof(c));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  185|   
+#  186|   	write(tochild[1], &c, sizeof(c));
+#  187|-> 	read(fromchild[0], &c, sizeof(c));
+#  188|   
+#  189|   	/*
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex-transaction1.c:200:9: warning[-Wunused-result]: ignoring return value of ‘write’ declared with attribute ‘warn_unused_result’
+#  200 |         write(tochild[1], &c, sizeof(c));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  198|   	ok(memcmp(val.dptr, data.dptr, data.dsize) == 0, "tdb_fetch(tdb, key) should return a value");
+#  199|   
+#  200|-> 	write(tochild[1], &c, sizeof(c));
+#  201|   	read(fromchild[0], &c, sizeof(c));
+#  202|   
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex-transaction1.c:201:9: warning[-Wunused-result]: ignoring return value of ‘read’ declared with attribute ‘warn_unused_result’
+#  201 |         read(fromchild[0], &c, sizeof(c));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  199|   
+#  200|   	write(tochild[1], &c, sizeof(c));
+#  201|-> 	read(fromchild[0], &c, sizeof(c));
+#  202|   
+#  203|   	/*
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex-transaction1.c:215:9: warning[-Wunused-result]: ignoring return value of ‘write’ declared with attribute ‘warn_unused_result’
+#  215 |         write(tochild[1], &c, sizeof(c));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  213|   	ok(memcmp(val.dptr, data.dptr, data.dsize) == 0, "tdb_fetch(tdb, key) should return a value");
+#  214|   
+#  215|-> 	write(tochild[1], &c, sizeof(c));
+#  216|   	read(fromchild[0], &c, sizeof(c));
+#  217|   
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex-transaction1.c:216:9: warning[-Wunused-result]: ignoring return value of ‘read’ declared with attribute ‘warn_unused_result’
+#  216 |         read(fromchild[0], &c, sizeof(c));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  214|   
+#  215|   	write(tochild[1], &c, sizeof(c));
+#  216|-> 	read(fromchild[0], &c, sizeof(c));
+#  217|   
+#  218|   	/*
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex-transaction1.c:229:9: warning[-Wunused-result]: ignoring return value of ‘write’ declared with attribute ‘warn_unused_result’
+#  229 |         write(tochild[1], &c, sizeof(c));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  227|   	ok(memcmp(val.dptr, key.dptr, key.dsize) == 0, "tdb_fetch(tdb, key) should return a value");
+#  228|   
+#  229|-> 	write(tochild[1], &c, sizeof(c));
+#  230|   
+#  231|   	wait_ret = wait(&status);
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex-trylock.c: scope_hint: In function ‘do_child’
+tdb-1.4.4/test/run-mutex-trylock.c:45:9: warning[-Wunused-result]: ignoring return value of ‘write’ declared with attribute ‘warn_unused_result’
+#   45 |         write(to, &c, sizeof(c));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~
+#   43|   	ok(ret == 0, "tdb_chainlock should succeed");
+#   44|   
+#   45|-> 	write(to, &c, sizeof(c));
+#   46|   
+#   47|   	read(from, &c, sizeof(c));
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex-trylock.c:47:9: warning[-Wunused-result]: ignoring return value of ‘read’ declared with attribute ‘warn_unused_result’
+#   47 |         read(from, &c, sizeof(c));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~
+#   45|   	write(to, &c, sizeof(c));
+#   46|   
+#   47|-> 	read(from, &c, sizeof(c));
+#   48|   
+#   49|   	ret = tdb_chainunlock(tdb, key);
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex-trylock.c:52:9: warning[-Wunused-result]: ignoring return value of ‘write’ declared with attribute ‘warn_unused_result’
+#   52 |         write(to, &c, sizeof(c));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~
+#   50|   	ok(ret == 0, "tdb_chainunlock should succeed");
+#   51|   
+#   52|-> 	write(to, &c, sizeof(c));
+#   53|   
+#   54|   	return 0;
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex-trylock.c: scope_hint: In function ‘main’
+tdb-1.4.4/test/run-mutex-trylock.c:83:9: warning[-Wunused-result]: ignoring return value of ‘pipe’ declared with attribute ‘warn_unused_result’
+#   83 |         pipe(fromchild);
+#      |         ^~~~~~~~~~~~~~~
+#   81|   	data.dptr = discard_const_p(uint8_t, "world");
+#   82|   
+#   83|-> 	pipe(fromchild);
+#   84|   	pipe(tochild);
+#   85|   
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex-trylock.c:84:9: warning[-Wunused-result]: ignoring return value of ‘pipe’ declared with attribute ‘warn_unused_result’
+#   84 |         pipe(tochild);
+#      |         ^~~~~~~~~~~~~
+#   82|   
+#   83|   	pipe(fromchild);
+#   84|-> 	pipe(tochild);
+#   85|   
+#   86|   	tdb_flags = TDB_INCOMPATIBLE_HASH|
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex-trylock.c:99:9: warning[-Wunused-result]: ignoring return value of ‘read’ declared with attribute ‘warn_unused_result’
+#   99 |         read(fromchild[0], &c, sizeof(c));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   97|   	close(tochild[0]);
+#   98|   
+#   99|-> 	read(fromchild[0], &c, sizeof(c));
+#  100|   
+#  101|   	tdb = tdb_open_ex("mutex-trylock.tdb", 0, tdb_flags,
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex-trylock.c:108:9: warning[-Wunused-result]: ignoring return value of ‘write’ declared with attribute ‘warn_unused_result’
+#  108 |         write(tochild[1], &c, sizeof(c));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  106|   	ok(ret == -1, "tdb_chainlock_nonblock should not succeed");
+#  107|   
+#  108|-> 	write(tochild[1], &c, sizeof(c));
+#  109|   
+#  110|   	read(fromchild[0], &c, sizeof(c));
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex-trylock.c:110:9: warning[-Wunused-result]: ignoring return value of ‘read’ declared with attribute ‘warn_unused_result’
+#  110 |         read(fromchild[0], &c, sizeof(c));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  108|   	write(tochild[1], &c, sizeof(c));
+#  109|   
+#  110|-> 	read(fromchild[0], &c, sizeof(c));
+#  111|   
+#  112|   	ret = tdb_chainlock_nonblock(tdb, key);
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex1.c: scope_hint: In function ‘do_child’
+tdb-1.4.4/test/run-mutex1.c:45:9: warning[-Wunused-result]: ignoring return value of ‘write’ declared with attribute ‘warn_unused_result’
+#   45 |         write(to, &c, sizeof(c));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~
+#   43|   	ok(ret == 0, "tdb_chainlock should succeed");
+#   44|   
+#   45|-> 	write(to, &c, sizeof(c));
+#   46|   	read(from, &c, sizeof(c));
+#   47|   
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex1.c:46:9: warning[-Wunused-result]: ignoring return value of ‘read’ declared with attribute ‘warn_unused_result’
+#   46 |         read(from, &c, sizeof(c));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~
+#   44|   
+#   45|   	write(to, &c, sizeof(c));
+#   46|-> 	read(from, &c, sizeof(c));
+#   47|   
+#   48|   	ret = tdb_chainunlock(tdb, key);
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex1.c:51:9: warning[-Wunused-result]: ignoring return value of ‘write’ declared with attribute ‘warn_unused_result’
+#   51 |         write(to, &c, sizeof(c));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~
+#   49|   	ok(ret == 0, "tdb_chainunlock should succeed");
+#   50|   
+#   51|-> 	write(to, &c, sizeof(c));
+#   52|   	read(from, &c, sizeof(c));
+#   53|   
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex1.c:52:9: warning[-Wunused-result]: ignoring return value of ‘read’ declared with attribute ‘warn_unused_result’
+#   52 |         read(from, &c, sizeof(c));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~
+#   50|   
+#   51|   	write(to, &c, sizeof(c));
+#   52|-> 	read(from, &c, sizeof(c));
+#   53|   
+#   54|   	ret = tdb_allrecord_lock(tdb, F_WRLCK, TDB_LOCK_WAIT, false);
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex1.c:57:9: warning[-Wunused-result]: ignoring return value of ‘write’ declared with attribute ‘warn_unused_result’
+#   57 |         write(to, &c, sizeof(c));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~
+#   55|   	ok(ret == 0, "tdb_allrecord_lock should succeed");
+#   56|   
+#   57|-> 	write(to, &c, sizeof(c));
+#   58|   	read(from, &c, sizeof(c));
+#   59|   
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex1.c:58:9: warning[-Wunused-result]: ignoring return value of ‘read’ declared with attribute ‘warn_unused_result’
+#   58 |         read(from, &c, sizeof(c));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~
+#   56|   
+#   57|   	write(to, &c, sizeof(c));
+#   58|-> 	read(from, &c, sizeof(c));
+#   59|   
+#   60|   	ret = tdb_allrecord_unlock(tdb, F_WRLCK, false);
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex1.c: scope_hint: In function ‘main’
+tdb-1.4.4/test/run-mutex1.c:92:9: warning[-Wunused-result]: ignoring return value of ‘pipe’ declared with attribute ‘warn_unused_result’
+#   92 |         pipe(fromchild);
+#      |         ^~~~~~~~~~~~~~~
+#   90|   	data.dptr = discard_const_p(uint8_t, "world");
+#   91|   
+#   92|-> 	pipe(fromchild);
+#   93|   	pipe(tochild);
+#   94|   
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex1.c:93:9: warning[-Wunused-result]: ignoring return value of ‘pipe’ declared with attribute ‘warn_unused_result’
+#   93 |         pipe(tochild);
+#      |         ^~~~~~~~~~~~~
+#   91|   
+#   92|   	pipe(fromchild);
+#   93|-> 	pipe(tochild);
+#   94|   
+#   95|   	tdb_flags = TDB_INCOMPATIBLE_HASH|
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex1.c:108:9: warning[-Wunused-result]: ignoring return value of ‘read’ declared with attribute ‘warn_unused_result’
+#  108 |         read(fromchild[0], &c, sizeof(c));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  106|   	close(tochild[0]);
+#  107|   
+#  108|-> 	read(fromchild[0], &c, sizeof(c));
+#  109|   
+#  110|   	tdb = tdb_open_ex("mutex1.tdb", 0, tdb_flags,
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex1.c:114:9: warning[-Wunused-result]: ignoring return value of ‘write’ declared with attribute ‘warn_unused_result’
+#  114 |         write(tochild[1], &c, sizeof(c));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  112|   	ok(tdb, "tdb_open_ex should succeed");
+#  113|   
+#  114|-> 	write(tochild[1], &c, sizeof(c));
+#  115|   	read(fromchild[0], &c, sizeof(c));
+#  116|   
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex1.c:115:9: warning[-Wunused-result]: ignoring return value of ‘read’ declared with attribute ‘warn_unused_result’
+#  115 |         read(fromchild[0], &c, sizeof(c));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  113|   
+#  114|   	write(tochild[1], &c, sizeof(c));
+#  115|-> 	read(fromchild[0], &c, sizeof(c));
+#  116|   
+#  117|   	ret = tdb_allrecord_lock(tdb, F_WRLCK, TDB_LOCK_WAIT, false);
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex1.c:126:9: warning[-Wunused-result]: ignoring return value of ‘write’ declared with attribute ‘warn_unused_result’
+#  126 |         write(tochild[1], &c, sizeof(c));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  124|   	ok(ret == 0, "tdb_allrecord_unlock should succeed");
+#  125|   
+#  126|-> 	write(tochild[1], &c, sizeof(c));
+#  127|   	read(fromchild[0], &c, sizeof(c));
+#  128|   	write(tochild[1], &c, sizeof(c));
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex1.c:127:9: warning[-Wunused-result]: ignoring return value of ‘read’ declared with attribute ‘warn_unused_result’
+#  127 |         read(fromchild[0], &c, sizeof(c));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  125|   
+#  126|   	write(tochild[1], &c, sizeof(c));
+#  127|-> 	read(fromchild[0], &c, sizeof(c));
+#  128|   	write(tochild[1], &c, sizeof(c));
+#  129|   
+
+Error: COMPILER_WARNING (CWE-252):
+tdb-1.4.4/test/run-mutex1.c:128:9: warning[-Wunused-result]: ignoring return value of ‘write’ declared with attribute ‘warn_unused_result’
+#  128 |         write(tochild[1], &c, sizeof(c));
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  126|   	write(tochild[1], &c, sizeof(c));
+#  127|   	read(fromchild[0], &c, sizeof(c));
+#  128|-> 	write(tochild[1], &c, sizeof(c));
+#  129|   
+#  130|   	ret = tdb_delete(tdb, key);

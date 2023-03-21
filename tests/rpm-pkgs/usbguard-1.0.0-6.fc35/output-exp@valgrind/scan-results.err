@@ -1,0 +1,22 @@
+Error: COMPILER_WARNING (CWE-252):
+usbguard-1.0.0/src/Daemon/Daemon.cpp: scope_hint: In member function 'void usbguard::Daemon::run()'
+usbguard-1.0.0/src/Daemon/Daemon.cpp:577:18: warning[-Wunused-result]: ignoring return value of 'int lockf(int, int, __off_t)' declared with attribute 'warn_unused_result'
+#  577 |       (void)lockf(pid_fd, F_ULOCK, 0);
+#      |             ~~~~~^~~~~~~~~~~~~~~~~~~~
+#  575|   
+#  576|       if (pid_fd != -1) {
+#  577|->       (void)lockf(pid_fd, F_ULOCK, 0);
+#  578|         (void)close(pid_fd);
+#  579|       }
+
+Error: COMPILER_WARNING (CWE-252):
+usbguard-1.0.0/src/Daemon/Daemon.cpp: scope_hint: In member function 'void usbguard::Daemon::daemonize(const string&)'
+usbguard-1.0.0/src/Daemon/Daemon.cpp:646:16: warning[-Wunused-result]: ignoring return value of 'int chdir(const char*)' declared with attribute 'warn_unused_result'
+#  646 |     (void)chdir("/");
+#      |           ~~~~~^~~~~
+cc1plus: note: unrecognized command-line option '-Wno-deprecated-register' may have been intended to silence earlier diagnostics
+#  644|       /* Now we are forked 2nd time */
+#  645|       umask(0047);  /* no need for world-accessible or executable files */
+#  646|->     (void)chdir("/");
+#  647|       const std::array<int, 3> std_fds {{STDIN_FILENO, STDOUT_FILENO, STDERR_FILENO}};
+#  648|       int fd_null;

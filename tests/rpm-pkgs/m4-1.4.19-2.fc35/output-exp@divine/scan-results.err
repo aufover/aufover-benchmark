@@ -1,0 +1,228 @@
+Error: COMPILER_WARNING:
+m4-1.4.19/lib/fatal-signal.c:195:17: warning: taking address of packed member '' of class or structure 'sigaction' may result in an unaligned pointer value
+#  sigemptyset (&action.sa_mask);
+#                ^~~~~~~~~~~~~~
+#  193|        SA_RESETHAND.  */
+#  194|     action.sa_flags = SA_NODEFER;
+#  195|->   sigemptyset (&action.sa_mask);
+#  196|     for (i = 0; i < num_fatal_signals; i++)
+#  197|       if (fatal_signals[i] >= 0)
+
+Error: COMPILER_WARNING:
+m4-1.4.19/lib/findprog-in.c:149:25: warning: implicit declaration of function 'eaccess' is invalid in C99
+#                    if (eaccess (progpathname, X_OK) == 0)
+#                        ^
+#  147|                          is not installed setuid or setgid, so that it is ok to
+#  148|                          call access() despite its design flaw.  */
+#  149|->                     if (eaccess (progpathname, X_OK) == 0)
+#  150|                         {
+#  151|                           /* Check that the progpathname does not point to a
+
+Error: COMPILER_WARNING:
+m4-1.4.19/lib/findprog-in.c:301:21: warning: implicit declaration of function 'eaccess' is invalid in C99
+#                if (eaccess (progpathname, X_OK) == 0)
+#                    ^
+#  299|                      is not installed setuid or setgid, so that it is ok to
+#  300|                      call access() despite its design flaw.  */
+#  301|->                 if (eaccess (progpathname, X_OK) == 0)
+#  302|                     {
+#  303|                       /* Check that the progpathname does not point to a
+
+Error: COMPILER_WARNING:
+m4-1.4.19/lib/getrandom.c:166:10: warning: implicit declaration of function 'getrandom' is invalid in C99
+#  return getrandom (buffer, length, flags);
+#         ^
+#  164|     return -1;
+#  165|   #elif HAVE_GETRANDOM
+#  166|->   return getrandom (buffer, length, flags);
+#  167|   #else
+#  168|     static int randfd[2] = { -1, -1 };
+
+Error: COMPILER_WARNING:
+m4-1.4.19/lib/localename.c:3118:24: warning: implicit declaration of function '_NL_ITEM' is invalid in C99
+#          nl_langinfo (_NL_ITEM ((category), _NL_ITEM_INDEX (-1)));
+#                       ^
+# 3116|              See <https://sourceware.org/bugzilla/show_bug.cgi?id=10968>.  */
+# 3117|           const char *name =
+# 3118|->           nl_langinfo (_NL_ITEM ((category), _NL_ITEM_INDEX (-1)));
+# 3119|           if (name[0] == '\0')
+# 3120|             /* Fallback code for glibc < 2.4, which did not implement
+
+Error: COMPILER_WARNING:
+m4-1.4.19/lib/localename.c:3118:46: warning: implicit declaration of function '_NL_ITEM_INDEX' is invalid in C99
+#          nl_langinfo (_NL_ITEM ((category), _NL_ITEM_INDEX (-1)));
+#                                             ^
+# 3116|              See <https://sourceware.org/bugzilla/show_bug.cgi?id=10968>.  */
+# 3117|           const char *name =
+# 3118|->           nl_langinfo (_NL_ITEM ((category), _NL_ITEM_INDEX (-1)));
+# 3119|           if (name[0] == '\0')
+# 3120|             /* Fallback code for glibc < 2.4, which did not implement
+
+Error: COMPILER_WARNING:
+m4-1.4.19/lib/nl_langinfo.c:342:10: warning: implicit declaration of function 'nl_langinfo' is invalid in C99
+#  return nl_langinfo_with_lock (item);
+#         ^
+m4-1.4.19/lib/nl_langinfo.c:272:33: note: expanded from macro 'nl_langinfo_with_lock'
+##  define nl_langinfo_with_lock nl_langinfo
+#                                ^
+#  340|         break;
+#  341|       }
+#  342|->   return nl_langinfo_with_lock (item);
+#  343|   }
+#  344|   
+
+Error: COMPILER_WARNING:
+m4-1.4.19/lib/nl_langinfo.c:342:10: warning: incompatible integer to pointer conversion returning 'int' from a function with result type 'char *'
+#  return nl_langinfo_with_lock (item);
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+m4-1.4.19/lib/nl_langinfo.c:272:33: note: expanded from macro 'nl_langinfo_with_lock'
+##  define nl_langinfo_with_lock nl_langinfo
+#                                ^
+#  340|         break;
+#  341|       }
+#  342|->   return nl_langinfo_with_lock (item);
+#  343|   }
+#  344|   
+
+Error: COMPILER_WARNING:
+m4-1.4.19/lib/pipe2.c:58:22: warning: implicit declaration of function 'pipe2' is invalid in C99
+#        int result = pipe2 (fd, flags);
+#                     ^
+#   56|       if (have_pipe2_really >= 0)
+#   57|         {
+#   58|->         int result = pipe2 (fd, flags);
+#   59|           if (!(result < 0 && errno == ENOSYS))
+#   60|             {
+
+Error: COMPILER_WARNING:
+m4-1.4.19/lib/tmpdir.c:114:9: warning: incompatible integer to pointer conversion assigning to 'const char *' from 'int'
+#      d = __libc_secure_getenv ("TMPDIR");
+#        ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  112|     if (try_tmpdir)
+#  113|       {
+#  114|->       d = __libc_secure_getenv ("TMPDIR");
+#  115|         if (d != NULL && direxists (d))
+#  116|           dir = d;
+
+Error: COMPILER_WARNING:
+m4-1.4.19/lib/tmpdir.c:114:11: warning: implicit declaration of function 'secure_getenv' is invalid in C99
+#      d = __libc_secure_getenv ("TMPDIR");
+#          ^
+m4-1.4.19/lib/tmpdir.c:62:31: note: expanded from macro '__libc_secure_getenv'
+## define __libc_secure_getenv secure_getenv
+#                              ^
+#  112|     if (try_tmpdir)
+#  113|       {
+#  114|->       d = __libc_secure_getenv ("TMPDIR");
+#  115|         if (d != NULL && direxists (d))
+#  116|           dir = d;
+
+Error: COMPILER_WARNING:
+m4-1.4.19/lib/xmalloc.c:59:9: warning: incompatible integer to pointer conversion initializing 'void *' with an expression of type 'int'
+#  void *r = reallocarray (p, n, s);
+#        ^   ~~~~~~~~~~~~~~~~~~~~~~
+#   57|   xreallocarray (void *p, size_t n, size_t s)
+#   58|   {
+#   59|->   void *r = reallocarray (p, n, s);
+#   60|     if (!r && (!p || (n && s)))
+#   61|       xalloc_die ();
+
+Error: COMPILER_WARNING:
+m4-1.4.19/lib/xmalloc.c:59:13: warning: implicit declaration of function 'reallocarray' is invalid in C99
+#  void *r = reallocarray (p, n, s);
+#            ^
+#   57|   xreallocarray (void *p, size_t n, size_t s)
+#   58|   {
+#   59|->   void *r = reallocarray (p, n, s);
+#   60|     if (!r && (!p || (n && s)))
+#   61|       xalloc_die ();
+
+Error: COMPILER_WARNING:
+m4-1.4.19/src/m4.c:444:17: warning: taking address of packed member '' of class or structure 'sigaction' may result in an unaligned pointer value
+#  sigemptyset (&act.sa_mask);
+#                ^~~~~~~~~~~
+#  442|     if (SIGBUS != SIGILL && SIGBUS != SIGSEGV)
+#  443|       signal_message[SIGBUS] = xstrdup (strsignal (SIGBUS));
+#  444|->   sigemptyset (&act.sa_mask);
+#  445|     /* One-shot - if we fault while handling a fault, we want to revert
+#  446|        to default signal behavior.  */
+
+Error: COMPILER_WARNING:
+m4-1.4.19/tests/findprog.c:109:11: warning: implicit declaration of function 'eaccess' is invalid in C99
+#      if (eaccess (progpathname, X_OK) == 0)
+#          ^
+#  107|            setuid or setgid, so that it is ok to call access() despite its
+#  108|            design flaw.  */
+#  109|->       if (eaccess (progpathname, X_OK) == 0)
+#  110|           {
+#  111|             /* Check that the progpathname does not point to a directory.  */
+
+Error: COMPILER_WARNING:
+m4-1.4.19/tests/pthread_sigmask.c:52:9: warning: implicit declaration of function 'pthread_sigmask' is invalid in C99
+#  ret = pthread_sigmask (how, new_mask, old_mask_ptr);
+#        ^
+#   50|   # endif
+#   51|   
+#   52|->   ret = pthread_sigmask (how, new_mask, old_mask_ptr);
+#   53|   
+#   54|   # if PTHREAD_SIGMASK_INEFFECTIVE
+
+Error: COMPILER_WARNING:
+m4-1.4.19/tests/read-file.c:110:23: warning: implicit declaration of function 'explicit_bzero' is invalid in C99
+#                      explicit_bzero (buf + size, alloc - size);
+#                      ^
+#  108|                       char *smaller_buf = malloc (size + 1);
+#  109|                       if (smaller_buf == NULL)
+#  110|->                       explicit_bzero (buf + size, alloc - size);
+#  111|                       else
+#  112|                         {
+
+Error: COMPILER_WARNING:
+m4-1.4.19/tests/read-file.c:157:15: warning: implicit declaration of function 'explicit_bzero' is invalid in C99
+#              explicit_bzero (buf, save_alloc);
+#              ^
+#  155|                   }
+#  156|                 memcpy (new_buf, buf, save_alloc);
+#  157|->               explicit_bzero (buf, save_alloc);
+#  158|                 free (buf);
+#  159|               }
+
+Error: COMPILER_WARNING:
+m4-1.4.19/tests/read-file.c:171:7: warning: implicit declaration of function 'explicit_bzero' is invalid in C99
+#      explicit_bzero (buf, alloc);
+#      ^
+#  169|   
+#  170|       if (flags & RF_SENSITIVE)
+#  171|->       explicit_bzero (buf, alloc);
+#  172|   
+#  173|       free (buf);
+
+Error: COMPILER_WARNING:
+m4-1.4.19/tests/read-file.c:209:13: warning: implicit declaration of function 'explicit_bzero' is invalid in C99
+#            explicit_bzero (out, *length);
+#            ^
+#  207|           {
+#  208|             if (flags & RF_SENSITIVE)
+#  209|->             explicit_bzero (out, *length);
+#  210|             free (out);
+#  211|           }
+
+Error: COMPILER_WARNING:
+m4-1.4.19/tests/strerror_r.c:205:9: warning: incompatible pointer to integer conversion assigning to 'int' from 'char *'
+#    ret = strerror_r (errnum, buf, buflen);
+#        ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  203|       }
+#  204|   # else
+#  205|->     ret = strerror_r (errnum, buf, buflen);
+#  206|   
+#  207|       /* Some old implementations may return (-1, EINVAL) instead of EINVAL.
+
+Error: COMPILER_WARNING:
+m4-1.4.19/tests/strerror_r.c:242:60: warning: comparison between pointer and integer ('char *' and 'int')
+#        if (strerror_r (errnum, stackbuf, sizeof stackbuf) == ERANGE)
+#            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^  ~~~~~~
+#  240|   
+#  241|           /* STACKBUF_LEN should have been large enough.  */
+#  242|->         if (strerror_r (errnum, stackbuf, sizeof stackbuf) == ERANGE)
+#  243|             abort ();
+#  244|           safe_copy (buf, buflen, stackbuf);

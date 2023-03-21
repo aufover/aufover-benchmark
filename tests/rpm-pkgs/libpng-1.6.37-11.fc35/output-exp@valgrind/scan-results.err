@@ -1,4 +1,4 @@
-Error: COMPILER_WARNING (CWE-758):
+Error: COMPILER_WARNING:
 libpng-1.6.37/contrib/libtests/pngstest.c: scope_hint: In function 'write_one_file'
 libpng-1.6.37/contrib/libtests/pngstest.c:3215:24: warning[-Wformat-overflow=]: '%d' directive writing between 1 and 11 bytes into a region of size between 10 and 32
 # 3215 |       sprintf(name, "%s%d.png", tmpf, ++counter);
@@ -22,7 +22,7 @@ libpng-1.6.37/contrib/libtests/pngstest.c:19: included_from: Included from here.
 # 3217|         if (png_image_write_to_file(&image->image, name, convert_to_8bit,
 
 Error: VALGRIND_WARNING:
-libpng-1.6.37/.libs/pngtest: note: while executing process 219883 with arguments: --relaxed ./contrib/testpngs/crashers/badcrc.png
+libpng-1.6.37/.libs/pngtest: note: while executing process 694 with arguments: --relaxed ./contrib/testpngs/crashers/badcrc.png
 libpng-1.6.37/png.c:173: warning[UninitValue]: Use of uninitialised value of size 8
 /usr/lib64/libz.so.1.2.11: note: called from here
 libpng-1.6.37/png.c:173: note: called from UnknownInlinedFun()
@@ -80,9 +80,9 @@ libpng-1.6.37/png.c:755:12: note: 'number_buf' declared here
 # 1751|   /* Suggested size for a number buffer (enough for 64 bits and a sign!) */
 
 Error: VALGRIND_WARNING:
-libpng-1.6.37/.libs/pngtest: note: while executing process 219883 with arguments: --relaxed ./contrib/testpngs/crashers/badcrc.png
+libpng-1.6.37/.libs/pngtest: note: while executing process 694 with arguments: --relaxed ./contrib/testpngs/crashers/badcrc.png
 libpng-1.6.37/pngtest.c:1674: warning[SyscallParam]: Syscall param write(buf) points to uninitialised byte(s)
-libpng-1.6.37/pngtest.c:1674: note: Address 0x4b7164f is 47 bytes inside a block of size 4,096 alloc'd
+libpng-1.6.37/pngtest.c:1674: note: Address 0x4b7064f is 47 bytes inside a block of size 4,096 alloc'd
 /usr/lib64/libc.so.6: note: called from write()
 /usr/lib64/libc.so.6: note: called from _IO_file_write@@GLIBC_2.2.5()
 /usr/lib64/libc.so.6: note: called from new_do_write()

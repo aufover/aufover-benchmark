@@ -1,0 +1,277 @@
+Error: COMPILER_WARNING (CWE-477):
+libdnf-0.64.0/build-py3/bindings/python/CMakeFiles/_module.dir/modulePYTHON_wrap.cxx:28884:24: warning[-Wdeprecated-declarations]: 'getDisabledStreams' is deprecated: Will be removed after 2019-12-31. Use getDisabledModules() instead.
+#      result = (arg1)->getDisabledStreams();
+#                       ^
+libdnf-0.64.0/libdnf/module/ModulePackageContainer.hpp:250:5: note: 'getDisabledStreams' has been explicitly marked deprecated here
+#    DEPRECATED("Will be removed after 2019-12-31. Use getDisabledModules() instead.")
+#    ^
+libdnf-0.64.0/libdnf/dnf-utils.h:33:35: note: expanded from macro 'DEPRECATED'
+#        #define DEPRECATED(msg) [[deprecated(msg)]]
+#                                  ^
+#28882|     {
+#28883|       try {
+#28884|->       result = (arg1)->getDisabledStreams();
+#28885|       } catch (const libdnf::Error & e) {
+#28886|         PyErr_SetString(libdnf_error, const_cast<char*>(e.what()));
+
+Error: COMPILER_WARNING (CWE-477):
+libdnf-0.64.0/build-py3/bindings/python/CMakeFiles/_module.dir/modulePYTHON_wrap.cxx:28952:24: warning[-Wdeprecated-declarations]: 'getResetStreams' is deprecated: Will be removed after 2019-12-31. Use getResetModules() instead.
+#      result = (arg1)->getResetStreams();
+#                       ^
+libdnf-0.64.0/libdnf/module/ModulePackageContainer.hpp:262:5: note: 'getResetStreams' has been explicitly marked deprecated here
+#    DEPRECATED("Will be removed after 2019-12-31. Use getResetModules() instead.")
+#    ^
+libdnf-0.64.0/libdnf/dnf-utils.h:33:35: note: expanded from macro 'DEPRECATED'
+#        #define DEPRECATED(msg) [[deprecated(msg)]]
+#                                  ^
+#28950|     {
+#28951|       try {
+#28952|->       result = (arg1)->getResetStreams();
+#28953|       } catch (const libdnf::Error & e) {
+#28954|         PyErr_SetString(libdnf_error, const_cast<char*>(e.what()));
+
+Error: COMPILER_WARNING:
+libdnf-0.64.0/libdnf/conf/ConfigRepo.cpp:32:14: warning[-Wunused-private-field]: private field 'owner' is not used
+#    Config & owner;
+#             ^
+#   30|       Impl(Config & owner, ConfigMain & mainConfig);
+#   31|   
+#   32|->     Config & owner;
+#   33|       ConfigMain & mainConfig;
+#   34|   
+
+Error: COMPILER_WARNING:
+libdnf-0.64.0/libdnf/dnf-context.cpp:137:15: warning[-Wnon-c-typedef-for-linkage]: anonymous non-C-compatible type given name for linkage purposes by typedef declaration; add a tag name here
+#typedef struct
+#              ^
+libdnf-0.64.0/libdnf/dnf-context.cpp:155:37: note: type is not C-compatible due to this default member initializer
+#    gchar            **native_arches{NULL};
+#                                    ^~~~~~
+libdnf-0.64.0/libdnf/dnf-context.cpp:182:3: note: type is given name 'DnfContextPrivate' for linkage purposes by this typedef declaration
+#} DnfContextPrivate;
+#  ^
+#  135|   }
+#  136|   
+#  137|-> typedef struct
+#  138|   {
+#  139|       gchar            **repos_dir;
+
+Error: COMPILER_WARNING:
+libdnf-0.64.0/libdnf/dnf-context.cpp:3305:26: warning[-Wpessimizing-move]: moving a temporary object prevents copy elision
+#            names.insert(std::move(module->getName()));
+#                         ^
+libdnf-0.64.0/libdnf/dnf-context.cpp:3305:26: note: remove std::move call here
+#            names.insert(std::move(module->getName()));
+#                         ^~~~~~~~~~                 ~
+# 3303|           std::unordered_set<std::string> names;
+# 3304|           for (auto * module : resolved_spec.second) {
+# 3305|->             names.insert(std::move(module->getName()));
+# 3306|           }
+# 3307|           for (auto & name : names) {
+
+Error: COMPILER_WARNING (CWE-477):
+libdnf-0.64.0/libdnf/dnf-keyring.cpp:120:11: warning[-Wdeprecated-declarations]: 'rpmPubkeyDig' is deprecated
+#    dig = rpmPubkeyDig(pubkey);
+#          ^
+/usr/include/rpm/rpmkeyring.h:108:1: note: 'rpmPubkeyDig' has been explicitly marked deprecated here
+#RPM_GNUC_DEPRECATED
+#^
+/usr/include/rpm/rpmutil.h:79:18: note: expanded from macro 'RPM_GNUC_DEPRECATED'
+#  __attribute__((__deprecated__))
+#                 ^
+#  118|   
+#  119|       /* does the key exist in the keyring */
+#  120|->     dig = rpmPubkeyDig(pubkey);
+#  121|       rc = rpmKeyringLookup(keyring, dig);
+#  122|       if (rc == RPMRC_OK) {
+
+Error: COMPILER_WARNING (CWE-477):
+libdnf-0.64.0/libdnf/dnf-keyring.cpp:121:10: warning[-Wdeprecated-declarations]: 'rpmKeyringLookup' is deprecated
+#    rc = rpmKeyringLookup(keyring, dig);
+#         ^
+/usr/include/rpm/rpmkeyring.h:45:1: note: 'rpmKeyringLookup' has been explicitly marked deprecated here
+#RPM_GNUC_DEPRECATED
+#^
+/usr/include/rpm/rpmutil.h:79:18: note: expanded from macro 'RPM_GNUC_DEPRECATED'
+#  __attribute__((__deprecated__))
+#                 ^
+#  119|       /* does the key exist in the keyring */
+#  120|       dig = rpmPubkeyDig(pubkey);
+#  121|->     rc = rpmKeyringLookup(keyring, dig);
+#  122|       if (rc == RPMRC_OK) {
+#  123|           ret = TRUE;
+
+Error: COMPILER_WARNING (CWE-477):
+libdnf-0.64.0/libdnf/dnf-keyring.cpp:351:10: warning[-Wdeprecated-declarations]: 'rpmKeyringLookup' is deprecated
+#    rc = rpmKeyringLookup(keyring, dig);
+#         ^
+/usr/include/rpm/rpmkeyring.h:45:1: note: 'rpmKeyringLookup' has been explicitly marked deprecated here
+#RPM_GNUC_DEPRECATED
+#^
+/usr/include/rpm/rpmutil.h:79:18: note: expanded from macro 'RPM_GNUC_DEPRECATED'
+#  __attribute__((__deprecated__))
+#                 ^
+#  349|   
+#  350|       /* does the key exist in the keyring */
+#  351|->     rc = rpmKeyringLookup(keyring, dig);
+#  352|       if (rc != RPMRC_OK) {
+#  353|           g_set_error(error,
+
+Error: COMPILER_WARNING:
+libdnf-0.64.0/libdnf/module/ModulePackage.cpp:242:50: warning[-Wpessimizing-move]: moving a temporary object prevents copy elision
+#                dependencies_result.emplace_back(std::move(ss.str()));
+#                                                 ^
+libdnf-0.64.0/libdnf/module/ModulePackage.cpp:242:50: note: remove std::move call here
+#                dependencies_result.emplace_back(std::move(ss.str()));
+#                                                 ^~~~~~~~~~        ~
+#  240|                   }
+#  241|                   ss << "]";
+#  242|->                 dependencies_result.emplace_back(std::move(ss.str()));
+#  243|               }
+#  244|               g_strfreev(runtimeReqStreams);
+
+Error: COMPILER_WARNING:
+libdnf-0.64.0/libdnf/module/ModulePackageContainer.cpp:1413:26: warning[-Wpessimizing-move]: moving a temporary object prevents copy elision
+#    newConfig.profiles = std::move(slist.fromString(plist));
+#                         ^
+libdnf-0.64.0/libdnf/module/ModulePackageContainer.cpp:1413:26: note: remove std::move call here
+#    newConfig.profiles = std::move(slist.fromString(plist));
+#                         ^~~~~~~~~~                       ~
+# 1411|       OptionStringList slist{std::vector<std::string>()};
+# 1412|       const auto &plist = parser.getValue(moduleName, "profiles");
+# 1413|->     newConfig.profiles = std::move(slist.fromString(plist));
+# 1414|   
+# 1415|       newConfig.state = fromString(parser.getValue(moduleName, "state"));
+
+Error: COMPILER_WARNING:
+libdnf-0.64.0/libdnf/module/modulemd/ModuleMetadata.cpp:21: included_from: Included from here.
+libdnf-0.64.0/libdnf/module/modulemd/ModuleMetadata.hpp:30:1: warning[-Wmismatched-tags]: 'ModuleMetadata' defined as a class here but previously declared as a struct; this is valid, but may result in linker errors under the Microsoft C++ ABI
+#class ModuleMetadata
+#^
+libdnf-0.64.0/libdnf/module/ModulePackage.hpp:100:12: note: did you mean class here?
+#    friend struct ModuleMetadata;
+#           ^~~~~~
+#   28|   namespace libdnf {
+#   29|   
+#   30|-> class ModuleMetadata
+#   31|   {
+#   32|   public:
+
+Error: COMPILER_WARNING (CWE-252):
+libdnf-0.64.0/libdnf/utils/crypto/sha1.cpp:12:5: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#    EVP_DigestInit_ex(md_ctx, EVP_sha1(), NULL);
+#    ^~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~
+#   10|   {
+#   11|       md_ctx = EVP_MD_CTX_new();
+#   12|->     EVP_DigestInit_ex(md_ctx, EVP_sha1(), NULL);
+#   13|   }
+#   14|   
+
+Error: COMPILER_WARNING (CWE-252):
+libdnf-0.64.0/libdnf/utils/crypto/sha1.cpp:19:5: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#    EVP_DigestUpdate(md_ctx, data, strlen(data));
+#    ^~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   17|   SHA1Hash::update(const char * data)
+#   18|   {
+#   19|->     EVP_DigestUpdate(md_ctx, data, strlen(data));
+#   20|   }
+#   21|   
+
+Error: COMPILER_WARNING (CWE-252):
+libdnf-0.64.0/libdnf/utils/crypto/sha1.cpp:27:5: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#    EVP_DigestFinal_ex(md_ctx, md, NULL);
+#    ^~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~
+#   25|   {
+#   26|       unsigned char md[digestLength];
+#   27|->     EVP_DigestFinal_ex(md_ctx, md, NULL);
+#   28|   
+#   29|       std::stringstream ss;
+
+Error: COMPILER_WARNING:
+libdnf-0.64.0/libdnf/utils/smartcols/Line.cpp:54:55: warning[-Wstring-plus-int]: adding 'size_t' (aka 'unsigned long') to a string does not append to the string
+#        std::string message = "Out of bound, Index: " + n;
+#                              ~~~~~~~~~~~~~~~~~~~~~~~~^~~
+libdnf-0.64.0/libdnf/utils/smartcols/Line.cpp:54:55: note: use array indexing to silence this warning
+#        std::string message = "Out of bound, Index: " + n;
+#                                                      ^
+#   52|   {
+#   53|       if (n >= getCellCount()) {
+#   54|->         std::string message = "Out of bound, Index: " + n;
+#   55|           message += " Size: " + getCellCount();
+#   56|           throw std::out_of_range(message);
+
+Error: COMPILER_WARNING:
+libdnf-0.64.0/libdnf/utils/smartcols/Line.cpp:55:30: warning[-Wstring-plus-int]: adding 'size_t' (aka 'unsigned long') to a string does not append to the string
+#        message += " Size: " + getCellCount();
+#                   ~~~~~~~~~~^~~~~~~~~~~~~~~~
+libdnf-0.64.0/libdnf/utils/smartcols/Line.cpp:55:30: note: use array indexing to silence this warning
+#        message += " Size: " + getCellCount();
+#                             ^
+#   53|       if (n >= getCellCount()) {
+#   54|           std::string message = "Out of bound, Index: " + n;
+#   55|->         message += " Size: " + getCellCount();
+#   56|           throw std::out_of_range(message);
+#   57|       }
+
+Error: COMPILER_WARNING:
+libdnf-0.64.0/libdnf/utils/smartcols/Table.cpp:39:56: warning[-Wstring-plus-int]: adding 'size_t' (aka 'unsigned long') to a string does not append to the string
+#        std::string message = "Out of bounds. Index: " + n;
+#                              ~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+libdnf-0.64.0/libdnf/utils/smartcols/Table.cpp:39:56: note: use array indexing to silence this warning
+#        std::string message = "Out of bounds. Index: " + n;
+#                                                       ^
+#   37|   {
+#   38|       if (columns.size() < n) {
+#   39|->         std::string message = "Out of bounds. Index: " + n;
+#   40|           message += " Size: " + columns.size();
+#   41|           throw std::out_of_range(message);
+
+Error: COMPILER_WARNING:
+libdnf-0.64.0/libdnf/utils/smartcols/Table.cpp:40:30: warning[-Wstring-plus-int]: adding 'std::vector::size_type' (aka 'unsigned long') to a string does not append to the string
+#        message += " Size: " + columns.size();
+#                   ~~~~~~~~~~^~~~~~~~~~~~~~~~
+libdnf-0.64.0/libdnf/utils/smartcols/Table.cpp:40:30: note: use array indexing to silence this warning
+#        message += " Size: " + columns.size();
+#                             ^
+#   38|       if (columns.size() < n) {
+#   39|           std::string message = "Out of bounds. Index: " + n;
+#   40|->         message += " Size: " + columns.size();
+#   41|           throw std::out_of_range(message);
+#   42|       }
+
+Error: COMPILER_WARNING:
+libdnf-0.64.0/libdnf/utils/smartcols/Table.cpp:49:56: warning[-Wstring-plus-int]: adding 'size_t' (aka 'unsigned long') to a string does not append to the string
+#        std::string message = "Out of bounds. Index: " + n;
+#                              ~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+libdnf-0.64.0/libdnf/utils/smartcols/Table.cpp:49:56: note: use array indexing to silence this warning
+#        std::string message = "Out of bounds. Index: " + n;
+#                                                       ^
+#   47|   {
+#   48|       if (lines.size() < n) {
+#   49|->         std::string message = "Out of bounds. Index: " + n;
+#   50|           message += " Size: " + lines.size();
+#   51|           throw std::out_of_range(message);
+
+Error: COMPILER_WARNING:
+libdnf-0.64.0/libdnf/utils/smartcols/Table.cpp:50:30: warning[-Wstring-plus-int]: adding 'std::vector::size_type' (aka 'unsigned long') to a string does not append to the string
+#        message += " Size: " + lines.size();
+#                   ~~~~~~~~~~^~~~~~~~~~~~~~
+libdnf-0.64.0/libdnf/utils/smartcols/Table.cpp:50:30: note: use array indexing to silence this warning
+#        message += " Size: " + lines.size();
+#                             ^
+#   48|       if (lines.size() < n) {
+#   49|           std::string message = "Out of bounds. Index: " + n;
+#   50|->         message += " Size: " + lines.size();
+#   51|           throw std::out_of_range(message);
+#   52|       }
+
+Error: COMPILER_WARNING:
+libdnf-0.64.0/tests/libdnf/sack/AdvisoryTest.cpp:1: included_from: Included from here.
+libdnf-0.64.0/tests/libdnf/sack/AdvisoryTest.hpp:47:17: warning[-Wunused-private-field]: private field 'context' is not used
+#    DnfContext *context = nullptr;
+#                ^
+#   45|   
+#   46|   private:
+#   47|->     DnfContext *context = nullptr;
+#   48|       DnfSack *sack = nullptr;
+#   49|       HyRepo repo = nullptr;

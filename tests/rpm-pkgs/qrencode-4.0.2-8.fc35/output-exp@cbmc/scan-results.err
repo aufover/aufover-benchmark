@@ -1,0 +1,42 @@
+Error: COMPILER_WARNING:
+qrencode-4.0.2/qrenc.c: scope_hint: In function 'writeANSI'
+qrencode-4.0.2/qrenc.c:786:25: warning[-Wstringop-overflow=]: 'strncat' specified bound 2 equals source length
+#  786 |                         strncat(buffer, "  ", 2);
+#      |                         ^~~~~~~~~~~~~~~~~~~~~~~~
+#  784|   		strncpy(buffer, white, white_s);
+#  785|   		for(x = 0; x < margin; x++ ){
+#  786|-> 			strncat(buffer, "  ", 2);
+#  787|   		}
+#  788|   		last = 0;
+
+Error: COMPILER_WARNING:
+qrencode-4.0.2/qrenc.c:800:25: warning[-Wstringop-overflow=]: 'strncat' specified bound 2 equals source length
+#  800 |                         strncat(buffer, "  ", 2);
+#      |                         ^~~~~~~~~~~~~~~~~~~~~~~~
+#  798|   				last = 0;
+#  799|   			}
+#  800|-> 			strncat(buffer, "  ", 2);
+#  801|   		}
+#  802|   
+
+Error: COMPILER_WARNING:
+qrencode-4.0.2/qrenc.c:807:25: warning[-Wstringop-overflow=]: 'strncat' specified bound 2 equals source length
+#  807 |                         strncat(buffer, "  ", 2);
+#      |                         ^~~~~~~~~~~~~~~~~~~~~~~~
+#  805|   		}
+#  806|   		for(x = 0; x < margin; x++ ){
+#  807|-> 			strncat(buffer, "  ", 2);
+#  808|   		}
+#  809|   		strncat(buffer, "\033[0m\n", 5);
+
+Error: COMPILER_WARNING:
+qrencode-4.0.2/qrenc.c:809:17: warning[-Wstringop-overflow=]: 'strncat' specified bound 5 equals source length
+#  809 |                 strncat(buffer, "\033[0m\n", 5);
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+qrencode-4.0.2/qrenc.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#  807|   			strncat(buffer, "  ", 2);
+#  808|   		}
+#  809|-> 		strncat(buffer, "\033[0m\n", 5);
+#  810|   		fputs(buffer, fp);
+#  811|   	}

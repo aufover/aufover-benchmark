@@ -1,0 +1,112 @@
+Error: COMPILER_WARNING (CWE-682):
+chrony-4.1/test/simulation/clknetsim/client.c:727:54: warning[-Wshift-negative-value]: shifting a negative signed value is undefined
+#        if (which_clock == CLOCK_REALTIME || which_clock == REFCLK_ID)
+#                                                            ^~~~~~~~~
+chrony-4.1/test/simulation/clknetsim/client.c:75:43: note: expanded from macro 'REFCLK_ID'
+##define REFCLK_ID ((~(clockid_t)REFCLK_FD << 3) | 3)
+#                    ~~~~~~~~~~~~~~~~~~~~~ ^
+#  725|   	time_to_timespec(time, tp);
+#  726|   	
+#  727|-> 	if (which_clock == CLOCK_REALTIME || which_clock == REFCLK_ID)
+#  728|   		tp->tv_sec += system_time_offset;
+#  729|   
+
+Error: COMPILER_WARNING (CWE-682):
+chrony-4.1/test/simulation/clknetsim/client.c:799:39: warning[-Wshift-negative-value]: shifting a negative signed value is undefined
+#        assert(id == CLOCK_REALTIME || id == SYSCLK_CLOCKID || id == REFCLK_ID);
+#        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+chrony-4.1/test/simulation/clknetsim/client.c:78:48: note: expanded from macro 'SYSCLK_CLOCKID'
+##define SYSCLK_CLOCKID ((~(clockid_t)SYSCLK_FD << 3) | 3)
+#                                               ^
+/usr/include/assert.h:106:11: note: expanded from macro 'assert'
+#      if (expr)                                                         \
+#          ^~~~
+#  797|   
+#  798|   int clock_adjtime(clockid_t id, struct timex *tx) {
+#  799|-> 	assert(id == CLOCK_REALTIME || id == SYSCLK_CLOCKID || id == REFCLK_ID);
+#  800|   
+#  801|   	if (id == SYSCLK_CLOCKID) {
+
+Error: COMPILER_WARNING (CWE-682):
+chrony-4.1/test/simulation/clknetsim/client.c:799:63: warning[-Wshift-negative-value]: shifting a negative signed value is undefined
+#        assert(id == CLOCK_REALTIME || id == SYSCLK_CLOCKID || id == REFCLK_ID);
+#        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
+chrony-4.1/test/simulation/clknetsim/client.c:75:43: note: expanded from macro 'REFCLK_ID'
+#  797|   
+#  798|   int clock_adjtime(clockid_t id, struct timex *tx) {
+#  799|-> 	assert(id == CLOCK_REALTIME || id == SYSCLK_CLOCKID || id == REFCLK_ID);
+#  800|   
+#  801|   	if (id == SYSCLK_CLOCKID) {
+
+Error: COMPILER_WARNING (CWE-682):
+chrony-4.1/test/simulation/clknetsim/client.c:801:12: warning[-Wshift-negative-value]: shifting a negative signed value is undefined
+#        if (id == SYSCLK_CLOCKID) {
+#                  ^~~~~~~~~~~~~~
+chrony-4.1/test/simulation/clknetsim/client.c:78:48: note: expanded from macro 'SYSCLK_CLOCKID'
+##define SYSCLK_CLOCKID ((~(clockid_t)SYSCLK_FD << 3) | 3)
+#                         ~~~~~~~~~~~~~~~~~~~~~ ^
+#/builddir/build/BUILD/chrony-4.1/test/simulation/clknetsim/client.c:824:19:#define REFCLK_ID ((~(clockid_t)REFCLK_FD << 3) | 3)
+#                                          ^
+/usr/include/assert.h:106:11: note: expanded from macro 'assert'
+#      if (expr)                                                         \
+#          ^~~~
+#  799|   	assert(id == CLOCK_REALTIME || id == SYSCLK_CLOCKID || id == REFCLK_ID);
+#  800|   
+#  801|-> 	if (id == SYSCLK_CLOCKID) {
+#  802|   		/* allow large frequency adjustment by setting ticks */
+#  803|   
+
+Error: COMPILER_WARNING (CWE-682):
+chrony-4.1/test/simulation/clknetsim/client.c:824:19: warning[-Wshift-negative-value]: shifting a negative signed value is undefined
+#        } else if (id == REFCLK_ID) {
+#                         ^~~~~~~~~
+chrony-4.1/test/simulation/clknetsim/client.c:75:43: note: expanded from macro 'REFCLK_ID'
+##define REFCLK_ID ((~(clockid_t)REFCLK_FD << 3) | 3)
+#                    ~~~~~~~~~~~~~~~~~~~~~ ^
+chrony-4.1/test/simulation/clknetsim/client.c:75:43: note: expanded from macro 'REFCLK_ID'
+##define REFCLK_ID ((~(clockid_t)REFCLK_FD << 3) | 3)
+#                    ~~~~~~~~~~~~~~~~~~~~~ ^
+#  822|   
+#  823|   		return r;
+#  824|-> 	} else if (id == REFCLK_ID) {
+#  825|   		if (tx->modes) {
+#  826|   			errno = EINVAL;
+
+Error: COMPILER_WARNING (CWE-682):
+chrony-4.1/test/simulation/clknetsim/client.c:1638:17: warning[-Wshift-negative-value]: shifting a negative signed value is undefined
+#                clock_gettime(REFCLK_ID, &ts);
+#                              ^~~~~~~~~
+chrony-4.1/test/simulation/clknetsim/client.c:75:43: note: expanded from macro 'REFCLK_ID'
+##define REFCLK_ID ((~(clockid_t)REFCLK_FD << 3) | 3)
+#                    ~~~~~~~~~~~~~~~~~~~~~ ^
+# 1636|   			sys_off->n_samples = PTP_MAX_SAMPLES;
+# 1637|   
+# 1638|-> 		clock_gettime(REFCLK_ID, &ts);
+# 1639|   		for (i = 0; i < sys_off->n_samples; i++) {
+# 1640|   			sys_off->ts[2 * i + 1].sec = ts.tv_sec;
+
+Error: COMPILER_WARNING (CWE-682):
+chrony-4.1/test/simulation/clknetsim/client.c:1655:17: warning[-Wshift-negative-value]: shifting a negative signed value is undefined
+#                clock_gettime(REFCLK_ID, &ts);
+#                              ^~~~~~~~~
+chrony-4.1/test/simulation/clknetsim/client.c:75:43: note: expanded from macro 'REFCLK_ID'
+##define REFCLK_ID ((~(clockid_t)REFCLK_FD << 3) | 3)
+#                    ~~~~~~~~~~~~~~~~~~~~~ ^
+# 1653|   		struct timespec ts;
+# 1654|   
+# 1655|-> 		clock_gettime(REFCLK_ID, &ts);
+# 1656|   		sys_off->device.sec = ts.tv_sec;
+# 1657|   		sys_off->device.nsec = ts.tv_nsec;
+
+Error: COMPILER_WARNING (CWE-682):
+chrony-4.1/test/simulation/clknetsim/client.c:2062:37: warning[-Wshift-negative-value]: shifting a negative signed value is undefined
+#                        clock_gettime(timestamping > 1 ? REFCLK_ID : CLOCK_REALTIME, &ts);
+#                                                         ^~~~~~~~~
+chrony-4.1/test/simulation/clknetsim/client.c:75:43: note: expanded from macro 'REFCLK_ID'
+##define REFCLK_ID ((~(clockid_t)REFCLK_FD << 3) | 3)
+#                    ~~~~~~~~~~~~~~~~~~~~~ ^
+# 2060|   		}
+# 2061|   		if (sockets[s].time_stamping & SOF_TIMESTAMPING_RAW_HARDWARE) {
+# 2062|-> 			clock_gettime(timestamping > 1 ? REFCLK_ID : CLOCK_REALTIME, &ts);
+# 2063|   			if (!(flags & MSG_ERRQUEUE))
+# 2064|   				add_to_timespec(&ts, -(8 * (msglen + 42 + 4) / (1e6 * LINK_SPEED)));

@@ -1,0 +1,219 @@
+Error: COMPILER_WARNING:
+attr-2.5.1/libattr/attr_copy_fd.c:76:9: warning: implicit declaration of function 'flistxattr' is invalid in C99
+#        size = flistxattr (src_fd, NULL, 0);
+#               ^
+#   74|   		check = attr_copy_check_permissions;
+#   75|   
+#   76|-> 	size = flistxattr (src_fd, NULL, 0);
+#   77|   	if (size < 0) {
+#   78|   		if (errno != ENOSYS && errno != ENOTSUP) {
+
+Error: COMPILER_WARNING:
+attr-2.5.1/libattr/attr_copy_fd.c:111:10: warning: implicit declaration of function 'fgetxattr' is invalid in C99
+#                size = fgetxattr (src_fd, name, NULL, 0);
+#                       ^
+#  109|   			continue;
+#  110|   
+#  111|-> 		size = fgetxattr (src_fd, name, NULL, 0);
+#  112|   		if (size < 0) {
+#  113|   			const char *qpath = quote (ctx, src_path);
+
+Error: COMPILER_WARNING:
+attr-2.5.1/libattr/attr_copy_fd.c:139:7: warning: implicit declaration of function 'fsetxattr' is invalid in C99
+#                if (fsetxattr (dst_fd, name, value, size, 0) != 0) {
+#                    ^
+#  137|   			continue;
+#  138|   		}
+#  139|-> 		if (fsetxattr (dst_fd, name, value, size, 0) != 0) {
+#  140|   			if (errno == ENOTSUP)
+#  141|   				setxattr_ENOTSUP++;
+
+Error: COMPILER_WARNING:
+attr-2.5.1/libattr/attr_copy_file.c:74:9: warning: implicit declaration of function 'llistxattr' is invalid in C99
+#        size = llistxattr (src_path, NULL, 0);
+#               ^
+#   72|   		check = attr_copy_check_permissions;
+#   73|   
+#   74|-> 	size = llistxattr (src_path, NULL, 0);
+#   75|   	if (size < 0) {
+#   76|   		if (errno != ENOSYS && errno != ENOTSUP) {
+
+Error: COMPILER_WARNING:
+attr-2.5.1/libattr/attr_copy_file.c:109:10: warning: implicit declaration of function 'lgetxattr' is invalid in C99
+#                size = lgetxattr (src_path, name, NULL, 0);
+#                       ^
+#  107|   			continue;
+#  108|   
+#  109|-> 		size = lgetxattr (src_path, name, NULL, 0);
+#  110|   		if (size < 0) {
+#  111|   			const char *qpath = quote (ctx, src_path);
+
+Error: COMPILER_WARNING:
+attr-2.5.1/libattr/attr_copy_file.c:137:7: warning: implicit declaration of function 'lsetxattr' is invalid in C99
+#                if (lsetxattr (dst_path, name, value, size, 0) != 0) {
+#                    ^
+#  135|   			continue;
+#  136|   		}
+#  137|-> 		if (lsetxattr (dst_path, name, value, size, 0) != 0) {
+#  138|   			if (errno == ENOTSUP)
+#  139|   				setxattr_ENOTSUP++;
+
+Error: COMPILER_WARNING:
+attr-2.5.1/libattr/libattr.c:150:7: warning: implicit declaration of function 'fgetxattr' is invalid in C99
+#                c = fgetxattr(fd, name, attrvalue, *valuelength);
+#                    ^
+#  148|   		if ((c = api_convert(name, attrname, flags, compat)) < 0)
+#  149|   			return c;
+#  150|-> 		c = fgetxattr(fd, name, attrvalue, *valuelength);
+#  151|   		if (c < 0 && (errno == ENOATTR || errno == ENOTSUP))
+#  152|   			continue;
+
+Error: COMPILER_WARNING:
+attr-2.5.1/libattr/libattr.c:156:14: warning: implicit declaration of function 'fgetxattr' is invalid in C99
+#                int size = fgetxattr(fd, name, NULL, 0);
+#                           ^
+#  154|   	}
+#  155|   	if (c < 0 && errno == ERANGE) {
+#  156|-> 		int size = fgetxattr(fd, name, NULL, 0);
+#  157|   		if (size >= 0) {
+#  158|   			*valuelength = size;
+
+Error: COMPILER_WARNING:
+attr-2.5.1/libattr/libattr.c:186:8: warning: implicit declaration of function 'lsetxattr' is invalid in C99
+#                        c = lsetxattr(path, name, buffer, valuelength, lflags);
+#                            ^
+#  184|   			return c;
+#  185|   		if (flags & ATTR_DONTFOLLOW)
+#  186|-> 			c = lsetxattr(path, name, buffer, valuelength, lflags);
+#  187|   		else
+#  188|   			c = setxattr(path, name, buffer, valuelength, lflags);
+
+Error: COMPILER_WARNING:
+attr-2.5.1/libattr/libattr.c:188:8: warning: implicit declaration of function 'setxattr' is invalid in C99
+#                        c = setxattr(path, name, buffer, valuelength, lflags);
+#                            ^
+#  186|   			c = lsetxattr(path, name, buffer, valuelength, lflags);
+#  187|   		else
+#  188|-> 			c = setxattr(path, name, buffer, valuelength, lflags);
+#  189|   		if (c < 0 && (errno == ENOATTR || errno == ENOTSUP))
+#  190|   			continue;
+
+Error: COMPILER_WARNING:
+attr-2.5.1/libattr/libattr.c:212:7: warning: implicit declaration of function 'fsetxattr' is invalid in C99
+#                c = fsetxattr(fd, name, buffer, valuelength, lflags);
+#                    ^
+#  210|   		if ((c = api_convert(name, attrname, flags, compat)) < 0)
+#  211|   			return c;
+#  212|-> 		c = fsetxattr(fd, name, buffer, valuelength, lflags);
+#  213|   		if (c < 0 && (errno == ENOATTR || errno == ENOTSUP))
+#  214|   			continue;
+
+Error: COMPILER_WARNING:
+attr-2.5.1/libattr/libattr.c:230:8: warning: implicit declaration of function 'lremovexattr' is invalid in C99
+#                        c = lremovexattr(path, name);
+#                            ^
+#  228|   			return c;
+#  229|   		if (flags & ATTR_DONTFOLLOW)
+#  230|-> 			c = lremovexattr(path, name);
+#  231|   		else
+#  232|   			c = removexattr(path, name);
+
+Error: COMPILER_WARNING:
+attr-2.5.1/libattr/libattr.c:232:8: warning: implicit declaration of function 'removexattr' is invalid in C99
+#                        c = removexattr(path, name);
+#                            ^
+#  230|   			c = lremovexattr(path, name);
+#  231|   		else
+#  232|-> 			c = removexattr(path, name);
+#  233|   		if (c < 0 && (errno == ENOATTR || errno == ENOTSUP))
+#  234|   			continue;
+
+Error: COMPILER_WARNING:
+attr-2.5.1/libattr/libattr.c:249:7: warning: implicit declaration of function 'fremovexattr' is invalid in C99
+#                c = fremovexattr(fd, name);
+#                    ^
+#  247|   		if ((c = api_convert(name, attrname, flags, compat)) < 0)
+#  248|   			return c;
+#  249|-> 		c = fremovexattr(fd, name);
+#  250|   		if (c < 0 && (errno == ENOATTR || errno == ENOTSUP))
+#  251|   			continue;
+
+Error: COMPILER_WARNING:
+attr-2.5.1/libattr/libattr.c:304:12: warning: implicit declaration of function 'llistxattr' is invalid in C99
+#                length = llistxattr(path, lbuf, sizeof(lbuf) - 1);
+#                         ^
+#  302|   
+#  303|   	if (flags & ATTR_DONTFOLLOW)
+#  304|-> 		length = llistxattr(path, lbuf, sizeof(lbuf) - 1);
+#  305|   	else
+#  306|   		length = listxattr(path, lbuf, sizeof(lbuf) - 1);
+
+Error: COMPILER_WARNING:
+attr-2.5.1/libattr/libattr.c:306:12: warning: implicit declaration of function 'listxattr' is invalid in C99
+#                length = listxattr(path, lbuf, sizeof(lbuf) - 1);
+#                         ^
+#  304|   		length = llistxattr(path, lbuf, sizeof(lbuf) - 1);
+#  305|   	else
+#  306|-> 		length = listxattr(path, lbuf, sizeof(lbuf) - 1);
+#  307|   	if (length <= 0)
+#  308|   		return length;
+
+Error: COMPILER_WARNING:
+attr-2.5.1/libattr/libattr.c:318:14: warning: implicit declaration of function 'lgetxattr' is invalid in C99
+#                        vlength = lgetxattr(path, l, NULL, 0);
+#                                  ^
+#  316|   			continue;
+#  317|   		if (flags & ATTR_DONTFOLLOW)
+#  318|-> 			vlength = lgetxattr(path, l, NULL, 0);
+#  319|   		else
+#  320|   			vlength =  getxattr(path, l, NULL, 0);
+
+Error: COMPILER_WARNING:
+attr-2.5.1/libattr/libattr.c:320:15: warning: implicit declaration of function 'getxattr' is invalid in C99
+#                        vlength =  getxattr(path, l, NULL, 0);
+#                                   ^
+#  318|   			vlength = lgetxattr(path, l, NULL, 0);
+#  319|   		else
+#  320|-> 			vlength =  getxattr(path, l, NULL, 0);
+#  321|   		if (vlength < 0 && (errno == ENOATTR || errno == ENOTSUP))
+#  322|   			continue;
+
+Error: COMPILER_WARNING:
+attr-2.5.1/libattr/libattr.c:354:11: warning: implicit declaration of function 'flistxattr' is invalid in C99
+#        length = flistxattr(fd, lbuf, sizeof(lbuf) - 1);
+#                 ^
+#  352|   	memset(buffer, 0, sizeof(attrlist_t));
+#  353|   
+#  354|-> 	length = flistxattr(fd, lbuf, sizeof(lbuf) - 1);
+#  355|   	if (length < 0)
+#  356|   		return length;
+
+Error: COMPILER_WARNING:
+attr-2.5.1/libattr/libattr.c:365:13: warning: implicit declaration of function 'fgetxattr' is invalid in C99
+#                vlength = fgetxattr(fd, l, NULL, 0);
+#                          ^
+#  363|   		if (api_unconvert(name, l, flags))
+#  364|   			continue;
+#  365|-> 		vlength = fgetxattr(fd, l, NULL, 0);
+#  366|   		if (vlength < 0 && (errno == ENOATTR || errno == ENOTSUP))
+#  367|   			continue;
+
+Error: COMPILER_WARNING:
+attr-2.5.1/tools/attr.c:69:11: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#        progname = basename(argv[0]);
+#                 ^ ~~~~~~~~~~~~~~~~~
+#   67|   	attrlist_cursor_t cursor;
+#   68|   
+#   69|-> 	progname = basename(argv[0]);
+#   70|   
+#   71|   	setlocale(LC_CTYPE, "");
+
+Error: COMPILER_WARNING:
+attr-2.5.1/tools/attr.c:69:13: warning: implicit declaration of function 'basename' is invalid in C99
+#        progname = basename(argv[0]);
+#                   ^
+#   67|   	attrlist_cursor_t cursor;
+#   68|   
+#   69|-> 	progname = basename(argv[0]);
+#   70|   
+#   71|   	setlocale(LC_CTYPE, "");

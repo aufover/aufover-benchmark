@@ -1,0 +1,3124 @@
+Error: COMPILER_WARNING:
+parted-3.4/lib/getrandom.c:166:10: warning: implicit declaration of function 'getrandom' is invalid in C99
+#  return getrandom (buffer, length, flags);
+#         ^
+#  164|     return -1;
+#  165|   #elif HAVE_GETRANDOM
+#  166|->   return getrandom (buffer, length, flags);
+#  167|   #else
+#  168|     static int randfd[2] = { -1, -1 };
+
+Error: COMPILER_WARNING:
+parted-3.4/lib/nl_langinfo.c:342:10: warning: implicit declaration of function 'nl_langinfo' is invalid in C99
+#  return nl_langinfo_with_lock (item);
+#         ^
+parted-3.4/lib/nl_langinfo.c:272:33: note: expanded from macro 'nl_langinfo_with_lock'
+##  define nl_langinfo_with_lock nl_langinfo
+#                                ^
+#  340|         break;
+#  341|       }
+#  342|->   return nl_langinfo_with_lock (item);
+#  343|   }
+#  344|   
+
+Error: COMPILER_WARNING:
+parted-3.4/lib/nl_langinfo.c:342:10: warning: incompatible integer to pointer conversion returning 'int' from a function with result type 'char *'
+#  return nl_langinfo_with_lock (item);
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+parted-3.4/lib/nl_langinfo.c:272:33: note: expanded from macro 'nl_langinfo_with_lock'
+##  define nl_langinfo_with_lock nl_langinfo
+#                                ^
+#  340|         break;
+#  341|       }
+#  342|->   return nl_langinfo_with_lock (item);
+#  343|   }
+#  344|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/arch/linux.c:562:28: warning: implicit declaration of function 'gnu_dev_major' is invalid in C99
+#        if (!_is_dm_major (major (deps->device[0])))
+#                           ^
+/usr/include/sys/sysmacros.h:60:20: note: expanded from macro 'major'
+##define major(dev) gnu_dev_major (dev)
+#                   ^
+#  560|           if (deps->count != 1)
+#  561|                   goto err;
+#  562|->         if (!_is_dm_major (major (deps->device[0])))
+#  563|                   goto err;
+#  564|           dm_task_destroy (task);
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/arch/linux.c:610:33: warning: implicit declaration of function 'gnu_dev_major' is invalid in C99
+#               if (_is_dm_major(major(st.st_rdev)) && _is_dmraid_device (buf)
+#                                ^
+/usr/include/sys/sysmacros.h:60:20: note: expanded from macro 'major'
+##define major(dev) gnu_dev_major (dev)
+#                   ^
+#  608|                          continue;
+#  609|   
+#  610|->                if (_is_dm_major(major(st.st_rdev)) && _is_dmraid_device (buf)
+#  611|                      && !_dm_is_part(buf))
+#  612|                          _ped_device_probe (buf);
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/arch/linux.c:658:44: warning: implicit declaration of function 'gnu_dev_major' is invalid in C99
+#        arch_specific->major = dev_major = major (dev_stat.st_rdev);
+#                                           ^
+/usr/include/sys/sysmacros.h:60:20: note: expanded from macro 'major'
+##define major(dev) gnu_dev_major (dev)
+#                   ^
+#  656|           }
+#  657|   
+#  658|->         arch_specific->major = dev_major = major (dev_stat.st_rdev);
+#  659|           arch_specific->minor = dev_minor = minor (dev_stat.st_rdev);
+#  660|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/arch/linux.c:659:44: warning: implicit declaration of function 'gnu_dev_minor' is invalid in C99
+#        arch_specific->minor = dev_minor = minor (dev_stat.st_rdev);
+#                                           ^
+/usr/include/sys/sysmacros.h:61:20: note: expanded from macro 'minor'
+##define minor(dev) gnu_dev_minor (dev)
+#                   ^
+#  657|   
+#  658|           arch_specific->major = dev_major = major (dev_stat.st_rdev);
+#  659|->         arch_specific->minor = dev_minor = minor (dev_stat.st_rdev);
+#  660|   
+#  661|           if (SCSI_BLK_MAJOR (dev_major) && (dev_minor % 0x10 == 0)) {
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/arch/linux.c:3383:9: warning: use of GNU old-style field designator extension
+#        _new:           linux_new,
+#        ^~~~~
+# 3381|   
+# 3382|   static PedDeviceArchOps linux_dev_ops = {
+# 3383|->         _new:           linux_new,
+# 3384|           destroy:        linux_destroy,
+# 3385|           is_busy:        linux_is_busy,
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/arch/linux.c:3384:9: warning: use of GNU old-style field designator extension
+#        destroy:        linux_destroy,
+#        ^~~~~~~~
+# 3382|   static PedDeviceArchOps linux_dev_ops = {
+# 3383|           _new:           linux_new,
+# 3384|->         destroy:        linux_destroy,
+# 3385|           is_busy:        linux_is_busy,
+# 3386|           open:           linux_open,
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/arch/linux.c:3385:9: warning: use of GNU old-style field designator extension
+#        is_busy:        linux_is_busy,
+#        ^~~~~~~~
+# 3383|           _new:           linux_new,
+# 3384|           destroy:        linux_destroy,
+# 3385|->         is_busy:        linux_is_busy,
+# 3386|           open:           linux_open,
+# 3387|           refresh_open:   linux_refresh_open,
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/arch/linux.c:3386:9: warning: use of GNU old-style field designator extension
+#        open:           linux_open,
+#        ^~~~~
+# 3384|           destroy:        linux_destroy,
+# 3385|           is_busy:        linux_is_busy,
+# 3386|->         open:           linux_open,
+# 3387|           refresh_open:   linux_refresh_open,
+# 3388|           close:          linux_close,
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/arch/linux.c:3387:9: warning: use of GNU old-style field designator extension
+#        refresh_open:   linux_refresh_open,
+#        ^~~~~~~~~~~~~
+# 3385|           is_busy:        linux_is_busy,
+# 3386|           open:           linux_open,
+# 3387|->         refresh_open:   linux_refresh_open,
+# 3388|           close:          linux_close,
+# 3389|           refresh_close:  linux_refresh_close,
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/arch/linux.c:3388:9: warning: use of GNU old-style field designator extension
+#        close:          linux_close,
+#        ^~~~~~
+# 3386|           open:           linux_open,
+# 3387|           refresh_open:   linux_refresh_open,
+# 3388|->         close:          linux_close,
+# 3389|           refresh_close:  linux_refresh_close,
+# 3390|           read:           linux_read,
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/arch/linux.c:3389:9: warning: use of GNU old-style field designator extension
+#        refresh_close:  linux_refresh_close,
+#        ^~~~~~~~~~~~~~
+# 3387|           refresh_open:   linux_refresh_open,
+# 3388|           close:          linux_close,
+# 3389|->         refresh_close:  linux_refresh_close,
+# 3390|           read:           linux_read,
+# 3391|           write:          linux_write,
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/arch/linux.c:3390:9: warning: use of GNU old-style field designator extension
+#        read:           linux_read,
+#        ^~~~~
+# 3388|           close:          linux_close,
+# 3389|           refresh_close:  linux_refresh_close,
+# 3390|->         read:           linux_read,
+# 3391|           write:          linux_write,
+# 3392|           check:          linux_check,
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/arch/linux.c:3391:9: warning: use of GNU old-style field designator extension
+#        write:          linux_write,
+#        ^~~~~~
+# 3389|           refresh_close:  linux_refresh_close,
+# 3390|           read:           linux_read,
+# 3391|->         write:          linux_write,
+# 3392|           check:          linux_check,
+# 3393|           sync:           linux_sync,
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/arch/linux.c:3392:9: warning: use of GNU old-style field designator extension
+#        check:          linux_check,
+#        ^~~~~~
+# 3390|           read:           linux_read,
+# 3391|           write:          linux_write,
+# 3392|->         check:          linux_check,
+# 3393|           sync:           linux_sync,
+# 3394|           sync_fast:      linux_sync_fast,
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/arch/linux.c:3393:9: warning: use of GNU old-style field designator extension
+#        sync:           linux_sync,
+#        ^~~~~
+# 3391|           write:          linux_write,
+# 3392|           check:          linux_check,
+# 3393|->         sync:           linux_sync,
+# 3394|           sync_fast:      linux_sync_fast,
+# 3395|           probe_all:      linux_probe_all,
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/arch/linux.c:3394:9: warning: use of GNU old-style field designator extension
+#        sync_fast:      linux_sync_fast,
+#        ^~~~~~~~~~
+# 3392|           check:          linux_check,
+# 3393|           sync:           linux_sync,
+# 3394|->         sync_fast:      linux_sync_fast,
+# 3395|           probe_all:      linux_probe_all,
+# 3396|   #if defined __s390__ || defined __s390x__
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/arch/linux.c:3395:9: warning: use of GNU old-style field designator extension
+#        probe_all:      linux_probe_all,
+#        ^~~~~~~~~~
+# 3393|           sync:           linux_sync,
+# 3394|           sync_fast:      linux_sync_fast,
+# 3395|->         probe_all:      linux_probe_all,
+# 3396|   #if defined __s390__ || defined __s390x__
+# 3397|           get_minimum_alignment:	s390_get_minimum_alignment,
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/arch/linux.c:3400:9: warning: use of GNU old-style field designator extension
+#        get_minimum_alignment:  linux_get_minimum_alignment,
+#        ^~~~~~~~~~~~~~~~~~~~~~
+# 3398|           get_optimum_alignment:	s390_get_optimum_alignment,
+# 3399|   #elif USE_BLKID
+# 3400|->         get_minimum_alignment:	linux_get_minimum_alignment,
+# 3401|           get_optimum_alignment:	linux_get_optimum_alignment,
+# 3402|   #endif
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/arch/linux.c:3401:9: warning: use of GNU old-style field designator extension
+#        get_optimum_alignment:  linux_get_optimum_alignment,
+#        ^~~~~~~~~~~~~~~~~~~~~~
+# 3399|   #elif USE_BLKID
+# 3400|           get_minimum_alignment:	linux_get_minimum_alignment,
+# 3401|->         get_optimum_alignment:	linux_get_optimum_alignment,
+# 3402|   #endif
+# 3403|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/arch/linux.c:3406:9: warning: use of GNU old-style field designator extension
+#        partition_get_path:     linux_partition_get_path,
+#        ^~~~~~~~~~~~~~~~~~~
+# 3404|   
+# 3405|   PedDiskArchOps linux_disk_ops =  {
+# 3406|->         partition_get_path:     linux_partition_get_path,
+# 3407|           partition_is_busy:      linux_partition_is_busy,
+# 3408|           disk_commit:            linux_disk_commit
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/arch/linux.c:3407:9: warning: use of GNU old-style field designator extension
+#        partition_is_busy:      linux_partition_is_busy,
+#        ^~~~~~~~~~~~~~~~~~
+# 3405|   PedDiskArchOps linux_disk_ops =  {
+# 3406|           partition_get_path:     linux_partition_get_path,
+# 3407|->         partition_is_busy:      linux_partition_is_busy,
+# 3408|           disk_commit:            linux_disk_commit
+# 3409|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/arch/linux.c:3408:9: warning: use of GNU old-style field designator extension
+#        disk_commit:            linux_disk_commit
+#        ^~~~~~~~~~~~
+# 3406|           partition_get_path:     linux_partition_get_path,
+# 3407|           partition_is_busy:      linux_partition_is_busy,
+# 3408|->         disk_commit:            linux_disk_commit
+# 3409|   };
+# 3410|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/arch/linux.c:3412:9: warning: use of GNU old-style field designator extension
+#        dev_ops:        &linux_dev_ops,
+#        ^~~~~~~~
+# 3410|   
+# 3411|   PedArchitecture ped_linux_arch = {
+# 3412|->         dev_ops:        &linux_dev_ops,
+# 3413|           disk_ops:       &linux_disk_ops
+# 3414|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/arch/linux.c:3413:9: warning: use of GNU old-style field designator extension
+#        disk_ops:       &linux_disk_ops
+#        ^~~~~~~~~
+# 3411|   PedArchitecture ped_linux_arch = {
+# 3412|           dev_ops:        &linux_dev_ops,
+# 3413|->         disk_ops:       &linux_disk_ops
+# 3414|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/cs/natmath.c:47:2: warning: use of GNU old-style field designator extension
+#        offset:         0,
+#        ^~~~~~~
+#   45|   
+#   46|   static const PedAlignment _any = {
+#   47|-> 	offset:		0,
+#   48|   	grain_size:	1
+#   49|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/cs/natmath.c:48:2: warning: use of GNU old-style field designator extension
+#        grain_size:     1
+#        ^~~~~~~~~~~
+#   46|   static const PedAlignment _any = {
+#   47|   	offset:		0,
+#   48|-> 	grain_size:	1
+#   49|   };
+#   50|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/device.c:160:15: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#                normal_path = canonicalize_file_name (path);
+#                            ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  158|   	if (strncmp (path, "/dev/mapper/", 12) &&
+#  159|   	    strncmp (path, "/dev/md/", 8))
+#  160|-> 		normal_path = canonicalize_file_name (path);
+#  161|   	if (!normal_path)
+#  162|   		/* Well, maybe it is just that the file does not exist.
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/device.c:160:17: warning: implicit declaration of function 'canonicalize_file_name' is invalid in C99
+#                normal_path = canonicalize_file_name (path);
+#                              ^
+#  158|   	if (strncmp (path, "/dev/mapper/", 12) &&
+#  159|   	    strncmp (path, "/dev/md/", 8))
+#  160|-> 		normal_path = canonicalize_file_name (path);
+#  161|   	if (!normal_path)
+#  162|   		/* Well, maybe it is just that the file does not exist.
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:173:2: warning: use of GNU old-style field designator extension
+#        probe:          _affs0_probe,
+#        ^~~~~~
+#  171|   
+#  172|   static PedFileSystemOps _affs0_ops = {
+#  173|-> 	probe:		_affs0_probe,
+#  174|   };
+#  175|   static PedFileSystemOps _affs1_ops = {
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:176:2: warning: use of GNU old-style field designator extension
+#        probe:          _affs1_probe,
+#        ^~~~~~
+#  174|   };
+#  175|   static PedFileSystemOps _affs1_ops = {
+#  176|-> 	probe:		_affs1_probe,
+#  177|   };
+#  178|   static PedFileSystemOps _affs2_ops = {
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:179:2: warning: use of GNU old-style field designator extension
+#        probe:          _affs2_probe,
+#        ^~~~~~
+#  177|   };
+#  178|   static PedFileSystemOps _affs2_ops = {
+#  179|-> 	probe:		_affs2_probe,
+#  180|   };
+#  181|   static PedFileSystemOps _affs3_ops = {
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:182:2: warning: use of GNU old-style field designator extension
+#        probe:          _affs3_probe,
+#        ^~~~~~
+#  180|   };
+#  181|   static PedFileSystemOps _affs3_ops = {
+#  182|-> 	probe:		_affs3_probe,
+#  183|   };
+#  184|   static PedFileSystemOps _affs4_ops = {
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:185:2: warning: use of GNU old-style field designator extension
+#        probe:          _affs4_probe,
+#        ^~~~~~
+#  183|   };
+#  184|   static PedFileSystemOps _affs4_ops = {
+#  185|-> 	probe:		_affs4_probe,
+#  186|   };
+#  187|   static PedFileSystemOps _affs5_ops = {
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:188:2: warning: use of GNU old-style field designator extension
+#        probe:          _affs5_probe,
+#        ^~~~~~
+#  186|   };
+#  187|   static PedFileSystemOps _affs5_ops = {
+#  188|-> 	probe:		_affs5_probe,
+#  189|   };
+#  190|   static PedFileSystemOps _affs6_ops = {
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:191:2: warning: use of GNU old-style field designator extension
+#        probe:          _affs6_probe,
+#        ^~~~~~
+#  189|   };
+#  190|   static PedFileSystemOps _affs6_ops = {
+#  191|-> 	probe:		_affs6_probe,
+#  192|   };
+#  193|   static PedFileSystemOps _affs7_ops = {
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:194:2: warning: use of GNU old-style field designator extension
+#        probe:          _affs7_probe,
+#        ^~~~~~
+#  192|   };
+#  193|   static PedFileSystemOps _affs7_ops = {
+#  194|-> 	probe:		_affs7_probe,
+#  195|   };
+#  196|   static PedFileSystemOps _amufs_ops = {
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:197:2: warning: use of GNU old-style field designator extension
+#        probe:          _amufs_probe,
+#        ^~~~~~
+#  195|   };
+#  196|   static PedFileSystemOps _amufs_ops = {
+#  197|-> 	probe:		_amufs_probe,
+#  198|   };
+#  199|   static PedFileSystemOps _amufs0_ops = {
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:200:2: warning: use of GNU old-style field designator extension
+#        probe:          _amufs0_probe,
+#        ^~~~~~
+#  198|   };
+#  199|   static PedFileSystemOps _amufs0_ops = {
+#  200|-> 	probe:		_amufs0_probe,
+#  201|   };
+#  202|   static PedFileSystemOps _amufs1_ops = {
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:203:2: warning: use of GNU old-style field designator extension
+#        probe:          _amufs1_probe,
+#        ^~~~~~
+#  201|   };
+#  202|   static PedFileSystemOps _amufs1_ops = {
+#  203|-> 	probe:		_amufs1_probe,
+#  204|   };
+#  205|   static PedFileSystemOps _amufs2_ops = {
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:206:2: warning: use of GNU old-style field designator extension
+#        probe:          _amufs2_probe,
+#        ^~~~~~
+#  204|   };
+#  205|   static PedFileSystemOps _amufs2_ops = {
+#  206|-> 	probe:		_amufs2_probe,
+#  207|   };
+#  208|   static PedFileSystemOps _amufs3_ops = {
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:209:2: warning: use of GNU old-style field designator extension
+#        probe:          _amufs3_probe,
+#        ^~~~~~
+#  207|   };
+#  208|   static PedFileSystemOps _amufs3_ops = {
+#  209|-> 	probe:		_amufs3_probe,
+#  210|   };
+#  211|   static PedFileSystemOps _amufs4_ops = {
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:212:2: warning: use of GNU old-style field designator extension
+#        probe:          _amufs4_probe,
+#        ^~~~~~
+#  210|   };
+#  211|   static PedFileSystemOps _amufs4_ops = {
+#  212|-> 	probe:		_amufs4_probe,
+#  213|   };
+#  214|   static PedFileSystemOps _amufs5_ops = {
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:215:2: warning: use of GNU old-style field designator extension
+#        probe:          _amufs5_probe,
+#        ^~~~~~
+#  213|   };
+#  214|   static PedFileSystemOps _amufs5_ops = {
+#  215|-> 	probe:		_amufs5_probe,
+#  216|   };
+#  217|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:219:8: warning: use of GNU old-style field designator extension
+#       next:             NULL,
+#       ^~~~~
+#  217|   
+#  218|   PedFileSystemType _affs0_type = {
+#  219|->        next:		 NULL,
+#  220|          ops:		 &_affs0_ops,
+#  221|          name:		 "affs0",
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:220:8: warning: use of GNU old-style field designator extension
+#       ops:              &_affs0_ops,
+#       ^~~~
+#  218|   PedFileSystemType _affs0_type = {
+#  219|          next:		 NULL,
+#  220|->        ops:		 &_affs0_ops,
+#  221|          name:		 "affs0",
+#  222|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:221:8: warning: use of GNU old-style field designator extension
+#       name:             "affs0",
+#       ^~~~~
+#  219|          next:		 NULL,
+#  220|          ops:		 &_affs0_ops,
+#  221|->        name:		 "affs0",
+#  222|   };
+#  223|   PedFileSystemType _affs1_type = {
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:224:8: warning: use of GNU old-style field designator extension
+#       next:             NULL,
+#       ^~~~~
+#  222|   };
+#  223|   PedFileSystemType _affs1_type = {
+#  224|->        next:		 NULL,
+#  225|          ops:		 &_affs1_ops,
+#  226|          name:		 "affs1",
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:225:8: warning: use of GNU old-style field designator extension
+#       ops:              &_affs1_ops,
+#       ^~~~
+#  223|   PedFileSystemType _affs1_type = {
+#  224|          next:		 NULL,
+#  225|->        ops:		 &_affs1_ops,
+#  226|          name:		 "affs1",
+#  227|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:226:8: warning: use of GNU old-style field designator extension
+#       name:             "affs1",
+#       ^~~~~
+#  224|          next:		 NULL,
+#  225|          ops:		 &_affs1_ops,
+#  226|->        name:		 "affs1",
+#  227|   };
+#  228|   PedFileSystemType _affs2_type = {
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:229:8: warning: use of GNU old-style field designator extension
+#       next:             NULL,
+#       ^~~~~
+#  227|   };
+#  228|   PedFileSystemType _affs2_type = {
+#  229|->        next:		 NULL,
+#  230|          ops:		 &_affs2_ops,
+#  231|          name:		 "affs2",
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:230:8: warning: use of GNU old-style field designator extension
+#       ops:              &_affs2_ops,
+#       ^~~~
+#  228|   PedFileSystemType _affs2_type = {
+#  229|          next:		 NULL,
+#  230|->        ops:		 &_affs2_ops,
+#  231|          name:		 "affs2",
+#  232|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:231:8: warning: use of GNU old-style field designator extension
+#       name:             "affs2",
+#       ^~~~~
+#  229|          next:		 NULL,
+#  230|          ops:		 &_affs2_ops,
+#  231|->        name:		 "affs2",
+#  232|   };
+#  233|   PedFileSystemType _affs3_type = {
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:234:8: warning: use of GNU old-style field designator extension
+#       next:             NULL,
+#       ^~~~~
+#  232|   };
+#  233|   PedFileSystemType _affs3_type = {
+#  234|->        next:		 NULL,
+#  235|          ops:		 &_affs3_ops,
+#  236|          name:		 "affs3",
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:235:8: warning: use of GNU old-style field designator extension
+#       ops:              &_affs3_ops,
+#       ^~~~
+#  233|   PedFileSystemType _affs3_type = {
+#  234|          next:		 NULL,
+#  235|->        ops:		 &_affs3_ops,
+#  236|          name:		 "affs3",
+#  237|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:236:8: warning: use of GNU old-style field designator extension
+#       name:             "affs3",
+#       ^~~~~
+#  234|          next:		 NULL,
+#  235|          ops:		 &_affs3_ops,
+#  236|->        name:		 "affs3",
+#  237|   };
+#  238|   PedFileSystemType _affs4_type = {
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:239:8: warning: use of GNU old-style field designator extension
+#       next:             NULL,
+#       ^~~~~
+#  237|   };
+#  238|   PedFileSystemType _affs4_type = {
+#  239|->        next:		 NULL,
+#  240|          ops:		 &_affs4_ops,
+#  241|          name:		 "affs4",
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:240:8: warning: use of GNU old-style field designator extension
+#       ops:              &_affs4_ops,
+#       ^~~~
+#  238|   PedFileSystemType _affs4_type = {
+#  239|          next:		 NULL,
+#  240|->        ops:		 &_affs4_ops,
+#  241|          name:		 "affs4",
+#  242|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:241:8: warning: use of GNU old-style field designator extension
+#       name:             "affs4",
+#       ^~~~~
+#  239|          next:		 NULL,
+#  240|          ops:		 &_affs4_ops,
+#  241|->        name:		 "affs4",
+#  242|   };
+#  243|   PedFileSystemType _affs5_type = {
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:244:8: warning: use of GNU old-style field designator extension
+#       next:             NULL,
+#       ^~~~~
+#  242|   };
+#  243|   PedFileSystemType _affs5_type = {
+#  244|->        next:		 NULL,
+#  245|          ops:		 &_affs5_ops,
+#  246|          name:		 "affs5",
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:245:8: warning: use of GNU old-style field designator extension
+#       ops:              &_affs5_ops,
+#       ^~~~
+#  243|   PedFileSystemType _affs5_type = {
+#  244|          next:		 NULL,
+#  245|->        ops:		 &_affs5_ops,
+#  246|          name:		 "affs5",
+#  247|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:246:8: warning: use of GNU old-style field designator extension
+#       name:             "affs5",
+#       ^~~~~
+#  244|          next:		 NULL,
+#  245|          ops:		 &_affs5_ops,
+#  246|->        name:		 "affs5",
+#  247|   };
+#  248|   PedFileSystemType _affs6_type = {
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:249:8: warning: use of GNU old-style field designator extension
+#       next:             NULL,
+#       ^~~~~
+#  247|   };
+#  248|   PedFileSystemType _affs6_type = {
+#  249|->        next:		 NULL,
+#  250|          ops:		 &_affs6_ops,
+#  251|          name:		 "affs6",
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:250:8: warning: use of GNU old-style field designator extension
+#       ops:              &_affs6_ops,
+#       ^~~~
+#  248|   PedFileSystemType _affs6_type = {
+#  249|          next:		 NULL,
+#  250|->        ops:		 &_affs6_ops,
+#  251|          name:		 "affs6",
+#  252|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:251:8: warning: use of GNU old-style field designator extension
+#       name:             "affs6",
+#       ^~~~~
+#  249|          next:		 NULL,
+#  250|          ops:		 &_affs6_ops,
+#  251|->        name:		 "affs6",
+#  252|   };
+#  253|   PedFileSystemType _affs7_type = {
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:254:8: warning: use of GNU old-style field designator extension
+#       next:             NULL,
+#       ^~~~~
+#  252|   };
+#  253|   PedFileSystemType _affs7_type = {
+#  254|->        next:		 NULL,
+#  255|          ops:		 &_affs7_ops,
+#  256|          name:		 "affs7",
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:255:8: warning: use of GNU old-style field designator extension
+#       ops:              &_affs7_ops,
+#       ^~~~
+#  253|   PedFileSystemType _affs7_type = {
+#  254|          next:		 NULL,
+#  255|->        ops:		 &_affs7_ops,
+#  256|          name:		 "affs7",
+#  257|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:256:8: warning: use of GNU old-style field designator extension
+#       name:             "affs7",
+#       ^~~~~
+#  254|          next:		 NULL,
+#  255|          ops:		 &_affs7_ops,
+#  256|->        name:		 "affs7",
+#  257|   };
+#  258|   PedFileSystemType _amufs_type = {
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:259:8: warning: use of GNU old-style field designator extension
+#       next:             NULL,
+#       ^~~~~
+#  257|   };
+#  258|   PedFileSystemType _amufs_type = {
+#  259|->        next:		 NULL,
+#  260|          ops:		 &_amufs_ops,
+#  261|          name:		 "amufs",
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:260:8: warning: use of GNU old-style field designator extension
+#       ops:              &_amufs_ops,
+#       ^~~~
+#  258|   PedFileSystemType _amufs_type = {
+#  259|          next:		 NULL,
+#  260|->        ops:		 &_amufs_ops,
+#  261|          name:		 "amufs",
+#  262|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:261:8: warning: use of GNU old-style field designator extension
+#       name:             "amufs",
+#       ^~~~~
+#  259|          next:		 NULL,
+#  260|          ops:		 &_amufs_ops,
+#  261|->        name:		 "amufs",
+#  262|   };
+#  263|   PedFileSystemType _amufs0_type = {
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:264:8: warning: use of GNU old-style field designator extension
+#       next:             NULL,
+#       ^~~~~
+#  262|   };
+#  263|   PedFileSystemType _amufs0_type = {
+#  264|->        next:		 NULL,
+#  265|          ops:		 &_amufs0_ops,
+#  266|          name:		 "amufs0",
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:265:8: warning: use of GNU old-style field designator extension
+#       ops:              &_amufs0_ops,
+#       ^~~~
+#  263|   PedFileSystemType _amufs0_type = {
+#  264|          next:		 NULL,
+#  265|->        ops:		 &_amufs0_ops,
+#  266|          name:		 "amufs0",
+#  267|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:266:8: warning: use of GNU old-style field designator extension
+#       name:             "amufs0",
+#       ^~~~~
+#  264|          next:		 NULL,
+#  265|          ops:		 &_amufs0_ops,
+#  266|->        name:		 "amufs0",
+#  267|   };
+#  268|   PedFileSystemType _amufs1_type = {
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:269:8: warning: use of GNU old-style field designator extension
+#       next:             NULL,
+#       ^~~~~
+#  267|   };
+#  268|   PedFileSystemType _amufs1_type = {
+#  269|->        next:		 NULL,
+#  270|          ops:		 &_amufs1_ops,
+#  271|          name:		 "amufs1",
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:270:8: warning: use of GNU old-style field designator extension
+#       ops:              &_amufs1_ops,
+#       ^~~~
+#  268|   PedFileSystemType _amufs1_type = {
+#  269|          next:		 NULL,
+#  270|->        ops:		 &_amufs1_ops,
+#  271|          name:		 "amufs1",
+#  272|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:271:8: warning: use of GNU old-style field designator extension
+#       name:             "amufs1",
+#       ^~~~~
+#  269|          next:		 NULL,
+#  270|          ops:		 &_amufs1_ops,
+#  271|->        name:		 "amufs1",
+#  272|   };
+#  273|   PedFileSystemType _amufs2_type = {
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:274:8: warning: use of GNU old-style field designator extension
+#       next:             NULL,
+#       ^~~~~
+#  272|   };
+#  273|   PedFileSystemType _amufs2_type = {
+#  274|->        next:		 NULL,
+#  275|          ops:		 &_amufs2_ops,
+#  276|          name:		 "amufs2",
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:275:8: warning: use of GNU old-style field designator extension
+#       ops:              &_amufs2_ops,
+#       ^~~~
+#  273|   PedFileSystemType _amufs2_type = {
+#  274|          next:		 NULL,
+#  275|->        ops:		 &_amufs2_ops,
+#  276|          name:		 "amufs2",
+#  277|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:276:8: warning: use of GNU old-style field designator extension
+#       name:             "amufs2",
+#       ^~~~~
+#  274|          next:		 NULL,
+#  275|          ops:		 &_amufs2_ops,
+#  276|->        name:		 "amufs2",
+#  277|   };
+#  278|   PedFileSystemType _amufs3_type = {
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:279:8: warning: use of GNU old-style field designator extension
+#       next:             NULL,
+#       ^~~~~
+#  277|   };
+#  278|   PedFileSystemType _amufs3_type = {
+#  279|->        next:		 NULL,
+#  280|          ops:		 &_amufs3_ops,
+#  281|          name:		 "amufs3",
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:280:8: warning: use of GNU old-style field designator extension
+#       ops:              &_amufs3_ops,
+#       ^~~~
+#  278|   PedFileSystemType _amufs3_type = {
+#  279|          next:		 NULL,
+#  280|->        ops:		 &_amufs3_ops,
+#  281|          name:		 "amufs3",
+#  282|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:281:8: warning: use of GNU old-style field designator extension
+#       name:             "amufs3",
+#       ^~~~~
+#  279|          next:		 NULL,
+#  280|          ops:		 &_amufs3_ops,
+#  281|->        name:		 "amufs3",
+#  282|   };
+#  283|   PedFileSystemType _amufs4_type = {
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:284:8: warning: use of GNU old-style field designator extension
+#       next:             NULL,
+#       ^~~~~
+#  282|   };
+#  283|   PedFileSystemType _amufs4_type = {
+#  284|->        next:		 NULL,
+#  285|          ops:		 &_amufs4_ops,
+#  286|          name:		 "amufs4",
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:285:8: warning: use of GNU old-style field designator extension
+#       ops:              &_amufs4_ops,
+#       ^~~~
+#  283|   PedFileSystemType _amufs4_type = {
+#  284|          next:		 NULL,
+#  285|->        ops:		 &_amufs4_ops,
+#  286|          name:		 "amufs4",
+#  287|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:286:8: warning: use of GNU old-style field designator extension
+#       name:             "amufs4",
+#       ^~~~~
+#  284|          next:		 NULL,
+#  285|          ops:		 &_amufs4_ops,
+#  286|->        name:		 "amufs4",
+#  287|   };
+#  288|   PedFileSystemType _amufs5_type = {
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:289:8: warning: use of GNU old-style field designator extension
+#       next:             NULL,
+#       ^~~~~
+#  287|   };
+#  288|   PedFileSystemType _amufs5_type = {
+#  289|->        next:		 NULL,
+#  290|          ops:		 &_amufs5_ops,
+#  291|          name:		 "amufs5",
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:290:8: warning: use of GNU old-style field designator extension
+#       ops:              &_amufs5_ops,
+#       ^~~~
+#  288|   PedFileSystemType _amufs5_type = {
+#  289|          next:		 NULL,
+#  290|->        ops:		 &_amufs5_ops,
+#  291|          name:		 "amufs5",
+#  292|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/affs.c:291:8: warning: use of GNU old-style field designator extension
+#       name:             "amufs5",
+#       ^~~~~
+#  289|          next:		 NULL,
+#  290|          ops:		 &_amufs5_ops,
+#  291|->        name:		 "amufs5",
+#  292|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/apfs.c:113:2: warning: use of GNU old-style field designator extension
+#        probe:          _apfs1_probe,
+#        ^~~~~~
+#  111|   
+#  112|   static PedFileSystemOps _apfs1_ops = {
+#  113|-> 	probe:		_apfs1_probe,
+#  114|   };
+#  115|   static PedFileSystemOps _apfs2_ops = {
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/apfs.c:116:2: warning: use of GNU old-style field designator extension
+#        probe:          _apfs2_probe,
+#        ^~~~~~
+#  114|   };
+#  115|   static PedFileSystemOps _apfs2_ops = {
+#  116|-> 	probe:		_apfs2_probe,
+#  117|   };
+#  118|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/apfs.c:120:8: warning: use of GNU old-style field designator extension
+#       next:             NULL,
+#       ^~~~~
+#  118|   
+#  119|   PedFileSystemType _apfs1_type = {
+#  120|->        next:		 NULL,
+#  121|          ops:		 &_apfs1_ops,
+#  122|          name:		 "apfs1",
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/apfs.c:121:8: warning: use of GNU old-style field designator extension
+#       ops:              &_apfs1_ops,
+#       ^~~~
+#  119|   PedFileSystemType _apfs1_type = {
+#  120|          next:		 NULL,
+#  121|->        ops:		 &_apfs1_ops,
+#  122|          name:		 "apfs1",
+#  123|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/apfs.c:122:8: warning: use of GNU old-style field designator extension
+#       name:             "apfs1",
+#       ^~~~~
+#  120|          next:		 NULL,
+#  121|          ops:		 &_apfs1_ops,
+#  122|->        name:		 "apfs1",
+#  123|   };
+#  124|   PedFileSystemType _apfs2_type = {
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/apfs.c:125:8: warning: use of GNU old-style field designator extension
+#       next:             NULL,
+#       ^~~~~
+#  123|   };
+#  124|   PedFileSystemType _apfs2_type = {
+#  125|->        next:		 NULL,
+#  126|          ops:		 &_apfs2_ops,
+#  127|          name:		 "apfs2",
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/apfs.c:126:8: warning: use of GNU old-style field designator extension
+#       ops:              &_apfs2_ops,
+#       ^~~~
+#  124|   PedFileSystemType _apfs2_type = {
+#  125|          next:		 NULL,
+#  126|->        ops:		 &_apfs2_ops,
+#  127|          name:		 "apfs2",
+#  128|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/apfs.c:127:8: warning: use of GNU old-style field designator extension
+#       name:             "apfs2",
+#       ^~~~~
+#  125|          next:		 NULL,
+#  126|          ops:		 &_apfs2_ops,
+#  127|->        name:		 "apfs2",
+#  128|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/asfs.c:123:2: warning: use of GNU old-style field designator extension
+#        probe:          _asfs_probe,
+#        ^~~~~~
+#  121|   
+#  122|   static PedFileSystemOps _asfs_ops = {
+#  123|-> 	probe:		_asfs_probe,
+#  124|   };
+#  125|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/asfs.c:127:8: warning: use of GNU old-style field designator extension
+#       next:             NULL,
+#       ^~~~~
+#  125|   
+#  126|   PedFileSystemType _asfs_type = {
+#  127|->        next:		 NULL,
+#  128|          ops:		 &_asfs_ops,
+#  129|          name:		 "asfs",
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/asfs.c:128:8: warning: use of GNU old-style field designator extension
+#       ops:              &_asfs_ops,
+#       ^~~~
+#  126|   PedFileSystemType _asfs_type = {
+#  127|          next:		 NULL,
+#  128|->        ops:		 &_asfs_ops,
+#  129|          name:		 "asfs",
+#  130|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/amiga/asfs.c:129:8: warning: use of GNU old-style field designator extension
+#       name:             "asfs",
+#       ^~~~~
+#  127|          next:		 NULL,
+#  128|          ops:		 &_asfs_ops,
+#  129|->        name:		 "asfs",
+#  130|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/btrfs/btrfs.c:58:9: warning: use of GNU old-style field designator extension
+#        probe:          btrfs_probe,
+#        ^~~~~~
+#   56|   
+#   57|   static PedFileSystemOps btrfs_ops = {
+#   58|->         probe:          btrfs_probe,
+#   59|   };
+#   60|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/btrfs/btrfs.c:62:9: warning: use of GNU old-style field designator extension
+#        next:   NULL,
+#        ^~~~~
+#   60|   
+#   61|   static PedFileSystemType btrfs_type = {
+#   62|->         next:   NULL,
+#   63|           ops:    &btrfs_ops,
+#   64|           name:   "btrfs",
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/btrfs/btrfs.c:63:9: warning: use of GNU old-style field designator extension
+#        ops:    &btrfs_ops,
+#        ^~~~
+#   61|   static PedFileSystemType btrfs_type = {
+#   62|           next:   NULL,
+#   63|->         ops:    &btrfs_ops,
+#   64|           name:   "btrfs",
+#   65|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/btrfs/btrfs.c:64:9: warning: use of GNU old-style field designator extension
+#        name:   "btrfs",
+#        ^~~~~
+#   62|           next:   NULL,
+#   63|           ops:    &btrfs_ops,
+#   64|->         name:   "btrfs",
+#   65|   };
+#   66|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/ext2/interface.c:122:2: warning: use of GNU old-style field designator extension
+#        probe:          _ext2_probe,
+#        ^~~~~~
+#  120|   
+#  121|   static PedFileSystemOps _ext2_ops = {
+#  122|-> 	probe:		_ext2_probe,
+#  123|   };
+#  124|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/ext2/interface.c:126:2: warning: use of GNU old-style field designator extension
+#        probe:          _ext3_probe,
+#        ^~~~~~
+#  124|   
+#  125|   static PedFileSystemOps _ext3_ops = {
+#  126|-> 	probe:		_ext3_probe,
+#  127|   };
+#  128|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/ext2/interface.c:130:2: warning: use of GNU old-style field designator extension
+#        probe:          _ext4_probe,
+#        ^~~~~~
+#  128|   
+#  129|   static PedFileSystemOps _ext4_ops = {
+#  130|-> 	probe:		_ext4_probe,
+#  131|   };
+#  132|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/ext2/interface.c:134:8: warning: use of GNU old-style field designator extension
+#       next:             NULL,
+#       ^~~~~
+#  132|   
+#  133|   static PedFileSystemType _ext2_type = {
+#  134|->        next:		 NULL,
+#  135|          ops:		 &_ext2_ops,
+#  136|          name:		 "ext2",
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/ext2/interface.c:135:8: warning: use of GNU old-style field designator extension
+#       ops:              &_ext2_ops,
+#       ^~~~
+#  133|   static PedFileSystemType _ext2_type = {
+#  134|          next:		 NULL,
+#  135|->        ops:		 &_ext2_ops,
+#  136|          name:		 "ext2",
+#  137|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/ext2/interface.c:136:8: warning: use of GNU old-style field designator extension
+#       name:             "ext2",
+#       ^~~~~
+#  134|          next:		 NULL,
+#  135|          ops:		 &_ext2_ops,
+#  136|->        name:		 "ext2",
+#  137|   };
+#  138|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/ext2/interface.c:140:8: warning: use of GNU old-style field designator extension
+#       next:             NULL,
+#       ^~~~~
+#  138|   
+#  139|   static PedFileSystemType _ext3_type = {
+#  140|->        next:		 NULL,
+#  141|          ops:		 &_ext3_ops,
+#  142|          name:		 "ext3",
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/ext2/interface.c:141:8: warning: use of GNU old-style field designator extension
+#       ops:              &_ext3_ops,
+#       ^~~~
+#  139|   static PedFileSystemType _ext3_type = {
+#  140|          next:		 NULL,
+#  141|->        ops:		 &_ext3_ops,
+#  142|          name:		 "ext3",
+#  143|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/ext2/interface.c:142:8: warning: use of GNU old-style field designator extension
+#       name:             "ext3",
+#       ^~~~~
+#  140|          next:		 NULL,
+#  141|          ops:		 &_ext3_ops,
+#  142|->        name:		 "ext3",
+#  143|   };
+#  144|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/ext2/interface.c:146:8: warning: use of GNU old-style field designator extension
+#       next:             NULL,
+#       ^~~~~
+#  144|   
+#  145|   static PedFileSystemType _ext4_type = {
+#  146|->        next:		 NULL,
+#  147|          ops:		 &_ext4_ops,
+#  148|          name:		 "ext4",
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/ext2/interface.c:147:8: warning: use of GNU old-style field designator extension
+#       ops:              &_ext4_ops,
+#       ^~~~
+#  145|   static PedFileSystemType _ext4_type = {
+#  146|          next:		 NULL,
+#  147|->        ops:		 &_ext4_ops,
+#  148|          name:		 "ext4",
+#  149|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/ext2/interface.c:148:8: warning: use of GNU old-style field designator extension
+#       name:             "ext4",
+#       ^~~~~
+#  146|          next:		 NULL,
+#  147|          ops:		 &_ext4_ops,
+#  148|->        name:		 "ext4",
+#  149|   };
+#  150|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/f2fs/f2fs.c:41:9: warning: use of GNU old-style field designator extension
+#        probe:          f2fs_probe,
+#        ^~~~~~
+#   39|   
+#   40|   static PedFileSystemOps f2fs_ops = {
+#   41|->         probe:          f2fs_probe,
+#   42|   };
+#   43|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/f2fs/f2fs.c:45:9: warning: use of GNU old-style field designator extension
+#        next:   NULL,
+#        ^~~~~
+#   43|   
+#   44|   static PedFileSystemType f2fs_type = {
+#   45|->         next:   NULL,
+#   46|           ops:    &f2fs_ops,
+#   47|           name:   "f2fs",
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/f2fs/f2fs.c:46:9: warning: use of GNU old-style field designator extension
+#        ops:    &f2fs_ops,
+#        ^~~~
+#   44|   static PedFileSystemType f2fs_type = {
+#   45|           next:   NULL,
+#   46|->         ops:    &f2fs_ops,
+#   47|           name:   "f2fs",
+#   48|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/f2fs/f2fs.c:47:9: warning: use of GNU old-style field designator extension
+#        name:   "f2fs",
+#        ^~~~~
+#   45|           next:   NULL,
+#   46|           ops:    &f2fs_ops,
+#   47|->         name:   "f2fs",
+#   48|   };
+#   49|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/fat/fat.c:125:2: warning: use of GNU old-style field designator extension
+#        probe:          fat_probe_fat16,
+#        ^~~~~~
+#  123|   
+#  124|   static PedFileSystemOps fat16_ops = {
+#  125|-> 	probe:		fat_probe_fat16,
+#  126|   };
+#  127|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/fat/fat.c:129:2: warning: use of GNU old-style field designator extension
+#        probe:          fat_probe_fat32,
+#        ^~~~~~
+#  127|   
+#  128|   static PedFileSystemOps fat32_ops = {
+#  129|-> 	probe:		fat_probe_fat32,
+#  130|   };
+#  131|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/fat/fat.c:133:2: warning: use of GNU old-style field designator extension
+#        next:           NULL,
+#        ^~~~~
+#  131|   
+#  132|   PedFileSystemType fat16_type = {
+#  133|-> 	next:	        NULL,
+#  134|   	ops:	        &fat16_ops,
+#  135|   	name:	        "fat16",
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/fat/fat.c:134:2: warning: use of GNU old-style field designator extension
+#        ops:            &fat16_ops,
+#        ^~~~
+#  132|   PedFileSystemType fat16_type = {
+#  133|   	next:	        NULL,
+#  134|-> 	ops:	        &fat16_ops,
+#  135|   	name:	        "fat16",
+#  136|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/fat/fat.c:135:2: warning: use of GNU old-style field designator extension
+#        name:           "fat16",
+#        ^~~~~
+#  133|   	next:	        NULL,
+#  134|   	ops:	        &fat16_ops,
+#  135|-> 	name:	        "fat16",
+#  136|   };
+#  137|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/fat/fat.c:139:2: warning: use of GNU old-style field designator extension
+#        next:           NULL,
+#        ^~~~~
+#  137|   
+#  138|   PedFileSystemType fat32_type = {
+#  139|-> 	next:	        NULL,
+#  140|   	ops:	        &fat32_ops,
+#  141|   	name:	        "fat32",
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/fat/fat.c:140:2: warning: use of GNU old-style field designator extension
+#        ops:            &fat32_ops,
+#        ^~~~
+#  138|   PedFileSystemType fat32_type = {
+#  139|   	next:	        NULL,
+#  140|-> 	ops:	        &fat32_ops,
+#  141|   	name:	        "fat32",
+#  142|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/fat/fat.c:141:2: warning: use of GNU old-style field designator extension
+#        name:           "fat32",
+#        ^~~~~
+#  139|   	next:	        NULL,
+#  140|   	ops:	        &fat32_ops,
+#  141|-> 	name:	        "fat32",
+#  142|   };
+#  143|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/hfs/hfs.c:48:2: warning: use of GNU old-style field designator extension
+#        probe:          hfs_probe,
+#        ^~~~~~
+#   46|   
+#   47|   static PedFileSystemOps hfs_ops = {
+#   48|-> 	probe:		hfs_probe,
+#   49|   };
+#   50|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/hfs/hfs.c:52:2: warning: use of GNU old-style field designator extension
+#        probe:          hfsplus_probe,
+#        ^~~~~~
+#   50|   
+#   51|   static PedFileSystemOps hfsplus_ops = {
+#   52|-> 	probe:		hfsplus_probe,
+#   53|   };
+#   54|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/hfs/hfs.c:56:2: warning: use of GNU old-style field designator extension
+#        probe:          hfsx_probe,
+#        ^~~~~~
+#   54|   
+#   55|   static PedFileSystemOps hfsx_ops = {
+#   56|-> 	probe:		hfsx_probe,
+#   57|   };
+#   58|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/hfs/hfs.c:61:2: warning: use of GNU old-style field designator extension
+#        next:   NULL,
+#        ^~~~~
+#   59|   
+#   60|   static PedFileSystemType hfs_type = {
+#   61|-> 	next:	NULL,
+#   62|   	ops:	&hfs_ops,
+#   63|   	name:	"hfs",
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/hfs/hfs.c:62:2: warning: use of GNU old-style field designator extension
+#        ops:    &hfs_ops,
+#        ^~~~
+#   60|   static PedFileSystemType hfs_type = {
+#   61|   	next:	NULL,
+#   62|-> 	ops:	&hfs_ops,
+#   63|   	name:	"hfs",
+#   64|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/hfs/hfs.c:63:2: warning: use of GNU old-style field designator extension
+#        name:   "hfs",
+#        ^~~~~
+#   61|   	next:	NULL,
+#   62|   	ops:	&hfs_ops,
+#   63|-> 	name:	"hfs",
+#   64|   };
+#   65|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/hfs/hfs.c:67:2: warning: use of GNU old-style field designator extension
+#        next:   NULL,
+#        ^~~~~
+#   65|   
+#   66|   static PedFileSystemType hfsplus_type = {
+#   67|-> 	next:	NULL,
+#   68|   	ops:	&hfsplus_ops,
+#   69|   	name:	"hfs+",
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/hfs/hfs.c:68:2: warning: use of GNU old-style field designator extension
+#        ops:    &hfsplus_ops,
+#        ^~~~
+#   66|   static PedFileSystemType hfsplus_type = {
+#   67|   	next:	NULL,
+#   68|-> 	ops:	&hfsplus_ops,
+#   69|   	name:	"hfs+",
+#   70|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/hfs/hfs.c:69:2: warning: use of GNU old-style field designator extension
+#        name:   "hfs+",
+#        ^~~~~
+#   67|   	next:	NULL,
+#   68|   	ops:	&hfsplus_ops,
+#   69|-> 	name:	"hfs+",
+#   70|   };
+#   71|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/hfs/hfs.c:73:2: warning: use of GNU old-style field designator extension
+#        next:   NULL,
+#        ^~~~~
+#   71|   
+#   72|   static PedFileSystemType hfsx_type = {
+#   73|-> 	next:	NULL,
+#   74|   	ops:	&hfsx_ops,
+#   75|   	name:	"hfsx",
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/hfs/hfs.c:74:2: warning: use of GNU old-style field designator extension
+#        ops:    &hfsx_ops,
+#        ^~~~
+#   72|   static PedFileSystemType hfsx_type = {
+#   73|   	next:	NULL,
+#   74|-> 	ops:	&hfsx_ops,
+#   75|   	name:	"hfsx",
+#   76|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/hfs/hfs.c:75:2: warning: use of GNU old-style field designator extension
+#        name:   "hfsx",
+#        ^~~~~
+#   73|   	next:	NULL,
+#   74|   	ops:	&hfsx_ops,
+#   75|-> 	name:	"hfsx",
+#   76|   };
+#   77|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/jfs/jfs.c:61:2: warning: use of GNU old-style field designator extension
+#        probe:          jfs_probe,
+#        ^~~~~~
+#   59|   
+#   60|   static PedFileSystemOps jfs_ops = {
+#   61|-> 	probe:		jfs_probe,
+#   62|   };
+#   63|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/jfs/jfs.c:65:2: warning: use of GNU old-style field designator extension
+#        next:   NULL,
+#        ^~~~~
+#   63|   
+#   64|   static PedFileSystemType jfs_type = {
+#   65|-> 	next:	NULL,
+#   66|   	ops:	&jfs_ops,
+#   67|   	name:	"jfs",
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/jfs/jfs.c:66:2: warning: use of GNU old-style field designator extension
+#        ops:    &jfs_ops,
+#        ^~~~
+#   64|   static PedFileSystemType jfs_type = {
+#   65|   	next:	NULL,
+#   66|-> 	ops:	&jfs_ops,
+#   67|   	name:	"jfs",
+#   68|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/jfs/jfs.c:67:2: warning: use of GNU old-style field designator extension
+#        name:   "jfs",
+#        ^~~~~
+#   65|   	next:	NULL,
+#   66|   	ops:	&jfs_ops,
+#   67|-> 	name:	"jfs",
+#   68|   };
+#   69|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/linux_swap/linux_swap.c:345:2: warning: use of GNU old-style field designator extension
+#        probe:          _swap_v0_probe,
+#        ^~~~~~
+#  343|   
+#  344|   static PedFileSystemOps _swap_v0_ops = {
+#  345|-> 	probe:		_swap_v0_probe,
+#  346|   };
+#  347|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/linux_swap/linux_swap.c:349:2: warning: use of GNU old-style field designator extension
+#        probe:          _swap_v1_probe,
+#        ^~~~~~
+#  347|   
+#  348|   static PedFileSystemOps _swap_v1_ops = {
+#  349|-> 	probe:		_swap_v1_probe,
+#  350|   };
+#  351|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/linux_swap/linux_swap.c:353:3: warning: use of GNU old-style field designator extension
+#  probe:                _swap_swsusp_probe,
+#  ^~~~~~
+#  351|   
+#  352|   static PedFileSystemOps _swap_swsusp_ops = {
+#  353|->   probe:		_swap_swsusp_probe,
+#  354|   };
+#  355|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/linux_swap/linux_swap.c:357:2: warning: use of GNU old-style field designator extension
+#        next:   NULL,
+#        ^~~~~
+#  355|   
+#  356|   static PedFileSystemType _swap_v0_type = {
+#  357|-> 	next:	NULL,
+#  358|   	ops:	&_swap_v0_ops,
+#  359|   	name:	"linux-swap(v0)",
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/linux_swap/linux_swap.c:358:2: warning: use of GNU old-style field designator extension
+#        ops:    &_swap_v0_ops,
+#        ^~~~
+#  356|   static PedFileSystemType _swap_v0_type = {
+#  357|   	next:	NULL,
+#  358|-> 	ops:	&_swap_v0_ops,
+#  359|   	name:	"linux-swap(v0)",
+#  360|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/linux_swap/linux_swap.c:359:2: warning: use of GNU old-style field designator extension
+#        name:   "linux-swap(v0)",
+#        ^~~~~
+#  357|   	next:	NULL,
+#  358|   	ops:	&_swap_v0_ops,
+#  359|-> 	name:	"linux-swap(v0)",
+#  360|   };
+#  361|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/linux_swap/linux_swap.c:363:2: warning: use of GNU old-style field designator extension
+#        next:   NULL,
+#        ^~~~~
+#  361|   
+#  362|   static PedFileSystemType _swap_v1_type = {
+#  363|-> 	next:	NULL,
+#  364|   	ops:	&_swap_v1_ops,
+#  365|   	name:	"linux-swap(v1)",
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/linux_swap/linux_swap.c:364:2: warning: use of GNU old-style field designator extension
+#        ops:    &_swap_v1_ops,
+#        ^~~~
+#  362|   static PedFileSystemType _swap_v1_type = {
+#  363|   	next:	NULL,
+#  364|-> 	ops:	&_swap_v1_ops,
+#  365|   	name:	"linux-swap(v1)",
+#  366|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/linux_swap/linux_swap.c:365:2: warning: use of GNU old-style field designator extension
+#        name:   "linux-swap(v1)",
+#        ^~~~~
+#  363|   	next:	NULL,
+#  364|   	ops:	&_swap_v1_ops,
+#  365|-> 	name:	"linux-swap(v1)",
+#  366|   };
+#  367|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/linux_swap/linux_swap.c:369:9: warning: use of GNU old-style field designator extension
+#        next:   NULL,
+#        ^~~~~
+#  367|   
+#  368|   static PedFileSystemType _swap_swsusp_type = {
+#  369|->         next:   NULL,
+#  370|   	ops:    &_swap_swsusp_ops,
+#  371|   	name:   "swsusp",
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/linux_swap/linux_swap.c:370:2: warning: use of GNU old-style field designator extension
+#        ops:    &_swap_swsusp_ops,
+#        ^~~~
+#  368|   static PedFileSystemType _swap_swsusp_type = {
+#  369|           next:   NULL,
+#  370|-> 	ops:    &_swap_swsusp_ops,
+#  371|   	name:   "swsusp",
+#  372|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/linux_swap/linux_swap.c:371:2: warning: use of GNU old-style field designator extension
+#        name:   "swsusp",
+#        ^~~~~
+#  369|           next:   NULL,
+#  370|   	ops:    &_swap_swsusp_ops,
+#  371|-> 	name:   "swsusp",
+#  372|   };
+#  373|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/nilfs2/nilfs2.c:136:2: warning: use of GNU old-style field designator extension
+#        probe:                  nilfs2_probe,
+#        ^~~~~~
+#  134|   
+#  135|   static PedFileSystemOps nilfs2_ops = {
+#  136|-> 	probe:			nilfs2_probe,
+#  137|   };
+#  138|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/nilfs2/nilfs2.c:140:2: warning: use of GNU old-style field designator extension
+#        next:   NULL,
+#        ^~~~~
+#  138|   
+#  139|   static PedFileSystemType nilfs2_type = {
+#  140|-> 	next:   NULL,
+#  141|   	ops:    &nilfs2_ops,
+#  142|   	name:   "nilfs2",
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/nilfs2/nilfs2.c:141:2: warning: use of GNU old-style field designator extension
+#        ops:    &nilfs2_ops,
+#        ^~~~
+#  139|   static PedFileSystemType nilfs2_type = {
+#  140|   	next:   NULL,
+#  141|-> 	ops:    &nilfs2_ops,
+#  142|   	name:   "nilfs2",
+#  143|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/nilfs2/nilfs2.c:142:2: warning: use of GNU old-style field designator extension
+#        name:   "nilfs2",
+#        ^~~~~
+#  140|   	next:   NULL,
+#  141|   	ops:    &nilfs2_ops,
+#  142|-> 	name:   "nilfs2",
+#  143|   };
+#  144|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/ntfs/ntfs.c:54:2: warning: use of GNU old-style field designator extension
+#        probe:          ntfs_probe,
+#        ^~~~~~
+#   52|   
+#   53|   static PedFileSystemOps ntfs_ops = {
+#   54|-> 	probe:		ntfs_probe,
+#   55|   };
+#   56|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/ntfs/ntfs.c:58:2: warning: use of GNU old-style field designator extension
+#        next:   NULL,
+#        ^~~~~
+#   56|   
+#   57|   static PedFileSystemType ntfs_type = {
+#   58|-> 	next:	NULL,
+#   59|   	ops:	&ntfs_ops,
+#   60|   	name:	"ntfs",
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/ntfs/ntfs.c:59:2: warning: use of GNU old-style field designator extension
+#        ops:    &ntfs_ops,
+#        ^~~~
+#   57|   static PedFileSystemType ntfs_type = {
+#   58|   	next:	NULL,
+#   59|-> 	ops:	&ntfs_ops,
+#   60|   	name:	"ntfs",
+#   61|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/ntfs/ntfs.c:60:2: warning: use of GNU old-style field designator extension
+#        name:   "ntfs",
+#        ^~~~~
+#   58|   	next:	NULL,
+#   59|   	ops:	&ntfs_ops,
+#   60|-> 	name:	"ntfs",
+#   61|   };
+#   62|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/r/fat/bootsector.c:282:10: warning: passing 'gl_uint8_t [420]' to parameter of type 'char *' converts between pointers to integer types with different sign
+#        strcpy (bs->u.fat32.boot_code, FAT_BOOT_CODE);
+#                ^~~~~~~~~~~~~~~~~~~~~
+/opt/divine/include/dios/include/string.h:61:40: note: passing argument to parameter 's1' here
+#char * strcpy( char * _PDCLIB_restrict s1, const char * _PDCLIB_restrict s2 ) _PDCLIB_nothrow;
+#                                       ^
+#  280|   	memcpy (bs->boot_jump, FAT_BOOT_JUMP, 3);
+#  281|   	PED_ASSERT (sizeof(FAT_BOOT_CODE) < sizeof(bs->u.fat32.boot_code));
+#  282|-> 	strcpy (bs->u.fat32.boot_code, FAT_BOOT_CODE);
+#  283|   	return 1;
+#  284|   }
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/reiserfs/reiserfs.c:76:2: warning: use of GNU old-style field designator extension
+#        probe:          reiserfs_probe,
+#        ^~~~~~
+#   74|   
+#   75|   static PedFileSystemOps reiserfs_simple_ops = {
+#   76|-> 	probe:		reiserfs_probe,
+#   77|   };
+#   78|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/reiserfs/reiserfs.c:80:2: warning: use of GNU old-style field designator extension
+#        next:           NULL,
+#        ^~~~~
+#   78|   
+#   79|   static PedFileSystemType reiserfs_simple_type = {
+#   80|-> 	next:	        NULL,
+#   81|   	ops:	        &reiserfs_simple_ops,
+#   82|   	name:	        "reiserfs",
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/reiserfs/reiserfs.c:81:2: warning: use of GNU old-style field designator extension
+#        ops:            &reiserfs_simple_ops,
+#        ^~~~
+#   79|   static PedFileSystemType reiserfs_simple_type = {
+#   80|   	next:	        NULL,
+#   81|-> 	ops:	        &reiserfs_simple_ops,
+#   82|   	name:	        "reiserfs",
+#   83|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/reiserfs/reiserfs.c:82:2: warning: use of GNU old-style field designator extension
+#        name:           "reiserfs",
+#        ^~~~~
+#   80|   	next:	        NULL,
+#   81|   	ops:	        &reiserfs_simple_ops,
+#   82|-> 	name:	        "reiserfs",
+#   83|   };
+#   84|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/udf/udf.c:156:2: warning: use of GNU old-style field designator extension
+#        probe:          udf_probe,
+#        ^~~~~~
+#  154|   
+#  155|   static PedFileSystemOps udf_ops = {
+#  156|-> 	probe:		udf_probe,
+#  157|   };
+#  158|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/udf/udf.c:160:2: warning: use of GNU old-style field designator extension
+#        next:   NULL,
+#        ^~~~~
+#  158|   
+#  159|   static PedFileSystemType udf_type = {
+#  160|-> 	next:	NULL,
+#  161|   	ops:	&udf_ops,
+#  162|   	name:	"udf",
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/udf/udf.c:161:2: warning: use of GNU old-style field designator extension
+#        ops:    &udf_ops,
+#        ^~~~
+#  159|   static PedFileSystemType udf_type = {
+#  160|   	next:	NULL,
+#  161|-> 	ops:	&udf_ops,
+#  162|   	name:	"udf",
+#  163|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/udf/udf.c:162:2: warning: use of GNU old-style field designator extension
+#        name:   "udf",
+#        ^~~~~
+#  160|   	next:	NULL,
+#  161|   	ops:	&udf_ops,
+#  162|-> 	name:	"udf",
+#  163|   };
+#  164|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/ufs/ufs.c:248:2: warning: use of GNU old-style field designator extension
+#        probe:          ufs_probe_sun,
+#        ^~~~~~
+#  246|   
+#  247|   static PedFileSystemOps ufs_ops_sun = {
+#  248|-> 	probe:		ufs_probe_sun,
+#  249|   };
+#  250|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/ufs/ufs.c:252:2: warning: use of GNU old-style field designator extension
+#        probe:          ufs_probe_hp,
+#        ^~~~~~
+#  250|   
+#  251|   static PedFileSystemOps ufs_ops_hp = {
+#  252|-> 	probe:		ufs_probe_hp,
+#  253|   };
+#  254|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/ufs/ufs.c:256:2: warning: use of GNU old-style field designator extension
+#        next:   NULL,
+#        ^~~~~
+#  254|   
+#  255|   static PedFileSystemType ufs_type_sun = {
+#  256|-> 	next:	NULL,
+#  257|   	ops:	&ufs_ops_sun,
+#  258|   	name:	"sun-ufs",
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/ufs/ufs.c:257:2: warning: use of GNU old-style field designator extension
+#        ops:    &ufs_ops_sun,
+#        ^~~~
+#  255|   static PedFileSystemType ufs_type_sun = {
+#  256|   	next:	NULL,
+#  257|-> 	ops:	&ufs_ops_sun,
+#  258|   	name:	"sun-ufs",
+#  259|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/ufs/ufs.c:258:2: warning: use of GNU old-style field designator extension
+#        name:   "sun-ufs",
+#        ^~~~~
+#  256|   	next:	NULL,
+#  257|   	ops:	&ufs_ops_sun,
+#  258|-> 	name:	"sun-ufs",
+#  259|   };
+#  260|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/ufs/ufs.c:262:2: warning: use of GNU old-style field designator extension
+#        next:   NULL,
+#        ^~~~~
+#  260|   
+#  261|   static PedFileSystemType ufs_type_hp = {
+#  262|-> 	next:   NULL,
+#  263|   	ops:    &ufs_ops_hp,
+#  264|   	name:   "hp-ufs",
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/ufs/ufs.c:263:2: warning: use of GNU old-style field designator extension
+#        ops:    &ufs_ops_hp,
+#        ^~~~
+#  261|   static PedFileSystemType ufs_type_hp = {
+#  262|   	next:   NULL,
+#  263|-> 	ops:    &ufs_ops_hp,
+#  264|   	name:   "hp-ufs",
+#  265|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/ufs/ufs.c:264:2: warning: use of GNU old-style field designator extension
+#        name:   "hp-ufs",
+#        ^~~~~
+#  262|   	next:   NULL,
+#  263|   	ops:    &ufs_ops_hp,
+#  264|-> 	name:   "hp-ufs",
+#  265|   };
+#  266|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/xfs/xfs.c:68:2: warning: use of GNU old-style field designator extension
+#        probe:          xfs_probe,
+#        ^~~~~~
+#   66|   
+#   67|   static PedFileSystemOps xfs_ops = {
+#   68|-> 	probe:		xfs_probe,
+#   69|   };
+#   70|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/xfs/xfs.c:72:2: warning: use of GNU old-style field designator extension
+#        next:   NULL,
+#        ^~~~~
+#   70|   
+#   71|   static PedFileSystemType xfs_type = {
+#   72|-> 	next:	NULL,
+#   73|   	ops:	&xfs_ops,
+#   74|   	name:	"xfs",
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/xfs/xfs.c:73:2: warning: use of GNU old-style field designator extension
+#        ops:    &xfs_ops,
+#        ^~~~
+#   71|   static PedFileSystemType xfs_type = {
+#   72|   	next:	NULL,
+#   73|-> 	ops:	&xfs_ops,
+#   74|   	name:	"xfs",
+#   75|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/fs/xfs/xfs.c:74:2: warning: use of GNU old-style field designator extension
+#        name:   "xfs",
+#        ^~~~~
+#   72|   	next:	NULL,
+#   73|   	ops:	&xfs_ops,
+#   74|-> 	name:	"xfs",
+#   75|   };
+#   76|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/aix.c:211:2: warning: use of GNU old-style field designator extension
+#        clobber:                NULL,
+#        ^~~~~~~~
+#  209|   
+#  210|   static PedDiskOps aix_disk_ops = {
+#  211|-> 	clobber:		NULL,
+#  212|   	write:			NULL_IF_DISCOVER_ONLY (aix_write),
+#  213|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/aix.c:212:2: warning: use of GNU old-style field designator extension
+#        write:                  NULL_IF_DISCOVER_ONLY (aix_write),
+#        ^~~~~~
+#  210|   static PedDiskOps aix_disk_ops = {
+#  211|   	clobber:		NULL,
+#  212|-> 	write:			NULL_IF_DISCOVER_ONLY (aix_write),
+#  213|   
+#  214|   	partition_set_name:		NULL,
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/aix.c:214:2: warning: use of GNU old-style field designator extension
+#        partition_set_name:             NULL,
+#        ^~~~~~~~~~~~~~~~~~~
+#  212|   	write:			NULL_IF_DISCOVER_ONLY (aix_write),
+#  213|   
+#  214|-> 	partition_set_name:		NULL,
+#  215|   	partition_get_name:		NULL,
+#  216|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/aix.c:215:2: warning: use of GNU old-style field designator extension
+#        partition_get_name:             NULL,
+#        ^~~~~~~~~~~~~~~~~~~
+#  213|   
+#  214|   	partition_set_name:		NULL,
+#  215|-> 	partition_get_name:		NULL,
+#  216|   
+#  217|   	PT_op_function_initializers (aix)
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/aix.c:217:2: warning: use of GNU old-style field designator extension
+#        PT_op_function_initializers (aix)
+#        ^
+parted-3.4/libparted/labels/pt-common.h:35:48: note: expanded from macro 'PT_op_function_initializers'
+##define PT_op_function_initializers(PT_type)                    \
+#                                                                ^
+#  215|   	partition_get_name:		NULL,
+#  216|   
+#  217|-> 	PT_op_function_initializers (aix)
+#  218|   };
+#  219|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/aix.c:221:2: warning: use of GNU old-style field designator extension
+#        next:           NULL,
+#        ^~~~~
+#  219|   
+#  220|   static PedDiskType aix_disk_type = {
+#  221|-> 	next:		NULL,
+#  222|   	name:		"aix",
+#  223|   	ops:		&aix_disk_ops,
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/aix.c:222:2: warning: use of GNU old-style field designator extension
+#        name:           "aix",
+#        ^~~~~
+#  220|   static PedDiskType aix_disk_type = {
+#  221|   	next:		NULL,
+#  222|-> 	name:		"aix",
+#  223|   	ops:		&aix_disk_ops,
+#  224|   	features:	0
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/aix.c:223:2: warning: use of GNU old-style field designator extension
+#        ops:            &aix_disk_ops,
+#        ^~~~
+#  221|   	next:		NULL,
+#  222|   	name:		"aix",
+#  223|-> 	ops:		&aix_disk_ops,
+#  224|   	features:	0
+#  225|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/aix.c:224:2: warning: use of GNU old-style field designator extension
+#        features:       0
+#        ^~~~~~~~~
+#  222|   	name:		"aix",
+#  223|   	ops:		&aix_disk_ops,
+#  224|-> 	features:	0
+#  225|   };
+#  226|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/atari.c:226:9: warning: implicit declaration of function 'isalnum_l' is invalid in C99
+#        return isalnum_l(part->id[0], atr_c_locale)
+#               ^
+#  224|   	size = PED_BE32_TO_CPU (part->size);
+#  225|   
+#  226|-> 	return isalnum_l(part->id[0], atr_c_locale)
+#  227|   		&& isalnum_l(part->id[1], atr_c_locale)
+#  228|   		&& isalnum_l(part->id[2], atr_c_locale)
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/atari.c:423:9: warning: passing 'gl_uint8_t [3]' to parameter of type 'const char *' converts between pointers to integer types with different sign
+#                   && atr_part_known (&table.icd_part[0], atr_known_icd_pid)) {
+#                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+parted-3.4/libparted/labels/atari.c:261:56: note: expanded from macro 'atr_part_known'
+##define atr_part_known(part, pid_list) (atr_pid_known ((part)->id, pid_list))
+#                                                       ^~~~~~~~~~
+parted-3.4/libparted/labels/atari.c:233:28: note: passing argument to parameter 'pid' here
+#atr_pid_known (const char* pid, const char** pid_list)
+#                           ^
+#  421|   	} /* no XGM so try ICD */
+#  422|   	  else if (atr_part_valid (&table.icd_part[0], rs_hd_size)
+#  423|-> 		   && atr_part_known (&table.icd_part[0], atr_known_icd_pid)) {
+#  424|   		for (i = 1; i < N_ICD; i++) {
+#  425|   			if (atr_part_trash (&table.icd_part[i], rs_hd_size))
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/atari.c:555:25: warning: passing 'gl_uint8_t const[3]' to parameter of type 'const char *' converts between pointers to integer types with different sign
+#        atr_part_sysraw (part, rawpart->id, rawpart->flag);
+#                               ^~~~~~~~~~~
+parted-3.4/libparted/labels/atari.c:512:50: note: passing argument to parameter 'id' here
+#atr_part_sysraw (PedPartition* part, const char* id, uint8_t flag)
+#                                                 ^
+#  553|   	else
+#  554|   		part->fs_type = NULL;
+#  555|-> 	atr_part_sysraw (part, rawpart->id, rawpart->flag);
+#  556|   
+#  557|   	const_exact = ped_constraint_exact (&part->geom);
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/atari.c:705:7: warning: passing 'gl_uint8_t [3]' to parameter of type 'const char *' converts between pointers to integer types with different sign
+#                 && atr_part_known (&table.icd_part[0], atr_known_icd_pid))
+#                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+parted-3.4/libparted/labels/atari.c:261:56: note: expanded from macro 'atr_part_known'
+##define atr_part_known(part, pid_list) (atr_pid_known ((part)->id, pid_list))
+#                                                       ^~~~~~~~~~
+parted-3.4/libparted/labels/atari.c:233:28: note: passing argument to parameter 'pid' here
+#atr_pid_known (const char* pid, const char** pid_list)
+#                           ^
+#  703|   	if (!xgm && pcount != 0
+#  704|   		 && atr_part_valid (&table.icd_part[0], rs_hd_size)
+#  705|-> 		 && atr_part_known (&table.icd_part[0], atr_known_icd_pid))
+#  706|   	for (i = 0; i < N_ICD; i++) {
+#  707|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/atari.c:708:8: warning: passing 'gl_uint8_t [3]' to parameter of type 'const char *' converts between pointers to integer types with different sign
+#                if (!atr_part_known (&table.icd_part[i], atr_known_icd_pid)
+#                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+parted-3.4/libparted/labels/atari.c:261:56: note: expanded from macro 'atr_part_known'
+##define atr_part_known(part, pid_list) (atr_pid_known ((part)->id, pid_list))
+#                                                       ^~~~~~~~~~
+parted-3.4/libparted/labels/atari.c:233:28: note: passing argument to parameter 'pid' here
+#atr_pid_known (const char* pid, const char** pid_list)
+#                           ^
+#  706|   	for (i = 0; i < N_ICD; i++) {
+#  707|   
+#  708|-> 		if (!atr_part_known (&table.icd_part[i], atr_known_icd_pid)
+#  709|   		    || !atr_part_used (&table.icd_part[i]))
+#  710|   			continue;
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/atari.c:1130:9: warning: passing 'gl_uint8_t [3]' to parameter of type 'const char *' converts between pointers to integer types with different sign
+#            && atr_part_known (&table.icd_part[0], atr_known_icd_pid)) {
+#               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+parted-3.4/libparted/labels/atari.c:261:56: note: expanded from macro 'atr_part_known'
+##define atr_part_known(part, pid_list) (atr_pid_known ((part)->id, pid_list))
+#                                                       ^~~~~~~~~~
+parted-3.4/libparted/labels/atari.c:233:28: note: passing argument to parameter 'pid' here
+#atr_pid_known (const char* pid, const char** pid_list)
+#                           ^
+# 1128|   	if (atr_disk->format == FMT_AHDI
+# 1129|   	    && atr_part_valid (&table.icd_part[0], rs_hd_size)
+# 1130|-> 	    && atr_part_known (&table.icd_part[0], atr_known_icd_pid)) {
+# 1131|   		int result = PED_EXCEPTION_UNHANDLED;
+# 1132|   		result = ped_exception_throw (
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/atari.c:1943:2: warning: use of GNU old-style field designator extension
+#        clobber:                NULL_IF_DISCOVER_ONLY (atari_clobber),
+#        ^~~~~~~~
+# 1941|   
+# 1942|   static PedDiskOps atari_disk_ops = {
+# 1943|-> 	clobber:	        NULL_IF_DISCOVER_ONLY (atari_clobber),
+# 1944|   	write:			NULL_IF_DISCOVER_ONLY (atari_write),
+# 1945|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/atari.c:1944:2: warning: use of GNU old-style field designator extension
+#        write:                  NULL_IF_DISCOVER_ONLY (atari_write),
+#        ^~~~~~
+# 1942|   static PedDiskOps atari_disk_ops = {
+# 1943|   	clobber:	        NULL_IF_DISCOVER_ONLY (atari_clobber),
+# 1944|-> 	write:			NULL_IF_DISCOVER_ONLY (atari_write),
+# 1945|   
+# 1946|   	partition_set_name:	NULL,
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/atari.c:1946:2: warning: use of GNU old-style field designator extension
+#        partition_set_name:     NULL,
+#        ^~~~~~~~~~~~~~~~~~~
+# 1944|   	write:			NULL_IF_DISCOVER_ONLY (atari_write),
+# 1945|   
+# 1946|-> 	partition_set_name:	NULL,
+# 1947|   	partition_get_name:	NULL,
+# 1948|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/atari.c:1947:2: warning: use of GNU old-style field designator extension
+#        partition_get_name:     NULL,
+#        ^~~~~~~~~~~~~~~~~~~
+# 1945|   
+# 1946|   	partition_set_name:	NULL,
+# 1947|-> 	partition_get_name:	NULL,
+# 1948|   
+# 1949|           PT_op_function_initializers (atari)
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/atari.c:1949:9: warning: use of GNU old-style field designator extension
+#        PT_op_function_initializers (atari)
+#        ^
+parted-3.4/libparted/labels/pt-common.h:35:48: note: expanded from macro 'PT_op_function_initializers'
+##define PT_op_function_initializers(PT_type)                    \
+#                                                                ^
+# 1947|   	partition_get_name:	NULL,
+# 1948|   
+# 1949|->         PT_op_function_initializers (atari)
+# 1950|   };
+# 1951|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/atari.c:1953:2: warning: use of GNU old-style field designator extension
+#        next:           NULL,
+#        ^~~~~
+# 1951|   
+# 1952|   static PedDiskType atari_disk_type = {
+# 1953|-> 	next:		NULL,
+# 1954|   	name:		"atari",
+# 1955|   	ops:		&atari_disk_ops,
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/atari.c:1954:2: warning: use of GNU old-style field designator extension
+#        name:           "atari",
+#        ^~~~~
+# 1952|   static PedDiskType atari_disk_type = {
+# 1953|   	next:		NULL,
+# 1954|-> 	name:		"atari",
+# 1955|   	ops:		&atari_disk_ops,
+# 1956|   	features:	PED_DISK_TYPE_EXTENDED
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/atari.c:1955:2: warning: use of GNU old-style field designator extension
+#        ops:            &atari_disk_ops,
+#        ^~~~
+# 1953|   	next:		NULL,
+# 1954|   	name:		"atari",
+# 1955|-> 	ops:		&atari_disk_ops,
+# 1956|   	features:	PED_DISK_TYPE_EXTENDED
+# 1957|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/atari.c:1956:2: warning: use of GNU old-style field designator extension
+#        features:       PED_DISK_TYPE_EXTENDED
+#        ^~~~~~~~~
+# 1954|   	name:		"atari",
+# 1955|   	ops:		&atari_disk_ops,
+# 1956|-> 	features:	PED_DISK_TYPE_EXTENDED
+# 1957|   };
+# 1958|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/bsd.c:625:2: warning: use of GNU old-style field designator extension
+#        clobber:                NULL,
+#        ^~~~~~~~
+#  623|   
+#  624|   static PedDiskOps bsd_disk_ops = {
+#  625|-> 	clobber:		NULL,
+#  626|   	write:			NULL_IF_DISCOVER_ONLY (bsd_write),
+#  627|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/bsd.c:626:2: warning: use of GNU old-style field designator extension
+#        write:                  NULL_IF_DISCOVER_ONLY (bsd_write),
+#        ^~~~~~
+#  624|   static PedDiskOps bsd_disk_ops = {
+#  625|   	clobber:		NULL,
+#  626|-> 	write:			NULL_IF_DISCOVER_ONLY (bsd_write),
+#  627|   
+#  628|   	partition_set_name:	NULL,
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/bsd.c:628:2: warning: use of GNU old-style field designator extension
+#        partition_set_name:     NULL,
+#        ^~~~~~~~~~~~~~~~~~~
+#  626|   	write:			NULL_IF_DISCOVER_ONLY (bsd_write),
+#  627|   
+#  628|-> 	partition_set_name:	NULL,
+#  629|   	partition_get_name:	NULL,
+#  630|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/bsd.c:629:2: warning: use of GNU old-style field designator extension
+#        partition_get_name:     NULL,
+#        ^~~~~~~~~~~~~~~~~~~
+#  627|   
+#  628|   	partition_set_name:	NULL,
+#  629|-> 	partition_get_name:	NULL,
+#  630|   
+#  631|   	PT_op_function_initializers (bsd)
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/bsd.c:631:2: warning: use of GNU old-style field designator extension
+#        PT_op_function_initializers (bsd)
+#        ^
+parted-3.4/libparted/labels/pt-common.h:35:48: note: expanded from macro 'PT_op_function_initializers'
+##define PT_op_function_initializers(PT_type)                    \
+#                                                                ^
+#  629|   	partition_get_name:	NULL,
+#  630|   
+#  631|-> 	PT_op_function_initializers (bsd)
+#  632|   };
+#  633|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/bsd.c:635:2: warning: use of GNU old-style field designator extension
+#        next:           NULL,
+#        ^~~~~
+#  633|   
+#  634|   static PedDiskType bsd_disk_type = {
+#  635|-> 	next:		NULL,
+#  636|   	name:		"bsd",
+#  637|   	ops:		&bsd_disk_ops,
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/bsd.c:636:2: warning: use of GNU old-style field designator extension
+#        name:           "bsd",
+#        ^~~~~
+#  634|   static PedDiskType bsd_disk_type = {
+#  635|   	next:		NULL,
+#  636|-> 	name:		"bsd",
+#  637|   	ops:		&bsd_disk_ops,
+#  638|   	features:	0
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/bsd.c:637:2: warning: use of GNU old-style field designator extension
+#        ops:            &bsd_disk_ops,
+#        ^~~~
+#  635|   	next:		NULL,
+#  636|   	name:		"bsd",
+#  637|-> 	ops:		&bsd_disk_ops,
+#  638|   	features:	0
+#  639|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/bsd.c:638:2: warning: use of GNU old-style field designator extension
+#        features:       0
+#        ^~~~~~~~~
+#  636|   	name:		"bsd",
+#  637|   	ops:		&bsd_disk_ops,
+#  638|-> 	features:	0
+#  639|   };
+#  640|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/dos.c:2564:2: warning: use of GNU old-style field designator extension
+#        clobber:                NULL,
+#        ^~~~~~~~
+# 2562|   
+# 2563|   static PedDiskOps msdos_disk_ops = {
+# 2564|-> 	clobber:		NULL,
+# 2565|   	write:			NULL_IF_DISCOVER_ONLY (msdos_write),
+# 2566|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/dos.c:2565:2: warning: use of GNU old-style field designator extension
+#        write:                  NULL_IF_DISCOVER_ONLY (msdos_write),
+#        ^~~~~~
+# 2563|   static PedDiskOps msdos_disk_ops = {
+# 2564|   	clobber:		NULL,
+# 2565|-> 	write:			NULL_IF_DISCOVER_ONLY (msdos_write),
+# 2566|   
+# 2567|   	disk_set_flag:          msdos_disk_set_flag,
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/dos.c:2567:2: warning: use of GNU old-style field designator extension
+#        disk_set_flag:          msdos_disk_set_flag,
+#        ^~~~~~~~~~~~~~
+# 2565|   	write:			NULL_IF_DISCOVER_ONLY (msdos_write),
+# 2566|   
+# 2567|-> 	disk_set_flag:          msdos_disk_set_flag,
+# 2568|   	disk_get_flag:          msdos_disk_get_flag,
+# 2569|   	disk_is_flag_available: msdos_disk_is_flag_available,
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/dos.c:2568:2: warning: use of GNU old-style field designator extension
+#        disk_get_flag:          msdos_disk_get_flag,
+#        ^~~~~~~~~~~~~~
+# 2566|   
+# 2567|   	disk_set_flag:          msdos_disk_set_flag,
+# 2568|-> 	disk_get_flag:          msdos_disk_get_flag,
+# 2569|   	disk_is_flag_available: msdos_disk_is_flag_available,
+# 2570|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/dos.c:2569:2: warning: use of GNU old-style field designator extension
+#        disk_is_flag_available: msdos_disk_is_flag_available,
+#        ^~~~~~~~~~~~~~~~~~~~~~~
+# 2567|   	disk_set_flag:          msdos_disk_set_flag,
+# 2568|   	disk_get_flag:          msdos_disk_get_flag,
+# 2569|-> 	disk_is_flag_available: msdos_disk_is_flag_available,
+# 2570|   
+# 2571|   	partition_set_name:	NULL,
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/dos.c:2571:2: warning: use of GNU old-style field designator extension
+#        partition_set_name:     NULL,
+#        ^~~~~~~~~~~~~~~~~~~
+# 2569|   	disk_is_flag_available: msdos_disk_is_flag_available,
+# 2570|   
+# 2571|-> 	partition_set_name:	NULL,
+# 2572|   	partition_get_name:	NULL,
+# 2573|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/dos.c:2572:2: warning: use of GNU old-style field designator extension
+#        partition_get_name:     NULL,
+#        ^~~~~~~~~~~~~~~~~~~
+# 2570|   
+# 2571|   	partition_set_name:	NULL,
+# 2572|-> 	partition_get_name:	NULL,
+# 2573|   
+# 2574|     PT_op_function_initializers (msdos)
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/dos.c:2574:3: warning: use of GNU old-style field designator extension
+#  PT_op_function_initializers (msdos)
+#  ^
+parted-3.4/libparted/labels/pt-common.h:35:48: note: expanded from macro 'PT_op_function_initializers'
+##define PT_op_function_initializers(PT_type)                    \
+#                                                                ^
+# 2572|   	partition_get_name:	NULL,
+# 2573|   
+# 2574|->   PT_op_function_initializers (msdos)
+# 2575|   };
+# 2576|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/dos.c:2578:2: warning: use of GNU old-style field designator extension
+#        next:           NULL,
+#        ^~~~~
+# 2576|   
+# 2577|   static PedDiskType msdos_disk_type = {
+# 2578|-> 	next:		NULL,
+# 2579|   	name:		"msdos",
+# 2580|   	ops:		&msdos_disk_ops,
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/dos.c:2579:2: warning: use of GNU old-style field designator extension
+#        name:           "msdos",
+#        ^~~~~
+# 2577|   static PedDiskType msdos_disk_type = {
+# 2578|   	next:		NULL,
+# 2579|-> 	name:		"msdos",
+# 2580|   	ops:		&msdos_disk_ops,
+# 2581|   	features:	PED_DISK_TYPE_EXTENDED
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/dos.c:2580:2: warning: use of GNU old-style field designator extension
+#        ops:            &msdos_disk_ops,
+#        ^~~~
+# 2578|   	next:		NULL,
+# 2579|   	name:		"msdos",
+# 2580|-> 	ops:		&msdos_disk_ops,
+# 2581|   	features:	PED_DISK_TYPE_EXTENDED
+# 2582|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/dos.c:2581:2: warning: use of GNU old-style field designator extension
+#        features:       PED_DISK_TYPE_EXTENDED
+#        ^~~~~~~~~
+# 2579|   	name:		"msdos",
+# 2580|   	ops:		&msdos_disk_ops,
+# 2581|-> 	features:	PED_DISK_TYPE_EXTENDED
+# 2582|   };
+# 2583|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/dvh.c:869:2: warning: use of GNU old-style field designator extension
+#        clobber:                NULL,
+#        ^~~~~~~~
+#  867|   
+#  868|   static PedDiskOps dvh_disk_ops = {
+#  869|-> 	clobber:		NULL,
+#  870|   	write:			NULL_IF_DISCOVER_ONLY (dvh_write),
+#  871|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/dvh.c:870:2: warning: use of GNU old-style field designator extension
+#        write:                  NULL_IF_DISCOVER_ONLY (dvh_write),
+#        ^~~~~~
+#  868|   static PedDiskOps dvh_disk_ops = {
+#  869|   	clobber:		NULL,
+#  870|-> 	write:			NULL_IF_DISCOVER_ONLY (dvh_write),
+#  871|   
+#  872|   	partition_set_name:	dvh_partition_set_name,
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/dvh.c:872:2: warning: use of GNU old-style field designator extension
+#        partition_set_name:     dvh_partition_set_name,
+#        ^~~~~~~~~~~~~~~~~~~
+#  870|   	write:			NULL_IF_DISCOVER_ONLY (dvh_write),
+#  871|   
+#  872|-> 	partition_set_name:	dvh_partition_set_name,
+#  873|   	partition_get_name:	dvh_partition_get_name,
+#  874|   	PT_op_function_initializers (dvh)
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/dvh.c:873:2: warning: use of GNU old-style field designator extension
+#        partition_get_name:     dvh_partition_get_name,
+#        ^~~~~~~~~~~~~~~~~~~
+#  871|   
+#  872|   	partition_set_name:	dvh_partition_set_name,
+#  873|-> 	partition_get_name:	dvh_partition_get_name,
+#  874|   	PT_op_function_initializers (dvh)
+#  875|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/dvh.c:874:2: warning: use of GNU old-style field designator extension
+#        PT_op_function_initializers (dvh)
+#        ^
+parted-3.4/libparted/labels/pt-common.h:35:48: note: expanded from macro 'PT_op_function_initializers'
+##define PT_op_function_initializers(PT_type)                    \
+#                                                                ^
+#  872|   	partition_set_name:	dvh_partition_set_name,
+#  873|   	partition_get_name:	dvh_partition_get_name,
+#  874|-> 	PT_op_function_initializers (dvh)
+#  875|   };
+#  876|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/dvh.c:878:2: warning: use of GNU old-style field designator extension
+#        next:           NULL,
+#        ^~~~~
+#  876|   
+#  877|   static PedDiskType dvh_disk_type = {
+#  878|-> 	next:		NULL,
+#  879|   	name:		"dvh",
+#  880|   	ops:		&dvh_disk_ops,
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/dvh.c:879:2: warning: use of GNU old-style field designator extension
+#        name:           "dvh",
+#        ^~~~~
+#  877|   static PedDiskType dvh_disk_type = {
+#  878|   	next:		NULL,
+#  879|-> 	name:		"dvh",
+#  880|   	ops:		&dvh_disk_ops,
+#  881|   	features:	PED_DISK_TYPE_PARTITION_NAME | PED_DISK_TYPE_EXTENDED
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/dvh.c:880:2: warning: use of GNU old-style field designator extension
+#        ops:            &dvh_disk_ops,
+#        ^~~~
+#  878|   	next:		NULL,
+#  879|   	name:		"dvh",
+#  880|-> 	ops:		&dvh_disk_ops,
+#  881|   	features:	PED_DISK_TYPE_PARTITION_NAME | PED_DISK_TYPE_EXTENDED
+#  882|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/dvh.c:881:2: warning: use of GNU old-style field designator extension
+#        features:       PED_DISK_TYPE_PARTITION_NAME | PED_DISK_TYPE_EXTENDED
+#        ^~~~~~~~~
+#  879|   	name:		"dvh",
+#  880|   	ops:		&dvh_disk_ops,
+#  881|-> 	features:	PED_DISK_TYPE_PARTITION_NAME | PED_DISK_TYPE_EXTENDED
+#  882|   };
+#  883|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/gpt.c:2154:3: warning: use of GNU old-style field designator extension
+#  clobber:                      NULL,
+#  ^~~~~~~~
+# 2152|   static PedDiskOps gpt_disk_ops =
+# 2153|   {
+# 2154|->   clobber:			NULL,
+# 2155|     write:			NULL_IF_DISCOVER_ONLY (gpt_write),
+# 2156|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/gpt.c:2155:3: warning: use of GNU old-style field designator extension
+#  write:                        NULL_IF_DISCOVER_ONLY (gpt_write),
+#  ^~~~~~
+# 2153|   {
+# 2154|     clobber:			NULL,
+# 2155|->   write:			NULL_IF_DISCOVER_ONLY (gpt_write),
+# 2156|   
+# 2157|     partition_set_name:		gpt_partition_set_name,
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/gpt.c:2157:3: warning: use of GNU old-style field designator extension
+#  partition_set_name:           gpt_partition_set_name,
+#  ^~~~~~~~~~~~~~~~~~~
+# 2155|     write:			NULL_IF_DISCOVER_ONLY (gpt_write),
+# 2156|   
+# 2157|->   partition_set_name:		gpt_partition_set_name,
+# 2158|     partition_get_name:		gpt_partition_get_name,
+# 2159|     disk_set_flag:		gpt_disk_set_flag,
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/gpt.c:2158:3: warning: use of GNU old-style field designator extension
+#  partition_get_name:           gpt_partition_get_name,
+#  ^~~~~~~~~~~~~~~~~~~
+# 2156|   
+# 2157|     partition_set_name:		gpt_partition_set_name,
+# 2158|->   partition_get_name:		gpt_partition_get_name,
+# 2159|     disk_set_flag:		gpt_disk_set_flag,
+# 2160|     disk_get_flag:		gpt_disk_get_flag,
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/gpt.c:2159:3: warning: use of GNU old-style field designator extension
+#  disk_set_flag:                gpt_disk_set_flag,
+#  ^~~~~~~~~~~~~~
+# 2157|     partition_set_name:		gpt_partition_set_name,
+# 2158|     partition_get_name:		gpt_partition_get_name,
+# 2159|->   disk_set_flag:		gpt_disk_set_flag,
+# 2160|     disk_get_flag:		gpt_disk_get_flag,
+# 2161|     disk_is_flag_available:	gpt_disk_is_flag_available,
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/gpt.c:2160:3: warning: use of GNU old-style field designator extension
+#  disk_get_flag:                gpt_disk_get_flag,
+#  ^~~~~~~~~~~~~~
+# 2158|     partition_get_name:		gpt_partition_get_name,
+# 2159|     disk_set_flag:		gpt_disk_set_flag,
+# 2160|->   disk_get_flag:		gpt_disk_get_flag,
+# 2161|     disk_is_flag_available:	gpt_disk_is_flag_available,
+# 2162|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/gpt.c:2161:3: warning: use of GNU old-style field designator extension
+#  disk_is_flag_available:       gpt_disk_is_flag_available,
+#  ^~~~~~~~~~~~~~~~~~~~~~~
+# 2159|     disk_set_flag:		gpt_disk_set_flag,
+# 2160|     disk_get_flag:		gpt_disk_get_flag,
+# 2161|->   disk_is_flag_available:	gpt_disk_is_flag_available,
+# 2162|   
+# 2163|     PT_op_function_initializers (gpt)
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/gpt.c:2163:3: warning: use of GNU old-style field designator extension
+#  PT_op_function_initializers (gpt)
+#  ^
+parted-3.4/libparted/labels/pt-common.h:35:48: note: expanded from macro 'PT_op_function_initializers'
+##define PT_op_function_initializers(PT_type)                    \
+#                                                                ^
+# 2161|     disk_is_flag_available:	gpt_disk_is_flag_available,
+# 2162|   
+# 2163|->   PT_op_function_initializers (gpt)
+# 2164|   };
+# 2165|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/gpt.c:2168:3: warning: use of GNU old-style field designator extension
+#  next:         NULL,
+#  ^~~~~
+# 2166|   static PedDiskType gpt_disk_type =
+# 2167|   {
+# 2168|->   next:		NULL,
+# 2169|     name:		"gpt",
+# 2170|     ops:		&gpt_disk_ops,
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/gpt.c:2169:3: warning: use of GNU old-style field designator extension
+#  name:         "gpt",
+#  ^~~~~
+# 2167|   {
+# 2168|     next:		NULL,
+# 2169|->   name:		"gpt",
+# 2170|     ops:		&gpt_disk_ops,
+# 2171|     features:	PED_DISK_TYPE_PARTITION_NAME
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/gpt.c:2170:3: warning: use of GNU old-style field designator extension
+#  ops:          &gpt_disk_ops,
+#  ^~~~
+# 2168|     next:		NULL,
+# 2169|     name:		"gpt",
+# 2170|->   ops:		&gpt_disk_ops,
+# 2171|     features:	PED_DISK_TYPE_PARTITION_NAME
+# 2172|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/gpt.c:2171:3: warning: use of GNU old-style field designator extension
+#  features:     PED_DISK_TYPE_PARTITION_NAME
+#  ^~~~~~~~~
+# 2169|     name:		"gpt",
+# 2170|     ops:		&gpt_disk_ops,
+# 2171|->   features:	PED_DISK_TYPE_PARTITION_NAME
+# 2172|   };
+# 2173|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/loop.c:290:2: warning: use of GNU old-style field designator extension
+#        clobber:                NULL,
+#        ^~~~~~~~
+#  288|   
+#  289|   static PedDiskOps loop_disk_ops = {
+#  290|-> 	clobber:		NULL,
+#  291|   	write:			NULL_IF_DISCOVER_ONLY (loop_write),
+#  292|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/loop.c:291:2: warning: use of GNU old-style field designator extension
+#        write:                  NULL_IF_DISCOVER_ONLY (loop_write),
+#        ^~~~~~
+#  289|   static PedDiskOps loop_disk_ops = {
+#  290|   	clobber:		NULL,
+#  291|-> 	write:			NULL_IF_DISCOVER_ONLY (loop_write),
+#  292|   
+#  293|   	partition_set_name:	NULL,
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/loop.c:293:2: warning: use of GNU old-style field designator extension
+#        partition_set_name:     NULL,
+#        ^~~~~~~~~~~~~~~~~~~
+#  291|   	write:			NULL_IF_DISCOVER_ONLY (loop_write),
+#  292|   
+#  293|-> 	partition_set_name:	NULL,
+#  294|   	partition_get_name:	NULL,
+#  295|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/loop.c:294:2: warning: use of GNU old-style field designator extension
+#        partition_get_name:     NULL,
+#        ^~~~~~~~~~~~~~~~~~~
+#  292|   
+#  293|   	partition_set_name:	NULL,
+#  294|-> 	partition_get_name:	NULL,
+#  295|   
+#  296|   	PT_op_function_initializers (loop)
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/loop.c:296:2: warning: use of GNU old-style field designator extension
+#        PT_op_function_initializers (loop)
+#        ^
+parted-3.4/libparted/labels/pt-common.h:35:48: note: expanded from macro 'PT_op_function_initializers'
+##define PT_op_function_initializers(PT_type)                    \
+#                                                                ^
+#  294|   	partition_get_name:	NULL,
+#  295|   
+#  296|-> 	PT_op_function_initializers (loop)
+#  297|   };
+#  298|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/loop.c:300:2: warning: use of GNU old-style field designator extension
+#        next:           NULL,
+#        ^~~~~
+#  298|   
+#  299|   static PedDiskType loop_disk_type = {
+#  300|-> 	next:		NULL,
+#  301|   	name:		"loop",
+#  302|   	ops:		&loop_disk_ops,
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/loop.c:301:2: warning: use of GNU old-style field designator extension
+#        name:           "loop",
+#        ^~~~~
+#  299|   static PedDiskType loop_disk_type = {
+#  300|   	next:		NULL,
+#  301|-> 	name:		"loop",
+#  302|   	ops:		&loop_disk_ops,
+#  303|   	features:	0
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/loop.c:302:2: warning: use of GNU old-style field designator extension
+#        ops:            &loop_disk_ops,
+#        ^~~~
+#  300|   	next:		NULL,
+#  301|   	name:		"loop",
+#  302|-> 	ops:		&loop_disk_ops,
+#  303|   	features:	0
+#  304|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/loop.c:303:2: warning: use of GNU old-style field designator extension
+#        features:       0
+#        ^~~~~~~~~
+#  301|   	name:		"loop",
+#  302|   	ops:		&loop_disk_ops,
+#  303|-> 	features:	0
+#  304|   };
+#  305|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/mac.c:1571:2: warning: use of GNU old-style field designator extension
+#        clobber: NULL,
+#        ^~~~~~~~
+# 1569|   
+# 1570|   static PedDiskOps mac_disk_ops = {
+# 1571|-> 	clobber: NULL,
+# 1572|           /* FIXME: remove this cast, once mac_write is fixed not to
+# 1573|              modify its *DISK parameter.  */
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/mac.c:1574:2: warning: use of GNU old-style field designator extension
+#        write:  NULL_IF_DISCOVER_ONLY ((int (*) (const PedDisk*)) mac_write),
+#        ^~~~~~
+# 1572|           /* FIXME: remove this cast, once mac_write is fixed not to
+# 1573|              modify its *DISK parameter.  */
+# 1574|-> 	write:	NULL_IF_DISCOVER_ONLY ((int (*) (const PedDisk*)) mac_write),
+# 1575|   
+# 1576|   	partition_set_name:	mac_partition_set_name,
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/mac.c:1576:2: warning: use of GNU old-style field designator extension
+#        partition_set_name:     mac_partition_set_name,
+#        ^~~~~~~~~~~~~~~~~~~
+# 1574|   	write:	NULL_IF_DISCOVER_ONLY ((int (*) (const PedDisk*)) mac_write),
+# 1575|   
+# 1576|-> 	partition_set_name:	mac_partition_set_name,
+# 1577|   	partition_get_name:	mac_partition_get_name,
+# 1578|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/mac.c:1577:2: warning: use of GNU old-style field designator extension
+#        partition_get_name:     mac_partition_get_name,
+#        ^~~~~~~~~~~~~~~~~~~
+# 1575|   
+# 1576|   	partition_set_name:	mac_partition_set_name,
+# 1577|-> 	partition_get_name:	mac_partition_get_name,
+# 1578|   
+# 1579|   	get_partition_alignment: mac_get_partition_alignment,
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/mac.c:1579:2: warning: use of GNU old-style field designator extension
+#        get_partition_alignment: mac_get_partition_alignment,
+#        ^~~~~~~~~~~~~~~~~~~~~~~~
+# 1577|   	partition_get_name:	mac_partition_get_name,
+# 1578|   
+# 1579|-> 	get_partition_alignment: mac_get_partition_alignment,
+# 1580|   
+# 1581|   	PT_op_function_initializers (mac)
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/mac.c:1581:2: warning: use of GNU old-style field designator extension
+#        PT_op_function_initializers (mac)
+#        ^
+parted-3.4/libparted/labels/pt-common.h:35:48: note: expanded from macro 'PT_op_function_initializers'
+##define PT_op_function_initializers(PT_type)                    \
+#                                                                ^
+# 1579|   	get_partition_alignment: mac_get_partition_alignment,
+# 1580|   
+# 1581|-> 	PT_op_function_initializers (mac)
+# 1582|   };
+# 1583|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/mac.c:1585:2: warning: use of GNU old-style field designator extension
+#        next:           NULL,
+#        ^~~~~
+# 1583|   
+# 1584|   static PedDiskType mac_disk_type = {
+# 1585|-> 	next:		NULL,
+# 1586|   	name:		"mac",
+# 1587|   	ops:		&mac_disk_ops,
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/mac.c:1586:2: warning: use of GNU old-style field designator extension
+#        name:           "mac",
+#        ^~~~~
+# 1584|   static PedDiskType mac_disk_type = {
+# 1585|   	next:		NULL,
+# 1586|-> 	name:		"mac",
+# 1587|   	ops:		&mac_disk_ops,
+# 1588|   	features:	PED_DISK_TYPE_PARTITION_NAME
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/mac.c:1587:2: warning: use of GNU old-style field designator extension
+#        ops:            &mac_disk_ops,
+#        ^~~~
+# 1585|   	next:		NULL,
+# 1586|   	name:		"mac",
+# 1587|-> 	ops:		&mac_disk_ops,
+# 1588|   	features:	PED_DISK_TYPE_PARTITION_NAME
+# 1589|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/mac.c:1588:2: warning: use of GNU old-style field designator extension
+#        features:       PED_DISK_TYPE_PARTITION_NAME
+#        ^~~~~~~~~
+# 1586|   	name:		"mac",
+# 1587|   	ops:		&mac_disk_ops,
+# 1588|-> 	features:	PED_DISK_TYPE_PARTITION_NAME
+# 1589|   };
+# 1590|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/pc98.c:784:2: warning: use of GNU old-style field designator extension
+#        clobber:                NULL,
+#        ^~~~~~~~
+#  782|   
+#  783|   static PedDiskOps pc98_disk_ops = {
+#  784|-> 	clobber:		NULL,
+#  785|   	write:			NULL_IF_DISCOVER_ONLY (pc98_write),
+#  786|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/pc98.c:785:2: warning: use of GNU old-style field designator extension
+#        write:                  NULL_IF_DISCOVER_ONLY (pc98_write),
+#        ^~~~~~
+#  783|   static PedDiskOps pc98_disk_ops = {
+#  784|   	clobber:		NULL,
+#  785|-> 	write:			NULL_IF_DISCOVER_ONLY (pc98_write),
+#  786|   
+#  787|   	partition_set_name:	pc98_partition_set_name,
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/pc98.c:787:2: warning: use of GNU old-style field designator extension
+#        partition_set_name:     pc98_partition_set_name,
+#        ^~~~~~~~~~~~~~~~~~~
+#  785|   	write:			NULL_IF_DISCOVER_ONLY (pc98_write),
+#  786|   
+#  787|-> 	partition_set_name:	pc98_partition_set_name,
+#  788|   	partition_get_name:	pc98_partition_get_name,
+#  789|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/pc98.c:788:2: warning: use of GNU old-style field designator extension
+#        partition_get_name:     pc98_partition_get_name,
+#        ^~~~~~~~~~~~~~~~~~~
+#  786|   
+#  787|   	partition_set_name:	pc98_partition_set_name,
+#  788|-> 	partition_get_name:	pc98_partition_get_name,
+#  789|   
+#  790|   	get_partition_alignment: pc98_get_partition_alignment,
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/pc98.c:790:2: warning: use of GNU old-style field designator extension
+#        get_partition_alignment: pc98_get_partition_alignment,
+#        ^~~~~~~~~~~~~~~~~~~~~~~~
+#  788|   	partition_get_name:	pc98_partition_get_name,
+#  789|   
+#  790|-> 	get_partition_alignment: pc98_get_partition_alignment,
+#  791|   
+#  792|   	PT_op_function_initializers (pc98)
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/pc98.c:792:2: warning: use of GNU old-style field designator extension
+#        PT_op_function_initializers (pc98)
+#        ^
+parted-3.4/libparted/labels/pt-common.h:35:48: note: expanded from macro 'PT_op_function_initializers'
+##define PT_op_function_initializers(PT_type)                    \
+#                                                                ^
+#  790|   	get_partition_alignment: pc98_get_partition_alignment,
+#  791|   
+#  792|-> 	PT_op_function_initializers (pc98)
+#  793|   };
+#  794|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/pc98.c:796:2: warning: use of GNU old-style field designator extension
+#        next:           NULL,
+#        ^~~~~
+#  794|   
+#  795|   static PedDiskType pc98_disk_type = {
+#  796|-> 	next:		NULL,
+#  797|   	name:		"pc98",
+#  798|   	ops:		&pc98_disk_ops,
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/pc98.c:797:2: warning: use of GNU old-style field designator extension
+#        name:           "pc98",
+#        ^~~~~
+#  795|   static PedDiskType pc98_disk_type = {
+#  796|   	next:		NULL,
+#  797|-> 	name:		"pc98",
+#  798|   	ops:		&pc98_disk_ops,
+#  799|   	features:	PED_DISK_TYPE_PARTITION_NAME
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/pc98.c:798:2: warning: use of GNU old-style field designator extension
+#        ops:            &pc98_disk_ops,
+#        ^~~~
+#  796|   	next:		NULL,
+#  797|   	name:		"pc98",
+#  798|-> 	ops:		&pc98_disk_ops,
+#  799|   	features:	PED_DISK_TYPE_PARTITION_NAME
+#  800|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/pc98.c:799:2: warning: use of GNU old-style field designator extension
+#        features:       PED_DISK_TYPE_PARTITION_NAME
+#        ^~~~~~~~~
+#  797|   	name:		"pc98",
+#  798|   	ops:		&pc98_disk_ops,
+#  799|-> 	features:	PED_DISK_TYPE_PARTITION_NAME
+#  800|   };
+#  801|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/rdb.c:1133:2: warning: use of GNU old-style field designator extension
+#        clobber:                NULL,
+#        ^~~~~~~~
+# 1131|   
+# 1132|   static PedDiskOps amiga_disk_ops = {
+# 1133|-> 	clobber:		NULL,
+# 1134|   	write:			NULL_IF_DISCOVER_ONLY (amiga_write),
+# 1135|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/rdb.c:1134:2: warning: use of GNU old-style field designator extension
+#        write:                  NULL_IF_DISCOVER_ONLY (amiga_write),
+#        ^~~~~~
+# 1132|   static PedDiskOps amiga_disk_ops = {
+# 1133|   	clobber:		NULL,
+# 1134|-> 	write:			NULL_IF_DISCOVER_ONLY (amiga_write),
+# 1135|   
+# 1136|   	partition_set_name:	amiga_partition_set_name,
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/rdb.c:1136:2: warning: use of GNU old-style field designator extension
+#        partition_set_name:     amiga_partition_set_name,
+#        ^~~~~~~~~~~~~~~~~~~
+# 1134|   	write:			NULL_IF_DISCOVER_ONLY (amiga_write),
+# 1135|   
+# 1136|-> 	partition_set_name:	amiga_partition_set_name,
+# 1137|   	partition_get_name:	amiga_partition_get_name,
+# 1138|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/rdb.c:1137:2: warning: use of GNU old-style field designator extension
+#        partition_get_name:     amiga_partition_get_name,
+#        ^~~~~~~~~~~~~~~~~~~
+# 1135|   
+# 1136|   	partition_set_name:	amiga_partition_set_name,
+# 1137|-> 	partition_get_name:	amiga_partition_get_name,
+# 1138|   
+# 1139|   	get_partition_alignment: amiga_get_partition_alignment,
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/rdb.c:1139:2: warning: use of GNU old-style field designator extension
+#        get_partition_alignment: amiga_get_partition_alignment,
+#        ^~~~~~~~~~~~~~~~~~~~~~~~
+# 1137|   	partition_get_name:	amiga_partition_get_name,
+# 1138|   
+# 1139|-> 	get_partition_alignment: amiga_get_partition_alignment,
+# 1140|   
+# 1141|   	PT_op_function_initializers (amiga)
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/rdb.c:1141:2: warning: use of GNU old-style field designator extension
+#        PT_op_function_initializers (amiga)
+#        ^
+parted-3.4/libparted/labels/pt-common.h:35:48: note: expanded from macro 'PT_op_function_initializers'
+##define PT_op_function_initializers(PT_type)                    \
+#                                                                ^
+# 1139|   	get_partition_alignment: amiga_get_partition_alignment,
+# 1140|   
+# 1141|-> 	PT_op_function_initializers (amiga)
+# 1142|   };
+# 1143|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/rdb.c:1145:2: warning: use of GNU old-style field designator extension
+#        next:           NULL,
+#        ^~~~~
+# 1143|   
+# 1144|   static PedDiskType amiga_disk_type = {
+# 1145|-> 	next:		NULL,
+# 1146|   	name:		"amiga",
+# 1147|   	ops:		&amiga_disk_ops,
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/rdb.c:1146:2: warning: use of GNU old-style field designator extension
+#        name:           "amiga",
+#        ^~~~~
+# 1144|   static PedDiskType amiga_disk_type = {
+# 1145|   	next:		NULL,
+# 1146|-> 	name:		"amiga",
+# 1147|   	ops:		&amiga_disk_ops,
+# 1148|   	features:	PED_DISK_TYPE_PARTITION_NAME
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/rdb.c:1147:2: warning: use of GNU old-style field designator extension
+#        ops:            &amiga_disk_ops,
+#        ^~~~
+# 1145|   	next:		NULL,
+# 1146|   	name:		"amiga",
+# 1147|-> 	ops:		&amiga_disk_ops,
+# 1148|   	features:	PED_DISK_TYPE_PARTITION_NAME
+# 1149|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/rdb.c:1148:2: warning: use of GNU old-style field designator extension
+#        features:       PED_DISK_TYPE_PARTITION_NAME
+#        ^~~~~~~~~
+# 1146|   	name:		"amiga",
+# 1147|   	ops:		&amiga_disk_ops,
+# 1148|-> 	features:	PED_DISK_TYPE_PARTITION_NAME
+# 1149|   };
+# 1150|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/sun.c:881:2: warning: use of GNU old-style field designator extension
+#        clobber:                NULL,
+#        ^~~~~~~~
+#  879|   
+#  880|   static PedDiskOps sun_disk_ops = {
+#  881|-> 	clobber:		NULL,
+#  882|   	write:			NULL_IF_DISCOVER_ONLY (sun_write),
+#  883|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/sun.c:882:2: warning: use of GNU old-style field designator extension
+#        write:                  NULL_IF_DISCOVER_ONLY (sun_write),
+#        ^~~~~~
+#  880|   static PedDiskOps sun_disk_ops = {
+#  881|   	clobber:		NULL,
+#  882|-> 	write:			NULL_IF_DISCOVER_ONLY (sun_write),
+#  883|   
+#  884|   	get_partition_alignment: sun_get_partition_alignment,
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/sun.c:884:2: warning: use of GNU old-style field designator extension
+#        get_partition_alignment: sun_get_partition_alignment,
+#        ^~~~~~~~~~~~~~~~~~~~~~~~
+#  882|   	write:			NULL_IF_DISCOVER_ONLY (sun_write),
+#  883|   
+#  884|-> 	get_partition_alignment: sun_get_partition_alignment,
+#  885|   
+#  886|   	partition_set_name:		NULL,
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/sun.c:886:2: warning: use of GNU old-style field designator extension
+#        partition_set_name:             NULL,
+#        ^~~~~~~~~~~~~~~~~~~
+#  884|   	get_partition_alignment: sun_get_partition_alignment,
+#  885|   
+#  886|-> 	partition_set_name:		NULL,
+#  887|   	partition_get_name:		NULL,
+#  888|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/sun.c:887:2: warning: use of GNU old-style field designator extension
+#        partition_get_name:             NULL,
+#        ^~~~~~~~~~~~~~~~~~~
+#  885|   
+#  886|   	partition_set_name:		NULL,
+#  887|-> 	partition_get_name:		NULL,
+#  888|   
+#  889|   	PT_op_function_initializers (sun)
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/sun.c:889:2: warning: use of GNU old-style field designator extension
+#        PT_op_function_initializers (sun)
+#        ^
+parted-3.4/libparted/labels/pt-common.h:35:48: note: expanded from macro 'PT_op_function_initializers'
+##define PT_op_function_initializers(PT_type)                    \
+#                                                                ^
+#  887|   	partition_get_name:		NULL,
+#  888|   
+#  889|-> 	PT_op_function_initializers (sun)
+#  890|   };
+#  891|   
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/sun.c:893:2: warning: use of GNU old-style field designator extension
+#        next:           NULL,
+#        ^~~~~
+#  891|   
+#  892|   static PedDiskType sun_disk_type = {
+#  893|-> 	next:		NULL,
+#  894|   	name:		"sun",
+#  895|   	ops:		&sun_disk_ops,
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/sun.c:894:2: warning: use of GNU old-style field designator extension
+#        name:           "sun",
+#        ^~~~~
+#  892|   static PedDiskType sun_disk_type = {
+#  893|   	next:		NULL,
+#  894|-> 	name:		"sun",
+#  895|   	ops:		&sun_disk_ops,
+#  896|   	features:	0
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/sun.c:895:2: warning: use of GNU old-style field designator extension
+#        ops:            &sun_disk_ops,
+#        ^~~~
+#  893|   	next:		NULL,
+#  894|   	name:		"sun",
+#  895|-> 	ops:		&sun_disk_ops,
+#  896|   	features:	0
+#  897|   };
+
+Error: COMPILER_WARNING:
+parted-3.4/libparted/labels/sun.c:896:2: warning: use of GNU old-style field designator extension
+#        features:       0
+#        ^~~~~~~~~
+#  894|   	name:		"sun",
+#  895|   	ops:		&sun_disk_ops,
+#  896|-> 	features:	0
+#  897|   };
+#  898|   
+
+Error: COMPILER_WARNING:
+parted-3.4/parted/ui.c:327:17: warning: declaration of built-in function 'siglongjmp' requires inclusion of the header <setjmp.h>
+#  325|                           exit (EXIT_SUCCESS);
+#  326|   
+#  327|->                 siglongjmp (readline_state.jmp_state, 1);
+#  328|           }
+#  329|   }
+
+Error: COMPILER_WARNING:
+parted-3.4/parted/ui.c:327:17: warning: implicit declaration of function 'siglongjmp' is invalid in C99
+#                siglongjmp (readline_state.jmp_state, 1);
+#                ^
+#  325|                           exit (EXIT_SUCCESS);
+#  326|   
+#  327|->                 siglongjmp (readline_state.jmp_state, 1);
+#  328|           }
+#  329|   }

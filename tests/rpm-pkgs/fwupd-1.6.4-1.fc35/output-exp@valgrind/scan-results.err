@@ -1,0 +1,39 @@
+Error: VALGRIND_WARNING:
+fwupd-1.6.4/redhat-linux-build/plugins/dfu/fu-dfu-self-test: note: while executing process 10335
+fwupd-1.6.4/redhat-linux-build/../plugins/dfu/fu-dfu-device.c:531: warning[Leak_DefinitelyLost]: 2,483 (32 direct, 2,451 indirect) bytes in 1 blocks are definitely lost in loss record 452 of 456
+/usr/lib64/libgobject-2.0.so.0.7000.5: note: called from g_type_create_instance()
+/usr/lib64/libgobject-2.0.so.0.7000.5: note: called from here
+/usr/lib64/libgobject-2.0.so.0.7000.5: note: called from g_object_new_valist()
+/usr/lib64/libgobject-2.0.so.0.7000.5: note: called from g_object_new()
+fwupd-1.6.4/redhat-linux-build/../plugins/dfu/fu-dfu-device.c:531: note: called from UnknownInlinedFun()
+fwupd-1.6.4/redhat-linux-build/../plugins/dfu/fu-dfu-self-test.c:67: note: called from fu_dfu_target_dfuse_func()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from here
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from here
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_test_run_suite()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_test_run()
+fwupd-1.6.4/redhat-linux-build/../plugins/dfu/fu-dfu-self-test.c:162: note: called from main()
+#  529|   {
+#  530|   	FuDfuDevice *self;
+#  531|-> 	self = g_object_new (FU_TYPE_DFU_DEVICE,
+#  532|   			     "usb-device", usb_device,
+#  533|   			     NULL);
+
+Error: VALGRIND_WARNING:
+fwupd-1.6.4/redhat-linux-build/plugins/linux-swap/linux-swap-self-test: note: while executing process 11629
+fwupd-1.6.4/redhat-linux-build/../plugins/linux-swap/fu-linux-swap.c:96: warning[Leak_DefinitelyLost]: 32 bytes in 1 blocks are definitely lost in loss record 402 of 774
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_malloc()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_slice_alloc()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_slice_alloc0()
+/usr/lib64/libgobject-2.0.so.0.7000.5: note: called from g_type_create_instance()
+/usr/lib64/libgobject-2.0.so.0.7000.5: note: called from here
+/usr/lib64/libgobject-2.0.so.0.7000.5: note: called from g_object_new_with_properties()
+/usr/lib64/libgobject-2.0.so.0.7000.5: note: called from g_object_new()
+fwupd-1.6.4/redhat-linux-build/../plugins/linux-swap/fu-linux-swap.c:96: note: called from fu_linux_swap_new()
+fwupd-1.6.4/redhat-linux-build/../plugins/linux-swap/fu-self-test.c:32: note: called from fu_linux_swap_plain_func()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from here
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from here
+#   94|   fu_linux_swap_new (const gchar *buf, gsize bufsz, GError **error)
+#   95|   {
+#   96|-> 	FuLinuxSwap *self = g_object_new (FU_TYPE_LINUX_SWAP, NULL);
+#   97|   	g_auto(GStrv) lines = NULL;
+#   98|   

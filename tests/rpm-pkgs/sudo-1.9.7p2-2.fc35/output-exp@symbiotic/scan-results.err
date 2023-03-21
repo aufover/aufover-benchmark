@@ -1,0 +1,63 @@
+Error: SYMBIOTIC_WARNING:
+sudo-1.9.7p2/lib/util/gidlist.c:71: error: memory error: out of bound pointer
+sudo-1.9.7p2/lib/util/gidlist.c:71: note: call stack: function sudo_parse_gids_v1 (=0, =16, =0)
+sudo-1.9.7p2/lib/util/regress/parse_gids/parse_gids_test.c:77: note: call stack: function main (=2, =0)
+sudo-1.9.7p2/lib/util/gidlist.c:71: note: Additional Info: address: 65280:0
+sudo-1.9.7p2/lib/util/gidlist.c:71: note: Additional Info: pointing to: none
+sudo-1.9.7p2/lib/util/gidlist.c:64:9: note: Non-deterministic values: reallocarray: len 8 bytes, [0x0|0xff|6 times 0x0] (i64: 65280)
+sudo-1.9.7p2/lib/util/gidlist.c:64:9: note: Non-deterministic values: reallocarray (offset): len 8 bytes, [8 times 0x0] (i64: 0)
+#   69|   	ngids = 0;
+#   70|   	if (basegid != NULL)
+#   71|-> 	    gids[ngids++] = *basegid;
+#   72|   	cp = gidstr;
+#   73|   	do {
+
+Error: SYMBIOTIC_WARNING:
+sudo-1.9.7p2/lib/util/progname.c:75: error: memory error: out of bound pointer
+sudo-1.9.7p2/lib/util/progname.c:75: note: call stack: function initprogname2 (=24, =0)
+sudo-1.9.7p2/lib/util/progname.c:99: note: call stack: function initprogname (=24)
+sudo-1.9.7p2/lib/util/regress/progname/progname_test.c:42: note: call stack: function main (=2, =0)
+sudo-1.9.7p2/lib/util/progname.c:75: note: Additional Info: address: 41:1
+sudo-1.9.7p2/lib/util/progname.c:75: note: Additional Info: pointing to: object at Segment: [41] of size 1
+sudo-1.9.7p2/lib/util/progname.c:75: note: Additional Info: MO30[1] allocated at global:
+#   73|   
+#   74|       /* Check for libtool prefix and strip it if present. */
+#   75|->     if (name[0] == 'l' && name[1] == 't' && name[2] == '-' && name[3] != '\0')
+#   76|   	name += 3;
+#   77|   
+
+Error: SYMBIOTIC_WARNING:
+sudo-1.9.7p2/lib/util/regress/getgrouplist/getgrouplist_test.c:58: error: memory error: out of bound pointer
+sudo-1.9.7p2/lib/util/regress/getgrouplist/getgrouplist_test.c:58: note: call stack: function main (=2, =0)
+sudo-1.9.7p2/lib/util/regress/getgrouplist/getgrouplist_test.c:58: note: Additional Info: address: 255:20
+sudo-1.9.7p2/lib/util/regress/getgrouplist/getgrouplist_test.c:58: note: Additional Info: pointing to: none
+sudo-1.9.7p2/lib/util/regress/getgrouplist/getgrouplist_test.c:56:15: note: Non-deterministic values: getpwuid: len 8 bytes, [0xff|7 times 0x0] (i64: 255)
+sudo-1.9.7p2/lib/util/regress/getgrouplist/getgrouplist_test.c:56:15: note: Non-deterministic values: getpwuid (offset): len 8 bytes, [8 times 0x0] (i64: 0)
+#   56|       if ((pw = getpwuid(0)) == NULL)
+#   57|   	sudo_fatal_nodebug("getpwuid(0)");
+#   58|->     basegid = pw->pw_gid;
+#   59|       if ((username = strdup(pw->pw_name)) == NULL)
+#   60|   	sudo_fatal_nodebug(NULL);
+
+Error: SYMBIOTIC_WARNING:
+sudo-1.9.7p2/lib/util/strtomode.c:50: error: memory error: out of bound pointer
+sudo-1.9.7p2/lib/util/strtomode.c:50: note: call stack: function sudo_strtomode_v1 (=0, =0)
+sudo-1.9.7p2/lib/util/regress/strtofoo/strtomode_test.c:59: note: call stack: function main (=2, =0)
+sudo-1.9.7p2/lib/util/strtomode.c:50: note: Additional Info: address: 0:12370169555311111083
+sudo-1.9.7p2/lib/util/strtomode.c:50: note: Additional Info: pointing to: none
+sudo-1.9.7p2/lib/util/strtomode.c:49:12: note: Non-deterministic values: strtol: len 8 bytes, [8 times 0x0] (i64: 0)
+#   48|       errno = 0;
+#   49|       lval = strtol(cp, &ep, 8);
+#   50|->     if (ep == cp || *ep != '\0') {
+#   51|   	if (errstr != NULL)
+#   52|   	    *errstr = N_("invalid value");
+
+Error: COMPILER_WARNING (CWE-252):
+sudo-1.9.7p2/plugins/sudoers/log_client.c:181:9: warning[-Wunused-result]: ignoring return value of function declared with 'warn_unused_result' attribute
+#        SSL_clear(closure->ssl);
+#        ^~~~~~~~~ ~~~~~~~~~~~~
+#  179|           if (closure->ssl == NULL)
+#  180|               debug_return_bool(false);
+#  181|->         SSL_clear(closure->ssl);
+#  182|           debug_return_bool(true);
+#  183|       }

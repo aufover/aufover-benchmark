@@ -1,0 +1,10 @@
+Error: VALGRIND_WARNING:
+./gid_proc_test: note: while executing process 815
+fapolicyd-1.0.3/src/tests/../library/attr-sets.c:172: warning[Leak_DefinitelyLost]: 128 (32 direct, 96 indirect) bytes in 1 blocks are definitely lost in loss record 4 of 4
+fapolicyd-1.0.3/src/tests/../library/attr-sets.c:172: note: called from UnknownInlinedFun()
+fapolicyd-1.0.3/src/tests/gid_proc_test.c:41: note: called from main()
+#  170|   attr_sets_entry_t *init_standalone_set(const int type)
+#  171|   {
+#  172|-> 	attr_sets_entry_t *s = malloc(sizeof(attr_sets_entry_t));
+#  173|   	if (s) {
+#  174|   		s->name = NULL;

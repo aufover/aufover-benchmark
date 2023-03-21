@@ -1,0 +1,272 @@
+Error: COMPILER_WARNING:
+popt-1.18/src/popt.c:183:9: warning: implicit declaration of function 'secure_getenv' is invalid in C99
+#    if (getenv("POSIXLY_CORRECT") || getenv("POSIX_ME_HARDER"))
+#        ^
+popt-1.18/src/system.h:57:20: note: expanded from macro 'getenv'
+##define getenv(_s)      secure_getenv(_s)
+#                        ^
+#  181|       con->arg_strip = NULL;
+#  182|   
+#  183|->     if (getenv("POSIXLY_CORRECT") || getenv("POSIX_ME_HARDER"))
+#  184|   	con->flags |= POPT_CONTEXT_POSIXMEHARDER;
+#  185|   
+
+Error: COMPILER_WARNING:
+popt-1.18/src/popt.c:414:15: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#    if ((path = getenv("PATH")) == NULL || (path = xstrdup(path)) == NULL)
+#              ^ ~~~~~~~~~~~~~~
+#  412|   	return xstrdup(argv0);
+#  413|   
+#  414|->     if ((path = getenv("PATH")) == NULL || (path = xstrdup(path)) == NULL)
+#  415|   	return NULL;
+#  416|   
+
+Error: COMPILER_WARNING:
+popt-1.18/src/popt.c:414:17: warning: implicit declaration of function 'secure_getenv' is invalid in C99
+#    if ((path = getenv("PATH")) == NULL || (path = xstrdup(path)) == NULL)
+#                ^
+popt-1.18/src/system.h:57:20: note: expanded from macro 'getenv'
+##define getenv(_s)      secure_getenv(_s)
+#                        ^
+#  412|   	return xstrdup(argv0);
+#  413|   
+#  414|->     if ((path = getenv("PATH")) == NULL || (path = xstrdup(path)) == NULL)
+#  415|   	return NULL;
+#  416|   
+
+Error: COMPILER_WARNING:
+popt-1.18/src/popt.c:503:10: warning: implicit declaration of function 'setgid' is invalid in C99
+#    rc = setgid(getgid());
+#         ^
+#  501|    */
+#  502|   #if defined(HAVE_SETUID)
+#  503|->     rc = setgid(getgid());
+#  504|       if (rc) goto exit;
+#  505|       rc = setuid(getuid());
+
+Error: COMPILER_WARNING:
+popt-1.18/src/popt.c:505:10: warning: implicit declaration of function 'setuid' is invalid in C99
+#    rc = setuid(getuid());
+#         ^
+#  503|       rc = setgid(getgid());
+#  504|       if (rc) goto exit;
+#  505|->     rc = setuid(getuid());
+#  506|       if (rc) goto exit;
+#  507|   #elif defined (HAVE_SETREUID)
+
+Error: COMPILER_WARNING:
+popt-1.18/src/popt.c:531:10: warning: implicit declaration of function 'execvp' is invalid in C99
+#    rc = execvp(argv[0], (char *const *)argv);
+#         ^
+#  529|   #endif
+#  530|   
+#  531|->     rc = execvp(argv[0], (char *const *)argv);
+#  532|   
+#  533|       /* only reached on execvp() failure */
+
+Error: COMPILER_WARNING:
+popt-1.18/src/popt.c:912:49: warning: '_Alignof' applied to an expression is a GNU extension
+#    if (arg == NULL || (((unsigned long)arg) & (ALIGNOF(*arg)-1)))
+#                                                ^
+popt-1.18/src/popt.c:23:20: note: expanded from macro 'ALIGNOF'
+##define ALIGNOF(x) alignof(x)
+#                   ^
+/opt/divine/include/dios/include/stdalign.h:11:17: note: expanded from macro 'alignof'
+##define alignof _Alignof
+#                ^
+#  910|   {
+#  911|       /* XXX Check alignment, may fail on funky platforms. */
+#  912|->     if (arg == NULL || (((unsigned long)arg) & (ALIGNOF(*arg)-1)))
+#  913|   	return POPT_ERROR_NULLARG;
+#  914|   
+
+Error: COMPILER_WARNING:
+popt-1.18/src/popt.c:918:6: warning: implicit declaration of function 'srandom' is invalid in C99
+#            srandom((unsigned)getpid());
+#            ^
+#  916|   #if defined(HAVE_SRANDOM)
+#  917|   	if (!seed) {
+#  918|-> 	    srandom((unsigned)getpid());
+#  919|   	    srandom((unsigned)random());
+#  920|   	}
+
+Error: COMPILER_WARNING:
+popt-1.18/src/popt.c:919:24: warning: implicit declaration of function 'random' is invalid in C99
+#            srandom((unsigned)random());
+#                              ^
+#  917|   	if (!seed) {
+#  918|   	    srandom((unsigned)getpid());
+#  919|-> 	    srandom((unsigned)random());
+#  920|   	}
+#  921|   	aLongLong = (long long)(random() % (aLongLong > 0 ? aLongLong : -aLongLong));
+
+Error: COMPILER_WARNING:
+popt-1.18/src/popt.c:921:26: warning: implicit declaration of function 'random' is invalid in C99
+#        aLongLong = (long long)(random() % (aLongLong > 0 ? aLongLong : -aLongLong));
+#                                ^
+#  919|   	    srandom((unsigned)random());
+#  920|   	}
+#  921|-> 	aLongLong = (long long)(random() % (aLongLong > 0 ? aLongLong : -aLongLong));
+#  922|   	aLongLong++;
+#  923|   #else
+
+Error: COMPILER_WARNING:
+popt-1.18/src/popt.c:953:49: warning: '_Alignof' applied to an expression is a GNU extension
+#    if (arg == NULL || (((unsigned long)arg) & (ALIGNOF(*arg)-1)))
+#                                                ^
+popt-1.18/src/popt.c:23:20: note: expanded from macro 'ALIGNOF'
+##define ALIGNOF(x) alignof(x)
+#                   ^
+/opt/divine/include/dios/include/stdalign.h:11:17: note: expanded from macro 'alignof'
+##define alignof _Alignof
+#                ^
+#  951|   {
+#  952|       /* XXX Check alignment, may fail on funky platforms. */
+#  953|->     if (arg == NULL || (((unsigned long)arg) & (ALIGNOF(*arg)-1)))
+#  954|   	return POPT_ERROR_NULLARG;
+#  955|   
+
+Error: COMPILER_WARNING:
+popt-1.18/src/popt.c:959:6: warning: implicit declaration of function 'srandom' is invalid in C99
+#            srandom((unsigned)getpid());
+#            ^
+#  957|   #if defined(HAVE_SRANDOM)
+#  958|   	if (!seed) {
+#  959|-> 	    srandom((unsigned)getpid());
+#  960|   	    srandom((unsigned)random());
+#  961|   	}
+
+Error: COMPILER_WARNING:
+popt-1.18/src/popt.c:960:24: warning: implicit declaration of function 'random' is invalid in C99
+#            srandom((unsigned)random());
+#                              ^
+#  958|   	if (!seed) {
+#  959|   	    srandom((unsigned)getpid());
+#  960|-> 	    srandom((unsigned)random());
+#  961|   	}
+#  962|   	aLong = random() % (aLong > 0 ? aLong : -aLong);
+
+Error: COMPILER_WARNING:
+popt-1.18/src/popt.c:962:10: warning: implicit declaration of function 'random' is invalid in C99
+#        aLong = random() % (aLong > 0 ? aLong : -aLong);
+#                ^
+#  960|   	    srandom((unsigned)random());
+#  961|   	}
+#  962|-> 	aLong = random() % (aLong > 0 ? aLong : -aLong);
+#  963|   	aLong++;
+#  964|   #else
+
+Error: COMPILER_WARNING:
+popt-1.18/src/popt.c:986:49: warning: '_Alignof' applied to an expression is a GNU extension
+#    if (arg == NULL || (((unsigned long)arg) & (ALIGNOF(*arg)-1)))
+#                                                ^
+popt-1.18/src/popt.c:23:20: note: expanded from macro 'ALIGNOF'
+##define ALIGNOF(x) alignof(x)
+#                   ^
+/opt/divine/include/dios/include/stdalign.h:11:17: note: expanded from macro 'alignof'
+##define alignof _Alignof
+#                ^
+#  984|   {
+#  985|       /* XXX Check alignment, may fail on funky platforms. */
+#  986|->     if (arg == NULL || (((unsigned long)arg) & (ALIGNOF(*arg)-1)))
+#  987|   	return POPT_ERROR_NULLARG;
+#  988|   
+
+Error: COMPILER_WARNING:
+popt-1.18/src/popt.c:992:6: warning: implicit declaration of function 'srandom' is invalid in C99
+#            srandom((unsigned)getpid());
+#            ^
+#  990|   #if defined(HAVE_SRANDOM)
+#  991|   	if (!seed) {
+#  992|-> 	    srandom((unsigned)getpid());
+#  993|   	    srandom((unsigned)random());
+#  994|   	}
+
+Error: COMPILER_WARNING:
+popt-1.18/src/popt.c:993:24: warning: implicit declaration of function 'random' is invalid in C99
+#            srandom((unsigned)random());
+#                              ^
+#  991|   	if (!seed) {
+#  992|   	    srandom((unsigned)getpid());
+#  993|-> 	    srandom((unsigned)random());
+#  994|   	}
+#  995|   	aLong = random() % (aLong > 0 ? aLong : -aLong);
+
+Error: COMPILER_WARNING:
+popt-1.18/src/popt.c:995:10: warning: implicit declaration of function 'random' is invalid in C99
+#        aLong = random() % (aLong > 0 ? aLong : -aLong);
+#                ^
+#  993|   	    srandom((unsigned)random());
+#  994|   	}
+#  995|-> 	aLong = random() % (aLong > 0 ? aLong : -aLong);
+#  996|   	aLong++;
+#  997|   #else
+
+Error: COMPILER_WARNING:
+popt-1.18/src/popt.c:1019:49: warning: '_Alignof' applied to an expression is a GNU extension
+#    if (arg == NULL || (((unsigned long)arg) & (ALIGNOF(*arg)-1)))
+#                                                ^
+popt-1.18/src/popt.c:23:20: note: expanded from macro 'ALIGNOF'
+##define ALIGNOF(x) alignof(x)
+#                   ^
+/opt/divine/include/dios/include/stdalign.h:11:17: note: expanded from macro 'alignof'
+##define alignof _Alignof
+#                ^
+# 1017|   {
+# 1018|       /* XXX Check alignment, may fail on funky platforms. */
+# 1019|->     if (arg == NULL || (((unsigned long)arg) & (ALIGNOF(*arg)-1)))
+# 1020|   	return POPT_ERROR_NULLARG;
+# 1021|   
+
+Error: COMPILER_WARNING:
+popt-1.18/src/popt.c:1025:6: warning: implicit declaration of function 'srandom' is invalid in C99
+#            srandom((unsigned)getpid());
+#            ^
+# 1023|   #if defined(HAVE_SRANDOM)
+# 1024|   	if (!seed) {
+# 1025|-> 	    srandom((unsigned)getpid());
+# 1026|   	    srandom((unsigned)random());
+# 1027|   	}
+
+Error: COMPILER_WARNING:
+popt-1.18/src/popt.c:1026:24: warning: implicit declaration of function 'random' is invalid in C99
+#            srandom((unsigned)random());
+#                              ^
+# 1024|   	if (!seed) {
+# 1025|   	    srandom((unsigned)getpid());
+# 1026|-> 	    srandom((unsigned)random());
+# 1027|   	}
+# 1028|   	aLong = random() % (aLong > 0 ? aLong : -aLong);
+
+Error: COMPILER_WARNING:
+popt-1.18/src/popt.c:1028:10: warning: implicit declaration of function 'random' is invalid in C99
+#        aLong = random() % (aLong > 0 ? aLong : -aLong);
+#                ^
+# 1026|   	    srandom((unsigned)random());
+# 1027|   	}
+# 1028|-> 	aLong = random() % (aLong > 0 ? aLong : -aLong);
+# 1029|   	aLong++;
+# 1030|   #else
+
+Error: COMPILER_WARNING:
+popt-1.18/src/poptconfig.c:464:15: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#    if ((home = getenv("HOME"))) {
+#              ^ ~~~~~~~~~~~~~~
+#  462|   #endif
+#  463|   
+#  464|->     if ((home = getenv("HOME"))) {
+#  465|   	char * fn = malloc(strlen(home) + 20);
+#  466|   	if (fn != NULL) {
+
+Error: COMPILER_WARNING:
+popt-1.18/src/poptconfig.c:464:17: warning: implicit declaration of function 'secure_getenv' is invalid in C99
+#    if ((home = getenv("HOME"))) {
+#                ^
+popt-1.18/src/system.h:57:20: note: expanded from macro 'getenv'
+##define getenv(_s)      secure_getenv(_s)
+#                        ^
+#  462|   #endif
+#  463|   
+#  464|->     if ((home = getenv("HOME"))) {
+#  465|   	char * fn = malloc(strlen(home) + 20);
+#  466|   	if (fn != NULL) {

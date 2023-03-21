@@ -1,0 +1,3452 @@
+Error: VALGRIND_WARNING:
+dbus-glib-0.112/dbus/.libs/dbus-binding-tool: note: while executing process 1181 with arguments: --mode=glib-server --prefix=test ./data/nested-introspect.xml
+dbus-glib-0.112/dbus/dbus-binding-tool-glib.c:307: warning[Leak_DefinitelyLost]: 128 bytes in 1 blocks are definitely lost in loss record 256 of 273
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_realloc()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_string_sized_new()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_string_new()
+dbus-glib-0.112/dbus/dbus-binding-tool-glib.c:307: note: called from UnknownInlinedFun()
+dbus-glib-0.112/dbus/dbus-binding-tool-glib.c:592: note: called from generate_glue()
+dbus-glib-0.112/dbus/dbus-binding-tool-glib.c:411: note: called from UnknownInlinedFun()
+dbus-glib-0.112/dbus/dbus-binding-tool-glib.c:531: note: called from generate_glue()
+dbus-glib-0.112/dbus/dbus-binding-tool-glib.c:411: note: called from UnknownInlinedFun()
+dbus-glib-0.112/dbus/dbus-binding-tool-glib.c:487: note: called from UnknownInlinedFun()
+dbus-glib-0.112/dbus/dbus-binding-tool-glib.c:923: note: called from dbus_binding_tool_output_glib_server()
+dbus-glib-0.112/dbus/dbus-glib-tool.c:421: note: called from main()
+#  305|       return NULL;
+#  306|   
+#  307|->   ret = g_string_new (MARSHAL_PREFIX);
+#  308|     g_string_append (ret, prefix);
+#  309|     g_string_append_c (ret, '_');
+
+Error: VALGRIND_WARNING:
+dbus-glib-0.112/dbus/.libs/dbus-binding-tool: note: while executing process 1181 with arguments: --mode=glib-server --prefix=test ./data/nested-introspect.xml
+dbus-glib-0.112/dbus/dbus-binding-tool-glib.c:889: warning[Leak_DefinitelyLost]: 32 bytes in 1 blocks are definitely lost in loss record 128 of 273
+/usr/lib64/libc.so.6: note: called from __vasprintf_internal()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_vasprintf()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_strdup_vprintf()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_strdup_printf()
+dbus-glib-0.112/dbus/dbus-binding-tool-glib.c:889: note: called from dbus_binding_tool_output_glib_server()
+dbus-glib-0.112/dbus/dbus-glib-tool.c:421: note: called from main()
+#  887|     g_ptr_array_add (argv, "--body");
+#  888|     g_ptr_array_add (argv, "--skip-source");
+#  889|->   g_ptr_array_add (argv, g_strdup_printf ("--prefix=%s%s", MARSHAL_PREFIX, prefix));
+#  890|     g_ptr_array_add (argv, tempfile_name);
+#  891|     g_ptr_array_add (argv, NULL);
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-binding-tool-glib.c:1146:3: warning[-Wdeprecated-declarations]: 'g_value_array_get_type' is deprecated: Use 'GArray' instead
+# 1146 |   MAP_KNOWN(G_TYPE_VALUE_ARRAY);
+#      |   ^~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-binding-tool-glib.c:28: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:60:17: note: declared here
+#   60 | GType           g_value_array_get_type       (void) G_GNUC_CONST;
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~
+# 1144|     MAP_KNOWN(G_TYPE_VALUE);
+# 1145|     MAP_KNOWN(G_TYPE_STRV);
+# 1146|->   MAP_KNOWN(G_TYPE_VALUE_ARRAY);
+# 1147|     MAP_KNOWN(DBUS_TYPE_G_PROXY);
+# 1148|     MAP_KNOWN(DBUS_TYPE_G_OBJECT_PATH);
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-binding-tool-glib.c: scope_hint: In function 'dbus_g_type_get_lookup_function'
+dbus-glib-0.112/dbus/dbus-binding-tool-glib.c:1146:13: warning: Deprecated pre-processor symbol: replace with "(g_array_get_type ())"
+# 1146 |   MAP_KNOWN(G_TYPE_VALUE_ARRAY);
+#      |             ^~~~~~~~~~~~~~~~~~~~                                                     
+# 1144|     MAP_KNOWN(G_TYPE_VALUE);
+# 1145|     MAP_KNOWN(G_TYPE_STRV);
+# 1146|->   MAP_KNOWN(G_TYPE_VALUE_ARRAY);
+# 1147|     MAP_KNOWN(DBUS_TYPE_G_PROXY);
+# 1148|     MAP_KNOWN(DBUS_TYPE_G_OBJECT_PATH);
+
+Error: VALGRIND_WARNING:
+dbus-glib-0.112/dbus/.libs/dbus-binding-tool: note: while executing process 1181 with arguments: --mode=glib-server --prefix=test ./data/nested-introspect.xml
+dbus-glib-0.112/dbus/dbus-gidl.c:268: warning[Leak_DefinitelyLost]: 549 (32 direct, 517 indirect) bytes in 1 blocks are definitely lost in loss record 270 of 273
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_malloc0()
+dbus-glib-0.112/dbus/dbus-gidl.c:268: note: called from UnknownInlinedFun()
+dbus-glib-0.112/dbus/dbus-gparser.c:303: note: called from UnknownInlinedFun()
+dbus-glib-0.112/dbus/dbus-gparser.c:790: note: called from UnknownInlinedFun()
+dbus-glib-0.112/dbus/dbus-gloader-expat.c:122: note: called from UnknownInlinedFun()
+dbus-glib-0.112/dbus/dbus-gloader-expat.c:86: note: called from expat_StartElementHandler()
+/usr/lib64/libexpat.so.1.8.10: note: called from here
+/usr/lib64/libexpat.so.1.8.10: note: called from here
+/usr/lib64/libexpat.so.1.8.10: note: called from here
+/usr/lib64/libexpat.so.1.8.10: note: called from XML_ParseBuffer()
+dbus-glib-0.112/dbus/dbus-gloader-expat.c:222: note: called from UnknownInlinedFun()
+dbus-glib-0.112/dbus/dbus-gloader-expat.c:183: note: called from UnknownInlinedFun()
+dbus-glib-0.112/dbus/dbus-glib-tool.c:406: note: called from main()
+#  266|     /* name can be NULL */
+#  267|     
+#  268|->   info = g_new0 (NodeInfo, 1);
+#  269|     info->base.refcount = 1;
+#  270|     info->base.name = g_strdup (name);
+
+Error: VALGRIND_WARNING:
+dbus-glib-0.112/dbus/.libs/dbus-binding-tool: note: while executing process 1181 with arguments: --mode=glib-server --prefix=test ./data/nested-introspect.xml
+dbus-glib-0.112/dbus/dbus-glib-tool.c:340: warning[Leak_DefinitelyLost]: 16 bytes in 1 blocks are definitely lost in loss record 113 of 273
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_malloc()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_slice_alloc()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_slist_prepend()
+dbus-glib-0.112/dbus/dbus-glib-tool.c:340: note: called from main()
+#  338|           }
+#  339|         else
+#  340|->         files = g_slist_prepend (files, (char*) arg);
+#  341|         
+#  342|         ++i;
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gobject.c:105:1: warning[-Wdeprecated-declarations]: 'GStaticRWLock' is deprecated: Use 'GRWLock' instead
+#  105 | static GStaticRWLock globals_lock = G_STATIC_RW_LOCK_INIT;
+#      | ^~~~~~
+/usr/include/glib-2.0/glib.h:112: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gbinding.h:28: included_from: Included from here.
+/usr/include/glib-2.0/glib-object.h:22: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluecollector.h:33: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gobject.c:28: included_from: Included from here.
+/usr/include/glib-2.0/glib/deprecated/gthread.h:198:8: note: declared here
+#  198 | struct _GStaticRWLock
+#      |        ^~~~~~~~~~~~~~
+#  103|   } DBusGErrorInfo;
+#  104|   
+#  105|-> static GStaticRWLock globals_lock = G_STATIC_RW_LOCK_INIT;
+#  106|   /* See comments in check_property_access */
+#  107|   static gboolean disable_legacy_property_access = FALSE;
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gobject.c:105:13: warning: Deprecated pre-processor symbol: replace with "g_mutex_init"
+#  105 | static GStaticRWLock globals_lock = G_STATIC_RW_LOCK_INIT;
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                  
+#  103|   } DBusGErrorInfo;
+#  104|   
+#  105|-> static GStaticRWLock globals_lock = G_STATIC_RW_LOCK_INIT;
+#  106|   /* See comments in check_property_access */
+#  107|   static gboolean disable_legacy_property_access = FALSE;
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gobject.c:105:13: warning: Deprecated pre-processor symbol: replace with "g_rw_lock_init"
+#  105 | static GStaticRWLock globals_lock = G_STATIC_RW_LOCK_INIT;
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                    
+#  103|   } DBusGErrorInfo;
+#  104|   
+#  105|-> static GStaticRWLock globals_lock = G_STATIC_RW_LOCK_INIT;
+#  106|   /* See comments in check_property_access */
+#  107|   static gboolean disable_legacy_property_access = FALSE;
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gobject.c: scope_hint: In function 'gerror_domaincode_to_dbus_error_name'
+dbus-glib-0.112/dbus/dbus-gobject.c:1480:7: warning[-Wdeprecated-declarations]: 'g_static_rw_lock_reader_lock' is deprecated: Use 'g_rw_lock_reader_lock' instead
+# 1480 |       g_static_rw_lock_reader_lock (&globals_lock);
+#      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib.h:112: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gbinding.h:28: included_from: Included from here.
+/usr/include/glib-2.0/glib-object.h:22: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluecollector.h:33: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gobject.c:28: included_from: Included from here.
+/usr/include/glib-2.0/glib/deprecated/gthread.h:216:11: note: declared here
+#  216 | void      g_static_rw_lock_reader_lock    (GStaticRWLock *lock);
+#      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1478|         DBusGErrorInfo *info;
+# 1479|   
+# 1480|->       g_static_rw_lock_reader_lock (&globals_lock);
+# 1481|   
+# 1482|         if (error_metadata != NULL)
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gobject.c:1487:7: warning[-Wdeprecated-declarations]: 'g_static_rw_lock_reader_unlock' is deprecated: Use 'g_rw_lock_reader_unlock' instead
+# 1487 |       g_static_rw_lock_reader_unlock (&globals_lock);
+#      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib.h:112: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gbinding.h:28: included_from: Included from here.
+/usr/include/glib-2.0/glib-object.h:22: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluecollector.h:33: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gobject.c:28: included_from: Included from here.
+/usr/include/glib-2.0/glib/deprecated/gthread.h:222:11: note: declared here
+#  222 | void      g_static_rw_lock_reader_unlock  (GStaticRWLock *lock);
+#      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1485|   	info = NULL;
+# 1486|   
+# 1487|->       g_static_rw_lock_reader_unlock (&globals_lock);
+# 1488|   
+# 1489|         if (info)
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gobject.c: scope_hint: In function 'invoke_object_method'
+dbus-glib-0.112/dbus/dbus-gobject.c:1803:3: warning[-Wdeprecated-declarations]: 'g_value_array_prepend' is deprecated: Use 'GArray' instead
+# 1803 |   g_value_array_prepend (value_array, NULL);
+#      |   ^~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluecollector.h:33: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gobject.c:28: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:76:17: note: declared here
+#   76 | GValueArray*    g_value_array_prepend        (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~~
+# 1801|   
+# 1802|     /* Prepend object as first argument */ 
+# 1803|->   g_value_array_prepend (value_array, NULL);
+# 1804|     g_value_init (g_value_array_get_nth (value_array, 0), G_TYPE_OBJECT);
+# 1805|     g_value_set_object (g_value_array_get_nth (value_array, 0), object);
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gobject.c:1804:3: warning[-Wdeprecated-declarations]: 'g_value_array_get_nth' is deprecated: Use 'GArray' instead
+# 1804 |   g_value_init (g_value_array_get_nth (value_array, 0), G_TYPE_OBJECT);
+#      |   ^~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluecollector.h:33: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gobject.c:28: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:63:17: note: declared here
+#   63 | GValue*         g_value_array_get_nth        (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~~
+# 1802|     /* Prepend object as first argument */ 
+# 1803|     g_value_array_prepend (value_array, NULL);
+# 1804|->   g_value_init (g_value_array_get_nth (value_array, 0), G_TYPE_OBJECT);
+# 1805|     g_value_set_object (g_value_array_get_nth (value_array, 0), object);
+# 1806|     
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gobject.c:1805:3: warning[-Wdeprecated-declarations]: 'g_value_array_get_nth' is deprecated: Use 'GArray' instead
+# 1805 |   g_value_set_object (g_value_array_get_nth (value_array, 0), object);
+#      |   ^~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluecollector.h:33: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gobject.c:28: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:63:17: note: declared here
+#   63 | GValue*         g_value_array_get_nth        (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~~
+# 1803|     g_value_array_prepend (value_array, NULL);
+# 1804|     g_value_init (g_value_array_get_nth (value_array, 0), G_TYPE_OBJECT);
+# 1805|->   g_value_set_object (g_value_array_get_nth (value_array, 0), object);
+# 1806|     
+# 1807|     if (is_async)
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gobject.c:1819:7: warning[-Wdeprecated-declarations]: 'g_value_array_append' is deprecated: Use 'GArray' instead
+# 1819 |       g_value_array_append (value_array, &context_value);
+#      |       ^~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluecollector.h:33: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gobject.c:28: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:80:17: note: declared here
+#   80 | GValueArray*    g_value_array_append         (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~
+# 1817|         g_value_init (&context_value, G_TYPE_POINTER);
+# 1818|         g_value_set_pointer (&context_value, context);
+# 1819|->       g_value_array_append (value_array, &context_value);
+# 1820|       }
+# 1821|     else
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gobject.c:1895:7: warning[-Wdeprecated-declarations]: 'g_value_array_new' is deprecated: Use 'GArray' instead
+# 1895 |       out_param_gvalues = g_value_array_new (out_param_count);
+#      |       ^~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluecollector.h:33: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gobject.c:28: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:67:17: note: declared here
+#   67 | GValueArray*    g_value_array_new            (guint              n_prealloced);
+#      |                 ^~~~~~~~~~~~~~~~~
+# 1893|          * types.
+# 1894|          */
+# 1895|->       out_param_gvalues = g_value_array_new (out_param_count);
+# 1896|         out_param_pos = 0;
+# 1897|         out_param_gvalue_pos = 0;
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gobject.c:1932:15: warning[-Wdeprecated-declarations]: 'g_value_array_append' is deprecated: Use 'GArray' instead
+# 1932 |               g_value_array_append (out_param_gvalues, NULL);
+#      |               ^~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluecollector.h:33: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gobject.c:28: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:80:17: note: declared here
+#   80 | GValueArray*    g_value_array_append         (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~
+# 1930|   	  else
+# 1931|   	    {
+# 1932|-> 	      g_value_array_append (out_param_gvalues, NULL);
+# 1933|   	      g_value_set_pointer (&value, out_param_gvalues->values + out_param_gvalue_pos);
+# 1934|   	      out_param_gvalue_pos++;
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gobject.c:1936:11: warning[-Wdeprecated-declarations]: 'g_value_array_append' is deprecated: Use 'GArray' instead
+# 1936 |           g_value_array_append (value_array, &value);
+#      |           ^~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluecollector.h:33: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gobject.c:28: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:80:17: note: declared here
+#   80 | GValueArray*    g_value_array_append         (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~
+# 1934|   	      out_param_gvalue_pos++;
+# 1935|   	    }
+# 1936|-> 	  g_value_array_append (value_array, &value);
+# 1937|   	}
+# 1938|       }
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gobject.c:1944:7: warning[-Wdeprecated-declarations]: 'g_value_array_append' is deprecated: Use 'GArray' instead
+# 1944 |       g_value_array_append (value_array, NULL);
+#      |       ^~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluecollector.h:33: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gobject.c:28: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:80:17: note: declared here
+#   80 | GValueArray*    g_value_array_append         (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~
+# 1942|       {
+# 1943|         g_assert (have_retval);
+# 1944|->       g_value_array_append (value_array, NULL);
+# 1945|         g_value_init (g_value_array_get_nth (value_array, value_array->n_values - 1), G_TYPE_POINTER);
+# 1946|         g_value_set_pointer (g_value_array_get_nth (value_array, value_array->n_values - 1), &gerror);
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gobject.c:1945:7: warning[-Wdeprecated-declarations]: 'g_value_array_get_nth' is deprecated: Use 'GArray' instead
+# 1945 |       g_value_init (g_value_array_get_nth (value_array, value_array->n_values - 1), G_TYPE_POINTER);
+#      |       ^~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluecollector.h:33: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gobject.c:28: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:63:17: note: declared here
+#   63 | GValue*         g_value_array_get_nth        (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~~
+# 1943|         g_assert (have_retval);
+# 1944|         g_value_array_append (value_array, NULL);
+# 1945|->       g_value_init (g_value_array_get_nth (value_array, value_array->n_values - 1), G_TYPE_POINTER);
+# 1946|         g_value_set_pointer (g_value_array_get_nth (value_array, value_array->n_values - 1), &gerror);
+# 1947|       }
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gobject.c:1946:7: warning[-Wdeprecated-declarations]: 'g_value_array_get_nth' is deprecated: Use 'GArray' instead
+# 1946 |       g_value_set_pointer (g_value_array_get_nth (value_array, value_array->n_values - 1), &gerror);
+#      |       ^~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluecollector.h:33: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gobject.c:28: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:63:17: note: declared here
+#   63 | GValue*         g_value_array_get_nth        (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~~
+# 1944|         g_value_array_append (value_array, NULL);
+# 1945|         g_value_init (g_value_array_get_nth (value_array, value_array->n_values - 1), G_TYPE_POINTER);
+# 1946|->       g_value_set_pointer (g_value_array_get_nth (value_array, value_array->n_values - 1), &gerror);
+# 1947|       }
+# 1948|     
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gobject.c:2087:7: warning[-Wdeprecated-declarations]: 'g_value_array_free' is deprecated: Use 'GArray' instead
+# 2087 |       g_value_array_free (out_param_gvalues);
+#      |       ^~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluecollector.h:33: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gobject.c:28: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:70:17: note: declared here
+#   70 | void            g_value_array_free           (GValueArray       *value_array);
+#      |                 ^~~~~~~~~~~~~~~~~~
+# 2085|       {
+# 2086|         g_array_free (out_param_values, TRUE);
+# 2087|->       g_value_array_free (out_param_gvalues);
+# 2088|       }
+# 2089|   
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gobject.c:2093:3: warning[-Wdeprecated-declarations]: 'g_value_array_free' is deprecated: Use 'GArray' instead
+# 2093 |   g_value_array_free (value_array);
+#      |   ^~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluecollector.h:33: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gobject.c:28: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:70:17: note: declared here
+#   70 | void            g_value_array_free           (GValueArray       *value_array);
+#      |                 ^~~~~~~~~~~~~~~~~~
+# 2091|       g_clear_error (&gerror);
+# 2092|   
+# 2093|->   g_value_array_free (value_array);
+# 2094|     return DBUS_HANDLER_RESULT_HANDLED;
+# 2095|   }
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gobject.c: scope_hint: In function 'dbus_g_error_domain_register'
+dbus-glib-0.112/dbus/dbus-gobject.c:2753:3: warning[-Wdeprecated-declarations]: 'g_static_rw_lock_writer_lock' is deprecated: Use 'g_rw_lock_writer_lock' instead
+# 2753 |   g_static_rw_lock_writer_lock (&globals_lock);
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib.h:112: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gbinding.h:28: included_from: Included from here.
+/usr/include/glib-2.0/glib-object.h:22: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluecollector.h:33: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gobject.c:28: included_from: Included from here.
+/usr/include/glib-2.0/glib/deprecated/gthread.h:225:11: note: declared here
+#  225 | void      g_static_rw_lock_writer_lock    (GStaticRWLock *lock);
+#      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2751|     g_return_if_fail (G_TYPE_FUNDAMENTAL (code_enum) == G_TYPE_ENUM);
+# 2752|   
+# 2753|->   g_static_rw_lock_writer_lock (&globals_lock);
+# 2754|   
+# 2755|     if (error_metadata == NULL)
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gobject.c:2777:3: warning[-Wdeprecated-declarations]: 'g_static_rw_lock_writer_unlock' is deprecated: Use 'g_rw_lock_writer_unlock' instead
+# 2777 |   g_static_rw_lock_writer_unlock (&globals_lock);
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib.h:112: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gbinding.h:28: included_from: Included from here.
+/usr/include/glib-2.0/glib-object.h:22: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluecollector.h:33: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gobject.c:28: included_from: Included from here.
+/usr/include/glib-2.0/glib/deprecated/gthread.h:231:11: note: declared here
+#  231 | void      g_static_rw_lock_writer_unlock  (GStaticRWLock *lock);
+#      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 2775|       }
+# 2776|   
+# 2777|->   g_static_rw_lock_writer_unlock (&globals_lock);
+# 2778|   }
+# 2779|   
+
+Error: VALGRIND_WARNING:
+dbus-glib-0.112/dbus/.libs/dbus-binding-tool: note: while executing process 2729 with arguments: --prefix=test_invalid --mode=glib-server --output=invalid-glue.h ./invalid-nested-annotation.xml
+dbus-glib-0.112/dbus/dbus-gparser.c:311: warning[Leak_DefinitelyLost]: 512 (16 direct, 496 indirect) bytes in 1 blocks are definitely lost in loss record 248 of 251
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_malloc()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_slice_alloc()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_slist_prepend()
+dbus-glib-0.112/dbus/dbus-gparser.c:311: note: called from UnknownInlinedFun()
+dbus-glib-0.112/dbus/dbus-gparser.c:790: note: called from UnknownInlinedFun()
+dbus-glib-0.112/dbus/dbus-gloader-expat.c:122: note: called from UnknownInlinedFun()
+dbus-glib-0.112/dbus/dbus-gloader-expat.c:86: note: called from expat_StartElementHandler()
+/usr/lib64/libexpat.so.1.8.10: note: called from here
+/usr/lib64/libexpat.so.1.8.10: note: called from here
+/usr/lib64/libexpat.so.1.8.10: note: called from here
+/usr/lib64/libexpat.so.1.8.10: note: called from XML_ParseBuffer()
+dbus-glib-0.112/dbus/dbus-gloader-expat.c:222: note: called from UnknownInlinedFun()
+dbus-glib-0.112/dbus/dbus-gloader-expat.c:183: note: called from UnknownInlinedFun()
+dbus-glib-0.112/dbus/dbus-glib-tool.c:406: note: called from main()
+#  309|       }
+#  310|     
+#  311|->   parser->node_stack = g_slist_prepend (parser->node_stack,
+#  312|                                           node);
+#  313|     
+
+Error: VALGRIND_WARNING:
+dbus-glib-0.112/dbus/.libs/dbus-binding-tool: note: while executing process 2499 with arguments: --prefix=test_invalid --mode=glib-server --output=invalid-glue.h ./invalid-annotated-node.xml
+dbus-glib-0.112/dbus/dbus-gparser.c:311: warning[Leak_DefinitelyLost]: 91 (16 direct, 75 indirect) bytes in 1 blocks are definitely lost in loss record 194 of 242
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_malloc()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_slice_alloc()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_slist_prepend()
+dbus-glib-0.112/dbus/dbus-gparser.c:311: note: called from UnknownInlinedFun()
+dbus-glib-0.112/dbus/dbus-gparser.c:790: note: called from UnknownInlinedFun()
+dbus-glib-0.112/dbus/dbus-gloader-expat.c:122: note: called from UnknownInlinedFun()
+dbus-glib-0.112/dbus/dbus-gloader-expat.c:86: note: called from expat_StartElementHandler()
+/usr/lib64/libexpat.so.1.8.10: note: called from here
+/usr/lib64/libexpat.so.1.8.10: note: called from here
+/usr/lib64/libexpat.so.1.8.10: note: called from here
+/usr/lib64/libexpat.so.1.8.10: note: called from XML_ParseBuffer()
+dbus-glib-0.112/dbus/dbus-gloader-expat.c:222: note: called from UnknownInlinedFun()
+dbus-glib-0.112/dbus/dbus-gloader-expat.c:183: note: called from UnknownInlinedFun()
+dbus-glib-0.112/dbus/dbus-glib-tool.c:406: note: called from main()
+#  309|       }
+#  310|     
+#  311|->   parser->node_stack = g_slist_prepend (parser->node_stack,
+#  312|                                           node);
+#  313|     
+
+Error: VALGRIND_WARNING:
+dbus-glib-0.112/dbus/.libs/dbus-binding-tool: note: while executing process 2499 with arguments: --prefix=test_invalid --mode=glib-server --output=invalid-glue.h ./invalid-annotated-node.xml
+dbus-glib-0.112/dbus/dbus-gparser.c:733: warning[Leak_DefinitelyLost]: 52 (16 direct, 36 indirect) bytes in 1 blocks are definitely lost in loss record 128 of 242
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_malloc()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_slice_alloc()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_slice_alloc0()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from here
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_error_new_valist()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_set_error()
+dbus-glib-0.112/dbus/dbus-gparser.c:733: note: called from UnknownInlinedFun()
+dbus-glib-0.112/dbus/dbus-gparser.c:826: note: called from UnknownInlinedFun()
+dbus-glib-0.112/dbus/dbus-gloader-expat.c:122: note: called from UnknownInlinedFun()
+dbus-glib-0.112/dbus/dbus-gloader-expat.c:86: note: called from expat_StartElementHandler()
+/usr/lib64/libexpat.so.1.8.10: note: called from here
+/usr/lib64/libexpat.so.1.8.10: note: called from here
+/usr/lib64/libexpat.so.1.8.10: note: called from here
+/usr/lib64/libexpat.so.1.8.10: note: called from XML_ParseBuffer()
+#  731|         parser->in_annotation)
+#  732|       {
+#  733|->       g_set_error (error, G_MARKUP_ERROR,
+#  734|                      G_MARKUP_ERROR_PARSE,
+#  735|                      "Can't put <%s> element here",
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:140:3: warning[-Wdeprecated-declarations]: 'GStaticMutex' is deprecated: Use 'GMutex' instead
+#  140 |   GStaticMutex lock; /**< Thread lock */
+#      |   ^~~~~~~~~~~~
+/usr/include/glib-2.0/glib.h:112: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gbinding.h:28: included_from: Included from here.
+/usr/include/glib-2.0/glib-object.h:22: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/glib/deprecated/gthread.h:133:9: note: declared here
+#  133 | typedef struct
+#      |         ^~~~~~
+#  138|   struct _DBusGProxyManager
+#  139|   {
+#  140|->   GStaticMutex lock; /**< Thread lock */
+#  141|     int refcount;      /**< Reference count */
+#  142|     DBusConnection *connection; /**< Connection we're associated with. */
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:179:1: warning[-Wdeprecated-declarations]: 'GStaticMutex' is deprecated: Use 'GMutex' instead
+#  179 | static GStaticMutex connection_g_proxy_lock = G_STATIC_MUTEX_INIT;
+#      | ^~~~~~
+/usr/include/glib-2.0/glib.h:112: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gbinding.h:28: included_from: Included from here.
+/usr/include/glib-2.0/glib-object.h:22: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/glib/deprecated/gthread.h:133:9: note: declared here
+#  133 | typedef struct
+#      |         ^~~~~~
+#  177|   
+#  178|   /* Lock controlling get/set manager as data on each connection */
+#  179|-> static GStaticMutex connection_g_proxy_lock = G_STATIC_MUTEX_INIT;
+#  180|   
+#  181|   static DBusGProxyManager*
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gproxy.c:179:13: warning: Deprecated pre-processor symbol: replace with "g_mutex_init"
+#  179 | static GStaticMutex connection_g_proxy_lock = G_STATIC_MUTEX_INIT;
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~          
+#  177|   
+#  178|   /* Lock controlling get/set manager as data on each connection */
+#  179|-> static GStaticMutex connection_g_proxy_lock = G_STATIC_MUTEX_INIT;
+#  180|   
+#  181|   static DBusGProxyManager*
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:190:3: warning[-Wdeprecated-declarations]: 'g_static_mutex_get_mutex_impl' is deprecated: Use 'GMutex' instead
+#  190 |   g_static_mutex_lock (&connection_g_proxy_lock);
+#      |   ^~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib.h:112: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gbinding.h:28: included_from: Included from here.
+/usr/include/glib-2.0/glib-object.h:22: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+#  154 | GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  188|       g_error ("out of memory");
+#  189|     
+#  190|->   g_static_mutex_lock (&connection_g_proxy_lock);
+#  191|     
+#  192|     manager = dbus_connection_get_data (connection, g_proxy_manager_slot);
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gproxy.c: scope_hint: In function 'dbus_g_proxy_manager_get'
+dbus-glib-0.112/dbus/dbus-gproxy.c:190:13: warning: Deprecated pre-processor symbol
+#  190 |   g_static_mutex_lock (&connection_g_proxy_lock);
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  188|       g_error ("out of memory");
+#  189|     
+#  190|->   g_static_mutex_lock (&connection_g_proxy_lock);
+#  191|     
+#  192|     manager = dbus_connection_get_data (connection, g_proxy_manager_slot);
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gproxy.c:190:13: warning: Deprecated pre-processor symbol: replace with "g_mutex_lock"
+#  190 |   g_static_mutex_lock (&connection_g_proxy_lock);
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                           
+#  188|       g_error ("out of memory");
+#  189|     
+#  190|->   g_static_mutex_lock (&connection_g_proxy_lock);
+#  191|     
+#  192|     manager = dbus_connection_get_data (connection, g_proxy_manager_slot);
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:197:7: warning[-Wdeprecated-declarations]: 'g_static_mutex_get_mutex_impl' is deprecated: Use 'GMutex' instead
+#  197 |       g_static_mutex_unlock (&connection_g_proxy_lock);
+#      |       ^~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib.h:112: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gbinding.h:28: included_from: Included from here.
+/usr/include/glib-2.0/glib-object.h:22: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+#  154 | GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  195|         dbus_connection_free_data_slot (&g_proxy_manager_slot);
+#  196|         dbus_g_proxy_manager_ref (manager);
+#  197|->       g_static_mutex_unlock (&connection_g_proxy_lock);
+#  198|         return manager;
+#  199|       }
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gproxy.c:197:13: warning: Deprecated pre-processor symbol
+#  197 |       g_static_mutex_unlock (&connection_g_proxy_lock);
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  195|         dbus_connection_free_data_slot (&g_proxy_manager_slot);
+#  196|         dbus_g_proxy_manager_ref (manager);
+#  197|->       g_static_mutex_unlock (&connection_g_proxy_lock);
+#  198|         return manager;
+#  199|       }
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gproxy.c:197:13: warning: Deprecated pre-processor symbol: replace with "g_mutex_unlock"
+#  197 |       g_static_mutex_unlock (&connection_g_proxy_lock);
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                       
+#  195|         dbus_connection_free_data_slot (&g_proxy_manager_slot);
+#  196|         dbus_g_proxy_manager_ref (manager);
+#  197|->       g_static_mutex_unlock (&connection_g_proxy_lock);
+#  198|         return manager;
+#  199|       }
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:206:3: warning[-Wdeprecated-declarations]: 'g_static_mutex_init' is deprecated: Use 'g_mutex_init' instead
+#  206 |   g_static_mutex_init (&manager->lock);
+#      |   ^~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib.h:112: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gbinding.h:28: included_from: Included from here.
+/usr/include/glib-2.0/glib-object.h:22: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/glib/deprecated/gthread.h:150:9: note: declared here
+#  150 | void    g_static_mutex_init           (GStaticMutex *mutex);
+#      |         ^~~~~~~~~~~~~~~~~~~
+#  204|     manager->connection = connection;
+#  205|   
+#  206|->   g_static_mutex_init (&manager->lock);
+#  207|   
+#  208|     /* Proxy managers keep the connection alive, which means that
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:220:3: warning[-Wdeprecated-declarations]: 'g_static_mutex_get_mutex_impl' is deprecated: Use 'GMutex' instead
+#  220 |   g_static_mutex_unlock (&connection_g_proxy_lock);
+#      |   ^~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib.h:112: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gbinding.h:28: included_from: Included from here.
+/usr/include/glib-2.0/glib-object.h:22: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+#  154 | GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  218|                                 manager, NULL);
+#  219|     
+#  220|->   g_static_mutex_unlock (&connection_g_proxy_lock);
+#  221|     
+#  222|     return manager;
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gproxy.c:220:13: warning: Deprecated pre-processor symbol
+#  220 |   g_static_mutex_unlock (&connection_g_proxy_lock);
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  218|                                 manager, NULL);
+#  219|     
+#  220|->   g_static_mutex_unlock (&connection_g_proxy_lock);
+#  221|     
+#  222|     return manager;
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gproxy.c:220:13: warning: Deprecated pre-processor symbol: replace with "g_mutex_unlock"
+#  220 |   g_static_mutex_unlock (&connection_g_proxy_lock);
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                           
+#  218|                                 manager, NULL);
+#  219|     
+#  220|->   g_static_mutex_unlock (&connection_g_proxy_lock);
+#  221|     
+#  222|     return manager;
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:231:3: warning[-Wdeprecated-declarations]: 'g_static_mutex_get_mutex_impl' is deprecated: Use 'GMutex' instead
+#  231 |   LOCK_MANAGER (manager);
+#      |   ^~~~~~~~~~~~
+/usr/include/glib-2.0/glib.h:112: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gbinding.h:28: included_from: Included from here.
+/usr/include/glib-2.0/glib-object.h:22: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+#  154 | GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  229|     g_assert (manager->refcount > 0);
+#  230|   
+#  231|->   LOCK_MANAGER (manager);
+#  232|     
+#  233|     manager->refcount += 1;
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gproxy.c: scope_hint: In function 'dbus_g_proxy_manager_ref'
+dbus-glib-0.112/dbus/dbus-gproxy.c:231:13: warning: Deprecated pre-processor symbol
+#  231 |   LOCK_MANAGER (manager);
+#      |             ^~~~~~~~~~~~~                    
+#  229|     g_assert (manager->refcount > 0);
+#  230|   
+#  231|->   LOCK_MANAGER (manager);
+#  232|     
+#  233|     manager->refcount += 1;
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gproxy.c:231:13: warning: Deprecated pre-processor symbol: replace with "g_mutex_lock"
+#  231 |   LOCK_MANAGER (manager);
+#      |             ^~~~~~~~~~~~~                                                   
+#  229|     g_assert (manager->refcount > 0);
+#  230|   
+#  231|->   LOCK_MANAGER (manager);
+#  232|     
+#  233|     manager->refcount += 1;
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:235:3: warning[-Wdeprecated-declarations]: 'g_static_mutex_get_mutex_impl' is deprecated: Use 'GMutex' instead
+#  235 |   UNLOCK_MANAGER (manager);
+#      |   ^~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib.h:112: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gbinding.h:28: included_from: Included from here.
+/usr/include/glib-2.0/glib-object.h:22: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+#  154 | GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  233|     manager->refcount += 1;
+#  234|   
+#  235|->   UNLOCK_MANAGER (manager);
+#  236|   
+#  237|     return manager;
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gproxy.c:235:13: warning: Deprecated pre-processor symbol
+#  235 |   UNLOCK_MANAGER (manager);
+#      |             ^~~~~~~~~~~~~~~                  
+#  233|     manager->refcount += 1;
+#  234|   
+#  235|->   UNLOCK_MANAGER (manager);
+#  236|   
+#  237|     return manager;
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gproxy.c:235:13: warning: Deprecated pre-processor symbol: replace with "g_mutex_unlock"
+#  235 |   UNLOCK_MANAGER (manager);
+#      |             ^~~~~~~~~~~~~~~                                                   
+#  233|     manager->refcount += 1;
+#  234|   
+#  235|->   UNLOCK_MANAGER (manager);
+#  236|   
+#  237|     return manager;
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:246:3: warning[-Wdeprecated-declarations]: 'g_static_mutex_get_mutex_impl' is deprecated: Use 'GMutex' instead
+#  246 |   LOCK_MANAGER (manager);
+#      |   ^~~~~~~~~~~~
+/usr/include/glib-2.0/glib.h:112: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gbinding.h:28: included_from: Included from here.
+/usr/include/glib-2.0/glib-object.h:22: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+#  154 | GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  244|     g_assert (manager->refcount > 0);
+#  245|   
+#  246|->   LOCK_MANAGER (manager);
+#  247|     manager->refcount -= 1;
+#  248|     if (manager->refcount == 0)
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gproxy.c: scope_hint: In function 'dbus_g_proxy_manager_unref'
+dbus-glib-0.112/dbus/dbus-gproxy.c:246:13: warning: Deprecated pre-processor symbol
+#  246 |   LOCK_MANAGER (manager);
+#      |             ^~~~~~~~~~~~~                    
+#  244|     g_assert (manager->refcount > 0);
+#  245|   
+#  246|->   LOCK_MANAGER (manager);
+#  247|     manager->refcount -= 1;
+#  248|     if (manager->refcount == 0)
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gproxy.c:246:13: warning: Deprecated pre-processor symbol: replace with "g_mutex_lock"
+#  246 |   LOCK_MANAGER (manager);
+#      |             ^~~~~~~~~~~~~                                                   
+#  244|     g_assert (manager->refcount > 0);
+#  245|   
+#  246|->   LOCK_MANAGER (manager);
+#  247|     manager->refcount -= 1;
+#  248|     if (manager->refcount == 0)
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:250:7: warning[-Wdeprecated-declarations]: 'g_static_mutex_get_mutex_impl' is deprecated: Use 'GMutex' instead
+#  250 |       UNLOCK_MANAGER (manager);
+#      |       ^~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib.h:112: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gbinding.h:28: included_from: Included from here.
+/usr/include/glib-2.0/glib-object.h:22: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+#  154 | GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  248|     if (manager->refcount == 0)
+#  249|       {
+#  250|->       UNLOCK_MANAGER (manager);
+#  251|   
+#  252|         if (manager->bus_proxy)
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gproxy.c:250:13: warning: Deprecated pre-processor symbol
+#  250 |       UNLOCK_MANAGER (manager);
+#      |             ^~~~~~~~~~~~~~~~~~~              
+#  248|     if (manager->refcount == 0)
+#  249|       {
+#  250|->       UNLOCK_MANAGER (manager);
+#  251|   
+#  252|         if (manager->bus_proxy)
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gproxy.c:250:13: warning: Deprecated pre-processor symbol: replace with "g_mutex_unlock"
+#  250 |       UNLOCK_MANAGER (manager);
+#      |             ^~~~~~~~~~~~~~~~~~~                                               
+#  248|     if (manager->refcount == 0)
+#  249|       {
+#  250|->       UNLOCK_MANAGER (manager);
+#  251|   
+#  252|         if (manager->bus_proxy)
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:290:7: warning[-Wdeprecated-declarations]: 'g_static_mutex_free' is deprecated: Use 'g_mutex_clear' instead
+#  290 |       g_static_mutex_free (&manager->lock);
+#      |       ^~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib.h:112: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gbinding.h:28: included_from: Included from here.
+/usr/include/glib-2.0/glib-object.h:22: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/glib/deprecated/gthread.h:152:9: note: declared here
+#  152 | void    g_static_mutex_free           (GStaticMutex *mutex);
+#      |         ^~~~~~~~~~~~~~~~~~~
+#  288|         g_assert (manager->unassociated_proxies == NULL);
+#  289|         
+#  290|->       g_static_mutex_free (&manager->lock);
+#  291|   
+#  292|         g_static_mutex_lock (&connection_g_proxy_lock);
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:292:7: warning[-Wdeprecated-declarations]: 'g_static_mutex_get_mutex_impl' is deprecated: Use 'GMutex' instead
+#  292 |       g_static_mutex_lock (&connection_g_proxy_lock);
+#      |       ^~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib.h:112: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gbinding.h:28: included_from: Included from here.
+/usr/include/glib-2.0/glib-object.h:22: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+#  154 | GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  290|         g_static_mutex_free (&manager->lock);
+#  291|   
+#  292|->       g_static_mutex_lock (&connection_g_proxy_lock);
+#  293|   
+#  294|         dbus_connection_remove_filter (manager->connection, dbus_g_proxy_manager_filter,
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gproxy.c:292:13: warning: Deprecated pre-processor symbol
+#  292 |       g_static_mutex_lock (&connection_g_proxy_lock);
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  290|         g_static_mutex_free (&manager->lock);
+#  291|   
+#  292|->       g_static_mutex_lock (&connection_g_proxy_lock);
+#  293|   
+#  294|         dbus_connection_remove_filter (manager->connection, dbus_g_proxy_manager_filter,
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gproxy.c:292:13: warning: Deprecated pre-processor symbol: replace with "g_mutex_lock"
+#  292 |       g_static_mutex_lock (&connection_g_proxy_lock);
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                       
+#  290|         g_static_mutex_free (&manager->lock);
+#  291|   
+#  292|->       g_static_mutex_lock (&connection_g_proxy_lock);
+#  293|   
+#  294|         dbus_connection_remove_filter (manager->connection, dbus_g_proxy_manager_filter,
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:301:7: warning[-Wdeprecated-declarations]: 'g_static_mutex_get_mutex_impl' is deprecated: Use 'GMutex' instead
+#  301 |       g_static_mutex_unlock (&connection_g_proxy_lock);
+#      |       ^~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib.h:112: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gbinding.h:28: included_from: Included from here.
+/usr/include/glib-2.0/glib-object.h:22: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+#  154 | GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  299|                                   NULL, NULL);
+#  300|   
+#  301|->       g_static_mutex_unlock (&connection_g_proxy_lock);
+#  302|         
+#  303|         dbus_connection_unref (manager->connection);
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gproxy.c:301:13: warning: Deprecated pre-processor symbol
+#  301 |       g_static_mutex_unlock (&connection_g_proxy_lock);
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  299|                                   NULL, NULL);
+#  300|   
+#  301|->       g_static_mutex_unlock (&connection_g_proxy_lock);
+#  302|         
+#  303|         dbus_connection_unref (manager->connection);
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gproxy.c:301:13: warning: Deprecated pre-processor symbol: replace with "g_mutex_unlock"
+#  301 |       g_static_mutex_unlock (&connection_g_proxy_lock);
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                       
+#  299|                                   NULL, NULL);
+#  300|   
+#  301|->       g_static_mutex_unlock (&connection_g_proxy_lock);
+#  302|         
+#  303|         dbus_connection_unref (manager->connection);
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:310:7: warning[-Wdeprecated-declarations]: 'g_static_mutex_get_mutex_impl' is deprecated: Use 'GMutex' instead
+#  310 |       UNLOCK_MANAGER (manager);
+#      |       ^~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib.h:112: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gbinding.h:28: included_from: Included from here.
+/usr/include/glib-2.0/glib-object.h:22: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+#  154 | GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  308|     else
+#  309|       {
+#  310|->       UNLOCK_MANAGER (manager);
+#  311|       }
+#  312|   }
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gproxy.c:310:13: warning: Deprecated pre-processor symbol
+#  310 |       UNLOCK_MANAGER (manager);
+#      |             ^~~~~~~~~~~~~~~~~~~              
+#  308|     else
+#  309|       {
+#  310|->       UNLOCK_MANAGER (manager);
+#  311|       }
+#  312|   }
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gproxy.c:310:13: warning: Deprecated pre-processor symbol: replace with "g_mutex_unlock"
+#  310 |       UNLOCK_MANAGER (manager);
+#      |             ^~~~~~~~~~~~~~~~~~~                                               
+#  308|     else
+#  309|       {
+#  310|->       UNLOCK_MANAGER (manager);
+#  311|       }
+#  312|   }
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:789:11: warning[-Wdeprecated-declarations]: 'g_static_mutex_get_mutex_impl' is deprecated: Use 'GMutex' instead
+#  789 |           UNLOCK_MANAGER (manager);
+#      |           ^~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib.h:112: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gbinding.h:28: included_from: Included from here.
+/usr/include/glib-2.0/glib-object.h:22: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+#  154 | GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  787|   				unassociate_proxies, &data);
+#  788|   
+#  789|-> 	  UNLOCK_MANAGER (manager);
+#  790|   
+#  791|             /* the destroyed list's data pointers are weak pointers, so that we
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gproxy.c: scope_hint: In function 'dbus_g_proxy_manager_replace_name_owner'
+dbus-glib-0.112/dbus/dbus-gproxy.c:789:20: warning: Deprecated pre-processor symbol
+#  789 |           UNLOCK_MANAGER (manager);
+#      |                    ^~~~~~~~~~~~~~~~                 
+#  787|   				unassociate_proxies, &data);
+#  788|   
+#  789|-> 	  UNLOCK_MANAGER (manager);
+#  790|   
+#  791|             /* the destroyed list's data pointers are weak pointers, so that we
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gproxy.c:789:20: warning: Deprecated pre-processor symbol: replace with "g_mutex_unlock"
+#  789 |           UNLOCK_MANAGER (manager);
+#      |                    ^~~~~~~~~~~~~~~~                                                  
+#  787|   				unassociate_proxies, &data);
+#  788|   
+#  789|-> 	  UNLOCK_MANAGER (manager);
+#  790|   
+#  791|             /* the destroyed list's data pointers are weak pointers, so that we
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:803:11: warning[-Wdeprecated-declarations]: 'g_static_mutex_get_mutex_impl' is deprecated: Use 'GMutex' instead
+#  803 |           LOCK_MANAGER (manager);
+#      |           ^~~~~~~~~~~~
+/usr/include/glib-2.0/glib.h:112: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gbinding.h:28: included_from: Included from here.
+/usr/include/glib-2.0/glib-object.h:22: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+#  154 | GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  801|   	  g_slist_free (data.destroyed);
+#  802|   
+#  803|-> 	  LOCK_MANAGER (manager);
+#  804|   
+#  805|   	  if (info)
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gproxy.c:803:20: warning: Deprecated pre-processor symbol
+#  803 |           LOCK_MANAGER (manager);
+#      |                    ^~~~~~~~~~~~~~                   
+#  801|   	  g_slist_free (data.destroyed);
+#  802|   
+#  803|-> 	  LOCK_MANAGER (manager);
+#  804|   
+#  805|   	  if (info)
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gproxy.c:803:20: warning: Deprecated pre-processor symbol: replace with "g_mutex_lock"
+#  803 |           LOCK_MANAGER (manager);
+#      |                    ^~~~~~~~~~~~~~                                                  
+#  801|   	  g_slist_free (data.destroyed);
+#  802|   
+#  803|-> 	  LOCK_MANAGER (manager);
+#  804|   
+#  805|   	  if (info)
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:831:3: warning[-Wdeprecated-declarations]: 'g_static_mutex_get_mutex_impl' is deprecated: Use 'GMutex' instead
+#  831 |   LOCK_MANAGER (priv->manager);
+#      |   ^~~~~~~~~~~~
+/usr/include/glib-2.0/glib.h:112: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gbinding.h:28: included_from: Included from here.
+/usr/include/glib-2.0/glib-object.h:22: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+#  154 | GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  829|     owner = NULL;
+#  830|   
+#  831|->   LOCK_MANAGER (priv->manager);
+#  832|   
+#  833|     if (!dbus_g_proxy_end_call (bus_proxy, call, &error,
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gproxy.c: scope_hint: In function 'got_name_owner_cb'
+dbus-glib-0.112/dbus/dbus-gproxy.c:831:13: warning: Deprecated pre-processor symbol
+#  831 |   LOCK_MANAGER (priv->manager);
+#      |             ^~~~~~~~~~~~~~~~~~~              
+#  829|     owner = NULL;
+#  830|   
+#  831|->   LOCK_MANAGER (priv->manager);
+#  832|   
+#  833|     if (!dbus_g_proxy_end_call (bus_proxy, call, &error,
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gproxy.c:831:13: warning: Deprecated pre-processor symbol: replace with "g_mutex_lock"
+#  831 |   LOCK_MANAGER (priv->manager);
+#      |             ^~~~~~~~~~~~~~~~~~~                                             
+#  829|     owner = NULL;
+#  830|   
+#  831|->   LOCK_MANAGER (priv->manager);
+#  832|   
+#  833|     if (!dbus_g_proxy_end_call (bus_proxy, call, &error,
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:859:3: warning[-Wdeprecated-declarations]: 'g_static_mutex_get_mutex_impl' is deprecated: Use 'GMutex' instead
+#  859 |   UNLOCK_MANAGER (priv->manager);
+#      |   ^~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib.h:112: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gbinding.h:28: included_from: Included from here.
+/usr/include/glib-2.0/glib-object.h:22: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+#  154 | GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  857|    out:
+#  858|     priv->name_call = NULL;
+#  859|->   UNLOCK_MANAGER (priv->manager);
+#  860|     g_free (owner);
+#  861|   }
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gproxy.c:859:13: warning: Deprecated pre-processor symbol
+#  859 |   UNLOCK_MANAGER (priv->manager);
+#      |             ^~~~~~~~~~~~~~~~~~~~~            
+#  857|    out:
+#  858|     priv->name_call = NULL;
+#  859|->   UNLOCK_MANAGER (priv->manager);
+#  860|     g_free (owner);
+#  861|   }
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gproxy.c:859:13: warning: Deprecated pre-processor symbol: replace with "g_mutex_unlock"
+#  859 |   UNLOCK_MANAGER (priv->manager);
+#      |             ^~~~~~~~~~~~~~~~~~~~~                                             
+#  857|    out:
+#  858|     priv->name_call = NULL;
+#  859|->   UNLOCK_MANAGER (priv->manager);
+#  860|     g_free (owner);
+#  861|   }
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:936:3: warning[-Wdeprecated-declarations]: 'g_static_mutex_get_mutex_impl' is deprecated: Use 'GMutex' instead
+#  936 |   LOCK_MANAGER (manager);
+#      |   ^~~~~~~~~~~~
+/usr/include/glib-2.0/glib.h:112: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gbinding.h:28: included_from: Included from here.
+/usr/include/glib-2.0/glib-object.h:22: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+#  154 | GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  934|     DBusGProxyPrivate *priv = DBUS_G_PROXY_GET_PRIVATE(proxy);
+#  935|   
+#  936|->   LOCK_MANAGER (manager);
+#  937|   
+#  938|     if (manager->proxy_lists == NULL)
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gproxy.c: scope_hint: In function 'dbus_g_proxy_manager_register'
+dbus-glib-0.112/dbus/dbus-gproxy.c:936:13: warning: Deprecated pre-processor symbol
+#  936 |   LOCK_MANAGER (manager);
+#      |             ^~~~~~~~~~~~~                    
+#  934|     DBusGProxyPrivate *priv = DBUS_G_PROXY_GET_PRIVATE(proxy);
+#  935|   
+#  936|->   LOCK_MANAGER (manager);
+#  937|   
+#  938|     if (manager->proxy_lists == NULL)
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gproxy.c:936:13: warning: Deprecated pre-processor symbol: replace with "g_mutex_lock"
+#  936 |   LOCK_MANAGER (manager);
+#      |             ^~~~~~~~~~~~~                                                   
+#  934|     DBusGProxyPrivate *priv = DBUS_G_PROXY_GET_PRIVATE(proxy);
+#  935|   
+#  936|->   LOCK_MANAGER (manager);
+#  937|   
+#  938|     if (manager->proxy_lists == NULL)
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:1042:3: warning[-Wdeprecated-declarations]: 'g_static_mutex_get_mutex_impl' is deprecated: Use 'GMutex' instead
+# 1042 |   UNLOCK_MANAGER (manager);
+#      |   ^~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib.h:112: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gbinding.h:28: included_from: Included from here.
+/usr/include/glib-2.0/glib-object.h:22: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+#  154 | GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1040|       }
+# 1041|     
+# 1042|->   UNLOCK_MANAGER (manager);
+# 1043|   }
+# 1044|   
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gproxy.c:1042:13: warning: Deprecated pre-processor symbol
+# 1042 |   UNLOCK_MANAGER (manager);
+#      |             ^~~~~~~~~~~~~~~                  
+# 1040|       }
+# 1041|     
+# 1042|->   UNLOCK_MANAGER (manager);
+# 1043|   }
+# 1044|   
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gproxy.c:1042:13: warning: Deprecated pre-processor symbol: replace with "g_mutex_unlock"
+# 1042 |   UNLOCK_MANAGER (manager);
+#      |             ^~~~~~~~~~~~~~~                                                   
+# 1040|       }
+# 1041|     
+# 1042|->   UNLOCK_MANAGER (manager);
+# 1043|   }
+# 1044|   
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:1053:3: warning[-Wdeprecated-declarations]: 'g_static_mutex_get_mutex_impl' is deprecated: Use 'GMutex' instead
+# 1053 |   LOCK_MANAGER (manager);
+#      |   ^~~~~~~~~~~~
+/usr/include/glib-2.0/glib.h:112: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gbinding.h:28: included_from: Included from here.
+/usr/include/glib-2.0/glib-object.h:22: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+#  154 | GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1051|     char *tri;
+# 1052|     
+# 1053|->   LOCK_MANAGER (manager);
+# 1054|   
+# 1055|   #ifndef G_DISABLE_CHECKS
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gproxy.c: scope_hint: In function 'dbus_g_proxy_manager_unregister'
+dbus-glib-0.112/dbus/dbus-gproxy.c:1053:13: warning: Deprecated pre-processor symbol
+# 1053 |   LOCK_MANAGER (manager);
+#      |             ^~~~~~~~~~~~~                    
+# 1051|     char *tri;
+# 1052|     
+# 1053|->   LOCK_MANAGER (manager);
+# 1054|   
+# 1055|   #ifndef G_DISABLE_CHECKS
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gproxy.c:1053:13: warning: Deprecated pre-processor symbol: replace with "g_mutex_lock"
+# 1053 |   LOCK_MANAGER (manager);
+#      |             ^~~~~~~~~~~~~                                                   
+# 1051|     char *tri;
+# 1052|     
+# 1053|->   LOCK_MANAGER (manager);
+# 1054|   
+# 1055|   #ifndef G_DISABLE_CHECKS
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:1153:3: warning[-Wdeprecated-declarations]: 'g_static_mutex_get_mutex_impl' is deprecated: Use 'GMutex' instead
+# 1153 |   UNLOCK_MANAGER (manager);
+#      |   ^~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib.h:112: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gbinding.h:28: included_from: Included from here.
+/usr/include/glib-2.0/glib-object.h:22: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+#  154 | GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1151|     g_free (tri);
+# 1152|         
+# 1153|->   UNLOCK_MANAGER (manager);
+# 1154|   }
+# 1155|   
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gproxy.c:1153:13: warning: Deprecated pre-processor symbol
+# 1153 |   UNLOCK_MANAGER (manager);
+#      |             ^~~~~~~~~~~~~~~                  
+# 1151|     g_free (tri);
+# 1152|         
+# 1153|->   UNLOCK_MANAGER (manager);
+# 1154|   }
+# 1155|   
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gproxy.c:1153:13: warning: Deprecated pre-processor symbol: replace with "g_mutex_unlock"
+# 1153 |   UNLOCK_MANAGER (manager);
+#      |             ^~~~~~~~~~~~~~~                                                   
+# 1151|     g_free (tri);
+# 1152|         
+# 1153|->   UNLOCK_MANAGER (manager);
+# 1154|   }
+# 1155|   
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:1211:3: warning[-Wdeprecated-declarations]: 'g_static_mutex_get_mutex_impl' is deprecated: Use 'GMutex' instead
+# 1211 |   LOCK_MANAGER (manager);
+#      |   ^~~~~~~~~~~~
+/usr/include/glib-2.0/glib.h:112: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gbinding.h:28: included_from: Included from here.
+/usr/include/glib-2.0/glib-object.h:22: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+#  154 | GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1209|     dbus_g_proxy_manager_ref (manager);
+# 1210|     
+# 1211|->   LOCK_MANAGER (manager);
+# 1212|     
+# 1213|     if (dbus_message_is_signal (message,
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gproxy.c: scope_hint: In function 'dbus_g_proxy_manager_filter'
+dbus-glib-0.112/dbus/dbus-gproxy.c:1211:13: warning: Deprecated pre-processor symbol
+# 1211 |   LOCK_MANAGER (manager);
+#      |             ^~~~~~~~~~~~~                    
+# 1209|     dbus_g_proxy_manager_ref (manager);
+# 1210|     
+# 1211|->   LOCK_MANAGER (manager);
+# 1212|     
+# 1213|     if (dbus_message_is_signal (message,
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gproxy.c:1211:13: warning: Deprecated pre-processor symbol: replace with "g_mutex_lock"
+# 1211 |   LOCK_MANAGER (manager);
+#      |             ^~~~~~~~~~~~~                                                   
+# 1209|     dbus_g_proxy_manager_ref (manager);
+# 1210|     
+# 1211|->   LOCK_MANAGER (manager);
+# 1212|     
+# 1213|     if (dbus_message_is_signal (message,
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:1232:11: warning[-Wdeprecated-declarations]: 'g_static_mutex_get_mutex_impl' is deprecated: Use 'GMutex' instead
+# 1232 |           UNLOCK_MANAGER (manager);
+#      |           ^~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib.h:112: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gbinding.h:28: included_from: Included from here.
+/usr/include/glib-2.0/glib-object.h:22: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+#  154 | GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1230|             proxy = DBUS_G_PROXY (tmp->data);
+# 1231|   
+# 1232|->           UNLOCK_MANAGER (manager);
+# 1233|             dbus_g_proxy_destroy (proxy);
+# 1234|             g_object_unref (G_OBJECT (proxy));
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gproxy.c:1232:13: warning: Deprecated pre-processor symbol
+# 1232 |           UNLOCK_MANAGER (manager);
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~          
+# 1230|             proxy = DBUS_G_PROXY (tmp->data);
+# 1231|   
+# 1232|->           UNLOCK_MANAGER (manager);
+# 1233|             dbus_g_proxy_destroy (proxy);
+# 1234|             g_object_unref (G_OBJECT (proxy));
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gproxy.c:1232:13: warning: Deprecated pre-processor symbol: replace with "g_mutex_unlock"
+# 1232 |           UNLOCK_MANAGER (manager);
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~                                           
+# 1230|             proxy = DBUS_G_PROXY (tmp->data);
+# 1231|   
+# 1232|->           UNLOCK_MANAGER (manager);
+# 1233|             dbus_g_proxy_destroy (proxy);
+# 1234|             g_object_unref (G_OBJECT (proxy));
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:1235:11: warning[-Wdeprecated-declarations]: 'g_static_mutex_get_mutex_impl' is deprecated: Use 'GMutex' instead
+# 1235 |           LOCK_MANAGER (manager);
+#      |           ^~~~~~~~~~~~
+/usr/include/glib-2.0/glib.h:112: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gbinding.h:28: included_from: Included from here.
+/usr/include/glib-2.0/glib-object.h:22: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+#  154 | GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1233|             dbus_g_proxy_destroy (proxy);
+# 1234|             g_object_unref (G_OBJECT (proxy));
+# 1235|->           LOCK_MANAGER (manager);
+# 1236|             
+# 1237|             tmp = tmp->next;
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gproxy.c:1235:13: warning: Deprecated pre-processor symbol
+# 1235 |           LOCK_MANAGER (manager);
+#      |             ^~~~~~~~~~~~~~~~~~~~~            
+# 1233|             dbus_g_proxy_destroy (proxy);
+# 1234|             g_object_unref (G_OBJECT (proxy));
+# 1235|->           LOCK_MANAGER (manager);
+# 1236|             
+# 1237|             tmp = tmp->next;
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gproxy.c:1235:13: warning: Deprecated pre-processor symbol: replace with "g_mutex_lock"
+# 1235 |           LOCK_MANAGER (manager);
+#      |             ^~~~~~~~~~~~~~~~~~~~~                                           
+# 1233|             dbus_g_proxy_destroy (proxy);
+# 1234|             g_object_unref (G_OBJECT (proxy));
+# 1235|->           LOCK_MANAGER (manager);
+# 1236|             
+# 1237|             tmp = tmp->next;
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:1357:11: warning[-Wdeprecated-declarations]: 'g_static_mutex_get_mutex_impl' is deprecated: Use 'GMutex' instead
+# 1357 |           UNLOCK_MANAGER (manager);
+#      |           ^~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib.h:112: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gbinding.h:28: included_from: Included from here.
+/usr/include/glib-2.0/glib-object.h:22: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+#  154 | GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1355|   	  proxy = DBUS_G_PROXY (tmp->data);
+# 1356|   	  
+# 1357|-> 	  UNLOCK_MANAGER (manager);
+# 1358|   	  dbus_g_proxy_emit_remote_signal (proxy, message);
+# 1359|   	  g_object_unref (G_OBJECT (proxy));
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gproxy.c:1357:20: warning: Deprecated pre-processor symbol
+# 1357 |           UNLOCK_MANAGER (manager);
+#      |                    ^~~~~~~~~~~~~~~~                 
+# 1355|   	  proxy = DBUS_G_PROXY (tmp->data);
+# 1356|   	  
+# 1357|-> 	  UNLOCK_MANAGER (manager);
+# 1358|   	  dbus_g_proxy_emit_remote_signal (proxy, message);
+# 1359|   	  g_object_unref (G_OBJECT (proxy));
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gproxy.c:1357:20: warning: Deprecated pre-processor symbol: replace with "g_mutex_unlock"
+# 1357 |           UNLOCK_MANAGER (manager);
+#      |                    ^~~~~~~~~~~~~~~~                                                  
+# 1355|   	  proxy = DBUS_G_PROXY (tmp->data);
+# 1356|   	  
+# 1357|-> 	  UNLOCK_MANAGER (manager);
+# 1358|   	  dbus_g_proxy_emit_remote_signal (proxy, message);
+# 1359|   	  g_object_unref (G_OBJECT (proxy));
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:1360:11: warning[-Wdeprecated-declarations]: 'g_static_mutex_get_mutex_impl' is deprecated: Use 'GMutex' instead
+# 1360 |           LOCK_MANAGER (manager);
+#      |           ^~~~~~~~~~~~
+/usr/include/glib-2.0/glib.h:112: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gbinding.h:28: included_from: Included from here.
+/usr/include/glib-2.0/glib-object.h:22: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+#  154 | GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1358|   	  dbus_g_proxy_emit_remote_signal (proxy, message);
+# 1359|   	  g_object_unref (G_OBJECT (proxy));
+# 1360|-> 	  LOCK_MANAGER (manager);
+# 1361|   	}
+# 1362|         g_slist_free (full_list);
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gproxy.c:1360:20: warning: Deprecated pre-processor symbol
+# 1360 |           LOCK_MANAGER (manager);
+#      |                    ^~~~~~~~~~~~~~                   
+# 1358|   	  dbus_g_proxy_emit_remote_signal (proxy, message);
+# 1359|   	  g_object_unref (G_OBJECT (proxy));
+# 1360|-> 	  LOCK_MANAGER (manager);
+# 1361|   	}
+# 1362|         g_slist_free (full_list);
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gproxy.c:1360:20: warning: Deprecated pre-processor symbol: replace with "g_mutex_lock"
+# 1360 |           LOCK_MANAGER (manager);
+#      |                    ^~~~~~~~~~~~~~                                                  
+# 1358|   	  dbus_g_proxy_emit_remote_signal (proxy, message);
+# 1359|   	  g_object_unref (G_OBJECT (proxy));
+# 1360|-> 	  LOCK_MANAGER (manager);
+# 1361|   	}
+# 1362|         g_slist_free (full_list);
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:1365:3: warning[-Wdeprecated-declarations]: 'g_static_mutex_get_mutex_impl' is deprecated: Use 'GMutex' instead
+# 1365 |   UNLOCK_MANAGER (manager);
+#      |   ^~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib.h:112: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gbinding.h:28: included_from: Included from here.
+/usr/include/glib-2.0/glib-object.h:22: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+#  154 | GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1363|       }
+# 1364|   
+# 1365|->   UNLOCK_MANAGER (manager);
+# 1366|     dbus_g_proxy_manager_unref (manager);
+# 1367|     
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gproxy.c:1365:13: warning: Deprecated pre-processor symbol
+# 1365 |   UNLOCK_MANAGER (manager);
+#      |             ^~~~~~~~~~~~~~~                  
+# 1363|       }
+# 1364|   
+# 1365|->   UNLOCK_MANAGER (manager);
+# 1366|     dbus_g_proxy_manager_unref (manager);
+# 1367|     
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gproxy.c:1365:13: warning: Deprecated pre-processor symbol: replace with "g_mutex_unlock"
+# 1365 |   UNLOCK_MANAGER (manager);
+#      |             ^~~~~~~~~~~~~~~                                                   
+# 1363|       }
+# 1364|   
+# 1365|->   UNLOCK_MANAGER (manager);
+# 1366|     dbus_g_proxy_manager_unref (manager);
+# 1367|     
+
+Error: VALGRIND_WARNING:
+dbus-glib-0.112/test/core/.libs/peer-client: note: while executing process 1600
+dbus-glib-0.112/dbus/dbus-gproxy.c:1432: warning[Leak_DefinitelyLost]: 155 (32 direct, 123 indirect) bytes in 1 blocks are definitely lost in loss record 373 of 408
+/usr/lib64/libgobject-2.0.so.0.7000.5: note: called from g_type_create_instance()
+/usr/lib64/libgobject-2.0.so.0.7000.5: note: called from here
+dbus-glib-0.112/dbus/dbus-gproxy.c:1432: note: called from dbus_g_proxy_constructor()
+/usr/lib64/libgobject-2.0.so.0.7000.5: note: called from here
+/usr/lib64/libgobject-2.0.so.0.7000.5: note: called from g_object_new_valist()
+/usr/lib64/libgobject-2.0.so.0.7000.5: note: called from g_object_new()
+dbus-glib-0.112/dbus/dbus-gproxy.c:2016: note: called from dbus_g_proxy_new()
+dbus-glib-0.112/test/core/peer-client.c:98: note: called from main()
+# 1430|     parent_class = G_OBJECT_CLASS (g_type_class_peek_parent (klass));
+# 1431|   
+# 1432|->   proxy = DBUS_G_PROXY (parent_class->constructor (type, n_construct_properties,
+# 1433|   						    construct_properties));
+# 1434|   
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c: scope_hint: In function 'marshal_dbus_message_to_g_marshaller'
+dbus-glib-0.112/dbus/dbus-gproxy.c:1740:3: warning[-Wdeprecated-declarations]: 'g_value_array_prepend' is deprecated: Use 'GArray' instead
+# 1740 |   g_value_array_prepend (value_array, NULL);
+#      |   ^~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:76:17: note: declared here
+#   76 | GValueArray*    g_value_array_prepend        (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~~
+# 1738|       return;
+# 1739|     
+# 1740|->   g_value_array_prepend (value_array, NULL);
+# 1741|     g_value_init (g_value_array_get_nth (value_array, 0), G_TYPE_FROM_INSTANCE (proxy));
+# 1742|     g_value_set_instance (g_value_array_get_nth (value_array, 0), proxy);
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:1741:3: warning[-Wdeprecated-declarations]: 'g_value_array_get_nth' is deprecated: Use 'GArray' instead
+# 1741 |   g_value_init (g_value_array_get_nth (value_array, 0), G_TYPE_FROM_INSTANCE (proxy));
+#      |   ^~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:63:17: note: declared here
+#   63 | GValue*         g_value_array_get_nth        (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~~
+# 1739|     
+# 1740|     g_value_array_prepend (value_array, NULL);
+# 1741|->   g_value_init (g_value_array_get_nth (value_array, 0), G_TYPE_FROM_INSTANCE (proxy));
+# 1742|     g_value_set_instance (g_value_array_get_nth (value_array, 0), proxy);
+# 1743|   
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:1742:3: warning[-Wdeprecated-declarations]: 'g_value_array_get_nth' is deprecated: Use 'GArray' instead
+# 1742 |   g_value_set_instance (g_value_array_get_nth (value_array, 0), proxy);
+#      |   ^~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:63:17: note: declared here
+#   63 | GValue*         g_value_array_get_nth        (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~~
+# 1740|     g_value_array_prepend (value_array, NULL);
+# 1741|     g_value_init (g_value_array_get_nth (value_array, 0), G_TYPE_FROM_INSTANCE (proxy));
+# 1742|->   g_value_set_instance (g_value_array_get_nth (value_array, 0), proxy);
+# 1743|   
+# 1744|     g_cclosure_marshal_generic (closure, return_value, value_array->n_values,
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:1747:3: warning[-Wdeprecated-declarations]: 'g_value_array_free' is deprecated: Use 'GArray' instead
+# 1747 |   g_value_array_free (value_array);
+#      |   ^~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:70:17: note: declared here
+#   70 | void            g_value_array_free           (GValueArray       *value_array);
+#      |                 ^~~~~~~~~~~~~~~~~~
+# 1745|         value_array->values, invocation_hint, marshal_data);
+# 1746|   
+# 1747|->   g_value_array_free (value_array);
+# 1748|   }
+# 1749|   
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:1923:3: warning[-Wdeprecated-declarations]: 'g_value_array_append' is deprecated: Use 'GArray' instead
+# 1923 |   DBUS_G_VALUE_ARRAY_COLLECT_ALL (arg_values, first_arg_type, args);
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:80:17: note: declared here
+#   80 | GValueArray*    g_value_array_append         (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~
+# 1921|       }
+# 1922|   
+# 1923|->   DBUS_G_VALUE_ARRAY_COLLECT_ALL (arg_values, first_arg_type, args);
+# 1924|   
+# 1925|     if (arg_values != NULL)
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:1923:3: warning[-Wdeprecated-declarations]: 'g_value_array_free' is deprecated: Use 'GArray' instead
+# 1923 |   DBUS_G_VALUE_ARRAY_COLLECT_ALL (arg_values, first_arg_type, args);
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:70:17: note: declared here
+#   70 | void            g_value_array_free           (GValueArray       *value_array);
+#      |                 ^~~~~~~~~~~~~~~~~~
+# 1921|       }
+# 1922|   
+# 1923|->   DBUS_G_VALUE_ARRAY_COLLECT_ALL (arg_values, first_arg_type, args);
+# 1924|   
+# 1925|     if (arg_values != NULL)
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:1923:3: warning[-Wdeprecated-declarations]: 'g_value_array_get_nth' is deprecated: Use 'GArray' instead
+# 1923 |   DBUS_G_VALUE_ARRAY_COLLECT_ALL (arg_values, first_arg_type, args);
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:63:17: note: declared here
+#   63 | GValue*         g_value_array_get_nth        (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~~
+# 1921|       }
+# 1922|   
+# 1923|->   DBUS_G_VALUE_ARRAY_COLLECT_ALL (arg_values, first_arg_type, args);
+# 1924|   
+# 1925|     if (arg_values != NULL)
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c: scope_hint: In function 'manager_begin_bus_call'
+dbus-glib-0.112/dbus/dbus-gproxy.c:1923:3: warning[-Wdeprecated-declarations]: 'g_value_array_new' is deprecated: Use 'GArray' instead
+# 1923 |   DBUS_G_VALUE_ARRAY_COLLECT_ALL (arg_values, first_arg_type, args);
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:67:17: note: declared here
+#   67 | GValueArray*    g_value_array_new            (guint              n_prealloced);
+#      |                 ^~~~~~~~~~~~~~~~~
+# 1921|       }
+# 1922|   
+# 1923|->   DBUS_G_VALUE_ARRAY_COLLECT_ALL (arg_values, first_arg_type, args);
+# 1924|   
+# 1925|     if (arg_values != NULL)
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:1930:7: warning[-Wdeprecated-declarations]: 'g_value_array_free' is deprecated: Use 'GArray' instead
+# 1930 |       g_value_array_free (arg_values);
+#      |       ^~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:70:17: note: declared here
+#   70 | void            g_value_array_free           (GValueArray       *value_array);
+#      |                 ^~~~~~~~~~~~~~~~~~
+# 1928|             notify, user_data, destroy, arg_values, -1);
+# 1929|   
+# 1930|->       g_value_array_free (arg_values);
+# 1931|       }
+# 1932|   
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c: scope_hint: In function 'dbus_g_proxy_marshal_args_to_message'
+dbus-glib-0.112/dbus/dbus-gproxy.c:2334:7: warning[-Wdeprecated-declarations]: 'g_value_array_get_nth' is deprecated: Use 'GArray' instead
+# 2334 |       gvalue = g_value_array_get_nth (args, i);
+#      |       ^~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:63:17: note: declared here
+#   63 | GValue*         g_value_array_get_nth        (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~~
+# 2332|         GValue *gvalue;
+# 2333|   
+# 2334|->       gvalue = g_value_array_get_nth (args, i);
+# 2335|   
+# 2336|         if (!_dbus_gvalue_marshal (&msgiter, gvalue))
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:2637:3: warning[-Wdeprecated-declarations]: 'g_value_array_append' is deprecated: Use 'GArray' instead
+# 2637 |   DBUS_G_VALUE_ARRAY_COLLECT_ALL (arg_values, first_arg_type, args);
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:80:17: note: declared here
+#   80 | GValueArray*    g_value_array_append         (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~
+# 2635|     va_start (args, first_arg_type);
+# 2636|   
+# 2637|->   DBUS_G_VALUE_ARRAY_COLLECT_ALL (arg_values, first_arg_type, args);
+# 2638|   
+# 2639|     if (arg_values != NULL)
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:2637:3: warning[-Wdeprecated-declarations]: 'g_value_array_free' is deprecated: Use 'GArray' instead
+# 2637 |   DBUS_G_VALUE_ARRAY_COLLECT_ALL (arg_values, first_arg_type, args);
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:70:17: note: declared here
+#   70 | void            g_value_array_free           (GValueArray       *value_array);
+#      |                 ^~~~~~~~~~~~~~~~~~
+# 2635|     va_start (args, first_arg_type);
+# 2636|   
+# 2637|->   DBUS_G_VALUE_ARRAY_COLLECT_ALL (arg_values, first_arg_type, args);
+# 2638|   
+# 2639|     if (arg_values != NULL)
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:2637:3: warning[-Wdeprecated-declarations]: 'g_value_array_get_nth' is deprecated: Use 'GArray' instead
+# 2637 |   DBUS_G_VALUE_ARRAY_COLLECT_ALL (arg_values, first_arg_type, args);
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:63:17: note: declared here
+#   63 | GValue*         g_value_array_get_nth        (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~~
+# 2635|     va_start (args, first_arg_type);
+# 2636|   
+# 2637|->   DBUS_G_VALUE_ARRAY_COLLECT_ALL (arg_values, first_arg_type, args);
+# 2638|   
+# 2639|     if (arg_values != NULL)
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c: scope_hint: In function 'dbus_g_proxy_begin_call'
+dbus-glib-0.112/dbus/dbus-gproxy.c:2637:3: warning[-Wdeprecated-declarations]: 'g_value_array_new' is deprecated: Use 'GArray' instead
+# 2637 |   DBUS_G_VALUE_ARRAY_COLLECT_ALL (arg_values, first_arg_type, args);
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:67:17: note: declared here
+#   67 | GValueArray*    g_value_array_new            (guint              n_prealloced);
+#      |                 ^~~~~~~~~~~~~~~~~
+# 2635|     va_start (args, first_arg_type);
+# 2636|   
+# 2637|->   DBUS_G_VALUE_ARRAY_COLLECT_ALL (arg_values, first_arg_type, args);
+# 2638|   
+# 2639|     if (arg_values != NULL)
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:2644:7: warning[-Wdeprecated-declarations]: 'g_value_array_free' is deprecated: Use 'GArray' instead
+# 2644 |       g_value_array_free (arg_values);
+#      |       ^~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:70:17: note: declared here
+#   70 | void            g_value_array_free           (GValueArray       *value_array);
+#      |                 ^~~~~~~~~~~~~~~~~~
+# 2642|             user_data, destroy, arg_values, priv->default_timeout);
+# 2643|   
+# 2644|->       g_value_array_free (arg_values);
+# 2645|       }
+# 2646|   
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:2705:3: warning[-Wdeprecated-declarations]: 'g_value_array_append' is deprecated: Use 'GArray' instead
+# 2705 |   DBUS_G_VALUE_ARRAY_COLLECT_ALL (arg_values, first_arg_type, args);
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:80:17: note: declared here
+#   80 | GValueArray*    g_value_array_append         (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~
+# 2703|     va_start (args, first_arg_type);
+# 2704|   
+# 2705|->   DBUS_G_VALUE_ARRAY_COLLECT_ALL (arg_values, first_arg_type, args);
+# 2706|   
+# 2707|     if (arg_values != NULL)
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:2705:3: warning[-Wdeprecated-declarations]: 'g_value_array_free' is deprecated: Use 'GArray' instead
+# 2705 |   DBUS_G_VALUE_ARRAY_COLLECT_ALL (arg_values, first_arg_type, args);
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:70:17: note: declared here
+#   70 | void            g_value_array_free           (GValueArray       *value_array);
+#      |                 ^~~~~~~~~~~~~~~~~~
+# 2703|     va_start (args, first_arg_type);
+# 2704|   
+# 2705|->   DBUS_G_VALUE_ARRAY_COLLECT_ALL (arg_values, first_arg_type, args);
+# 2706|   
+# 2707|     if (arg_values != NULL)
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:2705:3: warning[-Wdeprecated-declarations]: 'g_value_array_get_nth' is deprecated: Use 'GArray' instead
+# 2705 |   DBUS_G_VALUE_ARRAY_COLLECT_ALL (arg_values, first_arg_type, args);
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:63:17: note: declared here
+#   63 | GValue*         g_value_array_get_nth        (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~~
+# 2703|     va_start (args, first_arg_type);
+# 2704|   
+# 2705|->   DBUS_G_VALUE_ARRAY_COLLECT_ALL (arg_values, first_arg_type, args);
+# 2706|   
+# 2707|     if (arg_values != NULL)
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c: scope_hint: In function 'dbus_g_proxy_begin_call_with_timeout'
+dbus-glib-0.112/dbus/dbus-gproxy.c:2705:3: warning[-Wdeprecated-declarations]: 'g_value_array_new' is deprecated: Use 'GArray' instead
+# 2705 |   DBUS_G_VALUE_ARRAY_COLLECT_ALL (arg_values, first_arg_type, args);
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:67:17: note: declared here
+#   67 | GValueArray*    g_value_array_new            (guint              n_prealloced);
+#      |                 ^~~~~~~~~~~~~~~~~
+# 2703|     va_start (args, first_arg_type);
+# 2704|   
+# 2705|->   DBUS_G_VALUE_ARRAY_COLLECT_ALL (arg_values, first_arg_type, args);
+# 2706|   
+# 2707|     if (arg_values != NULL)
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:2712:7: warning[-Wdeprecated-declarations]: 'g_value_array_free' is deprecated: Use 'GArray' instead
+# 2712 |       g_value_array_free (arg_values);
+#      |       ^~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:70:17: note: declared here
+#   70 | void            g_value_array_free           (GValueArray       *value_array);
+#      |                 ^~~~~~~~~~~~~~~~~~
+# 2710|             user_data, destroy, arg_values, timeout);
+# 2711|   
+# 2712|->       g_value_array_free (arg_values);
+# 2713|       }
+# 2714|   
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:2814:3: warning[-Wdeprecated-declarations]: 'g_value_array_append' is deprecated: Use 'GArray' instead
+# 2814 |   DBUS_G_VALUE_ARRAY_COLLECT_ALL (in_args, first_arg_type, args);
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:80:17: note: declared here
+#   80 | GValueArray*    g_value_array_append         (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~
+# 2812|     va_start (args, first_arg_type);
+# 2813|   
+# 2814|->   DBUS_G_VALUE_ARRAY_COLLECT_ALL (in_args, first_arg_type, args);
+# 2815|   
+# 2816|     if (in_args != NULL)
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:2814:3: warning[-Wdeprecated-declarations]: 'g_value_array_free' is deprecated: Use 'GArray' instead
+# 2814 |   DBUS_G_VALUE_ARRAY_COLLECT_ALL (in_args, first_arg_type, args);
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:70:17: note: declared here
+#   70 | void            g_value_array_free           (GValueArray       *value_array);
+#      |                 ^~~~~~~~~~~~~~~~~~
+# 2812|     va_start (args, first_arg_type);
+# 2813|   
+# 2814|->   DBUS_G_VALUE_ARRAY_COLLECT_ALL (in_args, first_arg_type, args);
+# 2815|   
+# 2816|     if (in_args != NULL)
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:2814:3: warning[-Wdeprecated-declarations]: 'g_value_array_get_nth' is deprecated: Use 'GArray' instead
+# 2814 |   DBUS_G_VALUE_ARRAY_COLLECT_ALL (in_args, first_arg_type, args);
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:63:17: note: declared here
+#   63 | GValue*         g_value_array_get_nth        (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~~
+# 2812|     va_start (args, first_arg_type);
+# 2813|   
+# 2814|->   DBUS_G_VALUE_ARRAY_COLLECT_ALL (in_args, first_arg_type, args);
+# 2815|   
+# 2816|     if (in_args != NULL)
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c: scope_hint: In function 'dbus_g_proxy_call'
+dbus-glib-0.112/dbus/dbus-gproxy.c:2814:3: warning[-Wdeprecated-declarations]: 'g_value_array_new' is deprecated: Use 'GArray' instead
+# 2814 |   DBUS_G_VALUE_ARRAY_COLLECT_ALL (in_args, first_arg_type, args);
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:67:17: note: declared here
+#   67 | GValueArray*    g_value_array_new            (guint              n_prealloced);
+#      |                 ^~~~~~~~~~~~~~~~~
+# 2812|     va_start (args, first_arg_type);
+# 2813|   
+# 2814|->   DBUS_G_VALUE_ARRAY_COLLECT_ALL (in_args, first_arg_type, args);
+# 2815|   
+# 2816|     if (in_args != NULL)
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:2821:7: warning[-Wdeprecated-declarations]: 'g_value_array_free' is deprecated: Use 'GArray' instead
+# 2821 |       g_value_array_free (in_args);
+#      |       ^~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:70:17: note: declared here
+#   70 | void            g_value_array_free           (GValueArray       *value_array);
+#      |                 ^~~~~~~~~~~~~~~~~~
+# 2819|             NULL, in_args, priv->default_timeout);
+# 2820|   
+# 2821|->       g_value_array_free (in_args);
+# 2822|       }
+# 2823|   
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:2877:3: warning[-Wdeprecated-declarations]: 'g_value_array_append' is deprecated: Use 'GArray' instead
+# 2877 |   DBUS_G_VALUE_ARRAY_COLLECT_ALL (in_args, first_arg_type, args);
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:80:17: note: declared here
+#   80 | GValueArray*    g_value_array_append         (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~
+# 2875|     va_start (args, first_arg_type);
+# 2876|   
+# 2877|->   DBUS_G_VALUE_ARRAY_COLLECT_ALL (in_args, first_arg_type, args);
+# 2878|   
+# 2879|     if (in_args != NULL)
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:2877:3: warning[-Wdeprecated-declarations]: 'g_value_array_free' is deprecated: Use 'GArray' instead
+# 2877 |   DBUS_G_VALUE_ARRAY_COLLECT_ALL (in_args, first_arg_type, args);
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:70:17: note: declared here
+#   70 | void            g_value_array_free           (GValueArray       *value_array);
+#      |                 ^~~~~~~~~~~~~~~~~~
+# 2875|     va_start (args, first_arg_type);
+# 2876|   
+# 2877|->   DBUS_G_VALUE_ARRAY_COLLECT_ALL (in_args, first_arg_type, args);
+# 2878|   
+# 2879|     if (in_args != NULL)
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:2877:3: warning[-Wdeprecated-declarations]: 'g_value_array_get_nth' is deprecated: Use 'GArray' instead
+# 2877 |   DBUS_G_VALUE_ARRAY_COLLECT_ALL (in_args, first_arg_type, args);
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:63:17: note: declared here
+#   63 | GValue*         g_value_array_get_nth        (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~~
+# 2875|     va_start (args, first_arg_type);
+# 2876|   
+# 2877|->   DBUS_G_VALUE_ARRAY_COLLECT_ALL (in_args, first_arg_type, args);
+# 2878|   
+# 2879|     if (in_args != NULL)
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c: scope_hint: In function 'dbus_g_proxy_call_with_timeout'
+dbus-glib-0.112/dbus/dbus-gproxy.c:2877:3: warning[-Wdeprecated-declarations]: 'g_value_array_new' is deprecated: Use 'GArray' instead
+# 2877 |   DBUS_G_VALUE_ARRAY_COLLECT_ALL (in_args, first_arg_type, args);
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:67:17: note: declared here
+#   67 | GValueArray*    g_value_array_new            (guint              n_prealloced);
+#      |                 ^~~~~~~~~~~~~~~~~
+# 2875|     va_start (args, first_arg_type);
+# 2876|   
+# 2877|->   DBUS_G_VALUE_ARRAY_COLLECT_ALL (in_args, first_arg_type, args);
+# 2878|   
+# 2879|     if (in_args != NULL)
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:2884:7: warning[-Wdeprecated-declarations]: 'g_value_array_free' is deprecated: Use 'GArray' instead
+# 2884 |       g_value_array_free (in_args);
+#      |       ^~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:70:17: note: declared here
+#   70 | void            g_value_array_free           (GValueArray       *value_array);
+#      |                 ^~~~~~~~~~~~~~~~~~
+# 2882|             NULL, in_args, timeout);
+# 2883|   
+# 2884|->       g_value_array_free (in_args);
+# 2885|       }
+# 2886|   
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:2935:3: warning[-Wdeprecated-declarations]: 'g_value_array_append' is deprecated: Use 'GArray' instead
+# 2935 |   DBUS_G_VALUE_ARRAY_COLLECT_ALL (in_args, first_arg_type, args);
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:80:17: note: declared here
+#   80 | GValueArray*    g_value_array_append         (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~
+# 2933|   
+# 2934|     va_start (args, first_arg_type);
+# 2935|->   DBUS_G_VALUE_ARRAY_COLLECT_ALL (in_args, first_arg_type, args);
+# 2936|   
+# 2937|     if (in_args != NULL)
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:2935:3: warning[-Wdeprecated-declarations]: 'g_value_array_free' is deprecated: Use 'GArray' instead
+# 2935 |   DBUS_G_VALUE_ARRAY_COLLECT_ALL (in_args, first_arg_type, args);
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:70:17: note: declared here
+#   70 | void            g_value_array_free           (GValueArray       *value_array);
+#      |                 ^~~~~~~~~~~~~~~~~~
+# 2933|   
+# 2934|     va_start (args, first_arg_type);
+# 2935|->   DBUS_G_VALUE_ARRAY_COLLECT_ALL (in_args, first_arg_type, args);
+# 2936|   
+# 2937|     if (in_args != NULL)
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:2935:3: warning[-Wdeprecated-declarations]: 'g_value_array_get_nth' is deprecated: Use 'GArray' instead
+# 2935 |   DBUS_G_VALUE_ARRAY_COLLECT_ALL (in_args, first_arg_type, args);
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:63:17: note: declared here
+#   63 | GValue*         g_value_array_get_nth        (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~~
+# 2933|   
+# 2934|     va_start (args, first_arg_type);
+# 2935|->   DBUS_G_VALUE_ARRAY_COLLECT_ALL (in_args, first_arg_type, args);
+# 2936|   
+# 2937|     if (in_args != NULL)
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c: scope_hint: In function 'dbus_g_proxy_call_no_reply'
+dbus-glib-0.112/dbus/dbus-gproxy.c:2935:3: warning[-Wdeprecated-declarations]: 'g_value_array_new' is deprecated: Use 'GArray' instead
+# 2935 |   DBUS_G_VALUE_ARRAY_COLLECT_ALL (in_args, first_arg_type, args);
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:67:17: note: declared here
+#   67 | GValueArray*    g_value_array_new            (guint              n_prealloced);
+#      |                 ^~~~~~~~~~~~~~~~~
+# 2933|   
+# 2934|     va_start (args, first_arg_type);
+# 2935|->   DBUS_G_VALUE_ARRAY_COLLECT_ALL (in_args, first_arg_type, args);
+# 2936|   
+# 2937|     if (in_args != NULL)
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gproxy.c:2941:7: warning[-Wdeprecated-declarations]: 'g_value_array_free' is deprecated: Use 'GArray' instead
+# 2941 |       g_value_array_free (in_args);
+#      |       ^~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gproxy.c:29: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:70:17: note: declared here
+#   70 | void            g_value_array_free           (GValueArray       *value_array);
+#      |                 ^~~~~~~~~~~~~~~~~~
+# 2939|         message = dbus_g_proxy_marshal_args_to_message (proxy, method, in_args);
+# 2940|   
+# 2941|->       g_value_array_free (in_args);
+# 2942|       }
+# 2943|   
+
+Error: VALGRIND_WARNING:
+dbus-glib-0.112/dbus/.libs/dbus-binding-tool: note: while executing process 1181 with arguments: --mode=glib-server --prefix=test ./data/nested-introspect.xml
+dbus-glib-0.112/dbus/dbus-gtype-specialized.c:618: warning[Leak_DefinitelyLost]: 16 bytes in 1 blocks are definitely lost in loss record 114 of 273
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_malloc0()
+dbus-glib-0.112/dbus/dbus-gtype-specialized.c:618: note: called from register_container()
+dbus-glib-0.112/dbus/dbus-gvalue-utils.c:1367: note: called from _dbus_g_type_specialized_builtins_init()
+dbus-glib-0.112/dbus/dbus-gtype-specialized.c:438: note: called from specialized_init()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_once_impl()
+dbus-glib-0.112/dbus/dbus-gtype-specialized.c:458: note: called from UnknownInlinedFun()
+dbus-glib-0.112/dbus/dbus-gtype-specialized.c:454: note: called from UnknownInlinedFun()
+dbus-glib-0.112/dbus/dbus-binding-tool-glib.c:849: note: called from dbus_binding_tool_output_glib_server()
+dbus-glib-0.112/dbus/dbus-glib-tool.c:421: note: called from main()
+#  616|     g_warn_if_fail (vtable->copy_func != NULL);
+#  617|   
+#  618|->   klass = g_new0 (DBusGTypeSpecializedContainer, 1);
+#  619|     klass->type = type;
+#  620|     klass->vtable = vtable;
+
+Error: VALGRIND_WARNING:
+dbus-glib-0.112/test/.libs/test-specialized-types: note: while executing process 1175
+dbus-glib-0.112/dbus/dbus-gtype-specialized.c:1524: warning[Leak_DefinitelyLost]: 17 bytes in 1 blocks are definitely lost in loss record 127 of 314
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_malloc()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_strdup()
+/usr/lib64/libgobject-2.0.so.0.7000.5: note: called from here
+dbus-glib-0.112/dbus/dbus-gtype-specialized.c:1524: note: called from dbus_g_type_struct_get()
+dbus-glib-0.112/test/specialized-types.c:445: note: called from test_suo()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from here
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from here
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from here
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_test_run_suite()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_test_run()
+dbus-glib-0.112/test/specialized-types.c:491: note: called from main()
+# 1522|         dbus_g_type_struct_get_member (value, i, &val);
+# 1523|   
+# 1524|->       G_VALUE_LCOPY (&val, var_args, 0, &error);
+# 1525|         if (error)
+# 1526|           {
+
+Error: VALGRIND_WARNING:
+dbus-glib-0.112/test/.libs/test-specialized-types: note: while executing process 1175
+dbus-glib-0.112/dbus/dbus-gtype-specialized.c:1524: warning[Leak_DefinitelyLost]: 4 bytes in 1 blocks are definitely lost in loss record 3 of 314
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_malloc()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_strdup()
+/usr/lib64/libgobject-2.0.so.0.7000.5: note: called from here
+dbus-glib-0.112/dbus/dbus-gtype-specialized.c:1524: note: called from dbus_g_type_struct_get()
+dbus-glib-0.112/test/specialized-types.c:445: note: called from test_suo()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from here
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from here
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from here
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_test_run_suite()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_test_run()
+dbus-glib-0.112/test/specialized-types.c:491: note: called from main()
+# 1522|         dbus_g_type_struct_get_member (value, i, &val);
+# 1523|   
+# 1524|->       G_VALUE_LCOPY (&val, var_args, 0, &error);
+# 1525|         if (error)
+# 1526|           {
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gvalue-parse-variant.c: scope_hint: In function 'dbus_g_value_tuple_parse_variant'
+dbus-glib-0.112/dbus/dbus-gvalue-parse-variant.c:267:3: warning[-Wdeprecated-declarations]: 'g_value_array_new' is deprecated: Use 'GArray' instead
+#  267 |   GValueArray *va = g_value_array_new (n);
+#      |   ^~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gvalue-parse-variant.h:33: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gvalue-parse-variant.c:32: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:67:17: note: declared here
+#   67 | GValueArray*    g_value_array_new            (guint              n_prealloced);
+#      |                 ^~~~~~~~~~~~~~~~~
+#  265|     GType *types;
+#  266|     gsize i;
+#  267|->   GValueArray *va = g_value_array_new (n);
+#  268|     const GVariantType *inner_type;
+#  269|   
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gvalue-parse-variant.c:283:7: warning[-Wdeprecated-declarations]: 'g_value_array_append' is deprecated: Use 'GArray' instead
+#  283 |       g_value_array_append (va, NULL);
+#      |       ^~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gvalue-parse-variant.h:33: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gvalue-parse-variant.c:32: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:80:17: note: declared here
+#   80 | GValueArray*    g_value_array_append         (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~
+#  281|           inner_variant = g_variant_get_child_value (variant, i);
+#  282|   
+#  283|->       g_value_array_append (va, NULL);
+#  284|         dbus_g_value_parse_variant_by_type (inner_variant, inner_type,
+#  285|                                             &va->values[i]);
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gvalue-parse-variant.c:295:5: warning[-Wdeprecated-declarations]: 'g_value_array_free' is deprecated: Use 'GArray' instead
+#  295 |     g_value_array_free (va);
+#      |     ^~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gvalue-parse-variant.h:33: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gvalue-parse-variant.c:32: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:70:17: note: declared here
+#   70 | void            g_value_array_free           (GValueArray       *value_array);
+#      |                 ^~~~~~~~~~~~~~~~~~
+#  293|   
+#  294|     if (variant == NULL)
+#  295|->     g_value_array_free (va);
+#  296|     else
+#  297|       g_value_take_boxed (value, va);
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gvalue-utils.c: scope_hint: In function '_dbus_gvalue_store'
+dbus-glib-0.112/dbus/dbus-gvalue-utils.c:87:7: warning[-Wdeprecated-declarations]: 'g_value_get_char' is deprecated: Use 'g_value_get_schar' instead
+#   87 |       *((gchar *) storage) = g_value_get_char (value);
+#      |       ^
+/usr/include/glib-2.0/glib-object.h:36: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gvalue-utils.c:27: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluetypes.h:195:23: note: declared here
+#  195 | gchar                 g_value_get_char          (const GValue *value);
+#      |                       ^~~~~~~~~~~~~~~~
+#   85|       {
+#   86|       case G_TYPE_CHAR:
+#   87|->       *((gchar *) storage) = g_value_get_char (value);
+#   88|         return TRUE;
+#   89|       case G_TYPE_UCHAR:
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gvalue-utils.c: scope_hint: In function '_dbus_gvalue_set_from_pointer'
+dbus-glib-0.112/dbus/dbus-gvalue-utils.c:138:7: warning[-Wdeprecated-declarations]: 'g_value_set_char' is deprecated: Use 'g_value_set_schar' instead
+#  138 |       g_value_set_char (value, *((gchar *) storage));
+#      |       ^~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:36: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gvalue-utils.c:27: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluetypes.h:192:23: note: declared here
+#  192 | void                  g_value_set_char          (GValue       *value,
+#      |                       ^~~~~~~~~~~~~~~~
+#  136|       {
+#  137|       case G_TYPE_CHAR:
+#  138|->       g_value_set_char (value, *((gchar *) storage));
+#  139|         return TRUE;
+#  140|       case G_TYPE_UCHAR:
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gvalue-utils.c: scope_hint: In function 'hash_simple_free_from_gtype'
+dbus-glib-0.112/dbus/dbus-gvalue-utils.c:323:7: warning[-Wdeprecated-declarations]: 'g_value_array_get_type' is deprecated: Use 'GArray' instead
+#  323 |       else if (gtype == G_TYPE_VALUE_ARRAY)
+#      |       ^~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gvalue-utils.c:27: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:60:17: note: declared here
+#   60 | GType           g_value_array_get_type       (void) G_GNUC_CONST;
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~
+#  321|   	  return TRUE;
+#  322|   	}
+#  323|->       else if (gtype == G_TYPE_VALUE_ARRAY)
+#  324|           {
+#  325|             *func = (GDestroyNotify) g_value_array_free;
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gvalue-utils.c:323:13: warning: Deprecated pre-processor symbol: replace with "(g_array_get_type ())"
+#  323 |       else if (gtype == G_TYPE_VALUE_ARRAY)
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                          
+#  321|   	  return TRUE;
+#  322|   	}
+#  323|->       else if (gtype == G_TYPE_VALUE_ARRAY)
+#  324|           {
+#  325|             *func = (GDestroyNotify) g_value_array_free;
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gvalue-utils.c:325:11: warning[-Wdeprecated-declarations]: 'g_value_array_free' is deprecated: Use 'GArray' instead
+#  325 |           *func = (GDestroyNotify) g_value_array_free;
+#      |           ^
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gvalue-utils.c:27: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:70:17: note: declared here
+#   70 | void            g_value_array_free           (GValueArray       *value_array);
+#      |                 ^~~~~~~~~~~~~~~~~~
+#  323|         else if (gtype == G_TYPE_VALUE_ARRAY)
+#  324|           {
+#  325|->           *func = (GDestroyNotify) g_value_array_free;
+#  326|             return TRUE;
+#  327|           }
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gvalue-utils.c: scope_hint: In function 'gvalue_take_hash_value'
+dbus-glib-0.112/dbus/dbus-gvalue-utils.c:510:7: warning[-Wdeprecated-declarations]: 'g_value_set_char' is deprecated: Use 'g_value_set_schar' instead
+#  510 |       g_value_set_char (value, (gchar) GPOINTER_TO_INT (instance));
+#      |       ^~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:36: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gvalue-utils.c:27: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluetypes.h:192:23: note: declared here
+#  192 | void                  g_value_set_char          (GValue       *value,
+#      |                       ^~~~~~~~~~~~~~~~
+#  508|       {
+#  509|       case G_TYPE_CHAR:
+#  510|->       g_value_set_char (value, (gchar) GPOINTER_TO_INT (instance));
+#  511|         break;
+#  512|       case G_TYPE_UCHAR:
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gvalue-utils.c: scope_hint: In function 'hash_value_from_gvalue'
+dbus-glib-0.112/dbus/dbus-gvalue-utils.c:541:7: warning[-Wdeprecated-declarations]: 'g_value_get_char' is deprecated: Use 'g_value_get_schar' instead
+#  541 |       return GINT_TO_POINTER ((int) g_value_get_char (value));
+#      |       ^~~~~~
+/usr/include/glib-2.0/glib-object.h:36: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gvalue-utils.c:27: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluetypes.h:195:23: note: declared here
+#  195 | gchar                 g_value_get_char          (const GValue *value);
+#      |                       ^~~~~~~~~~~~~~~~
+#  539|       {
+#  540|       case G_TYPE_CHAR:
+#  541|->       return GINT_TO_POINTER ((int) g_value_get_char (value));
+#  542|         break;
+#  543|       case G_TYPE_UCHAR:
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gvalue-utils.c: scope_hint: In function 'valuearray_constructor'
+dbus-glib-0.112/dbus/dbus-gvalue-utils.c:773:3: warning[-Wdeprecated-declarations]: 'g_value_array_new' is deprecated: Use 'GArray' instead
+#  773 |   ret = g_value_array_new (size);
+#      |   ^~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gvalue-utils.c:27: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:67:17: note: declared here
+#   67 | GValueArray*    g_value_array_new            (guint              n_prealloced);
+#      |                 ^~~~~~~~~~~~~~~~~
+#  771|     guint size = dbus_g_type_get_struct_size (type);
+#  772|     guint i;
+#  773|->   ret = g_value_array_new (size);
+#  774|     for (i=0; i < size; i++)
+#  775|       {
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gvalue-utils.c:778:7: warning[-Wdeprecated-declarations]: 'g_value_array_append' is deprecated: Use 'GArray' instead
+#  778 |       g_value_array_append(ret, &val);
+#      |       ^~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gvalue-utils.c:27: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:80:17: note: declared here
+#   80 | GValueArray*    g_value_array_append         (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~
+#  776|         GValue val = {0,};
+#  777|         g_value_init (&val, dbus_g_type_get_struct_member_type (type, i));
+#  778|->       g_value_array_append(ret, &val);
+#  779|       }
+#  780|     return (gpointer)ret;
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gvalue-utils.c: scope_hint: In function 'valuearray_copy'
+dbus-glib-0.112/dbus/dbus-gvalue-utils.c:786:3: warning[-Wdeprecated-declarations]: 'g_value_array_copy' is deprecated: Use 'GArray' instead
+#  786 |   return g_value_array_copy ((GValueArray*) src);
+#      |   ^~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gvalue-utils.c:27: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:73:17: note: declared here
+#   73 | GValueArray*    g_value_array_copy           (const GValueArray *value_array);
+#      |                 ^~~~~~~~~~~~~~~~~~
+#  784|   valuearray_copy (GType type, gpointer src)
+#  785|   {
+#  786|->   return g_value_array_copy ((GValueArray*) src);
+#  787|   }
+#  788|   
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gvalue-utils.c: scope_hint: In function 'valuearray_simple_free'
+dbus-glib-0.112/dbus/dbus-gvalue-utils.c:792:3: warning[-Wdeprecated-declarations]: 'g_value_array_free' is deprecated: Use 'GArray' instead
+#  792 |   g_value_array_free (val);
+#      |   ^~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gvalue-utils.c:27: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:70:17: note: declared here
+#   70 | void            g_value_array_free           (GValueArray       *value_array);
+#      |                 ^~~~~~~~~~~~~~~~~~
+#  790|   valuearray_simple_free (gpointer val)
+#  791|   {
+#  792|->   g_value_array_free (val);
+#  793|   }
+#  794|   
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gvalue-utils.c: scope_hint: In function 'valuearray_get_member'
+dbus-glib-0.112/dbus/dbus-gvalue-utils.c:803:7: warning[-Wdeprecated-declarations]: 'g_value_array_get_nth' is deprecated: Use 'GArray' instead
+#  803 |       val = g_value_array_get_nth (va, member);
+#      |       ^~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gvalue-utils.c:27: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:63:17: note: declared here
+#   63 | GValue*         g_value_array_get_nth        (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~~
+#  801|     if (member < dbus_g_type_get_struct_size (type))
+#  802|       {
+#  803|->       val = g_value_array_get_nth (va, member);
+#  804|         g_value_copy (val, ret);
+#  805|         return TRUE;
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gvalue-utils.c: scope_hint: In function 'valuearray_set_member'
+dbus-glib-0.112/dbus/dbus-gvalue-utils.c:819:7: warning[-Wdeprecated-declarations]: 'g_value_array_get_nth' is deprecated: Use 'GArray' instead
+#  819 |       vp = g_value_array_get_nth (va, member);
+#      |       ^~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gvalue-utils.c:27: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:63:17: note: declared here
+#   63 | GValue*         g_value_array_get_nth        (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~~
+#  817|     if (member < dbus_g_type_get_struct_size (type))
+#  818|       {
+#  819|->       vp = g_value_array_get_nth (va, member);
+#  820|         g_value_copy (member_type, vp);
+#  821|         return TRUE;
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gvalue-utils.c: scope_hint: In function 'array_iterator'
+dbus-glib-0.112/dbus/dbus-gvalue-utils.c:884:13: warning[-Wdeprecated-declarations]: 'g_value_set_char' is deprecated: Use 'g_value_set_schar' instead
+#  884 |             g_value_set_char (&val, g_array_index (array, gchar, i));
+#      |             ^~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:36: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gvalue-utils.c:27: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluetypes.h:192:23: note: declared here
+#  192 | void                  g_value_set_char          (GValue       *value,
+#      |                       ^~~~~~~~~~~~~~~~
+#  882|   
+#  883|             case G_TYPE_CHAR:
+#  884|->             g_value_set_char (&val, g_array_index (array, gchar, i));
+#  885|               break;
+#  886|   
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gvalue-utils.c: scope_hint: In function 'array_append'
+dbus-glib-0.112/dbus/dbus-gvalue-utils.c:964:9: warning[-Wdeprecated-declarations]: 'g_value_get_char' is deprecated: Use 'g_value_get_schar' instead
+#  964 |         tmp.c = g_value_get_char (value);
+#      |         ^~~
+/usr/include/glib-2.0/glib-object.h:36: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gvalue-utils.c:27: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluetypes.h:195:23: note: declared here
+#  195 | gchar                 g_value_get_char          (const GValue *value);
+#      |                       ^~~~~~~~~~~~~~~~
+#  962|   
+#  963|         case G_TYPE_CHAR:
+#  964|->         tmp.c = g_value_get_char (value);
+#  965|           g_array_append_val (array, tmp.c);
+#  966|           break;
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gvalue.c: scope_hint: In function '_dbus_gvalue_to_signature'
+dbus-glib-0.112/dbus/dbus-gvalue.c:509:3: warning[-Wdeprecated-declarations]: 'g_value_array_get_type' is deprecated: Use 'GArray' instead
+#  509 |   if (g_type_is_a (gtype, G_TYPE_VALUE_ARRAY))
+#      |   ^~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gtest.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gvalue.c:28: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:60:17: note: declared here
+#   60 | GType           g_value_array_get_type       (void) G_GNUC_CONST;
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~
+#  507|   
+#  508|     gtype = G_VALUE_TYPE (val);
+#  509|->   if (g_type_is_a (gtype, G_TYPE_VALUE_ARRAY))
+#  510|       {
+#  511|         GString *str;
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gvalue.c:509:13: warning: Deprecated pre-processor symbol: replace with "(g_array_get_type ())"
+#  509 |   if (g_type_is_a (gtype, G_TYPE_VALUE_ARRAY))
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                       
+#  507|   
+#  508|     gtype = G_VALUE_TYPE (val);
+#  509|->   if (g_type_is_a (gtype, G_TYPE_VALUE_ARRAY))
+#  510|       {
+#  511|         GString *str;
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gvalue.c:521:11: warning[-Wdeprecated-declarations]: 'g_value_array_get_nth' is deprecated: Use 'GArray' instead
+#  521 |           sig = _dbus_gvalue_to_signature (g_value_array_get_nth (array, i));
+#      |           ^~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gtest.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gvalue.c:28: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:63:17: note: declared here
+#   63 | GValue*         g_value_array_get_nth        (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~~
+#  519|   	{
+#  520|   	  char *sig;
+#  521|-> 	  sig = _dbus_gvalue_to_signature (g_value_array_get_nth (array, i));
+#  522|   	  g_string_append (str, sig);
+#  523|   	  g_free (sig);
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gvalue.c: scope_hint: In function 'demarshal_valuearray'
+dbus-glib-0.112/dbus/dbus-gvalue.c:898:3: warning[-Wdeprecated-declarations]: 'g_value_array_new' is deprecated: Use 'GArray' instead
+#  898 |   ret = g_value_array_new (12);
+#      |   ^~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gtest.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gvalue.c:28: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:67:17: note: declared here
+#   67 | GValueArray*    g_value_array_new            (guint              n_prealloced);
+#      |                 ^~~~~~~~~~~~~~~~~
+#  896|     dbus_message_iter_recurse (iter, &subiter);
+#  897|   
+#  898|->   ret = g_value_array_new (12);
+#  899|   
+#  900|     while ((current_type = dbus_message_iter_get_arg_type (&subiter)) != DBUS_TYPE_INVALID)
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gvalue.c:906:7: warning[-Wdeprecated-declarations]: 'g_value_array_append' is deprecated: Use 'GArray' instead
+#  906 |       g_value_array_append (ret, NULL);
+#      |       ^~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gtest.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gvalue.c:28: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:80:17: note: declared here
+#   80 | GValueArray*    g_value_array_append         (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~
+#  904|         char *current_sig;
+#  905|   
+#  906|->       g_value_array_append (ret, NULL);
+#  907|         val = g_value_array_get_nth (ret, ret->n_values - 1);
+#  908|   
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gvalue.c:907:7: warning[-Wdeprecated-declarations]: 'g_value_array_get_nth' is deprecated: Use 'GArray' instead
+#  907 |       val = g_value_array_get_nth (ret, ret->n_values - 1);
+#      |       ^~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gtest.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gvalue.c:28: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:63:17: note: declared here
+#   63 | GValue*         g_value_array_get_nth        (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~~
+#  905|   
+#  906|         g_value_array_append (ret, NULL);
+#  907|->       val = g_value_array_get_nth (ret, ret->n_values - 1);
+#  908|   
+#  909|         current_sig = dbus_message_iter_get_signature (&subiter);
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gvalue.c:914:11: warning[-Wdeprecated-declarations]: 'g_value_array_free' is deprecated: Use 'GArray' instead
+#  914 |           g_value_array_free (ret);
+#      |           ^~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gtest.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gvalue.c:28: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:70:17: note: declared here
+#   70 | void            g_value_array_free           (GValueArray       *value_array);
+#      |                 ^~~~~~~~~~~~~~~~~~
+#  912|         if (elt_type == G_TYPE_INVALID)
+#  913|   	{
+#  914|-> 	  g_value_array_free (ret);
+#  915|   	  g_set_error (error,
+#  916|   		       DBUS_GERROR,
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gvalue.c:928:11: warning[-Wdeprecated-declarations]: 'g_value_array_free' is deprecated: Use 'GArray' instead
+#  928 |           g_value_array_free (ret);
+#      |           ^~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gtest.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gvalue.c:28: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:70:17: note: declared here
+#   70 | void            g_value_array_free           (GValueArray       *value_array);
+#      |                 ^~~~~~~~~~~~~~~~~~
+#  926|         if (!_dbus_gvalue_demarshal (context, &subiter, val, error))
+#  927|   	{
+#  928|-> 	  g_value_array_free (ret);
+#  929|   	  return FALSE;
+#  930|   	}
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gvalue.c: scope_hint: In function 'get_type_demarshaller'
+dbus-glib-0.112/dbus/dbus-gvalue.c:1101:7: warning[-Wdeprecated-declarations]: 'g_value_array_get_type' is deprecated: Use 'GArray' instead
+# 1101 |       if (g_type_is_a (type, G_TYPE_VALUE_ARRAY))
+#      |       ^~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gtest.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gvalue.c:28: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:60:17: note: declared here
+#   60 | GType           g_value_array_get_type       (void) G_GNUC_CONST;
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~
+# 1099|     if (typedata == NULL)
+# 1100|       {
+# 1101|->       if (g_type_is_a (type, G_TYPE_VALUE_ARRAY))
+# 1102|   	return demarshal_valuearray;
+# 1103|         if (dbus_g_type_is_collection (type))
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gvalue.c:1101:13: warning: Deprecated pre-processor symbol: replace with "(g_array_get_type ())"
+# 1101 |       if (g_type_is_a (type, G_TYPE_VALUE_ARRAY))
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                    
+# 1099|     if (typedata == NULL)
+# 1100|       {
+# 1101|->       if (g_type_is_a (type, G_TYPE_VALUE_ARRAY))
+# 1102|   	return demarshal_valuearray;
+# 1103|         if (dbus_g_type_is_collection (type))
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gvalue.c: scope_hint: In function '_dbus_gvalue_demarshal_message'
+dbus-glib-0.112/dbus/dbus-gvalue.c:1302:3: warning[-Wdeprecated-declarations]: 'g_value_array_new' is deprecated: Use 'GArray' instead
+# 1302 |   ret = g_value_array_new (6);  /* 6 is a typical maximum for arguments */
+#      |   ^~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gtest.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gvalue.c:28: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:67:17: note: declared here
+#   67 | GValueArray*    g_value_array_new            (guint              n_prealloced);
+#      |                 ^~~~~~~~~~~~~~~~~
+# 1300|     guint index_;
+# 1301|     
+# 1302|->   ret = g_value_array_new (6);  /* 6 is a typical maximum for arguments */
+# 1303|   
+# 1304|     dbus_message_iter_init (message, &iter);
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gvalue.c:1319:7: warning[-Wdeprecated-declarations]: 'g_value_array_append' is deprecated: Use 'GArray' instead
+# 1319 |       g_value_array_append (ret, NULL);
+#      |       ^~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gtest.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gvalue.c:28: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:80:17: note: declared here
+#   80 | GValueArray*    g_value_array_append         (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~
+# 1317|   	}
+# 1318|         
+# 1319|->       g_value_array_append (ret, NULL);
+# 1320|         value = g_value_array_get_nth (ret, index_);
+# 1321|   
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gvalue.c:1320:7: warning[-Wdeprecated-declarations]: 'g_value_array_get_nth' is deprecated: Use 'GArray' instead
+# 1320 |       value = g_value_array_get_nth (ret, index_);
+#      |       ^~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gtest.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gvalue.c:28: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:63:17: note: declared here
+#   63 | GValue*         g_value_array_get_nth        (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~~
+# 1318|         
+# 1319|         g_value_array_append (ret, NULL);
+# 1320|->       value = g_value_array_get_nth (ret, index_);
+# 1321|   
+# 1322|         gtype = types[index_]; 
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gvalue.c:1340:3: warning[-Wdeprecated-declarations]: 'g_value_array_free' is deprecated: Use 'GArray' instead
+# 1340 |   g_value_array_free (ret);
+#      |   ^~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gtest.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gvalue.c:28: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:70:17: note: declared here
+#   70 | void            g_value_array_free           (GValueArray       *value_array);
+#      |                 ^~~~~~~~~~~~~~~~~~
+# 1338|     return ret;
+# 1339|    lose:
+# 1340|->   g_value_array_free (ret);
+# 1341|     return NULL;
+# 1342|   }
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gvalue.c: scope_hint: In function 'marshal_basic'
+dbus-glib-0.112/dbus/dbus-gvalue.c:1362:9: warning[-Wdeprecated-declarations]: 'g_value_get_char' is deprecated: Use 'g_value_get_schar' instead
+# 1362 |         char b = g_value_get_char (value);
+#      |         ^~~~
+/usr/include/glib-2.0/glib-object.h:36: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gtest.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gvalue.c:28: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluetypes.h:195:23: note: declared here
+#  195 | gchar                 g_value_get_char          (const GValue *value);
+#      |                       ^~~~~~~~~~~~~~~~
+# 1360|       case G_TYPE_CHAR:
+# 1361|         {
+# 1362|->         char b = g_value_get_char (value);
+# 1363|           if (!dbus_message_iter_append_basic (iter,
+# 1364|                                                DBUS_TYPE_BYTE,
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gvalue.c:1540:3: warning[-Wdeprecated-declarations]: 'g_value_array_get_type' is deprecated: Use 'GArray' instead
+# 1540 |   g_assert (G_VALUE_TYPE (value) == G_TYPE_VALUE_ARRAY);
+#      |   ^~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gtest.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gvalue.c:28: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:60:17: note: declared here
+#   60 | GType           g_value_array_get_type       (void) G_GNUC_CONST;
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~
+# 1538|     DBusMessageIter subiter;
+# 1539|   
+# 1540|->   g_assert (G_VALUE_TYPE (value) == G_TYPE_VALUE_ARRAY);
+# 1541|   
+# 1542|     array = g_value_get_boxed (value);
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gvalue.c: scope_hint: In function 'marshal_valuearray'
+dbus-glib-0.112/dbus/dbus-gvalue.c:1540:13: warning: Deprecated pre-processor symbol: replace with "(g_array_get_type ())"
+# 1540 |   g_assert (G_VALUE_TYPE (value) == G_TYPE_VALUE_ARRAY);
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                             
+# 1538|     DBusMessageIter subiter;
+# 1539|   
+# 1540|->   g_assert (G_VALUE_TYPE (value) == G_TYPE_VALUE_ARRAY);
+# 1541|   
+# 1542|     array = g_value_get_boxed (value);
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gvalue.c:1554:11: warning[-Wdeprecated-declarations]: 'g_value_array_get_nth' is deprecated: Use 'GArray' instead
+# 1554 |           if (!_dbus_gvalue_marshal (&subiter, g_value_array_get_nth (array, i)))
+#      |           ^~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gtest.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gvalue.c:28: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:63:17: note: declared here
+#   63 | GValue*         g_value_array_get_nth        (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~~
+# 1552|         for (i = 0; i < array->n_values; i++)
+# 1553|           {
+# 1554|->           if (!_dbus_gvalue_marshal (&subiter, g_value_array_get_nth (array, i)))
+# 1555|               {
+# 1556|                 dbus_message_iter_abandon_container (iter, &subiter);
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/dbus-gvalue.c: scope_hint: In function 'get_type_marshaller'
+dbus-glib-0.112/dbus/dbus-gvalue.c:1849:7: warning[-Wdeprecated-declarations]: 'g_value_array_get_type' is deprecated: Use 'GArray' instead
+# 1849 |       if (g_type_is_a (type, G_TYPE_VALUE_ARRAY))
+#      |       ^~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gtest.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-gvalue.c:28: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:60:17: note: declared here
+#   60 | GType           g_value_array_get_type       (void) G_GNUC_CONST;
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~
+# 1847|     if (typedata == NULL)
+# 1848|       {
+# 1849|->       if (g_type_is_a (type, G_TYPE_VALUE_ARRAY))
+# 1850|   	return marshal_valuearray;
+# 1851|         if (dbus_g_type_is_collection (type))
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/dbus-gvalue.c:1849:13: warning: Deprecated pre-processor symbol: replace with "(g_array_get_type ())"
+# 1849 |       if (g_type_is_a (type, G_TYPE_VALUE_ARRAY))
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                    
+# 1847|     if (typedata == NULL)
+# 1848|       {
+# 1849|->       if (g_type_is_a (type, G_TYPE_VALUE_ARRAY))
+# 1850|   	return marshal_valuearray;
+# 1851|         if (dbus_g_type_is_collection (type))
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/examples/example-client.c: scope_hint: In function 'main'
+dbus-glib-0.112/dbus/examples/example-client.c:80:27: warning[-Wdeprecated-declarations]: 'g_value_array_get_type' is deprecated: Use 'GArray' instead
+#   80 |                           G_TYPE_VALUE_ARRAY, &hello_reply_struct, G_TYPE_INVALID))
+#      |                           ^~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/examples/example-client.c:5: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:60:17: note: declared here
+#   60 | GType           g_value_array_get_type       (void) G_GNUC_CONST;
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~
+#   78|     if (!dbus_g_proxy_call (remote_object, "GetTuple", &error,
+#   79|   			  G_TYPE_INVALID,
+#   80|-> 			  G_TYPE_VALUE_ARRAY, &hello_reply_struct, G_TYPE_INVALID))
+#   81|       lose_gerror ("Failed to complete GetTuple", error);
+#   82|     
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/dbus/examples/example-client.c:80:34: warning: Deprecated pre-processor symbol: replace with "(g_array_get_type ())"
+#   80 |                           G_TYPE_VALUE_ARRAY, &hello_reply_struct, G_TYPE_INVALID))
+#      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                       
+#   78|     if (!dbus_g_proxy_call (remote_object, "GetTuple", &error,
+#   79|   			  G_TYPE_INVALID,
+#   80|-> 			  G_TYPE_VALUE_ARRAY, &hello_reply_struct, G_TYPE_INVALID))
+#   81|       lose_gerror ("Failed to complete GetTuple", error);
+#   82|     
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/examples/example-client.c:99:7: warning[-Wdeprecated-declarations]: 'g_value_array_get_nth' is deprecated: Use 'GArray' instead
+#   99 |       if (!g_value_transform (g_value_array_get_nth (hello_reply_struct, i), &strval))
+#      |       ^~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/examples/example-client.c:5: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:63:17: note: declared here
+#   63 | GValue*         g_value_array_get_nth        (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~~
+#   97|   
+#   98|         g_value_init (&strval, G_TYPE_STRING);
+#   99|->       if (!g_value_transform (g_value_array_get_nth (hello_reply_struct, i), &strval))
+#  100|   	g_value_set_static_string (&strval, "(couldn't transform to string)");
+#  101|         g_print ("%s: %s\n", g_type_name (G_VALUE_TYPE (g_value_array_get_nth (hello_reply_struct, i))),
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/examples/example-client.c:101:7: warning[-Wdeprecated-declarations]: 'g_value_array_get_nth' is deprecated: Use 'GArray' instead
+#  101 |       g_print ("%s: %s\n", g_type_name (G_VALUE_TYPE (g_value_array_get_nth (hello_reply_struct, i))),
+#      |       ^~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/examples/example-client.c:5: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:63:17: note: declared here
+#   63 | GValue*         g_value_array_get_nth        (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~~
+#   99|         if (!g_value_transform (g_value_array_get_nth (hello_reply_struct, i), &strval))
+#  100|   	g_value_set_static_string (&strval, "(couldn't transform to string)");
+#  101|->       g_print ("%s: %s\n", g_type_name (G_VALUE_TYPE (g_value_array_get_nth (hello_reply_struct, i))),
+#  102|   	       g_value_get_string (&strval));
+#  103|       }
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/examples/example-client.c:104:3: warning[-Wdeprecated-declarations]: 'g_value_array_free' is deprecated: Use 'GArray' instead
+#  104 |   g_value_array_free (hello_reply_struct);
+#      |   ^~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/examples/example-client.c:5: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:70:17: note: declared here
+#   70 | void            g_value_array_free           (GValueArray       *value_array);
+#      |                 ^~~~~~~~~~~~~~~~~~
+#  102|   	       g_value_get_string (&strval));
+#  103|       }
+#  104|->   g_value_array_free (hello_reply_struct);
+#  105|     printf ("\n");
+#  106|   
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/examples/example-service.c: scope_hint: In function 'some_object_get_tuple'
+dbus-glib-0.112/dbus/examples/example-service.c:88:3: warning[-Wdeprecated-declarations]: 'g_value_array_new' is deprecated: Use 'GArray' instead
+#   88 |   *ret = g_value_array_new (6);
+#      |   ^
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/examples/example-service.c:5: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:67:17: note: declared here
+#   67 | GValueArray*    g_value_array_new            (guint              n_prealloced);
+#      |                 ^~~~~~~~~~~~~~~~~
+#   86|   some_object_get_tuple (SomeObject *obj, GValueArray **ret, GError **error)
+#   87|   {
+#   88|->   *ret = g_value_array_new (6);
+#   89|     g_value_array_prepend (*ret, NULL);
+#   90|     g_value_init (g_value_array_get_nth (*ret, 0), G_TYPE_STRING);
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/examples/example-service.c:89:3: warning[-Wdeprecated-declarations]: 'g_value_array_prepend' is deprecated: Use 'GArray' instead
+#   89 |   g_value_array_prepend (*ret, NULL);
+#      |   ^~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/examples/example-service.c:5: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:76:17: note: declared here
+#   76 | GValueArray*    g_value_array_prepend        (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~~
+#   87|   {
+#   88|     *ret = g_value_array_new (6);
+#   89|->   g_value_array_prepend (*ret, NULL);
+#   90|     g_value_init (g_value_array_get_nth (*ret, 0), G_TYPE_STRING);
+#   91|     g_value_set_string (g_value_array_get_nth (*ret, 0), "hello");
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/examples/example-service.c:90:3: warning[-Wdeprecated-declarations]: 'g_value_array_get_nth' is deprecated: Use 'GArray' instead
+#   90 |   g_value_init (g_value_array_get_nth (*ret, 0), G_TYPE_STRING);
+#      |   ^~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/examples/example-service.c:5: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:63:17: note: declared here
+#   63 | GValue*         g_value_array_get_nth        (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~~
+#   88|     *ret = g_value_array_new (6);
+#   89|     g_value_array_prepend (*ret, NULL);
+#   90|->   g_value_init (g_value_array_get_nth (*ret, 0), G_TYPE_STRING);
+#   91|     g_value_set_string (g_value_array_get_nth (*ret, 0), "hello");
+#   92|     g_value_array_prepend (*ret, NULL);
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/examples/example-service.c:91:3: warning[-Wdeprecated-declarations]: 'g_value_array_get_nth' is deprecated: Use 'GArray' instead
+#   91 |   g_value_set_string (g_value_array_get_nth (*ret, 0), "hello");
+#      |   ^~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/examples/example-service.c:5: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:63:17: note: declared here
+#   63 | GValue*         g_value_array_get_nth        (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~~
+#   89|     g_value_array_prepend (*ret, NULL);
+#   90|     g_value_init (g_value_array_get_nth (*ret, 0), G_TYPE_STRING);
+#   91|->   g_value_set_string (g_value_array_get_nth (*ret, 0), "hello");
+#   92|     g_value_array_prepend (*ret, NULL);
+#   93|     g_value_init (g_value_array_get_nth (*ret, 0), G_TYPE_UINT);
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/examples/example-service.c:92:3: warning[-Wdeprecated-declarations]: 'g_value_array_prepend' is deprecated: Use 'GArray' instead
+#   92 |   g_value_array_prepend (*ret, NULL);
+#      |   ^~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/examples/example-service.c:5: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:76:17: note: declared here
+#   76 | GValueArray*    g_value_array_prepend        (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~~
+#   90|     g_value_init (g_value_array_get_nth (*ret, 0), G_TYPE_STRING);
+#   91|     g_value_set_string (g_value_array_get_nth (*ret, 0), "hello");
+#   92|->   g_value_array_prepend (*ret, NULL);
+#   93|     g_value_init (g_value_array_get_nth (*ret, 0), G_TYPE_UINT);
+#   94|     g_value_set_uint (g_value_array_get_nth (*ret, 0), 42);
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/examples/example-service.c:93:3: warning[-Wdeprecated-declarations]: 'g_value_array_get_nth' is deprecated: Use 'GArray' instead
+#   93 |   g_value_init (g_value_array_get_nth (*ret, 0), G_TYPE_UINT);
+#      |   ^~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/examples/example-service.c:5: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:63:17: note: declared here
+#   63 | GValue*         g_value_array_get_nth        (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~~
+#   91|     g_value_set_string (g_value_array_get_nth (*ret, 0), "hello");
+#   92|     g_value_array_prepend (*ret, NULL);
+#   93|->   g_value_init (g_value_array_get_nth (*ret, 0), G_TYPE_UINT);
+#   94|     g_value_set_uint (g_value_array_get_nth (*ret, 0), 42);
+#   95|     
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/dbus/examples/example-service.c:94:3: warning[-Wdeprecated-declarations]: 'g_value_array_get_nth' is deprecated: Use 'GArray' instead
+#   94 |   g_value_set_uint (g_value_array_get_nth (*ret, 0), 42);
+#      |   ^~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/dbus/examples/example-service.c:5: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:63:17: note: declared here
+#   63 | GValue*         g_value_array_get_nth        (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~~
+#   92|     g_value_array_prepend (*ret, NULL);
+#   93|     g_value_init (g_value_array_get_nth (*ret, 0), G_TYPE_UINT);
+#   94|->   g_value_set_uint (g_value_array_get_nth (*ret, 0), 42);
+#   95|     
+#   96|     return TRUE;
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/test/core/my-object.c: scope_hint: In function 'my_object_send_car'
+dbus-glib-0.112/test/core/my-object.c:606:7: warning[-Wdeprecated-declarations]: 'g_value_array_get_nth' is deprecated: Use 'GArray' instead
+#  606 |       || G_VALUE_TYPE (g_value_array_get_nth (invals, 0)) != G_TYPE_STRING
+#      |       ^~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/test/core/my-object.c:8: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:63:17: note: declared here
+#   63 | GValue*         g_value_array_get_nth        (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~~
+#  604|   {
+#  605|     if (invals->n_values != 3
+#  606|->       || G_VALUE_TYPE (g_value_array_get_nth (invals, 0)) != G_TYPE_STRING
+#  607|         || G_VALUE_TYPE (g_value_array_get_nth (invals, 1)) != G_TYPE_UINT
+#  608|         || G_VALUE_TYPE (g_value_array_get_nth (invals, 2)) != G_TYPE_VALUE)
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/test/core/my-object.c:607:7: warning[-Wdeprecated-declarations]: 'g_value_array_get_nth' is deprecated: Use 'GArray' instead
+#  607 |       || G_VALUE_TYPE (g_value_array_get_nth (invals, 1)) != G_TYPE_UINT
+#      |       ^~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/test/core/my-object.c:8: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:63:17: note: declared here
+#   63 | GValue*         g_value_array_get_nth        (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~~
+#  605|     if (invals->n_values != 3
+#  606|         || G_VALUE_TYPE (g_value_array_get_nth (invals, 0)) != G_TYPE_STRING
+#  607|->       || G_VALUE_TYPE (g_value_array_get_nth (invals, 1)) != G_TYPE_UINT
+#  608|         || G_VALUE_TYPE (g_value_array_get_nth (invals, 2)) != G_TYPE_VALUE)
+#  609|       {
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/test/core/my-object.c:608:7: warning[-Wdeprecated-declarations]: 'g_value_array_get_nth' is deprecated: Use 'GArray' instead
+#  608 |       || G_VALUE_TYPE (g_value_array_get_nth (invals, 2)) != G_TYPE_VALUE)
+#      |       ^~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/test/core/my-object.c:8: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:63:17: note: declared here
+#   63 | GValue*         g_value_array_get_nth        (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~~
+#  606|         || G_VALUE_TYPE (g_value_array_get_nth (invals, 0)) != G_TYPE_STRING
+#  607|         || G_VALUE_TYPE (g_value_array_get_nth (invals, 1)) != G_TYPE_UINT
+#  608|->       || G_VALUE_TYPE (g_value_array_get_nth (invals, 2)) != G_TYPE_VALUE)
+#  609|       {
+#  610|         g_set_error (error,
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/test/core/my-object.c:616:3: warning[-Wdeprecated-declarations]: 'g_value_array_new' is deprecated: Use 'GArray' instead
+#  616 |   *outvals = g_value_array_new (2);
+#      |   ^
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/test/core/my-object.c:8: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:67:17: note: declared here
+#   67 | GValueArray*    g_value_array_new            (guint              n_prealloced);
+#      |                 ^~~~~~~~~~~~~~~~~
+#  614|         return FALSE;
+#  615|       }
+#  616|->   *outvals = g_value_array_new (2);
+#  617|     g_value_array_append (*outvals, NULL);
+#  618|     g_value_init (g_value_array_get_nth (*outvals, (*outvals)->n_values - 1), G_TYPE_UINT);
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/test/core/my-object.c:617:3: warning[-Wdeprecated-declarations]: 'g_value_array_append' is deprecated: Use 'GArray' instead
+#  617 |   g_value_array_append (*outvals, NULL);
+#      |   ^~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/test/core/my-object.c:8: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:80:17: note: declared here
+#   80 | GValueArray*    g_value_array_append         (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~
+#  615|       }
+#  616|     *outvals = g_value_array_new (2);
+#  617|->   g_value_array_append (*outvals, NULL);
+#  618|     g_value_init (g_value_array_get_nth (*outvals, (*outvals)->n_values - 1), G_TYPE_UINT);
+#  619|     g_value_set_uint (g_value_array_get_nth (*outvals, (*outvals)->n_values - 1),
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/test/core/my-object.c:618:3: warning[-Wdeprecated-declarations]: 'g_value_array_get_nth' is deprecated: Use 'GArray' instead
+#  618 |   g_value_init (g_value_array_get_nth (*outvals, (*outvals)->n_values - 1), G_TYPE_UINT);
+#      |   ^~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/test/core/my-object.c:8: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:63:17: note: declared here
+#   63 | GValue*         g_value_array_get_nth        (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~~
+#  616|     *outvals = g_value_array_new (2);
+#  617|     g_value_array_append (*outvals, NULL);
+#  618|->   g_value_init (g_value_array_get_nth (*outvals, (*outvals)->n_values - 1), G_TYPE_UINT);
+#  619|     g_value_set_uint (g_value_array_get_nth (*outvals, (*outvals)->n_values - 1),
+#  620|   		    g_value_get_uint (g_value_array_get_nth (invals, 1)) + 1);
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/test/core/my-object.c:619:3: warning[-Wdeprecated-declarations]: 'g_value_array_get_nth' is deprecated: Use 'GArray' instead
+#  619 |   g_value_set_uint (g_value_array_get_nth (*outvals, (*outvals)->n_values - 1),
+#      |   ^~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/test/core/my-object.c:8: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:63:17: note: declared here
+#   63 | GValue*         g_value_array_get_nth        (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~~
+#  617|     g_value_array_append (*outvals, NULL);
+#  618|     g_value_init (g_value_array_get_nth (*outvals, (*outvals)->n_values - 1), G_TYPE_UINT);
+#  619|->   g_value_set_uint (g_value_array_get_nth (*outvals, (*outvals)->n_values - 1),
+#  620|   		    g_value_get_uint (g_value_array_get_nth (invals, 1)) + 1);
+#  621|     g_value_array_append (*outvals, NULL);
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/test/core/my-object.c:620:21: warning[-Wdeprecated-declarations]: 'g_value_array_get_nth' is deprecated: Use 'GArray' instead
+#  620 |                     g_value_get_uint (g_value_array_get_nth (invals, 1)) + 1);
+#      |                     ^~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/test/core/my-object.c:8: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:63:17: note: declared here
+#   63 | GValue*         g_value_array_get_nth        (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~~
+#  618|     g_value_init (g_value_array_get_nth (*outvals, (*outvals)->n_values - 1), G_TYPE_UINT);
+#  619|     g_value_set_uint (g_value_array_get_nth (*outvals, (*outvals)->n_values - 1),
+#  620|-> 		    g_value_get_uint (g_value_array_get_nth (invals, 1)) + 1);
+#  621|     g_value_array_append (*outvals, NULL);
+#  622|     g_value_init (g_value_array_get_nth (*outvals, (*outvals)->n_values - 1), DBUS_TYPE_G_OBJECT_PATH);
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/test/core/my-object.c:621:3: warning[-Wdeprecated-declarations]: 'g_value_array_append' is deprecated: Use 'GArray' instead
+#  621 |   g_value_array_append (*outvals, NULL);
+#      |   ^~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/test/core/my-object.c:8: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:80:17: note: declared here
+#   80 | GValueArray*    g_value_array_append         (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~
+#  619|     g_value_set_uint (g_value_array_get_nth (*outvals, (*outvals)->n_values - 1),
+#  620|   		    g_value_get_uint (g_value_array_get_nth (invals, 1)) + 1);
+#  621|->   g_value_array_append (*outvals, NULL);
+#  622|     g_value_init (g_value_array_get_nth (*outvals, (*outvals)->n_values - 1), DBUS_TYPE_G_OBJECT_PATH);
+#  623|     g_value_set_boxed (g_value_array_get_nth (*outvals, (*outvals)->n_values - 1),
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/test/core/my-object.c:622:3: warning[-Wdeprecated-declarations]: 'g_value_array_get_nth' is deprecated: Use 'GArray' instead
+#  622 |   g_value_init (g_value_array_get_nth (*outvals, (*outvals)->n_values - 1), DBUS_TYPE_G_OBJECT_PATH);
+#      |   ^~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/test/core/my-object.c:8: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:63:17: note: declared here
+#   63 | GValue*         g_value_array_get_nth        (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~~
+#  620|   		    g_value_get_uint (g_value_array_get_nth (invals, 1)) + 1);
+#  621|     g_value_array_append (*outvals, NULL);
+#  622|->   g_value_init (g_value_array_get_nth (*outvals, (*outvals)->n_values - 1), DBUS_TYPE_G_OBJECT_PATH);
+#  623|     g_value_set_boxed (g_value_array_get_nth (*outvals, (*outvals)->n_values - 1),
+#  624|   		     g_strdup ("/org/freedesktop/DBus/GLib/Tests/MyTestObject2"));
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/test/core/my-object.c:623:3: warning[-Wdeprecated-declarations]: 'g_value_array_get_nth' is deprecated: Use 'GArray' instead
+#  623 |   g_value_set_boxed (g_value_array_get_nth (*outvals, (*outvals)->n_values - 1),
+#      |   ^~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/test/core/my-object.c:8: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:63:17: note: declared here
+#   63 | GValue*         g_value_array_get_nth        (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~~
+#  621|     g_value_array_append (*outvals, NULL);
+#  622|     g_value_init (g_value_array_get_nth (*outvals, (*outvals)->n_values - 1), DBUS_TYPE_G_OBJECT_PATH);
+#  623|->   g_value_set_boxed (g_value_array_get_nth (*outvals, (*outvals)->n_values - 1),
+#  624|   		     g_strdup ("/org/freedesktop/DBus/GLib/Tests/MyTestObject2"));
+#  625|     return TRUE;
+
+Error: VALGRIND_WARNING:
+dbus-glib-0.112/test/core/.libs/peer-client: note: while executing process 1600
+dbus-glib-0.112/test/core/peer-client.c:86: warning[Leak_DefinitelyLost]: 4,270 (120 direct, 4,150 indirect) bytes in 1 blocks are definitely lost in loss record 407 of 408
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_malloc()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_io_channel_unix_new()
+dbus-glib-0.112/test/core/peer-client.c:86: note: called from main()
+#   84|     g_type_init ();
+#   85|   
+#   86|->   io = g_io_channel_unix_new (0);
+#   87|     if (!g_io_channel_read_line (io, &addrbuf, NULL, &lineoffset, &error))
+#   88|       lose_gerror ("failed to read address from stdin", error);
+
+Error: VALGRIND_WARNING:
+dbus-glib-0.112/test/core/.libs/peer-client: note: while executing process 1600
+dbus-glib-0.112/test/core/peer-client.c:87: warning[Leak_DefinitelyLost]: 70 bytes in 1 blocks are definitely lost in loss record 239 of 408
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_malloc()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_memdup2()
+/usr/lib64/libglib-2.0.so.0.7000.5: note: called from g_io_channel_read_line()
+dbus-glib-0.112/test/core/peer-client.c:87: note: called from main()
+#   85|   
+#   86|     io = g_io_channel_unix_new (0);
+#   87|->   if (!g_io_channel_read_line (io, &addrbuf, NULL, &lineoffset, &error))
+#   88|       lose_gerror ("failed to read address from stdin", error);
+#   89|     /* trim newline */
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/test/core/private.c: scope_hint: In function 'main'
+dbus-glib-0.112/test/core/private.c:259:3: warning[-Wdeprecated-declarations]: 'g_type_init' is deprecated
+#  259 |   g_type_init ();
+#      |   ^~~~~~~~~~~
+/usr/include/glib-2.0/gobject/gobject.h:24: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gbinding.h:29: included_from: Included from here.
+/usr/include/glib-2.0/glib-object.h:22: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/test/core/private.c:40: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gtype.h:710:23: note: declared here
+#  710 | void                  g_type_init                    (void);
+#      |                       ^~~~~~~~~~~
+#  257|       char **argv)
+#  258|   {
+#  259|->   g_type_init ();
+#  260|     dbus_g_type_specialized_init ();
+#  261|   
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/test/core/test-dbus-glib.c: scope_hint: In function 'main'
+dbus-glib-0.112/test/core/test-dbus-glib.c:1177:5: warning[-Wdeprecated-declarations]: 'g_value_array_new' is deprecated: Use 'GArray' instead
+# 1177 |     vals = g_value_array_new (3);
+#      |     ^~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/test/core/test-dbus-glib.c:33: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:67:17: note: declared here
+#   67 | GValueArray*    g_value_array_new            (guint              n_prealloced);
+#      |                 ^~~~~~~~~~~~~~~~~
+# 1175|       GValue *val;
+# 1176|   
+# 1177|->     vals = g_value_array_new (3);
+# 1178|   
+# 1179|       g_value_array_append (vals, NULL);
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/test/core/test-dbus-glib.c:1179:5: warning[-Wdeprecated-declarations]: 'g_value_array_append' is deprecated: Use 'GArray' instead
+# 1179 |     g_value_array_append (vals, NULL);
+#      |     ^~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/test/core/test-dbus-glib.c:33: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:80:17: note: declared here
+#   80 | GValueArray*    g_value_array_append         (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~
+# 1177|       vals = g_value_array_new (3);
+# 1178|   
+# 1179|->     g_value_array_append (vals, NULL);
+# 1180|       g_value_init (g_value_array_get_nth (vals, vals->n_values - 1), G_TYPE_STRING);
+# 1181|       g_value_set_string (g_value_array_get_nth (vals, 0), "foo");
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/test/core/test-dbus-glib.c:1180:5: warning[-Wdeprecated-declarations]: 'g_value_array_get_nth' is deprecated: Use 'GArray' instead
+# 1180 |     g_value_init (g_value_array_get_nth (vals, vals->n_values - 1), G_TYPE_STRING);
+#      |     ^~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/test/core/test-dbus-glib.c:33: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:63:17: note: declared here
+#   63 | GValue*         g_value_array_get_nth        (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~~
+# 1178|   
+# 1179|       g_value_array_append (vals, NULL);
+# 1180|->     g_value_init (g_value_array_get_nth (vals, vals->n_values - 1), G_TYPE_STRING);
+# 1181|       g_value_set_string (g_value_array_get_nth (vals, 0), "foo");
+# 1182|   
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/test/core/test-dbus-glib.c:1181:5: warning[-Wdeprecated-declarations]: 'g_value_array_get_nth' is deprecated: Use 'GArray' instead
+# 1181 |     g_value_set_string (g_value_array_get_nth (vals, 0), "foo");
+#      |     ^~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/test/core/test-dbus-glib.c:33: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:63:17: note: declared here
+#   63 | GValue*         g_value_array_get_nth        (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~~
+# 1179|       g_value_array_append (vals, NULL);
+# 1180|       g_value_init (g_value_array_get_nth (vals, vals->n_values - 1), G_TYPE_STRING);
+# 1181|->     g_value_set_string (g_value_array_get_nth (vals, 0), "foo");
+# 1182|   
+# 1183|       g_value_array_append (vals, NULL);
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/test/core/test-dbus-glib.c:1183:5: warning[-Wdeprecated-declarations]: 'g_value_array_append' is deprecated: Use 'GArray' instead
+# 1183 |     g_value_array_append (vals, NULL);
+#      |     ^~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/test/core/test-dbus-glib.c:33: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:80:17: note: declared here
+#   80 | GValueArray*    g_value_array_append         (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~
+# 1181|       g_value_set_string (g_value_array_get_nth (vals, 0), "foo");
+# 1182|   
+# 1183|->     g_value_array_append (vals, NULL);
+# 1184|       g_value_init (g_value_array_get_nth (vals, vals->n_values - 1), G_TYPE_UINT);
+# 1185|       g_value_set_uint (g_value_array_get_nth (vals, vals->n_values - 1), 42);
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/test/core/test-dbus-glib.c:1184:5: warning[-Wdeprecated-declarations]: 'g_value_array_get_nth' is deprecated: Use 'GArray' instead
+# 1184 |     g_value_init (g_value_array_get_nth (vals, vals->n_values - 1), G_TYPE_UINT);
+#      |     ^~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/test/core/test-dbus-glib.c:33: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:63:17: note: declared here
+#   63 | GValue*         g_value_array_get_nth        (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~~
+# 1182|   
+# 1183|       g_value_array_append (vals, NULL);
+# 1184|->     g_value_init (g_value_array_get_nth (vals, vals->n_values - 1), G_TYPE_UINT);
+# 1185|       g_value_set_uint (g_value_array_get_nth (vals, vals->n_values - 1), 42);
+# 1186|   
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/test/core/test-dbus-glib.c:1185:5: warning[-Wdeprecated-declarations]: 'g_value_array_get_nth' is deprecated: Use 'GArray' instead
+# 1185 |     g_value_set_uint (g_value_array_get_nth (vals, vals->n_values - 1), 42);
+#      |     ^~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/test/core/test-dbus-glib.c:33: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:63:17: note: declared here
+#   63 | GValue*         g_value_array_get_nth        (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~~
+# 1183|       g_value_array_append (vals, NULL);
+# 1184|       g_value_init (g_value_array_get_nth (vals, vals->n_values - 1), G_TYPE_UINT);
+# 1185|->     g_value_set_uint (g_value_array_get_nth (vals, vals->n_values - 1), 42);
+# 1186|   
+# 1187|       g_value_array_append (vals, NULL);
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/test/core/test-dbus-glib.c:1187:5: warning[-Wdeprecated-declarations]: 'g_value_array_append' is deprecated: Use 'GArray' instead
+# 1187 |     g_value_array_append (vals, NULL);
+#      |     ^~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/test/core/test-dbus-glib.c:33: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:80:17: note: declared here
+#   80 | GValueArray*    g_value_array_append         (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~
+# 1185|       g_value_set_uint (g_value_array_get_nth (vals, vals->n_values - 1), 42);
+# 1186|   
+# 1187|->     g_value_array_append (vals, NULL);
+# 1188|       g_value_init (g_value_array_get_nth (vals, vals->n_values - 1), G_TYPE_VALUE);
+# 1189|       val = g_new0 (GValue, 1);
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/test/core/test-dbus-glib.c:1188:5: warning[-Wdeprecated-declarations]: 'g_value_array_get_nth' is deprecated: Use 'GArray' instead
+# 1188 |     g_value_init (g_value_array_get_nth (vals, vals->n_values - 1), G_TYPE_VALUE);
+#      |     ^~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/test/core/test-dbus-glib.c:33: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:63:17: note: declared here
+#   63 | GValue*         g_value_array_get_nth        (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~~
+# 1186|   
+# 1187|       g_value_array_append (vals, NULL);
+# 1188|->     g_value_init (g_value_array_get_nth (vals, vals->n_values - 1), G_TYPE_VALUE);
+# 1189|       val = g_new0 (GValue, 1);
+# 1190|       g_value_init (val, G_TYPE_UCHAR);
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/test/core/test-dbus-glib.c:1192:5: warning[-Wdeprecated-declarations]: 'g_value_array_get_nth' is deprecated: Use 'GArray' instead
+# 1192 |     g_value_set_boxed (g_value_array_get_nth (vals, vals->n_values - 1), val);
+#      |     ^~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/test/core/test-dbus-glib.c:33: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:63:17: note: declared here
+#   63 | GValue*         g_value_array_get_nth        (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~~
+# 1190|       g_value_init (val, G_TYPE_UCHAR);
+# 1191|       g_value_set_uchar (val, '!');
+# 1192|->     g_value_set_boxed (g_value_array_get_nth (vals, vals->n_values - 1), val);
+# 1193|   
+# 1194|       vals_ret = NULL;
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/test/core/test-dbus-glib.c:1197:29: warning[-Wdeprecated-declarations]: 'g_value_array_get_type' is deprecated: Use 'GArray' instead
+# 1197 |                             G_TYPE_VALUE_ARRAY, vals,
+#      |                             ^~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/test/core/test-dbus-glib.c:33: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:60:17: note: declared here
+#   60 | GType           g_value_array_get_type       (void) G_GNUC_CONST;
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~
+# 1195|       g_print ("Calling SendCar\n");
+# 1196|       if (!dbus_g_proxy_call (proxy, "SendCar", &error,
+# 1197|-> 			    G_TYPE_VALUE_ARRAY, vals,
+# 1198|   			    G_TYPE_INVALID,
+# 1199|   			    G_TYPE_VALUE_ARRAY, &vals_ret,
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/test/core/test-dbus-glib.c:1197:34: warning: Deprecated pre-processor symbol: replace with "(g_array_get_type ())"
+# 1197 |                             G_TYPE_VALUE_ARRAY, vals,
+#      |                                  ^~~~~~~~~~~~~~~~~~~~                                                     
+# 1195|       g_print ("Calling SendCar\n");
+# 1196|       if (!dbus_g_proxy_call (proxy, "SendCar", &error,
+# 1197|-> 			    G_TYPE_VALUE_ARRAY, vals,
+# 1198|   			    G_TYPE_INVALID,
+# 1199|   			    G_TYPE_VALUE_ARRAY, &vals_ret,
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/test/core/test-dbus-glib.c:1199:29: warning[-Wdeprecated-declarations]: 'g_value_array_get_type' is deprecated: Use 'GArray' instead
+# 1199 |                             G_TYPE_VALUE_ARRAY, &vals_ret,
+#      |                             ^~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/test/core/test-dbus-glib.c:33: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:60:17: note: declared here
+#   60 | GType           g_value_array_get_type       (void) G_GNUC_CONST;
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~
+# 1197|   			    G_TYPE_VALUE_ARRAY, vals,
+# 1198|   			    G_TYPE_INVALID,
+# 1199|-> 			    G_TYPE_VALUE_ARRAY, &vals_ret,
+# 1200|   			    G_TYPE_INVALID))
+# 1201|         lose_gerror ("Failed to complete SendCar call", error);
+
+Error: COMPILER_WARNING:
+dbus-glib-0.112/test/core/test-dbus-glib.c:1199:34: warning: Deprecated pre-processor symbol: replace with "(g_array_get_type ())"
+# 1199 |                             G_TYPE_VALUE_ARRAY, &vals_ret,
+#      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~                                                
+# 1197|   			    G_TYPE_VALUE_ARRAY, vals,
+# 1198|   			    G_TYPE_INVALID,
+# 1199|-> 			    G_TYPE_VALUE_ARRAY, &vals_ret,
+# 1200|   			    G_TYPE_INVALID))
+# 1201|         lose_gerror ("Failed to complete SendCar call", error);
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/test/core/test-dbus-glib.c:1206:5: warning[-Wdeprecated-declarations]: 'g_value_array_get_nth' is deprecated: Use 'GArray' instead
+# 1206 |     g_assert_true (G_VALUE_HOLDS_UINT (g_value_array_get_nth (vals_ret, 0)));
+#      |     ^~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/test/core/test-dbus-glib.c:33: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:63:17: note: declared here
+#   63 | GValue*         g_value_array_get_nth        (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~~
+# 1204|       g_assert_cmpuint (vals_ret->n_values, ==, 2);
+# 1205|   
+# 1206|->     g_assert_true (G_VALUE_HOLDS_UINT (g_value_array_get_nth (vals_ret, 0)));
+# 1207|       g_assert_cmpuint (g_value_get_uint (g_value_array_get_nth (vals_ret, 0)), ==, 43);
+# 1208|       
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/test/core/test-dbus-glib.c:1207:5: warning[-Wdeprecated-declarations]: 'g_value_array_get_nth' is deprecated: Use 'GArray' instead
+# 1207 |     g_assert_cmpuint (g_value_get_uint (g_value_array_get_nth (vals_ret, 0)), ==, 43);
+#      |     ^~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/test/core/test-dbus-glib.c:33: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:63:17: note: declared here
+#   63 | GValue*         g_value_array_get_nth        (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~~
+# 1205|   
+# 1206|       g_assert_true (G_VALUE_HOLDS_UINT (g_value_array_get_nth (vals_ret, 0)));
+# 1207|->     g_assert_cmpuint (g_value_get_uint (g_value_array_get_nth (vals_ret, 0)), ==, 43);
+# 1208|       
+# 1209|       g_assert_true (G_VALUE_TYPE (g_value_array_get_nth (vals_ret, 1)) == DBUS_TYPE_G_OBJECT_PATH);
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/test/core/test-dbus-glib.c:1209:5: warning[-Wdeprecated-declarations]: 'g_value_array_get_nth' is deprecated: Use 'GArray' instead
+# 1209 |     g_assert_true (G_VALUE_TYPE (g_value_array_get_nth (vals_ret, 1)) == DBUS_TYPE_G_OBJECT_PATH);
+#      |     ^~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/test/core/test-dbus-glib.c:33: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:63:17: note: declared here
+#   63 | GValue*         g_value_array_get_nth        (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~~
+# 1207|       g_assert_cmpuint (g_value_get_uint (g_value_array_get_nth (vals_ret, 0)), ==, 43);
+# 1208|       
+# 1209|->     g_assert_true (G_VALUE_TYPE (g_value_array_get_nth (vals_ret, 1)) == DBUS_TYPE_G_OBJECT_PATH);
+# 1210|       g_assert_cmpstr ("/org/freedesktop/DBus/GLib/Tests/MyTestObject2", ==,
+# 1211|                        g_value_get_boxed (g_value_array_get_nth (vals_ret, 1)));
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/test/core/test-dbus-glib.c:1210:5: warning[-Wdeprecated-declarations]: 'g_value_array_get_nth' is deprecated: Use 'GArray' instead
+# 1210 |     g_assert_cmpstr ("/org/freedesktop/DBus/GLib/Tests/MyTestObject2", ==,
+#      |     ^~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/test/core/test-dbus-glib.c:33: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:63:17: note: declared here
+#   63 | GValue*         g_value_array_get_nth        (GValueArray       *value_array,
+#      |                 ^~~~~~~~~~~~~~~~~~~~~
+# 1208|       
+# 1209|       g_assert_true (G_VALUE_TYPE (g_value_array_get_nth (vals_ret, 1)) == DBUS_TYPE_G_OBJECT_PATH);
+# 1210|->     g_assert_cmpstr ("/org/freedesktop/DBus/GLib/Tests/MyTestObject2", ==,
+# 1211|                        g_value_get_boxed (g_value_array_get_nth (vals_ret, 1)));
+# 1212|   
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/test/core/test-dbus-glib.c:1214:5: warning[-Wdeprecated-declarations]: 'g_value_array_free' is deprecated: Use 'GArray' instead
+# 1214 |     g_value_array_free (vals);
+#      |     ^~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/test/core/test-dbus-glib.c:33: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:70:17: note: declared here
+#   70 | void            g_value_array_free           (GValueArray       *value_array);
+#      |                 ^~~~~~~~~~~~~~~~~~
+# 1212|   
+# 1213|       g_free (val);
+# 1214|->     g_value_array_free (vals);
+# 1215|       g_value_array_free (vals_ret);
+# 1216|     }
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/test/core/test-dbus-glib.c:1215:5: warning[-Wdeprecated-declarations]: 'g_value_array_free' is deprecated: Use 'GArray' instead
+# 1215 |     g_value_array_free (vals_ret);
+#      |     ^~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib-object.h:34: included_from: Included from here.
+dbus-glib-0.112/dbus/dbus-glib.h:29: included_from: Included from here.
+dbus-glib-0.112/test/core/test-dbus-glib.c:33: included_from: Included from here.
+/usr/include/glib-2.0/gobject/gvaluearray.h:70:17: note: declared here
+#   70 | void            g_value_array_free           (GValueArray       *value_array);
+#      |                 ^~~~~~~~~~~~~~~~~~
+# 1213|       g_free (val);
+# 1214|       g_value_array_free (vals);
+# 1215|->     g_value_array_free (vals_ret);
+# 1216|     }
+# 1217|   
+
+Error: COMPILER_WARNING (CWE-477):
+dbus-glib-0.112/test/core/test-profile.c: scope_hint: In function 'do_profile_run'
+dbus-glib-0.112/test/core/test-profile.c:1057:7: warning[-Wdeprecated-declarations]: 'g_thread_create' is deprecated: Use 'g_thread_new' instead
+# 1057 |       g_thread_create (vtable->client_thread_func, (void*) vtable, FALSE, NULL);
+#      |       ^~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib.h:112: included_from: Included from here.
+dbus-glib-0.112/test/core/test-profile.c:27: included_from: Included from here.
+/usr/include/glib-2.0/glib/deprecated/gthread.h:100:10: note: declared here
+#  100 | GThread *g_thread_create       (GThreadFunc       func,
+#      |          ^~~~~~~~~~~~~~~
+# 1055|     for (i = 0; i < N_CLIENT_THREADS; i++)
+# 1056|       {
+# 1057|->       g_thread_create (vtable->client_thread_func, (void*) vtable, FALSE, NULL);
+# 1058|       }
+# 1059|   

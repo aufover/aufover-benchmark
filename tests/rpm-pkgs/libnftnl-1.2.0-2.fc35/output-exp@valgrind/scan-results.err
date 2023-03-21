@@ -1,0 +1,32 @@
+Error: VALGRIND_WARNING:
+libnftnl-1.2.0/tests/.libs/nft-expr_match-test: note: while executing process 6092
+libnftnl-1.2.0/tests/nft-expr_match-test.c:74: warning[UninitCondition]: Conditional jump or move depends on uninitialised value(s)
+/usr/lib64/libc.so.6: note: called from strdup()
+libnftnl-1.2.0/tests/nft-expr_match-test.c:74: note: called from main()
+#   72|   	nftnl_expr_set_str(ex, NFTNL_EXPR_MT_NAME, "Tests");
+#   73|   	nftnl_expr_set_u32(ex, NFTNL_EXPR_MT_REV, 0x12345678);
+#   74|-> 	nftnl_expr_set(ex, NFTNL_EXPR_MT_INFO, strdup(data), sizeof(data));
+#   75|   	nftnl_rule_add_expr(a, ex);
+#   76|   
+
+Error: VALGRIND_WARNING:
+libnftnl-1.2.0/tests/.libs/nft-expr_quota-test: note: while executing process 6377
+libnftnl-1.2.0/tests/nft-expr_quota-test.c:35: warning[UninitCondition]: Conditional jump or move depends on uninitialised value(s)
+libnftnl-1.2.0/tests/nft-expr_quota-test.c:35: note: called from UnknownInlinedFun()
+libnftnl-1.2.0/tests/nft-expr_quota-test.c:77: note: called from main()
+#   33|   	    nftnl_expr_get_u64(rule_b, NFTNL_EXPR_QUOTA_BYTES))
+#   34|   		print_err("Expr NFTNL_EXPR_QUOTA_BYTES mismatches");
+#   35|-> 	if (nftnl_expr_get_u64(rule_a, NFTNL_EXPR_QUOTA_FLAGS) !=
+#   36|   	    nftnl_expr_get_u64(rule_b, NFTNL_EXPR_QUOTA_FLAGS))
+#   37|   		print_err("Expr NFTNL_EXPR_QUOTA_FLAGS mismatches");
+
+Error: VALGRIND_WARNING:
+libnftnl-1.2.0/tests/.libs/nft-expr_target-test: note: while executing process 6512
+libnftnl-1.2.0/tests/nft-expr_target-test.c:74: warning[UninitCondition]: Conditional jump or move depends on uninitialised value(s)
+/usr/lib64/libc.so.6: note: called from strdup()
+libnftnl-1.2.0/tests/nft-expr_target-test.c:74: note: called from main()
+#   72|   	nftnl_expr_set(ex, NFTNL_EXPR_TG_NAME, "test", strlen("test"));
+#   73|   	nftnl_expr_set_u32(ex, NFTNL_EXPR_TG_REV, 0x56781234);
+#   74|-> 	nftnl_expr_set(ex, NFTNL_EXPR_TG_INFO, strdup(data), sizeof(data));
+#   75|   	nftnl_rule_add_expr(a, ex);
+#   76|   

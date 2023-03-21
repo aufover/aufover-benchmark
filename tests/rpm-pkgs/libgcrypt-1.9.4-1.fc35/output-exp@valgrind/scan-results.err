@@ -1,0 +1,76 @@
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/sha256.c: scope_hint: In function 'do_sha256_transform_amd64_ssse3'
+libgcrypt-1.9.4/cipher/sha256.c:157:10: warning[-Wstringop-overflow=]: '_gcry_sha256_transform_amd64_ssse3' accessing 32 bytes in a region of size 4
+#  157 |          + ASM_EXTRA_STACK;
+#      |          ^
+libgcrypt-1.9.4/cipher/sha256.c:157:10: note: referencing argument 2 of type 'u32 *'
+libgcrypt-1.9.4/cipher/sha256.c:147:14: note: in a call to function '_gcry_sha256_transform_amd64_ssse3'
+#  147 | unsigned int _gcry_sha256_transform_amd64_ssse3(const void *input_data,
+#      |              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  155|     SHA256_CONTEXT *hd = ctx;
+#  156|     return _gcry_sha256_transform_amd64_ssse3 (data, &hd->h0, nblks)
+#  157|->          + ASM_EXTRA_STACK;
+#  158|   }
+#  159|   #endif
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/sha256.c: scope_hint: In function 'do_sha256_transform_amd64_avx'
+libgcrypt-1.9.4/cipher/sha256.c:172:10: warning[-Wstringop-overflow=]: '_gcry_sha256_transform_amd64_avx' accessing 32 bytes in a region of size 4
+#  172 |          + ASM_EXTRA_STACK;
+#      |          ^
+libgcrypt-1.9.4/cipher/sha256.c:172:10: note: referencing argument 2 of type 'u32 *'
+libgcrypt-1.9.4/cipher/sha256.c:162:14: note: in a call to function '_gcry_sha256_transform_amd64_avx'
+#  162 | unsigned int _gcry_sha256_transform_amd64_avx(const void *input_data,
+#      |              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  170|     SHA256_CONTEXT *hd = ctx;
+#  171|     return _gcry_sha256_transform_amd64_avx (data, &hd->h0, nblks)
+#  172|->          + ASM_EXTRA_STACK;
+#  173|   }
+#  174|   #endif
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/sha256.c: scope_hint: In function 'do_sha256_transform_amd64_avx2'
+libgcrypt-1.9.4/cipher/sha256.c:187:10: warning[-Wstringop-overflow=]: '_gcry_sha256_transform_amd64_avx2' accessing 32 bytes in a region of size 4
+#  187 |          + ASM_EXTRA_STACK;
+#      |          ^
+libgcrypt-1.9.4/cipher/sha256.c:187:10: note: referencing argument 2 of type 'u32 *'
+libgcrypt-1.9.4/cipher/sha256.c:177:14: note: in a call to function '_gcry_sha256_transform_amd64_avx2'
+#  177 | unsigned int _gcry_sha256_transform_amd64_avx2(const void *input_data,
+#      |              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  185|     SHA256_CONTEXT *hd = ctx;
+#  186|     return _gcry_sha256_transform_amd64_avx2 (data, &hd->h0, nblks)
+#  187|->          + ASM_EXTRA_STACK;
+#  188|   }
+#  189|   #endif
+
+Error: COMPILER_WARNING:
+libgcrypt-1.9.4/cipher/sha256.c: scope_hint: In function 'do_sha256_transform_intel_shaext'
+libgcrypt-1.9.4/cipher/sha256.c:203:10: warning[-Wstringop-overflow=]: '_gcry_sha256_transform_intel_shaext' accessing 32 bytes in a region of size 4
+#  203 |   return _gcry_sha256_transform_intel_shaext (&hd->h0, data, nblks);
+#      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libgcrypt-1.9.4/cipher/sha256.c:203:10: note: referencing argument 1 of type 'u32 *'
+libgcrypt-1.9.4/cipher/sha256.c:194:1: note: in a call to function '_gcry_sha256_transform_intel_shaext'
+#  194 | _gcry_sha256_transform_intel_shaext(u32 state[8],
+#      | ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  201|   {
+#  202|     SHA256_CONTEXT *hd = ctx;
+#  203|->   return _gcry_sha256_transform_intel_shaext (&hd->h0, data, nblks);
+#  204|   }
+#  205|   #endif
+
+Error: VALGRIND_WARNING:
+./mpitests: note: while executing process 1259
+libgcrypt-1.9.4/src/global.c:1027: warning[Leak_DefinitelyLost]: 32 (24 direct, 8 indirect) bytes in 1 blocks are definitely lost in loss record 2 of 4
+libgcrypt-1.9.4/src/global.c:1027: note: called from do_malloc.constprop.0.isra.0()
+libgcrypt-1.9.4/src/global.c:1049: note: called from UnknownInlinedFun()
+libgcrypt-1.9.4/src/global.c:1223: note: called from _gcry_xmalloc()
+libgcrypt-1.9.4/src/../mpi/mpiutil.c:104: note: called from UnknownInlinedFun()
+libgcrypt-1.9.4/src/../mpi/mpiutil.c:554: note: called from UnknownInlinedFun()
+libgcrypt-1.9.4/src/visibility.c:308: note: called from gcry_mpi_set_ui()
+libgcrypt-1.9.4/tests/mpitests.c:82: note: called from UnknownInlinedFun()
+libgcrypt-1.9.4/tests/mpitests.c:600: note: called from main()
+# 1025|   	m = (*alloc_func) (n);
+# 1026|         else
+# 1027|-> 	m = _gcry_private_malloc (n);
+# 1028|       }
+# 1029|   

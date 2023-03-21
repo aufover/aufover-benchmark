@@ -1,0 +1,105 @@
+Error: COMPILER_WARNING (CWE-457):
+nettle-3.7.3/examples/nettle-benchmark.c:68: included_from: Included from here.
+nettle-3.7.3/examples/nettle-benchmark.c: scope_hint: In function 'time_cmac'
+nettle-3.7.3/cmac.h:54:29: warning[-Wmaybe-uninitialized]: 'key' may be used uninitialized
+#   54 | #define cmac_aes128_set_key nettle_cmac_aes128_set_key
+nettle-3.7.3/examples/nettle-benchmark.c:437:3: note: in expansion of macro 'cmac_aes128_set_key'
+#  437 |   cmac_aes128_set_key (&ctx, key);
+#      |   ^~~~~~~~~~~~~~~~~~~
+nettle-3.7.3/cmac.h:54:29: note: by argument 2 of type 'const uint8_t *' {aka 'const unsigned char *'} to 'nettle_cmac_aes128_set_key' declared here
+#   54 | #define cmac_aes128_set_key nettle_cmac_aes128_set_key
+#      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~
+nettle-3.7.3/cmac.h:197:1: note: in expansion of macro 'cmac_aes128_set_key'
+#  197 | cmac_aes128_set_key(struct cmac_aes128_ctx *ctx, const uint8_t *key);
+#      | ^~~~~~~~~~~~~~~~~~~
+nettle-3.7.3/examples/nettle-benchmark.c:435:11: note: 'key' declared here
+#  435 |   uint8_t key[16];
+#      |           ^~~
+#   52|   #define cmac128_update nettle_cmac128_update
+#   53|   #define cmac128_digest nettle_cmac128_digest
+#   54|-> #define cmac_aes128_set_key nettle_cmac_aes128_set_key
+#   55|   #define cmac_aes128_update nettle_cmac_aes128_update
+#   56|   #define cmac_aes128_digest nettle_cmac_aes128_digest
+
+Error: COMPILER_WARNING:
+nettle-3.7.3/conftest.s: scope_hint: Assembler messages
+nettle-3.7.3/conftest.s:2: Error: alignment not a power of 2
+
+Error: COMPILER_WARNING:
+nettle-3.7.3/conftest.s: scope_hint: Assembler messages
+nettle-3.7.3/conftest.s:4: Error: unknown pseudo-op: `.def'
+
+Error: COMPILER_WARNING:
+nettle-3.7.3/conftest.s: scope_hint: Assembler messages
+nettle-3.7.3/conftest.s:4: Error: unrecognized symbol type ""
+
+Error: COMPILER_WARNING:
+nettle-3.7.3/conftest.s:5: Error: unknown pseudo-op: `.scl'
+
+Error: COMPILER_WARNING:
+nettle-3.7.3/conftest.s:6: Error: Missing symbol name in directive
+
+Error: COMPILER_WARNING:
+nettle-3.7.3/conftest.s:6: Error: unrecognized symbol type "32"
+
+Error: COMPILER_WARNING:
+nettle-3.7.3/conftest.s:7: Error: unknown pseudo-op: `.endef'
+
+Error: COMPILER_WARNING (CWE-457):
+nettle-3.7.3/examples/nettle-benchmark.c:69: included_from: Included from here.
+nettle-3.7.3/examples/nettle-benchmark.c: scope_hint: In function 'time_poly1305_aes'
+nettle-3.7.3/poly1305.h:45:30: warning[-Wmaybe-uninitialized]: 'key' may be used uninitialized
+#   45 | #define poly1305_aes_set_key nettle_poly1305_aes_set_key
+nettle-3.7.3/examples/nettle-benchmark.c:454:3: note: in expansion of macro 'poly1305_aes_set_key'
+#  454 |   poly1305_aes_set_key (&ctx, key);
+#      |   ^~~~~~~~~~~~~~~~~~~~
+nettle-3.7.3/poly1305.h:45:30: note: by argument 2 of type 'const uint8_t *' {aka 'const unsigned char *'} to 'nettle_poly1305_aes_set_key' declared here
+#   45 | #define poly1305_aes_set_key nettle_poly1305_aes_set_key
+#      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+nettle-3.7.3/poly1305.h:92:1: note: in expansion of macro 'poly1305_aes_set_key'
+#   92 | poly1305_aes_set_key (struct poly1305_aes_ctx *ctx, const uint8_t *key);
+#      | ^~~~~~~~~~~~~~~~~~~~
+nettle-3.7.3/examples/nettle-benchmark.c:452:11: note: 'key' declared here
+#  452 |   uint8_t key[32];
+#      |           ^~~
+nettle-3.7.3/examples/nettle-benchmark.c: scope_hint: At top level
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#   43|   
+#   44|   /* Name mangling */
+#   45|-> #define poly1305_aes_set_key nettle_poly1305_aes_set_key
+#   46|   #define poly1305_aes_set_nonce nettle_poly1305_aes_set_nonce
+#   47|   #define poly1305_aes_update nettle_poly1305_aes_update
+
+Error: COMPILER_WARNING (CWE-1164):
+nettle-3.7.3/testsuite/ecdh-test.c:141:1: warning[-Wunused-function]: 'test_public_key' defined but not used
+#  141 | test_public_key (const char *label, const struct ecc_curve *ecc,
+#      | ^~~~~~~~~~~~~~~
+cc1: note: unrecognized command-line option '-Wno-unknown-warning-option' may have been intended to silence earlier diagnostics
+#  139|   
+#  140|   static void
+#  141|-> test_public_key (const char *label, const struct ecc_curve *ecc,
+#  142|                    const char *x, const char *y, int expect_success)
+#  143|   {
+
+Error: COMPILER_WARNING (CWE-457):
+nettle-3.7.3/examples/nettle-benchmark.c:67: included_from: Included from here.
+nettle-3.7.3/examples/nettle-benchmark.c: scope_hint: In function 'time_umac'
+nettle-3.7.3/umac.h:42:25: warning[-Wmaybe-uninitialized]: 'key' may be used uninitialized
+#   42 | #define umac32_set_key  nettle_umac32_set_key
+nettle-3.7.3/examples/nettle-benchmark.c:395:3: note: in expansion of macro 'umac32_set_key'
+#  395 |   umac32_set_key (&ctx32, key);
+#      |   ^~~~~~~~~~~~~~
+nettle-3.7.3/umac.h:42:25: note: by argument 2 of type 'const uint8_t *' {aka 'const unsigned char *'} to 'nettle_umac32_set_key' declared here
+#   42 | #define umac32_set_key  nettle_umac32_set_key
+#      |                         ^~~~~~~~~~~~~~~~~~~~~
+nettle-3.7.3/umac.h:134:1: note: in expansion of macro 'umac32_set_key'
+#  134 | umac32_set_key (struct umac32_ctx *ctx, const uint8_t *key);
+#      | ^~~~~~~~~~~~~~
+nettle-3.7.3/examples/nettle-benchmark.c:393:11: note: 'key' declared here
+#  393 |   uint8_t key[16];
+#      |           ^~~
+#   40|   
+#   41|   /* Namespace mangling */
+#   42|-> #define umac32_set_key  nettle_umac32_set_key
+#   43|   #define umac64_set_key  nettle_umac64_set_key
+#   44|   #define umac96_set_key  nettle_umac96_set_key

@@ -1,0 +1,17 @@
+Error: COMPILER_WARNING (CWE-477):
+modulemd-2.13.0/modulemd/tests/test-modulemd-validator.c: scope_hint: In function ‘test_exit_code’
+modulemd-2.13.0/modulemd/tests/test-modulemd-validator.c:136:3: warning[-Wdeprecated-declarations]: ‘g_spawn_check_exit_status’ is deprecated: Use 'g_spawn_check_wait_status' instead
+#  136 |   g_spawn_check_exit_status (validator_exit_status, &error);
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib.h:81: included_from: Included from here.
+modulemd-2.13.0/modulemd/tests/test-modulemd-validator.c:14: included_from: Included from here.
+/usr/include/glib-2.0/glib/gspawn.h:280:10: note: declared here
+#  280 | gboolean g_spawn_check_exit_status (gint      wait_status,
+#      |          ^~~~~~~~~~~~~~~~~~~~~~~~~
+modulemd-2.13.0/modulemd/tests/test-modulemd-validator.c: scope_hint: At top level
+cc1: note: unrecognized command-line option ‘-Wno-unknown-warning-option’ may have been intended to silence earlier diagnostics
+#  134|     g_autoptr (GError) error = NULL;
+#  135|     g_autofree gchar *message = NULL;
+#  136|->   g_spawn_check_exit_status (validator_exit_status, &error);
+#  137|     message = g_strdup_printf ("exit code was %d", expected_exit_code);
+#  138|     if (0 == expected_exit_code)

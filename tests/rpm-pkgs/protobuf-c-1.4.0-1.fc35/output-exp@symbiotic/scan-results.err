@@ -1,0 +1,40 @@
+Error: SYMBIOTIC_WARNING:
+protobuf-c-1.4.0/t/generated-code/test-generated-code.c:53: error: memory error: out of bound pointer
+protobuf-c-1.4.0/t/generated-code/test-generated-code.c:53: note: call stack: function main ()
+protobuf-c-1.4.0/t/generated-code/test-generated-code.c:53: note: Additional Info: address: 280375465082880:32
+protobuf-c-1.4.0/t/generated-code/test-generated-code.c:53: note: Additional Info: pointing to: none
+protobuf-c-1.4.0/t/test.pb-c.c:32:10: note: Non-deterministic values: protobuf_c_message_get_packed_size: len 8 bytes, [8 times 0x0] (i64: 0)
+protobuf-c-1.4.0/t/test.pb-c.c:39:10: note: Non-deterministic values: protobuf_c_message_pack: len 8 bytes, [8 times 0x0] (i64: 0)
+protobuf-c-1.4.0/t/test.pb-c.c:55:6: note: Non-deterministic values: protobuf_c_message_unpack: len 8 bytes, [5 times 0x0|0xff|2 times 0x0] (i64: 280375465082880)
+protobuf-c-1.4.0/t/test.pb-c.c:55:6: note: Non-deterministic values: protobuf_c_message_unpack (offset): len 8 bytes, [8 times 0x0] (i64: 0)
+#   51|     person2 = foo__person__unpack (NULL, size, packed);
+#   52|     assert (person2 != NULL);
+#   53|->   assert (person2->id == 42);
+#   54|   #ifndef PROTO3
+#   55|     assert (person2->email == NULL);
+
+Error: SYMBIOTIC_WARNING:
+protobuf-c-1.4.0/t/issue204/issue204.c:14: error: memory error: out of bound pointer
+protobuf-c-1.4.0/t/issue204/issue204.c:14: note: call stack: function main ()
+protobuf-c-1.4.0/t/issue204/issue204.c:14: note: Additional Info: address: 4278190080:24
+protobuf-c-1.4.0/t/issue204/issue204.c:14: note: Additional Info: pointing to: none
+protobuf-c-1.4.0/t/issue204/issue204.c:10:10: note: Non-deterministic values: protobuf_c_message_descriptor_get_field_by_name: len 8 bytes, [3 times 0x0|0xff|4 times 0x0] (i64: 4278190080)
+protobuf-c-1.4.0/t/issue204/issue204.c:10:10: note: Non-deterministic values: protobuf_c_message_descriptor_get_field_by_name (offset): len 8 bytes, [8 times 0x0] (i64: 0)
+#   12|   						"first_oneof");
+#   13|   	assert (field);
+#   14|-> 	off_name = field->offset;
+#   15|   	field = protobuf_c_message_descriptor_get_field(
+#   16|   						msg.base.descriptor,
+
+Error: SYMBIOTIC_WARNING:
+protobuf-c-1.4.0/t/issue440/issue440.c:22: error: memory error: out of bound pointer
+protobuf-c-1.4.0/t/issue440/issue440.c:22: note: call stack: function main ()
+protobuf-c-1.4.0/t/issue440/issue440.c:22: note: Additional Info: address: 71776119061217280:24
+protobuf-c-1.4.0/t/issue440/issue440.c:22: note: Additional Info: pointing to: none
+protobuf-c-1.4.0/t/issue440/issue440.pb-c.c:88:6: note: Non-deterministic values: protobuf_c_message_unpack: len 8 bytes, [6 times 0x0|0xff|0x0] (i64: 71776119061217280)
+protobuf-c-1.4.0/t/issue440/issue440.pb-c.c:88:6: note: Non-deterministic values: protobuf_c_message_unpack (offset): len 8 bytes, [8 times 0x0] (i64: 0)
+#   20|   	Boolean *msg = boolean__unpack (NULL, sizeof protoc, protoc);
+#   21|   	assert(msg);
+#   22|-> 	assert(msg->n_boolean == 4);
+#   23|   	assert(msg->boolean[0] == 1);
+#   24|   	assert(msg->boolean[1] == 1);

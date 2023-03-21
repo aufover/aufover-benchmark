@@ -1,0 +1,97 @@
+Error: COMPILER_WARNING (CWE-563):
+python-dmidecode-3.12.2/src/dmidecode.c: scope_hint: In function ‘dmi_additional_info’
+python-dmidecode-3.12.2/src/dmidecode.c:3907:42: warning[-Wunused-but-set-variable]: variable ‘str_n’ set but not used
+# 3907 |                 xmlNode *data_n = NULL, *str_n = NULL, *val_n = NULL;
+#      |                                          ^~~~~
+python-dmidecode-3.12.2/src/dmidecode.c: scope_hint: At top level
+cc1: note: unrecognized command-line option ‘-Wno-unknown-warning-option’ may have been intended to silence earlier diagnostics
+# 3905|   
+# 3906|           for(i = 0; i < count; i++) {
+# 3907|->                 xmlNode *data_n = NULL, *str_n = NULL, *val_n = NULL;
+# 3908|   
+# 3909|                   /* Check for short entries */
+
+Error: COMPILER_WARNING (CWE-704):
+python-dmidecode-3.12.2/src/dmidecodemodule.c: scope_hint: In function ‘dmidecode_get_section’
+python-dmidecode-3.12.2/src/dmidecodemodule.c:486:25: warning[-Wdiscarded-qualifiers]: assignment discards ‘const’ qualifier from pointer target type
+#  486 |                 section = PyUnicode_AsUTF8(args);
+#      |                         ^
+#  484|           char *section = NULL;
+#  485|           if (PyUnicode_Check(args)) {
+#  486|->                 section = PyUnicode_AsUTF8(args);
+#  487|           } else if (PyBytes_Check(args)) {
+#  488|                   section = PyBytes_AsString(args);
+
+Error: COMPILER_WARNING (CWE-704):
+python-dmidecode-3.12.2/src/dmidecodemodule.c: scope_hint: In function ‘dmidecode_set_dev’
+python-dmidecode-3.12.2/src/dmidecodemodule.c:617:19: warning[-Wdiscarded-qualifiers]: assignment discards ‘const’ qualifier from pointer target type
+#  617 |                 f = PyUnicode_AsUTF8(arg);
+#      |                   ^
+#  615|           char *f = NULL;
+#  616|           if(PyUnicode_Check(arg)) {
+#  617|->                 f = PyUnicode_AsUTF8(arg);
+#  618|           } else if(PyBytes_Check(arg)) {
+#  619|                   f = PyBytes_AsString(arg);
+
+Error: COMPILER_WARNING (CWE-704):
+python-dmidecode-3.12.2/src/dmidecodemodule.c: scope_hint: In function ‘dmidecode_set_pythonxmlmap’
+python-dmidecode-3.12.2/src/dmidecodemodule.c:665:23: warning[-Wdiscarded-qualifiers]: assignment discards ‘const’ qualifier from pointer target type
+#  665 |                 fname = PyUnicode_AsUTF8(arg);
+#      |                       ^
+#  663|   
+#  664|           if (PyUnicode_Check(arg)) {
+#  665|->                 fname = PyUnicode_AsUTF8(arg);
+#  666|           } else if (PyBytes_Check(arg)) {
+#  667|                   fname = PyBytes_AsString(arg);
+
+Error: COMPILER_WARNING (CWE-843):
+python-dmidecode-3.12.2/src/dmidecodemodule.c: scope_hint: At top level
+python-dmidecode-3.12.2/src/dmidecodemodule.c:740:28: warning[-Wincompatible-pointer-types]: initialization of ‘PyObject * (*)(PyObject *, PyObject *)’ {aka ‘struct _object * (*)(struct _object *, struct _object *)’} from incompatible pointer type ‘PyObject * (*)(PyObject *, PyObject *, PyObject *)’ {aka ‘struct _object * (*)(struct _object *, struct _object *, struct _object *)’}
+#  740 |         {(char *)"xmlapi", dmidecode_xmlapi, METH_VARARGS | METH_KEYWORDS,
+#      |                            ^~~~~~~~~~~~~~~~
+python-dmidecode-3.12.2/src/dmidecodemodule.c:740:28: note: (near initialization for ‘DMIDataMethods[16].ml_meth’)
+#  738|            (char *) "Use another python dict map definition. The default file is " PYTHON_XML_MAP},
+#  739|   
+#  740|->         {(char *)"xmlapi", dmidecode_xmlapi, METH_VARARGS | METH_KEYWORDS,
+#  741|            (char *) "Internal API for retrieving data as raw XML data"},
+#  742|   
+
+Error: COMPILER_WARNING (CWE-843):
+python-dmidecode-3.12.2/src/dmidecodemodule.c: scope_hint: In function ‘PyInit_dmidecodemod’
+python-dmidecode-3.12.2/src/dmidecodemodule.c:846:72: warning[-Wincompatible-pointer-types]: passing argument 3 of ‘PyCapsule_New’ from incompatible pointer type
+#  846 |         PyModule_AddObject(module, "options", PyCapsule_New(opt, NULL, destruct_options));
+#      |                                                                        ^~~~~~~~~~~~~~~~
+#      |                                                                        |
+#      |                                                                        void (*)(void *)
+/usr/include/python3.10/Python.h:102: included_from: Included from here.
+python-dmidecode-3.12.2/src/dmidecodemodule.c:42: included_from: Included from here.
+/usr/include/python3.10/pycapsule.h:31:26: note: expected ‘PyCapsule_Destructor’ {aka ‘void (*)(struct _object *)’} but argument is of type ‘void (*)(void *)’
+#   31 |     PyCapsule_Destructor destructor);
+#      |     ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
+python-dmidecode-3.12.2/src/dmidecodemodule.c: scope_hint: At top level
+cc1: note: unrecognized command-line option ‘-Wno-unknown-warning-option’ may have been intended to silence earlier diagnostics
+#  844|           // clean up the memory for us.
+#  845|           // TODO: destructor has wrong type under py3?
+#  846|->         PyModule_AddObject(module, "options", PyCapsule_New(opt, NULL, destruct_options));
+#  847|           global_options = opt;
+#  848|   #ifdef IS_PY3K
+
+Error: COMPILER_WARNING (CWE-681):
+python-dmidecode-3.12.2/src/dmixml.c: scope_hint: In function ‘dmixml_buildstr’
+python-dmidecode-3.12.2/src/dmixml.c:68:33: warning[-Wpointer-sign]: pointer targets in passing argument 3 of ‘xmlStrVPrintf’ differ in signedness
+#   68 |         xmlStrVPrintf(ret, len, xmlfmt, ap);
+#      |                                 ^~~~~~
+#      |                                 |
+#      |                                 xmlChar * {aka unsigned char *}
+/usr/include/libxml2/libxml/tree.h:18: included_from: Included from here.
+python-dmidecode-3.12.2/src/dmixml.c:40: included_from: Included from here.
+/usr/include/libxml2/libxml/xmlstring.h:105:54: note: expected ‘const char *’ but argument is of type ‘xmlChar *’ {aka ‘unsigned char *’}
+#  105 |                                          const char *msg,
+#      |                                          ~~~~~~~~~~~~^~~
+python-dmidecode-3.12.2/src/dmixml.c: scope_hint: At top level
+cc1: note: unrecognized command-line option ‘-Wno-unknown-warning-option’ may have been intended to silence earlier diagnostics
+#   66|           assert( xmlfmt != NULL );
+#   67|   
+#   68|->         xmlStrVPrintf(ret, len, xmlfmt, ap);
+#   69|           free(xmlfmt);
+#   70|   

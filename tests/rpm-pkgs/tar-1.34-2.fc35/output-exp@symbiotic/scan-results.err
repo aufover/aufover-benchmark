@@ -1,0 +1,28 @@
+Error: COMPILER_WARNING (CWE-1023):
+tar-1.34/lib/rtapelib.c:699:10: warning[-Wswitch]: overflow converting case value to switch condition type (2150657282 to 18446744071565241602)
+#    case MTIOCGET:
+#         ^
+/usr/include/sys/mtio.h:198:18: note: expanded from macro 'MTIOCGET'
+##define MTIOCGET        _IOR('m', 2, struct mtget)      /* Get tape status.  */
+#                        ^
+/usr/include/asm-generic/ioctl.h:84:28: note: expanded from macro '_IOR'
+##define _IOR(type,nr,size)      _IOC(_IOC_READ,(type),(nr),(_IOC_TYPECHECK(size)))
+#                                ^
+/usr/include/asm-generic/ioctl.h:70:2: note: expanded from macro '_IOC'
+#        (((dir)  << _IOC_DIRSHIFT) | \
+#        ^
+#  697|   
+#  698|   #ifdef MTIOCGET
+#  699|->     case MTIOCGET:
+#  700|         {
+#  701|   	ssize_t status;
+
+Error: COMPILER_WARNING:
+tar-1.34/src/create.c:311:33: warning[-Wconstant-conversion]: implicit conversion from 'int' to 'char' changes value from 128 to -128
+#          where[0] = negative ? -1 : 1 << (LG_256 - 1);
+#                   ~                 ~~^~~~~~~~~~~~~~~
+#  309|   	   <= MAX_VAL_WITH_DIGITS (size - 1, LG_256)))
+#  310|   	{
+#  311|-> 	  where[0] = negative ? -1 : 1 << (LG_256 - 1);
+#  312|   	  to_base256 (negative, value, where + 1, size - 1);
+#  313|   	  return true;

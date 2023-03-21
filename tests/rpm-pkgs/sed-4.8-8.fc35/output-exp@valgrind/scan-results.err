@@ -1,0 +1,1215 @@
+Error: VALGRIND_WARNING:
+sed-4.8/gnulib-tests/./dfa-match-aux: note: while executing process 37596 with arguments: a ba 0
+sed-4.8/gnulib-tests/../lib/xmalloc.c:41: warning[Leak_PossiblyLost]: 2,048 bytes in 1 blocks are possibly lost in loss record 12 of 13
+sed-4.8/gnulib-tests/../lib/xmalloc.c:41: note: called from UnknownInlinedFun()
+sed-4.8/gnulib-tests/../lib/dfa.c:2949: note: called from build_state()
+sed-4.8/gnulib-tests/../lib/dfa.c:3521: note: called from dfaexec_main()
+sed-4.8/gnulib-tests/../lib/dfa.c:3568: note: called from UnknownInlinedFun()
+sed-4.8/gnulib-tests/dfa-match-aux.c:67: note: called from main()
+#   39|   xmalloc (size_t n)
+#   40|   {
+#   41|->   void *p = malloc (n);
+#   42|     if (!p && n != 0)
+#   43|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/gnulib-tests/./dfa-match-aux: note: while executing process 37596 with arguments: a ba 0
+sed-4.8/gnulib-tests/../lib/xmalloc.c:61: warning[Leak_PossiblyLost]: 128 bytes in 1 blocks are possibly lost in loss record 10 of 13
+sed-4.8/gnulib-tests/../lib/xmalloc.c:61: note: called from UnknownInlinedFun()
+sed-4.8/gnulib-tests/../lib/dfa.c:818: note: called from xpalloc()
+sed-4.8/gnulib-tests/../lib/dfa.c:2853: note: called from realloc_trans_if_necessary()
+sed-4.8/gnulib-tests/../lib/dfa.c:3391: note: called from dfaexec_main()
+sed-4.8/gnulib-tests/../lib/dfa.c:3568: note: called from UnknownInlinedFun()
+sed-4.8/gnulib-tests/dfa-match-aux.c:67: note: called from main()
+#   59|       }
+#   60|   
+#   61|->   p = realloc (p, n);
+#   62|     if (!p && n)
+#   63|       xalloc_die ();
+
+Error: COMPILER_WARNING (CWE-1164):
+sed-4.8/gnulib-tests/test-canonicalize-lgpl.c:42: included_from: Included from here.
+sed-4.8/gnulib-tests/null-ptr.h:22:1: warning[-Wunused-function]: 'null_ptr' defined but not used
+#   22 | null_ptr (void)
+#      | ^~~~~~~~
+#   20|      Usual compilers are not able to infer something about the return value.  */
+#   21|   static void *
+#   22|-> null_ptr (void)
+#   23|   {
+#   24|     unsigned int x = rand ();
+
+Error: COMPILER_WARNING (CWE-457):
+sed-4.8/gnulib-tests/test-memrchr.c:28: included_from: Included from here.
+sed-4.8/gnulib-tests/test-memrchr.c: scope_hint: In function 'main'
+sed-4.8/gnulib-tests/test-memrchr.c:32:26: warning[-Wmaybe-uninitialized]: 'input_59' may be used uninitialized
+#   32 | #define MEMRCHR (char *) memrchr
+#      |                          ^
+sed-4.8/lib/string.h:41: included_from: Included from here.
+sed-4.8/gnulib-tests/test-memrchr.c:20: included_from: Included from here.
+/usr/include/string.h:117:14: note: in a call to 'memrchr' declared with attribute 'access (read_only, 1, 3)' here
+#  117 | extern void *memrchr (const void *__s, int __c, size_t __n)
+#      |              ^~~~~~~
+#   30|   /* Calculating void * + int is not portable, so this wrapper converts
+#   31|      to char * to make the tests easier to write.  */
+#   32|-> #define MEMRCHR (char *) memrchr
+#   33|   
+#   34|   int
+
+Error: COMPILER_WARNING (CWE-563):
+sed-4.8/gnulib-tests/test-thread_create.c:30:20: warning[-Wunused-variable]: 'worker_thread' defined but not used
+#   30 | static gl_thread_t worker_thread;
+#      |                    ^~~~~~~~~~~~~
+#   28|   static gl_thread_t main_thread_before;
+#   29|   static gl_thread_t main_thread_after;
+#   30|-> static gl_thread_t worker_thread;
+#   31|   
+#   32|   static int dummy;
+
+Error: COMPILER_WARNING (CWE-1164):
+sed-4.8/gnulib-tests/test-thread_create.c:36:1: warning[-Wunused-function]: 'worker_thread_func' defined but not used
+#   36 | worker_thread_func (void *arg)
+#      | ^~~~~~~~~~~~~~~~~~
+#   34|   
+#   35|   static void *
+#   36|-> worker_thread_func (void *arg)
+#   37|   {
+#   38|     work_done = 1;
+
+Error: COMPILER_WARNING (CWE-477):
+sed-4.8/lib/getfilecon.c:36:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#   36 | int getfilecon (char const *file, security_context_t *con);
+#      | ^~~
+#   34|   #undef lgetfilecon
+#   35|   #undef fgetfilecon
+#   36|-> int getfilecon (char const *file, security_context_t *con);
+#   37|   int lgetfilecon (char const *file, security_context_t *con);
+#   38|   int fgetfilecon (int fd, security_context_t *con);
+
+Error: COMPILER_WARNING (CWE-477):
+sed-4.8/lib/getfilecon.c:37:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#   37 | int lgetfilecon (char const *file, security_context_t *con);
+#      | ^~~
+#   35|   #undef fgetfilecon
+#   36|   int getfilecon (char const *file, security_context_t *con);
+#   37|-> int lgetfilecon (char const *file, security_context_t *con);
+#   38|   int fgetfilecon (int fd, security_context_t *con);
+#   39|   
+
+Error: COMPILER_WARNING (CWE-477):
+sed-4.8/lib/getfilecon.c:38:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#   38 | int fgetfilecon (int fd, security_context_t *con);
+#      | ^~~
+#   36|   int getfilecon (char const *file, security_context_t *con);
+#   37|   int lgetfilecon (char const *file, security_context_t *con);
+#   38|-> int fgetfilecon (int fd, security_context_t *con);
+#   39|   
+#   40|   /* getfilecon, lgetfilecon, and fgetfilecon can all misbehave, be it
+
+Error: COMPILER_WARNING (CWE-477):
+sed-4.8/lib/getfilecon.c:49:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#   49 | map_to_failure (int ret, security_context_t *con)
+#      | ^~~~~~~~~~~~~~
+#   47|   
+#   48|   static int
+#   49|-> map_to_failure (int ret, security_context_t *con)
+#   50|   {
+#   51|     if (ret == 0)
+
+Error: COMPILER_WARNING (CWE-477):
+sed-4.8/lib/getfilecon.c:69:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#   69 | rpl_getfilecon (char const *file, security_context_t *con)
+#      | ^~~~~~~~~~~~~~
+#   67|   
+#   68|   int
+#   69|-> rpl_getfilecon (char const *file, security_context_t *con)
+#   70|   {
+#   71|     int ret = getfilecon (file, con);
+
+Error: COMPILER_WARNING (CWE-477):
+sed-4.8/lib/getfilecon.c:76:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#   76 | rpl_lgetfilecon (char const *file, security_context_t *con)
+#      | ^~~~~~~~~~~~~~~
+#   74|   
+#   75|   int
+#   76|-> rpl_lgetfilecon (char const *file, security_context_t *con)
+#   77|   {
+#   78|     int ret = lgetfilecon (file, con);
+
+Error: COMPILER_WARNING (CWE-477):
+sed-4.8/lib/getfilecon.c:83:1: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#   83 | rpl_fgetfilecon (int fd, security_context_t *con)
+#      | ^~~~~~~~~~~~~~~
+#   81|   
+#   82|   int
+#   83|-> rpl_fgetfilecon (int fd, security_context_t *con)
+#   84|   {
+#   85|     int ret = fgetfilecon (fd, con);
+
+Error: VALGRIND_WARNING:
+sed-4.8/sed/sed: note: while executing process 1050 with arguments: s/^ *// empty2.1
+sed-4.8/lib/xmalloc.c:41: warning[Leak_DefinitelyLost]: 0 bytes in 1 blocks are definitely lost in loss record 3 of 68
+sed-4.8/lib/xmalloc.c:41: note: called from UnknownInlinedFun()
+sed-4.8/lib/xmalloc.c:113: note: called from UnknownInlinedFun()
+sed-4.8/sed/compile.c:742: note: called from UnknownInlinedFun()
+sed-4.8/sed/compile.c:1222: note: called from compile_program()
+sed-4.8/sed/compile.c:1505: note: called from compile_string()
+sed-4.8/sed/sed.c:402: note: called from main()
+#   39|   xmalloc (size_t n)
+#   40|   {
+#   41|->   void *p = malloc (n);
+#   42|     if (!p && n != 0)
+#   43|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/./sed/sed: note: while executing process 21792 with arguments: -n -f /builddir/build/BUILD/sed-4.8/testsuite/binary3.sed
+sed-4.8/lib/xmalloc.c:41: warning[Leak_DefinitelyLost]: 0 bytes in 10 blocks are definitely lost in loss record 3 of 456
+sed-4.8/lib/xmalloc.c:41: note: called from UnknownInlinedFun()
+sed-4.8/lib/xmalloc.c:113: note: called from UnknownInlinedFun()
+sed-4.8/sed/compile.c:742: note: called from UnknownInlinedFun()
+sed-4.8/sed/compile.c:1222: note: called from compile_program()
+sed-4.8/sed/compile.c:1536: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:307: note: called from main()
+#   39|   xmalloc (size_t n)
+#   40|   {
+#   41|->   void *p = malloc (n);
+#   42|     if (!p && n != 0)
+#   43|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/sed/sed: note: while executing process 1794 with arguments: -f fasts.1 fasts.2
+sed-4.8/lib/xmalloc.c:41: warning[Leak_DefinitelyLost]: 0 bytes in 13 blocks are definitely lost in loss record 2 of 91
+sed-4.8/lib/xmalloc.c:41: note: called from UnknownInlinedFun()
+sed-4.8/lib/xmalloc.c:113: note: called from UnknownInlinedFun()
+sed-4.8/sed/compile.c:742: note: called from UnknownInlinedFun()
+sed-4.8/sed/compile.c:1222: note: called from compile_program()
+sed-4.8/sed/compile.c:1536: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:307: note: called from main()
+#   39|   xmalloc (size_t n)
+#   40|   {
+#   41|->   void *p = malloc (n);
+#   42|     if (!p && n != 0)
+#   43|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/sed/sed: note: while executing process 1174 with arguments: -n h;s/Version: *//p;g;s/version: *//Ip case-insensitive.1
+sed-4.8/lib/xmalloc.c:41: warning[Leak_DefinitelyLost]: 0 bytes in 2 blocks are definitely lost in loss record 1 of 48
+sed-4.8/lib/xmalloc.c:41: note: called from UnknownInlinedFun()
+sed-4.8/lib/xmalloc.c:113: note: called from UnknownInlinedFun()
+sed-4.8/sed/compile.c:742: note: called from UnknownInlinedFun()
+sed-4.8/sed/compile.c:1222: note: called from compile_program()
+sed-4.8/sed/compile.c:1505: note: called from compile_string()
+sed-4.8/sed/sed.c:402: note: called from main()
+#   39|   xmalloc (size_t n)
+#   40|   {
+#   41|->   void *p = malloc (n);
+#   42|     if (!p && n != 0)
+#   43|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/sed/sed: note: while executing process 1825 with arguments: -n -f factor.1 factor.2
+sed-4.8/lib/xmalloc.c:41: warning[Leak_DefinitelyLost]: 0 bytes in 3 blocks are definitely lost in loss record 3 of 493
+sed-4.8/lib/xmalloc.c:41: note: called from UnknownInlinedFun()
+sed-4.8/lib/xmalloc.c:113: note: called from UnknownInlinedFun()
+sed-4.8/sed/compile.c:742: note: called from UnknownInlinedFun()
+sed-4.8/sed/compile.c:1222: note: called from compile_program()
+sed-4.8/sed/compile.c:1536: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:307: note: called from main()
+#   39|   xmalloc (size_t n)
+#   40|   {
+#   41|->   void *p = malloc (n);
+#   42|     if (!p && n != 0)
+#   43|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/./sed/sed: note: while executing process 21670 with arguments: -n -f /builddir/build/BUILD/sed-4.8/testsuite/binary.sed
+sed-4.8/lib/xmalloc.c:41: warning[Leak_DefinitelyLost]: 0 bytes in 5 blocks are definitely lost in loss record 3 of 435
+sed-4.8/lib/xmalloc.c:41: note: called from UnknownInlinedFun()
+sed-4.8/lib/xmalloc.c:113: note: called from UnknownInlinedFun()
+sed-4.8/sed/compile.c:742: note: called from UnknownInlinedFun()
+sed-4.8/sed/compile.c:1222: note: called from compile_program()
+sed-4.8/sed/compile.c:1536: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:307: note: called from main()
+#   39|   xmalloc (size_t n)
+#   40|   {
+#   41|->   void *p = malloc (n);
+#   42|     if (!p && n != 0)
+#   43|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/./sed/sed: note: while executing process 21731 with arguments: -n -f /builddir/build/BUILD/sed-4.8/testsuite/binary2.sed
+sed-4.8/lib/xmalloc.c:41: warning[Leak_DefinitelyLost]: 0 bytes in 8 blocks are definitely lost in loss record 3 of 424
+sed-4.8/lib/xmalloc.c:41: note: called from UnknownInlinedFun()
+sed-4.8/lib/xmalloc.c:113: note: called from UnknownInlinedFun()
+sed-4.8/sed/compile.c:742: note: called from UnknownInlinedFun()
+sed-4.8/sed/compile.c:1222: note: called from compile_program()
+sed-4.8/sed/compile.c:1536: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:307: note: called from main()
+#   39|   xmalloc (size_t n)
+#   40|   {
+#   41|->   void *p = malloc (n);
+#   42|     if (!p && n != 0)
+#   43|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/sed/sed: note: while executing process 1825 with arguments: -n -f factor.1 factor.2
+sed-4.8/lib/xmalloc.c:41: warning[Leak_PossiblyLost]: 10,240 bytes in 5 blocks are possibly lost in loss record 483 of 493
+sed-4.8/lib/xmalloc.c:41: note: called from UnknownInlinedFun()
+sed-4.8/lib/dfa.c:2949: note: called from build_state()
+sed-4.8/lib/dfa.c:3521: note: called from dfaexec_main()
+sed-4.8/lib/dfa.c:3568: note: called from UnknownInlinedFun()
+sed-4.8/sed/regexp.c:292: note: called from match_regex()
+sed-4.8/sed/execute.c:1029: note: called from UnknownInlinedFun()
+sed-4.8/sed/execute.c:1557: note: called from execute_program()
+sed-4.8/sed/execute.c:1694: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:422: note: called from main()
+#   39|   xmalloc (size_t n)
+#   40|   {
+#   41|->   void *p = malloc (n);
+#   42|     if (!p && n != 0)
+#   43|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/./sed/sed: note: while executing process 19062 with arguments: -f prog1 in1
+sed-4.8/lib/xmalloc.c:41: warning[Leak_PossiblyLost]: 12,288 bytes in 6 blocks are possibly lost in loss record 45 of 46
+sed-4.8/lib/xmalloc.c:41: note: called from UnknownInlinedFun()
+sed-4.8/lib/dfa.c:2949: note: called from build_state()
+sed-4.8/lib/dfa.c:3521: note: called from dfaexec_main()
+sed-4.8/lib/dfa.c:3568: note: called from UnknownInlinedFun()
+sed-4.8/sed/regexp.c:292: note: called from match_regex()
+sed-4.8/sed/execute.c:1029: note: called from UnknownInlinedFun()
+sed-4.8/sed/execute.c:1557: note: called from execute_program()
+sed-4.8/sed/execute.c:1694: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:422: note: called from main()
+#   39|   xmalloc (size_t n)
+#   40|   {
+#   41|->   void *p = malloc (n);
+#   42|     if (!p && n != 0)
+#   43|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/./sed/sed: note: while executing process 31515 with arguments: 1s/ [^ ]* / sed /; /^E-mail/,$d
+sed-4.8/lib/xmalloc.c:41: warning[Leak_PossiblyLost]: 14,336 bytes in 7 blocks are possibly lost in loss record 111 of 111
+sed-4.8/lib/xmalloc.c:41: note: called from UnknownInlinedFun()
+sed-4.8/lib/dfa.c:2949: note: called from build_state()
+sed-4.8/lib/dfa.c:3521: note: called from dfaexec_main()
+sed-4.8/lib/dfa.c:3568: note: called from UnknownInlinedFun()
+sed-4.8/sed/regexp.c:292: note: called from match_regex()
+sed-4.8/sed/execute.c:810: note: called from match_an_address_p()
+sed-4.8/sed/execute.c:862: note: called from UnknownInlinedFun()
+sed-4.8/sed/execute.c:1304: note: called from execute_program()
+sed-4.8/sed/execute.c:1694: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:422: note: called from main()
+#   39|   xmalloc (size_t n)
+#   40|   {
+#   41|->   void *p = malloc (n);
+#   42|     if (!p && n != 0)
+#   43|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/sed/sed: note: while executing process 1546 with arguments: -f brackets.1 brackets.2
+sed-4.8/lib/xmalloc.c:41: warning[Leak_PossiblyLost]: 16,384 bytes in 8 blocks are possibly lost in loss record 48 of 49
+sed-4.8/lib/xmalloc.c:41: note: called from UnknownInlinedFun()
+sed-4.8/lib/dfa.c:2949: note: called from build_state()
+sed-4.8/lib/dfa.c:3521: note: called from dfaexec_main()
+sed-4.8/lib/dfa.c:3568: note: called from UnknownInlinedFun()
+sed-4.8/sed/regexp.c:292: note: called from match_regex()
+sed-4.8/sed/execute.c:1029: note: called from UnknownInlinedFun()
+sed-4.8/sed/execute.c:1557: note: called from execute_program()
+sed-4.8/sed/execute.c:1694: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:422: note: called from main()
+#   39|   xmalloc (size_t n)
+#   40|   {
+#   41|->   void *p = malloc (n);
+#   42|     if (!p && n != 0)
+#   43|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/sed/sed: note: while executing process 1763 with arguments: -e s/-*enable-//;s/=.*// enable.1
+sed-4.8/lib/xmalloc.c:41: warning[Leak_PossiblyLost]: 18,432 bytes in 9 blocks are possibly lost in loss record 51 of 51
+sed-4.8/lib/xmalloc.c:41: note: called from UnknownInlinedFun()
+sed-4.8/lib/dfa.c:2949: note: called from build_state()
+sed-4.8/lib/dfa.c:3521: note: called from dfaexec_main()
+sed-4.8/lib/dfa.c:3568: note: called from UnknownInlinedFun()
+sed-4.8/sed/regexp.c:292: note: called from match_regex()
+sed-4.8/sed/execute.c:1029: note: called from UnknownInlinedFun()
+sed-4.8/sed/execute.c:1557: note: called from execute_program()
+sed-4.8/sed/execute.c:1694: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:422: note: called from main()
+#   39|   xmalloc (size_t n)
+#   40|   {
+#   41|->   void *p = malloc (n);
+#   42|     if (!p && n != 0)
+#   43|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/sed/sed: note: while executing process 12168 with arguments: --debug s/x// x_c30.2
+sed-4.8/lib/xmalloc.c:41: warning[Leak_PossiblyLost]: 2,048 bytes in 1 blocks are possibly lost in loss record 33 of 35
+sed-4.8/lib/xmalloc.c:41: note: called from UnknownInlinedFun()
+sed-4.8/lib/dfa.c:2949: note: called from build_state()
+sed-4.8/lib/dfa.c:3521: note: called from dfaexec_main()
+sed-4.8/lib/dfa.c:3568: note: called from UnknownInlinedFun()
+sed-4.8/sed/regexp.c:292: note: called from match_regex()
+sed-4.8/sed/execute.c:1029: note: called from UnknownInlinedFun()
+sed-4.8/sed/execute.c:1557: note: called from execute_program()
+sed-4.8/sed/execute.c:1694: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:422: note: called from main()
+#   39|   xmalloc (size_t n)
+#   40|   {
+#   41|->   void *p = malloc (n);
+#   42|     if (!p && n != 0)
+#   43|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/sed/sed: note: while executing process 1608 with arguments: -n -f classes.1 classes.2
+sed-4.8/lib/xmalloc.c:41: warning[Leak_PossiblyLost]: 20,480 bytes in 10 blocks are possibly lost in loss record 101 of 101
+sed-4.8/lib/xmalloc.c:41: note: called from UnknownInlinedFun()
+sed-4.8/lib/dfa.c:2949: note: called from build_state()
+sed-4.8/lib/dfa.c:3521: note: called from dfaexec_main()
+sed-4.8/lib/dfa.c:3568: note: called from UnknownInlinedFun()
+sed-4.8/sed/regexp.c:292: note: called from match_regex()
+sed-4.8/sed/execute.c:1029: note: called from UnknownInlinedFun()
+sed-4.8/sed/execute.c:1557: note: called from execute_program()
+sed-4.8/sed/execute.c:1694: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:422: note: called from main()
+#   39|   xmalloc (size_t n)
+#   40|   {
+#   41|->   void *p = malloc (n);
+#   42|     if (!p && n != 0)
+#   43|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/./sed/sed: note: while executing process 21670 with arguments: -n -f /builddir/build/BUILD/sed-4.8/testsuite/binary.sed
+sed-4.8/lib/xmalloc.c:41: warning[Leak_PossiblyLost]: 204,800 bytes in 100 blocks are possibly lost in loss record 432 of 435
+sed-4.8/lib/xmalloc.c:41: note: called from UnknownInlinedFun()
+sed-4.8/lib/dfa.c:2949: note: called from build_state()
+sed-4.8/lib/dfa.c:3521: note: called from dfaexec_main()
+sed-4.8/lib/dfa.c:3568: note: called from UnknownInlinedFun()
+sed-4.8/sed/regexp.c:284: note: called from match_regex()
+sed-4.8/sed/execute.c:1029: note: called from UnknownInlinedFun()
+sed-4.8/sed/execute.c:1557: note: called from execute_program()
+sed-4.8/sed/execute.c:1694: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:422: note: called from main()
+#   39|   xmalloc (size_t n)
+#   40|   {
+#   41|->   void *p = malloc (n);
+#   42|     if (!p && n != 0)
+#   43|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/sed/sed: note: while executing process 1639 with arguments: -n -f cv-vars.1 cv-vars.2
+sed-4.8/lib/xmalloc.c:41: warning[Leak_PossiblyLost]: 22,528 bytes in 11 blocks are possibly lost in loss record 100 of 100
+sed-4.8/lib/xmalloc.c:41: note: called from UnknownInlinedFun()
+sed-4.8/lib/dfa.c:2949: note: called from build_state()
+sed-4.8/lib/dfa.c:3521: note: called from dfaexec_main()
+sed-4.8/lib/dfa.c:3568: note: called from UnknownInlinedFun()
+sed-4.8/sed/regexp.c:292: note: called from match_regex()
+sed-4.8/sed/execute.c:1029: note: called from UnknownInlinedFun()
+sed-4.8/sed/execute.c:1557: note: called from execute_program()
+sed-4.8/sed/execute.c:1694: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:422: note: called from main()
+#   39|   xmalloc (size_t n)
+#   40|   {
+#   41|->   void *p = malloc (n);
+#   42|     if (!p && n != 0)
+#   43|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/./sed/sed: note: while executing process 31752 with arguments: -f /builddir/build/BUILD/sed-4.8/testsuite/mac-mf.sed /builddir/build/BUILD/sed-4.8/testsuite/mac-mf.inp
+sed-4.8/lib/xmalloc.c:41: warning[Leak_PossiblyLost]: 221,184 bytes in 108 blocks are possibly lost in loss record 248 of 249
+sed-4.8/lib/xmalloc.c:41: note: called from UnknownInlinedFun()
+sed-4.8/lib/dfa.c:2949: note: called from build_state()
+sed-4.8/lib/dfa.c:3521: note: called from dfaexec_main()
+sed-4.8/lib/dfa.c:3568: note: called from UnknownInlinedFun()
+sed-4.8/sed/regexp.c:292: note: called from match_regex()
+sed-4.8/sed/execute.c:810: note: called from match_an_address_p()
+sed-4.8/sed/execute.c:849: note: called from UnknownInlinedFun()
+sed-4.8/sed/execute.c:1304: note: called from execute_program()
+sed-4.8/sed/execute.c:1694: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:422: note: called from main()
+#   39|   xmalloc (size_t n)
+#   40|   {
+#   41|->   void *p = malloc (n);
+#   42|     if (!p && n != 0)
+#   43|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/./sed/sed: note: while executing process 21731 with arguments: -n -f /builddir/build/BUILD/sed-4.8/testsuite/binary2.sed
+sed-4.8/lib/xmalloc.c:41: warning[Leak_PossiblyLost]: 249,856 bytes in 122 blocks are possibly lost in loss record 423 of 424
+sed-4.8/lib/xmalloc.c:41: note: called from UnknownInlinedFun()
+sed-4.8/lib/dfa.c:2949: note: called from build_state()
+sed-4.8/lib/dfa.c:3521: note: called from dfaexec_main()
+sed-4.8/lib/dfa.c:3568: note: called from UnknownInlinedFun()
+sed-4.8/sed/regexp.c:292: note: called from match_regex()
+sed-4.8/sed/execute.c:1029: note: called from UnknownInlinedFun()
+sed-4.8/sed/execute.c:1557: note: called from execute_program()
+sed-4.8/sed/execute.c:1694: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:422: note: called from main()
+#   39|   xmalloc (size_t n)
+#   40|   {
+#   41|->   void *p = malloc (n);
+#   42|     if (!p && n != 0)
+#   43|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/sed/sed: note: while executing process 1794 with arguments: -f fasts.1 fasts.2
+sed-4.8/lib/xmalloc.c:41: warning[Leak_PossiblyLost]: 26,624 bytes in 13 blocks are possibly lost in loss record 90 of 91
+sed-4.8/lib/xmalloc.c:41: note: called from UnknownInlinedFun()
+sed-4.8/lib/dfa.c:2949: note: called from build_state()
+sed-4.8/lib/dfa.c:3521: note: called from dfaexec_main()
+sed-4.8/lib/dfa.c:3568: note: called from UnknownInlinedFun()
+sed-4.8/sed/regexp.c:292: note: called from match_regex()
+sed-4.8/sed/execute.c:1029: note: called from UnknownInlinedFun()
+sed-4.8/sed/execute.c:1557: note: called from execute_program()
+sed-4.8/sed/execute.c:1694: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:422: note: called from main()
+#   39|   xmalloc (size_t n)
+#   40|   {
+#   41|->   void *p = malloc (n);
+#   42|     if (!p && n != 0)
+#   43|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/./sed/sed: note: while executing process 21670 with arguments: -n -f /builddir/build/BUILD/sed-4.8/testsuite/binary.sed
+sed-4.8/lib/xmalloc.c:41: warning[Leak_PossiblyLost]: 260,096 bytes in 127 blocks are possibly lost in loss record 433 of 435
+sed-4.8/lib/xmalloc.c:41: note: called from UnknownInlinedFun()
+sed-4.8/lib/dfa.c:2949: note: called from build_state()
+sed-4.8/lib/dfa.c:3521: note: called from dfaexec_main()
+sed-4.8/lib/dfa.c:3568: note: called from UnknownInlinedFun()
+sed-4.8/sed/regexp.c:292: note: called from match_regex()
+sed-4.8/sed/execute.c:810: note: called from match_an_address_p()
+sed-4.8/sed/execute.c:849: note: called from UnknownInlinedFun()
+sed-4.8/sed/execute.c:1304: note: called from execute_program()
+sed-4.8/sed/execute.c:1694: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:422: note: called from main()
+#   39|   xmalloc (size_t n)
+#   40|   {
+#   41|->   void *p = malloc (n);
+#   42|     if (!p && n != 0)
+#   43|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/./sed/sed: note: while executing process 21670 with arguments: -n -f /builddir/build/BUILD/sed-4.8/testsuite/binary.sed
+sed-4.8/lib/xmalloc.c:41: warning[Leak_PossiblyLost]: 264,192 bytes in 129 blocks are possibly lost in loss record 434 of 435
+sed-4.8/lib/xmalloc.c:41: note: called from UnknownInlinedFun()
+sed-4.8/lib/dfa.c:2949: note: called from build_state()
+sed-4.8/lib/dfa.c:3521: note: called from dfaexec_main()
+sed-4.8/lib/dfa.c:3568: note: called from UnknownInlinedFun()
+sed-4.8/sed/regexp.c:292: note: called from match_regex()
+sed-4.8/sed/execute.c:1029: note: called from UnknownInlinedFun()
+sed-4.8/sed/execute.c:1557: note: called from execute_program()
+sed-4.8/sed/execute.c:1694: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:422: note: called from main()
+#   39|   xmalloc (size_t n)
+#   40|   {
+#   41|->   void *p = malloc (n);
+#   42|     if (!p && n != 0)
+#   43|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/./sed/sed: note: while executing process 21792 with arguments: -n -f /builddir/build/BUILD/sed-4.8/testsuite/binary3.sed
+sed-4.8/lib/xmalloc.c:41: warning[Leak_PossiblyLost]: 268,288 bytes in 131 blocks are possibly lost in loss record 455 of 456
+sed-4.8/lib/xmalloc.c:41: note: called from UnknownInlinedFun()
+sed-4.8/lib/dfa.c:2949: note: called from build_state()
+sed-4.8/lib/dfa.c:3521: note: called from dfaexec_main()
+sed-4.8/lib/dfa.c:3568: note: called from UnknownInlinedFun()
+sed-4.8/sed/regexp.c:292: note: called from match_regex()
+sed-4.8/sed/execute.c:1029: note: called from UnknownInlinedFun()
+sed-4.8/sed/execute.c:1557: note: called from execute_program()
+sed-4.8/sed/execute.c:1694: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:422: note: called from main()
+#   39|   xmalloc (size_t n)
+#   40|   {
+#   41|->   void *p = malloc (n);
+#   42|     if (!p && n != 0)
+#   43|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/./sed/sed: note: while executing process 31752 with arguments: -f /builddir/build/BUILD/sed-4.8/testsuite/mac-mf.sed /builddir/build/BUILD/sed-4.8/testsuite/mac-mf.inp
+sed-4.8/lib/xmalloc.c:41: warning[Leak_PossiblyLost]: 278,528 bytes in 136 blocks are possibly lost in loss record 249 of 249
+sed-4.8/lib/xmalloc.c:41: note: called from UnknownInlinedFun()
+sed-4.8/lib/dfa.c:2949: note: called from build_state()
+sed-4.8/lib/dfa.c:3521: note: called from dfaexec_main()
+sed-4.8/lib/dfa.c:3568: note: called from UnknownInlinedFun()
+sed-4.8/sed/regexp.c:292: note: called from match_regex()
+sed-4.8/sed/execute.c:1029: note: called from UnknownInlinedFun()
+sed-4.8/sed/execute.c:1557: note: called from execute_program()
+sed-4.8/sed/execute.c:1694: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:422: note: called from main()
+#   39|   xmalloc (size_t n)
+#   40|   {
+#   41|->   void *p = malloc (n);
+#   42|     if (!p && n != 0)
+#   43|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/sed/sed: note: while executing process 1174 with arguments: -n h;s/Version: *//p;g;s/version: *//Ip case-insensitive.1
+sed-4.8/lib/xmalloc.c:41: warning[Leak_PossiblyLost]: 32,768 bytes in 16 blocks are possibly lost in loss record 47 of 48
+sed-4.8/lib/xmalloc.c:41: note: called from UnknownInlinedFun()
+sed-4.8/lib/dfa.c:2949: note: called from build_state()
+sed-4.8/lib/dfa.c:3521: note: called from dfaexec_main()
+sed-4.8/lib/dfa.c:3568: note: called from UnknownInlinedFun()
+sed-4.8/sed/regexp.c:292: note: called from match_regex()
+sed-4.8/sed/execute.c:1029: note: called from UnknownInlinedFun()
+sed-4.8/sed/execute.c:1557: note: called from execute_program()
+sed-4.8/sed/execute.c:1694: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:422: note: called from main()
+#   39|   xmalloc (size_t n)
+#   40|   {
+#   41|->   void *p = malloc (n);
+#   42|     if (!p && n != 0)
+#   43|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/sed/sed: note: while executing process 1825 with arguments: -n -f factor.1 factor.2
+sed-4.8/lib/xmalloc.c:41: warning[Leak_PossiblyLost]: 36,864 bytes in 18 blocks are possibly lost in loss record 492 of 493
+sed-4.8/lib/xmalloc.c:41: note: called from UnknownInlinedFun()
+sed-4.8/lib/dfa.c:2949: note: called from build_state()
+sed-4.8/lib/dfa.c:3521: note: called from dfaexec_main()
+sed-4.8/lib/dfa.c:3568: note: called from UnknownInlinedFun()
+sed-4.8/sed/regexp.c:284: note: called from match_regex()
+sed-4.8/sed/execute.c:1029: note: called from UnknownInlinedFun()
+sed-4.8/sed/execute.c:1557: note: called from execute_program()
+sed-4.8/sed/execute.c:1694: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:422: note: called from main()
+#   39|   xmalloc (size_t n)
+#   40|   {
+#   41|->   void *p = malloc (n);
+#   42|     if (!p && n != 0)
+#   43|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/sed/sed: note: while executing process 1391 with arguments: -f recall.1 recall.2
+sed-4.8/lib/xmalloc.c:41: warning[Leak_PossiblyLost]: 4,096 bytes in 2 blocks are possibly lost in loss record 68 of 68
+sed-4.8/lib/xmalloc.c:41: note: called from UnknownInlinedFun()
+sed-4.8/lib/dfa.c:2949: note: called from build_state()
+sed-4.8/lib/dfa.c:3521: note: called from dfaexec_main()
+sed-4.8/lib/dfa.c:3568: note: called from UnknownInlinedFun()
+sed-4.8/sed/regexp.c:292: note: called from match_regex()
+sed-4.8/sed/execute.c:1029: note: called from UnknownInlinedFun()
+sed-4.8/sed/execute.c:1557: note: called from execute_program()
+sed-4.8/sed/execute.c:1694: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:422: note: called from main()
+#   39|   xmalloc (size_t n)
+#   40|   {
+#   41|->   void *p = malloc (n);
+#   42|     if (!p && n != 0)
+#   43|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/sed/sed: note: while executing process 1918 with arguments: -f khadafy.1 khadafy.2
+sed-4.8/lib/xmalloc.c:41: warning[Leak_PossiblyLost]: 51,200 bytes in 25 blocks are possibly lost in loss record 51 of 51
+sed-4.8/lib/xmalloc.c:41: note: called from UnknownInlinedFun()
+sed-4.8/lib/dfa.c:2949: note: called from build_state()
+sed-4.8/lib/dfa.c:3521: note: called from dfaexec_main()
+sed-4.8/lib/dfa.c:3568: note: called from UnknownInlinedFun()
+sed-4.8/sed/regexp.c:292: note: called from match_regex()
+sed-4.8/sed/execute.c:810: note: called from match_an_address_p()
+sed-4.8/sed/execute.c:849: note: called from UnknownInlinedFun()
+sed-4.8/sed/execute.c:1304: note: called from execute_program()
+sed-4.8/sed/execute.c:1694: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:422: note: called from main()
+#   39|   xmalloc (size_t n)
+#   40|   {
+#   41|->   void *p = malloc (n);
+#   42|     if (!p && n != 0)
+#   43|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/./sed/sed: note: while executing process 21792 with arguments: -n -f /builddir/build/BUILD/sed-4.8/testsuite/binary3.sed
+sed-4.8/lib/xmalloc.c:41: warning[Leak_PossiblyLost]: 59,392 bytes in 29 blocks are possibly lost in loss record 451 of 456
+sed-4.8/lib/xmalloc.c:41: note: called from UnknownInlinedFun()
+sed-4.8/lib/dfa.c:2949: note: called from build_state()
+sed-4.8/lib/dfa.c:3521: note: called from dfaexec_main()
+sed-4.8/lib/dfa.c:3568: note: called from UnknownInlinedFun()
+sed-4.8/sed/regexp.c:292: note: called from match_regex()
+sed-4.8/sed/execute.c:810: note: called from match_an_address_p()
+sed-4.8/sed/execute.c:849: note: called from UnknownInlinedFun()
+sed-4.8/sed/execute.c:1304: note: called from execute_program()
+sed-4.8/sed/execute.c:1694: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:422: note: called from main()
+#   39|   xmalloc (size_t n)
+#   40|   {
+#   41|->   void *p = malloc (n);
+#   42|     if (!p && n != 0)
+#   43|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/sed/sed: note: while executing process 1112 with arguments: s/_\S/XX/g;s/\s/_/g space.1
+sed-4.8/lib/xmalloc.c:41: warning[Leak_PossiblyLost]: 6,144 bytes in 3 blocks are possibly lost in loss record 51 of 51
+sed-4.8/lib/xmalloc.c:41: note: called from UnknownInlinedFun()
+sed-4.8/lib/dfa.c:2949: note: called from build_state()
+sed-4.8/lib/dfa.c:3521: note: called from dfaexec_main()
+sed-4.8/lib/dfa.c:3568: note: called from UnknownInlinedFun()
+sed-4.8/sed/regexp.c:292: note: called from match_regex()
+sed-4.8/sed/execute.c:1029: note: called from UnknownInlinedFun()
+sed-4.8/sed/execute.c:1557: note: called from execute_program()
+sed-4.8/sed/execute.c:1694: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:422: note: called from main()
+#   39|   xmalloc (size_t n)
+#   40|   {
+#   41|->   void *p = malloc (n);
+#   42|     if (!p && n != 0)
+#   43|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/./sed/sed: note: while executing process 31856 with arguments: -f /builddir/build/BUILD/sed-4.8/testsuite/madding.sed /builddir/build/BUILD/sed-4.8/testsuite/madding.inp
+sed-4.8/lib/xmalloc.c:41: warning[Leak_PossiblyLost]: 669,696 bytes in 327 blocks are possibly lost in loss record 43 of 45
+sed-4.8/lib/xmalloc.c:41: note: called from UnknownInlinedFun()
+sed-4.8/lib/dfa.c:2949: note: called from build_state()
+sed-4.8/lib/dfa.c:3521: note: called from dfaexec_main()
+sed-4.8/lib/dfa.c:3568: note: called from UnknownInlinedFun()
+sed-4.8/sed/regexp.c:292: note: called from match_regex()
+sed-4.8/sed/execute.c:1029: note: called from UnknownInlinedFun()
+sed-4.8/sed/execute.c:1557: note: called from execute_program()
+sed-4.8/sed/execute.c:1694: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:422: note: called from main()
+#   39|   xmalloc (size_t n)
+#   40|   {
+#   41|->   void *p = malloc (n);
+#   42|     if (!p && n != 0)
+#   43|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/./sed/sed: note: while executing process 31087 with arguments: -n -f distrib.sed
+sed-4.8/lib/xmalloc.c:41: warning[Leak_PossiblyLost]: 67,584 bytes in 33 blocks are possibly lost in loss record 214 of 215
+sed-4.8/lib/xmalloc.c:41: note: called from UnknownInlinedFun()
+sed-4.8/lib/dfa.c:2949: note: called from build_state()
+sed-4.8/lib/dfa.c:3521: note: called from dfaexec_main()
+sed-4.8/lib/dfa.c:3568: note: called from UnknownInlinedFun()
+sed-4.8/sed/regexp.c:292: note: called from match_regex()
+sed-4.8/sed/execute.c:1029: note: called from UnknownInlinedFun()
+sed-4.8/sed/execute.c:1557: note: called from execute_program()
+sed-4.8/sed/execute.c:1694: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:422: note: called from main()
+#   39|   xmalloc (size_t n)
+#   40|   {
+#   41|->   void *p = malloc (n);
+#   42|     if (!p && n != 0)
+#   43|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/./sed/sed: note: while executing process 21371 with arguments: -f 8bit-prog.sed
+sed-4.8/lib/xmalloc.c:41: warning[Leak_PossiblyLost]: 8,192 bytes in 4 blocks are possibly lost in loss record 46 of 46
+sed-4.8/lib/xmalloc.c:41: note: called from UnknownInlinedFun()
+sed-4.8/lib/dfa.c:2949: note: called from build_state()
+sed-4.8/lib/dfa.c:3521: note: called from dfaexec_main()
+sed-4.8/lib/dfa.c:3568: note: called from UnknownInlinedFun()
+sed-4.8/sed/regexp.c:292: note: called from match_regex()
+sed-4.8/sed/execute.c:1029: note: called from UnknownInlinedFun()
+sed-4.8/sed/execute.c:1557: note: called from execute_program()
+sed-4.8/sed/execute.c:1694: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:422: note: called from main()
+#   39|   xmalloc (size_t n)
+#   40|   {
+#   41|->   void *p = malloc (n);
+#   42|     if (!p && n != 0)
+#   43|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/./sed/sed: note: while executing process 31087 with arguments: -n -f distrib.sed
+sed-4.8/lib/xmalloc.c:41: warning[Leak_PossiblyLost]: 88,064 bytes in 43 blocks are possibly lost in loss record 215 of 215
+sed-4.8/lib/xmalloc.c:41: note: called from UnknownInlinedFun()
+sed-4.8/lib/dfa.c:2949: note: called from build_state()
+sed-4.8/lib/dfa.c:3521: note: called from dfaexec_main()
+sed-4.8/lib/dfa.c:3568: note: called from UnknownInlinedFun()
+sed-4.8/sed/regexp.c:292: note: called from match_regex()
+sed-4.8/sed/execute.c:810: note: called from match_an_address_p()
+sed-4.8/sed/execute.c:849: note: called from UnknownInlinedFun()
+sed-4.8/sed/execute.c:1304: note: called from execute_program()
+sed-4.8/sed/execute.c:1694: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:422: note: called from main()
+#   39|   xmalloc (size_t n)
+#   40|   {
+#   41|->   void *p = malloc (n);
+#   42|     if (!p && n != 0)
+#   43|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/./sed/sed: note: while executing process 21731 with arguments: -n -f /builddir/build/BUILD/sed-4.8/testsuite/binary2.sed
+sed-4.8/lib/xmalloc.c:41: warning[Leak_PossiblyLost]: 94,208 bytes in 46 blocks are possibly lost in loss record 420 of 424
+sed-4.8/lib/xmalloc.c:41: note: called from UnknownInlinedFun()
+sed-4.8/lib/dfa.c:2949: note: called from build_state()
+sed-4.8/lib/dfa.c:3521: note: called from dfaexec_main()
+sed-4.8/lib/dfa.c:3568: note: called from UnknownInlinedFun()
+sed-4.8/sed/regexp.c:292: note: called from match_regex()
+sed-4.8/sed/execute.c:810: note: called from match_an_address_p()
+sed-4.8/sed/execute.c:849: note: called from UnknownInlinedFun()
+sed-4.8/sed/execute.c:1304: note: called from execute_program()
+sed-4.8/sed/execute.c:1694: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:422: note: called from main()
+#   39|   xmalloc (size_t n)
+#   40|   {
+#   41|->   void *p = malloc (n);
+#   42|     if (!p && n != 0)
+#   43|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/sed/sed: note: while executing process 1546 with arguments: -f brackets.1 brackets.2
+sed-4.8/lib/xmalloc.c:61: warning[Leak_PossiblyLost]: 1,024 bytes in 8 blocks are possibly lost in loss record 37 of 49
+sed-4.8/lib/xmalloc.c:61: note: called from UnknownInlinedFun()
+sed-4.8/lib/dfa.c:818: note: called from xpalloc.lto_priv.0()
+sed-4.8/lib/dfa.c:2853: note: called from realloc_trans_if_necessary()
+sed-4.8/lib/dfa.c:3391: note: called from dfaexec_main()
+sed-4.8/lib/dfa.c:3568: note: called from UnknownInlinedFun()
+sed-4.8/sed/regexp.c:292: note: called from match_regex()
+sed-4.8/sed/execute.c:1029: note: called from UnknownInlinedFun()
+sed-4.8/sed/execute.c:1557: note: called from execute_program()
+sed-4.8/sed/execute.c:1694: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:422: note: called from main()
+#   59|       }
+#   60|   
+#   61|->   p = realloc (p, n);
+#   62|     if (!p && n)
+#   63|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/./sed/sed: note: while executing process 19845 with arguments: -f subst-prog2 subst-in2
+sed-4.8/lib/xmalloc.c:61: warning[Leak_PossiblyLost]: 1,280 bytes in 10 blocks are possibly lost in loss record 36 of 47
+sed-4.8/lib/xmalloc.c:61: note: called from UnknownInlinedFun()
+sed-4.8/lib/dfa.c:818: note: called from xpalloc.lto_priv.0()
+sed-4.8/lib/dfa.c:2853: note: called from realloc_trans_if_necessary()
+sed-4.8/lib/dfa.c:3391: note: called from dfaexec_main()
+sed-4.8/lib/dfa.c:3568: note: called from UnknownInlinedFun()
+sed-4.8/sed/regexp.c:292: note: called from match_regex()
+sed-4.8/sed/execute.c:1029: note: called from UnknownInlinedFun()
+sed-4.8/sed/execute.c:1557: note: called from execute_program()
+sed-4.8/sed/execute.c:1694: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:422: note: called from main()
+#   59|       }
+#   60|   
+#   61|->   p = realloc (p, n);
+#   62|     if (!p && n)
+#   63|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/./sed/sed: note: while executing process 6340 with arguments: -f cnv-num-prog cnv-num-in
+sed-4.8/lib/xmalloc.c:61: warning[Leak_PossiblyLost]: 1,408 bytes in 11 blocks are possibly lost in loss record 36 of 46
+sed-4.8/lib/xmalloc.c:61: note: called from UnknownInlinedFun()
+sed-4.8/lib/dfa.c:818: note: called from xpalloc.lto_priv.0()
+sed-4.8/lib/dfa.c:2853: note: called from realloc_trans_if_necessary()
+sed-4.8/lib/dfa.c:3391: note: called from dfaexec_main()
+sed-4.8/lib/dfa.c:3568: note: called from UnknownInlinedFun()
+sed-4.8/sed/regexp.c:292: note: called from match_regex()
+sed-4.8/sed/execute.c:1029: note: called from UnknownInlinedFun()
+sed-4.8/sed/execute.c:1557: note: called from execute_program()
+sed-4.8/sed/execute.c:1694: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:422: note: called from main()
+#   59|       }
+#   60|   
+#   61|->   p = realloc (p, n);
+#   62|     if (!p && n)
+#   63|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/sed/sed: note: while executing process 1794 with arguments: -f fasts.1 fasts.2
+sed-4.8/lib/xmalloc.c:61: warning[Leak_PossiblyLost]: 1,664 bytes in 13 blocks are possibly lost in loss record 80 of 91
+sed-4.8/lib/xmalloc.c:61: note: called from UnknownInlinedFun()
+sed-4.8/lib/dfa.c:818: note: called from xpalloc.lto_priv.0()
+sed-4.8/lib/dfa.c:2853: note: called from realloc_trans_if_necessary()
+sed-4.8/lib/dfa.c:3391: note: called from dfaexec_main()
+sed-4.8/lib/dfa.c:3568: note: called from UnknownInlinedFun()
+sed-4.8/sed/regexp.c:292: note: called from match_regex()
+sed-4.8/sed/execute.c:1029: note: called from UnknownInlinedFun()
+sed-4.8/sed/execute.c:1557: note: called from execute_program()
+sed-4.8/sed/execute.c:1694: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:422: note: called from main()
+#   59|       }
+#   60|   
+#   61|->   p = realloc (p, n);
+#   62|     if (!p && n)
+#   63|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/sed/sed: note: while executing process 1050 with arguments: s/^ *// empty2.1
+sed-4.8/lib/xmalloc.c:61: warning[Leak_PossiblyLost]: 128 bytes in 1 blocks are possibly lost in loss record 59 of 68
+sed-4.8/lib/xmalloc.c:61: note: called from UnknownInlinedFun()
+sed-4.8/lib/dfa.c:818: note: called from xpalloc.lto_priv.0()
+sed-4.8/lib/dfa.c:2853: note: called from realloc_trans_if_necessary()
+sed-4.8/lib/dfa.c:3391: note: called from dfaexec_main()
+sed-4.8/lib/dfa.c:3568: note: called from UnknownInlinedFun()
+sed-4.8/sed/regexp.c:292: note: called from match_regex()
+sed-4.8/sed/execute.c:1029: note: called from UnknownInlinedFun()
+sed-4.8/sed/execute.c:1557: note: called from execute_program()
+sed-4.8/sed/execute.c:1694: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:422: note: called from main()
+#   59|       }
+#   60|   
+#   61|->   p = realloc (p, n);
+#   62|     if (!p && n)
+#   63|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/./sed/sed: note: while executing process 31087 with arguments: -n -f distrib.sed
+sed-4.8/lib/xmalloc.c:61: warning[Leak_PossiblyLost]: 192 bytes in 1 blocks are possibly lost in loss record 118 of 215
+sed-4.8/lib/xmalloc.c:61: note: called from UnknownInlinedFun()
+sed-4.8/lib/dfa.c:818: note: called from xpalloc.lto_priv.0()
+sed-4.8/lib/dfa.c:2853: note: called from realloc_trans_if_necessary()
+sed-4.8/lib/dfa.c:3135: note: called from build_state()
+sed-4.8/lib/dfa.c:3472: note: called from dfaexec_main()
+sed-4.8/lib/dfa.c:3568: note: called from UnknownInlinedFun()
+sed-4.8/sed/regexp.c:292: note: called from match_regex()
+sed-4.8/sed/execute.c:1029: note: called from UnknownInlinedFun()
+sed-4.8/sed/execute.c:1557: note: called from execute_program()
+sed-4.8/sed/execute.c:1694: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:422: note: called from main()
+#   59|       }
+#   60|   
+#   61|->   p = realloc (p, n);
+#   62|     if (!p && n)
+#   63|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/./sed/sed: note: while executing process 21670 with arguments: -n -f /builddir/build/BUILD/sed-4.8/testsuite/binary.sed
+sed-4.8/lib/xmalloc.c:61: warning[Leak_PossiblyLost]: 2,816 bytes in 22 blocks are possibly lost in loss record 370 of 435
+sed-4.8/lib/xmalloc.c:61: note: called from UnknownInlinedFun()
+sed-4.8/lib/dfa.c:818: note: called from xpalloc.lto_priv.0()
+sed-4.8/lib/dfa.c:2853: note: called from realloc_trans_if_necessary()
+sed-4.8/lib/dfa.c:3391: note: called from dfaexec_main()
+sed-4.8/lib/dfa.c:3568: note: called from UnknownInlinedFun()
+sed-4.8/sed/regexp.c:292: note: called from match_regex()
+sed-4.8/sed/execute.c:810: note: called from match_an_address_p()
+sed-4.8/sed/execute.c:849: note: called from UnknownInlinedFun()
+sed-4.8/sed/execute.c:1304: note: called from execute_program()
+sed-4.8/sed/execute.c:1694: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:422: note: called from main()
+#   59|       }
+#   60|   
+#   61|->   p = realloc (p, n);
+#   62|     if (!p && n)
+#   63|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/./sed/sed: note: while executing process 21670 with arguments: -n -f /builddir/build/BUILD/sed-4.8/testsuite/binary.sed
+sed-4.8/lib/xmalloc.c:61: warning[Leak_PossiblyLost]: 2,944 bytes in 23 blocks are possibly lost in loss record 371 of 435
+sed-4.8/lib/xmalloc.c:61: note: called from UnknownInlinedFun()
+sed-4.8/lib/dfa.c:818: note: called from xpalloc.lto_priv.0()
+sed-4.8/lib/dfa.c:2853: note: called from realloc_trans_if_necessary()
+sed-4.8/lib/dfa.c:3391: note: called from dfaexec_main()
+sed-4.8/lib/dfa.c:3568: note: called from UnknownInlinedFun()
+sed-4.8/sed/regexp.c:292: note: called from match_regex()
+sed-4.8/sed/execute.c:1029: note: called from UnknownInlinedFun()
+sed-4.8/sed/execute.c:1557: note: called from execute_program()
+sed-4.8/sed/execute.c:1694: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:422: note: called from main()
+#   59|       }
+#   60|   
+#   61|->   p = realloc (p, n);
+#   62|     if (!p && n)
+#   63|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/sed/sed: note: while executing process 1112 with arguments: s/_\S/XX/g;s/\s/_/g space.1
+sed-4.8/lib/xmalloc.c:61: warning[Leak_PossiblyLost]: 256 bytes in 2 blocks are possibly lost in loss record 39 of 51
+sed-4.8/lib/xmalloc.c:61: note: called from UnknownInlinedFun()
+sed-4.8/lib/dfa.c:818: note: called from xpalloc.lto_priv.0()
+sed-4.8/lib/dfa.c:2853: note: called from realloc_trans_if_necessary()
+sed-4.8/lib/dfa.c:3391: note: called from dfaexec_main()
+sed-4.8/lib/dfa.c:3568: note: called from UnknownInlinedFun()
+sed-4.8/sed/regexp.c:292: note: called from match_regex()
+sed-4.8/sed/execute.c:1029: note: called from UnknownInlinedFun()
+sed-4.8/sed/execute.c:1557: note: called from execute_program()
+sed-4.8/sed/execute.c:1694: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:422: note: called from main()
+#   59|       }
+#   60|   
+#   61|->   p = realloc (p, n);
+#   62|     if (!p && n)
+#   63|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/sed/sed: note: while executing process 1918 with arguments: -f khadafy.1 khadafy.2
+sed-4.8/lib/xmalloc.c:61: warning[Leak_PossiblyLost]: 288 bytes in 1 blocks are possibly lost in loss record 28 of 51
+sed-4.8/lib/xmalloc.c:61: note: called from UnknownInlinedFun()
+sed-4.8/lib/dfa.c:818: note: called from xpalloc.lto_priv.0()
+sed-4.8/lib/dfa.c:2853: note: called from realloc_trans_if_necessary()
+sed-4.8/lib/dfa.c:3135: note: called from build_state()
+sed-4.8/lib/dfa.c:3472: note: called from dfaexec_main()
+sed-4.8/lib/dfa.c:3568: note: called from UnknownInlinedFun()
+sed-4.8/sed/regexp.c:292: note: called from match_regex()
+sed-4.8/sed/execute.c:810: note: called from match_an_address_p()
+sed-4.8/sed/execute.c:849: note: called from UnknownInlinedFun()
+sed-4.8/sed/execute.c:1304: note: called from execute_program()
+sed-4.8/sed/execute.c:1694: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:422: note: called from main()
+#   59|       }
+#   60|   
+#   61|->   p = realloc (p, n);
+#   62|     if (!p && n)
+#   63|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/./sed/sed: note: while executing process 21731 with arguments: -n -f /builddir/build/BUILD/sed-4.8/testsuite/binary2.sed
+sed-4.8/lib/xmalloc.c:61: warning[Leak_PossiblyLost]: 3,072 bytes in 24 blocks are possibly lost in loss record 365 of 424
+sed-4.8/lib/xmalloc.c:61: note: called from UnknownInlinedFun()
+sed-4.8/lib/dfa.c:818: note: called from xpalloc.lto_priv.0()
+sed-4.8/lib/dfa.c:2853: note: called from realloc_trans_if_necessary()
+sed-4.8/lib/dfa.c:3391: note: called from dfaexec_main()
+sed-4.8/lib/dfa.c:3568: note: called from UnknownInlinedFun()
+sed-4.8/sed/regexp.c:292: note: called from match_regex()
+sed-4.8/sed/execute.c:810: note: called from match_an_address_p()
+sed-4.8/sed/execute.c:849: note: called from UnknownInlinedFun()
+sed-4.8/sed/execute.c:1304: note: called from execute_program()
+sed-4.8/sed/execute.c:1694: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:422: note: called from main()
+#   59|       }
+#   60|   
+#   61|->   p = realloc (p, n);
+#   62|     if (!p && n)
+#   63|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/./sed/sed: note: while executing process 21731 with arguments: -n -f /builddir/build/BUILD/sed-4.8/testsuite/binary2.sed
+sed-4.8/lib/xmalloc.c:61: warning[Leak_PossiblyLost]: 3,200 bytes in 25 blocks are possibly lost in loss record 367 of 424
+sed-4.8/lib/xmalloc.c:61: note: called from UnknownInlinedFun()
+sed-4.8/lib/dfa.c:818: note: called from xpalloc.lto_priv.0()
+sed-4.8/lib/dfa.c:2853: note: called from realloc_trans_if_necessary()
+sed-4.8/lib/dfa.c:3391: note: called from dfaexec_main()
+sed-4.8/lib/dfa.c:3568: note: called from UnknownInlinedFun()
+sed-4.8/sed/regexp.c:292: note: called from match_regex()
+sed-4.8/sed/execute.c:1029: note: called from UnknownInlinedFun()
+sed-4.8/sed/execute.c:1557: note: called from execute_program()
+sed-4.8/sed/execute.c:1694: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:422: note: called from main()
+#   59|       }
+#   60|   
+#   61|->   p = realloc (p, n);
+#   62|     if (!p && n)
+#   63|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/./sed/sed: note: while executing process 21792 with arguments: -n -f /builddir/build/BUILD/sed-4.8/testsuite/binary3.sed
+sed-4.8/lib/xmalloc.c:61: warning[Leak_PossiblyLost]: 3,456 bytes in 27 blocks are possibly lost in loss record 400 of 456
+sed-4.8/lib/xmalloc.c:61: note: called from UnknownInlinedFun()
+sed-4.8/lib/dfa.c:818: note: called from xpalloc.lto_priv.0()
+sed-4.8/lib/dfa.c:2853: note: called from realloc_trans_if_necessary()
+sed-4.8/lib/dfa.c:3391: note: called from dfaexec_main()
+sed-4.8/lib/dfa.c:3568: note: called from UnknownInlinedFun()
+sed-4.8/sed/regexp.c:292: note: called from match_regex()
+sed-4.8/sed/execute.c:1029: note: called from UnknownInlinedFun()
+sed-4.8/sed/execute.c:1557: note: called from execute_program()
+sed-4.8/sed/execute.c:1694: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:422: note: called from main()
+#   59|       }
+#   60|   
+#   61|->   p = realloc (p, n);
+#   62|     if (!p && n)
+#   63|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/sed/sed: note: while executing process 2321 with arguments: -f sep.1 sep.2
+sed-4.8/lib/xmalloc.c:61: warning[Leak_PossiblyLost]: 384 bytes in 3 blocks are possibly lost in loss record 54 of 70
+sed-4.8/lib/xmalloc.c:61: note: called from UnknownInlinedFun()
+sed-4.8/lib/dfa.c:818: note: called from xpalloc.lto_priv.0()
+sed-4.8/lib/dfa.c:2853: note: called from realloc_trans_if_necessary()
+sed-4.8/lib/dfa.c:3391: note: called from dfaexec_main()
+sed-4.8/lib/dfa.c:3568: note: called from UnknownInlinedFun()
+sed-4.8/sed/regexp.c:292: note: called from match_regex()
+sed-4.8/sed/execute.c:1029: note: called from UnknownInlinedFun()
+sed-4.8/sed/execute.c:1557: note: called from execute_program()
+sed-4.8/sed/execute.c:1694: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:422: note: called from main()
+#   59|       }
+#   60|   
+#   61|->   p = realloc (p, n);
+#   62|     if (!p && n)
+#   63|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/./sed/sed: note: while executing process 31752 with arguments: -f /builddir/build/BUILD/sed-4.8/testsuite/mac-mf.sed /builddir/build/BUILD/sed-4.8/testsuite/mac-mf.inp
+sed-4.8/lib/xmalloc.c:61: warning[Leak_PossiblyLost]: 5,120 bytes in 40 blocks are possibly lost in loss record 222 of 249
+sed-4.8/lib/xmalloc.c:61: note: called from UnknownInlinedFun()
+sed-4.8/lib/dfa.c:818: note: called from xpalloc.lto_priv.0()
+sed-4.8/lib/dfa.c:2853: note: called from realloc_trans_if_necessary()
+sed-4.8/lib/dfa.c:3391: note: called from dfaexec_main()
+sed-4.8/lib/dfa.c:3568: note: called from UnknownInlinedFun()
+sed-4.8/sed/regexp.c:292: note: called from match_regex()
+sed-4.8/sed/execute.c:810: note: called from match_an_address_p()
+sed-4.8/sed/execute.c:849: note: called from UnknownInlinedFun()
+sed-4.8/sed/execute.c:1304: note: called from execute_program()
+sed-4.8/sed/execute.c:1694: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:422: note: called from main()
+#   59|       }
+#   60|   
+#   61|->   p = realloc (p, n);
+#   62|     if (!p && n)
+#   63|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/sed/sed: note: while executing process 1825 with arguments: -n -f factor.1 factor.2
+sed-4.8/lib/xmalloc.c:61: warning[Leak_PossiblyLost]: 512 bytes in 4 blocks are possibly lost in loss record 392 of 493
+sed-4.8/lib/xmalloc.c:61: note: called from UnknownInlinedFun()
+sed-4.8/lib/dfa.c:818: note: called from xpalloc.lto_priv.0()
+sed-4.8/lib/dfa.c:2853: note: called from realloc_trans_if_necessary()
+sed-4.8/lib/dfa.c:3391: note: called from dfaexec_main()
+sed-4.8/lib/dfa.c:3568: note: called from UnknownInlinedFun()
+sed-4.8/sed/regexp.c:292: note: called from match_regex()
+sed-4.8/sed/execute.c:810: note: called from match_an_address_p()
+sed-4.8/sed/execute.c:849: note: called from UnknownInlinedFun()
+sed-4.8/sed/execute.c:1304: note: called from execute_program()
+sed-4.8/sed/execute.c:1694: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:422: note: called from main()
+#   59|       }
+#   60|   
+#   61|->   p = realloc (p, n);
+#   62|     if (!p && n)
+#   63|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/./sed/sed: note: while executing process 31856 with arguments: -f /builddir/build/BUILD/sed-4.8/testsuite/madding.sed /builddir/build/BUILD/sed-4.8/testsuite/madding.inp
+sed-4.8/lib/xmalloc.c:61: warning[Leak_PossiblyLost]: 55,416 bytes in 1 blocks are possibly lost in loss record 32 of 45
+sed-4.8/lib/xmalloc.c:61: note: called from UnknownInlinedFun()
+sed-4.8/lib/dfa.c:818: note: called from xpalloc.lto_priv.0()
+sed-4.8/lib/dfa.c:2853: note: called from realloc_trans_if_necessary()
+sed-4.8/lib/dfa.c:3135: note: called from build_state()
+sed-4.8/lib/dfa.c:3521: note: called from dfaexec_main()
+sed-4.8/lib/dfa.c:3568: note: called from UnknownInlinedFun()
+sed-4.8/sed/regexp.c:292: note: called from match_regex()
+sed-4.8/sed/execute.c:1029: note: called from UnknownInlinedFun()
+sed-4.8/sed/execute.c:1557: note: called from execute_program()
+sed-4.8/sed/execute.c:1694: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:422: note: called from main()
+#   59|       }
+#   60|   
+#   61|->   p = realloc (p, n);
+#   62|     if (!p && n)
+#   63|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/./sed/sed: note: while executing process 21670 with arguments: -n -f /builddir/build/BUILD/sed-4.8/testsuite/binary.sed
+sed-4.8/lib/xmalloc.c:61: warning[Leak_PossiblyLost]: 768 bytes in 3 blocks are possibly lost in loss record 308 of 435
+sed-4.8/lib/xmalloc.c:61: note: called from UnknownInlinedFun()
+sed-4.8/lib/dfa.c:818: note: called from xpalloc.lto_priv.0()
+sed-4.8/lib/dfa.c:2853: note: called from realloc_trans_if_necessary()
+sed-4.8/lib/dfa.c:3135: note: called from build_state()
+sed-4.8/lib/dfa.c:3521: note: called from dfaexec_main()
+sed-4.8/lib/dfa.c:3568: note: called from UnknownInlinedFun()
+sed-4.8/sed/regexp.c:292: note: called from match_regex()
+sed-4.8/sed/execute.c:1029: note: called from UnknownInlinedFun()
+sed-4.8/sed/execute.c:1557: note: called from execute_program()
+sed-4.8/sed/execute.c:1694: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:422: note: called from main()
+#   59|       }
+#   60|   
+#   61|->   p = realloc (p, n);
+#   62|     if (!p && n)
+#   63|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/./sed/sed: note: while executing process 21670 with arguments: -n -f /builddir/build/BUILD/sed-4.8/testsuite/binary.sed
+sed-4.8/lib/xmalloc.c:61: warning[Leak_PossiblyLost]: 768 bytes in 4 blocks are possibly lost in loss record 309 of 435
+sed-4.8/lib/xmalloc.c:61: note: called from UnknownInlinedFun()
+sed-4.8/lib/dfa.c:818: note: called from xpalloc.lto_priv.0()
+sed-4.8/lib/dfa.c:2853: note: called from realloc_trans_if_necessary()
+sed-4.8/lib/dfa.c:3135: note: called from build_state()
+sed-4.8/lib/dfa.c:3472: note: called from dfaexec_main()
+sed-4.8/lib/dfa.c:3568: note: called from UnknownInlinedFun()
+sed-4.8/sed/regexp.c:284: note: called from match_regex()
+sed-4.8/sed/execute.c:1029: note: called from UnknownInlinedFun()
+sed-4.8/sed/execute.c:1557: note: called from execute_program()
+sed-4.8/sed/execute.c:1694: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:422: note: called from main()
+#   59|       }
+#   60|   
+#   61|->   p = realloc (p, n);
+#   62|     if (!p && n)
+#   63|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/sed/sed: note: while executing process 1825 with arguments: -n -f factor.1 factor.2
+sed-4.8/lib/xmalloc.c:61: warning[Leak_PossiblyLost]: 768 bytes in 6 blocks are possibly lost in loss record 416 of 493
+sed-4.8/lib/xmalloc.c:61: note: called from UnknownInlinedFun()
+sed-4.8/lib/dfa.c:818: note: called from xpalloc.lto_priv.0()
+sed-4.8/lib/dfa.c:2853: note: called from realloc_trans_if_necessary()
+sed-4.8/lib/dfa.c:3391: note: called from dfaexec_main()
+sed-4.8/lib/dfa.c:3568: note: called from UnknownInlinedFun()
+sed-4.8/sed/regexp.c:292: note: called from match_regex()
+sed-4.8/sed/execute.c:1029: note: called from UnknownInlinedFun()
+sed-4.8/sed/execute.c:1557: note: called from execute_program()
+sed-4.8/sed/execute.c:1694: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:422: note: called from main()
+#   59|       }
+#   60|   
+#   61|->   p = realloc (p, n);
+#   62|     if (!p && n)
+#   63|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/sed/sed: note: while executing process 1980 with arguments: -f manis.1 manis.2
+sed-4.8/lib/xmalloc.c:61: warning[Leak_PossiblyLost]: 896 bytes in 7 blocks are possibly lost in loss record 100 of 116
+sed-4.8/lib/xmalloc.c:61: note: called from UnknownInlinedFun()
+sed-4.8/lib/dfa.c:818: note: called from xpalloc.lto_priv.0()
+sed-4.8/lib/dfa.c:2853: note: called from realloc_trans_if_necessary()
+sed-4.8/lib/dfa.c:3391: note: called from dfaexec_main()
+sed-4.8/lib/dfa.c:3568: note: called from UnknownInlinedFun()
+sed-4.8/sed/regexp.c:292: note: called from match_regex()
+sed-4.8/sed/execute.c:1029: note: called from UnknownInlinedFun()
+sed-4.8/sed/execute.c:1557: note: called from execute_program()
+sed-4.8/sed/execute.c:1694: note: called from UnknownInlinedFun()
+sed-4.8/sed/sed.c:422: note: called from main()
+#   59|       }
+#   60|   
+#   61|->   p = realloc (p, n);
+#   62|     if (!p && n)
+#   63|       xalloc_die ();
+
+Error: VALGRIND_WARNING:
+sed-4.8/./sed/sed: note: while executing process 16285 with arguments: R
+sed-4.8/lib/xmalloc.c:101: warning[Leak_DefinitelyLost]: 24 bytes in 1 blocks are definitely lost in loss record 2 of 5
+sed-4.8/lib/xmalloc.c:101: note: called from UnknownInlinedFun()
+sed-4.8/sed/utils.c:507: note: called from init_buffer()
+sed-4.8/sed/compile.c:365: note: called from read_filename()
+sed-4.8/sed/compile.c:390: note: called from get_openfile()
+sed-4.8/sed/compile.c:1201: note: called from compile_program()
+sed-4.8/sed/compile.c:1505: note: called from compile_string()
+sed-4.8/sed/sed.c:402: note: called from main()
+#   99|        successful.  */
+#  100|     if (xalloc_oversized (n, s)
+#  101|->       || (! (p = calloc (n, s)) && (HAVE_GNU_CALLOC || n != 0)))
+#  102|       xalloc_die ();
+#  103|     return p;
+
+Error: COMPILER_WARNING (CWE-457):
+sed-4.8/sed/compile.c: scope_hint: In function 'match_slash'
+sed-4.8/sed/compile.c:493:37: warning[-Wmaybe-uninitialized]: 'delim' may be used uninitialized in this function
+#  493 |           else if (state == 2 && ch == delim)
+#      |                                  ~~~^~~~~~~~
+sed-4.8/sed/compile.c:458:7: note: 'delim' was declared here
+#  458 |   int delim IF_LINT ( = 0) ;
+#      |       ^~~~~
+#  491|                 state = 2;
+#  492|               }
+#  493|->           else if (state == 2 && ch == delim)
+#  494|               state = 3;
+#  495|             else
+
+Error: COMPILER_WARNING (CWE-477):
+sed-4.8/sed/execute.c: scope_hint: In function 'open_next_file'
+sed-4.8/sed/execute.c:575:7: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#  575 |       security_context_t old_fscreatecon;
+#      |       ^~~~~~~~~~~~~~~~~~
+#  573|         int input_fd;
+#  574|         char *tmpdir, *p;
+#  575|->       security_context_t old_fscreatecon;
+#  576|         int reset_fscreatecon = 0;
+#  577|         memset (&old_fscreatecon, 0, sizeof (old_fscreatecon));
+
+Error: COMPILER_WARNING (CWE-477):
+sed-4.8/sed/execute.c:596:11: warning[-Wdeprecated-declarations]: 'security_context_t' is deprecated
+#  596 |           security_context_t con;
+#      |           ^~~~~~~~~~~~~~~~~~
+#  594|         if (is_selinux_enabled () > 0)
+#  595|           {
+#  596|->           security_context_t con;
+#  597|             if (lgetfilecon (input->in_file_name, &con) != -1)
+#  598|               {
+
+Error: COMPILER_WARNING (CWE-563):
+sed-4.8/sed/utils.c: scope_hint: In function '_copy'
+sed-4.8/sed/utils.c:436:7: warning[-Wunused-variable]: unused variable 'c'
+#  436 |   int c, retval = 0;
+#      |       ^
+#  434|   
+#  435|     FILE *infile, *outfile;
+#  436|->   int c, retval = 0;
+#  437|     errno = 0;
+#  438|   

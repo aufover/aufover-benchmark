@@ -1,0 +1,896 @@
+Error: COMPILER_WARNING:
+man-db-2.9.4/gl/lib/argp-parse.c:39: included_from: Included from here.
+man-db-2.9.4/gl/lib/gettext.h:149:1: warning: unused function 'pgettext_aux'
+#pgettext_aux (const char *domain,
+#^
+#  147|   #endif
+#  148|   static const char *
+#  149|-> pgettext_aux (const char *domain,
+#  150|                 const char *msg_ctxt_id, const char *msgid,
+#  151|                 int category)
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/gl/lib/gettext.h:168:1: warning: unused function 'npgettext_aux'
+#npgettext_aux (const char *domain,
+#^
+#  166|   #endif
+#  167|   static const char *
+#  168|-> npgettext_aux (const char *domain,
+#  169|                  const char *msg_ctxt_id, const char *msgid,
+#  170|                  const char *msgid_plural, unsigned long int n,
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/gl/lib/gettext.h:219:1: warning: unused function 'dcpgettext_expr'
+#dcpgettext_expr (const char *domain,
+#^
+#  217|   #endif
+#  218|   static const char *
+#  219|-> dcpgettext_expr (const char *domain,
+#  220|                    const char *msgctxt, const char *msgid,
+#  221|                    int category)
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/gl/lib/gettext.h:266:1: warning: unused function 'dcnpgettext_expr'
+#dcnpgettext_expr (const char *domain,
+#^
+#  264|   #endif
+#  265|   static const char *
+#  266|-> dcnpgettext_expr (const char *domain,
+#  267|                     const char *msgctxt, const char *msgid,
+#  268|                     const char *msgid_plural, unsigned long int n,
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/gl/lib/idpriv-drop.c:43:7: warning: implicit declaration of function 'setresgid' is invalid in C99
+#  if (setresgid (gid, gid, gid) < 0)
+#      ^
+#   41|        may leave the saved gid as 0.  See also the comment below regarding
+#   42|        setresuid.  */
+#   43|->   if (setresgid (gid, gid, gid) < 0)
+#   44|       return -1;
+#   45|   #elif HAVE_SETREGID /* Mac OS X, NetBSD, AIX, IRIX, Solaris, OSF/1, Cygwin */
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/gl/lib/idpriv-drop.c:63:7: warning: implicit declaration of function 'setresuid' is invalid in C99
+#  if (setresuid (uid, uid, uid) < 0)
+#      ^
+#   61|        says about setreuid(): "What exactly happens to the saved UID when this
+#   62|        is used seems to vary a lot."  */
+#   63|->   if (setresuid (uid, uid, uid) < 0)
+#   64|       return -1;
+#   65|   #elif HAVE_SETREUID /* Mac OS X, NetBSD, AIX, IRIX, Solaris, OSF/1, Cygwin */
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/gl/lib/idpriv-drop.c:92:9: warning: implicit declaration of function 'getresuid' is invalid in C99
+#    if (getresuid (&real, &effective, &saved) < 0
+#        ^
+#   90|       uid_t effective;
+#   91|       uid_t saved;
+#   92|->     if (getresuid (&real, &effective, &saved) < 0
+#   93|           || real != uid
+#   94|           || effective != uid
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/gl/lib/idpriv-drop.c:113:9: warning: implicit declaration of function 'getresgid' is invalid in C99
+#    if (getresgid (&real, &effective, &saved) < 0
+#        ^
+#  111|       gid_t effective;
+#  112|       gid_t saved;
+#  113|->     if (getresgid (&real, &effective, &saved) < 0
+#  114|           || real != gid
+#  115|           || effective != gid
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/gl/lib/idpriv-droptemp.c:52:7: warning: implicit declaration of function 'setresgid' is invalid in C99
+#  if (setresgid (-1, gid, saved_gid) < 0)
+#      ^
+#   50|     /* This is for executables that have the setgid bit set.  */
+#   51|   # if HAVE_SETRESGID /* glibc, FreeBSD, OpenBSD, HP-UX */
+#   52|->   if (setresgid (-1, gid, saved_gid) < 0)
+#   53|       return -1;
+#   54|   # else /* Mac OS X, NetBSD, AIX, IRIX, Solaris >= 2.5, OSF/1, Cygwin */
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/gl/lib/idpriv-droptemp.c:65:7: warning: implicit declaration of function 'setresuid' is invalid in C99
+#  if (setresuid (-1, uid, saved_uid) < 0)
+#      ^
+#   63|          <https://www.usenix.org/legacy/publications/library/proceedings/sec02/full_papers/chen/chen.pdf>
+#   64|        figure 14.  */
+#   65|->   if (setresuid (-1, uid, saved_uid) < 0)
+#   66|       return -1;
+#   67|   # else /* Mac OS X, NetBSD, AIX, IRIX, Solaris >= 2.5, OSF/1, Cygwin */
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/gl/lib/idpriv-droptemp.c:82:9: warning: implicit declaration of function 'getresuid' is invalid in C99
+#    if (getresuid (&real, &effective, &saved) < 0
+#        ^
+#   80|       uid_t effective;
+#   81|       uid_t saved;
+#   82|->     if (getresuid (&real, &effective, &saved) < 0
+#   83|           || real != uid
+#   84|           || effective != uid
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/gl/lib/idpriv-droptemp.c:101:9: warning: implicit declaration of function 'getresgid' is invalid in C99
+#    if (getresgid (&real, &effective, &saved) < 0
+#        ^
+#   99|       uid_t effective;
+#  100|       uid_t saved;
+#  101|->     if (getresgid (&real, &effective, &saved) < 0
+#  102|           || real != gid
+#  103|           || effective != gid
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/gl/lib/idpriv-droptemp.c:143:7: warning: implicit declaration of function 'setresuid' is invalid in C99
+#  if (setresuid (-1, saved_uid, -1) < 0)
+#      ^
+#  141|          <https://www.usenix.org/legacy/publications/library/proceedings/sec02/full_papers/chen/chen.pdf>
+#  142|        figure 14.  */
+#  143|->   if (setresuid (-1, saved_uid, -1) < 0)
+#  144|       return -1;
+#  145|   # else /* Mac OS X, NetBSD, AIX, IRIX, Solaris >= 2.5, OSF/1, Cygwin */
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/gl/lib/idpriv-droptemp.c:152:7: warning: implicit declaration of function 'setresgid' is invalid in C99
+#  if (setresgid (-1, saved_gid, -1) < 0)
+#      ^
+#  150|     /* This is for executables that have the setgid bit set.  */
+#  151|   # if HAVE_SETRESGID /* glibc, FreeBSD, OpenBSD, HP-UX */
+#  152|->   if (setresgid (-1, saved_gid, -1) < 0)
+#  153|       return -1;
+#  154|   # else /* Mac OS X, NetBSD, AIX, IRIX, Solaris >= 2.5, OSF/1, Cygwin */
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/gl/lib/idpriv-droptemp.c:169:9: warning: implicit declaration of function 'getresuid' is invalid in C99
+#    if (getresuid (&real, &effective, &saved) < 0
+#        ^
+#  167|       uid_t effective;
+#  168|       uid_t saved;
+#  169|->     if (getresuid (&real, &effective, &saved) < 0
+#  170|           || real != uid
+#  171|           || effective != saved_uid
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/gl/lib/idpriv-droptemp.c:188:9: warning: implicit declaration of function 'getresgid' is invalid in C99
+#    if (getresgid (&real, &effective, &saved) < 0
+#        ^
+#  186|       uid_t effective;
+#  187|       uid_t saved;
+#  188|->     if (getresgid (&real, &effective, &saved) < 0
+#  189|           || real != gid
+#  190|           || effective != saved_gid
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/gl/lib/localcharset.c:584:33: warning: unused variable 'locale_table'
+#static const struct table_entry locale_table[] =
+#                                ^
+#  582|   
+#  583|   /* Table of platform-dependent mappings, sorted in ascending order.  */
+#  584|-> static const struct table_entry locale_table[] =
+#  585|     {
+#  586|   # if defined __FreeBSD__                                    /* FreeBSD 4.2 */
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/gl/lib/malloc/scratch_buffer_grow.c:23: included_from: Included from here.
+man-db-2.9.4/gl/lib/scratch_buffer.h:9: included_from: Included from here.
+man-db-2.9.4/gl/lib/malloc/scratch_buffer.h:99:1: warning: unused function 'scratch_buffer_grow'
+#scratch_buffer_grow (struct scratch_buffer *buffer)
+#^
+#   97|   /* Alias for __libc_scratch_buffer_grow.  */
+#   98|   static __always_inline bool
+#   99|-> scratch_buffer_grow (struct scratch_buffer *buffer)
+#  100|   {
+#  101|     return __glibc_likely (__libc_scratch_buffer_grow (buffer));
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/gl/lib/malloc/scratch_buffer.h:111:1: warning: unused function 'scratch_buffer_grow_preserve'
+#scratch_buffer_grow_preserve (struct scratch_buffer *buffer)
+#^
+#  109|   /* Alias for __libc_scratch_buffer_grow_preserve.  */
+#  110|   static __always_inline bool
+#  111|-> scratch_buffer_grow_preserve (struct scratch_buffer *buffer)
+#  112|   {
+#  113|     return __glibc_likely (__libc_scratch_buffer_grow_preserve (buffer));
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/gl/lib/malloc/scratch_buffer.h:128:1: warning: unused function 'scratch_buffer_set_array_size'
+#scratch_buffer_set_array_size (struct scratch_buffer *buffer,
+#^
+#  126|   /* Alias for __libc_scratch_set_array_size.  */
+#  127|   static __always_inline bool
+#  128|-> scratch_buffer_set_array_size (struct scratch_buffer *buffer,
+#  129|   			       size_t nelem, size_t size)
+#  130|   {
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/gl/lib/nl_langinfo.c:186:10: warning: implicit declaration of function 'nl_langinfo' is invalid in C99
+#  return nl_langinfo (item);
+#         ^
+#  184|         break;
+#  185|       }
+#  186|->   return nl_langinfo (item);
+#  187|   }
+#  188|   
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/gl/lib/nl_langinfo.c:186:10: warning: incompatible integer to pointer conversion returning 'int' from a function with result type 'char *'
+#  return nl_langinfo (item);
+#         ^~~~~~~~~~~~~~~~~~
+#  184|         break;
+#  185|       }
+#  186|->   return nl_langinfo (item);
+#  187|   }
+#  188|   
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/gl/lib/renameatu.c:84:13: warning: implicit declaration of function 'renameat2' is invalid in C99
+#  ret_val = renameat2 (fd1, src, fd2, dst, flags);
+#            ^
+#   82|   
+#   83|   #ifdef HAVE_RENAMEAT2
+#   84|->   ret_val = renameat2 (fd1, src, fd2, dst, flags);
+#   85|     err = errno;
+#   86|   #elif defined SYS_renameat2
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/gl/lib/utimens.c:404:16: warning: implicit declaration of function 'futimesat' is invalid in C99
+#        return futimesat (AT_FDCWD, file, t);
+#               ^
+#  402|         {
+#  403|   # if HAVE_FUTIMESAT
+#  404|->         return futimesat (AT_FDCWD, file, t);
+#  405|   # endif
+#  406|         }
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/gl/lib/utimens.c:425:13: warning: implicit declaration of function 'futimesat' is invalid in C99
+#        if (futimes (fd, t) == 0)
+#            ^
+man-db-2.9.4/gl/lib/utimens.c:423:27: note: expanded from macro 'futimes'
+##   define futimes(fd, t) futimesat (fd, NULL, t)
+#                          ^
+#  423|   #   define futimes(fd, t) futimesat (fd, NULL, t)
+#  424|   #  endif
+#  425|->         if (futimes (fd, t) == 0)
+#  426|             {
+#  427|   #  if __linux__ && __GLIBC__
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/lib/cleanup.c:59:17: warning: taking address of packed member '' of class or structure 'sigaction' may result in an unaligned pointer value
+#  sigemptyset (&act.sa_mask);
+#                ^~~~~~~~~~~
+#   57|     memset (&act, 0, sizeof act);
+#   58|     act.sa_handler = SIG_DFL;
+#   59|->   sigemptyset (&act.sa_mask);
+#   60|     act.sa_flags = 0;
+#   61|     if (sigaction (signo, &act, NULL)) {
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/lib/cleanup.c:95:19: warning: taking address of packed member '' of class or structure 'sigaction' may result in an unaligned pointer value
+#    sigemptyset (&act.sa_mask);
+#                  ^~~~~~~~~~~
+#   93|       memset (&act, 0, sizeof act);
+#   94|       act.sa_handler = sighandler;
+#   95|->     sigemptyset (&act.sa_mask);
+#   96|       act.sa_flags = 0;
+#   97|       return sigaction (signo, &act, oldact);
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/lib/pathsearch.c:66:15: warning: incompatible integer to pointer conversion assigning to 'const char *' from 'int'
+#        for (element = strsep (&pathtok, ":"); element;
+#                     ^ ~~~~~~~~~~~~~~~~~~~~~~
+#   64|   
+#   65|   	/* Unqualified name; iterate over $PATH looking for it. */
+#   66|-> 	for (element = strsep (&pathtok, ":"); element;
+#   67|   	     element = strsep (&pathtok, ":")) {
+#   68|   		char *filename;
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/lib/pathsearch.c:66:17: warning: implicit declaration of function 'strsep' is invalid in C99
+#        for (element = strsep (&pathtok, ":"); element;
+#                       ^
+#   64|   
+#   65|   	/* Unqualified name; iterate over $PATH looking for it. */
+#   66|-> 	for (element = strsep (&pathtok, ":"); element;
+#   67|   	     element = strsep (&pathtok, ":")) {
+#   68|   		char *filename;
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/lib/pathsearch.c:66:17: warning: this function declaration is not a prototype
+#   64|   
+#   65|   	/* Unqualified name; iterate over $PATH looking for it. */
+#   66|-> 	for (element = strsep (&pathtok, ":"); element;
+#   67|   	     element = strsep (&pathtok, ":")) {
+#   68|   		char *filename;
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/lib/pathsearch.c:67:15: warning: incompatible integer to pointer conversion assigning to 'const char *' from 'int'
+#             element = strsep (&pathtok, ":")) {
+#                     ^ ~~~~~~~~~~~~~~~~~~~~~~
+#   65|   	/* Unqualified name; iterate over $PATH looking for it. */
+#   66|   	for (element = strsep (&pathtok, ":"); element;
+#   67|-> 	     element = strsep (&pathtok, ":")) {
+#   68|   		char *filename;
+#   69|   
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/lib/pathsearch.c:114:15: warning: incompatible integer to pointer conversion assigning to 'const char *' from 'int'
+#        for (element = strsep (&pathtok, ":"); element;
+#                     ^ ~~~~~~~~~~~~~~~~~~~~~~
+#  112|   	pathtok = path = xstrdup (path);
+#  113|   
+#  114|-> 	for (element = strsep (&pathtok, ":"); element;
+#  115|   	     element = strsep (&pathtok, ":")) {
+#  116|   		if (!*element) {
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/lib/pathsearch.c:114:17: warning: implicit declaration of function 'strsep' is invalid in C99
+#        for (element = strsep (&pathtok, ":"); element;
+#                       ^
+#  112|   	pathtok = path = xstrdup (path);
+#  113|   
+#  114|-> 	for (element = strsep (&pathtok, ":"); element;
+#  115|   	     element = strsep (&pathtok, ":")) {
+#  116|   		if (!*element) {
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/lib/pathsearch.c:115:15: warning: incompatible integer to pointer conversion assigning to 'const char *' from 'int'
+#             element = strsep (&pathtok, ":")) {
+#                     ^ ~~~~~~~~~~~~~~~~~~~~~~
+#  113|   
+#  114|   	for (element = strsep (&pathtok, ":"); element;
+#  115|-> 	     element = strsep (&pathtok, ":")) {
+#  116|   		if (!*element) {
+#  117|   			if (!cwd)
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/libdb/db_lookup.c:180:16: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#                start[count] = strsep (&content, "\t");
+#                             ^ ~~~~~~~~~~~~~~~~~~~~~~~
+#  178|   	/* initialise pointers to first N-1 fields */
+#  179|   	for (count = 0; count < FIELDS - 1 ; count++) {
+#  180|-> 		start[count] = strsep (&content, "\t");
+#  181|   		if (!start[count]) {
+#  182|   			error (0, 0,
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/libdb/db_lookup.c:180:18: warning: implicit declaration of function 'strsep' is invalid in C99
+#                start[count] = strsep (&content, "\t");
+#                               ^
+#  178|   	/* initialise pointers to first N-1 fields */
+#  179|   	for (count = 0; count < FIELDS - 1 ; count++) {
+#  180|-> 		start[count] = strsep (&content, "\t");
+#  181|   		if (!start[count]) {
+#  182|   			error (0, 0,
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/libdb/db_lookup.c:180:18: warning: this function declaration is not a prototype
+#  178|   	/* initialise pointers to first N-1 fields */
+#  179|   	for (count = 0; count < FIELDS - 1 ; count++) {
+#  180|-> 		start[count] = strsep (&content, "\t");
+#  181|   		if (!start[count]) {
+#  182|   			error (0, 0,
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/libdb/db_lookup.c:183:11: warning: format string is not a string literal
+#                               ngettext ("only %d field in content",
+#                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+man-db-2.9.4/gl/lib/gettext.h:76:5: note: expanded from macro 'ngettext'
+#    ((N) == 1 \
+#    ^~~~~~~~~~~
+#  181|   		if (!start[count]) {
+#  182|   			error (0, 0,
+#  183|-> 			       ngettext ("only %d field in content",
+#  184|   					 "only %d fields in content", count),
+#  185|   			       count);
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/libdb/db_lookup.c:194:10: warning: format string is not a string literal
+#                       ngettext ("only %d field in content",
+#                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+man-db-2.9.4/gl/lib/gettext.h:76:5: note: expanded from macro 'ngettext'
+#    ((N) == 1 \
+#    ^~~~~~~~~~~
+#  192|   	if (!start[FIELDS - 1]) {
+#  193|   		error (0, 0,
+#  194|-> 		       ngettext ("only %d field in content",
+#  195|   				 "only %d fields in content", FIELDS - 1),
+#  196|   		       FIELDS - 1);
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/libdb/db_lookup.c:243:15: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#        while ((name = strsep (&data, "\t")) != NULL) {
+#                     ^ ~~~~~~~~~~~~~~~~~~~~
+#  241|   	char *name;
+#  242|   
+#  243|-> 	while ((name = strsep (&data, "\t")) != NULL) {
+#  244|   		char *ext;
+#  245|   		struct name_ext *name_ext;
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/libdb/db_lookup.c:243:17: warning: implicit declaration of function 'strsep' is invalid in C99
+#        while ((name = strsep (&data, "\t")) != NULL) {
+#                       ^
+#  241|   	char *name;
+#  242|   
+#  243|-> 	while ((name = strsep (&data, "\t")) != NULL) {
+#  244|   		char *ext;
+#  245|   		struct name_ext *name_ext;
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/libdb/db_lookup.c:247:7: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#                ext = strsep (&data, "\t");
+#                    ^ ~~~~~~~~~~~~~~~~~~~~
+#  245|   		struct name_ext *name_ext;
+#  246|   
+#  247|-> 		ext = strsep (&data, "\t");
+#  248|   		if (!ext)
+#  249|   			break;
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/src/lexgrog.c:5045:9: warning: format string is not a string literal
+#               ngettext ("warning: whatis for %s exceeds %d byte, "
+#               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+man-db-2.9.4/gl/lib/gettext.h:76:5: note: expanded from macro 'ngettext'
+#    ((N) == 1 \
+#    ^~~~~~~~~~~
+# 5043|   	 */
+# 5044|   	error (0, 0,
+# 5045|-> 	       ngettext ("warning: whatis for %s exceeds %d byte, "
+# 5046|   			 "truncating.",
+# 5047|   			 "warning: whatis for %s exceeds %d bytes, "
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/src/lexgrog.c:5215:17: warning: use of logical '&&' with constant operand
+#        if (p_lg->type && *COL) {
+#                       ^  ~~~~
+man-db-2.9.4/src/lexgrog.c:5215:17: note: use '&' for a bitwise operation
+#        if (p_lg->type && *COL) {
+#                       ^~
+man-db-2.9.4/src/lexgrog.c:5215:17: note: remove constant to silence this warning
+#        if (p_lg->type && *COL) {
+#                      ~^~~~~~~
+# 5213|   		add_manconv (p, page_encoding, "UTF-8");
+# 5214|   	free (page_encoding);
+# 5215|-> 	if (p_lg->type && *COL) {
+# 5216|   		pipecmd *col_cmd;
+# 5217|   		col_cmd = pipecmd_new_args (COL, "-b", "-p", "-x", (void *) 0);
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/src/man.c:1400:14: warning: use of logical '&&' with constant operand
+#                if (!troff && *COL) {
+#                           ^  ~~~~
+man-db-2.9.4/src/man.c:1400:14: note: use '&' for a bitwise operation
+#                if (!troff && *COL) {
+#                           ^~
+man-db-2.9.4/src/man.c:1400:14: note: remove constant to silence this warning
+#                if (!troff && *COL) {
+#                          ~^~~~~~~
+# 1398|   		} while (*pp_string++);
+# 1399|   
+# 1400|-> 		if (!troff && *COL) {
+# 1401|   			const char *man_keep_formatting =
+# 1402|   				getenv ("MAN_KEEP_FORMATTING");
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/src/man.c:1608:13: warning: use of logical '&&' with constant operand
+#        if (!troff && *COL) {
+#                   ^  ~~~~
+man-db-2.9.4/src/man.c:1608:13: note: use '&' for a bitwise operation
+#        if (!troff && *COL) {
+#                   ^~
+man-db-2.9.4/src/man.c:1608:13: note: remove constant to silence this warning
+#        if (!troff && *COL) {
+#                  ~^~~~~~~
+# 1606|   		add_output_iconv (p, encoding, locale_charset);
+# 1607|   
+# 1608|-> 	if (!troff && *COL) {
+# 1609|   		/* get rid of special characters if not writing to a
+# 1610|   		 * terminal
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/src/man.c:3661:19: warning: pointer/integer type mismatch in conditional expression ('char *' and 'int')
+#                        if (match_case ?
+#                                       ^
+# 3659|   			}
+# 3660|   		} else {
+# 3661|-> 			if (match_case ?
+# 3662|   			    strstr (line, string) :
+# 3663|   			    strcasestr (line, string)) {
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/src/man.c:3663:8: warning: implicit declaration of function 'strcasestr' is invalid in C99
+#                            strcasestr (line, string)) {
+#                            ^
+# 3661|   			if (match_case ?
+# 3662|   			    strstr (line, string) :
+# 3663|-> 			    strcasestr (line, string)) {
+# 3664|   				ret = 1;
+# 3665|   				break;
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/src/man.c:3663:8: warning: this function declaration is not a prototype
+# 3661|   			if (match_case ?
+# 3662|   			    strstr (line, string) :
+# 3663|-> 			    strcasestr (line, string)) {
+# 3664|   				ret = 1;
+# 3665|   				break;
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/src/manconv_main.c:73:11: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#        for (tok = strsep (&codestrtok_ptr, ":"); tok;
+#                 ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   71|   	codestrtok_ptr = codestrtok;
+#   72|   
+#   73|-> 	for (tok = strsep (&codestrtok_ptr, ":"); tok;
+#   74|   	     tok = strsep (&codestrtok_ptr, ":")) {
+#   75|   		if (!*tok)
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/src/manconv_main.c:73:13: warning: implicit declaration of function 'strsep' is invalid in C99
+#        for (tok = strsep (&codestrtok_ptr, ":"); tok;
+#                   ^
+#   71|   	codestrtok_ptr = codestrtok;
+#   72|   
+#   73|-> 	for (tok = strsep (&codestrtok_ptr, ":"); tok;
+#   74|   	     tok = strsep (&codestrtok_ptr, ":")) {
+#   75|   		if (!*tok)
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/src/manconv_main.c:73:13: warning: this function declaration is not a prototype
+#   71|   	codestrtok_ptr = codestrtok;
+#   72|   
+#   73|-> 	for (tok = strsep (&codestrtok_ptr, ":"); tok;
+#   74|   	     tok = strsep (&codestrtok_ptr, ":")) {
+#   75|   		if (!*tok)
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/src/manconv_main.c:74:11: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#             tok = strsep (&codestrtok_ptr, ":")) {
+#                 ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   72|   
+#   73|   	for (tok = strsep (&codestrtok_ptr, ":"); tok;
+#   74|-> 	     tok = strsep (&codestrtok_ptr, ":")) {
+#   75|   		if (!*tok)
+#   76|   			continue;	/* ignore empty fields */
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/src/mandb.c:801:16: warning: taking address of packed member '' of class or structure 'sigaction' may result in an unaligned pointer value
+#        sigemptyset (&sa.sa_mask);
+#                      ^~~~~~~~~~
+#  799|   	memset (&sa, 0, sizeof sa);
+#  800|   	sa.sa_handler = SIG_DFL;
+#  801|-> 	sigemptyset (&sa.sa_mask);
+#  802|   	sa.sa_flags = 0;
+#  803|   	sigaction (SIGPIPE, &sa, NULL);
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/src/mandb.c:912:11: warning: format string is not a string literal
+#                printf (ngettext ("%d man subdirectory contained newer "
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+man-db-2.9.4/gl/lib/gettext.h:76:5: note: expanded from macro 'ngettext'
+#    ((N) == 1 \
+#    ^~~~~~~~~~~
+#  910|   
+#  911|   	if (!quiet) {
+#  912|-> 		printf (ngettext ("%d man subdirectory contained newer "
+#  913|   				  "manual pages.\n",
+#  914|   				  "%d man subdirectories contained newer "
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/src/mandb.c:917:11: warning: format string is not a string literal
+#                printf (ngettext ("%d manual page was added.\n",
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+man-db-2.9.4/gl/lib/gettext.h:76:5: note: expanded from macro 'ngettext'
+#    ((N) == 1 \
+#    ^~~~~~~~~~~
+#  915|   				  "manual pages.\n", amount),
+#  916|   			amount);
+#  917|-> 		printf (ngettext ("%d manual page was added.\n",
+#  918|   				  "%d manual pages were added.\n", pages),
+#  919|   			pages);
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/src/mandb.c:921:12: warning: format string is not a string literal
+#                        printf (ngettext ("%d stray cat was added.\n",
+#                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+man-db-2.9.4/gl/lib/gettext.h:76:5: note: expanded from macro 'ngettext'
+#    ((N) == 1 \
+#    ^~~~~~~~~~~
+#  919|   			pages);
+#  920|   		if (check_for_strays)
+#  921|-> 			printf (ngettext ("%d stray cat was added.\n",
+#  922|   					  "%d stray cats were added.\n",
+#  923|   					  strays),
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/src/mandb.c:926:12: warning: format string is not a string literal
+#                        printf (ngettext ("%d old database entry was "
+#                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+man-db-2.9.4/gl/lib/gettext.h:76:5: note: expanded from macro 'ngettext'
+#    ((N) == 1 \
+#    ^~~~~~~~~~~
+#  924|   			        strays);
+#  925|   		if (purge)
+#  926|-> 			printf (ngettext ("%d old database entry was "
+#  927|   					  "purged.\n",
+#  928|   					  "%d old database entries were "
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/src/manp.c:276:12: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#                for (tok = strsep (&oldpathtok_ptr, ":"); tok;
+#                         ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  274|   		char *app_dedup = xstrdup (appendage);
+#  275|   		char *oldpathtok_ptr = oldpathtok;
+#  276|-> 		for (tok = strsep (&oldpathtok_ptr, ":"); tok;
+#  277|   		     tok = strsep (&oldpathtok_ptr, ":")) {
+#  278|   			char *search;
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/src/manp.c:276:14: warning: implicit declaration of function 'strsep' is invalid in C99
+#                for (tok = strsep (&oldpathtok_ptr, ":"); tok;
+#                           ^
+#  274|   		char *app_dedup = xstrdup (appendage);
+#  275|   		char *oldpathtok_ptr = oldpathtok;
+#  276|-> 		for (tok = strsep (&oldpathtok_ptr, ":"); tok;
+#  277|   		     tok = strsep (&oldpathtok_ptr, ":")) {
+#  278|   			char *search;
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/src/manp.c:276:14: warning: this function declaration is not a prototype
+#  274|   		char *app_dedup = xstrdup (appendage);
+#  275|   		char *oldpathtok_ptr = oldpathtok;
+#  276|-> 		for (tok = strsep (&oldpathtok_ptr, ":"); tok;
+#  277|   		     tok = strsep (&oldpathtok_ptr, ":")) {
+#  278|   			char *search;
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/src/manp.c:277:12: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#                     tok = strsep (&oldpathtok_ptr, ":")) {
+#                         ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  275|   		char *oldpathtok_ptr = oldpathtok;
+#  276|   		for (tok = strsep (&oldpathtok_ptr, ":"); tok;
+#  277|-> 		     tok = strsep (&oldpathtok_ptr, ":")) {
+#  278|   			char *search;
+#  279|   			if (!*tok)	    /* ignore empty fields */
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/src/manp.c:341:12: warning: incompatible integer to pointer conversion assigning to 'const char *' from 'int'
+#        for (path = strsep (&manp, ":"); path; path = strsep (&manp, ":")) {
+#                  ^ ~~~~~~~~~~~~~~~~~~~
+#  339|   	const char *path, *catdir;
+#  340|   
+#  341|-> 	for (path = strsep (&manp, ":"); path; path = strsep (&manp, ":")) {
+#  342|   		catdir = get_config (path, MANDB_MAP_USER);
+#  343|   		if (!catdir)
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/src/manp.c:341:14: warning: implicit declaration of function 'strsep' is invalid in C99
+#        for (path = strsep (&manp, ":"); path; path = strsep (&manp, ":")) {
+#                    ^
+#  339|   	const char *path, *catdir;
+#  340|   
+#  341|-> 	for (path = strsep (&manp, ":"); path; path = strsep (&manp, ":")) {
+#  342|   		catdir = get_config (path, MANDB_MAP_USER);
+#  343|   		if (!catdir)
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/src/manp.c:341:46: warning: incompatible integer to pointer conversion assigning to 'const char *' from 'int'
+#        for (path = strsep (&manp, ":"); path; path = strsep (&manp, ":")) {
+#                                                    ^ ~~~~~~~~~~~~~~~~~~~
+#  339|   	const char *path, *catdir;
+#  340|   
+#  341|-> 	for (path = strsep (&manp, ":"); path; path = strsep (&manp, ":")) {
+#  342|   		catdir = get_config (path, MANDB_MAP_USER);
+#  343|   		if (!catdir)
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/src/manp.c:440:12: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#        for (path = strsep (&manpathlist_ptr, ":"); path;
+#                  ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  438|   	manpathlist_copy = xstrdup (manpathlist);
+#  439|   	manpathlist_ptr = manpathlist_copy;
+#  440|-> 	for (path = strsep (&manpathlist_ptr, ":"); path;
+#  441|   	     path = strsep (&manpathlist_ptr, ":")) {
+#  442|   		DIR *mandir = opendir (path);
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/src/manp.c:440:14: warning: implicit declaration of function 'strsep' is invalid in C99
+#        for (path = strsep (&manpathlist_ptr, ":"); path;
+#                    ^
+#  438|   	manpathlist_copy = xstrdup (manpathlist);
+#  439|   	manpathlist_ptr = manpathlist_copy;
+#  440|-> 	for (path = strsep (&manpathlist_ptr, ":"); path;
+#  441|   	     path = strsep (&manpathlist_ptr, ":")) {
+#  442|   		DIR *mandir = opendir (path);
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/src/manp.c:441:12: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#             path = strsep (&manpathlist_ptr, ":")) {
+#                  ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  439|   	manpathlist_ptr = manpathlist_copy;
+#  440|   	for (path = strsep (&manpathlist_ptr, ":"); path;
+#  441|-> 	     path = strsep (&manpathlist_ptr, ":")) {
+#  442|   		DIR *mandir = opendir (path);
+#  443|   		struct dirent *mandirent;
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/src/manp.c:533:11: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#        for (tok = strsep (&locales_ptr, ":"); tok;
+#                 ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  531|   	locales_copy = xstrdup (locales);
+#  532|   	locales_ptr = locales_copy;
+#  533|-> 	for (tok = strsep (&locales_ptr, ":"); tok;
+#  534|   	     tok = strsep (&locales_ptr, ":")) {
+#  535|   		if (!*tok)	/* ignore empty fields */
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/src/manp.c:533:13: warning: implicit declaration of function 'strsep' is invalid in C99
+#        for (tok = strsep (&locales_ptr, ":"); tok;
+#                   ^
+#  531|   	locales_copy = xstrdup (locales);
+#  532|   	locales_ptr = locales_copy;
+#  533|-> 	for (tok = strsep (&locales_ptr, ":"); tok;
+#  534|   	     tok = strsep (&locales_ptr, ":")) {
+#  535|   		if (!*tok)	/* ignore empty fields */
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/src/manp.c:534:11: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#             tok = strsep (&locales_ptr, ":")) {
+#                 ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  532|   	locales_ptr = locales_copy;
+#  533|   	for (tok = strsep (&locales_ptr, ":"); tok;
+#  534|-> 	     tok = strsep (&locales_ptr, ":")) {
+#  535|   		if (!*tok)	/* ignore empty fields */
+#  536|   			continue;
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/src/manp.c:1097:13: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#        canon_path = canonicalize_file_name (path);
+#                   ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1095|   	struct canonicalized_path *cp = NULL;
+# 1096|   
+# 1097|-> 	canon_path = canonicalize_file_name (path);
+# 1098|   	if (canon_path) {
+# 1099|   		cp = XMALLOC (struct canonicalized_path);
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/src/manp.c:1097:15: warning: implicit declaration of function 'canonicalize_file_name' is invalid in C99
+#        canon_path = canonicalize_file_name (path);
+#                     ^
+# 1095|   	struct canonicalized_path *cp = NULL;
+# 1096|   
+# 1097|-> 	canon_path = canonicalize_file_name (path);
+# 1098|   	if (canon_path) {
+# 1099|   		cp = XMALLOC (struct canonicalized_path);
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/src/manp.c:1097:15: warning: this function declaration is not a prototype
+# 1095|   	struct canonicalized_path *cp = NULL;
+# 1096|   
+# 1097|-> 	canon_path = canonicalize_file_name (path);
+# 1098|   	if (canon_path) {
+# 1099|   		cp = XMALLOC (struct canonicalized_path);
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/src/straycats.c:228:13: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#                        fullpath = canonicalize_file_name (catdir);
+#                                 ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  226|   			pipeline_command (decomp, col_cmd);
+#  227|   
+#  228|-> 			fullpath = canonicalize_file_name (catdir);
+#  229|   			if (!fullpath) {
+#  230|   				if (quiet < 2) {
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/src/straycats.c:228:15: warning: implicit declaration of function 'canonicalize_file_name' is invalid in C99
+#                        fullpath = canonicalize_file_name (catdir);
+#                                   ^
+#  226|   			pipeline_command (decomp, col_cmd);
+#  227|   
+#  228|-> 			fullpath = canonicalize_file_name (catdir);
+#  229|   			if (!fullpath) {
+#  230|   				if (quiet < 2) {
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/src/straycats.c:228:15: warning: this function declaration is not a prototype
+#  226|   			pipeline_command (decomp, col_cmd);
+#  227|   
+#  228|-> 			fullpath = canonicalize_file_name (catdir);
+#  229|   			if (!fullpath) {
+#  230|   				if (quiet < 2) {
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/src/ult_src.c:119:16: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#        resolved_path = canonicalize_file_name (fullpath);
+#                      ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  117|   	char *resolved_path;
+#  118|   
+#  119|-> 	resolved_path = canonicalize_file_name (fullpath);
+#  120|   	if (!resolved_path) {
+#  121|   		/* discard the unresolved path */
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/src/ult_src.c:119:18: warning: implicit declaration of function 'canonicalize_file_name' is invalid in C99
+#        resolved_path = canonicalize_file_name (fullpath);
+#                        ^
+#  117|   	char *resolved_path;
+#  118|   
+#  119|-> 	resolved_path = canonicalize_file_name (fullpath);
+#  120|   	if (!resolved_path) {
+#  121|   		/* discard the unresolved path */
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/src/ult_src.c:119:18: warning: this function declaration is not a prototype
+#  117|   	char *resolved_path;
+#  118|   
+#  119|-> 	resolved_path = canonicalize_file_name (fullpath);
+#  120|   	if (!resolved_path) {
+#  121|   		/* discard the unresolved path */
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/src/ult_src.c:205:7: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#                ret = canonicalize_file_name (temp_file);
+#                    ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  203|   		/* Just plain include. */
+#  204|   		free (ret);
+#  205|-> 		ret = canonicalize_file_name (temp_file);
+#  206|   	} else {
+#  207|   		/* Try globbing - the file suffix might be missing. */
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/src/ult_src.c:205:9: warning: implicit declaration of function 'canonicalize_file_name' is invalid in C99
+#                ret = canonicalize_file_name (temp_file);
+#                      ^
+#  203|   		/* Just plain include. */
+#  204|   		free (ret);
+#  205|-> 		ret = canonicalize_file_name (temp_file);
+#  206|   	} else {
+#  207|   		/* Try globbing - the file suffix might be missing. */
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/src/ult_src.c:217:9: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#                                ret = canonicalize_file_name (candidate_file);
+#                                    ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  215|   			if (CAN_ACCESS (candidate_file, F_OK)) {
+#  216|   				free (ret);
+#  217|-> 				ret = canonicalize_file_name (candidate_file);
+#  218|   			}
+#  219|   		}
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/src/ult_src.c:217:11: warning: implicit declaration of function 'canonicalize_file_name' is invalid in C99
+#                                ret = canonicalize_file_name (candidate_file);
+#                                      ^
+#  215|   			if (CAN_ACCESS (candidate_file, F_OK)) {
+#  216|   				free (ret);
+#  217|-> 				ret = canonicalize_file_name (candidate_file);
+#  218|   			}
+#  219|   		}
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/src/whatis.c:648:22: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int'
+#        while (whatis && (p = strcasestr (whatis, page))) {
+#                            ^ ~~~~~~~~~~~~~~~~~~~~~~~~~
+#  646|   	
+#  647|   	/* check for string match, then see if it is a _word_ */
+#  648|-> 	while (whatis && (p = strcasestr (whatis, page))) {
+#  649|   		char *left = p - 1; 
+#  650|   		char *right = p + len;
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/src/whatis.c:648:24: warning: implicit declaration of function 'strcasestr' is invalid in C99
+#        while (whatis && (p = strcasestr (whatis, page))) {
+#                              ^
+#  646|   	
+#  647|   	/* check for string match, then see if it is a _word_ */
+#  648|-> 	while (whatis && (p = strcasestr (whatis, page))) {
+#  649|   		char *left = p - 1; 
+#  650|   		char *right = p + len;
+
+Error: COMPILER_WARNING:
+man-db-2.9.4/src/whatis.c:648:24: warning: this function declaration is not a prototype
+#  646|   	
+#  647|   	/* check for string match, then see if it is a _word_ */
+#  648|-> 	while (whatis && (p = strcasestr (whatis, page))) {
+#  649|   		char *left = p - 1; 
+#  650|   		char *right = p + len;
