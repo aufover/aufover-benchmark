@@ -42,7 +42,6 @@ jobs:
       - name: Update the system and install dependencies
         run: |
           dnf config-manager --set-enabled updates-testing
-          dnf config-manager --set-enabled updates-testing-modular
           dnf update -y
           DNF_OPTS=-y make install-deps
 
