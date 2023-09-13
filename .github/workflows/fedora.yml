@@ -17,7 +17,7 @@ jobs:
       fail-fast: false
       matrix:
         # Fedora release targets
-        release: [36, 37, 38, rawhide]
+        release: [36, 37, 38, 39, rawhide]
 
     runs-on: ubuntu-latest
     container:
@@ -26,7 +26,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Install Copr support and make
         run: dnf install dnf-plugins-core make -y
@@ -42,7 +42,6 @@ jobs:
       - name: Update the system and install dependencies
         run: |
           dnf config-manager --set-enabled updates-testing
-          dnf config-manager --set-enabled updates-testing-modular
           dnf update -y
           DNF_OPTS=-y make install-deps
 
